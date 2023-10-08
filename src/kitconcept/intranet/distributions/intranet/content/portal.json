@@ -4,6 +4,20 @@
     "UID": "71846cd61b404039a69de1298738c493",
     "allow_discussion": null,
     "blocks": {
+        "1cc4aff1-c56f-4c41-800f-5bac997728bb": {
+            "@type": "slate",
+            "plaintext": "",
+            "value": [
+                {
+                    "children": [
+                        {
+                            "text": ""
+                        }
+                    ],
+                    "type": "p"
+                }
+            ]
+        },
         "4b7b41d2-30d4-48c3-8606-ff3a4b0eb710": {
             "@type": "slate",
             "plaintext": "",
@@ -18,49 +32,387 @@
                 }
             ]
         },
-        "4d697d5d-7b2f-4f50-ab3c-efaa1f6f6a60": {
-            "@type": "image",
-            "alt": "Plone Foundation Logo",
-            "openLinkInNewTab": true,
-            "url": "/images/plone-foundation-logo.png"
+        "609bf49e-75bc-4288-8a54-5a215cf8692e": {
+            "@type": "gridBlock",
+            "blocks": {
+                "6be259d5-3ec6-470f-a096-7df0f499c7b9": {
+                    "@type": "teaser",
+                    "description": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+                    "head_title": null,
+                    "href": [
+                        {
+                            "@id": "/features/person-profiles",
+                            "@type": "Document",
+                            "Description": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+                            "Title": "Person Profiles",
+                            "getRemoteUrl": null,
+                            "hasPreviewImage": true,
+                            "head_title": null,
+                            "image_field": "preview_image",
+                            "image_scales": {
+                                "preview_image": [
+                                    {
+                                        "content-type": "image/jpeg",
+                                        "download": "@@images/preview_image-5184-4c2103cac92eb9c98eb49e3118fa46fc.jpeg",
+                                        "filename": "christopher-campbell-rDEOVtE7vOs-unsplash (1).jpg",
+                                        "height": 3456,
+                                        "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-b726f077c3ea8e35de98a2b150df8a34.jpeg",
+                                                "height": 800,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-40d6328912c92b426176ae652fd747e9.jpeg",
+                                                "height": 1066,
+                                                "width": 1600
+                                            },
+                                            "icon": {
+                                                "download": "@@images/preview_image-32-138ab9d8facdb8b8b0c88607cb628b3f.jpeg",
+                                                "height": 21,
+                                                "width": 32
+                                            },
+                                            "large": {
+                                                "download": "@@images/preview_image-800-9e61b906040273cd0fb585294bf37981.jpeg",
+                                                "height": 533,
+                                                "width": 800
+                                            },
+                                            "larger": {
+                                                "download": "@@images/preview_image-1000-b100c6719e37395e820950bb64776af0.jpeg",
+                                                "height": 666,
+                                                "width": 1000
+                                            },
+                                            "mini": {
+                                                "download": "@@images/preview_image-200-ff46547ad6a51d9f9883d01d8994f7fc.jpeg",
+                                                "height": 133,
+                                                "width": 200
+                                            },
+                                            "preview": {
+                                                "download": "@@images/preview_image-400-6e8fdb7fe2fa0b08ba37ff6d587646bc.jpeg",
+                                                "height": 266,
+                                                "width": 400
+                                            },
+                                            "teaser": {
+                                                "download": "@@images/preview_image-600-29dbd269c390670a43bc5f4189589941.jpeg",
+                                                "height": 400,
+                                                "width": 600
+                                            },
+                                            "thumb": {
+                                                "download": "@@images/preview_image-128-8f318268eb08d2b5171ee7bb3fc7fd4e.jpeg",
+                                                "height": 85,
+                                                "width": 128
+                                            },
+                                            "tile": {
+                                                "download": "@@images/preview_image-64-21c6f24ea5917a647659b65877979620.jpeg",
+                                                "height": 42,
+                                                "width": 64
+                                            }
+                                        },
+                                        "size": 1098386,
+                                        "width": 5184
+                                    }
+                                ]
+                            },
+                            "title": "Person Profiles"
+                        }
+                    ],
+                    "styles": {
+                        "align": "left"
+                    },
+                    "title": "Person Profiles"
+                },
+                "b239c817-8dde-4da9-bf53-76614a8ff5b8": {
+                    "@type": "teaser",
+                    "description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+                    "head_title": null,
+                    "href": [
+                        {
+                            "@id": "/features/theme",
+                            "@type": "Document",
+                            "Description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+                            "Title": "Theme",
+                            "getRemoteUrl": null,
+                            "hasPreviewImage": true,
+                            "head_title": null,
+                            "image_field": "preview_image",
+                            "image_scales": {
+                                "preview_image": [
+                                    {
+                                        "content-type": "image/jpeg",
+                                        "download": "@@images/preview_image-12104-a2f7171dd270cff1dac27bf416df5479.jpeg",
+                                        "filename": "national-cancer-institute-zz_3tCcrk7o-unsplash (3).jpg",
+                                        "height": 8616,
+                                        "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-41d18d34b6e5bd875820ddff37beca6d.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c0f172895b2732655cb00904963bdd3b.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
+                                            "icon": {
+                                                "download": "@@images/preview_image-32-1f3ce06cd8bfe24365059f67fc5d1cf9.jpeg",
+                                                "height": 22,
+                                                "width": 32
+                                            },
+                                            "large": {
+                                                "download": "@@images/preview_image-800-7dc25c422b719e2a9db777fb7b9e7be4.jpeg",
+                                                "height": 569,
+                                                "width": 800
+                                            },
+                                            "larger": {
+                                                "download": "@@images/preview_image-1000-b3799ced1d32c08faf0cb36409492f59.jpeg",
+                                                "height": 711,
+                                                "width": 1000
+                                            },
+                                            "mini": {
+                                                "download": "@@images/preview_image-200-559c44da8a1738758de5c0e9e7f510c6.jpeg",
+                                                "height": 142,
+                                                "width": 200
+                                            },
+                                            "preview": {
+                                                "download": "@@images/preview_image-400-a8c86bdae55d0fd320c0a7a12ff4be13.jpeg",
+                                                "height": 284,
+                                                "width": 400
+                                            },
+                                            "teaser": {
+                                                "download": "@@images/preview_image-600-6e0fa7ffa5c63ff3633392aef3d74c80.jpeg",
+                                                "height": 427,
+                                                "width": 600
+                                            },
+                                            "thumb": {
+                                                "download": "@@images/preview_image-128-0408c2a57a3578da077c9616f26fbc16.jpeg",
+                                                "height": 91,
+                                                "width": 128
+                                            },
+                                            "tile": {
+                                                "download": "@@images/preview_image-64-1619e83d062d8bd8d8fe51aa927b0e32.jpeg",
+                                                "height": 45,
+                                                "width": 64
+                                            }
+                                        },
+                                        "size": 12423390,
+                                        "width": 12104
+                                    }
+                                ]
+                            },
+                            "title": "Theme"
+                        }
+                    ],
+                    "styles": {
+                        "align": "left"
+                    },
+                    "title": "Theme"
+                },
+                "ee8810e2-0fca-4629-bc71-5936f7948e38": {
+                    "@type": "teaser",
+                    "description": "A full text search that let's you find all the content in your intranet.",
+                    "head_title": null,
+                    "href": [
+                        {
+                            "@id": "/features/search",
+                            "@type": "Document",
+                            "Description": "A full text search that let's you find all the content in your intranet.",
+                            "Title": "Search",
+                            "getRemoteUrl": null,
+                            "hasPreviewImage": true,
+                            "head_title": null,
+                            "image_field": "preview_image",
+                            "image_scales": {
+                                "preview_image": [
+                                    {
+                                        "content-type": "image/jpeg",
+                                        "download": "@@images/preview_image-5616-03280e3f4271848a0a56674b39e96ca4.jpeg",
+                                        "filename": "gabriel-ponton-NfxVIkHyAig-unsplash.jpg",
+                                        "height": 3744,
+                                        "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-438705a443d2fdae2f4755b50cf98173.jpeg",
+                                                "height": 800,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-2a04b81a8b499ade19a548fca742de64.jpeg",
+                                                "height": 1066,
+                                                "width": 1600
+                                            },
+                                            "icon": {
+                                                "download": "@@images/preview_image-32-75802474472fe5ea67eb4e7703e3b619.jpeg",
+                                                "height": 21,
+                                                "width": 32
+                                            },
+                                            "large": {
+                                                "download": "@@images/preview_image-800-2dee20a54a9e9a33df8912c9f170bc0f.jpeg",
+                                                "height": 533,
+                                                "width": 800
+                                            },
+                                            "larger": {
+                                                "download": "@@images/preview_image-1000-39dab3db3dd429066c59859ec6b8aa17.jpeg",
+                                                "height": 666,
+                                                "width": 1000
+                                            },
+                                            "mini": {
+                                                "download": "@@images/preview_image-200-f7d04c54e6e1b194dac05a426d2ed5c7.jpeg",
+                                                "height": 133,
+                                                "width": 200
+                                            },
+                                            "preview": {
+                                                "download": "@@images/preview_image-400-9935e6c5451ef22b13ce761336657074.jpeg",
+                                                "height": 266,
+                                                "width": 400
+                                            },
+                                            "teaser": {
+                                                "download": "@@images/preview_image-600-bd11f2e555f0a8a9ef6bf0798617088c.jpeg",
+                                                "height": 400,
+                                                "width": 600
+                                            },
+                                            "thumb": {
+                                                "download": "@@images/preview_image-128-d47cd67a195469f8b1e8a0c600214647.jpeg",
+                                                "height": 85,
+                                                "width": 128
+                                            },
+                                            "tile": {
+                                                "download": "@@images/preview_image-64-3231507c05993368385bd010b0a549f4.jpeg",
+                                                "height": 42,
+                                                "width": 64
+                                            }
+                                        },
+                                        "size": 2879593,
+                                        "width": 5616
+                                    }
+                                ]
+                            },
+                            "title": "Search"
+                        }
+                    ],
+                    "styles": {
+                        "align": "left"
+                    },
+                    "title": "Search"
+                }
+            },
+            "blocks_layout": {
+                "items": [
+                    "b239c817-8dde-4da9-bf53-76614a8ff5b8",
+                    "ee8810e2-0fca-4629-bc71-5936f7948e38",
+                    "6be259d5-3ec6-470f-a096-7df0f499c7b9"
+                ]
+            },
+            "headline": "Features",
+            "styles": {}
         },
-        "8836cd7f-35ca-49e7-96d9-39bdadd01fdf": {
-            "@type": "title"
-        },
-        "b9cf9e11-fea1-4440-a826-8288278e63e2": {
+        "dd87aac4-aef0-45e5-a54b-8ebc0aaa69a5": {
             "@type": "slate",
-            "plaintext": "This is the home page of your newly created Plone Distribution !",
+            "plaintext": "",
+            "styles": {},
             "value": [
                 {
                     "children": [
                         {
-                            "text": "This is the home page of your newly created "
-                        },
-                        {
-                            "children": [
-                                {
-                                    "text": "Plone Distribution"
-                                }
-                            ],
-                            "data": {
-                                "url": "https://plone.github.io/plone.distribution/"
-                            },
-                            "type": "link"
-                        },
-                        {
-                            "text": "!"
+                            "text": ""
                         }
                     ],
                     "type": "p"
+                }
+            ]
+        },
+        "eae93ac2-c6b0-4370-b8e0-5eff40582210": {
+            "@type": "slider",
+            "slides": [
+                {
+                    "@id": "93d988b9-05e7-4957-a630-9414f88267a2",
+                    "description": "Welcome to the kitconcept intranet distribution. A Plone distribution specifically crafted for Intranets with Plone.",
+                    "head_title": "Plone Distribution",
+                    "href": [
+                        {
+                            "@id": "/about",
+                            "@type": "Document",
+                            "Description": "",
+                            "Title": "About",
+                            "hasPreviewImage": true,
+                            "head_title": null,
+                            "image_field": "preview_image",
+                            "image_scales": {
+                                "preview_image": [
+                                    {
+                                        "content-type": "image/jpeg",
+                                        "download": "@@images/preview_image-6000-6a17e812861b45a63fdfd767b38462c8.jpeg",
+                                        "filename": "codioful-formerly-gradienta-lweK7Wme_jo-unsplash (2).jpg",
+                                        "height": 4000,
+                                        "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-a40696bfba55bc5e19f4c379d4c828ce.jpeg",
+                                                "height": 800,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-9ff0f18789d4a969ba64f5b6f07dca27.jpeg",
+                                                "height": 1066,
+                                                "width": 1600
+                                            },
+                                            "icon": {
+                                                "download": "@@images/preview_image-32-98c061c8f8e6312018f29473daa4705f.jpeg",
+                                                "height": 21,
+                                                "width": 32
+                                            },
+                                            "large": {
+                                                "download": "@@images/preview_image-800-282b70678f1cfbce9004cadffda966e0.jpeg",
+                                                "height": 533,
+                                                "width": 800
+                                            },
+                                            "larger": {
+                                                "download": "@@images/preview_image-1000-9e798544a3a234d31ebbbae6154ab48c.jpeg",
+                                                "height": 666,
+                                                "width": 1000
+                                            },
+                                            "mini": {
+                                                "download": "@@images/preview_image-200-8434b234a37fa0b461566ab965066daf.jpeg",
+                                                "height": 133,
+                                                "width": 200
+                                            },
+                                            "preview": {
+                                                "download": "@@images/preview_image-400-cb42c548e24242cc712bdac0382356ad.jpeg",
+                                                "height": 266,
+                                                "width": 400
+                                            },
+                                            "teaser": {
+                                                "download": "@@images/preview_image-600-bf9705fcffa7a8bd8e87913642e7eb65.jpeg",
+                                                "height": 400,
+                                                "width": 600
+                                            },
+                                            "thumb": {
+                                                "download": "@@images/preview_image-128-cb16999c0dc6d866c0e3119e2febaec1.jpeg",
+                                                "height": 85,
+                                                "width": 128
+                                            },
+                                            "tile": {
+                                                "download": "@@images/preview_image-64-c3d5378a1922c92e1dceab4f7be04a58.jpeg",
+                                                "height": 42,
+                                                "width": 64
+                                            }
+                                        },
+                                        "size": 283261,
+                                        "width": 6000
+                                    }
+                                ]
+                            },
+                            "title": "About"
+                        }
+                    ],
+                    "title": "kitconcept intranet"
                 }
             ]
         }
     },
     "blocks_layout": {
         "items": [
-            "8836cd7f-35ca-49e7-96d9-39bdadd01fdf",
-            "b9cf9e11-fea1-4440-a826-8288278e63e2",
-            "4d697d5d-7b2f-4f50-ab3c-efaa1f6f6a60",
+            "eae93ac2-c6b0-4370-b8e0-5eff40582210",
+            "609bf49e-75bc-4288-8a54-5a215cf8692e",
+            "dd87aac4-aef0-45e5-a54b-8ebc0aaa69a5",
+            "1cc4aff1-c56f-4c41-800f-5bac997728bb",
             "4b7b41d2-30d4-48c3-8606-ff3a4b0eb710"
         ]
     },
@@ -74,7 +426,7 @@
     "expires": null,
     "id": "Plone",
     "is_folderish": true,
-    "items_total": 1,
+    "items_total": 4,
     "language": "en-us",
     "lock": {
         "locked": false,

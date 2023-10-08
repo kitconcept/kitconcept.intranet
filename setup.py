@@ -52,7 +52,8 @@ setup(
         "setuptools",
         "Plone",
         "plone.distribution",
-        "plone.api",
+        # "plone.api",
+        "kitconcept.solr",
     ],
     extras_require={
         "test": [

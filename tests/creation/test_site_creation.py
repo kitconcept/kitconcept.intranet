@@ -38,6 +38,7 @@ class TestDistributionPortalEdu:
             ("plonetheme.barceloneta", True),
             ("plone.restapi", True),
             ("plone.volto", True),
+            ("kitconcept.solr", True),
         ],
     )
     def test_dependencies_installed(self, installer, package, expected):

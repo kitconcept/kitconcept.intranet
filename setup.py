@@ -64,6 +64,7 @@ setup(
             "pytest",
             "pytest-cov",
             "pytest-plone>=0.2.0",
+            "collective.person",
         ],
     },
     entry_points="""

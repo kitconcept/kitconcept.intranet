@@ -8,6 +8,11 @@ SHELL:=bash
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
 
+CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+
+COMPOSE_PROJECT_NAME?="kitconcept_intranet"
+SOLR_ONLY_COMPOSE?=${CURRENT_DIR}/docker-compose.yml
+
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
 RED=`tput setaf 1`
@@ -127,3 +132,42 @@ build-image:  ## Build Docker Image
 .PHONY: run-image
 run-image:  build-image  ## Build Docker Image
 	docker run --rm -it -p 8080:8080 $(IMAGE_NAME):$(IMAGE_TAG)
+
+## Solr only
+.PHONY: solr-prepare
+	solr-prepare: ## Prepare solr
+	@echo "$(RED)==> Preparing solr $(RESET)"
+	mkdir -p ${SOLR_DATA_FOLDER}/solr
+
+.PHONY: start-solr
+start-solr: solr-start
+
+.PHONY: stop-solr
+stop-solr: solr-stop
+
+.PHONY: start-solr-fg
+start-solr-fg: solr-start-fg
+
+.PHONY: solr-start
+solr-start: ## Start solr
+	@echo "Start solr"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up -d
+
+.PHONY: solr-start-fg
+solr-start-fg: ## Start solr in foreground
+	@echo "Start solr in foreground"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up
+
+.PHONY: solr-stop
+solr-stop: ## Stop solr
+	@echo "Stop solr"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} down
+
+.PHONY: solr-logs
+solr-logs: ## Show solr logs
+	@echo "Show solr logs"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} logs -f
+
+.PHONY: solr-activate-and-reindex
+solr-activate-and-reindex: instance/etc/zope.ini ## Activate and reindex solr
+	PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf scripts/solr_activate_and_reindex.py --clear

@@ -53,6 +53,7 @@ make start
 ````
 export PLONE_VERSION=6.0.9 && make build-image
 make solr-prepare
+make solr-activate-and-reindex
 make solr-start
 -> go to localhost:8983/solr to see the Solr backend
 ````

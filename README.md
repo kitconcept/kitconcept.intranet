@@ -48,6 +48,15 @@ make start
 -> go to localhost:3000 to see the Volto frontend
 ````
 
+### Solr
+
+````
+export PLONE_VERSION=6.0.9 && make build-image
+make solr-prepare
+make solr-start
+-> go to localhost:8983/solr to see the Solr backend
+````
+
 ## Contribute
 
 - [Issue Tracker](https://github.com/kitconcept/kitconcept.intranet/issues)

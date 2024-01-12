@@ -26,6 +26,28 @@ And to create the Plone site:
 make create_site
 ```
 
+## Development
+
+### Backend
+
+````
+git clone git@github.com:kitconcept/kitconcept.intranet.git
+cd kitconcept.intranet
+make
+make start
+-> go to localhost:8080 and create a new kitconcept.intranet instance with example content
+````
+
+### Frontend
+
+````
+git clone git@github.com:kitconcept/kitconcept-intranet.git
+cd kitconcept-intranet
+make
+make start
+-> go to localhost:3000 to see the Volto frontend
+````
+
 ## Contribute
 
 - [Issue Tracker](https://github.com/kitconcept/kitconcept.intranet/issues)

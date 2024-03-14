@@ -133,6 +133,14 @@ build-image:  ## Build Docker Image
 run-image:  build-image  ## Build Docker Image
 	docker run --rm -it -p 8080:8080 $(IMAGE_NAME):$(IMAGE_TAG)
 
+.PHONY: create-site
+create-site: ## Create a new site using default distribution and default answers
+	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf scripts/create-site.py
+
+.PHONY: create-site-force
+create-site-force: ## Create a new site using default distribution and default answers
+	DELETE_EXISTING=1 DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf scripts/create-site.py
+
 ## Solr only
 .PHONY: solr-prepare
 	solr-prepare: ## Prepare solr

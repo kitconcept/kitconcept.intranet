@@ -18,3 +18,4 @@ exclude instance.yaml
 global-exclude *.pyc
 global-exclude .DS_Store
 recursive-include scripts *.py
+recursive-include scripts *.json

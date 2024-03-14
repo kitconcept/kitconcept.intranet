@@ -6,7 +6,9 @@ A Plone distribution for Intranets with Plone. Created by kitconcept.
 
 ### Content Types
 
-- TBD
+- Theme
+- Search
+- Person Profiles
 
 ### Initial content
 
@@ -57,6 +59,26 @@ make solr-activate-and-reindex
 make solr-start
 -> go to localhost:8983/solr to see the Solr backend
 ````
+
+### Create Site
+
+````
+make create-site
+````
+
+Override existing content:
+
+````
+make create-site-force
+````
+
+### Export Content
+
+````
+http://localhost:8080/Plone/@@dist_export_all
+````
+
+Then commit the changed data to the repo.
 
 ## Contribute
 

@@ -1,0 +1,79 @@
+{
+    "@id": "/features/search",
+    "@type": "Document",
+    "UID": "a0574567f6894cc2ad3bd6af5d755a1a",
+    "allow_discussion": false,
+    "blocks": {
+        "3267a962-1f02-46a0-8b78-b794d3dd78b3": {
+            "@type": "title"
+        },
+        "5102f516-5d60-40a2-801d-b08d4a24e646": {
+            "@type": "slate"
+        }
+    },
+    "blocks_layout": {
+        "items": [
+            "3267a962-1f02-46a0-8b78-b794d3dd78b3",
+            "5102f516-5d60-40a2-801d-b08d4a24e646"
+        ]
+    },
+    "contributors": [],
+    "created": "2023-10-08T16:51:44+00:00",
+    "creators": [
+        "admin"
+    ],
+    "description": "A full text search that let's you find all the content in your intranet.",
+    "effective": null,
+    "exclude_from_nav": false,
+    "expires": null,
+    "id": "search",
+    "is_folderish": true,
+    "language": "de",
+    "layout": "document_view",
+    "lock": {
+        "locked": false,
+        "stealable": true
+    },
+    "modified": "2023-10-08T16:51:44+00:00",
+    "parent": {
+        "@id": "/features",
+        "@type": "Document",
+        "UID": "d4dce2b298db445f9d713bfd22f049fb",
+        "description": "",
+        "image_field": null,
+        "image_scales": null,
+        "review_state": "private",
+        "title": "Features",
+        "type_title": "Seite"
+    },
+    "preview_caption": null,
+    "preview_image": {
+        "blob_path": "blobs/a0574567f6894cc2ad3bd6af5d755a1a-preview_image/gabriel-ponton-NfxVIkHyAig-unsplash.jpg",
+        "content-type": "image/jpeg",
+        "filename": "gabriel-ponton-NfxVIkHyAig-unsplash.jpg",
+        "height": 3744,
+        "size": 2879593,
+        "width": 5616
+    },
+    "review_state": "private",
+    "rights": "",
+    "searchwords": [],
+    "showinsearch": true,
+    "subjects": [],
+    "title": "Search",
+    "type_title": "Seite",
+    "version": "current",
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null,
+                "actor": "admin",
+                "comments": "",
+                "review_state": "private",
+                "time": "2023-10-08T16:51:44+00:00"
+            }
+        ]
+    },
+    "working_copy": null,
+    "working_copy_of": null
+}

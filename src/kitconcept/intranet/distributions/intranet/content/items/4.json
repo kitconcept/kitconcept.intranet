@@ -1,0 +1,88 @@
+{
+    "@id": "/features",
+    "@type": "Document",
+    "UID": "d4dce2b298db445f9d713bfd22f049fb",
+    "allow_discussion": false,
+    "blocks": {
+        "006339c9-2d74-44a7-ae30-2d7b7bbaf7db": {
+            "@type": "slate",
+            "plaintext": "",
+            "styles": {},
+            "value": [
+                {
+                    "children": [
+                        {
+                            "text": ""
+                        }
+                    ],
+                    "type": "p"
+                }
+            ]
+        },
+        "2ad9707b-f9ca-428f-85cb-9ce3dff64975": {
+            "@type": "listing",
+            "headlineTag": "h2",
+            "styles": {},
+            "variation": "grid"
+        },
+        "7bd2f2c6-2905-4e85-8137-a4d38f0451ee": {
+            "@type": "title"
+        }
+    },
+    "blocks_layout": {
+        "items": [
+            "7bd2f2c6-2905-4e85-8137-a4d38f0451ee",
+            "2ad9707b-f9ca-428f-85cb-9ce3dff64975",
+            "006339c9-2d74-44a7-ae30-2d7b7bbaf7db"
+        ]
+    },
+    "contributors": [],
+    "created": "2023-10-08T16:37:14+00:00",
+    "creators": [
+        "admin"
+    ],
+    "description": "",
+    "effective": null,
+    "exclude_from_nav": false,
+    "expires": null,
+    "id": "features",
+    "is_folderish": true,
+    "language": "de",
+    "layout": "document_view",
+    "lock": {
+        "locked": false,
+        "stealable": true
+    },
+    "modified": "2024-03-14T14:48:55+00:00",
+    "parent": {
+        "@id": "/",
+        "@type": "Plone Site",
+        "UID": "5c1ddd25b02e44109a5eef9f445aba69",
+        "description": "A Plone Site",
+        "title": "Welcome to Plone 6!",
+        "type_title": "Website"
+    },
+    "preview_caption": null,
+    "preview_image": null,
+    "review_state": "private",
+    "rights": "",
+    "searchwords": [],
+    "showinsearch": true,
+    "subjects": [],
+    "title": "Features",
+    "type_title": "Seite",
+    "version": "current",
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null,
+                "actor": "admin",
+                "comments": "",
+                "review_state": "private",
+                "time": "2023-10-08T16:37:14+00:00"
+            }
+        ]
+    },
+    "working_copy": null,
+    "working_copy_of": null
+}

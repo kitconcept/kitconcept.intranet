@@ -21,12 +21,6 @@
   <include file="permissions.zcml" />
   <include file="profiles.zcml" />
 
-  <include package=".indexers" />
-  <include package=".vocabularies" />
   <include package=".behaviors" />
-  <include package=".browser" />
-  <include package=".serializers" />
-  <include package=".services" />
-  <include package=".subscribers" />
 
 </configure>

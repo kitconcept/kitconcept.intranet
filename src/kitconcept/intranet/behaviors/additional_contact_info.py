@@ -1,4 +1,4 @@
-from collective.contact_behaviors import _
+from kitconcept.intranet import _
 from plone.autoform.directives import read_permission
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema.email import Email

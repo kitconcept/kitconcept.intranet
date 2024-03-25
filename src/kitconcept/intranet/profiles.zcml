@@ -1,12 +1,12 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="kitconcept_intranet_demo"
+    i18n_domain="kitconcept.intranet"
     >
 
   <genericsetup:registerProfile
       name="default"
-      title="kitconcept.intranet.demo: Install"
+      title="kitconcept.intranet: Install"
       description="Policy package to install our site"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/default"
@@ -14,7 +14,7 @@
 
   <genericsetup:registerProfile
       name="initial"
-      title="kitconcept.intranet.demo: Initial content"
+      title="kitconcept.intranet: Initial content"
       description="Initial content for our website."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/initial"
@@ -23,8 +23,8 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="kitconcept.intranet.demo: Uninstall"
-      description="Uninstall kitconcept.intranet.demo setup."
+      title="kitconcept.intranet: Uninstall"
+      description="Uninstall kitconcept.intranet setup."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/uninstall"
       />

@@ -1,6 +1,6 @@
-from kitconcept_intranet_demo import logger
-from kitconcept_intranet_demo.setuphandlers import content
-from kitconcept_intranet_demo.setuphandlers import users
+from kitconcept.intranet import logger
+from kitconcept.intranet.setuphandlers import content
+from kitconcept.intranet.setuphandlers import users
 from plone import api
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
@@ -11,7 +11,7 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
         return [
-            "kitconcept_intranet_demo:uninstall",
+            "kitconcept.intranet:uninstall",
         ]
 
 

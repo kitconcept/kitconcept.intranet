@@ -1,7 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:zcml="http://namespaces.zope.org/zcml"
-    i18n_domain="kitconcept_intranet_demo"
+    i18n_domain="kitconcept.intranet"
     >
 
   <configure zcml:condition="installed AccessControl.security">

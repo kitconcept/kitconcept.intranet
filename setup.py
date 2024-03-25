@@ -54,6 +54,8 @@ setup(
         "plone.distribution",
         # "plone.api",
         "kitconcept.solr",
+        "python-dateutil",
+        "collective.person",
     ],
     extras_require={
         "test": [
@@ -64,7 +66,6 @@ setup(
             "pytest",
             "pytest-cov",
             "pytest-plone>=0.2.0",
-            "collective.person",
         ],
     },
     entry_points="""

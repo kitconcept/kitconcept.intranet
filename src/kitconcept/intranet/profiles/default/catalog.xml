@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object name="portal_catalog">
+
+  <!-- Needed for additional_contact_info in Person content type -->
+
+  <index meta_type="FieldIndex"
+         name="contact_building"
+  >
+    <indexed_attr value="contact_building" />
+  </index>
+  <column value="contact_building" />
+
+  <index meta_type="FieldIndex"
+         name="contact_room"
+  >
+    <indexed_attr value="contact_room" />
+  </index>
+  <column value="contact_room" />
+
+</object>

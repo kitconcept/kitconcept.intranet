@@ -77,7 +77,7 @@ def _create_content(portal, item: dict, creators: list):
 
 def populate_portal(portal, creators):
     """Create content structure."""
-    with open(os.path.join(__location__, "contents.json"), "r") as f_in:
+    with open(os.path.join(__location__, "contents.json")) as f_in:
         contents = json.load(f_in)
 
     # Contents are created by Editors
@@ -99,7 +99,7 @@ def _update_home(portal, item: dict):
 
 def update_home(portal, creators):
     """Create content structure."""
-    with open(os.path.join(__location__, "home.json"), "r") as f_in:
+    with open(os.path.join(__location__, "home.json")) as f_in:
         content = json.load(f_in)
 
     # Contents are created by Editors

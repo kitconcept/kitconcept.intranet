@@ -9,7 +9,7 @@ __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file
 
 def _users_info() -> dict:
     """Return users info."""
-    with open(os.path.join(__location__, "users.json"), "r") as f_in:
+    with open(os.path.join(__location__, "users.json")) as f_in:
         users = json.load(f_in)
     return users
 

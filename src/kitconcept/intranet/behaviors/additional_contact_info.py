@@ -1,7 +1,6 @@
 from kitconcept.intranet import _
 from plone.autoform.directives import read_permission
 from plone.autoform.interfaces import IFormFieldProvider
-from plone.schema.email import Email
 from plone.supermodel import directives
 from plone.supermodel import model
 from zope import schema

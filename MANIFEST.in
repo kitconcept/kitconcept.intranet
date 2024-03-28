@@ -2,6 +2,7 @@ graft src/kitconcept
 graft docs
 graft news
 graft tests
+graft solr
 include .coveragerc
 include .dockerignore
 include .editorconfig

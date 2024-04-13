@@ -54,8 +54,6 @@ setup(
         "plone.distribution",
         # "plone.api",
         "kitconcept.solr",
-        "python-dateutil",
-        "collective.person",
     ],
     extras_require={
         "test": [

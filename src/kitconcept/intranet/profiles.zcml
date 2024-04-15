@@ -11,30 +11,31 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/default"
       post_handler=".setuphandlers.post_install"
-      ><genericsetup:registerProfile
-        name="initial"
-        title="kitconcept.intranet: Initial content"
-        description="Initial content for our website."
-        provides="Products.GenericSetup.interfaces.EXTENSION"
-        directory="profiles/initial"
-        pre_handler=".setuphandlers.populate_portal"
-        />
+      />
 
-    <genericsetup:registerProfile
-        name="uninstall"
-        title="kitconcept Intranet (kitconcept.intranet): uninstall"
-        description="Uninstalls the kitconcept.intranet add-on."
-        provides="Products.GenericSetup.interfaces.EXTENSION"
-        directory="profiles/uninstall"
-        post_handler=".setuphandlers.uninstall"
-        />
+  <genericsetup:registerProfile
+      name="initial"
+      title="kitconcept.intranet: Initial content"
+      description="Initial content for our website."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/initial"
+      pre_handler=".setuphandlers.populate_portal"
+      />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="kitconcept Intranet (kitconcept.intranet): uninstall"
+      description="Uninstalls the kitconcept.intranet add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      post_handler=".setuphandlers.uninstall"
+      />
 
-    <utility
-        factory=".setuphandlers.HiddenProfiles"
-        name="kitconcept.intranet-hiddenprofiles"
-        />
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="kitconcept.intranet-hiddenprofiles"
+      />
 
-    <include package=".upgrades" />
+  <include package=".upgrades" />
 
-  </genericsetup:registerProfile></configure>
+</configure>

@@ -1,7 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="dlr.internet"
+    i18n_domain="kitconcept.intranet"
     >
 
   <genericsetup:registerProfile
@@ -11,6 +11,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/default"
       post_handler=".setuphandlers.post_install"
+
+  <genericsetup:registerProfile
+      name="initial"
+      title="kitconcept.intranet: Initial content"
+      description="Initial content for our website."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/initial"
+      pre_handler=".setuphandlers.populate_portal"
       />
 
   <genericsetup:registerProfile
@@ -27,5 +35,7 @@
       factory=".setuphandlers.HiddenProfiles"
       name="kitconcept.intranet-hiddenprofiles"
       />
+
+  <include package=".upgrades" />
 
 </configure>

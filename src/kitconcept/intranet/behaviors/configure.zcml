@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="kitconcept.intranet"
+    >
+
+  <include
+      package="plone.behavior"
+      file="meta.zcml"
+      />
+
+  <!-- Person Behavior -->
+  <plone:behavior
+      name="kitconcept.intranet.additional_contact_info"
+      title="Person Behavior"
+      description="Fields with additional person information"
+      provides=".additional_contact_info.IAdditionalContactInfo"
+      />
+
+</configure>

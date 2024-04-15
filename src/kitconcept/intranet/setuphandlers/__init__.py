@@ -1,18 +1,9 @@
-from pathlib import Path
-from plone import api
-from Products.CMFCore.indexing import processQueue
-from Products.CMFPlone.interfaces import INonInstallable
-from zope.interface import implementer
-
-import logging
-
-
-logger = logging.getLogger("kitconcept.intranet.setuphandlers")
-
 from kitconcept.intranet import logger
 from kitconcept.intranet.setuphandlers import content
 from kitconcept.intranet.setuphandlers import users
+from pathlib import Path
 from plone import api
+from Products.CMFCore.indexing import processQueue
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
 
@@ -20,7 +11,6 @@ from zope.interface import implementer
 @implementer(INonInstallable)
 class HiddenProfiles:
     def getNonInstallableProfiles(self):
-
         """Hide uninstall profile from site-creation and quickinstaller."""
         return [
             "kitconcept.intranet:uninstall",
@@ -99,4 +89,3 @@ def create_object(path, is_folder=False):
     )
     api.content.transition(obj=obj, transition="publish")
     return obj
-

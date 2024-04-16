@@ -20,3 +20,4 @@ global-exclude *.pyc
 global-exclude .DS_Store
 recursive-include scripts *.py
 recursive-include scripts *.json
+recursive-include src *.json

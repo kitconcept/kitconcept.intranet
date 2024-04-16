@@ -1,0 +1,151 @@
+{
+    "@id": "/about",
+    "@type": "Document",
+    "UID": "dda3862f877e484790e4ef490392d10a",
+    "allow_discussion": false,
+    "blocks": {
+        "5ae099e6-3b59-47e1-8fbd-adc6ef4a57ac": {
+            "@type": "image",
+            "align": "center",
+            "credit": {},
+            "description": "",
+            "image_field": "image",
+            "image_scales": {
+                "image": [
+                    {
+                        "content-type": "image/jpeg",
+                        "download": "@@images/image-12288-fe9f529fa7d4f9055d704a0c17a9e44e.jpeg",
+                        "filename": "osarugue-igbinoba-qj3iklQhtiI-unsplash.jpg",
+                        "height": 6480,
+                        "scales": {
+                            "great": {
+                                "download": "@@images/image-1200-e14d9418fcea574d161e25f1682cdbd4.jpeg",
+                                "height": 632,
+                                "width": 1200
+                            },
+                            "huge": {
+                                "download": "@@images/image-1600-b1e826cf316299593290002293cb8596.jpeg",
+                                "height": 843,
+                                "width": 1600
+                            },
+                            "icon": {
+                                "download": "@@images/image-32-2eaae1293a30bc4b2a54df34d8b6bfcb.jpeg",
+                                "height": 16,
+                                "width": 32
+                            },
+                            "large": {
+                                "download": "@@images/image-800-d927380b7f85a2f05265e7026d84810f.jpeg",
+                                "height": 421,
+                                "width": 800
+                            },
+                            "larger": {
+                                "download": "@@images/image-1000-6f216dabcb016fbc8b9b0791fd66fd3a.jpeg",
+                                "height": 527,
+                                "width": 1000
+                            },
+                            "mini": {
+                                "download": "@@images/image-200-4ad797c19fa93c2f04a1bbaeb99571e5.jpeg",
+                                "height": 105,
+                                "width": 200
+                            },
+                            "preview": {
+                                "download": "@@images/image-400-a691b026527f5f844a8c279b4b0de0e3.jpeg",
+                                "height": 210,
+                                "width": 400
+                            },
+                            "teaser": {
+                                "download": "@@images/image-600-2b839bb66f25bdbecaeb10de8c1ab29f.jpeg",
+                                "height": 316,
+                                "width": 600
+                            },
+                            "thumb": {
+                                "download": "@@images/image-128-89cb2e5cc38f91aad2ae0b2368c482cd.jpeg",
+                                "height": 67,
+                                "width": 128
+                            },
+                            "tile": {
+                                "download": "@@images/image-64-4689c149d615d69ad8995c7e7fe11aed.jpeg",
+                                "height": 33,
+                                "width": 64
+                            }
+                        },
+                        "size": 3126657,
+                        "width": 12288
+                    }
+                ]
+            },
+            "size": "l",
+            "title": "osarugue-igbinoba-qj3iklQhtiI-unsplash.jpg",
+            "url": "/images/osarugue-igbinoba-qj3iklqhtii-unsplash.jpg"
+        },
+        "7482547a-0a11-4bd8-8f7f-26340100220e": {
+            "@type": "title"
+        },
+        "82c19169-39df-4fba-a4b4-8bd3a6166089": {
+            "@type": "slate"
+        }
+    },
+    "blocks_layout": {
+        "items": [
+            "7482547a-0a11-4bd8-8f7f-26340100220e",
+            "5ae099e6-3b59-47e1-8fbd-adc6ef4a57ac",
+            "82c19169-39df-4fba-a4b4-8bd3a6166089"
+        ]
+    },
+    "contributors": [],
+    "created": "2023-10-08T16:37:22+00:00",
+    "creators": [
+        "admin"
+    ],
+    "description": "",
+    "effective": null,
+    "exclude_from_nav": false,
+    "expires": null,
+    "id": "about",
+    "is_folderish": true,
+    "language": "de",
+    "layout": "document_view",
+    "lock": {
+        "locked": false,
+        "stealable": true
+    },
+    "modified": "2024-03-14T15:03:28+00:00",
+    "parent": {
+        "@id": "/",
+        "@type": "Plone Site",
+        "UID": "5c1ddd25b02e44109a5eef9f445aba69",
+        "description": "A Plone Site",
+        "title": "Welcome to Plone 6!",
+        "type_title": "Website"
+    },
+    "preview_caption": null,
+    "preview_image": {
+        "blob_path": "blobs/dda3862f877e484790e4ef490392d10a-preview_image/codioful-formerly-gradienta-lweK7Wme_jo-unsplash (2).jpg",
+        "content-type": "image/jpeg",
+        "filename": "codioful-formerly-gradienta-lweK7Wme_jo-unsplash (2).jpg",
+        "height": 4000,
+        "size": 283261,
+        "width": 6000
+    },
+    "review_state": "private",
+    "rights": "",
+    "searchwords": [],
+    "showinsearch": true,
+    "subjects": [],
+    "title": "About",
+    "type_title": "Seite",
+    "version": "current",
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null,
+                "actor": "admin",
+                "comments": "",
+                "review_state": "private",
+                "time": "2023-10-08T16:37:23+00:00"
+            }
+        ]
+    },
+    "working_copy": null,
+    "working_copy_of": null
+}

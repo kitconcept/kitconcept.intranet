@@ -17,6 +17,7 @@ class HiddenProfiles:
 
 def populate_portal(context):
     """Post install script"""
+    breakpoint()
     portal = api.portal.get()
     # Delete content
     content.delete_content(portal)

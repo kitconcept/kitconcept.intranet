@@ -13,7 +13,7 @@
                     "head_title": null,
                     "href": [
                         {
-                            "@id": "resolveuid/48cccc986d774cee91af1ee92bd9a4cd",
+                            "@id": "/features/person-profiles",
                             "@type": "Document",
                             "Description": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
                             "Title": "Person Profiles",
@@ -99,7 +99,7 @@
                     "head_title": null,
                     "href": [
                         {
-                            "@id": "resolveuid/ee13aa2250cb4f8a808cd489107c750e",
+                            "@id": "/features/theme",
                             "@type": "Document",
                             "Description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
                             "Title": "Theme",
@@ -174,77 +174,6 @@
                             "title": "Theme"
                         }
                     ],
-                    "preview_image": [
-                        {
-                            "@id": "resolveuid/476b59e6f7fe46b4acc929608aaea3e5",
-                            "image_field": "image",
-                            "image_scales": {
-                                "image": [
-                                    {
-                                        "content-type": "image/jpeg",
-                                        "download": "@@images/image-6000-e6e9d58f32ffe9a4e6808a9d0532501f.jpeg",
-                                        "filename": "codioful-formerly-gradienta-lweK7Wme_jo-unsplash (5).jpg",
-                                        "height": 4000,
-                                        "scales": {
-                                            "great": {
-                                                "download": "@@images/image-1200-24df794db70080899ae939434dc729dd.jpeg",
-                                                "height": 800,
-                                                "width": 1200
-                                            },
-                                            "huge": {
-                                                "download": "@@images/image-1600-fb0dcdbeeef4b23a02043397e12ae566.jpeg",
-                                                "height": 1066,
-                                                "width": 1600
-                                            },
-                                            "icon": {
-                                                "download": "@@images/image-32-5c0bf9bab4543dd50f282b3d49e8ba49.jpeg",
-                                                "height": 21,
-                                                "width": 32
-                                            },
-                                            "large": {
-                                                "download": "@@images/image-800-6dc93857c3357777df566eb5244da6cc.jpeg",
-                                                "height": 533,
-                                                "width": 800
-                                            },
-                                            "larger": {
-                                                "download": "@@images/image-1000-8ccf18ef0e91d96ffe3e23a44c554fbe.jpeg",
-                                                "height": 666,
-                                                "width": 1000
-                                            },
-                                            "mini": {
-                                                "download": "@@images/image-200-3036c0951bbb0438ebfae7393d90f00f.jpeg",
-                                                "height": 133,
-                                                "width": 200
-                                            },
-                                            "preview": {
-                                                "download": "@@images/image-400-a7e9c72408c7124b2e4003424f37789b.jpeg",
-                                                "height": 266,
-                                                "width": 400
-                                            },
-                                            "teaser": {
-                                                "download": "@@images/image-600-f36bb1330a52e429ceec1dca76f9c93d.jpeg",
-                                                "height": 400,
-                                                "width": 600
-                                            },
-                                            "thumb": {
-                                                "download": "@@images/image-128-bfec15cc7607d43864d1b05fcccb36c2.jpeg",
-                                                "height": 85,
-                                                "width": 128
-                                            },
-                                            "tile": {
-                                                "download": "@@images/image-64-23c354604c6667cafc3b049057d82860.jpeg",
-                                                "height": 42,
-                                                "width": 64
-                                            }
-                                        },
-                                        "size": 336997,
-                                        "width": 6000
-                                    }
-                                ]
-                            },
-                            "title": "codioful-formerly-gradienta-lweK7Wme_jo-unsplash.jpg"
-                        }
-                    ],
                     "styles": {
                         "align": "left"
                     },
@@ -256,7 +185,7 @@
                     "head_title": null,
                     "href": [
                         {
-                            "@id": "resolveuid/a0574567f6894cc2ad3bd6af5d755a1a",
+                            "@id": "/features/search",
                             "@type": "Document",
                             "Description": "A full text search that let's you find all the content in your intranet.",
                             "Title": "Search",
@@ -331,77 +260,6 @@
                             "title": "Search"
                         }
                     ],
-                    "preview_image": [
-                        {
-                            "@id": "resolveuid/63c184341da343be93c8ddc8b6b15cb6",
-                            "image_field": "image",
-                            "image_scales": {
-                                "image": [
-                                    {
-                                        "content-type": "image/jpeg",
-                                        "download": "@@images/image-5616-52090571c90ece5faaf09361d323b9ab.jpeg",
-                                        "filename": "gabriel-ponton-NfxVIkHyAig-unsplash (1).jpg",
-                                        "height": 3744,
-                                        "scales": {
-                                            "great": {
-                                                "download": "@@images/image-1200-e64e8eb3db31c472a032ecc9e53c4aa1.jpeg",
-                                                "height": 800,
-                                                "width": 1200
-                                            },
-                                            "huge": {
-                                                "download": "@@images/image-1600-beef06800d070e0a9722ff8830934d73.jpeg",
-                                                "height": 1066,
-                                                "width": 1600
-                                            },
-                                            "icon": {
-                                                "download": "@@images/image-32-c2aabcceee2101d196133ee347905d45.jpeg",
-                                                "height": 21,
-                                                "width": 32
-                                            },
-                                            "large": {
-                                                "download": "@@images/image-800-3f5c07d74ba0754ab6be8f6c2617f8e1.jpeg",
-                                                "height": 533,
-                                                "width": 800
-                                            },
-                                            "larger": {
-                                                "download": "@@images/image-1000-12b1f555f9e4113fdf9e3e51ac676989.jpeg",
-                                                "height": 666,
-                                                "width": 1000
-                                            },
-                                            "mini": {
-                                                "download": "@@images/image-200-b1bd4327cc7a362ae65e6c3f2a40448f.jpeg",
-                                                "height": 133,
-                                                "width": 200
-                                            },
-                                            "preview": {
-                                                "download": "@@images/image-400-5badeb874f9316d4f1daddfb8d3d5f42.jpeg",
-                                                "height": 266,
-                                                "width": 400
-                                            },
-                                            "teaser": {
-                                                "download": "@@images/image-600-48a8033a77f9e0054f0dd9c53bfce5ea.jpeg",
-                                                "height": 400,
-                                                "width": 600
-                                            },
-                                            "thumb": {
-                                                "download": "@@images/image-128-5ada901c158fb921d80283baa2dce2ba.jpeg",
-                                                "height": 85,
-                                                "width": 128
-                                            },
-                                            "tile": {
-                                                "download": "@@images/image-64-ded5e6a5c4fa049569a87d3ed2a0dcea.jpeg",
-                                                "height": 42,
-                                                "width": 64
-                                            }
-                                        },
-                                        "size": 2879593,
-                                        "width": 5616
-                                    }
-                                ]
-                            },
-                            "title": "gabriel-ponton-NfxVIkHyAig-unsplash.jpg"
-                        }
-                    ],
                     "styles": {
                         "align": "left"
                     },
@@ -442,7 +300,7 @@
                     "head_title": "Plone Distribution",
                     "href": [
                         {
-                            "@id": "resolveuid/dda3862f877e484790e4ef490392d10a",
+                            "@id": "/about",
                             "@type": "Document",
                             "Description": "",
                             "Title": "About",
@@ -516,128 +374,6 @@
                             "title": "About"
                         }
                     ],
-                    "preview_image": [
-                        {
-                            "@id": "resolveuid/59ee51bf2e47441da69fc2e0217221f5",
-                            "@type": "Image",
-                            "CreationDate": "2024-04-16T19:53:12+02:00",
-                            "Creator": "admin",
-                            "Date": "2024-04-16T19:54:12+02:00",
-                            "Description": "",
-                            "EffectiveDate": "None",
-                            "ExpirationDate": "None",
-                            "ModificationDate": "2024-04-16T19:54:12+02:00",
-                            "Subject": [],
-                            "Title": "jr-korpa-SFT9G3pAxLY-unsplash.jpg",
-                            "Type": "Image",
-                            "UID": "59ee51bf2e47441da69fc2e0217221f5",
-                            "author_name": null,
-                            "cmf_uid": null,
-                            "commentators": [],
-                            "contact_building": null,
-                            "contact_room": null,
-                            "country": null,
-                            "created": "2024-04-16T17:53:12+00:00",
-                            "description": "",
-                            "effective": "1969-12-30T22:00:00+00:00",
-                            "end": null,
-                            "exclude_from_nav": false,
-                            "expires": "2499-12-30T22:00:00+00:00",
-                            "getIcon": true,
-                            "getId": "jr-korpa-sft9g3paxly-unsplash.jpg",
-                            "getObjSize": "882.6 KB",
-                            "getPath": "/Plone/images/jr-korpa-sft9g3paxly-unsplash.jpg",
-                            "getRemoteUrl": null,
-                            "getURL": "http://localhost:3000/images/jr-korpa-sft9g3paxly-unsplash.jpg",
-                            "hasPreviewImage": null,
-                            "head_title": null,
-                            "id": "jr-korpa-sft9g3paxly-unsplash.jpg",
-                            "image_field": "image",
-                            "image_scales": {
-                                "image": [
-                                    {
-                                        "content-type": "image/jpeg",
-                                        "download": "@@images/image-3600-1503acdab513b966a2ae2e0042c69c64.jpeg",
-                                        "filename": "jr-korpa-SFT9G3pAxLY-unsplash (2).jpg",
-                                        "height": 2400,
-                                        "scales": {
-                                            "great": {
-                                                "download": "@@images/image-1200-eaf580a81cc0c05b62c07bd87d1fb9e0.jpeg",
-                                                "height": 800,
-                                                "width": 1200
-                                            },
-                                            "huge": {
-                                                "download": "@@images/image-1600-356f2bcaf50ef3b2563e2d2577ea8faa.jpeg",
-                                                "height": 1066,
-                                                "width": 1600
-                                            },
-                                            "icon": {
-                                                "download": "@@images/image-32-39f818a369b2a4f0209aab576669115f.jpeg",
-                                                "height": 21,
-                                                "width": 32
-                                            },
-                                            "large": {
-                                                "download": "@@images/image-800-7bff542ca625b2a4bed1c6457e0267ae.jpeg",
-                                                "height": 533,
-                                                "width": 800
-                                            },
-                                            "larger": {
-                                                "download": "@@images/image-1000-0f07e3b0079b7ac2888b4dba9298fc8b.jpeg",
-                                                "height": 666,
-                                                "width": 1000
-                                            },
-                                            "mini": {
-                                                "download": "@@images/image-200-f460fee229548f0af2154e575fcb19d1.jpeg",
-                                                "height": 133,
-                                                "width": 200
-                                            },
-                                            "preview": {
-                                                "download": "@@images/image-400-bd6af60eba2f1e979d9678f7b837831a.jpeg",
-                                                "height": 266,
-                                                "width": 400
-                                            },
-                                            "teaser": {
-                                                "download": "@@images/image-600-27cd816e196577e7c27f267114c70bf6.jpeg",
-                                                "height": 400,
-                                                "width": 600
-                                            },
-                                            "thumb": {
-                                                "download": "@@images/image-128-804e0120aade89624f58639e32ad3456.jpeg",
-                                                "height": 85,
-                                                "width": 128
-                                            },
-                                            "tile": {
-                                                "download": "@@images/image-64-0fa83521084ea0b598a3c4bf87c178c9.jpeg",
-                                                "height": 42,
-                                                "width": 64
-                                            }
-                                        },
-                                        "size": 903735,
-                                        "width": 3600
-                                    }
-                                ]
-                            },
-                            "in_response_to": null,
-                            "is_folderish": false,
-                            "last_comment_date": null,
-                            "listCreators": [
-                                "admin"
-                            ],
-                            "location": null,
-                            "mime_type": "image/jpeg",
-                            "modified": "2024-04-16T17:54:12+00:00",
-                            "nav_title": null,
-                            "portal_type": "Image",
-                            "review_state": null,
-                            "roles": null,
-                            "start": null,
-                            "sync_uid": null,
-                            "title": "jr-korpa-SFT9G3pAxLY-unsplash.jpg",
-                            "total_comments": 0,
-                            "type_title": "Image",
-                            "username": null
-                        }
-                    ],
                     "title": "kitconcept intranet"
                 }
             ]
@@ -661,7 +397,7 @@
     "id": "Plone",
     "is_folderish": true,
     "items_total": 4,
-    "language": "en",
+    "language": "de",
     "lock": {
         "locked": false,
         "stealable": true

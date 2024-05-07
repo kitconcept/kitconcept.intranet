@@ -13,8 +13,8 @@ CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PLONE_VERSION=$$(cat backend/version.txt)
 VOLTO_VERSION = $(shell cat ./frontend/package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['@plone/volto'])")
 
-PROJECT_NAME=kitconcept.com
-STACK_NAME=kitconcept-com
+PROJECT_NAME=kitconcept.intranet
+STACK_NAME=kitconcept-intranet
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -156,22 +156,22 @@ test-acceptance: ## Start Cypress (for use it while developing)
 .PHONY: build-acceptance-servers
 build-acceptance-servers: ## Build Acceptance Servers
 	@echo "Build acceptance backend"
-	@docker build backend --build-arg PLONE_VERSION=${PLONE_VERSION} -t kitconcept/kitconcept.com-backend:acceptance -f backend/Dockerfile.acceptance
+	@docker build backend --build-arg PLONE_VERSION=${PLONE_VERSION} -t kitconcept/kitconcept.intranet-backend:acceptance -f backend/Dockerfile.acceptance
 	@echo "Build acceptance frontend"
-	@docker build frontend --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t kitconcept/kitconcept.com-frontend:acceptance -f frontend/Dockerfile
+	@docker build frontend --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t kitconcept/kitconcept.intranet-frontend:acceptance -f frontend/Dockerfile
 
 .PHONY: start-acceptance-servers
 start-acceptance-servers: build-acceptance-servers ## Start Acceptance Servers
 	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name kitconcept.com-backend-acceptance -d kitconcept/kitconcept.com-backend:acceptance
+	@docker run --rm -p 55001:55001 --name kitconcept.intranet-backend-acceptance -d kitconcept/kitconcept.intranet-backend:acceptance
 	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name kitconcept.com-frontend-acceptance --link kitconcept.com-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/kitconcept.com-frontend:acceptance
+	@docker run --rm -p 3000:3000 --name kitconcept.intranet-frontend-acceptance --link kitconcept.intranet-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/kitconcept.intranet-frontend:acceptance
 
 .PHONY: stop-acceptance-servers
 stop-acceptance-servers: ## Stop Acceptance Servers
 	@echo "Stop acceptance containers"
-	@docker stop kitconcept.com-frontend-acceptance
-	@docker stop kitconcept.com-backend-acceptance
+	@docker stop kitconcept.intranet-frontend-acceptance
+	@docker stop kitconcept.intranet-backend-acceptance
 
 .PHONY: run-acceptance-tests
 run-acceptance-tests: ## Run Acceptance tests
@@ -183,7 +183,7 @@ run-acceptance-tests: ## Run Acceptance tests
 .PHONY: acceptance-backend-build
 acceptance-backend-build: ## Build Acceptance Backend
 	@echo "Build acceptance backend"
-	@docker build backend --build-arg PLONE_VERSION=${PLONE_VERSION} -t kitconcept/kitconcept.com-backend:acceptance -f backend/Dockerfile.acceptance
+	@docker build backend --build-arg PLONE_VERSION=${PLONE_VERSION} -t kitconcept/kitconcept.intranet-backend:acceptance -f backend/Dockerfile.acceptance
 
 .PHONY: start-test-acceptance-frontend-dev
 start-test-acceptance-frontend-dev: ## Start the Core Acceptance Frontend Fixture in dev mode
@@ -192,9 +192,9 @@ start-test-acceptance-frontend-dev: ## Start the Core Acceptance Frontend Fixtur
 .PHONY: start-test-acceptance-server
 start-test-acceptance-server: acceptance-backend-build ## Start Backend Acceptance Servers
 	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name kitconcept.com-backend-acceptance -d kitconcept/kitconcept.com-backend:acceptance
+	@docker run --rm -p 55001:55001 --name kitconcept.intranet-backend-acceptance -d kitconcept/kitconcept.intranet-backend:acceptance
 
 .PHONY: stop-acceptance-server
 stop-acceptance-server: ## Stop Backend Acceptance Server
 	@echo "Stop backend acceptance container"
-	@docker stop kitconcept.com-backend-acceptance
+	@docker stop kitconcept.intranet-backend-acceptance

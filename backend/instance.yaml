@@ -2,8 +2,7 @@ default_context:
   initial_user_name: "admin"
   initial_user_password: "admin"
 
-  load_zcml:
-    package_includes: ["kitconcept.intranet"]
+  zcml_package_includes: ["kitconcept.intranet"]
 
   db_storage: direct
 

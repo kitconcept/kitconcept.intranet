@@ -23,6 +23,10 @@ on:
 # """
 ##
 
+defaults:
+  run:
+    working-directory: ./backend
+
 jobs:
   qa:
     uses: plone/meta/.github/workflows/qa.yml@1.0.0

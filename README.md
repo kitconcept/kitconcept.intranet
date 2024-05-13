@@ -12,3 +12,23 @@ Enable Coremedia:
 ```
 corepack enable pnpm
 ```
+
+Build:
+
+```
+make install
+```
+
+# Start
+
+Start Frontend:
+
+```
+cd frontend && pnpm start
+```
+
+Start Backend
+
+```
+make start-backend
+```

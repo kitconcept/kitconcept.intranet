@@ -1,6 +1,6 @@
 from kitconcept.intranet import logger
-from kitconcept.intranet.setuphandlers import content
-from kitconcept.intranet.setuphandlers import users
+from kitconcept.intranet.setuphandlers import content, users
+from kitconcept.intranet.upgrades import remove_preview_image_behavior
 from plone import api
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
@@ -14,6 +14,8 @@ class HiddenProfiles:
             "kitconcept.intranet:uninstall",
         ]
 
+def post_install(setup_tool):
+    remove_preview_image_behavior(setup_tool)
 
 def populate_portal(context):
     """Post install script"""

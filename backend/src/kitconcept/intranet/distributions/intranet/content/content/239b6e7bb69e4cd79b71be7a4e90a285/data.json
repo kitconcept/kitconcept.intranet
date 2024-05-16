@@ -1,0 +1,85 @@
+{
+  "@id": "/features/theme",
+  "@type": "Document",
+  "UID": "239b6e7bb69e4cd79b71be7a4e90a285",
+  "allow_discussion": false,
+  "blocks": {
+    "8f93decd-ecaa-4cb2-bad3-2a0198b87cd1": {
+      "@type": "title"
+    },
+    "dea1bfe1-28eb-4f61-8264-309d8ccc46f3": {
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "jr-korpa-SFT9G3pAxLY-unsplash.jpg",
+      "url": "../../resolveuid/5f1077b5414743429689927de357c350"
+    },
+    "fa4c83af-3fa5-45d9-b465-fbfb55d72af1": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "8f93decd-ecaa-4cb2-bad3-2a0198b87cd1",
+      "dea1bfe1-28eb-4f61-8264-309d8ccc46f3",
+      "fa4c83af-3fa5-45d9-b465-fbfb55d72af1"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T20:18:45+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "theme",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T20:40:54+00:00",
+  "parent": {
+    "@id": "/features",
+    "@type": "Document",
+    "UID": "f29a0a79ff974cbab0ea9b016944336a",
+    "description": "",
+    "image_field": null,
+    "image_scales": {},
+    "review_state": "private",
+    "title": "Features",
+    "type_title": "Page"
+  },
+  "preview_caption_link": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Theme",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T20:18:45+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

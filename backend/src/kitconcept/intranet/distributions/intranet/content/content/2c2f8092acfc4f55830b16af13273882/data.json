@@ -1,0 +1,85 @@
+{
+  "@id": "/features/full-text-search",
+  "@type": "Document",
+  "UID": "2c2f8092acfc4f55830b16af13273882",
+  "allow_discussion": false,
+  "blocks": {
+    "5612d8d3-5119-41fa-ac6c-e6ea1352e6e4": {
+      "@type": "slate"
+    },
+    "8849454b-331d-4080-9e20-5a221db9add8": {
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "christian-wiediger-zhZydTyNMPg-unsplash.jpg",
+      "url": "../../resolveuid/afb59233c4e04945a4c8c1ec161c7124"
+    },
+    "d4a1c14f-b3e5-4583-af83-d3cb00986f35": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d4a1c14f-b3e5-4583-af83-d3cb00986f35",
+      "8849454b-331d-4080-9e20-5a221db9add8",
+      "5612d8d3-5119-41fa-ac6c-e6ea1352e6e4"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T20:18:54+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "A full text search that let's you find all the content in your intranet.",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "full-text-search",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T20:40:07+00:00",
+  "parent": {
+    "@id": "/features",
+    "@type": "Document",
+    "UID": "f29a0a79ff974cbab0ea9b016944336a",
+    "description": "",
+    "image_field": null,
+    "image_scales": {},
+    "review_state": "private",
+    "title": "Features",
+    "type_title": "Page"
+  },
+  "preview_caption_link": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Full Text Search",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T20:18:54+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

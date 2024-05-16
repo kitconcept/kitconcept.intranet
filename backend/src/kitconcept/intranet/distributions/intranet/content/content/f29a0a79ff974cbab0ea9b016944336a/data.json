@@ -1,0 +1,78 @@
+{
+  "@id": "/features",
+  "@type": "Document",
+  "UID": "f29a0a79ff974cbab0ea9b016944336a",
+  "allow_discussion": false,
+  "blocks": {
+    "781e509b-134e-4551-83c4-a0b3830b2c70": {
+      "@type": "title"
+    },
+    "cad1409e-182b-48c5-8865-d5c3dc622e1e": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "styles": {},
+      "variation": "grid"
+    },
+    "efe05471-2a99-4733-94a3-03d1617f4687": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "781e509b-134e-4551-83c4-a0b3830b2c70",
+      "cad1409e-182b-48c5-8865-d5c3dc622e1e",
+      "efe05471-2a99-4733-94a3-03d1617f4687"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T20:18:37+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "features",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T20:19:03+00:00",
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "plone_site_root",
+    "description": "A Plone Intranet distribution provided by kitconcept GmbH",
+    "title": "Plone Intranet by kitconcept",
+    "type_title": "Plone Site"
+  },
+  "preview_caption_link": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Features",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T20:18:37+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

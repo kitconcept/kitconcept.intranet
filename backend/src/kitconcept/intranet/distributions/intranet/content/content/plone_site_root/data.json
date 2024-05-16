@@ -3,9 +3,125 @@
   "@type": "Plone Site",
   "UID": "plone_site_root",
   "allow_discussion": null,
-  "blocks": {},
+  "blocks": {
+    "4979b879-0499-494e-9ca9-967aae7af1f4": {
+      "@type": "gridBlock",
+      "blocks": {
+        "41863fc3-5e05-4e50-8166-607686a34758": {
+          "@type": "teaser",
+          "description": "",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/2c2f8092acfc4f55830b16af13273882",
+              "@type": "Document",
+              "Description": "A full text search that let's you find all the content in your intranet.",
+              "Title": "Full Text Search",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Full Text Search"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Full Text Search"
+        },
+        "b44ca6dd-a55f-4a15-9727-3297eeaade15": {
+          "@type": "teaser",
+          "description": "",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/f10b7bca6e014ff7a56598f1cfcc4d2b",
+              "@type": "Document",
+              "Description": "Present your employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+              "Title": "Person Profiles",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Person Profiles"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Person Profiles"
+        },
+        "dc468cc2-ccda-4e25-a3db-116ca9f99ef2": {
+          "@type": "teaser",
+          "description": "",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/239b6e7bb69e4cd79b71be7a4e90a285",
+              "@type": "Document",
+              "Description": "",
+              "Title": "Theme",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Theme"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Theme"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "dc468cc2-ccda-4e25-a3db-116ca9f99ef2",
+          "41863fc3-5e05-4e50-8166-607686a34758",
+          "b44ca6dd-a55f-4a15-9727-3297eeaade15"
+        ]
+      },
+      "styles": {}
+    },
+    "7815392a-f32a-45cf-b633-09f1cabf49bc": {
+      "@type": "title"
+    },
+    "cf694a86-6ef4-43e2-b249-24f7ca3a55e9": {
+      "@type": "slate"
+    },
+    "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "8e5603d5-a253-4094-9c45-37708e5bd3a3",
+          "description": "",
+          "flagAlign": "left",
+          "href": [
+            {
+              "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
+              "Description": "",
+              "Title": "About",
+              "hasPreviewImage": null,
+              "image_field": "preview_image_link",
+              "title": "About"
+            }
+          ],
+          "title": "kitconcept intranet"
+        }
+      ],
+      "styles": {}
+    }
+  },
   "blocks_layout": {
-    "items": []
+    "items": [
+      "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11",
+      "7815392a-f32a-45cf-b633-09f1cabf49bc",
+      "4979b879-0499-494e-9ca9-967aae7af1f4",
+      "cf694a86-6ef4-43e2-b249-24f7ca3a55e9"
+    ]
   },
   "contributors": [],
   "creators": [
@@ -20,7 +136,7 @@
   "exportimport.versions": {},
   "id": "Plone",
   "is_folderish": true,
-  "items_total": 0,
+  "items_total": 1,
   "language": "##DEFAULT##",
   "lock": {
     "locked": false,

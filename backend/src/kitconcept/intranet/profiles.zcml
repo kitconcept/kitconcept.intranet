@@ -10,6 +10,7 @@
       description="Policy package to install our site"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/default"
+      post_handler=".setuphandlers.post_install"
       />
 
   <genericsetup:registerProfile

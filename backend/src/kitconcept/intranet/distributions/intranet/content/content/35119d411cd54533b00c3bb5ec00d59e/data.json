@@ -1,0 +1,104 @@
+{
+  "@id": "/features/theme",
+  "@type": "Document",
+  "UID": "35119d411cd54533b00c3bb5ec00d59e",
+  "allow_discussion": false,
+  "blocks": {
+    "16d32295-db54-4cc4-8cb8-018bb690bd35": {
+      "@type": "title"
+    },
+    "4f8ce985-45ee-4901-9278-b0e528946cb1": {
+      "@type": "slate"
+    },
+    "6c24f874-9bf0-4a6c-b953-a0a1ebb872da": {
+      "@type": "introduction",
+      "plaintext": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "81d25d01-b860-4487-91b1-04963c94b1f0": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "a9416c1c-66d9-486f-819d-7cb77e8cd866": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "16d32295-db54-4cc4-8cb8-018bb690bd35",
+      "a9416c1c-66d9-486f-819d-7cb77e8cd866",
+      "6c24f874-9bf0-4a6c-b953-a0a1ebb872da",
+      "81d25d01-b860-4487-91b1-04963c94b1f0",
+      "4f8ce985-45ee-4901-9278-b0e528946cb1"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T18:16:54+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "theme",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T18:18:49+00:00",
+  "parent": {
+    "@id": "/features",
+    "@type": "Document",
+    "UID": "b79b981ccc834c5f8102ed396fdfbe71",
+    "description": "",
+    "image_field": null,
+    "image_scales": {},
+    "review_state": "private",
+    "title": "Features",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Theme",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T18:16:54+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

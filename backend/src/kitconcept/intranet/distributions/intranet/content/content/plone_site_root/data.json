@@ -3,9 +3,114 @@
   "@type": "Plone Site",
   "UID": "plone_site_root",
   "allow_discussion": null,
-  "blocks": {},
+  "blocks": {
+    "7998313d-116a-49da-9406-4c406cfc2770": {
+      "@type": "gridBlock",
+      "blocks": {
+        "4319b84b-3bc2-4400-b543-66dacb008deb": {
+          "@type": "teaser",
+          "description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/35119d411cd54533b00c3bb5ec00d59e",
+              "@type": "Document",
+              "Description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+              "Title": "Theme",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Theme"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Theme"
+        },
+        "57565c39-655c-4598-b1e4-153848981f29": {
+          "@type": "teaser",
+          "description": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/019a0b1ffb3048ada9eb37eff5e45429",
+              "@type": "Document",
+              "Description": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+              "Title": "Person Profiles",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Person Profiles"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Person Profiles"
+        },
+        "58a7c6b9-c426-4dc5-bb36-9e561928b3d7": {
+          "@type": "teaser",
+          "description": "A full text search that let's you find all the content in your intranet.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/799657a471fa4df5b6f589d558e031bb",
+              "@type": "Document",
+              "Description": "A full text search that let's you find all the content in your intranet.",
+              "Title": "Full Text Search",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Full Text Search"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Full Text Search"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "57565c39-655c-4598-b1e4-153848981f29",
+          "58a7c6b9-c426-4dc5-bb36-9e561928b3d7",
+          "4319b84b-3bc2-4400-b543-66dacb008deb"
+        ]
+      },
+      "headline": "Features",
+      "styles": {}
+    },
+    "7d83c51a-5c2e-4938-8ccb-dded73dcc064": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "9bd82509-7ac1-4def-88bf-5a2deb2cc5f7",
+          "flagAlign": "left"
+        }
+      ],
+      "styles": {}
+    },
+    "dbb67376-6ffb-4076-9eca-c7becb195243": {
+      "@type": "title"
+    },
+    "f3db90dd-6314-47fd-80b5-eac792c019a0": {
+      "@type": "slate"
+    }
+  },
   "blocks_layout": {
-    "items": []
+    "items": [
+      "dbb67376-6ffb-4076-9eca-c7becb195243",
+      "7d83c51a-5c2e-4938-8ccb-dded73dcc064",
+      "7998313d-116a-49da-9406-4c406cfc2770",
+      "f3db90dd-6314-47fd-80b5-eac792c019a0"
+    ]
   },
   "contributors": [],
   "creators": [

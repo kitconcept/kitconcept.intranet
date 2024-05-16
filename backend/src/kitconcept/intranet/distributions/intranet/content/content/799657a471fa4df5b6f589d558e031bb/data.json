@@ -1,0 +1,104 @@
+{
+  "@id": "/features/full-text-search",
+  "@type": "Document",
+  "UID": "799657a471fa4df5b6f589d558e031bb",
+  "allow_discussion": false,
+  "blocks": {
+    "03a09053-10da-4084-9537-5b5bccfe0ee5": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "13a9d98d-4e33-491e-8336-41277c5519a3": {
+      "@type": "title"
+    },
+    "71fd79e9-b76a-4cc1-846d-a1673d51ce7d": {
+      "@type": "introduction",
+      "plaintext": "A full text search that let's you find all the content in your intranet.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "A full text search that let's you find all the content in your intranet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b669f78e-d9af-47be-8d99-ce08bb1169e6": {
+      "@type": "slate"
+    },
+    "f15e7bd8-0a43-44cb-9bdd-1889b6a519dd": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "13a9d98d-4e33-491e-8336-41277c5519a3",
+      "f15e7bd8-0a43-44cb-9bdd-1889b6a519dd",
+      "71fd79e9-b76a-4cc1-846d-a1673d51ce7d",
+      "03a09053-10da-4084-9537-5b5bccfe0ee5",
+      "b669f78e-d9af-47be-8d99-ce08bb1169e6"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T18:16:40+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "A full text search that let's you find all the content in your intranet.",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "full-text-search",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T18:18:21+00:00",
+  "parent": {
+    "@id": "/features",
+    "@type": "Document",
+    "UID": "b79b981ccc834c5f8102ed396fdfbe71",
+    "description": "",
+    "image_field": null,
+    "image_scales": {},
+    "review_state": "private",
+    "title": "Features",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Full Text Search",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T18:16:40+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

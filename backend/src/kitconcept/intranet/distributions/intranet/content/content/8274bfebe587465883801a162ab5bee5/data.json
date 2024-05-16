@@ -1,0 +1,72 @@
+{
+  "@id": "/about",
+  "@type": "Document",
+  "UID": "8274bfebe587465883801a162ab5bee5",
+  "allow_discussion": false,
+  "blocks": {
+    "5857a9bd-338d-45a4-9e68-15ab95746a55": {
+      "@type": "title"
+    },
+    "8368254c-413c-474a-8777-f47d69dd17e0": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5857a9bd-338d-45a4-9e68-15ab95746a55",
+      "8368254c-413c-474a-8777-f47d69dd17e0"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T18:22:53+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "about",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T18:22:53+00:00",
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "plone_site_root",
+    "description": "A Plone Intranet distribution provided by kitconcept GmbH",
+    "title": "Plone Intranet by kitconcept",
+    "type_title": "Plone Site"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "About",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T18:22:53+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

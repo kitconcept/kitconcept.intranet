@@ -1,0 +1,104 @@
+{
+  "@id": "/features/person-profiles",
+  "@type": "Document",
+  "UID": "019a0b1ffb3048ada9eb37eff5e45429",
+  "allow_discussion": false,
+  "blocks": {
+    "63455d26-c545-45dc-8ab4-36c996420b96": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "667d4cba-6958-4467-af00-9b696e1f1f0c": {
+      "@type": "introduction",
+      "plaintext": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "7d91236c-c143-4e32-9ccb-1d9b777a83c4": {
+      "@type": "slate"
+    },
+    "c4e3ca3d-36c4-40b6-b206-fc9387648281": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "de703a27-19a4-475f-8044-362b99266d60": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "de703a27-19a4-475f-8044-362b99266d60",
+      "c4e3ca3d-36c4-40b6-b206-fc9387648281",
+      "667d4cba-6958-4467-af00-9b696e1f1f0c",
+      "63455d26-c545-45dc-8ab4-36c996420b96",
+      "7d91236c-c143-4e32-9ccb-1d9b777a83c4"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T18:16:26+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Show your awesome employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "person-profiles",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T18:17:52+00:00",
+  "parent": {
+    "@id": "/features",
+    "@type": "Document",
+    "UID": "b79b981ccc834c5f8102ed396fdfbe71",
+    "description": "",
+    "image_field": null,
+    "image_scales": {},
+    "review_state": "private",
+    "title": "Features",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Person Profiles",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T18:16:26+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

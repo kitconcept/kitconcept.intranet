@@ -82,11 +82,9 @@ install: build-dev ## Install Plone 6.0
 .PHONY: build
 build: build-dev ## Install Plone 6.0
 
-
-.PHONY: clean
-clean: ## Remove old virtualenv and creates a new one
-	@echo "$(RED)==> Cleaning environment and build$(RESET)"
-	rm -rf bin lib lib64 include share etc var inituser pyvenv.cfg .installed.cfg instance .tox .pytest_cache
+.PHONY: Clean
+clean:  ## Clean
+	git clean -Xdf
 
 .PHONY: start
 start: ## Start a Plone instance on localhost:8080

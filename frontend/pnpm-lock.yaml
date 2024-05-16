@@ -1395,9 +1395,36 @@ importers:
 
   packages/volto-intranet:
     dependencies:
+      '@eeacms/volto-accordion-block':
+        specifier: ^10.4.6
+        version: 10.4.6
+      '@kitconcept/volto-button-block':
+        specifier: ^2.3.1
+        version: 2.3.1
+      '@kitconcept/volto-dsgvo-banner':
+        specifier: ^2.3.2
+        version: 2.3.2
+      '@kitconcept/volto-heading-block':
+        specifier: ^2.4.0
+        version: 2.4.0(react@18.2.0)
+      '@kitconcept/volto-highlight-block':
+        specifier: ^3.0.1
+        version: 3.0.1(@plone/volto@core+packages+volto)
+      '@kitconcept/volto-introduction-block':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@kitconcept/volto-light-theme':
+        specifier: ^3.3.0
+        version: 3.3.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-button-block@2.3.1)(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.0)(@kitconcept/volto-highlight-block@3.0.1)(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.1)(@kitconcept/volto-slider-block@6.3.1)(react-dom@18.2.0)(react@18.2.0)
+      '@kitconcept/volto-separator-block':
+        specifier: ^4.1.1
+        version: 4.1.1(@plone/volto@core+packages+volto)
+      '@kitconcept/volto-slider-block':
+        specifier: ^6.3.1
+        version: 6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.0.4)(react@18.2.0)
       '@plone/components':
-        specifier: ^2.0.0-alpha.0
-        version: link:../../core/packages/components
+        specifier: ^2.0.0-alpha.8
+        version: 2.0.0-alpha.8(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -2993,6 +3020,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@datapunt/matomo-tracker-js@0.5.1:
+    resolution: {integrity: sha512-9/MW9vt/BA5Db7tO6LqCeQKtuvBNjyq51faF3AzUmPMlYsJCnASIxcut3VqJKiribhUoey7aYbPIYuj9x4DLPA==}
+    dev: false
+
   /@discoveryjs/json-ext@0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
@@ -3001,6 +3032,16 @@ packages:
   /@dual-bundle/import-meta-resolve@4.0.0:
     resolution: {integrity: sha512-ZKXyJeFAzcpKM2kk8ipoGIPUqx9BX52omTGnfwjJvxOCaZTM2wtDK7zN0aIgPRbT9XYAlha0HtmZ+XKteuh0Gw==}
     dev: true
+
+  /@eeacms/volto-accordion-block@10.4.6:
+    resolution: {integrity: sha512-IZfAg8By1dZA2SSr4MNu2gFCs0F67/ZMAlpdqkevSMvkBREjny97cEFtMjkhGyOc3MBTp1vd0TtqvL3cN1GehQ==}
+    dependencies:
+      '@eeacms/volto-widget-theme-picker': 2.0.0
+    dev: false
+
+  /@eeacms/volto-widget-theme-picker@2.0.0:
+    resolution: {integrity: sha512-f3+B7ATw0EoehO2rqU9NZoJABBtFUGy+zDGynm7MCSsfWcy6yafmCsOw2MKssBFXkgBicfpLLdE8ESEEITy6aA==}
+    dev: false
 
   /@emotion/babel-plugin@11.11.0:
     resolution: {integrity: sha512-m4HEDZleaaCH+XgDDsPF15Ht6wTLsgDTeR3WYj9Q/k76JtWhrJjcP4+/XlG8LGT/Rol9qUfOIztXeA84ATpqPQ==}
@@ -4188,6 +4229,85 @@ packages:
 
   /@juggle/resize-observer@3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
+    dev: false
+
+  /@kitconcept/volto-button-block@2.3.1:
+    resolution: {integrity: sha512-bYBwxk3CQVLlIiL2uaHk9NVcVqKHqkCOUu0lao2pi+bQ4jPOgScZihgy5rdMtwsopzvawCzShcFGQP1S6VuiLQ==}
+    dev: false
+
+  /@kitconcept/volto-dsgvo-banner@2.3.2:
+    resolution: {integrity: sha512-iguCyuy4a7dYi1glWorVY7/0co66Su3+acp2O24GEGyDHvrZJgNkKvIOc9nnmAvR6g9zluMWH5ilLaT1rZuT6w==}
+    dependencies:
+      '@datapunt/matomo-tracker-js': 0.5.1
+      react-ga4: 2.1.0
+    dev: false
+
+  /@kitconcept/volto-heading-block@2.4.0(react@18.2.0):
+    resolution: {integrity: sha512-NbXsksnfEtaaHHln7SdZ8/BA0jTLilCH6uQ/CeL6auc+zzssqRyFRTr+PArGRUSCWP/e10esewYaN9M+H7oxgQ==}
+    dependencies:
+      react-contenteditable: 3.3.6(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+    dev: false
+
+  /@kitconcept/volto-highlight-block@3.0.1(@plone/volto@core+packages+volto):
+    resolution: {integrity: sha512-hSH2qTwnNs+iW3OrNENGiBLQazjxPufaHigZOWzn0w/JBbuaRv654Ua/lxAuzMCVwD4Xzw5xJyYz2K9aJb8cBQ==}
+    peerDependencies:
+      '@plone/volto': ^17.0.0 || ^18.0.0-alpha.0
+    dependencies:
+      '@plone/volto': link:core/packages/volto
+    dev: false
+
+  /@kitconcept/volto-introduction-block@1.0.0:
+    resolution: {integrity: sha512-17wbBx89zcSQzXbdWvKBDlw0aJfTzjaX3cJUBorHjrJgOcTx7WBahIhBPjnC2z4EYmZ5w9YdHolqdD9HUlpozw==}
+    dev: false
+
+  /@kitconcept/volto-light-theme@3.3.0(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-button-block@2.3.1)(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.0)(@kitconcept/volto-highlight-block@3.0.1)(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-separator-block@4.1.1)(@kitconcept/volto-slider-block@6.3.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Sbk+KkknW87MPKA0DwQeSx/fUiTSs8brnG9EmZ4smijc8AW1bSpm8WuXj622/u+QfoQhK1p6lJpbuM9aL4Gw9w==}
+    peerDependencies:
+      '@eeacms/volto-accordion-block': ^10.4.6
+      '@kitconcept/volto-button-block': ^2.3.1
+      '@kitconcept/volto-dsgvo-banner': ^2.3.2
+      '@kitconcept/volto-heading-block': ^2.4.0
+      '@kitconcept/volto-highlight-block': ^3.0.1
+      '@kitconcept/volto-introduction-block': ^1.0.0
+      '@kitconcept/volto-separator-block': ^4.1.1
+      '@kitconcept/volto-slider-block': ^6.3.1
+    dependencies:
+      '@eeacms/volto-accordion-block': 10.4.6
+      '@kitconcept/volto-button-block': 2.3.1
+      '@kitconcept/volto-dsgvo-banner': 2.3.2
+      '@kitconcept/volto-heading-block': 2.4.0(react@18.2.0)
+      '@kitconcept/volto-highlight-block': 3.0.1(@plone/volto@core+packages+volto)
+      '@kitconcept/volto-introduction-block': 1.0.0
+      '@kitconcept/volto-separator-block': 4.1.1(@plone/volto@core+packages+volto)
+      '@kitconcept/volto-slider-block': 6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.0.4)(react@18.2.0)
+      '@plone/components': 2.0.0-alpha.6(react-dom@18.2.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: false
+
+  /@kitconcept/volto-separator-block@4.1.1(@plone/volto@core+packages+volto):
+    resolution: {integrity: sha512-+F4fCjYXtTujXS1/ARrsB1S1m8j4X/O3LML3vUSQKzFgmZoE/MvA/0tfCCNajWr9UHzt9sgqkjqAdVEgoegQXQ==}
+    peerDependencies:
+      '@plone/volto': ^16.0.0 || ^17.0.0 || ^18.0.0-alpha.0
+    dependencies:
+      '@plone/volto': link:core/packages/volto
+    dev: false
+
+  /@kitconcept/volto-slider-block@6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.0.4)(react@18.2.0):
+    resolution: {integrity: sha512-bkn1M1Lcl8P067dAUeYeWsLw5P4ZpjbKg+7Tt3/rjx7oVg4VQX/QsRfOKojQPGeFL3ifmzk9mJoW4rCF4QGFdw==}
+    peerDependencies:
+      '@plone/volto': ^17.0.0-alpha.21 || ^18.0.0-alpha.0
+    dependencies:
+      '@plone/volto': link:core/packages/volto
+      deepmerge: 4.2.2
+      embla-carousel-autoplay: 8.0.4(embla-carousel@8.0.4)
+      embla-carousel-react: 8.0.4(react@18.2.0)
+    transitivePeerDependencies:
+      - embla-carousel
+      - react
     dev: false
 
   /@kwsites/file-exists@1.1.1:
@@ -6103,6 +6223,47 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
+
+  /@plone/components@2.0.0-alpha.6(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-0z4lCUA0o59xe68nw8NVDvQ7sxJxDOTO+djZBsPfRkddAq+5kW93XVqrlNr+av2FAzAkWG1uR/yFL7dtcWnyPQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+    dependencies:
+      '@react-aria/utils': 3.24.0(react@18.2.0)
+      '@react-spectrum/utils': 3.11.6(react@18.2.0)
+      clsx: 2.1.1
+      react: 18.2.0
+      react-aria-components: 1.2.0(react-dom@18.2.0)(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@plone/components@2.0.0-alpha.8(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-V/abrXSYHxewaJj2D7zzbFx0nLk0Ee7uV8h7LZw7dDDQcQgrQCXCh1bWcV7YiN881kC6ulV7HifsY6Sv5Bg4lQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+    dependencies:
+      '@react-aria/utils': 3.24.0(react@18.2.0)
+      '@react-spectrum/utils': 3.11.6(react@18.2.0)
+      '@storybook/test': 8.0.10
+      clsx: 2.1.1
+      react: 18.2.0
+      react-aria-components: 1.2.0(react-dom@18.2.0)(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@jest/globals'
+      - '@types/bun'
+      - '@types/jest'
+      - jest
+      - vitest
+    dev: false
 
   /@pmmmwh/react-refresh-webpack-plugin@0.4.3(react-refresh@0.9.0)(webpack-dev-server@4.11.1)(webpack@5.90.1):
     resolution: {integrity: sha512-br5Qwvh8D2OQqSXpd1g/xqXKnK0r+Jz6qVKBbWmpUcrbGOxUrf39V5oZ1876084CGn18uMdR5uvPqBv9UqtBjQ==}
@@ -8696,6 +8857,27 @@ packages:
       - supports-color
     dev: true
 
+  /@storybook/test@8.0.10:
+    resolution: {integrity: sha512-VqjzKJiOCjaZ0CjLeKygYk8uetiaiKbpIox+BrND9GtpEBHcRZA5AeFY2P1aSCOhsaDwuh4KRBxJWFug7DhWGQ==}
+    dependencies:
+      '@storybook/client-logger': 8.0.10
+      '@storybook/core-events': 8.0.10
+      '@storybook/instrumenter': 8.0.10
+      '@storybook/preview-api': 8.0.10
+      '@testing-library/dom': 9.3.4
+      '@testing-library/jest-dom': 6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(jest@26.6.3)
+      '@testing-library/user-event': 14.5.2(@testing-library/dom@9.3.4)
+      '@vitest/expect': 1.3.1
+      '@vitest/spy': 1.6.0
+      util: 0.12.5
+    transitivePeerDependencies:
+      - '@jest/globals'
+      - '@types/bun'
+      - '@types/jest'
+      - jest
+      - vitest
+    dev: false
+
   /@storybook/test@8.0.10(vitest@1.6.0):
     resolution: {integrity: sha512-VqjzKJiOCjaZ0CjLeKygYk8uetiaiKbpIox+BrND9GtpEBHcRZA5AeFY2P1aSCOhsaDwuh4KRBxJWFug7DhWGQ==}
     dependencies:
@@ -9661,7 +9843,7 @@ packages:
     resolution: {integrity: sha512-Sr2fYMBUVGYq8kj3UthXFAu5UN6ZW+rYr4NACjZQJvHvj+c8lYv0CahmZ2P/r7iUkN44gGUBwqxZkrKXYPb7cw==}
     dependencies:
       '@types/expect': 1.20.4
-      '@types/node': 15.14.9
+      '@types/node': 20.12.10
 
   /@types/ws@8.5.10:
     resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
@@ -13455,6 +13637,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /deepmerge@4.2.2:
+    resolution: {integrity: sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
@@ -13948,6 +14135,36 @@ packages:
 
   /electron-to-chromium@1.4.757:
     resolution: {integrity: sha512-jftDaCknYSSt/+KKeXzH3LX5E2CvRLm75P3Hj+J/dv3CL0qUYcOt13d5FN1NiL5IJbbhzHrb3BomeG2tkSlZmw==}
+
+  /embla-carousel-autoplay@8.0.4(embla-carousel@8.0.4):
+    resolution: {integrity: sha512-Ilmgn+d09o2M23yvl4cYwfO8VnZi7YXQl9UGYIflLGhtFaZW9PKU67TaW8teRjaDhS3I+uz3osBFDO407YPjfQ==}
+    peerDependencies:
+      embla-carousel: 8.0.4
+    dependencies:
+      embla-carousel: 8.0.4
+    dev: false
+
+  /embla-carousel-react@8.0.4(react@18.2.0):
+    resolution: {integrity: sha512-3NlOmBmRhaGhtI0It9243yg9fz2wPRML5gGLDIE69Oyb/CuGsJnxpcgG74j905NQBDgReTEfFJwzOtIFAjeBfg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      embla-carousel: 8.0.4
+      embla-carousel-reactive-utils: 8.0.4(embla-carousel@8.0.4)
+      react: 18.2.0
+    dev: false
+
+  /embla-carousel-reactive-utils@8.0.4(embla-carousel@8.0.4):
+    resolution: {integrity: sha512-7lWM+8hanIF2roTAjxwfqfr0+VTbr9rYVlAs0r5PwPOVpz1G3/+bRelgAYvwcfWVm5Vydo2pKXVfFOPQjznF7w==}
+    peerDependencies:
+      embla-carousel: 8.0.4
+    dependencies:
+      embla-carousel: 8.0.4
+    dev: false
+
+  /embla-carousel@8.0.4:
+    resolution: {integrity: sha512-INndmilrV9KY4Wnb4F2tI55DuQnFjf3GPOaPDT2LGYiKhIWVNUhv1nz/RI7CZ6WoIZ8MYHP4t6Qm/cqpcGHknA==}
+    dev: false
 
   /emittery@0.7.2:
     resolution: {integrity: sha512-A8OG5SR/ij3SsJdWDJdkkSYUjQdCUx6APQXem0SaEePBSRg4eymGYwBkKo1Y6DU+af/Jn2dBQqDBvjnr9Vi8nQ==}
@@ -23545,6 +23762,16 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
+  /react-contenteditable@3.3.6(react@18.2.0):
+    resolution: {integrity: sha512-61+Anbmzggel1sP7nwvxq3d2woD3duR5R89RoLGqKan1A+nruFIcmLjw2F+qqk70AyABls0BDKzE1vqS1UIF1g==}
+    peerDependencies:
+      react: '>=16.3'
+    dependencies:
+      fast-deep-equal: 3.1.3
+      prop-types: 15.7.2
+      react: 18.2.0
+    dev: false
+
   /react-cookie@4.1.1(react@18.2.0):
     resolution: {integrity: sha512-ffn7Y7G4bXiFbnE+dKhHhbP+b8I34mH9jqnm8Llhj89zF4nPxPutxHT1suUqMeCEhLDBI7InYwf1tpaSoK5w8A==}
     peerDependencies:
@@ -23771,6 +23998,10 @@ packages:
 
   /react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+    dev: false
+
+  /react-ga4@2.1.0:
+    resolution: {integrity: sha512-ZKS7PGNFqqMd3PJ6+C2Jtz/o1iU9ggiy8Y8nUeksgVuvNISbmrQtJiZNvC/TjDsqD0QlU5Wkgs7i+w9+OjHhhQ==}
     dev: false
 
   /react-image-gallery@1.2.7(react@18.2.0):

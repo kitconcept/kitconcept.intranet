@@ -82,6 +82,10 @@ install: build-dev ## Install Plone 6.0
 .PHONY: build
 build: build-dev ## Install Plone 6.0
 
+.PHONY: export
+export:  ## Clean installation
+	bin/export-distribution instance/etc/zope.conf Plone
+
 .PHONY: Clean
 clean:  ## Clean
 	git clean -Xdf

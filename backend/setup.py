@@ -1,8 +1,7 @@
 """Installer for the kitconcept.intranet package."""
 from pathlib import Path
-from setuptools import find_packages
-from setuptools import setup
 
+from setuptools import find_packages, setup
 
 long_description = f"""
 {Path("README.md").read_text()}\n
@@ -50,8 +49,8 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "setuptools",
-        "Plone",
-        "plone.distribution",
+        "plone.volto",
+        "plone.distribution>=1.99",
         # "plone.api",
         "kitconcept.solr",
         "python-dateutil",

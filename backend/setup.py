@@ -50,7 +50,7 @@ setup(
     install_requires=[
         "setuptools",
         "plone.volto",
-        "plone.distribution>=1.99",
+        "plone.distribution>=2.0.0a1",
         # "plone.api",
         "kitconcept.solr",
         "python-dateutil",

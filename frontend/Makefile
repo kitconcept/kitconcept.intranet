@@ -36,6 +36,10 @@ install: ## Install task, checks if missdev (mrs-developer) is present and runs 
 	pnpm dlx mrs-developer missdev --no-config --fetch-https
 	pnpm i
 
+.PHONY: Clean
+clean:  ## Clean
+	git clean -Xdf
+
 .PHONY: i18n
 i18n: ## Sync i18n
 	pnpm --filter $(ADDON_NAME) i18n

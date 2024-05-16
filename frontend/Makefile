@@ -36,6 +36,10 @@ install: ## Install task, checks if missdev (mrs-developer) is present and runs 
 	pnpm dlx mrs-developer missdev --no-config --fetch-https
 	pnpm i
 
+.PHONY: start
+start: ## Start a Volto instance on localhost:3000
+	pnpm start
+
 .PHONY: Clean
 clean:  ## Clean
 	git clean -Xdf

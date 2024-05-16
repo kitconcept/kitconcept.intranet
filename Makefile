@@ -88,6 +88,11 @@ clean:  ## Clean installation
 	$(MAKE) -C "./backend/" clean
 	$(MAKE) -C "./frontend/" clean
 
+.PHONY: export
+export:  ## Clean installation
+	@echo "Export"
+	$(MAKE) -C "./backend/" export
+
 .PHONY: format
 format:  ## Format codebase
 	@echo "Format codebase"

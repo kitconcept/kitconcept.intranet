@@ -1,5 +1,5 @@
 {
-  "@id": "/features/termine",
+  "@id": "/features/calendar",
   "@type": "Document",
   "UID": "37bcbfabfe6b47bca2af52fc08fead0a",
   "allow_discussion": false,
@@ -9,11 +9,22 @@
     },
     "9d304537-3aca-4338-8c37-5bea163e3a2d": {
       "@type": "title"
+    },
+    "e2953af0-4b7a-4b7b-8626-667ba3e18341": {
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "towfiqu-barbhuiya-bwOAixLG0uc-unsplash.jpg",
+      "url": "../../resolveuid/e22f445ce04d465aa3635729294fb81a"
     }
   },
   "blocks_layout": {
     "items": [
       "9d304537-3aca-4338-8c37-5bea163e3a2d",
+      "e2953af0-4b7a-4b7b-8626-667ba3e18341",
       "34e39804-910f-4166-82a8-d8f98c5441f0"
     ]
   },
@@ -22,14 +33,14 @@
   "creators": [
     "admin"
   ],
-  "description": "",
-  "effective": null,
+  "description": "Publish company-wide or department events, that can be shown in calendar apps.",
+  "effective": "2024-05-17T11:53:02",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "exportimport.versions": {},
-  "id": "termine",
+  "id": "calendar",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -37,7 +48,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T08:14:08+00:00",
+  "modified": "2024-05-17T09:56:42+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -45,17 +56,17 @@
     "description": "",
     "image_field": null,
     "image_scales": {},
-    "review_state": "private",
+    "review_state": "published",
     "title": "Features",
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Termine",
+  "title": "Calendar",
   "type_title": "Page",
   "version": "current",
   "workflow_history": {
@@ -66,6 +77,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2024-05-17T08:14:08+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-17T09:53:02+00:00"
       }
     ]
   },

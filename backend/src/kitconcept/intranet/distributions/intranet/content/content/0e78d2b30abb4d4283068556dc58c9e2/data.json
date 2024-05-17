@@ -1,5 +1,5 @@
 {
-  "@id": "/features/formulare",
+  "@id": "/features/forms",
   "@type": "Document",
   "UID": "0e78d2b30abb4d4283068556dc58c9e2",
   "allow_discussion": false,
@@ -7,14 +7,21 @@
     "6219cc1b-fcb2-4de0-901b-ec647f28d2c4": {
       "@type": "title"
     },
-    "7c4d362e-1388-43a8-94f5-37b111e5c579": {
-      "@type": "slate"
+    "a6029df9-fdc9-43d4-b0f4-32228a6347c5": {
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "scott-graham-OQMZwNd3ThU-unsplash.jpg",
+      "url": "../../resolveuid/b45ece53135c4f62a49b92318eea9538"
     }
   },
   "blocks_layout": {
     "items": [
       "6219cc1b-fcb2-4de0-901b-ec647f28d2c4",
-      "7c4d362e-1388-43a8-94f5-37b111e5c579"
+      "a6029df9-fdc9-43d4-b0f4-32228a6347c5"
     ]
   },
   "contributors": [],
@@ -22,14 +29,14 @@
   "creators": [
     "admin"
   ],
-  "description": "",
-  "effective": null,
+  "description": "Design forms, collect responses that can be mailed out or downloaded for further processing.",
+  "effective": "2024-05-17T11:53:03",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "exportimport.versions": {},
-  "id": "formulare",
+  "id": "forms",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -37,7 +44,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T08:06:52+00:00",
+  "modified": "2024-05-17T09:55:37+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -45,17 +52,17 @@
     "description": "",
     "image_field": null,
     "image_scales": {},
-    "review_state": "private",
+    "review_state": "published",
     "title": "Features",
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Formulare",
+  "title": "Forms",
   "type_title": "Page",
   "version": "current",
   "workflow_history": {
@@ -66,6 +73,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2024-05-17T08:06:51+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-17T09:53:03+00:00"
       }
     ]
   },

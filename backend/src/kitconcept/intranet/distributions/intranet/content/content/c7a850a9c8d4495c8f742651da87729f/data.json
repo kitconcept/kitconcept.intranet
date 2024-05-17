@@ -1,11 +1,21 @@
 {
-  "@id": "/features/versionierung",
+  "@id": "/features/versioning",
   "@type": "Document",
   "UID": "c7a850a9c8d4495c8f742651da87729f",
   "allow_discussion": false,
   "blocks": {
     "5b7ddcb9-fa74-44d5-94f9-202562840d5a": {
       "@type": "slate"
+    },
+    "6ed07367-2caa-4f93-95b8-b10dd09c4330": {
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "ralph-mayhew-48-uFiCsQrA-unsplash.jpg",
+      "url": "../../resolveuid/e6a2ed459bd84ff1b1b75818c0b373b1"
     },
     "bcdaaf42-ae1c-479e-a37d-86f6520749a9": {
       "@type": "title"
@@ -14,6 +24,7 @@
   "blocks_layout": {
     "items": [
       "bcdaaf42-ae1c-479e-a37d-86f6520749a9",
+      "6ed07367-2caa-4f93-95b8-b10dd09c4330",
       "5b7ddcb9-fa74-44d5-94f9-202562840d5a"
     ]
   },
@@ -22,14 +33,14 @@
   "creators": [
     "admin"
   ],
-  "description": "",
-  "effective": null,
+  "description": "Store multiple versions of documents, compare versions and go back in history.",
+  "effective": "2024-05-17T11:53:02",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "exportimport.versions": {},
-  "id": "versionierung",
+  "id": "versioning",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -37,7 +48,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T08:07:45+00:00",
+  "modified": "2024-05-17T09:57:19+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -45,17 +56,17 @@
     "description": "",
     "image_field": null,
     "image_scales": {},
-    "review_state": "private",
+    "review_state": "published",
     "title": "Features",
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Versionierung",
+  "title": "Versioning",
   "type_title": "Page",
   "version": "current",
   "workflow_history": {
@@ -66,6 +77,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2024-05-17T08:07:45+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-17T09:53:02+00:00"
       }
     ]
   },

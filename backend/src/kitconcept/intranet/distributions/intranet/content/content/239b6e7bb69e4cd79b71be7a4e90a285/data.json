@@ -34,7 +34,7 @@
     "admin"
   ],
   "description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
-  "effective": null,
+  "effective": "2024-05-17T11:53:02",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
@@ -48,7 +48,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T07:22:10+00:00",
+  "modified": "2024-05-17T09:53:02+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -56,12 +56,12 @@
     "description": "",
     "image_field": null,
     "image_scales": {},
-    "review_state": "private",
+    "review_state": "published",
     "title": "Features",
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
@@ -77,6 +77,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2024-05-16T20:18:45+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-17T09:53:02+00:00"
       }
     ]
   },

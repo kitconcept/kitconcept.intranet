@@ -4,6 +4,16 @@
   "UID": "68d35bb747e2435e96863049a871b755",
   "allow_discussion": false,
   "blocks": {
+    "2f62a540-e26a-4773-881f-a72bda36cb20": {
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "ahmad-ossayli-laJW5pp-6Yw-unsplash.jpg",
+      "url": "../../resolveuid/023daca5870d4226871c44317e2840ab"
+    },
     "801d2be8-f4b0-45a8-9c67-76d28abf1aaa": {
       "@type": "slate"
     },
@@ -14,6 +24,7 @@
   "blocks_layout": {
     "items": [
       "b0ddbd4e-6b90-4260-b7eb-17fd855eb32a",
+      "2f62a540-e26a-4773-881f-a72bda36cb20",
       "801d2be8-f4b0-45a8-9c67-76d28abf1aaa"
     ]
   },
@@ -22,8 +33,8 @@
   "creators": [
     "admin"
   ],
-  "description": "",
-  "effective": null,
+  "description": "Keep track of documents that may need to be updated.",
+  "effective": "2024-05-17T11:53:03",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
@@ -37,7 +48,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T08:14:31+00:00",
+  "modified": "2024-05-17T09:57:52+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -45,12 +56,12 @@
     "description": "",
     "image_field": null,
     "image_scales": {},
-    "review_state": "private",
+    "review_state": "published",
     "title": "Features",
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
@@ -66,6 +77,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2024-05-17T08:14:31+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-17T09:53:03+00:00"
       }
     ]
   },

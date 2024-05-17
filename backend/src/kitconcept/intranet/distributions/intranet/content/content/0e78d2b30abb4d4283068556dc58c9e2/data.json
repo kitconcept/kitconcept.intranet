@@ -4,17 +4,28 @@
   "UID": "0e78d2b30abb4d4283068556dc58c9e2",
   "allow_discussion": false,
   "blocks": {
+    "0b0e9336-0097-4bc4-8061-2bfbc1efb02e": {
+      "@type": "slate"
+    },
     "6219cc1b-fcb2-4de0-901b-ec647f28d2c4": {
       "@type": "title"
     },
     "7c4d362e-1388-43a8-94f5-37b111e5c579": {
-      "@type": "slate"
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "scott-graham-OQMZwNd3ThU-unsplash.jpg",
+      "url": "../../resolveuid/b25ac9b29c9247c7bde7c6b5eca71720"
     }
   },
   "blocks_layout": {
     "items": [
       "6219cc1b-fcb2-4de0-901b-ec647f28d2c4",
-      "7c4d362e-1388-43a8-94f5-37b111e5c579"
+      "7c4d362e-1388-43a8-94f5-37b111e5c579",
+      "0b0e9336-0097-4bc4-8061-2bfbc1efb02e"
     ]
   },
   "contributors": [],
@@ -37,7 +48,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T08:06:52+00:00",
+  "modified": "2024-05-17T11:46:22+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",

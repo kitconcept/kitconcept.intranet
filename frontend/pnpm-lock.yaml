@@ -1398,6 +1398,9 @@ importers:
       '@eeacms/volto-accordion-block':
         specifier: ^10.4.6
         version: 10.4.6
+      '@kitconcept/volto-banner-block':
+        specifier: ^1.0.0-2
+        version: 1.0.0-2(@plone/volto@17.15.6)
       '@kitconcept/volto-button-block':
         specifier: ^2.3.1
         version: 2.3.1
@@ -4259,6 +4262,14 @@ packages:
 
   /@juggle/resize-observer@3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
+    dev: false
+
+  /@kitconcept/volto-banner-block@1.0.0-2(@plone/volto@17.15.6):
+    resolution: {integrity: sha512-v5mqRrZ9uLYbXeNGaNfZ1uv7VCnuZs1p7joX6do1SIfBM6AOwTZeTRj/+9Y7PPBDL8AVUVDJkXgA5dvv3dYLZw==}
+    peerDependencies:
+      '@plone/volto': ^17.0.0
+    dependencies:
+      '@plone/volto': 17.15.6(@babel/plugin-syntax-flow@7.24.1)(@babel/plugin-transform-react-jsx@7.23.4)(react-with-direction@1.4.0)(seamless-immutable@7.1.4)
     dev: false
 
   /@kitconcept/volto-button-block@2.3.1:

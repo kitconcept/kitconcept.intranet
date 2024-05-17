@@ -29,12 +29,6 @@
           },
           "title": "Full Text Search"
         },
-        "5797f886-f1d9-4141-abb4-74983e85c80f": {
-          "@type": "teaser",
-          "styles": {
-            "align": "left"
-          }
-        },
         "b44ca6dd-a55f-4a15-9727-3297eeaade15": {
           "@type": "teaser",
           "description": "",
@@ -84,17 +78,57 @@
         "items": [
           "dc468cc2-ccda-4e25-a3db-116ca9f99ef2",
           "41863fc3-5e05-4e50-8166-607686a34758",
-          "b44ca6dd-a55f-4a15-9727-3297eeaade15",
-          "5797f886-f1d9-4141-abb4-74983e85c80f"
+          "b44ca6dd-a55f-4a15-9727-3297eeaade15"
         ]
       },
       "styles": {}
+    },
+    "72d64f8a-cca6-444d-a497-482daba7e970": {
+      "@type": "slate"
     },
     "7815392a-f32a-45cf-b633-09f1cabf49bc": {
       "@type": "title"
     },
     "cf694a86-6ef4-43e2-b249-24f7ca3a55e9": {
-      "@type": "slate"
+      "@type": "gridBlock",
+      "blocks": {
+        "71047227-7fac-4012-8c5f-e2f54cc9ad70": {
+          "@type": "empty"
+        },
+        "86acbd7e-e3df-42cf-8b65-00e0b881a205": {
+          "@type": "teaser",
+          "description": "",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/0e78d2b30abb4d4283068556dc58c9e2",
+              "@type": "Document",
+              "Description": "",
+              "Title": "Formulare",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Formulare"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Formulare"
+        },
+        "a5ff65b5-7029-41f7-96a1-810a008e51a2": {
+          "@type": "empty"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "86acbd7e-e3df-42cf-8b65-00e0b881a205",
+          "a5ff65b5-7029-41f7-96a1-810a008e51a2",
+          "71047227-7fac-4012-8c5f-e2f54cc9ad70"
+        ]
+      },
+      "styles": {}
     },
     "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11": {
       "@type": "slider",
@@ -104,8 +138,9 @@
       "slides": [
         {
           "@id": "8e5603d5-a253-4094-9c45-37708e5bd3a3",
-          "description": "",
+          "description": "A Plone Distribution to build sophisticated Intranets",
           "flagAlign": "left",
+          "head_title": "100% Open Source",
           "href": [
             {
               "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
@@ -127,7 +162,8 @@
       "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11",
       "7815392a-f32a-45cf-b633-09f1cabf49bc",
       "4979b879-0499-494e-9ca9-967aae7af1f4",
-      "cf694a86-6ef4-43e2-b249-24f7ca3a55e9"
+      "cf694a86-6ef4-43e2-b249-24f7ca3a55e9",
+      "72d64f8a-cca6-444d-a497-482daba7e970"
     ]
   },
   "contributors": [],

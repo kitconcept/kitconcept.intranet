@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-          i18n:domain="kitconcept.solr"
+  i18n:domain="kitconcept.solr"
 >
 
   <records interface="kitconcept.solr.interfaces.IKitconceptSolrSettings"
-           prefix="kitconcept.solr"
+    prefix="kitconcept.solr"
   >
     <value key="config"
-           purge="false"
+      purge="false"
     >{
       "fieldList": [
       "UID",

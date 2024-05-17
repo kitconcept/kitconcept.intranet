@@ -32,3 +32,11 @@ Start Backend
 ```
 make start-backend
 ```
+
+# Export
+
+Export content to the file system:
+
+```
+make export
+```

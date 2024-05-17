@@ -13,6 +13,9 @@ CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PLONE_VERSION=$$(cat backend/version.txt)
 VOLTO_VERSION = $(shell cat ./frontend/package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['@plone/volto'])")
 
+COMPOSE_PROJECT_NAME?="kitconcept_intranet"
+SOLR_ONLY_COMPOSE?=${CURRENT_DIR}/docker-compose.yml
+
 PROJECT_NAME=kitconcept.intranet
 STACK_NAME=kitconcept-intranet
 
@@ -207,3 +210,47 @@ start-test-acceptance-server: acceptance-backend-build ## Start Backend Acceptan
 stop-acceptance-server: ## Stop Backend Acceptance Server
 	@echo "Stop backend acceptance container"
 	@docker stop kitconcept.intranet-backend-acceptance
+
+## Solr only
+.PHONY: solr-prepare
+	solr-prepare: ## Prepare solr
+	@echo "$(RED)==> Preparing solr $(RESET)"
+	mkdir -p ${SOLR_DATA_FOLDER}/solr
+
+.PHONY: start-solr
+start-solr: solr-start
+
+.PHONY: stop-solr
+stop-solr: solr-stop
+
+.PHONY: start-solr-fg
+start-solr-fg: solr-start-fg
+
+.PHONY: solr-start
+solr-start: ## Start solr
+	@echo "Start solr"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up -d
+
+.PHONY: solr-start-and-rebuild
+solr-start-and-rebuild: ## Start solr, force rebuild
+	@echo "Start solr, force rebuild, erases data"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up -d --build
+
+.PHONY: solr-start-fg
+solr-start-fg: ## Start solr in foreground
+	@echo "Start solr in foreground"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up
+
+.PHONY: solr-stop
+solr-stop: ## Stop solr
+	@echo "Stop solr"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} down
+
+.PHONY: solr-logs
+solr-logs: ## Show solr logs
+	@echo "Show solr logs"
+	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} logs -f
+
+.PHONY: solr-activate-and-reindex
+solr-activate-and-reindex: instance/etc/zope.ini ## Activate and reindex solr
+	PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf scripts/solr_activate_and_reindex.py --clear

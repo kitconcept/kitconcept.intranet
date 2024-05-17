@@ -1,46 +1,35 @@
 {
-  "@id": "/features/person-profiles",
+  "@id": "/features/kommentare",
   "@type": "Document",
-  "UID": "f10b7bca6e014ff7a56598f1cfcc4d2b",
+  "UID": "ab9fa349a4704ae9bc83fef1f51fe08a",
   "allow_discussion": false,
   "blocks": {
-    "e357b468-f727-465a-8280-93a569213589": {
-      "@type": "image",
-      "align": "full",
-      "credit": {},
-      "description": "",
-      "image_field": "image",
-      "size": "l",
-      "title": "christopher-campbell-rDEOVtE7vOs-unsplash (4).jpg",
-      "url": "../../resolveuid/70e63351448f45968af7bca53f418e6b"
-    },
-    "f0f05a82-9857-4636-b1cf-9f6ed9c5fb74": {
-      "@type": "title"
-    },
-    "f25613c9-8d70-495f-bcd5-58d99aa04c36": {
+    "771341aa-39a3-41c5-9032-6dfd36013d86": {
       "@type": "slate"
+    },
+    "ea292231-010c-435c-ae47-6c5c6f9d32c3": {
+      "@type": "title"
     }
   },
   "blocks_layout": {
     "items": [
-      "f0f05a82-9857-4636-b1cf-9f6ed9c5fb74",
-      "e357b468-f727-465a-8280-93a569213589",
-      "f25613c9-8d70-495f-bcd5-58d99aa04c36"
+      "ea292231-010c-435c-ae47-6c5c6f9d32c3",
+      "771341aa-39a3-41c5-9032-6dfd36013d86"
     ]
   },
   "contributors": [],
-  "created": "2024-05-16T20:19:03+00:00",
+  "created": "2024-05-17T08:19:49+00:00",
   "creators": [
     "admin"
   ],
-  "description": "Present your employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+  "description": "",
   "effective": null,
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "exportimport.versions": {},
-  "id": "person-profiles",
+  "id": "kommentare",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -48,7 +37,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T07:22:10+00:00",
+  "modified": "2024-05-17T08:19:49+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -66,7 +55,7 @@
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Person Profiles",
+  "title": "Kommentare",
   "type_title": "Page",
   "version": "current",
   "workflow_history": {
@@ -76,7 +65,7 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2024-05-16T20:19:03+00:00"
+        "time": "2024-05-17T08:19:49+00:00"
       }
     ]
   },

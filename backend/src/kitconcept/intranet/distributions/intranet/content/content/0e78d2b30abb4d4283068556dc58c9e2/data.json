@@ -1,5 +1,5 @@
 {
-  "@id": "/features/formulare",
+  "@id": "/features/forms",
   "@type": "Document",
   "UID": "0e78d2b30abb4d4283068556dc58c9e2",
   "allow_discussion": false,
@@ -33,14 +33,14 @@
   "creators": [
     "admin"
   ],
-  "description": "",
-  "effective": null,
+  "description": "Design forms, collect responses that can be mailed out or downloaded for further processing.",
+  "effective": "2024-05-17T11:53:03",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "exportimport.versions": {},
-  "id": "formulare",
+  "id": "forms",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -56,17 +56,17 @@
     "description": "",
     "image_field": null,
     "image_scales": {},
-    "review_state": "private",
+    "review_state": "published",
     "title": "Features",
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Formulare",
+  "title": "Forms",
   "type_title": "Page",
   "version": "current",
   "workflow_history": {
@@ -77,6 +77,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2024-05-17T08:06:51+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-17T09:53:03+00:00"
       }
     ]
   },

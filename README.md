@@ -19,6 +19,13 @@ Build:
 make install
 ```
 
+Build Solr:
+
+```
+make solr-prepare
+make solr-start-and-rebuild
+```
+
 # Start
 
 Start Frontend:
@@ -31,6 +38,12 @@ Start Backend
 
 ```
 make start-backend
+```
+
+Start Solr:
+
+```
+make start-solr
 ```
 
 # Export

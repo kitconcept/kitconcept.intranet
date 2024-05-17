@@ -1,5 +1,6 @@
 from kitconcept.intranet import logger
-from kitconcept.intranet.setuphandlers import content, users
+from kitconcept.intranet.setuphandlers import content
+from kitconcept.intranet.setuphandlers import users
 from kitconcept.intranet.upgrades import remove_preview_image_behavior
 from plone import api
 from Products.CMFPlone.interfaces import INonInstallable

@@ -6,6 +6,7 @@ const applyConfig = (config) => {
     defaultLanguage: 'en',
     // Volto Light Theme Configuration
     intranetHeader: true,
+    siteLabel: 'Intranet',
   };
 
   // config.views.contentTypeSearchResultViews.Person = PersonResultItem;

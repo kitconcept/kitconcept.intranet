@@ -1,0 +1,82 @@
+{
+  "@id": "/about",
+  "@type": "Document",
+  "UID": "1e7262f173a54700a5ca2578506b1bc1",
+  "allow_discussion": false,
+  "blocks": {
+    "9bdc943a-3a45-4cf5-854b-8f5238cb714a": {
+      "@type": "slate"
+    },
+    "bafa192c-a61e-499b-9e22-f1799d22aaad": {
+      "@type": "title"
+    },
+    "c30a11c1-a250-47b2-bab3-63380c662442": {
+      "@type": "image",
+      "align": "full",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "title": "codioful-formerly-gradienta-lweK7Wme_jo-unsplash.jpg",
+      "url": "../resolveuid/75f2d0b5a1f04f7a922c47be34f9f532"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "bafa192c-a61e-499b-9e22-f1799d22aaad",
+      "c30a11c1-a250-47b2-bab3-63380c662442",
+      "9bdc943a-3a45-4cf5-854b-8f5238cb714a"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T20:19:27+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "about",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T20:21:37+00:00",
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "plone_site_root",
+    "description": "A Plone Intranet distribution provided by kitconcept GmbH",
+    "title": "Plone Intranet by kitconcept",
+    "type_title": "Plone Site"
+  },
+  "preview_caption_link": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "About",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T20:19:27+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -49,7 +49,7 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "setuptools",
-        "plone.volto",
+        "plone.volto>=4.4.1",  # fix preview_image_link behavior issue
         "plone.distribution>=2.0.0a1",
         # "plone.api",
         "kitconcept.solr",

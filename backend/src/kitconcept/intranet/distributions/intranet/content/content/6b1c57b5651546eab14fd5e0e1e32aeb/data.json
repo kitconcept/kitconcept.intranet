@@ -1,0 +1,103 @@
+{
+  "@id": "/images",
+  "@type": "Document",
+  "UID": "6b1c57b5651546eab14fd5e0e1e32aeb",
+  "allow_discussion": false,
+  "blocks": {
+    "2747ff88-6d35-497a-8d6f-e19cb4818c46": {
+      "@type": "slate"
+    },
+    "4b452d4e-ed73-4130-b1a5-81475e90f989": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Image"
+            ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "."
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "variation": "grid"
+    },
+    "c1eb4997-9777-429e-bf37-514a309c89b8": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "c1eb4997-9777-429e-bf37-514a309c89b8",
+      "4b452d4e-ed73-4130-b1a5-81475e90f989",
+      "2747ff88-6d35-497a-8d6f-e19cb4818c46"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-05-16T20:17:44+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2024-05-16T22:21:01",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "images",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-05-16T20:42:02+00:00",
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "plone_site_root",
+    "description": "A Plone Intranet distribution provided by kitconcept GmbH",
+    "title": "Plone Intranet by kitconcept",
+    "type_title": "Plone Site"
+  },
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Images",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-05-16T20:17:44+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-16T20:21:01+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

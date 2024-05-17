@@ -57,6 +57,10 @@ build-backend:  ## Build Backend
 create-site: ## Create a Plone site with default content
 	$(MAKE) -C "./backend/" create-site
 
+.PHONY: create-site-force
+create-site-force: ## Create a Plone site with default content
+	$(MAKE) -C "./backend/" create-site-force
+
 .PHONY: start-backend
 start-backend: ## Start Plone Backend
 	$(MAKE) -C "./backend/" start

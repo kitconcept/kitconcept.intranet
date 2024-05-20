@@ -1,43 +1,55 @@
 {
-  "@id": "/features/full-text-search",
+  "@id": "/features/barrierefreiheit",
   "@type": "Document",
-  "UID": "2c2f8092acfc4f55830b16af13273882",
+  "UID": "f255cc2bd29849d19428b865f52819d9",
   "allow_discussion": false,
   "blocks": {
-    "5612d8d3-5119-41fa-ac6c-e6ea1352e6e4": {
-      "@type": "slate"
+    "09f97051-24bf-4548-b774-e7688dcc0bce": {
+      "@type": "slate",
+      "plaintext": "WCAG 2.2 / BITV (https://bitvtest.de/blog/detail/wcag-22-ist-da)",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "WCAG 2.2 / BITV (https://bitvtest.de/blog/detail/wcag-22-ist-da)"
+            }
+          ],
+          "type": "p"
+        }
+      ]
     },
-    "ba4ed86f-f53a-47b8-a17d-e802d1aa8ab1": {
+    "7784791d-da31-4253-8f9f-5b5c90827d12": {
       "@type": "banner",
       "credit": {},
-      "description": "",
-      "title": "valeria-nikitina-n99YXHGyQj8-unsplash.jpg",
-      "url": "../../resolveuid/da07e218ea5e4c6c8582be7936d4686d"
+      "description": "Kiasma Museum, Helsinki, Finland",
+      "title": "stefan-spassov-k87dHceae1w-unsplash.jpg",
+      "url": "../../resolveuid/50c969b05290465da8e38b46fcfb4cf7"
     },
-    "d4a1c14f-b3e5-4583-af83-d3cb00986f35": {
+    "af4de70e-dd9e-42d3-ab81-0ef15f468cc0": {
       "@type": "title"
     }
   },
   "blocks_layout": {
     "items": [
-      "ba4ed86f-f53a-47b8-a17d-e802d1aa8ab1",
-      "d4a1c14f-b3e5-4583-af83-d3cb00986f35",
-      "5612d8d3-5119-41fa-ac6c-e6ea1352e6e4"
+      "af4de70e-dd9e-42d3-ab81-0ef15f468cc0",
+      "7784791d-da31-4253-8f9f-5b5c90827d12",
+      "09f97051-24bf-4548-b774-e7688dcc0bce"
     ]
   },
   "contributors": [],
-  "created": "2024-05-16T20:18:54+00:00",
+  "created": "2024-05-20T08:38:16+00:00",
   "creators": [
     "admin"
   ],
-  "description": "A full text search that let's you find all the content in your intranet.",
-  "effective": "2024-05-17T11:53:00",
+  "description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2.",
+  "effective": null,
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "exportimport.versions": {},
-  "id": "full-text-search",
+  "id": "barrierefreiheit",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -45,7 +57,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T15:05:37+00:00",
+  "modified": "2024-05-20T08:43:05+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -58,12 +70,12 @@
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "published",
+  "review_state": "private",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Full Text Search",
+  "title": "Barrierefreiheit",
   "type_title": "Page",
   "version": "current",
   "workflow_history": {
@@ -73,14 +85,7 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2024-05-16T20:18:54+00:00"
-      },
-      {
-        "action": "publish",
-        "actor": "admin",
-        "comments": "",
-        "review_state": "published",
-        "time": "2024-05-17T09:53:03+00:00"
+        "time": "2024-05-20T08:38:16+00:00"
       }
     ]
   },

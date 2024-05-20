@@ -1,46 +1,35 @@
 {
-  "@id": "/features/versioning",
+  "@id": "/features/responsive-design",
   "@type": "Document",
-  "UID": "c7a850a9c8d4495c8f742651da87729f",
+  "UID": "144516507ac74892b96c1f7b574af7c4",
   "allow_discussion": false,
   "blocks": {
-    "5b7ddcb9-fa74-44d5-94f9-202562840d5a": {
+    "7c8dcae2-84b5-466c-8f9e-3e40856f76d9": {
       "@type": "slate"
     },
-    "6ed07367-2caa-4f93-95b8-b10dd09c4330": {
-      "@type": "image",
-      "align": "full",
-      "credit": {},
-      "description": "",
-      "image_field": "image",
-      "size": "l",
-      "title": "ralph-mayhew-48-uFiCsQrA-unsplash.jpg",
-      "url": "../../resolveuid/e6a2ed459bd84ff1b1b75818c0b373b1"
-    },
-    "bcdaaf42-ae1c-479e-a37d-86f6520749a9": {
+    "e7d678c6-f114-4127-a3d0-b080ffbef8bb": {
       "@type": "title"
     }
   },
   "blocks_layout": {
     "items": [
-      "bcdaaf42-ae1c-479e-a37d-86f6520749a9",
-      "6ed07367-2caa-4f93-95b8-b10dd09c4330",
-      "5b7ddcb9-fa74-44d5-94f9-202562840d5a"
+      "e7d678c6-f114-4127-a3d0-b080ffbef8bb",
+      "7c8dcae2-84b5-466c-8f9e-3e40856f76d9"
     ]
   },
   "contributors": [],
-  "created": "2024-05-17T08:07:45+00:00",
+  "created": "2024-05-20T08:38:33+00:00",
   "creators": [
     "admin"
   ],
-  "description": "Store multiple versions of documents, compare versions and go back in history.",
-  "effective": "2024-05-17T11:53:00",
+  "description": "",
+  "effective": null,
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "exportimport.versions": {},
-  "id": "versioning",
+  "id": "responsive-design",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -48,7 +37,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-05-17T15:03:14+00:00",
+  "modified": "2024-05-20T08:38:33+00:00",
   "parent": {
     "@id": "/features",
     "@type": "Document",
@@ -61,12 +50,12 @@
     "type_title": "Page"
   },
   "preview_caption_link": null,
-  "review_state": "published",
+  "review_state": "private",
   "rights": "",
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Versioning",
+  "title": "Responsive Design",
   "type_title": "Page",
   "version": "current",
   "workflow_history": {
@@ -76,14 +65,7 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2024-05-17T08:07:45+00:00"
-      },
-      {
-        "action": "publish",
-        "actor": "admin",
-        "comments": "",
-        "review_state": "published",
-        "time": "2024-05-17T09:53:02+00:00"
+        "time": "2024-05-20T08:38:33+00:00"
       }
     ]
   },

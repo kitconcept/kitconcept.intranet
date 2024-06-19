@@ -5,8 +5,6 @@ from plone.app.testing import PloneSandboxLayer
 from plone.distribution.testing.layer import PloneDistributionFixture
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 
-import kitconcept.intranet  # noQA
-
 
 DEFAULT_ANSWERS = {
     "site_id": "plone",
@@ -34,9 +32,11 @@ class Layer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
-        import plone.restapi
+        import kitconcept.intranet
+        import plone.distribution
 
-        self.loadZCML(package=plone.restapi)
+        self.loadZCML(package=plone.distribution)
+        self.loadZCML(package=kitconcept.intranet)
 
 
 FIXTURE = Layer()

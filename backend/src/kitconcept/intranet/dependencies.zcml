@@ -1,10 +1,9 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
   <!-- List all packages you depend here -->
-  <include package="plone.volto" />
-  <include package="plone.restapi" />
   <include package="plone.distribution" />
-  <include package="kitconcept.solr" />
+  <include package="plone.volto" />
   <include package="collective.person" />
+  <include package="kitconcept.solr" />
 
 </configure>

@@ -1,19 +1,26 @@
 # syntax=docker/dockerfile:1
-ARG PLONE_VERSION
-FROM plone/server-builder:${PLONE_VERSION:-6} as builder
+ARG PLONE_VERSION=6.0.11
+FROM plone/server-builder:${PLONE_VERSION} as builder
 
 WORKDIR /app
 
+
 # Add local code
-COPY . src/kitconcept.intranet
+COPY scripts/ scripts/
+COPY . src
 
 # Install local requirements and pre-compile mo files
 RUN <<EOT
     set -e
-    mv src/kitconcept.intranet/requirements-docker.txt ./requirements.txt
-    bin/pip install -r requirements.txt
-    bin/python /compile_mo.py
-    rm -Rf src/ /compile_mo.py compile_mo.log
+    bin/pip install mxdev uv
+    mv src/requirements-docker.txt src/requirements.txt
+    sed -i 's/-e .\[test\]/./g' src/mx.ini
+    cd /app/src
+    ../bin/mxdev -c mx.ini
+    ../bin/uv pip install -r requirements-mxdev.txt
+    ../bin/python /compile_mo.py
+    cd /app
+    rm -Rf src/
 EOT
 
 FROM plone/server-prod-config:${PLONE_VERSION}
@@ -28,8 +35,10 @@ ENV zope_i18n_compile_mo_files=
 # Show only our distributions
 ENV ALLOWED_DISTRIBUTIONS=intranet
 
+# Copy /app from builder
 COPY --from=builder /app /app
 
 RUN <<EOT
+    set -e
     ln -s /data /app/var
 EOT

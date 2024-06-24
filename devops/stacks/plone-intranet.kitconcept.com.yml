@@ -26,7 +26,7 @@ services:
         - traefik.http.routers.rt-kc-intranet-front.rule=Host(`plone-intranet.kitconcept.com`)
         - traefik.http.routers.rt-kc-intranet-front.entrypoints=https
         - traefik.http.routers.rt-kc-intranet-front.tls=true
-        - traefik.http.routers.rt-kc-intranet-front.tls.certresolver=le
+        - traefik.http.routers.rt-kc-intranet-front.tls.certresolver=le-hetzner
         - traefik.http.routers.rt-kc-intranet-front.service=svc-kc-intranet-front
         - traefik.http.routers.rt-kc-intranet-front.middlewares=gzip
 

@@ -15,7 +15,7 @@ PROJECT_NAME=kitconcept.intranet
 STACK_NAME=plone-intranet-kitconcept-com
 
 VOLTO_VERSION = $(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
-PLONE_VERSION=$(shell cat backend/version.txt)
+PLONE_VERSION =$(shell cat backend/version.txt)
 
 PRE_COMMIT=pipx run --spec 'pre-commit==3.7.1' pre-commit
 
@@ -25,8 +25,6 @@ RED=`tput setaf 1`
 GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
-
-VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION)
 
 .PHONY: all
 all: install
@@ -71,7 +69,9 @@ backend-build:  ## Build Backend
 
 .PHONY: backend-create-site
 backend-create-site: ## Create a Plone site with default content
+	$(MAKE) solr-start
 	$(MAKE) -C "./backend/" create-site
+	$(MAKE) solr-stop
 
 .PHONY: backend-update-example-content
 backend-update-example-content: ## Export example content inside package
@@ -96,6 +96,7 @@ install:  ## Install
 .PHONY: start
 start:  ## Start
 	@echo "Starting application"
+	$(MAKE) solr-start
 	$(MAKE) backend-start
 	$(MAKE) frontend-start
 
@@ -124,6 +125,29 @@ build-images:  ## Build docker images
 	@echo "Build"
 	$(MAKE) -C "./backend/" build-image
 	$(MAKE) -C "./frontend/" build-image
+
+## Solr
+.PHONY: solr-start
+solr-start:  ## SOLR: Start local service
+	@echo "Start local Solr"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml up -d solr
+	@echo "Solr running on port 8983"
+
+.PHONY: solr-stop
+solr-stop:  ## SOLR: Stop local service
+	@echo "Stop local Solr"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml stop solr
+
+.PHONY: solr-status
+solr-status:  ## SOLR: Status of local service
+	@echo "Stop local Solr"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml ps solr
+
+.PHONY: solr-reindex-site
+solr-reindex-site: solr-start ## SOLR: Activate and reindex
+	@echo "Solr: Activate and reindex site"
+	$(MAKE) -C "./backend/" solr-reindex-site
+
 
 ## Docker stack
 .PHONY: stack-start

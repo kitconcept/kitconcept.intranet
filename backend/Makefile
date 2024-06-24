@@ -18,8 +18,8 @@ YELLOW=`tput setaf 3`
 PRE_COMMIT=pipx run --spec 'pre-commit==3.7.1' pre-commit
 
 # Set distributions still in development
-DISTRIBUTIONS="intranet"
-ALLOWED_DISTRIBUTIONS="intranet"
+DISTRIBUTIONS="kitconcept-intranet"
+ALLOWED_DISTRIBUTIONS="kitconcept-intranet"
 
 IMAGE_NAME_PREFIX=ghcr.io/kitconcept/kitconcept.intranet
 IMAGE_TAG=latest
@@ -39,12 +39,14 @@ ifeq ($(PYTHON_VERSION_OK),0)
   $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
 endif
 
+
 PLONE_SITE_ID=Plone
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_FOLDER=$(shell dirname $(BACKEND_FOLDER))
 PLONE_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
 EXAMPLE_CONTENT_FOLDER=$(BACKEND_FOLDER)/src/kitconcept/intranet/distributions/intranet/content
 
-GIT_FOLDER=$(BACKEND_FOLDER)/.git
+GIT_FOLDER=$(ROOT_FOLDER)/.git
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
 BIN_FOLDER=$(VENV_FOLDER)/bin
 
@@ -105,10 +107,16 @@ update-example-content: $(BIN_FOLDER)/tox ## Export example content inside packa
 	if [ -d $(EXAMPLE_CONTENT_FOLDER)/content ]; then rm -r $(EXAMPLE_CONTENT_FOLDER)/* ;fi
 	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) $(BIN_FOLDER)/export-distribution instance/etc/zope.conf $(PLONE_SITE_ID) $(EXAMPLE_CONTENT_FOLDER)
 
+
+# Reindex site
+.PHONY: solr-reindex-site
+solr-reindex-site: instance/etc/zope.ini ## Solr: Activate and reindex
+	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore $(BIN_FOLDER)/zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
+
 .PHONY: check
 check: $(BIN_FOLDER)/tox ## Check and fix code base according to Plone standards
 	@echo "$(GREEN)==> Format codebase$(RESET)"
-	$(BIN_FOLDER)/tox -e lint
+	make -C $(ROOT_FOLDER) check
 
 # i18n
 $(BIN_FOLDER)/i18ndude: $(BIN_FOLDER)/pip
@@ -123,7 +131,7 @@ i18n: $(BIN_FOLDER)/i18ndude ## Update locales
 # Tests
 .PHONY: test
 test: $(BIN_FOLDER)/tox ## run tests
-	$(BIN_FOLDER)/tox -e test
+	$(BIN_FOLDER)/pytest tests/
 
 .PHONY: test-coverage
 test-coverage: $(BIN_FOLDER)/tox ## run tests with coverage

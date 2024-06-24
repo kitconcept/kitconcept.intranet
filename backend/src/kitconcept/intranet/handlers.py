@@ -25,4 +25,7 @@ def post_handler(
         logo = convert_data_uri_to_b64(raw_logo)
         logger.info(f"{site.id}: Set logo")
         api.portal.set_registry_record("plone.site_logo", logo)
+    # This should be fixed on plone.distribution
+    site.title = answers.get("title", site.title)
+    site.description = answers.get("description", site.description)
     return site

@@ -68,6 +68,7 @@ setup(
             "plone.restapi[test]",
             "pytest",
             "pytest-cov",
+            "pytest-docker",
             "pytest-plone>=0.5.0",
         ],
     },

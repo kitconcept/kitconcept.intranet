@@ -1,4 +1,3 @@
-from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
@@ -18,8 +17,15 @@ DEFAULT_ANSWERS = {
 
 class BaseFixture(PloneDistributionFixture):
     PACKAGE_NAME = "kitconcept.intranet"
-
-    SITES = (("intranet", DEFAULT_ANSWERS),)
+    SITES = (("kitconcept-intranet", DEFAULT_ANSWERS),)
+    _distribution_products = (
+        ("plone.app.contenttypes", {"loadZCML": True}),
+        ("plone.distribution", {"loadZCML": True}),
+        ("plone.restapi", {"loadZCML": True}),
+        ("plone.volto", {"loadZCML": True}),
+        ("kitconcept.solr", {"loadZCML": True}),
+        ("collective.person", {"loadZCML": True}),
+    )
 
 
 BASE_FIXTURE = BaseFixture()
@@ -27,16 +33,6 @@ BASE_FIXTURE = BaseFixture()
 
 class Layer(PloneSandboxLayer):
     defaultBases = (BASE_FIXTURE,)
-
-    def setUpZope(self, app, configurationContext):
-        # Load any other ZCML that is required for your tests.
-        # The z3c.autoinclude feature is disabled in the Plone fixture base
-        # layer.
-        import kitconcept.intranet
-        import plone.distribution
-
-        self.loadZCML(package=plone.distribution)
-        self.loadZCML(package=kitconcept.intranet)
 
 
 FIXTURE = Layer()
@@ -50,14 +46,4 @@ INTEGRATION_TESTING = IntegrationTesting(
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE, WSGI_SERVER_FIXTURE),
     name="Kitconcept.IntranetLayer:FunctionalTesting",
-)
-
-
-ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(
-        FIXTURE,
-        REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        WSGI_SERVER_FIXTURE,
-    ),
-    name="Kitconcept.IntranetLayer:AcceptanceTesting",
 )

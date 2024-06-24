@@ -63,7 +63,7 @@ def parse_answers(answers_file: Path, site_id: str = "") -> dict:
 
 
 # VARS
-DISTRIBUTION = os.getenv("DISTRIBUTION", "intranet")
+DISTRIBUTION = os.getenv("DISTRIBUTION", "kitconcept-intranet")
 SITE_ID = os.getenv("SITE_ID")  # if set, this overrides the value in ANSWERS
 ANSWERS = os.getenv("ANSWERS", "default")
 DELETE_EXISTING = asbool(os.getenv("DELETE_EXISTING"))

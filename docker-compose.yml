@@ -4,7 +4,7 @@ name: kitconcept-intranet
 services:
 
   traefik:
-    image: traefik:v2.10
+    image: traefik:v2.11
 
     ports:
       - 80:80
@@ -95,6 +95,12 @@ services:
       - traefik.http.routers.rt-backend-classic.entrypoints=http
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
+      ## Intranet Admin
+      - traefik.http.routers.rt-backend-zmi.rule=Host(`intranet-admin.localhost`)
+      - traefik.http.routers.rt-backend-zmi.entrypoints=http
+      - traefik.http.routers.rt-backend-zmi.service=svc-backend
+      - traefik.http.routers.rt-backend-zmi.middlewares=gzip
+
 
   db:
     image: postgres:14

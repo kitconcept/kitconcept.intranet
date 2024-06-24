@@ -6,9 +6,10 @@
     >
 
   <plone:distribution
-      name="intranet"
+      name="kitconcept-intranet"
       title="kitconcept Intranet"
       description="A Plone distribution for Intranets with Plone. Created by kitconcept."
+      directory="distributions/intranet"
       post_handler=".handlers.post_handler"
       pre_handler=".handlers.pre_handler"
       />

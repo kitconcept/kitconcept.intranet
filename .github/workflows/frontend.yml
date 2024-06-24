@@ -70,15 +70,15 @@ jobs:
         if: ${{ success() || failure() }}
         run: make lint
 
-      - name: i18n sync
-        id: i18n
-        if: ${{ success() || failure() }}
-        run: make ci-i18n
-
       - name: Unit Tests
         id: unit
         if: ${{ success() || failure() }}
         run: make test
+
+      - name: i18n sync
+        id: i18n
+        if: ${{ success() || failure() }}
+        run: make ci-i18n
 
       - name: Report
         if: ${{ success() || failure() }}

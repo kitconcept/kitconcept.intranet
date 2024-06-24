@@ -6,13 +6,9 @@
 *.pyc
 *.pyo
 
-# translation related
-*.mo
-
 # tools related
 build/
 .coverage
-.*project
 coverage.xml
 dist/
 docs/_build
@@ -44,7 +40,7 @@ var/
 /sources/
 /venv/
 .installed.txt
-
+.lock
 
 ##
 # Add extra configuration options in .meta.toml:

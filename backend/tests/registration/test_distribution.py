@@ -1,75 +1,54 @@
-from pathlib import Path
-from plone.distribution.api import distribution as dist_api
-from plone.distribution.core import Distribution
+from plone import api
+from Products.CMFCore.WorkflowCore import WorkflowException
 
 import pytest
 
 
-DISTRIBUTION_NAME = "intranet"
-
-
-class TestDistributionRegistration:
-    distribution: Distribution = None
-
-    @pytest.fixture(autouse=True)
-    def _dist_intranet_volto(self, integration) -> Distribution:
-        self.distribution = dist_api.get(name=DISTRIBUTION_NAME)
-
-    def test_distribution_class(self):
-        distribution = self.distribution
-        assert isinstance(distribution, Distribution)
-
+class TestDistribution:
     @pytest.mark.parametrize(
         "attr,expected",
         [
-            ["title", "kitconcept Intranet"],
-            [
+            ("title", "My Site"),
+            (
                 "description",
-                "A Plone distribution for Intranets with Plone. Created by kitconcept.",
-            ],
+                "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA
+            ),
+            ("exclude_from_nav", False),
         ],
     )
-    def test_distribution_name_description(self, attr, expected):
-        distribution = self.distribution
-        assert isinstance(distribution, Distribution)
-        assert getattr(distribution, attr, expected)
-
-    def test_distribution_has_pre_handler(self):
-        distribution = self.distribution
-        assert distribution.pre_handler is not None
-
-    def test_distribution_has_no_handler(self):
-        distribution = self.distribution
-        assert distribution.handler is None
-
-    def test_distribution_has_post_handler(self):
-        distribution = self.distribution
-        assert distribution.post_handler is not None
+    def test_plone_site_attributes(self, portal, attr, expected):
+        assert getattr(portal, attr) == expected
 
     @pytest.mark.parametrize(
-        "profile",
+        "package,expected",
         [
-            "plone.app.contenttypes:default",
-            "plone.app.caching:default",
-            "plonetheme.barceloneta:default",
+            ("plone.app.contenttypes", True),
+            ("plonetheme.barceloneta", True),
+            ("plone.restapi", True),
+            ("plone.volto", True),
         ],
     )
-    def test_distribution_profiles(self, profile):
-        distribution = self.distribution
-        assert profile in distribution.profiles
+    def test_dependencies_installed(self, installer, package, expected):
+        assert installer.is_product_installed(package) is expected
 
-    def test_distribution_has_image(self):
-        distribution = self.distribution
-        assert isinstance(distribution.image, Path)
-        assert distribution.image.exists()
-
-    def test_distribution_has_local_directory(self):
-        distribution = self.distribution
-        assert isinstance(distribution.directory, Path)
-        assert distribution.directory.exists()
-
-    def test_distribution_has_contents_folder(self):
-        distribution = self.distribution
-        contents_folder = distribution.contents["json"]
-        assert isinstance(contents_folder, Path)
-        assert contents_folder.exists()
+    @pytest.mark.parametrize(
+        "path,title,portal_type,review_state",
+        [
+            ("/", "My Site", "Plone Site", "internal"),
+        ],
+    )
+    def test_content_created(self, portal, path, title, portal_type, review_state):
+        with api.env.adopt_roles(
+            [
+                "Manager",
+            ]
+        ):
+            content = api.content.get(path=path)
+        assert content.title == title
+        assert content.portal_type == portal_type
+        if review_state:
+            assert api.content.get_state(content) == review_state
+        else:
+            with pytest.raises(WorkflowException) as exc:
+                api.content.get_state(content)
+            assert "No workflow provides" in str(exc)

@@ -1,7 +1,7 @@
 {
-  "name": "@kitconcept/volto-intranet",
-  "version": "1.0.0-alpha.1",
-  "description": "A new add-on for Volto",
+  "name": "volto-intranet",
+  "version": "1.0.0-alpha.0",
+  "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.js",
   "license": "MIT",
   "keywords": [
@@ -10,7 +10,7 @@
     "plone",
     "react"
   ],
-  "author": "kitconcept, GmbH",
+  "author": "kitconcept GmbH",
   "homepage": "https://github.com/kitconcept/volto-intranet#readme",
   "repository": {
     "type": "git",
@@ -18,6 +18,22 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intl": "3.8.0"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.1",
+    "release-it": "^17.1.1"
   },
   "addons": [
     "@kitconcept/volto-solr",
@@ -31,13 +47,6 @@
     "@kitconcept/volto-slider-block",
     "@kitconcept/volto-light-theme"
   ],
-  "scripts": {
-    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
-    "dry-release": "release-it --dry-run",
-    "release": "release-it",
-    "release-major-alpha": "release-it major --preRelease=alpha",
-    "release-alpha": "release-it --preRelease=alpha"
-  },
   "dependencies": {
     "@plone/components": "^2.0.0-alpha.8",
     "@kitconcept/volto-solr": "^1.0.0-alpha.4",
@@ -51,14 +60,5 @@
     "@kitconcept/volto-separator-block": "^4.1.1",
     "@kitconcept/volto-slider-block": "^6.3.1",
     "@kitconcept/volto-light-theme": "^3.3.0"
-  },
-  "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-intl": "3.8.0"
-  },
-  "devDependencies": {
-    "@plone/scripts": "^3.6.1",
-    "release-it": "^17.1.1"
   }
 }

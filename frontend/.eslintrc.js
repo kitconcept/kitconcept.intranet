@@ -23,7 +23,7 @@ module.exports = {
           ],
           ['@plone/registry', `${coreLocation}/packages/registry/src`],
           [
-            '@kitconcept/volto-intranet',
+            'volto-intranet',
             './packages/volto-intranet/src',
           ],
         ],

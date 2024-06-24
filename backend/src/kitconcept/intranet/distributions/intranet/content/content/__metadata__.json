@@ -1,6 +1,7 @@
 {
   "__version__": "1.0.0",
   "_blob_files_": [
+    "50c969b05290465da8e38b46fcfb4cf7/image/stefan-spassov-k87dHceae1w-unsplash.jpg",
     "023daca5870d4226871c44317e2840ab/image/ahmad-ossayli-laJW5pp-6Yw-unsplash.jpg",
     "3f5e5703eee34cbbb27a7c41e2ed347e/image/anton-CtlZ68KBDIo-unsplash.jpg",
     "70e63351448f45968af7bca53f418e6b/image/christopher-campbell-rDEOVtE7vOs-unsplash (4).jpg",
@@ -16,8 +17,7 @@
     "da07e218ea5e4c6c8582be7936d4686d/image/valeria-nikitina-n99YXHGyQj8-unsplash.jpg",
     "7e0183099bc547efad04d031ac04c23a/image/viktor-forgacs-Q2nx_2QBbYM-unsplash.jpg",
     "24d00ed0888f4d8a97230123f88d74e2/image/vinicius-amnx-amano-wRM_cNrP53E-unsplash.jpg",
-    "575ada43fa3047218a8824890fd3355a/image/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg",
-    "50c969b05290465da8e38b46fcfb4cf7/image/stefan-spassov-k87dHceae1w-unsplash.jpg"
+    "575ada43fa3047218a8824890fd3355a/image/volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg"
   ],
   "_data_files_": [
     "plone_site_root/data.json",
@@ -53,6 +53,147 @@
     "575ada43fa3047218a8824890fd3355a/data.json"
   ],
   "default_page": {},
+  "local_permissions": {
+    "023daca5870d4226871c44317e2840ab": {},
+    "0c1eaeaca2cc47f48eae213121a6f7a8": {},
+    "0e78d2b30abb4d4283068556dc58c9e2": {},
+    "144516507ac74892b96c1f7b574af7c4": {},
+    "1e7262f173a54700a5ca2578506b1bc1": {},
+    "239b6e7bb69e4cd79b71be7a4e90a285": {},
+    "24d00ed0888f4d8a97230123f88d74e2": {},
+    "28985e382c0f4147bb5ea95c9ac8085e": {},
+    "2c2f8092acfc4f55830b16af13273882": {},
+    "37bcbfabfe6b47bca2af52fc08fead0a": {},
+    "3f5e5703eee34cbbb27a7c41e2ed347e": {},
+    "50c969b05290465da8e38b46fcfb4cf7": {},
+    "575ada43fa3047218a8824890fd3355a": {},
+    "5f1077b5414743429689927de357c350": {},
+    "68d35bb747e2435e96863049a871b755": {},
+    "6b1c57b5651546eab14fd5e0e1e32aeb": {},
+    "70e63351448f45968af7bca53f418e6b": {},
+    "75f2d0b5a1f04f7a922c47be34f9f532": {},
+    "7e0183099bc547efad04d031ac04c23a": {},
+    "ab9fa349a4704ae9bc83fef1f51fe08a": {},
+    "afb59233c4e04945a4c8c1ec161c7124": {},
+    "b25ac9b29c9247c7bde7c6b5eca71720": {},
+    "c7a850a9c8d4495c8f742651da87729f": {},
+    "da07e218ea5e4c6c8582be7936d4686d": {},
+    "df4d71d6f0d044ec8ecd9c5164449c37": {},
+    "e22f445ce04d465aa3635729294fb81a": {},
+    "e6a2ed459bd84ff1b1b75818c0b373b1": {},
+    "f10b7bca6e014ff7a56598f1cfcc4d2b": {},
+    "f255cc2bd29849d19428b865f52819d9": {},
+    "f29a0a79ff974cbab0ea9b016944336a": {},
+    "plone_site_root": {
+      "Add portal member": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner"
+        ]
+      },
+      "Content rules: Manage rules": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator"
+        ]
+      },
+      "Delete own comments": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Reviewer",
+          "Owner"
+        ]
+      },
+      "Reply to item": {
+        "acquire": false,
+        "roles": [
+          "Authenticated"
+        ]
+      },
+      "Set own password": {
+        "acquire": false,
+        "roles": [
+          "Authenticated",
+          "Manager",
+          "Site Administrator"
+        ]
+      },
+      "Set own properties": {
+        "acquire": false,
+        "roles": [
+          "Authenticated",
+          "Manager",
+          "Site Administrator"
+        ]
+      },
+      "Show Toolbar": {
+        "acquire": false,
+        "roles": [
+          "Authenticated"
+        ]
+      },
+      "collective.contact_behaviors: View Basic Address Information": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner",
+          "Editor",
+          "Contributor",
+          "Reader",
+          "Anonymous"
+        ]
+      },
+      "collective.contact_behaviors: View Contact Information": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner",
+          "Editor",
+          "Contributor"
+        ]
+      },
+      "collective.contact_behaviors: View Detailed Address Information": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner",
+          "Editor",
+          "Contributor"
+        ]
+      },
+      "collective.person: Add Person": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator",
+          "Owner",
+          "Editor",
+          "Contributor"
+        ]
+      },
+      "plone.resource: Export ZIP file": {
+        "acquire": false,
+        "roles": [
+          "Manager"
+        ]
+      },
+      "plone.resourceeditor: Manage Sources": {
+        "acquire": false,
+        "roles": [
+          "Manager",
+          "Site Administrator"
+        ]
+      }
+    }
+  },
   "local_roles": {
     "023daca5870d4226871c44317e2840ab": {
       "local_roles": {

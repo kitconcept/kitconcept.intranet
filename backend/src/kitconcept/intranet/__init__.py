@@ -4,6 +4,8 @@ from zope.i18nmessageid import MessageFactory
 import logging
 
 
-_ = MessageFactory("kitconcept.intranet")
+PACKAGE_NAME = "kitconcept.intranet"
 
-logger = logging.getLogger("kitconcept.intranet")
+_ = MessageFactory(PACKAGE_NAME)
+
+logger = logging.getLogger(PACKAGE_NAME)

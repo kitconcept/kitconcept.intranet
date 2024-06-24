@@ -1,11 +1,9 @@
 {
   "base": [
     "plone.app.contenttypes:default",
-    "plone.app.caching:default",
+    "plonetheme.barceloneta:default",
     "plone.restapi:default",
     "plone.volto:default",
-    "kitconcept.solr:default",
-    "plonetheme.barceloneta:default",
     "kitconcept.intranet:default"
   ],
   "content": []

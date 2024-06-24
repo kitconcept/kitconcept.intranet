@@ -2,22 +2,22 @@
 #     https://tech.davis-hansson.com/p/make/
 SHELL:=bash
 .ONESHELL:
-.SHELLFLAGS:=-eu -o pipefail -c
+.SHELLFLAGS:=-xeu -o pipefail -O inherit_errexit -c
 .SILENT:
 .DELETE_ON_ERROR:
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
 
 CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-
-PLONE_VERSION=$$(cat backend/version.txt)
-VOLTO_VERSION = $(shell cat ./frontend/package.json | python -c "import sys, json; print(json.load(sys.stdin)['dependencies']['@plone/volto'])")
-
-COMPOSE_PROJECT_NAME?="kitconcept_intranet"
-SOLR_ONLY_COMPOSE?=${CURRENT_DIR}/docker-compose.yml
+GIT_FOLDER=$(CURRENT_DIR)/.git
 
 PROJECT_NAME=kitconcept.intranet
-STACK_NAME=kitconcept-intranet
+STACK_NAME=plone-intranet-kitconcept-com
+
+VOLTO_VERSION = $(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
+PLONE_VERSION =$(shell cat backend/version.txt)
+
+PRE_COMMIT=pipx run --spec 'pre-commit==3.7.1' pre-commit
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -35,59 +35,70 @@ all: install
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: install-frontend
-install-frontend:  ## Install React Frontend
+###########################################
+# Frontend
+###########################################
+.PHONY: frontend-install
+frontend-install:  ## Install React Frontend
 	$(MAKE) -C "./frontend/" install
 
-.PHONY: build-frontend
-build-frontend:  ## Build React Frontend
+.PHONY: frontend-build
+frontend-build:  ## Build React Frontend
 	$(MAKE) -C "./frontend/" build
 
-.PHONY: start-frontend
-start-frontend:  ## Start React Frontend
+.PHONY: frontend-start
+frontend-start:  ## Start React Frontend
 	$(MAKE) -C "./frontend/" start
 
-.PHONY: install-backend
-install-backend:  ## Create virtualenv and install Plone
-	$(MAKE) -C "./backend/" build-dev
-	$(MAKE) create-site
+.PHONY: frontend-test
+frontend-test:  ## Test frontend codebase
+	@echo "Test frontend"
+	$(MAKE) -C "./frontend/" test
 
-.PHONY: build-backend
-build-backend:  ## Build Backend
-	$(MAKE) -C "./backend/" build-dev
+###########################################
+# Backend
+###########################################
+.PHONY: backend-install
+backend-install:  ## Create virtualenv and install Plone
+	$(MAKE) -C "./backend/" install
+	$(MAKE) backend-create-site
 
-.PHONY: create-site
-create-site: ## Create a Plone site with default content
+.PHONY: backend-build
+backend-build:  ## Build Backend
+	$(MAKE) -C "./backend/" install
+
+.PHONY: backend-create-site
+backend-create-site: ## Create a Plone site with default content
+	$(MAKE) solr-start
 	$(MAKE) -C "./backend/" create-site
+	$(MAKE) solr-stop
 
-.PHONY: create-site-force
-create-site-force: ## Create a Plone site with default content
-	$(MAKE) -C "./backend/" create-site-force
+.PHONY: backend-update-example-content
+backend-update-example-content: ## Export example content inside package
+	$(MAKE) -C "./backend/" update-example-content
 
-.PHONY: start-backend
-start-backend: ## Start Plone Backend
+.PHONY: backend-start
+backend-start: ## Start Plone Backend
 	$(MAKE) -C "./backend/" start
+
+.PHONY: backend-test
+backend-test:  ## Test backend codebase
+	@echo "Test backend"
+	$(MAKE) -C "./backend/" test
 
 .PHONY: install
 install:  ## Install
 	@echo "Install Backend & Frontend"
-	$(MAKE) install-backend
-	$(MAKE) install-frontend
-
-# TODO production build
-
-.PHONY: build
-build:  ## Build in development mode
-	@echo "Build"
-	$(MAKE) build-backend
-	$(MAKE) install-frontend
-
+	if [ -d $(GIT_FOLDER) ]; then $(PRE_COMMIT) install; else echo "$(RED) Not installing pre-commit$(RESET)";fi
+	$(MAKE) backend-install
+	$(MAKE) frontend-install
 
 .PHONY: start
 start:  ## Start
 	@echo "Starting application"
-	$(MAKE) start-backend
-	$(MAKE) start-frontend
+	$(MAKE) solr-start
+	$(MAKE) backend-start
+	$(MAKE) frontend-start
 
 .PHONY: clean
 clean:  ## Clean installation
@@ -95,16 +106,10 @@ clean:  ## Clean installation
 	$(MAKE) -C "./backend/" clean
 	$(MAKE) -C "./frontend/" clean
 
-.PHONY: export
-export:  ## Clean installation
-	@echo "Export"
-	$(MAKE) -C "./backend/" export
-
-.PHONY: format
-format:  ## Format codebase
-	@echo "Format codebase"
-	$(MAKE) -C "./backend/" format
-	$(MAKE) -C "./frontend/" format
+.PHONY: check
+check:  ## Lint and Format codebase
+	@echo "Lint and Format codebase"
+	$(PRE_COMMIT) run -a
 
 .PHONY: i18n
 i18n:  ## Update locales
@@ -112,18 +117,8 @@ i18n:  ## Update locales
 	$(MAKE) -C "./backend/" i18n
 	$(MAKE) -C "./frontend/" i18n
 
-.PHONY: test-backend
-test-backend:  ## Test backend codebase
-	@echo "Test backend"
-	$(MAKE) -C "./backend/" test
-
-.PHONY: test-frontend
-test-frontend:  ## Test frontend codebase
-	@echo "Test frontend"
-	$(MAKE) -C "./frontend/" test
-
 .PHONY: test
-test:  test-backend test-frontend ## Test codebase
+test:  backend-test frontend-test ## Test codebase
 
 .PHONY: build-images
 build-images:  ## Build docker images
@@ -131,12 +126,35 @@ build-images:  ## Build docker images
 	$(MAKE) -C "./backend/" build-image
 	$(MAKE) -C "./frontend/" build-image
 
+## Solr
+.PHONY: solr-start
+solr-start:  ## SOLR: Start local service
+	@echo "Start local Solr"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml up -d solr
+	@echo "Solr running on port 8983"
+
+.PHONY: solr-stop
+solr-stop:  ## SOLR: Stop local service
+	@echo "Stop local Solr"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml stop solr
+
+.PHONY: solr-status
+solr-status:  ## SOLR: Status of local service
+	@echo "Stop local Solr"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml ps solr
+
+.PHONY: solr-reindex-site
+solr-reindex-site: solr-start ## SOLR: Activate and reindex
+	@echo "Solr: Activate and reindex site"
+	$(MAKE) -C "./backend/" solr-reindex-site
+
+
 ## Docker stack
 .PHONY: stack-start
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
-	@docker compose -f docker-compose.yml up -d --build
-	@echo "Now visit: http://kitconcept.com.localhost"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml up -d --build
+	@echo "Now visit: http://kitconcept.intranet.localhost"
 
 .PHONY: start-stack
 stack-create-site:  ## Local Stack: Create a new site
@@ -158,19 +176,15 @@ stack-rm:  ## Local Stack: Remove Services and Volumes
 	@echo "Remove local Docker stack"
 	@docker compose -f docker-compose.yml down
 	@echo "Remove local volume data"
-	@docker volume rm $(STACK_NAME)_vol-site-data
+	@docker volume rm $(PROJECT_NAME)_vol-site-data
 
 ## Acceptance
-.PHONY: test-acceptance
-test-acceptance: ## Start Cypress (for use it while developing)
-	(cd frontend && ./node_modules/.bin/cypress open --config specPattern='cypress/tests/**/*.{js,jsx,ts,tsx}')
-
 .PHONY: build-acceptance-servers
 build-acceptance-servers: ## Build Acceptance Servers
 	@echo "Build acceptance backend"
-	@docker build backend --build-arg PLONE_VERSION=${PLONE_VERSION} -t kitconcept/kitconcept.intranet-backend:acceptance -f backend/Dockerfile.acceptance
+	@docker build backend -t kitconcept/kitconcept.intranet-backend:acceptance -f backend/Dockerfile.acceptance
 	@echo "Build acceptance frontend"
-	@docker build frontend --build-arg VOLTO_VERSION=${VOLTO_VERSION} -t kitconcept/kitconcept.intranet-frontend:acceptance -f frontend/Dockerfile
+	@docker build frontend -t kitconcept/kitconcept.intranet-frontend:acceptance -f frontend/Dockerfile
 
 .PHONY: start-acceptance-servers
 start-acceptance-servers: build-acceptance-servers ## Start Acceptance Servers
@@ -191,66 +205,3 @@ run-acceptance-tests: ## Run Acceptance tests
 	npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
 	$(MAKE) -C "./frontend/" test-acceptance-headless
 	$(MAKE) stop-acceptance-servers
-
-.PHONY: acceptance-backend-build
-acceptance-backend-build: ## Build Acceptance Backend
-	@echo "Build acceptance backend"
-	@docker build backend --build-arg PLONE_VERSION=${PLONE_VERSION} -t kitconcept/kitconcept.intranet-backend:acceptance -f backend/Dockerfile.acceptance
-
-.PHONY: start-test-acceptance-frontend-dev
-start-test-acceptance-frontend-dev: ## Start the Core Acceptance Frontend Fixture in dev mode
-	(cd frontend && RAZZLE_API_PATH=http://127.0.0.1:55001/plone yarn start)
-
-.PHONY: start-test-acceptance-server
-start-test-acceptance-server: acceptance-backend-build ## Start Backend Acceptance Servers
-	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name kitconcept.intranet-backend-acceptance -d kitconcept/kitconcept.intranet-backend:acceptance
-
-.PHONY: stop-acceptance-server
-stop-acceptance-server: ## Stop Backend Acceptance Server
-	@echo "Stop backend acceptance container"
-	@docker stop kitconcept.intranet-backend-acceptance
-
-## Solr only
-.PHONY: solr-prepare
-	solr-prepare: ## Prepare solr
-	@echo "$(RED)==> Preparing solr $(RESET)"
-	mkdir -p ${SOLR_DATA_FOLDER}/solr
-
-.PHONY: start-solr
-start-solr: solr-start
-
-.PHONY: stop-solr
-stop-solr: solr-stop
-
-.PHONY: start-solr-fg
-start-solr-fg: solr-start-fg
-
-.PHONY: solr-start
-solr-start: ## Start solr
-	@echo "Start solr"
-	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up -d
-
-.PHONY: solr-start-and-rebuild
-solr-start-and-rebuild: ## Start solr, force rebuild
-	@echo "Start solr, force rebuild, erases data"
-	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up -d --build
-
-.PHONY: solr-start-fg
-solr-start-fg: ## Start solr in foreground
-	@echo "Start solr in foreground"
-	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} up
-
-.PHONY: solr-stop
-solr-stop: ## Stop solr
-	@echo "Stop solr"
-	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} down
-
-.PHONY: solr-logs
-solr-logs: ## Show solr logs
-	@echo "Show solr logs"
-	@COMPOSE_PROJECT_NAME=${COMPOSE_PROJECT_NAME} docker compose -f ${SOLR_ONLY_COMPOSE} logs -f
-
-.PHONY: solr-activate-and-reindex
-solr-activate-and-reindex: instance/etc/zope.ini ## Activate and reindex solr
-	PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf scripts/solr_activate_and_reindex.py --clear

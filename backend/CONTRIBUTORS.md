@@ -1,3 +1,3 @@
 # Contributors
 
-- kitconcept [info@kitconcept.com]
+- kitconcept GmbH [info@kitconcept.com]

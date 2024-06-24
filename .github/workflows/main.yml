@@ -1,4 +1,4 @@
-name: Main
+name: Main Workflow
 
 on:
   push:
@@ -41,16 +41,18 @@ jobs:
 
   backend:
     uses: ./.github/workflows/backend.yml
-    needs: config
-    if: ${{ needs.changes.outputs.backend == 'true' }}
+    needs:
+      - config
+    if: ${{ needs.config.outputs.backend == 'true' }}
     permissions:
       contents: read
       packages: write
 
   frontend:
     uses: ./.github/workflows/frontend.yml
-    needs: config
-    if: ${{ needs.changes.outputs.frontend == 'true' }}
+    needs:
+      - config
+    if: ${{ needs.config.outputs.frontend == 'true' }}
     permissions:
       contents: read
       packages: write

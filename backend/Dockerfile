@@ -26,7 +26,7 @@ EOT
 FROM plone/server-prod-config:${PLONE_VERSION}
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
-      org.label-schema.name="ghcr.io/kitconcept.intranet-backend" \
+      org.label-schema.name="ghcr.io/kitconcept/kitconcept.intranet-backend" \
       org.label-schema.description="A Plone distribution for Intranets with Plone. Created by kitconcept." \
       org.label-schema.vendor="kitconcept GmbH"
 

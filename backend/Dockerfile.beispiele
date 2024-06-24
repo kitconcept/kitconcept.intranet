@@ -4,7 +4,7 @@ ARG SEED=1000
 FROM ghcr.io/kitconcept/kitconcept.intranet-backend:${IMAGE_TAG:-latest}
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
-      org.label-schema.name="ghcr.io/kitconcept.intranet-beispiele" \
+      org.label-schema.name="ghcr.io/kitconcept/kitconcept.intranet-beispiele" \
       org.label-schema.description="A Plone distribution for Intranets with Plone. Created by kitconcept." \
       org.label-schema.vendor="kitconcept GmbH"
 

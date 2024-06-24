@@ -91,11 +91,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Plone ${{ needs.meta.outputs.PLONE_VERSION }} with Python ${{ env.PYTHON_VERSION }}
+      - name: Setup Plone ${{ needs.config.outputs.PLONE_VERSION }} with Python ${{ env.PYTHON_VERSION }}
         uses: plone/setup-plone@v2.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          plone-version: ${{ needs.meta.outputs.PLONE_VERSION }}
+          plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
 
       - name: Install package
         run: |

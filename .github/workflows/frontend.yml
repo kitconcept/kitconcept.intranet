@@ -138,4 +138,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            VOLTO_VERSION=${{ needs.meta.outputs.VOLTO_VERSION }}
+            VOLTO_VERSION=${{ needs.config.outputs.VOLTO_VERSION }}

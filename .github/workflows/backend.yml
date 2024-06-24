@@ -175,7 +175,9 @@ jobs:
         with:
           platforms: linux/amd64
           context: backend
-          build-args: SEED=${{ github.run_id }} IMAGE_TAG=${{ github.ref_name }}
+          build-args: |
+            SEED=${{ github.run_id }}
+            IMAGE_TAG=${{ github.ref_name }}
           file: backend/Dockerfile.beispiele
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-beispiele.outputs.tags }}

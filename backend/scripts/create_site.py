@@ -85,8 +85,9 @@ if site_id in app.objectIds() and DELETE_EXISTING:
     logger.info(f" - Deleted existing site with id {site_id}")
 else:
     logger.info(
-        f" - Stopping site creation, as there is already a site with id {site_id} at the instance. "
-        "Set DELETE_EXISTING=1 to delete the existing site before creating a new one."
+        f" - Stopping site creation, as there is already a site with id {site_id} "
+        "at the instance. Set DELETE_EXISTING=1 to delete the existing site before "
+        "creating a new one."
     )
 
 if site_id not in app.objectIds():

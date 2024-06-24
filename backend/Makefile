@@ -50,6 +50,7 @@ GIT_FOLDER=$(ROOT_FOLDER)/.git
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
 BIN_FOLDER=$(VENV_FOLDER)/bin
 
+SEED=$(shell date +'%Y%m%d-%H%M%S')
 
 all: build
 
@@ -140,4 +141,7 @@ test-coverage: $(BIN_FOLDER)/tox ## run tests with coverage
 # Build Docker image
 .PHONY: build-image
 build-image:  ## Build Docker Images
+	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) $(RESET)"
 	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
+	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) $(RESET)"
+	@DOCKER_BUILDKIT=1 docker build .  --pull=false -t $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) -f Dockerfile.beispiele --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)

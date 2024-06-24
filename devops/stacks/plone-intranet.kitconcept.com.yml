@@ -2,79 +2,14 @@
 version: '3.8'
 
 services:
-  traefik:
-    image: traefik:v2.10
-
-    ports:
-      - 80:80
-      - 443:443
-
-    deploy:
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 5s
-        order: start-first
-      labels:
-        - traefik.enable=true
-        - traefik.constraint-label=public
-        - traefik.http.services.traefik-public.loadbalancer.server.port=8000
-        ## Basic Authentication
-        ### Note: all dollar signs in the hash need to be doubled for escaping.
-        ### To create user:password pair, it's possible to use this command:
-        ### echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
-        ### Defaults to admin:admin
-        #- traefik.http.middlewares.admin-auth.basicauth.users=admin:$$apr1$$uZPT5Fgu$$AmlIdamxT5ipBvPlsdfD70
-        #- traefik.http.routers.traefik-public-https.rule=Host(`traefik-plone-intranet.kitconcept.com`)
-        #- traefik.http.routers.traefik-public-https.entrypoints=https
-        #- traefik.http.routers.traefik-public-https.tls=true
-        #- traefik.http.routers.traefik-public-https.service=api@internal
-        #- traefik.http.routers.traefik-public-https.middlewares=admin-auth
-
-        # GENERIC MIDDLEWARES
-        - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
-        - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
-        - traefik.http.middlewares.gzip.compress=true
-        - traefik.http.middlewares.gzip.compress.excludedcontenttypes=image/png, image/jpeg, font/woff2
-
-        # GENERIC ROUTERS
-        - traefik.http.routers.generic-https-redirect.entrypoints=http
-        - traefik.http.routers.generic-https-redirect.rule=HostRegexp(`{host:.*}`)
-        - traefik.http.routers.generic-https-redirect.priority=1
-        - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
-
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - vol-traefik-certs:/certificates
-
-    command:
-      - --providers.docker
-      - --providers.docker.constraints=Label(`traefik.constraint-label`, `public`)
-      - --providers.docker.exposedbydefault=false
-      - --providers.docker.swarmmode
-      - --providers.docker.network=plone-intranet-kitconcept-com_nw-internal
-      - --entrypoints.http.address=:80
-      - --entrypoints.https.address=:443
-      - --certificatesresolvers.le.acme.email=info@kitconcept.com
-      - --certificatesresolvers.le.acme.storage=/certificates/acme.json
-      - --certificatesresolvers.le.acme.tlschallenge=true
-      - --accesslog
-      - --log
-      - --log.level=INFO
-      - --api
-
-    networks:
-      - nw-internal
 
   frontend:
     image: ghcr.io/kitconcept/kitconcept.intranet-frontend:${STACK_PARAM:-latest}
     environment:
-      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+      RAZZLE_INTERNAL_API_PATH: http://plone-intranet-kitconcept-com_backend:8080/Plone
       RAZZLE_API_PATH: https://plone-intranet.kitconcept.com
-    depends_on:
-      - backend
     networks:
-      - nw-internal
+      - public
     deploy:
       replicas: 2
       update_config:
@@ -85,26 +20,22 @@ services:
         - traefik.enable=true
         - traefik.constraint-label=public
         # Service
-        - traefik.http.services.svc-frontend.loadbalancer.server.port=3000
+        - traefik.http.services.svc-kc-intranet-front.loadbalancer.server.port=3000
         # Routers
         ## /
-        - traefik.http.routers.rt-frontend.rule=Host(`plone-intranet.kitconcept.com`)
-        - traefik.http.routers.rt-frontend.entrypoints=https
-        - traefik.http.routers.rt-frontend.tls=true
-        - traefik.http.routers.rt-frontend.tls.certresolver=le
-        - traefik.http.routers.rt-frontend.service=svc-frontend
-        - traefik.http.routers.rt-frontend.middlewares=gzip
+        - traefik.http.routers.rt-kc-intranet-front.rule=Host(`plone-intranet.kitconcept.com`)
+        - traefik.http.routers.rt-kc-intranet-front.entrypoints=https
+        - traefik.http.routers.rt-kc-intranet-front.tls=true
+        - traefik.http.routers.rt-kc-intranet-front.tls.certresolver=le
+        - traefik.http.routers.rt-kc-intranet-front.service=svc-kc-intranet-front
+        - traefik.http.routers.rt-kc-intranet-front.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept.intranet-backend:${STACK_PARAM:-latest}
-    environment:
-      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-OwAaOExRfIvY}' port='${DB_PORT:-5432}'"
-    depends_on:
-      - db
+    image: ghcr.io/kitconcept/kitconcept.intranet-beispiele:${STACK_PARAM:-latest}
     networks:
-      - nw-internal
+      - public
     deploy:
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 1
         delay: 5s
@@ -113,61 +44,34 @@ services:
         - traefik.enable=true
         - traefik.constraint-label=public
         # Services
-        - traefik.http.services.svc-backend.loadbalancer.server.port=8080
+        - traefik.http.services.svc-kc-intranet-back.loadbalancer.server.port=8080
         # Middlewares
         ## VHM rewrite /++api++/
-        - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
-        - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.replacement=/VirtualHostBase/https/plone-intranet.kitconcept.com/Plone/++api++/VirtualHostRoot$$1"
+        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-api.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-api.replacepathregex.replacement=/VirtualHostBase/https/plone-intranet.kitconcept.com/Plone/++api++/VirtualHostRoot$$1"
         ## VHM rewrite /ClassicUI/
-        - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
-        - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/plone-intranet.kitconcept.com/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
+        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
+        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/plone-intranet.kitconcept.com/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
         ## Basic Authentication
         ### Note: all dollar signs in the hash need to be doubled for escaping.
         ### To create user:password pair, it's possible to use this command:
         ### echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
-        ### Defaults to admin:admin
-        - traefik.http.middlewares.mw-backend-auth.basicauth.users=admin:$$apr1$$uZPT5Fgu$$AmlIdamxT5ipBvPlsdfD70
+        - traefik.http.middlewares.mw-kc-intranet-back-auth.basicauth.users=intra-admin:$$apr1$$6RN5HfVi$$gB0AHNAzvzKXudmevCYdU.
 
         # Routes
         ## /++api++
-        - traefik.http.routers.rt-backend-api.rule=Host(`plone-intranet.kitconcept.com`) && PathPrefix(`/++api++`)
-        - traefik.http.routers.rt-backend-api.entrypoints=https
-        - traefik.http.routers.rt-backend-api.tls=true
-        - traefik.http.routers.rt-backend-api.service=svc-backend
-        - traefik.http.routers.rt-backend-api.middlewares=gzip,mw-backend-vhm-api
+        - traefik.http.routers.rt-kc-intranet-back-api.rule=Host(`plone-intranet.kitconcept.com`) && PathPrefix(`/++api++`)
+        - traefik.http.routers.rt-kc-intranet-back-api.entrypoints=https
+        - traefik.http.routers.rt-kc-intranet-back-api.tls=true
+        - traefik.http.routers.rt-kc-intranet-back-api.service=svc-kc-intranet-back
+        - traefik.http.routers.rt-kc-intranet-back-api.middlewares=gzip,mw-kc-intranet-back-vhm-api
         ## /ClassicUI
-        - traefik.http.routers.rt-backend-classic.rule=Host(`plone-intranet.kitconcept.com`) && PathPrefix(`/ClassicUI`)
-        - traefik.http.routers.rt-backend-classic.entrypoints=https
-        - traefik.http.routers.rt-backend-classic.tls=true
-        - traefik.http.routers.rt-backend-classic.service=svc-backend
-        - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
-
-  db:
-    image: postgres:14
-    environment:
-      POSTGRES_USER: plone
-      POSTGRES_PASSWORD: OwAaOExRfIvY
-      POSTGRES_DB: plone
-    deploy:
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 1s
-        order: stop-first
-    volumes:
-      - vol-site-data:/var/lib/postgresql/data
-    networks:
-      - nw-internal
-
-volumes:
-  vol-traefik-certs: {}
-  vol-site-data:
-    driver_opts:
-      type: none
-      device: /srv/kitconcept.intranet/data
-      o: bind
+        - traefik.http.routers.rt-kc-intranet-back-classic.rule=Host(`plone-intranet.kitconcept.com`) && PathPrefix(`/ClassicUI`)
+        - traefik.http.routers.rt-kc-intranet-back-classic.entrypoints=https
+        - traefik.http.routers.rt-kc-intranet-back-classic.tls=true
+        - traefik.http.routers.rt-kc-intranet-back-classic.service=svc-kc-intranet-back
+        - traefik.http.routers.rt-kc-intranet-back-classic.middlewares=gzip,mw-kc-intranet-back-auth,mw-kc-intranet-back-vhm-classic
 
 networks:
-  nw-internal:
-    internal: true
-    driver: overlay
+  public:
+    external: true

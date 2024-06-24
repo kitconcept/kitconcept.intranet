@@ -101,7 +101,6 @@ services:
       - traefik.http.routers.rt-backend-zmi.service=svc-backend
       - traefik.http.routers.rt-backend-zmi.middlewares=gzip
 
-
   db:
     image: postgres:14
     environment:

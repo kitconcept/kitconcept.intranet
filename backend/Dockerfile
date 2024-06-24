@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG PLONE_VERSION=6.0.11
-FROM plone/server-builder:${PLONE_VERSION} as builder
+FROM plone/server-builder:${PLONE_VERSION} AS builder
 
 WORKDIR /app
 
@@ -26,14 +26,18 @@ EOT
 FROM plone/server-prod-config:${PLONE_VERSION}
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
-      org.label-schema.name="ghcr.io/kitconcept/intranet" \
+      org.label-schema.name="ghcr.io/kitconcept.intranet-backend" \
       org.label-schema.description="A Plone distribution for Intranets with Plone. Created by kitconcept." \
       org.label-schema.vendor="kitconcept GmbH"
 
 # Disable MO Compilation
 ENV zope_i18n_compile_mo_files=
+
 # Show only our distributions
-ENV ALLOWED_DISTRIBUTIONS=intranet
+ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
+
+# Increase Upload limit to 6MB
+ENV ZOPE_FORM_MEMORY_LIMIT=6MB
 
 # Copy /app from builder
 COPY --from=builder /app /app

@@ -12,7 +12,7 @@ def answers():
     return {
         "site_id": "intranet",
         "title": "My Site",
-        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",
+        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA
         "default_language": "en",
         "portal_timezone": "Europe/Berlin",
         "setup_content": True,

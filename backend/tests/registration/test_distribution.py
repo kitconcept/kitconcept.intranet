@@ -11,7 +11,7 @@ class TestDistribution:
             ("title", "My Site"),
             (
                 "description",
-                "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",
+                "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA
             ),
             ("exclude_from_nav", False),
         ],

@@ -1,0 +1,25 @@
+# syntax=docker/dockerfile:1
+ARG IMAGE_TAG
+ARG SEED=1000
+FROM ghcr.io/kitconcept/kitconcept.intranet-backend:${IMAGE_TAG:-latest}
+
+LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
+      org.label-schema.name="ghcr.io/kitconcept.intranet-beispiele" \
+      org.label-schema.description="A Plone distribution for Intranets with Plone. Created by kitconcept." \
+      org.label-schema.vendor="kitconcept GmbH"
+
+# Disable MO Compilation
+ENV zope_i18n_compile_mo_files=
+# Show only our distributions
+ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
+
+# Increase Upload limit to 6MB
+ENV ZOPE_FORM_MEMORY_LIMIT=6MB
+
+RUN <<EOT
+    set -e
+    ln -s /data /app/var
+    chown -R 500:500 /app/etc/
+    cat ${SEED} > /app/__created__.txt
+    SEED=${SEED} ./docker-entrypoint.sh create-site
+EOT

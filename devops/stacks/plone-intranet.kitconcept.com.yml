@@ -10,6 +10,8 @@ services:
       RAZZLE_API_PATH: https://plone-intranet.kitconcept.com
     networks:
       - public
+    healthcheck:
+      disable: true
     deploy:
       replicas: 2
       update_config:

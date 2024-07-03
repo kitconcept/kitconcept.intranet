@@ -1,11 +1,26 @@
 {
   "schema": {
     "title": "kitconcept Intranet",
-    "description": "Adds a new Plone content management system intranet.",
+    "description": "Create a new Intranet based on Plone.",
     "type": "object",
+    "definitions": {
+      "workflows": {
+        "oneOf": [
+          {
+            "const": "restricted",
+            "title": "Requires authentication"
+          },
+          {
+            "const": "public",
+            "title": "Public access"
+          }
+        ]
+      }
+    },
     "required": [
       "site_id",
-      "title"
+      "title",
+      "workflow"
     ],
     "properties": {
       "site_id": {
@@ -30,6 +45,12 @@
         "format": "data-url",
         "title": "Site logo"
       },
+      "workflow": {
+        "type": "string",
+        "title": "Intranet access",
+        "$ref": "#/definitions/workflows",
+        "default": "restricted"
+      },
       "default_language": {"$ref": "#/definitions/languages"},
       "setup_content": {
         "type": "boolean",
@@ -40,5 +61,6 @@
     }
   },
   "uischema": {
+    "site_id": {"ui:widget": "hidden"}
   }
 }

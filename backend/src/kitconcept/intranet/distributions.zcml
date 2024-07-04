@@ -10,6 +10,7 @@
       title="kitconcept Intranet"
       description="A Plone distribution for Intranets with Plone. Created by kitconcept."
       directory="distributions/intranet"
+      handler=".handlers.handler"
       post_handler=".handlers.post_handler"
       pre_handler=".handlers.pre_handler"
       />

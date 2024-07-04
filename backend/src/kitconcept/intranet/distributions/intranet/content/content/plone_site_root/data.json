@@ -224,11 +224,28 @@
     "stealable": true
   },
   "parent": {},
-  "review_state": "internal",
+  "review_state": "published",
   "rights": "",
   "subjects": [],
   "table_of_contents": null,
   "title": "Plone Intranet by kitconcept",
   "type_title": "Plone Site",
-  "workflow_history": {}
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-16T20:18:37+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-05-17T09:39:07+00:00"
+      }
+    ]
+  }
 }

@@ -1,6 +1,8 @@
+from copy import deepcopy
 from kitconcept.intranet import logger
 from plone import api
 from plone.distribution.core import Distribution
+from plone.distribution.handler import default_handler
 from plone.distribution.utils.data import convert_data_uri_to_b64
 from Products.CMFPlone.Portal import PloneSite
 from Products.CMFPlone.WorkflowTool import WorkflowTool
@@ -9,6 +11,19 @@ from Products.CMFPlone.WorkflowTool import WorkflowTool
 def pre_handler(answers: dict) -> dict:
     """Process answers."""
     return answers
+
+
+def handler(distribution: Distribution, site: PloneSite, answers: dict) -> PloneSite:
+    """Handler to create a new site."""
+    default_profiles = distribution._profiles
+    workflow = answers.get("workflow", "restricted")
+    if workflow == "restricted":
+        profiles = deepcopy(default_profiles)
+        profiles["base"].append("kitconcept.intranet:restricted")
+        distribution._profiles = profiles
+    site = default_handler(distribution, site, answers)
+    distribution._profiles = default_profiles
+    return site
 
 
 def post_handler(

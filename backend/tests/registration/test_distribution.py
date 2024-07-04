@@ -1,4 +1,5 @@
 from plone import api
+from plone.app.testing.interfaces import SITE_OWNER_NAME
 from Products.CMFCore.WorkflowCore import WorkflowException
 
 import pytest
@@ -8,7 +9,7 @@ class TestDistribution:
     @pytest.mark.parametrize(
         "attr,expected",
         [
-            ("title", "My Site"),
+            ("title", "Intranet"),
             (
                 "description",
                 "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA
@@ -34,15 +35,11 @@ class TestDistribution:
     @pytest.mark.parametrize(
         "path,title,portal_type,review_state",
         [
-            ("/", "My Site", "Plone Site", "internal"),
+            ("/", "Intranet", "Plone Site", "published"),
         ],
     )
     def test_content_created(self, portal, path, title, portal_type, review_state):
-        with api.env.adopt_roles(
-            [
-                "Manager",
-            ]
-        ):
+        with api.env.adopt_user(SITE_OWNER_NAME):
             content = api.content.get(path=path)
         assert content.title == title
         assert content.portal_type == portal_type

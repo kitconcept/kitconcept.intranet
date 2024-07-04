@@ -31,9 +31,9 @@ class TestRegistration:
         assert isinstance(distribution, Distribution)
         assert getattr(distribution, attr) == expected
 
-    def test_distribution_has_no_handler(self):
+    def test_distribution_has_handler(self):
         distribution = self.distribution
-        assert distribution.handler is None
+        assert distribution.handler is not None
 
     def test_distribution_has_post_handler(self):
         distribution = self.distribution

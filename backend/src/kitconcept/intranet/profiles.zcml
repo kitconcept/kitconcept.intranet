@@ -14,20 +14,11 @@
       />
 
   <genericsetup:registerProfile
-      name="initial"
-      title="kitconcept.intranet: Initial content"
-      description="Initial content for our website."
+      name="restricted"
+      title="kitconcept.intranet: Restricted access"
+      description="Setup the intranet to always require users to be authenticated."
       provides="Products.GenericSetup.interfaces.EXTENSION"
-      directory="profiles/initial"
-      pre_handler=".setuphandlers.populate_portal"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="kitconcept.intranet: Uninstall"
-      description="Uninstall kitconcept.intranet setup."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      directory="profiles/uninstall"
+      directory="profiles/restricted"
       />
 
   <include package=".upgrades" />

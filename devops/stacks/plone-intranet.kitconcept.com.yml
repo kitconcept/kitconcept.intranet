@@ -4,7 +4,7 @@ version: '3.8'
 services:
 
   frontend:
-    image: ghcr.io/kitconcept/kitconcept.intranet-frontend:${STACK_PARAM:-latest}
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${STACK_PARAM:-latest}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://plone-intranet-kitconcept-com_backend:8080/Plone
       RAZZLE_API_PATH: https://plone-intranet.kitconcept.com
@@ -37,7 +37,7 @@ services:
         - traefik.http.routers.rt-kc-intranet-front.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept.intranet-beispiele:${STACK_PARAM:-latest}
+    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${STACK_PARAM:-latest}
     networks:
       - public
     deploy:

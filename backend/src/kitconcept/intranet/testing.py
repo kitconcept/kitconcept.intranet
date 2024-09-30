@@ -8,7 +8,7 @@ from plone.testing.zope import WSGI_SERVER_FIXTURE
 DEFAULT_ANSWERS = {
     "site_id": "plone",
     "title": "Intranet",
-    "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA
+    "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
     "default_language": "en",
     "portal_timezone": "Europe/Berlin",
     "setup_content": True,

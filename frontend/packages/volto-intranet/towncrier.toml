@@ -5,7 +5,7 @@ title_format = "## {version} ({project_date})"
 underlines = ["", "", ""]
 template = "./node_modules/@plone/scripts/templates/towncrier_template.jinja"
 start_string = "<!-- towncrier release notes start -->\n"
-issue_format = "[#{issue}](https://github.com/kitconcept/volto-intranet/issue/{issue})"
+issue_format = "[#{issue}](https://github.com/kitconcept/kitconcept.intranet/issue/{issue})"
 
 [[tool.towncrier.type]]
 directory = "breaking"
@@ -30,4 +30,9 @@ showcontent = true
 [[tool.towncrier.type]]
 directory = "documentation"
 name = "Documentation"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "test"
+name = "Test"
 showcontent = true

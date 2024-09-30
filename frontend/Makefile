@@ -23,8 +23,8 @@ PLONE_VERSION=6
 DOCKER_IMAGE=plone/server-dev:${PLONE_VERSION}
 DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
 
-ADDON_NAME='volto-intranet'
-IMAGE_NAME=ghcr.io/kitconcept/kitconcept.intranet-frontend
+ADDON_NAME='@kitconcept/volto-intranet'
+IMAGE_NAME=ghcr.io/kitconcept/kitconcept-intranet-frontend
 IMAGE_TAG=latest
 VOLTO_VERSION = $(shell cat ./mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 
@@ -32,18 +32,13 @@ VOLTO_VERSION = $(shell cat ./mrs.developer.json | python -c "import sys, json; 
 help: ## Show this help
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
-.PHONY: clean
-clean: ## Clean environment
-	@echo "$(RED)==> Frontend: Cleaning environment and build$(RESET)"
-	rm -rf core node_modules
-
 # Dev Helpers
 
 .PHONY: install
 install: ## Installs the add-on in a development environment
 	pnpm dlx mrs-developer missdev --no-config --fetch-https
 	pnpm i
-	make build-deps
+	pnpm build:deps
 
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
@@ -53,10 +48,10 @@ start: ## Starts Volto, allowing reloading of the add-on during development
 build: ## Build a production bundle for distribution of the project with the add-on
 	pnpm build
 
-core/packages/registry/dist: $(shell find core/packages/registry/src -type f)
+core/packages/registry/dist: core/packages/registry/src
 	pnpm --filter @plone/registry build
 
-core/packages/components/dist: $(shell find core/packages/components/src -type f)
+core/packages/components/dist: core/packages/components/src
 	pnpm --filter @plone/components build
 
 .PHONY: build-deps
@@ -88,7 +83,7 @@ release: ## Release the add-on on npmjs.org
 
 .PHONY: release-dry-run
 release-dry-run: ## Dry-run the release of the add-on on npmjs.org
-	pnpm release
+	pnpm dry-release
 
 .PHONY: test
 test: ## Run unit tests

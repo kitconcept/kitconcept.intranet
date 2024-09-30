@@ -12,21 +12,20 @@ COPY . src
 # Install local requirements and pre-compile mo files
 RUN <<EOT
     set -e
-    bin/pip install mxdev uv
-    mv src/requirements-docker.txt src/requirements.txt
-    sed -i 's/-e .\[test\]/./g' src/mx.ini
+    bin/pip install mxdev uv hatch
     cd /app/src
+    ../bin/hatch build
     ../bin/mxdev -c mx.ini
-    ../bin/uv pip install -r requirements-mxdev.txt
+    ../bin/uv pip install dist/*.whl -c constraints-mxdev.txt
     ../bin/python /compile_mo.py
     cd /app
-    rm -Rf src/
+    rm -Rf /app/src
 EOT
 
 FROM plone/server-prod-config:${PLONE_VERSION}
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
-      org.label-schema.name="ghcr.io/kitconcept/kitconcept.intranet-backend" \
+      org.label-schema.name="ghcr.io/kitconcept/kitconcept-intranet-backend" \
       org.label-schema.description="A Plone distribution for Intranets with Plone. Created by kitconcept." \
       org.label-schema.vendor="kitconcept GmbH"
 

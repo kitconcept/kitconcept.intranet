@@ -17,7 +17,7 @@ EOT
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
-      org.label-schema.name="kitconcept.intranet-frontend" \
+      org.label-schema.name="kitconcept-intranet-frontend" \
       org.label-schema.description="kitconcept Intranet frontend image." \
       org.label-schema.vendor="kitconcept GmbH"
 

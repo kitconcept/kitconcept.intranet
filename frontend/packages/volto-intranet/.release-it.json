@@ -10,14 +10,11 @@
   },
   "git": {
     "changelog": "pipx run towncrier build --draft --yes --version 0.0.0",
-    "requireUpstream": false,
-    "requireCleanWorkingDir": false,
-    "commitMessage": "Release ${version}",
-    "tagName": "${version}",
-    "tagAnnotation": "Release ${version}"
+    "commit": false,
+    "tag": false
   },
   "github": {
-    "release": true,
+    "release": false,
     "releaseName": "${version}",
     "releaseNotes": "cat .changelog.draft"
   }

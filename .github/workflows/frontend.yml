@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept.intranet
+  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept-intranet
   IMAGE_NAME_SUFFIX: frontend
   NODE_VERSION: 20.x
 

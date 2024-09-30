@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept.intranet
+  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept-intranet
   IMAGE_NAME_SUFFIX: backend
   PYTHON_VERSION: "3.11"
 
@@ -101,7 +101,7 @@ jobs:
           images: |
             ${{ env.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ env.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}:latest
+            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ env.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}:${{ github.ref_name }}
           flavor:
             latest=false
           tags: |
@@ -137,7 +137,7 @@ jobs:
           images: |
             ${{ env.IMAGE_NAME_PREFIX }}-beispiele
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ env.IMAGE_NAME_PREFIX }}-beispiele:latest
+            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ env.IMAGE_NAME_PREFIX }}-beispiele:${{ github.ref_name }}
           flavor:
             latest=false
           tags: |

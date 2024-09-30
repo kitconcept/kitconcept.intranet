@@ -9,8 +9,6 @@ import requests
 
 
 pytest_plugins = ["pytest_plone"]
-
-
 globals().update(
     fixtures_factory((
         (FUNCTIONAL_TESTING, "functional"),
@@ -28,7 +26,7 @@ def distribution_name() -> str:
 def is_responsive(url):
     """Helper fixture to check if Solr is up and running."""
     try:
-        response = requests.get(url)
+        response = requests.get(url)  # noQA: S113
         if response.status_code == 200:
             return b"""<str name="status">OK</str>""" in response.content
     except (exc.ConnectionError, exc.Timeout):

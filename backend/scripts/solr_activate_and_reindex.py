@@ -7,7 +7,7 @@ import transaction
 
 
 if __name__ == "__main__":
-    app = makerequest(globals()["app"])  # noQA
+    app = makerequest(globals()["app"])
 
     # Set site to Plone
     site_id = "Plone"

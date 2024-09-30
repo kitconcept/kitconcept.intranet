@@ -9,6 +9,10 @@ env:
   IMAGE_NAME_SUFFIX: backend
   PYTHON_VERSION: "3.11"
 
+defaults:
+  run:
+    working-directory: ./backend
+
 jobs:
 
   config:

@@ -11,13 +11,11 @@ MAKEFLAGS+=--no-builtin-rules
 CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 GIT_FOLDER=$(CURRENT_DIR)/.git
 
-PROJECT_NAME=kitconcept.intranet
-STACK_NAME=plone-intranet-kitconcept-com
+PROJECT_NAME=kitconcept-intranet
+STACK_FILE=docker-compose-dev.yml
 
 VOLTO_VERSION = $(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
-PLONE_VERSION =$(shell cat backend/version.txt)
-
-PRE_COMMIT=pipx run --spec 'pre-commit==3.7.1' pre-commit
+PLONE_VERSION=$(shell cat backend/version.txt)
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -69,9 +67,7 @@ backend-build:  ## Build Backend
 
 .PHONY: backend-create-site
 backend-create-site: ## Create a Plone site with default content
-	$(MAKE) solr-start
 	$(MAKE) -C "./backend/" create-site
-	$(MAKE) solr-stop
 
 .PHONY: backend-update-example-content
 backend-update-example-content: ## Export example content inside package
@@ -89,14 +85,12 @@ backend-test:  ## Test backend codebase
 .PHONY: install
 install:  ## Install
 	@echo "Install Backend & Frontend"
-	if [ -d $(GIT_FOLDER) ]; then $(PRE_COMMIT) install; else echo "$(RED) Not installing pre-commit$(RESET)";fi
 	$(MAKE) backend-install
 	$(MAKE) frontend-install
 
 .PHONY: start
 start:  ## Start
 	@echo "Starting application"
-	$(MAKE) solr-start
 	$(MAKE) backend-start
 	$(MAKE) frontend-start
 
@@ -106,10 +100,17 @@ clean:  ## Clean installation
 	$(MAKE) -C "./backend/" clean
 	$(MAKE) -C "./frontend/" clean
 
-.PHONY: check
-check:  ## Lint and Format codebase
-	@echo "Lint and Format codebase"
-	$(PRE_COMMIT) run -a
+.PHONY: format
+format:  ## Format codebase
+	@echo "Format codebase"
+	$(MAKE) -C "./backend/" format
+	$(MAKE) -C "./frontend/" format
+
+.PHONY: lint
+lint:  ## Lint codebase
+	@echo "Lint codebase"
+	$(MAKE) -C "./backend/" lint
+	$(MAKE) -C "./frontend/" lint
 
 .PHONY: i18n
 i18n:  ## Update locales
@@ -122,86 +123,95 @@ test:  backend-test frontend-test ## Test codebase
 
 .PHONY: build-images
 build-images:  ## Build docker images
-	@echo "Build"
+	@echo "Build Images"
 	$(MAKE) -C "./backend/" build-image
 	$(MAKE) -C "./frontend/" build-image
-
-## Solr
-.PHONY: solr-start
-solr-start:  ## SOLR: Start local service
-	@echo "Start local Solr"
-	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml up -d solr
-	@echo "Solr running on port 8983"
-
-.PHONY: solr-stop
-solr-stop:  ## SOLR: Stop local service
-	@echo "Stop local Solr"
-	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml stop solr
-
-.PHONY: solr-status
-solr-status:  ## SOLR: Status of local service
-	@echo "Stop local Solr"
-	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml ps solr
-
-.PHONY: solr-reindex-site
-solr-reindex-site: solr-start ## SOLR: Activate and reindex
-	@echo "Solr: Activate and reindex site"
-	$(MAKE) -C "./backend/" solr-reindex-site
-
 
 ## Docker stack
 .PHONY: stack-start
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
-	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose.yml up -d --build
-	@echo "Now visit: http://kitconcept.intranet.localhost"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f $(STACK_FILE) up -d --build
+	@echo "Now visit: http://portalbrasil-intranet.localhost"
 
 .PHONY: start-stack
 stack-create-site:  ## Local Stack: Create a new site
 	@echo "Create a new site in the local Docker stack"
-	@docker compose -f docker-compose.yml exec backend ./docker-entrypoint.sh create-site
+	@docker compose -f $(STACK_FILE) exec backend ./docker-entrypoint.sh create-site
 
 .PHONY: start-ps
 stack-status:  ## Local Stack: Check Status
 	@echo "Check the status of the local Docker stack"
-	@docker compose -f docker-compose.yml ps
+	@docker compose -f $(STACK_FILE) ps
 
 .PHONY: stack-stop
 stack-stop:  ##  Local Stack: Stop Services
 	@echo "Stop local Docker stack"
-	@docker compose -f docker-compose.yml stop
+	@docker compose -f $(STACK_FILE) stop
 
 .PHONY: stack-rm
 stack-rm:  ## Local Stack: Remove Services and Volumes
 	@echo "Remove local Docker stack"
-	@docker compose -f docker-compose.yml down
+	@docker compose -f $(STACK_FILE) down
 	@echo "Remove local volume data"
 	@docker volume rm $(PROJECT_NAME)_vol-site-data
 
 ## Acceptance
-.PHONY: build-acceptance-servers
-build-acceptance-servers: ## Build Acceptance Servers
+.PHONY: acceptance-backend-dev-start
+acceptance-backend-dev-start: ## Build Acceptance Servers
 	@echo "Build acceptance backend"
-	@docker build backend -t kitconcept/kitconcept.intranet-backend:acceptance -f backend/Dockerfile.acceptance
+	$(MAKE) -C "./backend/" acceptance-backend-start
+
+.PHONY: acceptance-frontend-dev-start
+acceptance-frontend-dev-start: ## Build Acceptance Servers
+	@echo "Build acceptance backend"
+	$(MAKE) -C "./frontend/" acceptance-frontend-dev-start
+
+.PHONY: acceptance-test
+acceptance-test: ## Start Acceptance tests in interactive mode
+	@echo "Build acceptance backend"
+	$(MAKE) -C "./frontend/" acceptance-test
+
+# Build Docker images
+.PHONY: acceptance-frontend-image-build
+acceptance-frontend-image-build: ## Build Acceptance frontend server image
 	@echo "Build acceptance frontend"
-	@docker build frontend -t kitconcept/kitconcept.intranet-frontend:acceptance -f frontend/Dockerfile
+	@docker build frontend -t kitconcept/kitconcept-intranet-frontend:acceptance -f frontend/Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)
 
-.PHONY: start-acceptance-servers
-start-acceptance-servers: build-acceptance-servers ## Start Acceptance Servers
-	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name kitconcept.intranet-backend-acceptance -d kitconcept/kitconcept.intranet-backend:acceptance
+.PHONY: acceptance-backend-image-build
+acceptance-backend-image-build: ## Build Acceptance backend server image
+	@echo "Build acceptance backend"
+	@docker build backend -t kitconcept/kitconcept-intranet-backend:acceptance -f backend/Dockerfile.acceptance --build-arg PLONE_VERSION=$(PLONE_VERSION)
+
+.PHONY: acceptance-images-build
+acceptance-images-build: ## Build Acceptance frontend/backend images
+	$(MAKE) acceptance-backend-image-build
+	$(MAKE) acceptance-frontend-image-build
+
+.PHONY: acceptance-frontend-container-start
+acceptance-frontend-container-start: ## Start Acceptance frontend container
 	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name kitconcept.intranet-frontend-acceptance --link kitconcept.intranet-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/kitconcept.intranet-frontend:acceptance
+	@docker run --rm -p 3000:3000 --name portalbrasil-intranet-frontend-acceptance --link portalbrasil-intranet-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/kitconcept-intranet-frontend:acceptance
 
-.PHONY: stop-acceptance-servers
-stop-acceptance-servers: ## Stop Acceptance Servers
+.PHONY: acceptance-backend-container-start
+acceptance-backend-container-start: ## Start Acceptance backend container
+	@echo "Start acceptance backend"
+	@docker run --rm -p 55001:55001 --name portalbrasil-intranet-backend-acceptance -d kitconcept/kitconcept-intranet-backend:acceptance
+
+.PHONY: acceptance-containers-start
+acceptance-containers-start: ## Start Acceptance containers
+	$(MAKE) acceptance-backend-container-start
+	$(MAKE) acceptance-frontend-container-start
+
+.PHONY: acceptance-containers-stop
+acceptance-containers-stop: ## Stop Acceptance containers
 	@echo "Stop acceptance containers"
-	@docker stop kitconcept.intranet-frontend-acceptance
-	@docker stop kitconcept.intranet-backend-acceptance
+	@docker stop portalbrasil-intranet-frontend-acceptance
+	@docker stop portalbrasil-intranet-backend-acceptance
 
-.PHONY: run-acceptance-tests
-run-acceptance-tests: ## Run Acceptance tests
-	$(MAKE) start-acceptance-servers
-	npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
-	$(MAKE) -C "./frontend/" test-acceptance-headless
-	$(MAKE) stop-acceptance-servers
+.PHONY: ci-acceptance-test
+ci-acceptance-test: ## Run Acceptance tests in ci mode
+	$(MAKE) acceptance-containers-start
+	pnpm dlx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
+	$(MAKE) -C "./frontend/" ci-acceptance-test
+	$(MAKE) acceptance-containers-stop

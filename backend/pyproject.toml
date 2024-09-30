@@ -45,6 +45,9 @@ PyPI = "https://pypi.python.org/pypi/kitconcept.intranet"
 Source = "https://github.com/kitconcept/kitconcept.intranet"
 Tracker = "https://github.com/kitconcept/kitconcept.intranet/issues"
 
+[project.entry-points."z3c.autoinclude.plugin"]
+target = "plone"
+
 [tool.hatch.version]
 path = "src/kitconcept/intranet/about.py"
 

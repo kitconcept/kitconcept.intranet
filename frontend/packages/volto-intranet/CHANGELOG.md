@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.2 (2024-10-01)
+
+### Bugfix
+
+- Generate Docker images on tag creation [@ericof] [#51](https://github.com/kitconcept/kitconcept.intranet/issue/51)
+- Fix Docker image creation for frontend [@ericof] [#52](https://github.com/kitconcept/kitconcept.intranet/issue/52)
+
 ## 1.0.0-alpha.1 (2024-10-01)
 
 ### Feature

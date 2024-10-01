@@ -26,7 +26,7 @@ jobs:
       - name: Set Env Vars
         id: vars
         run: |
-          python3 -c 'from pathlib import Path; data = (Path() / "backend" / "version.txt").read_text().strip(); print(f"PLONE_VERSION={data}")' >> $GITHUB_OUTPUT
+          python3 -c 'from pathlib import Path; data = (Path() / "version.txt").read_text().strip(); print(f"PLONE_VERSION={data}")' >> $GITHUB_OUTPUT
       - name: Test vars
         run: |
           echo 'PLONE_VERSION=${{ steps.vars.outputs.PLONE_VERSION }}'

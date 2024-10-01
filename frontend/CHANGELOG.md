@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.3 (2024-10-01)
+
+### Internal
+
+- Release ghcr.io/kitconcept/kitconcept-intranet-frontend image with tags [@ericof] 
+
 ## 1.0.0-alpha.2 (2024-10-01)
 
 ### Bugfix

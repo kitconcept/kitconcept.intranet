@@ -9,6 +9,20 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a3 (2024-10-01)
+
+
+### Bugfix
+
+- Generate Docker images on tag creation [@ericof] [#51](https://github.com/kitconcept/kitconcept.intranet/issue/51)
+
+
+### Internal
+
+- Fixes a warning in the Acceptance tests docker image creation [@ericof] 
+- Improve GHA to generate the backend Docker image [@ericof] 
+- Release ghcr.io/kitconcept/kitconcept-intranet-backend image with tags [@ericof] 
+
 ## 1.0.0a0 (2024-10-01)
 
 

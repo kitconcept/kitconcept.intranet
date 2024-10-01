@@ -59,6 +59,9 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha
+            type=pep440,pattern={{version}}
+            type=pep440,pattern={{major}}.{{minor}}
+            type=pep440,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Set up Docker Buildx
@@ -97,6 +100,9 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha
+            type=pep440,pattern={{version}}
+            type=pep440,pattern={{major}}.{{minor}}
+            type=pep440,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push
@@ -138,6 +144,9 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha
+            type=pep440,pattern={{version}}
+            type=pep440,pattern={{major}}.{{minor}}
+            type=pep440,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Set up Docker Buildx

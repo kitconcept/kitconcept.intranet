@@ -23,7 +23,7 @@ class BaseFixture(PloneDistributionFixture):
         ("plone.distribution", {"loadZCML": True}),
         ("plone.restapi", {"loadZCML": True}),
         ("plone.volto", {"loadZCML": True}),
-        ("kitconcept.solr", {"loadZCML": True}),
+        # ("kitconcept.solr", {"loadZCML": True}),
         ("collective.person", {"loadZCML": True}),
     )
 

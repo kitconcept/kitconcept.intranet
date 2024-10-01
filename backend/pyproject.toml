@@ -8,12 +8,7 @@ requires-python = ">=3.8"
 authors = [
     { name = "kitconcept GmbH", email = "info@kitconcept.com" },
 ]
-keywords = [
-    "CMS",
-    "Plone",
-    "Python",
-    "Intranet",
-]
+keywords = ["CMS", "Plone", "Python", "Intranet"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Web Environment",
@@ -32,7 +27,7 @@ classifiers = [
 ]
 dependencies = [
     "collective.person",
-    "kitconcept.solr",
+    # "kitconcept.solr",
     "plone.api",
     "plone.distribution>=2.0.0a1",
     "plone.restapi",
@@ -48,6 +43,7 @@ Tracker = "https://github.com/kitconcept/kitconcept.intranet/issues"
 
 [project.entry-points."z3c.autoinclude.plugin"]
 target = "plone"
+
 
 [tool.hatch.version]
 path = "src/kitconcept/intranet/about.py"

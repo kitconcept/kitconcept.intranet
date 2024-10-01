@@ -8,15 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@kitconcept/volto-intranet':
+        specifier: workspace:*
+        version: link:packages/volto-intranet
       '@plone/registry':
         specifier: workspace:*
         version: link:core/packages/registry
       '@plone/volto':
         specifier: workspace:*
         version: link:core/packages/volto
-      volto-intranet:
-        specifier: workspace:*
-        version: link:packages/volto-intranet
     devDependencies:
       mrs-developer:
         specifier: ^2.2.0

@@ -1,4 +1,4 @@
-const addons = ['volto-intranet'];
+const addons = ['@kitconcept/volto-intranet'];
 const theme = '@kitconcept/volto-light-theme';
 
 module.exports = {

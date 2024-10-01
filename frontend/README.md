@@ -1,4 +1,4 @@
-# kitconcept Intranet (volto-intranet)
+# kitconcept Intranet (@kitconcept/volto-intranet)
 
 A Plone distribution for Intranets with Plone. Created by kitconcept.
 

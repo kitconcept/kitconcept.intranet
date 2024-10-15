@@ -52,6 +52,10 @@ module.exports = {
           ['@plone/volto-slate', `${coreLocation}/packages/volto-slate/src`],
           ['@plone/registry', `${coreLocation}/packages/registry/src`],
           ['@kitconcept/volto-intranet', './packages/volto-intranet/src'],
+          [
+            '@kitconcept/volto-light-theme',
+            './packages/volto-light-theme/packages/volto-light-theme/src',
+          ],
           ...addonAliases,
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

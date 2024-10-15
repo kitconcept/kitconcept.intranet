@@ -1,8 +1,9 @@
 from kitconcept.intranet import _
+from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
+from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from zope.interface import provider
-from zope.schema import Choice
 from zope.schema import TextLine
 
 
@@ -13,40 +14,86 @@ class ITheming(model.Schema):
     model.fieldset(
         "theming",
         fields=[
-            # "theme",
-            "color1",
-            "color2",
-            "color3",
-            "color4",
+            "logo",
+            "theme_color",
+            "theme_high_contrast_color",
+            "theme_font_color",
+            "theme_low_contrast_font_color",
+            "secondary_theme_color",
+            "secondary_theme_high_contrast_color",
+            "secondary_theme_font_color",
+            "secondary_theme_low_contrast_font_color",
         ],
     )
 
-    # theme = Choice(
-    #     title=_("label_theme", default="Theme"),
-    #     description=_(
-    #         "label_theme_description",
-    #         default="Defines the theme (color, etc...) used in this subsite",
-    #     ),
-    #     vocabulary="kitconcept.internet.vocabulary.themes",
-    #     required=False,
-    # )
-
-    color1 = TextLine(
-        title=_("label_color1", default="Color 1"),
+    logo = NamedBlobImage(
+        title=_("label_project_logo", default="Project Logo"),
+        description=_(
+            "help_project_logo",
+            default="If the project has a logo, please upload it here.",
+        ),
         required=False,
     )
 
-    color2 = TextLine(
-        title=_("label_color2", default="Color 2"),
+    directives.widget("theme_color", frontendOptions={"widget": "color"})
+    theme_color = TextLine(
+        title=_("label_theme_color", default="Theme Color"),
         required=False,
     )
 
-    color3 = TextLine(
-        title=_("label_color3", default="Color 3"),
+    directives.widget("theme_high_contrast_color", frontendOptions={"widget": "color"})
+    theme_high_contrast_color = TextLine(
+        title=_("label_theme_high_contrast_color", default="High Contrast Color"),
         required=False,
     )
 
-    color4 = TextLine(
-        title=_("label_color4", default="Color 4"),
+    directives.widget("theme_font_color", frontendOptions={"widget": "color"})
+    theme_font_color = TextLine(
+        title=_("label_theme_font_color", default="Font Color"),
+        required=False,
+    )
+
+    directives.widget(
+        "theme_low_contrast_font_color", frontendOptions={"widget": "color"}
+    )
+    theme_low_contrast_font_color = TextLine(
+        title=_(
+            "label_theme_low_contrast_font_color", default="Low Contrast Font Color"
+        ),
+        required=False,
+    )
+
+    directives.widget("secondary_theme_color", frontendOptions={"widget": "color"})
+    secondary_theme_color = TextLine(
+        title=_("label_secondary_theme_color", default="Secondary Theme Color"),
+        required=False,
+    )
+
+    directives.widget(
+        "secondary_theme_high_contrast_color", frontendOptions={"widget": "color"}
+    )
+    secondary_theme_high_contrast_color = TextLine(
+        title=_(
+            "label_secondary_theme_high_contrast_color",
+            default="Secondary High Contrast Color",
+        ),
+        required=False,
+    )
+
+    directives.widget("secondary_theme_font_color", frontendOptions={"widget": "color"})
+    secondary_theme_font_color = TextLine(
+        title=_("label_secondary_theme_font_color", default="Secondary Font Color"),
+        required=False,
+    )
+
+    directives.widget(
+        "secondary_theme_low_contrast_font_color",
+        frontendOptions={"widget": "color"},
+    )
+    secondary_theme_low_contrast_font_color = TextLine(
+        title=_(
+            "label_secondary_theme_low_contrast_font_color",
+            default="Secondary Low Contrast Font Color",
+        ),
         required=False,
     )

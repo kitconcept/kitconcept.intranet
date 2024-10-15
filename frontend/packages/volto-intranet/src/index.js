@@ -10,7 +10,7 @@ const applyConfig = (config) => {
   };
 
   // config.views.contentTypeSearchResultViews.Person = PersonResultItem;
-
+  console.log(config.widgets.widget);
   return config;
 };
 

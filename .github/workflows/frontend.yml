@@ -26,7 +26,7 @@ jobs:
         id: vars
         run: |
           echo 'BASE_TAG=sha-$(git rev-parse --short HEAD)' >> $GITHUB_OUTPUT
-          python3 -c 'import json; data = json.load(open("./mrs.developer.json")); print("VOLTO_VERSION=" + data["core"].get("tag") if data["core"].get("tag") else data["core"].get("branch", ""))' >> $GITHUB_OUTPUT
+          python3 -c 'import json; data = json.load(open("./mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") if data["core"].get("tag") else data["core"].get("branch", "")))' >> $GITHUB_OUTPUT
       - name: Test vars
         run: |
           echo 'BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}'

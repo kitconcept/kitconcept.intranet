@@ -29,11 +29,11 @@
   "peerDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-intl": "3.8.0"
+    "react-intl": "^3.12.1"
   },
   "devDependencies": {
-    "@plone/scripts": "^3.6.1",
-    "release-it": "^17.1.1"
+    "@plone/scripts": "^3.6.2",
+    "release-it": "^17.7.0"
   },
   "addons": [
     "@kitconcept/volto-solr",
@@ -48,17 +48,17 @@
     "@kitconcept/volto-light-theme"
   ],
   "dependencies": {
-    "@plone/components": "^2.0.0-alpha.8",
+    "@plone/components": "workspace:*",
+    "@kitconcept/volto-light-theme": "workspace:*",
     "@kitconcept/volto-solr": "^1.0.0-alpha.4",
     "@eeacms/volto-accordion-block": "^10.4.6",
-    "@kitconcept/volto-banner-block": "^1.0.0-2",
-    "@kitconcept/volto-button-block": "^2.3.1",
+    "@kitconcept/volto-banner-block": "^1.0.0",
+    "@kitconcept/volto-button-block": "^3.0.1",
     "@kitconcept/volto-dsgvo-banner": "^2.3.2",
     "@kitconcept/volto-heading-block": "^2.4.0",
-    "@kitconcept/volto-highlight-block": "^3.0.1",
+    "@kitconcept/volto-highlight-block": "^4.0.0",
     "@kitconcept/volto-introduction-block": "^1.0.0",
-    "@kitconcept/volto-separator-block": "^4.1.1",
-    "@kitconcept/volto-slider-block": "^6.3.1",
-    "@kitconcept/volto-light-theme": "^3.3.0"
+    "@kitconcept/volto-separator-block": "^4.1.2",
+    "@kitconcept/volto-slider-block": "^6.3.1"
   }
 }

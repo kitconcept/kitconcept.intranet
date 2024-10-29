@@ -16,13 +16,9 @@ class ITheming(model.Schema):
         fields=[
             "logo",
             "theme_color",
+            "theme_foreground_color",
             "theme_high_contrast_color",
-            "theme_font_color",
-            "theme_low_contrast_font_color",
-            "theme_color_secondary",
-            "theme_high_contrast_color_secondary",
-            "theme_font_color_secondary",
-            "theme_low_contrast_font_color_secondary",
+            "theme_low_contrast_foreground_color",
         ],
     )
 
@@ -35,65 +31,76 @@ class ITheming(model.Schema):
         required=False,
     )
 
-    directives.widget("theme_color", frontendOptions={"widget": "color"})
+    directives.widget("theme_color", frontendOptions={"widget": "themingColorPicker"})
     theme_color = TextLine(
-        title=_("label_theme_color", default="Theme Color"),
+        title=_("label_theme_color", default="Primary Color"),
         required=False,
     )
 
-    directives.widget("theme_high_contrast_color", frontendOptions={"widget": "color"})
+    directives.widget(
+        "theme_foreground_color", frontendOptions={"widget": "themingColorPicker"}
+    )
+    theme_foreground_color = TextLine(
+        title=_("label_theme_foreground_color", default="Primary Foreground Color"),
+        required=False,
+    )
+
+    directives.widget(
+        "theme_high_contrast_color", frontendOptions={"widget": "themingColorPicker"}
+    )
     theme_high_contrast_color = TextLine(
         title=_("label_theme_high_contrast_color", default="High Contrast Color"),
         required=False,
     )
 
-    directives.widget("theme_font_color", frontendOptions={"widget": "color"})
-    theme_font_color = TextLine(
-        title=_("label_theme_font_color", default="Font Color"),
-        required=False,
-    )
-
     directives.widget(
-        "theme_low_contrast_font_color", frontendOptions={"widget": "color"}
+        "theme_low_contrast_foreground_color",
+        frontendOptions={"widget": "themingColorPicker"},
     )
-    theme_low_contrast_font_color = TextLine(
+    theme_low_contrast_foreground_color = TextLine(
         title=_(
-            "label_theme_low_contrast_font_color", default="Low Contrast Font Color"
+            "label_theme_low_contrast_foreground_color",
+            default="Low Contrast Foreground Color",
         ),
         required=False,
     )
 
-    directives.widget("theme_color_secondary", frontendOptions={"widget": "color"})
-    theme_color_secondary = TextLine(
-        title=_("label_theme_color_secondary", default="Secondary Theme Color"),
-        required=False,
-    )
+    # directives.widget(
+    #     "theme_color_secondary", frontendOptions={"widget": "themingColorPicker"}
+    # )
+    # theme_color_secondary = TextLine(
+    #     title=_("label_theme_color_secondary", default="Secondary Theme Color"),
+    #     required=False,
+    # )
 
-    directives.widget(
-        "theme_high_contrast_color_secondary", frontendOptions={"widget": "color"}
-    )
-    theme_high_contrast_color_secondary = TextLine(
-        title=_(
-            "label_theme_high_contrast_color_secondary",
-            default="Secondary High Contrast Color",
-        ),
-        required=False,
-    )
+    # directives.widget(
+    #     "theme_high_contrast_color_secondary",
+    #     frontendOptions={"widget": "themingColorPicker"},
+    # )
+    # theme_high_contrast_color_secondary = TextLine(
+    #     title=_(
+    #         "label_theme_high_contrast_color_secondary",
+    #         default="Secondary High Contrast Color",
+    #     ),
+    #     required=False,
+    # )
 
-    directives.widget("theme_font_color_secondary", frontendOptions={"widget": "color"})
-    theme_font_color_secondary = TextLine(
-        title=_("label_theme_font_color_secondary", default="Secondary Font Color"),
-        required=False,
-    )
+    # directives.widget(
+    #     "theme_font_color_secondary", frontendOptions={"widget": "themingColorPicker"}
+    # )
+    # theme_font_color_secondary = TextLine(
+    #     title=_("label_theme_font_color_secondary", default="Secondary Font Color"),
+    #     required=False,
+    # )
 
-    directives.widget(
-        "theme_low_contrast_font_color_secondary",
-        frontendOptions={"widget": "color"},
-    )
-    theme_low_contrast_font_color_secondary = TextLine(
-        title=_(
-            "label_theme_low_contrast_font_color_secondary",
-            default="Secondary Low Contrast Font Color",
-        ),
-        required=False,
-    )
+    # directives.widget(
+    #     "theme_low_contrast_font_color_secondary",
+    #     frontendOptions={"widget": "themingColorPicker"},
+    # )
+    # theme_low_contrast_font_color_secondary = TextLine(
+    #     title=_(
+    #         "label_theme_low_contrast_font_color_secondary",
+    #         default="Secondary Low Contrast Font Color",
+    #     ),
+    #     required=False,
+    # )

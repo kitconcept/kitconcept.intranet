@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@pmmmwh/react-refresh-webpack-plugin': ^0.5.15
+  react-refresh: ^0.14.2
+
 importers:
 
   .:
@@ -524,8 +528,11 @@ importers:
         specifier: 0.10.0
         version: 0.10.0
       glob:
-        specifier: 7.1.6
-        version: 7.1.6
+        specifier: ^10.4.5
+        version: 10.4.5
+      tmp:
+        specifier: 0.2.1
+        version: 0.2.1
     devDependencies:
       '@parcel/packager-ts':
         specifier: ^2.12.0
@@ -536,12 +543,24 @@ importers:
       '@plone/types':
         specifier: workspace:*
         version: link:../types
+      '@types/debug':
+        specifier: ^4.1.12
+        version: 4.1.12
+      '@types/glob':
+        specifier: ^8.1.0
+        version: 8.1.0
+      '@types/node':
+        specifier: ^20
+        version: 20.14.8
       '@types/react':
         specifier: ^18
         version: 18.2.27
       '@types/react-dom':
         specifier: ^18
         version: 18.2.12
+      '@types/tmp':
+        specifier: ^0.2.6
+        version: 0.2.6
       parcel:
         specifier: ^2.12.0
         version: 2.12.0(@swc/helpers@0.5.11)(postcss@8.4.47)(relateurl@0.2.7)(terser@5.31.1)(typescript@5.6.3)
@@ -558,8 +577,11 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       typescript:
-        specifier: ^5.4.5
+        specifier: ^5.6.3
         version: 5.6.3
+      vite:
+        specifier: ^5.4.8
+        version: 5.4.8(@types/node@20.14.8)(less@3.11.1)(lightningcss@1.25.1)(sass@1.77.6)(terser@5.31.1)
       vitest:
         specifier: ^2.1.3
         version: 2.1.3(@types/node@20.14.8)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.25.1)(sass@1.77.6)(terser@5.31.1)
@@ -1248,13 +1270,13 @@ importers:
         version: 3.2.5
       razzle:
         specifier: 4.2.18
-        version: 4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))
+        version: 4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(type-fest@2.19.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))
       razzle-dev-utils:
         specifier: 4.2.18
         version: 4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2))
       razzle-plugin-scss:
         specifier: 4.2.18
-        version: 4.2.18(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(postcss@8.4.31)(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(razzle@4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2))
+        version: 4.2.18(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(postcss@8.4.31)(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(razzle@4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(type-fest@2.19.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2))
       react-docgen-typescript-plugin:
         specifier: ^1.0.5
         version: 1.0.8(typescript@5.6.3)(webpack@5.90.1(esbuild@0.20.2))
@@ -1374,7 +1396,7 @@ importers:
         version: 3.12.1(react@18.2.0)
       react-redux:
         specifier: 8.1.2
-        version: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+        version: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router-dom:
         specifier: 5.2.0
         version: 5.2.0(react@18.2.0)
@@ -1475,10 +1497,10 @@ importers:
         version: 4.1.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(vitest@2.1.3)
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
       '@kitconcept/volto-solr':
         specifier: ^1.0.0-alpha.4
-        version: 1.0.0-alpha.5(@plone/volto@18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+        version: 1.0.0-alpha.5(@plone/volto@18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -1505,8 +1527,8 @@ importers:
         specifier: ^10.4.6
         version: 10.4.6
       '@kitconcept/volto-button-block':
-        specifier: ^3.0.2
-        version: 3.0.2(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
+        specifier: ^2.3.1 || ^3.0.3
+        version: 3.0.3(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner':
         specifier: ^2.3.2
         version: 2.3.2
@@ -1524,7 +1546,7 @@ importers:
         version: 4.1.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(vitest@2.1.3)
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../../../core/packages/components
@@ -1540,6 +1562,9 @@ importers:
       react-intl:
         specifier: ^3.12.1
         version: 3.12.1(react@18.2.0)
+      uuid:
+        specifier: ^10.0.0
+        version: 10.0.0
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.2
@@ -1547,24 +1572,24 @@ importers:
       '@plone/types':
         specifier: workspace:*
         version: link:../../../../core/packages/types
+      '@types/jest':
+        specifier: ^29.5.8
+        version: 29.5.12
       '@types/react':
-        specifier: ^18.2.27
-        version: 18.2.27
+        specifier: ^18.3.12
+        version: 18.3.12
       '@types/react-dom':
-        specifier: ^18.2.12
-        version: 18.2.12
+        specifier: ^18.3.1
+        version: 18.3.1
       react-redux:
         specifier: 8.1.2
-        version: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+        version: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router-dom:
         specifier: 5.2.0
         version: 5.2.0(react@18.2.0)
       release-it:
         specifier: ^17.7.0
         version: 17.7.0(typescript@5.6.3)
-      typescript:
-        specifier: ^5.6.3
-        version: 5.6.3
 
 packages:
 
@@ -3033,8 +3058,8 @@ packages:
       react-dom: 18.2.0
       react-intl: 3.8.0
 
-  '@kitconcept/volto-button-block@3.0.2':
-    resolution: {integrity: sha512-nnmEeCu4RDJvlvj7IYuBf7HPuqMRzphmEm+WjtZ3ah/6l0mr6dH7/lA0IfYRwzGX1pAzla1wodih7JopfwQ9bw==}
+  '@kitconcept/volto-button-block@3.0.3':
+    resolution: {integrity: sha512-H1N3OY1XRxyU9u8Cjkmf5QtdBYB6010nzke9DHU3lJLItGzP84Qg3dw6RFWV0oE/EcKhZHh0tr6kxnYIpIaiFg==}
     peerDependencies:
       classnames: ^2.2.6
       react: 18.2.0
@@ -3799,8 +3824,8 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/registry@1.8.0':
-    resolution: {integrity: sha512-xQH7vhnzQpxPxZLZtObpN/jv4JOIBhYEKsdWUCYmL1e8wlbxb+Xk2C6qNK9+i+kyjmLdAUzDH0v5Xl9Y7igxKw==}
+  '@plone/registry@2.0.0-alpha.0':
+    resolution: {integrity: sha512-V2hzEUzdhL+q8ef3R1g6xiv0MjVNM5lXsx5h6Xes7FtP5bddPJ2xye2gPISzaQZ8WpK9esf3lzxeLjQ8WBvX5Q==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3812,23 +3837,27 @@ packages:
     resolution: {integrity: sha512-52S2Nb8sUDnHobzoYBstn6UkXxri+UGEh5DWZfy0xJ9h/ia6n9XI+mjtSEG3vKkr+hsbLH9sO8RlX4tpG3Kyhg==}
     hasBin: true
 
+  '@plone/scripts@3.7.0':
+    resolution: {integrity: sha512-YCCWu9llrzdiLsnHFeI9PyZkuOvkpsSWDjSGbtllTX6VbjDEjWXgJrnqpnpgIXVCkogErMfNmn7WCR0u2VeHPw==}
+    hasBin: true
+
   '@plone/volto-slate@18.0.0-alpha.19':
     resolution: {integrity: sha512-4D/KspTsCDVGNZueBi14NvDMjQua8KFWwBT58Xk5+GDkq4SLxwxnc8mfjIIMXsoEioXd48+n8ai3OGnqmgna8A==}
 
-  '@plone/volto@18.0.0-alpha.46':
-    resolution: {integrity: sha512-CQUwD0AlIoCGmlMK9mpcwPlkxUuUfzPcxHaaw0QQIrOC/UcVOM1jZcvN3eWnWc6l8urh+9OVwNe+CelljTYkDw==}
-    engines: {node: ^16 || ^18 || ^20}
+  '@plone/volto@18.0.0-alpha.47':
+    resolution: {integrity: sha512-1pE6g5Qv3vbhMEnIg2HREoKtXVuwCUAlp/VYfi9AiDUJx2DfWUvMgrd4ehGUx5ovmAG/qzfvLSr+QHsF+j7wDQ==}
+    engines: {node: ^20 || ^22}
 
-  '@pmmmwh/react-refresh-webpack-plugin@0.4.3':
-    resolution: {integrity: sha512-br5Qwvh8D2OQqSXpd1g/xqXKnK0r+Jz6qVKBbWmpUcrbGOxUrf39V5oZ1876084CGn18uMdR5uvPqBv9UqtBjQ==}
-    engines: {node: '>= 10.x'}
+  '@pmmmwh/react-refresh-webpack-plugin@0.5.15':
+    resolution: {integrity: sha512-LFWllMA55pzB9D34w/wXUCf8+c+IYKuJDgxiZ3qMhl64KRMBHYM1I3VdGaD2BV5FNPV2/S2596bppxHbv2ZydQ==}
+    engines: {node: '>= 10.13'}
     peerDependencies:
-      '@types/webpack': 4.x
-      react-refresh: '>=0.8.3 <0.10.0'
+      '@types/webpack': 4.x || 5.x
+      react-refresh: ^0.14.2
       sockjs-client: ^1.4.0
-      type-fest: ^0.13.1
+      type-fest: '>=0.17.0 <5.0.0'
       webpack: '>=4.43.0 <6.0.0'
-      webpack-dev-server: 3.x
+      webpack-dev-server: 3.x || 4.x || 5.x
       webpack-hot-middleware: 2.x
       webpack-plugin-serve: 0.x || 1.x
     peerDependenciesMeta:
@@ -5400,6 +5429,9 @@ packages:
   '@types/glob@7.2.0':
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
 
+  '@types/glob@8.1.0':
+    resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
+
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
 
@@ -5523,6 +5555,9 @@ packages:
   '@types/react-dom@18.2.12':
     resolution: {integrity: sha512-QWZuiA/7J/hPIGocXreCRbx7wyoeet9ooxfbSA+zbIWqyQEE7GMtRn4A37BdYyksnN+/NDnWgfxZH9UVGDw1hg==}
 
+  '@types/react-dom@18.3.1':
+    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
+
   '@types/react-redux@7.1.33':
     resolution: {integrity: sha512-NF8m5AjWCkert+fosDsN3hAlHzpjSiXlVy9EgQEmLoBhaNXbmyeGs/aj5dQzKuF+/q+S7JQagorGDW8pJ28Hmg==}
 
@@ -5540,6 +5575,9 @@ packages:
 
   '@types/react@18.2.27':
     resolution: {integrity: sha512-Wfv7B7FZiR2r3MIqbAlXoY1+tXm4bOqfz4oRr+nyXdBqapDBZ0l/IGcSlAfvxIHEEJjkPU0MYAc/BlFPOcrgLw==}
+
+  '@types/react@18.3.12':
+    resolution: {integrity: sha512-D2wOSq/d6Agt28q7rSI3jhU7G6aiuzljDGZ2hTZHIkrTLUI+AF3WMeKkEZ9nN2fkBAlcktT6vcZjDFiIhMYEQw==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -5595,6 +5633,9 @@ packages:
 
   '@types/testing-library__react@9.1.3':
     resolution: {integrity: sha512-iCdNPKU3IsYwRK9JieSYAiX0+aYDXOGAmrC/3/M7AqqSDKnWWVv07X+Zk1uFSL7cMTUYzv4lQRfohucEocn5/w==}
+
+  '@types/tmp@0.2.6':
+    resolution: {integrity: sha512-chhaNf2oKHlRkDGt+tiKE2Z5aJ6qalm7Z9rlLdBwmOiAAf09YQvvoLXjWK4HWPF1xU/fqvMgfNfpVoBscA/tKA==}
 
   '@types/unist@3.0.2':
     resolution: {integrity: sha512-dqId9J8K/vGi5Zr7oo212BGii5m3q5Hxlkwy3WpYuKPklmBEvsbMYYyLxAQpSffdLl/gdW0XUpKWFvYmyoWCoQ==}
@@ -6034,8 +6075,8 @@ packages:
     engines: {'0': node >= 0.8.0}
     hasBin: true
 
-  ansi-html@0.0.7:
-    resolution: {integrity: sha512-JoAxEa1DfP9m2xfB/y2r/aKcwXNlltr4+0QSBC4TrLfcxyvepX2Pv0t/xpgGV5bGsDzCYV8SzjWgyCW0T9yYbA==}
+  ansi-html@0.0.9:
+    resolution: {integrity: sha512-ozbS3LuenHVxNRh/wdnN16QapUHzauqSomAl1jwwJRRsGwFwtj644lIhxfWu0Fy0acCij2+AEgHvjscq3dlVXg==}
     engines: {'0': node >= 0.8.0}
     hasBin: true
 
@@ -8836,9 +8877,8 @@ packages:
   glob-to-regexp@0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
 
-  glob@10.4.2:
-    resolution: {integrity: sha512-GwMlUF6PkPo3Gk21UxkCohOv0PLcIXVtKyLlpEI28R/cO/4eNOdmLk3CMW1wROV/WR/EsZOWAfBbBOqYvs88/w==}
-    engines: {node: '>=16 || 14 >=14.18'}
+  glob@10.4.5:
+    resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
     hasBin: true
 
   glob@7.1.6:
@@ -9103,9 +9143,6 @@ packages:
   html-encoding-sniffer@3.0.0:
     resolution: {integrity: sha512-oWv4T4yJ52iKrufjnyZPkrN0CH3QnrUqdB6In1g5Fe1mia8GmF36gnfNySxoZtxD5+NmYw1EElVXiBk93UeskA==}
     engines: {node: '>=12'}
-
-  html-entities@1.4.0:
-    resolution: {integrity: sha512-8nxjcBcd8wovbeKx7h3wTji4e6+rhaVuPNpMqwWgnHh+N9ToqsCs6XztWRBPQ+UtzsoMAdKZtUENoVzU/EMtZA==}
 
   html-entities@2.5.2:
     resolution: {integrity: sha512-K//PSRMQk4FZ78Kyau+mZurHn3FH0Vwr+H36eE0rPbeYkRRi9YxceYPhuN60UwWorxyKHhqoAJl2OFKa4BVtaA==}
@@ -11126,9 +11163,6 @@ packages:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
     engines: {node: '>=0.10.0'}
 
-  native-url@0.2.6:
-    resolution: {integrity: sha512-k4bDC87WtgrdD362gZz6zoiXQrl40kYlBmpfmSjwRO1VU0V5ccwJTlxuE72F6m3V0vc1xOf6n3UCP9QyerRqmA==}
-
   natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
 
@@ -12297,11 +12331,6 @@ packages:
     resolution: {integrity: sha512-4EWwcRGsO2H+yzq6ddHcVqkCQ2EFUSfDMEjF8ryp8ReymyZhIuaFRGLomeOQLkrzacMHoyky2HW0Qe30UbzkKw==}
     engines: {node: '>=18'}
 
-  querystring@0.2.1:
-    resolution: {integrity: sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==}
-    engines: {node: '>=0.4.x'}
-    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
-
   querystringify@2.2.0:
     resolution: {integrity: sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==}
 
@@ -12625,10 +12654,6 @@ packages:
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
-    engines: {node: '>=0.10.0'}
-
-  react-refresh@0.9.0:
-    resolution: {integrity: sha512-Gvzk7OZpiqKSkxsQvO/mbTN1poglhmAV7gR/DdIrRrSMXraRQQlfikRJOr3Nb9GTMPC5kof948Zy6jJZIFtDvQ==}
     engines: {node: '>=0.10.0'}
 
   react-remove-scroll-bar@2.3.6:
@@ -14594,6 +14619,10 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    hasBin: true
+
   uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
@@ -15186,7 +15215,7 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.0.1
+      picocolors: 1.1.0
 
   '@babel/compat-data@7.24.7': {}
 
@@ -16340,6 +16369,22 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@emotion/react@11.11.4(@types/react@18.3.12)(react@18.2.0)':
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@emotion/babel-plugin': 11.11.0
+      '@emotion/cache': 11.11.0
+      '@emotion/serialize': 1.1.4
+      '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@18.2.0)
+      '@emotion/utils': 1.2.1
+      '@emotion/weak-memoize': 0.3.1
+      hoist-non-react-statics: 3.3.2
+      react: 18.2.0
+    optionalDependencies:
+      '@types/react': 18.3.12
+    transitivePeerDependencies:
+      - supports-color
+
   '@emotion/serialize@1.1.4':
     dependencies:
       '@emotion/hash': 0.9.1
@@ -16923,7 +16968,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
 
-  '@kitconcept/volto-button-block@3.0.2(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-button-block@3.0.3(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
     dependencies:
       classnames: 2.2.6
       react: 18.2.0
@@ -16961,9 +17006,9 @@ snapshots:
       - jest
       - vitest
 
-  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)':
+  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)':
     dependencies:
-      '@plone/volto': 18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       deepmerge: 4.2.2
       embla-carousel-autoplay: 8.1.5(embla-carousel@8.1.5)
       embla-carousel-react: 8.1.5(react@18.2.0)
@@ -16971,9 +17016,9 @@ snapshots:
       - embla-carousel
       - react
 
-  '@kitconcept/volto-solr@1.0.0-alpha.5(@plone/volto@18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
+  '@kitconcept/volto-solr@1.0.0-alpha.5(@plone/volto@18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
     dependencies:
-      '@plone/volto': 18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
 
   '@kwsites/file-exists@1.1.1':
     dependencies:
@@ -17914,7 +17959,7 @@ snapshots:
       '@parcel/plugin': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)
       '@parcel/utils': 2.12.0
       react-error-overlay: 6.0.9
-      react-refresh: 0.9.0
+      react-refresh: 0.14.2
     transitivePeerDependencies:
       - '@parcel/core'
       - '@swc/helpers'
@@ -18047,7 +18092,7 @@ snapshots:
     dependencies:
       '@parcel/plugin': 2.12.0(@parcel/core@2.12.0(@swc/helpers@0.5.11))(@swc/helpers@0.5.11)
       '@parcel/utils': 2.12.0
-      react-refresh: 0.9.0
+      react-refresh: 0.14.2
     transitivePeerDependencies:
       - '@parcel/core'
       - '@swc/helpers'
@@ -18196,13 +18241,14 @@ snapshots:
       - jest
       - vitest
 
-  '@plone/registry@1.8.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@plone/registry@2.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       crypto-random-string: 3.2.0
       debug: 4.3.2
       dependency-graph: 0.10.0
-      glob: 7.1.6
+      glob: 10.4.5
       react: 18.2.0
+      tmp: 0.2.1
     optionalDependencies:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -18229,7 +18275,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/scripts@3.6.2(debug@4.3.2)':
+  '@plone/scripts@3.7.0(debug@4.3.2)':
     dependencies:
       '@babel/core': 7.24.7
       babel-plugin-react-intl: 5.1.17
@@ -18250,7 +18296,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/volto-slate@18.0.0-alpha.19(@types/react-dom@18.2.12)(@types/react@18.2.27)(redux@4.2.1)':
+  '@plone/volto-slate@18.0.0-alpha.19(@types/react-dom@18.3.1)(@types/react@18.3.12)(redux@4.2.1)':
     dependencies:
       classnames: 2.2.6
       github-slugger: 1.4.0
@@ -18263,7 +18309,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-intersection-observer: 9.1.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router-dom: 5.2.0(react@18.2.0)
       react-toastify: 5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       redux-mock-store: 1.5.4
@@ -18284,16 +18330,16 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.0.0-alpha.46(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.0.0-alpha.47(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
-      '@plone/registry': 1.8.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/scripts': 3.6.2(debug@4.3.2)
-      '@plone/volto-slate': 18.0.0-alpha.19(@types/react-dom@18.2.12)(@types/react@18.2.27)(redux@4.2.1)
+      '@plone/registry': 2.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/scripts': 3.7.0(debug@4.3.2)
+      '@plone/volto-slate': 18.0.0-alpha.19(@types/react-dom@18.3.1)(@types/react@18.3.12)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
       classnames: 2.2.6
-      connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
+      connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
       debug: 4.3.2
       decorate-component-with-props: 1.2.1(react@18.2.0)
       dependency-graph: 0.10.0
@@ -18340,16 +18386,16 @@ snapshots:
       react-image-gallery: 1.2.7(react@18.2.0)
       react-intersection-observer: 9.1.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
-      react-intl-redux: 2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0)
+      react-intl-redux: 2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0)
       react-medium-image-zoom: 3.0.15(prop-types@15.7.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router: 5.2.0(react@18.2.0)
       react-router-config: 5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0)
       react-router-dom: 5.2.0(react@18.2.0)
       react-router-hash-link: 2.4.3(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)
-      react-select: 4.3.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-select-async-paginate: 0.5.3(react-dom@18.2.0(react@18.2.0))(react-select@4.3.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      react-select: 4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-select-async-paginate: 0.5.3(react-dom@18.2.0(react@18.2.0))(react-select@4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       react-side-effect: 2.1.2(react@18.2.0)
       react-simple-code-editor: 0.7.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-sortable-hoc: 2.0.0(prop-types@15.7.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -18359,7 +18405,7 @@ snapshots:
       react-virtualized: 9.22.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       redux: 4.2.1
       redux-actions: 3.0.0
-      redux-connect: 10.0.0(prop-types@15.7.2)(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-config@5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0))(react-router-dom@5.2.0(react@18.2.0))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux-actions@3.0.0)
+      redux-connect: 10.0.0(prop-types@15.7.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-config@5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0))(react-router-dom@5.2.0(react@18.2.0))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux-actions@3.0.0)
       redux-localstorage-simple: 2.5.1
       redux-mock-store: 1.5.4
       redux-thunk: 2.4.2(redux@4.2.1)
@@ -18391,18 +18437,20 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@pmmmwh/react-refresh-webpack-plugin@0.4.3(react-refresh@0.9.0)(sockjs-client@1.4.0)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))':
+  '@pmmmwh/react-refresh-webpack-plugin@0.5.15(react-refresh@0.14.2)(sockjs-client@1.4.0)(type-fest@2.19.0)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))':
     dependencies:
-      ansi-html: 0.0.7
+      ansi-html: 0.0.9
+      core-js-pure: 3.37.1
       error-stack-parser: 2.1.4
-      html-entities: 1.4.0
-      native-url: 0.2.6
-      react-refresh: 0.9.0
-      schema-utils: 2.7.1
+      html-entities: 2.5.2
+      loader-utils: 2.0.4
+      react-refresh: 0.14.2
+      schema-utils: 4.2.0
       source-map: 0.7.4
       webpack: 5.90.1(esbuild@0.20.2)
     optionalDependencies:
       sockjs-client: 1.4.0
+      type-fest: 2.19.0
       webpack-dev-server: 4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2))
       webpack-hot-middleware: 2.26.1
 
@@ -20162,7 +20210,7 @@ snapshots:
       find-cache-dir: 3.3.2
       find-up: 5.0.0
       fs-extra: 11.2.0
-      glob: 10.4.2
+      glob: 10.4.5
       handlebars: 4.7.8
       lazy-universal-dotenv: 4.0.0
       node-fetch: 2.7.0(encoding@0.1.13)
@@ -20907,6 +20955,11 @@ snapshots:
       '@types/minimatch': 5.1.2
       '@types/node': 20.14.8
 
+  '@types/glob@8.1.0':
+    dependencies:
+      '@types/minimatch': 5.1.2
+      '@types/node': 20.14.8
+
   '@types/graceful-fs@4.1.9':
     dependencies:
       '@types/node': 20.14.8
@@ -20919,7 +20972,7 @@ snapshots:
 
   '@types/hoist-non-react-statics@3.3.5':
     dependencies:
-      '@types/react': 18.2.27
+      '@types/react': 18.3.12
       hoist-non-react-statics: 3.3.2
 
   '@types/html-minifier-terser@6.1.0': {}
@@ -21027,6 +21080,10 @@ snapshots:
     dependencies:
       '@types/react': 18.2.27
 
+  '@types/react-dom@18.3.1':
+    dependencies:
+      '@types/react': 18.3.12
+
   '@types/react-redux@7.1.33':
     dependencies:
       '@types/hoist-non-react-statics': 3.3.5
@@ -21043,7 +21100,7 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.2.27
+      '@types/react': 18.3.12
 
   '@types/react-test-renderer@18.0.7':
     dependencies:
@@ -21059,6 +21116,11 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.12
       '@types/scheduler': 0.23.0
+      csstype: 3.1.3
+
+  '@types/react@18.3.12':
+    dependencies:
+      '@types/prop-types': 15.7.12
       csstype: 3.1.3
 
   '@types/resolve@1.20.6': {}
@@ -21116,9 +21178,11 @@ snapshots:
 
   '@types/testing-library__react@9.1.3':
     dependencies:
-      '@types/react-dom': 18.2.12
+      '@types/react-dom': 18.3.1
       '@types/testing-library__dom': 7.5.0
       pretty-format: 25.5.0
+
+  '@types/tmp@0.2.6': {}
 
   '@types/unist@3.0.2': {}
 
@@ -21720,7 +21784,7 @@ snapshots:
 
   ansi-html-community@0.0.8: {}
 
-  ansi-html@0.0.7: {}
+  ansi-html@0.0.9: {}
 
   ansi-regex@2.1.1: {}
 
@@ -22619,7 +22683,7 @@ snapshots:
     dependencies:
       '@npmcli/fs': 3.1.1
       fs-minipass: 3.0.3
-      glob: 10.4.2
+      glob: 10.4.5
       lru-cache: 7.18.3
       minipass: 7.1.2
       minipass-collect: 1.0.2
@@ -23063,6 +23127,17 @@ snapshots:
       prop-types: 15.7.2
       react: 18.2.0
       react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-router: 5.2.0(react@18.2.0)
+      redux: 4.2.1
+      seamless-immutable: 7.1.4
+
+  connected-react-router@6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4):
+    dependencies:
+      history: 4.10.1
+      immutable: 3.8.2
+      prop-types: 15.7.2
+      react: 18.2.0
+      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router: 5.2.0(react@18.2.0)
       redux: 4.2.1
       seamless-immutable: 7.1.4
@@ -25247,7 +25322,7 @@ snapshots:
 
   glob-to-regexp@0.4.1: {}
 
-  glob@10.4.2:
+  glob@10.4.5:
     dependencies:
       foreground-child: 3.2.1
       jackspeak: 3.4.0
@@ -25581,8 +25656,6 @@ snapshots:
   html-encoding-sniffer@3.0.0:
     dependencies:
       whatwg-encoding: 2.0.0
-
-  html-entities@1.4.0: {}
 
   html-entities@2.5.2: {}
 
@@ -28176,10 +28249,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  native-url@0.2.6:
-    dependencies:
-      querystring: 0.2.1
-
   natural-compare-lite@1.4.0: {}
 
   natural-compare@1.4.0: {}
@@ -29581,8 +29650,6 @@ snapshots:
       filter-obj: 5.1.0
       split-on-first: 3.0.0
 
-  querystring@0.2.1: {}
-
   querystringify@2.2.0: {}
 
   queue-microtask@1.2.3: {}
@@ -29631,7 +29698,7 @@ snapshots:
       - typescript
       - vue-template-compiler
 
-  razzle-plugin-scss@4.2.18(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(postcss@8.4.31)(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(razzle@4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)):
+  razzle-plugin-scss@4.2.18(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(postcss@8.4.31)(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(razzle@4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(type-fest@2.19.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)):
     dependencies:
       autoprefixer: 10.4.8(postcss@8.4.31)
       css-loader: 5.2.7(webpack@5.90.1(esbuild@0.20.2))
@@ -29640,7 +29707,7 @@ snapshots:
       postcss-load-config: 3.1.4(postcss@8.4.31)
       postcss-loader: 4.3.0(postcss@8.4.31)(webpack@5.90.1(esbuild@0.20.2))
       postcss-scss: 3.0.5
-      razzle: 4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))
+      razzle: 4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(type-fest@2.19.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))
       razzle-dev-utils: 4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2))
       resolve-url-loader: 3.1.5
       sass: 1.77.6
@@ -29656,10 +29723,10 @@ snapshots:
     dependencies:
       webpack: 5.90.1(esbuild@0.20.2)
 
-  razzle@4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2)):
+  razzle@4.2.18(@babel/core@7.24.7)(babel-preset-razzle@4.2.18)(eslint@8.57.0)(html-webpack-plugin@5.5.0(webpack@5.90.1(esbuild@0.20.2)))(mini-css-extract-plugin@2.7.2(webpack@5.90.1(esbuild@0.20.2)))(razzle-dev-utils@4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2)))(sockjs-client@1.4.0)(type-fest@2.19.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2)):
     dependencies:
       '@babel/plugin-transform-modules-commonjs': 7.24.7(@babel/core@7.24.7)
-      '@pmmmwh/react-refresh-webpack-plugin': 0.4.3(react-refresh@0.9.0)(sockjs-client@1.4.0)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.15(react-refresh@0.14.2)(sockjs-client@1.4.0)(type-fest@2.19.0)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack-hot-middleware@2.26.1)(webpack@5.90.1(esbuild@0.20.2))
       autoprefixer: 10.4.8(postcss@8.4.31)
       babel-jest: 26.6.3(@babel/core@7.24.7)
       babel-loader: 8.3.0(@babel/core@7.24.7)(webpack@5.90.1(esbuild@0.20.2))
@@ -29690,7 +29757,7 @@ snapshots:
       razzle-dev-utils: 4.2.18(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack-dev-server@4.11.1(debug@4.3.2)(webpack@5.90.1(esbuild@0.20.2)))(webpack@5.90.1(esbuild@0.20.2))
       razzle-start-server-webpack-plugin: 4.2.18(webpack@5.90.1(esbuild@0.20.2))
       react-dev-utils: 11.0.4(eslint@8.57.0)(typescript@5.6.3)(vue-template-compiler@2.7.16)(webpack@5.90.1(esbuild@0.20.2))
-      react-refresh: 0.9.0
+      react-refresh: 0.14.2
       resolve: 1.22.8
       sade: 1.8.1
       source-map-support: 0.5.21
@@ -30088,13 +30155,13 @@ snapshots:
       react-intl: 3.12.1(react@18.2.0)
       react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
 
-  react-intl-redux@2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0):
+  react-intl-redux@2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.24.7
       prop-types: 15.7.2
       react: 18.2.0
       react-intl: 3.12.1(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
 
   react-intl@3.12.1(react@18.2.0):
     dependencies:
@@ -30188,9 +30255,22 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       redux: 4.2.1
 
-  react-refresh@0.14.2: {}
+  react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1):
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@types/hoist-non-react-statics': 3.3.5
+      '@types/use-sync-external-store': 0.0.3
+      hoist-non-react-statics: 3.3.2
+      react: 18.2.0
+      react-is: 18.3.1
+      use-sync-external-store: 1.2.2(react@18.2.0)
+    optionalDependencies:
+      '@types/react': 18.3.12
+      '@types/react-dom': 18.3.1
+      react-dom: 18.2.0(react@18.2.0)
+      redux: 4.2.1
 
-  react-refresh@0.9.0: {}
+  react-refresh@0.14.2: {}
 
   react-remove-scroll-bar@2.3.6(@types/react@18.2.27)(react@18.2.0):
     dependencies:
@@ -30259,11 +30339,37 @@ snapshots:
     transitivePeerDependencies:
       - react-dom
 
+  react-select-async-paginate@0.5.3(react-dom@18.2.0(react@18.2.0))(react-select@4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@seznam/compose-react-refs': 1.0.6
+      react: 18.2.0
+      react-is-mounted-hook: 1.1.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-select: 4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      sleep-promise: 9.1.0
+    transitivePeerDependencies:
+      - react-dom
+
   react-select@4.3.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.20.6
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.4(@types/react@18.2.27)(react@18.2.0)
+      memoize-one: 5.2.1
+      prop-types: 15.7.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-input-autosize: 3.0.0(react@18.2.0)
+      react-transition-group: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    transitivePeerDependencies:
+      - '@types/react'
+      - supports-color
+
+  react-select@4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@emotion/cache': 11.11.0
+      '@emotion/react': 11.11.4(@types/react@18.3.12)(react@18.2.0)
       memoize-one: 5.2.1
       prop-types: 15.7.2
       react: 18.2.0
@@ -30435,7 +30541,7 @@ snapshots:
 
   read-package-json@6.0.4:
     dependencies:
-      glob: 10.4.2
+      glob: 10.4.5
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 5.0.0
       npm-normalize-package-bin: 3.0.1
@@ -30535,6 +30641,16 @@ snapshots:
       prop-types: 15.7.2
       react: 18.2.0
       react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-router: 5.2.0(react@18.2.0)
+      react-router-config: 5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0)
+      react-router-dom: 5.2.0(react@18.2.0)
+      redux-actions: 3.0.0
+
+  redux-connect@10.0.0(prop-types@15.7.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-config@5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0))(react-router-dom@5.2.0(react@18.2.0))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux-actions@3.0.0):
+    dependencies:
+      prop-types: 15.7.2
+      react: 18.2.0
+      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router: 5.2.0(react@18.2.0)
       react-router-config: 5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0)
       react-router-dom: 5.2.0(react@18.2.0)
@@ -31860,7 +31976,7 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       commander: 4.1.1
-      glob: 10.4.2
+      glob: 10.4.5
       lines-and-columns: 1.2.4
       mz: 2.7.0
       pirates: 4.0.6
@@ -32670,6 +32786,8 @@ snapshots:
   utility-types@3.11.0: {}
 
   utils-merge@1.0.1: {}
+
+  uuid@10.0.0: {}
 
   uuid@3.4.0: {}
 

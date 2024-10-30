@@ -15,6 +15,8 @@ class ITheming(model.Schema):
         "theming",
         fields=[
             "logo",
+            "accent_color",
+            "accent_foreground_color",
             "theme_color",
             "theme_foreground_color",
             "theme_high_contrast_color",
@@ -28,6 +30,20 @@ class ITheming(model.Schema):
             "help_project_logo",
             default="If the project has a logo, please upload it here.",
         ),
+        required=False,
+    )
+
+    directives.widget("accent_color", frontendOptions={"widget": "themingColorPicker"})
+    accent_color = TextLine(
+        title=_("label_accent_color", default="Accent Color"),
+        required=False,
+    )
+
+    directives.widget(
+        "accent_foreground_color", frontendOptions={"widget": "themingColorPicker"}
+    )
+    accent_foreground_color = TextLine(
+        title=_("label_accent_foreground_color", default="Accent Foreground Color"),
         required=False,
     )
 

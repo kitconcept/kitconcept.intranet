@@ -30,8 +30,8 @@ dependencies = [
     # "kitconcept.solr",
     "plone.api",
     "plone.distribution>=2.0.0a1",
-    "plone.restapi",
-    "plone.volto",
+    "plone.restapi>=9.8.3",
+    "plone.volto@git+https://github.com/plone/plone.volto.git@site-settings",
     "python-dateutil",
 ]
 
@@ -65,6 +65,8 @@ build-backend = "hatchling.build"
 requires = [
     "hatch-pip-compile"
 ]
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.envs.default]
 type = "pip-compile"

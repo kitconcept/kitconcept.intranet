@@ -1,4 +1,5 @@
 from kitconcept.intranet import _
+from plone.volto.sitesettings import SettingsSchema
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile.field import NamedBlobImage
@@ -8,11 +9,12 @@ from zope.schema import TextLine
 
 
 @provider(IFormFieldProvider)
-class ITheming(model.Schema):
+class ITheming(SettingsSchema):
     """Site/Subsite theming properties behavior."""
 
     model.fieldset(
         "theming",
+        title="Theming",
         fields=[
             "logo",
             "accent_color",

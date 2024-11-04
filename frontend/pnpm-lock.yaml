@@ -73,7 +73,7 @@ importers:
     dependencies:
       '@tanstack/react-query':
         specifier: ^5.59.0
-        version: 5.59.15(react@18.2.0)
+        version: 5.59.16(react@18.2.0)
       axios:
         specifier: ^1.6.7
         version: 1.7.2(debug@4.3.4)
@@ -462,7 +462,7 @@ importers:
         version: link:../registry
       '@tanstack/react-query':
         specifier: ^5.59.0
-        version: 5.59.15(react@18.2.0)
+        version: 5.59.16(react@18.2.0)
       react:
         specifier: ^16.8.0 || ^17.0.0 || ^18.0.0
         version: 18.2.0
@@ -1396,7 +1396,7 @@ importers:
         version: 3.12.1(react@18.2.0)
       react-redux:
         specifier: 8.1.2
-        version: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+        version: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router-dom:
         specifier: 5.2.0
         version: 5.2.0(react@18.2.0)
@@ -1497,10 +1497,10 @@ importers:
         version: 4.1.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(vitest@2.1.3)
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
       '@kitconcept/volto-solr':
         specifier: ^1.0.0-alpha.4
-        version: 1.0.0-alpha.5(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+        version: 1.0.0-alpha.5(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -1527,8 +1527,8 @@ importers:
         specifier: ^10.4.6
         version: 10.4.6
       '@kitconcept/volto-button-block':
-        specifier: ^2.3.1 || ^3.0.3
-        version: 3.0.3(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
+        specifier: ^3.0.2
+        version: 3.0.2(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner':
         specifier: ^2.3.2
         version: 2.3.2
@@ -1546,7 +1546,7 @@ importers:
         version: 4.1.2(@jest/globals@29.7.0)(@types/jest@29.5.12)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(vitest@2.1.3)
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../../../core/packages/components
@@ -1562,28 +1562,13 @@ importers:
       react-intl:
         specifier: ^3.12.1
         version: 3.12.1(react@18.2.0)
-      uuid:
-        specifier: ^10.0.0
-        version: 10.0.0
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.2
         version: 3.6.2
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../core/packages/types
-      '@types/jest':
-        specifier: ^29.5.8
-        version: 29.5.12
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.12
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.1
       react-redux:
         specifier: 8.1.2
-        version: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+        version: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router-dom:
         specifier: 5.2.0
         version: 5.2.0(react@18.2.0)
@@ -3058,8 +3043,8 @@ packages:
       react-dom: 18.2.0
       react-intl: 3.8.0
 
-  '@kitconcept/volto-button-block@3.0.3':
-    resolution: {integrity: sha512-H1N3OY1XRxyU9u8Cjkmf5QtdBYB6010nzke9DHU3lJLItGzP84Qg3dw6RFWV0oE/EcKhZHh0tr6kxnYIpIaiFg==}
+  '@kitconcept/volto-button-block@3.0.2':
+    resolution: {integrity: sha512-nnmEeCu4RDJvlvj7IYuBf7HPuqMRzphmEm+WjtZ3ah/6l0mr6dH7/lA0IfYRwzGX1pAzla1wodih7JopfwQ9bw==}
     peerDependencies:
       classnames: ^2.2.6
       react: 18.2.0
@@ -5208,11 +5193,11 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tanstack/query-core@5.59.13':
-    resolution: {integrity: sha512-Oou0bBu/P8+oYjXsJQ11j+gcpLAMpqW42UlokQYEz4dE7+hOtVO9rVuolJKgEccqzvyFzqX4/zZWY+R/v1wVsQ==}
+  '@tanstack/query-core@5.59.16':
+    resolution: {integrity: sha512-crHn+G3ltqb5JG0oUv6q+PMz1m1YkjpASrXTU+sYWW9pLk0t2GybUHNRqYPZWhxgjPaVGC4yp92gSFEJgYEsPw==}
 
-  '@tanstack/react-query@5.59.15':
-    resolution: {integrity: sha512-QbVlAkTI78wB4Mqgf2RDmgC0AOiJqer2c5k9STOOSXGv1S6ZkY37r/6UpE8DbQ2Du0ohsdoXgFNEyv+4eDoPEw==}
+  '@tanstack/react-query@5.59.16':
+    resolution: {integrity: sha512-MuyWheG47h6ERd4PKQ6V8gDyBu3ThNG22e1fRVwvq6ap3EqsFhyuxCAwhNP/03m/mLg+DAb0upgbPaX6VB+CkQ==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -5555,9 +5540,6 @@ packages:
   '@types/react-dom@18.2.12':
     resolution: {integrity: sha512-QWZuiA/7J/hPIGocXreCRbx7wyoeet9ooxfbSA+zbIWqyQEE7GMtRn4A37BdYyksnN+/NDnWgfxZH9UVGDw1hg==}
 
-  '@types/react-dom@18.3.1':
-    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
-
   '@types/react-redux@7.1.33':
     resolution: {integrity: sha512-NF8m5AjWCkert+fosDsN3hAlHzpjSiXlVy9EgQEmLoBhaNXbmyeGs/aj5dQzKuF+/q+S7JQagorGDW8pJ28Hmg==}
 
@@ -5575,9 +5557,6 @@ packages:
 
   '@types/react@18.2.27':
     resolution: {integrity: sha512-Wfv7B7FZiR2r3MIqbAlXoY1+tXm4bOqfz4oRr+nyXdBqapDBZ0l/IGcSlAfvxIHEEJjkPU0MYAc/BlFPOcrgLw==}
-
-  '@types/react@18.3.12':
-    resolution: {integrity: sha512-D2wOSq/d6Agt28q7rSI3jhU7G6aiuzljDGZ2hTZHIkrTLUI+AF3WMeKkEZ9nN2fkBAlcktT6vcZjDFiIhMYEQw==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -14619,10 +14598,6 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
-  uuid@10.0.0:
-    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
-    hasBin: true
-
   uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
@@ -15215,7 +15190,7 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.1.0
+      picocolors: 1.0.1
 
   '@babel/compat-data@7.24.7': {}
 
@@ -16369,22 +16344,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@emotion/react@11.11.4(@types/react@18.3.12)(react@18.2.0)':
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@emotion/babel-plugin': 11.11.0
-      '@emotion/cache': 11.11.0
-      '@emotion/serialize': 1.1.4
-      '@emotion/use-insertion-effect-with-fallbacks': 1.0.1(react@18.2.0)
-      '@emotion/utils': 1.2.1
-      '@emotion/weak-memoize': 0.3.1
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-    optionalDependencies:
-      '@types/react': 18.3.12
-    transitivePeerDependencies:
-      - supports-color
-
   '@emotion/serialize@1.1.4':
     dependencies:
       '@emotion/hash': 0.9.1
@@ -16968,7 +16927,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
 
-  '@kitconcept/volto-button-block@3.0.3(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-button-block@3.0.2(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
     dependencies:
       classnames: 2.2.6
       react: 18.2.0
@@ -17006,9 +16965,9 @@ snapshots:
       - jest
       - vitest
 
-  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)':
+  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)':
     dependencies:
-      '@plone/volto': 18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       deepmerge: 4.2.2
       embla-carousel-autoplay: 8.1.5(embla-carousel@8.1.5)
       embla-carousel-react: 8.1.5(react@18.2.0)
@@ -17016,9 +16975,9 @@ snapshots:
       - embla-carousel
       - react
 
-  '@kitconcept/volto-solr@1.0.0-alpha.5(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
+  '@kitconcept/volto-solr@1.0.0-alpha.5(@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
     dependencies:
-      '@plone/volto': 18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
 
   '@kwsites/file-exists@1.1.1':
     dependencies:
@@ -18296,7 +18255,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/volto-slate@18.0.0-alpha.20(@types/react-dom@18.3.1)(@types/react@18.3.12)(redux@4.2.1)':
+  '@plone/volto-slate@18.0.0-alpha.20(@types/react-dom@18.2.12)(@types/react@18.2.27)(redux@4.2.1)':
     dependencies:
       classnames: 2.2.6
       github-slugger: 1.4.0
@@ -18309,7 +18268,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-intersection-observer: 9.1.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router-dom: 5.2.0(react@18.2.0)
       react-toastify: 5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       redux-mock-store: 1.5.4
@@ -18330,16 +18289,16 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.0.0-alpha.48(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
       '@plone/registry': 2.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/scripts': 3.7.0(debug@4.3.2)
-      '@plone/volto-slate': 18.0.0-alpha.20(@types/react-dom@18.3.1)(@types/react@18.3.12)(redux@4.2.1)
+      '@plone/volto-slate': 18.0.0-alpha.20(@types/react-dom@18.2.12)(@types/react@18.2.27)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
       classnames: 2.2.6
-      connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
+      connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
       debug: 4.3.2
       decorate-component-with-props: 1.2.1(react@18.2.0)
       dependency-graph: 0.10.0
@@ -18386,16 +18345,16 @@ snapshots:
       react-image-gallery: 1.2.7(react@18.2.0)
       react-intersection-observer: 9.1.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
-      react-intl-redux: 2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0)
+      react-intl-redux: 2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0)
       react-medium-image-zoom: 3.0.15(prop-types@15.7.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-popper: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router: 5.2.0(react@18.2.0)
       react-router-config: 5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0)
       react-router-dom: 5.2.0(react@18.2.0)
       react-router-hash-link: 2.4.3(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)
-      react-select: 4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-select-async-paginate: 0.5.3(react-dom@18.2.0(react@18.2.0))(react-select@4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      react-select: 4.3.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-select-async-paginate: 0.5.3(react-dom@18.2.0(react@18.2.0))(react-select@4.3.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       react-side-effect: 2.1.2(react@18.2.0)
       react-simple-code-editor: 0.7.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-sortable-hoc: 2.0.0(prop-types@15.7.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -18405,7 +18364,7 @@ snapshots:
       react-virtualized: 9.22.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       redux: 4.2.1
       redux-actions: 3.0.0
-      redux-connect: 10.0.0(prop-types@15.7.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-config@5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0))(react-router-dom@5.2.0(react@18.2.0))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux-actions@3.0.0)
+      redux-connect: 10.0.0(prop-types@15.7.2)(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-config@5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0))(react-router-dom@5.2.0(react@18.2.0))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux-actions@3.0.0)
       redux-localstorage-simple: 2.5.1
       redux-mock-store: 1.5.4
       redux-thunk: 2.4.2(redux@4.2.1)
@@ -20677,11 +20636,11 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tanstack/query-core@5.59.13': {}
+  '@tanstack/query-core@5.59.16': {}
 
-  '@tanstack/react-query@5.59.15(react@18.2.0)':
+  '@tanstack/react-query@5.59.16(react@18.2.0)':
     dependencies:
-      '@tanstack/query-core': 5.59.13
+      '@tanstack/query-core': 5.59.16
       react: 18.2.0
 
   '@testing-library/cypress@10.0.1(cypress@13.13.2)':
@@ -20972,7 +20931,7 @@ snapshots:
 
   '@types/hoist-non-react-statics@3.3.5':
     dependencies:
-      '@types/react': 18.3.12
+      '@types/react': 18.2.27
       hoist-non-react-statics: 3.3.2
 
   '@types/html-minifier-terser@6.1.0': {}
@@ -21080,10 +21039,6 @@ snapshots:
     dependencies:
       '@types/react': 18.2.27
 
-  '@types/react-dom@18.3.1':
-    dependencies:
-      '@types/react': 18.3.12
-
   '@types/react-redux@7.1.33':
     dependencies:
       '@types/hoist-non-react-statics': 3.3.5
@@ -21100,7 +21055,7 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.3.12
+      '@types/react': 18.2.27
 
   '@types/react-test-renderer@18.0.7':
     dependencies:
@@ -21116,11 +21071,6 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.12
       '@types/scheduler': 0.23.0
-      csstype: 3.1.3
-
-  '@types/react@18.3.12':
-    dependencies:
-      '@types/prop-types': 15.7.12
       csstype: 3.1.3
 
   '@types/resolve@1.20.6': {}
@@ -21178,7 +21128,7 @@ snapshots:
 
   '@types/testing-library__react@9.1.3':
     dependencies:
-      '@types/react-dom': 18.3.1
+      '@types/react-dom': 18.2.12
       '@types/testing-library__dom': 7.5.0
       pretty-format: 25.5.0
 
@@ -23131,17 +23081,6 @@ snapshots:
       redux: 4.2.1
       seamless-immutable: 7.1.4
 
-  connected-react-router@6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4):
-    dependencies:
-      history: 4.10.1
-      immutable: 3.8.2
-      prop-types: 15.7.2
-      react: 18.2.0
-      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
-      react-router: 5.2.0(react@18.2.0)
-      redux: 4.2.1
-      seamless-immutable: 7.1.4
-
   consola@2.15.3: {}
 
   consola@3.2.3: {}
@@ -23323,12 +23262,12 @@ snapshots:
 
   css-loader@6.11.0(webpack@5.90.1(esbuild@0.20.2)):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.38)
-      postcss: 8.4.38
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.38)
-      postcss-modules-local-by-default: 4.0.5(postcss@8.4.38)
-      postcss-modules-scope: 3.2.0(postcss@8.4.38)
-      postcss-modules-values: 4.0.0(postcss@8.4.38)
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
+      postcss-modules-extract-imports: 3.1.0(postcss@8.4.47)
+      postcss-modules-local-by-default: 4.0.5(postcss@8.4.47)
+      postcss-modules-scope: 3.2.0(postcss@8.4.47)
+      postcss-modules-values: 4.0.0(postcss@8.4.47)
       postcss-value-parser: 4.2.0
       semver: 7.6.2
     optionalDependencies:
@@ -25838,9 +25777,9 @@ snapshots:
     dependencies:
       postcss: 8.4.31
 
-  icss-utils@5.1.0(postcss@8.4.38):
+  icss-utils@5.1.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.38
+      postcss: 8.4.47
 
   identity-obj-proxy@3.0.0:
     dependencies:
@@ -29207,9 +29146,9 @@ snapshots:
     dependencies:
       postcss: 8.4.31
 
-  postcss-modules-extract-imports@3.1.0(postcss@8.4.38):
+  postcss-modules-extract-imports@3.1.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.38
+      postcss: 8.4.47
 
   postcss-modules-local-by-default@4.0.5(postcss@8.4.31):
     dependencies:
@@ -29218,10 +29157,10 @@ snapshots:
       postcss-selector-parser: 6.1.0
       postcss-value-parser: 4.2.0
 
-  postcss-modules-local-by-default@4.0.5(postcss@8.4.38):
+  postcss-modules-local-by-default@4.0.5(postcss@8.4.47):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.38)
-      postcss: 8.4.38
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
       postcss-selector-parser: 6.1.0
       postcss-value-parser: 4.2.0
 
@@ -29230,9 +29169,9 @@ snapshots:
       postcss: 8.4.31
       postcss-selector-parser: 6.1.0
 
-  postcss-modules-scope@3.2.0(postcss@8.4.38):
+  postcss-modules-scope@3.2.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.38
+      postcss: 8.4.47
       postcss-selector-parser: 6.1.0
 
   postcss-modules-values@4.0.0(postcss@8.4.31):
@@ -29240,10 +29179,10 @@ snapshots:
       icss-utils: 5.1.0(postcss@8.4.31)
       postcss: 8.4.31
 
-  postcss-modules-values@4.0.0(postcss@8.4.38):
+  postcss-modules-values@4.0.0(postcss@8.4.47):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.38)
-      postcss: 8.4.38
+      icss-utils: 5.1.0(postcss@8.4.47)
+      postcss: 8.4.47
 
   postcss-normalize-charset@4.0.1:
     dependencies:
@@ -30155,13 +30094,13 @@ snapshots:
       react-intl: 3.12.1(react@18.2.0)
       react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
 
-  react-intl-redux@2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0):
+  react-intl-redux@2.3.0(@babel/runtime@7.24.7)(prop-types@15.7.2)(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.24.7
       prop-types: 15.7.2
       react: 18.2.0
       react-intl: 3.12.1(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
 
   react-intl@3.12.1(react@18.2.0):
     dependencies:
@@ -30255,21 +30194,6 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       redux: 4.2.1
 
-  react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1):
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@types/hoist-non-react-statics': 3.3.5
-      '@types/use-sync-external-store': 0.0.3
-      hoist-non-react-statics: 3.3.2
-      react: 18.2.0
-      react-is: 18.3.1
-      use-sync-external-store: 1.2.2(react@18.2.0)
-    optionalDependencies:
-      '@types/react': 18.3.12
-      '@types/react-dom': 18.3.1
-      react-dom: 18.2.0(react@18.2.0)
-      redux: 4.2.1
-
   react-refresh@0.14.2: {}
 
   react-remove-scroll-bar@2.3.6(@types/react@18.2.27)(react@18.2.0):
@@ -30339,37 +30263,11 @@ snapshots:
     transitivePeerDependencies:
       - react-dom
 
-  react-select-async-paginate@0.5.3(react-dom@18.2.0(react@18.2.0))(react-select@4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0):
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@seznam/compose-react-refs': 1.0.6
-      react: 18.2.0
-      react-is-mounted-hook: 1.1.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-select: 4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      sleep-promise: 9.1.0
-    transitivePeerDependencies:
-      - react-dom
-
   react-select@4.3.1(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@babel/runtime': 7.20.6
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.4(@types/react@18.2.27)(react@18.2.0)
-      memoize-one: 5.2.1
-      prop-types: 15.7.2
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-input-autosize: 3.0.0(react@18.2.0)
-      react-transition-group: 4.4.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-    transitivePeerDependencies:
-      - '@types/react'
-      - supports-color
-
-  react-select@4.3.1(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      '@babel/runtime': 7.20.6
-      '@emotion/cache': 11.11.0
-      '@emotion/react': 11.11.4(@types/react@18.3.12)(react@18.2.0)
       memoize-one: 5.2.1
       prop-types: 15.7.2
       react: 18.2.0
@@ -30641,16 +30539,6 @@ snapshots:
       prop-types: 15.7.2
       react: 18.2.0
       react-redux: 8.1.2(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
-      react-router: 5.2.0(react@18.2.0)
-      react-router-config: 5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0)
-      react-router-dom: 5.2.0(react@18.2.0)
-      redux-actions: 3.0.0
-
-  redux-connect@10.0.0(prop-types@15.7.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-config@5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0))(react-router-dom@5.2.0(react@18.2.0))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux-actions@3.0.0):
-    dependencies:
-      prop-types: 15.7.2
-      react: 18.2.0
-      react-redux: 8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router: 5.2.0(react@18.2.0)
       react-router-config: 5.1.1(react-router@5.2.0(react@18.2.0))(react@18.2.0)
       react-router-dom: 5.2.0(react@18.2.0)
@@ -32786,8 +32674,6 @@ snapshots:
   utility-types@3.11.0: {}
 
   utils-merge@1.0.1: {}
-
-  uuid@10.0.0: {}
 
   uuid@3.4.0: {}
 

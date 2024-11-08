@@ -67,6 +67,7 @@ requires = [
 ]
 
 [tool.hatch.envs.default]
+python = "3.11"
 type = "pip-compile"
 path = ".venv"
 pip-compile-resolver = "uv"

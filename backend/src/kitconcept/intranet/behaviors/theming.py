@@ -11,7 +11,7 @@ from zope.schema import TextLine
 messages = {
     "accent_color": {
         "default": "Fat menu background",
-        "description": "This is also the color used as accent color in buttons font text and borders.",
+        "description": "This is also the color used as accent color in buttons font text and for the breadcumbs background",
     },
     "accent_foreground_color": {
         "default": "Fat menu font color",

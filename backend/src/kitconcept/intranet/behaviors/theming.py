@@ -18,11 +18,11 @@ messages = {
         "description": "This is also the color used in ...",
     },
     "primary_color": {
-        "default": "Navigation menu font color",
+        "default": "Header background color (for dark themes)",
         "description": "If not set, the default color is used.",
     },
     "primary_foreground_color": {
-        "default": "Fat menu font color",
+        "default": "Navigation menu font color",
         "description": "This is also the color used in ...",
     },
     "secondary_color": {
@@ -47,8 +47,8 @@ class ITheming(SettingsSchema):
             "logo",
             "accent_color",
             "accent_foreground_color",
-            "primary_color",
-            # "primary_foreground_color", # Not used in PiK
+            # "primary_color", # Not used in PiK
+            "primary_foreground_color",
             "secondary_color",
             "secondary_foreground_color",
         ],
@@ -87,22 +87,29 @@ class ITheming(SettingsSchema):
         required=False,
     )
 
-    directives.widget("primary_color", frontendOptions={"widget": "themingColorPicker"})
-    primary_color = TextLine(
-        title=_("label_primary_color", default=messages["primary_color"]["default"]),
+    # directives.widget("primary_color", frontendOptions={"widget": "themingColorPicker"})
+    # primary_color = TextLine(
+    #     title=_("label_primary_color", default=messages["primary_color"]["default"]),
+    #     description=_(
+    #         "help_primary_color", default=messages["primary_color"]["description"]
+    #     ),
+    #     required=False,
+    # )
+
+    directives.widget(
+        "primary_foreground_color", frontendOptions={"widget": "themingColorPicker"}
+    )
+    primary_foreground_color = TextLine(
+        title=_(
+            "label_primary_foreground_color",
+            default=messages["primary_foreground_color"]["default"],
+        ),
         description=_(
-            "help_primary_color", default=messages["primary_color"]["description"]
+            "help_primary_foreground_color",
+            default=messages["primary_foreground_color"]["description"],
         ),
         required=False,
     )
-
-    # directives.widget(
-    #     "primary_foreground_color", frontendOptions={"widget": "themingColorPicker"}
-    # )
-    # primary_foreground_color = TextLine(
-    #     title=_("label_primary_foreground_color", default="Primary Foreground Color"),
-    #     required=False,
-    # )
 
     directives.widget(
         "secondary_color", frontendOptions={"widget": "themingColorPicker"}

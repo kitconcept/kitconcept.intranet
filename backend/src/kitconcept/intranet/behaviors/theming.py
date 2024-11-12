@@ -37,7 +37,9 @@ messages = {
 
 
 @provider(IFormFieldProvider)
-class ITheming(SettingsSchema):
+class ITheming(model.Schema):
+    # @ericof, bring it back when it's ready
+    # class ITheming(SettingsSchema):
     """Site/Subsite theming properties behavior."""
 
     model.fieldset(

@@ -5,6 +5,7 @@ FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
 COPY --chown=node packages/volto-intranet /app/packages/volto-intranet
 COPY --chown=node packages/volto-light-theme /app/packages/volto-light-theme
 COPY --chown=node volto.config.js /app/
+COPY --chown=node pnpm-workspace.yaml /app/
 COPY --chown=node package.json /app/package.json.temp
 
 RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT

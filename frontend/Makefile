@@ -33,6 +33,9 @@ help: ## Show this help
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
 # Dev Helpers
+.PHONY: clean
+clean: ## Clean up environment
+	rm -Rf core node_modules packages/volto-light-theme packages/volto-intranet/node_modules
 
 .PHONY: install
 install: ## Installs the add-on in a development environment

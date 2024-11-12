@@ -3,7 +3,6 @@ from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
-from plone.volto.sitesettings import SettingsSchema
 from zope.interface import provider
 from zope.schema import TextLine
 
@@ -11,7 +10,10 @@ from zope.schema import TextLine
 messages = {
     "accent_color": {
         "default": "Fat menu background",
-        "description": "This is also the color used as accent color in buttons font text and for the breadcumbs background",
+        "description": (
+            "This is also the color used as accent color in buttons font text "
+            "and for the breadcumbs background"
+        ),
     },
     "accent_foreground_color": {
         "default": "Fat menu font color",
@@ -88,15 +90,6 @@ class ITheming(model.Schema):
         ),
         required=False,
     )
-
-    # directives.widget("primary_color", frontendOptions={"widget": "themingColorPicker"})
-    # primary_color = TextLine(
-    #     title=_("label_primary_color", default=messages["primary_color"]["default"]),
-    #     description=_(
-    #         "help_primary_color", default=messages["primary_color"]["description"]
-    #     ),
-    #     required=False,
-    # )
 
     directives.widget(
         "primary_foreground_color", frontendOptions={"widget": "themingColorPicker"}

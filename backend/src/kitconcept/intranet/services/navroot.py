@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from kitconcept.intranet.interfaces import IBrowserLayer
 from plone.restapi.services import Service
 from plone.restapi.services.navroot.get import Navroot
@@ -21,7 +20,7 @@ SETTINGS = [
 @adapter(Interface, IBrowserLayer)
 class CustomNavroot(Navroot):
     def filterAttributes(self, data):
-        return {key: data.get(key) for key in data.keys() if key in SETTINGS}
+        return {key: data.get(key) for key in data if key in SETTINGS}
 
     def __call__(self, expand=False):
         result = super().__call__(expand)

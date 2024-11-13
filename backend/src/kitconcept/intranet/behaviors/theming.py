@@ -9,31 +9,22 @@ from zope.schema import TextLine
 
 messages = {
     "accent_color": {
-        "default": "Fat menu background",
-        "description": (
-            "This is also the color used as accent color in buttons font text "
-            "and for the breadcumbs background"
-        ),
+        "default": "Fat Menu Background Color",
     },
     "accent_foreground_color": {
-        "default": "Fat menu font color",
-        "description": "This is also the color used in ...",
+        "default": "Fat Menu / Breadcrumbs Text Color",
     },
     "primary_color": {
         "default": "Header background color (for dark themes)",
-        "description": "If not set, the default color is used.",
     },
     "primary_foreground_color": {
-        "default": "Navigation menu font color",
-        "description": "This is also the color used in ...",
+        "default": "Navigation Text Color",
     },
     "secondary_color": {
-        "default": "Footer background color",
-        "description": "This is also the color used in ...",
+        "default": "Footer Background Color",
     },
     "secondary_foreground_color": {
-        "default": "Footer font color",
-        "description": "This is also the color used in ...",
+        "default": "Footer Font Color",
     },
 }
 
@@ -49,12 +40,12 @@ class ITheming(model.Schema):
         title="Theming",
         fields=[
             "logo",
-            "accent_color",
-            "accent_foreground_color",
-            # "primary_color", # Not used in PiK
             "primary_foreground_color",
-            "secondary_color",
+            "accent_foreground_color",
+            "accent_color",
+            # "primary_color", # Not used in PiK
             "secondary_foreground_color",
+            "secondary_color",
         ],
     )
 
@@ -70,9 +61,6 @@ class ITheming(model.Schema):
     directives.widget("accent_color", frontendOptions={"widget": "themingColorPicker"})
     accent_color = TextLine(
         title=_("label_accent_color", default=messages["accent_color"]["default"]),
-        description=_(
-            "help_accent_color", default=messages["accent_color"]["description"]
-        ),
         required=False,
     )
 
@@ -83,10 +71,6 @@ class ITheming(model.Schema):
         title=_(
             "label_accent_foreground_color",
             default=messages["accent_foreground_color"]["default"],
-        ),
-        description=_(
-            "help_accent_foreground_color",
-            default=messages["accent_foreground_color"]["description"],
         ),
         required=False,
     )
@@ -99,10 +83,6 @@ class ITheming(model.Schema):
             "label_primary_foreground_color",
             default=messages["primary_foreground_color"]["default"],
         ),
-        description=_(
-            "help_primary_foreground_color",
-            default=messages["primary_foreground_color"]["description"],
-        ),
         required=False,
     )
 
@@ -112,9 +92,6 @@ class ITheming(model.Schema):
     secondary_color = TextLine(
         title=_(
             "label_secondary_color", default=messages["secondary_color"]["default"]
-        ),
-        description=_(
-            "help_secondary_color", default=messages["secondary_color"]["description"]
         ),
         required=False,
     )
@@ -127,10 +104,6 @@ class ITheming(model.Schema):
         title=_(
             "label_secondary_foreground_color",
             default=messages["secondary_foreground_color"]["default"],
-        ),
-        description=_(
-            "help_secondary_foreground_color",
-            default=messages["secondary_foreground_color"]["description"],
         ),
         required=False,
     )

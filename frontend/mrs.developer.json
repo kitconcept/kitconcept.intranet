@@ -4,6 +4,13 @@
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
     "https": "https://github.com/plone/volto.git",
-    "tag": "18.0.0-alpha.43"
+    "tag": "18.1.0"
+  },
+  "volto-light-theme": {
+    "output": "./packages",
+    "package": "@kitconcept/volto-light-theme",
+    "url": "git@github.com:kitconcept/volto-light-theme.git",
+    "https": "https://github.com/kitconcept/volto-light-theme.git",
+    "branch": "vlt6"
   }
 }

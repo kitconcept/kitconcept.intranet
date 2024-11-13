@@ -33,6 +33,9 @@ help: ## Show this help
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
 # Dev Helpers
+.PHONY: clean
+clean: ## Clean up environment
+	rm -Rf core node_modules packages/volto-light-theme packages/volto-intranet/node_modules
 
 .PHONY: install
 install: ## Installs the add-on in a development environment
@@ -48,10 +51,10 @@ start: ## Starts Volto, allowing reloading of the add-on during development
 build: ## Build a production bundle for distribution of the project with the add-on
 	pnpm build
 
-core/packages/registry/dist: core/packages/registry/src
+core/packages/registry/dist: $(shell find core/packages/registry/src -type f)
 	pnpm --filter @plone/registry build
 
-core/packages/components/dist: core/packages/components/src
+core/packages/components/dist: $(shell find core/packages/components/src -type f)
 	pnpm --filter @plone/components build
 
 .PHONY: build-deps

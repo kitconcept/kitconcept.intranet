@@ -19,4 +19,11 @@
       provides=".additional_contact_info.IAdditionalContactInfo"
       />
 
+  <plone:behavior
+      name="kitconcept.theming"
+      title="Custom basic theming for sites/subsites"
+      description="Enable the Theming behavior"
+      provides=".theming.ITheming"
+      />
+
 </configure>

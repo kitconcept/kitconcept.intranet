@@ -3,14 +3,16 @@ ARG VOLTO_VERSION
 FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
 
 COPY --chown=node packages/volto-intranet /app/packages/volto-intranet
+COPY --chown=node packages/volto-light-theme /app/packages/volto-light-theme
 COPY --chown=node volto.config.js /app/
+COPY --chown=node pnpm-workspace.yaml /app/
 COPY --chown=node package.json /app/package.json.temp
 
 RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
-    python3 -c "import json; data = json.load(open('package.json.temp')); deps = data['dependencies']; data['dependencies'].update(deps); json.dump(data, open('package.json', 'w'), indent=2)"
+    python3 -c "import json; orig_data = json.load(open('package.json.temp')); orig_deps = orig_data['dependencies']; data = json.load(open('package.json')); data['dependencies'].update(orig_deps); json.dump(data, open('package.json', 'w'), indent=2)"
     rm package.json.temp
-    pnpm install
+    make install
     pnpm build
     pnpm install --prod
 EOT

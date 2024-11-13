@@ -1,15 +1,7 @@
-const applyConfig = (config) => {
-  config.settings = {
-    ...config.settings,
-    isMultilingual: false,
-    supportedLanguages: ['en'],
-    defaultLanguage: 'en',
-    // Volto Light Theme Configuration
-    intranetHeader: true,
-    siteLabel: 'Intranet',
-  };
+import installSettings from './config/settings';
 
-  // config.views.contentTypeSearchResultViews.Person = PersonResultItem;
+const applyConfig = (config) => {
+  installSettings(config);
 
   return config;
 };

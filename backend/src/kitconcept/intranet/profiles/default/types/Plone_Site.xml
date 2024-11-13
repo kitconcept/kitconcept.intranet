@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="Plone Site"
+        i18n:domain="plone"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Plone Site</property>
+  <property name="description"
+            i18n:translate=""
+  />
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors"
+            purge="true"
+  >
+    <element value="kitconcept.theming" />
+    <element value="plone.dublincore" />
+    <element value="plone.richtext" />
+    <element value="plone.relateditems" />
+    <element value="plone.locking" />
+    <element value="plone.allowdiscussion" />
+    <element value="plone.excludefromnavigation" />
+    <element value="plone.tableofcontents" />
+    <element value="volto.blocks" />
+  </property>
+
+
+</object>

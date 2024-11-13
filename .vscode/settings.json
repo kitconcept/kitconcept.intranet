@@ -4,6 +4,10 @@
   "flake8.args": [
     "--config=pyproject.toml"
   ],
+  "black-formatter.cwd": "${workspaceFolder}/backend",
+  "isort.args": ["--settings-path=${workspaceFolder}/backend/pyproject.toml"],
+  "ansible.python.interpreterPath": "./devops/bin/python",
+  "ansible.validation.lint.path": "./devops/bin/ansible-lint",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#314158",
     "activityBar.background": "#314158",

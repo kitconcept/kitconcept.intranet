@@ -2,9 +2,14 @@ from kitconcept.intranet import _
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.namedfile.field import NamedBlobImage
+from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider
 from zope.schema import TextLine
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
+
+import json
 
 
 messages = {
@@ -28,6 +33,29 @@ messages = {
     },
 }
 
+BLOCKS_SCHEMA_DEFAULT_VALUE = {
+    "blocks": {},
+    "blocks_layout": {},
+}
+
+BLOCKS_SCHEMA = json.dumps(
+    {
+        "type": "object",
+        "properties": {
+            "blocks": {"type": "object"},
+            "blocks_layout": {"type": "object"},
+        },
+    }
+)
+
+FONT_VOCABULARY = SimpleVocabulary(
+    [
+        SimpleTerm(value="default", title=_("Default FZJ font")),
+        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+    ]
+)
+
 
 @provider(IFormFieldProvider)
 class ITheming(model.Schema):
@@ -46,6 +74,8 @@ class ITheming(model.Schema):
             # "primary_color", # Not used in PiK
             "secondary_foreground_color",
             "secondary_color",
+            "footer_logos",
+            "footer_links",
         ],
     )
 
@@ -106,4 +136,22 @@ class ITheming(model.Schema):
             default=messages["secondary_foreground_color"]["default"],
         ),
         required=False,
+    )
+
+    directives.widget("footer_logos", frontendOptions={"widget": "footerLogos"})
+    footer_logos = JSONField(
+        title=_("Footer logos"),
+        schema=BLOCKS_SCHEMA,
+        default=BLOCKS_SCHEMA_DEFAULT_VALUE,
+        required=False,
+        widget="",
+    )
+
+    directives.widget("footer_links", frontendOptions={"widget": "footerLinks"})
+    footer_links = JSONField(
+        title=_("Footer links"),
+        schema=BLOCKS_SCHEMA,
+        default=BLOCKS_SCHEMA_DEFAULT_VALUE,
+        required=False,
+        widget="",
     )

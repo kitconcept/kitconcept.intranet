@@ -14,6 +14,8 @@ SETTINGS = [
     "primary_foreground_color",
     "secondary_color",
     "secondary_foreground_color",
+    "footer_logos",
+    "footer_links",
 ]
 
 

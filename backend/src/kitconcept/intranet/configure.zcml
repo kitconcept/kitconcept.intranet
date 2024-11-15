@@ -27,12 +27,4 @@
   <include package=".serializers" />
   <include package=".deserializers" />
 
-  <browser:page
-      name="images"
-      for="plone.app.layout.navigation.interfaces.INavigationRoot"
-      class="plone.namedfile.scaling.NavigationRootScaling"
-      allowed_attributes="scale tag"
-      permission="zope2.View"
-      />
-
 </configure>

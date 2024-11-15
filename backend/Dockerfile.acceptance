@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG PLONE_VERSION=6.0.13
+ARG PLONE_VERSION=6.1.0b1
 FROM plone/server-builder:${PLONE_VERSION} AS builder
 
 WORKDIR /app

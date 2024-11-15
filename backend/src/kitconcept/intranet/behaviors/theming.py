@@ -74,8 +74,8 @@ class ITheming(model.Schema):
             # "primary_color", # Not used in PiK
             "secondary_foreground_color",
             "secondary_color",
-            "footer_logos",
             "footer_links",
+            "footer_logos",
         ],
     )
 

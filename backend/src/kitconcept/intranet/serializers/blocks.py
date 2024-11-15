@@ -19,10 +19,7 @@ class BlocksJSONFieldSerializer(DefaultFieldSerializer):
     def __call__(self):
         value = copy.deepcopy(self.get_value())
 
-        if "blocks" in value:
-            blocksValue = value["blocks"]
-        else:
-            blocksValue = value
+        blocksValue = value.get("blocks", value)
 
         if self.field.getName() == "blocks" or "blocks" in value:
             for block in visit_blocks(self.context, blocksValue):

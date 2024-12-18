@@ -76,6 +76,8 @@ class ITheming(model.Schema):
             "secondary_color",
             "footer_links",
             "footer_logos",
+            "footer_logos_container_width",
+            "footer_logos_size",
         ],
     )
 
@@ -145,6 +147,44 @@ class ITheming(model.Schema):
         default=BLOCKS_SCHEMA_DEFAULT_VALUE,
         required=False,
         widget="",
+    )
+
+    directives.widget(
+        "footer_logos_container_width",
+        frontendOptions={
+            "widget": "blockWidth",
+            "widgetProps": {
+                "filterActions": ["default", "layout"],
+                "actions": [
+                    {
+                        "name": "default",
+                        "label": "Default",
+                    },
+                    {
+                        "name": "layout",
+                        "label": "Layout",
+                    },
+                ],
+            },
+        },
+    )
+    footer_logos_container_width = TextLine(
+        title=_("Footer logos container width"),
+        default="default",
+        required=False,
+    )
+
+    directives.widget(
+        "footer_logos_size",
+        frontendOptions={
+            "widget": "sizeWidget",
+            "widgetProps": {"filterActions": ["s", "l"]},
+        },
+    )
+    footer_logos_size = TextLine(
+        title=_("Footer logos size"),
+        default="s",
+        required=False,
     )
 
     directives.widget("footer_links", frontendOptions={"widget": "footerLinks"})

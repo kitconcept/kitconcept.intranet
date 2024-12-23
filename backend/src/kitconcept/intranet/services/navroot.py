@@ -16,6 +16,8 @@ SETTINGS = [
     "secondary_foreground_color",
     "footer_logos",
     "footer_links",
+    "footer_logos_container_width",
+    "footer_logos_size",
 ]
 
 

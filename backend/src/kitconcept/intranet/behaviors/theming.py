@@ -90,14 +90,14 @@ class ITheming(model.Schema):
         required=False,
     )
 
-    directives.widget("accent_color", frontendOptions={"widget": "themingColorPicker"})
+    directives.widget("accent_color", frontendOptions={"widget": "themeColorPicker"})
     accent_color = TextLine(
         title=_("label_accent_color", default=messages["accent_color"]["default"]),
         required=False,
     )
 
     directives.widget(
-        "accent_foreground_color", frontendOptions={"widget": "themingColorPicker"}
+        "accent_foreground_color", frontendOptions={"widget": "themeColorPicker"}
     )
     accent_foreground_color = TextLine(
         title=_(
@@ -108,7 +108,7 @@ class ITheming(model.Schema):
     )
 
     directives.widget(
-        "primary_foreground_color", frontendOptions={"widget": "themingColorPicker"}
+        "primary_foreground_color", frontendOptions={"widget": "themeColorPicker"}
     )
     primary_foreground_color = TextLine(
         title=_(
@@ -118,9 +118,7 @@ class ITheming(model.Schema):
         required=False,
     )
 
-    directives.widget(
-        "secondary_color", frontendOptions={"widget": "themingColorPicker"}
-    )
+    directives.widget("secondary_color", frontendOptions={"widget": "themeColorPicker"})
     secondary_color = TextLine(
         title=_(
             "label_secondary_color", default=messages["secondary_color"]["default"]
@@ -130,7 +128,7 @@ class ITheming(model.Schema):
 
     directives.widget(
         "secondary_foreground_color",
-        frontendOptions={"widget": "themingColorPicker"},
+        frontendOptions={"widget": "themeColorPicker"},
     )
     secondary_foreground_color = TextLine(
         title=_(

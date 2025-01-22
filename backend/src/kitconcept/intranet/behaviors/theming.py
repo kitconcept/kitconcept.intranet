@@ -38,23 +38,19 @@ BLOCKS_SCHEMA_DEFAULT_VALUE = {
     "blocks_layout": {},
 }
 
-BLOCKS_SCHEMA = json.dumps(
-    {
-        "type": "object",
-        "properties": {
-            "blocks": {"type": "object"},
-            "blocks_layout": {"type": "object"},
-        },
-    }
-)
+BLOCKS_SCHEMA = json.dumps({
+    "type": "object",
+    "properties": {
+        "blocks": {"type": "object"},
+        "blocks_layout": {"type": "object"},
+    },
+})
 
-FONT_VOCABULARY = SimpleVocabulary(
-    [
-        SimpleTerm(value="default", title=_("Default FZJ font")),
-        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-    ]
-)
+FONT_VOCABULARY = SimpleVocabulary([
+    SimpleTerm(value="default", title=_("Default FZJ font")),
+    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+])
 
 
 @provider(IFormFieldProvider)

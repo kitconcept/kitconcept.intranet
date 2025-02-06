@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.5 (2025-02-06)
+
+### Internal
+
+- Fix Docker image generation [@ericof] 
+
 ## 1.0.0-alpha.4 (2025-02-06)
 
 ## 1.0.0-alpha.3 (2024-10-01)

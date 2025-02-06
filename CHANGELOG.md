@@ -1,6 +1,23 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a4 (2025-02-06)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Fix Docker image generation [@ericof] 
+
+
+
 ## 1.0.0a3 (2025-02-06)
 
 ### Backend

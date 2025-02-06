@@ -8,6 +8,7 @@ on:
 
 env:
   IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept-intranet
+  NODE_VERSION: 20.x
 
 jobs:
 
@@ -131,7 +132,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-        - name: Use Node.js ${{ env.node-version }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}

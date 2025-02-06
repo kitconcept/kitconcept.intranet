@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a4 (2025-02-06)
+
+
+### Internal
+
+- Allow use of environment variables for create-site script [@ericof] [#55](https://github.com/kitconcept/kitconcept.intranet/issue/55)
+
 ## 1.0.0a3 (2024-10-01)
 
 

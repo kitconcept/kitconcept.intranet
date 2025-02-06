@@ -1,6 +1,21 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a3 (2025-02-06)
+
+### Backend
+
+
+#### Internal
+
+- Allow use of environment variables for create-site script [@ericof] [#55](https://github.com/kitconcept/kitconcept.intranet/issue/55)
+
+
+
+### Frontend
+
+
+
 ## 1.0.0a2 (2024-10-01)
 
 ### Backend

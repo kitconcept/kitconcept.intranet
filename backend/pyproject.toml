@@ -31,7 +31,7 @@ dependencies = [
     "plone.api",
     "plone.distribution>=2.0.0a1",
     "plone.restapi>=9.8.3",
-    "plone.volto@git+https://github.com/plone/plone.volto.git@site-settings",
+    "plone.volto>=5.0.2",
     "python-dateutil",
 ]
 

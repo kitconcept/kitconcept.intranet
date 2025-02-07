@@ -132,14 +132,14 @@ build-images:  ## Build docker images
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
 	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f $(STACK_FILE) up -d --build
-	@echo "Now visit: http://portalbrasil-intranet.localhost"
+	@echo "Now visit: http://kitconcept-intranet.localhost"
 
 .PHONY: start-stack
 stack-create-site:  ## Local Stack: Create a new site
 	@echo "Create a new site in the local Docker stack"
 	@docker compose -f $(STACK_FILE) exec backend ./docker-entrypoint.sh create-site
 
-.PHONY: start-ps
+.PHONY: start-status
 stack-status:  ## Local Stack: Check Status
 	@echo "Check the status of the local Docker stack"
 	@docker compose -f $(STACK_FILE) ps
@@ -191,12 +191,12 @@ acceptance-images-build: ## Build Acceptance frontend/backend images
 .PHONY: acceptance-frontend-container-start
 acceptance-frontend-container-start: ## Start Acceptance frontend container
 	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name portalbrasil-intranet-frontend-acceptance --link portalbrasil-intranet-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/kitconcept-intranet-frontend:acceptance
+	@docker run --rm -p 3000:3000 --name kitconcept-intranet-frontend-acceptance --link kitconcept-intranet-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/kitconcept-intranet-frontend:acceptance
 
 .PHONY: acceptance-backend-container-start
 acceptance-backend-container-start: ## Start Acceptance backend container
 	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name portalbrasil-intranet-backend-acceptance -d kitconcept/kitconcept-intranet-backend:acceptance
+	@docker run --rm -p 55001:55001 --name kitconcept-intranet-backend-acceptance -d kitconcept/kitconcept-intranet-backend:acceptance
 
 .PHONY: acceptance-containers-start
 acceptance-containers-start: ## Start Acceptance containers
@@ -206,8 +206,8 @@ acceptance-containers-start: ## Start Acceptance containers
 .PHONY: acceptance-containers-stop
 acceptance-containers-stop: ## Stop Acceptance containers
 	@echo "Stop acceptance containers"
-	@docker stop portalbrasil-intranet-frontend-acceptance
-	@docker stop portalbrasil-intranet-backend-acceptance
+	@docker stop kitconcept-intranet-frontend-acceptance
+	@docker stop kitconcept-intranet-backend-acceptance
 
 .PHONY: ci-acceptance-test
 ci-acceptance-test: ## Run Acceptance tests in ci mode

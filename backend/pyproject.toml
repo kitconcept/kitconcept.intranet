@@ -4,7 +4,7 @@ dynamic = ["version"]
 description = "A Plone distribution for Intranets with Plone. Created by kitconcept."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 authors = [
     { name = "kitconcept GmbH", email = "info@kitconcept.com" },
 ]
@@ -13,14 +13,11 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Web Environment",
     "Framework :: Plone",
-    "Framework :: Plone :: 6.0",
-    "Framework :: Plone :: Addon",
+    "Framework :: Plone :: 6.1",
     "Framework :: Plone :: Distribution",
     "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",

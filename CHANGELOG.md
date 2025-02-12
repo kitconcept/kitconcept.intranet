@@ -1,6 +1,29 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a5 (2025-02-12)
+
+### Backend
+
+
+#### Feature
+
+- Upgrade Plone to version 6.1.0 [@ericof] [#64](https://github.com/kitconcept/kitconcept.intranet/issue/64)
+
+
+
+### Frontend
+
+#### Feature
+
+- Upgrade Volto to version 18.8.2 [@ericof] [#65](https://github.com/kitconcept/kitconcept.intranet/issue/65)
+
+#### Bugfix
+
+- Install corepack on the frontend image to avoid requiring internet connection during startup [@ericof] [#62](https://github.com/kitconcept/kitconcept.intranet/issue/62)
+
+
+
 ## 1.0.0a4 (2025-02-06)
 
 ### Backend

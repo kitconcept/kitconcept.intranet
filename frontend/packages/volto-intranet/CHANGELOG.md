@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.6 (2025-02-12)
+
+### Feature
+
+- Upgrade Volto to version 18.8.2 [@ericof] [#65](https://github.com/kitconcept/kitconcept.intranet/issue/65)
+
+### Bugfix
+
+- Install corepack on the frontend image to avoid requiring internet connection during startup [@ericof] [#62](https://github.com/kitconcept/kitconcept.intranet/issue/62)
+
 ## 1.0.0-alpha.5 (2025-02-06)
 
 ### Internal

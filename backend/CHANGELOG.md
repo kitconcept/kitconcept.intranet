@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a6 (2025-02-12)
+
+
+### Feature
+
+- Upgrade Plone to version 6.1.0 [@ericof] [#64](https://github.com/kitconcept/kitconcept.intranet/issue/64)
+
 ## 1.0.0a5 (2025-02-06)
 
 No significant changes.

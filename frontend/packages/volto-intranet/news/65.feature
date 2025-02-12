@@ -1,0 +1,1 @@
+Upgrade Volto to version 18.8.2 [@ericof]

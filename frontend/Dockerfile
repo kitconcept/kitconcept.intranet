@@ -24,4 +24,10 @@ LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
       org.label-schema.description="kitconcept Intranet frontend image." \
       org.label-schema.vendor="kitconcept GmbH"
 
+# Upgrades pnpm to the latest version globally
+RUN corepack install -g pnpm
+
 COPY --from=builder /app/ /app/
+
+# Specifically install and uses the package manager configured in the local project
+RUN corepack install

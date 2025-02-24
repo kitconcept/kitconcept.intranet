@@ -66,7 +66,7 @@ services:
         ### Note: all dollar signs in the hash need to be doubled for escaping.
         ### To create user:password pair, it's possible to use this command:
         ### echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
-        - traefik.http.middlewares.mw-kc-intranet-back-auth.basicauth.users=intra-admin:$$apr1$$6RN5HfVi$$gB0AHNAzvzKXudmevCYdU.
+        - traefik.http.middlewares.mw-kc-intranet-back-auth.basicauth.users=kitconcept:$$apr1$$6RN5HfVi$$gB0AHNAzvzKXudmevCYdU.
 
         # Routes
         ## /++api++

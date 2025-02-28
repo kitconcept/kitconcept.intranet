@@ -38,19 +38,23 @@ BLOCKS_SCHEMA_DEFAULT_VALUE = {
     "blocks_layout": {},
 }
 
-BLOCKS_SCHEMA = json.dumps({
-    "type": "object",
-    "properties": {
-        "blocks": {"type": "object"},
-        "blocks_layout": {"type": "object"},
-    },
-})
+BLOCKS_SCHEMA = json.dumps(
+    {
+        "type": "object",
+        "properties": {
+            "blocks": {"type": "object"},
+            "blocks_layout": {"type": "object"},
+        },
+    }
+)
 
-FONT_VOCABULARY = SimpleVocabulary([
-    SimpleTerm(value="default", title=_("Default FZJ font")),
-    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-])
+FONT_VOCABULARY = SimpleVocabulary(
+    [
+        SimpleTerm(value="default", title=_("Default FZJ font")),
+        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+    ]
+)
 
 
 @provider(IFormFieldProvider)
@@ -106,7 +110,8 @@ class ISiteCustomizationSettings(model.Schema):
         title=_("label_complementary_logo", default="Complementary Logo"),
         description=_(
             "help_complementary_logo",
-            default="If the project has a complimentary logo, please upload it here. It will show in the right side of the header",
+            default="If the project has a complimentary logo, please upload it here. "
+            "It will show in the right side of the header",
         ),
         required=False,
     )
@@ -115,7 +120,8 @@ class ISiteCustomizationSettings(model.Schema):
         title=_("label_intranet_flag", default="Intranet Flag"),
         description=_(
             "help_intranet_flag",
-            default="If your site is an intranet, the intranet flag is the color pill at the top left of the header.",
+            default="If your site is an intranet, the intranet flag is the color pill"
+            " at the top left of the header.",
         ),
         required=False,
     )

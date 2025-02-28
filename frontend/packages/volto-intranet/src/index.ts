@@ -8,3 +8,4 @@ const applyConfig = (config: ConfigType) => {
 };
 
 export default applyConfig;
+// asd

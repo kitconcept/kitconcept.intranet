@@ -38,38 +38,58 @@ BLOCKS_SCHEMA_DEFAULT_VALUE = {
     "blocks_layout": {},
 }
 
-BLOCKS_SCHEMA = json.dumps({
-    "type": "object",
-    "properties": {
-        "blocks": {"type": "object"},
-        "blocks_layout": {"type": "object"},
-    },
-})
+BLOCKS_SCHEMA = json.dumps(
+    {
+        "type": "object",
+        "properties": {
+            "blocks": {"type": "object"},
+            "blocks_layout": {"type": "object"},
+        },
+    }
+)
 
-FONT_VOCABULARY = SimpleVocabulary([
-    SimpleTerm(value="default", title=_("Default FZJ font")),
-    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-])
+FONT_VOCABULARY = SimpleVocabulary(
+    [
+        SimpleTerm(value="default", title=_("Default FZJ font")),
+        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+    ]
+)
 
 
 @provider(IFormFieldProvider)
-class ITheming(model.Schema):
+class ISiteCustomizationSettings(model.Schema):
     # @ericof, bring it back when it's ready
-    # class ITheming(SettingsSchema):
+    # class ISiteCustomizationSettings(SettingsSchema):
     """Site/Subsite theming properties behavior."""
 
     model.fieldset(
-        "theming",
-        title="Theming",
+        "header",
+        label=_("Header customizations"),
         fields=[
             "logo",
+            "complementary_logo",
+            "intranet_flag",
+        ],
+    )
+
+    model.fieldset(
+        "theming",
+        label=_("Theming"),
+        fields=[
             "primary_foreground_color",
             "accent_foreground_color",
             "accent_color",
             # "primary_color", # Not used in PiK
             "secondary_foreground_color",
             "secondary_color",
+        ],
+    )
+
+    model.fieldset(
+        "footer",
+        label=_("Footer customizations"),
+        fields=[
             "footer_links",
             "footer_logos",
             "footer_logos_container_width",
@@ -78,10 +98,30 @@ class ITheming(model.Schema):
     )
 
     logo = NamedBlobImage(
-        title=_("label_project_logo", default="Project Logo"),
+        title=_("label_site_logo", default="Site Logo"),
         description=_(
-            "help_project_logo",
-            default="If the project has a logo, please upload it here.",
+            "help_site_logo",
+            default="If the site or subsite has a logo, please upload it here.",
+        ),
+        required=False,
+    )
+
+    complementary_logo = NamedBlobImage(
+        title=_("label_complementary_logo", default="Complementary Logo"),
+        description=_(
+            "help_complementary_logo",
+            default="If the project has a complimentary logo, please upload it here. "
+            "It will show in the right side of the header",
+        ),
+        required=False,
+    )
+
+    intranet_flag = TextLine(
+        title=_("label_intranet_flag", default="Intranet Flag"),
+        description=_(
+            "help_intranet_flag",
+            default="If your site is an intranet, the intranet flag is the color pill"
+            " at the top left of the header.",
         ),
         required=False,
     )

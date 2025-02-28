@@ -20,10 +20,10 @@
       />
 
   <plone:behavior
-      name="kitconcept.theming"
-      title="Custom basic theming for sites/subsites"
-      description="Enable the Theming behavior"
-      provides=".theming.ITheming"
+      name="kitconcept.sitecustomization"
+      title="Customizations for sites/subsites"
+      description="Set of fields to customize sites and subsites"
+      provides=".customizations.ISiteCustomizationSettings"
       />
 
 </configure>

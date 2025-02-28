@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Plone Actions Tool"
+        name="portal_actions"
+>
+  <object meta_type="CMF Action Category"
+          name="portal_tabs"
+  >
+    <property name="title" />
+    <object meta_type="CMF Action"
+            name="index_html"
+            i18n:domain="plone"
+    >
+      <property name="visible">False</property>
+    </object>
+  </object>
+</object>

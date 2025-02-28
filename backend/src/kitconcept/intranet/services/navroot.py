@@ -8,6 +8,8 @@ from zope.interface import Interface
 # Grab them from the behavior?
 SETTINGS = [
     "logo",
+    "complementary_logo",
+    "intranet_flag",
     "accent_color",
     "accent_foreground_color",
     "primary_color",

@@ -38,23 +38,19 @@ BLOCKS_SCHEMA_DEFAULT_VALUE = {
     "blocks_layout": {},
 }
 
-BLOCKS_SCHEMA = json.dumps(
-    {
-        "type": "object",
-        "properties": {
-            "blocks": {"type": "object"},
-            "blocks_layout": {"type": "object"},
-        },
-    }
-)
+BLOCKS_SCHEMA = json.dumps({
+    "type": "object",
+    "properties": {
+        "blocks": {"type": "object"},
+        "blocks_layout": {"type": "object"},
+    },
+})
 
-FONT_VOCABULARY = SimpleVocabulary(
-    [
-        SimpleTerm(value="default", title=_("Default FZJ font")),
-        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-    ]
-)
+FONT_VOCABULARY = SimpleVocabulary([
+    SimpleTerm(value="default", title=_("Default FZJ font")),
+    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+])
 
 
 @provider(IFormFieldProvider)
@@ -65,16 +61,17 @@ class ISiteCustomizationSettings(model.Schema):
 
     model.fieldset(
         "header",
-        title="Header customizations",
+        label=_("Header customizations"),
         fields=[
             "logo",
             "complementary_logo",
+            "intranet_flag",
         ],
     )
 
     model.fieldset(
         "theming",
-        title="Theming",
+        label=_("Theming"),
         fields=[
             "primary_foreground_color",
             "accent_foreground_color",
@@ -87,7 +84,7 @@ class ISiteCustomizationSettings(model.Schema):
 
     model.fieldset(
         "footer",
-        title="Footer customizations",
+        label=_("Footer customizations"),
         fields=[
             "footer_links",
             "footer_logos",
@@ -110,6 +107,15 @@ class ISiteCustomizationSettings(model.Schema):
         description=_(
             "help_complementary_logo",
             default="If the project has a complimentary logo, please upload it here. It will show in the right side of the header",
+        ),
+        required=False,
+    )
+
+    intranet_flag = TextLine(
+        title=_("label_intranet_flag", default="Intranet Flag"),
+        description=_(
+            "help_intranet_flag",
+            default="If your site is an intranet, the intranet flag is the color pill at the top left of the header.",
         ),
         required=False,
     )

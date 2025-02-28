@@ -154,6 +154,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
+        working-directory: ./frontend
         run: make install
 
       - name: Docker meta

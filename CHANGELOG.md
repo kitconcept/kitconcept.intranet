@@ -1,6 +1,19 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a6 (2025-03-05)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+
 ## 1.0.0a5 (2025-02-12)
 
 ### Backend

@@ -1,7 +1,7 @@
 from AccessControl.SecurityManagement import newSecurityManager
-from pathlib import Path
 from kitconcept.intranet.utils.scripts import asbool
 from kitconcept.intranet.utils.scripts import parse_answers
+from pathlib import Path
 from plone.distribution.api import site as site_api
 from Testing.makerequest import makerequest
 
@@ -80,7 +80,7 @@ def main():
             )
 
     if site_id not in app.objectIds():
-        site = site_api._create_site(
+        site_api._create_site(
             context=app, distribution_name=DISTRIBUTION, answers=answers
         )
         transaction.commit()

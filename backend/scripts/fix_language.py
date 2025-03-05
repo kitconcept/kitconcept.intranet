@@ -13,7 +13,7 @@ from zope.component.hooks import setSite
 import transaction
 
 
-portal = app.Plone  # noqa
+portal = app.Plone  # noqa: F821
 setSite(portal)
 
 
@@ -24,7 +24,7 @@ def main(app):
 
     with api.env.adopt_user(username="admin"):
         brains = api.content.find(
-            path={"query": f"/Plone"},
+            path={"query": "/Plone"},
         )
 
         print(f"Processing a total of {len(brains)} objects")
@@ -35,15 +35,15 @@ def main(app):
                 obj = brain.getObject()
                 if obj.language != default_language:
                     print(
-                        f"Detected missing or wrong lang field to object, should be {default_language}: {obj.absolute_url()}"
+                        f"Detected missing or wrong lang field to object, should be {default_language}: {obj.absolute_url()}"  # noqa:E501
                     )
                     obj.language = default_language
-            except:  # noqa
+            except Exception:
                 print(f"Error setting language in object: {brain.getPath()}")
 
             if n % 100 == 0:
                 transaction.commit()
-                print("{0} items processed.".format(n))
+                print(f"{n} items processed.")
 
             n = n + 1
 
@@ -53,4 +53,4 @@ def main(app):
 
 
 if "app" in locals():
-    main(app)  # noqa
+    main(app)  # noqa: F821

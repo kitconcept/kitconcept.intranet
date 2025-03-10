@@ -126,8 +126,7 @@ test: $(VENV_FOLDER) ## run tests
 
 .PHONY: test-coverage
 test-coverage: $(VENV_FOLDER) ## run tests with coverage
-	@uv run pytest --cov=ploneconf.core --cov-report term-missing
-
+	@uv run pytest --cov=kitconcept.intranet --cov-report term-missing
 
 # Build Docker images
 .PHONY: build-image

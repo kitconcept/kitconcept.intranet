@@ -78,13 +78,9 @@ source_pkgs = ["kitconcept.intranet", "tests"]
 branch = true
 parallel = true
 omit = [
-  "kitconcept/intranet/locales/__init__.py",
-  "kitconcept/intranet/locales/__main__.py",
+  "src/kitconcept/intranet/locales/__init__.py",
+  "src/kitconcept/intranet/locales/__main__.py",
 ]
-
-[tool.coverage.paths]
-kitconcept.intranet = ["src/kitconcept/intranet"]
-tests = ["tests",]
 
 [tool.coverage.report]
 skip_empty = true

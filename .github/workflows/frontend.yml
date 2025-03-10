@@ -122,6 +122,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install dependencies
+        run: make install
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:

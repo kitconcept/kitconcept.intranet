@@ -1,13 +1,17 @@
 {
   "eslint.workingDirectories": ["./frontend"],
   "flake8.cwd": "${workspaceFolder}/backend",
-  "flake8.args": [
-    "--config=pyproject.toml"
+  "flake8.args": ["--config=pyproject.toml"],
+  "ruff.organizeImports": true,
+  "python.terminal.activateEnvironment": true,
+  "python.testing.pytestArgs": [
+    "backend/tests"
   ],
-  "black-formatter.cwd": "${workspaceFolder}/backend",
-  "isort.args": ["--settings-path=${workspaceFolder}/backend/pyproject.toml"],
-  "ansible.python.interpreterPath": "./devops/bin/python",
-  "ansible.validation.lint.path": "./devops/bin/ansible-lint",
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#314158",
     "activityBar.background": "#314158",

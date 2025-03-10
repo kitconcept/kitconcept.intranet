@@ -12,14 +12,14 @@ COPY . src
 # Install local requirements and pre-compile mo files
 RUN <<EOT
     set -e
-    bin/pip install mxdev uv hatch
+    sed -i 's/plone.autoinclude==1.0.1/plone.autoinclude==2.0.0/g' /app/constraints.txt
+    bin/pip install uv hatch hatchling wheel
     cd /app/src
     ../bin/hatch build
-    ../bin/mxdev -c mx.ini
-    ../bin/uv pip install dist/*.whl -c constraints-mxdev.txt
-    ../bin/python /compile_mo.py
     cd /app
-    rm -Rf /app/src
+    bin/uv pip install /app/src/dist/*.whl -c /app/constraints.txt
+    bin/python /compile_mo.py
+    rm -Rf src
 EOT
 
 FROM plone/server-prod-config:${PLONE_VERSION}

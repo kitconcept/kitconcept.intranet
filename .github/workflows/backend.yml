@@ -1,92 +1,150 @@
-name: Backend CI Workflow
+name: Backend CI
 
 on:
   workflow_call:
-  workflow_dispatch:
-
-env:
-  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept-intranet
-  IMAGE_NAME_SUFFIX: backend
-  PYTHON_VERSION: "3.11"
+    inputs:
+      base-tag:
+        required: true
+        type: string
+      image-name-prefix:
+        required: true
+        type: string
+      image-name-suffix:
+        required: true
+        type: string
+      python-version:
+        required: true
+        type: string
+      plone-version:
+        required: true
+        type: string
 
 defaults:
   run:
-    working-directory: ./backend
+    working-directory: backend
 
 jobs:
 
-  config:
+  lint:
     runs-on: ubuntu-latest
-    outputs:
-      PLONE_VERSION: ${{ steps.vars.outputs.PLONE_VERSION }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Set Env Vars
-        id: vars
-        run: |
-          python3 -c 'from pathlib import Path; data = (Path() / "version.txt").read_text().strip(); print(f"PLONE_VERSION={data}")' >> $GITHUB_OUTPUT
-      - name: Test vars
-        run: |
-          echo 'PLONE_VERSION=${{ steps.vars.outputs.PLONE_VERSION }}'
+        - name: Checkout
+          uses: actions/checkout@v4
 
-  code-quality:
-    runs-on: ubuntu-latest
-    needs:
-      - config
-    steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v4
+        - name: Install the latest version of uv
+          uses: astral-sh/setup-uv@v5
+          with:
+            python-version: ${{ inputs.python-version }}
+            enable-cache: true
 
-      - name: Install hatch
-        run: pipx install hatch
+        - name: Check formatting
+          if: ${{ success() || failure() }}
+          id: ruff-format
+          run: uvx ruff@latest format --diff
 
-      - name: Generate Constraints file
-        run: pipx run mxdev -c mx.ini
+        - name: Check lint
+          if: ${{ success() || failure() }}
+          id: ruff-lint
+          run: uvx ruff@latest check --diff
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: 'pip'
+        - name: Check XML / ZCML
+          if: ${{ success() || failure() }}
+          id: zpretty
+          run: uvx zpretty@latest --check src
 
-      - name: "Install Environment"
-        run: hatch env create
+        - name: Check Package Metadata
+          if: ${{ success() || failure() }}
+          id: pyroma
+          run: uvx pyroma@latest -d .
 
-      - name: "Run checks"
-        run: hatch run lint
+        - name: Check Python Versions
+          if: ${{ success() || failure() }}
+          id: py-versions
+          run: uvx check-python-versions@latest .
+
+        - name: Report
+          if: ${{ success() || failure() }}
+          run: |
+            echo '# Code Analysis' >> $GITHUB_STEP_SUMMARY
+            echo '| Test | Status |' >> $GITHUB_STEP_SUMMARY
+            echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+            echo '| Format | ${{ steps.ruff-format.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| Lint | ${{ steps.ruff-lint.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| XML / ZCML | ${{ steps.zpretty.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| Package Metadata | ${{ steps.pyroma.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| Python Versions | ${{ steps.py-versions.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
 
   test:
     runs-on: ubuntu-latest
-    needs:
-      - config
+    env:
+      PYTHON_VERSION: ${{ inputs.python-version }}
+      PLONE_VERSION: ${{ inputs.plone-version }}
     steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v4
 
-      - name: Install hatch
-        run: pipx install hatch
+        - name: Checkout
+          uses: actions/checkout@v4
 
-      - name: Generate Constraints file
-        run: pipx run mxdev -c mx.ini
+        - name: Install the latest version of uv
+          uses: astral-sh/setup-uv@v5
+          with:
+            python-version: ${{ inputs.python-version }}
+            enable-cache: false
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: 'pip'
+        - name: Restore uv cache
+          uses: actions/cache@v4
+          with:
+            path: ${{ env.UV_CACHE_DIR }}
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            restore-keys: |
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
 
-      - name: "Install Environment"
-        run: hatch env create
+        - name: Install Plone and package
+          run: make install
 
-      - name: "Test Codebase"
-        run: hatch run test
+        - name: Run tests
+          run: make test
+
+  coverage:
+    runs-on: ubuntu-latest
+    needs:
+      - test
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Install the latest version of uv
+          uses: astral-sh/setup-uv@v5
+          with:
+            python-version: ${{ inputs.python-version }}
+            enable-cache: false
+
+        - name: Restore uv cache
+          uses: actions/cache@v4
+          with:
+            path: /tmp/.uv-cache
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            restore-keys: |
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
+
+        - name: Install Plone and package
+          run: make install
+
+        - name: Run tests
+          run: make test-coverage
+
+        - name: Report Coverage
+          run: |
+            echo "# Coverage Report" >> $GITHUB_STEP_SUMMARY
+            echo "$(uv run coverage report --format markdown)" >> $GITHUB_STEP_SUMMARY
 
   release:
     runs-on: ubuntu-latest
     needs:
-      - config
-      - code-quality
-      - test
+      - lint
+      - coverage
     permissions:
       contents: read
       packages: write
@@ -101,15 +159,18 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ env.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}
+            ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ env.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}:${{ github.ref_name }}
+            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:${{ inputs.base-tag }}
           flavor:
             latest=false
           tags: |
             type=ref,event=branch
             type=sha
             type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -121,43 +182,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Backend image
-        uses: docker/build-push-action@v5
-        with:
-          platforms: linux/amd64
-          context: backend
-          file: backend/Dockerfile
-          build-args: |
-            PLONE_VERSION=${{ needs.config.outputs.PLONE_VERSION }}
-          load: true
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-
-      - name: Docker meta Beispiele
-        id: meta-beispiele
-        uses: docker/metadata-action@v5
-        with:
-          images: |
-            ${{ env.IMAGE_NAME_PREFIX }}-beispiele
-          labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ env.IMAGE_NAME_PREFIX }}-beispiele:${{ github.ref_name }}
-          flavor:
-            latest=false
-          tags: |
-            type=ref,event=branch
-            type=sha
-            type=raw,value=latest,enable={{is_default_branch}}
-
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           platforms: linux/amd64
-          context: backend
-          build-args: |
-            SEED=${{ github.run_id }}
-            IMAGE_TAG=${{ github.ref_name }}
-          file: backend/Dockerfile.beispiele
+          context: backend/
+          file: backend/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta-beispiele.outputs.tags }}
-          labels: ${{ steps.meta-beispiele.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            PLONE_VERSION=${{ inputs.plone-version }}

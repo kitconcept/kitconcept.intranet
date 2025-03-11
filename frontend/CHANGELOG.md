@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.8 (2025-03-11)
+
+### Feature
+
+- Update @plone/volto to version 18.9.2 @sneridagh 
+- Update volto-banner-block to latest, add dependencies. @sneridagh 
+
 ## 1.0.0-alpha.7 (2025-03-05)
 
 ## 1.0.0-alpha.6 (2025-02-12)

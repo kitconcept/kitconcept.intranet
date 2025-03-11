@@ -1,6 +1,36 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a8 (2025-03-11)
+
+### Backend
+
+
+#### Feature
+
+- Adds preview_image_link behavior to Link, Event, News Item, Image, File, Person content types @sneridagh 
+
+
+#### Bugfix
+
+- Upgrade to plone.autoinclude 2.0.0 [@ericof] 
+
+
+#### Internal
+
+- Refactor backend installation [@ericof] [#69](https://github.com/kitconcept/kitconcept.intranet/issue/69)
+
+
+
+### Frontend
+
+#### Feature
+
+- Update @plone/volto to version 18.9.2 @sneridagh 
+- Update volto-banner-block to latest, add dependencies. @sneridagh 
+
+
+
 ## 1.0.0a6 (2025-03-05)
 
 ### Backend

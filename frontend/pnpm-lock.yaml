@@ -1527,10 +1527,10 @@ importers:
         version: 4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
       '@kitconcept/volto-solr':
         specifier: ^1.0.0-alpha.4
-        version: 1.0.0-alpha.5(@plone/volto@18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+        version: 1.0.0-alpha.5(@plone/volto@18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -1553,15 +1553,6 @@ importers:
 
   packages/volto-light-theme/packages/volto-light-theme:
     dependencies:
-      '@dnd-kit/core':
-        specifier: 6.0.8
-        version: 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@dnd-kit/sortable':
-        specifier: 7.0.2
-        version: 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
-      '@dnd-kit/utilities':
-        specifier: 3.2.2
-        version: 3.2.2(react@18.2.0)
       '@eeacms/volto-accordion-block':
         specifier: ^10.4.6
         version: 10.4.6
@@ -1585,7 +1576,7 @@ importers:
         version: 4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)
       '@plone/components':
         specifier: workspace:^
         version: link:../../../../core/packages/components
@@ -1598,18 +1589,12 @@ importers:
       react:
         specifier: 18.2.0
         version: 18.2.0
-      react-animate-height:
-        specifier: ^3.2.3
-        version: 3.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-aria-components:
-        specifier: ^1.7.0
+        specifier: ^1.5.0
         version: 1.7.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-colorful:
         specifier: ^5.6.1
         version: 5.6.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
       react-intl:
         specifier: ^3.12.1
         version: 3.12.1(react@18.2.0)
@@ -3726,14 +3711,14 @@ packages:
     resolution: {integrity: sha512-QjZvqJZxawcb+aPA3oByHLCsPmpoZ6Q6ogJxvFGmpS9Oo/+rHDZTYtsRHZ5waS0TfUj0znnX896KD6KY5afAjQ==}
     hasBin: true
 
-  '@plone/volto-slate@18.2.2':
-    resolution: {integrity: sha512-Qnsniug09UfgUGBv7+SOtEDoatIGmy4vtiKA5x/chf0IG8FoRsgD0H9FVrEr3Yn6Zai+jj+qDhAjYwjLEelMcA==}
+  '@plone/volto-slate@18.2.3':
+    resolution: {integrity: sha512-xavWmbKbI/vi9UxObQwlq0aS6zRnmnW9weEzcZVAFJ2pCrT4mfUDywqeQ8zetDMIet/U3enBPvQcNe0zdNw5Og==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@plone/volto@18.9.1':
-    resolution: {integrity: sha512-AdguRl83wdzbCF6++2BYdCoYnJWXY/+7uFHETm+U/eED63FT0G6X/EPd7drs3MYMXZsIwjoKI7q33bkeO67MGw==}
+  '@plone/volto@18.9.2':
+    resolution: {integrity: sha512-GSn2A7tPiAbbIFtWmLv6KDn19JJcJQ999eMm/11mjzSwqg08RhnLDQ3x88OzRwSJpPRC9pz1k3wPeymWI1wp3Q==}
     engines: {node: ^20 || ^22}
 
   '@pmmmwh/react-refresh-webpack-plugin@0.5.15':
@@ -13094,13 +13079,6 @@ packages:
       react: '>=15.6.2'
       react-dom: '>=15.6.2'
 
-  react-animate-height@3.2.3:
-    resolution: {integrity: sha512-R6DSvr7ud07oeCixScyvXWEMJY/Mt2+GyOWC1KMaRc69gOBw+SsCg4TJmrp4rKUM1hyd6p+YKw90brjPH93Y2A==}
-    engines: {node: '>= 12.0.0'}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
   react-aria-components@1.6.0:
     resolution: {integrity: sha512-YfG9PUE7XrXtDDAqT4pLTGyYQaiHHTBFdAK/wNgGsypVnQSdzmyYlV3Ty8aHlZJI6hP9RWkbywvosXkU7KcPHg==}
     peerDependencies:
@@ -18128,9 +18106,9 @@ snapshots:
     transitivePeerDependencies:
       - storybook
 
-  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)':
+  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.1.5)(react@18.2.0)':
     dependencies:
-      '@plone/volto': 18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       deepmerge: 4.2.2
       embla-carousel-autoplay: 8.1.5(embla-carousel@8.1.5)
       embla-carousel-react: 8.1.5(react@18.2.0)
@@ -18138,9 +18116,9 @@ snapshots:
       - embla-carousel
       - react
 
-  '@kitconcept/volto-solr@1.0.0-alpha.5(@plone/volto@18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
+  '@kitconcept/volto-solr@1.0.0-alpha.5(@plone/volto@18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
     dependencies:
-      '@plone/volto': 18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
 
   '@kwsites/file-exists@1.1.1':
     dependencies:
@@ -18769,7 +18747,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/volto-slate@18.2.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
+  '@plone/volto-slate@18.2.3(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
     dependencies:
       classnames: 2.2.6
       github-slugger: 1.4.0
@@ -18803,13 +18781,13 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.9.1(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.9.2(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
       '@plone/registry': 2.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/scripts': 3.8.2(debug@4.3.2)
-      '@plone/volto-slate': 18.2.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      '@plone/volto-slate': 18.2.3(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
       classnames: 2.2.6
       connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
@@ -19595,10 +19573,10 @@ snapshots:
 
   '@react-aria/form@3.0.12(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@react-aria/interactions': 3.23.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@react-aria/utils': 3.27.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/interactions': 3.24.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/utils': 3.28.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@react-stately/form': 3.1.1(react@18.2.0)
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       '@swc/helpers': 0.5.11
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -19615,18 +19593,18 @@ snapshots:
 
   '@react-aria/grid@3.11.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@react-aria/focus': 3.19.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/focus': 3.20.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@react-aria/i18n': 3.12.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@react-aria/interactions': 3.23.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/interactions': 3.24.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@react-aria/live-announcer': 3.4.1
       '@react-aria/selection': 3.22.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@react-aria/utils': 3.27.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/utils': 3.28.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@react-stately/collections': 3.12.1(react@18.2.0)
       '@react-stately/grid': 3.10.1(react@18.2.0)
-      '@react-stately/selection': 3.19.0(react@18.2.0)
+      '@react-stately/selection': 3.20.0(react@18.2.0)
       '@react-types/checkbox': 3.9.1(react@18.2.0)
-      '@react-types/grid': 3.2.11(react@18.2.0)
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/grid': 3.3.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       '@swc/helpers': 0.5.11
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -20295,12 +20273,12 @@ snapshots:
 
   '@react-aria/toggle@3.10.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@react-aria/focus': 3.19.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@react-aria/interactions': 3.23.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@react-aria/utils': 3.27.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/focus': 3.20.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/interactions': 3.24.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-aria/utils': 3.28.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@react-stately/toggle': 3.8.1(react@18.2.0)
       '@react-types/checkbox': 3.9.1(react@18.2.0)
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       '@swc/helpers': 0.5.11
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -20980,7 +20958,7 @@ snapshots:
   '@react-types/breadcrumbs@3.7.10(react@18.2.0)':
     dependencies:
       '@react-types/link': 3.5.10(react@18.2.0)
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/breadcrumbs@3.7.11(react@18.2.0)':
@@ -21002,7 +20980,7 @@ snapshots:
   '@react-types/calendar@3.6.0(react@18.2.0)':
     dependencies:
       '@internationalized/date': 3.7.0
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/calendar@3.6.1(react@18.2.0)':
@@ -21013,7 +20991,7 @@ snapshots:
 
   '@react-types/checkbox@3.9.1(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/checkbox@3.9.2(react@18.2.0)':
@@ -21035,7 +21013,7 @@ snapshots:
 
   '@react-types/combobox@3.13.2(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/combobox@3.13.3(react@18.2.0)':
@@ -21048,7 +21026,7 @@ snapshots:
       '@internationalized/date': 3.7.0
       '@react-types/calendar': 3.6.0(react@18.2.0)
       '@react-types/overlays': 3.8.12(react@18.2.0)
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/datepicker@3.11.0(react@18.2.0)':
@@ -21062,7 +21040,7 @@ snapshots:
   '@react-types/dialog@3.5.15(react@18.2.0)':
     dependencies:
       '@react-types/overlays': 3.8.12(react@18.2.0)
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/dialog@3.5.16(react@18.2.0)':
@@ -21093,7 +21071,7 @@ snapshots:
 
   '@react-types/link@3.5.10(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/link@3.5.11(react@18.2.0)':
@@ -21103,7 +21081,7 @@ snapshots:
 
   '@react-types/listbox@3.5.4(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/listbox@3.5.5(react@18.2.0)':
@@ -21135,7 +21113,7 @@ snapshots:
 
   '@react-types/numberfield@3.8.8(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/numberfield@3.8.9(react@18.2.0)':
@@ -21145,7 +21123,7 @@ snapshots:
 
   '@react-types/overlays@3.8.12(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/overlays@3.8.13(react@18.2.0)':
@@ -21160,12 +21138,12 @@ snapshots:
 
   '@react-types/progress@3.5.9(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/radio@3.8.6(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/radio@3.8.7(react@18.2.0)':
@@ -21175,7 +21153,7 @@ snapshots:
 
   '@react-types/searchfield@3.5.11(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       '@react-types/textfield': 3.11.0(react@18.2.0)
       react: 18.2.0
 
@@ -21192,7 +21170,7 @@ snapshots:
 
   '@react-types/select@3.9.9(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/shared@3.23.1(react@18.2.0)':
@@ -21219,7 +21197,7 @@ snapshots:
 
   '@react-types/switch@3.5.8(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/switch@3.5.9(react@18.2.0)':
@@ -21241,7 +21219,7 @@ snapshots:
 
   '@react-types/tabs@3.3.12(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/tabs@3.3.13(react@18.2.0)':
@@ -21251,7 +21229,7 @@ snapshots:
 
   '@react-types/textfield@3.11.0(react@18.2.0)':
     dependencies:
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/textfield@3.12.0(react@18.2.0)':
@@ -21262,7 +21240,7 @@ snapshots:
   '@react-types/tooltip@3.4.14(react@18.2.0)':
     dependencies:
       '@react-types/overlays': 3.8.12(react@18.2.0)
-      '@react-types/shared': 3.27.0(react@18.2.0)
+      '@react-types/shared': 3.28.0(react@18.2.0)
       react: 18.2.0
 
   '@react-types/tooltip@3.4.15(react@18.2.0)':
@@ -31876,11 +31854,6 @@ snapshots:
     dependencies:
       classnames: 2.2.6
       prop-types: 15.7.2
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-
-  react-animate-height@3.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 

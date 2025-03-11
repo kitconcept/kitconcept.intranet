@@ -20,10 +20,24 @@
       />
 
   <plone:behavior
-      name="kitconcept.sitecustomization"
-      title="Customizations for sites/subsites"
+      name="voltolighttheme.header"
+      title="Volto Light Theme header settings"
       description="Set of fields to customize sites and subsites"
-      provides=".customizations.ISiteCustomizationSettings"
+      provides=".customizations.IHeaderSettings"
+      />
+
+  <plone:behavior
+      name="voltolighttheme.footer"
+      title="Volto Light Theme header settings"
+      description="Set of fields to customize sites and subsites"
+      provides=".customizations.IFooterSettings"
+      />
+
+  <plone:behavior
+      name="voltolighttheme.colors"
+      title="Volto Light Theme colors"
+      description="Set of fields to customize sites and subsites"
+      provides=".customizations.IThemeColorSettings"
       />
 
 </configure>

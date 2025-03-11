@@ -38,26 +38,28 @@ BLOCKS_SCHEMA_DEFAULT_VALUE = {
     "blocks_layout": {},
 }
 
-BLOCKS_SCHEMA = json.dumps({
-    "type": "object",
-    "properties": {
-        "blocks": {"type": "object"},
-        "blocks_layout": {"type": "object"},
-    },
-})
+BLOCKS_SCHEMA = json.dumps(
+    {
+        "type": "object",
+        "properties": {
+            "blocks": {"type": "object"},
+            "blocks_layout": {"type": "object"},
+        },
+    }
+)
 
-FONT_VOCABULARY = SimpleVocabulary([
-    SimpleTerm(value="default", title=_("Default FZJ font")),
-    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-])
+FONT_VOCABULARY = SimpleVocabulary(
+    [
+        SimpleTerm(value="default", title=_("Default FZJ font")),
+        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+    ]
+)
 
 
 @provider(IFormFieldProvider)
-class ISiteCustomizationSettings(model.Schema):
-    # @ericof, bring it back when it's ready
-    # class ISiteCustomizationSettings(SettingsSchema):
-    """Site/Subsite theming properties behavior."""
+class IHeaderSettings(model.Schema):
+    """Settings for VLT header"""
 
     model.fieldset(
         "header",
@@ -66,30 +68,6 @@ class ISiteCustomizationSettings(model.Schema):
             "logo",
             "complementary_logo",
             "intranet_flag",
-        ],
-    )
-
-    model.fieldset(
-        "theming",
-        label=_("Theming"),
-        fields=[
-            "primary_foreground_color",
-            "accent_foreground_color",
-            "accent_color",
-            # "primary_color", # Not used in PiK
-            "secondary_foreground_color",
-            "secondary_color",
-        ],
-    )
-
-    model.fieldset(
-        "footer",
-        label=_("Footer customizations"),
-        fields=[
-            "footer_links",
-            "footer_logos",
-            "footer_logos_container_width",
-            "footer_logos_size",
         ],
     )
 
@@ -122,52 +100,20 @@ class ISiteCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget("accent_color", frontendOptions={"widget": "themeColorPicker"})
-    accent_color = TextLine(
-        title=_("label_accent_color", default=messages["accent_color"]["default"]),
-        required=False,
-    )
 
-    directives.widget(
-        "accent_foreground_color", frontendOptions={"widget": "themeColorPicker"}
-    )
-    accent_foreground_color = TextLine(
-        title=_(
-            "label_accent_foreground_color",
-            default=messages["accent_foreground_color"]["default"],
-        ),
-        required=False,
-    )
+@provider(IFormFieldProvider)
+class IFooterSettings(model.Schema):
+    """Settings for VLT footer"""
 
-    directives.widget(
-        "primary_foreground_color", frontendOptions={"widget": "themeColorPicker"}
-    )
-    primary_foreground_color = TextLine(
-        title=_(
-            "label_primary_foreground_color",
-            default=messages["primary_foreground_color"]["default"],
-        ),
-        required=False,
-    )
-
-    directives.widget("secondary_color", frontendOptions={"widget": "themeColorPicker"})
-    secondary_color = TextLine(
-        title=_(
-            "label_secondary_color", default=messages["secondary_color"]["default"]
-        ),
-        required=False,
-    )
-
-    directives.widget(
-        "secondary_foreground_color",
-        frontendOptions={"widget": "themeColorPicker"},
-    )
-    secondary_foreground_color = TextLine(
-        title=_(
-            "label_secondary_foreground_color",
-            default=messages["secondary_foreground_color"]["default"],
-        ),
-        required=False,
+    model.fieldset(
+        "footer",
+        label=_("Footer customizations"),
+        fields=[
+            "footer_links",
+            "footer_logos",
+            "footer_logos_container_width",
+            "footer_logos_size",
+        ],
     )
 
     directives.widget("footer_logos", frontendOptions={"widget": "footerLogos"})
@@ -224,4 +170,70 @@ class ISiteCustomizationSettings(model.Schema):
         default=BLOCKS_SCHEMA_DEFAULT_VALUE,
         required=False,
         widget="",
+    )
+
+
+@provider(IFormFieldProvider)
+class IThemeColorSettings(model.Schema):
+    """Settings for VLT theme colors"""
+
+    model.fieldset(
+        "theming",
+        label=_("Theming"),
+        fields=[
+            "primary_foreground_color",
+            "accent_foreground_color",
+            "accent_color",
+            # "primary_color", # Not used in PiK
+            "secondary_foreground_color",
+            "secondary_color",
+        ],
+    )
+
+    directives.widget("accent_color", frontendOptions={"widget": "themeColorPicker"})
+    accent_color = TextLine(
+        title=_("label_accent_color", default=messages["accent_color"]["default"]),
+        required=False,
+    )
+
+    directives.widget(
+        "accent_foreground_color", frontendOptions={"widget": "themeColorPicker"}
+    )
+    accent_foreground_color = TextLine(
+        title=_(
+            "label_accent_foreground_color",
+            default=messages["accent_foreground_color"]["default"],
+        ),
+        required=False,
+    )
+
+    directives.widget(
+        "primary_foreground_color", frontendOptions={"widget": "themeColorPicker"}
+    )
+    primary_foreground_color = TextLine(
+        title=_(
+            "label_primary_foreground_color",
+            default=messages["primary_foreground_color"]["default"],
+        ),
+        required=False,
+    )
+
+    directives.widget("secondary_color", frontendOptions={"widget": "themeColorPicker"})
+    secondary_color = TextLine(
+        title=_(
+            "label_secondary_color", default=messages["secondary_color"]["default"]
+        ),
+        required=False,
+    )
+
+    directives.widget(
+        "secondary_foreground_color",
+        frontendOptions={"widget": "themeColorPicker"},
+    )
+    secondary_foreground_color = TextLine(
+        title=_(
+            "label_secondary_foreground_color",
+            default=messages["secondary_foreground_color"]["default"],
+        ),
+        required=False,
     )

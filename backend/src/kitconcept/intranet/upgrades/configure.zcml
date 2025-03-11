@@ -28,4 +28,15 @@
         import_steps="typeinfo"
         />
   </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250311001"
+      destination="20250311002"
+      >
+    <genericsetup:upgradeDepends
+        title="Update VLT behaviors"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

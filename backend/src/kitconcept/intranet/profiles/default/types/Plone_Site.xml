@@ -17,7 +17,9 @@
   <property name="behaviors"
             purge="true"
   >
-    <element value="kitconcept.sitecustomization" />
+    <element value="voltolighttheme.header" />
+    <element value="voltolighttheme.colors" />
+    <element value="voltolighttheme.footer" />
     <element value="plone.dublincore" />
     <element value="plone.relateditems" />
     <element value="plone.locking" />

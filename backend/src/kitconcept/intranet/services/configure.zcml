@@ -6,15 +6,15 @@
     >
   <plone:service
       method="GET"
-      factory=".navroot.NavrootGet"
-      for="kitconcept.intranet.interfaces.IBrowserLayer"
+      factory=".inherit.InheritedBehaviorGet"
+      for="*"
       permission="zope2.View"
-      name="@navroot"
+      name="@inherit"
       />
 
   <adapter
-      factory=".navroot.CustomNavroot"
-      name="navroot"
+      factory=".inherit.InheritedBehaviorExpander"
+      name="inherit"
       />
 
 </configure>

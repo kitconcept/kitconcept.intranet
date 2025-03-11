@@ -116,7 +116,13 @@ class IFooterSettings(model.Schema):
         ],
     )
 
-    directives.widget("footer_logos", frontendOptions={"widget": "footerLogos"})
+    directives.widget(
+        "footer_logos",
+        frontendOptions={
+            "widget": "blocksObject",
+            "widgetProps": {"schemaName": "footerLogos"},
+        },
+    )
     footer_logos = JSONField(
         title=_("Footer logos"),
         schema=BLOCKS_SCHEMA,
@@ -163,7 +169,13 @@ class IFooterSettings(model.Schema):
         required=False,
     )
 
-    directives.widget("footer_links", frontendOptions={"widget": "footerLinks"})
+    directives.widget(
+        "footer_links",
+        frontendOptions={
+            "widget": "blocksObject",
+            "widgetProps": {"schemaName": "footerLinks"},
+        },
+    )
     footer_links = JSONField(
         title=_("Footer links"),
         schema=BLOCKS_SCHEMA,
@@ -190,14 +202,14 @@ class IThemeColorSettings(model.Schema):
         ],
     )
 
-    directives.widget("accent_color", frontendOptions={"widget": "themeColorPicker"})
+    directives.widget("accent_color", frontendOptions={"widget": "colorPicker"})
     accent_color = TextLine(
         title=_("label_accent_color", default=messages["accent_color"]["default"]),
         required=False,
     )
 
     directives.widget(
-        "accent_foreground_color", frontendOptions={"widget": "themeColorPicker"}
+        "accent_foreground_color", frontendOptions={"widget": "colorPicker"}
     )
     accent_foreground_color = TextLine(
         title=_(
@@ -208,7 +220,7 @@ class IThemeColorSettings(model.Schema):
     )
 
     directives.widget(
-        "primary_foreground_color", frontendOptions={"widget": "themeColorPicker"}
+        "primary_foreground_color", frontendOptions={"widget": "colorPicker"}
     )
     primary_foreground_color = TextLine(
         title=_(
@@ -218,7 +230,7 @@ class IThemeColorSettings(model.Schema):
         required=False,
     )
 
-    directives.widget("secondary_color", frontendOptions={"widget": "themeColorPicker"})
+    directives.widget("secondary_color", frontendOptions={"widget": "colorPicker"})
     secondary_color = TextLine(
         title=_(
             "label_secondary_color", default=messages["secondary_color"]["default"]
@@ -228,7 +240,7 @@ class IThemeColorSettings(model.Schema):
 
     directives.widget(
         "secondary_foreground_color",
-        frontendOptions={"widget": "themeColorPicker"},
+        frontendOptions={"widget": "colorPicker"},
     )
     secondary_foreground_color = TextLine(
         title=_(

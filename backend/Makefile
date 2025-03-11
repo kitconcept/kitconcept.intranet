@@ -66,6 +66,8 @@ sync: ## Sync project dependencies
 .PHONY: install
 install: sync config ## Install Plone and dependencies
 
+$(VENV_FOLDER): sync ## Install Plone and dependencies
+
 .PHONY: clean
 clean: ## Clean environment
 	@echo "$(RED)==> Cleaning environment and build$(RESET)"

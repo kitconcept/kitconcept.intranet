@@ -1,0 +1,1 @@
+Update @plone/volto to version 18.9.2 @sneridagh

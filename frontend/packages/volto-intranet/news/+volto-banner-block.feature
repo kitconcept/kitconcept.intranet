@@ -1,0 +1,1 @@
+Update volto-banner-block to latest, add dependencies. @sneridagh

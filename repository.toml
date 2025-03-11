@@ -18,7 +18,7 @@ towncrier_settings = "backend/pyproject.toml"
 path = "frontend"
 
 [frontend.package]
-name = "volto-intranet"
+name = "@kitconcept/volto-intranet"
 path = "frontend/packages/volto-intranet"
 changelog = "frontend/packages/volto-intranet/CHANGELOG.md"
 towncrier_settings = "frontend/packages/volto-intranet/towncrier.toml"

@@ -18,4 +18,14 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20240228001"
+      destination="20250311001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add preview_image_link behavior to content types"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

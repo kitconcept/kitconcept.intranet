@@ -104,23 +104,15 @@ cov = [
   "test-cov",
   "cov-report",
 ]
-zpretty_lint = [
-  "find src -name '*.xml'|xargs zpretty -x --check",
-  "find src -name '*.zcml'|xargs zpretty -z --check",
-]
-zpretty_format = [
-  "find src -name '*.xml'|xargs zpretty -x -i",
-  "find src -name '*.zcml'|xargs zpretty -z -i",
-]
 lint = [
   "ruff check",
   "isort --check-only src/ tests/",
-  "zpretty_lint"
+  "zpretty --check src"
 ]
 format = [
   "ruff format",
   "isort src/ tests/",
-  "zpretty_format"
+  "zpretty -i src"
 ]
 i18n = [
   "python -m kitconcept.intranet.locales.update"

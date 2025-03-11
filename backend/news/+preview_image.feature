@@ -1,1 +1,0 @@
-Adds preview_image_link behavior to Link, Event, News Item, Image, File, Person content types @sneridagh

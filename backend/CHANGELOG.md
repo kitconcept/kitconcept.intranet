@@ -1,12 +1,5 @@
 # Changelog
 
-<!--
-   You should *NOT* be adding new change log entries to this file.
-   You should create a file in the news directory instead.
-   For helpful instructions, please see:
-   https://github.com/plone/plone.releaser/blob/master/ADD-A-NEWS-ITEM.rst
--->
-
 <!-- towncrier release notes start -->
 
 ## 1.0.0a7 (2025-03-05)
@@ -43,9 +36,9 @@ No significant changes.
 
 ### Internal
 
-- Fixes a warning in the Acceptance tests docker image creation [@ericof] 
-- Improve GHA to generate the backend Docker image [@ericof] 
-- Release ghcr.io/kitconcept/kitconcept-intranet-backend image with tags [@ericof] 
+- Fixes a warning in the Acceptance tests docker image creation [@ericof]
+- Improve GHA to generate the backend Docker image [@ericof]
+- Release ghcr.io/kitconcept/kitconcept-intranet-backend image with tags [@ericof]
 
 ## 1.0.0a0 (2024-10-01)
 

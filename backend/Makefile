@@ -20,21 +20,12 @@ PACKAGE_NAME=plonegovbr.intranet
 IMAGE_NAME_PREFIX=ghcr.io/kitconcept/kitconcept-intranet
 IMAGE_TAG=latest
 
-ALLOWED_DISTRIBUTIONS=portalbrasil-intranet
-
 # Python checks
-PYTHON?=python3
+UV?=uv
 
 # installed?
-ifeq (, $(shell which $(PYTHON) ))
-  $(error "PYTHON=$(PYTHON) not found in $(PATH)")
-endif
-
-# version ok?
-PYTHON_VERSION_MIN=3.8
-PYTHON_VERSION_OK=$(shell $(PYTHON) -c "import sys; print((int(sys.version_info[0]), int(sys.version_info[1])) >= tuple(map(int, '$(PYTHON_VERSION_MIN)'.split('.'))))")
-ifeq ($(PYTHON_VERSION_OK),0)
-  $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
+ifeq (, $(shell which $(UV) ))
+  $(error "UV=$(UV) not found in $(PATH)")
 endif
 
 PLONE_SITE_ID=Plone
@@ -42,11 +33,15 @@ BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 PLONE_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
 EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/intranet/setuphandlers/examplecontent
 
-GIT_FOLDER=$(BACKEND_FOLDER)/.git
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
 BIN_FOLDER=$(VENV_FOLDER)/bin
 
 SEED=$(shell date +'%Y%m%d-%H%M%S')
+
+# Environment variables to be exported
+export ALLOWED_DISTRIBUTIONS := portalbrasil-intranet
+export PYTHONWARNINGS := ignore
+export DOCKER_BUILDKIT := 1
 
 all: build
 
@@ -56,86 +51,90 @@ all: build
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-$(BIN_FOLDER)/hatch:  ## Setup virtual env
-	@echo "$(GREEN)==> Install dependencies$(RESET)"
-	@pipx run hatch env create
-
-instance/etc/zope.ini:  ## Create instance configuration
+instance/etc/zope.ini instance/etc/zope.conf: ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
-	@pipx run cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+	@uvx cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
 
 .PHONY: config
 config: instance/etc/zope.ini
 
-constraints-mxdev.txt: ## Generate constraints file
-	@echo "$(GREEN)==> Generate constraints file$(RESET)"
-	@echo '-c https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt' > requirements.txt
-	@pipx run mxdev -c mx.ini
-
-.PHONY: build-dev
-build-dev: constraints-mxdev.txt config $(BIN_FOLDER)/hatch ## Install Plone packages
+.PHONY: sync
+sync: ## Sync project dependencies
+	@echo "$(GREEN)==> Sync project dependencies$(RESET)"
+	@uv sync
 
 .PHONY: install
-install: build-dev ## Install Plone
-
-.PHONY: build
-build: build-dev ## Install Plone
+install: sync config ## Install Plone and dependencies
 
 .PHONY: clean
 clean: ## Clean environment
 	@echo "$(RED)==> Cleaning environment and build$(RESET)"
-	rm -rf $(VENV_FOLDER) pyvenv.cfg dist instance .venv .pytest_cache requirements-mxdev.txt constraints-mxdev.txt requirements.lock
+	@rm -rf $(VENV_FOLDER) pyvenv.cfg .installed.cfg instance .venv .pytest_cache .ruff_cache constraints* requirements*
+
+.PHONY: remove-data
+remove-data: ## Remove all content
+	@echo "$(RED)==> Removing all content$(RESET)"
+	rm -rf $(VENV_FOLDER) instance/var
+
+# Instance management
 
 .PHONY: start
-start: ## Start a Plone instance on localhost:8080
-	ALLOWED_DISTRIBUTIONS=portalbrasil-intranet PYTHONWARNINGS=ignore $(BIN_FOLDER)/runwsgi instance/etc/zope.ini
+start: $(VENV_FOLDER) instance/etc/zope.ini ## Start a Plone instance on localhost:8080
+	@uv run runwsgi instance/etc/zope.ini
 
 .PHONY: console
-console: instance/etc/zope.ini ## Start a console into a Plone instance
-	ALLOWED_DISTRIBUTIONS=portalbrasil-intranet PYTHONWARNINGS=ignore $(BIN_FOLDER)/zconsole debug instance/etc/zope.conf
+console: $(VENV_FOLDER) instance/etc/zope.conf ## Start a console into a Plone instance
+	@uv run zconsole debug instance/etc/zope.conf
 
 .PHONY: create-site
-create-site: instance/etc/zope.ini ## Create a new site from scratch
-	ALLOWED_DISTRIBUTIONS=portalbrasil-intranet PYTHONWARNINGS=ignore $(BIN_FOLDER)/zconsole run instance/etc/zope.conf ./scripts/create_site.py
+create-site: $(VENV_FOLDER) instance/etc/zope.ini ## Create a new site from scratch
+	@uv run zconsole run instance/etc/zope.conf ./scripts/create_site.py
 
-# Example Content
+## Example Content
 .PHONY: update-example-content
-update-example-content: $(BIN_FOLDER)/tox ## Export example content inside package
+update-example-content: $(VENV_FOLDER) ## Export example content inside package
 	@echo "$(GREEN)==> Export example content into $(EXAMPLE_CONTENT_FOLDER) $(RESET)"
 	if [ -d $(EXAMPLE_CONTENT_FOLDER)/content ]; then rm -r $(EXAMPLE_CONTENT_FOLDER)/* ;fi
-	$(BIN_FOLDER)/plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(EXAMPLE_CONTENT_FOLDER)
+	@uv run plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(EXAMPLE_CONTENT_FOLDER)
 
+# QA
 .PHONY: lint
-lint: $(BIN_FOLDER)/hatch ## Check and fix code base according to Plone standards
+lint: ## Check and fix code base according to Plone standards
 	@echo "$(GREEN)==> Lint codebase$(RESET)"
-	$(BIN_FOLDER)/hatch run lint
+	@uvx ruff@latest check --fix --config $(BACKEND_FOLDER)/pyproject.toml
+	@uvx pyroma@latest -d .
+	@uvx check-python-versions@latest .
+	@uvx zpretty@latest --check src
 
 .PHONY: format
-format: $(BIN_FOLDER)/hatch ## Check and fix code base according to Plone standards
+format: ## Check and fix code base according to Plone standards
 	@echo "$(GREEN)==> Format codebase$(RESET)"
-	$(BIN_FOLDER)/hatch run format
+	@uvx ruff@latest check --select I --fix --config $(BACKEND_FOLDER)/pyproject.toml
+	@uvx ruff@latest format --config $(BACKEND_FOLDER)/pyproject.toml
+	@uvx zpretty@latest -i src
 
+# i18n
 .PHONY: i18n
-i18n: ## Update locales
+i18n: $(VENV_FOLDER) ## Update locales
 	@echo "$(GREEN)==> Updating locales$(RESET)"
-	$(BIN_FOLDER)/hatch run i18n
+	@uv run python -m kitconcept.intranet.locales
 
 # Tests
 .PHONY: test
-test: $(BIN_FOLDER)/pytest ## run tests
-	$(BIN_FOLDER)/hatch run test
+test: $(VENV_FOLDER) ## run tests
+	@uv run pytest
 
 .PHONY: test-coverage
-test-coverage: $(BIN_FOLDER)/pytest ## run tests with coverage
-	$(BIN_FOLDER)/hatch run cov
+test-coverage: $(VENV_FOLDER) ## run tests with coverage
+	@uv run pytest --cov=kitconcept.intranet --cov-report term-missing
 
 # Build Docker images
 .PHONY: build-image
 build-image:  ## Build Docker Images
-	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
+	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) $(RESET)"
+	@docker build . -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) --progress plain -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) $(RESET)"
-	@DOCKER_BUILDKIT=1 docker build .  --pull=false -t $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) -f Dockerfile.beispiele --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)
-
+	@docker build .  --pull=false -t $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) -f Dockerfile.beispiele --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)
 
 # Acceptance tests
 .PHONY: acceptance-backend-start

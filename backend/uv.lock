@@ -190,7 +190,7 @@ constraints = [
     { name = "plone-dexterity", specifier = "==3.0.7" },
     { name = "plone-distribution", specifier = "==3.1.0" },
     { name = "plone-event", specifier = "==2.0.2" },
-    { name = "plone-exportimport", specifier = "==1.0.0" },
+    { name = "plone-exportimport", specifier = "==1.1.0" },
     { name = "plone-folder", specifier = "==4.0.1" },
     { name = "plone-formwidget-autocomplete", specifier = "==1.4.1" },
     { name = "plone-formwidget-namedfile", specifier = "==3.1.1" },
@@ -3123,7 +3123,7 @@ wheels = [
 
 [[package]]
 name = "plone-exportimport"
-version = "1.0.0"
+version = "1.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -3148,9 +3148,9 @@ dependencies = [
     { name = "zc-relation" },
     { name = "zope" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e6/bf/8bf2fdd9167f07f4e151830acd3638e127a1f31742d86c47f76be73789cd/plone_exportimport-1.0.0.tar.gz", hash = "sha256:77e752e8d54b736c061afea96af8dc0a00c3847e349ffeb381141ae804f5482d", size = 194157 }
+sdist = { url = "https://files.pythonhosted.org/packages/10/b0/9605d69ff27a9ebbd87efcc53d5efab9f9c06ebce9263e4d371934359e81/plone_exportimport-1.1.0.tar.gz", hash = "sha256:a85420732f319abfc3d40f4dee214065e4de15a77cf3e5f82dbbdf2df410d5aa", size = 194933 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4b/6b/f9bdbfe7f0be4e86aeac456d8d882ee685265abd55d1d0b0480acdc0ea25/plone.exportimport-1.0.0-py3-none-any.whl", hash = "sha256:d99a8471c948c587baf523caa8580096a2090309b7dd719044028c7d0da86bc0", size = 63945 },
+    { url = "https://files.pythonhosted.org/packages/0f/ed/89e1dcf88e4f7809161578ba78d16845dbed7ad72ef8dcfd23175ecb9f20/plone.exportimport-1.1.0-py3-none-any.whl", hash = "sha256:004b68df86aceb10a00de90d4f3dfc085960b199b8e225a2fad80e5474f0bd45", size = 64623 },
 ]
 
 [[package]]

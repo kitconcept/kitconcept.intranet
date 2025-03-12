@@ -1,0 +1,1 @@
+Use plone.exportimport 1.1.0 @ericof

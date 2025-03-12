@@ -13,6 +13,7 @@ COPY . src
 RUN <<EOT
     set -e
     sed -i 's/plone.autoinclude==1.0.1/plone.autoinclude==2.0.0/g' /app/constraints.txt
+    sed -i 's/plone.exportimport==1.0.0/plone.exportimport==1.1.0/g' /app/constraints.txt
     bin/pip install uv hatch hatchling wheel
     cd /app/src
     ../bin/hatch build

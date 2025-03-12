@@ -1,6 +1,27 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a9 (2025-03-12)
+
+### Backend
+
+
+#### Feature
+
+- Use plone.exportimport 1.1.0 @ericof 
+
+
+#### Internal
+
+- Add a target $(VENV_FOLDER) to the backend Makefile as an alias to install. @ericof 
+
+
+
+### Frontend
+
+No significant changes.
+
+
 ## 1.0.0a8 (2025-03-11)
 
 ### Backend

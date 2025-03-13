@@ -1,6 +1,35 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a9 (2025-03-12)
+
+
+### Feature
+
+- Use plone.exportimport 1.1.0 @ericof
+
+
+### Internal
+
+- Add a target $(VENV_FOLDER) to the backend Makefile as an alias to install. @ericof
+
+
+## 1.0.0a8 (2025-03-11)
+
+### Feature
+
+- Adds preview_image_link behavior to Link, Event, News Item, Image, File, Person content types @sneridagh
+
+
+### Bugfix
+
+- Upgrade to plone.autoinclude 2.0.0 [@ericof]
+
+
+### Internal
+
+- Refactor backend installation [@ericof] [#69](https://github.com/kitconcept/kitconcept.intranet/issue/69)
+
 
 ## 1.0.0a7 (2025-03-05)
 

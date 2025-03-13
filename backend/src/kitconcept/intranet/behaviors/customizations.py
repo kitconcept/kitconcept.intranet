@@ -33,24 +33,24 @@ messages = {
     },
 }
 
-BLOCKS_SCHEMA_DEFAULT_VALUE = {
-    "blocks": {},
-    "blocks_layout": {},
-}
+OBJECT_LIST_DEFAULT_VALUE = []
 
-BLOCKS_SCHEMA = json.dumps({
-    "type": "object",
-    "properties": {
-        "blocks": {"type": "object"},
-        "blocks_layout": {"type": "object"},
-    },
-})
+OBJECT_LIST = json.dumps(
+    {
+        "type": "array",
+        "items": {
+            "type": "object",
+        },
+    }
+)
 
-FONT_VOCABULARY = SimpleVocabulary([
-    SimpleTerm(value="default", title=_("Default FZJ font")),
-    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-])
+FONT_VOCABULARY = SimpleVocabulary(
+    [
+        SimpleTerm(value="default", title=_("Default FZJ font")),
+        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+    ]
+)
 
 
 @provider(IFormFieldProvider)
@@ -66,6 +66,7 @@ class ISiteCustomizationSettings(model.Schema):
             "logo",
             "complementary_logo",
             "intranet_flag",
+            "header_actions",
         ],
     )
 
@@ -122,14 +123,29 @@ class ISiteCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget("accent_color", frontendOptions={"widget": "themeColorPicker"})
+    directives.widget(
+        "header_actions",
+        frontendOptions={
+            "widget": "object_list",
+            "widgetProps": {"schemaName": "headerActions"},
+        },
+    )
+    header_actions = JSONField(
+        title=_("Site Actions"),
+        schema=OBJECT_LIST,
+        default=OBJECT_LIST_DEFAULT_VALUE,
+        required=False,
+        widget="",
+    )
+
+    directives.widget("accent_color", frontendOptions={"widget": "colorPicker"})
     accent_color = TextLine(
         title=_("label_accent_color", default=messages["accent_color"]["default"]),
         required=False,
     )
 
     directives.widget(
-        "accent_foreground_color", frontendOptions={"widget": "themeColorPicker"}
+        "accent_foreground_color", frontendOptions={"widget": "colorPicker"}
     )
     accent_foreground_color = TextLine(
         title=_(
@@ -140,7 +156,7 @@ class ISiteCustomizationSettings(model.Schema):
     )
 
     directives.widget(
-        "primary_foreground_color", frontendOptions={"widget": "themeColorPicker"}
+        "primary_foreground_color", frontendOptions={"widget": "colorPicker"}
     )
     primary_foreground_color = TextLine(
         title=_(
@@ -150,7 +166,7 @@ class ISiteCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget("secondary_color", frontendOptions={"widget": "themeColorPicker"})
+    directives.widget("secondary_color", frontendOptions={"widget": "colorPicker"})
     secondary_color = TextLine(
         title=_(
             "label_secondary_color", default=messages["secondary_color"]["default"]
@@ -160,7 +176,7 @@ class ISiteCustomizationSettings(model.Schema):
 
     directives.widget(
         "secondary_foreground_color",
-        frontendOptions={"widget": "themeColorPicker"},
+        frontendOptions={"widget": "colorPicker"},
     )
     secondary_foreground_color = TextLine(
         title=_(
@@ -170,11 +186,17 @@ class ISiteCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget("footer_logos", frontendOptions={"widget": "footerLogos"})
+    directives.widget(
+        "footer_logos",
+        frontendOptions={
+            "widget": "object_list",
+            "widgetProps": {"schemaName": "footerLogos"},
+        },
+    )
     footer_logos = JSONField(
         title=_("Footer logos"),
-        schema=BLOCKS_SCHEMA,
-        default=BLOCKS_SCHEMA_DEFAULT_VALUE,
+        schema=OBJECT_LIST,
+        default=OBJECT_LIST_DEFAULT_VALUE,
         required=False,
         widget="",
     )
@@ -207,7 +229,7 @@ class ISiteCustomizationSettings(model.Schema):
     directives.widget(
         "footer_logos_size",
         frontendOptions={
-            "widget": "sizeWidget",
+            "widget": "size",
             "widgetProps": {"filterActions": ["s", "l"]},
         },
     )
@@ -217,11 +239,17 @@ class ISiteCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget("footer_links", frontendOptions={"widget": "footerLinks"})
+    directives.widget(
+        "footer_links",
+        frontendOptions={
+            "widget": "object_list",
+            "widgetProps": {"schemaName": "footerLinks"},
+        },
+    )
     footer_links = JSONField(
         title=_("Footer links"),
-        schema=BLOCKS_SCHEMA,
-        default=BLOCKS_SCHEMA_DEFAULT_VALUE,
+        schema=OBJECT_LIST,
+        default=OBJECT_LIST_DEFAULT_VALUE,
         required=False,
         widget="",
     )

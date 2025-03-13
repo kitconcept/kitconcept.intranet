@@ -3,8 +3,8 @@ from plone.restapi.types.adapters import JSONFieldSchemaProvider
 from plone.restapi.types.interfaces import IJsonSchemaProvider
 from plone.schema import IJSONField
 from zope.component import adapter
-from zope.interface import implementer
 from zope.interface import Interface
+from zope.interface import implementer
 
 
 @adapter(IJSONField, Interface, IBrowserLayer)

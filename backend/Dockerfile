@@ -12,12 +12,8 @@ COPY . src
 # Install local requirements and pre-compile mo files
 RUN <<EOT
     set -e
-    bin/python scripts/dump-constraints.py /app/src/pyproject.toml /app/constraints.txt
-    bin/pip install uv hatch hatchling wheel
-    cd /app/src
-    ../bin/hatch build
-    cd /app
-    bin/uv pip install /app/src/dist/*.whl -c /app/constraints.txt
+    bin/pip install uv
+    VIRTUAL_ENV=/app bin/uv --directory src sync --frozen --active --no-editable
     bin/python /compile_mo.py
     rm -Rf src
 EOT

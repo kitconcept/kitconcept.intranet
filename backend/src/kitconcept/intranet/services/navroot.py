@@ -10,6 +10,7 @@ SETTINGS = [
     "logo",
     "complementary_logo",
     "intranet_flag",
+    "header_actions",
     "accent_color",
     "accent_foreground_color",
     "primary_color",

@@ -178,7 +178,7 @@ constraints = [
     { name = "plone-app-workflow", specifier = "==5.0.4" },
     { name = "plone-app-z3cform", specifier = "==4.7.2" },
     { name = "plone-autoform", specifier = "==2.0.3" },
-    { name = "plone-autoinclude", specifier = "==1.0.1" },
+    { name = "plone-autoinclude", specifier = "==2.0.0" },
     { name = "plone-base", specifier = "==2.0.2" },
     { name = "plone-batching", specifier = "==2.0.6" },
     { name = "plone-behavior", specifier = "==2.0.1" },
@@ -188,7 +188,7 @@ constraints = [
     { name = "plone-classicui", specifier = "==1.0.0" },
     { name = "plone-contentrules", specifier = "==3.0.1" },
     { name = "plone-dexterity", specifier = "==3.0.7" },
-    { name = "plone-distribution", specifier = "==3.1.0" },
+    { name = "plone-distribution", specifier = "==3.1.1" },
     { name = "plone-event", specifier = "==2.0.2" },
     { name = "plone-exportimport", specifier = "==1.1.0" },
     { name = "plone-folder", specifier = "==4.0.1" },
@@ -217,7 +217,7 @@ constraints = [
     { name = "plone-resource", specifier = "==3.0.2" },
     { name = "plone-resourceeditor", specifier = "==4.0.1" },
     { name = "plone-rest", specifier = "==5.0.0" },
-    { name = "plone-restapi", specifier = "==9.11.0" },
+    { name = "plone-restapi", specifier = "==9.13.0" },
     { name = "plone-rfc822", specifier = "==3.0.1" },
     { name = "plone-scale", specifier = "==4.1.3" },
     { name = "plone-schema", specifier = "==2.0.1" },
@@ -1348,8 +1348,8 @@ test = [
 requires-dist = [
     { name = "collective-person" },
     { name = "plone-api" },
-    { name = "plone-distribution", specifier = ">=2.0.0a1" },
-    { name = "plone-restapi", specifier = ">=9.8.3" },
+    { name = "plone-distribution" },
+    { name = "plone-restapi", specifier = ">=9.13.0" },
     { name = "plone-volto", specifier = ">=5.0.2" },
     { name = "products-cmfplone", specifier = "==6.1.0" },
     { name = "python-dateutil" },
@@ -1498,15 +1498,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0d/34/eb8410ca60ad89487f0c6dca21c89068a17a323acc67d5c078cd2fb65ff6/Missing-5.0.tar.gz", hash = "sha256:81e53a025e1b31a1311aeec56e35249cd7d7f0c278bef42dc09c6dd893ccb185", size = 8276 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2d/b7/9a84a141b07dc1b0ef4d65b4fa2d2173fef84a64649dc8700b62bcddcc7e/Missing-5.0-py3-none-any.whl", hash = "sha256:482e73d644cb7de8d1ae7f559a787e794d27a42981ee9d770f781cb4ab770920", size = 6026 },
-]
-
-[[package]]
-name = "mock"
-version = "5.1.0"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/66/ab/41d09a46985ead5839d8be987acda54b5bb93f713b3969cc0be4f81c455b/mock-5.1.0.tar.gz", hash = "sha256:5e96aad5ccda4718e0a229ed94b2024df75cc2d55575ba5762d31f5767b8767d", size = 80232 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/6b/20/471f41173930550f279ccb65596a5ac19b9ac974a8d93679bcd3e0c31498/mock-5.1.0-py3-none-any.whl", hash = "sha256:18c694e5ae8a208cdb3d2c20a993ca1a7b0efa258c247a1e565150f477f83744", size = 30938 },
 ]
 
 [[package]]
@@ -2901,15 +2892,15 @@ wheels = [
 
 [[package]]
 name = "plone-autoinclude"
-version = "1.0.1"
+version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "setuptools" },
     { name = "zope-configuration" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a8/61/c3158766c66e5ce3be2a67404c8c569c6772aa90079d575cce8f9bc6db9f/plone.autoinclude-1.0.1.tar.gz", hash = "sha256:08f3d6c4b038ac5f5a0dd01fff201d9e71191bce14b5424b063bb8882ae6621a", size = 40521 }
+sdist = { url = "https://files.pythonhosted.org/packages/40/9a/e613f14ca03c2f6966b157c90543e9c9a6732972071d364da46699ec3c7e/plone_autoinclude-2.0.0.tar.gz", hash = "sha256:a092a4d244e78cf54e73f99951c8f59ce25e602306871898d4c22fdea3e9c571", size = 40262 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c2/b5/1d9bf94a796ffc17d918d71c5cedb357a167c4d07dd0458767962919017c/plone.autoinclude-1.0.1-py3-none-any.whl", hash = "sha256:c7aa865ee409e7a083153d36d83f91c8ecfc9f06c1eefab634ab9f8a5d1e64eb", size = 20669 },
+    { url = "https://files.pythonhosted.org/packages/f8/31/8c158a468016cbc85af1bc0ddffe907a816f9b65fa0efc634c9274791a53/plone.autoinclude-2.0.0-py3-none-any.whl", hash = "sha256:640faae00bf340f099136b95218d42f8d0825f37ecca574e3ffe695d0b68de58", size = 20753 },
 ]
 
 [[package]]
@@ -3082,7 +3073,7 @@ wheels = [
 
 [[package]]
 name = "plone-distribution"
-version = "3.1.0"
+version = "3.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jsonschema" },
@@ -3100,9 +3091,9 @@ dependencies = [
     { name = "z3c-unconfigure" },
     { name = "zope" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6c/d1/ce66156e0153619dcc447f82a39add8289b3d708c940cdba2e7c9f1eab86/plone_distribution-3.1.0.tar.gz", hash = "sha256:e53b595737f0ab53b1f5ec8236f66e19407747dc9760ee56e05edbbd6a7c7106", size = 628606 }
+sdist = { url = "https://files.pythonhosted.org/packages/b7/2a/2286ebbb34b3384984b04b3b1aaa0829d9ca80bc8c04314b04f811f130e7/plone_distribution-3.1.1.tar.gz", hash = "sha256:393659d0381fb913b54095e46370a2a1f76a33f796e30d4d4a7f93875bd6b6be", size = 629402 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/db/5c/46cc3e7aeb880fa1658e5234af055db5072d3952927128590af8e6906c89/plone.distribution-3.1.0-py3-none-any.whl", hash = "sha256:7f450dbdcc2b6b1847eddca983763bcbe26c342c9c5c1a6f538abcd104bf3211", size = 603232 },
+    { url = "https://files.pythonhosted.org/packages/b1/cb/27e4c0739c51d87e8afb245626f0dd7f3b752c90551b5abd74ca46501d3e/plone_distribution-3.1.1-py3-none-any.whl", hash = "sha256:b44f389386ffa5620bdcb82abeb753496a2ef2ff221c19e108914d2aa312c68e", size = 603803 },
 ]
 
 [[package]]
@@ -3511,9 +3502,10 @@ wheels = [
 
 [[package]]
 name = "plone-restapi"
-version = "9.11.0"
+version = "9.13.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "packaging" },
     { name = "plone-rest" },
     { name = "plone-schema" },
     { name = "products-cmfplone" },
@@ -3522,22 +3514,23 @@ dependencies = [
     { name = "pytz" },
     { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c9/20/b1b6c630b7604d3d0908ede36c97b93ec4443f934ea94d28dc2cc074fd91/plone_restapi-9.11.0.tar.gz", hash = "sha256:e53160c32f1b843682fd991a90b2acc27d1354f7167192531f6b2a7a1997f3fe", size = 2955125 }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/74/3cbdf493b65c84166d733ce772889433af1fb7ede2d6fd5b66c3f36835be/plone_restapi-9.13.0.tar.gz", hash = "sha256:8ab76a4b4af0f697a063846cffad321634e767f1b951901d78d58458893fa125", size = 2967777 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/48/c4/f7a5680e076f07e9d9edbb128b101bea950a7f3f8a77fe94da6f40ad5e5c/plone.restapi-9.11.0-py3-none-any.whl", hash = "sha256:f5dc07c37ba425c9ea74f38156d4a4c769ac034545ad3204f14c3b5aa745fb66", size = 3079654 },
+    { url = "https://files.pythonhosted.org/packages/81/f3/8b921c75729b3f0aa985ed0260c14df16008d3b561b29a670a8aa60d1a81/plone_restapi-9.13.0-py3-none-any.whl", hash = "sha256:0185c2a17f47fb732bcb552697989186b1ec3c248ae7e0dcbead7d5a8ed1d8dc", size = 3090352 },
 ]
 
 [package.optional-dependencies]
 test = [
     { name = "collective-mockmailhost" },
-    { name = "mock" },
     { name = "plone-api" },
     { name = "plone-app-caching" },
     { name = "plone-app-contenttypes", extra = ["test"] },
     { name = "plone-app-discussion", extra = ["test"] },
     { name = "plone-app-iterate" },
+    { name = "plone-app-multilingual" },
     { name = "plone-app-testing" },
     { name = "plone-app-upgrade" },
+    { name = "plone-rest" },
     { name = "requests" },
 ]
 

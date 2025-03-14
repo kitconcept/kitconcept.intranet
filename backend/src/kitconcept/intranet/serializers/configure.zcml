@@ -5,7 +5,4 @@
     i18n_domain="kitconcept.intranet"
     >
 
-  <!-- Remove when using latest p.restapi serializers for JSONField -->
-  <!-- <adapter factory=".blocks.CustomJSONFieldSchemaProvider" /> -->
-
 </configure>

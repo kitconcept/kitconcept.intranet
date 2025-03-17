@@ -30,6 +30,7 @@ jobs:
     with:
       python-version: ${{ inputs.python-version }}
       plone-version: ${{ inputs.plone-version }}
+      working-directory: "backend"
 
   test:
     runs-on: ubuntu-latest
@@ -46,6 +47,7 @@ jobs:
           with:
             python-version: ${{ inputs.python-version }}
             plone-version: ${{ inputs.plone-version }}
+            working-directory: "backend"
 
         - name: Run tests
           run: make test

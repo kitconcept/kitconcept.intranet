@@ -35,25 +35,27 @@ messages = {
 
 OBJECT_LIST_DEFAULT_VALUE = []
 
-OBJECT_LIST = json.dumps({
-    "type": "array",
-    "items": {
-        "type": "object",
-    },
-})
+OBJECT_LIST = json.dumps(
+    {
+        "type": "array",
+        "items": {
+            "type": "object",
+        },
+    }
+)
 
-FONT_VOCABULARY = SimpleVocabulary([
-    SimpleTerm(value="default", title=_("Default FZJ font")),
-    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-])
+FONT_VOCABULARY = SimpleVocabulary(
+    [
+        SimpleTerm(value="default", title=_("Default FZJ font")),
+        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+    ]
+)
 
 
 @provider(IFormFieldProvider)
-class ISiteCustomizationSettings(model.Schema):
-    # @ericof, bring it back when it's ready
-    # class ISiteCustomizationSettings(SettingsSchema):
-    """Site/Subsite theming properties behavior."""
+class ISiteHeaderCustomizationSettings(model.Schema):
+    """Site/Subsite Header properties behavior."""
 
     model.fieldset(
         "header",
@@ -63,30 +65,6 @@ class ISiteCustomizationSettings(model.Schema):
             "complementary_logo",
             "intranet_flag",
             "header_actions",
-        ],
-    )
-
-    model.fieldset(
-        "theming",
-        label=_("Theming"),
-        fields=[
-            "primary_foreground_color",
-            "accent_foreground_color",
-            "accent_color",
-            # "primary_color", # Not used in PiK
-            "secondary_foreground_color",
-            "secondary_color",
-        ],
-    )
-
-    model.fieldset(
-        "footer",
-        label=_("Footer customizations"),
-        fields=[
-            "footer_links",
-            "footer_logos",
-            "footer_logos_container_width",
-            "footer_logos_size",
         ],
     )
 
@@ -132,6 +110,24 @@ class ISiteCustomizationSettings(model.Schema):
         default=OBJECT_LIST_DEFAULT_VALUE,
         required=False,
         widget="",
+    )
+
+
+@provider(IFormFieldProvider)
+class ISiteThemeCustomizationSettings(model.Schema):
+    """Site/Subsite theme colors behavior."""
+
+    model.fieldset(
+        "theming",
+        label=_("Theming"),
+        fields=[
+            "primary_foreground_color",
+            "accent_foreground_color",
+            "accent_color",
+            # "primary_color", # Not used in PiK
+            "secondary_foreground_color",
+            "secondary_color",
+        ],
     )
 
     directives.widget("accent_color", frontendOptions={"widget": "colorPicker"})
@@ -180,6 +176,22 @@ class ISiteCustomizationSettings(model.Schema):
             default=messages["secondary_foreground_color"]["default"],
         ),
         required=False,
+    )
+
+
+@provider(IFormFieldProvider)
+class ISiteFooterCustomizationSettings(model.Schema):
+    """Site/Subsite footer properties behavior."""
+
+    model.fieldset(
+        "footer",
+        label=_("Footer customizations"),
+        fields=[
+            "footer_links",
+            "footer_logos",
+            "footer_logos_container_width",
+            "footer_logos_size",
+        ],
     )
 
     directives.widget(

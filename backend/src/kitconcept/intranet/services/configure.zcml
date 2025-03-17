@@ -4,17 +4,5 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="kitconcept.intranet"
     >
-  <plone:service
-      method="GET"
-      factory=".navroot.NavrootGet"
-      for="kitconcept.intranet.interfaces.IBrowserLayer"
-      permission="zope2.View"
-      name="@navroot"
-      />
-
-  <adapter
-      factory=".navroot.CustomNavroot"
-      name="navroot"
-      />
 
 </configure>

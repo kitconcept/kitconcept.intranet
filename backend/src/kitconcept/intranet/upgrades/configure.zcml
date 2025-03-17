@@ -28,4 +28,19 @@
         import_steps="typeinfo"
         />
   </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250311001"
+      destination="20250317001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update splitting of kitconcept.sitecustomization behavior"
+        import_steps="typeinfo"
+        />
+    <genericsetup:upgradeStep
+        title="Replace kitconcept.sitecustomization behavior with the splitted ones"
+        handler=".v20250317001.replace_sitecustomization_with_splitted_behaviors"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

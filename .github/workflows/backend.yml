@@ -33,109 +33,37 @@ jobs:
       working-directory: "backend"
 
   test:
-    runs-on: ubuntu-latest
-    env:
-      PYTHON_VERSION: ${{ inputs.python-version }}
-      PLONE_VERSION: ${{ inputs.plone-version }}
-    steps:
-
-        - name: Checkout
-          uses: actions/checkout@v4
-
-        - name: Setup Backend
-          uses: kitconcept/meta/.github/actions/setup_backend@main
-          with:
-            python-version: ${{ inputs.python-version }}
-            plone-version: ${{ inputs.plone-version }}
-            working-directory: "backend"
-
-        - name: Run tests
-          run: make test
+    uses: kitconcept/meta/.github/workflows/backend-test.yml@main
+    with:
+      python-version: ${{ inputs.python-version }}
+      plone-version: ${{ inputs.plone-version }}
+      working-directory: "backend"
 
   coverage:
-    runs-on: ubuntu-latest
+    uses: kitconcept/meta/.github/workflows/backend-coverage.yml@main
     needs:
       - test
-    steps:
-        - name: Checkout
-          uses: actions/checkout@v4
-
-        - name: Install the latest version of uv
-          uses: astral-sh/setup-uv@v5
-          with:
-            python-version: ${{ inputs.python-version }}
-            enable-cache: false
-
-        - name: Restore uv cache
-          uses: actions/cache@v4
-          with:
-            path: /tmp/.uv-cache
-            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
-            restore-keys: |
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
-
-        - name: Install Plone and package
-          run: make install
-
-        - name: Run tests
-          run: make test-coverage
-
-        - name: Report Coverage
-          run: |
-            echo "# Coverage Report" >> $GITHUB_STEP_SUMMARY
-            echo "$(uv run coverage report --format markdown)" >> $GITHUB_STEP_SUMMARY
+    with:
+      python-version: ${{ inputs.python-version }}
+      plone-version: ${{ inputs.plone-version }}
+      working-directory: "backend"
 
   release:
-    runs-on: ubuntu-latest
+    uses: kitconcept/meta/.github/workflows/image-build.yml@main
     needs:
       - lint
       - coverage
     permissions:
       contents: read
       packages: write
-
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: |
-            ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}
-          labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:${{ inputs.base-tag }}
-          flavor:
-            latest=false
-          tags: |
-            type=ref,event=branch
-            type=sha
-            type=raw,value=latest,enable={{is_default_branch}}
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          platforms: linux/amd64
-          context: backend/
-          file: backend/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            PLONE_VERSION=${{ inputs.plone-version }}
+    with:
+      base-tag: ${{ inputs.base-tag }}
+      image-name-prefix: ${{ inputs.image-name-prefix }}
+      image-name-suffix: "backend"
+      working-directory: "backend"
+      build-args: |
+        PLONE_VERSION=${{ inputs.plone-version }}
+      push: ${{ github.event_name != 'pull_request' }}
+    secrets:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}

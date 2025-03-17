@@ -50,7 +50,7 @@ jobs:
           # compare the current branch with the base branch.
           # Source: https://github.com/actions/checkout/#fetch-all-branches.
           git fetch --no-tags origin ${BASE_BRANCH}
-          towncrier check --config backend/pyproject.toml --dir backend/
+          towncrier check  --compare-with origin/${{ env.BASE_BRANCH }} --config backend/pyproject.toml --dir backend/
 
   frontend:
     if: ${{ needs.config.outputs.frontend == 'true' }}
@@ -101,4 +101,4 @@ jobs:
           # Source: https://github.com/actions/checkout/#fetch-all-branches.
           git fetch --no-tags origin ${BASE_BRANCH}
           cd ..
-          towncrier check --config frontend/packages/${{ env.ADDON_NAME }}/towncrier.toml --dir frontend/packages/${{ env.ADDON_NAME }}
+          towncrier check --compare-with origin/${{ env.BASE_BRANCH }} --config frontend/packages/${{ env.ADDON_NAME }}/towncrier.toml --dir frontend/packages/${{ env.ADDON_NAME }}

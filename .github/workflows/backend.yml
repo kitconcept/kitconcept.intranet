@@ -26,7 +26,7 @@ defaults:
 jobs:
 
   lint:
-    uses: kitconcept/.github/workflows/backend-lint.yml@gha
+    uses: kitconcept/meta/.github/workflows/backend-lint.yml@main
     with:
       python-version: ${{ inputs.python-version }}
       plone-version: ${{ inputs.plone-version }}
@@ -42,7 +42,7 @@ jobs:
           uses: actions/checkout@v4
 
         - name: Setup Backend
-          uses: kitconcept/.github/actions/setup_backend@gha
+          uses: kitconcept/meta/.github/actions/setup_backend@main
           with:
             python-version: ${{ inputs.python-version }}
             plone-version: ${{ inputs.plone-version }}

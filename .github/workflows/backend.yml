@@ -26,6 +26,7 @@ defaults:
 jobs:
 
   lint:
+    name: "Backend: Lint"
     uses: kitconcept/meta/.github/workflows/backend-lint.yml@main
     with:
       python-version: ${{ inputs.python-version }}
@@ -33,6 +34,7 @@ jobs:
       working-directory: "backend"
 
   test:
+    name: "Backend: Tests"
     uses: kitconcept/meta/.github/workflows/backend-test.yml@main
     with:
       python-version: ${{ inputs.python-version }}
@@ -40,6 +42,7 @@ jobs:
       working-directory: "backend"
 
   coverage:
+    name: "Backend: Run test coverage"
     uses: kitconcept/meta/.github/workflows/backend-coverage.yml@main
     needs:
       - test
@@ -49,6 +52,7 @@ jobs:
       working-directory: "backend"
 
   release:
+    name: "Backend: Build and publish Container Image"
     uses: kitconcept/meta/.github/workflows/image-build.yml@main
     needs:
       - lint

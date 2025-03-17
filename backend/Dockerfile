@@ -10,18 +10,10 @@ COPY scripts/ scripts/
 COPY . src
 
 # Install local requirements and pre-compile mo files
-# We have to use sed here, for now, until we use only uv (and not uv pip install)
 RUN <<EOT
     set -e
-    sed -i 's/plone.autoinclude==1.0.1/plone.autoinclude==2.0.0/g' /app/constraints.txt
-    sed -i 's/plone.distribution==3.1.0/plone.exportimport==3.1.1/g' /app/constraints.txt
-    sed -i 's/plone.exportimport==1.0.0/plone.exportimport==1.1.0/g' /app/constraints.txt
-    sed -i 's/plone.restapi==9.11.0/plone.restapi==9.13.0/g' /app/constraints.txt
-    bin/pip install uv hatch hatchling wheel
-    cd /app/src
-    ../bin/hatch build
-    cd /app
-    bin/uv pip install /app/src/dist/*.whl -c /app/constraints.txt
+    bin/pip install uv
+    VIRTUAL_ENV=/app bin/uv --directory src sync --frozen --active --no-editable
     bin/python /compile_mo.py
     rm -Rf src
 EOT

@@ -20,21 +20,21 @@
       />
 
   <plone:behavior
-      name="kitconcept.sitecustomization.header"
+      name="voltolighttheme.header"
       title="Header customizations for sites/subsites"
       description="Set of fields to customize sites and subsites"
       provides=".customizations.ISiteHeaderCustomizationSettings"
       />
 
   <plone:behavior
-      name="kitconcept.sitecustomization.theme"
+      name="voltolighttheme.theme"
       title="Theme colors customizations for sites/subsites"
       description="Set of fields to customize sites and subsites"
       provides=".customizations.ISiteThemeCustomizationSettings"
       />
 
   <plone:behavior
-      name="kitconcept.sitecustomization.footer"
+      name="voltolighttheme.footer"
       title="Footer customizations for sites/subsites"
       description="Set of fields to customize sites and subsites"
       provides=".customizations.ISiteFooterCustomizationSettings"

@@ -35,12 +35,12 @@
       destination="20250317001"
       >
     <genericsetup:upgradeDepends
-        title="Update splitting of kitconcept.sitecustomization behavior"
+        title="Update splitting of kitconcept.sitecustomization behavior into voltolighttheme ones"
         import_steps="typeinfo"
         />
     <genericsetup:upgradeStep
-        title="Replace kitconcept.sitecustomization behavior with the splitted ones"
-        handler=".v20250317001.replace_sitecustomization_with_splitted_behaviors"
+        title="Replace kitconcept.sitecustomization behavior with the voltolighttheme split ones"
+        handler=".v20250317001.replace_sitecustomization_with_split_behaviors"
         />
   </genericsetup:upgradeSteps>
 </configure>

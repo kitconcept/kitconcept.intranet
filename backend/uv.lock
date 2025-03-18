@@ -217,7 +217,7 @@ constraints = [
     { name = "plone-resource", specifier = "==3.0.2" },
     { name = "plone-resourceeditor", specifier = "==4.0.1" },
     { name = "plone-rest", specifier = "==5.0.0" },
-    { name = "plone-restapi", specifier = "==9.13.0" },
+    { name = "plone-restapi", specifier = "==9.13.2" },
     { name = "plone-rfc822", specifier = "==3.0.1" },
     { name = "plone-scale", specifier = "==4.1.3" },
     { name = "plone-schema", specifier = "==2.0.1" },
@@ -365,7 +365,7 @@ constraints = [
     { name = "webencodings", specifier = "==0.5.1" },
     { name = "webob", specifier = "==1.8.9" },
     { name = "webresource", specifier = "==1.2" },
-    { name = "webtest", specifier = "==3.0.2" },
+    { name = "webtest", specifier = "==3.0.3" },
     { name = "wheel", specifier = "==0.45.1" },
     { name = "wmctrl", specifier = "==0.5" },
     { name = "wrapt", specifier = "==1.17.0" },
@@ -1349,7 +1349,7 @@ requires-dist = [
     { name = "collective-person" },
     { name = "plone-api" },
     { name = "plone-distribution" },
-    { name = "plone-restapi", specifier = ">=9.13.0" },
+    { name = "plone-restapi", specifier = ">=9.13.2" },
     { name = "plone-volto", specifier = ">=5.0.2" },
     { name = "products-cmfplone", specifier = "==6.1.0" },
     { name = "python-dateutil" },
@@ -3502,7 +3502,7 @@ wheels = [
 
 [[package]]
 name = "plone-restapi"
-version = "9.13.0"
+version = "9.13.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
@@ -3514,9 +3514,9 @@ dependencies = [
     { name = "pytz" },
     { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2a/74/3cbdf493b65c84166d733ce772889433af1fb7ede2d6fd5b66c3f36835be/plone_restapi-9.13.0.tar.gz", hash = "sha256:8ab76a4b4af0f697a063846cffad321634e767f1b951901d78d58458893fa125", size = 2967777 }
+sdist = { url = "https://files.pythonhosted.org/packages/3c/96/049ab186600a7f817207a74c86a892fdf3b116fb230723427c4cf5109df4/plone_restapi-9.13.2.tar.gz", hash = "sha256:6a40f4cf11a607173946dfa8038b67a655a4f48614019f3a9744fb8f3841a20f", size = 2968257 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/81/f3/8b921c75729b3f0aa985ed0260c14df16008d3b561b29a670a8aa60d1a81/plone_restapi-9.13.0-py3-none-any.whl", hash = "sha256:0185c2a17f47fb732bcb552697989186b1ec3c248ae7e0dcbead7d5a8ed1d8dc", size = 3090352 },
+    { url = "https://files.pythonhosted.org/packages/58/b6/f94136147b387c4ded46dc7d74da40dac0a194e7eb6fa9f41e45a9e79724/plone.restapi-9.13.2-py3-none-any.whl", hash = "sha256:30d532b5f147b60f4d1a36bcd825dc9916e1419ed60ba7d2614c5045e41bbe04", size = 3090515 },
 ]
 
 [package.optional-dependencies]
@@ -5147,16 +5147,16 @@ wheels = [
 
 [[package]]
 name = "webtest"
-version = "3.0.2"
+version = "3.0.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "waitress" },
     { name = "webob" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/26/a1/0f122e385fe9634360adb39f1844b75f315be1d7bd5b310e0af59f1cacc7/webtest-3.0.2.tar.gz", hash = "sha256:0b2de681c16f57b31da5cce6e94ff03cdc77bd86c37a57ba0ee27fed8e065ceb", size = 79331 }
+sdist = { url = "https://files.pythonhosted.org/packages/48/aa/cc6c35e99a7f21fe53a5210446c6615e57f561cb0288072f52b1d78279cd/webtest-3.0.3.tar.gz", hash = "sha256:b635f6fe6584bc9737496b687155e9373f3d01bcb1b46169007da0f7ba6238f9", size = 79391 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/88/be/4cfe50dbe2e0b8e64a421157e18bbdbdb58a12ffc7ebcf5d32845ae56146/WebTest-3.0.2-py3-none-any.whl", hash = "sha256:799846e169d15e0c1233ab4ab00ee4de59a5d964407d6f2945d89249328dbbdb", size = 32152 },
+    { url = "https://files.pythonhosted.org/packages/17/85/744fc36fe0a3fb9cd219c1d92c6ff6fa46b9e5abbf70260b46b505043f83/WebTest-3.0.3-py3-none-any.whl", hash = "sha256:25a2f3b1ad273655ed22fdb4f9eff62d02f22d9d5ffeb0b58627759b1f62edff", size = 32148 },
 ]
 
 [[package]]

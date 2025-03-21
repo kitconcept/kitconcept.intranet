@@ -1,47 +1,41 @@
-name: Deploy stack to plone-intranet.kitconcept.com
+name: "kitconcept-intranet: Manual Deploy"
+description: "Always using the branch / tag name"
 
 on:
   workflow_dispatch:
 
 jobs:
-  config:
-    runs-on: ubuntu-latest
-    outputs:
-      ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
-      STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Set Env Vars
-        id: vars
-        run: |
-          ENVIRONMENT=${{ vars.LIVE_ENV }}
-          echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
-          echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
+  config:
+    name: "Config: Compute values used in workflow"
+    uses: ./.github/workflows/config.yml
 
   deploy:
+    name: "Deploy: ${{ needs.config.outputs.hostname }}"
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
     if: ${{ github.ref == 'refs/heads/main' }}
     needs:
-      - config
-    runs-on: ubuntu-latest
-    environment: ${{ needs.config.outputs.ENVIRONMENT }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy to cluster
-        uses: kitconcept/docker-stack-deploy@v1.2.0
-        with:
-          registry: "ghcr.io"
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          remote_host: ${{ secrets.DEPLOY_HOST }}
-          remote_port: ${{ secrets.DEPLOY_PORT }}
-          remote_user: ${{ secrets.DEPLOY_USER }}
-          remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: devops/stacks/${{ needs.config.outputs.ENVIRONMENT }}.yml
-          stack_name: ${{ needs.config.outputs.STACK_NAME }}
-          stack_param: ${{ github.ref_name }}
-          env_file: ${{ secrets.ENV_FILE }}
-          deploy_timeout: 480
+        - config
+    with:
+        tag: ${{ github.ref_name }}
+        environment: ${{ needs.config.outputs.environment }}
+        stack-name: ${{ needs.config.outputs.stack-name }}
+        stack-file: ${{ needs.config.outputs.stack-file }}
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+        password: ${{ secrets.GITHUB_TOKEN }}
+        remote-host: ${{ secrets.DEPLOY_HOST }}
+        remote-port: ${{ secrets.DEPLOY_PORT }}
+        remote-user: ${{ secrets.DEPLOY_USER }}
+        remote-private-key: ${{ secrets.DEPLOY_SSH }}
+        env-file: |
+            IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+            IMAGE_TAG=${{ github.ref_name }}
+            STACK_NAME=${{ needs.config.outputs.stack-name }}
+            STACK_PREFIX=${{ needs.config.outputs.stack-prefix }}
+            HOSTNAME=${{ needs.config.outputs.hostname }}
+            CERTRESOLVER=${{ needs.config.outputs.certresolver }}
+    permissions:
+        contents: read
+        packages: write

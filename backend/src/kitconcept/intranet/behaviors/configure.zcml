@@ -19,25 +19,4 @@
       provides=".additional_contact_info.IAdditionalContactInfo"
       />
 
-  <plone:behavior
-      name="voltolighttheme.header"
-      title="Header customizations for sites/subsites"
-      description="Set of fields to customize sites and subsites"
-      provides=".customizations.ISiteHeaderCustomizationSettings"
-      />
-
-  <plone:behavior
-      name="voltolighttheme.theme"
-      title="Theme colors customizations for sites/subsites"
-      description="Set of fields to customize sites and subsites"
-      provides=".customizations.ISiteThemeCustomizationSettings"
-      />
-
-  <plone:behavior
-      name="voltolighttheme.footer"
-      title="Footer customizations for sites/subsites"
-      description="Set of fields to customize sites and subsites"
-      provides=".customizations.ISiteFooterCustomizationSettings"
-      />
-
 </configure>

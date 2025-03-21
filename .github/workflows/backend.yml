@@ -108,8 +108,6 @@ jobs:
 
   coverage:
     runs-on: ubuntu-latest
-    needs:
-      - test
     steps:
         - name: Checkout
           uses: actions/checkout@v4
@@ -199,6 +197,7 @@ jobs:
     needs:
       - lint
       - coverage
+      - test
     permissions:
       contents: read
       packages: write
@@ -213,7 +212,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}
+            ${{ inputs.image-name-prefix }}-beispiele
           labels: |
             org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ inputs.image-name-prefix }}-beispiele:${{ inputs.base-tag }}
           flavor:

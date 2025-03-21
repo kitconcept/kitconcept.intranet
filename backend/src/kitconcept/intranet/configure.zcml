@@ -23,8 +23,5 @@
   <include file="profiles.zcml" />
 
   <include package=".behaviors" />
-  <include package=".services" />
-  <include package=".serializers" />
-  <include package=".deserializers" />
 
 </configure>

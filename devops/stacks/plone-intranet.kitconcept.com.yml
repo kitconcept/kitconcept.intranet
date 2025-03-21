@@ -4,10 +4,10 @@ version: '3.8'
 services:
 
   frontend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${STACK_PARAM:-latest}
+    image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
     environment:
-      RAZZLE_INTERNAL_API_PATH: http://plone-intranet-kitconcept-com_backend:8080/Plone
-      RAZZLE_API_PATH: https://plone-intranet.kitconcept.com
+      RAZZLE_INTERNAL_API_PATH: http://${HOSTNAME}_backend:8080/Plone
+      RAZZLE_API_PATH: https://${HOSTNAME}
     networks:
       - public
     healthcheck:
@@ -26,18 +26,18 @@ services:
         - traefik.enable=true
         - traefik.constraint-label=public
         # Service
-        - traefik.http.services.svc-kc-intranet-front.loadbalancer.server.port=3000
+        - traefik.http.services.svc-${STACK_PREFIX}-front.loadbalancer.server.port=3000
         # Routers
         ## /
-        - traefik.http.routers.rt-kc-intranet-front.rule=Host(`plone-intranet.kitconcept.com`)
-        - traefik.http.routers.rt-kc-intranet-front.entrypoints=https
-        - traefik.http.routers.rt-kc-intranet-front.tls=true
-        - traefik.http.routers.rt-kc-intranet-front.tls.certresolver=le-hetzner
-        - traefik.http.routers.rt-kc-intranet-front.service=svc-kc-intranet-front
-        - traefik.http.routers.rt-kc-intranet-front.middlewares=gzip
+        - traefik.http.routers.rt-${STACK_PREFIX}-front.rule=Host(`${HOSTNAME}`)
+        - traefik.http.routers.rt-${STACK_PREFIX}-front.entrypoints=https
+        - traefik.http.routers.rt-${STACK_PREFIX}-front.tls=true
+        - traefik.http.routers.rt-${STACK_PREFIX}-front.tls.certresolver=${CERTRESOLVER}
+        - traefik.http.routers.rt-${STACK_PREFIX}-front.service=svc-${STACK_PREFIX}-front
+        - traefik.http.routers.rt-${STACK_PREFIX}-front.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${STACK_PARAM:-latest}
+    image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
     networks:
       - public
     deploy:
@@ -54,33 +54,33 @@ services:
         - traefik.enable=true
         - traefik.constraint-label=public
         # Services
-        - traefik.http.services.svc-kc-intranet-back.loadbalancer.server.port=8080
+        - traefik.http.services.svc-${STACK_PREFIX}-back.loadbalancer.server.port=8080
         # Middlewares
         ## VHM rewrite /++api++/
-        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-api.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
-        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-api.replacepathregex.replacement=/VirtualHostBase/https/plone-intranet.kitconcept.com/Plone/++api++/VirtualHostRoot$$1"
+        - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-api.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-api.replacepathregex.replacement=/VirtualHostBase/https/${HOSTNAME}/Plone/++api++/VirtualHostRoot$$1"
         ## VHM rewrite /ClassicUI/
-        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
-        - "traefik.http.middlewares.mw-kc-intranet-back-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/plone-intranet.kitconcept.com/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
+        - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
+        - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/${HOSTNAME}/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
         ## Basic Authentication
         ### Note: all dollar signs in the hash need to be doubled for escaping.
         ### To create user:password pair, it's possible to use this command:
         ### echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
-        - traefik.http.middlewares.mw-kc-intranet-back-auth.basicauth.users=kitconcept:$$apr1$$6RN5HfVi$$gB0AHNAzvzKXudmevCYdU.
+        - traefik.http.middlewares.mw-${STACK_PREFIX}-back-auth.basicauth.users=kitconcept:$$apr1$$6RN5HfVi$$gB0AHNAzvzKXudmevCYdU.
 
         # Routes
         ## /++api++
-        - traefik.http.routers.rt-kc-intranet-back-api.rule=Host(`plone-intranet.kitconcept.com`) && PathPrefix(`/++api++`)
-        - traefik.http.routers.rt-kc-intranet-back-api.entrypoints=https
-        - traefik.http.routers.rt-kc-intranet-back-api.tls=true
-        - traefik.http.routers.rt-kc-intranet-back-api.service=svc-kc-intranet-back
-        - traefik.http.routers.rt-kc-intranet-back-api.middlewares=gzip,mw-kc-intranet-back-vhm-api
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-api.rule=Host(`${HOSTNAME}`) && PathPrefix(`/++api++`)
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-api.entrypoints=https
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-api.tls=true
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-api.service=svc-${STACK_PREFIX}-back
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-api.middlewares=gzip,mw-${STACK_PREFIX}-back-vhm-api
         ## /ClassicUI
-        - traefik.http.routers.rt-kc-intranet-back-classic.rule=Host(`plone-intranet.kitconcept.com`) && PathPrefix(`/ClassicUI`)
-        - traefik.http.routers.rt-kc-intranet-back-classic.entrypoints=https
-        - traefik.http.routers.rt-kc-intranet-back-classic.tls=true
-        - traefik.http.routers.rt-kc-intranet-back-classic.service=svc-kc-intranet-back
-        - traefik.http.routers.rt-kc-intranet-back-classic.middlewares=gzip,mw-kc-intranet-back-auth,mw-kc-intranet-back-vhm-classic
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.rule=Host(`${HOSTNAME}`) && PathPrefix(`/ClassicUI`)
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.entrypoints=https
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.tls=true
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.service=svc-${STACK_PREFIX}-back
+        - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.middlewares=gzip,mw-${STACK_PREFIX}-back-auth,mw-${STACK_PREFIX}-back-vhm-classic
 
 networks:
   public:

@@ -1,4 +1,5 @@
-name: kitconcept.intranet workflow
+name: "kitconcept.intranet: CI"
+description: "Main workflow for kitconcept.intranet"
 
 on:
   push:
@@ -11,69 +12,22 @@ on:
       - "devops/**"
   workflow_dispatch:
 
-env:
-  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept.intranet
-  NODE_VERSION: "22.x"
-  PYTHON_VERSION: "3.12"
-
 jobs:
 
   config:
-    runs-on: ubuntu-latest
-    outputs:
-      backend: ${{ steps.filter.outputs.backend }}
-      frontend: ${{ steps.filter.outputs.frontend }}
-      BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}
-      IMAGE_NAME_PREFIX: ${{ env.IMAGE_NAME_PREFIX }}
-      NODE_VERSION: ${{ env.NODE_VERSION }}
-      PYTHON_VERSION: ${{ env.PYTHON_VERSION }}
-      PLONE_VERSION: ${{ steps.vars.outputs.PLONE_VERSION }}
-      VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
-      ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
-      STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Compute several vars needed for the CI
-        id: vars
-        run: |
-          echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          echo "PLONE_VERSION=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
-          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
-          ENVIRONMENT=${{ vars.LIVE_ENV }}
-          echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
-          echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
-
-      - name: Test vars
-        run: |
-          echo 'BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}'
-          echo 'PLONE_VERSION=${{ steps.vars.outputs.PLONE_VERSION }}'
-          echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
-          echo 'ENVIRONMENT=${{ steps.vars.outputs.ENVIRONMENT }}'
-          echo 'STACK_NAME=${{ steps.vars.outputs.STACK_NAME }}'
-
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            backend:
-              - 'backend/**'
-              - '.github/workflows/backend.yml'
-            frontend:
-              - 'frontend/**'
-              - '.github/workflows/frontend.yml'
+    name: "Config: Compute values used in workflow"
+    uses: ./.github/workflows/config.yml
 
   backend:
     uses: ./.github/workflows/backend.yml
     needs:
         - config
     with:
-        base-tag: ${{ needs.config.outputs.BASE_TAG }}
-        image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
         image-name-suffix: backend
-        python-version: ${{ needs.config.outputs.PYTHON_VERSION }}
-        plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+        python-version: ${{ needs.config.outputs.python-version }}
+        plone-version: ${{ needs.config.outputs.plone-version }}
     if: ${{ needs.config.outputs.backend == 'true' }}
     permissions:
       contents: read
@@ -84,40 +38,44 @@ jobs:
     needs:
         - config
     with:
-        base-tag: ${{ needs.config.outputs.BASE_TAG }}
-        image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
         image-name-suffix: frontend
-        node-version: ${{ needs.config.outputs.NODE_VERSION }}
-        volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
+        node-version: ${{ needs.config.outputs.node-version }}
+        volto-version: ${{ needs.config.outputs.volto-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
     permissions:
       contents: read
       packages: write
 
   deploy:
+    name: "Deploy: ${{ needs.config.outputs.hostname }}"
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
     if: ${{ always() && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
     needs:
       - config
       - backend
       - frontend
-    runs-on: ubuntu-latest
-    environment: ${{ needs.config.outputs.ENVIRONMENT }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy to cluster
-        uses: kitconcept/docker-stack-deploy@v1.2.0
-        with:
-          registry: "ghcr.io"
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          remote_host: ${{ secrets.DEPLOY_HOST }}
-          remote_port: ${{ secrets.DEPLOY_PORT }}
-          remote_user: ${{ secrets.DEPLOY_USER }}
-          remote_private_key: ${{ secrets.DEPLOY_SSH }}
-          stack_file: devops/stacks/${{ needs.config.outputs.ENVIRONMENT }}.yml
-          stack_name: ${{ needs.config.outputs.STACK_NAME }}
-          stack_param: ${{ github.ref_name }}
-          env_file: ${{ secrets.ENV_FILE }}
-          deploy_timeout: 480
+    with:
+        tag: ${{ github.ref_name }}
+        environment: ${{ needs.config.outputs.environment }}
+        stack-name: ${{ needs.config.outputs.stack-name }}
+        stack-file: ${{ needs.config.outputs.stack-file }}
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+        password: ${{ secrets.GITHUB_TOKEN }}
+        remote-host: ${{ secrets.DEPLOY_HOST }}
+        remote-port: ${{ secrets.DEPLOY_PORT }}
+        remote-user: ${{ secrets.DEPLOY_USER }}
+        remote-private-key: ${{ secrets.DEPLOY_SSH }}
+        env-file: |
+            IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+            IMAGE_TAG=${{ github.ref_name }}
+            STACK_NAME=${{ needs.config.outputs.stack-name }}
+            STACK_PREFIX=${{ needs.config.outputs.stack-prefix }}
+            HOSTNAME=${{ needs.config.outputs.hostname }}
+            CERTRESOLVER=${{ needs.config.outputs.certresolver }}
+    permissions:
+        contents: read
+        packages: write

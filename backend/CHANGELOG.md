@@ -1,6 +1,29 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+
+## 1.0.0a10 (2025-03-21)
+
+
+### Breaking
+
+- Upgrade to split customization behavior in several ones, and renamed them to use `voltolightheme`. @sneridagh [#77](https://github.com/kitconcept/kitconcept.intranet/issue/77)
+
+
+### Feature
+
+- Use released version of `kitconcept.voltolightheme`. @sneridagh [#77](https://github.com/kitconcept/kitconcept.intranet/issue/77)
+- Remove local development of the customization behaviors after transfer them to `kitconcept.voltolightheme`. @sneridagh [#77](https://github.com/kitconcept/kitconcept.intranet/issue/77)
+
+
+### Internal
+
+- Add script to dump constraints from pyproject.toml to a constraints.txt file during Docker image build @ericof 
+- Fix ruff configuration for isort @ericof 
+- On GitHub, add a workflow to check a PR has changelog entries @ericof 
+- Upgrade plone.distribution to version 3.1.1 @ericof 
+- Upgrade plone.restapi to version 9.13.0 @ericof 
+
 ## 1.0.0a9 (2025-03-12)
 
 

@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.10 (2025-03-21)
+
+### Internal
+
+- Update to use Volto 18.10.1 and adjustments for new VLT package layout. @sneridagh [#77](https://github.com/kitconcept/kitconcept.intranet/issue/77)
+- Move to a released version of `@kitconcept/volto-light-theme`. @sneridagh [#77](https://github.com/kitconcept/kitconcept.intranet/issue/77)
+- On GitHub, add a workflow to check a PR has changelog entries @ericof 
+
 ## 1.0.0-alpha.9 (2025-03-12)
 
 ## 1.0.0-alpha.8 (2025-03-11)

@@ -52,7 +52,7 @@ services:
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-backend:1.0.0a10
+    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:1.0.0a10
     platform: linux/amd64
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_NAME:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-HxfQYJgHCtjM}' port='${DB_PORT:-5432}'"

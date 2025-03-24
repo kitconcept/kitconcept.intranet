@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.11 (2025-03-24)
+
+### Internal
+
+- Update to use latest VLT 6a18. @sneridagh [#82](https://github.com/kitconcept/kitconcept.intranet/issue/82)
+
 ## 1.0.0-alpha.10 (2025-03-21)
 
 ### Internal

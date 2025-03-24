@@ -1,6 +1,35 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a11 (2025-03-24)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to use latest VLT 6a18. @sneridagh [#82](https://github.com/kitconcept/kitconcept.intranet/issue/82)
+
+
+
+### Project
+
+
+#### Internal
+
+- Allow entries on the repository changelog @ericof 
+- Fix backend service name reference on the frontend service. @ericof 
+- GHA: Update changelog workflow. @ericof 
+- Use beispile image, by default, for docker-compose.yml. @ericof 
+
+
+
 ## 1.0.0a10 (2025-03-21)
 
 ### Backend

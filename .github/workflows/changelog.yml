@@ -29,9 +29,11 @@ jobs:
               - 'backend/**'
             repository:
               - '.github/**'
-              - '.devops/**'
-              - '.docs/**'
               - '.vscode/**'
+              - 'devops/**'
+              - 'docs/**'
+              - 'docker-compose.yml'
+              - 'README.md'
             frontend:
               - 'frontend/**'
 

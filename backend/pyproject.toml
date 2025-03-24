@@ -65,14 +65,15 @@ target = "plone"
 path = "src/kitconcept/intranet/about.py"
 
 [tool.hatch.build]
-strict-naming = false
-packages = ["src/kitconcept"]
+strict-naming = true
 
 [tool.hatch.build.targets.sdist]
 exclude = [
   "/.github",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/kitconcept"]
 
 [tool.coverage.run]
 source_pkgs = ["kitconcept.intranet", "tests"]

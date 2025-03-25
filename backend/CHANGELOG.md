@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a12 (2025-03-25)
+
+
+### Bugfix
+
+- Fix hatchling packaging issue with building wheels. @ericof 
+
 ## 1.0.0a11 (2025-03-24)
 
 No significant changes.

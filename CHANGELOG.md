@@ -1,6 +1,32 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a12 (2025-03-25)
+
+### Backend
+
+
+#### Bugfix
+
+- Fix hatchling packaging issue with building wheels. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Upgrade to VLT 6a19. @sneridagh [#84](https://github.com/kitconcept/kitconcept.intranet/issue/84)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a11 (2025-03-24)
 
 ### Backend

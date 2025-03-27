@@ -147,6 +147,7 @@ jobs:
           echo 'STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}'
           echo 'STACK_FILE: ${{ steps.vars.outputs.STACK_FILE }}'
           echo 'event-name: ${{ github.event_name }}'
+          echo "ref-name: ${{ github.ref_name }}"
           echo 'Paths - acceptance: ${{ steps.filter.outputs.acceptance }}'
           echo 'Paths - backend: ${{ steps.filter.outputs.backend }}'
           echo 'Paths - devops: ${{ steps.filter.outputs.devops }}'

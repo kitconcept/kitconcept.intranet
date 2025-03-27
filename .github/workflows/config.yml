@@ -21,7 +21,7 @@ on:
       image-name-prefix:
         required: false
         type: string
-        default: "ghcr.io/kitconcept/kitconcept.intranet"
+        default: "ghcr.io/kitconcept/kitconcept-intranet"
       node-version:
         required: false
         type: string

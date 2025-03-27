@@ -165,6 +165,7 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha
+            type=raw,value=${{ inputs.base-tag }}
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Set up QEMU
@@ -220,6 +221,7 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha
+            type=raw,value=${{ inputs.base-tag }}
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Set up QEMU
@@ -245,5 +247,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            PLONE_VERSION=${{ inputs.plone-version }}
+            IMAGE_TAG=${{ inputs.base-tag }}
             SEED=$GITHUB_RUN_ID

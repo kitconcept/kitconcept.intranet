@@ -221,4 +221,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             IMAGE_TAG=${{ inputs.base-tag }}
-            SEED=$GITHUB_RUN_ID
+            SEED="${{ github.run_id }}${{ github.sha }}""

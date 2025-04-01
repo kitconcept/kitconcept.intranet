@@ -106,15 +106,15 @@ jobs:
             type=pep440,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
 
-      - name: Build and push
+      - name: "Beispiele: Build and push"
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64
           context: backend
-          build-args: |
-            SEED=${{ github.run_id }}
-            IMAGE_TAG=${{ needs.config.outputs.BASE_TAG }}
           file: backend/Dockerfile.beispiele
+          build-args: |
+            SEED="${{ github.run_id }}${{ github.sha }}"
+            IMAGE_TAG=${{ github.ref_name }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-beispiele.outputs.tags }}
           labels: ${{ steps.meta-beispiele.outputs.labels }}

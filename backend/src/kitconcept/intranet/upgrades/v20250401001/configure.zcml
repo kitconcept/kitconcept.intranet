@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250317001"
+      destination="20250401001"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade Plone to 6.1.1"
+        handler=".upgrade_plone_611"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

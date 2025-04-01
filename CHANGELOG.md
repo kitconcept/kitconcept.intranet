@@ -1,6 +1,36 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a13 (2025-04-01)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+
+#### Bugfix
+
+- GHA: Fix manual_deploy workflow not working for branches other than main. @ericof 
+- The docker-compose.yml shipped here does not need a database (or relstorage) @ericof 
+
+
+#### Internal
+
+- GHA: Update docker/build-push-action to v6 @ericof 
+- Refactor container image creation for beispiele. @ericof 
+
+
+
 ## 1.0.0a12 (2025-03-25)
 
 ### Backend

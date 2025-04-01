@@ -33,7 +33,7 @@ services:
       - --api
 
   frontend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:1.0.0a12
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:1.0.0a13
     platform: linux/amd64
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
@@ -52,14 +52,11 @@ services:
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:1.0.0a12
+    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:1.0.0a13
     platform: linux/amd64
     environment:
-      RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_NAME:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-HxfQYJgHCtjM}' port='${DB_PORT:-5432}'"
       ZOPE_FORM_MEMORY_LIMIT: 250MB
       HONEYPOT_FIELD: your_email
-    depends_on:
-      - db
     labels:
       - traefik.enable=true
       - traefik.constraint-label=public
@@ -96,15 +93,3 @@ services:
       - traefik.http.routers.rt-backend-admin.entrypoints=http
       - traefik.http.routers.rt-backend-admin.service=svc-backend
       - traefik.http.routers.rt-backend-admin.middlewares=gzip,mw-backend-auth
-
-  db:
-    image: postgres:14
-    environment:
-      POSTGRES_USER: plone
-      POSTGRES_PASSWORD: HxfQYJgHCtjM
-      POSTGRES_DB: plone
-    volumes:
-      - vol-site-data:/var/lib/postgresql/data
-
-volumes:
-  vol-site-data: {}

@@ -1,0 +1,1 @@
+Force kitconcept.voltolighttheme version 6.0.0a21 @ericof

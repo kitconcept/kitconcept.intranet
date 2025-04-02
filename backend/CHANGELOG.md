@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a17 (2025-04-02)
+
+
+### Bugfix
+
+- Container: Keep python packages installed by plone/server-builder image. @ericof [#89](https://github.com/kitconcept/kitconcept.intranet/issue/89)
+
 ## 1.0.0a16 (2025-04-02)
 
 No significant changes.

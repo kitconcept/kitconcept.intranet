@@ -2,6 +2,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a15 (2025-04-02)
+
+
+### Feature
+
+- Upgrade Products.CMFPlone to version 6.1.1 @ericof [#86](https://github.com/kitconcept/kitconcept.intranet/issue/86)
+- Force kitconcept.voltolighttheme version 6.0.0a21 @ericof 
+
 ## 1.0.0a14 (2025-04-02)
 
 No significant changes.

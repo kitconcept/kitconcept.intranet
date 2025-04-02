@@ -13,26 +13,8 @@ env:
 jobs:
 
   config:
-    runs-on: ubuntu-latest
-    outputs:
-      BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}
-      PLONE_VERSION: ${{ steps.vars.outputs.PLONE_VERSION }}
-      VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Compute several vars needed for the build
-        id: vars
-        run: |
-          echo 'BASE_TAG=sha-'$(git rev-parse --short HEAD) >> $GITHUB_OUTPUT
-          python3 -c 'from pathlib import Path; data = (Path() / "backend" / "version.txt").read_text().strip(); print(f"PLONE_VERSION={data}")' >> $GITHUB_OUTPUT
-          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + data["core"].get("tag") or "latest")' >> $GITHUB_OUTPUT
-
-      - name: Test vars
-        run: |
-          echo 'BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}'
-          echo "PLONE_VERSION=${{ steps.vars.outputs.PLONE_VERSION }}"
-          echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
+    name: "Config: Compute values used in workflow"
+    uses: ./.github/workflows/config.yml
 
   backend:
     runs-on: ubuntu-latest
@@ -196,3 +178,34 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             VOLTO_VERSION=${{ needs.config.outputs.VOLTO_VERSION }}
+
+  deploy:
+    name: "Deploy: ${{ needs.config.outputs.hostname }}"
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    needs:
+      - config
+      - backend
+      - frontend
+    with:
+        tag: ${{ github.ref_name }}
+        environment: ${{ needs.config.outputs.environment }}
+        stack-name: ${{ needs.config.outputs.stack-name }}
+        stack-file: ${{ needs.config.outputs.stack-file }}
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+        password: ${{ secrets.GITHUB_TOKEN }}
+        remote-host: ${{ secrets.DEPLOY_HOST }}
+        remote-port: ${{ secrets.DEPLOY_PORT }}
+        remote-user: ${{ secrets.DEPLOY_USER }}
+        remote-private-key: ${{ secrets.DEPLOY_SSH }}
+        env-file: |
+            IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+            IMAGE_TAG=${{ github.ref_name }}
+            STACK_NAME=${{ needs.config.outputs.stack-name }}
+            STACK_PREFIX=${{ needs.config.outputs.stack-prefix }}
+            HOSTNAME=${{ needs.config.outputs.hostname }}
+            CERTRESOLVER=${{ needs.config.outputs.certresolver }}
+    permissions:
+        contents: read
+        packages: write

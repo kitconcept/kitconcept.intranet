@@ -13,7 +13,7 @@ COPY . src
 RUN <<EOT
     set -e
     bin/pip install uv
-    VIRTUAL_ENV=/app bin/uv --directory src sync --frozen --active --no-editable
+    VIRTUAL_ENV=/app bin/uv --directory src sync --frozen --active --no-editable --no-default-groups --inexact
     bin/python /compile_mo.py
     rm -Rf src
 EOT

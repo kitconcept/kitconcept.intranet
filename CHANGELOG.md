@@ -1,6 +1,29 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a16 (2025-04-02)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+
+#### Bugfix
+
+- GHA: Fix issues with tag workflow @ericof 
+
+
+
 ## 1.0.0a15 (2025-04-02)
 
 ### Backend

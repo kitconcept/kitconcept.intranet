@@ -30,10 +30,6 @@ on:
         required: false
         type: string
         default: "3.12"
-      plone-version:
-        required: false
-        type: string
-        default: "6.1.0"
     outputs:
       acceptance:
         description: "Flag reporting if we should run the acceptance jobs"
@@ -64,7 +60,7 @@ on:
         value: ${{ inputs.python-version }}
       plone-version:
         description: "Plone version to be used"
-        value: ${{ inputs.plone-version }}
+        value: ${{ jobs.config.outputs.plone-version }}
       volto-version:
         description: "Volto version to be used"
         value: ${{ jobs.config.outputs.volto-version }}
@@ -97,6 +93,7 @@ jobs:
       docs: ${{ steps.filter.outputs.docs }}
       frontend: ${{ steps.filter.outputs.frontend }}
       base-tag: ${{ steps.vars.outputs.BASE_TAG }}
+      plone-version: ${{ steps.vars.outputs.PLONE_VERSION }}
       volto-version: ${{ steps.vars.outputs.VOLTO_VERSION }}
       environment: ${{ steps.vars.outputs.ENVIRONMENT }}
       stack-name: ${{ steps.vars.outputs.STACK_NAME }}
@@ -110,6 +107,7 @@ jobs:
         id: vars
         run: |
           echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "PLONE_VERSION=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
           ENVIRONMENT=${{ inputs.hostname }}
           STACK_FILE=${{ inputs.stack-file }}

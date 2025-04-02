@@ -64,7 +64,7 @@ jobs:
           context: backend
           file: backend/Dockerfile
           build-args: |
-            PLONE_VERSION=${{ needs.config.outputs.PLONE_VERSION }}
+            PLONE_VERSION=${{ needs.config.outputs.plone-version }}
           load: true
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
@@ -177,7 +177,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            VOLTO_VERSION=${{ needs.config.outputs.VOLTO_VERSION }}
+            VOLTO_VERSION=${{ needs.config.outputs.volto-version }}
 
   deploy:
     name: "Deploy: ${{ needs.config.outputs.hostname }}"

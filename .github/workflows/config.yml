@@ -140,6 +140,7 @@ jobs:
       - name: Test vars
         run: |
           echo "BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}"
+          echo 'PLONE_VERSION: ${{ steps.vars.outputs.PLONE_VERSION }}'
           echo 'VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}'
           echo 'ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}'
           echo 'STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}'

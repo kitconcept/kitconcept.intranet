@@ -143,6 +143,7 @@ jobs:
     needs:
       - lint
       - coverage
+      - test
     permissions:
       contents: read
       packages: write

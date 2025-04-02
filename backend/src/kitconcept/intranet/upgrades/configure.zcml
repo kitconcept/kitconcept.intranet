@@ -43,4 +43,6 @@
         handler=".v20250317001.replace_sitecustomization_with_split_behaviors"
         />
   </genericsetup:upgradeSteps>
+
+  <include package=".v20250401001" />
 </configure>

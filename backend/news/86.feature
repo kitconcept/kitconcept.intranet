@@ -1,0 +1,1 @@
+Upgrade Products.CMFPlone to version 6.1.1 @ericof

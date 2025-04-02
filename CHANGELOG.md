@@ -1,6 +1,36 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0a14 (2025-04-02)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Unify usage of header actions. @sneridagh [#85](https://github.com/kitconcept/kitconcept.intranet/issue/85)
+- New site customization settings: `has_intranet_header`, `has_fat_menu`. @sneridagh [#85](https://github.com/kitconcept/kitconcept.intranet/issue/85)
+- Update to VLT 6a21. @sneridagh [#88](https://github.com/kitconcept/kitconcept.intranet/issue/88)
+
+#### Internal
+
+- Update to Volto 18.11.0 and VLT 6a20. @sneridagh [#85](https://github.com/kitconcept/kitconcept.intranet/issue/85)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0a13 (2025-04-01)
 
 ### Backend

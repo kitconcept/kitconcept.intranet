@@ -3,6 +3,8 @@
   "@type": "Plone Site",
   "UID": "plone_site_root",
   "allow_discussion": null,
+  "has_intranet_header": true,
+  "intranet_flag": "Intranet",
   "blocks": {
     "4979b879-0499-494e-9ca9-967aae7af1f4": {
       "@type": "gridBlock",
@@ -205,9 +207,7 @@
     ]
   },
   "contributors": [],
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "A Plone Intranet distribution provided by kitconcept GmbH",
   "effective": null,
   "exclude_from_nav": false,

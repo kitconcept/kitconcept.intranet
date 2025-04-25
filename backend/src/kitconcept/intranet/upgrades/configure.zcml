@@ -45,4 +45,15 @@
   </genericsetup:upgradeSteps>
 
   <include package=".v20250401001" />
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250401001"
+      destination="20250425001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add volto.navtitle behavior to content types"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

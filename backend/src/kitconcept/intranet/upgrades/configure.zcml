@@ -45,4 +45,15 @@
   </genericsetup:upgradeSteps>
 
   <include package=".v20250401001" />
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250311001"
+      destination="20250506001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add kitconcept.footer and kitconcept.sticky_menu behavior to Plone Site"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

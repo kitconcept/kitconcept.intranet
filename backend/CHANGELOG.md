@@ -2,6 +2,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a18 (2025-05-07)
+
+
+### Internal
+
+- Force Intranet header and intranet flag default content in example content. @sneridagh [#91](https://github.com/kitconcept/kitconcept.intranet/issue/91)
+- Upgrade to VLT 6.0.0a24. @sneridagh 
+
 ## 1.0.0a17 (2025-04-02)
 
 

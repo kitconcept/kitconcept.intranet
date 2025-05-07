@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-alpha.18 (2025-05-07)
+
+### Internal
+
+- Upgrade to VLT 6.0.0a24. @sneridagh 
+
 ## 1.0.0-alpha.17 (2025-04-02)
 
 ## 1.0.0-alpha.16 (2025-04-02)

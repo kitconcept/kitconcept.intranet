@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "A Plone distribution for Intranets with Plone. Created by kitconcept."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 authors = [
     { name = "kitconcept GmbH", email = "info@kitconcept.com" },
 ]
@@ -22,8 +22,6 @@ classifiers = [
     "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
@@ -34,7 +32,7 @@ dependencies = [
     "plone.restapi>=9.13.2",
     "plone.volto>=5.0.2",
     "python-dateutil",
-    "kitconcept.voltolighttheme==6.0.0a21",
+    "kitconcept.voltolighttheme==6.0.0a24",
 ]
 
 [dependency-groups]

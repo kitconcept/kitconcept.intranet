@@ -30,7 +30,7 @@ dependencies = [
     "plone.api",
     "plone.distribution",
     "plone.restapi>=9.13.2",
-    "plone.volto>=5.0.2",
+    "plone.volto==5.1.0",
     "python-dateutil",
     "kitconcept.voltolighttheme==6.0.0a24",
 ]
@@ -410,7 +410,7 @@ constraint-dependencies = [
     "plone.transformchain==3.0.1",
     "plone.uuid==2.0.1",
     "plone.versioncheck==1.8.2",
-    "plone.volto==5.0.4",
+    "plone.volto==5.1.0",
     "plone.z3cform==2.0.4",
     "Plone==6.1.1",
     "plonetheme.barceloneta==3.2.3",

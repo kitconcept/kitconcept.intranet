@@ -228,7 +228,7 @@ constraints = [
     { name = "plone-transformchain", specifier = "==3.0.1" },
     { name = "plone-uuid", specifier = "==2.0.1" },
     { name = "plone-versioncheck", specifier = "==1.8.2" },
-    { name = "plone-volto", specifier = "==5.0.4" },
+    { name = "plone-volto", specifier = "==5.1.0" },
     { name = "plone-z3cform", specifier = "==2.0.4" },
     { name = "plonetheme-barceloneta", specifier = "==3.2.3" },
     { name = "pluggy", specifier = "==1.5.0" },
@@ -1166,7 +1166,7 @@ requires-dist = [
     { name = "plone-api" },
     { name = "plone-distribution" },
     { name = "plone-restapi", specifier = ">=9.13.2" },
-    { name = "plone-volto", specifier = ">=5.0.2" },
+    { name = "plone-volto", specifier = "==5.1.0" },
     { name = "products-cmfplone", specifier = "==6.1.1" },
     { name = "python-dateutil" },
 ]
@@ -3516,20 +3516,21 @@ wheels = [
 
 [[package]]
 name = "plone-volto"
-version = "5.0.4"
+version = "5.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-monkeypatcher" },
     { name = "plone-api" },
     { name = "plone-app-caching" },
+    { name = "plone-app-dexterity" },
     { name = "plone-distribution" },
     { name = "plone-restapi" },
     { name = "products-cmfplone" },
     { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a3/e7/694e8d7ad5f56ff35d9aec6835f9acb9527be0a8d92653f3862ab15fb506/plone_volto-5.0.4.tar.gz", hash = "sha256:c31c19bfb3b6bf5a6de674cc598bd678e58990cc692783f25c0b147e92de0b5b", size = 260121 }
+sdist = { url = "https://files.pythonhosted.org/packages/b4/03/42306397dc228642618233207f6e08d411f3ab40e963337adfdf95631783/plone_volto-5.1.0.tar.gz", hash = "sha256:e6f9bc7566e4c9866d2f5e4bac6e99b3c2c2b197919ee72029396c6d4e75aeb7", size = 261224 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/58/44/f7dc93634da374263dd79ed533a63a188601621508ddc444c187bdb482da/plone_volto-5.0.4-py3-none-any.whl", hash = "sha256:34d2ab40e78149db12ccdbfdea5c25207b89acc8bf07123913b656f8cbb54300", size = 268268 },
+    { url = "https://files.pythonhosted.org/packages/d9/76/8b4dea471064cc49df6350d9839b2eddcadb93377ddc9c64412f4ae7f2bf/plone_volto-5.1.0-py3-none-any.whl", hash = "sha256:bffb63dc0d1c6ebfe173b792522c083e8170a54f9fac24317193c41366ca4305", size = 270891 },
 ]
 
 [[package]]

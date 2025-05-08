@@ -12,7 +12,7 @@ class TestDistribution:
             ("title", "Intranet"),
             (
                 "description",
-                "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
+                "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",
             ),
             ("exclude_from_nav", False),
         ],

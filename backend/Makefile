@@ -15,8 +15,6 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PACKAGE_NAME=plonegovbr.intranet
-
 IMAGE_NAME_PREFIX=ghcr.io/kitconcept/kitconcept-intranet
 IMAGE_TAG=latest
 
@@ -39,7 +37,7 @@ BIN_FOLDER=$(VENV_FOLDER)/bin
 SEED=$(shell date +'%Y%m%d-%H%M%S')
 
 # Environment variables to be exported
-export ALLOWED_DISTRIBUTIONS := portalbrasil-intranet
+export ALLOWED_DISTRIBUTIONS := kitconcept-intranet
 export PYTHONWARNINGS := ignore
 export DOCKER_BUILDKIT := 1
 
@@ -51,27 +49,35 @@ all: build
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-instance/etc/zope.ini instance/etc/zope.conf: ## Create instance configuration
+requirements-mxdev.txt: pyproject.toml mx.ini ## Generate constraints file
+	@echo "$(GREEN)==> Generate constraints file$(RESET)"
+	@echo '-c https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt' > requirements.txt
+	@uvx mxdev -c mx.ini
+
+$(VENV_FOLDER): requirements-mxdev.txt ## Install dependencies
+	@echo "$(GREEN)==> Install environment$(RESET)"
+	@uv venv $(VENV_FOLDER)
+	@uv pip install -r requirements-mxdev.txt
+
+.PHONY: sync
+sync: $(VENV_FOLDER) ## Sync project dependencies
+	@echo "$(GREEN)==> Sync project dependencies$(RESET)"
+	@uv pip install -r requirements-mxdev.txt
+
+instance/etc/zope.ini instance/etc/zope.conf: instance.yaml ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
-	@uvx cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+	@uvx cookiecutter -f --no-input -c 2.1.1 --config-file instance.yaml gh:plone/cookiecutter-zope-instance
 
 .PHONY: config
 config: instance/etc/zope.ini
 
-.PHONY: sync
-sync: ## Sync project dependencies
-	@echo "$(GREEN)==> Sync project dependencies$(RESET)"
-	@uv sync
-
 .PHONY: install
-install: sync config ## Install Plone and dependencies
-
-$(VENV_FOLDER): sync ## Install Plone and dependencies
+install: $(VENV_FOLDER) config ## Install Plone and dependencies
 
 .PHONY: clean
-clean: ## Clean environment
+clean: ## Clean installation and instance
 	@echo "$(RED)==> Cleaning environment and build$(RESET)"
-	@rm -rf $(VENV_FOLDER) pyvenv.cfg .installed.cfg instance .venv .pytest_cache .ruff_cache constraints* requirements*
+	@rm -rf $(VENV_FOLDER) pyvenv.cfg .installed.cfg instance/etc .venv .pytest_cache .ruff_cache constraints* requirements*
 
 .PHONY: remove-data
 remove-data: ## Remove all content

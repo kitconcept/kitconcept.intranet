@@ -12,7 +12,7 @@ def answers():
     return {
         "site_id": "intranet",
         "title": "Intranet",
-        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
+        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",
         "workflow": "restricted",
         "default_language": "en",
         "portal_timezone": "Europe/Berlin",
@@ -25,7 +25,7 @@ def answers_public():
     return {
         "site_id": "public",
         "title": "Intranet",
-        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
+        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",
         "workflow": "public",
         "default_language": "en",
         "portal_timezone": "Europe/Berlin",

@@ -11,7 +11,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.constraint-label=public
-      - traefik.http.routers.traefik-public-http.rule=Host(`traefik.kitconcept-intranet.localhost`)
+      - traefik.http.routers.traefik-public-http.rule=Host(`traefik.${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
       - traefik.http.routers.traefik-public-http.entrypoints=http
       - traefik.http.routers.traefik-public-http.service=api@internal
       - traefik.http.services.traefik-public.loadbalancer.server.port=8000
@@ -33,7 +33,7 @@ services:
       - --api
 
   frontend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:1.0.0a18
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${RELEASE:-1.0.0a18}
     platform: linux/amd64
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
@@ -46,13 +46,13 @@ services:
       - traefik.http.services.svc-frontend.loadbalancer.server.port=3000
       # Routers
       ## /
-      - traefik.http.routers.rt-frontend.rule=Host(`kitconcept-intranet.localhost`)
+      - traefik.http.routers.rt-frontend.rule=Host(`${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
       - traefik.http.routers.rt-frontend.entrypoints=http
       - traefik.http.routers.rt-frontend.service=svc-frontend
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:1.0.0a18
+    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${RELEASE:-1.0.0a18}
     platform: linux/amd64
     environment:
       ZOPE_FORM_MEMORY_LIMIT: 250MB
@@ -66,11 +66,11 @@ services:
       # Middlewares
       ## VHM rewrite /++api++/
       - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
-      - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.replacement=/VirtualHostBase/http/kitconcept-intranet.localhost/Plone/++api++/VirtualHostRoot$$1"
+      - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.replacement=/VirtualHostBase/http/${STACK_HOSTNAME:-kitconcept-intranet.localhost}/Plone/++api++/VirtualHostRoot$$1"
 
       ## VHM rewrite /ClassicUI/
       - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
-      - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.replacement=/VirtualHostBase/http/kitconcept-intranet.localhost/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
+      - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.replacement=/VirtualHostBase/http/${STACK_HOSTNAME:-kitconcept-intranet.localhost}/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
 
       ## Basic Authentication
       ### Note: all dollar signs in the hash need to be doubled for escaping.
@@ -79,17 +79,17 @@ services:
       ### Defaults to admin:admin
       - traefik.http.middlewares.mw-backend-auth.basicauth.users=admin:$$apr1$$uZPT5Fgu$$AmlIdamxT5ipBvPlsdfD70
       # Routers
-      - traefik.http.routers.rt-backend-api.rule=Host(`kitconcept-intranet.localhost`) && (PathPrefix(`/++api++`))
+      - traefik.http.routers.rt-backend-api.rule=Host(`${STACK_HOSTNAME:-kitconcept-intranet.localhost}`) && (PathPrefix(`/++api++`))
       - traefik.http.routers.rt-backend-api.entrypoints=http
       - traefik.http.routers.rt-backend-api.service=svc-backend
       - traefik.http.routers.rt-backend-api.middlewares=gzip,mw-backend-vhm-api
       ## /ClassicUI
-      - traefik.http.routers.rt-backend-classic.rule=Host(`kitconcept-intranet.localhost`) && PathPrefix(`/ClassicUI`)
+      - traefik.http.routers.rt-backend-classic.rule=Host(`${STACK_HOSTNAME:-kitconcept-intranet.localhost}`) && PathPrefix(`/ClassicUI`)
       - traefik.http.routers.rt-backend-classic.entrypoints=http
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
       ## admin
-      - traefik.http.routers.rt-backend-admin.rule=Host(`admin.kitconcept-intranet.localhost`)
+      - traefik.http.routers.rt-backend-admin.rule=Host(`admin.${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
       - traefik.http.routers.rt-backend-admin.entrypoints=http
       - traefik.http.routers.rt-backend-admin.service=svc-backend
       - traefik.http.routers.rt-backend-admin.middlewares=gzip,mw-backend-auth

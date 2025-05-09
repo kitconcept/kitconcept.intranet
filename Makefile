@@ -13,6 +13,7 @@ GIT_FOLDER=$(CURRENT_DIR)/.git
 
 PROJECT_NAME=kitconcept-intranet
 STACK_FILE=docker-compose-dev.yml
+STACK_HOSTNAME=kitconcept-intranet.localhost
 
 VOLTO_VERSION = $(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 KC_VERSION=$(shell cat backend/version.txt)

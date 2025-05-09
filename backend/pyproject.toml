@@ -25,14 +25,13 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "Products.CMFPlone==6.1.1",
+    "kitconcept.core==1.0.0a1",
     "collective.person",
     "plone.api",
     "plone.distribution",
-    "plone.restapi>=9.13.2",
-    "plone.volto>=5.0.2",
+    "plone.restapi",
+    "plone.volto>=5.1.0",
     "python-dateutil",
-    "kitconcept.voltolighttheme==6.0.0a24",
 ]
 
 [dependency-groups]
@@ -41,13 +40,20 @@ build = [
     "wheel",
 ]
 test = [
+    "horse-with-no-namespace>=20250408.0",
     "mypy>=1.15.0",
     "plone.app.testing",
     "plone.restapi[test]",
     "pytest",
     "pytest-cov",
     "pytest-docker>=3.2.0",
-    "pytest-plone>=0.5.0",
+    "pytest-plone>=1.0.0a1",
+]
+container = [
+    "plone.app.upgrade",
+    "psycopg2==2.9.10",
+    "relstorage==4.1.1",
+    "zeo==6.0.0",
 ]
 
 [project.urls]
@@ -60,7 +66,7 @@ Tracker = "https://github.com/kitconcept/kitconcept.intranet/issues"
 target = "plone"
 
 [tool.hatch.version]
-path = "src/kitconcept/intranet/about.py"
+path = "src/kitconcept/intranet/__init__.py"
 
 [tool.hatch.build]
 strict-naming = true
@@ -224,6 +230,7 @@ constraint-dependencies = [
     "collective.recipe.omelette==2.0.0",
     "collective.recipe.template==2.2",
     "collective.recipe.vscode==0.1.9",
+    "collective.volto.formsupport==3.2.3",
     "collective.xmltestreport==2.0.2",
     "collective.z3cform.datagridfield==3.0.3",
     "colorama==0.4.6",
@@ -273,6 +280,8 @@ constraint-dependencies = [
     "jsonschema-specifications==2024.10.1",
     "jsonschema==4.23.0",
     "keyring==25.5.0",
+    "kitconcept.core==1.0.0a1",
+    "kitconcept.voltolighttheme==6.0.0a24",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.1",
@@ -290,6 +299,7 @@ constraint-dependencies = [
     "MultiMapping==5.0",
     "multipart==1.2.1",
     "mxdev==4.0.3",
+    "mypy>=1.15.0",
     "natsort==8.4.0",
     "nh3==0.2.19",
     "nt-svcutils==2.13.0",
@@ -365,7 +375,7 @@ constraint-dependencies = [
     "plone.classicui==1.0.0",
     "plone.contentrules==3.0.1",
     "plone.dexterity==3.0.7",
-    "plone.distribution==3.1.1",
+    "plone.distribution==3.1.2",
     "plone.event==2.0.2",
     "plone.exportimport==1.1.0",
     "plone.folder==4.0.1",
@@ -410,9 +420,10 @@ constraint-dependencies = [
     "plone.transformchain==3.0.1",
     "plone.uuid==2.0.1",
     "plone.versioncheck==1.8.2",
-    "plone.volto==5.0.4",
+    "plone.volto>=5.1.0",
     "plone.z3cform==2.0.4",
     "Plone==6.1.1",
+    "plonegovbr.socialmedia==2.0.0a5",
     "plonetheme.barceloneta==3.2.3",
     "pluggy==1.5.0",
     "Products.BTreeFolder2==5.1",
@@ -461,7 +472,8 @@ constraint-dependencies = [
     "pyrsistent==0.20.0",
     "PySocks==1.7.1",
     "pytest-cov==5.0.0",
-    "pytest-plone==0.5.0",
+    "pytest-docker>=3.2.0",
+    "pytest-plone>=1.0.0a1",
     "pytest==7.4.4",
     "python-dateutil==2.9.0.post0",
     "python-dotenv==1.0.1",

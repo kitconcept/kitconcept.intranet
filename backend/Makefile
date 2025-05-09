@@ -30,7 +30,7 @@ endif
 
 PLONE_SITE_ID=Plone
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-PLONE_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
+KC_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
 EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/intranet/setuphandlers/examplecontent
 
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
@@ -134,9 +134,9 @@ test-coverage: $(VENV_FOLDER) ## run tests with coverage
 .PHONY: build-image
 build-image:  ## Build Docker Images
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) $(RESET)"
-	@docker build . -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) --progress plain -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
+	@docker build . --platform linux/amd64 -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) --progress plain -f Dockerfile --build-arg KC_VERSION=$(KC_VERSION)
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) $(RESET)"
-	@docker build .  --pull=false -t $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) -f Dockerfile.beispiele --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)
+	@docker build .  --pull=false --platform linux/amd64 -t $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) -f Dockerfile.beispiele --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)
 
 # Acceptance tests
 .PHONY: acceptance-backend-start
@@ -145,4 +145,4 @@ acceptance-backend-start: ## Start backend acceptance server
 
 .PHONY: acceptance-image-build
 acceptance-image-build:  ## Build Docker Images
-	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME_PREFIX)-backend-acceptance:$(IMAGE_TAG) -f Dockerfile.acceptance --build-arg PLONE_VERSION=$(PLONE_VERSION)
+	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME_PREFIX)-backend-acceptance:$(IMAGE_TAG) -f Dockerfile.acceptance --build-arg KC_VERSION=$(KC_VERSION)

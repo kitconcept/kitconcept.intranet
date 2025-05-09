@@ -1,7 +1,5 @@
 from kitconcept.intranet import PACKAGE_NAME
-from Products.GenericSetup.tool import SetupTool
 
-import pytest
 
 
 class TestSetupInstall:

@@ -13,9 +13,10 @@ GIT_FOLDER=$(CURRENT_DIR)/.git
 
 PROJECT_NAME=kitconcept-intranet
 STACK_FILE=docker-compose-dev.yml
+STACK_HOSTNAME=kitconcept-intranet.localhost
 
 VOLTO_VERSION = $(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
-PLONE_VERSION=$(shell cat backend/version.txt)
+KC_VERSION=$(shell cat backend/version.txt)
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -131,7 +132,7 @@ build-images:  ## Build docker images
 .PHONY: stack-start
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
-	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f $(STACK_FILE) up -d --build
+	VOLTO_VERSION=$(VOLTO_VERSION) KC_VERSION=$(KC_VERSION) docker compose -f $(STACK_FILE) up -d --build
 	@echo "Now visit: http://kitconcept-intranet.localhost"
 
 .PHONY: start-stack
@@ -181,7 +182,7 @@ acceptance-frontend-image-build: ## Build Acceptance frontend server image
 .PHONY: acceptance-backend-image-build
 acceptance-backend-image-build: ## Build Acceptance backend server image
 	@echo "Build acceptance backend"
-	@docker build backend -t kitconcept/kitconcept-intranet-backend:acceptance -f backend/Dockerfile.acceptance --build-arg PLONE_VERSION=$(PLONE_VERSION)
+	@docker build backend -t kitconcept/kitconcept-intranet-backend:acceptance -f backend/Dockerfile.acceptance --build-arg KC_VERSION=$(KC_VERSION)
 
 .PHONY: acceptance-images-build
 acceptance-images-build: ## Build Acceptance frontend/backend images

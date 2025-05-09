@@ -1,7 +1,6 @@
 # kitconcept Intranet 🚀
 
 [![Built with Cookieplone](https://img.shields.io/badge/built%20with-Cookieplone-0083be.svg?logo=cookiecutter)](https://github.com/plone/cookiecutter-plone/)
-[![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![Tests](https://github.com/kitconcept/kitconcept.intranet/actions/workflows/main.yml/badge.svg)](https://github.com/kitconcept/kitconcept.intranet/actions/workflows/main.yml)
 
 A Plone distribution for Intranets with Plone. Created by kitconcept.
@@ -12,7 +11,7 @@ A Plone distribution for Intranets with Plone. Created by kitconcept.
 
 Ensure you have the following installed:
 
-- Python 3.11 🐍
+- Python 3.12 🐍
 - Node 20 🟩
 - pnpm 🧶
 - Docker 🐳

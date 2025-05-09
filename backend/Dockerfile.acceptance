@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
-ARG PLONE_VERSION=6.1.0
-FROM plone/server-builder:${PLONE_VERSION} AS builder
+ARG KC_VERSION=6.1.0
+FROM plone/server-builder:${KC_VERSION} AS builder
 
 WORKDIR /app
 
@@ -23,7 +23,7 @@ RUN <<EOT
     rm -Rf src/
 EOT
 
-FROM plone/server-acceptance:${PLONE_VERSION}
+FROM plone/server-acceptance:${KC_VERSION}
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
       org.label-schema.name="kitconcept.intranet-acceptance" \

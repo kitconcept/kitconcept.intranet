@@ -3,6 +3,7 @@ from kitconcept.intranet.testing import INTEGRATION_TESTING
 from pathlib import Path
 from pytest_plone import fixtures_factory
 from requests import exceptions as exc
+from zope.component.hooks import site
 
 import pytest
 import requests
@@ -39,12 +40,12 @@ def docker_compose_file(pytestconfig):
     return Path(str(pytestconfig.rootdir)).resolve() / "tests" / "docker-compose.yml"
 
 
-@pytest.fixture
-def solr_service(docker_ip, docker_services):
-    """Ensure that Solr service is up and responsive."""
-    port = docker_services.port_for("solr", 8983)
-    url = f"http://{docker_ip}:{port}/solr/plone/admin/ping?wt=xml"
-    docker_services.wait_until_responsive(
-        timeout=90.0, pause=0.1, check=lambda: is_responsive(url)
-    )
-    return url
+@pytest.fixture(scope="class")
+def portal_class(integration_class):
+    if hasattr(integration_class, "testSetUp"):
+        integration_class.testSetUp()
+    portal = integration_class["portal"]
+    with site(portal):
+        yield portal
+    if hasattr(integration_class, "testTearDown"):
+        integration_class.testTearDown()

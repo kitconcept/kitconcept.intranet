@@ -1,7 +1,6 @@
 from kitconcept.intranet import PACKAGE_NAME
 
 
-
 class TestSetupInstall:
     profile_id: str = f"{PACKAGE_NAME}:default"
 

@@ -29,8 +29,8 @@ class IIntranetSettings(Interface):
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
-    label = "Volto Settings"
-    schema_prefix = "volto"
+    label = "Intranet Settings"
+    schema_prefix = "kitconcept.intranet"
 
     def updateFields(self):
         super().updateFields()
@@ -48,7 +48,7 @@ class IntranetControlpanel(RegistryConfigletPanel):
     schema = IIntranetSettings
     configlet_id = "IntranetSettings"
     configlet_category_id = "plone-general"
-    schema_prefix = "intranet"
+    schema_prefix = "kitconcept.intranet"
 
 
 @adapter(Interface, IBrowserLayer)
@@ -60,7 +60,7 @@ class IntranetSiteEndpointExpander:
 
     def __call__(self, data):
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(IIntranetSettings, prefix="intranet")
+        settings = registry.forInterface(IIntranetSettings, prefix="kitconcept.intranet")
         data["kitconcept.intranet.external_search_url"] = settings.external_search_url
         data["kitconcept.intranet.search_field_placeholder"] = (
             settings.search_field_placeholder

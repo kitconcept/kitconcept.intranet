@@ -28,5 +28,9 @@
       factory=".controlpanel.IntranetControlpanel"
       name="intranet-settings"
       />
+  <adapter
+      factory=".controlpanel.IntranetSiteEndpointExpander"
+      name="kitconcept.intranet"
+      />
 
 </configure>

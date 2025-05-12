@@ -212,7 +212,7 @@ constraints = [
     { name = "plone-resource", specifier = "==3.0.2" },
     { name = "plone-resourceeditor", specifier = "==4.0.1" },
     { name = "plone-rest", specifier = "==5.0.0" },
-    { name = "plone-restapi", specifier = "==9.13.3" },
+    { name = "plone-restapi", specifier = "==9.14.0" },
     { name = "plone-rfc822", specifier = "==3.0.1" },
     { name = "plone-scale", specifier = "==4.1.4" },
     { name = "plone-schema", specifier = "==2.0.2" },
@@ -1165,7 +1165,7 @@ requires-dist = [
     { name = "kitconcept-voltolighttheme", specifier = "==6.0.0a24" },
     { name = "plone-api" },
     { name = "plone-distribution" },
-    { name = "plone-restapi", specifier = ">=9.13.2" },
+    { name = "plone-restapi", specifier = "==9.14.0" },
     { name = "plone-volto", specifier = ">=5.0.2" },
     { name = "products-cmfplone", specifier = "==6.1.1" },
     { name = "python-dateutil" },
@@ -3236,7 +3236,7 @@ wheels = [
 
 [[package]]
 name = "plone-restapi"
-version = "9.13.3"
+version = "9.14.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
@@ -3248,9 +3248,9 @@ dependencies = [
     { name = "pytz" },
     { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/17/17/da4ae2cc0319e7d6938e5264fe91affed6ff629d8b7ab571a0aae018eda5/plone_restapi-9.13.3.tar.gz", hash = "sha256:dc00af068953ac6da74433ce0e49e10587fcdcdcf806025ad215692e1e04392d", size = 2968347 }
+sdist = { url = "https://files.pythonhosted.org/packages/fa/14/6ca0aa832e15359d6caa96476f77572b9d513779bca423c1e8d02a47575a/plone_restapi-9.14.0.tar.gz", hash = "sha256:c33d113c6f810e6e9544509e83fa6b30a2770542b786d5f994299f99133279f7", size = 2971194 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/94/e97689d2079356cedbbac57bdb919cad14aa5081841d4fe3d18ca45c3fe3/plone.restapi-9.13.3-py3-none-any.whl", hash = "sha256:62de7e6950bbfda24655043fad7eeeea1ac72ededc3c0a6118f4eeeee39cba1f", size = 3090565 },
+    { url = "https://files.pythonhosted.org/packages/6e/2c/48132f3375903bbedd460d445cf86253d894c1d3dbb0c4e7bde81cdc814e/plone.restapi-9.14.0-py3-none-any.whl", hash = "sha256:3cb9bae62f700e176a4c79f9a4930358964a187a09b6c403f00075b8b46a86b7", size = 3093537 },
 ]
 
 [package.optional-dependencies]

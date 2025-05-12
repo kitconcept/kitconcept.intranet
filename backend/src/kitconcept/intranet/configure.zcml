@@ -24,4 +24,9 @@
 
   <include package=".behaviors" />
 
+  <adapter
+      factory=".controlpanel.IntranetControlpanel"
+      name="intranet-settings"
+      />
+
 </configure>

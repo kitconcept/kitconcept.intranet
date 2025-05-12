@@ -56,4 +56,15 @@
         import_steps="typeinfo"
         />
   </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250506001"
+      destination="20250512001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add new control panel for intranet settings"
+        import_steps="controlpanel plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
 </configure>

@@ -7,9 +7,8 @@ from plone.restapi.interfaces import ISiteEndpointExpander
 from zope import schema
 from zope.component import adapter
 from zope.component import getUtility
-from zope.interface import implementer
 from zope.interface import Interface
-
+from zope.interface import implementer
 
 
 class IIntranetSettings(Interface):
@@ -55,7 +54,6 @@ class IntranetControlpanel(RegistryConfigletPanel):
 @adapter(Interface, IBrowserLayer)
 @implementer(ISiteEndpointExpander)
 class IntranetSiteEndpointExpander:
-
     def __init__(self, context, request):
         self.context = context
         self.request = request
@@ -64,4 +62,6 @@ class IntranetSiteEndpointExpander:
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IIntranetSettings, prefix="intranet")
         data["kitconcept.intranet.external_search_url"] = settings.external_search_url
-        data["kitconcept.intranet.search_field_placeholder"] = settings.search_field_placeholder
+        data["kitconcept.intranet.search_field_placeholder"] = (
+            settings.search_field_placeholder
+        )

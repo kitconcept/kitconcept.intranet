@@ -60,7 +60,9 @@ class IntranetSiteEndpointExpander:
 
     def __call__(self, data):
         registry = getUtility(IRegistry)
-        settings = registry.forInterface(IIntranetSettings, prefix="kitconcept.intranet")
+        settings = registry.forInterface(
+            IIntranetSettings, prefix="kitconcept.intranet"
+        )
         data["kitconcept.intranet.external_search_url"] = settings.external_search_url
         data["kitconcept.intranet.search_field_placeholder"] = (
             settings.search_field_placeholder

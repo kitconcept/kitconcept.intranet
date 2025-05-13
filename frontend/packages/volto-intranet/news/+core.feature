@@ -1,1 +1,1 @@
-Use @kitconcept/core version 1.0.0-alpha.1 @ericof
+Use @kitconcept/core version 1.0.0-alpha.2 @ericof

@@ -74,6 +74,7 @@ constraints = [
     { name = "gitpython", specifier = "==3.1.43" },
     { name = "gunicorn", specifier = "==23.0.0" },
     { name = "h11", specifier = "==0.14.0" },
+    { name = "horse-with-no-namespace", specifier = ">=20250408.0" },
     { name = "httplib2", specifier = "==0.22.0" },
     { name = "i18ndude", specifier = "==6.2.1" },
     { name = "icalendar", specifier = "==6.1.1" },
@@ -91,7 +92,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.23.0" },
     { name = "jsonschema-specifications", specifier = "==2024.10.1" },
     { name = "keyring", specifier = "==25.5.0" },
-    { name = "kitconcept-core", specifier = "==1.0.0a1" },
+    { name = "kitconcept-core", specifier = "==1.0.0a2" },
     { name = "kitconcept-voltolighttheme", specifier = "==6.0.0a24" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
@@ -216,7 +217,7 @@ constraints = [
     { name = "plone-resource", specifier = "==3.0.2" },
     { name = "plone-resourceeditor", specifier = "==4.0.1" },
     { name = "plone-rest", specifier = "==5.0.0" },
-    { name = "plone-restapi", specifier = "==9.13.3" },
+    { name = "plone-restapi", specifier = "==9.14.0" },
     { name = "plone-rfc822", specifier = "==3.0.1" },
     { name = "plone-scale", specifier = "==4.1.4" },
     { name = "plone-schema", specifier = "==2.0.2" },
@@ -269,6 +270,7 @@ constraints = [
     { name = "products-zopeversioncontrol", specifier = "==4.1" },
     { name = "progress", specifier = "==1.6" },
     { name = "prompt-toolkit", specifier = "==3.0.48" },
+    { name = "psycopg2", specifier = "==2.9.10" },
     { name = "py", specifier = "==1.11.0" },
     { name = "pycparser", specifier = "==2.22" },
     { name = "pygithub", specifier = "==2.5.0" },
@@ -295,6 +297,7 @@ constraints = [
     { name = "readme-renderer", specifier = "==44.0" },
     { name = "record", specifier = "==4.1" },
     { name = "referencing", specifier = "==0.35.1" },
+    { name = "relstorage", specifier = "==4.1.1" },
     { name = "repoze-xmliter", specifier = "==1.0b1" },
     { name = "requests", specifier = "==2.32.3" },
     { name = "requests-toolbelt", specifier = "==1.0.0" },
@@ -1213,7 +1216,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.0a1"
+version = "1.0.0a2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1226,9 +1229,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/96/29/b86bf59a897978877b6d607f0f6aec906cebd040f072111d40fbf03935f5/kitconcept_core-1.0.0a1.tar.gz", hash = "sha256:3fd719894d6f6533b9ccc5a3165288af1d003f3ce3b4b0bbc2cd435238a6cb39", size = 167306 }
+sdist = { url = "https://files.pythonhosted.org/packages/46/ac/21540081a6cfad478779bbfc133190fe747be52310d9aa40f4f524f12a22/kitconcept_core-1.0.0a2.tar.gz", hash = "sha256:12041826b55483280c017087670269d5c6368842299ca7a30390521d2ba50772", size = 143580 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5c/45/1c061db2131eff2bcc086fc4084b12a351ca3afaeba5acb6d7ae3bd889b9/kitconcept_core-1.0.0a1-py3-none-any.whl", hash = "sha256:b17fcef8aa71bbd7f62688bd5611211008a5e034393ffe71146fe8eeb672c5cb", size = 55620 },
+    { url = "https://files.pythonhosted.org/packages/39/3d/4f1a80afb330797b5c7b6754ddbc04255950c3c6dd0d358eb49627ab95a3/kitconcept_core-1.0.0a2-py3-none-any.whl", hash = "sha256:3920788b34cc0b5de5d2ecb76b75e8f13d46d7cb6af89e10ce3519d18199c997", size = 55106 },
 ]
 
 [[package]]
@@ -1269,7 +1272,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-person" },
-    { name = "kitconcept-core", specifier = "==1.0.0a1" },
+    { name = "kitconcept-core", specifier = "==1.0.0a2" },
     { name = "plone-api" },
     { name = "plone-distribution" },
     { name = "plone-restapi" },
@@ -3419,7 +3422,7 @@ wheels = [
 
 [[package]]
 name = "plone-restapi"
-version = "9.13.3"
+version = "9.14.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
@@ -3431,9 +3434,9 @@ dependencies = [
     { name = "pytz" },
     { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/17/17/da4ae2cc0319e7d6938e5264fe91affed6ff629d8b7ab571a0aae018eda5/plone_restapi-9.13.3.tar.gz", hash = "sha256:dc00af068953ac6da74433ce0e49e10587fcdcdcf806025ad215692e1e04392d", size = 2968347 }
+sdist = { url = "https://files.pythonhosted.org/packages/fa/14/6ca0aa832e15359d6caa96476f77572b9d513779bca423c1e8d02a47575a/plone_restapi-9.14.0.tar.gz", hash = "sha256:c33d113c6f810e6e9544509e83fa6b30a2770542b786d5f994299f99133279f7", size = 2971194 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/94/e97689d2079356cedbbac57bdb919cad14aa5081841d4fe3d18ca45c3fe3/plone.restapi-9.13.3-py3-none-any.whl", hash = "sha256:62de7e6950bbfda24655043fad7eeeea1ac72ededc3c0a6118f4eeeee39cba1f", size = 3090565 },
+    { url = "https://files.pythonhosted.org/packages/6e/2c/48132f3375903bbedd460d445cf86253d894c1d3dbb0c4e7bde81cdc814e/plone.restapi-9.14.0-py3-none-any.whl", hash = "sha256:3cb9bae62f700e176a4c79f9a4930358964a187a09b6c403f00075b8b46a86b7", size = 3093537 },
 ]
 
 [package.optional-dependencies]

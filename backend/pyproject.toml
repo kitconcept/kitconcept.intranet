@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "A Plone distribution for Intranets with Plone. Created by kitconcept."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.12"
+requires-python = "==3.12.*"
 authors = [
     { name = "kitconcept GmbH", email = "info@kitconcept.com" },
 ]

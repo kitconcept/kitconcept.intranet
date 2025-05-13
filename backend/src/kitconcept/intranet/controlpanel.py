@@ -26,6 +26,12 @@ class IIntranetSettings(Interface):
         required=False,
     )
 
+    custom_css = schema.Text(
+        title="Custom CSS",
+        description="Custom CSS for the intranet.",
+        required=False,
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
@@ -67,3 +73,4 @@ class IntranetSiteEndpointExpander:
         data["kitconcept.intranet.search_field_placeholder"] = (
             settings.search_field_placeholder
         )
+        data["kitconcept.intranet.custom_css"] = settings.custom_css

@@ -1,6 +1,5 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="kitconcept.intranet"
     >
@@ -23,14 +22,6 @@
   <include file="profiles.zcml" />
 
   <include package=".behaviors" />
-
-  <adapter
-      factory=".controlpanel.IntranetControlpanel"
-      name="intranet-settings"
-      />
-  <adapter
-      factory=".controlpanel.IntranetSiteEndpointExpander"
-      name="kitconcept.intranet"
-      />
+  <include package=".controlpanels" />
 
 </configure>

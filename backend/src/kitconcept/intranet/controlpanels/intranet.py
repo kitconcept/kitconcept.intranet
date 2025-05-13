@@ -1,3 +1,4 @@
+from kitconcept.intranet import _
 from kitconcept.intranet.interfaces import IBrowserLayer
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
@@ -15,27 +16,27 @@ class IIntranetSettings(Interface):
     """Intranet project settings stored in the backend"""
 
     external_search_url = schema.URI(
-        title="External Search URL",
-        description="Used in the intranet header seach bar.",
+        title=_("External Search URL"),
+        description=_("Used in the intranet header seach bar."),
         required=False,
     )
 
     search_field_placeholder = schema.TextLine(
-        title="Search Field Placeholder",
-        description="Placeholder text for the search field.",
+        title=_("Search Field Placeholder"),
+        description=_("Placeholder text for the search field."),
         required=False,
     )
 
     custom_css = schema.Text(
-        title="Custom CSS",
-        description="Custom CSS for the intranet.",
+        title=_("Custom CSS"),
+        description=_("Custom CSS for the intranet."),
         required=False,
     )
 
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
-    label = "Intranet Settings"
+    label = _("Intranet Settings")
     schema_prefix = "kitconcept.intranet"
 
     def updateFields(self):

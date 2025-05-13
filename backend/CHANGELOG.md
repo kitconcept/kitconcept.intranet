@@ -2,6 +2,25 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b1 (2025-05-13)
+
+
+### Breaking
+
+- The adoption of kitconcept.core breaks existing installations. Please refer to the documentation about how to migrate to this new version. @ericof 
+
+
+### Feature
+
+- Added control panel for global project intranet settings. @sneridagh [#98](https://github.com/kitconcept/kitconcept.intranet/issue/98)
+- Use kitconcept.core version 1.0.0a2 @ericof 
+
+
+### Internal
+
+- Added missing update of `uv.lock`. @sneridagh 
+- Pin Python version to 3.12 @ericof 
+
 ## 1.0.0a18 (2025-05-07)
 
 

@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.1 (2025-05-13)
+
+### Breaking
+
+- The adoption of @kitconcept/core could break existing customizations @ericof 
+
+### Feature
+
+- Added support for adding custom_css in a slot using Helmet @sneridagh 
+- Use @kitconcept/core version 1.0.0-alpha.2 @ericof 
+
 ## 1.0.0-alpha.18 (2025-05-07)
 
 ### Internal

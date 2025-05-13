@@ -16,7 +16,7 @@ ANSWERS = {
     "portal_timezone": os.getenv("SITE_PORTAL_TIMEZONE"),
     "setup_content": os.getenv("SITE_SETUP_CONTENT", "true"),
     "demo_content": os.getenv("SITE_DEMO_CONTENT", "true"),
-    "workflow": os.getenv("SITE_WORFLOW", "restricted"),
+    "workflow": os.getenv("SITE_WORFLOW", "public"),
 }
 
 

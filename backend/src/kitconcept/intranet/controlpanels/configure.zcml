@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="kitconcept.intranet"
+    >
+
+  <adapter
+      factory=".intranet.IntranetControlpanel"
+      name="intranet-settings"
+      />
+  <adapter
+      factory=".intranet.IntranetSiteEndpointExpander"
+      name="kitconcept.intranet"
+      />
+
+</configure>

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-25 17:12+0000\n"
+"POT-Creation-Date: 2025-05-13 12:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,3 +13,187 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: kitconcept.intranet\n"
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+msgid "- Workflow for Intranets. Public access to published content."
+msgstr ""
+
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "- Workflow for Intranets. Requires authentication."
+msgstr ""
+
+#: kitconcept/intranet/distributions.zcml:16
+msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Can only be seen and edited by the owner."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:31
+msgid "Custom CSS"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:32
+msgid "Custom CSS for the intranet."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:19
+msgid "External Search URL"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:20
+msgid "Fields with additional person information"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+msgid "Intranet Public Workflow"
+msgstr ""
+
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Intranet Restricted Workflow"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:39
+msgid "Intranet Settings"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Member retracts submission"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Member submits content for publication"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Pending review"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:20
+msgid "Person Behavior"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:26
+msgid "Placeholder text for the search field."
+msgstr ""
+
+#: kitconcept/intranet/profiles.zcml:14
+msgid "Policy package to install our site"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Private"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Publish"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Published"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Publishing the item makes it visible to other users."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be published on the site."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Retract"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Reviewer publishes content"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Reviewer sends content back for re-drafting"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:25
+msgid "Search Field Placeholder"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Send back"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published."
+msgstr ""
+
+#: kitconcept/intranet/profiles.zcml:22
+msgid "Setup the intranet to always require users to be authenticated."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Submit for publication"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:20
+msgid "Used in the intranet header seach bar."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+msgid "Visible to anonymous users, editable by editors and reviewers."
+msgstr ""
+
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Visible to authenticated users, editable by editors and reviewers."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
+#: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
+msgid "Waiting to be reviewed, not editable by the owner."
+msgstr ""
+
+#: kitconcept/intranet/distributions.zcml:16
+msgid "kitconcept Intranet"
+msgstr ""
+
+#: kitconcept/intranet/profiles.zcml:14
+msgid "kitconcept.intranet: Install"
+msgstr ""
+
+#: kitconcept/intranet/profiles.zcml:22
+msgid "kitconcept.intranet: Restricted access"
+msgstr ""
+
+#. Default: "Additional Contact Information"
+#: kitconcept/intranet/behaviors/additional_contact_info.py:17
+msgid "label_additional_contact_info"
+msgstr ""
+
+#. Default: "Building"
+#: kitconcept/intranet/behaviors/additional_contact_info.py:27
+msgid "label_contact_building"
+msgstr ""
+
+#. Default: "Room"
+#: kitconcept/intranet/behaviors/additional_contact_info.py:32
+msgid "label_contact_room"
+msgstr ""

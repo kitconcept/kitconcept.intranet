@@ -16,4 +16,4 @@ class TestSetupInstall:
 
     def test_latest_version(self, profile_last_version):
         """Test latest version of default profile."""
-        assert profile_last_version(self.profile_id) == "20250506001"
+        assert profile_last_version(self.profile_id) == "20250512001"

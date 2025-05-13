@@ -1,6 +1,5 @@
 [repository]
 name = "kitconcept.intranet"
-managed_by_uv = true
 changelog = "CHANGELOG.md"
 version = "version.txt"
 compose = "docker-compose.yml"
@@ -9,20 +8,18 @@ compose = "docker-compose.yml"
 section = "Project"
 settings = "towncrier.toml"
 
-[backend]
-path = "backend"
-
 [backend.package]
 name = "kitconcept.intranet"
 path = "backend"
 changelog = "backend/CHANGELOG.md"
 towncrier_settings = "backend/pyproject.toml"
-
-[frontend]
-path = "frontend"
+base_package = "kitconcept.core"
+publish = true
 
 [frontend.package]
 name = "@kitconcept/volto-intranet"
 path = "frontend/packages/volto-intranet"
 changelog = "frontend/packages/volto-intranet/CHANGELOG.md"
 towncrier_settings = "frontend/packages/volto-intranet/towncrier.toml"
+base_package = "@kitconcept/core"
+publish = true

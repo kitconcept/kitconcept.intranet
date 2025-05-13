@@ -19,9 +19,9 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6
-DOCKER_IMAGE=plone/server-dev:${PLONE_VERSION}
-DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
+KC_VERSION=6
+DOCKER_IMAGE=plone/server-dev:${KC_VERSION}
+DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${KC_VERSION}
 
 ADDON_NAME='@kitconcept/volto-intranet'
 IMAGE_NAME=ghcr.io/kitconcept/kitconcept-intranet-frontend

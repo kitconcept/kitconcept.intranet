@@ -55,7 +55,7 @@ def create_site(app, distribution_name):
 
 class TestCreationSite:
     @pytest.fixture(autouse=True)
-    def _create_site(self, create_site, answers, solr_service):
+    def _create_site(self, create_site, answers):
         self.site = create_site(answers)
 
     @pytest.mark.parametrize(
@@ -107,7 +107,7 @@ class TestCreationSite:
 
 class TestCreationPublicSite(TestCreationSite):
     @pytest.fixture(autouse=True)
-    def _create_site(self, create_site, answers_public, solr_service):
+    def _create_site(self, create_site, answers_public):
         self.site = create_site(answers_public)
 
     @pytest.mark.parametrize(

@@ -64,7 +64,7 @@ jobs:
           context: backend
           file: backend/Dockerfile
           build-args: |
-            PLONE_VERSION=${{ needs.config.outputs.plone-version }}
+            KC_VERSION=${{ needs.config.outputs.plone-version }}
           load: true
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}

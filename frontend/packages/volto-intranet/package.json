@@ -36,7 +36,6 @@
     "release-it": "^17.7.0"
   },
   "addons": [
-    "@kitconcept/volto-solr",
     "@eeacms/volto-accordion-block",
     "@kitconcept/volto-banner-block",
     "@kitconcept/volto-button-block",
@@ -45,12 +44,12 @@
     "@kitconcept/volto-introduction-block",
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-slider-block",
+    "@kitconcept/core",
     "@kitconcept/volto-light-theme"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/volto-light-theme": "6.0.0-alpha.24",
-    "@kitconcept/volto-solr": "^1.0.0-alpha.4",
+    "@kitconcept/core": "1.0.0-alpha.2",
     "@kitconcept/volto-banner-block": "^1.0.1"
   }
 }

@@ -15,7 +15,7 @@ on:
       python-version:
         required: true
         type: string
-      plone-version:
+      kc-version:
         required: true
         type: string
 
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHON_VERSION: ${{ inputs.python-version }}
-      PLONE_VERSION: ${{ inputs.plone-version }}
+      KC_VERSION: ${{ inputs.kc-version }}
     steps:
 
         - name: Checkout
@@ -95,10 +95,10 @@ jobs:
           uses: actions/cache@v4
           with:
             path: ${{ env.UV_CACHE_DIR }}
-            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.kc-version }}-${{ hashFiles('pyproject.toml') }}
             restore-keys: |
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.kc-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.kc-version }}
 
         - name: Install Plone and package
           run: make install
@@ -122,10 +122,10 @@ jobs:
           uses: actions/cache@v4
           with:
             path: /tmp/.uv-cache
-            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.kc-version }}-${{ hashFiles('pyproject.toml') }}
             restore-keys: |
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.kc-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.kc-version }}
 
         - name: Install Plone and package
           run: make install
@@ -209,7 +209,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            PLONE_VERSION=${{ inputs.plone-version }}
+            KC_VERSION=${{ inputs.kc-version }}
 
       - name: "Beispiele: Build and push"
         uses: docker/build-push-action@v6

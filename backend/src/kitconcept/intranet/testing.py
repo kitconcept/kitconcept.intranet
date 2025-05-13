@@ -1,8 +1,16 @@
+from kitconcept.core.testing.layers import kitconceptDistributionFixture
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
-from plone.distribution.testing.layer import PloneDistributionFixture
+from plone.app.testing.interfaces import SITE_OWNER_NAME
+from plone.app.testing.interfaces import SITE_OWNER_PASSWORD
+from plone.app.testing.interfaces import TEST_USER_ID
+from plone.app.testing.interfaces import TEST_USER_NAME
+from plone.app.testing.interfaces import TEST_USER_PASSWORD
+from plone.app.testing.interfaces import TEST_USER_ROLES
+from plone.testing import zope
 from plone.testing.zope import WSGI_SERVER_FIXTURE
+from zope.globalrequest import setRequest
 
 
 DEFAULT_ANSWERS = {
@@ -15,17 +23,55 @@ DEFAULT_ANSWERS = {
 }
 
 
-class BaseFixture(PloneDistributionFixture):
+class BaseFixture(kitconceptDistributionFixture):
     PACKAGE_NAME = "kitconcept.intranet"
     SITES = (("kitconcept-intranet", DEFAULT_ANSWERS),)
-    _distribution_products = (
-        ("plone.app.contenttypes", {"loadZCML": True}),
-        ("plone.distribution", {"loadZCML": True}),
-        ("plone.restapi", {"loadZCML": True}),
-        ("plone.volto", {"loadZCML": True}),
-        # ("kitconcept.solr", {"loadZCML": True}),
-        ("collective.person", {"loadZCML": True}),
+    internal_packages: tuple[str] = (
+        "plone.restapi",
+        "plone.volto",
+        "kitconcept.core",
+        "kitconcept.intranet",
     )
+
+    @property
+    def sites(self):
+        """Guarantee there is at least one site created."""
+        return self.SITES
+
+    def setUpDefaultContent(self, app):
+        """Create a Plone site using plone.distribution."""
+        from kitconcept.core.factory import add_site
+
+        # Create the owner user and "log in" so that the site object gets
+        # the right ownership information
+        app["acl_users"].userFolderAddUser(
+            SITE_OWNER_NAME, SITE_OWNER_PASSWORD, ["Manager"], []
+        )
+
+        setRequest(app.REQUEST)
+        zope.login(app["acl_users"], SITE_OWNER_NAME)
+        sites = self.sites
+        for distribution_name, answers in sites:
+            site_id = answers["site_id"]
+            # Create Plone site
+            add_site(
+                app,
+                extension_ids=self.extensionProfiles,
+                distribution=distribution_name,
+                **answers,
+            )
+
+            # Create the test user. (Plone)PAS does not have an API to create a
+            # user with different userid and login name, so we call the plugin
+            # directly.
+            pas = app[site_id]["acl_users"]
+            pas.source_users.addUser(TEST_USER_ID, TEST_USER_NAME, TEST_USER_PASSWORD)
+            for role in TEST_USER_ROLES:
+                pas.portal_role_manager.doAssignRoleToPrincipal(TEST_USER_ID, role)
+
+        # Log out again
+        zope.logout()
+        setRequest(None)
 
 
 BASE_FIXTURE = BaseFixture()

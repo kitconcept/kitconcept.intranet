@@ -25,7 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "kitconcept.core==1.0.0a2",
+    "kitconcept.core==1.0.0a3",
     "collective.person",
     "plone.api",
     "plone.distribution",
@@ -280,8 +280,8 @@ constraint-dependencies = [
     "jsonschema-specifications==2024.10.1",
     "jsonschema==4.23.0",
     "keyring==25.5.0",
-    "kitconcept.core==1.0.0a2",
-    "kitconcept.voltolighttheme==6.0.0a24",
+    "kitconcept.core==1.0.0a3",
+    "kitconcept.voltolighttheme==6.0.1",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.1",
@@ -404,7 +404,7 @@ constraint-dependencies = [
     "plone.resource==3.0.2",
     "plone.resourceeditor==4.0.1",
     "plone.rest==5.0.0",
-    "plone.restapi==9.14.0",
+    "plone.restapi>=9.14.0",
     "plone.rfc822==3.0.1",
     "plone.scale==4.1.4",
     "plone.schema==2.0.2",

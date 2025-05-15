@@ -40,20 +40,10 @@
     "release-it": "^17.7.0"
   },
   "addons": [
-    "@eeacms/volto-accordion-block",
-    "@kitconcept/volto-banner-block",
-    "@kitconcept/volto-button-block",
-    "@kitconcept/volto-heading-block",
-    "@kitconcept/volto-highlight-block",
-    "@kitconcept/volto-introduction-block",
-    "@kitconcept/volto-separator-block",
-    "@kitconcept/volto-slider-block",
-    "@kitconcept/core",
-    "@kitconcept/volto-light-theme"
+    "@kitconcept/core"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/core": "1.0.0-alpha.2",
-    "@kitconcept/volto-banner-block": "^1.0.1"
+    "@kitconcept/core": "1.0.0-alpha.3"
   }
 }

@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.2 (2025-05-15)
+
+### Feature
+
+- Upgrade @kitconcept/core to version 1.0.0-alpha.3. @ericof 
+
+### Internal
+
+- Update to Volto 18.20.0 and remove duplicated add-ons declarations. @sneridagh [#102](https://github.com/kitconcept/kitconcept.intranet/issue/102)
+
 ## 1.0.0-beta.1 (2025-05-13)
 
 ### Breaking

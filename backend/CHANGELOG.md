@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b2 (2025-05-15)
+
+
+### Feature
+
+- Upgrade kitconcept.core to version 1.0.0a3. @ericof 
+
 ## 1.0.0b1 (2025-05-13)
 
 

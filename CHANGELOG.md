@@ -1,6 +1,36 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b2 (2025-05-15)
+
+### Backend
+
+
+#### Feature
+
+- Upgrade kitconcept.core to version 1.0.0a3. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Upgrade @kitconcept/core to version 1.0.0-alpha.3. @ericof 
+
+#### Internal
+
+- Update to Volto 18.20.0 and remove duplicated add-ons declarations. @sneridagh [#102](https://github.com/kitconcept/kitconcept.intranet/issue/102)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b1 (2025-05-13)
 
 ### Backend

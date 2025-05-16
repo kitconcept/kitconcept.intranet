@@ -1,5 +1,6 @@
 from copy import deepcopy
 from kitconcept.intranet import logger
+from kitconcept.intranet.utils.authentication import setup_authentication
 from plone import api
 from plone.distribution.core import Distribution
 from plone.distribution.handler import default_handler
@@ -43,4 +44,9 @@ def post_handler(
     # This should be fixed on plone.distribution
     site.title = answers.get("title", site.title)
     site.description = answers.get("description", site.description)
+    # Configure authentication
+    auth_answers = answers.get("authentication")
+    if auth_answers:
+        logger.info(f"{site.id}: Processing authentication options")
+        setup_authentication(auth_answers)
     return site

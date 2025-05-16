@@ -39,6 +39,8 @@ make install
 make backend-create-site
 ```
 
+or create the site manually by visiting [http://localhost:8080/](http://localhost:8080/).
+
 2. Start the Backend at [http://localhost:8080/](http://localhost:8080/):
 
 ```shell
@@ -52,6 +54,39 @@ make frontend-start
 ```
 
 Voila! Your Plone site should be live and kicking! 🎉
+
+### Manual site creation 🔥
+
+Point your browser at [http://localhost:8080/](http://localhost:8080/) and you will be greated with the site creation page:
+
+<img alt="first step" src="./docs/docs/_static/01-new-site.png" width="640" />
+
+After selecting **kitconcept Intranet** you will see a form:
+
+<img alt="first step" src="./docs/docs/_static/02-auth-internal.png" width="640" />
+
+
+#### Authentication
+
+Choosing **Keycloak** for user authentication will present configuration options:
+
+<img alt="first step" src="./docs/docs/_static/03-auth-keycloak.png" width="300" />
+
+
+Choosing **OIDC / OAuth2** for user authentication will present configuration options:
+
+<img alt="first step" src="./docs/docs/_static/04-auth-oidc.png" width="300" />
+
+
+Choosing **Google** for user authentication will present configuration options:
+
+<img alt="first step" src="./docs/docs/_static/05-auth-google.png" width="300" />
+
+
+Choosing **GitHub** for user authentication will present configuration options:
+
+<img alt="first step" src="./docs/docs/_static/06-auth-github.png" width="300" />
+
 
 ### Local Stack Deployment 📦
 

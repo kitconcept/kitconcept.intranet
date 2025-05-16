@@ -17,6 +17,7 @@ def answers():
         "default_language": "en",
         "portal_timezone": "Europe/Berlin",
         "setup_content": True,
+        "authentication": {"provider": "internal"},
     }
 
 
@@ -30,6 +31,7 @@ def answers_public():
         "default_language": "en",
         "portal_timezone": "Europe/Berlin",
         "setup_content": True,
+        "authentication": {"provider": "internal"},
     }
 
 
@@ -53,7 +55,7 @@ def create_site(app, distribution_name):
     return func
 
 
-class TestCreationSite:
+class TestSiteCreation:
     @pytest.fixture(autouse=True)
     def _create_site(self, create_site, answers):
         self.site = create_site(answers)
@@ -105,7 +107,7 @@ class TestCreationSite:
         assert (role in roles) is expected
 
 
-class TestCreationPublicSite(TestCreationSite):
+class TestCreationPublicSite(TestSiteCreation):
     @pytest.fixture(autouse=True)
     def _create_site(self, create_site, answers_public):
         self.site = create_site(answers_public)

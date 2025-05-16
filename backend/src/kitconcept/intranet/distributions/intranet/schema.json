@@ -15,13 +15,155 @@
             "title": "Public access"
           }
         ]
+      },
+      "field-scope": {
+        "type": "array",
+        "title": "Scopes",
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "keycloak": {
+        "type": "object",
+        "properties": {
+          "oidc-server_url": {
+            "type": "string",
+            "title": "Server URL"
+          },
+          "oidc-realm_name": {
+            "type": "string",
+            "title": "Realm"
+          },
+          "oidc-client_id": {
+            "type": "string",
+            "title": "Client ID"
+          },
+          "oidc-client_secret": {
+            "type": "string",
+            "title": "Client Secret"
+          },
+          "oidc-site-url": {
+            "type": "string",
+            "title": "Public URL of your site",
+            "description": "Please inform the address this site will be available."
+          },
+          "oidc-scope": {
+            "$ref": "#/definitions/field-scope",
+            "items": {
+              "type": "string",
+              "enum": [
+                "openid",
+                "profile",
+                "email"
+              ]
+            }
+          }
+        },
+        "required": [
+          "oidc-server_url",
+          "oidc-realm_name",
+          "oidc-client_id",
+          "oidc-client_secret",
+          "oidc-site-url",
+          "oidc-scope"
+        ]
+      },
+      "oidc": {
+        "type": "object",
+        "properties": {
+          "oidc-issuer": {
+            "type": "string",
+            "title": "Issuer (URL)"
+          },
+          "oidc-client_id": {
+            "type": "string",
+            "title": "Client ID"
+          },
+          "oidc-client_secret": {
+            "type": "string",
+            "title": "Client Secret"
+          },
+          "oidc-site-url": {
+            "type": "string",
+            "title": "Public URL of your site",
+            "description": "Please inform the address this site will be available."
+          },
+          "oidc-scope": {
+            "$ref": "#/definitions/field-scope",
+            "items": {
+              "type": "string",
+              "enum": [
+                "openid",
+                "profile",
+                "email"
+              ]
+            }
+          }
+        },
+        "required": [
+          "oidc-issuer",
+          "oidc-client_id",
+          "oidc-client_secret",
+          "oidc-site-url",
+          "oidc-scope"
+        ]
+      },
+      "authomatic-github": {
+        "type": "object",
+        "properties": {
+          "authomatic-github-consumer_key": {
+            "type": "string",
+            "title": "Consumer Key"
+          },
+          "authomatic-github-consumer_secret": {
+            "type": "string",
+            "title": "Consumer Secret"
+          },
+          "authomatic-github-scope": {
+            "$ref": "#/definitions/field-scope",
+            "items": {
+              "type": "string",
+              "enum": [
+                "read:user",
+                "user:email"
+              ]
+            }
+          }
+        },
+        "required": [
+          "authomatic-github-consumer_key",
+          "authomatic-github-consumer_secret",
+          "authomatic-github-scope"
+        ]
+      },
+      "authomatic-google": {
+        "type": "object",
+        "properties": {
+          "authomatic-google-consumer_key": {
+            "type": "string",
+            "title": "Consumer Key"
+          },
+          "authomatic-google-consumer_secret": {
+            "type": "string",
+            "title": "Consumer Secret"
+          },
+          "authomatic-google-scope": {
+            "$ref": "#/definitions/field-scope",
+            "items": {
+              "type": "string",
+              "enum": [
+                "profile",
+                "email"
+              ]
+            }
+          }
+        },
+        "required": [
+          "authomatic-google-consumer_key",
+          "authomatic-google-consumer_secret",
+          "authomatic-google-scope"
+        ]
       }
     },
-    "required": [
-      "site_id",
-      "title",
-      "workflow"
-    ],
     "properties": {
       "site_id": {
         "type": "string",
@@ -49,7 +191,7 @@
         "type": "string",
         "title": "Intranet access",
         "$ref": "#/definitions/workflows",
-        "default": "restricted"
+        "default": "public"
       },
       "default_language": {"$ref": "#/definitions/languages"},
       "setup_content": {
@@ -57,8 +199,101 @@
         "title": "Create Example Content",
         "description": "Should example content be added during site creation?",
         "default": true
+      },
+      "authentication": {
+        "title": "Authentication",
+        "type": "object",
+        "properties": {
+          "provider" : {
+            "type": "string",
+            "title": "User authentication",
+            "description": "Which authentication would be used?",
+            "default": "internal",
+            "oneOf": [
+              { "const": "internal", "title": "Plone" },
+              { "const": "keycloak", "title": "Keycloak" },
+              { "const": "oidc", "title": "OIDC / OAuth2" },
+              { "const": "authomatic-google", "title": "Social Login Google" },
+              { "const": "authomatic-github", "title": "Social Login GitHub" }
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "provider": {
+                  "const": "keycloak"
+                }
+              }
+            },
+            "then": {
+              "$ref": "#/definitions/keycloak"
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "provider": {
+                  "const": "oidc"
+                }
+              }
+            },
+            "then": {
+              "$ref": "#/definitions/oidc"
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "provider": {
+                  "const": "authomatic-github"
+                }
+              }
+            },
+            "then": {
+              "$ref": "#/definitions/authomatic-github"
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "provider": {
+                  "const": "authomatic-google"
+                }
+              }
+            },
+            "then": {
+              "$ref": "#/definitions/authomatic-google"
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "provider": {
+                  "const": "internal"
+                }
+              }
+            },
+            "then": {
+              "properties": {},
+              "required": []
+            }
+          },
+          {
+            "required": [
+              "provider"
+            ]
+          }
+        ]
       }
-    }
+    },
+    "required": [
+      "site_id",
+      "title",
+      "workflow",
+      "authentication"
+    ]
   },
   "uischema": {
     "site_id": {"ui:widget": "hidden"}

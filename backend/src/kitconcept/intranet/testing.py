@@ -19,24 +19,21 @@ DEFAULT_ANSWERS = {
     "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
     "default_language": "en",
     "portal_timezone": "Europe/Berlin",
+    "workflow": "public",
     "setup_content": True,
+    "authentication": {"provider": "internal"},
 }
 
 
 class BaseFixture(kitconceptDistributionFixture):
     PACKAGE_NAME = "kitconcept.intranet"
-    SITES = (("kitconcept-intranet", DEFAULT_ANSWERS),)
+    sites = (("kitconcept-intranet", DEFAULT_ANSWERS),)
     internal_packages: tuple[str] = (
         "plone.restapi",
         "plone.volto",
         "kitconcept.core",
         "kitconcept.intranet",
     )
-
-    @property
-    def sites(self):
-        """Guarantee there is at least one site created."""
-        return self.SITES
 
     def setUpDefaultContent(self, app):
         """Create a Plone site using plone.distribution."""

@@ -1,6 +1,47 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b3 (2025-05-23)
+
+### Backend
+
+
+#### Feature
+
+- Support external authentication with pas.plugins.oidc and pas.plugins.authomatic. @ericof [#101](https://github.com/kitconcept/kitconcept.intranet/issue/101)
+- Site creation form now allows you to select which type of authentication do you want to setup. @ericof 
+
+
+#### Bugfix
+
+- Development: Fixed typos in backend/Makefile that prevented the creation of new sites. @ericof 
+
+
+#### Internal
+
+- Moved c.person to k.core. @sneridagh 
+- Upgrade kitconcept.core to version 1.0.0a5. @ericof 
+
+
+
+### Frontend
+
+#### Internal
+
+- Upgrade @kitconcept/core to version 1.0.0-alpha.5. @ericof 
+- Upgrade @plone/volto to version 18.22.0. @ericof 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Update README.md with screenshots of new site creation. @ericof [#101](https://github.com/kitconcept/kitconcept.intranet/pull/101)
+
+
+
 ## 1.0.0b2 (2025-05-15)
 
 ### Backend

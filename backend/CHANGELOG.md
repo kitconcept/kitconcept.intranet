@@ -2,6 +2,25 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b3 (2025-05-23)
+
+
+### Feature
+
+- Support external authentication with pas.plugins.oidc and pas.plugins.authomatic. @ericof [#101](https://github.com/kitconcept/kitconcept.intranet/issue/101)
+- Site creation form now allows you to select which type of authentication do you want to setup. @ericof 
+
+
+### Bugfix
+
+- Development: Fixed typos in backend/Makefile that prevented the creation of new sites. @ericof 
+
+
+### Internal
+
+- Moved c.person to k.core. @sneridagh 
+- Upgrade kitconcept.core to version 1.0.0a5. @ericof 
+
 ## 1.0.0b2 (2025-05-15)
 
 

@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.3 (2025-05-23)
+
+### Internal
+
+- Upgrade @kitconcept/core to version 1.0.0-alpha.5. @ericof 
+- Upgrade @plone/volto to version 18.22.0. @ericof 
+
 ## 1.0.0-beta.2 (2025-05-15)
 
 ### Feature

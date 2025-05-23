@@ -15,7 +15,7 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PACKAGE_NAME=plonegovbr.intranet
+PACKAGE_NAME=kitconcept.intranet
 
 IMAGE_NAME_PREFIX=ghcr.io/kitconcept/kitconcept-intranet
 IMAGE_TAG=latest
@@ -39,7 +39,7 @@ BIN_FOLDER=$(VENV_FOLDER)/bin
 SEED=$(shell date +'%Y%m%d-%H%M%S')
 
 # Environment variables to be exported
-export ALLOWED_DISTRIBUTIONS := portalbrasil-intranet
+export ALLOWED_DISTRIBUTIONS := kitconcept-intranet
 export PYTHONWARNINGS := ignore
 export DOCKER_BUILDKIT := 1
 

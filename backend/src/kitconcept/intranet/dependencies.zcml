@@ -6,6 +6,9 @@
   <include package="plone.volto" />
   <include package="kitconcept.core" />
   <include package="kitconcept.voltolighttheme" />
+  <include package="pas.plugins.authomatic" />
+  <include package="pas.plugins.keycloakgroups" />
+  <include package="pas.plugins.oidc" />
   <!-- <include package="kitconcept.solr" /> -->
 
 </configure>

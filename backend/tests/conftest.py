@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from kitconcept.intranet.testing import FUNCTIONAL_TESTING
 from kitconcept.intranet.testing import INTEGRATION_TESTING
 from pathlib import Path
@@ -12,10 +13,12 @@ import requests
 
 pytest_plugins = ["pytest_plone"]
 globals().update(
-    fixtures_factory((
-        (FUNCTIONAL_TESTING, "functional"),
-        (INTEGRATION_TESTING, "integration"),
-    ))
+    fixtures_factory(
+        (
+            (FUNCTIONAL_TESTING, "functional"),
+            (INTEGRATION_TESTING, "integration"),
+        )
+    )
 )
 
 
@@ -83,3 +86,21 @@ def traverse():
         return value
 
     return func
+
+
+@dataclass
+class CurrentVersions:
+    base: str
+    dependencies: str
+    package: str
+
+
+@pytest.fixture(scope="session")
+def current_versions() -> CurrentVersions:
+    from kitconcept.core import __version__
+
+    return CurrentVersions(
+        base="20250523001",
+        dependencies="1000",
+        package=__version__,
+    )

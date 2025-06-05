@@ -2,7 +2,7 @@
   "@id": "/features/barrierefreiheit/stefan-spassov-k87dhceae1w-unsplash.jpg",
   "@type": "Image",
   "UID": "50c969b05290465da8e38b46fcfb4cf7",
-  "allow_discussion": false,
+  "allow_discussion": null,
   "contributors": [],
   "created": "2024-05-20T08:40:12+00:00",
   "creators": [
@@ -10,11 +10,9 @@
   ],
   "description": "Kiasma Museum, Helsinki, Finland",
   "effective": null,
-  "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "stefan-spassov-k87dhceae1w-unsplash.jpg",
   "image": {
     "blob_path": "50c969b05290465da8e38b46fcfb4cf7/image/stefan-spassov-k87dHceae1w-unsplash.jpg",
@@ -29,85 +27,9 @@
   "layout": "image_view",
   "lock": {},
   "modified": "2024-06-24T17:09:41+00:00",
-  "parent": {
-    "@id": "/features/barrierefreiheit",
-    "@type": "Document",
-    "UID": "f255cc2bd29849d19428b865f52819d9",
-    "description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2.",
-    "image_field": null,
-    "image_scales": {
-      "preview_image_link": [
-        {
-          "base_path": "/features/barrierefreiheit/stefan-spassov-k87dhceae1w-unsplash.jpg",
-          "content-type": "image/jpeg",
-          "download": "@@images/image-3024-56b23850835ab72826333631c7f0d5a3.jpeg",
-          "filename": "stefan-spassov-k87dHceae1w-unsplash.jpg",
-          "height": 4032,
-          "scales": {
-            "great": {
-              "download": "@@images/image-1200-676f4b61513852c8db96c9373a59ef6a.jpeg",
-              "height": 1600,
-              "width": 1200
-            },
-            "huge": {
-              "download": "@@images/image-1600-bf2f9a9f12c6c44ad5eb72087499ccf3.jpeg",
-              "height": 2133,
-              "width": 1600
-            },
-            "icon": {
-              "download": "@@images/image-32-d9bb462299e9a024095ff091427037ea.jpeg",
-              "height": 32,
-              "width": 24
-            },
-            "large": {
-              "download": "@@images/image-800-372a76b1c4967e048508bf46ede12796.jpeg",
-              "height": 1066,
-              "width": 800
-            },
-            "larger": {
-              "download": "@@images/image-1000-03ed64c708304e08768cfe67d34d8882.jpeg",
-              "height": 1333,
-              "width": 1000
-            },
-            "mini": {
-              "download": "@@images/image-200-9f5989652f04e3461a06397755b32468.jpeg",
-              "height": 266,
-              "width": 200
-            },
-            "preview": {
-              "download": "@@images/image-400-784dcb6545656f80cc690c07133208dd.jpeg",
-              "height": 533,
-              "width": 400
-            },
-            "teaser": {
-              "download": "@@images/image-600-6ca151f3a34d86e326b6a02ed3250421.jpeg",
-              "height": 800,
-              "width": 600
-            },
-            "thumb": {
-              "download": "@@images/image-128-73bc7001cc0b98d64c0ed666eaf35a62.jpeg",
-              "height": 128,
-              "width": 96
-            },
-            "tile": {
-              "download": "@@images/image-64-df613b8fcb58ffc1d72837ebcafd6988.jpeg",
-              "height": 64,
-              "width": 48
-            }
-          },
-          "size": 1752805,
-          "width": 3024
-        }
-      ]
-    },
-    "review_state": "published",
-    "title": "Barrierefreiheit",
-    "type_title": "Page"
-  },
+  "preview_caption_link": null,
   "review_state": null,
   "rights": "Stefan Spassov, https://unsplash.com/photos/interior-view-of-white-building-k87dHceae1w",
-  "searchwords": [],
-  "showinsearch": true,
   "subjects": [],
   "title": "stefan-spassov-k87dHceae1w-unsplash.jpg",
   "type_title": "Image",

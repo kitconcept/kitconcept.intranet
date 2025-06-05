@@ -27,24 +27,24 @@ class TestContentTypeFTI:
         assert getattr(fti, attr) == expected
 
     @pytest.mark.parametrize(
-        "name,expected",
+        "name,expected,index",
         [
-            ("plone.dublincore", True),
-            ("plone.richtext", False),
-            ("plone.relateditems", True),
-            ("plone.locking", True),
-            ("plone.excludefromnavigation", True),
-            ("plone.tableofcontents", True),
-            ("voltolighttheme.header", True),
-            ("voltolighttheme.footer", True),
-            ("kitconcept.footer", True),
-            ("kitconcept.sticky_menu", True),
-            ("plonegovbr.socialmedia.settings", True),
-            ("volto.blocks", True),
+            ("volto.preview_image_link", True, 0),
+            ("voltolighttheme.header", True, 1),
+            ("voltolighttheme.theme", True, 2),
+            ("voltolighttheme.footer", True, 3),
+            ("kitconcept.footer", True, 4),
+            ("kitconcept.sticky_menu", True, 5),
+            ("plonegovbr.socialmedia.settings", True, 6),
+            ("plone.basic", True, 7),
+            ("plone.relateditems", True, 8),
+            ("plone.locking", True, 9),
+            ("volto.blocks", True, 10),
         ],
     )
-    def test_behavior(self, name: str, expected: bool):
+    def test_behavior(self, name: str, expected: bool, index: int):
         """Test behavior is present or not."""
         fti = self.fti
         behaviors = fti.behaviors
         assert (name in behaviors) is expected
+        assert behaviors[index] == name if expected else True

@@ -17,18 +17,16 @@
   <property name="behaviors"
             purge="true"
   >
+    <element value="volto.preview_image_link" />
     <element value="voltolighttheme.header" />
     <element value="voltolighttheme.theme" />
     <element value="voltolighttheme.footer" />
     <element value="kitconcept.footer" />
     <element value="kitconcept.sticky_menu" />
     <element value="plonegovbr.socialmedia.settings" />
-    <element value="plone.dublincore" />
+    <element value="plone.basic" />
     <element value="plone.relateditems" />
     <element value="plone.locking" />
-    <element value="plone.allowdiscussion" />
-    <element value="plone.excludefromnavigation" />
-    <element value="plone.tableofcontents" />
     <element value="volto.blocks" />
   </property>
 

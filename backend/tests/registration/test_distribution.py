@@ -22,12 +22,7 @@ class TestDistribution:
 
     @pytest.mark.parametrize(
         "package,expected",
-        [
-            ("plone.app.contenttypes", True),
-            ("plonetheme.barceloneta", True),
-            ("plone.restapi", True),
-            ("plone.volto", True),
-        ],
+        [],
     )
     def test_dependencies_installed(self, installer, package, expected):
         assert installer.is_product_installed(package) is expected

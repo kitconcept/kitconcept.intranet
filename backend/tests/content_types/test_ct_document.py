@@ -26,30 +26,30 @@ class TestContentTypeFTI:
         assert getattr(fti, attr) == expected
 
     @pytest.mark.parametrize(
-        "name,expected,index",
-        [
-            ("plone.basic", True, 0),
-            ("volto.preview_image_link", True, 1),
-            ("volto.kicker", True, 2),
-            ("plone.categorization", True, 3),
-            ("plone.publication", True, 4),
-            ("plone.ownership", True, 5),
-            ("plone.relateditems", True, 6),
-            ("plone.shortname", True, 7),
-            ("volto.navtitle", True, 8),
-            ("plone.excludefromnavigation", True, 9),
-            ("plone.allowdiscussion", True, 10),
-            ("volto.blocks", True, 11),
-            ("plone.constraintypes", True, 12),
-            ("plone.namefromtitle", True, 13),
-            ("plone.versioning", True, 14),
-            ("plone.locking", True, 15),
-            ("plone.translatable", True, 16),
-        ],
+        "index,name",
+        enumerate(
+            [
+                "plone.basic",
+                "volto.preview_image_link",
+                "volto.kicker",
+                "plone.categorization",
+                "plone.publication",
+                "plone.ownership",
+                "plone.relateditems",
+                "plone.shortname",
+                "volto.navtitle",
+                "plone.excludefromnavigation",
+                "plone.allowdiscussion",
+                "volto.blocks",
+                "plone.constraintypes",
+                "plone.namefromtitle",
+                "plone.versioning",
+                "plone.locking",
+                "plone.translatable",
+            ]
+        ),
     )
-    def test_behavior(self, name: str, expected: bool, index: int):
-        """Test behavior is present or not."""
+    def test_behaviors(self, index: int, name: str):
+        """Test behaviors are present and in correct order."""
         fti = self.fti
-        behaviors = fti.behaviors
-        assert (name in behaviors) is expected
-        assert behaviors[index] == name if expected else True
+        assert fti.behaviors[index] == name

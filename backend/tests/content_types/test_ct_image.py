@@ -27,17 +27,20 @@ class TestContentTypeFTI:
 
     @pytest.mark.parametrize(
         "index,name",
-        enumerate([
-            "volto.kicker",
-            "plone.categorization",
-            "plone.publication",
-            "plone.ownership",
-            "plone.shortname",
-            "plone.relateditems",
-            "plone.namefromfilename",
-            "plone.versioning",
-            "plone.locking",
-        ]),
+        enumerate(
+            [
+                "volto.kicker",
+                "plone.categorization",
+                "plone.publication",
+                "plone.ownership",
+                "plone.shortname",
+                "volto.navtitle",
+                "plone.relateditems",
+                "plone.namefromfilename",
+                "plone.versioning",
+                "plone.locking",
+            ]
+        ),
     )
     def test_behaviors(self, index: int, name: str):
         """Test behaviors are present and in correct order."""

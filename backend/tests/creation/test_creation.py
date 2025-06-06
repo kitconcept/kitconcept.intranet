@@ -45,11 +45,10 @@ def roles_permission():
 
 
 @pytest.fixture
-def create_site(app, distribution_name):
+def create_site(app, base_profile_id, distribution_name):
     def func(answers: dict) -> PloneSite:
         with api.env.adopt_user(SITE_OWNER_NAME):
-            breakpoint()
-            site = site_api.create(app, distribution_name, answers)
+            site = site_api.create(app, distribution_name, answers, base_profile_id)
             setSite(site)
         return site
 
@@ -121,8 +120,6 @@ class TestCreationPublicSite(TestSiteCreation):
     )
     def test_properties(self, attr, expected):
         site = self.site
-        breakpoint()
-
         assert getattr(site, attr) == expected
 
     @pytest.mark.parametrize(

@@ -12,10 +12,10 @@ KEY = "pas.plugins.authomatic.interfaces.IPasPluginsAuthomaticSettings.json_conf
 
 
 @pytest.fixture
-def create_site(app, distribution_name):
+def create_site(app, base_profile_id, distribution_name):
     def func(answers: dict) -> PloneSite:
         with api.env.adopt_user(SITE_OWNER_NAME):
-            site = site_api.create(app, distribution_name, answers)
+            site = site_api.create(app, distribution_name, answers, base_profile_id)
             setSite(site)
         return site
 

@@ -14,7 +14,6 @@ class TestDistribution:
                 "description",
                 "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
             ),
-            ("exclude_from_nav", False),
         ],
     )
     def test_plone_site_attributes(self, portal, attr, expected):

@@ -102,3 +102,9 @@ def current_versions() -> CurrentVersions:
         dependencies="1000",
         package=__version__,
     )
+
+
+@pytest.fixture(scope="session")
+def base_profile_id() -> str:
+    """Fixture to get the base profile ID."""
+    return "kitconcept.core:base"

@@ -26,25 +26,18 @@ class TestContentTypeFTI:
         assert isinstance(fti, DexterityFTI)
         assert getattr(fti, attr) == expected
 
-    @pytest.mark.parametrize(
-        "name,expected",
-        [
-            ("plone.dublincore", True),
-            ("plone.richtext", False),
-            ("plone.relateditems", True),
-            ("plone.locking", True),
-            ("plone.excludefromnavigation", True),
-            ("plone.tableofcontents", True),
-            ("voltolighttheme.header", True),
-            ("voltolighttheme.footer", True),
-            ("kitconcept.footer", True),
-            ("kitconcept.sticky_menu", True),
-            ("plonegovbr.socialmedia.settings", True),
-            ("volto.blocks", True),
-        ],
-    )
-    def test_behavior(self, name: str, expected: bool):
-        """Test behavior is present or not."""
-        fti = self.fti
-        behaviors = fti.behaviors
-        assert (name in behaviors) is expected
+    def test_behaviors(self):
+        """Test behaviors are present and in correct order."""
+        assert self.fti.behaviors == (
+            "volto.preview_image_link",
+            "voltolighttheme.header",
+            "voltolighttheme.theme",
+            "voltolighttheme.footer",
+            "kitconcept.footer",
+            "kitconcept.sticky_menu",
+            "plonegovbr.socialmedia.settings",
+            "plone.basic",
+            "plone.relateditems",
+            "plone.locking",
+            "volto.blocks",
+        )

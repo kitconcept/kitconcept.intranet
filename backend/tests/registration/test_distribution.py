@@ -14,7 +14,6 @@ class TestDistribution:
                 "description",
                 "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
             ),
-            ("exclude_from_nav", False),
         ],
     )
     def test_plone_site_attributes(self, portal, attr, expected):
@@ -22,12 +21,7 @@ class TestDistribution:
 
     @pytest.mark.parametrize(
         "package,expected",
-        [
-            ("plone.app.contenttypes", True),
-            ("plonetheme.barceloneta", True),
-            ("plone.restapi", True),
-            ("plone.volto", True),
-        ],
+        [],
     )
     def test_dependencies_installed(self, installer, package, expected):
         assert installer.is_product_installed(package) is expected

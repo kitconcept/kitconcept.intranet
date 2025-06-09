@@ -25,7 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "kitconcept.core==1.0.0a5",
+    "kitconcept.core==1.0.0a6",
     "plone.api",
     "plone.distribution",
     "plone.restapi",
@@ -197,6 +197,7 @@ preview = true
 "tests/*" = ["S101"]
 
 [tool.uv]
+prerelease = "allow"
 default-groups = ["build", "test"]
 constraint-dependencies = [
     "AccessControl==7.2",
@@ -284,8 +285,7 @@ constraint-dependencies = [
     "jsonschema-specifications==2024.10.1",
     "jsonschema==4.23.0",
     "keyring==25.5.0",
-    "kitconcept.core==1.0.0a5",
-    "kitconcept.voltolighttheme==6.2.0",
+    "kitconcept.core==1.0.0a6",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.1",

@@ -11,28 +11,30 @@ class TestContentTypeFTI:
         self.portal = portal
         self.fti: DexterityFTI = get_fti(self.portal_type)
 
-    @pytest.mark.parametrize(
-        "attr,expected",
-        [
-            ("title", "Event"),
-            ("global_allow", True),
-        ],
-    )
-    def test_fti(self, attr: str, expected):
-        """Test FTI values."""
-        fti = self.fti
-
-        assert isinstance(fti, DexterityFTI)
-        assert getattr(fti, attr) == expected
-
-    @pytest.mark.parametrize(
-        "name,expected",
-        [
-            ("volto.preview_image_link", True),
-        ],
-    )
-    def test_behavior(self, name: str, expected: bool):
-        """Test behavior is present or not."""
-        fti = self.fti
-        behaviors = fti.behaviors
-        assert (name in behaviors) is expected
+    def test_behaviors(self):
+        """Test behaviors are present and in correct order."""
+        assert self.fti.behaviors == (
+            "plone.eventbasic",
+            "plone.eventrecurrence",
+            "plone.eventlocation",
+            "plone.eventattendees",
+            "plone.eventcontact",
+            "plone.basic",
+            "volto.preview_image_link",
+            "volto.kicker",
+            "plone.categorization",
+            "plone.publication",
+            "plone.ownership",
+            "plone.shortname",
+            "volto.navtitle",
+            "plone.excludefromnavigation",
+            "plone.allowdiscussion",
+            "plone.relateditems",
+            "volto.blocks",
+            "plone.constraintypes",
+            "plone.namefromtitle",
+            "plone.textindexer",
+            "plone.versioning",
+            "plone.locking",
+            "plone.translatable",
+        )

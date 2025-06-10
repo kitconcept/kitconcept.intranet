@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.4 (2025-06-10)
+
+### Internal
+
+- Update to kitconcept/core 1.0.0a8. @sneridagh 
+
 ## 1.0.0-beta.3 (2025-05-23)
 
 ### Internal

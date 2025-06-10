@@ -2,6 +2,21 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b4 (2025-06-10)
+
+
+### Bugfix
+
+- Remove behaviors, since they are set in core. @sneridagh 
+
+
+### Internal
+
+- Add example content of Sticky menu ,Person content type and update footer example
+  content and background color @iRohitSingh 
+- Adds test to /@system get endpoint. @ericof 
+- Update to kitconcept/core 1.0.0a8. @sneridagh 
+
 ## 1.0.0b3 (2025-05-23)
 
 

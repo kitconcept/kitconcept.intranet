@@ -2,9 +2,9 @@
   "@id": "/Plone",
   "@type": "Plone Site",
   "UID": "plone_site_root",
+  "accent_color": null,
+  "accent_foreground_color": null,
   "allow_discussion": null,
-  "has_intranet_header": true,
-  "intranet_flag": "Intranet",
   "blocks": {
     "4979b879-0499-494e-9ca9-967aae7af1f4": {
       "@type": "gridBlock",
@@ -18,14 +18,29 @@
               "@id": "resolveuid/2c2f8092acfc4f55830b16af13273882",
               "@type": "Document",
               "Description": "A full text search that let's you find all the content in your intranet.",
+              "Subject": [],
               "Title": "Full Text Search",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "A full text search that let's you find all the content in your intranet.",
+              "effective": "2024-05-17T11:53:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
               "image_field": "preview_image_link",
-              "title": "Full Text Search"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Full Text Search",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -40,14 +55,29 @@
               "@id": "resolveuid/f10b7bca6e014ff7a56598f1cfcc4d2b",
               "@type": "Document",
               "Description": "Present your employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+              "Subject": [],
               "Title": "Person Profiles",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "Present your employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+              "effective": "2024-05-17T11:53:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
               "image_field": "preview_image_link",
-              "title": "Person Profiles"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Person Profiles",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -62,14 +92,29 @@
               "@id": "resolveuid/239b6e7bb69e4cd79b71be7a4e90a285",
               "@type": "Document",
               "Description": "",
+              "Subject": [],
               "Title": "Theme",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "Volto Light Theme, a beautifully crafted Plone theme with a minimalistic design that let's your intranet content shine.",
+              "effective": "2024-05-17T11:53:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
               "image_field": "preview_image_link",
-              "title": "Theme"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Theme",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -86,7 +131,9 @@
       "styles": {}
     },
     "72d64f8a-cca6-444d-a497-482daba7e970": {
-      "@type": "slate"
+      "@type": "slate",
+      "styles": {},
+      "theme": "default"
     },
     "7815392a-f32a-45cf-b633-09f1cabf49bc": {
       "@type": "title"
@@ -103,14 +150,29 @@
               "@id": "resolveuid/f255cc2bd29849d19428b865f52819d9",
               "@type": "Document",
               "Description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2.",
+              "Subject": [],
               "Title": "Barrierefreiheit",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
               "image_field": "preview_image_link",
-              "title": "Barrierefreiheit"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Barrierefreiheit",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -125,14 +187,29 @@
               "@id": "resolveuid/0e78d2b30abb4d4283068556dc58c9e2",
               "@type": "Document",
               "Description": "",
+              "Subject": [],
               "Title": "Formulare",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "Design forms, collect responses that can be mailed out or downloaded for further processing.",
+              "effective": "2024-05-17T11:53:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
               "image_field": "preview_image_link",
-              "title": "Formulare"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Forms",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -147,14 +224,29 @@
               "@id": "resolveuid/ab9fa349a4704ae9bc83fef1f51fe08a",
               "@type": "Document",
               "Description": "Stimulate discussion and social interaction with comments on documents.",
+              "Subject": [],
               "Title": "Comments",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "Stimulate discussion and social interaction with comments on documents.",
+              "effective": "2024-05-17T11:53:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
               "image_field": "preview_image_link",
-              "title": "Comments"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Comments",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -168,7 +260,8 @@
           "71047227-7fac-4012-8c5f-e2f54cc9ad70"
         ]
       },
-      "styles": {}
+      "styles": {},
+      "theme": "default"
     },
     "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11": {
       "@type": "slider",
@@ -194,7 +287,8 @@
           "title": "kitconcept intranet"
         }
       ],
-      "styles": {}
+      "styles": {},
+      "theme": "default"
     }
   },
   "blocks_layout": {
@@ -206,26 +300,362 @@
       "72d64f8a-cca6-444d-a497-482daba7e970"
     ]
   },
+  "complementary_logo": null,
   "contributors": [],
-  "creators": ["admin"],
+  "creators": [
+    "admin"
+  ],
   "description": "A Plone Intranet distribution provided by kitconcept GmbH",
   "effective": null,
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
+  "facebook_app_id": "",
+  "facebook_username": "",
+  "footer_address": "Musterfirma Mustermann\u2028Karl-Maier-Strasse 81\u202853113 Bonn\u2028Telefon: 0228-123456 mustermann@musterfirma.de",
+  "footer_colophon_text": "Powered by Plone & Light Theme",
+  "footer_column_left": [
+    {
+      "@id": "6ffa227c-965d-4eec-b76c-6cf34dc80739",
+      "href": [
+        {
+          "@id": "resolveuid/0eab0d751a0a49b8964e6b4741dce4d6",
+          "@type": "Person",
+          "Description": "Lorem ipsum is a dummy or placeholder text",
+          "Title": "Ralf L\u00f6ber",
+          "title": "Ralf L\u00f6ber"
+        }
+      ],
+      "title": "Link Eins"
+    },
+    {
+      "@id": "0b015842-63a5-42dd-81bc-9c50e75fe856",
+      "href": [
+        {
+          "@id": "resolveuid/6d119c6ea149486da6f90af351e49014",
+          "@type": "Person",
+          "Description": "Lorem ipsum is a dummy or placeholder text",
+          "Title": "Dr. Bernadette Biermann",
+          "title": "Dr. Bernadette Biermann"
+        }
+      ],
+      "title": "Link Zwei"
+    },
+    {
+      "@id": "99446de0-1179-40a3-b3af-9893b31662d8",
+      "href": [
+        {
+          "@id": "resolveuid/f29a0a79ff974cbab0ea9b016944336a",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Features",
+          "title": "Features"
+        }
+      ],
+      "title": "Link Drei"
+    }
+  ],
+  "footer_column_left_header": "Menu Eins",
+  "footer_column_middle": [
+    {
+      "@id": "c49ab957-cd5d-4888-8bd5-479a709fef5e",
+      "href": [
+        {
+          "@id": "resolveuid/6b1c57b5651546eab14fd5e0e1e32aeb",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "title": "Link Eins"
+    },
+    {
+      "@id": "56e1da4e-155b-45b9-9282-8b8404d81947",
+      "href": [
+        {
+          "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
+          "@type": "Document",
+          "Description": "",
+          "Title": "About",
+          "title": "About"
+        }
+      ],
+      "title": "Link Zwei"
+    },
+    {
+      "@id": "47403a90-4c92-479d-8c46-9a129ee9477f",
+      "href": [
+        {
+          "@id": "resolveuid/f29a0a79ff974cbab0ea9b016944336a",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Features",
+          "title": "Features"
+        }
+      ],
+      "title": "Link Drei"
+    },
+    {
+      "@id": "58e6894d-d949-4be1-9e81-4cfbcc8c7ba1",
+      "href": [
+        {
+          "@id": "resolveuid/6fb793fcdcaa47ba81c6226e1ea3267a",
+          "@type": "Person",
+          "Description": "Abteilungsleiter III",
+          "Title": "Bernhard Ehmann",
+          "title": "Bernhard Ehmann"
+        }
+      ],
+      "title": "Link Vier"
+    }
+  ],
+  "footer_column_middle_header": "Menu Zwei",
+  "footer_column_right": [
+    {
+      "@id": "38140612-deb6-49e4-ace6-0685c42447b8",
+      "href": [
+        {
+          "@id": "resolveuid/6b1c57b5651546eab14fd5e0e1e32aeb",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "title": "Link Eins"
+    },
+    {
+      "@id": "f5bc9491-4f47-4c25-a18c-a8130b4cd1ec",
+      "href": [
+        {
+          "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
+          "@type": "Document",
+          "Description": "",
+          "Title": "About",
+          "title": "About"
+        }
+      ],
+      "title": "Link Zwei"
+    },
+    {
+      "@id": "336bb576-7430-45b1-974e-13516935b78e",
+      "href": [
+        {
+          "@id": "resolveuid/f29a0a79ff974cbab0ea9b016944336a",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Features",
+          "title": "Features"
+        }
+      ],
+      "title": "Link Drei"
+    }
+  ],
+  "footer_column_right_header": "Menu Drei",
+  "footer_links": [
+    {
+      "@id": "67cadddf-24bf-429a-aa87-63b13c19aa9d",
+      "href": [
+        {
+          "@id": "resolveuid/6b1c57b5651546eab14fd5e0e1e32aeb",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "title": "Datenschutz"
+    },
+    {
+      "@id": "f200359a-da42-438e-9297-e63e00e7c8c7",
+      "href": [
+        {
+          "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
+          "@type": "Document",
+          "Description": "",
+          "Title": "About",
+          "title": "About"
+        }
+      ],
+      "title": "Barrierefreiheit"
+    },
+    {
+      "@id": "a14c0d06-a170-489f-96b7-8bfbee3c3ee7",
+      "href": [
+        {
+          "@id": "resolveuid/f29a0a79ff974cbab0ea9b016944336a",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Features",
+          "title": "Features"
+        }
+      ],
+      "title": "Impressum"
+    }
+  ],
+  "footer_logo": null,
+  "footer_logo_link": null,
+  "footer_logos": [],
+  "footer_logos_container_width": "default",
+  "footer_logos_size": "s",
+  "has_fat_menu": true,
+  "has_intranet_header": true,
+  "header_actions": [],
   "id": "Plone",
+  "intranet_flag": "Intranet",
   "is_folderish": true,
-  "items_total": 0,
+  "items_total": 9,
   "language": "##DEFAULT##",
   "lock": {
     "locked": false,
     "stealable": true
   },
-  "parent": {},
+  "logo": null,
+  "primary_foreground_color": null,
   "review_state": "published",
   "rights": "",
+  "secondary_color": "#000",
+  "secondary_foreground_color": "#FFF",
+  "share_social_data": true,
+  "social_links": [],
+  "sticky_menu": [
+    {
+      "@id": "439111a4-25d8-4a76-8ce8-cfecefaab71e",
+      "href": [
+        {
+          "@id": "resolveuid/6b1c57b5651546eab14fd5e0e1e32aeb",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "resolveuid/2853b2bd423d468fb71ad136d623bd22",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Kantine icon",
+          "image_field": "image",
+          "title": "Kantine icon"
+        }
+      ],
+      "title": "Kantine"
+    },
+    {
+      "@id": "2bf05582-13f3-465c-b514-1f5c98886574",
+      "href": [
+        {
+          "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
+          "Description": "",
+          "Title": "About",
+          "title": "About"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "resolveuid/85434210cf1444858fcd760d8cd110f0",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Arbeitszeit icon",
+          "image_field": "image",
+          "title": "Arbeitszeit icon"
+        }
+      ],
+      "title": "Arbeitszeit"
+    },
+    {
+      "@id": "e6b5ea29-4b8e-4e68-8c4a-599eaa87bcf8",
+      "href": [
+        {
+          "@id": "resolveuid/f29a0a79ff974cbab0ea9b016944336a",
+          "Description": "",
+          "Title": "Features",
+          "title": "Features"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "resolveuid/8e3d31feef784091b78cad81c938f3c7",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Telefonverzeichnis icon",
+          "image_field": "image",
+          "title": "Telefonverzeichnis icon"
+        }
+      ],
+      "title": "Telefonverzeichnis"
+    },
+    {
+      "@id": "91eceabc-00c5-4dd7-ba1d-ebe9f0e98db0",
+      "href": [
+        {
+          "@id": "resolveuid/6b1c57b5651546eab14fd5e0e1e32aeb",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "resolveuid/29dcc2ca91de4c5d811e346688845d03",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Formulare icon",
+          "image_field": "image",
+          "title": "Formulare icon"
+        }
+      ],
+      "title": "Formulare"
+    },
+    {
+      "@id": "30b330ed-3310-4614-8551-4417d5a051d2",
+      "href": [
+        {
+          "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
+          "Description": "",
+          "Title": "About",
+          "title": "About"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "resolveuid/be46c6a5e2f34467ae31ec37edbc5edd",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Service icon",
+          "image_field": "image",
+          "title": "Service icon"
+        }
+      ],
+      "title": "Service"
+    },
+    {
+      "@id": "66ae2270-f438-4dfa-9adb-ea73783d04af",
+      "href": [
+        {
+          "@id": "resolveuid/f29a0a79ff974cbab0ea9b016944336a",
+          "Description": "",
+          "Title": "Features",
+          "title": "Features"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "resolveuid/f848310b388e4c63bc3524ca76b2b649",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Ansprechpersonen icon",
+          "image_field": "image",
+          "title": "Ansprechpersonen icon"
+        }
+      ],
+      "title": "Ansprechpersonen"
+    }
+  ],
+  "sticky_menu_color": "#555555",
+  "sticky_menu_foreground_color": "#fff",
   "subjects": [],
   "table_of_contents": null,
   "title": "Plone Intranet by kitconcept",
@@ -247,5 +677,8 @@
         "time": "2024-05-17T09:39:07+00:00"
       }
     ]
-  }
+  },
+  "working_copy": null,
+  "working_copy_of": null,
+  "x_username": ""
 }

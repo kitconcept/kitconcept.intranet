@@ -31,7 +31,7 @@ endif
 PLONE_SITE_ID=Plone
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 KC_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
-EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/intranet/setuphandlers/examplecontent
+EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/intranet/distributions/intranet/content
 
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
 BIN_FOLDER=$(VENV_FOLDER)/bin

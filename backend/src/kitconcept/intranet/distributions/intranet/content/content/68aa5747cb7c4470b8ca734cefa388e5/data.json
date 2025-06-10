@@ -1,0 +1,108 @@
+{
+  "@id": "/features/person-profiles/dr-bernadette-biermann",
+  "@type": "Person",
+  "UID": "68aa5747cb7c4470b8ca734cefa388e5",
+  "allow_discussion": null,
+  "blocks": {
+    "09069dfa-ae83-4dc0-9d97-c863a67aa67a": {
+      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
+      "@type": "slate",
+      "block": "c4f7bfd0-d243-4e52-9d5c-8e36bc30a495",
+      "plaintext": "",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "3c50fa28-0df8-40d6-83c9-20cd2d2ed43a": {
+      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
+      "@type": "description",
+      "block": "b24b4663-7429-4653-a35f-ae33b333c039",
+      "fixed": true,
+      "required": true
+    },
+    "89703e0f-b5eb-4e3b-916c-bb70db0988b0": {
+      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
+      "@type": "title",
+      "block": "2a2c13a0-7b7d-4160-aebf-325190b83d38",
+      "fixed": true,
+      "readOnly": true,
+      "required": true
+    },
+    "eef93cc7-c078-4282-a8db-559f07f9d88c": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "89703e0f-b5eb-4e3b-916c-bb70db0988b0",
+      "3c50fa28-0df8-40d6-83c9-20cd2d2ed43a",
+      "09069dfa-ae83-4dc0-9d97-c863a67aa67a",
+      "eef93cc7-c078-4282-a8db-559f07f9d88c"
+    ]
+  },
+  "changeNote": "",
+  "contact_building": null,
+  "contact_email": null,
+  "contact_phone": "0160 6968850",
+  "contact_room": null,
+  "contact_website": null,
+  "created": "2025-06-04T12:59:10+00:00",
+  "description": "Lorem ipsum is a dummy or placeholder text",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "first_name": "Dr. Bernadette Biermann",
+  "id": "dr-bernadette-biermann",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "last_name": null,
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-09T11:20:22+00:00",
+  "preview_caption_link": null,
+  "review_state": "private",
+  "roles": [
+    "member"
+  ],
+  "title": "Dr. Bernadette Biermann",
+  "type_title": "Person",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-09T11:00:35+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

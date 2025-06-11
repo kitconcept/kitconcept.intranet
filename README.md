@@ -7,6 +7,20 @@ A Plone distribution for Intranets with Plone. Created by kitconcept.
 
 ## Quick Start 🏁
 
+### Prerequisites
+
+- Docker (https://www.docker.com/)
+- Git (https://git-scm.com/downloads)
+
+### Set up local demo instance
+
+- Clone repository with `git clone https://github.com/kitconcept/kitconcept.intranet.git`
+- Change directory to "kitconcept.intranet" with `cd kitconcept.intranet`
+- Start Docker containers with `docker-compose up`
+- Open kitconcept.intranet in your browser by typing `http://kitconcept-intranet.localhost/` into your browser URL field
+
+## Development
+
 ### Prerequisites ✅
 
 Ensure you have the following installed:

@@ -74,8 +74,8 @@ backend-create-site: ## Create a Plone site with default content
 backend-update-example-content: ## Export example content inside package
 	$(MAKE) -C "./backend/" update-example-content
 
-.PHONY: backend-remove-data
-backend-remove-data: ## Remove all content and create site
+.PHONY: backend-create-site-and-delete-existing
+backend-create-site-and-delete-existing: ## Remove all content and create site
 	$(MAKE) -C "./backend/" remove-data
 	$(MAKE) -C "./backend/" create-site
 

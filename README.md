@@ -12,10 +12,10 @@ A Plone distribution for Intranets with Plone. Created by kitconcept.
 Ensure you have the following installed:
 
 - Python 3.12 🐍
-- Node 20 🟩
+- Node 22 🟩
 - pnpm 🧶
 - Docker 🐳
-- UV (brew install uv)
+- UV (See [https://docs.astral.sh/uv/getting-started/installation/#standalone-installer])
 
 ### Installation 🔧
 

@@ -15,6 +15,7 @@ Ensure you have the following installed:
 - Node 20 🟩
 - pnpm 🧶
 - Docker 🐳
+- UV (brew install uv)
 
 ### Installation 🔧
 

@@ -1,13 +1,13 @@
 {
-  "@id": "/images",
+  "@id": "/images/people",
   "@type": "Document",
-  "UID": "6b1c57b5651546eab14fd5e0e1e32aeb",
-  "allow_discussion": false,
+  "UID": "9adb512d778840dc8b7dea82ac5a60eb",
+  "allow_discussion": null,
   "blocks": {
-    "2747ff88-6d35-497a-8d6f-e19cb4818c46": {
+    "1803712d-3a7e-464f-bda7-2bc11acac3ac": {
       "@type": "slate"
     },
-    "4b452d4e-ed73-4130-b1a5-81475e90f989": {
+    "61196352-a167-42cc-a908-0597da34927e": {
       "@type": "listing",
       "headlineTag": "h2",
       "querystring": {
@@ -16,46 +16,41 @@
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
             "v": [
-              "Image"
+              "Person"
             ]
-          },
-          {
-            "i": "path",
-            "o": "plone.app.querystring.operation.string.relativePath",
-            "v": "."
           }
         ],
-        "sort_on": "sortable_title",
         "sort_order": "ascending"
       },
       "styles": {},
-      "variation": "grid"
+      "theme": "default",
+      "variation": "summary"
     },
-    "c1eb4997-9777-429e-bf37-514a309c89b8": {
+    "b356eb84-59ec-4297-818c-224dc14b61ce": {
       "@type": "title"
     }
   },
   "blocks_layout": {
     "items": [
-      "c1eb4997-9777-429e-bf37-514a309c89b8",
-      "4b452d4e-ed73-4130-b1a5-81475e90f989",
-      "2747ff88-6d35-497a-8d6f-e19cb4818c46"
+      "b356eb84-59ec-4297-818c-224dc14b61ce",
+      "61196352-a167-42cc-a908-0597da34927e",
+      "1803712d-3a7e-464f-bda7-2bc11acac3ac"
     ]
   },
   "changeNote": "",
   "contributors": [],
-  "created": "2024-05-16T20:17:44+00:00",
+  "created": "2025-06-13T04:42:11+00:00",
   "creators": [
     "admin"
   ],
   "description": "",
-  "effective": "2024-05-16T22:21:00+00:00",
-  "exclude_from_nav": true,
+  "effective": null,
+  "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "head_title": null,
-  "id": "images",
+  "id": "people",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -66,10 +61,10 @@
   "modified": "2025-06-13T04:42:11+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "review_state": "published",
+  "review_state": "private",
   "rights": "",
   "subjects": [],
-  "title": "Images",
+  "title": "People",
   "type_title": "Page",
   "version": "current",
   "versioning_enabled": true,
@@ -79,15 +74,8 @@
         "action": null,
         "actor": "admin",
         "comments": "",
-        "review_state": "published",
-        "time": "2024-05-16T20:17:44+00:00"
-      },
-      {
-        "action": "publish",
-        "actor": "admin",
-        "comments": "",
-        "review_state": "published",
-        "time": "2024-05-16T20:21:01+00:00"
+        "review_state": "private",
+        "time": "2025-06-13T04:42:11+00:00"
       }
     ]
   },

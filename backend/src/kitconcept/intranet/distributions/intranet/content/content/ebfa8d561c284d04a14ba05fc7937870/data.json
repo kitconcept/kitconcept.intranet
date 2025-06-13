@@ -1,0 +1,80 @@
+{
+  "@id": "/events/event-one",
+  "@type": "Event",
+  "UID": "ebfa8d561c284d04a14ba05fc7937870",
+  "allow_discussion": null,
+  "attendees": [],
+  "blocks": {
+    "11e8ed81-c041-42d1-a085-19e97f86f2d6": {
+      "@type": "title"
+    },
+    "c4d16ade-c45f-4221-9bc9-b9f8480e6adc": {
+      "@type": "eventMetadata",
+      "fixed": true,
+      "required": true
+    },
+    "d6d263b9-1c91-424e-972b-c1b4f5615f8a": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "11e8ed81-c041-42d1-a085-19e97f86f2d6",
+      "c4d16ade-c45f-4221-9bc9-b9f8480e6adc",
+      "d6d263b9-1c91-424e-972b-c1b4f5615f8a"
+    ]
+  },
+  "contact_email": null,
+  "contact_name": "0228 329 2393 3",
+  "contact_phone": null,
+  "contributors": [],
+  "created": "2025-06-12T14:10:48+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+  "effective": "2025-06-11T09:35:00+00:00",
+  "end": "2025-06-04T10:00:00+00:00",
+  "event_url": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": "AI",
+  "id": "event-one",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "event_view",
+  "location": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-12T14:44:41+00:00",
+  "nav_title": null,
+  "open_end": false,
+  "preview_caption_link": null,
+  "recurrence": null,
+  "review_state": "private",
+  "rights": "",
+  "start": "2025-06-02T09:00:00+00:00",
+  "subjects": [],
+  "sync_uid": null,
+  "title": "Event One",
+  "type_title": "Event",
+  "version": "current",
+  "whole_day": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-12T14:10:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

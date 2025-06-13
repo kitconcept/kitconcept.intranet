@@ -301,7 +301,14 @@
     ]
   },
   "complementary_logo": null,
+  "contributors": [],
+  "creators": [
+    "admin"
+  ],
   "description": "A Plone Intranet distribution provided by kitconcept GmbH",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "facebook_app_id": "",
@@ -499,16 +506,16 @@
   "id": "Plone",
   "intranet_flag": "Intranet",
   "is_folderish": true,
-  "items_total": 10,
+  "items_total": 13,
   "language": "##DEFAULT##",
   "lock": {
     "locked": false,
     "stealable": true
   },
   "logo": null,
-  "preview_caption_link": null,
   "primary_foreground_color": null,
   "review_state": "published",
+  "rights": "",
   "secondary_color": "#000",
   "secondary_foreground_color": "#FFF",
   "share_social_data": true,
@@ -649,6 +656,8 @@
   ],
   "sticky_menu_color": "#555555",
   "sticky_menu_foreground_color": "#fff",
+  "subjects": [],
+  "table_of_contents": null,
   "title": "Plone Intranet by kitconcept",
   "type_title": "Plone Site",
   "workflow_history": {

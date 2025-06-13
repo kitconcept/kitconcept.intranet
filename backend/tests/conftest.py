@@ -13,10 +13,12 @@ import requests
 
 pytest_plugins = ["pytest_plone"]
 globals().update(
-    fixtures_factory((
-        (FUNCTIONAL_TESTING, "functional"),
-        (INTEGRATION_TESTING, "integration"),
-    ))
+    fixtures_factory(
+        (
+            (FUNCTIONAL_TESTING, "functional"),
+            (INTEGRATION_TESTING, "integration"),
+        )
+    )
 )
 
 
@@ -98,7 +100,7 @@ def current_versions() -> CurrentVersions:
     from kitconcept.core import __version__
 
     return CurrentVersions(
-        base="20250523001",
+        base="20250612001",
         dependencies="1000",
         package=__version__,
     )

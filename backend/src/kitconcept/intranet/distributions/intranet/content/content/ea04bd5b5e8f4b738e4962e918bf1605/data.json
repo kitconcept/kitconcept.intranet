@@ -1,0 +1,110 @@
+{
+  "@id": "/features/person-profiles/harry-gruss",
+  "@type": "Person",
+  "UID": "ea04bd5b5e8f4b738e4962e918bf1605",
+  "allow_discussion": null,
+  "blocks": {
+    "298cace5-db0a-49ad-8ecd-8e80e7960087": {
+      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
+      "@type": "slate",
+      "block": "42fcc4c2-1c7e-4097-815d-a16b544353d9",
+      "plaintext": "",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "5997be82-0936-4299-965f-7b200a03f34f": {
+      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
+      "@type": "title",
+      "block": "5a4756c5-c783-41e5-8ae1-4e98c0244adc",
+      "fixed": true,
+      "readOnly": true,
+      "required": true
+    },
+    "667cfa87-9339-4688-9c22-bb1e35708916": {
+      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
+      "@type": "description",
+      "block": "86b06340-5517-41bc-9584-706cffe8abcb",
+      "fixed": true,
+      "required": true
+    },
+    "f0932893-6c3e-4d26-9974-a9d0cc3046c4": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5997be82-0936-4299-965f-7b200a03f34f",
+      "667cfa87-9339-4688-9c22-bb1e35708916",
+      "298cace5-db0a-49ad-8ecd-8e80e7960087",
+      "f0932893-6c3e-4d26-9974-a9d0cc3046c4"
+    ]
+  },
+  "changeNote": "",
+  "contact_building": null,
+  "contact_email": null,
+  "contact_phone": "0151 62820158",
+  "contact_room": null,
+  "contact_website": null,
+  "created": "2025-06-04T13:00:18+00:00",
+  "description": "Lorem ipsum is a dummy or placeholder text",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "first_name": "Harry Gru\u00df",
+  "head_title": null,
+  "id": "harry-gruss",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "last_name": null,
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-09T11:20:41+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "private",
+  "roles": [
+    "member"
+  ],
+  "title": "Harry Gru\u00df",
+  "type_title": "Person",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-09T11:00:35+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

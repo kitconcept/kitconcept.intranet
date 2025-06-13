@@ -5,18 +5,36 @@
   "allow_discussion": false,
   "blocks": {
     "9bdc943a-3a45-4cf5-854b-8f5238cb714a": {
-      "@type": "slate"
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     },
     "bafa192c-a61e-499b-9e22-f1799d22aaad": {
       "@type": "title"
     },
     "c30a11c1-a250-47b2-bab3-63380c662442": {
       "@type": "image",
-      "align": "full",
+      "align": "center",
       "credit": {},
       "description": "",
       "image_field": "image",
       "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "100%"
+        }
+      },
       "title": "codioful-formerly-gradienta-lweK7Wme_jo-unsplash.jpg",
       "url": "../resolveuid/75f2d0b5a1f04f7a922c47be34f9f532"
     }
@@ -49,7 +67,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-06-24T17:09:41+00:00",
+  "modified": "2025-06-12T13:26:08+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

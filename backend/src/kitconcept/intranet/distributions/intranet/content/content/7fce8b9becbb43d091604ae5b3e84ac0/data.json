@@ -1,0 +1,107 @@
+{
+  "@id": "/news",
+  "@type": "Document",
+  "UID": "7fce8b9becbb43d091604ae5b3e84ac0",
+  "allow_discussion": null,
+  "blocks": {
+    "5288ed25-e21c-4d08-b7cc-59f5bde6ba10": {
+      "@type": "title"
+    },
+    "b35d1aa6-51b6-456f-870c-b7e5b4b76c61": {
+      "@type": "search",
+      "listingBodyTemplate": "summary",
+      "query": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": ""
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      }
+    },
+    "undefined": {
+      "@type": "search",
+      "listingBodyTemplate": "default",
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5288ed25-e21c-4d08-b7cc-59f5bde6ba10",
+      "b35d1aa6-51b6-456f-870c-b7e5b4b76c61"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-06-12T13:34:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-06-13T09:28:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "news",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-13T09:28:33+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "News",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-12T13:34:09+00:00"
+      },
+      {
+        "action": "submit",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "pending",
+        "time": "2025-06-13T09:28:33+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:30:14+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

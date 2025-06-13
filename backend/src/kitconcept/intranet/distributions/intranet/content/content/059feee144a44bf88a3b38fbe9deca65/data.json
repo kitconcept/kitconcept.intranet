@@ -1,0 +1,100 @@
+{
+  "@id": "/people/tim-werner-ll-m",
+  "@type": "Person",
+  "UID": "059feee144a44bf88a3b38fbe9deca65",
+  "allow_discussion": null,
+  "blocks": {
+    "08dbd45c-3579-499d-bd80-825fb220f15a": {
+      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
+      "@type": "description",
+      "block": "08dbd45c-3579-499d-bd80-825fb220f15a",
+      "fixed": true,
+      "required": true
+    },
+    "8d7cfcc8-ff59-47bc-a04e-f165b5a265b1": {
+      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
+      "@type": "slate",
+      "block": "8d7cfcc8-ff59-47bc-a04e-f165b5a265b1",
+      "plaintext": "",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "e5152e88-33ec-4104-9c3a-d1c76b9df9c4": {
+      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
+      "@type": "title",
+      "block": "e5152e88-33ec-4104-9c3a-d1c76b9df9c4",
+      "fixed": true,
+      "readOnly": true,
+      "required": true
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "e5152e88-33ec-4104-9c3a-d1c76b9df9c4",
+      "08dbd45c-3579-499d-bd80-825fb220f15a",
+      "8d7cfcc8-ff59-47bc-a04e-f165b5a265b1"
+    ]
+  },
+  "changeNote": "",
+  "contact_building": "B19",
+  "contact_email": "tim.werner@example.com",
+  "contact_phone": "0221 3902 323",
+  "contact_room": "R874",
+  "contact_website": "https://plone.org",
+  "created": "2025-06-12T11:23:38+00:00",
+  "description": "Tim Werner, LL.M. ist Pr\u00fcfer im Bereich \u00d6ffentliche Finanzen und in der Abteilung Haushalts- und Strukturkontrolle t\u00e4tig. Seine Schwerpunkte liegen im Haushaltsrecht, der Mittelverwendung und der Bewertung \u00f6ffentlicher Projekte. Er f\u00fchrt Pr\u00fcfungen durch, erstellt fundierte Pr\u00fcfberichte und ber\u00e4t zu Optimierungspotenzialen im Haushaltsvollzug. Mit seiner juristischen Expertise im Verwaltungsrecht, seiner Erfahrung in der Bilanzanalyse sowie dem sicheren Umgang mit MS Excel und spezialisierter Pr\u00fcfsoftware tr\u00e4gt er zur Transparenz und Effizienz \u00f6ffentlicher Finanzen bei.",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "first_name": "Tim",
+  "head_title": null,
+  "id": "tim-werner-ll-m",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "last_name": "Werner, LL.M.",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-13T09:29:27+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "roles": [
+    "member"
+  ],
+  "title": "Tim Werner, LL.M.",
+  "type_title": "Person",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-12T11:23:38+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:29:27+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

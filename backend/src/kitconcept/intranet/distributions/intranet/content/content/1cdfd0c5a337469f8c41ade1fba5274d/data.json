@@ -1,0 +1,100 @@
+{
+  "@id": "/people/dr-ayla-demir",
+  "@type": "Person",
+  "UID": "1cdfd0c5a337469f8c41ade1fba5274d",
+  "allow_discussion": null,
+  "blocks": {
+    "5568d237-e7d6-4418-8be8-9ad914b7b7bb": {
+      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
+      "@type": "slate",
+      "block": "5568d237-e7d6-4418-8be8-9ad914b7b7bb",
+      "plaintext": "",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "7c42288b-1dbc-414b-910b-f03cbcd95097": {
+      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
+      "@type": "title",
+      "block": "7c42288b-1dbc-414b-910b-f03cbcd95097",
+      "fixed": true,
+      "readOnly": true,
+      "required": true
+    },
+    "e1877148-3b50-421f-8848-b86bed67a239": {
+      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
+      "@type": "description",
+      "block": "e1877148-3b50-421f-8848-b86bed67a239",
+      "fixed": true,
+      "required": true
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7c42288b-1dbc-414b-910b-f03cbcd95097",
+      "e1877148-3b50-421f-8848-b86bed67a239",
+      "5568d237-e7d6-4418-8be8-9ad914b7b7bb"
+    ]
+  },
+  "changeNote": "",
+  "contact_building": "B32",
+  "contact_email": "ayla.demir@example.com",
+  "contact_phone": "0221 3902 323",
+  "contact_room": "R943",
+  "contact_website": "https://plone.org",
+  "created": "2025-06-12T11:26:07+00:00",
+  "description": "Dr. Ayla Demir ist Projektkoordinatorin f\u00fcr Internationale Zusammenarbeit in der Abteilung Wissenschaftspolitische Beziehungen. Sie koordiniert internationale Partnerschaften, begleitet das Antragsmanagement f\u00fcr EU- und Drittmittelprojekte und organisiert Fachkonferenzen. Ihre Schwerpunkte liegen in der Entwicklung von F\u00f6rderprogrammen, dem Aufbau wissenschaftlicher Netzwerke und der strategischen Projektentwicklung. Mit fundierten Kenntnissen im Drittmittelrecht (z.\u202fB. Horizon, BMBF), interkultureller Kommunikation sowie Projektmanagement-Standards wie PRINCE2 und GPM/IPMA unterst\u00fctzt sie wirkungsvoll die internationale Wissenschaftskooperation.",
+  "exclude_from_nav": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "first_name": "Dr. Ayla",
+  "head_title": null,
+  "id": "dr-ayla-demir",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "last_name": "Demir",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-13T09:29:27+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "roles": [
+    "member"
+  ],
+  "title": "Dr. Ayla Demir",
+  "type_title": "Person",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-12T11:26:07+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:29:27+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

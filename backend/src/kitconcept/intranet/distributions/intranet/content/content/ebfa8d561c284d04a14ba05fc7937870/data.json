@@ -24,6 +24,7 @@
       "d6d263b9-1c91-424e-972b-c1b4f5615f8a"
     ]
   },
+  "changeNote": "",
   "contact_email": null,
   "contact_name": "0228 329 2393 3",
   "contact_phone": null,
@@ -55,7 +56,7 @@
   "open_end": false,
   "preview_caption_link": null,
   "recurrence": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "start": "2025-06-02T09:00:00+00:00",
   "subjects": [],
@@ -63,6 +64,7 @@
   "title": "Event One",
   "type_title": "Event",
   "version": "current",
+  "versioning_enabled": true,
   "whole_day": true,
   "workflow_history": {
     "simple_intranet_workflow": [
@@ -72,6 +74,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2025-06-12T14:10:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:30:15+00:00"
       }
     ]
   },

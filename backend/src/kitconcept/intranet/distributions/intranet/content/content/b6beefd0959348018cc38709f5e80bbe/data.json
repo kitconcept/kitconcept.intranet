@@ -37,6 +37,7 @@
       "dac462a7-83b6-4668-8506-fee827c77bb8"
     ]
   },
+  "changeNote": "",
   "contact_email": "doe@example.com",
   "contact_name": "John Doe",
   "contact_phone": "0221 322 3232 2",
@@ -68,7 +69,7 @@
   "open_end": false,
   "preview_caption_link": null,
   "recurrence": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "start": "2025-06-05T09:00:00+00:00",
   "subjects": [],
@@ -76,6 +77,7 @@
   "title": "Event Four",
   "type_title": "Event",
   "version": "current",
+  "versioning_enabled": true,
   "whole_day": true,
   "workflow_history": {
     "simple_intranet_workflow": [
@@ -85,6 +87,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2025-06-12T14:29:57+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:30:15+00:00"
       }
     ]
   },

@@ -44,17 +44,19 @@
       "2fc184ce-914b-4b5b-b5e7-7c46b51c4e1b"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2025-06-12T10:17:38+00:00",
   "creators": [
     "admin"
   ],
   "description": "",
-  "effective": null,
+  "effective": "2025-06-13T09:28:34+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "head_title": null,
   "id": "people",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -63,15 +65,16 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-12T14:57:49+00:00",
+  "modified": "2025-06-13T09:38:00+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "subjects": [],
   "title": "People",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_intranet_workflow": [
       {
@@ -80,6 +83,20 @@
         "comments": "",
         "review_state": "private",
         "time": "2025-06-12T10:17:38+00:00"
+      },
+      {
+        "action": "submit",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "pending",
+        "time": "2025-06-13T09:28:34+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:29:27+00:00"
       }
     ]
   },

@@ -82,17 +82,19 @@
       "83b5a746-2cff-41d7-9ed9-4006d9837fb4"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2025-06-12T13:30:59+00:00",
   "creators": [
     "admin"
   ],
   "description": "",
-  "effective": null,
+  "effective": "2025-06-13T09:28:34+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "head_title": null,
   "id": "events",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -101,15 +103,16 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-12T14:31:18+00:00",
+  "modified": "2025-06-13T09:28:34+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "subjects": [],
   "title": "Events",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_intranet_workflow": [
       {
@@ -118,6 +121,20 @@
         "comments": "",
         "review_state": "private",
         "time": "2025-06-12T13:30:59+00:00"
+      },
+      {
+        "action": "submit",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "pending",
+        "time": "2025-06-13T09:28:34+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:30:15+00:00"
       }
     ]
   },

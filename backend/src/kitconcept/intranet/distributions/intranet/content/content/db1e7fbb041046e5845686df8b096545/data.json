@@ -24,6 +24,7 @@
       "82d4e5cc-1819-4db0-bdd2-cbdf9ec3eaa7"
     ]
   },
+  "changeNote": "",
   "contact_email": "blunt@example.com",
   "contact_name": "Steven Blunt",
   "contact_phone": "0212 2121 2112",
@@ -55,7 +56,7 @@
   "open_end": false,
   "preview_caption_link": null,
   "recurrence": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "start": "2025-06-08T09:00:00+00:00",
   "subjects": [],
@@ -63,6 +64,7 @@
   "title": "Event Three",
   "type_title": "Event",
   "version": "current",
+  "versioning_enabled": true,
   "whole_day": true,
   "workflow_history": {
     "simple_intranet_workflow": [
@@ -72,6 +74,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2025-06-12T14:22:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:30:15+00:00"
       }
     ]
   },

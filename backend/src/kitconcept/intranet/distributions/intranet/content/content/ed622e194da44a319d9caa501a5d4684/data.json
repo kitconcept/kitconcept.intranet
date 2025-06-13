@@ -30,13 +30,14 @@
       "04bd79fb-9849-47c3-ad53-9d7666910d65"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2025-06-12T13:46:53+00:00",
   "creators": [
     "admin"
   ],
   "description": "Die Personalabteilung des IAZ informiert \u00fcber die aktualisierte Dienstvereinbarung zum mobilen Arbeiten. Ab 1. Juli gelten neue Regelungen zur Homeoffice-Nutzung und technischen Ausstattung.",
-  "effective": "2025-06-11T10:42:00+00:00",
+  "effective": "2025-06-12T10:42:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
@@ -50,15 +51,16 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-12T14:46:27+00:00",
+  "modified": "2025-06-13T09:35:13+00:00",
   "nav_title": null,
   "preview_caption_link": null,
-  "review_state": "private",
+  "review_state": "published",
   "rights": "",
   "subjects": [],
   "title": "Neue Dienstvereinbarung zum mobilen Arbeiten",
   "type_title": "News Item",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_intranet_workflow": [
       {
@@ -67,6 +69,13 @@
         "comments": "",
         "review_state": "private",
         "time": "2025-06-12T13:46:53+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-06-13T09:30:14+00:00"
       }
     ]
   },

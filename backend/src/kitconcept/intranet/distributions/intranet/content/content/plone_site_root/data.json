@@ -131,12 +131,54 @@
       "styles": {}
     },
     "72d64f8a-cca6-444d-a497-482daba7e970": {
-      "@type": "slate",
+      "@type": "listing",
+      "headline": "Aktuelle Nachrichten",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
       "styles": {},
-      "theme": "default"
+      "theme": "default",
+      "variation": "summary"
+    },
+    "73760a92-54e1-4d25-9599-2d8e9fbadacb": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "resolveuid/5fcf6fb9d4d34320a305b80ee5c2d8c5",
+          "Description": "Aktuelle Nachrichten aus dem Intranet.",
+          "Title": "Aktuelles",
+          "hasPreviewImage": null,
+          "title": "Aktuelles"
+        }
+      ],
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "title": "Weitere aktuelle Nachrichten"
     },
     "7815392a-f32a-45cf-b633-09f1cabf49bc": {
       "@type": "title"
+    },
+    "7dd4c30e-10da-4ddf-bb56-30d44ec34e20": {
+      "@type": "slate"
     },
     "cf694a86-6ef4-43e2-b249-24f7ca3a55e9": {
       "@type": "gridBlock",
@@ -157,7 +199,7 @@
               "contact_phone": null,
               "contact_room": null,
               "description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2.",
-              "effective": "1969-12-30T18:30:00+00:00",
+              "effective": "1969-12-30T22:00:00+00:00",
               "end": null,
               "getObjSize": "0 KB",
               "getRemoteUrl": null,
@@ -297,7 +339,9 @@
       "7815392a-f32a-45cf-b633-09f1cabf49bc",
       "4979b879-0499-494e-9ca9-967aae7af1f4",
       "cf694a86-6ef4-43e2-b249-24f7ca3a55e9",
-      "72d64f8a-cca6-444d-a497-482daba7e970"
+      "72d64f8a-cca6-444d-a497-482daba7e970",
+      "73760a92-54e1-4d25-9599-2d8e9fbadacb",
+      "7dd4c30e-10da-4ddf-bb56-30d44ec34e20"
     ]
   },
   "complementary_logo": null,

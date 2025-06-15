@@ -6,13 +6,38 @@
   "accent_foreground_color": null,
   "allow_discussion": null,
   "blocks": {
+    "223fb3b3-95e7-4273-b116-4ce2dcb2dabc": {
+      "@type": "listing",
+      "headline": "Termine",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "2b7e4ef9-7010-4ce9-85c3-b91da57f16b4": {
+      "@type": "slate"
+    },
     "4979b879-0499-494e-9ca9-967aae7af1f4": {
       "@type": "gridBlock",
       "blocks": {
         "41863fc3-5e05-4e50-8166-607686a34758": {
           "@type": "teaser",
-          "description": "",
-          "head_title": null,
+          "description": "Durchsuchen Sie alle Inhalte Ihres Intranets egal ob Seiten, PDFs, Word-Dokumente. Finden Sie alle Inhalte mit der integrierten Volltextsuche.",
           "href": [
             {
               "@id": "resolveuid/2c2f8092acfc4f55830b16af13273882",
@@ -44,48 +69,55 @@
           "styles": {
             "align": "left"
           },
-          "title": "Full Text Search"
+          "title": "Volltextsuche"
         },
         "b44ca6dd-a55f-4a15-9727-3297eeaade15": {
           "@type": "teaser",
-          "description": "",
+          "description": "Pr\u00e4sentieren Sie Ihre Mitarbeiter:innnen mit Personenprofilen. Erstellen Sie Auflistungen von Organisationseinheiten in sekundenschnelle.",
           "head_title": null,
           "href": [
             {
-              "@id": "resolveuid/f10b7bca6e014ff7a56598f1cfcc4d2b",
+              "@id": "resolveuid/6e4e9914ff9e4955a1b8b459e743f361",
               "@type": "Document",
-              "Description": "Present your employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
+              "Description": "",
               "Subject": [],
-              "Title": "Person Profiles",
+              "Title": "People",
               "contact_building": null,
               "contact_email": null,
               "contact_phone": null,
               "contact_room": null,
-              "description": "Present your employees with personal profile pages. Sync their data with your AD/LDAP or any other source.",
-              "effective": "2024-05-17T11:53:00+00:00",
+              "description": "",
+              "effective": "2025-06-13T09:28:00+00:00",
               "end": null,
               "getObjSize": "0 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
-              "image_field": "preview_image_link",
+              "image_field": "",
               "mime_type": "text/plain",
               "nav_title": null,
               "review_state": "published",
               "start": null,
-              "title": "Person Profiles",
+              "title": "People",
               "type_title": "Page"
             }
           ],
           "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "resolveuid/70e63351448f45968af7bca53f418e6b",
+              "image_field": "image",
+              "title": "christopher-campbell-rDEOVtE7vOs-unsplash (4).jpg"
+            }
+          ],
           "styles": {
             "align": "left"
           },
-          "title": "Person Profiles"
+          "title": "Personenprofile"
         },
         "dc468cc2-ccda-4e25-a3db-116ca9f99ef2": {
           "@type": "teaser",
-          "description": "",
+          "description": "Ein minimalistischen und leicht anpassbares Theme f\u00fcr Ihr Intranet. Mobile ready und Responsive.",
           "head_title": null,
           "href": [
             {
@@ -128,22 +160,82 @@
           "b44ca6dd-a55f-4a15-9727-3297eeaade15"
         ]
       },
-      "styles": {}
-    },
-    "72d64f8a-cca6-444d-a497-482daba7e970": {
-      "@type": "slate",
+      "headline": "Features",
       "styles": {},
       "theme": "default"
     },
-    "7815392a-f32a-45cf-b633-09f1cabf49bc": {
-      "@type": "title"
+    "72d64f8a-cca6-444d-a497-482daba7e970": {
+      "@type": "listing",
+      "headline": "Aktuelle Nachrichten",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "summary"
+    },
+    "737924ac-388c-46eb-af06-0f4bf9b237fa": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "resolveuid/f29a0a79ff974cbab0ea9b016944336a",
+          "Description": "",
+          "Title": "Features",
+          "hasPreviewImage": null,
+          "title": "Features"
+        }
+      ],
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "title": "Weitere Features"
+    },
+    "868556d1-15e1-4a30-83d8-46eeb3794bfe": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "resolveuid/7fce8b9becbb43d091604ae5b3e84ac0",
+          "Description": "",
+          "Title": "News",
+          "hasPreviewImage": null,
+          "title": "News"
+        }
+      ],
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "grey",
+      "title": "Weitere Nachrichten"
     },
     "cf694a86-6ef4-43e2-b249-24f7ca3a55e9": {
       "@type": "gridBlock",
       "blocks": {
         "71047227-7fac-4012-8c5f-e2f54cc9ad70": {
           "@type": "teaser",
-          "description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2.",
+          "description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2. Machen Sie Ihr Intranet barrierefrei f\u00fcr alle ohne aufw\u00e4ndige Schulungen.",
           "head_title": null,
           "href": [
             {
@@ -157,7 +249,7 @@
               "contact_phone": null,
               "contact_room": null,
               "description": "kitconcept Intranet ist Barrierefrei nach BITV 2.0 und WCAG 2.2.",
-              "effective": "1969-12-30T18:30:00+00:00",
+              "effective": "1969-12-30T22:00:00+00:00",
               "end": null,
               "getObjSize": "0 KB",
               "getRemoteUrl": null,
@@ -180,7 +272,7 @@
         },
         "86acbd7e-e3df-42cf-8b65-00e0b881a205": {
           "@type": "teaser",
-          "description": "",
+          "description": "Erstellen Sie Formulare f\u00fcr Urlaubsantr\u00e4ge, Konferenzen oder interne Umfragen in sekundenschnelle.",
           "head_title": null,
           "href": [
             {
@@ -217,7 +309,7 @@
         },
         "a5ff65b5-7029-41f7-96a1-810a008e51a2": {
           "@type": "teaser",
-          "description": "Stimulate discussion and social interaction with comments on documents.",
+          "description": "Diskutieren Sie mit Ihren Kollegen die neusten Nachrichten und Termine oder tauschen sich aus.",
           "head_title": null,
           "href": [
             {
@@ -250,7 +342,7 @@
           "styles": {
             "align": "left"
           },
-          "title": "Comments"
+          "title": "Kommentare"
         }
       },
       "blocks_layout": {
@@ -271,9 +363,10 @@
       "slides": [
         {
           "@id": "8e5603d5-a253-4094-9c45-37708e5bd3a3",
-          "description": "A Plone Distribution to build sophisticated Intranets",
+          "description": "Eine Intranet L\u00f6sung entwickelt f\u00fcr Forschungseinrichtungen, Universit\u00e4ten und Bundesbeh\u00f6rden.",
           "flagAlign": "left",
           "head_title": "100% Open Source",
+          "hideButton": true,
           "href": [
             {
               "@id": "resolveuid/1e7262f173a54700a5ca2578506b1bc1",
@@ -284,7 +377,7 @@
               "title": "About"
             }
           ],
-          "title": "kitconcept intranet"
+          "title": "kitconcept Intranet"
         }
       ],
       "styles": {},
@@ -294,10 +387,13 @@
   "blocks_layout": {
     "items": [
       "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11",
-      "7815392a-f32a-45cf-b633-09f1cabf49bc",
       "4979b879-0499-494e-9ca9-967aae7af1f4",
       "cf694a86-6ef4-43e2-b249-24f7ca3a55e9",
-      "72d64f8a-cca6-444d-a497-482daba7e970"
+      "737924ac-388c-46eb-af06-0f4bf9b237fa",
+      "72d64f8a-cca6-444d-a497-482daba7e970",
+      "868556d1-15e1-4a30-83d8-46eeb3794bfe",
+      "223fb3b3-95e7-4273-b116-4ce2dcb2dabc",
+      "2b7e4ef9-7010-4ce9-85c3-b91da57f16b4"
     ]
   },
   "complementary_logo": null,

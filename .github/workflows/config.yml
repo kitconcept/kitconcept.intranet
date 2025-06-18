@@ -15,9 +15,6 @@ on:
         required: false
         type: string
         default: "kc-intranet-dev"
-      stack-file:
-        required: false
-        type: string
       image-name-prefix:
         required: false
         type: string
@@ -76,9 +73,6 @@ on:
       stack-name:
         description: "Deploy: Name of the Docker stack to be used"
         value: ${{ jobs.config.outputs.stack-name }}
-      stack-file:
-        description: "Deploy: Name of the stack file to be used"
-        value: ${{ jobs.config.outputs.stack-file }}
       stack-prefix:
         description: "Deploy: Short name to be used to create Traefik labels"
         value: ${{ inputs.stack-prefix }}
@@ -97,7 +91,6 @@ jobs:
       volto-version: ${{ steps.vars.outputs.volto-version }}
       environment: ${{ steps.vars.outputs.environment }}
       stack-name: ${{ steps.vars.outputs.stack-name }}
-      stack-file: ${{ steps.vars.outputs.stack-file }}
 
     steps:
       - name: Checkout
@@ -110,10 +103,8 @@ jobs:
           echo "kc-version=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("volto-version=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
           environment=${{ inputs.hostname }}
-          stack-file=${{ inputs.stack-file }}
           echo "environment=${environment}" >> $GITHUB_OUTPUT
           echo "stack-name=${environment//./-}" >> $GITHUB_OUTPUT
-          echo "stack-file=${stack-file:-devops/stacks/${{ inputs.hostname }}.yml}" >> $GITHUB_OUTPUT
 
       - uses: dorny/paths-filter@v3.0.2
         id: filter
@@ -144,7 +135,6 @@ jobs:
           echo 'volto-version: ${{ steps.vars.outputs.volto-version }}'
           echo 'environment: ${{ steps.vars.outputs.environment }}'
           echo 'stack-name: ${{ steps.vars.outputs.stack-name }}'
-          echo 'stack-file: ${{ steps.vars.outputs.stack-file }}'
           echo 'event-name: ${{ github.event_name }}'
           echo "ref-name: ${{ github.ref_name }}"
           echo 'Paths - acceptance: ${{ steps.filter.outputs.acceptance }}'

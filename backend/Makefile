@@ -77,6 +77,7 @@ clean: ## Clean environment
 remove-data: ## Remove all content
 	@echo "$(RED)==> Removing all content$(RESET)"
 	rm -rf $(VENV_FOLDER) instance/var
+	$(MAKE) install
 
 # Instance management
 

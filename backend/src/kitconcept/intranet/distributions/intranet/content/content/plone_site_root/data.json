@@ -30,7 +30,25 @@
       "variation": "summary"
     },
     "2b7e4ef9-7010-4ce9-85c3-b91da57f16b4": {
-      "@type": "slate"
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "resolveuid/66ceae4426a347e19e158f36202c98b5",
+          "Description": "",
+          "Title": "Termine",
+          "hasPreviewImage": null,
+          "title": "Termine"
+        }
+      ],
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "title": "Weitere Termine "
     },
     "4979b879-0499-494e-9ca9-967aae7af1f4": {
       "@type": "gridBlock",
@@ -98,7 +116,7 @@
               "nav_title": null,
               "review_state": "published",
               "start": null,
-              "title": "People",
+              "title": "Personen",
               "type_title": "Page"
             }
           ],
@@ -355,6 +373,9 @@
       "styles": {},
       "theme": "default"
     },
+    "e3a7ef5d-bea3-4b87-b7d1-e70c33434cbc": {
+      "@type": "slate"
+    },
     "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11": {
       "@type": "slider",
       "autoplayDelay": 4000,
@@ -393,7 +414,8 @@
       "72d64f8a-cca6-444d-a497-482daba7e970",
       "868556d1-15e1-4a30-83d8-46eeb3794bfe",
       "223fb3b3-95e7-4273-b116-4ce2dcb2dabc",
-      "2b7e4ef9-7010-4ce9-85c3-b91da57f16b4"
+      "2b7e4ef9-7010-4ce9-85c3-b91da57f16b4",
+      "e3a7ef5d-bea3-4b87-b7d1-e70c33434cbc"
     ]
   },
   "complementary_logo": null,
@@ -402,8 +424,8 @@
   "exportimport.conversation": [],
   "facebook_app_id": "",
   "facebook_username": "",
-  "footer_address": "Musterfirma Mustermann\u2028Karl-Maier-Strasse 81\u202853113 Bonn\u2028Telefon: 0228-123456 mustermann@musterfirma.de",
-  "footer_colophon_text": "Powered by Plone & Light Theme",
+  "footer_address": "kitconcept GmbH\nRieststr. 21\n53113 Bonn",
+  "footer_colophon_text": "Powered by kitconcept Intranet",
   "footer_column_left": [
     {
       "@id": "6ffa227c-965d-4eec-b76c-6cf34dc80739",

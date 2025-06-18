@@ -47,3 +47,34 @@ jobs:
     permissions:
       contents: read
       packages: write
+
+  acceptance:
+    name: "Acceptance: ${{ matrix.name }}"
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
+    uses: ./.github/workflows/acceptance.yml
+    needs:
+      - config
+      - backend
+      - frontend
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Main"
+            short-name: main
+          - name: "Core - Basic"
+            short-name: core/basic
+          - name: "Core - Blocks"
+            short-name: core/blocks
+          - name: "Core - Content"
+            short-name: core/content
+          - name: "a11y"
+            short-name: a11y
+            a11y: true
+    with:
+      name: ${{ matrix.name }}
+      short-name: ${{ matrix.short-name }}
+      node-version: ${{ needs.config.outputs.node-version }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-tag: ${{ needs.config.outputs.base-tag }}
+      a11y: ${{ matrix.a11y || false }}

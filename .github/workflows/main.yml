@@ -47,3 +47,36 @@ jobs:
     permissions:
       contents: read
       packages: write
+
+  deploy:
+    name: "Deploy: plone-intranet.kitconcept.dev"
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    if: ${{ github.event_name != 'pull_request' && github.ref_name == 'main' }}
+    needs:
+      - config
+      - backend
+      - frontend
+    with:
+      tag: ${{ needs.config.outputs.base-tag }}
+      environment: "plone-intranet.kitconcept.dev"
+      stack-name: "plone-intranet-kitconcept-dev"
+      stack-file: "devops/stacks/demo.yml"
+      registry: "ghcr.io"
+      username: ${{ github.actor }}
+    secrets:
+      password: ${{ secrets.GITHUB_TOKEN }}
+      remote-host: ${{ secrets.DEPLOY_HOST }}
+      remote-port: ${{ secrets.DEPLOY_PORT }}
+      remote-user: ${{ secrets.DEPLOY_USER }}
+      remote-private-key: ${{ secrets.DEPLOY_SSH }}
+      env-file: |
+          IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+          IMAGE_TAG=${{ github.ref_name }}
+          STACK_NAME=${{ vars.STACK_NAME }}
+          STACK_PREFIX=${{ vars.STACK_PREFIX }}
+          HOSTNAME=${{ vars.HOSTNAME }}
+          CERTRESOLVER=${{ vars.CERTRESOLVER }}
+
+    permissions:
+        contents: read
+        packages: write

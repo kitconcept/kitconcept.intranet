@@ -76,8 +76,8 @@ clean: ## Clean environment
 .PHONY: remove-data
 remove-data: ## Remove all content
 	@echo "$(RED)==> Removing all content$(RESET)"
-	rm -rf $(VENV_FOLDER) instance/var
-	$(MAKE) install
+	rm -rf instance/var instance/etc/zope.ini
+	$(MAKE) config
 
 # Instance management
 

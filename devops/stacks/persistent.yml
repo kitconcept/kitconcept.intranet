@@ -1,5 +1,5 @@
 ---
-version: '3.8'
+version: '3.9'
 
 services:
 
@@ -37,9 +37,12 @@ services:
         - traefik.http.routers.rt-${STACK_PREFIX}-front.middlewares=gzip
 
   backend:
-    image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
+    image: ${IMAGE_NAME_PREFIX}-backend:${IMAGE_TAG:-latest}
+    environment:
+      ZEO_ADDRESS: "${STACK_NAME}_zeo:8100"
     networks:
       - public
+      - nw-internal
     deploy:
       replicas: 1
       placement:
@@ -63,10 +66,7 @@ services:
         - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/${HOSTNAME}/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
         ## Basic Authentication
-        ### Note: all dollar signs in the hash need to be doubled for escaping.
-        ### To create user:password pair, it's possible to use this command:
-        ### echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
-        - traefik.http.middlewares.mw-${STACK_PREFIX}-back-auth.basicauth.users=kitconcept:$$apr1$$6RN5HfVi$$gB0AHNAzvzKXudmevCYdU.
+        - traefik.http.middlewares.mw-${STACK_PREFIX}-back-auth.basicauth.users=${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD_CLASSICUI}
 
         # Routes
         ## /++api++
@@ -82,6 +82,35 @@ services:
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.service=svc-${STACK_PREFIX}-back
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.middlewares=gzip,mw-${STACK_PREFIX}-back-auth,mw-${STACK_PREFIX}-back-vhm-classic
 
+  zeo:
+    image: plone/plone-zeo:6.0.0
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 1s
+        order: stop-first
+      placement:
+        constraints:
+          - node.labels.type == data
+          - node.labels.env == ${PLACEMENT_LABEL:-staging}
+    volumes:
+      - vol-site-data:/data
+    networks:
+      - nw-internal
+
+volumes:
+  vol-site-data:
+    driver_opts:
+      type: none
+      device: "/srv/${STACK_PREFIX}/data"
+      o: bind
+
 networks:
   public:
     external: true
+  nw-internal:
+    internal: true
+    driver: overlay
+    driver_opts:
+      com.docker.network.driver.mtu: 1450

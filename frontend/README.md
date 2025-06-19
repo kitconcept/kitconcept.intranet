@@ -9,7 +9,6 @@ A Plone distribution for Intranets with Plone. Created by kitconcept.
 
 ## Features
 
-<!-- List your awesome features here -->
 
 ## Installation
 

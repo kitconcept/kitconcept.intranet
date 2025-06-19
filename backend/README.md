@@ -2,7 +2,6 @@
 
 A Plone distribution for Intranets with Plone. Created by kitconcept.
 
-
 ## Installation
 
 Install kitconcept.intranet with `pip`:

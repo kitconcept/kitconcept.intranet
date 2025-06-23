@@ -93,7 +93,7 @@ services:
       placement:
         constraints:
           - node.labels.type == data
-          - node.labels.env == ${PLACEMENT_LABEL:-staging}
+          - node.labels.env == ${PLACEMENT_LABEL:-production}
     volumes:
       - vol-site-data:/data
     networks:

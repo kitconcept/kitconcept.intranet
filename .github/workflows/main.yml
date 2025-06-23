@@ -94,7 +94,7 @@ jobs:
       remote-private-key: ${{ secrets.DEPLOY_SSH }}
       env-file: |
           IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
-          IMAGE_TAG=${{ github.ref_name }}
+          IMAGE_TAG=${{ needs.config.outputs.base-tag }}
           STACK_NAME=${{ vars.STACK_NAME }}
           STACK_PREFIX=${{ vars.STACK_PREFIX }}
           HOSTNAME=${{ vars.HOSTNAME }}

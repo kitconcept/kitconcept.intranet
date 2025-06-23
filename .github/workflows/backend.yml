@@ -34,8 +34,6 @@ jobs:
   coverage:
     name: "Backend: Test"
     uses: plone/meta/.github/workflows/backend-pytest-coverage.yml@2.x
-    needs:
-      - test
     with:
       python-version: ${{ inputs.python-version }}
       plone-version: ${{ inputs.kc-version }}

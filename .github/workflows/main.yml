@@ -1,5 +1,4 @@
 name: "kitconcept.intranet: CI"
-description: "Main workflow for kitconcept.intranet"
 
 on:
   push:
@@ -21,9 +20,6 @@ jobs:
     needs:
         - config
     with:
-        base-tag: ${{ needs.config.outputs.base-tag }}
-        image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
-        image-name-suffix: backend
         python-version: ${{ needs.config.outputs.python-version }}
         kc-version: ${{ needs.config.outputs.kc-version }}
     if: ${{ needs.config.outputs.backend == 'true' }}
@@ -36,12 +32,41 @@ jobs:
     needs:
         - config
     with:
-        base-tag: ${{ needs.config.outputs.base-tag }}
-        image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
-        image-name-suffix: frontend
         node-version: ${{ needs.config.outputs.node-version }}
         volto-version: ${{ needs.config.outputs.volto-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
+    permissions:
+      contents: read
+      packages: write
+
+  backend-release:
+    uses: ./.github/workflows/backend-release.yml
+    needs:
+        - config
+        - backend
+    with:
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-name-suffix: "backend"
+      python-version: ${{ needs.config.outputs.python-version }}
+      kc-version: ${{ needs.config.outputs.kc-version }}
+    if: ${{ needs.config.outputs.deploy == 'true' && (always() && !contains(needs.*.result, 'failure')) }}
+    permissions:
+      contents: read
+      packages: write
+
+  frontend-release:
+    uses: ./.github/workflows/frontend-release.yml
+    needs:
+        - config
+        - frontend
+    with:
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-name-suffix: "frontend"
+      node-version: ${{ needs.config.outputs.node-version }}
+      volto-version: ${{ needs.config.outputs.volto-version }}
+    if: ${{ needs.config.outputs.deploy == 'true' && (always() && !contains(needs.*.result, 'failure')) }}
     permissions:
       contents: read
       packages: write
@@ -52,8 +77,8 @@ jobs:
     if: ${{ github.event_name != 'pull_request' && github.ref_name == 'main' }}
     needs:
       - config
-      - backend
-      - frontend
+      - backend-release
+      - frontend-release
     with:
       tag: ${{ needs.config.outputs.base-tag }}
       environment: "plone-intranet.kitconcept.dev"
@@ -69,7 +94,7 @@ jobs:
       remote-private-key: ${{ secrets.DEPLOY_SSH }}
       env-file: |
           IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
-          IMAGE_TAG=${{ github.ref_name }}
+          IMAGE_TAG=${{ needs.config.outputs.base-tag }}
           STACK_NAME=${{ vars.STACK_NAME }}
           STACK_PREFIX=${{ vars.STACK_PREFIX }}
           HOSTNAME=${{ vars.HOSTNAME }}

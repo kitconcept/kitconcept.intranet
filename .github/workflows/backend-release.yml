@@ -1,0 +1,68 @@
+name: Backend Image Release Workflow
+
+on:
+  workflow_call:
+    inputs:
+      base-tag:
+        required: true
+        type: string
+      image-name-prefix:
+        required: true
+        type: string
+      image-name-suffix:
+        required: true
+        type: string
+      python-version:
+        required: true
+        type: string
+      kc-version:
+        required: true
+        type: string
+      working-directory:
+        required: false
+        type: string
+        default: backend
+
+jobs:
+  release-backend:
+    name: "Backend: Build and publish Container Image"
+    uses: plone/meta/.github/workflows/container-image-build-push.yml@2.x
+    permissions:
+      contents: read
+      packages: write
+    with:
+      base-tag: ${{ inputs.base-tag }}
+      image-name-prefix: ${{ inputs.image-name-prefix }}
+      image-name-suffix: ${{ inputs.image-name-suffix }}
+      working-directory: ${{ inputs.working-directory }}
+      build-args: |
+        IMAGE_TAG=${{ inputs.base-tag }}
+        SEED=${{ github.run_id }}
+        KC_VERSION=${{ inputs.kc-version }}
+      push: true
+    secrets:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}
+
+  release-beispiele:
+    name: "Backend: Build and publish Demo Image"
+    uses: plone/meta/.github/workflows/container-image-build-push.yml@2.x
+    needs:
+      - release-backend
+    permissions:
+      contents: read
+      packages: write
+    with:
+      base-tag: ${{ inputs.base-tag }}
+      dockerfile: Dockerfile.beispiele
+      image-name-prefix: ${{ inputs.image-name-prefix }}
+      image-name-suffix: beispiele
+      working-directory: ${{ inputs.working-directory }}
+      build-args: |
+        IMAGE_TAG=${{ inputs.base-tag }}
+        SEED=${{ github.run_id }}
+        KC_VERSION=${{ inputs.kc-version }}
+      push: ${{ github.event_name != 'pull_request' }}
+    secrets:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}

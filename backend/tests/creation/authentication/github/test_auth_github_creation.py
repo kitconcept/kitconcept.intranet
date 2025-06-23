@@ -2,9 +2,6 @@ import pytest
 
 
 class TestSiteCreation:
-    @pytest.fixture(autouse=True)
-    def _setup(self, create_site, answers):
-        self.portal = create_site(answers)
 
     @pytest.mark.parametrize(
         "profile_id",
@@ -12,7 +9,7 @@ class TestSiteCreation:
             "profile-pas.plugins.authomatic:default",
         ],
     )
-    def test_profile_installed(self, profile_last_version, profile_id):
+    def test_profile_installed(self, site, profile_last_version, profile_id):
         result = profile_last_version(profile_id)
         assert isinstance(result, str)
         assert result != ""
@@ -32,6 +29,8 @@ class TestSiteCreation:
             ["github/access_headers/User-Agent", "Plone (kitconcept.intranet)"],
         ],
     )
-    def test_authomatic_settings(self, traverse, authomatic_config, path, expected):
-        config = authomatic_config()
+    def test_authomatic_settings(
+        self, site, traverse, authomatic_config, path, expected
+    ):
+        config = authomatic_config(site)
         assert traverse(config, path) == expected

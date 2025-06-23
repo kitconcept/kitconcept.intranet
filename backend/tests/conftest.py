@@ -13,10 +13,12 @@ import requests
 
 pytest_plugins = ["pytest_plone"]
 globals().update(
-    fixtures_factory((
-        (FUNCTIONAL_TESTING, "functional"),
-        (INTEGRATION_TESTING, "integration"),
-    ))
+    fixtures_factory(
+        (
+            (FUNCTIONAL_TESTING, "functional"),
+            (INTEGRATION_TESTING, "integration"),
+        )
+    )
 )
 
 
@@ -53,7 +55,7 @@ def portal_class(integration_class):
         integration_class.testTearDown()
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def traverse():
     def func(data: dict | list, path: str) -> Any:
         func = None

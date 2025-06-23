@@ -29,7 +29,7 @@ class TestDistribution:
     @pytest.mark.parametrize(
         "path,title,portal_type,review_state",
         [
-            ("/", "Intranet", "Plone Site", "published"),
+            ("/", "Intranet", "Plone Site", "private"),
         ],
     )
     def test_content_created(self, portal, path, title, portal_type, review_state):

@@ -1,8 +1,4 @@
 from plone import api
-from plone.app.testing.interfaces import SITE_OWNER_NAME
-from plone.distribution.api import site as site_api
-from Products.CMFPlone.Portal import PloneSite
-from zope.component.hooks import setSite
 
 import json
 import pytest
@@ -11,20 +7,20 @@ import pytest
 KEY = "pas.plugins.authomatic.interfaces.IPasPluginsAuthomaticSettings.json_config"
 
 
-@pytest.fixture
-def create_site(app, base_profile_id, distribution_name):
-    def func(answers: dict) -> PloneSite:
-        with api.env.adopt_user(SITE_OWNER_NAME):
-            site = site_api.create(app, distribution_name, answers, base_profile_id)
-            setSite(site)
-        return site
+@pytest.fixture(scope="session")
+def get_registry():
+    def func(site, key) -> dict:
+        from zope.component.hooks import setSite
+
+        setSite(site)
+        return api.portal.get_registry_record(key)
 
     return func
 
 
-@pytest.fixture
-def authomatic_config():
-    def func() -> dict:
-        return json.loads(api.portal.get_registry_record(KEY))
+@pytest.fixture(scope="session")
+def authomatic_config(get_registry):
+    def func(site) -> dict:
+        return json.loads(get_registry(site, KEY))
 
     return func

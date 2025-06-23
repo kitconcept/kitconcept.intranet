@@ -19,7 +19,6 @@ def answers():
 
 
 class TestSiteCreation:
-
     @pytest.mark.parametrize(
         "attr,expected",
         [

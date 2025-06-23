@@ -4,7 +4,6 @@ import pytest
 
 
 class TestContentTypeFTI:
-
     @pytest.fixture(autouse=True)
     def _setup(self, portal, get_fti):
         self.portal = portal

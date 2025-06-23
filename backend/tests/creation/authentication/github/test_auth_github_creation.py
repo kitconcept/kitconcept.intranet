@@ -2,7 +2,6 @@ import pytest
 
 
 class TestSiteCreation:
-
     @pytest.mark.parametrize(
         "profile_id",
         [

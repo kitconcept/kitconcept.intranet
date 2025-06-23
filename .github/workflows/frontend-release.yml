@@ -1,0 +1,49 @@
+name: Frontend Image Release Workflow
+
+on:
+  workflow_call:
+    inputs:
+      base-tag:
+        required: true
+        type: string
+      image-name-prefix:
+        required: true
+        type: string
+      image-name-suffix:
+        required: true
+        type: string
+        default: "frontend"
+      node-version:
+        required: true
+        type: string
+      volto-version:
+        required: true
+        type: string
+      working-directory:
+        required: false
+        type: string
+        default: "./frontend"
+
+defaults:
+  run:
+    working-directory: ./frontend
+
+jobs:
+
+  release:
+    name: "Frontend: Build and publish container image"
+    uses: plone/meta/.github/workflows/container-image-build-push.yml@2.x
+    permissions:
+      contents: read
+      packages: write
+    with:
+      base-tag: ${{ inputs.base-tag }}
+      image-name-prefix: ${{ inputs.image-name-prefix }}
+      image-name-suffix: ${{ inputs.image-name-suffix }}
+      working-directory: ${{ inputs.working-directory }}
+      build-args: |
+        VOLTO_VERSION=${{ inputs.volto-version }}
+      push: ${{ github.event_name != 'pull_request' }}
+    secrets:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}

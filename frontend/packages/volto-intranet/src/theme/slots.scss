@@ -1,0 +1,9 @@
+#page-document .blocks-group-wrapper > .documentByLine {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+  margin-bottom: 1rem;
+
+  .byAuthor {
+    text-decoration: none;
+  }
+}

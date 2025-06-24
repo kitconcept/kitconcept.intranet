@@ -43,6 +43,9 @@ on:
       frontend:
         description: "Flag reporting if we should run the frontend jobs"
         value: ${{ jobs.config.outputs.frontend }}
+      deploy:
+        description: "Flag reporting if we should deploy"
+        value: ${{ jobs.config.outputs.deploy }}
       base-tag:
         description: "Base tag to be used when creating container images"
         value: ${{ jobs.config.outputs.base-tag }}
@@ -86,6 +89,7 @@ jobs:
       devops: ${{ steps.filter.outputs.devops }}
       docs: ${{ steps.filter.outputs.docs }}
       frontend: ${{ steps.filter.outputs.frontend }}
+      deploy: ${{ steps.filter.outputs.deploy }}
       base-tag: ${{ steps.vars.outputs.BASE_TAG }}
       kc-version: ${{ steps.vars.outputs.kc-version }}
       volto-version: ${{ steps.vars.outputs.volto-version }}
@@ -126,6 +130,11 @@ jobs:
               - '.github/workflows/docs.yaml'
             frontend:
               - 'frontend/**'
+              - '.github/workflows/frontend*'
+            deploy:
+              - 'backend/**'
+              - 'frontend/**'
+              - '.github/workflows/backend*'
               - '.github/workflows/frontend*'
 
       - name: Test vars

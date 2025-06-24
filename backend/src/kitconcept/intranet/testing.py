@@ -20,7 +20,7 @@ DEFAULT_ANSWERS = {
     "default_language": "en",
     "portal_timezone": "Europe/Berlin",
     "workflow": "public",
-    "setup_content": True,
+    "setup_content": False,
     "authentication": {"provider": "internal"},
 }
 
@@ -28,7 +28,7 @@ DEFAULT_ANSWERS = {
 class BaseFixture(kitconceptDistributionFixture):
     PACKAGE_NAME = "kitconcept.intranet"
     sites = (("kitconcept-intranet", DEFAULT_ANSWERS),)
-    internal_packages: tuple[str] = (
+    internal_packages: tuple[str, ...] = (
         "plone.restapi",
         "plone.volto",
         "kitconcept.core",

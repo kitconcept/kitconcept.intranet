@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.fixture()
+@pytest.fixture(scope="class")
 def answers():
     return {
         "site_id": "intranet",
@@ -10,7 +10,7 @@ def answers():
         "workflow": "public",
         "default_language": "en",
         "portal_timezone": "Europe/Berlin",
-        "setup_content": True,
+        "setup_content": False,
         "authentication": {
             "provider": "authomatic-google",
             "authomatic-google-consumer_key": "google-12345",

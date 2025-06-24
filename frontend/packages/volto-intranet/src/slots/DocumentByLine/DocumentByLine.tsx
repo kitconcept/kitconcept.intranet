@@ -10,7 +10,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
     try {
       const response = await fetch(expandToBackendURL(`/@users/${username}`));
       const data: User = await response.json();
-      return data.home_page;
+      return data.home_page ?? '';
     } catch (error) {
       return '';
     }

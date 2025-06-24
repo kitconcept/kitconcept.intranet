@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Content, User } from '@plone/types';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { useEffect, useState } from 'react';
@@ -46,19 +47,17 @@ const DocumentByLine = ({ content }: { content: Content }) => {
         by{' '}
         {creatorsProfile.map(([name, url], index) =>
           url ? (
-            <>
-              <a className="byAuthor" key={name} href={url}>
+            <React.Fragment key={index}>
+              <a className="byAuthor" href={url}>
                 {name}
               </a>
               {index < creatorsProfile.length - 1 && ' '}
-            </>
+            </React.Fragment>
           ) : (
-            <>
-              <span className="byAuthor" key={name}>
-                {name}
-              </span>
+            <React.Fragment key={index}>
+              <span className="byAuthor">{name}</span>
               {index < creatorsProfile.length - 1 && ' '}
-            </>
+            </React.Fragment>
           ),
         )}
       </span>

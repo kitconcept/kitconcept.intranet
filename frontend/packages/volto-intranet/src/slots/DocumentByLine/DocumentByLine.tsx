@@ -51,12 +51,12 @@ const DocumentByLine = ({ content }: { content: Content }) => {
               <a className="byAuthor" href={url}>
                 {name}
               </a>
-              {index < creatorProfiles.length  && ' '}
+              {index < creatorProfiles.length && ' '}
             </React.Fragment>
           ) : (
             <React.Fragment key={index}>
               <span className="byAuthor">{name}</span>
-              {index < creatorProfiles.length  && ' '}
+              {index < creatorProfiles.length && ' '}
             </React.Fragment>
           ),
         )}

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-06-30 10:48+0000\n"
+"POT-Creation-Date: 2025-05-13 12:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,10 @@ msgstr ""
 msgid "External Search URL"
 msgstr ""
 
+#: kitconcept/intranet/behaviors/configure.zcml:20
+msgid "Fields with additional person information"
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
@@ -76,6 +80,10 @@ msgstr ""
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Pending review"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:20
+msgid "Person Behavior"
 msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:26
@@ -176,4 +184,19 @@ msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:22
 msgid "kitconcept.intranet: Restricted access"
+msgstr ""
+
+#. Default: "Additional Contact Information"
+#: kitconcept/intranet/behaviors/additional_contact_info.py:17
+msgid "label_additional_contact_info"
+msgstr ""
+
+#. Default: "Building"
+#: kitconcept/intranet/behaviors/additional_contact_info.py:27
+msgid "label_contact_building"
+msgstr ""
+
+#. Default: "Room"
+#: kitconcept/intranet/behaviors/additional_contact_info.py:32
+msgid "label_contact_room"
 msgstr ""

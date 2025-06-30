@@ -54,7 +54,6 @@ const DocumentByLine = ({ content }: { content: Content }) => {
     });
     return isNaN(date.getTime()) ? '' : formatted;
   };
-  console.log('DocumentByLine content', content);
 
   const formattedEffectiveDate = formatDate(content?.effective ?? '');
   const formattedModifiedDate = formatDate(content.modified);

@@ -2,10 +2,24 @@ import React from 'react';
 import type { Content, User } from '@plone/types';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { useEffect, useState } from 'react';
-
+import { defineMessages, useIntl } from 'react-intl';
+const messages = defineMessages({
+  author: {
+    id: 'author',
+    defaultMessage: 'By',
+  },
+  published: {
+    id: 'published',
+    defaultMessage: 'published',
+  },
+  modified: {
+    id: 'modified',
+    defaultMessage: 'last modified',
+  },
+});
 const DocumentByLine = ({ content }: { content: Content }) => {
   const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
-
+  const intl = useIntl();
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {
       const response = await fetch(expandToBackendURL(`/@users/${username}`));
@@ -18,12 +32,14 @@ const DocumentByLine = ({ content }: { content: Content }) => {
 
   useEffect(() => {
     const fetchCreatorProfiles = async () => {
-      const result = await Promise.all(
-        content.creators.map(async (user) => {
-          const abt = await getCreatorHomePage(user);
-          return [user, abt || ''];
-        }),
-      );
+      const result = content.creators
+        ? await Promise.all(
+            content.creators.map(async (user) => {
+              const abt = await getCreatorHomePage(user);
+              return [user, abt || ''];
+            }),
+          )
+        : [['']];
       setCreatorProfiles(result);
     };
     fetchCreatorProfiles();
@@ -31,12 +47,14 @@ const DocumentByLine = ({ content }: { content: Content }) => {
 
   const formatDate = (ISOstring: string): String => {
     const date: Date = new Date(ISOstring);
-    return date.toLocaleDateString('en-US', {
+    const formatted = date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
     });
+    return isNaN(date.getTime()) ? '' : formatted;
   };
+  console.log('DocumentByLine content', content);
 
   const formattedEffectiveDate = formatDate(content?.effective ?? '');
   const formattedModifiedDate = formatDate(content.modified);
@@ -44,7 +62,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
   return (
     <div className="documentByLine">
       <span>
-        by{' '}
+        {intl.formatMessage(messages.author)}{' '}
         {creatorProfiles.map(([name, url], index) =>
           url ? (
             <React.Fragment key={index}>
@@ -63,13 +81,17 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       </span>
       <span className="documentPublished">
         {content.review_state === 'published' ? (
-          <span> — published {formattedEffectiveDate} </span>
+          <span>
+            {' '}
+            — {intl.formatMessage(messages.published)} {formattedEffectiveDate}{' '}
+          </span>
         ) : (
           ''
         )}
       </span>
       <span className="documentModified">
-        , last modified {formattedModifiedDate}
+        , {intl.formatMessage(messages.modified)}
+        {formattedModifiedDate}
       </span>
     </div>
   );

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-06-24T18:49:09.950Z\n"
+"POT-Creation-Date: 2025-06-30T10:48:57.701Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,4 +13,17 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "By"
+#: slots/DocumentByLine/DocumentByLine
+msgid "author"
+msgstr ""
 
+#. Default: "last modified"
+#: slots/DocumentByLine/DocumentByLine
+msgid "modified"
+msgstr ""
+
+#. Default: "published"
+#: slots/DocumentByLine/DocumentByLine
+msgid "published"
+msgstr ""

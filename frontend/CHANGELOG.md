@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.5 (2025-06-30)
+
+### Bugfix
+
+- Fixed default `selectedItemAttrs` for Teaser to include Person specific attributes. Update to kitconcept.core 1.0.0a11. @sneridagh 
+- Several bugfixes. Update to Volto 18.23.0 and kitconcept.core 1.0.0a9. @sneridagh 
+- Several bugfixes. Update to kitconcept.core 1.0.0a10. @sneridagh 
+
 ## 1.0.0-beta.4 (2025-06-10)
 
 ### Internal

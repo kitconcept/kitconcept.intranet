@@ -2,6 +2,26 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b5 (2025-06-30)
+
+
+### Bugfix
+
+- Fixed `remove-data` command. @sneridagh 
+- Several bugfixes. Update to Volto 18.23.0 and kitconcept.core 1.0.0a9. @sneridagh 
+- Update to kitconcept.core 1.0.0a10. @sneridagh 
+- Update to kitconcept.core 1.0.0a11. @sneridagh 
+
+
+### Internal
+
+- Add example content of people, event and news item content type @iRohitSingh 
+
+
+### Test
+
+- Speedup test run. @ericof 
+
 ## 1.0.0b4 (2025-06-10)
 
 

@@ -2,7 +2,7 @@
 name = "kitconcept.intranet"
 changelog = "CHANGELOG.md"
 version = "version.txt"
-compose = "docker-compose.yml"
+compose = ["docker-compose.yml", "docker-compose-solr.yml"]
 
 [repository.towncrier]
 section = "Project"

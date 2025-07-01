@@ -138,7 +138,10 @@ build-images:  ## Build docker images
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
 	VOLTO_VERSION=$(VOLTO_VERSION) KC_VERSION=$(KC_VERSION) docker compose -f $(STACK_FILE) up -d --build
-	@echo "Now visit: http://kitconcept-intranet.localhost"
+	@echo "Now visit: http://$(STACK_HOSTNAME)/ to access the site"
+	@echo "- http://$(STACK_HOSTNAME)/ to access the default site"
+	@echo "- http://admin-$(STACK_HOSTNAME)/ to create a new site"
+	@echo "- http://traefik.$(STACK_HOSTNAME)/ to access the Traefik dashboard"
 
 .PHONY: start-stack
 stack-create-site:  ## Local Stack: Create a new site

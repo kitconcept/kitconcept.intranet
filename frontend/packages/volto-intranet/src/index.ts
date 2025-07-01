@@ -1,4 +1,5 @@
-import type { ConfigType } from '@plone/registry';
+import './theme/custom.scss';
+import { ConfigType } from '@plone/registry';
 import installSettings from './config/settings';
 import installSlots from './config/slots';
 import installWidgets from './config/widgets';
@@ -23,6 +24,9 @@ const applyConfig = (config: ConfigType) => {
   installSlots(config);
   installWidgets(config);
   installBlocks(config);
+  (
+    config.settings.solrSearchOptions as { showSearchInput?: boolean }
+  ).showSearchInput = false;
   return config;
 };
 

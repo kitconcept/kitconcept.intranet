@@ -20,6 +20,13 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/restricted"
       />
+  <genericsetup:registerProfile
+      name="solr"
+      title="kitconcept.intranet: Solr Support"
+      description="Setup the intranet to use Solr."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/solr"
+      />
 
   <include package=".upgrades" />
 

@@ -1553,6 +1553,9 @@ importers:
       '@kitconcept/core':
         specifier: 1.0.0-alpha.11
         version: 1.0.0-alpha.11(@eeacms/volto-accordion-block@10.4.6)(@kitconcept/volto-banner-block@1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-bm3-compat@1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-button-block@3.0.3(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0))(@kitconcept/volto-carousel-block@2.0.0-alpha.1(classnames@2.5.1)(embla-carousel@8.5.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-dsgvo-banner@2.3.2)(@kitconcept/volto-heading-block@2.4.0(react@18.2.0))(@kitconcept/volto-highlight-block@4.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@kitconcept/volto-introduction-block@1.0.0)(@kitconcept/volto-logos-block@3.0.0-alpha.0(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5)))(@kitconcept/volto-separator-block@4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5)))(@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.23.0(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.5.2)(react@18.2.0))(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plonegovbr/volto-social-media@2.0.0-alpha.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5)))(classnames@2.5.1)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(storybook@8.5.3(prettier@3.2.5))
+      '@kitconcept/volto-solr':
+        specifier: 1.0.0-alpha.5
+        version: 1.0.0-alpha.5(@plone/volto@18.23.0(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -3396,6 +3399,11 @@ packages:
     resolution: {integrity: sha512-bkn1M1Lcl8P067dAUeYeWsLw5P4ZpjbKg+7Tt3/rjx7oVg4VQX/QsRfOKojQPGeFL3ifmzk9mJoW4rCF4QGFdw==}
     peerDependencies:
       '@plone/volto': ^17.0.0-alpha.21 || ^18.0.0-alpha.0
+
+  '@kitconcept/volto-solr@1.0.0-alpha.5':
+    resolution: {integrity: sha512-LQNDGnzc/WTnMTdbwwvTuisDqozZfyQBQ5ChsVaqjS+GGr8NiBTHCnzQmCuxQxMcw/RydbR7O2hNNaYmGTyQiA==}
+    peerDependencies:
+      '@plone/volto': ^16.20.0 || ^17.0.0-alpha.4
 
   '@kwsites/file-exists@1.1.1':
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
@@ -19095,6 +19103,10 @@ snapshots:
     transitivePeerDependencies:
       - embla-carousel
       - react
+
+  '@kitconcept/volto-solr@1.0.0-alpha.5(@plone/volto@18.23.0(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
+    dependencies:
+      '@plone/volto': 18.23.0(@babel/runtime@7.24.7)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
 
   '@kwsites/file-exists@1.1.1':
     dependencies:

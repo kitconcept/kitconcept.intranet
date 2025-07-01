@@ -40,10 +40,12 @@
     "release-it": "^17.7.0"
   },
   "addons": [
-    "@kitconcept/core"
+    "@kitconcept/core",
+    "@kitconcept/volto-solr"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/core": "1.0.0-alpha.11"
+    "@kitconcept/core": "1.0.0-alpha.11",
+    "@kitconcept/volto-solr": "1.0.0-alpha.5"
   }
 }

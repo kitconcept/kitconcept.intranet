@@ -1,8 +1,7 @@
 ---
-name: kitconcept-intranet
+name: kitconcept-intranet-solr
 
 services:
-
   traefik:
     image: traefik:v2.11
 
@@ -34,12 +33,8 @@ services:
       - --api
 
   frontend:
-    build:
-      context: ./frontend
-      args:
-        - VOLTO_VERSION=${VOLTO_VERSION}
-      platforms:
-        - linux/amd64
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${RELEASE:-1.0.0b5}
+    platform: linux/amd64
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     depends_on:
@@ -57,20 +52,15 @@ services:
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    build:
-      context: ./backend
-      args:
-        - KC_VERSION=${KC_VERSION}
-      platforms:
-        - linux/amd64
+    image: ghcr.io/kitconcept/kitconcept-intranet-backend:${RELEASE:-1.0.0b5}
+    platform: linux/amd64
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_NAME:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-OwAaOExRfIvY}' port='${DB_PORT:-5432}'"
+      ZOPE_FORM_MEMORY_LIMIT: 250MB
+      HONEYPOT_FIELD: your_email
       SOLR_HOST: solr
       SOLR_PORT: 8983
       SOLR_BASE: /solr/plone
-    depends_on:
-      - db
-      - solr
     labels:
       - traefik.enable=true
       - traefik.constraint-label=public
@@ -102,11 +92,11 @@ services:
       - traefik.http.routers.rt-backend-classic.entrypoints=http
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
-      ## Intranet Admin
-      - traefik.http.routers.rt-backend-zmi.rule=Host(`admin-${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
-      - traefik.http.routers.rt-backend-zmi.entrypoints=http
-      - traefik.http.routers.rt-backend-zmi.service=svc-backend
-      - traefik.http.routers.rt-backend-zmi.middlewares=gzip
+      ## admin
+      - traefik.http.routers.rt-backend-admin.rule=Host(`admin.${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
+      - traefik.http.routers.rt-backend-admin.entrypoints=http
+      - traefik.http.routers.rt-backend-admin.service=svc-backend
+      - traefik.http.routers.rt-backend-admin.middlewares=gzip,mw-backend-auth
 
   db:
     image: postgres:14

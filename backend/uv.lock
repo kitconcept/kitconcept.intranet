@@ -787,6 +787,40 @@ wheels = [
 ]
 
 [[package]]
+name = "collective-solr"
+version = "9.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "acquisition" },
+    { name = "datetime" },
+    { name = "lxml" },
+    { name = "plone-api" },
+    { name = "plone-app-content" },
+    { name = "plone-app-layout" },
+    { name = "plone-app-registry" },
+    { name = "plone-app-vocabularies" },
+    { name = "plone-browserlayer" },
+    { name = "plone-indexer" },
+    { name = "plone-restapi" },
+    { name = "products-cmfcore" },
+    { name = "products-cmfplone" },
+    { name = "products-genericsetup" },
+    { name = "products-zcatalog" },
+    { name = "requests-toolbelt" },
+    { name = "setuptools" },
+    { name = "transaction" },
+    { name = "zope-component" },
+    { name = "zope-i18nmessageid" },
+    { name = "zope-interface" },
+    { name = "zope-publisher" },
+    { name = "zope-schema" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ac/0f/f3ae94b0159c7c654065bafaaaef8a49c9f12b9ddb9d737a41b1bd785a45/collective_solr-9.4.0.tar.gz", hash = "sha256:b598f0dd58a83ac61bd5a180b48e02d3d0d5ad320f72ea92dadc5e26fafd19a2", size = 360856 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/11/74/6da27cbd95a0a37e10cc6059f3dd1ca27b16a02acb4fb5711be0dd022d3e/collective.solr-9.4.0-py3-none-any.whl", hash = "sha256:26edf7df61fc16cdef029bad9aeb138b645ea7cd2bf3d85d1c1c1ea2e34f116a", size = 368629 },
+]
+
+[[package]]
 name = "collective-volto-formsupport"
 version = "3.2.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1307,6 +1341,7 @@ name = "kitconcept-intranet"
 source = { editable = "." }
 dependencies = [
     { name = "kitconcept-core" },
+    { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
     { name = "pas-plugins-keycloakgroups" },
     { name = "pas-plugins-oidc" },
@@ -1342,6 +1377,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "kitconcept-core", specifier = "==1.0.0a11" },
+    { name = "kitconcept-solr", specifier = "==1.0.0a5" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1372,6 +1408,22 @@ test = [
     { name = "pytest-cov" },
     { name = "pytest-docker", specifier = ">=3.2.0" },
     { name = "pytest-plone", specifier = ">=1.0.0a1" },
+]
+
+[[package]]
+name = "kitconcept-solr"
+version = "1.0.0a5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "collective-solr" },
+    { name = "plone" },
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "setuptools" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d9/de/c2c45e52ca6d60237b01e99f47f2cebc953058ebb30a3cf0e6df929d2bc2/kitconcept.solr-1.0.0a5.tar.gz", hash = "sha256:6ec0a3491501001930631a14aeb23f53d850a8295a82e01078ca53e641f9da53", size = 84144 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b2/48/5e62c48eac90b7f7b39e0f058d6c4420c3dcb51f1dce397a23c713e6ae55/kitconcept.solr-1.0.0a5-py3-none-any.whl", hash = "sha256:77d6639178a459ce5602550c3464aba2ef3c12edf6b5641f4d11c445a22646a5", size = 34001 },
 ]
 
 [[package]]

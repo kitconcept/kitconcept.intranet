@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.9
-ARG KC_VERSION
+ARG KC_VERSION=undefined
 FROM ghcr.io/kitconcept/core-builder:${KC_VERSION:-latest} AS builder
 
 # Move skeleton folder

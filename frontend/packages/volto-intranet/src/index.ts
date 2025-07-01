@@ -3,6 +3,10 @@ import { ConfigType } from '@plone/registry';
 import installSettings from './config/settings';
 import installSlots from './config/slots';
 
+type State = {
+  site: { data: { 'collective.solr.active': boolean } };
+};
+
 declare module '@plone/types' {
   export interface GetSiteResponse {
     'kitconcept.intranet.custom_css': string;
@@ -12,9 +16,16 @@ declare module '@plone/types' {
 const applyConfig = (config: ConfigType) => {
   installSettings(config);
   installSlots(config);
-  (
-    config.settings.solrSearchOptions as { showSearchInput?: boolean }
-  ).showSearchInput = false;
+  const solrSearchOptions = config.settings.solrSearchOptions as {
+    showSearchInput?: boolean;
+    isBackendAvailable?: (state: any) => boolean;
+  };
+  config.settings.solrSearchOptions = {
+    ...solrSearchOptions,
+    showSearchInput: false,
+    isBackendAvailable: (state: State) =>
+      !!state.site?.data?.['collective.solr.active'],
+  };
   return config;
 };
 

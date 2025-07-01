@@ -14,5 +14,13 @@
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
     "branch": "main"
+  },
+  "volto-solr": {
+    "develop": true,
+    "output": "./packages",
+    "package": "@kitconcept/volto-solr",
+    "url": "git@github.com:kitconcept/volto-solr.git",
+    "https": "https://github.com/kitconcept/volto-solr.git",
+    "branch": "conditional-backend"
   }
 }

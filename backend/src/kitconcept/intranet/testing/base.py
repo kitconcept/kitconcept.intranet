@@ -80,6 +80,7 @@ class Layer(PloneSandboxLayer):
 
 FIXTURE = Layer()
 
+
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
     name="Kitconcept.IntranetLayer:IntegrationTesting",

@@ -34,3 +34,11 @@ jobs:
     with:
       node-version: ${{ inputs.node-version }}
       working-directory: ${{ inputs.working-directory }}
+
+  acceptance:
+    name: "Frontend: Acceptance tests"
+    uses: plone/meta/.github/workflows/frontend-acceptance.yml@2.x
+    with:
+      node-version: ${{ inputs.node-version }}
+      volto-version: ${{ inputs.volto-version }}
+      working-directory: ${{ inputs.working-directory }}

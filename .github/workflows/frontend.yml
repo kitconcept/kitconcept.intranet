@@ -34,3 +34,10 @@ jobs:
     with:
       node-version: ${{ inputs.node-version }}
       working-directory: ${{ inputs.working-directory }}
+
+  acceptance:
+    name: "Frontend: Acceptance tests"
+    uses: ./.github/workflows/frontend-acceptance.yml
+    with:
+      node-version: ${{ inputs.node-version }}
+      working-directory: "./frontend"

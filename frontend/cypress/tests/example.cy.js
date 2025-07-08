@@ -17,6 +17,7 @@ context('Example Acceptance Tests', () => {
       cy.visit('/document');
       cy.navigate('/document/edit');
       cy.wait('@schema');
+      cy.wait(100);
       cy.get('#toolbar-save').click();
     });
   });

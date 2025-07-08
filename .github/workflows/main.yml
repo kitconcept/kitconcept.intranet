@@ -34,7 +34,6 @@ jobs:
     with:
         node-version: ${{ needs.config.outputs.node-version }}
         volto-version: ${{ needs.config.outputs.volto-version }}
-    if: ${{ needs.config.outputs.frontend == 'true' }}
     permissions:
       contents: read
       packages: write

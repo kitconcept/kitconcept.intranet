@@ -33,7 +33,7 @@ jobs:
         - config
     with:
         node-version: ${{ needs.config.outputs.node-version }}
-        volto-version: ${{ needs.config.outputs.volto-version }}
+        volto-version: "18.23.0"
     permissions:
       contents: read
       packages: write

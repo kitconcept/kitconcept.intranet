@@ -51,6 +51,7 @@ jobs:
           run: |
             make ci-acceptance-backend-start &
             make acceptance-frontend-prod-start &
+            wait
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step

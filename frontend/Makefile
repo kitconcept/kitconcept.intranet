@@ -140,6 +140,24 @@ acceptance-test: ## Start Cypress in interactive mode
 ci-acceptance-test: ## Run cypress tests in headless mode for CI
 	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx}'
 
+## A11y tests
+.PHONY: acceptance-a11y-frontend-dev-start
+acceptance-a11y-frontend-dev-start: ## Start a11y acceptance frontend in prod mode
+	pnpm start
+
+.PHONY: acceptance-a11y-frontend-prod-start
+acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
+	pnpm build && pnpm start:prod
+
+.PHONY: acceptance-a11y-test
+acceptance-a11y-test: ## Start a11y Cypress in interactive mode
+	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: ci-acceptance-a11y-test
+ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
+	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern='$(SPEC)'
+
+## Image Build
 .PHONY: build-image
 build-image:  ## Build Docker Image
 	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)

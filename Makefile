@@ -178,6 +178,19 @@ acceptance-test: ## Start Acceptance tests in interactive mode
 	@echo "Build acceptance backend"
 	$(MAKE) -C "./frontend/" acceptance-test
 
+# a11y tests
+.PHONY: acceptance-a11y-frontend-prod-start
+acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
+	$(MAKE) -C "./frontend/" acceptance-a11y-frontend-prod-start
+
+.PHONY: acceptance-a11y-test
+acceptance-a11y-test: ## Start a11y Cypress in interactive mode
+	$(MAKE) -C "./frontend/" acceptance-a11y-test
+
+.PHONY: ci-acceptance-a11y-test
+ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
+	$(MAKE) -C "./frontend/" ci-acceptance-a11y-test
+
 # Build Docker images
 .PHONY: acceptance-frontend-image-build
 acceptance-frontend-image-build: ## Build Acceptance frontend server image

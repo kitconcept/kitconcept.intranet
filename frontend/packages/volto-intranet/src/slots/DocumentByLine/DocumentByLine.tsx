@@ -1,25 +1,104 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import type { Content, User } from '@plone/types';
-import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
+import {
+  expandToBackendURL,
+  flattenToAppURL,
+} from '@plone/volto/helpers/Url/Url';
 import { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
+import { useSelector } from 'react-redux';
+
 const messages = defineMessages({
   author: {
     id: 'author',
-    defaultMessage: 'By',
+    defaultMessage: 'By ',
   },
   published: {
     id: 'published',
-    defaultMessage: 'published',
+    defaultMessage: ' published ',
   },
   modified: {
     id: 'modified',
-    defaultMessage: 'last modified',
+    defaultMessage: ' last modified ',
   },
 });
+
+type FormState = {
+  users: { user: User };
+};
+
 const DocumentByLine = ({ content }: { content: Content }) => {
   const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
+  const [creator, setCreator] = useState('');
+
+  const [updatedCreatorsList, setUpdatedCreatorsList] = useState<string[]>(
+    content.creators || [],
+  );
+
   const intl = useIntl();
+  const locked = content.lock.locked;
+
+  const creator_name = useSelector((state: FormState) => state.users.user.id);
+
+  useEffect(() => {
+    if (creator_name) setCreator(creator_name);
+  }, [creator_name]);
+
+  //The list is updated only when there is creator
+  // whose name is not on the list
+  useEffect(() => {
+    if (
+      updatedCreatorsList &&
+      !updatedCreatorsList?.includes(creator) &&
+      creator != ''
+    ) {
+      setUpdatedCreatorsList((prevCreators) => [...prevCreators, creator]);
+    }
+  }, [creator]);
+
+  useEffect(() => {
+    const fetchCreatorsProfiles = async () => {
+      const result = content.creators
+        ? await Promise.all(
+            content.creators.map(async (user) => {
+              const user_url = await getCreatorHomePage(user);
+              return [user, user_url || ''];
+            }),
+          )
+        : [['']];
+      setCreatorProfiles(result);
+    };
+    fetchCreatorsProfiles();
+  }, [content.creators]);
+
+  useEffect(() => {
+    if (locked === false) {
+      const updateCreators: any = async (updatedCreators: string[]) => {
+        try {
+          await fetch(
+            expandToBackendURL(flattenToAppURL(`${content['@id']}`)),
+            {
+              method: 'PATCH',
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+              },
+              body: JSON.stringify({
+                creators: updatedCreators,
+              }),
+            },
+          );
+        } catch (error) {
+          return error;
+        }
+      };
+
+      updateCreators(updatedCreatorsList).then(() =>
+        setUpdatedCreatorsList(content.creators),
+      );
+    }
+  }, [locked, updatedCreatorsList, content.creators]);
+
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {
       const response = await fetch(expandToBackendURL(`/@users/${username}`));
@@ -30,69 +109,76 @@ const DocumentByLine = ({ content }: { content: Content }) => {
     }
   };
 
-  useEffect(() => {
-    const fetchCreatorProfiles = async () => {
-      const result = content.creators
-        ? await Promise.all(
-            content.creators.map(async (user) => {
-              const abt = await getCreatorHomePage(user);
-              return [user, abt || ''];
-            }),
-          )
-        : [['']];
-      setCreatorProfiles(result);
+  //Get the dates formatted
+  const formattedDates = useMemo(() => {
+    const formatDate = (isoString: string): string => {
+      if (!isoString) return '';
+      const date = new Date(isoString);
+      return isNaN(date.getTime())
+        ? ''
+        : date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
     };
-    fetchCreatorProfiles();
-  }, [content.creators]);
 
-  const formatDate = (ISOstring: string): String => {
-    const date: Date = new Date(ISOstring);
-    const formatted = date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-    return isNaN(date.getTime()) ? '' : formatted;
-  };
-
-  const formattedEffectiveDate = formatDate(content?.effective ?? '');
-  const formattedModifiedDate = formatDate(content.modified);
+    return {
+      effective: formatDate(content?.effective ?? ''),
+      modified: formatDate(content.modified),
+    };
+  }, [content?.effective, content?.modified]);
 
   return (
-    <div className="documentByLine">
-      <span>
-        {intl.formatMessage(messages.author)}{' '}
-        {creatorProfiles.map(([name, url], index) =>
-          url ? (
-            <React.Fragment key={index}>
-              <a className="byAuthor" href={url}>
-                {name}
-              </a>
-              {index < creatorProfiles.length && ' '}
-            </React.Fragment>
-          ) : (
-            <React.Fragment key={index}>
-              <span className="byAuthor">{name}</span>
-              {index < creatorProfiles.length && ' '}
-            </React.Fragment>
-          ),
-        )}
-      </span>
-      <span className="documentPublished">
-        {content.review_state === 'published' ? (
+    <>
+      {updatedCreatorsList?.length > 0 && (
+        <div className="documentByLine">
           <span>
-            {' '}
-            — {intl.formatMessage(messages.published)} {formattedEffectiveDate}{' '}
+            {intl.formatMessage(messages.author)}
+            {locked
+              ? updatedCreatorsList.map((name, index) => (
+                  <React.Fragment key={index}>
+                    <span className="byAuthor">{name}</span>
+                    {index < creatorProfiles.length && ' '}
+                  </React.Fragment>
+                ))
+              : creatorProfiles.map(([name, url], index) =>
+                  url ? (
+                    <React.Fragment key={index}>
+                      <a className="byAuthor" href={url}>
+                        {name}
+                      </a>
+                      {index < creatorProfiles.length && ' '}
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment key={index}>
+                      <span className="byAuthor">{name}</span>
+                      {index < creatorProfiles.length && ' '}
+                    </React.Fragment>
+                  ),
+                )}
           </span>
-        ) : (
-          ''
-        )}
-      </span>
-      <span className="documentModified">
-        , {intl.formatMessage(messages.modified)}
-        {formattedModifiedDate}
-      </span>
-    </div>
+          {formattedDates.effective && (
+            <span className="documentPublished">
+              {content.review_state === 'published' ? (
+                <span>
+                  — {intl.formatMessage(messages.published)}
+                  {formattedDates.effective}
+                </span>
+              ) : (
+                ''
+              )}
+            </span>
+          )}
+          {formattedDates.modified && (
+            <span className="documentModified">
+              , {intl.formatMessage(messages.modified)}
+              {formattedDates.modified}
+            </span>
+          )}
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,9 +1,17 @@
-#page-document .blocks-group-wrapper > .documentByLine,
-#page-edit .q.container .documentByLine {
+#page-document .blocks-group-wrapper > .documentByLine {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
   margin-bottom: 1rem;
+  .byAuthor {
+    text-decoration: none;
+  }
+}
 
+#page-edit .q.container .documentByLine,
+#page-add .q.container .documentByLine {
+  @include default-container-width();
+  @include adjustMarginsToEditContainer($default-container-width);
+  margin-bottom: 1rem;
   .byAuthor {
     text-decoration: none;
   }

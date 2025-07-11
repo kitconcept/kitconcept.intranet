@@ -101,7 +101,6 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       setCreatorProfiles([]);
       return;
     }
-
     const result = await Promise.all(
       creatorsArray.map(async (user) => {
         const user_url = await getCreatorHomePage(user);
@@ -111,6 +110,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
 
     setCreatorProfiles(result);
   };
+
   //Get the dates formatted
   const formattedDates = useMemo(() => {
     const formatDate = (isoString: string): string => {

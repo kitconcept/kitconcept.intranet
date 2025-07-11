@@ -131,3 +131,8 @@ test: clean vale linkcheckbroken doctest  ## Clean docs build, then run vale, li
 .PHONY: all
 all: clean vale linkcheckbroken html  ## Clean docs build, then run linkcheckbroken, and build html
 # /test
+
+.PHONY: rtd-build
+rtd-build: ## Build Volto Light Theme docs on RTD
+	@uv sync
+	@uv run sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/

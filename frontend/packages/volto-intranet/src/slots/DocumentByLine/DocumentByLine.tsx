@@ -47,12 +47,12 @@ const DocumentByLine = ({ content }: { content: Content }) => {
   useEffect(() => {
     if (
       updatedCreatorsList &&
-      creator != '' &&
+      creator !== '' &&
       !updatedCreatorsList?.includes(creator)
     ) {
-      console.log('updatedCreatorsList');
       setUpdatedCreatorsList((prevCreators) => [...prevCreators, creator]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [creator]);
 
   useEffect(() => {
@@ -76,7 +76,6 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       JSON.stringify(updatedCreatorsList);
 
     if (locked === false && hasDifference) {
-      console.log('PATCH');
       const updateCreators = async (updatedCreators: string[]) => {
         try {
           await fetch(
@@ -93,15 +92,16 @@ const DocumentByLine = ({ content }: { content: Content }) => {
             },
           );
         } catch (error) {
-          console.error('error', error);
+          return error;
         }
       };
 
       updateCreators(updatedCreatorsList).then(() =>
-        setUpdatedCreatorsList(content.creators),
+        setUpdatedCreatorsList(content.creators || []),
       );
     }
-  }, [locked, updatedCreatorsList, content.creators]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [locked, updatedCreatorsList]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {

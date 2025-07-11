@@ -22,5 +22,5 @@ build:
       # - make -C "./frontend/" install
     build:
       html:
-        - make -C "./docs/" rtd-build
+        - make -C "./docs/" html
         # - (cd frontend && pnpm run storybook-build -o $READTHEDOCS_OUTPUT/html/storybook)

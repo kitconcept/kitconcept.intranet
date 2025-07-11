@@ -1,8 +1,10 @@
 [project]
-name = "Project_Title_Documentation"
-description = "A new project using Plone 6."
+name = "kitconcept-intranet-docs"
+description = "The kitconcept Intranet distribution documentation."
 keywords = [
-    "Project Title",
+    "kitconcept",
+    "intranet",
+    "distribution",
     "documentation",
     "Plone",
     "Diátaxis",
@@ -12,10 +14,10 @@ readme = "README.md"
 requires-python = ">=3.10,<3.14"
 license = { file = "LICENSE" }
 maintainers = [
-    { name = "Plone Foundation", email = "collective@plone.org" },
+    { name = "kitconcept", email = "info@kitconcept.com" },
 ]
 authors = [
-    { name = "Plone Foundation", email = "collective@plone.org" },
+    { name = "kitconcept", email = "info@kitconcept.com" },
 ]
 classifiers = [
     "Development Status :: 1 - Planning",

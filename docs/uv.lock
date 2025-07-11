@@ -238,6 +238,62 @@ wheels = [
 ]
 
 [[package]]
+name = "kitconcept-intranet-docs"
+version = "1.0.0"
+source = { editable = "." }
+
+[package.dev-dependencies]
+dev = [
+    { name = "graphviz" },
+    { name = "linkify-it-py" },
+    { name = "myst-parser" },
+    { name = "plone-sphinx-theme" },
+    { name = "setuptools" },
+    { name = "sphinx-autobuild" },
+    { name = "sphinx-copybutton" },
+    { name = "sphinx-design" },
+    { name = "sphinx-examples" },
+    { name = "sphinx-notfound-page" },
+    { name = "sphinx-reredirects", version = "0.1.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "sphinx-reredirects", version = "1.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "sphinx-sitemap" },
+    { name = "sphinx-tippy" },
+    { name = "sphinxcontrib-httpdomain" },
+    { name = "sphinxcontrib-httpexample" },
+    { name = "sphinxcontrib-mermaid" },
+    { name = "sphinxcontrib-video" },
+    { name = "sphinxcontrib-youtube" },
+    { name = "sphinxext-opengraph" },
+    { name = "vale" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "graphviz" },
+    { name = "linkify-it-py" },
+    { name = "myst-parser" },
+    { name = "plone-sphinx-theme", specifier = ">=1.4.1" },
+    { name = "setuptools" },
+    { name = "sphinx-autobuild" },
+    { name = "sphinx-copybutton" },
+    { name = "sphinx-design" },
+    { name = "sphinx-examples" },
+    { name = "sphinx-notfound-page" },
+    { name = "sphinx-reredirects" },
+    { name = "sphinx-sitemap" },
+    { name = "sphinx-tippy" },
+    { name = "sphinxcontrib-httpdomain" },
+    { name = "sphinxcontrib-httpexample" },
+    { name = "sphinxcontrib-mermaid" },
+    { name = "sphinxcontrib-video" },
+    { name = "sphinxcontrib-youtube" },
+    { name = "sphinxext-opengraph" },
+    { name = "vale" },
+]
+
+[[package]]
 name = "linkify-it-py"
 version = "2.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -378,62 +434,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/fa/25/074699c4d63978fcce115093e2f0bcd6e9c68ca79f9781cc8d82c8965943/plone_sphinx_theme-1.4.3.tar.gz", hash = "sha256:c563ae411f45ee10ca741b819f4c751f8713848c8c656c106a8a03258964ad6c", size = 142378 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/51/3e/52aec1224a31a702de3cdd50c2339241494efcb48b0230784368ca6e7dd9/plone_sphinx_theme-1.4.3-py3-none-any.whl", hash = "sha256:4c4a2d52ef395da30b84b09c23e6d3c20dbc7baa543d0743693052df37c4dc74", size = 54165 },
-]
-
-[[package]]
-name = "project-title-documentation"
-version = "1.0.0"
-source = { editable = "." }
-
-[package.dev-dependencies]
-dev = [
-    { name = "graphviz" },
-    { name = "linkify-it-py" },
-    { name = "myst-parser" },
-    { name = "plone-sphinx-theme" },
-    { name = "setuptools" },
-    { name = "sphinx-autobuild" },
-    { name = "sphinx-copybutton" },
-    { name = "sphinx-design" },
-    { name = "sphinx-examples" },
-    { name = "sphinx-notfound-page" },
-    { name = "sphinx-reredirects", version = "0.1.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "sphinx-reredirects", version = "1.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "sphinx-sitemap" },
-    { name = "sphinx-tippy" },
-    { name = "sphinxcontrib-httpdomain" },
-    { name = "sphinxcontrib-httpexample" },
-    { name = "sphinxcontrib-mermaid" },
-    { name = "sphinxcontrib-video" },
-    { name = "sphinxcontrib-youtube" },
-    { name = "sphinxext-opengraph" },
-    { name = "vale" },
-]
-
-[package.metadata]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "graphviz" },
-    { name = "linkify-it-py" },
-    { name = "myst-parser" },
-    { name = "plone-sphinx-theme", specifier = ">=1.4.1" },
-    { name = "setuptools" },
-    { name = "sphinx-autobuild" },
-    { name = "sphinx-copybutton" },
-    { name = "sphinx-design" },
-    { name = "sphinx-examples" },
-    { name = "sphinx-notfound-page" },
-    { name = "sphinx-reredirects" },
-    { name = "sphinx-sitemap" },
-    { name = "sphinx-tippy" },
-    { name = "sphinxcontrib-httpdomain" },
-    { name = "sphinxcontrib-httpexample" },
-    { name = "sphinxcontrib-mermaid" },
-    { name = "sphinxcontrib-video" },
-    { name = "sphinxcontrib-youtube" },
-    { name = "sphinxext-opengraph" },
-    { name = "vale" },
 ]
 
 [[package]]

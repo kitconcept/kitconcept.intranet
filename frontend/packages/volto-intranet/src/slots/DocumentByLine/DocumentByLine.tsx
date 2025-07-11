@@ -44,23 +44,22 @@ const DocumentByLine = ({ content }: { content: Content }) => {
     if (creator_name) setCreator(creator_name);
   }, [creator_name]);
 
-  //The list is updated only when there is creator
-  // whose name is not on the list
   useEffect(() => {
     if (
       updatedCreatorsList &&
-      !updatedCreatorsList?.includes(creator) &&
-      creator != ''
+      creator != '' &&
+      !updatedCreatorsList?.includes(creator)
     ) {
+      console.log('updatedCreatorsList');
       setUpdatedCreatorsList((prevCreators) => [...prevCreators, creator]);
     }
   }, [creator]);
 
   useEffect(() => {
     const fetchCreatorsProfiles = async () => {
-      const result = content.creators
+      const result = updatedCreatorsList
         ? await Promise.all(
-            content.creators.map(async (user) => {
+            updatedCreatorsList.map(async (user) => {
               const user_url = await getCreatorHomePage(user);
               return [user, user_url || ''];
             }),
@@ -69,11 +68,16 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       setCreatorProfiles(result);
     };
     fetchCreatorsProfiles();
-  }, [content.creators]);
+  }, [updatedCreatorsList]);
 
   useEffect(() => {
-    if (locked === false) {
-      const updateCreators: any = async (updatedCreators: string[]) => {
+    const hasDifference =
+      JSON.stringify(content.creators || []) !==
+      JSON.stringify(updatedCreatorsList);
+
+    if (locked === false && hasDifference) {
+      console.log('PATCH');
+      const updateCreators = async (updatedCreators: string[]) => {
         try {
           await fetch(
             expandToBackendURL(flattenToAppURL(`${content['@id']}`)),
@@ -89,7 +93,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
             },
           );
         } catch (error) {
-          return error;
+          console.error('error', error);
         }
       };
 
@@ -135,28 +139,21 @@ const DocumentByLine = ({ content }: { content: Content }) => {
         <div className="documentByLine">
           <span>
             {intl.formatMessage(messages.author)}
-            {locked
-              ? updatedCreatorsList.map((name, index) => (
-                  <React.Fragment key={index}>
-                    <span className="byAuthor">{name}</span>
-                    {index < creatorProfiles.length && ' '}
-                  </React.Fragment>
-                ))
-              : creatorProfiles.map(([name, url], index) =>
-                  url ? (
-                    <React.Fragment key={index}>
-                      <a className="byAuthor" href={url}>
-                        {name}
-                      </a>
-                      {index < creatorProfiles.length && ' '}
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment key={index}>
-                      <span className="byAuthor">{name}</span>
-                      {index < creatorProfiles.length && ' '}
-                    </React.Fragment>
-                  ),
-                )}
+            {creatorProfiles.map(([name, url], index) =>
+              url ? (
+                <React.Fragment key={index}>
+                  <a className="byAuthor" href={url}>
+                    {name}
+                  </a>
+                  {index < creatorProfiles.length && ' '}
+                </React.Fragment>
+              ) : (
+                <React.Fragment key={index}>
+                  <span className="byAuthor">{name}</span>
+                  {index < creatorProfiles.length && ' '}
+                </React.Fragment>
+              ),
+            )}
           </span>
           {formattedDates.effective && (
             <span className="documentPublished">

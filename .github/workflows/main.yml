@@ -74,7 +74,7 @@ jobs:
   deploy:
     name: "Deploy: plone-intranet.kitconcept.dev"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ github.event_name != 'pull_request' && github.ref_name == 'main' }}
+    if: ${{ always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
     needs:
       - config
       - backend-release

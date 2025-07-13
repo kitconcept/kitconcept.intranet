@@ -7,6 +7,7 @@ import {
 import { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
+import { useRouteMatch } from 'react-router-dom';
 
 const messages = defineMessages({
   author: {
@@ -26,43 +27,48 @@ const messages = defineMessages({
 type FormState = {
   users: { user: User };
 };
+type d = {
+  content: Content;
+  props: any;
+};
 
 const DocumentByLine = ({ content }: { content: Content }) => {
   const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
   const [creator, setCreator] = useState('');
-
   const [updatedCreatorsList, setUpdatedCreatorsList] = useState<string[]>(
-    content.creators || [],
+    content.creators,
   );
 
   const intl = useIntl();
   const locked = content.lock.locked;
 
   const creator_name = useSelector((state: FormState) => state.users.user.id);
+  const match = useRouteMatch(flattenToAppURL(`${content['@id']}/edit`));
 
   useEffect(() => {
     if (creator_name) setCreator(creator_name);
   }, [creator_name]);
 
+  // useEffect(() => {
+  //   console.log('Component mounted/remounted', match, is);
+  //   return () => {
+  //     console.log('Component unmounted', match, is);
+  //   };
+  // }, []);
   useEffect(() => {
-    if (
-      updatedCreatorsList &&
-      creator !== '' &&
-      !updatedCreatorsList?.includes(creator)
-    ) {
-      setUpdatedCreatorsList((prevCreators) => [...prevCreators, creator]);
+    if (creator && !content.creators.includes(creator)) {
+      setUpdatedCreatorsList([...content.creators, creator]);
+    } else {
+      setUpdatedCreatorsList(content.creators);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [creator]);
+  }, [creator, content.creators]);
 
   useEffect(() => {
-    const hasDifference =
-      JSON.stringify(content.creators || []) !==
-      JSON.stringify(updatedCreatorsList);
-
-    if (locked === false && hasDifference) {
-      const updateCreators = async (updatedCreators: string[]) => {
+    if (locked === false && creator && !content.creators.includes(creator)) {
+      const updateCreators = async () => {
         try {
+          console.log('patch', creator);
           await fetch(
             expandToBackendURL(flattenToAppURL(`${content['@id']}`)),
             {
@@ -72,20 +78,19 @@ const DocumentByLine = ({ content }: { content: Content }) => {
                 Accept: 'application/json',
               },
               body: JSON.stringify({
-                creators: updatedCreators,
+                creators: updatedCreatorsList,
               }),
             },
           );
-          setUpdatedCreatorsList(content.creators);
-          fetchCreatorsProfiles(content.creators);
         } catch (error) {
           return error;
         }
       };
-      updateCreators(updatedCreatorsList);
-    } else fetchCreatorsProfiles(updatedCreatorsList);
+
+      updateCreators();
+    }
     //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locked, updatedCreatorsList, content.creators]);
+  }, [locked, content.creators, creator, updatedCreatorsList]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {
@@ -96,6 +101,13 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       return '';
     }
   };
+
+  useEffect(() => {
+    if (content.creators.includes(creator))
+      fetchCreatorsProfiles(content.creators);
+    else fetchCreatorsProfiles(updatedCreatorsList);
+  }, [content.creators, updatedCreatorsList]);
+
   const fetchCreatorsProfiles = async (creatorsArray: string[]) => {
     if (!creatorsArray || creatorsArray.length === 0) {
       setCreatorProfiles([]);
@@ -130,6 +142,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       modified: formatDate(content.modified),
     };
   }, [content?.effective, content?.modified]);
+  // console.log('edited ', isEditedRef.current);
 
   return (
     <>
@@ -137,6 +150,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
         {creatorProfiles.length > 0 && (
           <span>
             {intl.formatMessage(messages.author)}
+            {/* {content.creators},{updatedCreatorsList}, */}
             {creatorProfiles.map(([name, url], index) =>
               url ? (
                 <React.Fragment key={index}>

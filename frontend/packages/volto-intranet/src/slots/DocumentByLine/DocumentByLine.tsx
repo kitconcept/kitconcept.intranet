@@ -6,8 +6,7 @@ import {
 } from '@plone/volto/helpers/Url/Url';
 import { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { useSelector } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
+import { shallowEqual, useSelector } from 'react-redux';
 
 const messages = defineMessages({
   author: {
@@ -27,48 +26,61 @@ const messages = defineMessages({
 type FormState = {
   users: { user: User };
 };
-type d = {
-  content: Content;
-  props: any;
-};
 
 const DocumentByLine = ({ content }: { content: Content }) => {
   const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
   const [creator, setCreator] = useState('');
+
   const [updatedCreatorsList, setUpdatedCreatorsList] = useState<string[]>(
-    content.creators,
+    content.creators || [],
   );
 
   const intl = useIntl();
   const locked = content.lock.locked;
 
-  const creator_name = useSelector((state: FormState) => state.users.user.id);
-  const match = useRouteMatch(flattenToAppURL(`${content['@id']}/edit`));
+  const creator_name = useSelector(
+    (state: FormState) => state.users.user.id,
+    shallowEqual,
+  );
 
   useEffect(() => {
-    if (creator_name) setCreator(creator_name);
-  }, [creator_name]);
+    if (
+      sessionStorage.getItem(`edit-${content.id}`) === '1' &&
+      !content.creators.includes(creator_name) &&
+      creator_name
+    )
+      setCreator(creator_name);
+    else {
+      sessionStorage.setItem(`edit-${content.id}`, '0');
+      setCreator('');
+    }
+    if (
+      location.pathname.includes('/edit') &&
+      !content.creators.includes(creator_name)
+    )
+      setCreator(creator_name);
+  }, [creator_name, content.id]);
 
-  // useEffect(() => {
-  //   console.log('Component mounted/remounted', match, is);
-  //   return () => {
-  //     console.log('Component unmounted', match, is);
-  //   };
-  // }, []);
   useEffect(() => {
-    if (creator && !content.creators.includes(creator)) {
-      setUpdatedCreatorsList([...content.creators, creator]);
-    } else {
-      setUpdatedCreatorsList(content.creators);
+    if (!content.creators.includes(creator_name) && locked)
+      sessionStorage.setItem(`edit-${content.id}`, '1');
+  }, [content.id]);
+
+  useEffect(() => {
+    if (
+      updatedCreatorsList &&
+      creator !== '' &&
+      !updatedCreatorsList?.includes(creator)
+    ) {
+      setUpdatedCreatorsList((prevCreators) => [...prevCreators, creator]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [creator, content.creators]);
+  }, [creator]);
 
   useEffect(() => {
-    if (locked === false && creator && !content.creators.includes(creator)) {
+    if (locked === false && !content.creators.includes(creator)) {
       const updateCreators = async () => {
         try {
-          console.log('patch', creator);
           await fetch(
             expandToBackendURL(flattenToAppURL(`${content['@id']}`)),
             {
@@ -78,7 +90,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
                 Accept: 'application/json',
               },
               body: JSON.stringify({
-                creators: updatedCreatorsList,
+                creators: [...content.creators, creator],
               }),
             },
           );
@@ -86,11 +98,26 @@ const DocumentByLine = ({ content }: { content: Content }) => {
           return error;
         }
       };
-
       updateCreators();
     }
     //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locked, content.creators, creator, updatedCreatorsList]);
+  }, [locked, updatedCreatorsList, content.creators]);
+
+  useEffect(() => {
+    if (content.creators.includes(creator))
+      fetchCreatorsProfiles(content.creators);
+    else fetchCreatorsProfiles(updatedCreatorsList);
+  }, [content.creators, updatedCreatorsList]);
+
+  //removes from the session storage after use
+  useEffect(() => {
+    const currentContentId = content.id;
+    Object.keys(sessionStorage).forEach((key) => {
+      if (key.startsWith('edit-') && key !== `edit-${currentContentId}`) {
+        sessionStorage.removeItem(key);
+      }
+    });
+  }, [content['@id']]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {
@@ -101,13 +128,6 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       return '';
     }
   };
-
-  useEffect(() => {
-    if (content.creators.includes(creator))
-      fetchCreatorsProfiles(content.creators);
-    else fetchCreatorsProfiles(updatedCreatorsList);
-  }, [content.creators, updatedCreatorsList]);
-
   const fetchCreatorsProfiles = async (creatorsArray: string[]) => {
     if (!creatorsArray || creatorsArray.length === 0) {
       setCreatorProfiles([]);
@@ -142,7 +162,6 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       modified: formatDate(content.modified),
     };
   }, [content?.effective, content?.modified]);
-  // console.log('edited ', isEditedRef.current);
 
   return (
     <>
@@ -150,7 +169,6 @@ const DocumentByLine = ({ content }: { content: Content }) => {
         {creatorProfiles.length > 0 && (
           <span>
             {intl.formatMessage(messages.author)}
-            {/* {content.creators},{updatedCreatorsList}, */}
             {creatorProfiles.map(([name, url], index) =>
               url ? (
                 <React.Fragment key={index}>

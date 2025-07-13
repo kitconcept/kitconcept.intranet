@@ -54,10 +54,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       sessionStorage.setItem(`edit-${content.id}`, '0');
       setCreator('');
     }
-    if (
-      location.pathname.includes('/edit') &&
-      !content.creators.includes(creator_name)
-    )
+    if (locked && !content.creators.includes(creator_name))
       setCreator(creator_name);
   }, [creator_name, content.id]);
 

@@ -56,11 +56,13 @@ const DocumentByLine = ({ content }: { content: Content }) => {
     }
     if (locked && !content.creators.includes(creator_name))
       setCreator(creator_name);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [creator_name, content.id]);
 
   useEffect(() => {
     if (!content.creators.includes(creator_name) && locked)
       sessionStorage.setItem(`edit-${content.id}`, '1');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content.id]);
 
   useEffect(() => {
@@ -104,6 +106,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
     if (content.creators.includes(creator))
       fetchCreatorsProfiles(content.creators);
     else fetchCreatorsProfiles(updatedCreatorsList);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content.creators, updatedCreatorsList]);
 
   //removes from the session storage after use
@@ -114,6 +117,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
         sessionStorage.removeItem(key);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content['@id']]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {

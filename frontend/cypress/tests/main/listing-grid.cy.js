@@ -35,14 +35,15 @@ context('Listing Grid Acceptance Tests', () => {
       path: '/document',
     });
 
-    cy.visit('/document/edit');
+    cy.navigate('/document/edit');
     cy.get('.block .slate-editor [contenteditable=true]').click();
     cy.get('.button .block-add-button').click({ force: true });
     cy.get('.blocks-chooser .mostUsed  .button.listing').click({
       force: true,
     });
-    cy.get('#field-variation').click();
-    cy.get(' #field-variation').findByText('Grid').click();
+    cy.get('#field-variation', { timeout: 10000 }).should('be.visible').click();
+
+    cy.get('#field-variation').findByText('Grid').click();
 
     cy.get('.querystring-widget .fields').contains('Add criteria').click();
     cy.get(

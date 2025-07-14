@@ -41,14 +41,14 @@ context('Navigation Acceptance Tests', () => {
   it('Open 2nd level', function () {
     cy.wait('@content');
     cy.get('ul.desktop-menu button').contains('Level 1').click();
-    cy.get('.subitem-wrapper').findByText('Level 2').click();
+    cy.get('.subitem-wrapper a').contains('Level 2').click();
     cy.get('.documentFirstHeading').should('have.text', 'Level 2');
   });
 
   it('Open 3rd level', function () {
     cy.wait('@content');
     cy.get('ul.desktop-menu button').contains('Level 1').click();
-    cy.get('.subsubitem-wrapper').findByText('Level 3').click();
+    cy.get('.subitem-wrapper a').contains('Level 3').click();
     cy.get('.documentFirstHeading').should('have.text', 'Level 3');
   });
 });

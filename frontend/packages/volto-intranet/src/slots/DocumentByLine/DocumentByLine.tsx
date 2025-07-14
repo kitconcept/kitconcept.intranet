@@ -44,40 +44,43 @@ const DocumentByLine = ({ content }: { content: Content }) => {
   );
 
   useEffect(() => {
-    if (
-      sessionStorage.getItem(`edit-${content.id}`) === '1' &&
-      !content.creators.includes(creator_name) &&
-      creator_name
-    )
-      setCreator(creator_name);
-    else {
-      sessionStorage.setItem(`edit-${content.id}`, '0');
-      setCreator('');
-    }
-    if (locked && !content.creators.includes(creator_name))
-      setCreator(creator_name);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [creator_name, content.id]);
-
-  useEffect(() => {
     if (!content.creators.includes(creator_name) && locked)
       sessionStorage.setItem(`edit-${content.id}`, '1');
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content.id]);
 
   useEffect(() => {
     if (
+      sessionStorage.getItem(`edit-${content.id}`) === '1' &&
+      !content.creators.includes(creator_name) &&
+      creator_name
+    ) {
+      setCreator(creator_name);
+    } else {
+      sessionStorage.setItem(`edit-${content.id}`, '0');
+      setCreator('');
+    }
+    if (locked && !content.creators.includes(creator_name))
+      setCreator(creator_name);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [creator_name, content.id]);
+
+  useEffect(() => {
+    if (
       updatedCreatorsList &&
-      creator !== '' &&
+      creator &&
       !updatedCreatorsList?.includes(creator)
     ) {
       setUpdatedCreatorsList((prevCreators) => [...prevCreators, creator]);
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [creator]);
 
   useEffect(() => {
-    if (locked === false && !content.creators.includes(creator)) {
+    if (!locked && !content.creators.includes(creator) && creator) {
       const updateCreators = async () => {
         try {
           await fetch(
@@ -99,6 +102,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       };
       updateCreators();
     }
+
     //  eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locked, updatedCreatorsList, content.creators]);
 
@@ -106,6 +110,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
     if (content.creators.includes(creator))
       fetchCreatorsProfiles(content.creators);
     else fetchCreatorsProfiles(updatedCreatorsList);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content.creators, updatedCreatorsList]);
 
@@ -117,6 +122,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
         sessionStorage.removeItem(key);
       }
     });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content['@id']]);
 
@@ -129,6 +135,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       return '';
     }
   };
+
   const fetchCreatorsProfiles = async (creatorsArray: string[]) => {
     if (!creatorsArray || creatorsArray.length === 0) {
       setCreatorProfiles([]);

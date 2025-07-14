@@ -44,15 +44,17 @@ const DocumentByLine = ({ content }: { content: Content }) => {
   );
 
   useEffect(() => {
-    if (!content.creators.includes(creator_name) && locked)
+    if (!content.creators?.includes(creator_name) && locked)
       sessionStorage.setItem(`edit-${content.id}`, '1');
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content.id]);
 
   useEffect(() => {
+    const editFlag = sessionStorage.getItem(`edit-${content.id}`);
+    const isEditing = locked && !content.creators?.includes(creator_name);
     if (
-      sessionStorage.getItem(`edit-${content.id}`) === '1' &&
+      editFlag === '1' &&
       !content.creators.includes(creator_name) &&
       creator_name
     ) {
@@ -61,8 +63,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
       sessionStorage.setItem(`edit-${content.id}`, '0');
       setCreator('');
     }
-    if (locked && !content.creators.includes(creator_name))
-      setCreator(creator_name);
+    if (isEditing) setCreator(creator_name);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [creator_name, content.id]);
@@ -80,7 +81,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
   }, [creator]);
 
   useEffect(() => {
-    if (!locked && !content.creators.includes(creator) && creator) {
+    if (!locked && !content.creators?.includes(creator) && creator) {
       const updateCreators = async () => {
         try {
           await fetch(
@@ -107,7 +108,7 @@ const DocumentByLine = ({ content }: { content: Content }) => {
   }, [locked, updatedCreatorsList, content.creators]);
 
   useEffect(() => {
-    if (content.creators.includes(creator))
+    if (content.creators?.includes(creator))
       fetchCreatorsProfiles(content.creators);
     else fetchCreatorsProfiles(updatedCreatorsList);
 

@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react';
 import type { Content, User } from '@plone/types';
-import {
-  expandToBackendURL,
-  flattenToAppURL,
-} from '@plone/volto/helpers/Url/Url';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
+import useUser from '@plone/volto/hooks/user/useUser';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { shallowEqual, useSelector } from 'react-redux';
+import { setFormData } from '@plone/volto/actions/form/form';
 
 const messages = defineMessages({
   author: {
@@ -22,137 +21,76 @@ const messages = defineMessages({
     defaultMessage: ' last modified ',
   },
 });
-
-type FormState = {
-  users: { user: User };
+type FormData = {
+  form: {
+    global: Content;
+  };
 };
-
-const DocumentByLine = ({ content }: { content: Content }) => {
-  const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
-  const [creator, setCreator] = useState('');
-
-  const [updatedCreatorsList, setUpdatedCreatorsList] = useState<string[]>(
-    content.creators || [],
-  );
-
+type DocumentByLineProps = {
+  content: Content;
+  location: {
+    pathname: string;
+  };
+};
+const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const intl = useIntl();
-  const locked = content.lock.locked;
+  const dispatch = useDispatch();
 
-  const creator_name = useSelector(
-    (state: FormState) => state.users.user.id,
-    shallowEqual,
-  );
+  const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
 
-  useEffect(() => {
-    if (!content.creators?.includes(creator_name) && locked)
-      sessionStorage.setItem(`edit-${content.id}`, '1');
+  const form = useSelector((state: FormData) => state.form);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [content.id]);
+  const user = useUser();
+  const userId = user?.id;
+
+  const isAddMode = props.location.pathname.includes('/add');
 
   useEffect(() => {
-    const editFlag = sessionStorage.getItem(`edit-${content.id}`);
-    const isEditing = locked && !content.creators?.includes(creator_name);
     if (
-      editFlag === '1' &&
-      !content.creators.includes(creator_name) &&
-      creator_name
+      content.lock.locked === true &&
+      !content.creators.includes(userId) &&
+      userId
     ) {
-      setCreator(creator_name);
+      dispatch(
+        setFormData({
+          ...form?.global,
+          creators: [...content.creators, userId],
+        }),
+      );
+    }
+  }, [userId, content.lock.locked, content.creators]);
+
+  useEffect(() => {
+    if (content.lock.locked === true && !isAddMode) {
+      fetchCreatorProfiles(form.global?.creators ?? content?.creators);
+    } else if (!isAddMode) {
+      fetchCreatorProfiles(content?.creators);
     } else {
-      sessionStorage.setItem(`edit-${content.id}`, '0');
-      setCreator('');
+      fetchCreatorProfiles([userId ?? 'user']);
     }
-    if (isEditing) setCreator(creator_name);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [creator_name, content.id]);
-
-  useEffect(() => {
-    if (
-      updatedCreatorsList &&
-      creator &&
-      !updatedCreatorsList?.includes(creator)
-    ) {
-      setUpdatedCreatorsList((prevCreators) => [...prevCreators, creator]);
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [creator]);
-
-  useEffect(() => {
-    if (!locked && !content.creators?.includes(creator) && creator) {
-      const updateCreators = async () => {
-        try {
-          await fetch(
-            expandToBackendURL(flattenToAppURL(`${content['@id']}`)),
-            {
-              method: 'PATCH',
-              headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json',
-              },
-              body: JSON.stringify({
-                creators: [...content.creators, creator],
-              }),
-            },
-          );
-        } catch (error) {
-          return error;
-        }
-      };
-      updateCreators();
-    }
-
-    //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locked, updatedCreatorsList, content.creators]);
-
-  useEffect(() => {
-    if (content.creators?.includes(creator))
-      fetchCreatorsProfiles(content.creators);
-    else fetchCreatorsProfiles(updatedCreatorsList);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [content.creators, updatedCreatorsList]);
-
-  //removes from the session storage after use
-  useEffect(() => {
-    const currentContentId = content.id;
-    Object.keys(sessionStorage).forEach((key) => {
-      if (key.startsWith('edit-') && key !== `edit-${currentContentId}`) {
-        sessionStorage.removeItem(key);
-      }
-    });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [content['@id']]);
+  }, [content.lock.locked, form.global?.creators]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {
       const response = await fetch(expandToBackendURL(`/@users/${username}`));
       const data: User = await response.json();
-      return data.home_page ?? '';
+      return data.home_page;
     } catch (error) {
       return '';
     }
   };
 
-  const fetchCreatorsProfiles = async (creatorsArray: string[]) => {
-    if (!creatorsArray || creatorsArray.length === 0) {
-      setCreatorProfiles([]);
-      return;
-    }
+  const fetchCreatorProfiles = async (creators: string[]) => {
     const result = await Promise.all(
-      creatorsArray.map(async (user) => {
-        const user_url = await getCreatorHomePage(user);
-        return [user, user_url || ''];
+      creators.map(async (user) => {
+        if (user === 'user') return [user, ''];
+        const abt = await getCreatorHomePage(user);
+        return [user, abt || ''];
       }),
     );
-
     setCreatorProfiles(result);
   };
 
-  //Get the dates formatted
   const formattedDates = useMemo(() => {
     const formatDate = (isoString: string): string => {
       if (!isoString) return '';
@@ -166,9 +104,11 @@ const DocumentByLine = ({ content }: { content: Content }) => {
           });
     };
 
+    const getCurrentTimeISO = (): string => new Date().toISOString();
+
     return {
       effective: formatDate(content?.effective ?? ''),
-      modified: formatDate(content.modified),
+      modified: formatDate(content?.modified || getCurrentTimeISO()),
     };
   }, [content?.effective, content?.modified]);
 

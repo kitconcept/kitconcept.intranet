@@ -1,7 +1,7 @@
 #page-document .blocks-group-wrapper > .documentByLine {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
-  margin-bottom: 1rem;
+  margin-bottom: $spacing-medium;
   .byAuthor {
     text-decoration: none;
   }
@@ -11,8 +11,11 @@
 #page-add .q.container .documentByLine {
   @include default-container-width();
   @include adjustMarginsToEditContainer($default-container-width);
-  margin-bottom: 1rem;
+  margin-bottom: $spacing-medium;
   .byAuthor {
     text-decoration: none;
   }
+}
+h1.documentFirstHeading:has(+ .documentByLine) {
+  margin-bottom: $spacing-small;
 }

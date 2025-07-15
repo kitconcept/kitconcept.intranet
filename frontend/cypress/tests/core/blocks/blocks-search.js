@@ -1,5 +1,5 @@
 describe('Search Block Tests', () => {
-  var results_number = 66;
+  var results_number = 3;
   beforeEach(() => {
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '/**/Document').as('schema');
@@ -123,7 +123,7 @@ describe('Search Block Tests', () => {
     cy.reload();
     cy.wait(2000);
     cy.get('h2.search-details')
-      .should('contain', '6')
+      .should('contain', '1')
       .and('contain', 'Search results');
 
     //navigate to home
@@ -136,12 +136,12 @@ describe('Search Block Tests', () => {
       '/my-search-page?query=%5B%7B%22i%22%3A%22portal_type%22%2C%22o%22%3A%22paqo.list.contains%22%2C%22v%22%3A%5B%22Event%22%5D%7D%5D',
     );
     cy.get('h2.search-details')
-      .should('contain', '6')
+      .should('contain', '1')
       .and('contain', 'Search results');
 
     cy.reload();
     cy.get('h2.search-details')
-      .should('contain', '6')
+      .should('contain', '1')
       .and('contain', 'Search results');
   });
 
@@ -255,7 +255,7 @@ describe('Search Block Tests', () => {
       () =>
         cy
           .get('#page-document .listing-item:first-of-type a')
-          .should('have.attr', 'href', '/features/calendar'),
+          .should('have.attr', 'href', '/my-event'),
       () =>
         cy
           .url()
@@ -295,7 +295,7 @@ describe('Search Block Tests', () => {
     cy.get('#page-document .listing-item:first-of-type a').should(
       'have.attr',
       'href',
-      '/features/calendar',
+      '/my-event',
     );
 
     cy.url().should(
@@ -305,7 +305,7 @@ describe('Search Block Tests', () => {
 
     // test search results number
     cy.get('h2.search-details')
-      .should('contain', '4')
+      .should('contain', '1')
       .and('contain', 'Search results');
 
     // test removing the whole text from the keyboard
@@ -366,7 +366,7 @@ describe('Search Block Tests', () => {
     cy.get('#page-document .listing-item:first-of-type a').should(
       'have.attr',
       'href',
-      '/features/calendar',
+      '/my-event',
     );
 
     cy.url().should(
@@ -376,7 +376,7 @@ describe('Search Block Tests', () => {
 
     // test search results number
     cy.get('h2.search-details')
-      .should('contain', '4')
+      .should('contain', '1')
       .and('contain', 'Search results');
 
     // test removing one char
@@ -394,7 +394,7 @@ describe('Search Block Tests', () => {
 
     // test search results number
     cy.get('h2.search-details')
-      .should('contain', '4')
+      .should('contain', '1')
       .and('contain', 'Search results');
 
     // test searching for Event
@@ -403,7 +403,7 @@ describe('Search Block Tests', () => {
     cy.get('#page-document .listing-item:first-of-type a').should(
       'have.attr',
       'href',
-      '/features/calendar',
+      '/my-event',
     );
 
     cy.url().should(
@@ -466,7 +466,7 @@ describe('Search Block Tests', () => {
     // reverse order
     cy.get('label[for=field-sort_order_boolean-2-query]').click();
     //check if the sorting order is working
-    cy.get('.listing-item .listing-body h2.title').first().contains('Logos');
+    cy.get('.listing-item .listing-body h2.title').first().contains('My Event');
     cy.get('#select-listingblock-sort-on').click();
     cy.get('.react-select__menu .react-select__group')
       .first()
@@ -479,7 +479,7 @@ describe('Search Block Tests', () => {
       .click();
     cy.wait(5000);
 
-    //cy.get('.listing-item .listing-body h2.title').first().contains('Logos');
+    cy.get('.listing-item .listing-body h2.title').first().contains('My page');
     //save page
     cy.get('#toolbar-save > .icon').click();
     cy.wait(500);

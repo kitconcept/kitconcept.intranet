@@ -1,4 +1,4 @@
-// In our intranet we have linking of preview image instead of uploading it.
+// we are not using filewidget for preview image in intranet.
 
 // describe('FileWidget Test', () => {
 //   beforeEach(() => {

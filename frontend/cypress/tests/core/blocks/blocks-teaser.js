@@ -16,11 +16,23 @@ context('Blocks Acceptance Tests', () => {
   it('As editor I can add a (standalone) Teaser block', () => {
     // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
     cy.createContent({
+      contentType: 'Image',
+      contentId: 'my-image',
+      contentTitle: 'My Image',
+      path: 'document',
+    });
+
+    cy.createContent({
       contentType: 'Document',
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      bodyModifier(body) {
+        body.preview_image_link = {
+          '@id': '/document/my-image',
+        };
+        return body;
+      },
       path: '/',
     });
     cy.visit('/edit');
@@ -45,10 +57,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.block.teaser').should('have.class', 'has--align--center');
     cy.get('.block.teaser .image-wrapper img')
       .should('have.attr', 'src')
-      .and(
-        'include',
-        '/images/jr-korpa-sft9g3paxly-unsplash.jpg/@@images/image-3600-20f8a3f3e6cb09dc41a21b974ed512e3.jpeg',
-      );
+      .and('include', '/document/my-image/@@images/image-215-');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
@@ -58,11 +67,23 @@ context('Blocks Acceptance Tests', () => {
   it('As editor I can add a (standalone) Teaser block that always fetches the live data', () => {
     // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
     cy.createContent({
+      contentType: 'Image',
+      contentId: 'my-image',
+      contentTitle: 'My Image',
+      path: 'document',
+    });
+
+    cy.createContent({
       contentType: 'Document',
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      bodyModifier(body) {
+        body.preview_image_link = {
+          '@id': '/document/my-image',
+        };
+        return body;
+      },
       path: '/',
     });
 
@@ -107,11 +128,23 @@ context('Blocks Acceptance Tests', () => {
   it('As editor I can create a Teaser block and overwrite the data which is is not updated when the target is changed', () => {
     // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
     cy.createContent({
+      contentType: 'Image',
+      contentId: 'my-image',
+      contentTitle: 'My Image',
+      path: 'document',
+    });
+
+    cy.createContent({
       contentType: 'Document',
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      bodyModifier(body) {
+        body.preview_image_link = {
+          '@id': '/document/my-image',
+        };
+        return body;
+      },
       path: '/',
     });
     cy.visit('/edit');
@@ -183,7 +216,7 @@ context('Blocks Acceptance Tests', () => {
       .should('have.attr', 'src')
       .and(
         'include',
-        '/icons_intranet_icn_kantine.svg/@@images/image-65-07492e70e88a1dfa438154b7940cc14c.svg',
+        'https://github.com/plone/volto/raw/main/logos/volto-colorful.png',
       );
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
   });

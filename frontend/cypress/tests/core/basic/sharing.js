@@ -37,10 +37,7 @@ describe('Sharing Tests', () => {
 
     // Click on the Toolbar > More
     cy.findByRole('button', { name: /more/i }).click();
-    cy.findByRole('link', { name: /sharing/i }).click({
-      force: true,
-    });
-
+    cy.findByRole('link', { name: /sharing/i }).click();
     cy.wait('@sharing');
 
     // TODO: Need a unique label here. Site search name is also 'SearchableText'
@@ -48,7 +45,6 @@ describe('Sharing Tests', () => {
     cy.findByPlaceholderText(/search for user or group/i)
       .type('test')
       .closest('form')
-
       .submit();
 
     // Give the test user view permissions
@@ -61,22 +57,17 @@ describe('Sharing Tests', () => {
         cy.findAllByRole('checkbox', { value: 'test_user_1_:Reviewer' })
           .eq(2)
           .parents('.checkbox')
-          .click({
-            force: true,
-          });
+          .click();
       });
 
-    cy.findByRole('button', { name: /save/i }).click({
-      force: true,
-    });
-
+    cy.findByRole('button', { name: /save/i }).click();
     cy.wait('@sharing');
 
-    cy.navigate('/logout');
+    cy.visit('/logout');
     cy.wait('@logout');
 
     cy.autologin('test-user', 'correct horse battery staple');
-    cy.navigate('/my-page');
+    cy.visit('/my-page');
     cy.findByRole('heading', { name: /my page/i }).should('exist');
   });
 
@@ -85,27 +76,18 @@ describe('Sharing Tests', () => {
     cy.intercept('/**/@sharing').as('sharing');
 
     // Click on the Toolbar > More
-    cy.findByRole('button', { name: /more/i }).click({
-      force: true,
-    });
-
-    cy.findByRole('link', { name: /sharing/i }).click({
-      force: true,
-    });
-
+    cy.findByRole('button', { name: /more/i }).click();
+    cy.findByRole('link', { name: /sharing/i }).click();
     cy.wait('@sharing');
 
     cy.findByLabelText('Inherit permissions from higher levels').click({
       force: true,
     });
 
-    cy.findByRole('button', { name: /save/i }).click({
-      force: true,
-    });
-
+    cy.findByRole('button', { name: /save/i }).click();
     cy.wait('@sharing');
 
-    cy.navigate('/my-page/sharing');
+    cy.visit('/my-page/sharing');
 
     cy.findByLabelText('Inherit permissions from higher levels').should(
       'not.be.checked',

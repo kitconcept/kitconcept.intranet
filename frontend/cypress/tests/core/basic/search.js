@@ -17,12 +17,12 @@ describe('Search', () => {
       contentId: 'color',
       contentTitle: 'Color',
     });
-    cy.navigate('/colorless/edit');
+    cy.visit('/colorless/edit');
     cy.url().should('eq', Cypress.config().baseUrl + '/colorless/edit');
     cy.getSlateEditorAndType('This is the text.');
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/colorless');
-    cy.navigate('/color/edit');
+    cy.visit('/color/edit');
     cy.url().should('eq', Cypress.config().baseUrl + '/color/edit');
     cy.getSlateEditorAndType('This is the text.');
     cy.get('#toolbar-save').click();
@@ -36,9 +36,9 @@ describe('Search', () => {
       'eq',
       Cypress.config().baseUrl + '/search?SearchableText=color',
     );
-    cy.wait(1000);
-    // we should get the first link Colorless
-    cy.get('.summary.url:first').should('have.text', 'Colorless');
+
+    // we should get the first link Color
+    cy.get('.summary.url:first').should('have.text', 'Color');
   });
 
   it('As anonymous user I can see the search results ordered alphabetically', () => {
@@ -53,12 +53,12 @@ describe('Search', () => {
       contentId: 'bcolor',
       contentTitle: 'B Color',
     });
-    cy.navigate('/acolorless/edit');
+    cy.visit('/acolorless/edit');
     cy.url().should('eq', Cypress.config().baseUrl + '/acolorless/edit');
     cy.getSlateEditorAndType('This is the text.');
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/acolorless');
-    cy.navigate('/bcolor/edit');
+    cy.visit('/bcolor/edit');
     cy.url().should('eq', Cypress.config().baseUrl + '/bcolor/edit');
     cy.getSlateEditorAndType('This is the text.');
     cy.get('#toolbar-save').click();
@@ -66,7 +66,7 @@ describe('Search', () => {
     cy.visit('/');
     cy.url().should('eq', Cypress.config().baseUrl + '/');
     // then we are searhing for SearchableText=color and sorting it Alphabetically
-    cy.navigate('/search?SearchableText=color');
+    cy.visit('/search?SearchableText=color');
     cy.url().should(
       'eq',
       Cypress.config().baseUrl + '/search?SearchableText=color',
@@ -99,16 +99,14 @@ describe('Search', () => {
       effective: '2020-08-13T15:58:24+00:00',
       expires: '2030-05-14T15:58:24+00:00',
     });
-    cy.navigate('/colorless/edit');
+    cy.visit('/colorless/edit');
     cy.url().should('eq', Cypress.config().baseUrl + '/colorless/edit');
     cy.getSlateEditorAndType('This is the text.');
-    cy.wait(1000);
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/colorless');
-    cy.navigate('/color/edit');
+    cy.visit('/color/edit');
     cy.url().should('eq', Cypress.config().baseUrl + '/color/edit');
     cy.getSlateEditorAndType('This is the text.');
-    cy.wait(1000);
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/color');
     cy.visit('/');

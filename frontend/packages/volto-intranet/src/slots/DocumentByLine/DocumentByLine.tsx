@@ -58,7 +58,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
         }),
       );
     }
-  }, [userId, content.lock.locked, content.creators]);
+  }, [userId, content.lock.locked, content.creators, dispatch, form?.global]);
 
   useEffect(() => {
     if (content.lock.locked === true && !isAddMode) {
@@ -68,6 +68,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     } else {
       fetchCreatorProfiles([userId ?? 'user']);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content.lock.locked, form.global?.creators]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {

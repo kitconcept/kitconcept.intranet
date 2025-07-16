@@ -132,7 +132,7 @@ describe('Folder Contents Tests', () => {
     cy.get('thead tr').contains('Creator');
   });
 
-  it.only('Move items to top of folder and bottom of folder', () => {
+  it('Move items to top of folder and bottom of folder', () => {
     cy.intercept('GET', `/**/@search*`).as('search');
     cy.intercept('PATCH', `/**/my-folder`).as('reorder');
     // creating a Document

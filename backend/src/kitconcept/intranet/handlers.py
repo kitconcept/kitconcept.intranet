@@ -76,7 +76,8 @@ def post_handler(
     wf_tool.updateRoleMappings()
 
     workflow = answers.get("workflow", "restricted")
-    if workflow == "public":
+    if workflow == "public" and api.content.get_state(site) == "private":
+        print("Publishing site")
         api.content.transition(
             site,
             "publish",

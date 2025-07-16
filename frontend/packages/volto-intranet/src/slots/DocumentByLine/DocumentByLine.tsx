@@ -1,11 +1,9 @@
 import React, { useMemo } from 'react';
 import type { Content, User } from '@plone/types';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
-import useUser from '@plone/volto/hooks/user/useUser';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { setFormData } from '@plone/volto/actions/form/form';
 
 const messages = defineMessages({
   author: {
@@ -34,42 +32,18 @@ type DocumentByLineProps = {
 };
 const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const intl = useIntl();
-  const dispatch = useDispatch();
-
   const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
 
   const form = useSelector((state: FormData) => state.form);
 
-  const user = useUser();
-  const userId = user?.id;
-
   const isAddMode = props.location.pathname.includes('/add');
 
   useEffect(() => {
-    if (
-      content.lock.locked === true &&
-      !content.creators.includes(userId) &&
-      userId
-    ) {
-      dispatch(
-        setFormData({
-          ...form?.global,
-          creators: [...content.creators, userId],
-        }),
-      );
-    }
-  }, [userId, content.lock.locked, content.creators, dispatch, form?.global]);
-
-  useEffect(() => {
-    if (content.lock.locked === true && !isAddMode) {
-      fetchCreatorProfiles(form.global?.creators ?? content?.creators);
-    } else if (!isAddMode) {
-      fetchCreatorProfiles(content?.creators);
-    } else {
-      fetchCreatorProfiles([userId ?? 'user']);
-    }
+    !isAddMode
+      ? fetchCreatorProfiles(form.global?.creators ?? content?.creators)
+      : fetchCreatorProfiles(['user']);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [content.lock.locked, form.global?.creators]);
+  }, [form.global?.creators, content.creators, isAddMode]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {

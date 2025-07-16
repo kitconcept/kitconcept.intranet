@@ -1,0 +1,41 @@
+{
+  "name": "@kitconcept/volto-button-block",
+  "version": "4.0.0-alpha.0",
+  "description": "volto-button-block: Volto add-on that provides a configurable button as a block.",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "author": "kitconcept GmbH",
+  "homepage": "https://github.com/kitconcept/volto-button-block#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
+  },
+  "addons": [
+    "@kitconcept/volto-bm3-compat"
+  ],
+  "dependencies": {
+    "@kitconcept/volto-bm3-compat": "1.0.0-alpha.1"
+  },
+  "peerDependencies": {
+    "classnames": "^2.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intl": "^3.12.1"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.2",
+    "release-it": "^19.0.2"
+  }
+}

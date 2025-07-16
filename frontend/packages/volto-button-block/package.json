@@ -1,0 +1,54 @@
+{
+  "name": "@kitconcept/volto-button-block-dev",
+  "version": "4.0.0-alpha.0",
+  "description": "volto-button-block: Volto add-on that provides a configurable button as a block.",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "author": "kitconcept GmbH",
+  "homepage": "https://github.com/kitconcept/volto-button-block#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "start": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
+    "start:prod": "pnpm --filter @plone/volto start:prod",
+    "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
+    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
+    "i18n": "pnpm --filter addons i18n",
+    "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test",
+    "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
+    "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
+    "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix",
+    "dry-release": "release-it --dry-run",
+    "release": "pnpm --filter @kitconcept/volto-button-block run release",
+    "release-major-alpha": "pnpm --filter @kitconcept/volto-button-block run release-major-alpha",
+    "release-alpha": "pnpm --filter @kitconcept/volto-button-block run release-alpha",
+    "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
+    "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
+  },
+  "dependencies": {
+    "@plone/volto": "workspace:*",
+    "@plone/registry": "workspace:*",
+    "@kitconcept/volto-button-block": "workspace:*"
+  },
+  "devDependencies": {
+    "mrs-developer": "^2.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+      "react-refresh": "^0.14.2"
+    }
+  },
+  "packageManager": "pnpm@9.1.1"
+}

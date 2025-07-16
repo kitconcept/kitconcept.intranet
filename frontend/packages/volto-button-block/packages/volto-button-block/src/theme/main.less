@@ -1,0 +1,46 @@
+.block.__button {
+  text-align: center;
+
+  .align {
+    &.right {
+      text-align: right;
+    }
+
+    &.left {
+      text-align: left;
+    }
+
+    &.center {
+      text-align: center;
+    }
+
+    &.full {
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.align-buttons {
+  display: flex !important;
+  align-items: center;
+
+  .ui.buttons {
+    .ui.icon.button {
+      padding: 4px;
+      border-radius: 1px;
+      margin-left: 4px;
+      color: #826a6a !important;
+    }
+
+    .ui.active.basic.icon.button {
+      border: 1px solid #2996da;
+      background: transparent !important;
+    }
+
+    &:hover {
+      background-color: #edf1f2 !important;
+    }
+  }
+}

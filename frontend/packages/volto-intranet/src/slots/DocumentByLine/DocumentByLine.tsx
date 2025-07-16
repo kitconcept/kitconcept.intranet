@@ -42,6 +42,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     !isAddMode
       ? fetchCreatorProfiles(form.global?.creators ?? content?.creators)
       : fetchCreatorProfiles(['user']);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form.global?.creators, content.creators, isAddMode]);
 
@@ -59,8 +60,8 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     const result = await Promise.all(
       creators.map(async (user) => {
         if (user === 'user') return [user, ''];
-        const abt = await getCreatorHomePage(user);
-        return [user, abt || ''];
+        const profileUrl = await getCreatorHomePage(user);
+        return [user, profileUrl || ''];
       }),
     );
     setCreatorProfiles(result);

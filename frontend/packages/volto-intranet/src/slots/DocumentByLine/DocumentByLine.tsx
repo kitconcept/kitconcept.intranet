@@ -40,7 +40,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
 
   useEffect(() => {
     !isAddMode
-      ? fetchCreatorProfiles(form.global?.creators ?? content?.creators)
+      ? fetchCreatorProfiles(form.global?.creators ?? content.creators)
       : fetchCreatorProfiles(['user']);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -83,10 +83,10 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     const getCurrentTimeISO = (): string => new Date().toISOString();
 
     return {
-      effective: formatDate(content?.effective ?? ''),
-      modified: formatDate(content?.modified || getCurrentTimeISO()),
+      effective: formatDate(content.effective ?? ''),
+      modified: formatDate(content.modified || getCurrentTimeISO()),
     };
-  }, [content?.effective, content?.modified]);
+  }, [content.effective, content.modified]);
 
   return (
     <>

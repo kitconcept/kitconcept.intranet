@@ -33,7 +33,7 @@ jobs:
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ inputs.node-version }}}
+          node-version: ${{ inputs.node-version }}
 
       - name: Enable corepack
         run: npm i -g corepack@latest && corepack enable

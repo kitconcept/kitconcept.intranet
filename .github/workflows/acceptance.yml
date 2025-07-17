@@ -71,10 +71,9 @@ jobs:
 
       - uses: JarvusInnovations/background-action@v1
         name: Start Servers
-        if: ${{ inputs.a11y == false || inputs.a11y == 'false' || inputs.a11y == null }}
         with:
           run: |
-            make acceptance-containers-start &
+            make ci-acceptance-containers-start &
 
           wait-on: |
             http-get://localhost:55001/plone

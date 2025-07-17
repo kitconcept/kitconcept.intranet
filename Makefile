@@ -217,6 +217,10 @@ acceptance-containers-stop: ## Stop Acceptance containers
 	@docker compose -f $(STACK_FILE_ACCEPTANCE) down
 
 ## Acceptance tests in CI
+.PHONY: ci-acceptance-containers-start
+ci-acceptance-containers-start: ## Start Acceptance containers
+	@echo "Start acceptance containers"
+	@docker compose -f $(STACK_FILE_ACCEPTANCE) up
 
 .PHONY: ci-acceptance-test
 ci-acceptance-test: ## Run Acceptance tests in ci mode

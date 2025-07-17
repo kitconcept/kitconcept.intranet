@@ -1331,6 +1331,7 @@ container = [
 test = [
     { name = "horse-with-no-namespace" },
     { name = "mypy" },
+    { name = "plone-app-robotframework" },
     { name = "plone-app-testing" },
     { name = "plone-restapi", extra = ["test"] },
     { name = "pytest" },
@@ -1366,6 +1367,7 @@ container = [
 test = [
     { name = "horse-with-no-namespace", specifier = ">=20250408.0" },
     { name = "mypy", specifier = ">=1.15.0" },
+    { name = "plone-app-robotframework", specifier = ">=2.1.5" },
     { name = "plone-app-testing" },
     { name = "plone-restapi", extras = ["test"] },
     { name = "pytest" },

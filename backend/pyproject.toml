@@ -50,6 +50,7 @@ test = [
     "pytest-cov",
     "pytest-docker>=3.2.0",
     "pytest-plone>=1.0.0a1",
+    "plone.app.robotframework>=2.1.5",
 ]
 container = [
     "plone.app.upgrade",

@@ -13,10 +13,17 @@ GIT_FOLDER=$(CURRENT_DIR)/.git
 
 PROJECT_NAME=kitconcept-intranet
 STACK_FILE=docker-compose-dev.yml
+STACK_FILE_ACCEPTANCE=docker-compose-acceptance.yml
 STACK_HOSTNAME=kitconcept-intranet.localhost
 
 VOLTO_VERSION = $(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 KC_VERSION=$(shell cat backend/version.txt)
+IMAGE_TAG=latest
+
+# Environment variables to be exported
+export VOLTO_VERSION := $(VOLTO_VERSION)
+export KC_VERSION := $(KC_VERSION)
+export DOCKER_BUILDKIT := 1
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -137,7 +144,7 @@ build-images:  ## Build docker images
 .PHONY: stack-start
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
-	VOLTO_VERSION=$(VOLTO_VERSION) KC_VERSION=$(KC_VERSION) docker compose -f $(STACK_FILE) up -d --build
+	@docker compose -f $(STACK_FILE) up -d --build
 	@echo "Now visit: http://kitconcept-intranet.localhost"
 
 .PHONY: start-stack
@@ -162,7 +169,9 @@ stack-rm:  ## Local Stack: Remove Services and Volumes
 	@echo "Remove local volume data"
 	@docker volume rm $(PROJECT_NAME)_vol-site-data
 
+####################################################
 ## Acceptance
+####################################################
 .PHONY: acceptance-backend-dev-start
 acceptance-backend-dev-start: ## Build Acceptance Servers
 	@echo "Build acceptance backend"
@@ -178,7 +187,7 @@ acceptance-test: ## Start Acceptance tests in interactive mode
 	@echo "Build acceptance backend"
 	$(MAKE) -C "./frontend/" acceptance-test
 
-# a11y tests
+## A11y tests
 .PHONY: acceptance-a11y-frontend-prod-start
 acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
 	$(MAKE) -C "./frontend/" acceptance-a11y-frontend-prod-start
@@ -191,46 +200,36 @@ acceptance-a11y-test: ## Start a11y Cypress in interactive mode
 ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 	$(MAKE) -C "./frontend/" ci-acceptance-a11y-test
 
-# Build Docker images
-.PHONY: acceptance-frontend-image-build
-acceptance-frontend-image-build: ## Build Acceptance frontend server image
-	@echo "Build acceptance frontend"
-	@docker build frontend -t kitconcept/kitconcept-intranet-frontend:acceptance -f frontend/Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)
-
-.PHONY: acceptance-backend-image-build
-acceptance-backend-image-build: ## Build Acceptance backend server image
-	@echo "Build acceptance backend"
-	@docker build backend -t kitconcept/kitconcept-intranet-backend:acceptance -f backend/Dockerfile.acceptance --build-arg KC_VERSION=$(KC_VERSION)
-
+## Acceptance tests with Containers
 .PHONY: acceptance-images-build
 acceptance-images-build: ## Build Acceptance frontend/backend images
-	$(MAKE) acceptance-backend-image-build
-	$(MAKE) acceptance-frontend-image-build
-
-.PHONY: acceptance-frontend-container-start
-acceptance-frontend-container-start: ## Start Acceptance frontend container
-	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name kitconcept-intranet-frontend-acceptance --link kitconcept-intranet-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/kitconcept-intranet-frontend:acceptance
-
-.PHONY: acceptance-backend-container-start
-acceptance-backend-container-start: ## Start Acceptance backend container
-	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name kitconcept-intranet-backend-acceptance -d kitconcept/kitconcept-intranet-backend:acceptance
+	@echo "Build acceptance images build"
+	@docker compose -f $(STACK_FILE_ACCEPTANCE) build
 
 .PHONY: acceptance-containers-start
 acceptance-containers-start: ## Start Acceptance containers
-	$(MAKE) acceptance-backend-container-start
-	$(MAKE) acceptance-frontend-container-start
+	@echo "Start acceptance containers"
+	@docker compose -f $(STACK_FILE_ACCEPTANCE) up -d
 
 .PHONY: acceptance-containers-stop
 acceptance-containers-stop: ## Stop Acceptance containers
 	@echo "Stop acceptance containers"
-	@docker stop kitconcept-intranet-frontend-acceptance
-	@docker stop kitconcept-intranet-backend-acceptance
+	@docker compose -f $(STACK_FILE_ACCEPTANCE) down
+
+## Acceptance tests in CI
+.PHONY: ci-acceptance-containers-start
+ci-acceptance-containers-start: ## Start Acceptance containers
+	@echo "Start acceptance containers"
+	@docker compose -f $(STACK_FILE_ACCEPTANCE) up
 
 .PHONY: ci-acceptance-test
 ci-acceptance-test: ## Run Acceptance tests in ci mode
-	$(MAKE) acceptance-containers-start
-	pnpm dlx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
+	@echo "Run acceptance tests"
 	$(MAKE) -C "./frontend/" ci-acceptance-test
+
+.PHONY: ci-acceptance-test-complete
+ci-acceptance-test-complete: ## Start acceptance containers, wait for them to be ready, and run tests
+	$(MAKE) acceptance-containers-start
+	pnpx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
+	$(MAKE) ci-acceptance-test
 	$(MAKE) acceptance-containers-stop

@@ -6,7 +6,8 @@ acceptance/cypress/videos/
 acceptance/node_modules
 .storybook-build
 build
-core
+/core/
+!/cypress/core/
 node_modules
 results
 yarn.lock

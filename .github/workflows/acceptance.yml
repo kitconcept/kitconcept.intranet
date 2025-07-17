@@ -65,7 +65,7 @@ jobs:
 
       - name: Install Cypress if not in cache
         if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
-        working-directory: core/packages/volto
+        working-directory: ./frontend/core/packages/volto
         shell: bash
         run: make cypress-install
 

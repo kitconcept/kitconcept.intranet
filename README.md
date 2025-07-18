@@ -80,6 +80,36 @@ After selecting **kitconcept Intranet** you will see a form:
 
 <img alt="first step" src="./docs/docs/_static/02-auth-internal.png" width="640" />
 
+### Amend Example Content
+
+Delete existing site and all its content and re-create a new Plone site:
+
+````
+make backend-delete-and-create-site
+````
+
+Export the content of the Plone site to your local repository:
+
+````
+make backend-update-example-content
+````
+
+Show the diff in your local repository:
+
+````
+git diff
+````
+
+Commit your changes:
+
+````
+git add .
+git checkout -b <MY_BRANCH>
+git commit . -m"<MY_COMMIT_MESSAGE>"
+git push
+````
+
+Go to [github.com/kitconcept/kitconcept.intranet](https://github.com/kitconcept/kitconcept.intranet/pulls) and click on the banner that shows your PR. Click on "Create PR".
 
 #### Authentication
 

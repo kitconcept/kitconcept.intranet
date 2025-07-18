@@ -1793,15 +1793,24 @@ importers:
       '@plone/types':
         specifier: workspace:*
         version: link:../../core/packages/types
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18
         version: 18.3.23
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18
         version: 18.3.7(@types/react@18.3.23)
       release-it:
-        specifier: ^17.7.0
+        specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.8.3
+      vitest:
+        specifier: ^3.1.2
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@22.16.2)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
 
   packages/volto-introduction-block/packages/volto-introduction-block:
     dependencies:
@@ -1948,6 +1957,9 @@ importers:
 
   packages/volto-logos-block/packages/volto-logos-block:
     dependencies:
+      '@kitconcept/volto-light-theme':
+        specifier: workspace:*
+        version: link:../../../volto-light-theme/frontend/packages/volto-light-theme
       '@plone/components':
         specifier: workspace:*
         version: link:../../../../core/packages/components

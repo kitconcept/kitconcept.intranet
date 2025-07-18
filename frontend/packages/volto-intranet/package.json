@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-intranet",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -44,6 +44,6 @@
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/core": "workspace:*"
+    "@kitconcept/core": "1.0.0-alpha.13"
   }
 }

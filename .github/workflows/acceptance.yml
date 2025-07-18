@@ -1,0 +1,111 @@
+name: Acceptance Code Quality Workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+        default: Acceptance
+      short-name:
+        required: true
+        type: string
+        default: all
+      node-version:
+        required: true
+        type: string
+
+env:
+  CYPRESS_RETRIES: 2
+
+jobs:
+  acceptance:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
+    name: ${{ inputs.name }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Acceptance Images
+        run: |
+          make acceptance-images-build
+
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Enable corepack
+        run: npm i -g corepack@latest && corepack enable
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Cypress Binary
+        id: cache-cypress-binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: binary-${{ env.NODE_VERSION }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          make frontend-install
+
+      - name: Install Cypress if not in cache
+        if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
+        working-directory: ./frontend/core/packages/volto
+        shell: bash
+        run: make cypress-install
+
+      - uses: JarvusInnovations/background-action@v1
+        name: Start Servers
+        with:
+          run: |
+            make ci-acceptance-containers-start &
+
+          wait-on: |
+            http-get://localhost:55001/plone
+            http://localhost:3000
+
+          tail: true # true = stderr,stdout
+          # This will allow you to monitor the progress live
+
+          log-output-resume: stderr
+          # Eliminates previosuly output stderr log entries from post-run output
+
+          wait-for: 10m
+
+          log-output: stderr,stdout # same as true
+
+          log-output-if: failure
+
+      - name: Run Acceptance Tests
+        shell: bash
+        run: |
+          make ci-acceptance-test
+
+      # Upload Cypress screenshots
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots-acceptance-${{ inputs.short-name }}
+          path: acceptance/cypress/screenshots
+
+      # Upload Cypress videos
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-videos-acceptance-${{ inputs.short-name }}
+          path: cypress/videos

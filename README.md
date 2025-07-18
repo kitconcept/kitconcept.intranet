@@ -82,13 +82,25 @@ After selecting **kitconcept Intranet** you will see a form:
 
 ### Amend Example Content
 
+First, make sure that you do not have the backend process running.
+
 Delete existing site and all its content and re-create a new Plone site:
 
 ````
 make backend-delete-and-create-site
 ````
 
-Export the content of the Plone site to your local repository:
+Start the backend with:
+
+````
+make backend-start
+````
+
+and amend the content on the site.
+
+Stop the backend by killing the `make backend-start` process (CTRL+C).
+
+Export the content of the Plone site to your local repository (make sure the backend is stopped for this):
 
 ````
 make backend-update-example-content
@@ -109,7 +121,7 @@ git commit . -m"<MY_COMMIT_MESSAGE>"
 git push
 ````
 
-Go to [github.com/kitconcept/kitconcept.intranet](https://github.com/kitconcept/kitconcept.intranet/pulls) and click on the banner that shows your PR. Click on "Create PR".
+Go to [github.com/kitconcept/kitconcept.intranet](https://github.com/kitconcept/kitconcept.intranet/pulls) and click on the banner that shows your PR. Click on "Compare & pull request".
 
 #### Authentication
 

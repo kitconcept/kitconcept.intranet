@@ -80,6 +80,48 @@ After selecting **kitconcept Intranet** you will see a form:
 
 <img alt="first step" src="./docs/docs/_static/02-auth-internal.png" width="640" />
 
+### Amend Example Content
+
+First, make sure that you do not have the backend process running.
+
+Delete existing site and all its content and re-create a new Plone site:
+
+````
+make backend-delete-and-create-site
+````
+
+Start the backend with:
+
+````
+make backend-start
+````
+
+and amend the content on the site.
+
+Stop the backend by killing the `make backend-start` process (CTRL+C).
+
+Export the content of the Plone site to your local repository (make sure the backend is stopped for this):
+
+````
+make backend-update-example-content
+````
+
+Show the diff in your local repository:
+
+````
+git diff
+````
+
+Commit your changes:
+
+````
+git add .
+git checkout -b <MY_BRANCH>
+git commit . -m"<MY_COMMIT_MESSAGE>"
+git push
+````
+
+Go to [github.com/kitconcept/kitconcept.intranet](https://github.com/kitconcept/kitconcept.intranet/pulls) and click on the banner that shows your PR. Click on "Compare & pull request".
 
 #### Authentication
 

@@ -18,7 +18,7 @@
     "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
     "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
     "i18n": "pnpm --filter volto-intranet i18n",
-    "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests",
+    "test": "pnpm --filter @kitconcept/volto-intranet exec vitest --passWithNoTests",
     "lint": "eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
@@ -43,7 +43,19 @@
   "pnpm": {
     "overrides": {
       "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
-      "react-refresh": "^0.14.2"
+      "react-refresh": "^0.14.2",
+      "@kitconcept/core": "workspace:*",
+      "@kitconcept/volto-light-theme": "workspace:*",
+      "@kitconcept/volto-button-block": "workspace:*",
+      "@kitconcept/volto-dsgvo-banner": "workspace:*",
+      "@kitconcept/volto-heading-block": "workspace:*",
+      "@kitconcept/volto-highlight-block": "workspace:*",
+      "@kitconcept/volto-introduction-block": "workspace:*",
+      "@kitconcept/volto-separator-block": "workspace:*",
+      "@kitconcept/volto-banner-block": "workspace:*",
+      "@kitconcept/volto-logos-block": "workspace:*",
+      "@kitconcept/volto-carousel-block": "workspace:*",
+      "@kitconcept/volto-bm3-compat": "workspace:*"
     }
   },
   "packageManager": "pnpm@9.1.1"

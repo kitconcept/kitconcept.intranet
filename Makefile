@@ -113,6 +113,11 @@ clean:  ## Clean installation
 	$(MAKE) -C "./backend/" clean
 	$(MAKE) -C "./frontend/" clean
 
+.PHONY: status
+status:  ## Show status
+	@echo "Show status"
+	python3 ./dirty.py
+
 .PHONY: format
 format:  ## Format codebase
 	@echo "Format codebase"

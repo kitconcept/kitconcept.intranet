@@ -1,0 +1,89 @@
+{
+  "@id": "/events/event-on-same-day",
+  "@type": "Event",
+  "UID": "f1b65766eaeb46ffa67ef35e7b4d4e25",
+  "allow_discussion": null,
+  "attendees": [],
+  "blocks": {
+    "18ffe2bd-9cc8-4854-9a3c-9b0b1adcf3fd": {
+      "@type": "slate"
+    },
+    "80ac3822-f81e-40c5-b0ff-6f13630a852c": {
+      "@type": "eventMetadata",
+      "fixed": true,
+      "required": true
+    },
+    "b8dee685-27fb-4867-a924-e87598358525": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "b8dee685-27fb-4867-a924-e87598358525",
+      "80ac3822-f81e-40c5-b0ff-6f13630a852c",
+      "18ffe2bd-9cc8-4854-9a3c-9b0b1adcf3fd"
+    ]
+  },
+  "changeNote": "",
+  "contact_email": null,
+  "contact_name": null,
+  "contact_phone": null,
+  "contributors": [],
+  "created": "2025-07-21T12:59:35+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "nfost\u00e4nde, Vortr\u00e4ge und Check-ups rund um Ergonomie, Stressbew\u00e4ltigung und Ern\u00e4hrung.",
+  "effective": "2025-07-21T14:51:42+00:00",
+  "end": "2025-07-21T13:00:00+00:00",
+  "event_url": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": "Gesundheit am Arbeitsplatz",
+  "id": "event-on-same-day",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "event_view",
+  "location": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-07-21T14:51:42+00:00",
+  "nav_title": null,
+  "open_end": false,
+  "preview_caption_link": null,
+  "recurrence": null,
+  "review_state": "published",
+  "rights": "",
+  "start": "2025-07-21T12:00:00+00:00",
+  "subjects": [],
+  "sync_uid": null,
+  "title": "Event on same day",
+  "type_title": "Event",
+  "version": "current",
+  "versioning_enabled": true,
+  "whole_day": false,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-21T12:59:35+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-21T14:51:42+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

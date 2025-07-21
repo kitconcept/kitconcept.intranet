@@ -6,6 +6,19 @@
   "blocks": {
     "3ffb70b3-51f1-4d9f-bbe6-a23e8bb1ca1a": {
       "@type": "eventCalendar",
+      "query": {
+        "b_size": "2",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
       "showSearchInput": true,
       "showTotalResults": true
     },
@@ -14,6 +27,18 @@
     },
     "undefined": {
       "@type": "eventCalendar",
+      "query": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
       "showSearchInput": true,
       "showTotalResults": true
     }
@@ -45,7 +70,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-18T12:41:37+00:00",
+  "modified": "2025-07-21T14:52:18+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

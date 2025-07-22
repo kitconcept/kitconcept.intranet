@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="kitconcept.intranet"
+    >
+
+  <include
+      package="plone.behavior"
+      file="meta.zcml"
+      />
+
+  <plone:behavior
+      name="kitconcept.blocks.config"
+      title="Through The Web blocks configuration"
+      description="Allows to set configuration that will be injected into the blocks default configuration."
+      provides=".blocks_settings.ITTWBlocksSettings"
+      />
+
+</configure>

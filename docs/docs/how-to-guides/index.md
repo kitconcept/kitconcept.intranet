@@ -18,13 +18,8 @@ This part of the documentation contains how-to guides, including installation an
 https://diataxis.fr/how-to-guides/
 ```
 
+```{toctree}
+:maxdepth: 2
 
-## Authors
-
--   {doc}`plone:contributing/documentation/myst-reference`
--   {doc}`plone:contributing/documentation/authors`
-
-
-## Designers
-
--   [Contribute to Plone Sphinx Theme](https://plone-sphinx-theme.readthedocs.io/guides/contribute.html)
+blocks-config-ttw
+```

@@ -21,6 +21,10 @@ RUN --mount=type=cache,target=/root/.cache \
 COPY . /src
 WORKDIR /src
 
+RUN <<EOT
+    ls -la /src/src/kitconcept/intranet/behaviors
+EOT
+
 # Install package
 RUN --mount=type=cache,target=/root/.cache \
     uv sync \

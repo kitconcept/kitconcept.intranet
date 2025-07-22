@@ -9,6 +9,9 @@ module.exports = defineConfig({
   retries: {
     runMode: 3,
   },
+  screenshotsFolder: `${currentDir}/cypress/screenshots`,
+  videosFolder: `${currentDir}/cypress/videos`,
+  video: true,
   e2e: {
     baseUrl: 'http://localhost:3000',
     specPattern: 'cypress/tests/**/*.cy.{js,jsx,ts,tsx}',

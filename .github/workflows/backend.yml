@@ -32,7 +32,7 @@ jobs:
       working-directory: ${{ inputs.working-directory }}
 
   coverage:
-    name: "Backend: Test"
+    name: "Backend: Test - Coverage"
     uses: plone/meta/.github/workflows/backend-pytest-coverage.yml@2.x
     with:
       python-version: ${{ inputs.python-version }}

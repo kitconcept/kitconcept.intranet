@@ -101,11 +101,11 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots-acceptance-${{ inputs.short-name }}
-          path: frontend/core/packages/volto/cypress/screenshots
+          path: frontend/cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-acceptance-${{ inputs.short-name }}
-          path: frontend/core/packages/volto/cypress/videos
+          path: frontend/cypress/videos

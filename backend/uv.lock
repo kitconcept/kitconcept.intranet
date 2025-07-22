@@ -92,6 +92,8 @@ constraints = [
     { name = "jsonschema-specifications", specifier = "==2024.10.1" },
     { name = "keyring", specifier = "==25.5.0" },
     { name = "kitconcept-core", specifier = "==1.0.0a13" },
+    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr?rev=conditional-backend" },
+    { name = "kitconcept-voltolighttheme", specifier = "==7.0.0a15" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.3.0" },
@@ -163,7 +165,7 @@ constraints = [
     { name = "plone-app-redirector", specifier = "==3.0.4" },
     { name = "plone-app-registry", specifier = "==2.0.6" },
     { name = "plone-app-relationfield", specifier = "==4.0.2" },
-    { name = "plone-app-robotframework", specifier = "==2.1.5" },
+    { name = "plone-app-robotframework", specifier = ">=2.1.5" },
     { name = "plone-app-standardtiles", specifier = "==3.2.1" },
     { name = "plone-app-testing", specifier = "==7.1.1" },
     { name = "plone-app-textfield", specifier = "==3.0.0" },
@@ -1386,7 +1388,7 @@ test = [
 [[package]]
 name = "kitconcept-solr"
 version = "1.0.0a7.dev0"
-source = { git = "https://github.com/kitconcept/kitconcept.solr?rev=conditional-backend#7780f6bf1afa76ba24e699e69dbbfe431024513d" }
+source = { git = "https://github.com/kitconcept/kitconcept.solr?rev=conditional-backend#4c7607971703e8a25e36deb577f8555c31b40c90" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },

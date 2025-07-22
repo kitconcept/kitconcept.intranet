@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-intranet",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -35,9 +35,12 @@
   "devDependencies": {
     "@plone/scripts": "^3.6.2",
     "@plone/types": "workspace:*",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "release-it": "^17.7.0"
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@testing-library/react": "^16.2.0",
+    "release-it": "^17.1.1",
+    "typescript": "^5.7.3",
+    "vitest": "^3.1.2"
   },
   "addons": [
     "@kitconcept/core",
@@ -45,7 +48,7 @@
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/core": "1.0.0-alpha.11",
+    "@kitconcept/core": "workspace:*",
     "@kitconcept/volto-solr": "workspace:*"
   }
 }

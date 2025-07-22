@@ -75,6 +75,14 @@ def post_handler(
     # Update security
     wf_tool: WorkflowTool = api.portal.get_tool("portal_workflow")
     wf_tool.updateRoleMappings()
+
+    workflow = answers.get("workflow", "restricted")
+    if workflow == "public" and api.content.get_state(site) == "private":
+        print("Publishing site")
+        api.content.transition(
+            site,
+            "publish",
+        )
     raw_logo = answers.get("site_logo")
     if raw_logo:
         logo = convert_data_uri_to_b64(raw_logo)

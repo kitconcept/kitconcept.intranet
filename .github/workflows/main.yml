@@ -39,10 +39,20 @@ jobs:
       contents: read
       packages: write
 
+  acceptance:
+    uses: ./.github/workflows/acceptance.yml
+    needs:
+        - config
+    with:
+        name: "Acceptance Tests"
+        short-name: "all"
+        node-version: ${{ needs.config.outputs.node-version }}
+    if: ${{ needs.config.outputs.acceptance == 'true' }}
   backend-release:
     uses: ./.github/workflows/backend-release.yml
     needs:
         - config
+        - acceptance
         - backend
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
@@ -59,6 +69,7 @@ jobs:
     uses: ./.github/workflows/frontend-release.yml
     needs:
         - config
+        - acceptance
         - frontend
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
@@ -74,7 +85,7 @@ jobs:
   deploy:
     name: "Deploy: plone-intranet.kitconcept.dev"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ github.event_name != 'pull_request' && github.ref_name == 'main' }}
+    if: ${{ always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
     needs:
       - config
       - backend-release

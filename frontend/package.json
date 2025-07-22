@@ -35,23 +35,7 @@
   "dependencies": {
     "@plone/volto": "workspace:*",
     "@plone/registry": "workspace:*",
-    "@kitconcept/volto-intranet": "workspace:*",
-    "overrides": {
-      "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
-      "react-refresh": "^0.14.2",
-      "@kitconcept/core": "workspace:*",
-      "@kitconcept/volto-light-theme": "workspace:*",
-      "@kitconcept/volto-button-block": "workspace:*",
-      "@kitconcept/volto-dsgvo-banner": "workspace:*",
-      "@kitconcept/volto-heading-block": "workspace:*",
-      "@kitconcept/volto-highlight-block": "workspace:*",
-      "@kitconcept/volto-introduction-block": "workspace:*",
-      "@kitconcept/volto-separator-block": "workspace:*",
-      "@kitconcept/volto-banner-block": "workspace:*",
-      "@kitconcept/volto-logos-block": "workspace:*",
-      "@kitconcept/volto-carousel-block": "workspace:*",
-      "@kitconcept/volto-bm3-compat": "workspace:*"
-    }
+    "@kitconcept/volto-intranet": "workspace:*"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0"

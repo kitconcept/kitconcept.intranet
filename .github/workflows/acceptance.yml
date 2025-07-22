@@ -101,7 +101,7 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots-acceptance-${{ inputs.short-name }}
-          path: acceptance/cypress/screenshots
+          path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4

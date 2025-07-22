@@ -120,10 +120,9 @@ context('Blocks Acceptance Tests', () => {
       .should('be.checked');
     cy.get('#toolbar-save').click();
     cy.wait(1000);
-    cy.get('.block.teaser .card-inner .card-summary').should(
-      'not.contain',
-      'are growing on the mountain tops',
-    );
+    cy.get('.block.teaser .card-inner .card-summary')
+      .should('be.visible')
+      .should('not.contain', 'are growing on the mountain tops');
     cy.get('.block.teaser .card-summary h2')
       .contains('Blue Orchids')
       .should('be.visible');

@@ -22,7 +22,7 @@ COPY . /src
 WORKDIR /src
 
 RUN <<EOT
-    ls -la /src/kitconcept/intranet/behaviors
+    ls -la /src/src/kitconcept/intranet/behaviors
 EOT
 
 # Install package

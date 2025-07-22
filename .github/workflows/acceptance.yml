@@ -96,6 +96,13 @@ jobs:
         run: |
           make ci-acceptance-test
 
+      - name: ls
+        run: |
+          ls -la frontend/cypress/screenshots
+          ls -la frontend/cypress/videos
+          ls -la frontend/core/packages/volto/cypress/screenshots
+          ls -la frontend/core/packages/volto/cypress/videos
+
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v4
         if: failure()

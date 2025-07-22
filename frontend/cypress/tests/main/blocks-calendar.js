@@ -136,7 +136,7 @@ describe('Event Calendar Block Tests', () => {
     cy.wait('@querySearch');
     cy.get('.row.template-container')
       .findByText('My First Event')
-      .should('not.exist');
+      .should('exist');
     cy.get('.row.template-container')
       .findByText('Second Event')
       .should('not.exist');

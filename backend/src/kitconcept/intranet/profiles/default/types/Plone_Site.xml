@@ -17,7 +17,6 @@
   <property name="behaviors"
             purge="true"
   >
-    <element value="kitconcept.blocks.config" />
     <element value="volto.preview_image_link" />
     <element value="voltolighttheme.header" />
     <element value="voltolighttheme.theme" />
@@ -29,6 +28,7 @@
     <element value="plone.relateditems" />
     <element value="plone.locking" />
     <element value="volto.blocks" />
+    <element value="kitconcept.blocks.config" />
   </property>
 
 

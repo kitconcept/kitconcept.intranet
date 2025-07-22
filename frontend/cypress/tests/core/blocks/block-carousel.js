@@ -118,8 +118,9 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#field-hide_description')
       .check({ force: true })
       .should('be.checked');
-    cy.get('.block.teaser .card-summary ')
-      .contains('are growing on the mountain tops')
-      .should('not.exist');
+    cy.get('.block.teaser .card-summary').should(
+      'not.contain',
+      'are growing on the mountain tops',
+    );
   });
 });

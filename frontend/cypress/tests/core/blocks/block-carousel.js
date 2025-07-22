@@ -124,5 +124,8 @@ context('Blocks Acceptance Tests', () => {
       'not.contain',
       'are growing on the mountain tops',
     );
+    cy.get('.block.teaser .card-summary h2')
+      .contains('Blue Orchids')
+      .should('be.visible');
   });
 });

@@ -22,17 +22,7 @@
         }
       ],
       "query": {
-        "limit": "23",
-        "query": [
-          {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event",
-              "Document"
-            ]
-          }
-        ],
+        "query": [],
         "sort_order": "ascending"
       },
       "showSearchInput": true,
@@ -53,7 +43,6 @@
         }
       ],
       "query": {
-        "b_size": "2",
         "limit": "23",
         "query": [
           {
@@ -98,7 +87,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-22T12:08:47+00:00",
+  "modified": "2025-07-22T12:27:07+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

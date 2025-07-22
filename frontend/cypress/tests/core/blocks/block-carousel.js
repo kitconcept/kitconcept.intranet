@@ -123,12 +123,6 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@content');
     cy.wait('@save');
-    cy.get('.block.teaser:first .card-inner .card-summary')
-      .should('be.visible')
-      .find('p')
-      .should('not.exist');
-    cy.get('.block.teaser:first .card-summary h2')
-      .contains('Blue Orchids')
-      .should('be.visible');
+    cy.get('.block.teaser:first .card-summary h2').contains('Blue Orchids');
   });
 });

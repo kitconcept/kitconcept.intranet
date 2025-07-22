@@ -1,27 +1,17 @@
 {
-  "extends": [
-    "stylelint-config-idiomatic-order"
-  ],
-  "plugins": [
-    "stylelint-prettier"
-  ],
+  "extends": ["stylelint-config-idiomatic-order"],
+  "plugins": ["stylelint-prettier"],
   "overrides": [
     {
-      "files": [
-        "**/*.less"
-      ],
+      "files": ["**/*.less"],
       "customSyntax": "postcss-less"
     },
     {
-      "files": [
-        "**/*.overrides"
-      ],
+      "files": ["**/*.overrides"],
       "customSyntax": "postcss-less"
     },
     {
-      "files": [
-        "**/*.scss"
-      ],
+      "files": ["**/*.scss"],
       "customSyntax": "postcss-scss"
     }
   ],

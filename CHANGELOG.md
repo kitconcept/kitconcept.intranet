@@ -1,6 +1,65 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b6 (2025-07-17)
+
+### Backend
+
+
+#### Feature
+
+- Example content for Event Calendar. @iFlameing [#140](https://github.com/kitconcept/kitconcept.intranet/issue/140)
+
+
+#### Internal
+
+- Fix acceptance fixture. @iRohitSingh @sneridagh [#137](https://github.com/kitconcept/kitconcept.intranet/issue/137)
+- Remove temporarily unit tests related to content creation. @sneridagh [#137](https://github.com/kitconcept/kitconcept.intranet/issue/137)
+- Added VLT example content under `/features/examples`. @sneridagh [#138](https://github.com/kitconcept/kitconcept.intranet/issue/138)
+- Added new event calendar block.
+  Added `footer_main_logo_inversed` image field to kitconcept.footer behavior, and related frontend code.
+  Several fixes.
+  Update to core 1a12. @sneridagh 
+- Update to core 1a13. @sneridagh 
+
+
+#### Test
+
+- Implement robotframework support for acceptance tests. @ericof 
+
+
+
+### Frontend
+
+#### Internal
+
+- Transfer and adjust acceptance tests from VLT. @iRohitSingh @sneridagh [#137](https://github.com/kitconcept/kitconcept.intranet/issue/137)
+- Added new event calendar block.
+  Added `footer_main_logo_inversed` image field to kitconcept.footer behavior, and related frontend code.
+  Several fixes.
+  Update to core 1a12. @sneridagh 
+- Update to core 1a13. @sneridagh 
+
+#### Test
+
+- Add cypress test for navigation_title, kicker and Breadcrumbs @iRohitSingh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Fix acceptance fixture. @iRohitSingh @sneridagh [#137](https://github.com/kitconcept/kitconcept.intranet/pull/137)
+
+
+#### Documentation
+
+- Added documentation infrastructure. @sneridagh 
+
+
+
 ## 1.0.0b5 (2025-06-30)
 
 ### Backend

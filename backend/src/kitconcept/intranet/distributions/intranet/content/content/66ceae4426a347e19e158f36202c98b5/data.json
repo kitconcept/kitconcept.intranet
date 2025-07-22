@@ -7,79 +7,63 @@
     "56bbedc5-a231-405a-87ec-a4b24af735f6": {
       "@type": "title"
     },
-    "83b5a746-2cff-41d7-9ed9-4006d9837fb4": {
-      "@type": "search",
+    "f23eac8e-733a-422e-b40d-fb59635fd731": {
+      "@type": "eventCalendar",
       "facets": [
         {
-          "@id": "0a809569-a22f-4bf0-808c-4aab33433477",
+          "@id": "d8166b63-327b-4e67-93b2-374c3bc20340",
           "advanced": false,
           "field": {
-            "label": "Effective date",
-            "value": "effective"
+            "label": "Review state",
+            "value": "review_state"
           },
           "hidden": false,
-          "multiple": false,
-          "title": "Datum",
-          "type": "daterangeFacet"
+          "multiple": false
         }
       ],
-      "listingBodyTemplate": "grid",
       "query": {
-        "query": [
-          {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event"
-            ]
-          }
-        ],
-        "sort_on": "start",
-        "sort_order": "descending",
-        "sort_order_boolean": true
-      }
-    },
-    "undefined": {
-      "@type": "search",
-      "facets": [
-        {
-          "@id": "0a809569-a22f-4bf0-808c-4aab33433477",
-          "advanced": false,
-          "field": {
-            "label": "Effective date",
-            "value": "effective"
-          },
-          "hidden": false,
-          "multiple": false,
-          "title": "Datum",
-          "type": "daterangeFacet"
-        }
-      ],
-      "listingBodyTemplate": "grid",
-      "query": {
-        "query": [
-          {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event"
-            ]
-          }
-        ],
-        "sort_on": "start",
+        "query": [],
         "sort_order": "ascending"
       },
       "showSearchInput": true,
-      "showSortOn": true,
-      "showTotalResults": true,
-      "styles": {},
-      "theme": "default"
+      "showTotalResults": true
+    },
+    "undefined": {
+      "@type": "eventCalendar",
+      "facets": [
+        {
+          "@id": "d8166b63-327b-4e67-93b2-374c3bc20340",
+          "advanced": false,
+          "field": {
+            "label": "Review state",
+            "value": "review_state"
+          },
+          "hidden": false,
+          "multiple": false
+        }
+      ],
+      "query": {
+        "limit": "23",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event",
+              "Document"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showTotalResults": true
     }
   },
   "blocks_layout": {
     "items": [
       "56bbedc5-a231-405a-87ec-a4b24af735f6",
-      "83b5a746-2cff-41d7-9ed9-4006d9837fb4"
+      "f23eac8e-733a-422e-b40d-fb59635fd731"
     ]
   },
   "changeNote": "",
@@ -103,7 +87,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-18T12:33:26+00:00",
+  "modified": "2025-07-22T12:27:07+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

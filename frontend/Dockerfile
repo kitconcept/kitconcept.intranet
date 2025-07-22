@@ -1,11 +1,12 @@
 # syntax=docker/dockerfile:1
-ARG VOLTO_VERSION
+ARG VOLTO_VERSION=undefined
 FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
 
 COPY --chown=node packages/volto-intranet /app/packages/volto-intranet
 COPY --chown=node volto.config.js /app/
 COPY --chown=node pnpm-workspace.yaml /app/
 COPY --chown=node package.json /app/package.json.temp
+COPY --chown=node mrs.developer.json /app/mrs.developer.json
 
 RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e

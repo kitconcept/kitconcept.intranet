@@ -25,8 +25,8 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "kitconcept.core==1.0.0a11",
-    "kitconcept.solr==1.0.0a5",
+    "kitconcept.core==1.0.0a13",
+    "kitconcept-solr==1.0.0a5",
     "plone.api",
     "plone.distribution",
     "plone.restapi",
@@ -51,6 +51,7 @@ test = [
     "pytest-cov",
     "pytest-docker>=3.2.0",
     "pytest-plone>=1.0.0a1",
+    "plone.app.robotframework>=2.1.5",
 ]
 container = [
     "plone.app.upgrade",
@@ -286,7 +287,9 @@ constraint-dependencies = [
     "jsonschema-specifications==2024.10.1",
     "jsonschema==4.23.0",
     "keyring==25.5.0",
-    "kitconcept.core==1.0.0a11",
+    "kitconcept-solr==1.0.0a5",
+    "kitconcept.core==1.0.0a13",
+    "kitconcept.voltolighttheme==7.0.0a15",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.1",
@@ -357,7 +360,7 @@ constraint-dependencies = [
     "plone.app.redirector==3.0.4",
     "plone.app.registry==2.0.6",
     "plone.app.relationfield==4.0.2",
-    "plone.app.robotframework==2.1.5",
+    "plone.app.robotframework>=2.1.5",
     "plone.app.standardtiles==3.2.1",
     "plone.app.testing==7.1.1",
     "plone.app.textfield==3.0.0",
@@ -651,3 +654,6 @@ constraint-dependencies = [
     "Zope==5.13",
     "ZopeUndo==6.0",
 ]
+
+[tool.uv.sources]
+kitconcept-solr = { git = "https://github.com/kitconcept/kitconcept.solr", rev = "conditional-backend" }

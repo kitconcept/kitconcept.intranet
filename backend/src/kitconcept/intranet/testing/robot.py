@@ -20,7 +20,7 @@ ANSWERS_CONTENT = {
     "default_language": "en",
     "portal_timezone": "Europe/Berlin",
     "workflow": "public",
-    "setup_content": True,
+    "setup_content": False,
     "authentication": {"provider": "internal"},
 }
 

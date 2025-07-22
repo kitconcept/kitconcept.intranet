@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.6 (2025-07-17)
+
+### Internal
+
+- Transfer and adjust acceptance tests from VLT. @iRohitSingh @sneridagh [#137](https://github.com/kitconcept/kitconcept.intranet/issue/137)
+- Added new event calendar block.
+  Added `footer_main_logo_inversed` image field to kitconcept.footer behavior, and related frontend code.
+  Several fixes.
+  Update to core 1a12. @sneridagh 
+- Update to core 1a13. @sneridagh 
+
+### Test
+
+- Add cypress test for navigation_title, kicker and Breadcrumbs @iRohitSingh 
+
 ## 1.0.0-beta.5 (2025-06-30)
 
 ### Bugfix

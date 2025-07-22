@@ -6,10 +6,12 @@ acceptance/cypress/videos/
 acceptance/node_modules
 .storybook-build
 build
-core
+/core/
+!/cypress/core/
 node_modules
 results
 yarn.lock
 /public
 
-packages/volto-light-theme
+packages/*
+!packages/volto-intranet

@@ -15,14 +15,6 @@
     "https": "https://github.com/kitconcept/volto-light-theme.git",
     "branch": "main"
   },
-  "volto-solr": {
-    "develop": true,
-    "output": "./packages",
-    "package": "@kitconcept/volto-solr",
-    "url": "git@github.com:kitconcept/volto-solr.git",
-    "https": "https://github.com/kitconcept/volto-solr.git",
-    "branch": "conditional-backend"
-  },
   "kitconcept-core": {
     "develop": true,
     "output": "packages",
@@ -114,5 +106,13 @@
     "url": "git@github.com:plonegovbr/social-media.git",
     "https": "https://github.com/plonegovbr/social-media.git",
     "branch": "main"
+  },
+  "volto-solr": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-solr",
+    "url": "git@github.com:kitconcept/volto-solr.git",
+    "https": "https://github.com/kitconcept/volto-solr.git",
+    "branch": "conditional-backend"
   }
 }

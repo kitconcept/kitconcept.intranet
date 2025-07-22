@@ -97,6 +97,7 @@ jobs:
           make ci-acceptance-test
 
       - name: ls
+        if: failure()
         run: |
           ls -la frontend/cypress/screenshots
           ls -la frontend/cypress/videos

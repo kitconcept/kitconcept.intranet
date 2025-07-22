@@ -24,6 +24,7 @@ context('Blocks configuration TTW - Acceptance Tests', () => {
     cy.findByLabelText('Close').click();
     cy.get('#toolbar-save').click();
     cy.wait('@content');
+    cy.wait(300);
 
     cy.navigate('/edit');
     cy.wait('@schema');
@@ -75,6 +76,7 @@ context('Blocks configuration TTW - Acceptance Tests', () => {
     cy.findByLabelText('Close').click();
     cy.get('#toolbar-save').click();
     cy.wait('@content');
+    cy.wait(300);
 
     cy.navigate('/edit');
     cy.wait('@schema');
@@ -106,6 +108,7 @@ context('Blocks configuration TTW - Acceptance Tests', () => {
     cy.findByLabelText('Close').click();
     cy.get('#toolbar-save').click();
     cy.wait('@content');
+    cy.wait(300);
 
     cy.navigate('/edit');
     cy.wait('@schema');
@@ -170,6 +173,7 @@ context('Blocks configuration TTW - Acceptance Tests', () => {
     cy.findByLabelText('Close').click();
     cy.get('#toolbar-save').click();
     cy.wait('@content');
+    cy.wait(300);
 
     cy.navigate('/edit');
     cy.wait('@schema');

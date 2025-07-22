@@ -2,9 +2,7 @@ from kitconcept.voltolighttheme import _
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField
-from plone.schema import TextLine
 from plone.supermodel import model
-from zope import schema
 from zope.interface import provider
 
 import json
@@ -32,7 +30,7 @@ class ITTWBlocksSettings(model.Schema):
     directives.widget(
         "blocks_config_mutator",
         frontendOptions={
-            "widget": "allowedBlocks",
+            "widget": "blockConfigEditor",
         },
     )
     blocks_config_mutator = JSONField(

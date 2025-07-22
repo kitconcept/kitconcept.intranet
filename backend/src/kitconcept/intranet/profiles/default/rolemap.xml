@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rolemap>
+  <permissions>
+    <permission acquire="False"
+                name="kitconcept.intranet: Site Admins Only"
+    >
+      <role name="Site Administrator" />
+      <role name="Manager" />
+    </permission>
+  </permissions>
+</rolemap>

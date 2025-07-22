@@ -27,6 +27,9 @@ class ITTWBlocksSettings(model.Schema):
         ],
     )
 
+    directives.write_permission(
+        blocks_config_mutator="kitconcept.intranet.siteadminsonly"
+    )
     directives.widget(
         "blocks_config_mutator",
         frontendOptions={

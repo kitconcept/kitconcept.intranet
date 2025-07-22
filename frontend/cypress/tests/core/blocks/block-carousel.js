@@ -125,7 +125,8 @@ context('Blocks Acceptance Tests', () => {
     cy.wait('@save');
     cy.get('.block.teaser:first .card-inner .card-summary')
       .should('be.visible')
-      .should('not.contain', 'are growing on the mountain tops');
+      .find('p')
+      .should('not.exist');
     cy.get('.block.teaser:first .card-summary h2')
       .contains('Blue Orchids')
       .should('be.visible');

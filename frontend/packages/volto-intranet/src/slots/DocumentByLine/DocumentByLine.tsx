@@ -37,9 +37,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const form = useSelector((state: FormData) => state.form);
 
   const isAddMode = props.location.pathname.includes('/add');
-  const creators = !isAddMode
-    ? form.global?.creators ?? content.creators ?? []
-    : [];
+  const creators = form.global?.creators ?? content.creators ?? [];
 
   useEffect(() => {
     fetchCreatorProfiles(creators);

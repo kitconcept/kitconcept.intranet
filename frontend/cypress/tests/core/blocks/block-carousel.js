@@ -2,13 +2,15 @@ context('Blocks Acceptance Tests', () => {
   beforeEach(() => {
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '/**/Document').as('schema');
+    cy.intercept('PATCH', '/**/my-page').as('save');
+
+    cy.autologin();
     cy.viewport('macbook-16');
     cy.createContent({
       contentType: 'Document',
-      contentId: 'document',
-      contentTitle: 'Document',
+      contentId: 'my-page',
+      contentTitle: 'My Page',
     });
-    cy.autologin();
     cy.visit('/');
     cy.wait('@content');
   });
@@ -19,7 +21,7 @@ context('Blocks Acceptance Tests', () => {
       contentType: 'Image',
       contentId: 'my-image',
       contentTitle: 'My Image',
-      path: 'document',
+      path: '/my-page',
     });
 
     cy.createContent({
@@ -29,14 +31,14 @@ context('Blocks Acceptance Tests', () => {
       contentDescription: 'are growing on the mountain tops',
       bodyModifier(body) {
         body.preview_image_link = {
-          '@id': '/document/my-image',
+          '@id': '/my-page/my-image',
         };
         return body;
       },
-      path: '/',
+      path: '/my-page',
     });
-    cy.visit('/edit');
-    cy.wait(1000);
+    cy.navigate('/my-page/edit');
+    cy.wait('@schema');
 
     // WHEN I create a carousel block
 
@@ -89,7 +91,8 @@ context('Blocks Acceptance Tests', () => {
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.get('#field-headline').click().clear().type('Carousel Block');
-    cy.get('#field-items_to_show').click().clear().type('2');
+    cy.get('#field-items_to_show').click();
+    cy.findByText('2').click();
     // Select the checkbox
     cy.get('#field-hide_description')
       .check({ force: true })
@@ -104,11 +107,26 @@ context('Blocks Acceptance Tests', () => {
     cy.get('h2.headline').contains('Carousel Block');
     cy.get('.block.teaser .image-wrapper img')
       .should('have.attr', 'src')
-      .and('include', '/document/my-image/@@images/image-215-');
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
-    cy.get('.block.teaser .card-summary p').contains(
-      'are growing on the mountain tops',
-    );
+      .and('include', '/my-page/my-image/@@images/image-');
+    cy.get('.block.teaser .card-summary h2')
+      .contains('Blue Orchids')
+      .should('be.visible');
+    cy.get('.block.teaser .card-summary p')
+      .contains('are growing on the mountain tops')
+      .should('be.visible');
     cy.get('.carousel-dots button').click({ multiple: true });
+    cy.navigate('/my-page/edit');
+    cy.wait('@schema');
+    cy.get('.block.carousel').dblclick({ force: true });
+    cy.get('#field-hide_description')
+      .check({ force: true })
+      .should('be.checked');
+    cy.get('#toolbar-save').click();
+    cy.wait('@content');
+    cy.wait('@save');
+    cy.get('.block.teaser:first .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser:first .card-inner .card-summary')
+      .should('be.visible')
+      .should('not.contain', 'are growing on the mountain tops');
   });
 });

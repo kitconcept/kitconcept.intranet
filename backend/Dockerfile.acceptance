@@ -1,29 +1,54 @@
-# syntax=docker/dockerfile:1
-ARG KC_VERSION=6.1.0
-FROM plone/server-builder:${KC_VERSION} AS builder
+# syntax=docker/dockerfile:1.9
+ARG KC_VERSION=latest
+FROM ghcr.io/kitconcept/core-builder:${KC_VERSION} AS builder
 
-WORKDIR /app
-
-
-# Add local code
-COPY scripts/ scripts/
-COPY . src
-
-# Install local requirements and pre-compile mo files
+# Move skeleton folder
 RUN <<EOT
-    set -e
-    bin/pip install mxdev uv
-    mv src/requirements-docker.txt src/requirements.txt
-    sed -i 's/-e .\[test\]/./g' src/mx.ini
-    cd /app/src
-    ../bin/mxdev -c mx.ini
-    ../bin/uv pip install -r requirements-mxdev.txt
-    ../bin/python /compile_mo.py
-    cd /app
-    rm -Rf src/
+    mv /app /app_base
 EOT
 
-FROM plone/server-acceptance:${KC_VERSION}
+# Install dependencies
+RUN --mount=type=cache,target=/root/.cache \
+    --mount=type=bind,source=uv.lock,target=uv.lock \
+    --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+    uv sync \
+        --locked \
+        --no-dev \
+        --no-group test \
+        --group container \
+        --no-install-project
+
+COPY . /src
+WORKDIR /src
+
+RUN <<EOT
+    ls -la /src/src/kitconcept/intranet/behaviors
+EOT
+
+# Install package
+RUN --mount=type=cache,target=/root/.cache \
+    uv sync \
+        --locked \
+        --no-dev \
+        --group test \
+        --group container \
+        --no-editable
+
+# Move skeleton files to /app
+RUN <<EOT
+    mv /app_base/* /app
+    rm -Rf /app_base
+    mv scripts/create_site.py /app/scripts/create_site.py
+    mv scripts/default.json /app/scripts/default.json
+EOT
+
+# Compile translation files
+RUN <<EOT
+    /app/bin/python /compile_mo.py
+EOT
+
+
+FROM ghcr.io/kitconcept/core-prod:${KC_VERSION:-latest}
 
 LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
       org.label-schema.name="kitconcept.intranet-acceptance" \
@@ -32,10 +57,25 @@ LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
 
 ENV CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,kitconcept.intranet"
 ENV APPLY_PROFILES="kitconcept.intranet:default"
+ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
 
-# Copy /app from builder
-COPY --from=builder /app /app
+# Copy the pre-built `/app` directory to the runtime container
+# and change the ownership to user app and group app in one step.
+COPY --from=builder --chown=500:500 /app /app
 
 RUN <<EOT
     ln -s /data /app/var
+    chown -R 500:500 /data
 EOT
+
+# Also expose port 55001
+EXPOSE 55001
+
+ENV ZSERVER_HOST=0.0.0.0
+ENV ZSERVER_PORT=55001
+ENV LISTEN_PORT=55001
+
+# Entrypoint is robot-server
+ENTRYPOINT [ "/app/bin/robot-server" ]
+
+CMD ["kitconcept.intranet.testing.ROBOT_TESTING"]

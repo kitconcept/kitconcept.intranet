@@ -25,7 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "kitconcept.core==1.0.0a12",
+    "kitconcept.core==1.0.0a13",
     "plone.api",
     "plone.distribution",
     "plone.restapi",
@@ -50,6 +50,7 @@ test = [
     "pytest-cov",
     "pytest-docker>=3.2.0",
     "pytest-plone>=1.0.0a1",
+    "plone.app.robotframework>=2.1.5",
 ]
 container = [
     "plone.app.upgrade",
@@ -285,7 +286,7 @@ constraint-dependencies = [
     "jsonschema-specifications==2024.10.1",
     "jsonschema==4.23.0",
     "keyring==25.5.0",
-    "kitconcept.core==1.0.0a12",
+    "kitconcept.core==1.0.0a13",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.1",

@@ -8,11 +8,103 @@
     "filterBlobs": true
   },
   "volto-light-theme": {
-    "develop": false,
+    "develop": true,
     "output": "./packages",
     "package": "@kitconcept/volto-light-theme",
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
+    "branch": "main"
+  },
+  "kitconcept-core": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/core",
+    "url": "git@github.com:kitconcept/kitconcept-core.git",
+    "https": "https://github.com/kitconcept/kitconcept-core.git"
+  },
+  "volto-button-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-button-block",
+    "url": "git@github.com:kitconcept/volto-button-block.git",
+    "https": "https://github.com/kitconcept/volto-button-block.git"
+  },
+  "volto-dsgvo-banner": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-dsgvo-banner",
+    "url": "git@github.com:kitconcept/volto-dsgvo-banner.git",
+    "https": "https://github.com/kitconcept/volto-dsgvo-banner.git"
+  },
+  "volto-heading-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-heading-block",
+    "url": "git@github.com:kitconcept/volto-heading-block.git",
+    "https": "https://github.com/kitconcept/volto-heading-block.git"
+  },
+  "volto-highlight-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-highlight-block",
+    "url": "git@github.com:kitconcept/volto-highlight-block.git",
+    "https": "https://github.com/kitconcept/volto-highlight-block.git"
+  },
+  "volto-introduction-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-introduction-block",
+    "url": "git@github.com:kitconcept/volto-introduction-block.git",
+    "https": "https://github.com/kitconcept/volto-introduction-block.git"
+  },
+  "volto-separator-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-separator-block",
+    "url": "git@github.com:kitconcept/volto-separator-block.git",
+    "https": "https://github.com/kitconcept/volto-separator-block.git"
+  },
+  "volto-slider-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-slider-block",
+    "url": "git@github.com:kitconcept/volto-slider-block.git",
+    "https": "https://github.com/kitconcept/volto-slider-block.git"
+  },
+  "volto-banner-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-banner-block",
+    "url": "git@github.com:kitconcept/volto-banner-block.git",
+    "https": "https://github.com/kitconcept/volto-banner-block.git"
+  },
+  "volto-logos-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-logos-block",
+    "url": "git@github.com:kitconcept/volto-logos-block.git",
+    "https": "https://github.com/kitconcept/volto-logos-block.git"
+  },
+  "volto-carousel-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-carousel-block",
+    "url": "git@github.com:kitconcept/volto-carousel-block.git",
+    "https": "https://github.com/kitconcept/volto-carousel-block.git"
+  },
+  "volto-bm3-compat": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-bm3-compat",
+    "url": "git@github.com:kitconcept/volto-bm3-compat.git",
+    "https": "https://github.com/kitconcept/volto-bm3-compat.git"
+  },
+  "volto-social-media": {
+    "develop": true,
+    "output": "packages",
+    "package": "@plonegovbr/volto-social-media",
+    "url": "git@github.com:plonegovbr/social-media.git",
+    "https": "https://github.com/plonegovbr/social-media.git",
     "branch": "main"
   }
 }

@@ -190,6 +190,7 @@ class TestContentTypeFTI:
                     "plone.relateditems",
                     "plone.locking",
                     "volto.blocks",
+                    "kitconcept.blocks.config",
                 ),
             ),
         ],

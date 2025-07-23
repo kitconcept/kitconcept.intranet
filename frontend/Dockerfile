@@ -6,10 +6,11 @@ COPY --chown=node packages/volto-intranet /app/packages/volto-intranet
 COPY --chown=node volto.config.js /app/
 COPY --chown=node pnpm-workspace.yaml /app/
 COPY --chown=node package.json /app/package.json.temp
+COPY --chown=node mrs.developer.json /app/mrs.developer.json
 
 RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e
-    python3 -c "import json; orig_data = json.load(open('package.json.temp')); orig_deps = orig_data['dependencies']; data = json.load(open('package.json')); data['dependencies'].update(orig_deps); json.dump(data, open('package.json', 'w'), indent=2)"
+    python3 -c "import json; orig_data = json.load(open('package.json.temp')); orig_deps = orig_data['dependencies']; orig_pnpm = orig_data['pnpm']; data = json.load(open('package.json')); data['dependencies'].update(orig_deps); data['pnpm'].update(orig_pnpm); json.dump(data, open('package.json', 'w'), indent=2)"
     rm package.json.temp
     make install
     pnpm build

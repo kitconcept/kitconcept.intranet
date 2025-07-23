@@ -5,7 +5,11 @@
     >
 
   <configure zcml:condition="installed AccessControl.security">
-    <!-- -*- extra stuff goes here -*- -->
+
+    <permission
+        id="kitconcept.intranet.siteadminsonly"
+        title="kitconcept.intranet: Site Admins Only"
+        />
 
   </configure>
 

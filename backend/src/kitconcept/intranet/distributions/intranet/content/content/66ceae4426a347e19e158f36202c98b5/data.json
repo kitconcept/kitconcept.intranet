@@ -4,58 +4,16 @@
   "UID": "66ceae4426a347e19e158f36202c98b5",
   "allow_discussion": null,
   "blocks": {
-    "56bbedc5-a231-405a-87ec-a4b24af735f6": {
-      "@type": "title"
-    },
-    "f23eac8e-733a-422e-b40d-fb59635fd731": {
+    "3ffb70b3-51f1-4d9f-bbe6-a23e8bb1ca1a": {
       "@type": "eventCalendar",
-      "facets": [
-        {
-          "@id": "d8166b63-327b-4e67-93b2-374c3bc20340",
-          "advanced": false,
-          "field": {
-            "label": "Review state",
-            "value": "review_state"
-          },
-          "hidden": false,
-          "multiple": false
-        }
-      ],
-      "query": {
-        "query": [],
-        "sort_order": "ascending"
-      },
       "showSearchInput": true,
       "showTotalResults": true
     },
+    "56bbedc5-a231-405a-87ec-a4b24af735f6": {
+      "@type": "title"
+    },
     "undefined": {
       "@type": "eventCalendar",
-      "facets": [
-        {
-          "@id": "d8166b63-327b-4e67-93b2-374c3bc20340",
-          "advanced": false,
-          "field": {
-            "label": "Review state",
-            "value": "review_state"
-          },
-          "hidden": false,
-          "multiple": false
-        }
-      ],
-      "query": {
-        "limit": "23",
-        "query": [
-          {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event",
-              "Document"
-            ]
-          }
-        ],
-        "sort_order": "ascending"
-      },
       "showSearchInput": true,
       "showTotalResults": true
     }
@@ -63,7 +21,7 @@
   "blocks_layout": {
     "items": [
       "56bbedc5-a231-405a-87ec-a4b24af735f6",
-      "f23eac8e-733a-422e-b40d-fb59635fd731"
+      "3ffb70b3-51f1-4d9f-bbe6-a23e8bb1ca1a"
     ]
   },
   "changeNote": "",
@@ -87,7 +45,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-22T12:27:07+00:00",
+  "modified": "2025-07-18T12:41:37+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

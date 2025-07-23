@@ -37,14 +37,13 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const form = useSelector((state: FormData) => state.form);
 
   const isAddMode = props.location.pathname.includes('/add');
+  const creators = form.global?.creators ?? content.creators ?? [];
 
   useEffect(() => {
-    !isAddMode
-      ? fetchCreatorProfiles(form.global?.creators ?? content.creators)
-      : fetchCreatorProfiles(['user']);
+    fetchCreatorProfiles(creators);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [form.global?.creators, content.creators, isAddMode]);
+  }, [form.global?.creators, content.creators]);
 
   const getCreatorHomePage = async (username: string): Promise<string> => {
     try {
@@ -59,7 +58,6 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const fetchCreatorProfiles = async (creators: string[]) => {
     const result = await Promise.all(
       creators.map(async (user) => {
-        if (user === 'user') return [user, ''];
         const profileUrl = await getCreatorHomePage(user);
         return [user, profileUrl || ''];
       }),
@@ -109,23 +107,24 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
                 </React.Fragment>
               ),
             )}
+            —
           </span>
         )}
-        {formattedDates.effective && (
+        {formattedDates.effective && !isAddMode && (
           <span className="documentPublished">
             {content.review_state === 'published' ? (
               <span>
-                — {intl.formatMessage(messages.published)}
-                {formattedDates.effective}
+                {intl.formatMessage(messages.published)}
+                {formattedDates.effective},
               </span>
             ) : (
               ''
             )}
           </span>
         )}
-        {formattedDates.modified && (
+        {formattedDates.modified && !isAddMode && (
           <span className="documentModified">
-            , {intl.formatMessage(messages.modified)}
+            {intl.formatMessage(messages.modified)}
             {formattedDates.modified}
           </span>
         )}

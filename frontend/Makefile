@@ -39,6 +39,15 @@ install: ## Installs the add-on in a development environment
 	pnpm i
 	pnpm build:deps
 
+.PHONY: status
+status:  ## Show status
+	@echo "Show status"
+	python3 ../dirty.py
+
+.PHONY: list-packages
+list-packages: ## List frontend packages and their tags from mrs.developer.json
+	@python3 -c 'import json; f = open("mrs.developer.json"); data = json.load(f); f.close(); result = {v["package"]: v.get("tag", None) for v in data.values() if isinstance(v, dict) and "package" in v and "tag" in v}; print(json.dumps(result, indent=2))'
+
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
 	pnpm start

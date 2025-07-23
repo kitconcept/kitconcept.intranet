@@ -391,6 +391,13 @@
           "Contributor"
         ]
       },
+      "kitconcept.intranet: Site Admins Only": {
+        "acquire": false,
+        "roles": [
+          "Site Administrator",
+          "Manager"
+        ]
+      },
       "plone.resource: Export ZIP file": {
         "acquire": false,
         "roles": [

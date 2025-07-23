@@ -1562,42 +1562,9 @@ importers:
 
   packages/kitconcept-core/frontend/packages/kitconcept-core:
     dependencies:
-      '@eeacms/volto-accordion-block':
-        specifier: ^10.4.6
-        version: 10.4.6
-      '@kitconcept/volto-bm3-compat':
-        specifier: workspace:*
-        version: link:../../../../volto-bm3-compat/packages/volto-bm3-compat
-      '@kitconcept/volto-button-block':
-        specifier: workspace:*
-        version: link:../../../../volto-button-block/packages/volto-button-block
-      '@kitconcept/volto-carousel-block':
-        specifier: workspace:*
-        version: link:../../../../volto-carousel-block/packages/volto-carousel-block
-      '@kitconcept/volto-dsgvo-banner':
-        specifier: workspace:*
-        version: link:../../../../volto-dsgvo-banner/packages/volto-dsgvo-banner
-      '@kitconcept/volto-heading-block':
-        specifier: workspace:*
-        version: link:../../../../volto-heading-block/packages/volto-heading-block
-      '@kitconcept/volto-highlight-block':
-        specifier: workspace:*
-        version: link:../../../../volto-highlight-block/packages/volto-highlight-block
-      '@kitconcept/volto-introduction-block':
-        specifier: workspace:*
-        version: link:../../../../volto-introduction-block/packages/volto-introduction-block
       '@kitconcept/volto-light-theme':
         specifier: workspace:*
         version: link:../../../../volto-light-theme/frontend/packages/volto-light-theme
-      '@kitconcept/volto-logos-block':
-        specifier: workspace:*
-        version: link:../../../../volto-logos-block/packages/volto-logos-block
-      '@kitconcept/volto-separator-block':
-        specifier: workspace:*
-        version: link:../../../../volto-separator-block/packages/volto-separator-block
-      '@kitconcept/volto-slider-block':
-        specifier: ^6.4.0
-        version: 6.4.0(embla-carousel@8.5.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@mbarde/volto-image-crop-widget':
         specifier: ^0.5.1
         version: 0.5.1(react@18.2.0)
@@ -1607,9 +1574,6 @@ importers:
       '@plone/components':
         specifier: workspace:*
         version: link:../../../../../core/packages/components
-      '@plonegovbr/volto-social-media':
-        specifier: ^2.0.0-alpha.6
-        version: 2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -3702,12 +3666,6 @@ packages:
     resolution: {integrity: sha512-bkn1M1Lcl8P067dAUeYeWsLw5P4ZpjbKg+7Tt3/rjx7oVg4VQX/QsRfOKojQPGeFL3ifmzk9mJoW4rCF4QGFdw==}
     peerDependencies:
       '@plone/volto': ^17.0.0-alpha.21 || ^18.0.0-alpha.0
-
-  '@kitconcept/volto-slider-block@6.4.0':
-    resolution: {integrity: sha512-Dm1TB4ubHjF4It1CN78HMEiPb9smCY1I6jmFWyjYhQHkN7TF/uGeS+rDofk8jv5XzKanpr6chPR7+vDf5t9CRg==}
-    peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
 
   '@kwsites/file-exists@1.1.1':
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
@@ -17665,16 +17623,6 @@ snapshots:
     transitivePeerDependencies:
       - embla-carousel
       - react
-
-  '@kitconcept/volto-slider-block@6.4.0(embla-carousel@8.5.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
-    dependencies:
-      deepmerge: 4.2.2
-      embla-carousel-autoplay: 8.5.2(embla-carousel@8.5.2)
-      embla-carousel-react: 8.5.2(react@18.2.0)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - embla-carousel
 
   '@kwsites/file-exists@1.1.1':
     dependencies:

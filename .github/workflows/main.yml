@@ -113,9 +113,9 @@ jobs:
       matrix:
         include:
           - name: "Tests"
+            api-port: '8080'
+            api-site: plone
             spec-pattern: 'a11y/**/*.cy.{js,jsx,ts,tsx}'
-            backend-port: '8080'
-            backend-site: plone
 
     needs:
         - config

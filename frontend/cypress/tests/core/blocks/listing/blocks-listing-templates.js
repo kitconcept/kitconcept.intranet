@@ -55,6 +55,7 @@ describe('Folder Contents Tests', () => {
     cy.get('.block-editor-listing').click();
     cy.configureListingWith('Image');
     cy.get('#toolbar-save').click();
+    cy.wait('@content');
 
     cy.isInHTML({ parent: '.listing-item:eq(0)', content: 'My Image' });
   });
@@ -93,6 +94,7 @@ describe('Folder Contents Tests', () => {
     cy.configureListingWith('Page');
     cy.addLocationQuerystring();
     cy.get('#toolbar-save').click();
+    cy.wait('@content');
 
     cy.isInHTML({ parent: '.listing-item:eq(0)', content: 'My Document' });
   });
@@ -131,6 +133,8 @@ describe('Folder Contents Tests', () => {
     cy.get('.edit').click();
     cy.addLocationQuerystring();
     cy.get('#toolbar-save').click();
+    cy.wait('@content');
+
     cy.isInHTML({
       parent: '.image-gallery-slides',
       content: '.image-gallery-image',

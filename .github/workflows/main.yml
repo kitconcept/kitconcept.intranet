@@ -123,6 +123,7 @@ jobs:
         base-tag: ${{ needs.config.outputs.base-tag }}
         node-version: ${{ needs.config.outputs.node-version }}
         name: ${{ matrix.name }}
+        api-url: ${{ matrix.api-url }}
         spec-pattern: ${{ matrix.spec-pattern }}
         test-profile: a11y
 

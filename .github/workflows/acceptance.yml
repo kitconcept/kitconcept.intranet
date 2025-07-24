@@ -26,6 +26,14 @@ on:
         required: false
         type: string
         default: '**/*.cy.{js,jsx,ts,tsx}'
+      backend-port:
+        required: false
+        type: number
+        default: 55001
+      backend-site:
+        required: false
+        type: string
+        default: plone
       test-profile:
         required: false
         type: string
@@ -95,7 +103,7 @@ jobs:
             BASE_TAG=${{ inputs.base-tag }} COMPOSE_PROFILES=${{ inputs.test-profile }} make ci-containers-start &
 
           wait-on: |
-            http-get://localhost:55001/plone
+            http-get://localhost:${{ inputs.backend-port }}/${{ inputs.backend-site }}
             http://localhost:3000
 
           tail: true # true = stderr,stdout

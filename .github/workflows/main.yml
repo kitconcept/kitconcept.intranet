@@ -114,6 +114,8 @@ jobs:
         include:
           - name: "A11y Tests"
             spec-pattern: 'a11y/**/*.cy.{js,jsx,ts,tsx}'
+            backend-port: 8080
+
     needs:
         - config
         - image-build

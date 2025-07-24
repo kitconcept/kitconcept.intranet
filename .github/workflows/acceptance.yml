@@ -26,14 +26,14 @@ on:
         required: false
         type: string
         default: '**/*.cy.{js,jsx,ts,tsx}'
-      api-port:
+      api-url:
         required: false
         type: string
-        default: '55001'
-      api-site:
+        default: 'localhost:55001/plone'
+      site-url:
         required: false
         type: string
-        default: plone
+        default: 'localhost:3000'
       test-profile:
         required: false
         type: string
@@ -103,8 +103,8 @@ jobs:
             BASE_TAG=${{ inputs.base-tag }} COMPOSE_PROFILES=${{ inputs.test-profile }} make ci-containers-start &
 
           wait-on: |
-            http-get://localhost:${{ inputs.api-port }}/${{ inputs.api-site }}
-            http://localhost:3000
+            http-get://${{ inputs.api-url }}
+            http://${{ inputs.site-url }}
 
           tail: true # true = stderr,stdout
           # This will allow you to monitor the progress live

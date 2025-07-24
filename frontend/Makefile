@@ -147,7 +147,7 @@ acceptance-a11y-test: ## Start a11y Cypress in interactive mode
 
 .PHONY: ci-acceptance-a11y-test
 ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/plone pnpm exec cypress run --config specPattern='$(SPEC)'
+	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/plone pnpm exec cypress run --config specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
 
 ## Image Build
 .PHONY: build-image

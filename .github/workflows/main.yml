@@ -17,6 +17,7 @@ jobs:
 
 
   image-build:
+    name: "Image: ${{ needs.config.outputs.image-name-prefix }}-${{ matrix.suffix }}:${{ needs.config.outputs.base-tag }}"
     uses: ./.github/workflows/image-build.yml
     if: ${{ needs.config.outputs.acceptance == 'true' }}
     strategy:
@@ -53,7 +54,6 @@ jobs:
       dockerfile: ${{ matrix.dockerfile }}
       working-directory: ${{ matrix.working-directory }}
 
-
   backend:
     uses: ./.github/workflows/backend.yml
     needs:
@@ -79,6 +79,7 @@ jobs:
       packages: write
 
   acceptance:
+    name: "Acceptance: ${{ matrix.name }}"
     uses: ./.github/workflows/acceptance.yml
     if: ${{ needs.config.outputs.acceptance == 'true' }}
     strategy:
@@ -104,6 +105,7 @@ jobs:
         spec-pattern: ${{ matrix.spec-pattern }}
 
   a11y:
+    name: "A11y: ${{ matrix.name }}"
     uses: ./.github/workflows/acceptance.yml
     if: ${{ needs.config.outputs.acceptance == 'true' }}
     strategy:

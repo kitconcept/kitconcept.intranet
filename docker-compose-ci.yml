@@ -23,5 +23,5 @@ services:
     pull_policy: always
 
   backend-a11y:
-    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${BASE_TAG:-latest}
+    image: ghcr.io/kitconcept/kitconcept-intranet-acceptance:${BASE_TAG:-latest}
     pull_policy: always

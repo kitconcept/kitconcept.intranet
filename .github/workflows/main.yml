@@ -85,8 +85,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Core Tests"
-            spec-pattern: 'core/**/*.cy.{js,jsx,ts,tsx}'
+          - name: "Core Tests: Basic"
+            spec-pattern: 'core/basic/*.{js,jsx,ts,tsx}'
+          - name: "Core Tests: Blocks"
+            spec-pattern: 'core/blocks/*.{js,jsx,ts,tsx}'
+          - name: "Core Tests: Content"
+            spec-pattern: 'core/content/*.{js,jsx,ts,tsx}'
           - name: "Main Tests"
             spec-pattern: 'main/**/*.cy.{js,jsx,ts,tsx}'
 

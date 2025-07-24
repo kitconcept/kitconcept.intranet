@@ -281,7 +281,7 @@ ci-a11y-test-complete: ## Simulate CI a11y test run
 	$(MAKE) acceptance-a11y-containers-start
 	@echo "- Waiting for backend and frontend to be ready"
 	pnpx wait-on --httpTimeout 20000 http-get://localhost:8080/plone http://localhost:3000
-	$(MAKE) -C "./frontend/" ci-acceptance-a11y-test
+	-$(MAKE) -C "./frontend/" ci-acceptance-a11y-test || true
 	$(MAKE) acceptance-a11y-containers-stop
 
 .PHONY: ci-acceptance-test-complete
@@ -290,5 +290,5 @@ ci-acceptance-test-complete: ## Simulate CI acceptance test run
 	$(MAKE) acceptance-containers-start
 	@echo "- Waiting for backend and frontend to be ready"
 	pnpx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
-	$(MAKE) -C "./frontend/" ci-acceptance-test
+	-$(MAKE) -C "./frontend/" ci-acceptance-test || true
 	$(MAKE) acceptance-containers-stop

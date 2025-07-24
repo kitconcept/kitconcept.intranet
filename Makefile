@@ -13,9 +13,21 @@ GIT_FOLDER=$(CURRENT_DIR)/.git
 
 PROJECT_NAME=kitconcept-intranet
 STACK_FILE=docker-compose-dev.yml
-STACK_FILE_ACCEPTANCE=docker-compose-acceptance.yml
+STACK_FILE_DEV=docker-compose-dev.yml
+STACK_FILE_CI=docker-compose-ci.yml
 STACK_HOSTNAME=kitconcept-intranet.localhost
 
+# Docker Compose Helpers
+STACK_PROFILE := $(if $(filter undefined,$(origin COMPOSE_PROFILES)),dev,$(COMPOSE_PROFILES))
+COMPOSE_DEV := docker compose -f $(STACK_FILE) --profile dev
+COMPOSE_ACCEPTANCE := docker compose -f $(STACK_FILE) --profile acceptance
+COMPOSE_A11y := docker compose -f $(STACK_FILE) --profile a11y
+COMPOSE_CI := docker compose -f $(STACK_FILE) -f $(STACK_FILE_CI) --profile $(STACK_PROFILE)
+
+# CI Test Command
+CI_TEST_COMMAND := $(if $(filter a11y,$(STACK_PROFILE)),ci-acceptance-a11y-test,ci-acceptance-test)
+
+# Versioning variables
 VOLTO_VERSION = $(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 KC_VERSION=$(shell cat backend/version.txt)
 IMAGE_TAG=latest
@@ -24,6 +36,7 @@ IMAGE_TAG=latest
 export VOLTO_VERSION := $(VOLTO_VERSION)
 export KC_VERSION := $(KC_VERSION)
 export DOCKER_BUILDKIT := 1
+export COMPOSE_BAKE := 1
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -153,28 +166,28 @@ build-images:  ## Build docker images
 .PHONY: stack-start
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
-	@docker compose -f $(STACK_FILE) up -d --build
+	$(COMPOSE_DEV) up -d --build
 	@echo "Now visit: http://kitconcept-intranet.localhost"
 
 .PHONY: start-stack
 stack-create-site:  ## Local Stack: Create a new site
 	@echo "Create a new site in the local Docker stack"
-	@docker compose -f $(STACK_FILE) exec backend ./docker-entrypoint.sh create-site
+	$(COMPOSE_DEV) exec backend ./docker-entrypoint.sh create-site
 
 .PHONY: start-status
 stack-status:  ## Local Stack: Check Status
 	@echo "Check the status of the local Docker stack"
-	@docker compose -f $(STACK_FILE) ps
+	$(COMPOSE_DEV) ps
 
 .PHONY: stack-stop
 stack-stop:  ##  Local Stack: Stop Services
 	@echo "Stop local Docker stack"
-	@docker compose -f $(STACK_FILE) stop
+	$(COMPOSE_DEV) stop
 
 .PHONY: stack-rm
 stack-rm:  ## Local Stack: Remove Services and Volumes
 	@echo "Remove local Docker stack"
-	@docker compose -f $(STACK_FILE) down
+	$(COMPOSE_DEV) down
 	@echo "Remove local volume data"
 	@docker volume rm $(PROJECT_NAME)_vol-site-data
 
@@ -197,6 +210,11 @@ acceptance-test: ## Start Acceptance tests in interactive mode
 	$(MAKE) -C "./frontend/" acceptance-test
 
 ## A11y tests
+.PHONY: acceptance-a11y-backend-dev-start
+acceptance-a11y-backend-dev-start: ## Start a11y acceptance backend in dev mode
+	@echo "Start acceptance backend"
+	$(MAKE) -C "./backend/" a11y-backend-start
+
 .PHONY: acceptance-a11y-frontend-prod-start
 acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
 	$(MAKE) -C "./frontend/" acceptance-a11y-frontend-prod-start
@@ -209,36 +227,68 @@ acceptance-a11y-test: ## Start a11y Cypress in interactive mode
 ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 	$(MAKE) -C "./frontend/" ci-acceptance-a11y-test
 
+## A11y tests with Containers
+.PHONY: acceptance-a11y-images-build
+acceptance-a11y-images-build: ## Build A11y frontend/backend images
+	@echo "Build acceptance a11y images build"
+	$(COMPOSE_A11y) build
+
+.PHONY: acceptance-a11y-containers-start
+acceptance-a11y-containers-start: ## Start A11y containers
+	@echo "Start acceptance a11y containers"
+	$(COMPOSE_A11y) up -d
+
+.PHONY: acceptance-a11y-containers-stop
+acceptance-a11y-containers-stop: ## Stop A11y containers
+	@echo "Stop acceptance a11y containers"
+	$(COMPOSE_A11y) down
+
 ## Acceptance tests with Containers
 .PHONY: acceptance-images-build
 acceptance-images-build: ## Build Acceptance frontend/backend images
 	@echo "Build acceptance images build"
-	@docker compose -f $(STACK_FILE_ACCEPTANCE) build
+	$(COMPOSE_ACCEPTANCE) build
 
 .PHONY: acceptance-containers-start
 acceptance-containers-start: ## Start Acceptance containers
 	@echo "Start acceptance containers"
-	@docker compose -f $(STACK_FILE_ACCEPTANCE) up -d
+	$(COMPOSE_ACCEPTANCE) up -d
 
 .PHONY: acceptance-containers-stop
 acceptance-containers-stop: ## Stop Acceptance containers
 	@echo "Stop acceptance containers"
-	@docker compose -f $(STACK_FILE_ACCEPTANCE) down
+	$(COMPOSE_ACCEPTANCE) down
 
-## Acceptance tests in CI
-.PHONY: ci-acceptance-containers-start
-ci-acceptance-containers-start: ## Start Acceptance containers
-	@echo "Start acceptance containers"
-	@docker compose -f $(STACK_FILE_ACCEPTANCE) up
+## Acceptance / A11y tests in CI
+.PHONY: ci-images-load
+ci-images-load: ## Load container images in CI
+	@echo "Load container images"
+	$(COMPOSE_CI) pull
 
-.PHONY: ci-acceptance-test
-ci-acceptance-test: ## Run Acceptance tests in ci mode
-	@echo "Run acceptance tests"
-	$(MAKE) -C "./frontend/" ci-acceptance-test
+.PHONY: ci-containers-start
+ci-containers-start: ## Start Acceptance containers
+	@echo "Start containers"
+	$(COMPOSE_CI) up
+
+.PHONY: ci-test
+ci-test: ## Run Acceptance tests in ci mode
+	@echo "Run tests"
+	$(MAKE) -C "./frontend/" $(CI_TEST_COMMAND)
 
 .PHONY: ci-acceptance-test-complete
-ci-acceptance-test-complete: ## Start acceptance containers, wait for them to be ready, and run tests
+ci-a11y-test-complete: ## Simulate CI a11y test run
+	@echo "Simulate CI a11y test run"
+	$(MAKE) acceptance-a11y-containers-start
+	@echo "- Waiting for backend and frontend to be ready"
+	pnpx wait-on --httpTimeout 20000 http-get://localhost:8080/plone http://localhost:3000
+	$(MAKE) -C "./frontend/" ci-acceptance-a11y-test
+	$(MAKE) acceptance-a11y-containers-stop
+
+.PHONY: ci-acceptance-test-complete
+ci-acceptance-test-complete: ## Simulate CI acceptance test run
+	@echo "Simulate CI acceptance test run"
 	$(MAKE) acceptance-containers-start
+	@echo "- Waiting for backend and frontend to be ready"
 	pnpx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
-	$(MAKE) ci-acceptance-test
+	$(MAKE) -C "./frontend/" ci-acceptance-test
 	$(MAKE) acceptance-containers-stop

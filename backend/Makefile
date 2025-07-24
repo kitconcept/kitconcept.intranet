@@ -141,6 +141,10 @@ build-image:  ## Build Docker Images
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-acceptance:$(IMAGE_TAG) $(RESET)"
 	@docker build .  --pull=false --platform linux/amd64 -t $(IMAGE_NAME_PREFIX)-acceptance:$(IMAGE_TAG) -f Dockerfile.acceptance --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)
 
+.PHONY: a11y-backend-start
+a11y-backend-start: ## Start backend a11y server
+	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=8080 LISTEN_PORT=8080 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.A11Y_TESTING
+
 # Acceptance tests
 .PHONY: acceptance-backend-start
 acceptance-backend-start: ## Start backend acceptance server

@@ -3,32 +3,50 @@ name: Acceptance Code Quality Workflow
 on:
   workflow_call:
     inputs:
-      name:
+      base-tag:
         required: true
         type: string
-        default: Acceptance
-      short-name:
-        required: true
-        type: string
-        default: all
       node-version:
         required: true
         type: string
+
+      artifacts-folder:
+        required: false
+        type: string
+        default: frontend/cypress
+      name:
+        required: false
+        type: string
+        default: Acceptance Tests
+      spec-folder:
+        required: false
+        type: string
+        default: frontend/cypress/tests
+      spec-pattern:
+        required: false
+        type: string
+        default: '**/*.cy.{js,jsx,ts,tsx}'
+      test-profile:
+        required: false
+        type: string
+        default: acceptance
 
 env:
   CYPRESS_RETRIES: 2
 
 jobs:
   acceptance:
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     name: ${{ inputs.name }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build Acceptance Images
+      - name: Load images needed for acceptance tests
+        env:
+          BASE_TAG: ${{ inputs.base-tag }}
+          COMPOSE_PROFILES: ${{ inputs.test-profile }}
         run: |
-          make acceptance-images-build
+          make ci-acceptance-images-load
 
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
@@ -73,7 +91,8 @@ jobs:
         name: Start Servers
         with:
           run: |
-            make ci-acceptance-containers-start &
+            # Start only the services we need for acceptance tests
+            BASE_TAG=${{ inputs.base-tag }} COMPOSE_PROFILES=${{ inputs.test-profile }} make ci-acceptance-containers-start &
 
           wait-on: |
             http-get://localhost:55001/plone
@@ -91,21 +110,25 @@ jobs:
 
           log-output-if: failure
 
-      - name: Run Acceptance Tests
+      - name: Run Tests
         shell: bash
+        env:
+          CYPRESS_SPEC_PATTERN: ${{ github.workspace }}/${{ inputs.spec-folder }}/${{ inputs.spec-pattern }}
+          BASE_TAG: ${{ inputs.base-tag }}
+          COMPOSE_PROFILES: ${{ inputs.test-profile }}
         run: |
-          make ci-acceptance-test
+          make ci-test
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-acceptance-${{ inputs.short-name }}
-          path: frontend/cypress/screenshots
+          name: cypress-screenshots-acceptance-${{ inputs.name }}
+          path: ${{ inputs.artifacts-folder }}/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-acceptance-${{ inputs.short-name }}
-          path: frontend/cypress/videos
+          name: cypress-videos-acceptance-${{ inputs.name }}
+          path: ${{ inputs.artifacts-folder }}/videos

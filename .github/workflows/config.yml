@@ -117,6 +117,7 @@ jobs:
             acceptance:
               - '.github/workflows/acceptance*'
               - '.github/workflows/backend*'
+              - '.github/workflows/config*'
               - '.github/workflows/frontend*'
               - 'backend/**'
               - 'frontend/**'

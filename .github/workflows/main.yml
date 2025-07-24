@@ -15,6 +15,45 @@ jobs:
     name: "Config: Compute values used in workflow"
     uses: ./.github/workflows/config.yml
 
+
+  image-build:
+    uses: ./.github/workflows/image-build.yml
+    if: ${{ needs.config.outputs.acceptance == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - suffix: "backend"
+            dockerfile: "Dockerfile"
+            working-directory: "backend"
+            build-args: |
+              IMAGE_TAG=${{ needs.config.outputs.base-tag }}
+              SEED=${{ github.run_id }}
+              KC_VERSION=${{ needs.config.outputs.kc-version }}
+          - suffix: "acceptance"
+            dockerfile: "Dockerfile.acceptance"
+            working-directory: "backend"
+            build-args: |
+              IMAGE_TAG=${{ needs.config.outputs.base-tag }}
+              SEED=${{ github.run_id }}
+              KC_VERSION=${{ needs.config.outputs.kc-version }}
+          - suffix: "frontend"
+            dockerfile: "Dockerfile"
+            working-directory: "frontend"
+            build-args: |
+              VOLTO_VERSION=${{ needs.config.outputs.volto-version }}
+
+    needs:
+        - config
+    with:
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-name-suffix: ${{ matrix.suffix }}
+      build-args: ${{ matrix.build-args }}
+      dockerfile: ${{ matrix.dockerfile }}
+      working-directory: ${{ matrix.working-directory }}
+
+
   backend:
     uses: ./.github/workflows/backend.yml
     needs:
@@ -41,18 +80,50 @@ jobs:
 
   acceptance:
     uses: ./.github/workflows/acceptance.yml
+    if: ${{ needs.config.outputs.acceptance == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Core Tests"
+            spec-pattern: 'core/**/*.cy.{js,jsx,ts,tsx}'
+          - name: "Main Tests"
+            spec-pattern: 'main/**/*.cy.{js,jsx,ts,tsx}'
+
     needs:
         - config
+        - image-build
     with:
-        name: "Acceptance Tests"
-        short-name: "all"
+        base-tag: ${{ needs.config.outputs.base-tag }}
         node-version: ${{ needs.config.outputs.node-version }}
+        name: ${{ matrix.name }}
+        spec-pattern: ${{ matrix.spec-pattern }}
+
+  a11y:
+    uses: ./.github/workflows/acceptance.yml
     if: ${{ needs.config.outputs.acceptance == 'true' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "A11y Tests"
+            spec-pattern: 'a11y/**/*.cy.{js,jsx,ts,tsx}'
+    needs:
+        - config
+        - image-build
+    with:
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        node-version: ${{ needs.config.outputs.node-version }}
+        name: ${{ matrix.name }}
+        spec-pattern: ${{ matrix.spec-pattern }}
+        test-profile: a11y
+
   backend-release:
     uses: ./.github/workflows/backend-release.yml
     needs:
         - config
         - acceptance
+        - a11y
         - backend
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
@@ -70,6 +141,7 @@ jobs:
     needs:
         - config
         - acceptance
+        - a11y
         - frontend
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
@@ -114,3 +186,29 @@ jobs:
     permissions:
         contents: read
         packages: write
+
+  report:
+    name: "Final report"
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs:
+      - config
+      - image-build
+      - acceptance
+      - a11y
+      - backend
+      - frontend
+      - deploy
+    steps:
+      - name: Write report
+        run: |
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| config | ${{ needs.config.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| image-build | ${{ needs.image-build.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| acceptance | ${{ needs.acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| a11y | ${{ needs.a11y.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend | ${{ needs.backend.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend | ${{ needs.frontend.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| deploy | ${{ needs.deploy.result }} |' >> $GITHUB_STEP_SUMMARY

@@ -28,8 +28,8 @@ on:
         default: '**/*.cy.{js,jsx,ts,tsx}'
       backend-port:
         required: false
-        type: number
-        default: 55001
+        type: string
+        default: '55001'
       backend-site:
         required: false
         type: string

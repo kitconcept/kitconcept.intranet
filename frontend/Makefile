@@ -143,11 +143,11 @@ acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod m
 
 .PHONY: acceptance-a11y-test
 acceptance-a11y-test: ## Start a11y Cypress in interactive mode
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
+	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/plone pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
 
 .PHONY: ci-acceptance-a11y-test
 ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern='$(SPEC)'
+	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/plone pnpm exec cypress run --config specPattern='$(SPEC)'
 
 ## Image Build
 .PHONY: build-image

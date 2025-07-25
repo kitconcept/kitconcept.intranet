@@ -134,12 +134,16 @@ ci-acceptance-test: ## Run cypress tests in headless mode for CI
 
 ## A11y tests
 .PHONY: acceptance-a11y-frontend-dev-start
+acceptance-a11y-backend-dev-start: ## Start a11y acceptance frontend in prod mode
+	$(MAKE) -C "../backend/" start
+
+.PHONY: acceptance-a11y-frontend-dev-start
 acceptance-a11y-frontend-dev-start: ## Start a11y acceptance frontend in prod mode
-	RAZZLE_API_PATH=http://127.0.0.1:8080/plone pnpm start
+	pnpm start
 
 .PHONY: acceptance-a11y-frontend-prod-start
 acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
-	RAZZLE_API_PATH=http://127.0.0.1:8080/plone pnpm build && pnpm start:prod
+	pnpm build && pnpm start:prod
 
 .PHONY: acceptance-a11y-test
 acceptance-a11y-test: ## Start a11y Cypress in interactive mode

@@ -196,7 +196,7 @@ services:
     <<: *backend-tests
     profiles: ["a11y"]
     environment:
-      - SITE=Plone
+      - SITE=plone
     ports:
       - 8080:8080
 

@@ -113,7 +113,7 @@ jobs:
       matrix:
         include:
           - name: "Tests"
-            api-url: 'http://localhost:8080/plone'
+            api-url: 'localhost:8080/plone'
             spec-pattern: 'a11y/**/*.cy.{js,jsx,ts,tsx}'
 
     needs:

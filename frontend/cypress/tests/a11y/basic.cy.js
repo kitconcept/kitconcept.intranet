@@ -10,7 +10,6 @@ describe('a11y tests', () => {
   });
 
   it('Home page (/)', () => {
-    cy.navigate('/');
     cy.injectAxe();
     cy.configureAxe({
       rules: [

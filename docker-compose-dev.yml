@@ -193,12 +193,10 @@ services:
       - 55001:55001
 
   backend-a11y:
-    <<: *backend-acceptance
+    <<: *backend-tests
     profiles: ["a11y"]
-    command: ["kitconcept.intranet.testing.A11Y_TESTING"]
     environment:
-      - ZSERVER_PORT=8080
-      - LISTEN_PORT=8080
+      - SITE=Plone
     ports:
       - 8080:8080
 

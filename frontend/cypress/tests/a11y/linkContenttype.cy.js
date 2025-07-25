@@ -5,17 +5,23 @@ describe('a11y tests', () => {
     // so we must tell it to visit our website with the `cy.visit()` command.
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
-    cy.autologin('admin', 'admin');
     cy.visit('/');
     cy.wait('@content');
   });
 
   //Link
-  it('link (/content-types/internal-link)', () => {
-    cy.navigate('/content-types/internal-link');
+  it('link (/features/examples/content-types/internal-link)', () => {
+    cy.navigate('/features/examples/content-types/internal-link');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'region',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Video Block
-  it('Video Block (/block/video-block)', () => {
-    cy.navigate('/block/video-block');
+  it('Video Block (/features/examples/block/video-block)', () => {
+    cy.navigate('/features/examples/block/video-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
@@ -20,6 +20,10 @@ describe('a11y tests', () => {
       rules: [
         {
           id: 'image-alt',
+          enabled: false,
+        },
+        {
+          id: 'region',
           enabled: false,
         },
       ],

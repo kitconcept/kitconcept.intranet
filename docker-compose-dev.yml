@@ -1,18 +1,74 @@
 ---
-name: kitconcept-intranet
+name: kitconcept-intranet-dev
+
+
+x-frontend: &frontend
+  image: ghcr.io/kitconcept/kitconcept-intranet-frontend:latest
+  pull_policy: build
+  build:
+    context: ./frontend
+    args:
+      - VOLTO_VERSION=${VOLTO_VERSION}
+  platform: linux/amd64
+  environment:
+    RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+
+x-frontend-tests: &frontend-tests
+  <<: *frontend
+  ports:
+    - 3000:3000
+
+x-backend: &backend
+  image: ghcr.io/kitconcept/kitconcept-intranet-backend:latest
+  pull_policy: build
+  build:
+    context: ./backend
+    args:
+      - KC_VERSION=${KC_VERSION}
+  platform: linux/amd64
+
+x-backend-tests: &backend-tests
+  <<: *backend
+  environment:
+    COLLECTIVE_SOLR_HOST: solr-acceptance
+    COLLECTIVE_SOLR_PORT: 8983
+    COLLECTIVE_SOLR_BASE: /solr/plone
+  depends_on:
+    - solr-acceptance
+
+x-backend-acceptance: &backend-acceptance
+  <<: *backend-tests
+  image: ghcr.io/kitconcept/kitconcept-intranet-acceptance:latest
+  build:
+    context: ./backend
+    dockerfile: Dockerfile.acceptance
+    args:
+      - KC_VERSION=${KC_VERSION}
+  pull_policy: build
+
+x-solr: &solr
+  image: ghcr.io/kitconcept/solr:latest
+  platform: linux/amd64
+  ports:
+    - 8983:8983
+  command:
+    - solr-precreate
+    - plone
+    - /plone-config
+
 
 services:
 
   traefik:
     image: traefik:v2.11
-
+    profiles: ["dev"]
     ports:
       - 80:80
 
     labels:
       - traefik.enable=true
       - traefik.constraint-label=public
-      - traefik.http.routers.traefik-public-http.rule=Host(`traefik.intranet.localhost`)
+      - traefik.http.routers.traefik-public-http.rule=Host(`traefik.${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
       - traefik.http.routers.traefik-public-http.entrypoints=http
       - traefik.http.routers.traefik-public-http.service=api@internal
       - traefik.http.services.traefik-public.loadbalancer.server.port=8000
@@ -34,12 +90,8 @@ services:
       - --api
 
   frontend:
-    build:
-      context: ./frontend
-      args:
-        - VOLTO_VERSION=${VOLTO_VERSION}
-    environment:
-      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
+    <<: *frontend
+    profiles: ["dev"]
     depends_on:
       - backend
     labels:
@@ -49,16 +101,14 @@ services:
       - traefik.http.services.svc-frontend.loadbalancer.server.port=3000
       # Routers
       ## /
-      - traefik.http.routers.rt-frontend.rule=Host(`intranet.localhost`)
+      - traefik.http.routers.rt-frontend.rule=Host(`${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
       - traefik.http.routers.rt-frontend.entrypoints=http
       - traefik.http.routers.rt-frontend.service=svc-frontend
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    build:
-      context: ./backend
-      args:
-        - KC_VERSION=${KC_VERSION}
+    <<: *backend
+    profiles: ["dev"]
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_NAME:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-OwAaOExRfIvY}' port='${DB_PORT:-5432}'"
     depends_on:
@@ -73,11 +123,11 @@ services:
       # Middlewares
       ## VHM rewrite /++api++/
       - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
-      - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.replacement=/VirtualHostBase/http/intranet.localhost/Plone/++api++/VirtualHostRoot$$1"
+      - "traefik.http.middlewares.mw-backend-vhm-api.replacepathregex.replacement=/VirtualHostBase/http/${STACK_HOSTNAME:-kitconcept-intranet.localhost}/Plone/++api++/VirtualHostRoot$$1"
 
       ## VHM rewrite /ClassicUI/
       - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
-      - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.replacement=/VirtualHostBase/http/intranet.localhost/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
+      - "traefik.http.middlewares.mw-backend-vhm-classic.replacepathregex.replacement=/VirtualHostBase/http/${STACK_HOSTNAME:-kitconcept-intranet.localhost}/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
 
       ## Basic Authentication
       ### Note: all dollar signs in the hash need to be doubled for escaping.
@@ -86,12 +136,12 @@ services:
       ### Defaults to admin:admin
       - traefik.http.middlewares.mw-backend-auth.basicauth.users=admin:$$apr1$$uZPT5Fgu$$AmlIdamxT5ipBvPlsdfD70
       # Routers
-      - traefik.http.routers.rt-backend-api.rule=Host(`intranet.localhost`) && (PathPrefix(`/++api++`))
+      - traefik.http.routers.rt-backend-api.rule=Host(`${STACK_HOSTNAME:-kitconcept-intranet.localhost}`) && (PathPrefix(`/++api++`))
       - traefik.http.routers.rt-backend-api.entrypoints=http
       - traefik.http.routers.rt-backend-api.service=svc-backend
       - traefik.http.routers.rt-backend-api.middlewares=gzip,mw-backend-vhm-api
       ## /ClassicUI
-      - traefik.http.routers.rt-backend-classic.rule=Host(`intranet.localhost`) && PathPrefix(`/ClassicUI`)
+      - traefik.http.routers.rt-backend-classic.rule=Host(`${STACK_HOSTNAME:-kitconcept-intranet.localhost}`) && PathPrefix(`/ClassicUI`)
       - traefik.http.routers.rt-backend-classic.entrypoints=http
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
@@ -103,6 +153,7 @@ services:
 
   db:
     image: postgres:14
+    profiles: ["dev"]
     environment:
       POSTGRES_USER: plone
       POSTGRES_PASSWORD: OwAaOExRfIvY
@@ -111,15 +162,47 @@ services:
       - vol-site-data:/var/lib/postgresql/data
 
   solr:
-    image: ghcr.io/kitconcept/solr:latest
-    ports:
-      - 8983:8983
+    <<: *solr
+    profiles: ["dev"]
     volumes:
       - vol-solr-data:/var/solr/data
-    command:
-      - solr-precreate
-      - plone
-      - /plone-config
+
+  # Acceptance / A11y Testing Services
+  frontend-acceptance:
+    <<: *frontend-tests
+    profiles: ["acceptance"]
+    environment:
+      RAZZLE_API_PATH: http://localhost:55001/plone
+      RAZZLE_INTERNAL_API_PATH: http://backend-acceptance:55001/plone
+    depends_on:
+      - backend-acceptance
+
+  frontend-a11y:
+    <<: *frontend-tests
+    profiles: ["a11y"]
+    environment:
+      RAZZLE_API_PATH: http://localhost:8080/plone
+      RAZZLE_INTERNAL_API_PATH: http://backend-a11y:8080/plone
+    depends_on:
+      - backend-a11y
+
+  backend-acceptance:
+    <<: *backend-acceptance
+    profiles: ["acceptance"]
+    ports:
+      - 55001:55001
+
+  backend-a11y:
+    <<: *backend-tests
+    profiles: ["a11y"]
+    environment:
+      - SITE=plone
+    ports:
+      - 8080:8080
+
+  solr-acceptance:
+    <<: *solr
+    profiles: ["solr", "acceptance", "a11y"]
 
 volumes:
   vol-site-data: {}

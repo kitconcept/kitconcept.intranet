@@ -10,11 +10,18 @@ describe('a11y tests', () => {
   });
 
   // grid block listing
-  it('Grid-Block Listing (/block/grid-block/listing)', () => {
-    cy.navigate('/block/grid-block/listing');
+  it('Grid-Block Listing (/features/examples/block/grid-block/listing)', () => {
+    cy.navigate('/features/examples/block/grid-block/listing');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'region',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

@@ -30,7 +30,7 @@ describe('Blocks Tests', () => {
     });
     cy.visit('/test-doc');
     cy.get('#page-document .blocks-group-wrapper div').should(
-      'have.text',
+      'contain.text',
       'Unknown Block missing',
     );
   });

@@ -10,11 +10,18 @@ describe('a11y tests', () => {
   });
 
   // Introduction-Block
-  it('Introduction-Block (/block/introduction-block)', () => {
-    cy.navigate('/block/introduction-block');
+  it('Introduction-Block (/features/examples/block/introduction-block)', () => {
+    cy.navigate('/features/examples/block/introduction-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'region',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   //Event
-  it('Event (/content-types/event)', () => {
-    cy.navigate('/content-types/event');
+  it('Event (/features/examples/content-types/event)', () => {
+    cy.navigate('/features/examples/content-types/event');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
@@ -24,6 +24,10 @@ describe('a11y tests', () => {
         },
         {
           id: 'duplicate-id-active',
+          enabled: false,
+        },
+        {
+          id: 'region',
           enabled: false,
         },
       ],

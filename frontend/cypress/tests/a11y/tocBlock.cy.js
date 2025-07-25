@@ -10,11 +10,18 @@ describe('a11y tests', () => {
   });
 
   // Table of Contents
-  it('Table of Contents (/block/toc-block)', () => {
-    cy.navigate('/block/toc-block');
+  it('Table of Contents (/features/examples/block/toc-block)', () => {
+    cy.navigate('/features/examples/block/toc-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'region',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

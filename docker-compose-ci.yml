@@ -1,0 +1,27 @@
+---
+name: kitconcept-intranet-ci
+
+# This file is used to define the CI environment for kitconcept-solr.
+# It is supposed to be used in conjunction with docker-compose-dev.yml.
+# The services defined here are used for CI testing and should not be used in development.
+
+services:
+
+  solr-acceptance:
+    profiles: ["acceptance", "a11y"]
+
+  frontend-acceptance:
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${BASE_TAG:-latest}
+    pull_policy: always
+
+  backend-acceptance:
+    image: ghcr.io/kitconcept/kitconcept-intranet-acceptance:${BASE_TAG:-latest}
+    pull_policy: always
+
+  frontend-a11y:
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${BASE_TAG:-latest}
+    pull_policy: always
+
+  backend-a11y:
+    image: ghcr.io/kitconcept/kitconcept-intranet-backend:${BASE_TAG:-latest}
+    pull_policy: always

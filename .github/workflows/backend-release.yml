@@ -26,7 +26,8 @@ on:
 jobs:
   release-backend:
     name: "Backend: Build and publish Container Image"
-    uses: plone/meta/.github/workflows/container-image-build-push.yml@2.x
+    if: ${{ github.event_name != 'pull_request' }}
+    uses: plone/meta/.github/workflows/container-image-push.yml@2.x
     permissions:
       contents: read
       packages: write
@@ -39,14 +40,13 @@ jobs:
         IMAGE_TAG=${{ inputs.base-tag }}
         SEED=${{ github.run_id }}
         KC_VERSION=${{ inputs.kc-version }}
-      push: true
     secrets:
       username: ${{ github.actor }}
       password: ${{ secrets.GITHUB_TOKEN }}
 
   release-beispiele:
     name: "Backend: Build and publish Demo Image"
-    uses: plone/meta/.github/workflows/container-image-build-push.yml@2.x
+    uses: plone/meta/.github/workflows/container-image-push.yml@2.x
     needs:
       - release-backend
     permissions:
@@ -62,7 +62,6 @@ jobs:
         IMAGE_TAG=${{ inputs.base-tag }}
         SEED=${{ github.run_id }}
         KC_VERSION=${{ inputs.kc-version }}
-      push: ${{ github.event_name != 'pull_request' }}
     secrets:
       username: ${{ github.actor }}
       password: ${{ secrets.GITHUB_TOKEN }}

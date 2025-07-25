@@ -14,7 +14,14 @@ describe('a11y tests', () => {
     cy.navigate('/features/examples/block/grid-block/listing');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'region',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

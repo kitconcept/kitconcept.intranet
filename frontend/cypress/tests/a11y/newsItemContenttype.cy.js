@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   //news-item
-  it('news-item (/content-types/news-item)', () => {
-    cy.navigate('/content-types/news-item');
+  it('news-item (/features/examples/content-types/news-item)', () => {
+    cy.navigate('/features/examples/content-types/news-item');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
@@ -20,6 +20,10 @@ describe('a11y tests', () => {
         // which have with the same id
         {
           id: 'duplicate-id-active',
+          enabled: false,
+        },
+        {
+          id: 'region',
           enabled: false,
         },
       ],

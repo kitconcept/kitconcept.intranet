@@ -418,4 +418,58 @@ describe('Event Calendar Block Tests', () => {
       'has-end-date',
     );
   });
+
+  it('Add eventCalendar Block - sort by Order in folder and sort_order:descending', () => {
+    //add eventCalendar block
+    cy.addNewBlock('event');
+
+    //********  add Type criteria filter
+    cy.configureListingWith('Event');
+
+    // selecting sort_on 'Order in folder'
+    cy.get('#select-listingblock-sort-on')
+      .click()
+      .type('Order in folder {enter}');
+
+    //save
+    cy.get('#toolbar-save').click();
+    cy.wait('@save');
+    cy.wait('@content');
+
+    // My first event should be first in the list
+    cy.get('#page-document .card-listing:first-of-type').contains(
+      'My First Event',
+    );
+    cy.get('#page-document .card-listing:first-of-type a').should(
+      'have.attr',
+      'href',
+      '/my-first-event',
+    );
+
+    // selecting sort order 'Reversed'
+    cy.navigate('/my-page/edit');
+    cy.wait('@content');
+    cy.wait('@schema');
+    cy.wait('@querySearch');
+    cy.get('.block-editor-eventCalendar').click();
+    cy.get('input[name="field-sort_order_boolean-2-query"]')
+      .check({ force: true })
+      .should('be.checked');
+
+    //save
+    cy.get('#toolbar-save').click();
+    cy.wait('@save');
+    cy.wait('@content');
+    cy.wait('@querySearch');
+
+    // Second event should be first in the list
+    cy.get('#page-document .card-listing:first-of-type').contains(
+      'Second Event',
+    );
+    cy.get('#page-document .card-listing:first-of-type a').should(
+      'have.attr',
+      'href',
+      '/my-second-event',
+    );
+  });
 });

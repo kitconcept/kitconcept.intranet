@@ -6,10 +6,14 @@ import { setup, teardown } from '@plone/volto/cypress/support/reset-fixture';
 
 beforeEach(function () {
   cy.log('Setting up API fixture');
-  setup();
+  if (!Cypress.env('a11y')) {
+    setup();
+  }
 });
 
 afterEach(function () {
   cy.log('Tearing down API fixture');
-  teardown();
+  if (!Cypress.env('a11y')) {
+    teardown();
+  }
 });

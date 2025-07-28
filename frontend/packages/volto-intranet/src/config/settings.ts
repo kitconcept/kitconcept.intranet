@@ -9,5 +9,8 @@ export default function install(config: ConfigType) {
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';
 
+  // Solr Search
+  config.settings.solrSearchOptions = false;
+
   return config;
 }

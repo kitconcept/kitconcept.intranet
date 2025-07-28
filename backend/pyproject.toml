@@ -26,7 +26,7 @@ classifiers = [
 ]
 dependencies = [
     "kitconcept.core==1.0.0a15",
-    "kitconcept.solr==1.0.0a5",
+    "kitconcept-solr==1.0.0a5",
     "plone.api",
     "plone.distribution",
     "plone.restapi",
@@ -652,3 +652,6 @@ constraint-dependencies = [
     "Zope==5.13",
     "ZopeUndo==6.0",
 ]
+
+[tool.uv.sources]
+kitconcept-solr = { git = "https://github.com/kitconcept/kitconcept.solr.git", subdirectory = "backend", branch = "monorepo" }

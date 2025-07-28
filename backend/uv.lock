@@ -1349,7 +1349,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "kitconcept-core", specifier = "==1.0.0a15" },
-    { name = "kitconcept-solr", specifier = "==1.0.0a5" },
+    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=monorepo" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1385,18 +1385,15 @@ test = [
 
 [[package]]
 name = "kitconcept-solr"
-version = "1.0.0a5"
-source = { registry = "https://pypi.org/simple" }
+version = "2.0.0a0"
+source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=monorepo#4adaf8199c2f9da3c89d8c5af3861f447ee292f3" }
 dependencies = [
     { name = "collective-solr" },
-    { name = "plone" },
     { name = "plone-api" },
+    { name = "plone-app-multilingual" },
     { name = "plone-restapi" },
-    { name = "setuptools" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/d9/de/c2c45e52ca6d60237b01e99f47f2cebc953058ebb30a3cf0e6df929d2bc2/kitconcept.solr-1.0.0a5.tar.gz", hash = "sha256:6ec0a3491501001930631a14aeb23f53d850a8295a82e01078ca53e641f9da53", size = 84144 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/b2/48/5e62c48eac90b7f7b39e0f058d6c4420c3dcb51f1dce397a23c713e6ae55/kitconcept.solr-1.0.0a5-py3-none-any.whl", hash = "sha256:77d6639178a459ce5602550c3464aba2ef3c12edf6b5641f4d11c445a22646a5", size = 34001 },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
 ]
 
 [[package]]

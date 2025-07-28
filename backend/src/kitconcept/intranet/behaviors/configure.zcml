@@ -18,4 +18,11 @@
       provides=".blocks_settings.ITTWBlocksSettings"
       />
 
+  <plone:behavior
+      name="kitconcept.intranet.location"
+      title="Location"
+      description="Fields flor related Location"
+      provides=".location.ILocation"
+      />
+
 </configure>

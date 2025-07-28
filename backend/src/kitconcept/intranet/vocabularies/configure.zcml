@@ -1,0 +1,8 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <utility
+      name="kitconcept.intranet.vocabularies.location"
+      component=".location.locations_vocabulary"
+      />
+
+</configure>

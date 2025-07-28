@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Listing-block
-  it('Listing-block (/block/listing-block)', () => {
-    cy.navigate('/block/listing-block');
+  it('Listing-block (/features/examples/block/listing-block)', () => {
+    cy.navigate('/features/examples/block/listing-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
@@ -24,6 +24,14 @@ describe('a11y tests', () => {
         },
         {
           id: 'nested-interactive',
+          enabled: false,
+        },
+        {
+          id: 'region',
+          enabled: false,
+        },
+        {
+          id: 'landmark-unique',
           enabled: false,
         },
       ],

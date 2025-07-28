@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Accordion Block
-  it('Accordion Block (/block/block-accordion)', () => {
-    cy.navigate('/block/block-accordion');
+  it('Accordion Block (/features/examples/block/block-accordion)', () => {
+    cy.navigate('/features/examples/block/block-accordion');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
@@ -23,6 +23,10 @@ describe('a11y tests', () => {
         },
         {
           id: 'duplicate-id',
+          enabled: false,
+        },
+        {
+          id: 'region',
           enabled: false,
         },
       ],

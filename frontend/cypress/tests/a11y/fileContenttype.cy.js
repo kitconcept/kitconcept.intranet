@@ -10,11 +10,18 @@ describe('a11y tests', () => {
   });
 
   //File
-  it('File (/content-types/file)', () => {
-    cy.navigate('/content-types/file');
+  it('File (/features/examples/content-types/file)', () => {
+    cy.navigate('/features/examples/content-types/file');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'region',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

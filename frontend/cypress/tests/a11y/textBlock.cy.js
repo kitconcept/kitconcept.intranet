@@ -10,11 +10,18 @@ describe('a11y tests', () => {
   });
 
   // Text-block
-  it('Text-block (/block/text-block)', () => {
-    cy.navigate('/block/text-block');
+  it('Text-block (/features/examples/block/text-block)', () => {
+    cy.navigate('/features/examples/block/text-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'region',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

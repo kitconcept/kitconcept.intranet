@@ -13,7 +13,7 @@
     "package": "@kitconcept/volto-light-theme",
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
-    "tag": "7.0.0a18",
+    "tag": "7.0.0a19",
     "filterBlobs": true
   },
   "kitconcept-core": {
@@ -22,7 +22,7 @@
     "package": "@kitconcept/core",
     "url": "git@github.com:kitconcept/kitconcept-core.git",
     "https": "https://github.com/kitconcept/kitconcept-core.git",
-    "tag": "1.0.0a14"
+    "tag": "1.0.0a15"
   },
   "volto-banner-block": {
     "develop": true,
@@ -111,5 +111,14 @@
     "url": "git@github.com:kitconcept/volto-slider-block.git",
     "https": "https://github.com/kitconcept/volto-slider-block.git",
     "tag": "6.4.0"
+  },
+  "volto-form-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "volto-form-block",
+    "url": "git@github.com:collective/volto-form-block.git",
+    "https": "https://github.com/collective/volto-form-block.git",
+    "path": "frontend",
+    "tag": "4.x.x-xfs8"
   }
 }

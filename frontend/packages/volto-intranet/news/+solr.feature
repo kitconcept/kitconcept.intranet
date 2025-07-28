@@ -1,1 +1,1 @@
-Implement SOLR support using @kitconcept/solr. @ericof
+Implement SOLR support using @kitconcept/volto-solr. @ericof

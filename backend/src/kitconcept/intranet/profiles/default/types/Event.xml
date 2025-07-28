@@ -11,6 +11,7 @@
   <property name="behaviors"
             purge="false"
   >
+    <element value="plone.eventlocation" remove="true" />
     <element value="kitconcept.intranet.location" />
   </property>
 </object>

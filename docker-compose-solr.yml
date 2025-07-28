@@ -1,67 +1,10 @@
 ---
-name: kitconcept-intranet-dev
-
-
-x-frontend: &frontend
-  image: ghcr.io/kitconcept/kitconcept-intranet-frontend:latest
-  pull_policy: build
-  build:
-    context: ./frontend
-    args:
-      - VOLTO_VERSION=${VOLTO_VERSION}
-  platform: linux/amd64
-  environment:
-    RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
-
-x-frontend-tests: &frontend-tests
-  <<: *frontend
-  ports:
-    - 3000:3000
-
-x-backend: &backend
-  image: ghcr.io/kitconcept/kitconcept-intranet-backend:latest
-  pull_policy: build
-  build:
-    context: ./backend
-    args:
-      - KC_VERSION=${KC_VERSION}
-  platform: linux/amd64
-
-x-backend-tests: &backend-tests
-  <<: *backend
-  environment:
-    COLLECTIVE_SOLR_HOST: solr-acceptance
-    COLLECTIVE_SOLR_PORT: 8983
-    COLLECTIVE_SOLR_BASE: /solr/plone
-  depends_on:
-    - solr-acceptance
-
-x-backend-acceptance: &backend-acceptance
-  <<: *backend-tests
-  image: ghcr.io/kitconcept/kitconcept-intranet-acceptance:latest
-  build:
-    context: ./backend
-    dockerfile: Dockerfile.acceptance
-    args:
-      - KC_VERSION=${KC_VERSION}
-  pull_policy: build
-
-x-solr: &solr
-  image: ghcr.io/kitconcept/solr:latest
-  platform: linux/amd64
-  ports:
-    - 8983:8983
-  command:
-    - solr-precreate
-    - plone
-    - /plone-config
-
+name: kitconcept-intranet-solr
 
 services:
-
   traefik:
     image: traefik:v2.11
-    profiles: ["dev"]
+
     ports:
       - 80:80
 
@@ -90,8 +33,10 @@ services:
       - --api
 
   frontend:
-    <<: *frontend
-    profiles: ["dev"]
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${RELEASE:-1.0.0b5}
+    platform: linux/amd64
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     depends_on:
       - backend
     labels:
@@ -107,16 +52,15 @@ services:
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    <<: *backend
-    profiles: ["dev"]
+    image: ghcr.io/kitconcept/kitconcept-intranet-backend:${RELEASE:-1.0.0b5}
+    platform: linux/amd64
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_NAME:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-OwAaOExRfIvY}' port='${DB_PORT:-5432}'"
+      ZOPE_FORM_MEMORY_LIMIT: 250MB
+      HONEYPOT_FIELD: your_email
       SOLR_HOST: solr
       SOLR_PORT: 8983
       SOLR_BASE: /solr/plone
-    depends_on:
-      - db
-      - solr
     labels:
       - traefik.enable=true
       - traefik.constraint-label=public
@@ -148,15 +92,14 @@ services:
       - traefik.http.routers.rt-backend-classic.entrypoints=http
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
-      ## Intranet Admin
-      - traefik.http.routers.rt-backend-zmi.rule=Host(`admin-${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
-      - traefik.http.routers.rt-backend-zmi.entrypoints=http
-      - traefik.http.routers.rt-backend-zmi.service=svc-backend
-      - traefik.http.routers.rt-backend-zmi.middlewares=gzip
+      ## admin
+      - traefik.http.routers.rt-backend-admin.rule=Host(`admin.${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
+      - traefik.http.routers.rt-backend-admin.entrypoints=http
+      - traefik.http.routers.rt-backend-admin.service=svc-backend
+      - traefik.http.routers.rt-backend-admin.middlewares=gzip,mw-backend-auth
 
   db:
     image: postgres:14
-    profiles: ["dev"]
     environment:
       POSTGRES_USER: plone
       POSTGRES_PASSWORD: OwAaOExRfIvY
@@ -165,47 +108,15 @@ services:
       - vol-site-data:/var/lib/postgresql/data
 
   solr:
-    <<: *solr
-    profiles: ["dev"]
+    image: ghcr.io/kitconcept/solr:latest
+    ports:
+      - 8983:8983
     volumes:
       - vol-solr-data:/var/solr/data
-
-  # Acceptance / A11y Testing Services
-  frontend-acceptance:
-    <<: *frontend-tests
-    profiles: ["acceptance"]
-    environment:
-      RAZZLE_API_PATH: http://localhost:55001/plone
-      RAZZLE_INTERNAL_API_PATH: http://backend-acceptance:55001/plone
-    depends_on:
-      - backend-acceptance
-
-  frontend-a11y:
-    <<: *frontend-tests
-    profiles: ["a11y"]
-    environment:
-      RAZZLE_API_PATH: http://localhost:8080/plone
-      RAZZLE_INTERNAL_API_PATH: http://backend-a11y:8080/plone
-    depends_on:
-      - backend-a11y
-
-  backend-acceptance:
-    <<: *backend-acceptance
-    profiles: ["acceptance"]
-    ports:
-      - 55001:55001
-
-  backend-a11y:
-    <<: *backend-tests
-    profiles: ["a11y"]
-    environment:
-      - SITE=plone
-    ports:
-      - 8080:8080
-
-  solr-acceptance:
-    <<: *solr
-    profiles: ["solr", "acceptance", "a11y"]
+    command:
+      - solr-precreate
+      - plone
+      - /plone-config
 
 volumes:
   vol-site-data: {}

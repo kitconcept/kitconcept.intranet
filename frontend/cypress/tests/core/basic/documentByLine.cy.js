@@ -1,4 +1,4 @@
-describe('actions Tests', () => {
+describe('DocumentByLine Tests', () => {
   beforeEach(() => {
     cy.autologin();
     cy.createContent({

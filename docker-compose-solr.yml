@@ -58,9 +58,9 @@ services:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_NAME:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-OwAaOExRfIvY}' port='${DB_PORT:-5432}'"
       ZOPE_FORM_MEMORY_LIMIT: 250MB
       HONEYPOT_FIELD: your_email
-      SOLR_HOST: solr
-      SOLR_PORT: 8983
-      SOLR_BASE: /solr/plone
+      COLLECTIVE_SOLR_HOST: solr
+      COLLECTIVE_SOLR_PORT: 8983
+      COLLECTIVE_SOLR_BASE: /solr/plone
     labels:
       - traefik.enable=true
       - traefik.constraint-label=public

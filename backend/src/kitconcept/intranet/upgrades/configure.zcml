@@ -67,4 +67,7 @@
         import_steps="controlpanel plone.app.registry"
         />
   </genericsetup:upgradeSteps>
+
+  <include package=".v20250729001" />
+
 </configure>

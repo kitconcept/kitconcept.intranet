@@ -11,9 +11,28 @@
   <property name="behaviors"
             purge="false"
   >
+    <!-- Remove event behaviors and then re-add them after kitconcept.intranet.location
+      to ensure the location indexer is run correctly.
+    -->
+    <element remove="true"
+             value="plone.eventbasic"
+    />
+    <element remove="true"
+             value="plone.eventrecurrence"
+    />
+    <element remove="true"
+             value="plone.eventattendees"
+    />
+    <element remove="true"
+             value="plone.eventcontact"
+    />
     <element remove="true"
              value="plone.eventlocation"
     />
     <element value="kitconcept.intranet.location" />
+    <element value="plone.eventbasic" />
+    <element value="plone.eventrecurrence" />
+    <element value="plone.eventattendees" />
+    <element value="plone.eventcontact" />
   </property>
 </object>

@@ -1,0 +1,136 @@
+{
+  "@id": "/about/headquarters-bonn",
+  "@type": "Location",
+  "UID": "97e82b07b5444728b1517de15c79fefb",
+  "allow_discussion": null,
+  "blocks": {
+    "14d4dd01-8c6d-4875-b673-20865958dbbe": {
+      "@type": "slate",
+      "plaintext": "Rieststr. 21\n53113\nBonn",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Rieststr. 21\n53113\nBonn"
+            }
+          ],
+          "type": "blockquote"
+        }
+      ]
+    },
+    "d6da7272-2cde-4fcf-9933-073844719bec": {
+      "@type": "slate",
+      "plaintext": "Our office is located at:",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Our office is located at:"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "dd8be8b4-4f84-4e2d-aa68-65bdd38ac197": {
+      "@type": "eventCalendar",
+      "headline": "Termine",
+      "query": {
+        "query": [
+          {
+            "i": "location",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showTotalResults": true
+    },
+    "fe023b1c-9da2-4639-b457-4ad8c534dab9": {
+      "@type": "title"
+    },
+    "undefined": {
+      "@type": "eventCalendar",
+      "query": {
+        "query": [
+          {
+            "i": "location",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showTotalResults": true
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "fe023b1c-9da2-4639-b457-4ad8c534dab9",
+      "d6da7272-2cde-4fcf-9933-073844719bec",
+      "14d4dd01-8c6d-4875-b673-20865958dbbe",
+      "dd8be8b4-4f84-4e2d-aa68-65bdd38ac197"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-07-29T13:39:53+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-07-29T13:39:00+00:00",
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "headquarters-bonn",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-07-29T15:51:55+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Headquarters (Bonn)",
+  "type_title": "Location",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-29T13:39:53+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-29T13:39:56+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

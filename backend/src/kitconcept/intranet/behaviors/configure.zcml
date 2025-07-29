@@ -21,8 +21,11 @@
   <plone:behavior
       name="kitconcept.intranet.location"
       title="Location"
-      description="Fields flor related Location"
-      provides=".location.ILocation"
+      description="Fields for Location"
+      factory=".location.LocationAdapter"
+      provides=".location.ILocationBehavior"
+      for=".location.ILocationMarker"
+      marker=".location.ILocationMarker"
       />
 
 </configure>

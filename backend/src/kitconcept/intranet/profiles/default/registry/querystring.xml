@@ -3,6 +3,7 @@
           i18n:domain="kitconcept.intranet"
 >
 
+  <!-- Location -->
   <records interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.location"
   >

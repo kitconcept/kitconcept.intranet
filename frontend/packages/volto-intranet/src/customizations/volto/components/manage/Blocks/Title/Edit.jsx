@@ -1,3 +1,16 @@
+/**
+ * OVERRIDE Edit.jsx
+ * REASON: Add a slot below the title block.
+ * FILE: https://github.com/plone/volto/blob/0b06447408cad92728183ae597a76e7e9f8a5ddb/packages/volto/src/components/manage/Blocks/Title/Edit.jsx
+ * FILE VERSION: Volto 18.23.0
+ * PULL REQUEST: https://github.com/kitconcept/kitconcept.intranet/pull/131
+ * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/issues/19
+ * DATE: 2025-07-29
+ * DEVELOPER: @Tishasoumya-02
+ * CHANGELOG:
+ *  - Add documentByLine feature. @Tishasoumya-02
+ */
+
 import React, {
   useCallback,
   useEffect,
@@ -163,7 +176,9 @@ export const TitleBlockEdit = (props) => {
         onFocus={handleFocus}
         aria-multiline="false"
       ></Editable>
+      {/* START CUSTOMIZATION */}
       <SlotRenderer name="belowContentTitle" content={content} />
+      {/* END CUSTOMIZATION */}
     </Slate>
   );
 };

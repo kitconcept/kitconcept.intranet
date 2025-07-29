@@ -1,6 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import type { Content, User } from '@plone/types';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
@@ -45,7 +46,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [form.global?.creators, content.creators]);
 
-  const getCreatorHomePage = async (username: string): Promise<string> => {
+  const getCreatorUrl = async (username: string): Promise<string> => {
     try {
       const response = await fetch(expandToBackendURL(`/@users/${username}`));
       const data: User = await response.json();
@@ -58,33 +59,12 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const fetchCreatorProfiles = async (creators: string[]) => {
     const result = await Promise.all(
       creators.map(async (user) => {
-        const profileUrl = await getCreatorHomePage(user);
+        const profileUrl = await getCreatorUrl(user);
         return [user, profileUrl || ''];
       }),
     );
     setCreatorProfiles(result);
   };
-
-  const formattedDates = useMemo(() => {
-    const formatDate = (isoString: string): string => {
-      if (!isoString) return '';
-      const date = new Date(isoString);
-      return isNaN(date.getTime())
-        ? ''
-        : date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          });
-    };
-
-    const getCurrentTimeISO = (): string => new Date().toISOString();
-
-    return {
-      effective: formatDate(content.effective ?? ''),
-      modified: formatDate(content.modified || getCurrentTimeISO()),
-    };
-  }, [content.effective, content.modified]);
 
   return (
     <>
@@ -110,22 +90,39 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             —
           </span>
         )}
-        {formattedDates.effective && !isAddMode && (
+        {content.effective && !isAddMode && (
           <span className="documentPublished">
             {content.review_state === 'published' ? (
               <span>
                 {intl.formatMessage(messages.published)}
-                {formattedDates.effective},
+                <FormattedDate
+                  date={form.global?.effective ?? content?.effective}
+                  format={{
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  }}
+                  locale={intl.locale}
+                />
+                ,
               </span>
             ) : (
               ''
             )}
           </span>
         )}
-        {formattedDates.modified && !isAddMode && (
+        {content.modified && !isAddMode && (
           <span className="documentModified">
             {intl.formatMessage(messages.modified)}
-            {formattedDates.modified}
+            <FormattedDate
+              date={content.modified}
+              format={{
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              }}
+              locale={intl.locale}
+            />
           </span>
         )}
       </div>

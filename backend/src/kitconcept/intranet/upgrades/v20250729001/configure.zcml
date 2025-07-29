@@ -16,7 +16,7 @@
         import_steps="catalog"
         />
     <genericsetup:upgradeDepends
-        title="Add Place querystring filter"
+        title="Add Place querystring filter, and Location content type to navigation schema"
         import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>

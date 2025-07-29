@@ -282,7 +282,7 @@ ci-test: ## Run Acceptance tests in ci mode
 	@echo "Run tests"
 	$(MAKE) -C "./frontend/" $(CI_TEST_COMMAND)
 
-.PHONY: ci-acceptance-test-complete
+.PHONY: ci-a11y-test-complete
 ci-a11y-test-complete: ## Simulate CI a11y test run
 	@echo "Simulate CI a11y test run"
 	$(MAKE) acceptance-a11y-containers-start

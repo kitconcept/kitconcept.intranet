@@ -1,9 +1,8 @@
 from kitconcept.intranet import _
-from zope.i18nmessageid import MessageFactory
+from plone.autoform.interfaces import IFormFieldProvider
 from zope.interface import Interface
 from zope.interface import provider
 from zope.schema import Choice
-from plone.autoform.interfaces import IFormFieldProvider
 
 
 @provider(IFormFieldProvider)

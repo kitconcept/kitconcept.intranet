@@ -3,20 +3,24 @@
           i18n:domain="kitconcept.intranet"
 >
 
-<records interface="plone.app.querystring.interfaces.IQueryField"
-         prefix="plone.app.querystring.field.location">
-  <value key="title"
-         i18n:translate="label_place">Place</value>
-  <value key="description"
-         i18n:translate="help_place">Filter by location</value>
-  <value key="enabled">True</value>
-  <value key="sortable">False</value>
-  <value key="operations">
-    <element>plone.app.querystring.operation.selection.any</element>
-  </value>
-  <value key="vocabulary">kitconcept.intranet.vocabularies.location</value>
-  <value key="group"
-         i18n:translate="">Taxonomy</value>
-</records>
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.location"
+  >
+    <value key="title"
+           i18n:translate="label_place"
+    >Place</value>
+    <value key="description"
+           i18n:translate="help_place"
+    >Filter by location</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="vocabulary">kitconcept.intranet.vocabularies.location</value>
+    <value key="group"
+           i18n:translate=""
+    >Taxonomy</value>
+  </records>
 
 </registry>

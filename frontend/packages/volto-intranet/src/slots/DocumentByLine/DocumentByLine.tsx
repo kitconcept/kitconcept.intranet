@@ -2,6 +2,7 @@ import React from 'react';
 import type { Content, User } from '@plone/types';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
@@ -75,19 +76,19 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             {creatorProfiles.map(([name, url], index) =>
               url ? (
                 <React.Fragment key={index}>
-                  <a className="byAuthor" href={url}>
+                  <UniversalLink className="byAuthor" href={url}>
                     {name}
-                  </a>
-                  {index < creatorProfiles.length && ' '}
+                  </UniversalLink>
+                  {index < creatorProfiles.length - 1 && ', '}
                 </React.Fragment>
               ) : (
                 <React.Fragment key={index}>
                   <span className="byAuthor">{name}</span>
-                  {index < creatorProfiles.length && ' '}
+                  {index < creatorProfiles.length - 1 && ', '}
                 </React.Fragment>
               ),
             )}
-            —
+            {' —'}
           </span>
         )}
         {content.effective && !isAddMode && (

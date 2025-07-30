@@ -127,6 +127,7 @@ class TestContentTypeFTI:
                     "plone.versioning",
                     "plone.locking",
                     "plone.translatable",
+                    "kitconcept.intranet.location",
                 ),
             ),
             ("News Item", "title", "News Item"),

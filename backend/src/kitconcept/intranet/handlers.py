@@ -1,5 +1,6 @@
 from copy import deepcopy
 from kitconcept.intranet import logger
+from kitconcept.intranet.utils import creation as utils
 from kitconcept.intranet.utils.authentication import setup_authentication
 from plone import api
 from plone.dexterity.schema import SCHEMA_CACHE
@@ -49,6 +50,8 @@ def default_handler(
 
 def pre_handler(answers: dict) -> dict:
     """Process answers."""
+    available_languages = answers.get("available_languages", ["de"])
+    answers["default_language"] = available_languages[0]
     return answers
 
 
@@ -61,6 +64,9 @@ def handler(distribution: Distribution, site: PloneSite, answers: dict) -> Plone
         profiles["base"].append("kitconcept.intranet:restricted")
         distribution._profiles = profiles
     site = default_handler(distribution, site, answers)
+    # Handle Plone site workflow state
+    if workflow == "public" and api.content.get_state(site) == "private":
+        api.content.transition(site, "publish")
     distribution._profiles = default_profiles
     return site
 
@@ -75,21 +81,28 @@ def post_handler(
     wf_tool: WorkflowTool = api.portal.get_tool("portal_workflow")
     wf_tool.updateRoleMappings()
 
-    workflow = answers.get("workflow", "restricted")
-    if workflow == "public" and api.content.get_state(site) == "private":
-        print("Publishing site")
-        api.content.transition(
-            site,
-            "publish",
-        )
+    # Site settings
+    title = answers.get("title", site.title)
+    description = answers.get("description", site.description)
+    registry_data = {
+        "plone.available_languages": answers["available_languages"],
+        "plone.default_language": answers["default_language"],
+        "plone.email_from_name": title,
+        "plone.site_title": title,
+    }
+
     raw_logo = answers.get("site_logo")
     if raw_logo:
         logo = convert_data_uri_to_b64(raw_logo)
-        logger.info(f"{site.id}: Set logo")
-        api.portal.set_registry_record("plone.site_logo", logo)
+        registry_data["plone.site_logo"] = logo
+        utils.set_site_logo(raw_logo, site)
+
     # This should be fixed on plone.distribution
-    site.title = answers.get("title", site.title)
-    site.description = answers.get("description", site.description)
+    site.title = title
+    site.description = description
+
+    # Update registry
+    utils.update_registry(registry_data)
     # Configure authentication
     auth_answers = answers.get("authentication")
     if auth_answers:

@@ -5,7 +5,7 @@
 
   <!-- Location -->
   <records interface="plone.app.querystring.interfaces.IQueryField"
-           prefix="plone.app.querystring.field.location"
+           prefix="plone.app.querystring.field.location_reference"
   >
     <value key="title"
            i18n:translate="label_place"

@@ -4,6 +4,31 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Container } from '@plone/components';
 
+const EventLocation = (content) => {
+  const hasLocationInfo = content?.location || content?.location_reference;
+  return (
+    hasLocationInfo && (
+      <div className="event-title">
+        <span className="event-heading">
+          <FormattedMessage id="Location" defaultMessage="Location" />
+        </span>
+        <div className="event-detail">
+          {content?.location_reference ? (
+            <UniversalLink
+              className="event-location"
+              item={content.location_reference}
+            >
+              {content.location_reference.title}
+            </UniversalLink>
+          ) : (
+            <span>{content.location.title}</span>
+          )}
+        </div>
+      </div>
+    )
+  );
+};
+
 const EventMetadataView = (props) => {
   const content = props.properties;
   const isWholeDay = !!content.whole_day;
@@ -54,21 +79,7 @@ const EventMetadataView = (props) => {
                 <div className="separator"></div>
               </div>
             ) : null}
-            {content?.location && (
-              <div className="event-title">
-                <span className="event-heading">
-                  <FormattedMessage id="Location" defaultMessage="Location" />
-                </span>
-                <div className="event-detail">
-                  <UniversalLink
-                    className="event-location"
-                    item={content.location}
-                  >
-                    {content.location.title}
-                  </UniversalLink>
-                </div>
-              </div>
-            )}
+            <EventLocation content={content} />
           </div>
 
           <div className="event-details">

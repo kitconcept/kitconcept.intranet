@@ -33,21 +33,29 @@ class TestRegistrySettings:
         "record,oper,value",
         [
             ("plone.displayed_types", "in", "Location"),
-            ("plone.app.querystring.field.location.title", "eq", "label_place"),
-            ("plone.app.querystring.field.location.description", "eq", "help_place"),
-            ("plone.app.querystring.field.location.enabled", "is", True),
-            ("plone.app.querystring.field.location.sortable", "is", False),
             (
-                "plone.app.querystring.field.location.operations",
+                "plone.app.querystring.field.location_reference.title",
+                "eq",
+                "label_place",
+            ),
+            (
+                "plone.app.querystring.field.location_reference.description",
+                "eq",
+                "help_place",
+            ),
+            ("plone.app.querystring.field.location_reference.enabled", "is", True),
+            ("plone.app.querystring.field.location_reference.sortable", "is", False),
+            (
+                "plone.app.querystring.field.location_reference.operations",
                 "in",
                 "plone.app.querystring.operation.selection.any",
             ),
             (
-                "plone.app.querystring.field.location.vocabulary",
+                "plone.app.querystring.field.location_reference.vocabulary",
                 "in",
                 "kitconcept.intranet.vocabularies.location",
             ),
-            ("plone.app.querystring.field.location.group", "eq", "Taxonomy"),
+            ("plone.app.querystring.field.location_reference.group", "eq", "Taxonomy"),
         ],
     )
     def test_registry_settings(self, record: str, oper: str, value: Any):

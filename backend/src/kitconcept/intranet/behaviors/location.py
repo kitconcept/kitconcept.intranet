@@ -15,7 +15,7 @@ class ILocationMarker(Interface):
 class ILocationBehavior(ILocationMarker):
     """Behavior: Select a Location from a vocabulary."""
 
-    location = RelationChoice(
+    location_reference = RelationChoice(
         title=_("Location"),
         vocabulary="kitconcept.intranet.vocabularies.location_objects",
         required=False,
@@ -30,9 +30,9 @@ class LocationAdapter:
         self.context = context
 
     @property
-    def location(self) -> RelationValue | None:
-        return self.context.location
+    def location_reference(self) -> RelationValue | None:
+        return self.context.location_reference
 
-    @location.setter
-    def location(self, value: RelationValue | None):
-        self.context.location = value
+    @location_reference.setter
+    def location_reference(self, value: RelationValue | None):
+        self.context.location_reference = value

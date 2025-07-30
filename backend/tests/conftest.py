@@ -15,12 +15,10 @@ import requests
 
 pytest_plugins = ["pytest_plone"]
 globals().update(
-    fixtures_factory(
-        (
-            (FUNCTIONAL_TESTING, "functional"),
-            (INTEGRATION_TESTING, "integration"),
-        )
-    )
+    fixtures_factory((
+        (FUNCTIONAL_TESTING, "functional"),
+        (INTEGRATION_TESTING, "integration"),
+    ))
 )
 
 
@@ -151,9 +149,9 @@ def checker():
             case "is not":
                 assert value is not expected, f"{value} is {expected}"
             case "starts":
-                assert value.startswith(
-                    expected
-                ), f"{value} does not start with {expected}"
+                assert value.startswith(expected), (
+                    f"{value} does not start with {expected}"
+                )
             case _:
                 raise ValueError(f"Unknown operation: {oper}")
 

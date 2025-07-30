@@ -15,6 +15,14 @@
   >
     <indexed_attr value="contact_room" />
   </index>
+
+  <index meta_type="FieldIndex"
+         name="location_reference"
+  >
+    <indexed_attr value="location_reference" />
+  </index>
+
   <column value="contact_room" />
+  <column value="location_reference" />
 
 </object>

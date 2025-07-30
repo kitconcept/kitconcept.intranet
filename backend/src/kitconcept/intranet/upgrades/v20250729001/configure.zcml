@@ -12,7 +12,11 @@
         import_steps="typeinfo"
         />
     <genericsetup:upgradeDepends
-        title="Add Catalog index for location"
+        title="Versioning support for Location content type"
+        import_steps="repositorytool"
+        />
+    <genericsetup:upgradeDepends
+        title="Add Catalog index for location_reference"
         import_steps="catalog"
         />
     <genericsetup:upgradeDepends

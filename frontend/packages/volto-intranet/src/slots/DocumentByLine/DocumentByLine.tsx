@@ -76,14 +76,14 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             {creatorProfiles.map(([name, url], index) =>
               url ? (
                 <React.Fragment key={index}>
-                  <UniversalLink className="byAuthor" href={url}>
+                  <UniversalLink className="author-name" href={url}>
                     {name}
                   </UniversalLink>
                   {index < creatorProfiles.length - 1 && ', '}
                 </React.Fragment>
               ) : (
                 <React.Fragment key={index}>
-                  <span className="byAuthor">{name}</span>
+                  <span>{name}</span>
                   {index < creatorProfiles.length - 1 && ', '}
                 </React.Fragment>
               ),
@@ -92,7 +92,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
           </span>
         )}
         {content.effective && !isAddMode && (
-          <span className="documentPublished">
+          <span>
             {content.review_state === 'published' ? (
               <span>
                 {intl.formatMessage(messages.published)}
@@ -113,7 +113,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
           </span>
         )}
         {content.modified && !isAddMode && (
-          <span className="documentModified">
+          <span>
             {intl.formatMessage(messages.modified)}
             <FormattedDate
               date={content.modified}

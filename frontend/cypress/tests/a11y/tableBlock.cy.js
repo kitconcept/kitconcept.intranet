@@ -21,10 +21,6 @@ describe('a11y tests', () => {
           id: 'page-has-heading-one',
           enabled: false,
         },
-        {
-          id: 'region',
-          enabled: false,
-        },
       ],
     });
     cy.checkAccessibility();

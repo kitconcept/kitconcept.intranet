@@ -27,10 +27,6 @@ describe('a11y tests', () => {
           enabled: false,
         },
         {
-          id: 'region',
-          enabled: false,
-        },
-        {
           id: 'landmark-unique',
           enabled: false,
         },

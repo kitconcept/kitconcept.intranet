@@ -166,8 +166,11 @@ build-images:  ## Build docker images
 .PHONY: stack-start
 stack-start:  ## Local Stack: Start Services
 	@echo "Start local Docker stack"
-	$(COMPOSE_DEV) up -d --build
-	@echo "Now visit: http://kitconcept-intranet.localhost"
+	VOLTO_VERSION=$(VOLTO_VERSION) KC_VERSION=$(KC_VERSION) docker compose -f $(STACK_FILE) up -d --build
+	@echo "Now visit: http://$(STACK_HOSTNAME)/ to access the site"
+	@echo "- http://$(STACK_HOSTNAME)/ to access the default site"
+	@echo "- http://admin-$(STACK_HOSTNAME)/ to create a new site"
+	@echo "- http://traefik.$(STACK_HOSTNAME)/ to access the Traefik dashboard"
 
 .PHONY: start-stack
 stack-create-site:  ## Local Stack: Create a new site
@@ -279,7 +282,7 @@ ci-test: ## Run Acceptance tests in ci mode
 	@echo "Run tests"
 	$(MAKE) -C "./frontend/" $(CI_TEST_COMMAND)
 
-.PHONY: ci-acceptance-test-complete
+.PHONY: ci-a11y-test-complete
 ci-a11y-test-complete: ## Simulate CI a11y test run
 	@echo "Simulate CI a11y test run"
 	$(MAKE) acceptance-a11y-containers-start

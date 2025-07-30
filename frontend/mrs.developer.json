@@ -120,5 +120,14 @@
     "https": "https://github.com/collective/volto-form-block.git",
     "path": "frontend",
     "tag": "4.x.x-xfs8"
+  },
+  "volto-solr": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-solr",
+    "url": "git@github.com:kitconcept/kitconcept.solr.git",
+    "https": "https://github.com/kitconcept/kitconcept.solr.git",
+    "path": "frontend",
+    "branch": "monorepo"
   }
 }

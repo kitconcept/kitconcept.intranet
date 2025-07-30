@@ -25,10 +25,6 @@ describe('a11y tests', () => {
           id: 'duplicate-id',
           enabled: false,
         },
-        {
-          id: 'region',
-          enabled: false,
-        },
       ],
     });
     // To prevent color contrast error during css transition

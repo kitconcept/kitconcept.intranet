@@ -4,7 +4,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Container } from '@plone/components';
 
-const EventLocation = (content) => {
+const EventLocation = ({ content }) => {
   const hasLocationInfo = content?.location || content?.location_reference;
   return (
     hasLocationInfo && (
@@ -21,7 +21,7 @@ const EventLocation = (content) => {
               {content.location_reference.title}
             </UniversalLink>
           ) : (
-            <span>{content.location.title}</span>
+            <span>{content.location}</span>
           )}
         </div>
       </div>
@@ -46,7 +46,6 @@ const EventMetadataView = (props) => {
         hour: 'numeric',
         minute: 'numeric',
       };
-
   return (
     <div className="block eventMetadata ">
       <Container className="details-container">

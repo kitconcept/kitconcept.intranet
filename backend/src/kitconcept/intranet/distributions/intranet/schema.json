@@ -4,6 +4,22 @@
     "description": "Create a new Intranet based on Plone.",
     "type": "object",
     "definitions": {
+      "languages": {
+        "type": "string",
+        "title": "Language",
+        "anyOf": [
+          {
+            "type": "string",
+            "enum": ["de"],
+            "title": "Deutsch"
+          },
+          {
+            "type": "string",
+            "enum": ["en"],
+            "title": "English"
+          }
+        ]
+      },
       "workflows": {
         "oneOf": [
           {
@@ -193,7 +209,18 @@
         "$ref": "#/definitions/workflows",
         "default": "public"
       },
-      "default_language": {"$ref": "#/definitions/languages"},
+      "available_languages": {
+        "type": "array",
+        "title": "Available Languages",
+        "description": "Languages that will be available in the solution. If more than one language is selected, the first on in the list will be the default language.",
+        "items": {"$ref": "#/definitions/languages"},
+        "default": ["de"]
+      },
+      "default_language": {
+        "type": "string",
+        "title": "Dummy field",
+        "default": ""
+      },
       "setup_content": {
         "type": "boolean",
         "title": "Create Example Content",
@@ -291,11 +318,13 @@
     "required": [
       "site_id",
       "title",
+      "available_languages",
       "workflow",
       "authentication"
     ]
   },
   "uischema": {
-    "site_id": {"ui:widget": "hidden"}
+    "site_id": {"ui:widget": "hidden"},
+    "default_language": {"ui:widget": "hidden"}
   }
 }

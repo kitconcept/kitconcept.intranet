@@ -40,20 +40,21 @@
   <property name="behaviors"
             purge="true"
   >
-    <element value="plone.locking" />
-    <element value="volto.blocks" />
-    <element value="plone.translatable" />
     <element value="plone.basic" />
-    <element value="volto.kicker" />
     <element value="volto.preview_image_link" />
-    <element value="plone.publication" />
+    <element value="volto.kicker" />
     <element value="plone.categorization" />
+    <element value="plone.publication" />
     <element value="plone.ownership" />
-    <element value="volto.navtitle" />
     <element value="plone.shortname" />
-    <element value="plone.allowdiscussion" />
+    <element value="volto.navtitle" />
+    <element value="plone.excludefromnavigation" />
+    <element value="volto.blocks" />
+    <element value="plone.constraintypes" />
+    <element value="plone.namefromtitle" />
     <element value="plone.versioning" />
-
+    <element value="plone.locking" />
+    <element value="plone.translatable" />
   </property>
 
 

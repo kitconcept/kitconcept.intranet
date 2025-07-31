@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // separator-block
-  it('Separator-block (/features/examples/block/separator-block)', () => {
-    cy.navigate('/features/examples/block/separator-block');
+  it('Separator-block (/features/blocks/separator-block)', () => {
+    cy.navigate('/features/blocks/separator-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({

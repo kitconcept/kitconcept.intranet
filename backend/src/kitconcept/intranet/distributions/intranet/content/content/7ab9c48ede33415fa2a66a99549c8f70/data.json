@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/content-types/page",
+  "@id": "/features/content-types/page",
   "@type": "Document",
   "UID": "7ab9c48ede33415fa2a66a99549c8f70",
   "allow_discussion": false,
@@ -1186,9 +1186,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:20+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
   "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,

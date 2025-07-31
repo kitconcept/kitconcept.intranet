@@ -1,14 +1,12 @@
 {
-  "@id": "/features/examples/content-types/internal-link",
+  "@id": "/features/content-types/internal-link",
   "@type": "Link",
   "UID": "195d96ca9952493cbffa69cda040b8b3",
   "allow_discussion": null,
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:19+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
   "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,

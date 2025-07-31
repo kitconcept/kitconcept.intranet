@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/block/block-accordion",
+  "@id": "/features/blocks/block-accordion",
   "@type": "Document",
   "UID": "f8cd4a2d8d7c4703b4e41d2093b21aed",
   "allow_discussion": false,
@@ -32,9 +32,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "c9580c7a-ab67-44f7-8532-59a4ba9fd846"
-              ]
+              "items": ["c9580c7a-ab67-44f7-8532-59a4ba9fd846"]
             },
             "title": "Accordion with listing"
           },
@@ -319,9 +317,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "c85ec1d2-f371-4ed4-be65-8fa0a091b833"
-              ]
+              "items": ["c85ec1d2-f371-4ed4-be65-8fa0a091b833"]
             },
             "title": "Accordion with text"
           },
@@ -523,7 +519,7 @@
                   ]
                 },
                 "size": "l",
-                "title": "Image",
+                "title": "Image - Light",
                 "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
               "725bfc52-49f6-4e70-8d11-48c537cfb5ff": {
@@ -1642,9 +1638,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           }
@@ -1692,9 +1686,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "c9580c7a-ab67-44f7-8532-59a4ba9fd846"
-              ]
+              "items": ["c9580c7a-ab67-44f7-8532-59a4ba9fd846"]
             },
             "title": "Accordion with listing"
           },
@@ -1718,9 +1710,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35"
-              ]
+              "items": ["afacd5e4-5914-46b6-b9f9-ebd8bbda9d35"]
             },
             "title": "Accordion with text"
           },
@@ -3312,9 +3302,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           }
@@ -3350,9 +3338,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-27T19:48:00+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The accordion contains other blocks in an accordion behavior layout.",
   "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,

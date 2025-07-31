@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/content-types/news-item",
+  "@id": "/features/content-types/news-item",
   "@type": "News Item",
   "UID": "8cc3e9af77c0452aa2278b0bfdcf9c85",
   "allow_discussion": null,
@@ -1149,9 +1149,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:19+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The News Item content type can be used to display News content on the website.",
   "effective": "2023-01-01T10:42:00+00:00",
   "exclude_from_nav": false,

@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/block/grid-block/listing",
+  "@id": "/features/blocks/grid-block/listing",
   "@type": "Document",
   "UID": "3ac4a2c6c4034a1686bc0ee2d2072fd6",
   "allow_discussion": false,
@@ -66,9 +66,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:22+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "\nThe Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. This is a grid block with multiple listing blocks.",
   "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,

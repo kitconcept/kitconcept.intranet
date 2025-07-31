@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/content-types/event",
+  "@id": "/features/content-types/event",
   "@type": "Event",
   "UID": "7adc12f0e7604982a6cdcb9437bccf66",
   "allow_discussion": false,
@@ -1143,9 +1143,7 @@
   "contact_phone": "+49 1234 567-890",
   "contributors": [],
   "created": "2023-07-06T21:35:07+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The event content type can be used to display an event on the website.",
   "effective": "2023-07-06T18:35:00+00:00",
   "end": "2023-12-31T12:00:00+00:00",

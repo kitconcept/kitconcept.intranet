@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/block/maps-block",
+  "@id": "/features/blocks/maps-block",
   "@type": "Document",
   "UID": "e090d954d0a448bca81c1a646e673a12",
   "allow_discussion": false,
@@ -170,9 +170,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-28T09:10:43+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The maps block can have embeded a Map (Google Maps, OpenMaps, etc).",
   "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,

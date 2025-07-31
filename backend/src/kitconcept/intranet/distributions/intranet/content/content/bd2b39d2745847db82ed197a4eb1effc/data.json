@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/block/teaser-block",
+  "@id": "/features/blocks/teaser-block",
   "@type": "Document",
   "UID": "bd2b39d2745847db82ed197a4eb1effc",
   "allow_discussion": false,
@@ -168,9 +168,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:20+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
   "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,

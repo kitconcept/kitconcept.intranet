@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/block/heading-block",
+  "@id": "/features/blocks/heading-block",
   "@type": "Document",
   "UID": "2f69aa417e894fd3bf23d393287b369e",
   "allow_discussion": false,
@@ -115,9 +115,7 @@
         }
       },
       "blocks_layout": {
-        "items": [
-          "882e7872-bcf3-4234-a510-d1cff6bf2f7f"
-        ]
+        "items": ["882e7872-bcf3-4234-a510-d1cff6bf2f7f"]
       },
       "headline": "Block Title",
       "styles": {}
@@ -243,9 +241,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:08+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "\nThe heading block allows you to display headings to group multiple blocks under one topic.",
   "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,

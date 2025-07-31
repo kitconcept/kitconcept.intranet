@@ -22,6 +22,8 @@
   <include file="profiles.zcml" />
 
   <include package=".behaviors" />
+  <include package=".indexers" />
+  <include package=".vocabularies" />
   <include package=".controlpanels" />
 
 </configure>

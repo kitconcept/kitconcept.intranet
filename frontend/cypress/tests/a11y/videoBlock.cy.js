@@ -22,10 +22,6 @@ describe('a11y tests', () => {
           id: 'image-alt',
           enabled: false,
         },
-        {
-          id: 'region',
-          enabled: false,
-        },
       ],
     });
     cy.checkAccessibility();

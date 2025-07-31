@@ -14,14 +14,7 @@ describe('a11y tests', () => {
     cy.navigate('/features/examples/block/search-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        {
-          id: 'region',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

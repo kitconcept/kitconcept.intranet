@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from kitconcept.intranet.testing import FUNCTIONAL_TESTING
 from kitconcept.intranet.testing import INTEGRATION_TESTING
 from pathlib import Path
+from plone.distribution.api import distribution as dist_api
 from pytest_plone import fixtures_factory
 from requests import exceptions as exc
 from typing import Any
@@ -24,6 +25,13 @@ globals().update(
 def distribution_name() -> str:
     """Distribution name."""
     return "kitconcept-intranet"
+
+
+@pytest.fixture(scope="class")
+def example_content_folder(distribution_name) -> Path:
+    """Return the path to the example content folder."""
+    distribution = dist_api.get(distribution_name)
+    return distribution.contents["json"]
 
 
 def is_responsive(url):
@@ -108,3 +116,16 @@ def current_versions() -> CurrentVersions:
 def base_profile_id() -> str:
     """Fixture to get the base profile ID."""
     return "kitconcept.core:base"
+
+
+@pytest.fixture(scope="class")
+def example_content_factory(example_content_folder):
+    """Fixture to return a factory to handle example content."""
+    from plone.exportimport import importers
+
+    def factory(portal) -> None:
+        """Import example content into an existing site."""
+        importer = importers.get_importer(portal)
+        _ = importer.import_site(example_content_folder)
+
+    return factory

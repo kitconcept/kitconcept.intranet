@@ -99,6 +99,12 @@ update-example-content: $(VENV_FOLDER) ## Export example content inside package
 	@echo "$(GREEN)==> Export example content into $(EXAMPLE_CONTENT_FOLDER) $(RESET)"
 	if [ -d $(EXAMPLE_CONTENT_FOLDER)/content ]; then rm -r $(EXAMPLE_CONTENT_FOLDER)/* ;fi
 	@uv run plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(EXAMPLE_CONTENT_FOLDER)
+	$(MAKE) cleanup-example-content
+
+.PHONY: cleanup-example-content
+cleanup-example-content: $(VENV_FOLDER) ## Remove invalid references to http://nohost/Plone
+	@echo "$(GREEN)==> Remove invalid references to http://nohost/Plone $(RESET)"
+	@find $(EXAMPLE_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i 's/http:\/\/nohost\/Plone\//\//' {} \;
 
 # QA
 .PHONY: lint

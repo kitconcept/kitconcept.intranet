@@ -8,7 +8,8 @@ from zope.interface import provider
 
 
 class IOrganisationalUnitMarker(Interface):
-    """Marker interface for content items that use IOrganisationalUnitBehavior behavior."""
+    """Marker interface for content items that use IOrganisationalUnitBehavior
+    behavior."""
 
 
 @provider(IFormFieldProvider)

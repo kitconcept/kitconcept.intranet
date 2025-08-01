@@ -8,8 +8,8 @@ from z3c.relationfield.relation import RelationValue
 
 @indexer(IOrganisationalUnitMarker)
 def organisational_unit_indexer(obj: DexterityContent) -> str:
-    """Indexer for organisational_unit_reference attribute from IOrganisationalUnitBehavior
-    behavior."""
+    """Indexer for organisational_unit_reference attribute from
+    IOrganisationalUnitBehavior behavior."""
 
     base_obj = aq_base(obj)
     organisational_unit_reference: RelationValue | None = getattr(

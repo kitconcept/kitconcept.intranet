@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // grid tex block
-  it('Grid-Block text (/features/blocks/grid-block/text)', () => {
-    cy.navigate('/features/blocks/grid-block/text');
+  it('Grid-Block text (/features/block/grid-block/text)', () => {
+    cy.navigate('/features/block/grid-block/text');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({

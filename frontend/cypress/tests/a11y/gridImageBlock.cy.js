@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // grid block Image
-  it('Grid-Block Image (/features/blocks/grid-block/image)', () => {
-    cy.navigate('/features/blocks/grid-block/image');
+  it('Grid-Block Image (/features/block/grid-block/image)', () => {
+    cy.navigate('/features/block/grid-block/image');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe();

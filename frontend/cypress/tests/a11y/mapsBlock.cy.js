@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Maps block
-  it('Maps Block (/features/blocks/maps-block)', () => {
-    cy.navigate('/features/blocks/maps-block');
+  it('Maps Block (/features/block/maps-block)', () => {
+    cy.navigate('/features/block/maps-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({

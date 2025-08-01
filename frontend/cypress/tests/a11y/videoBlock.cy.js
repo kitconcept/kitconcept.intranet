@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Video Block
-  it('Video Block (/features/blocks/video-block)', () => {
-    cy.navigate('/features/blocks/video-block');
+  it('Video Block (/features/block/video-block)', () => {
+    cy.navigate('/features/block/video-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({

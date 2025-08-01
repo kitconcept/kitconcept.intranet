@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Accordion Block
-  it('Accordion Block (/features/blocks/block-accordion)', () => {
-    cy.navigate('/features/blocks/block-accordion');
+  it('Accordion Block (/features/block/block-accordion)', () => {
+    cy.navigate('/features/block/block-accordion');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({

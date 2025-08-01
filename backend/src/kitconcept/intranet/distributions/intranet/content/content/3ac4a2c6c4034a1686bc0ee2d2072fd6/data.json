@@ -1,5 +1,5 @@
 {
-  "@id": "/features/blocks/grid-block/listing",
+  "@id": "/features/block/grid-block/listing",
   "@type": "Document",
   "UID": "3ac4a2c6c4034a1686bc0ee2d2072fd6",
   "allow_discussion": false,
@@ -16,7 +16,7 @@
               {
                 "i": "path",
                 "o": "plone.app.querystring.operation.string.absolutePath",
-                "v": "/features/blocks/grid-block"
+                "v": "/features/block/grid-block"
               }
             ],
             "sort_on": "getId",
@@ -35,7 +35,7 @@
               {
                 "i": "path",
                 "o": "plone.app.querystring.operation.string.absolutePath",
-                "v": "/features/blocks/grid-block"
+                "v": "/features/block/grid-block"
               }
             ],
             "sort_order": "ascending"

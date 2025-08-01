@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   //Page
-  it('Page (/features/examples/content-types/page)', () => {
-    cy.navigate('/features/examples/content-types/page');
+  it('Page (/features/content-types/page)', () => {
+    cy.navigate('/features/content-types/page');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({

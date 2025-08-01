@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Table-block
-  it('Table-block (/features/examples/block/table-block)', () => {
-    cy.navigate('/features/examples/block/table-block');
+  it('Table-block (/features/block/table-block)', () => {
+    cy.navigate('/features/block/table-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({

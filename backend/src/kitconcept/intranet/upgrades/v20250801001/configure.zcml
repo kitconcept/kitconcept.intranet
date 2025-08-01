@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250729001"
+      destination="20250801001"
+      >
+    <genericsetup:upgradeDepends
+        title="Adds kitconcept.intranet.organisational_unit behavior to content types, Adds organisational unit content type"
+        import_steps="typeinfo"
+        />
+    <genericsetup:upgradeDepends
+        title="Versioning support for Organisational Unit content type"
+        import_steps="repositorytool"
+        />
+    <genericsetup:upgradeDepends
+        title="Add Catalog index for organisational_unit_reference"
+        import_steps="catalog"
+        />
+    <genericsetup:upgradeDepends
+        title="Add Organisational Unit querystring filter, and Organisational Unit content type to navigation schema"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

@@ -1,0 +1,91 @@
+{
+  "@id": "/features/examples/content-types/institute-of-robotics-and-mechatronics",
+  "@type": "Organisational Unit",
+  "UID": "f1b64d4955074e2086a9d5752e223ace",
+  "allow_discussion": null,
+  "blocks": {
+    "39fa1c34-96f4-43bc-83e2-5fbfbfd5af1d": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "f1b64d4955074e2086a9d5752e223ace"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "45ec4a7f-5002-4677-b5f6-4ce516c1c340": {
+      "@type": "slate"
+    },
+    "d57ba86f-bf85-45fa-a579-c825242ce7b8": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d57ba86f-bf85-45fa-a579-c825242ce7b8",
+      "39fa1c34-96f4-43bc-83e2-5fbfbfd5af1d",
+      "45ec4a7f-5002-4677-b5f6-4ce516c1c340"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-07-31T13:45:56+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "This institute conducts research in robotic systems for space, aeronautics, and industrial applications. It is one of the best-known units within DLR.\n\n",
+  "effective": "2025-07-31T13:47:36+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institute-of-robotics-and-mechatronics",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-08-01T13:49:07+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Institute of Robotics and Mechatronics(Organisational unit)",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-31T13:45:56+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-31T13:47:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

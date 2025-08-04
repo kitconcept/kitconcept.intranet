@@ -1,6 +1,5 @@
 from kitconcept.intranet.vocabularies.base import BaseRelationVocabulary
 from kitconcept.intranet.vocabularies.base import BaseSimpleVocabulary
-from plone import api
 from zope.interface import implementer
 from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory

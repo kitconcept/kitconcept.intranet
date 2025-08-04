@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   //Link
-  it('link (/features/examples/content-types/internal-link)', () => {
-    cy.navigate('/features/examples/content-types/internal-link');
+  it('link (/features/content-types/internal-link)', () => {
+    cy.navigate('/features/content-types/internal-link');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe();

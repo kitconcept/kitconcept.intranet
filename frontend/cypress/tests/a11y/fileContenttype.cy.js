@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   //File
-  it('File (/features/examples/content-types/file)', () => {
-    cy.navigate('/features/examples/content-types/file');
+  it('File (/features/content-types/file)', () => {
+    cy.navigate('/features/content-types/file');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe();

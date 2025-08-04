@@ -67,64 +67,66 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   };
 
   return (
-    <div className="documentByLine">
-      {creatorProfiles.length > 0 && (
-        <span>
-          {intl.formatMessage(messages.author)}
-          {creatorProfiles.map(([name, url], index) =>
-            url ? (
-              <React.Fragment key={index}>
-                <UniversalLink className="byAuthor" href={url}>
-                  {name}
-                </UniversalLink>
-                {index < creatorProfiles.length - 1 && ', '}
-              </React.Fragment>
+    <>
+      <div className="documentByLine">
+        {creatorProfiles.length > 0 && (
+          <span>
+            {intl.formatMessage(messages.author)}
+            {creatorProfiles.map(([name, url], index) =>
+              url ? (
+                <React.Fragment key={index}>
+                  <UniversalLink className="author-name" href={url}>
+                    {name}
+                  </UniversalLink>
+                  {index < creatorProfiles.length - 1 && ', '}
+                </React.Fragment>
+              ) : (
+                <React.Fragment key={index}>
+                  <span>{name}</span>
+                  {index < creatorProfiles.length - 1 && ', '}
+                </React.Fragment>
+              ),
+            )}
+            {' —'}
+          </span>
+        )}
+        {content.effective && !isAddMode && (
+          <span>
+            {content.review_state === 'published' ? (
+              <span>
+                {intl.formatMessage(messages.published)}
+                <FormattedDate
+                  date={form.global?.effective ?? content?.effective}
+                  format={{
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  }}
+                  locale={intl.locale}
+                />
+                ,
+              </span>
             ) : (
-              <React.Fragment key={index}>
-                <span className="byAuthor">{name}</span>
-                {index < creatorProfiles.length - 1 && ', '}
-              </React.Fragment>
-            ),
-          )}
-          {' —'}
-        </span>
-      )}
-      {content.effective && !isAddMode && (
-        <span className="documentPublished">
-          {content.review_state === 'published' ? (
-            <span>
-              {intl.formatMessage(messages.published)}
-              <FormattedDate
-                date={form.global?.effective ?? content?.effective}
-                format={{
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                }}
-                locale={intl.locale}
-              />
-              ,
-            </span>
-          ) : (
-            ''
-          )}
-        </span>
-      )}
-      {content.modified && !isAddMode && (
-        <span className="documentModified">
-          {intl.formatMessage(messages.modified)}
-          <FormattedDate
-            date={content.modified}
-            format={{
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            }}
-            locale={intl.locale}
-          />
-        </span>
-      )}
-    </div>
+              ''
+            )}
+          </span>
+        )}
+        {content.modified && !isAddMode && (
+          <span>
+            {intl.formatMessage(messages.modified)}
+            <FormattedDate
+              date={content.modified}
+              format={{
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              }}
+              locale={intl.locale}
+            />
+          </span>
+        )}
+      </div>
+    </>
   );
 };
 

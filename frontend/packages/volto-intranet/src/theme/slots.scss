@@ -2,7 +2,7 @@
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
   margin-bottom: $spacing-medium;
-  .byAuthor {
+  .author-name {
     text-decoration: none;
   }
 }
@@ -12,7 +12,7 @@
   @include default-container-width();
   @include adjustMarginsToEditContainer($default-container-width);
   margin-bottom: $spacing-medium;
-  .byAuthor {
+  .author-name {
     text-decoration: none;
   }
 }

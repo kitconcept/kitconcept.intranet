@@ -33,12 +33,16 @@ type DocumentByLineProps = {
     pathname: string;
   };
 };
-
+type Users = {
+  users: {
+    users: User[];
+  };
+};
 const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const intl = useIntl();
   const dispatch = useDispatch();
 
-  const userlist = useSelector((state: any) => state.users?.users || []);
+  const userlist = useSelector((state: Users) => state.users?.users || []);
   const form = useSelector((state: FormData) => state.form);
   const isAddMode = props.location.pathname.includes('/add');
 

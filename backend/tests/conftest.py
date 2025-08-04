@@ -190,6 +190,7 @@ def solr_settings(docker_ip, docker_services, solr_service) -> dict:
     }
 
 
+@pytest.fixture(scope="class")
 def example_content_factory(example_content_folder):
     """Fixture to return a factory to handle example content."""
     from plone.exportimport import importers

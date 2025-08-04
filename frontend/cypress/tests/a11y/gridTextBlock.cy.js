@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // grid tex block
-  it('Grid-Block text (/features/examples/block/grid-block/text)', () => {
-    cy.navigate('/features/examples/block/grid-block/text');
+  it('Grid-Block text (/features/block/grid-block/text)', () => {
+    cy.navigate('/features/block/grid-block/text');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
@@ -26,10 +26,6 @@ describe('a11y tests', () => {
         // because we are using multiple grid block
         {
           id: 'empty-heading',
-          enabled: false,
-        },
-        {
-          id: 'region',
           enabled: false,
         },
       ],

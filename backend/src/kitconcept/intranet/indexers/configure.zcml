@@ -1,0 +1,9 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Location indexers -->
+  <adapter
+      factory=".location.location_indexer"
+      name="location_reference"
+      />
+
+</configure>

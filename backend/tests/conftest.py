@@ -4,6 +4,7 @@ from kitconcept.intranet.testing import INTEGRATION_TESTING
 from pathlib import Path
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
+from plone.distribution.api import distribution as dist_api
 from plone.distribution.api import site as site_api
 from Products.CMFPlone.Portal import PloneSite
 from pytest_plone import fixtures_factory
@@ -29,6 +30,13 @@ globals().update(
 def distribution_name() -> str:
     """Distribution name."""
     return "kitconcept-intranet"
+
+
+@pytest.fixture(scope="class")
+def example_content_folder(distribution_name) -> Path:
+    """Return the path to the example content folder."""
+    distribution = dist_api.get(distribution_name)
+    return distribution.contents["json"]
 
 
 @pytest.fixture(scope="class")
@@ -180,3 +188,15 @@ def solr_settings(docker_ip, docker_services, solr_service) -> dict:
         "collective.solr.port": port,
         "collective.solr.base": "/solr/plone",
     }
+
+
+def example_content_factory(example_content_folder):
+    """Fixture to return a factory to handle example content."""
+    from plone.exportimport import importers
+
+    def factory(portal) -> None:
+        """Import example content into an existing site."""
+        importer = importers.get_importer(portal)
+        _ = importer.import_site(example_content_folder)
+
+    return factory

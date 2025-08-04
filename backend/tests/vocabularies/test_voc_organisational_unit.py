@@ -22,7 +22,7 @@ class TestVocab:
         "token,title",
         [
             (
-                "f1b64d4955074e2086a9d5752e223ace",
+                "d87d0bc79ec3449b9816ad93740c61f2",
                 "Institute of Robotics and Mechatronics(Organisational unit)",
             )
         ],

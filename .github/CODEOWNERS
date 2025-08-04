@@ -1,0 +1,23 @@
+# Devops contents
+/.github/ @kitconcept/devops
+/devops/ @kitconcept/devops
+/repository.toml @kitconcept/devops
+/*.yml @kitconcept/devops
+towncrier.toml @kitconcept/devops
+Dockerfile @kitconcept/devops
+Dockerfile.* @kitconcept/devops
+
+# Backend
+/backend/ @kitconcept/backend
+*.py @kitconcept/backend
+
+# Frontend
+/frontend/ @kitconcept/frontend
+*.js @kitconcept/frontend
+*.jsx @kitconcept/frontend
+*.ts @kitconcept/frontend
+*.tsx @kitconcept/frontend
+
+# Documentation
+README.md @kitconcept/documentation
+/docs/ @kitconcept/documentation

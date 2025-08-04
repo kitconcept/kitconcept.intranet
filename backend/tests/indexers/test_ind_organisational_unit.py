@@ -8,7 +8,7 @@ class TestIndexer:
     def _setup(self, portal):
         self.portal = portal
 
-    @pytest.mark.parametrize("token,results", [("d87d0bc79ec3449b9816ad93740c61f2", 1)])
+    @pytest.mark.parametrize("token,results", [("1a22eddf0e7941a0962cbfaa785e4b4d", 1)])
     def test_search(self, token: str, results: str):
         brains = api.content.find(
             organisational_unit_reference=token, portal_type="Document"

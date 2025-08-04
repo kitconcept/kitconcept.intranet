@@ -45,6 +45,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const userlist = useSelector((state: Users) => state.users?.users || []);
   const form = useSelector((state: FormData) => state.form);
   const isAddMode = props.location.pathname.includes('/add');
+  const t = content.creators;
 
   //The expression form.global?.creators ?? content.creators ?? [] creates a new array reference
   //  on every render, even if the values are the same.
@@ -60,7 +61,6 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const creatorsWithData = useMemo(() => {
     const usersMap = userlist.reduce(
       (map: Record<string, User>, user: User) => {
-        map[user.username] = user;
         map[user.id] = user;
         return map;
       },
@@ -71,7 +71,6 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
       const userData = usersMap[username];
       return {
         username,
-        fullname: userData?.fullname || username,
         homePage: userData?.home_page || '',
         hasHomePage: !!userData?.home_page,
       };
@@ -85,14 +84,14 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
           <span>
             {intl.formatMessage(messages.author)}
             {creatorsWithData.map(
-              ({ username, fullname, homePage, hasHomePage }, index) => (
+              ({ username, homePage, hasHomePage }, index) => (
                 <React.Fragment key={username}>
                   {hasHomePage ? (
                     <UniversalLink className="author-name" href={homePage}>
-                      {fullname}
+                      {username}
                     </UniversalLink>
                   ) : (
-                    <span>{fullname}</span>
+                    <span>{username}</span>
                   )}
                   {index < creatorsWithData.length - 1 && ', '}
                 </React.Fragment>

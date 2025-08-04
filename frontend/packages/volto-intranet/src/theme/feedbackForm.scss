@@ -1,0 +1,4 @@
+.feedback-form {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+}

@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import type { Content, User } from '@plone/types';
-import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
+import { listUsers } from '@plone/volto/actions/users/users';
 
 const messages = defineMessages({
   author: {
@@ -21,11 +20,13 @@ const messages = defineMessages({
     defaultMessage: ' last modified ',
   },
 });
+
 type FormData = {
   form: {
     global: Content;
   };
 };
+
 type DocumentByLineProps = {
   content: Content;
   location: {
@@ -33,57 +34,64 @@ type DocumentByLineProps = {
   };
 };
 
-const useCreatorUrl = async (username: string): Promise<string> => {
-  try {
-    const response = await fetch(expandToBackendURL(`/@users/${username}`));
-    const data: User = await response.json();
-    return data.home_page;
-  } catch (error) {
-    return '';
-  }
-};
-
 const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const intl = useIntl();
+  const dispatch = useDispatch();
 
-  const [creatorProfiles, setCreatorProfiles] = useState<string[][]>([]);
+  const userlist = useSelector((state: any) => state.users?.users || []);
   const form = useSelector((state: FormData) => state.form);
   const isAddMode = props.location.pathname.includes('/add');
-  const creators = form.global?.creators ?? content.creators ?? [];
 
-  useEffect(() => {
-    fetchCreatorProfiles(creators);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  //The expression form.global?.creators ?? content.creators ?? [] creates a new array reference
+  //  on every render, even if the values are the same.
+  // This makes React think the dependency has changed and re-runs the
+
+  const creators = useMemo(() => {
+    return form.global?.creators ?? content.creators ?? [];
   }, [form.global?.creators, content.creators]);
 
-  const fetchCreatorProfiles = async (creators: string[]) => {
-    const result = await Promise.all(
-      creators.map(async (user) => {
-        const profileUrl = await useCreatorUrl(user);
-        return [user, profileUrl || ''];
-      }),
+  useEffect(() => {
+    dispatch(listUsers());
+  }, [dispatch]);
+
+  const creatorsWithData = useMemo(() => {
+    const usersMap = userlist.reduce(
+      (map: Record<string, User>, user: User) => {
+        map[user.username] = user;
+        map[user.id] = user;
+        return map;
+      },
+      {},
     );
-    setCreatorProfiles(result);
-  };
+
+    return creators.map((username: string) => {
+      const userData = usersMap[username];
+      return {
+        username,
+        fullname: userData?.fullname || username,
+        homePage: userData?.home_page || '',
+        hasHomePage: !!userData?.home_page,
+      };
+    });
+  }, [userlist, creators]);
 
   return (
     <>
       <div className="documentByLine">
-        {creatorProfiles.length > 0 && (
+        {creatorsWithData.length > 0 && (
           <span>
             {intl.formatMessage(messages.author)}
-            {creatorProfiles.map(([name, url], index) =>
-              url ? (
-                <React.Fragment key={index}>
-                  <UniversalLink className="author-name" href={url}>
-                    {name}
-                  </UniversalLink>
-                  {index < creatorProfiles.length - 1 && ', '}
-                </React.Fragment>
-              ) : (
-                <React.Fragment key={index}>
-                  <span>{name}</span>
-                  {index < creatorProfiles.length - 1 && ', '}
+            {creatorsWithData.map(
+              ({ username, fullname, homePage, hasHomePage }, index) => (
+                <React.Fragment key={username}>
+                  {hasHomePage ? (
+                    <UniversalLink className="author-name" href={homePage}>
+                      {fullname}
+                    </UniversalLink>
+                  ) : (
+                    <span>{fullname}</span>
+                  )}
+                  {index < creatorsWithData.length - 1 && ', '}
                 </React.Fragment>
               ),
             )}

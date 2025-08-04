@@ -1,5 +1,5 @@
 {
-  "@id": "/features/examples/block/listing-block",
+  "@id": "/features/block/listing-block",
   "@type": "Document",
   "UID": "6bd32a3367ea4254b295db642655b9d3",
   "allow_discussion": false,
@@ -16,7 +16,7 @@
           {
             "i": "path",
             "o": "plone.app.querystring.operation.string.absolutePath",
-            "v": "/features/examples/content-types::1"
+            "v": "/features/content-types::1"
           }
         ],
         "sort_on": "getId",
@@ -38,7 +38,7 @@
           {
             "i": "path",
             "o": "plone.app.querystring.operation.string.absolutePath",
-            "v": "/features/examples/content-types::1"
+            "v": "/features/content-types::1"
           }
         ],
         "sort_on": "getId",
@@ -63,7 +63,7 @@
           {
             "i": "path",
             "o": "plone.app.querystring.operation.string.absolutePath",
-            "v": "/features/examples/content-types::1"
+            "v": "/features/content-types::1"
           }
         ],
         "sort_on": "getId",

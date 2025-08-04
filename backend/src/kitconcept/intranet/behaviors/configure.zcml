@@ -18,4 +18,14 @@
       provides=".blocks_settings.ITTWBlocksSettings"
       />
 
+  <plone:behavior
+      name="kitconcept.intranet.location"
+      title="Location"
+      description="Fields for Location"
+      factory=".location.LocationAdapter"
+      provides=".location.ILocationBehavior"
+      for=".location.ILocationMarker"
+      marker=".location.ILocationMarker"
+      />
+
 </configure>

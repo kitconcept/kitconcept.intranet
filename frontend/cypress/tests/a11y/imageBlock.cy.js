@@ -10,18 +10,11 @@ describe('a11y tests', () => {
   });
 
   // Image-Block
-  it('Image-Block (/features/examples/block/image-block)', () => {
-    cy.navigate('/features/examples/block/image-block');
+  it('Image-Block (/features/block/image-block)', () => {
+    cy.navigate('/features/block/image-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        {
-          id: 'region',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

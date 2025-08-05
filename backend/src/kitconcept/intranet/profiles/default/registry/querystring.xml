@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="kitconcept.intranet"
+>
+
+  <!-- Location -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.location_reference"
+  >
+    <value key="title"
+           i18n:translate="label_place"
+    >Place</value>
+    <value key="description"
+           i18n:translate="help_place"
+    >Filter by location</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="vocabulary">kitconcept.intranet.vocabularies.location</value>
+    <value key="group"
+           i18n:translate=""
+    >Taxonomy</value>
+  </records>
+
+  <!-- Organisational Unit -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.organisational_unit_reference"
+  >
+    <value key="title"
+           i18n:translate="label_organisational_unit"
+    >Organisational Unit</value>
+    <value key="description"
+           i18n:translate="help_organisational_unit"
+    >Filter by Organisational Unit</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="vocabulary">kitconcept.intranet.vocabularies.organisational_unit</value>
+    <value key="group"
+           i18n:translate=""
+    >Taxonomy</value>
+  </records>
+
+</registry>

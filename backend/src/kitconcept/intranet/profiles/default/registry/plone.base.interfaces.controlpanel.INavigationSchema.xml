@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry>
+  <records interface="plone.base.interfaces.controlpanel.INavigationSchema"
+           prefix="plone"
+  >
+    <value key="displayed_types"
+           purge="false"
+    >
+      <element>Location</element>
+      <element>Organisational Unit</element>
+    </value>
+  </records>
+</registry>

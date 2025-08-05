@@ -2,5 +2,11 @@
 <object meta_type="Plone Types Tool"
         name="portal_types"
 >
+  <object meta_type="Dexterity FTI"
+          name="Location"
+  />
 
+  <object meta_type="Dexterity FTI"
+          name="Organisational Unit"
+  />
 </object>

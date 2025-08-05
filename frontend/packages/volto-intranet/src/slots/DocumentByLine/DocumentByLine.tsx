@@ -45,7 +45,6 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const userlist = useSelector((state: Users) => state.users?.users || []);
   const form = useSelector((state: FormData) => state.form);
   const isAddMode = props.location.pathname.includes('/add');
-  const t = content.creators;
 
   //The expression form.global?.creators ?? content.creators ?? [] creates a new array reference
   //  on every render, even if the values are the same.
@@ -58,15 +57,14 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     dispatch(listUsers());
   }, [dispatch]);
 
-  const creatorsWithData = useMemo(() => {
-    const usersMap = userlist.reduce(
-      (map: Record<string, User>, user: User) => {
-        map[user.id] = user;
-        return map;
-      },
-      {},
-    );
+  const usersMap = useMemo(() => {
+    return userlist.reduce((map: Record<string, User>, user: User) => {
+      map[user.id] = user;
+      return map;
+    }, {});
+  }, [userlist]);
 
+  const creatorsWithData = useMemo(() => {
     return creators.map((username: string) => {
       const userData = usersMap[username];
       return {
@@ -75,7 +73,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
         hasHomePage: !!userData?.home_page,
       };
     });
-  }, [userlist, creators]);
+  }, [creators, usersMap]);
 
   return (
     <>

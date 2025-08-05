@@ -20,7 +20,7 @@ class TestSetupInstall:
 
     def test_latest_version(self, profile_last_version):
         """Test latest version of default profile."""
-        assert profile_last_version(self.profile_id) == "20250729001"
+        assert profile_last_version(self.profile_id) == "20250801001"
 
 
 class TestRegistrySettings:
@@ -32,6 +32,7 @@ class TestRegistrySettings:
     @pytest.mark.parametrize(
         "record,oper,value",
         [
+            # Location reference field
             ("plone.displayed_types", "in", "Location"),
             (
                 "plone.app.querystring.field.location_reference.title",
@@ -43,8 +44,16 @@ class TestRegistrySettings:
                 "eq",
                 "help_place",
             ),
-            ("plone.app.querystring.field.location_reference.enabled", "is", True),
-            ("plone.app.querystring.field.location_reference.sortable", "is", False),
+            (
+                "plone.app.querystring.field.location_reference.enabled",
+                "is",
+                True,
+            ),
+            (
+                "plone.app.querystring.field.location_reference.sortable",
+                "is",
+                False,
+            ),
             (
                 "plone.app.querystring.field.location_reference.operations",
                 "in",
@@ -55,7 +64,47 @@ class TestRegistrySettings:
                 "in",
                 "kitconcept.intranet.vocabularies.location",
             ),
-            ("plone.app.querystring.field.location_reference.group", "eq", "Taxonomy"),
+            (
+                "plone.app.querystring.field.location_reference.group",
+                "eq",
+                "Taxonomy",
+            ),
+            # Organisational Unit reference field
+            (
+                "plone.app.querystring.field.organisational_unit_reference.title",
+                "eq",
+                "label_organisational_unit",
+            ),
+            (
+                "plone.app.querystring.field.organisational_unit_reference.description",
+                "eq",
+                "help_organisational_unit",
+            ),
+            (
+                "plone.app.querystring.field.organisational_unit_reference.enabled",
+                "is",
+                True,
+            ),
+            (
+                "plone.app.querystring.field.organisational_unit_reference.sortable",
+                "is",
+                False,
+            ),
+            (
+                "plone.app.querystring.field.organisational_unit_reference.operations",
+                "in",
+                "plone.app.querystring.operation.selection.any",
+            ),
+            (
+                "plone.app.querystring.field.organisational_unit_reference.vocabulary",
+                "in",
+                "kitconcept.intranet.vocabularies.organisational_unit",
+            ),
+            (
+                "plone.app.querystring.field.organisational_unit_reference.group",
+                "eq",
+                "Taxonomy",
+            ),
         ],
     )
     def test_registry_settings(self, record: str, oper: str, value: Any):

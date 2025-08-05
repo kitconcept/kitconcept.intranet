@@ -1,59 +1,51 @@
 {
-  "@id": "/features/examples",
-  "@type": "Document",
-  "UID": "e0b2330086db48ccb724b2e88ad8ba1d",
+  "@id": "/features/content-types/institute-of-robotics-and-mechatronics-organisational-unit",
+  "@type": "Organisational Unit",
+  "UID": "1a22eddf0e7941a0962cbfaa785e4b4d",
   "allow_discussion": null,
   "blocks": {
-    "5b339eab-bab8-40e0-89fc-9b1afc3943d3": {
-      "@type": "title"
-    },
-    "7c304eee-27b9-4c21-a9df-b90847697743": {
+    "1ff0fcdf-68a7-4e16-934d-1b409a23b27c": {
       "@type": "slate"
     },
-    "cc89be86-7131-4de9-a7c3-4df2a22cd00a": {
-      "@type": "listing",
-      "headlineTag": "h2",
-      "styles": {},
-      "theme": "default",
-      "variation": "default"
+    "8d98a183-9f01-4631-a9c4-227f447d3859": {
+      "@type": "title"
     }
   },
   "blocks_layout": {
     "items": [
-      "5b339eab-bab8-40e0-89fc-9b1afc3943d3",
-      "cc89be86-7131-4de9-a7c3-4df2a22cd00a",
-      "7c304eee-27b9-4c21-a9df-b90847697743"
+      "8d98a183-9f01-4631-a9c4-227f447d3859",
+      "1ff0fcdf-68a7-4e16-934d-1b409a23b27c"
     ]
   },
   "changeNote": "",
   "contributors": [],
-  "created": "2025-07-09T10:51:57+00:00",
+  "created": "2025-08-04T15:58:39+00:00",
   "creators": [
     "admin"
   ],
   "description": "",
-  "effective": "2025-07-23T08:36:12+00:00",
+  "effective": "2025-08-04T15:58:44+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "head_title": null,
-  "id": "examples",
+  "id": "institute-of-robotics-and-mechatronics-organisational-unit",
   "is_folderish": true,
   "language": "##DEFAULT##",
-  "layout": "document_view",
+  "layout": "view",
   "lock": {
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-23T08:36:12+00:00",
+  "modified": "2025-08-04T15:58:44+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],
-  "title": "Content playground",
-  "type_title": "Page",
+  "title": "Institute of Robotics and Mechatronics(Organisational unit)",
+  "type_title": "Organisational Unit",
   "version": "current",
   "versioning_enabled": true,
   "workflow_history": {
@@ -63,14 +55,14 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2025-07-09T10:51:57+00:00"
+        "time": "2025-08-04T15:58:39+00:00"
       },
       {
         "action": "publish",
         "actor": "admin",
         "comments": "",
         "review_state": "published",
-        "time": "2025-07-23T08:36:12+00:00"
+        "time": "2025-08-04T15:58:44+00:00"
       }
     ]
   },

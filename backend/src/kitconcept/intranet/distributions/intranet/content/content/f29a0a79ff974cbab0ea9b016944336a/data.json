@@ -10,7 +10,26 @@
     "cad1409e-182b-48c5-8865-d5c3dc622e1e": {
       "@type": "listing",
       "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": ".::1"
+          },
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
       "styles": {},
+      "theme": "default",
       "variation": "grid"
     },
     "efe05471-2a99-4733-94a3-03d1617f4687": {
@@ -45,7 +64,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2025-08-01T14:05:56+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250512001"
+      destination="20250729001"
+      >
+    <genericsetup:upgradeDepends
+        title="Adds kitconcept.intranet.location behavior to content types, Adds Location content type"
+        import_steps="typeinfo"
+        />
+    <genericsetup:upgradeDepends
+        title="Versioning support for Location content type"
+        import_steps="repositorytool"
+        />
+    <genericsetup:upgradeDepends
+        title="Add Catalog index for location_reference"
+        import_steps="catalog"
+        />
+    <genericsetup:upgradeDepends
+        title="Add Place querystring filter, and Location content type to navigation schema"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

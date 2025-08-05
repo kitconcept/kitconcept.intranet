@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // separator-block
-  it('Separator-block (/features/examples/block/separator-block)', () => {
-    cy.navigate('/features/examples/block/separator-block');
+  it('Separator-block (/features/block/separator-block)', () => {
+    cy.navigate('/features/block/separator-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
@@ -20,10 +20,6 @@ describe('a11y tests', () => {
         // which have with the same id
         {
           id: 'duplicate-id-active',
-          enabled: false,
-        },
-        {
-          id: 'region',
           enabled: false,
         },
       ],

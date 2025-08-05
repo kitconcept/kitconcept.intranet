@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
-import cx from 'classnames';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Content } from '@plone/types';
 import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
 import { Toast } from '@plone/volto/components';
 import { toast } from 'react-toastify';
@@ -80,7 +78,7 @@ const messages = defineMessages({
   },
 });
 
-let requiredField = ['email', 'feedback'];
+let requiredField: string[] = ['email', 'feedback'];
 
 const englishPlaceholder = `Please provide as much detail as possible about the issue, such as:
 - Which page or which area of the intranet is concerned?
@@ -95,10 +93,20 @@ const germanPlaceholder = `Machen Sie bitte möglichst genaue Angaben zu Ihrem P
 - Haben Sie eine Verbesserungsidee?
 - Falls ein Fehler auftritt: Welche Schritte haben Sie unternommen, bis der Fehler auftrat?
 `;
-interface FeedBackFormProps {
-  content: Content;
+
+interface FormData {
+  feedback: string;
+  email: string;
+  name: string;
+  [key: string]: string;
 }
+
 const FeedBackForm = () => {
+  const [form, setForm] = useState<FormData>({
+    feedback: '',
+    email: '',
+    name: '',
+  });
   const [metadata, setMetadata] = useState({});
   const [emailError, setEmailError] = useState(false);
   const [emailErrorSubmit, setEmailErrorSubmit] = useState(false);
@@ -107,21 +115,20 @@ const FeedBackForm = () => {
   const history = useHistory();
   const intl = useIntl();
   const { locale } = useIntl();
-  const [form, setForm] = useState({
-    feedback: '',
-    email: '',
-    name: '',
-  });
-  const content = useSelector((state: any) => state.content.data);
   let PageURl = getBaseUrl(useLocation().pathname);
 
+  const dispatch = useDispatch();
   const { loading, loaded, error } = useSelector(
     (state: any) => state.feedbackContactForm,
   );
-  const dispatch = useDispatch();
+
   const isLoading = usePrevious(loading);
+
+  const content = useSelector((state: any) => state.content.data);
+
   const responsiblePersonUUID =
     content?.['@components']?.lcm?.responsible_person?.value;
+
   const feedbackPersonUUID = content.feedback_person;
 
   React.useEffect(() => {
@@ -137,6 +144,18 @@ const FeedBackForm = () => {
     }
   }, [loaded, isLoading, intl, history]);
 
+  useEffect(() => {
+    if (error) {
+      toast.error(
+        <Toast
+          error
+          title={intl.formatMessage(messages.error)}
+          content={error?.response?.body?.message}
+        />,
+      );
+    }
+  }, [error, intl]);
+
   React.useEffect(() => {
     const userAgent = navigator.userAgent;
     const windowWidth = window.innerWidth;
@@ -149,6 +168,7 @@ const FeedBackForm = () => {
   }, []);
 
   const onSubmit = () => {
+    console.log('ds', requiredField);
     for (let field of requiredField) {
       if (form[field].length < 1) {
         if (field === 'feedback') {
@@ -192,122 +212,95 @@ const FeedBackForm = () => {
     }
     setForm({ ...form, [event.target.name]: event.target.value });
   };
-
   return (
     <Container className="feedback-form">
-      <h1>
-        {intl.formatMessage(messages.feedbackOn)} {content?.title}
-      </h1>
-      <Form>
-        <TextField>
-          <Label className="oe-form-label">
-            {intl.formatMessage(messages.url)}:
-          </Label>
-          <Input id="URL" name="url" value={PageURl} readOnly={true} />
-          <FieldError />
-        </TextField>
-        <TextField>
-          <Label className="oe-form-label">
-            {intl.formatMessage(messages.feedback)}: *
-          </Label>
-          <TextArea
-            id="feedback"
-            rows={6}
-            cols={50}
-            style={{ height: 'unset' }}
-            name="feedback"
-            onChange={onChangeHandler}
-            value={form.feedback}
-            placeholder={
-              locale === 'en' ? englishPlaceholder : germanPlaceholder
-            }
-          />
-          {feedbackError && (
+      <div>
+        <h2>
+          {intl.formatMessage(messages.feedbackOn)} {content?.title}
+        </h2>
+        <Form>
+          <TextField>
+            <Label htmlFor="url">{intl.formatMessage(messages.url)}:</Label>
+            <Input id="url" name="url" value={PageURl} readOnly={true} />
+          </TextField>
+          <TextField isInvalid={feedbackError}>
+            <Label htmlFor="feedback">
+              {intl.formatMessage(messages.feedback)}: *
+            </Label>
+            <TextArea
+              id="feedback"
+              rows={6}
+              cols={50}
+              style={{ height: 'unset' }}
+              name="feedback"
+              onChange={onChangeHandler}
+              value={form.feedback}
+              placeholder={
+                locale === 'en' ? englishPlaceholder : germanPlaceholder
+              }
+            />
             <FieldError>
               {intl.formatMessage(messages.feedbackError)}
             </FieldError>
-          )}
-        </TextField>
-        <h2>{intl.formatMessage(messages.feedbackTo)}</h2>
-        <TextField>
-          <Label className="oe-form-label">
-            {intl.formatMessage(messages.name)}:
-          </Label>
-          <Input
-            id="Name"
-            name="name"
-            onChange={onChangeHandler}
-            value={form.name}
-          />
+          </TextField>
+          <h2 className="feedback-to">
+            {intl.formatMessage(messages.feedbackTo)}
+          </h2>
           <TextField>
-            <Label className="oe-form-label">
+            <Label htmlFor="name">{intl.formatMessage(messages.name)}:</Label>
+            <Input
+              id="name"
+              name="name"
+              onChange={onChangeHandler}
+              value={form.name}
+            />
+          </TextField>
+          <TextField isInvalid={emailErrorSubmit || emailError}>
+            <Label htmlFor="email">
               {intl.formatMessage(messages.email)}: *
             </Label>
             <Input
               id="email"
-              className={cx({ error: emailError })}
               name="email"
+              type="email"
               onChange={onChangeHandler}
               value={form.email}
             />
-            {emailErrorSubmit && (
-              <FieldError>{intl.formatMessage(messages.emailError)}</FieldError>
-            )}
+            <FieldError> {intl.formatMessage(messages.emailError)}</FieldError>
             <p className="help">{intl.formatMessage(messages.emailHelpText)}</p>
           </TextField>
-        </TextField>
-        <p>
-          {locale === 'en' ? (
-            <>
-              By submitting this feedback, I agree to the{' '}
-              <span>
-                <a href="https://intranet.fz-juelich.de/en/data-protection">
-                  data protection declaration.
-                </a>
-              </span>
-            </>
-          ) : (
-            <>
-              Mit dem Absenden dieses Feedbacks erkläre ich mich mit den{' '}
-              <span>
-                <a href="https://intranet.fz-juelich.de/de/datenschutz">
-                  Datenschutzbestimmungen
-                </a>
-              </span>{' '}
-              einverstanden.
-            </>
-          )}
-        </p>
-        <TextField
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: '20px',
-          }}
-        >
-          <Button className="reset-button" type="submit" onClick={onCancel}>
-            {intl.formatMessage(messages.cancel)}
-          </Button>
-          <Button
-            // loading={loading}
-            className="send-button"
-            type="submit"
-            onClick={onSubmit}
-          >
-            {intl.formatMessage(messages.send)}
-          </Button>
-        </TextField>
-        {/* {error && (
-            <Message
-              icon="warning"
-              negative
-              attached
-              header={intl.formatMessage(messages.error)}
-              content={error?.response?.body?.message}
-            />
-          )} */}
-      </Form>
+          <p>
+            {locale === 'en' ? (
+              <>
+                By submitting this feedback, I agree to the{' '}
+                <span>
+                  <a href="https://intranet.fz-juelich.de/en/data-protection">
+                    data protection declaration.
+                  </a>
+                </span>
+              </>
+            ) : (
+              <>
+                Mit dem Absenden dieses Feedbacks erkläre ich mich mit den{' '}
+                <span>
+                  <a href="https://intranet.fz-juelich.de/de/datenschutz">
+                    Datenschutzbestimmungen
+                  </a>
+                </span>{' '}
+                einverstanden.
+              </>
+            )}
+          </p>
+          <div className="feedback-form-buttons">
+            <Button type="submit" onClick={onCancel}>
+              {intl.formatMessage(messages.cancel)}
+            </Button>
+            <Button type="submit" onClick={onSubmit}>
+              {intl.formatMessage(messages.send)}
+            </Button>
+          </div>
+        </Form>
+      </div>
     </Container>
   );
 };

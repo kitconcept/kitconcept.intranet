@@ -1,4 +1,22 @@
 .feedback-form {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
+  h2 {
+    margin-bottom: $spacing-small;
+  }
+
+  .react-aria-TextField {
+    width: 100%;
+    margin-bottom: $spacing-small;
+  }
+  .feedback-to {
+    margin-top: $spacing-small;
+  }
+  .feedback-form-buttons {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: $spacing-small;
+    width: 100%;
+  }
 }

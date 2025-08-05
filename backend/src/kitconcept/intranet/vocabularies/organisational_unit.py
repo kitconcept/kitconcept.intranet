@@ -6,14 +6,14 @@ from zope.schema.interfaces import IVocabularyFactory
 
 
 @implementer(IVocabularyFactory)
-class LocationsRelationVocabulary(BaseRelationVocabulary):
+class OrganisationalUnitRelationVocabulary(BaseRelationVocabulary):
     def __init__(self):
-        super().__init__("Location")
+        super().__init__("Organisational Unit")
 
 
-LocationsRelationVocabularyFactory = LocationsRelationVocabulary()
+OrganisationalsUnitRelationVocabularyFactory = OrganisationalUnitRelationVocabulary()
 
 
 @provider(IVocabularyFactory)
-def locations_vocabulary(context):
-    return BaseSimpleVocabulary("Location")(context)
+def organisational_unit_vocabulary(context):
+    return BaseSimpleVocabulary("Organisational Unit")(context)

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         meta_type="Dexterity FTI"
-        name="Location"
+        name="Organisational Unit"
         i18n:domain="kitconcept.intranet"
 >
 
   <!-- Basic properties -->
   <property name="title"
             i18n:translate=""
-  >Location</property>
+  >Organisational Unit</property>
   <property name="description"
             i18n:translate=""
   />
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Location</property>
+  <property name="factory">Organisational Unit</property>
   <property name="link_target" />
 
 
@@ -31,10 +31,10 @@
 
   <!-- Schema, class and security -->
   <property name="add_permission">kitconcept.intranet.siteadminsonly</property>
-  <property name="klass">kitconcept.intranet.content.location.Location</property>
+  <property name="klass">kitconcept.intranet.content.organisational_unit.OrganisationalUnit</property>
   <property name="model_file" />
   <property name="model_source" />
-  <property name="schema">kitconcept.intranet.content.location.ILocation</property>
+  <property name="schema">kitconcept.intranet.content.organisational_unit.IOrganisationalUnit</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors"
@@ -43,7 +43,7 @@
     <element value="plone.basic" />
     <element value="volto.preview_image_link" />
     <element value="volto.kicker" />
-    <element value="kitconcept.intranet.organisational_unit" />
+    <element value="kitconcept.intranet.location" />
     <element value="plone.categorization" />
     <element value="plone.publication" />
     <element value="plone.ownership" />
@@ -56,6 +56,7 @@
     <element value="plone.versioning" />
     <element value="plone.locking" />
     <element value="plone.translatable" />
+
   </property>
 
 

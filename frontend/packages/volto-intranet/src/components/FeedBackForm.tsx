@@ -235,6 +235,7 @@ const FeedBackForm = () => {
               cols={50}
               style={{ height: 'unset' }}
               name="feedback"
+              className="feedback-textarea"
               onChange={onChangeHandler}
               value={form.feedback}
               placeholder={
@@ -294,10 +295,10 @@ const FeedBackForm = () => {
             )}
           </p>
           <div className="feedback-form-buttons">
-            <Button type="submit" onClick={onCancel}>
+            <Button type="submit" className="reset-button" onClick={onCancel}>
               {intl.formatMessage(messages.cancel)}
             </Button>
-            <Button type="submit" onClick={onSubmit}>
+            <Button type="submit" className="send-button" onClick={onSubmit}>
               {intl.formatMessage(messages.send)}
             </Button>
           </div>

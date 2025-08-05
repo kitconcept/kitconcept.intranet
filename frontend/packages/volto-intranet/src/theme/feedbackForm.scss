@@ -19,4 +19,38 @@
     justify-content: center;
     gap: $spacing-small;
   }
+  .help {
+    padding-top: 0.625rem;
+    font-size: 14px;
+  }
+  .reset-button,
+  .send-button {
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: none;
+    border: none;
+    padding: 10px 30px 10px;
+    border-radius: 0.25rem;
+    background: #003d66;
+    color: #fff;
+    font-size: 1rem;
+
+    &:hover {
+      background: #fff;
+      color: #003d66;
+    }
+
+    &:focus {
+      background: #003d66;
+      color: #fff;
+    }
+  }
+
+  .reset-button {
+    background: #333;
+  }
+  .feedback-textarea {
+    border-radius: none;
+  }
 }

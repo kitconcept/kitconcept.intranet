@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { useHistory, useLocation } from 'react-router-dom';
 import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
-import { Toast } from '@plone/volto/components';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { toast } from 'react-toastify';
 import { submitFeedbackContactForm } from '../actions';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import { Form, Button, Container } from '@plone/components';
+import { Form } from '@plone/components';
+import { Button } from '@plone/components';
+import { Container } from '@plone/components';
+
 import {
   Label,
   TextArea,
@@ -168,7 +171,6 @@ const FeedBackForm = () => {
   }, []);
 
   const onSubmit = () => {
-    console.log('ds', requiredField);
     for (let field of requiredField) {
       if (form[field].length < 1) {
         if (field === 'feedback') {

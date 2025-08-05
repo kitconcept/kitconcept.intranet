@@ -14,9 +14,9 @@
   }
   .feedback-form-buttons {
     display: flex;
+    width: 100%;
     align-self: center;
     justify-content: center;
     gap: $spacing-small;
-    width: 100%;
   }
 }

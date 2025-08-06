@@ -132,7 +132,7 @@ const FeedBackForm = () => {
   const responsiblePersonUUID =
     content?.['@components']?.lcm?.responsible_person?.value;
 
-  const feedbackPersonUUID = content.feedback_person;
+  const feedbackPersonUUID = content?.feedback_person;
 
   React.useEffect(() => {
     if (loaded && isLoading) {
@@ -222,11 +222,13 @@ const FeedBackForm = () => {
         </h2>
         <Form>
           <TextField>
-            <Label htmlFor="url">{intl.formatMessage(messages.url)}:</Label>
+            <Label className="feedback-label" htmlFor="url">
+              {intl.formatMessage(messages.url)}:
+            </Label>
             <Input id="url" name="url" value={PageURl} readOnly={true} />
           </TextField>
           <TextField isInvalid={feedbackError}>
-            <Label htmlFor="feedback">
+            <Label htmlFor="feedback" className="feedback-label">
               {intl.formatMessage(messages.feedback)}: *
             </Label>
             <TextArea
@@ -246,11 +248,13 @@ const FeedBackForm = () => {
               {intl.formatMessage(messages.feedbackError)}
             </FieldError>
           </TextField>
-          <h2 className="feedback-to">
+          <h3 className="feedback-to">
             {intl.formatMessage(messages.feedbackTo)}
-          </h2>
+          </h3>
           <TextField>
-            <Label htmlFor="name">{intl.formatMessage(messages.name)}:</Label>
+            <Label className="feedback-label" htmlFor="name">
+              {intl.formatMessage(messages.name)}:
+            </Label>
             <Input
               id="name"
               name="name"
@@ -259,7 +263,7 @@ const FeedBackForm = () => {
             />
           </TextField>
           <TextField isInvalid={emailErrorSubmit || emailError}>
-            <Label htmlFor="email">
+            <Label className="feedback-label" htmlFor="email">
               {intl.formatMessage(messages.email)}: *
             </Label>
             <Input

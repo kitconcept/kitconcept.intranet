@@ -215,8 +215,8 @@ const FeedBackForm = () => {
     setForm({ ...form, [event.target.name]: event.target.value });
   };
   return (
-    <Container className="feedback-form">
-      <div>
+    <Container>
+      <div className="feedback-form">
         <h2>
           {intl.formatMessage(messages.feedbackOn)} {content?.title}
         </h2>

@@ -1,6 +1,5 @@
 .feedback-form {
-  margin-top: 16px;
-  margin-bottom: 60px;
+  margin: 16px 0 60px 0;
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
   h2 {

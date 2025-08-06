@@ -2,6 +2,33 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b7 (2025-08-05)
+
+
+### Feature
+
+- Added behavior for configuring blocks through the web. @sneridagh [#151](https://github.com/kitconcept/kitconcept.intranet/issue/151)
+- Add organisational Unit content type. @iFlameing [#169](https://github.com/kitconcept/kitconcept.intranet/issue/169)
+- Add Location content type. @iFlameing 
+- Add `kitconcept.intranet.location` behavior. @iFlameing 
+- Add `kitconcept.intranet.vocabularies.location` vocabulary. @iFlameing 
+
+
+### Internal
+
+- Add an event content type with same start and end date. @iFlameing [#149](https://github.com/kitconcept/kitconcept.intranet/issue/149)
+- Publish example content. @sneridagh [#155](https://github.com/kitconcept/kitconcept.intranet/issue/155)
+- Update example content of carousel block. @iRohitSingh [#157](https://github.com/kitconcept/kitconcept.intranet/issue/157)
+- Update to latest VLT 7a19 and core 1a15. @sneridagh [#161](https://github.com/kitconcept/kitconcept.intranet/issue/161)
+- Update example content. @iRohitSingh [#167](https://github.com/kitconcept/kitconcept.intranet/issue/167)
+- Polish features section; move images to images folder; cleanup; reorder top-level entries. @tisto [#168](https://github.com/kitconcept/kitconcept.intranet/issue/168)
+
+
+### Test
+
+- Add kitconcept.intranet.testing.A11Y_TESTING fixture to be used with A11y tests. @ericof 
+- Update Dockerfile.acceptance to be used in GHA. @ericof 
+
 ## 1.0.0b6 (2025-07-17)
 
 

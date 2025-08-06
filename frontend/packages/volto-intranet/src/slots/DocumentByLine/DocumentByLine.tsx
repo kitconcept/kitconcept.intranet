@@ -1,10 +1,9 @@
-import React, { useEffect, useMemo } from 'react';
-import type { Content, User } from '@plone/types';
+import React, { useMemo } from 'react';
+import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { listUsers } from '@plone/volto/actions/users/users';
 
 const messages = defineMessages({
   author: {
@@ -27,22 +26,29 @@ type FormData = {
   };
 };
 
+type UserData = {
+  fullname: string;
+  homepage: string | null;
+};
+
+type ContentWithBylineExpander = Content & {
+  '@components': {
+    byline: {
+      users: Record<string, UserData>;
+    };
+  };
+};
+
 type DocumentByLineProps = {
-  content: Content;
+  content: ContentWithBylineExpander;
   location: {
     pathname: string;
   };
 };
-type Users = {
-  users: {
-    users: User[];
-  };
-};
+
 const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const intl = useIntl();
-  const dispatch = useDispatch();
 
-  const userlist = useSelector((state: Users) => state.users?.users || []);
   const form = useSelector((state: FormData) => state.form);
   const isAddMode = props.location.pathname.includes('/add');
 
@@ -53,27 +59,18 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     return form.global?.creators ?? content.creators ?? [];
   }, [form.global?.creators, content.creators]);
 
-  useEffect(() => {
-    dispatch(listUsers());
-  }, [dispatch]);
-
-  const usersMap = useMemo(() => {
-    return userlist.reduce((map: Record<string, User>, user: User) => {
-      map[user.id] = user;
-      return map;
-    }, {});
-  }, [userlist]);
-
   const creatorsWithData = useMemo(() => {
-    return creators.map((username: string) => {
-      const userData = usersMap[username];
+    const usersFromExpander = content['@components'].byline.users;
+    return creators.map((userid: string) => {
+      const userData = usersFromExpander[userid];
+      // The user data may not be found if a new user was selected
+      // or if a creator was entered that is not a username.
       return {
-        username,
-        homePage: userData?.home_page || '',
-        hasHomePage: !!userData?.home_page,
+        name: userData?.fullname || userid,
+        homepage: userData?.homepage,
       };
     });
-  }, [creators, usersMap]);
+  }, [creators, content]);
 
   return (
     <>
@@ -81,20 +78,18 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
         {creatorsWithData.length > 0 && (
           <span>
             {intl.formatMessage(messages.author)}
-            {creatorsWithData.map(
-              ({ username, homePage, hasHomePage }, index) => (
-                <React.Fragment key={username}>
-                  {hasHomePage ? (
-                    <UniversalLink className="author-name" href={homePage}>
-                      {username}
-                    </UniversalLink>
-                  ) : (
-                    <span>{username}</span>
-                  )}
-                  {index < creatorsWithData.length - 1 && ', '}
-                </React.Fragment>
-              ),
-            )}
+            {creatorsWithData.map(({ name, homepage }, index) => (
+              <React.Fragment key={name}>
+                {homepage ? (
+                  <UniversalLink className="author-name" href={homepage}>
+                    {name}
+                  </UniversalLink>
+                ) : (
+                  <span>{name}</span>
+                )}
+                {index < creatorsWithData.length - 1 && ', '}
+              </React.Fragment>
+            ))}
             {' —'}
           </span>
         )}

@@ -1,1 +1,1 @@
-Add docker-compose-solr to test SOLR support. @ericof
+Add SOLR to docker-compose files. @ericof

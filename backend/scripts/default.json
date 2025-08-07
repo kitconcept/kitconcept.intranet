@@ -5,6 +5,7 @@
     "default_language": "en",
     "portal_timezone": "Europe/Berlin",
     "workflow": "public",
+    "setup_solr": false,
     "setup_content": true,
     "authentication": {"provider": "internal"},
     "distribution": "kitconcept-intranet"

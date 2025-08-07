@@ -1799,6 +1799,9 @@ importers:
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
+      '@kitconcept/volto-solr':
+        specifier: 2.0.0-alpha.1
+        version: 2.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -2108,6 +2111,22 @@ importers:
         version: 3.12.1(react@18.2.0)
       release-it:
         specifier: ^17.7.0
+        version: 17.11.0(typescript@5.8.3)
+
+  packages/volto-solr/frontend/packages/volto-solr:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.1
+      release-it:
+        specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
 
 packages:
@@ -3704,6 +3723,12 @@ packages:
 
   '@kitconcept/volto-slider-block@6.4.0':
     resolution: {integrity: sha512-Dm1TB4ubHjF4It1CN78HMEiPb9smCY1I6jmFWyjYhQHkN7TF/uGeS+rDofk8jv5XzKanpr6chPR7+vDf5t9CRg==}
+    peerDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0
+
+  '@kitconcept/volto-solr@2.0.0-alpha.1':
+    resolution: {integrity: sha512-3fmAH8OR9vHNIDFnpCEBBb0MKchCl636jwdNzb74j7nPGIgxVoMUGYeMMIKFX6K2kbEUKbAN4aK/QsRvqSa8Dw==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -17683,6 +17708,11 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - embla-carousel
+
+  '@kitconcept/volto-solr@2.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   '@kwsites/file-exists@1.1.1':
     dependencies:

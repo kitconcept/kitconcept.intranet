@@ -10,4 +10,14 @@
       component=".location.locations_vocabulary"
       />
 
+  <utility
+      name="kitconcept.intranet.vocabularies.organisational_unit_objects"
+      component=".organisational_unit.OrganisationalsUnitRelationVocabularyFactory"
+      />
+
+  <utility
+      name="kitconcept.intranet.vocabularies.organisational_unit"
+      component=".organisational_unit.organisational_unit_vocabulary"
+      />
+
 </configure>

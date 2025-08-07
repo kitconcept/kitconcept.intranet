@@ -44,10 +44,12 @@
   },
   "addons": [
     "volto-form-block",
+    "volto-rss-block",
     "@kitconcept/core"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/core": "workspace:*"
+    "@kitconcept/core": "workspace:*",
+    "volto-rss-block": "^3.0.0"
   }
 }

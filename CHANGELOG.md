@@ -1,6 +1,86 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b7 (2025-08-05)
+
+### Backend
+
+
+#### Feature
+
+- Added behavior for configuring blocks through the web. @sneridagh [#151](https://github.com/kitconcept/kitconcept.intranet/issue/151)
+- Add organisational Unit content type. @iFlameing [#169](https://github.com/kitconcept/kitconcept.intranet/issue/169)
+- Add Location content type. @iFlameing 
+- Add `kitconcept.intranet.location` behavior. @iFlameing 
+- Add `kitconcept.intranet.vocabularies.location` vocabulary. @iFlameing 
+
+
+#### Internal
+
+- Add an event content type with same start and end date. @iFlameing [#149](https://github.com/kitconcept/kitconcept.intranet/issue/149)
+- Publish example content. @sneridagh [#155](https://github.com/kitconcept/kitconcept.intranet/issue/155)
+- Update example content of carousel block. @iRohitSingh [#157](https://github.com/kitconcept/kitconcept.intranet/issue/157)
+- Update to latest VLT 7a19 and core 1a15. @sneridagh [#161](https://github.com/kitconcept/kitconcept.intranet/issue/161)
+- Update example content. @iRohitSingh [#167](https://github.com/kitconcept/kitconcept.intranet/issue/167)
+- Polish features section; move images to images folder; cleanup; reorder top-level entries. @tisto [#168](https://github.com/kitconcept/kitconcept.intranet/issue/168)
+
+
+#### Test
+
+- Add kitconcept.intranet.testing.A11Y_TESTING fixture to be used with A11y tests. @ericof 
+- Update Dockerfile.acceptance to be used in GHA. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Added feature for configuring blocks through the web. @sneridagh [#151](https://github.com/kitconcept/kitconcept.intranet/issue/151)
+- Include `volto-form-block` as add-on. @robgietema [#152](https://github.com/kitconcept/kitconcept.intranet/issue/152)
+- Customize EventMetadata block to handle Location behavior. @ericof 
+
+#### Bugfix
+
+- Fix extra request of Event Calendar block. @iFlameing [#149](https://github.com/kitconcept/kitconcept.intranet/issue/149)
+- Fix EventMetaData view to display location. @danalvrz [#165](https://github.com/kitconcept/kitconcept.intranet/issue/165)
+
+#### Internal
+
+- Added all add-ons, VLT and @kitconcept/core to the build, using mrs-developer. @sneridagh [#148](https://github.com/kitconcept/kitconcept.intranet/issue/148)
+- Bring back core test acceptance to its original place. @sneridagh [#156](https://github.com/kitconcept/kitconcept.intranet/issue/156)
+- Pin all the add-ons to a tag. @sneridagh [#158](https://github.com/kitconcept/kitconcept.intranet/issue/158)
+- Add cypress test for sort_on and sort_order for eventCalendar Block. @iFlameing [#160](https://github.com/kitconcept/kitconcept.intranet/issue/160)
+- Update to latest VLT 7a19 and core 1a15. @sneridagh [#161](https://github.com/kitconcept/kitconcept.intranet/issue/161)
+- Update VLT to 7.0.0a20 and fix a11y test @iRohitSingh [#163](https://github.com/kitconcept/kitconcept.intranet/issue/163)
+- Update A11y link @iRohitSingh [#167](https://github.com/kitconcept/kitconcept.intranet/issue/167)
+- Modify A11y configuration in Makefile. @ericof 
+- Remove Makefile targets related to running the backend as a container. @ericof 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- GHA: Fix actions/upload-artifact settings for the acceptance tests. @ericof 
+
+
+#### Internal
+
+- Configure CODEOWNERS to route pull request review requests. @ericof 
+- GHA: Add acceptance and a11y tests to the workflow. @ericof 
+- Refactor Makefile to handle Acceptance and A11y tests. @ericof 
+
+
+#### Documentation
+
+- Added documentation for configuring blocks through the web. @sneridagh [#151](https://github.com/kitconcept/kitconcept.intranet/pull/151)
+- Add instructions on how to update example content. @tisto 
+
+
+
 ## 1.0.0b6 (2025-07-17)
 
 ### Backend

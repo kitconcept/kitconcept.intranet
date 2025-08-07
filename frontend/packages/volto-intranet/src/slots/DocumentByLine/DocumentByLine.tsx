@@ -61,8 +61,9 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
 
   const creatorsWithData = useMemo(() => {
     const usersFromExpander = content['@components'].byline.users;
+
     return creators.map((userid: string) => {
-      const userData = usersFromExpander[userid];
+      const userData = usersFromExpander?.[userid];
       // The user data may not be found if a new user was selected
       // or if a creator was entered that is not a username.
       return {

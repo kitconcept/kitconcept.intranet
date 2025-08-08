@@ -1799,6 +1799,9 @@ importers:
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
+      '@kitconcept/volto-solr':
+        specifier: 2.0.0-alpha.1
+        version: 2.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -2071,6 +2074,43 @@ importers:
         version: 3.10.1
       release-it:
         specifier: ^17.1.1
+        version: 17.11.0(typescript@5.8.3)
+
+  packages/volto-social-media/frontend/packages/volto-social-media:
+    dependencies:
+      '@plone/components':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/components
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.2
+        version: 3.10.1
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/types
+      '@types/jest':
+        specifier: ^29.5.8
+        version: 29.5.14
+      '@types/lodash':
+        specifier: ^4.14.201
+        version: 4.17.20
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.23
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.23)
+      react-intl:
+        specifier: ^3.12.1
+        version: 3.12.1(react@18.2.0)
+      release-it:
+        specifier: ^17.7.0
         version: 17.11.0(typescript@5.8.3)
 
 packages:
@@ -3667,6 +3707,12 @@ packages:
 
   '@kitconcept/volto-slider-block@6.4.0':
     resolution: {integrity: sha512-Dm1TB4ubHjF4It1CN78HMEiPb9smCY1I6jmFWyjYhQHkN7TF/uGeS+rDofk8jv5XzKanpr6chPR7+vDf5t9CRg==}
+    peerDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0
+
+  '@kitconcept/volto-solr@2.0.0-alpha.1':
+    resolution: {integrity: sha512-3fmAH8OR9vHNIDFnpCEBBb0MKchCl636jwdNzb74j7nPGIgxVoMUGYeMMIKFX6K2kbEUKbAN4aK/QsRvqSa8Dw==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -12803,7 +12849,6 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     deprecated: |-
       You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
-
       (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   qs@6.11.0:
@@ -17646,6 +17691,11 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - embla-carousel
+
+  '@kitconcept/volto-solr@2.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   '@kwsites/file-exists@1.1.1':
     dependencies:

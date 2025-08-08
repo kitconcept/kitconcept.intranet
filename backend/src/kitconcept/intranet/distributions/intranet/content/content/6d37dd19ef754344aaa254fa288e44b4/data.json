@@ -4,6 +4,14 @@
   "UID": "6d37dd19ef754344aaa254fa288e44b4",
   "allow_discussion": false,
   "blocks": {
+    "050f0513-0cd2-4566-b839-8c970692a9cb": {
+      "@type": "video",
+      "align": "center",
+      "preview_image": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+      "styles": {},
+      "theme": "grey",
+      "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
+    },
     "0d092cea-0518-428c-8aaa-c90a7cff183f": {
       "@type": "slate",
       "plaintext": "The Video-Block can be aligned to the left with text floating around it on the right side.",
@@ -21,21 +29,83 @@
     "19a3d50a-a683-4e59-ac7c-d2ba2149cdd7": {
       "@type": "video",
       "align": "right",
-      "preview_image": "http://localhost:8080/Plone/content-types/image",
+      "preview_image": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
       "styles": {},
+      "theme": "default",
       "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
     },
     "205fa3ab-9358-46f3-81d6-4ea90dc8c290": {
       "@type": "video",
       "align": "left",
-      "preview_image": "http://localhost:8080/Plone/content-types/image",
+      "preview_image": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
       "styles": {},
+      "theme": "default",
       "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
+    },
+    "211be916-226d-47ee-8318-9953cab00f7a": {
+      "@type": "video",
+      "align": "wide",
+      "styles": {},
+      "theme": "grey",
+      "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
+    },
+    "21f6eb0d-9345-4196-8a5a-26582ca5d5cc": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "grey"
+    },
+    "233a86a0-150b-46d7-b75b-97352379b53b": {
+      "@type": "slate",
+      "plaintext": "Video Block (Align Right)",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Video Block (Align Right)"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "2c8a5218-a273-4972-8bf8-a984a0d15262": {
+      "@type": "video",
+      "align": "full",
+      "styles": {},
+      "theme": "grey",
+      "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
+    },
+    "2ff7e629-8970-4e21-a477-0b7623990667": {
+      "@type": "slate",
+      "plaintext": "The Video-Block can be aligned to the right with text floating around it on the left side.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The Video-Block can be aligned to the right with text floating around it on the left side."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     },
     "30c476a0-65fe-4e3a-895e-f59f6695929b": {
       "@type": "slate",
       "plaintext": "Video-Block (Standard Size)",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -61,10 +131,19 @@
         }
       ]
     },
+    "367c52af-a351-4c3d-a360-2931c0d542a2": {
+      "@type": "video",
+      "align": "right",
+      "preview_image": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+      "styles": {},
+      "theme": "grey",
+      "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
+    },
     "38e88a05-b1b0-4958-af71-b3bd6e37297f": {
       "@type": "slate",
       "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -76,28 +155,77 @@
         }
       ]
     },
+    "3fdee37b-3f9a-4abd-80b1-1fe7c2b5fd4f": {
+      "@type": "slate",
+      "plaintext": "The Video-Block can be aligned to the left with text floating around it on the right side.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The Video-Block can be aligned to the left with text floating around it on the right side."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "412c68a6-0391-4eea-9498-43508bd71450": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
+      },
+      "theme": "grey"
+    },
     "42767d3a-3186-4e50-843d-3ea96c380943": {
       "@type": "video",
       "align": "wide",
       "styles": {},
       "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
     },
+    "458084b6-72eb-493b-a2de-a03a2ab1c975": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Video-Block with\u00a0Preview Image",
+      "styles": {},
+      "theme": "default"
+    },
     "458576df-767e-4412-9e9f-2733e8334d5d": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "45a46c1b-f619-4e95-9b8c-932d524336af": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "49a61581-70ce-4810-84c2-1d91ac421197": {
       "@type": "slate",
       "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis nostrud exerci tation ullamcorper ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -130,7 +258,9 @@
     "70d958cb-14b6-4689-84ad-cd3aa4ac19ee": {
       "@type": "video",
       "align": "center",
+      "preview_image": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
       "styles": {},
+      "theme": "default",
       "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
     },
     "7ace8ba6-13cb-4a5c-ab1c-fc6f8ce8737c": {
@@ -147,6 +277,30 @@
         }
       ]
     },
+    "83191d74-c34f-4d4d-930f-03907eefcf02": {
+      "@type": "video",
+      "align": "left",
+      "preview_image": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+      "styles": {},
+      "theme": "grey",
+      "url": "https://www.youtube.com/watch?v=_yaYy86jdk8"
+    },
+    "a3f62b8a-d222-4af2-b504-a28cafb1f09c": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis nostrud exerci tation ullamcorper ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis nostrud exerci tation ullamcorper ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
     "b75aeb62-6aca-440b-ab6d-66b063dbdab9": {
       "@type": "slate",
       "plaintext": "The Video-Block can be aligned to the right with text floating around it on the left side.",
@@ -159,6 +313,30 @@
             }
           ],
           "type": "p"
+        }
+      ]
+    },
+    "c2a2f7b4-be1f-4c4d-bd41-1995504944ee": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Video-Block with\u00a0Preview Image",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
+    },
+    "c5e5c5b3-b047-4aba-94f7-9aa83ad2c2e6": {
+      "@type": "slate",
+      "plaintext": "Headline H2",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H2"
+            }
+          ],
+          "type": "h3"
         }
       ]
     },
@@ -183,6 +361,59 @@
         }
       ]
     },
+    "cb28a1fd-4d05-4c25-872f-8dc1afbfaa10": {
+      "@type": "slate",
+      "plaintext": "Video-Block (Standard Size)",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Video-Block (Standard Size)"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "daf63088-3979-4976-966a-99fd103f033e": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis nostrud exerci tation ullamcorper ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis nostrud exerci tation ullamcorper ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat quis Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "dffa927a-f074-43c6-9338-720a9dd5258e": {
+      "@type": "slate",
+      "plaintext": "Video-Block (Align: Left)",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Video-Block (Align: Left)"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "e0f1ef26-c21b-4209-b783-e9d1dd064175": {
+      "@type": "heading",
+      "heading": "Video\u00a0on Grey Background",
+      "theme": "grey"
+    },
     "e6e1484a-c2c2-4788-a8c4-a26a979d18cd": {
       "@type": "slate",
       "plaintext": "Headline H2",
@@ -197,6 +428,22 @@
           "type": "h3"
         }
       ]
+    },
+    "f70df069-13a7-466b-ac87-2cf188570a71": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     }
   },
   "blocks_layout": {
@@ -209,6 +456,7 @@
       "458576df-767e-4412-9e9f-2733e8334d5d",
       "e6e1484a-c2c2-4788-a8c4-a26a979d18cd",
       "38e88a05-b1b0-4958-af71-b3bd6e37297f",
+      "458084b6-72eb-493b-a2de-a03a2ab1c975",
       "70d958cb-14b6-4689-84ad-cd3aa4ac19ee",
       "45a46c1b-f619-4e95-9b8c-932d524336af",
       "3664a470-22c4-47d9-8a30-89c34f1f7c99",
@@ -218,7 +466,25 @@
       "5212b457-984a-4666-ab67-7c9f6429b2a7",
       "b75aeb62-6aca-440b-ab6d-66b063dbdab9",
       "19a3d50a-a683-4e59-ac7c-d2ba2149cdd7",
-      "49a61581-70ce-4810-84c2-1d91ac421197"
+      "49a61581-70ce-4810-84c2-1d91ac421197",
+      "e0f1ef26-c21b-4209-b783-e9d1dd064175",
+      "2c8a5218-a273-4972-8bf8-a984a0d15262",
+      "cb28a1fd-4d05-4c25-872f-8dc1afbfaa10",
+      "211be916-226d-47ee-8318-9953cab00f7a",
+      "21f6eb0d-9345-4196-8a5a-26582ca5d5cc",
+      "c5e5c5b3-b047-4aba-94f7-9aa83ad2c2e6",
+      "f70df069-13a7-466b-ac87-2cf188570a71",
+      "c2a2f7b4-be1f-4c4d-bd41-1995504944ee",
+      "050f0513-0cd2-4566-b839-8c970692a9cb",
+      "412c68a6-0391-4eea-9498-43508bd71450",
+      "dffa927a-f074-43c6-9338-720a9dd5258e",
+      "3fdee37b-3f9a-4abd-80b1-1fe7c2b5fd4f",
+      "83191d74-c34f-4d4d-930f-03907eefcf02",
+      "a3f62b8a-d222-4af2-b504-a28cafb1f09c",
+      "233a86a0-150b-46d7-b75b-97352379b53b",
+      "2ff7e629-8970-4e21-a477-0b7623990667",
+      "367c52af-a351-4c3d-a360-2931c0d542a2",
+      "daf63088-3979-4976-966a-99fd103f033e"
     ]
   },
   "changeNote": "",
@@ -242,7 +508,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2025-08-07T13:12:57+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

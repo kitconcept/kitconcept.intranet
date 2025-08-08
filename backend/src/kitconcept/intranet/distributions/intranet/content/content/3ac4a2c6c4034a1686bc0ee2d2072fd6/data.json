@@ -4,6 +4,74 @@
   "UID": "3ac4a2c6c4034a1686bc0ee2d2072fd6",
   "allow_discussion": false,
   "blocks": {
+    "0668f550-40d0-49f8-af17-d5de0af03f25": {
+      "@type": "gridBlock",
+      "blocks": {
+        "e1e4683e-21a0-4d4c-9e73-e872609a4aee": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "e1e4683e-21a0-4d4c-9e73-e872609a4aee"
+        ]
+      },
+      "headline": "Grid with one column",
+      "styles": {},
+      "theme": "default"
+    },
+    "3b5188c0-67a9-49c0-b2f1-978c7c5b34a2": {
+      "@type": "heading",
+      "heading": "Grid Variations on Grey Background",
+      "theme": "grey"
+    },
+    "49cd17c0-06f8-44c6-826c-636a74219aae": {
+      "@type": "heading",
+      "heading": "Grid Variations on Grey Background",
+      "theme": "grey"
+    },
+    "4bea276c-1a66-4f1e-913d-9a52effbf84f": {
+      "@type": "gridBlock",
+      "blocks": {
+        "bcb370cd-0184-4c9e-adfb-41d79c617251": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "bcb370cd-0184-4c9e-adfb-41d79c617251"
+        ]
+      },
+      "headline": "Grid with one column",
+      "styles": {},
+      "theme": "grey"
+    },
     "5a361b25-3e19-4c06-866f-a2db6feed983": {
       "@type": "gridBlock",
       "blocks": {
@@ -26,6 +94,22 @@
           "styles": {},
           "variation": "default"
         },
+        "7c1d3bee-0fe1-4720-9a8c-032b85e3f996": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_on": "",
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
         "b940ae89-2b34-472b-aac8-f3d96dfe46f4": {
           "@type": "listing",
           "headlineTag": "h2",
@@ -42,14 +126,573 @@
           },
           "styles": {},
           "variation": "default"
+        },
+        "c137024c-ca2e-42e7-8303-232b40b5fe9b": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
         }
       },
       "blocks_layout": {
         "items": [
           "b940ae89-2b34-472b-aac8-f3d96dfe46f4",
-          "0fae8b67-374c-4ca2-b3e0-86114e2f17e1"
+          "0fae8b67-374c-4ca2-b3e0-86114e2f17e1",
+          "c137024c-ca2e-42e7-8303-232b40b5fe9b",
+          "7c1d3bee-0fe1-4720-9a8c-032b85e3f996"
         ]
       },
+      "headline": "Grid with four column",
+      "styles": {},
+      "theme": "default"
+    },
+    "6e2ccc9f-81e1-4ad4-99a7-9934dc01a757": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "List Grid\u00a0Variations",
+      "styles": {},
+      "theme": "default"
+    },
+    "74a2074b-aad6-4b70-94eb-c2b1eeb8c8cc": {
+      "@type": "gridBlock",
+      "blocks": {
+        "0bb0025f-94fd-4339-8e10-67114b410364": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "0bb0025f-94fd-4339-8e10-67114b410364"
+        ]
+      },
+      "headline": "Grid with one column",
+      "styles": {},
+      "theme": "default"
+    },
+    "8918ba5b-9bc6-4159-9498-4e4fae59bf27": {
+      "@type": "gridBlock",
+      "blocks": {
+        "4154088d-f2f0-4c96-83a9-edb1665f99e9": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        },
+        "dc491446-14e5-49a8-be02-0f9decaef37c": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        },
+        "fb52fa55-7fd4-4d37-9730-19b2fa0208f1": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "4154088d-f2f0-4c96-83a9-edb1665f99e9",
+          "fb52fa55-7fd4-4d37-9730-19b2fa0208f1",
+          "dc491446-14e5-49a8-be02-0f9decaef37c"
+        ]
+      },
+      "headline": "Grid with three column",
+      "styles": {},
+      "theme": "default"
+    },
+    "8fdee185-a560-4bc9-a469-42340e1d5c87": {
+      "@type": "gridBlock",
+      "blocks": {
+        "7fb2fd6a-43f0-493a-8a8d-1df2adf124dd": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "ac0dded9-be03-40c8-bed7-467a540e5d21": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "f595ff49-3e0a-45bf-8fb3-4da5f1b7f352": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f595ff49-3e0a-45bf-8fb3-4da5f1b7f352",
+          "7fb2fd6a-43f0-493a-8a8d-1df2adf124dd",
+          "ac0dded9-be03-40c8-bed7-467a540e5d21"
+        ]
+      },
+      "headline": "Grid with three column",
+      "styles": {},
+      "theme": "grey"
+    },
+    "b377d9b1-983d-4da6-9694-069ec47be373": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3f86f896-f48e-48fd-8262-91149d4163c2": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "3",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "592318de-f95f-4eb1-987c-ad8b55f19d95": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "3",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "da9de6b6-3c79-4986-bad9-4fa578846bbd": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "3",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "e0bb8566-971b-4019-bdd6-d70054bf9934": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "3",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "e0bb8566-971b-4019-bdd6-d70054bf9934",
+          "592318de-f95f-4eb1-987c-ad8b55f19d95",
+          "3f86f896-f48e-48fd-8262-91149d4163c2",
+          "da9de6b6-3c79-4986-bad9-4fa578846bbd"
+        ]
+      },
+      "headline": "Grid with four column",
+      "styles": {},
+      "theme": "default"
+    },
+    "b37c498a-383c-46f2-9df6-4b4663441b8a": {
+      "@type": "gridBlock",
+      "blocks": {
+        "1eb501ae-ece7-4d76-96bb-1b5fac36271d": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "4",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "bd4cdc94-3453-43dc-88ce-436c57e52fa7": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "4",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "bd4cdc94-3453-43dc-88ce-436c57e52fa7",
+          "1eb501ae-ece7-4d76-96bb-1b5fac36271d"
+        ]
+      },
+      "headline": "Grid with two column",
+      "styles": {},
+      "theme": "default"
+    },
+    "bfd0f6c6-fda0-4041-a776-e10d4f513be1": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Image gallery Grid\u00a0Variations",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "c4cdb066-823b-4d31-8603-337116ea201c": {
+      "@type": "gridBlock",
+      "blocks": {
+        "0002d491-27af-4bb6-ba36-96d461495167": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "4",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "10641b98-cad2-4275-8a37-7f619e1fcc6b": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "4",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "b7b9c1a6-8721-4f3d-b6c2-6bc34c0535fd": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "4",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "0002d491-27af-4bb6-ba36-96d461495167",
+          "b7b9c1a6-8721-4f3d-b6c2-6bc34c0535fd",
+          "10641b98-cad2-4275-8a37-7f619e1fcc6b"
+        ]
+      },
+      "headline": "Grid with three column",
+      "styles": {},
+      "theme": "default"
+    },
+    "e9cc9b44-ee8c-4e4b-ae74-662f875ebba7": {
+      "@type": "gridBlock",
+      "blocks": {
+        "dc6d67d8-2b6a-499d-96f6-7a5c72dca702": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "ec79ad18-b07c-44b4-bd1c-076867464003": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/features/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "ec79ad18-b07c-44b4-bd1c-076867464003",
+          "dc6d67d8-2b6a-499d-96f6-7a5c72dca702"
+        ]
+      },
+      "headline": "Grid with two column",
+      "styles": {},
+      "theme": "default"
+    },
+    "f01a8f23-9dfc-4264-99de-9f263d6a04d7": {
+      "@type": "gridBlock",
+      "blocks": {
+        "124fffb3-6337-4bbe-82e5-3c6046a2306a": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        },
+        "961bf34d-7355-41d9-9dea-a5943f1e5162": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        },
+        "9c195693-2c96-43f6-83ee-d344999d5613": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        },
+        "c4425c7f-4500-4e0c-a9c5-f02dbe085296": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "c4425c7f-4500-4e0c-a9c5-f02dbe085296",
+          "124fffb3-6337-4bbe-82e5-3c6046a2306a",
+          "961bf34d-7355-41d9-9dea-a5943f1e5162",
+          "9c195693-2c96-43f6-83ee-d344999d5613"
+        ]
+      },
+      "headline": "Grid with four column",
+      "styles": {},
+      "theme": "default"
+    },
+    "f7d4ced8-951c-4e8f-87bc-451fec469b56": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "List with Image Grid\u00a0Variations",
+      "styles": {},
+      "theme": "default"
+    },
+    "fa053758-3818-42fb-8e7e-33f453a63818": {
+      "@type": "gridBlock",
+      "blocks": {
+        "9ffca543-20bd-4be6-a184-22c7d82ea40d": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        },
+        "b0ca1df1-6d1c-4e21-942d-d1be52883b83": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Image"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "imageGallery"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "9ffca543-20bd-4be6-a184-22c7d82ea40d",
+          "b0ca1df1-6d1c-4e21-942d-d1be52883b83"
+        ]
+      },
+      "headline": "Grid with two column",
       "styles": {},
       "theme": "default"
     },
@@ -60,7 +703,23 @@
   "blocks_layout": {
     "items": [
       "fc7973d9-34e3-484c-a20b-1af7eecd9879",
-      "5a361b25-3e19-4c06-866f-a2db6feed983"
+      "6e2ccc9f-81e1-4ad4-99a7-9934dc01a757",
+      "5a361b25-3e19-4c06-866f-a2db6feed983",
+      "3b5188c0-67a9-49c0-b2f1-978c7c5b34a2",
+      "8fdee185-a560-4bc9-a469-42340e1d5c87",
+      "e9cc9b44-ee8c-4e4b-ae74-662f875ebba7",
+      "0668f550-40d0-49f8-af17-d5de0af03f25",
+      "f7d4ced8-951c-4e8f-87bc-451fec469b56",
+      "b377d9b1-983d-4da6-9694-069ec47be373",
+      "c4cdb066-823b-4d31-8603-337116ea201c",
+      "b37c498a-383c-46f2-9df6-4b4663441b8a",
+      "74a2074b-aad6-4b70-94eb-c2b1eeb8c8cc",
+      "bfd0f6c6-fda0-4041-a776-e10d4f513be1",
+      "f01a8f23-9dfc-4264-99de-9f263d6a04d7",
+      "8918ba5b-9bc6-4159-9498-4e4fae59bf27",
+      "fa053758-3818-42fb-8e7e-33f453a63818",
+      "49cd17c0-06f8-44c6-826c-636a74219aae",
+      "4bea276c-1a66-4f1e-913d-9a52effbf84f"
     ]
   },
   "changeNote": "",
@@ -84,7 +743,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T12:47:29+00:00",
+  "modified": "2025-08-05T14:46:06+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

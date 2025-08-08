@@ -81,9 +81,8 @@
           "57a1cf38-0550-4929-a1d8-d2752b6f70d5"
         ]
       },
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "07692b0f-bef2-41f3-8110-643380f599a1": {
       "@type": "gridBlock",
@@ -185,9 +184,8 @@
           "019e7dd0-63b9-4421-8824-3544391e9b23"
         ]
       },
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "0f49cd2b-8040-402c-abca-a16618460f9d": {
       "@type": "gridBlock",
@@ -302,6 +300,12 @@
       },
       "styles": {}
     },
+    "5b05e6e4-034c-4d07-80f3-e1781b9cfc08": {
+      "@type": "heading",
+      "heading": "Text Variations on Grey Background",
+      "styles": {},
+      "theme": "grey"
+    },
     "828a7be1-0ab3-4663-9069-4581f5be63c1": {
       "@type": "title"
     },
@@ -359,9 +363,8 @@
           "9d78a363-ad2f-4290-a2a7-be8e22a752be"
         ]
       },
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "bf39075e-2748-42ee-8a3f-bffef3d91bab": {
       "@type": "gridBlock",
@@ -463,7 +466,8 @@
           "f7f64a3c-ed24-4bfd-beac-15feeb1e5c65"
         ]
       },
-      "styles": {}
+      "styles": {},
+      "theme": "default"
     },
     "c43aa15d-13e2-4112-957a-a5b3477a3cbf": {
       "@type": "gridBlock",
@@ -497,9 +501,8 @@
         ]
       },
       "headline": "Block Title",
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "debb8187-e54f-4cad-8301-2343d65e2024": {
       "@type": "gridBlock",
@@ -573,6 +576,7 @@
       "debb8187-e54f-4cad-8301-2343d65e2024",
       "38d06a19-4a1c-44ed-a35f-e9ad0f665924",
       "bf39075e-2748-42ee-8a3f-bffef3d91bab",
+      "5b05e6e4-034c-4d07-80f3-e1781b9cfc08",
       "c43aa15d-13e2-4112-957a-a5b3477a3cbf",
       "92d23c58-9f96-45e7-8a37-bd7a788c90e7",
       "044b3c74-9129-4bef-a640-8ce362697184",
@@ -600,7 +604,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2025-08-05T10:53:41+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

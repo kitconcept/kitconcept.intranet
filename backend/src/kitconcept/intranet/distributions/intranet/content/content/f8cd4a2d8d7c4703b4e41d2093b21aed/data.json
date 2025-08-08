@@ -12,6 +12,65 @@
           "262a2478-3a63-445a-aab7-edf55cceebcf": {
             "@type": "accordionPanel",
             "blocks": {
+              "58f244db-9609-49d7-bb9c-4ddecb92467e": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "6b666cc0-6006-408c-8dc5-060a193b8684": {
+                "@type": "listing",
+                "headline": "List with images",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "6",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": [
+                        "News Item"
+                      ]
+                    }
+                  ],
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "summary"
+              },
+              "7a3d2262-a290-41ea-8741-aa0cd92a316b": {
+                "@type": "listing",
+                "headline": "Grid",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "4",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": [
+                        "Event"
+                      ]
+                    }
+                  ],
+                  "sort_on": "sortable_title",
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "grid"
+              },
               "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
                 "@type": "listing",
                 "headlineTag": "h2",
@@ -28,262 +87,283 @@
                   "sort_order_boolean": true
                 },
                 "styles": {},
-                "variation": "summary"
+                "theme": "default",
+                "variation": "default"
               }
             },
             "blocks_layout": {
               "items": [
-                "c9580c7a-ab67-44f7-8532-59a4ba9fd846"
+                "c9580c7a-ab67-44f7-8532-59a4ba9fd846",
+                "6b666cc0-6006-408c-8dc5-060a193b8684",
+                "58f244db-9609-49d7-bb9c-4ddecb92467e",
+                "7a3d2262-a290-41ea-8741-aa0cd92a316b"
               ]
             },
+            "selected": "58f244db-9609-49d7-bb9c-4ddecb92467e",
             "title": "Accordion with listing"
           },
           "b58c92b4-6604-4408-9039-a147965fa4bd": {
             "@type": "accordionPanel",
             "blocks": {
-              "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
+              "54bee7c1-0d30-41e9-983e-e97645ce1ba0": {
                 "@type": "teaser",
                 "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
-                "head_title": null,
+                "head_title": "Event Teaser",
                 "href": [
                   {
-                    "@id": "/content-types/image-light",
+                    "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+                    "@type": "Event",
+                    "Description": "The event content type can be used to display an event on the website.",
+                    "Subject": [],
+                    "Title": "Event",
+                    "contact_building": null,
+                    "contact_email": "m.mustermann@plone.com",
+                    "contact_phone": "+49 1234 567-890",
+                    "contact_room": null,
+                    "description": "The event content type can be used to display an event on the website.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": "2023-12-31T12:00:00+00:00",
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": "2023-01-01T11:00:00+00:00",
+                    "title": "Event",
+                    "type_title": "Event"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "title": "Teaser to an Event with Image "
+              },
+              "685afe6a-4c46-4cf8-b7e6-a7788fa5a46f": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "6c16bdbd-c642-4fab-9905-202ef4ed0aba": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "News Item Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+                    "@type": "News Item",
+                    "Description": "The News Item content type can be used to display News content on the website.",
+                    "Subject": [],
+                    "Title": "News Item",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The News Item content type can be used to display News content on the website.",
+                    "effective": "2023-01-01T10:42:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": "Head title",
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "News Item",
+                    "type_title": "News Item"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "title": "Teaser to a News Item with Image"
+              },
+              "7c927302-5731-482d-aa04-039e73ff68e0": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "86b37c48-9b94-46d1-8736-8f0b71dbee8b": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "Image Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
                     "@type": "Image",
                     "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
-                    "Title": "Image - Light",
+                    "Subject": [],
+                    "Title": "Image",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "676.8 KB",
                     "getRemoteUrl": null,
                     "hasPreviewImage": null,
                     "head_title": null,
                     "image_field": "image",
-                    "image_scales": {
-                      "image": [
-                        {
-                          "content-type": "image/jpeg",
-                          "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                          "filename": "image-light.jpg",
-                          "height": 633,
-                          "scales": {
-                            "icon": {
-                              "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                              "height": 17,
-                              "width": 32
-                            },
-                            "large": {
-                              "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                              "height": 449,
-                              "width": 800
-                            },
-                            "larger": {
-                              "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                              "height": 562,
-                              "width": 1000
-                            },
-                            "mini": {
-                              "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                              "height": 112,
-                              "width": 200
-                            },
-                            "preview": {
-                              "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                              "height": 224,
-                              "width": 400
-                            },
-                            "teaser": {
-                              "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                              "height": 337,
-                              "width": 600
-                            },
-                            "thumb": {
-                              "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                              "height": 71,
-                              "width": 128
-                            },
-                            "tile": {
-                              "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                              "height": 35,
-                              "width": 64
-                            }
-                          },
-                          "size": 475285,
-                          "width": 1126
-                        }
-                      ]
-                    },
-                    "title": "Image - Light"
+                    "mime_type": "image/jpeg",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "Image",
+                    "type_title": "Image"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an Image with Image aligned left"
+              },
+              "89734769-234c-40db-a9e2-d353b6c35dd7": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "File Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+                    "@type": "File",
+                    "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "Subject": [],
+                    "Title": "File",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "72.7 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "application/pdf",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "File",
+                    "type_title": "File"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "theme": "default",
+                "title": "Teaser to a File with Image aligned right"
+              },
+              "c8fb7e1e-7ca4-4fcf-86a3-d475ad577324": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "External Link Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+                    "@type": "Link",
+                    "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "Subject": [],
+                    "Title": "Link",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": "https://www.google.com",
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Link",
+                    "type_title": "Link"
+                  }
+                ],
+                "overwrite": true,
+                "preview_image": [
+                  {
+                    "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+                    "image_field": "image",
+                    "title": "Image for Link"
                   }
                 ],
                 "styles": {
                   "align": "left"
                 },
-                "title": "Teaser Title H2"
+                "theme": "default",
+                "title": "Teaser to an external Link with Image"
               },
-              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
-                "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
-                "head_title": null,
-                "href": [
-                  {
-                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
-                    "@type": "Document",
-                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-                    "Title": "Page",
-                    "getRemoteUrl": null,
-                    "hasPreviewImage": true,
-                    "head_title": null,
-                    "image_field": "preview_image",
-                    "image_scales": {
-                      "preview_image": [
-                        {
-                          "content-type": "image/jpeg",
-                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
-                          "filename": "black-starry-night.jpg",
-                          "height": 1708,
-                          "scales": {
-                            "great": {
-                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
-                              "height": 854,
-                              "width": 1200
-                            },
-                            "huge": {
-                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
-                              "height": 1138,
-                              "width": 1600
-                            },
-                            "icon": {
-                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
-                              "height": 22,
-                              "width": 32
-                            },
-                            "large": {
-                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
-                              "height": 569,
-                              "width": 800
-                            },
-                            "larger": {
-                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
-                              "height": 711,
-                              "width": 1000
-                            },
-                            "mini": {
-                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
-                              "height": 142,
-                              "width": 200
-                            },
-                            "preview": {
-                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
-                              "height": 284,
-                              "width": 400
-                            },
-                            "teaser": {
-                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
-                              "height": 427,
-                              "width": 600
-                            },
-                            "thumb": {
-                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
-                              "height": 91,
-                              "width": 128
-                            },
-                            "tile": {
-                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
-                              "height": 45,
-                              "width": 64
-                            }
-                          },
-                          "size": 693013,
-                          "width": 2400
-                        }
-                      ]
-                    },
-                    "title": "Page"
-                  }
-                ],
-                "styles": {
-                  "align": "right"
-                },
-                "title": "Teaser Title H2"
-              },
-              "eb600a9b-7400-4b4e-bb40-70ddb6911749": {
+              "d6a38fa5-e8a8-40ee-9078-5788c494086b": {
                 "@type": "teaser",
                 "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
-                "head_title": null,
+                "head_title": "Page Teaser",
                 "href": [
                   {
-                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
                     "@type": "Document",
                     "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Subject": [],
                     "Title": "Page",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
                     "getRemoteUrl": null,
                     "hasPreviewImage": true,
                     "head_title": null,
-                    "image_field": "preview_image",
-                    "image_scales": {
-                      "preview_image": [
-                        {
-                          "content-type": "image/jpeg",
-                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
-                          "filename": "black-starry-night.jpg",
-                          "height": 1708,
-                          "scales": {
-                            "great": {
-                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
-                              "height": 854,
-                              "width": 1200
-                            },
-                            "huge": {
-                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
-                              "height": 1138,
-                              "width": 1600
-                            },
-                            "icon": {
-                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
-                              "height": 22,
-                              "width": 32
-                            },
-                            "large": {
-                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
-                              "height": 569,
-                              "width": 800
-                            },
-                            "larger": {
-                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
-                              "height": 711,
-                              "width": 1000
-                            },
-                            "mini": {
-                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
-                              "height": 142,
-                              "width": 200
-                            },
-                            "preview": {
-                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
-                              "height": 284,
-                              "width": 400
-                            },
-                            "teaser": {
-                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
-                              "height": 427,
-                              "width": 600
-                            },
-                            "thumb": {
-                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
-                              "height": 91,
-                              "width": 128
-                            },
-                            "tile": {
-                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
-                              "height": 45,
-                              "width": 64
-                            }
-                          },
-                          "size": 693013,
-                          "width": 2400
-                        }
-                      ]
-                    },
-                    "title": "Page"
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Page",
+                    "type_title": "Page"
                   }
                 ],
+                "overwrite": true,
                 "styles": {
                   "align": "center"
                 },
@@ -292,20 +372,175 @@
             },
             "blocks_layout": {
               "items": [
-                "eb600a9b-7400-4b4e-bb40-70ddb6911749",
-                "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03",
-                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a"
+                "d6a38fa5-e8a8-40ee-9078-5788c494086b",
+                "6c16bdbd-c642-4fab-9905-202ef4ed0aba",
+                "54bee7c1-0d30-41e9-983e-e97645ce1ba0",
+                "7c927302-5731-482d-aa04-039e73ff68e0",
+                "c8fb7e1e-7ca4-4fcf-86a3-d475ad577324",
+                "89734769-234c-40db-a9e2-d353b6c35dd7",
+                "685afe6a-4c46-4cf8-b7e6-a7788fa5a46f",
+                "86b37c48-9b94-46d1-8736-8f0b71dbee8b"
               ]
             },
+            "selected": "6a14fdb0-e0cf-470e-95dd-15aadb0e85c1",
             "title": "Accordion with teaser"
           },
           "bc2c120e-51df-4c47-b4d0-5a11311d020d": {
             "@type": "accordionPanel",
             "blocks": {
+              "3272740e-1998-4a82-a4ae-dbd303f31021": {
+                "@type": "slate",
+                "plaintext": "This is unordered list This is unordered list This is unordered list",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ul"
+                  }
+                ]
+              },
+              "7e7d2fec-1cb5-4240-8705-ab84cfc34fe1": {
+                "@type": "slate",
+                "plaintext": "   This is link. ",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ],
+                        "type": "em"
+                      },
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is link."
+                          }
+                        ],
+                        "data": {
+                          "url": "https://www.google.com/"
+                        },
+                        "type": "link"
+                      },
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "938f774b-530a-4ec5-85ec-127e37870a13": {
+                "@type": "slate",
+                "plaintext": "This is H2",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "This is H2"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "b314ee6a-b847-4bc8-ba0d-b700725a37c9": {
+                "@type": "slate",
+                "plaintext": "This is H3",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "This is H3\n"
+                      }
+                    ],
+                    "type": "h3"
+                  }
+                ]
+              },
+              "b9c04394-91cd-44a8-927a-0b4af417f36f": {
+                "@type": "slate",
+                "plaintext": " This is Italics.  This is bold text. ",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is Italics.\n"
+                          }
+                        ],
+                        "type": "em"
+                      },
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is bold text."
+                          }
+                        ],
+                        "type": "strong"
+                      },
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
               "c85ec1d2-f371-4ed4-be65-8fa0a091b833": {
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
@@ -316,11 +551,54 @@
                     "type": "p"
                   }
                 ]
+              },
+              "d54db3fd-b376-49a5-ae3f-e9ea31fb98f3": {
+                "@type": "slate",
+                "plaintext": "one two three",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "one"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "two"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "three"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ol"
+                  }
+                ]
               }
             },
             "blocks_layout": {
               "items": [
-                "c85ec1d2-f371-4ed4-be65-8fa0a091b833"
+                "c85ec1d2-f371-4ed4-be65-8fa0a091b833",
+                "b9c04394-91cd-44a8-927a-0b4af417f36f",
+                "7e7d2fec-1cb5-4240-8705-ab84cfc34fe1",
+                "938f774b-530a-4ec5-85ec-127e37870a13",
+                "b314ee6a-b847-4bc8-ba0d-b700725a37c9",
+                "3272740e-1998-4a82-a4ae-dbd303f31021",
+                "d54db3fd-b376-49a5-ae3f-e9ea31fb98f3"
               ]
             },
             "title": "Accordion with text"
@@ -345,70 +623,19 @@
               },
               "1060e842-2b14-43dc-9e43-c25022029a94": {
                 "@type": "image",
-                "align": "right",
+                "align": "left",
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                      "filename": "image-light.jpg",
-                      "height": 633,
-                      "scales": {
-                        "icon": {
-                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                          "height": 17,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                          "height": 449,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                          "height": 562,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                          "height": 112,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                          "height": 224,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                          "height": 337,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                          "height": 71,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                          "height": 35,
-                          "width": 64
-                        }
-                      },
-                      "size": 475285,
-                      "width": 1126
-                    }
-                  ]
-                },
                 "size": "m",
                 "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
                   "size:noprefix": "medium"
                 },
                 "title": "Image - Light",
-                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
               },
               "11af3b59-7720-4875-b0b9-90be5807d476": {
                 "@type": "separator",
@@ -452,79 +679,37 @@
                   }
                 ]
               },
+              "5e9ba51a-2462-476c-b89e-66cddc10479f": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "image_field": "image",
+                "size": "s",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "small"
+                },
+                "theme": "default",
+                "title": "Image for Link",
+                "url": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3"
+              },
               "6e94c839-855c-43ff-92fa-a2f9dfac2bc9": {
                 "@type": "image",
                 "align": "center",
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-                      "filename": "black-starry-night.jpg",
-                      "height": 1708,
-                      "scales": {
-                        "great": {
-                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                          "height": 854,
-                          "width": 1200
-                        },
-                        "huge": {
-                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                          "height": 1138,
-                          "width": 1600
-                        },
-                        "icon": {
-                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                          "height": 22,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                          "height": 569,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                          "height": 711,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                          "height": 142,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                          "height": 284,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                          "height": 427,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                          "height": 91,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                          "height": 45,
-                          "width": 64
-                        }
-                      },
-                      "size": 693013,
-                      "width": 2400
-                    }
-                  ]
-                },
                 "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  }
+                },
                 "title": "Image - Light",
-                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
               "725bfc52-49f6-4e70-8d11-48c537cfb5ff": {
                 "@type": "slate",
@@ -545,6 +730,7 @@
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
@@ -562,149 +748,53 @@
                   "align": "left"
                 }
               },
-              "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961": {
-                "@type": "image",
-                "align": "left",
-                "credit": {},
-                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
-                "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                      "filename": "image-light.jpg",
-                      "height": 633,
-                      "scales": {
-                        "icon": {
-                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                          "height": 17,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                          "height": 449,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                          "height": 562,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                          "height": 112,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                          "height": 224,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                          "height": 337,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                          "height": 71,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                          "height": 35,
-                          "width": 64
-                        }
-                      },
-                      "size": 475285,
-                      "width": 1126
-                    }
-                  ]
-                },
-                "size": "s",
-                "styles": {
-                  "size:noprefix": "small"
-                },
-                "title": "Image - Light",
-                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              "863bd937-9644-4258-aaf2-3cc780eecb4f": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
               },
-              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
+              "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961": {
                 "@type": "image",
                 "align": "right",
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-                      "filename": "black-starry-night.jpg",
-                      "height": 1708,
-                      "scales": {
-                        "great": {
-                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                          "height": 854,
-                          "width": 1200
-                        },
-                        "huge": {
-                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                          "height": 1138,
-                          "width": 1600
-                        },
-                        "icon": {
-                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                          "height": 22,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                          "height": 569,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                          "height": 711,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                          "height": 142,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                          "height": 284,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                          "height": 427,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                          "height": 91,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                          "height": 45,
-                          "width": 64
-                        }
-                      },
-                      "size": 693013,
-                      "width": 2400
-                    }
-                  ]
+                "size": "m",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "medium"
                 },
+                "title": "Image - Light",
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
                 "size": "s",
                 "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
                   "size:noprefix": "small"
                 },
                 "title": "Image",
-                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
               "b4536f61-92a1-4b65-aa40-c142d799f0ba": {
                 "@type": "slate",
@@ -723,80 +813,20 @@
               },
               "c0b3b08e-c350-43e6-84e9-787903d91f8c": {
                 "@type": "image",
-                "align": "left",
+                "align": "right",
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-                      "filename": "black-starry-night.jpg",
-                      "height": 1708,
-                      "scales": {
-                        "great": {
-                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                          "height": 854,
-                          "width": 1200
-                        },
-                        "huge": {
-                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                          "height": 1138,
-                          "width": 1600
-                        },
-                        "icon": {
-                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                          "height": 22,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                          "height": 569,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                          "height": 711,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                          "height": 142,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                          "height": 284,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                          "height": 427,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                          "height": 91,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                          "height": 45,
-                          "width": 64
-                        }
-                      },
-                      "size": 693013,
-                      "width": 2400
-                    }
-                  ]
-                },
-                "size": "m",
+                "size": "l",
                 "styles": {
-                  "size:noprefix": "medium"
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "large"
                 },
+                "theme": "default",
                 "title": "Image",
-                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
               "c3344b1c-89b9-4119-993e-58ef6bece880": {
                 "@type": "slate",
@@ -817,6 +847,7 @@
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
@@ -834,63 +865,14 @@
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                      "filename": "image-light.jpg",
-                      "height": 633,
-                      "scales": {
-                        "icon": {
-                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                          "height": 17,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                          "height": 449,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                          "height": 562,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                          "height": 112,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                          "height": 224,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                          "height": 337,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                          "height": 71,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                          "height": 35,
-                          "width": 64
-                        }
-                      },
-                      "size": 475285,
-                      "width": 1126
-                    }
-                  ]
-                },
                 "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  }
+                },
                 "title": "Image - Light",
-                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
               },
               "d77557e0-793a-408f-9940-a0ad80d3be8f": {
                 "@type": "slate",
@@ -959,7 +941,9 @@
                 "d77557e0-793a-408f-9940-a0ad80d3be8f",
                 "8f1ad076-32b9-432b-9308-8b0972a8f57e",
                 "c3344b1c-89b9-4119-993e-58ef6bece880",
-                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad"
+                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad",
+                "5e9ba51a-2462-476c-b89e-66cddc10479f",
+                "863bd937-9644-4258-aaf2-3cc780eecb4f"
               ]
             },
             "title": "Accordion with image"
@@ -1662,7 +1646,8 @@
       "filtering": false,
       "non_exclusive": false,
       "right_arrows": true,
-      "styles": {}
+      "styles": {},
+      "theme": "default"
     },
     "8f68209e-220e-4230-9d42-8b0602573bd9": {
       "@type": "accordion",
@@ -1672,39 +1657,272 @@
           "262a2478-3a63-445a-aab7-edf55cceebcf": {
             "@type": "accordionPanel",
             "blocks": {
-              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
+              "3b586718-75a0-4801-986f-65dfcb6147a3": {
                 "@type": "listing",
+                "headline": "List with images",
                 "headlineTag": "h2",
                 "querystring": {
-                  "limit": "3",
                   "query": [
                     {
-                      "i": "Description",
-                      "o": "plone.app.querystring.operation.string.contains",
-                      "v": "block"
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": [
+                        "News Item"
+                      ]
                     }
                   ],
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "summary"
+              },
+              "ab870338-007a-4400-9364-3588fcffd9e8": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
+                "@type": "listing",
+                "headline": "List",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "5",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": [
+                        "Document"
+                      ]
+                    }
+                  ],
+                  "sort_on": "sortable_title",
                   "sort_order": "descending",
                   "sort_order_boolean": true
                 },
                 "styles": {},
-                "variation": "summary"
+                "theme": "default",
+                "variation": "default"
+              },
+              "dffa8bfa-df0a-4b42-abf9-746195893b29": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "f36a69e0-d064-42b2-8ec5-e1ef73d23928": {
+                "@type": "listing",
+                "headline": "Grid",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "4",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": [
+                        "Event"
+                      ]
+                    }
+                  ],
+                  "sort_on": "sortable_title",
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "grid"
               }
             },
             "blocks_layout": {
               "items": [
-                "c9580c7a-ab67-44f7-8532-59a4ba9fd846"
+                "c9580c7a-ab67-44f7-8532-59a4ba9fd846",
+                "dffa8bfa-df0a-4b42-abf9-746195893b29",
+                "3b586718-75a0-4801-986f-65dfcb6147a3",
+                "ab870338-007a-4400-9364-3588fcffd9e8",
+                "f36a69e0-d064-42b2-8ec5-e1ef73d23928"
               ]
             },
+            "selected": "ab870338-007a-4400-9364-3588fcffd9e8",
             "title": "Accordion with listing"
           },
           "39f75787-bd7a-42dc-ab40-a6c9dfd2a8f1": {
             "@type": "accordionPanel",
             "blocks": {
+              "09269ef9-7209-448b-b7ff-4d93a01918d0": {
+                "@type": "slate",
+                "plaintext": "This is H3",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "This is H3\n"
+                      }
+                    ],
+                    "type": "h3"
+                  }
+                ]
+              },
+              "0cc52a89-6b2f-46b4-b05b-a318451351d2": {
+                "@type": "slate",
+                "plaintext": "   This is link. ",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": ""
+                          }
+                        ],
+                        "type": "em"
+                      },
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is link."
+                          }
+                        ],
+                        "data": {
+                          "url": "https://www.google.com/"
+                        },
+                        "type": "link"
+                      },
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "62769217-d9fe-4317-af1b-0f52e1d403ce": {
+                "@type": "slate",
+                "plaintext": "This is unordered list This is unordered list This is unordered list",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ul"
+                  }
+                ]
+              },
+              "7472a4e0-4108-4716-b175-da54ed67495b": {
+                "@type": "slate",
+                "plaintext": "This is H2",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "This is H2"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "9e002af6-1d9f-4dd7-abad-d0a78eda482a": {
+                "@type": "slate",
+                "plaintext": " This is Italics.  This is bold text. ",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is Italics.\n"
+                          }
+                        ],
+                        "type": "em"
+                      },
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is bold text."
+                          }
+                        ],
+                        "type": "strong"
+                      },
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
               "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35": {
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
@@ -1715,11 +1933,54 @@
                     "type": "p"
                   }
                 ]
+              },
+              "b4d8c43d-c2cf-4d89-9060-18eb27540fef": {
+                "@type": "slate",
+                "plaintext": "one two three",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "one"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "two"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "three"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ol"
+                  }
+                ]
               }
             },
             "blocks_layout": {
               "items": [
-                "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35"
+                "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35",
+                "9e002af6-1d9f-4dd7-abad-d0a78eda482a",
+                "0cc52a89-6b2f-46b4-b05b-a318451351d2",
+                "7472a4e0-4108-4716-b175-da54ed67495b",
+                "09269ef9-7209-448b-b7ff-4d93a01918d0",
+                "62769217-d9fe-4317-af1b-0f52e1d403ce",
+                "b4d8c43d-c2cf-4d89-9060-18eb27540fef"
               ]
             },
             "title": "Accordion with text"
@@ -1730,246 +1991,262 @@
               "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
                 "@type": "teaser",
                 "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
-                "head_title": null,
+                "head_title": "News Item Teaser",
                 "href": [
                   {
-                    "@id": "/content-types/image-light",
-                    "@type": "Image",
-                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
-                    "Title": "Image - Light",
+                    "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+                    "@type": "News Item",
+                    "Description": "The News Item content type can be used to display News content on the website.",
+                    "Subject": [],
+                    "Title": "News Item",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The News Item content type can be used to display News content on the website.",
+                    "effective": "2023-01-01T10:42:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": "Head title",
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "News Item",
+                    "type_title": "News Item"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "title": "Teaser to a News Item with Image"
+              },
+              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "Event Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+                    "@type": "Event",
+                    "Description": "The event content type can be used to display an event on the website.",
+                    "Subject": [],
+                    "Title": "Event",
+                    "contact_building": null,
+                    "contact_email": "m.mustermann@plone.com",
+                    "contact_phone": "+49 1234 567-890",
+                    "contact_room": null,
+                    "description": "The event content type can be used to display an event on the website.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": "2023-12-31T12:00:00+00:00",
+                    "getObjSize": "0 KB",
                     "getRemoteUrl": null,
                     "hasPreviewImage": null,
                     "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": "2023-01-01T11:00:00+00:00",
+                    "title": "Event",
+                    "type_title": "Event"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "title": "Teaser to an Event with Image "
+              },
+              "32053cfb-3906-4883-b929-2f0d475167ea": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "External Link Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+                    "@type": "Link",
+                    "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "Subject": [],
+                    "Title": "Link",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": "https://www.google.com",
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Link",
+                    "type_title": "Link"
+                  }
+                ],
+                "overwrite": true,
+                "preview_image": [
+                  {
+                    "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
                     "image_field": "image",
-                    "image_scales": {
-                      "image": [
-                        {
-                          "content-type": "image/jpeg",
-                          "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                          "filename": "image-light.jpg",
-                          "height": 633,
-                          "scales": {
-                            "icon": {
-                              "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                              "height": 17,
-                              "width": 32
-                            },
-                            "large": {
-                              "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                              "height": 449,
-                              "width": 800
-                            },
-                            "larger": {
-                              "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                              "height": 562,
-                              "width": 1000
-                            },
-                            "mini": {
-                              "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                              "height": 112,
-                              "width": 200
-                            },
-                            "preview": {
-                              "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                              "height": 224,
-                              "width": 400
-                            },
-                            "teaser": {
-                              "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                              "height": 337,
-                              "width": 600
-                            },
-                            "thumb": {
-                              "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                              "height": 71,
-                              "width": 128
-                            },
-                            "tile": {
-                              "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                              "height": 35,
-                              "width": 64
-                            }
-                          },
-                          "size": 475285,
-                          "width": 1126
-                        }
-                      ]
-                    },
-                    "title": "Image - Light"
+                    "title": "Image for Link"
                   }
                 ],
                 "styles": {
                   "align": "left"
                 },
-                "title": "Teaser Title H2"
+                "theme": "default",
+                "title": "Teaser to an external Link with Image"
               },
-              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
+              "56df2459-adbd-48ac-9e96-95933678c979": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "76245078-f513-459e-88a0-12cfa5a265af": {
                 "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
-                "head_title": null,
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "Image Teaser",
                 "href": [
                   {
-                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
-                    "@type": "Document",
-                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-                    "Title": "Page",
+                    "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+                    "@type": "Image",
+                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "Subject": [],
+                    "Title": "Image",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "676.8 KB",
                     "getRemoteUrl": null,
-                    "hasPreviewImage": true,
+                    "hasPreviewImage": null,
                     "head_title": null,
-                    "image_field": "preview_image",
-                    "image_scales": {
-                      "preview_image": [
-                        {
-                          "content-type": "image/jpeg",
-                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
-                          "filename": "black-starry-night.jpg",
-                          "height": 1708,
-                          "scales": {
-                            "great": {
-                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
-                              "height": 854,
-                              "width": 1200
-                            },
-                            "huge": {
-                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
-                              "height": 1138,
-                              "width": 1600
-                            },
-                            "icon": {
-                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
-                              "height": 22,
-                              "width": 32
-                            },
-                            "large": {
-                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
-                              "height": 569,
-                              "width": 800
-                            },
-                            "larger": {
-                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
-                              "height": 711,
-                              "width": 1000
-                            },
-                            "mini": {
-                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
-                              "height": 142,
-                              "width": 200
-                            },
-                            "preview": {
-                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
-                              "height": 284,
-                              "width": 400
-                            },
-                            "teaser": {
-                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
-                              "height": 427,
-                              "width": 600
-                            },
-                            "thumb": {
-                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
-                              "height": 91,
-                              "width": 128
-                            },
-                            "tile": {
-                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
-                              "height": 45,
-                              "width": 64
-                            }
-                          },
-                          "size": 693013,
-                          "width": 2400
-                        }
-                      ]
-                    },
-                    "title": "Page"
+                    "image_field": "image",
+                    "mime_type": "image/jpeg",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "Image",
+                    "type_title": "Image"
                   }
                 ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an Image with Image aligned left"
+              },
+              "a8e11fa5-a423-45f9-8de2-060c8ea00e5f": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d235847d-eb7d-4627-9247-dd92f8bbea79": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "File Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+                    "@type": "File",
+                    "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "Subject": [],
+                    "Title": "File",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "72.7 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "application/pdf",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "File",
+                    "type_title": "File"
+                  }
+                ],
+                "overwrite": true,
                 "styles": {
                   "align": "right"
                 },
-                "title": "Teaser Title H2"
+                "theme": "default",
+                "title": "Teaser to a File with Image aligned right"
               },
               "eb600a9b-7400-4b4e-bb40-70ddb6911749": {
                 "@type": "teaser",
                 "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
-                "head_title": null,
+                "head_title": "Page Teaser",
                 "href": [
                   {
-                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
                     "@type": "Document",
                     "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Subject": [],
                     "Title": "Page",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
                     "getRemoteUrl": null,
                     "hasPreviewImage": true,
                     "head_title": null,
-                    "image_field": "preview_image",
-                    "image_scales": {
-                      "preview_image": [
-                        {
-                          "content-type": "image/jpeg",
-                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
-                          "filename": "black-starry-night.jpg",
-                          "height": 1708,
-                          "scales": {
-                            "great": {
-                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
-                              "height": 854,
-                              "width": 1200
-                            },
-                            "huge": {
-                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
-                              "height": 1138,
-                              "width": 1600
-                            },
-                            "icon": {
-                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
-                              "height": 22,
-                              "width": 32
-                            },
-                            "large": {
-                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
-                              "height": 569,
-                              "width": 800
-                            },
-                            "larger": {
-                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
-                              "height": 711,
-                              "width": 1000
-                            },
-                            "mini": {
-                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
-                              "height": 142,
-                              "width": 200
-                            },
-                            "preview": {
-                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
-                              "height": 284,
-                              "width": 400
-                            },
-                            "teaser": {
-                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
-                              "height": 427,
-                              "width": 600
-                            },
-                            "thumb": {
-                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
-                              "height": 91,
-                              "width": 128
-                            },
-                            "tile": {
-                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
-                              "height": 45,
-                              "width": 64
-                            }
-                          },
-                          "size": 693013,
-                          "width": 2400
-                        }
-                      ]
-                    },
-                    "title": "Page"
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Page",
+                    "type_title": "Page"
                   }
                 ],
+                "overwrite": true,
                 "styles": {
                   "align": "center"
                 },
@@ -1980,9 +2257,15 @@
               "items": [
                 "eb600a9b-7400-4b4e-bb40-70ddb6911749",
                 "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03",
-                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a"
+                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a",
+                "56df2459-adbd-48ac-9e96-95933678c979",
+                "32053cfb-3906-4883-b929-2f0d475167ea",
+                "d235847d-eb7d-4627-9247-dd92f8bbea79",
+                "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
+                "76245078-f513-459e-88a0-12cfa5a265af"
               ]
             },
+            "selected": "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
             "title": "Accordion with teaser"
           },
           "d2168440-888d-4081-8409-b59392abc189": {
@@ -2005,70 +2288,19 @@
               },
               "1060e842-2b14-43dc-9e43-c25022029a94": {
                 "@type": "image",
-                "align": "right",
+                "align": "left",
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                      "filename": "image-light.jpg",
-                      "height": 633,
-                      "scales": {
-                        "icon": {
-                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                          "height": 17,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                          "height": 449,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                          "height": 562,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                          "height": 112,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                          "height": 224,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                          "height": 337,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                          "height": 71,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                          "height": 35,
-                          "width": 64
-                        }
-                      },
-                      "size": 475285,
-                      "width": 1126
-                    }
-                  ]
-                },
                 "size": "m",
                 "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
                   "size:noprefix": "medium"
                 },
                 "title": "Image - Light",
-                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
               },
               "11af3b59-7720-4875-b0b9-90be5807d476": {
                 "@type": "separator",
@@ -2118,63 +2350,9 @@
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                      "filename": "image-light.jpg",
-                      "height": 633,
-                      "scales": {
-                        "icon": {
-                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                          "height": 17,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                          "height": 449,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                          "height": 562,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                          "height": 112,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                          "height": 224,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                          "height": 337,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                          "height": 71,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                          "height": 35,
-                          "width": 64
-                        }
-                      },
-                      "size": 475285,
-                      "width": 1126
-                    }
-                  ]
-                },
                 "size": "l",
                 "title": "Image - Light",
-                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
               },
               "725bfc52-49f6-4e70-8d11-48c537cfb5ff": {
                 "@type": "slate",
@@ -2195,6 +2373,7 @@
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
@@ -2214,157 +2393,51 @@
               },
               "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961": {
                 "@type": "image",
-                "align": "left",
-                "credit": {},
-                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
-                "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-                      "filename": "black-starry-night.jpg",
-                      "height": 1708,
-                      "scales": {
-                        "great": {
-                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                          "height": 854,
-                          "width": 1200
-                        },
-                        "huge": {
-                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                          "height": 1138,
-                          "width": 1600
-                        },
-                        "icon": {
-                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                          "height": 22,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                          "height": 569,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                          "height": 711,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                          "height": 142,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                          "height": 284,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                          "height": 427,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                          "height": 91,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                          "height": 45,
-                          "width": 64
-                        }
-                      },
-                      "size": 693013,
-                      "width": 2400
-                    }
-                  ]
-                },
-                "size": "s",
-                "styles": {
-                  "size:noprefix": "small"
-                },
-                "title": "Image",
-                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
-              },
-              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
-                "@type": "image",
                 "align": "right",
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-                      "filename": "black-starry-night.jpg",
-                      "height": 1708,
-                      "scales": {
-                        "great": {
-                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                          "height": 854,
-                          "width": 1200
-                        },
-                        "huge": {
-                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                          "height": 1138,
-                          "width": 1600
-                        },
-                        "icon": {
-                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                          "height": 22,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                          "height": 569,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                          "height": 711,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                          "height": 142,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                          "height": 284,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                          "height": 427,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                          "height": 91,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                          "height": 45,
-                          "width": 64
-                        }
-                      },
-                      "size": 693013,
-                      "width": 2400
-                    }
-                  ]
+                "size": "m",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "medium"
                 },
+                "title": "Image",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
                 "size": "s",
                 "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
                   "size:noprefix": "small"
                 },
                 "title": "Image",
-                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "a632b02c-d68b-44fa-8039-8197876728ea": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
               },
               "b4536f61-92a1-4b65-aa40-c142d799f0ba": {
                 "@type": "slate",
@@ -2381,82 +2454,38 @@
                   }
                 ]
               },
+              "beed6d62-0753-4183-915e-9704b178e4ff": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "image_field": "image",
+                "size": "s",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "small"
+                },
+                "theme": "default",
+                "title": "Image for Link",
+                "url": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3"
+              },
               "c0b3b08e-c350-43e6-84e9-787903d91f8c": {
                 "@type": "image",
-                "align": "left",
+                "align": "right",
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-                      "filename": "black-starry-night.jpg",
-                      "height": 1708,
-                      "scales": {
-                        "great": {
-                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                          "height": 854,
-                          "width": 1200
-                        },
-                        "huge": {
-                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                          "height": 1138,
-                          "width": 1600
-                        },
-                        "icon": {
-                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                          "height": 22,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                          "height": 569,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                          "height": 711,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                          "height": 142,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                          "height": 284,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                          "height": 427,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                          "height": 91,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                          "height": 45,
-                          "width": 64
-                        }
-                      },
-                      "size": 693013,
-                      "width": 2400
-                    }
-                  ]
-                },
-                "size": "m",
+                "size": "l",
                 "styles": {
-                  "size:noprefix": "medium"
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "large"
                 },
                 "title": "Image",
-                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
               "c3344b1c-89b9-4119-993e-58ef6bece880": {
                 "@type": "slate",
@@ -2494,73 +2523,14 @@
                 "credit": {},
                 "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
                 "image_field": "image",
-                "image_scales": {
-                  "image": [
-                    {
-                      "content-type": "image/jpeg",
-                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-                      "filename": "black-starry-night.jpg",
-                      "height": 1708,
-                      "scales": {
-                        "great": {
-                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                          "height": 854,
-                          "width": 1200
-                        },
-                        "huge": {
-                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                          "height": 1138,
-                          "width": 1600
-                        },
-                        "icon": {
-                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                          "height": 22,
-                          "width": 32
-                        },
-                        "large": {
-                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                          "height": 569,
-                          "width": 800
-                        },
-                        "larger": {
-                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                          "height": 711,
-                          "width": 1000
-                        },
-                        "mini": {
-                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                          "height": 142,
-                          "width": 200
-                        },
-                        "preview": {
-                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                          "height": 284,
-                          "width": 400
-                        },
-                        "teaser": {
-                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                          "height": 427,
-                          "width": 600
-                        },
-                        "thumb": {
-                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                          "height": 91,
-                          "width": 128
-                        },
-                        "tile": {
-                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                          "height": 45,
-                          "width": 64
-                        }
-                      },
-                      "size": 693013,
-                      "width": 2400
-                    }
-                  ]
-                },
                 "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  }
+                },
                 "title": "Image",
-                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
               "d77557e0-793a-408f-9940-a0ad80d3be8f": {
                 "@type": "slate",
@@ -2629,7 +2599,9 @@
                 "d77557e0-793a-408f-9940-a0ad80d3be8f",
                 "8f1ad076-32b9-432b-9308-8b0972a8f57e",
                 "c3344b1c-89b9-4119-993e-58ef6bece880",
-                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad"
+                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad",
+                "beed6d62-0753-4183-915e-9704b178e4ff",
+                "a632b02c-d68b-44fa-8039-8197876728ea"
               ]
             },
             "title": "Accordion with image"
@@ -3332,9 +3304,8 @@
       "filtering": false,
       "non_exclusive": false,
       "right_arrows": true,
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "fec13476-1231-42fc-84d5-b110e8e3c6e7": {
       "@type": "title"
@@ -3368,7 +3339,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2025-08-07T14:35:28+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

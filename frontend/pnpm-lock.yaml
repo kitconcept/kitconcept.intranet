@@ -1808,6 +1808,9 @@ importers:
       react:
         specifier: 18.2.0
         version: 18.2.0
+      react-aria-components:
+        specifier: 1.10.1
+        version: 1.10.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
@@ -2111,22 +2114,6 @@ importers:
         version: 3.12.1(react@18.2.0)
       release-it:
         specifier: ^17.7.0
-        version: 17.11.0(typescript@5.8.3)
-
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.1
-      release-it:
-        specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
 
 packages:

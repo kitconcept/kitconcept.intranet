@@ -212,7 +212,7 @@
       "available_languages": {
         "type": "array",
         "title": "Available Languages",
-        "description": "Languages that will be available in the solution. If more than one language is selected, the first on in the list will be the default language.",
+        "description": "Languages that will be available. If more than one language is selected, the first one in the list will be the default language.",
         "items": {"$ref": "#/definitions/languages"},
         "default": ["de"]
       },

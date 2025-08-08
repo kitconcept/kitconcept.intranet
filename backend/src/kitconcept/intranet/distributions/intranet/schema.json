@@ -220,6 +220,12 @@
         "type": "string",
         "title": "Dummy field",
         "default": ""
+    },
+      "setup_solr": {
+        "type": "boolean",
+        "title": "Use SOLR",
+        "description": "Should we use SOLR for search?",
+        "default": false
       },
       "setup_content": {
         "type": "boolean",

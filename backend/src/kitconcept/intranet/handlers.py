@@ -58,11 +58,13 @@ def pre_handler(answers: dict) -> dict:
 def handler(distribution: Distribution, site: PloneSite, answers: dict) -> PloneSite:
     """Handler to create a new site."""
     default_profiles = distribution._profiles
-    workflow = answers.get("workflow", "restricted")
+    profiles = deepcopy(default_profiles)
+    workflow = answers.get("workflow", "public")
     if workflow == "restricted":
-        profiles = deepcopy(default_profiles)
         profiles["base"].append("kitconcept.intranet:restricted")
-        distribution._profiles = profiles
+    if answers.get("setup_solr", False):
+        profiles["base"].append("kitconcept.intranet:solr")
+    distribution._profiles = profiles
     site = default_handler(distribution, site, answers)
     # Handle Plone site workflow state
     if workflow == "public" and api.content.get_state(site) == "private":

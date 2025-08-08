@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-05-13 12:26+0000\n"
+"POT-Creation-Date: 2025-08-08 13:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,14 @@ msgstr ""
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr ""
 
+#: kitconcept/intranet/behaviors/configure.zcml:19
+msgid "Allows to set configuration that will be injected into the blocks default configuration."
+msgstr ""
+
+#: kitconcept/intranet/behaviors/blocks_settings.py:24
+msgid "Blocks configuration"
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Can only be seen and edited by the owner."
@@ -39,12 +47,21 @@ msgstr ""
 msgid "Custom CSS for the intranet."
 msgstr ""
 
+#: kitconcept/intranet/profiles/default/types/Location.xml
+#: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
+msgid "Edit"
+msgstr ""
+
 #: kitconcept/intranet/controlpanels/intranet.py:19
 msgid "External Search URL"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:20
-msgid "Fields with additional person information"
+#: kitconcept/intranet/behaviors/configure.zcml:29
+msgid "Fields for Location"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:39
+msgid "Fields for Organisational Unit"
 msgstr ""
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
@@ -64,6 +81,12 @@ msgstr ""
 msgid "Intranet Settings"
 msgstr ""
 
+#: kitconcept/intranet/behaviors/configure.zcml:29
+#: kitconcept/intranet/behaviors/location.py:19
+#: kitconcept/intranet/profiles/default/types/Location.xml
+msgid "Location"
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Member retracts submission"
@@ -74,13 +97,15 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
+#: kitconcept/intranet/behaviors/configure.zcml:39
+#: kitconcept/intranet/behaviors/organisational_unit.py:20
+#: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
+msgid "Organisational Unit"
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Pending review"
-msgstr ""
-
-#: kitconcept/intranet/behaviors/configure.zcml:20
-msgid "Person Behavior"
 msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:26
@@ -149,13 +174,30 @@ msgstr ""
 msgid "Setup the intranet to always require users to be authenticated."
 msgstr ""
 
+#: kitconcept/intranet/profiles.zcml:29
+msgid "Setup the intranet to use Solr."
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Submit for publication"
 msgstr ""
 
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "Taxonomy"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:19
+msgid "Through The Web blocks configuration"
+msgstr ""
+
 #: kitconcept/intranet/controlpanels/intranet.py:20
 msgid "Used in the intranet header seach bar."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/types/Location.xml
+#: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
+msgid "View"
 msgstr ""
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
@@ -171,6 +213,21 @@ msgstr ""
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr ""
 
+#. Default: "Configure some aspects of the default blocks configuration."
+#: kitconcept/intranet/behaviors/blocks_settings.py:41
+msgid "help_blocks_config_mutator"
+msgstr ""
+
+#. Default: "Filter by Organisational Unit"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_organisational_unit"
+msgstr ""
+
+#. Default: "Filter by location"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_place"
+msgstr ""
+
 #: kitconcept/intranet/distributions.zcml:16
 msgid "kitconcept Intranet"
 msgstr ""
@@ -183,17 +240,16 @@ msgstr ""
 msgid "kitconcept.intranet: Restricted access"
 msgstr ""
 
-#. Default: "Additional Contact Information"
-#: kitconcept/intranet/behaviors/additional_contact_info.py:17
-msgid "label_additional_contact_info"
+#: kitconcept/intranet/profiles.zcml:29
+msgid "kitconcept.intranet: Solr Support"
 msgstr ""
 
-#. Default: "Building"
-#: kitconcept/intranet/behaviors/additional_contact_info.py:27
-msgid "label_contact_building"
+#. Default: "Organisational Unit"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_organisational_unit"
 msgstr ""
 
-#. Default: "Room"
-#: kitconcept/intranet/behaviors/additional_contact_info.py:32
-msgid "label_contact_room"
+#. Default: "Place"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_place"
 msgstr ""

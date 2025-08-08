@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="Organisational Unit"
+        i18n:domain="kitconcept.intranet"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Organisational Unit</property>
+  <property name="description"
+            i18n:translate=""
+  />
+
+  <property name="allow_discussion">False</property>
+  <property name="factory">Organisational Unit</property>
+  <property name="link_target" />
+
+
+  <!-- Hierarchy control -->
+  <property name="allowed_content_types">
+    <element value="Document" />
+    <element value="Image" />
+    <element value="File" />
+    <element value="Link" />
+  </property>
+  <property name="filter_content_types">True</property>
+  <property name="global_allow">True</property>
+
+
+  <!-- Schema, class and security -->
+  <property name="add_permission">kitconcept.intranet.siteadminsonly</property>
+  <property name="klass">kitconcept.intranet.content.organisational_unit.OrganisationalUnit</property>
+  <property name="model_file" />
+  <property name="model_source" />
+  <property name="schema">kitconcept.intranet.content.organisational_unit.IOrganisationalUnit</property>
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors"
+            purge="true"
+  >
+    <element value="plone.basic" />
+    <element value="volto.preview_image_link" />
+    <element value="volto.kicker" />
+    <element value="kitconcept.intranet.location" />
+    <element value="plone.categorization" />
+    <element value="plone.publication" />
+    <element value="plone.ownership" />
+    <element value="plone.shortname" />
+    <element value="volto.navtitle" />
+    <element value="plone.excludefromnavigation" />
+    <element value="volto.blocks" />
+    <element value="plone.constraintypes" />
+    <element value="plone.namefromtitle" />
+    <element value="plone.versioning" />
+    <element value="plone.locking" />
+    <element value="plone.translatable" />
+
+  </property>
+
+
+  <!-- View information -->
+  <property name="add_view_expr">string:${folder_url}/++add++Location</property>
+  <property name="immediate_view">view</property>
+  <property name="default_view">view</property>
+  <property name="default_view_fallback">False</property>
+  <property name="view_methods">
+    <element value="view" />
+  </property>
+
+  <!-- Method aliases -->
+  <alias from="(Default)"
+         to="(dynamic view)"
+  />
+  <alias from="edit"
+         to="@@edit"
+  />
+  <alias from="sharing"
+         to="@@sharing"
+  />
+  <alias from="view"
+         to="(selected layout)"
+  />
+
+  <!-- Actions -->
+  <action action_id="view"
+          category="object"
+          condition_expr=""
+          description=""
+          title="View"
+          url_expr="string:${object_url}"
+          visible="True"
+          i18n:attributes="title"
+  >
+    <permission value="View" />
+  </action>
+  <action action_id="edit"
+          category="object"
+          condition_expr="not:object/@@plone_lock_info/is_locked_for_current_user|python:True"
+          description=""
+          title="Edit"
+          url_expr="string:${object_url}/edit"
+          visible="True"
+          i18n:attributes="title"
+  >
+    <permission value="Modify portal content" />
+  </action>
+</object>

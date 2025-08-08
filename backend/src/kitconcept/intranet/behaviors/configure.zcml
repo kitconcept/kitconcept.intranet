@@ -28,4 +28,14 @@
       marker=".location.ILocationMarker"
       />
 
+  <plone:behavior
+      name="kitconcept.intranet.organisational_unit"
+      title="Organisational Unit"
+      description="Fields for Organisational Unit"
+      factory=".organisational_unit.OrganisationalUnitAdapter"
+      provides=".organisational_unit.IOrganisationalUnitBehavior"
+      for=".organisational_unit.IOrganisationalUnitMarker"
+      marker=".organisational_unit.IOrganisationalUnitMarker"
+      />
+
 </configure>

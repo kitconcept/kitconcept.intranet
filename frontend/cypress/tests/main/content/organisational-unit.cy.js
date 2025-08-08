@@ -15,7 +15,6 @@ describe('Add Content Tests', () => {
   });
 
   it('As editor I can add a organisational unit content type', function () {
-    // when I add a file
     cy.get('#toolbar-add').click();
     cy.get('#toolbar-add-organisational-unit').click();
     cy.getSlateTitle()

@@ -19,12 +19,13 @@ ANSWERS = {
     "title": os.getenv("SITE_TITLE"),
     "description": os.getenv("SITE_DESCRIPTION"),
     "available_languages": _string_as_list(
-        os.getenv("SITE_AVAILABLE_LANGUAGES", os.getenv("SITE_DEFAULT_LANGUAGES", "en"))
+        os.getenv("SITE_AVAILABLE_LANGUAGES", os.getenv("SITE_DEFAULT_LANGUAGE", "en"))
     ),
     "portal_timezone": os.getenv("SITE_PORTAL_TIMEZONE"),
     "setup_content": os.getenv("SITE_SETUP_CONTENT", "true"),
     "demo_content": os.getenv("SITE_DEMO_CONTENT", "true"),
     "workflow": os.getenv("SITE_WORFLOW", "public"),
+    "setup_solr": os.getenv("SITE_SETUP_SOLR", "false"),
     "authentication": {
         "provider": os.getenv("SITE_AUTHENTICATION_PROVIDER", "internal"),
         "oidc-server_url": os.getenv("SITE_AUTHENTICATION_OIDC-SERVER_URL"),

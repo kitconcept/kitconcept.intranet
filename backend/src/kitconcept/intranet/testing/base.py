@@ -1,4 +1,5 @@
 from kitconcept.core.testing.layers import kitconceptDistributionFixture
+from kitconcept.intranet.testing.logo import TEST_LOGO
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
@@ -17,8 +18,9 @@ DEFAULT_ANSWERS = {
     "site_id": "plone",
     "title": "Intranet",
     "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
-    "default_language": "en",
+    "available_languages": ["en"],
     "portal_timezone": "Europe/Berlin",
+    "site_logo": TEST_LOGO,
     "workflow": "public",
     "setup_content": False,
     "authentication": {"provider": "internal"},

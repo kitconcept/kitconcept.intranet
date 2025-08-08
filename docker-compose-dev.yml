@@ -111,6 +111,9 @@ services:
     profiles: ["dev"]
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_NAME:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-OwAaOExRfIvY}' port='${DB_PORT:-5432}'"
+      SOLR_HOST: solr
+      SOLR_PORT: 8983
+      SOLR_BASE: /solr/plone
     depends_on:
       - db
       - solr
@@ -146,7 +149,7 @@ services:
       - traefik.http.routers.rt-backend-classic.service=svc-backend
       - traefik.http.routers.rt-backend-classic.middlewares=gzip,mw-backend-auth,mw-backend-vhm-classic
       ## Intranet Admin
-      - traefik.http.routers.rt-backend-zmi.rule=Host(`intranet-admin.localhost`)
+      - traefik.http.routers.rt-backend-zmi.rule=Host(`admin-${STACK_HOSTNAME:-kitconcept-intranet.localhost}`)
       - traefik.http.routers.rt-backend-zmi.entrypoints=http
       - traefik.http.routers.rt-backend-zmi.service=svc-backend
       - traefik.http.routers.rt-backend-zmi.middlewares=gzip

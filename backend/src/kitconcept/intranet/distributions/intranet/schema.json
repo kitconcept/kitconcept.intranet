@@ -194,6 +194,12 @@
         "default": "public"
       },
       "default_language": {"$ref": "#/definitions/languages"},
+      "setup_solr": {
+        "type": "boolean",
+        "title": "Use SOLR",
+        "description": "Should we use SOLR for search?",
+        "default": false
+      },
       "setup_content": {
         "type": "boolean",
         "title": "Create Example Content",

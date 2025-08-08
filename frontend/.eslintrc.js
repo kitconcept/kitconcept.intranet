@@ -54,6 +54,10 @@ module.exports = {
             '@kitconcept/volto-light-theme',
             './packages/volto-light-theme/packages/volto-light-theme/src',
           ],
+          [
+            '@kitconcept/volto-solr',
+            './packages/volto-solr/frontend/packages/volto-solr/src',
+          ],
           ...addonAliases,
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],

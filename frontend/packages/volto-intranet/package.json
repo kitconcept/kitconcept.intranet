@@ -44,11 +44,13 @@
   },
   "addons": [
     "volto-form-block",
-    "@kitconcept/core"
+    "@kitconcept/core",
+    "@kitconcept/volto-solr"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
     "@kitconcept/core": "workspace:*",
-    "react-aria-components": "1.10.1"
+    "react-aria-components": "1.10.1",
+    "@kitconcept/volto-solr": "2.0.0-alpha.1"
   }
 }

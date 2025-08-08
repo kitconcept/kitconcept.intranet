@@ -47,7 +47,7 @@ class TestSystemGet:
         (
             ("cmf_version", "3.7"),
             ("debug_mode", "No"),
-            ("plone_restapi_version", "9.14.0"),
+            ("plone_restapi_version", "9.15.1"),
             ("plone_version", "6.1.1"),
             ("upgrade", False),
         ),

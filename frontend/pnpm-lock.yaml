@@ -2113,22 +2113,6 @@ importers:
         specifier: ^17.7.0
         version: 17.11.0(typescript@5.8.3)
 
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.1
-      release-it:
-        specifier: ^17.1.1
-        version: 17.11.0(typescript@5.8.3)
-
 packages:
 
   '@adobe/css-tools@4.4.3':
@@ -12865,7 +12849,6 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     deprecated: |-
       You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
-
       (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   qs@6.11.0:

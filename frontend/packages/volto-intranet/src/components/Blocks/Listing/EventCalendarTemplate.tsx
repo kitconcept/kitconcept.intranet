@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import Card from '@kitconcept/volto-light-theme/primitives/Card/Card';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
@@ -19,8 +18,6 @@ const EventItem = ({
   lang: string;
   isEditMode: boolean;
 }) => {
-  const today = new Date();
-
   const formatter = new Intl.DateTimeFormat(lang, {
     year: 'numeric',
     month: 'short',
@@ -45,8 +42,12 @@ const EventItem = ({
   const formattedStartDate = start ? formatter.format(start) : '';
   const formattedEndDate = end ? formatter.format(end) : '';
   const formattedHeaderDate = !end
-    ? (start ? headFormatter.format(start) : '')
-    : (start && end ? headFormatter.formatRange(start, end) : '');
+    ? start
+      ? headFormatter.format(start)
+      : ''
+    : start && end
+      ? headFormatter.formatRange(start, end)
+      : '';
 
   return (
     <div className="card-listing">
@@ -82,9 +83,8 @@ const EventItem = ({
   );
 };
 
-const EventCalenderTemplate = (props: any) => {
+const EventCalendarTemplate = (props: any) => {
   const lang = useSelector((state: IntlType) => state.intl.locale);
-  console.log(props, 'EventCalendarTemplate items');
   return (
     <div className="event-calendar items">
       {props.items.map((item: any, index: number) => (
@@ -99,4 +99,4 @@ const EventCalenderTemplate = (props: any) => {
   );
 };
 
-export default EventCalenderTemplate;
+export default EventCalendarTemplate;

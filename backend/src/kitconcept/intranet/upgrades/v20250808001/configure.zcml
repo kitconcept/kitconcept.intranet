@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250801001"
+      destination="20250808001"
+      >
+    <genericsetup:upgradeDepends
+        title="Adds kitconcept.intranet.organisational_unit and location behavior to Person content type."
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

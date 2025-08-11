@@ -229,6 +229,8 @@ class TestContentTypeFTI:
                     "plone.versioning",
                     "plone.locking",
                     "plone.translatable",
+                    "kitconcept.intranet.location",
+                    "kitconcept.intranet.organisational_unit",
                 ),
             ),
             ("Plone Site", "title", "Plone Site"),

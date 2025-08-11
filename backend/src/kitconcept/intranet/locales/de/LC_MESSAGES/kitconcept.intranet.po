@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-08 13:19+0000\n"
+"POT-Creation-Date: 2025-08-11 12:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,217 +16,217 @@ msgstr ""
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 msgid "- Workflow for Intranets. Public access to published content."
-msgstr ""
+msgstr "- Workflow für Intranets. Öffentlicher Zugriff auf veröffentlichte Inhalte."
 
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "- Workflow for Intranets. Requires authentication."
-msgstr ""
+msgstr "- Workflow für Intranets. Authentifizierung erforderlich."
 
 #: kitconcept/intranet/distributions.zcml:16
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
-msgstr ""
+msgstr "Eine Plone-Distribution für Intranets mit Plone. Erstellt von kitconcept."
 
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Allows to set configuration that will be injected into the blocks default configuration."
-msgstr ""
+msgstr "Ermöglicht die Festlegung einer Konfiguration, die in die Standardkonfiguration der Blöcke eingefügt wird."
 
 #: kitconcept/intranet/behaviors/blocks_settings.py:24
 msgid "Blocks configuration"
-msgstr ""
+msgstr "Blockkonfiguration"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Can only be seen and edited by the owner."
-msgstr ""
+msgstr "Kann nur vom Eigentümer angesehen und bearbeitet werden."
 
 #: kitconcept/intranet/controlpanels/intranet.py:31
 msgid "Custom CSS"
-msgstr ""
+msgstr "Benutzerdefiniertes CSS"
 
 #: kitconcept/intranet/controlpanels/intranet.py:32
 msgid "Custom CSS for the intranet."
-msgstr ""
+msgstr "Benutzerdefiniertes CSS für das Intranet."
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: kitconcept/intranet/controlpanels/intranet.py:19
 msgid "External Search URL"
-msgstr ""
+msgstr "Externe Such-URL"
 
 #: kitconcept/intranet/behaviors/configure.zcml:29
 msgid "Fields for Location"
-msgstr ""
+msgstr "Felder für Standort"
 
 #: kitconcept/intranet/behaviors/configure.zcml:39
 msgid "Fields for Organisational Unit"
-msgstr ""
+msgstr "Felder für Organisationseinheit"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
-msgstr ""
+msgstr "Wenn Sie den Artikel versehentlich eingereicht haben oder zusätzliche Änderungen vornehmen möchten, können Sie ihn hier zurückziehen."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 msgid "Intranet Public Workflow"
-msgstr ""
+msgstr "Intranet Öffentlicher Workflow"
 
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Intranet Restricted Workflow"
-msgstr ""
+msgstr "Intranet-beschränkter Workflow"
 
 #: kitconcept/intranet/controlpanels/intranet.py:39
 msgid "Intranet Settings"
-msgstr ""
+msgstr "Intranet-Einstellungen"
 
 #: kitconcept/intranet/behaviors/configure.zcml:29
 #: kitconcept/intranet/behaviors/location.py:19
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
-msgstr ""
+msgstr "Standort"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Member retracts submission"
-msgstr ""
+msgstr "Mitglied zieht Einreichung zurück"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Member submits content for publication"
-msgstr ""
+msgstr "Mitglied reicht Inhalte zur Veröffentlichung ein"
 
 #: kitconcept/intranet/behaviors/configure.zcml:39
 #: kitconcept/intranet/behaviors/organisational_unit.py:20
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
-msgstr ""
+msgstr "Organisatorische Einheit"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Pending review"
-msgstr ""
+msgstr "In Bearbeitung"
 
 #: kitconcept/intranet/controlpanels/intranet.py:26
 msgid "Placeholder text for the search field."
-msgstr ""
+msgstr "Platzhaltertext für das Suchfeld."
 
 #: kitconcept/intranet/profiles.zcml:14
 msgid "Policy package to install our site"
-msgstr ""
+msgstr "Paket mit Richtlinien zur Installation unserer Website"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Private"
-msgstr ""
+msgstr "Privat"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Publish"
-msgstr ""
+msgstr "Veröffentlichen"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Published"
-msgstr ""
+msgstr "Veröffentlicht"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Publishing the item makes it visible to other users."
-msgstr ""
+msgstr "Durch das Veröffentlichen des Elements wird es für andere Benutzer sichtbar."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Puts your item in a review queue, so it can be published on the site."
-msgstr ""
+msgstr "Stellt Ihren Artikel in eine Überprüfungswarteschlange, damit er auf der Website veröffentlicht werden kann."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Retract"
-msgstr ""
+msgstr "Zurückziehen"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Reviewer publishes content"
-msgstr ""
+msgstr "Der Rezensent veröffentlicht Inhalte."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Reviewer sends content back for re-drafting"
-msgstr ""
+msgstr "Der Prüfer sendet den Inhalt zur Überarbeitung zurück."
 
 #: kitconcept/intranet/controlpanels/intranet.py:25
 msgid "Search Field Placeholder"
-msgstr ""
+msgstr "Suchfeld-Platzhalter"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Send back"
-msgstr ""
+msgstr "Zurücksenden"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published."
-msgstr ""
+msgstr "Wenn Sie den Artikel zurücksenden, wird er an den ursprünglichen Autor zurückgeschickt, anstatt veröffentlicht zu werden. Sie sollten vorzugsweise einen Grund angeben, warum er nicht veröffentlicht wurde."
 
 #: kitconcept/intranet/profiles.zcml:22
 msgid "Setup the intranet to always require users to be authenticated."
-msgstr ""
+msgstr "Richten Sie das Intranet so ein, dass Benutzer sich immer authentifizieren müssen."
 
 #: kitconcept/intranet/profiles.zcml:29
 msgid "Setup the intranet to use Solr."
-msgstr ""
+msgstr "Richten Sie das Intranet für die Verwendung von Solr ein."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Submit for publication"
-msgstr ""
+msgstr "Zur Veröffentlichung einreichen"
 
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "Taxonomy"
-msgstr ""
+msgstr "Taxonomie"
 
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Through The Web blocks configuration"
-msgstr ""
+msgstr "Konfiguration der Web-Blöcke"
 
 #: kitconcept/intranet/controlpanels/intranet.py:20
 msgid "Used in the intranet header seach bar."
-msgstr ""
+msgstr "Verwendet in der Suchleiste der Intranet-Kopfzeile."
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "View"
-msgstr ""
+msgstr "Ansicht"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 msgid "Visible to anonymous users, editable by editors and reviewers."
-msgstr ""
+msgstr "Für anonyme Benutzer sichtbar, für Redakteure und Gutachter editierbar."
 
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Visible to authenticated users, editable by editors and reviewers."
-msgstr ""
+msgstr "Für authentifizierte Benutzer sichtbar, für Redakteure und Prüfer editierbar."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Waiting to be reviewed, not editable by the owner."
-msgstr ""
+msgstr "Wartet auf Überprüfung, kann vom Eigentümer nicht bearbeitet werden."
 
 #. Default: "Configure some aspects of the default blocks configuration."
 #: kitconcept/intranet/behaviors/blocks_settings.py:41
 msgid "help_blocks_config_mutator"
-msgstr ""
+msgstr "Konfigurieren Sie einige Aspekte der Standardblockkonfiguration."
 
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_organisational_unit"
-msgstr ""
+msgstr "Nach Organisationseinheit filtern"
 
 #. Default: "Filter by location"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_place"
-msgstr ""
+msgstr "Nach Standort filtern"
 
 #: kitconcept/intranet/distributions.zcml:16
 msgid "kitconcept Intranet"
@@ -247,9 +247,9 @@ msgstr ""
 #. Default: "Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_organisational_unit"
-msgstr ""
+msgstr "Organisationseinheit"
 
 #. Default: "Place"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_place"
-msgstr ""
+msgstr "Ort"

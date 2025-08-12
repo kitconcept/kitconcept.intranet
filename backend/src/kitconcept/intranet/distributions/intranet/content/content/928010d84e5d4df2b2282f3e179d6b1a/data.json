@@ -12,7 +12,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -82,7 +83,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -166,6 +168,7 @@
     },
     "4ad850d8-a405-4f41-8c00-90b070cf483b": {
       "@type": "search",
+      "headline": "Grid",
       "listingBodyTemplate": "grid",
       "query": {
         "query": [
@@ -278,7 +281,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -305,6 +309,7 @@
       "alignment": "left",
       "heading": "News Item\u00a0Search",
       "styles": {},
+      "tag": "h2",
       "theme": "default"
     },
     "78361706-c009-4ec7-bbf4-7fa4c08c3abe": {
@@ -320,7 +325,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -332,7 +338,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -373,6 +380,7 @@
     },
     "a9fa4fa5-0dd7-459a-aa45-e9b1aa534299": {
       "@type": "search",
+      "headline": "List with image",
       "listingBodyTemplate": "summary",
       "query": {
         "b_size": "6",
@@ -448,7 +456,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -640,7 +649,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-06T12:38:07+00:00",
+  "modified": "2025-08-12T10:39:36+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

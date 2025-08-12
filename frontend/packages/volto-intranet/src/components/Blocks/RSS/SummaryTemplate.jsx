@@ -15,7 +15,7 @@ const messages = defineMessages({
 const RssSummaryTemplate = ({ items, data, isEditMode }) => {
   const intl = useIntl();
   return (
-    <>
+    <div className="summary-variation">
       {data.title && <h2 className="headline">{data.title}</h2>}
 
       {items?.length > 0 ? (
@@ -45,7 +45,7 @@ const RssSummaryTemplate = ({ items, data, isEditMode }) => {
           {intl.formatMessage(messages.noResults)}
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 RssSummaryTemplate.propTypes = {

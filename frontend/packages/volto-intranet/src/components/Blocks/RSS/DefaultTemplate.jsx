@@ -15,7 +15,7 @@ const messages = defineMessages({
 const RssDefaultTemplate = ({ items, data, isEditMode }) => {
   const intl = useIntl();
   return (
-    <>
+    <div className="default-variation">
       {data.title && <h2 className="headline">{data.title}</h2>}
 
       {items?.length > 0 ? (
@@ -35,7 +35,7 @@ const RssDefaultTemplate = ({ items, data, isEditMode }) => {
           {intl.formatMessage(messages.noResults)}
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 RssDefaultTemplate.propTypes = {

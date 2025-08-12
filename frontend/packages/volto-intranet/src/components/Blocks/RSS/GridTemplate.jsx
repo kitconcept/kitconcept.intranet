@@ -15,7 +15,7 @@ const messages = defineMessages({
 const RssGridTemplate = ({ items, data, isEditMode }) => {
   const intl = useIntl();
   return (
-    <>
+    <div className="grid-variation">
       {data.title && <h2 className="headline">{data.title}</h2>}
 
       {items?.length > 0 ? (
@@ -42,7 +42,7 @@ const RssGridTemplate = ({ items, data, isEditMode }) => {
           {intl.formatMessage(messages.noResults)}
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 RssGridTemplate.propTypes = {

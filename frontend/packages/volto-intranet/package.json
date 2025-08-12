@@ -45,11 +45,12 @@
   "addons": [
     "volto-form-block",
     "volto-rss-block",
-    "@kitconcept/core"
+    "@kitconcept/core",
+    "@kitconcept/volto-solr"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
     "@kitconcept/core": "workspace:*",
-    "volto-rss-block": "^3.0.0"
+    "@kitconcept/volto-solr": "2.0.0-alpha.1"
   }
 }

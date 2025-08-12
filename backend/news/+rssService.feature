@@ -1,0 +1,1 @@
+Add RSS service for RSS block. @danalvrz

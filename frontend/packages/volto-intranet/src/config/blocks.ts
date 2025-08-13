@@ -6,7 +6,7 @@ export default function install(config: ConfigType) {
     ...(config.blocks.blocksConfig.listing.variations || []),
     {
       id: 'listDate',
-      title: 'list with Date',
+      title: 'list with date',
       template: EventCalendarTemplate,
     },
   ].filter((variation) => !!variation);

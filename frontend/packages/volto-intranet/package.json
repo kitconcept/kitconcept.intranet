@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-intranet",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -44,10 +44,12 @@
   },
   "addons": [
     "volto-form-block",
-    "@kitconcept/core"
+    "@kitconcept/core",
+    "@kitconcept/volto-solr"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
-    "@kitconcept/core": "workspace:*"
+    "@kitconcept/core": "workspace:*",
+    "@kitconcept/volto-solr": "2.0.0-alpha.1"
   }
 }

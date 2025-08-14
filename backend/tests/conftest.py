@@ -2,11 +2,16 @@ from dataclasses import dataclass
 from kitconcept.intranet.testing import FUNCTIONAL_TESTING
 from kitconcept.intranet.testing import INTEGRATION_TESTING
 from pathlib import Path
+from plone import api
+from plone.app.testing.interfaces import SITE_OWNER_NAME
 from plone.distribution.api import distribution as dist_api
+from plone.distribution.api import site as site_api
+from Products.CMFPlone.Portal import PloneSite
 from pytest_plone import fixtures_factory
 from requests import exceptions as exc
 from typing import Any
-from zope.component.hooks import site
+from zope.component.hooks import setSite
+from zope.component.hooks import site as site_wrapper
 
 import pytest
 import requests
@@ -34,28 +39,12 @@ def example_content_folder(distribution_name) -> Path:
     return distribution.contents["json"]
 
 
-def is_responsive(url):
-    """Helper fixture to check if Solr is up and running."""
-    try:
-        response = requests.get(url)  # noQA: S113
-        if response.status_code == 200:
-            return b"""<str name="status">OK</str>""" in response.content
-    except (exc.ConnectionError, exc.Timeout):
-        return False
-
-
-@pytest.fixture(scope="session")
-def docker_compose_file(pytestconfig):
-    """Fixture pointing to the docker-compose file to be used."""
-    return Path(str(pytestconfig.rootdir)).resolve() / "tests" / "docker-compose.yml"
-
-
 @pytest.fixture(scope="class")
 def portal_class(integration_class):
     if hasattr(integration_class, "testSetUp"):
         integration_class.testSetUp()
     portal = integration_class["portal"]
-    with site(portal):
+    with site_wrapper(portal):
         yield portal
     if hasattr(integration_class, "testTearDown"):
         integration_class.testTearDown()
@@ -116,6 +105,89 @@ def current_versions() -> CurrentVersions:
 def base_profile_id() -> str:
     """Fixture to get the base profile ID."""
     return "kitconcept.core:base"
+
+
+@pytest.fixture(scope="class")
+def app_functional_class(functional_class):
+    if hasattr(functional_class, "testSetUp"):
+        functional_class.testSetUp()
+    yield functional_class["app"]
+    if hasattr(functional_class, "testTearDown"):
+        functional_class.testTearDown()
+
+
+@pytest.fixture(scope="class")
+def create_site(app_functional_class, base_profile_id, distribution_name):
+    def func(answers: dict) -> PloneSite:
+        with api.env.adopt_user(SITE_OWNER_NAME):
+            site = site_api.create(
+                app_functional_class, distribution_name, answers, base_profile_id
+            )
+            setSite(site)
+        return site
+
+    return func
+
+
+@pytest.fixture(scope="class")
+def site(create_site, answers):
+    site = create_site(answers)
+    setSite(site)
+    return site
+
+
+def is_responsive(url):
+    """Helper fixture to check if Solr is up and running."""
+    try:
+        response = requests.get(url, timeout=5)
+        if response.status_code == 200:
+            return b"""<str name="status">OK</str>""" in response.content
+    except (exc.ConnectionError, exc.Timeout):
+        return False
+
+
+@pytest.fixture(scope="session")
+def docker_compose_project_name() -> str:
+    """Return the name of the Docker Compose project."""
+    return "kitconcept-solr-tests"
+
+
+@pytest.fixture(scope="session")
+def docker_setup():
+    """Return the Docker Compose commands to set up the stack."""
+    # Stop the stack before starting a new one, only start the Solr service
+    profile = "solr"
+    return [f"--profile {profile} down -v", f"--profile {profile} up --build -d"]
+
+
+@pytest.fixture(scope="session")
+def docker_compose_file(pytestconfig):
+    """Fixture pointing to the docker-compose file to be used."""
+    backend_root = Path(str(pytestconfig.rootdir)).resolve()
+    repo_root = backend_root.parent
+    return repo_root / "docker-compose-dev.yml"
+
+
+@pytest.fixture(scope="class")
+def solr_service(docker_ip, docker_services):
+    """Ensure that Solr service is up and responsive."""
+    port = docker_services.port_for("solr-acceptance", 8983)
+    url = f"http://{docker_ip}:{port}/solr/plone/admin/ping?wt=xml"
+    docker_services.wait_until_responsive(
+        timeout=90.0, pause=0.1, check=lambda: is_responsive(url)
+    )
+    return url
+
+
+@pytest.fixture(scope="class")
+def solr_settings(docker_ip, docker_services, solr_service) -> dict:
+    port = docker_services.port_for("solr-acceptance", 8983)
+    return {
+        "collective.solr.active": True,
+        "collective.solr.host": docker_ip,
+        "collective.solr.port": port,
+        "collective.solr.base": "/solr/plone",
+    }
 
 
 @pytest.fixture(scope="class")

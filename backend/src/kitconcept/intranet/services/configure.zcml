@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cache="http://namespaces.zope.org/cache"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    >
+
+  <adapter
+      factory=".byline.BylineExpander"
+      name="byline"
+      />
+
+  <plone:service
+      method="GET"
+      factory=".byline.BylineGet"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@byline"
+      />
+
+  <cache:ruleset
+      for=".byline.BylineGet"
+      ruleset="plone.content.dynamic"
+      />
+
+</configure>

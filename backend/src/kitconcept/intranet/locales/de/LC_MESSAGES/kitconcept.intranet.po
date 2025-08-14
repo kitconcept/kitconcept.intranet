@@ -71,7 +71,7 @@ msgstr "Wenn Sie den Artikel versehentlich eingereicht haben oder zusätzliche �
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 msgid "Intranet Public Workflow"
-msgstr "Intranet Öffentlicher Workflow"
+msgstr "Öffentlicher Intranet-Workflow"
 
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Intranet Restricted Workflow"
@@ -101,7 +101,7 @@ msgstr "Mitglied reicht Inhalte zur Veröffentlichung ein"
 #: kitconcept/intranet/behaviors/organisational_unit.py:20
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
-msgstr "Organisatorische Einheit"
+msgstr "Organisationseinheit"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -134,7 +134,7 @@ msgstr "Veröffentlicht"
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Publishing the item makes it visible to other users."
-msgstr "Durch das Veröffentlichen des Elements wird es für andere Benutzer sichtbar."
+msgstr "Durch das Veröffentlichen des Artikels wird dieser für andere Benutzer sichtbar."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -149,7 +149,7 @@ msgstr "Zurückziehen"
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Reviewer publishes content"
-msgstr "Der Rezensent veröffentlicht Inhalte."
+msgstr "Der Prüfer veröffentlicht Inhalte."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -189,7 +189,7 @@ msgstr "Taxonomie"
 
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Through The Web blocks configuration"
-msgstr "Konfiguration der Web-Blöcke"
+msgstr "Blockkonfiguration durch die Weboberfläche"
 
 #: kitconcept/intranet/controlpanels/intranet.py:20
 msgid "Used in the intranet header seach bar."
@@ -202,7 +202,7 @@ msgstr "Ansicht"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 msgid "Visible to anonymous users, editable by editors and reviewers."
-msgstr "Für anonyme Benutzer sichtbar, für Redakteure und Gutachter editierbar."
+msgstr "Für anonyme Benutzer sichtbar, für Redakteure und Prüfer editierbar."
 
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Visible to authenticated users, editable by editors and reviewers."

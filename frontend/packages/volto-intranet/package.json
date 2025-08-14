@@ -44,12 +44,14 @@
   },
   "addons": [
     "volto-form-block",
+    "@kitconcept/volto-iframe-block",
     "@kitconcept/core",
     "@kitconcept/volto-solr"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
     "@kitconcept/core": "workspace:*",
-    "@kitconcept/volto-solr": "2.0.0-alpha.1"
+    "@kitconcept/volto-solr": "2.0.0-alpha.1",
+    "@kitconcept/volto-iframe-block": "2.1.0"
   }
 }

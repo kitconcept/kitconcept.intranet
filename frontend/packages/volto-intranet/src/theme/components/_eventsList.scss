@@ -21,22 +21,15 @@
           height: 140px;
           &.has-end-date {
             .day {
+              display: flex;
+              flex-direction: row;
               font-size: 36px;
               line-height: 38px;
             }
 
             .month {
-              font-size: 10px;
               font-weight: 400;
-              line-height: 18px;
             }
-          }
-          .separator {
-            width: 71%;
-            height: 1px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            background: $black;
           }
         }
       }

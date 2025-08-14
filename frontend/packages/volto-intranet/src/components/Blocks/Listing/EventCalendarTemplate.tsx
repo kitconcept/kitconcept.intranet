@@ -27,27 +27,45 @@ const EventItem = ({
     year: 'numeric',
     month: 'long',
   });
+  const itemDates = (item: any) => {
+    const start =
+      item['@type'] === 'Event'
+        ? item.start
+          ? new Date(item.start)
+          : null
+        : item.Effective
+          ? new Date(item.Effective)
+          : new Date(item.CreationDate);
+    const end =
+      item['@type'] === 'Event' && (item.end ? new Date(item.end) : null);
+    const notSameDay = end && start?.getDate() !== end?.getDate();
+    const formattedStartDate = start ? formatter.format(start) : '';
+    const formattedEndDate = end ? formatter.format(end) : '';
+    const formattedHeaderDate = !end
+      ? start
+        ? headFormatter.format(start)
+        : ''
+      : start && end
+        ? headFormatter.formatRange(start, end)
+        : '';
 
-  const start =
-    item['@type'] === 'Event'
-      ? item.start
-        ? new Date(item.start)
-        : null
-      : item.Effective
-        ? new Date(item.Effective)
-        : new Date(item.CreationDate);
-  const end =
-    item['@type'] === 'Event' && (item.end ? new Date(item.end) : null);
-  const notSameDay = end && start?.getDate() !== end?.getDate();
-  const formattedStartDate = start ? formatter.format(start) : '';
-  const formattedEndDate = end ? formatter.format(end) : '';
-  const formattedHeaderDate = !end
-    ? start
-      ? headFormatter.format(start)
-      : ''
-    : start && end
-      ? headFormatter.formatRange(start, end)
-      : '';
+    return {
+      start,
+      end,
+      formattedStartDate,
+      formattedEndDate,
+      formattedHeaderDate,
+      notSameDay,
+    };
+  };
+  const {
+    start,
+    end,
+    formattedHeaderDate,
+    notSameDay,
+    formattedStartDate,
+    formattedEndDate,
+  } = itemDates(item);
 
   return (
     <div className="card-listing">
@@ -56,17 +74,17 @@ const EventItem = ({
           <div className={cx('date-inset', { 'has-end-date': notSameDay })}>
             <div className="day">
               {String(start?.getDate()).padStart(2, '0')}
+
+              {item['@type'] === 'Event' && notSameDay && (
+                <>
+                  <>-</>
+                  <div className="day">
+                    {end && String(end?.getDate()).padStart(2, '0')}
+                  </div>
+                </>
+              )}
             </div>
             <div className="month">{formattedStartDate}</div>
-            {item['@type'] === 'Event' && notSameDay && (
-              <>
-                <div className="separator"></div>
-                <div className="day">
-                  {String(end.getDate()).padStart(2, '0')}
-                </div>
-                <div className="month">{formattedEndDate}</div>
-              </>
-            )}
           </div>
         </Card.Image>
         <Card.Summary>

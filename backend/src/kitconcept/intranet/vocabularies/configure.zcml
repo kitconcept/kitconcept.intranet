@@ -11,6 +11,11 @@
       />
 
   <utility
+      name="kitconcept.intranet.vocabularies.person"
+      component=".person.persons_vocabulary"
+      />
+
+  <utility
       name="kitconcept.intranet.vocabularies.organisational_unit_objects"
       component=".organisational_unit.OrganisationalsUnitRelationVocabularyFactory"
       />

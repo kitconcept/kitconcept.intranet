@@ -1,6 +1,7 @@
 import { ConfigType } from '@plone/registry';
 import installSettings from './config/settings';
 import installSlots from './config/slots';
+import installWidgets from './config/widgets';
 
 declare module '@plone/types' {
   export interface GetSiteResponse {
@@ -11,6 +12,7 @@ declare module '@plone/types' {
 const applyConfig = (config: ConfigType) => {
   installSettings(config);
   installSlots(config);
+  installWidgets(config);
   return config;
 };
 

@@ -3,8 +3,8 @@ from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope.interface import provider
-from zope.schema import TextLine
 from zope.schema import List
+from zope.schema import TextLine
 
 
 @provider(IFormFieldProvider)
@@ -17,7 +17,6 @@ class ILCM(model.Schema):
         "responsible_person",
         vocabulary="kitconcept.intranet.vocabularies.person",
         frontendOptions={
-            "widget": "autocomplete",
             "widgetProps": {
                 "isMulti": False,
                 "inheritedField": True,
@@ -52,5 +51,6 @@ class ILCM(model.Schema):
     )
     authors = List(
         title=_("label_authors", default="Authors"),
+        value_type=TextLine(),
         required=False,
     )

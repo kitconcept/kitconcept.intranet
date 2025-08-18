@@ -39,10 +39,10 @@
       />
 
   <plone:behavior
-    name="kitconcept.intranet.lcm"
-    title="Lifecycle Management fields"
-    description="Add the lifecycle management fields"
-    provides=".lcm.ILCM"
-    />
+      name="kitconcept.intranet.lcm"
+      title="Lifecycle Management fields"
+      description="Add the lifecycle management fields"
+      provides=".lcm.ILCM"
+      />
 
 </configure>

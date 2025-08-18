@@ -35,6 +35,12 @@
     },
     "22f22002-2159-4e42-942a-8ebc6e930ed5": {
       "@type": "toc",
+      "levels": [
+        "h2",
+        "h3"
+      ],
+      "styles": {},
+      "theme": "default",
       "title": "Inhaltsverzeichnis",
       "variation": "default"
     },
@@ -158,8 +164,15 @@
     "3e036171-0a20-47d0-a06a-a7f493b65186": {
       "@type": "separator",
       "styles": {
-        "align": "left"
-      }
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
+      },
+      "theme": "default"
     },
     "43dd5fcf-3f52-469b-8ccc-57b785cf65b1": {
       "@type": "slate",
@@ -182,7 +195,13 @@
     "60a17689-6437-4a88-bf2c-76a62351ca5b": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "741da11b-703b-43ab-a9df-a7c1087d059a": {
@@ -202,79 +221,18 @@
     },
     "89137ab1-3973-437f-be95-7e91586a4685": {
       "@type": "image",
-      "align": "wide",
+      "align": "center",
       "copyright_and_sources": "Copyright: unsplash.com",
       "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt.",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-            "filename": "black-starry-night.jpg",
-            "height": 1708,
-            "scales": {
-              "great": {
-                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                "height": 854,
-                "width": 1200
-              },
-              "huge": {
-                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                "height": 1138,
-                "width": 1600
-              },
-              "icon": {
-                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                "height": 22,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                "height": 569,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                "height": 711,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                "height": 142,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                "height": 284,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                "height": 427,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                "height": 91,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                "height": 45,
-                "width": 64
-              }
-            },
-            "size": 693013,
-            "width": 2400
-          }
-        ]
-      },
       "size": "l",
       "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
         "size:noprefix": "large"
       },
       "title": "Title Image",
-      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+      "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
     },
     "9313e80c-65d1-4d72-863f-fc1c17aba444": {
       "@type": "slate",
@@ -361,7 +319,13 @@
     "d91f58fa-4634-4aac-bd1d-5f2fc4b338ca": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "e83fea00-1714-4de7-9d79-8d0e749639a9": {
@@ -437,7 +401,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T13:05:07+00:00",
+  "modified": "2025-08-07T13:27:42+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

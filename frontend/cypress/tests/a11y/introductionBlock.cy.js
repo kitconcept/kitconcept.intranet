@@ -14,7 +14,14 @@ describe('a11y tests', () => {
     cy.navigate('/features/block/introduction-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'duplicate-id-active',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

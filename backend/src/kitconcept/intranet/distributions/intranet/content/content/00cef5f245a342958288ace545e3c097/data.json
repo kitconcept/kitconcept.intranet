@@ -7,6 +7,8 @@
     "177de529-ce72-4721-a58c-15feadaf285e": {
       "@type": "slate",
       "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -33,19 +35,43 @@
         }
       ]
     },
+    "2f22fb0c-419e-4f02-aea2-95fa69026c24": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "grey"
+    },
     "50727b9a-1f8a-4857-aab5-8acc6985bfc6": {
       "@type": "title"
     },
     "cec08900-0334-4288-9ece-f5d15d4dd6f1": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "d0438a28-aaaf-4db1-8887-c9b3351787d3": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "d35f209e-12c1-4a30-ae36-52f84a4a0b7b": {
@@ -69,6 +95,35 @@
           "type": "p"
         }
       ]
+    },
+    "e2fc823f-4dbd-4c0d-9522-865b3c80b5c6": {
+      "@type": "introduction",
+      "plaintext": "Highlight Title H2\nLorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.",
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Highlight Title H2 "
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "ed441bb2-fa85-46bf-af80-0f9b93bf01aa": {
+      "@type": "heading",
+      "heading": "Introduction on Grey Background",
+      "styles": {},
+      "theme": "grey"
     }
   },
   "blocks_layout": {
@@ -78,7 +133,10 @@
       "d35f209e-12c1-4a30-ae36-52f84a4a0b7b",
       "cec08900-0334-4288-9ece-f5d15d4dd6f1",
       "26accd80-9715-43ea-9b7c-aa0b3be7d0da",
-      "177de529-ce72-4721-a58c-15feadaf285e"
+      "177de529-ce72-4721-a58c-15feadaf285e",
+      "ed441bb2-fa85-46bf-af80-0f9b93bf01aa",
+      "e2fc823f-4dbd-4c0d-9522-865b3c80b5c6",
+      "2f22fb0c-419e-4f02-aea2-95fa69026c24"
     ]
   },
   "changeNote": "",
@@ -102,7 +160,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T13:04:07+00:00",
+  "modified": "2025-08-07T13:23:55+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

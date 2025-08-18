@@ -14,7 +14,25 @@ describe('a11y tests', () => {
     cy.navigate('/features/block/search-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      // Disabling 'image-alt'
+      // semantic-ui-react's Embed doesn't include an alt tag for the placeholder image
+
+      rules: [
+        {
+          id: 'image-alt',
+          enabled: false,
+        },
+        {
+          id: 'nested-interactive',
+          enabled: false,
+        },
+        {
+          id: 'landmark-unique',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

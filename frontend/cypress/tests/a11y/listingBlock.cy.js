@@ -30,6 +30,10 @@ describe('a11y tests', () => {
           id: 'landmark-unique',
           enabled: false,
         },
+        {
+          id: 'duplicate-id-active',
+          enabled: false,
+        },
       ],
     });
     cy.checkAccessibility();

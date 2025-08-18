@@ -18,6 +18,41 @@ msgstr ""
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 2.2.1\n"
 
+#. Default: "Contact"
+#: components/Blocks/EventMetadata/View
+msgid "Contact"
+msgstr ""
+
+#. Default: "End"
+#: components/Blocks/EventMetadata/View
+msgid "End"
+msgstr ""
+
+#. Default: "ICS Download"
+#: components/Blocks/EventMetadata/View
+msgid "ICS-Download"
+msgstr ""
+
+#. Default: "Location"
+#: components/Blocks/EventMetadata/View
+msgid "Location"
+msgstr ""
+
+#. Default: "Phone"
+#: components/Blocks/EventMetadata/View
+msgid "Phone"
+msgstr ""
+
+#. Default: "Start"
+#: components/Blocks/EventMetadata/View
+msgid "Start"
+msgstr ""
+
+#. Default: "Website"
+#: components/Blocks/EventMetadata/View
+msgid "Website"
+msgstr ""
+
 #. Default: "By"
 #: slots/DocumentByLine/DocumentByLine
 msgid "author"
@@ -32,3 +67,17 @@ msgstr ""
 #: slots/DocumentByLine/DocumentByLine
 msgid "published"
 msgstr ""
+
+#. Default: "No results from RSS feed."
+#: components/Blocks/RSS/DefaultTemplate
+#: components/Blocks/RSS/GridTemplate
+#: components/Blocks/RSS/SummaryTemplate
+msgid "rss_no_results"
+msgstr "No hay resultados en el feed RSS."
+
+#. Default: "Read more"
+#: components/Blocks/RSS/DefaultTemplate
+#: components/Blocks/RSS/GridTemplate
+#: components/Blocks/RSS/SummaryTemplate
+msgid "rss_read_more"
+msgstr "Leer más"

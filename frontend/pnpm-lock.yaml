@@ -1794,6 +1794,22 @@ importers:
         specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
 
+  packages/volto-iframe-block/packages/volto-iframe-block:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.1
+      release-it:
+        specifier: ^17.1.1
+        version: 17.1.1(typescript@5.8.3)
+
   packages/volto-intranet:
     dependencies:
       '@kitconcept/core':
@@ -1918,12 +1934,6 @@ importers:
       classnames:
         specifier: ^2.2.6
         version: 2.5.1
-      embla-carousel-autoplay:
-        specifier: ^8.0.0
-        version: 8.5.2(embla-carousel@8.5.2)
-      embla-carousel-react:
-        specifier: ^8.0.0
-        version: 8.5.2(react@18.2.0)
       lodash:
         specifier: 4.17.21
         version: 4.17.21

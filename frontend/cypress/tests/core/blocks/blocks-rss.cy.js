@@ -25,19 +25,21 @@ context('RSS block Acceptance Tests', () => {
 
     cy.get('#field-template').findByText('List').click();
 
-    cy.get('object-list-widget react-aria-Button').click();
+    cy.get('.object-list-widget .react-aria-Button').click();
 
-    cy.get("olw-item-wrapper .olw-item-content .inline.field.text[class*='field-wrapper-url'] input[type='text']").type(
+    cy.get(".olw-item-wrapper .olw-item-content .inline.field.text[class*='field-wrapper-url'] input[type='text']").type(
       'https://www.mozilla.org/en-US/firefox/nightly/notes/feed/',
     );
 
-    cy.get("olw-item-wrapper .olw-item-content .inline.field.text[class*='field-wrapper-source'] input[type='text']").type(
+    cy.get(".olw-item-wrapper .olw-item-content .inline.field.text[class*='field-wrapper-source'] input[type='text']").type(
       'Mozilla',
     );
 
     //save
     cy.get('#toolbar-save').click();
     cy.url().should('eq', Cypress.config().baseUrl + '/document');
+    cy.reload();
+    cy.wait(1000);
 
     //test after save
     cy.get('#page-document .listing-item.rss-item').contains('Mozilla');

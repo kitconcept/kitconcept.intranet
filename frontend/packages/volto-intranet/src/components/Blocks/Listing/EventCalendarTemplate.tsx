@@ -40,7 +40,7 @@ const EventItem = ({
 
     const end =
       item['@type'] === 'Event' && (item.end ? new Date(item.end) : null);
-      
+
     const notSameDay = end && start?.getDate() !== end?.getDate();
     const formattedStartDate = start ? formatter.format(start) : '';
     const formattedEndDate = end ? formatter.format(end) : '';

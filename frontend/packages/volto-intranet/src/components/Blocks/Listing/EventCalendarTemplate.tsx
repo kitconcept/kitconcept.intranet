@@ -27,6 +27,7 @@ const EventItem = ({
     year: 'numeric',
     month: 'long',
   });
+
   const itemDates = (item: any) => {
     const start =
       item['@type'] === 'Event'
@@ -36,8 +37,10 @@ const EventItem = ({
         : item.Effective
           ? new Date(item.Effective)
           : new Date(item.CreationDate);
+
     const end =
       item['@type'] === 'Event' && (item.end ? new Date(item.end) : null);
+      
     const notSameDay = end && start?.getDate() !== end?.getDate();
     const formattedStartDate = start ? formatter.format(start) : '';
     const formattedEndDate = end ? formatter.format(end) : '';
@@ -58,6 +61,7 @@ const EventItem = ({
       notSameDay,
     };
   };
+
   const {
     start,
     end,
@@ -73,18 +77,18 @@ const EventItem = ({
         <Card.Image>
           <div className={cx('date-inset', { 'has-end-date': notSameDay })}>
             <div className="day">
-              {String(start?.getDate()).padStart(2, '0')}
-
-              {item['@type'] === 'Event' && notSameDay && (
-                <>
-                  <>-</>
-                  <div className="day">
-                    {end && String(end?.getDate()).padStart(2, '0')}
-                  </div>
-                </>
-              )}
+              {start && String(start?.getDate()).padStart(2, '0')}
             </div>
             <div className="month">{formattedStartDate}</div>
+            {notSameDay && (
+              <>
+                <div className="separator"></div>
+                <div className="day">
+                  {end && String(end?.getDate()).padStart(2, '0')}
+                </div>
+                <div className="month">{formattedEndDate}</div>
+              </>
+            )}
           </div>
         </Card.Image>
         <Card.Summary>

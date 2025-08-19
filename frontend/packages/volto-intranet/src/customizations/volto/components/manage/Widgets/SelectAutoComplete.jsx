@@ -1,11 +1,11 @@
 /**
  * OVERRIDE SelectAutoComplete.jsx
  * REASON: Add additional props, allow for single option selection (not an array), save accordingly.
- * FILE: https://github.com/plone/volto/blob/15.11.1/src/components/manage/Widgets/SelectAutoComplete.jsx
- * FILE VERSION: Volto 15.11.1
- * PULL REQUEST: https://github.com/kitconcept/fzj-intranet/pull/1002
- * DATE: 2025-02-26
- * DEVELOPER: @sneridagh
+ * FILE: https://github.com/plone/volto/blob/19.0.0-alpha.3/packages/volto/src/components/manage/Widgets/SelectAutoComplete.jsx
+ * FILE VERSION: Volto 19.0.0-alpha.3
+ * PULL REQUEST: https://github.com/kitconcept/kitconcept.intranet/pull/178
+ * DATE: 2025-08-19
+ * DEVELOPER: @iFlameing
  */
 
 import React, { Component } from 'react';
@@ -34,6 +34,7 @@ import {
   Option,
   ClearIndicator,
   DropdownIndicator,
+  MultiValueContainer,
   selectTheme,
   customSelectStyles,
   MenuList,
@@ -89,7 +90,7 @@ class SelectAutoComplete extends Component {
     onChange: PropTypes.func.isRequired,
     wrapped: PropTypes.bool,
     isDisabled: PropTypes.bool,
-    isMulti: PropTypes.bool,
+    placeholder: PropTypes.string,
   };
 
   /**
@@ -130,7 +131,7 @@ class SelectAutoComplete extends Component {
   }
 
   componentDidMount() {
-    const { id, intl, value, choices } = this.props;
+    const { id, lang, value, choices } = this.props;
     // START CUSTOMIZATION
     // Probably fixing a long standing bug, and the reducer can be updated to handle
     // the response in the same way for one or for many
@@ -148,7 +149,7 @@ class SelectAutoComplete extends Component {
       // END CUSTOMIZATION
       this.props.getVocabularyTokenTitle({
         vocabNameOrURL: this.props.vocabBaseUrl,
-        subrequest: `widget-${id}-${intl.locale}`,
+        subrequest: `widget-${id}-${lang}`,
         ...tokensQuery,
       });
     }
@@ -220,7 +221,7 @@ class SelectAutoComplete extends Component {
       vocabNameOrURL: this.props.vocabBaseUrl,
       query,
       size: -1,
-      subrequest: this.props.intl.locale,
+      subrequest: this.props.lang,
     });
 
     return normalizeChoices(resp.items || [], this.props.intl);
@@ -266,12 +267,16 @@ class SelectAutoComplete extends Component {
             ...(this.props.choices?.length > 25 && {
               MenuList,
             }),
+            MultiValueContainer,
             ClearIndicator,
             DropdownIndicator,
             Option,
           }}
           value={selectedOption || []}
-          placeholder={this.props.intl.formatMessage(messages.select)}
+          placeholder={
+            this.props.placeholder ??
+            this.props.intl.formatMessage(messages.select)
+          }
           onChange={this.handleChange}
           // START CUSTOMIZATION
           isMulti={this.props.isMulti}
@@ -297,19 +302,20 @@ export default compose(
 
       const vocabState =
         state.vocabularies?.[vocabBaseUrl]?.subrequests?.[
-          `widget-${props.id}-${props.intl.locale}`
+          `widget-${props.id}-${state.intl.locale}`
         ]?.items;
 
       // If the schema already has the choices in it, then do not try to get
       // the vocab, even if there is one
       return props.items?.choices
-        ? { choices: props.items.choices }
+        ? { choices: props.items.choices, lang: state.intl.locale }
         : vocabState
           ? {
               choices: vocabState,
               vocabBaseUrl,
+              lang: state.intl.locale,
             }
-          : { vocabBaseUrl };
+          : { vocabBaseUrl, lang: state.intl.locale };
     },
     { getVocabulary, getVocabularyTokenTitle },
   ),

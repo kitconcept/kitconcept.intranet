@@ -1805,6 +1805,9 @@ importers:
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
+      classnames:
+        specifier: 2.5.1
+        version: 2.5.1
       react:
         specifier: 18.2.0
         version: 18.2.0

@@ -478,6 +478,26 @@
       },
       "theme": "default"
     },
+    "b72b932a-c191-4116-afed-024d0893b340": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event",
+              "Document"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "listDate"
+    },
     "c2eaacd0-4e96-4344-a0ac-26ed644fc503": {
       "@type": "listing",
       "block": "c2eaacd0-4e96-4344-a0ac-26ed644fc503",
@@ -541,6 +561,11 @@
       "styles": {},
       "theme": "default",
       "variation": "grid"
+    },
+    "dacab3f8-187e-45da-9823-e67e6db70498": {
+      "@type": "heading",
+      "heading": "List with date",
+      "theme": "default"
     },
     "e405a8b2-9a83-47b7-a1c6-52a919f01e08": {
       "@type": "listing",
@@ -665,7 +690,9 @@
       "ab005953-3360-4186-97ad-a4e1b4903b1c",
       "e405a8b2-9a83-47b7-a1c6-52a919f01e08",
       "e87a3b1a-493e-4cd7-8ca5-76b83a3595c2",
-      "245f8bda-5a49-4639-bbeb-d005c6a1a731"
+      "245f8bda-5a49-4639-bbeb-d005c6a1a731",
+      "dacab3f8-187e-45da-9823-e67e6db70498",
+      "b72b932a-c191-4116-afed-024d0893b340"
     ]
   },
   "changeNote": "",
@@ -689,7 +716,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-07T12:08:49+00:00",
+  "modified": "2025-08-19T09:59:59+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

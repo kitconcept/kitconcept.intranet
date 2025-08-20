@@ -27,5 +27,11 @@ export default function install(config: ConfigType) {
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';
 
+  // Add byline expander
+  config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
+    { match: '', GET_CONTENT: ['byline'] },
+  ];
+
   return config;
 }

@@ -7,12 +7,21 @@
     "0126e819-d955-41c5-a736-2f0b5ffda8a1": {
       "@type": "separator",
       "styles": {
-        "align": "full"
-      }
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
     },
     "06a960a6-795c-409d-a55f-94d5047e3514": {
       "@type": "slate",
       "plaintext": "Headline H2",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -24,103 +33,21 @@
         }
       ]
     },
-    "1bedcc9d-1c02-44e8-bb8e-5c46d6c67d3d": {
-      "@type": "gridBlock",
-      "blocks": {
-        "882e7872-bcf3-4234-a510-d1cff6bf2f7f": {
-          "@type": "teaser",
-          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
-          "head_title": null,
-          "href": [
+    "31e7b97e-1fe6-4676-b9b9-599f6358706c": {
+      "@type": "slate",
+      "plaintext": "Headline H3",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
             {
-              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
-              "@type": "Document",
-              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-              "Title": "Page",
-              "getRemoteUrl": null,
-              "hasPreviewImage": true,
-              "head_title": null,
-              "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
-              "title": "Page"
+              "text": "Headline H3"
             }
           ],
-          "styles": {
-            "align": "left"
-          },
-          "title": "Teaser Title H2"
+          "type": "h3"
         }
-      },
-      "blocks_layout": {
-        "items": [
-          "882e7872-bcf3-4234-a510-d1cff6bf2f7f"
-        ]
-      },
-      "headline": "Block Title",
-      "styles": {}
+      ]
     },
     "36960cee-ec85-458b-b0be-d2e7a5a41e5f": {
       "@type": "introduction",
@@ -147,10 +74,23 @@
     "4a0352d5-89df-48aa-944e-7270e81351d4": {
       "@type": "separator",
       "styles": {
-        "align": "full",
-        "backgroundColor": "transparent",
-        "noLine": false
-      }
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "noLine": false,
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "6000ee9e-3275-4985-ae86-8a76ebb2e207": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Heading Block\u00a0on Grey Background",
+      "styles": {},
+      "theme": "grey"
     },
     "7a405d27-e5ca-426c-bca4-e40cc338f7ba": {
       "@type": "slate",
@@ -183,6 +123,8 @@
     "b4691078-153d-451f-9b47-fa6f852a1e6c": {
       "@type": "slate",
       "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -194,14 +136,57 @@
         }
       ]
     },
+    "d97a3818-eb5b-40d9-a7b6-3d8878103310": {
+      "@type": "heading",
+      "heading": "Heading Block",
+      "theme": "default"
+    },
     "e328753b-d914-4bcb-8b8b-2d5060476efe": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "e58cca3c-95d4-4819-951d-48415706bf41": {
       "@type": "title"
+    },
+    "f42348f3-37c1-4461-9620-45607e4ebb7d": {
+      "@type": "slate",
+      "plaintext": "Headline H2",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "f4398945-40d7-484b-8659-d0606f715e22": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     },
     "faabad67-4aa2-4774-a48c-b1accf288700": {
       "@type": "introduction",
@@ -220,14 +205,37 @@
     "fe637263-126e-4a7f-b4aa-36369c5155cc": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
+    },
+    "ffe59041-10a8-4b48-9d5a-09fa6a1b77bf": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     }
   },
   "blocks_layout": {
     "items": [
       "e58cca3c-95d4-4819-951d-48415706bf41",
       "4a0352d5-89df-48aa-944e-7270e81351d4",
+      "d97a3818-eb5b-40d9-a7b6-3d8878103310",
       "faabad67-4aa2-4774-a48c-b1accf288700",
       "fe637263-126e-4a7f-b4aa-36369c5155cc",
       "36960cee-ec85-458b-b0be-d2e7a5a41e5f",
@@ -237,7 +245,11 @@
       "7a405d27-e5ca-426c-bca4-e40cc338f7ba",
       "7ebc67e3-e666-43f4-9fce-5dc14f98834f",
       "0126e819-d955-41c5-a736-2f0b5ffda8a1",
-      "1bedcc9d-1c02-44e8-bb8e-5c46d6c67d3d"
+      "6000ee9e-3275-4985-ae86-8a76ebb2e207",
+      "f42348f3-37c1-4461-9620-45607e4ebb7d",
+      "ffe59041-10a8-4b48-9d5a-09fa6a1b77bf",
+      "31e7b97e-1fe6-4676-b9b9-599f6358706c",
+      "f4398945-40d7-484b-8659-d0606f715e22"
     ]
   },
   "changeNote": "",
@@ -261,7 +273,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2025-08-07T13:04:22+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

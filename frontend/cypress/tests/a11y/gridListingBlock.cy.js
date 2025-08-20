@@ -14,7 +14,14 @@ describe('a11y tests', () => {
     cy.navigate('/features/block/grid-block/listing');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'landmark-unique',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

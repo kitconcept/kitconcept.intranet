@@ -52,7 +52,7 @@ module.exports = {
           ['@kitconcept/volto-intranet', './packages/volto-intranet/src'],
           [
             '@kitconcept/volto-light-theme',
-            './packages/volto-light-theme/packages/volto-light-theme/src',
+            './packages/volto-light-theme/frontend/packages/volto-light-theme/src',
           ],
           [
             '@kitconcept/volto-solr',

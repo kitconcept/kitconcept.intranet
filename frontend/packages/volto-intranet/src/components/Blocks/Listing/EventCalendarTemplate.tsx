@@ -9,6 +9,50 @@ type IntlType = {
   };
 };
 
+const itemDates = (item: any, lang: string) => {
+  const formatter = new Intl.DateTimeFormat(lang, {
+    year: 'numeric',
+    month: 'short',
+  });
+
+  const headFormatter = new Intl.DateTimeFormat(lang, {
+    day: 'numeric',
+    year: 'numeric',
+    month: 'long',
+  });
+
+  const start =
+    item['@type'] === 'Event'
+      ? item.start
+        ? new Date(item.start)
+        : null
+      : item.Effective
+        ? new Date(item.Effective)
+        : new Date(item.CreationDate);
+
+  const end =
+    item['@type'] === 'Event' && (item.end ? new Date(item.end) : null);
+
+  const notSameDay = end && start?.getDate() !== end?.getDate();
+  const formattedStartDate = start ? formatter.format(start) : '';
+  const formattedEndDate = end ? formatter.format(end) : '';
+  const formattedHeaderDate = !end
+    ? start
+      ? headFormatter.format(start)
+      : ''
+    : start && end
+      ? headFormatter.formatRange(start, end)
+      : '';
+
+  return {
+    start,
+    end,
+    formattedStartDate,
+    formattedEndDate,
+    formattedHeaderDate,
+    notSameDay,
+  };
+};
 const EventItem = ({
   item,
   lang,
@@ -18,50 +62,6 @@ const EventItem = ({
   lang: string;
   isEditMode: boolean;
 }) => {
-  const formatter = new Intl.DateTimeFormat(lang, {
-    year: 'numeric',
-    month: 'short',
-  });
-  const headFormatter = new Intl.DateTimeFormat(lang, {
-    day: 'numeric',
-    year: 'numeric',
-    month: 'long',
-  });
-
-  const itemDates = (item: any) => {
-    const start =
-      item['@type'] === 'Event'
-        ? item.start
-          ? new Date(item.start)
-          : null
-        : item.Effective
-          ? new Date(item.Effective)
-          : new Date(item.CreationDate);
-
-    const end =
-      item['@type'] === 'Event' && (item.end ? new Date(item.end) : null);
-
-    const notSameDay = end && start?.getDate() !== end?.getDate();
-    const formattedStartDate = start ? formatter.format(start) : '';
-    const formattedEndDate = end ? formatter.format(end) : '';
-    const formattedHeaderDate = !end
-      ? start
-        ? headFormatter.format(start)
-        : ''
-      : start && end
-        ? headFormatter.formatRange(start, end)
-        : '';
-
-    return {
-      start,
-      end,
-      formattedStartDate,
-      formattedEndDate,
-      formattedHeaderDate,
-      notSameDay,
-    };
-  };
-
   const {
     start,
     end,
@@ -69,7 +69,7 @@ const EventItem = ({
     notSameDay,
     formattedStartDate,
     formattedEndDate,
-  } = itemDates(item);
+  } = itemDates(item, lang);
 
   return (
     <div className="card-listing">

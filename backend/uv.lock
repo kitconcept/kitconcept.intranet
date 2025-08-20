@@ -1359,7 +1359,7 @@ requires-dist = [
     { name = "plone-restapi" },
     { name = "plone-volto", specifier = ">=5.1.0" },
     { name = "python-dateutil" },
-    { name = "redturtle-rssservice", specifier = ">=2.2.0" },
+    { name = "redturtle-rssservice", specifier = "==2.2.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -4814,7 +4814,7 @@ wheels = [
 
 [[package]]
 name = "redturtle-rssservice"
-version = "2.2.1"
+version = "2.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "feedparser" },
@@ -4824,7 +4824,7 @@ dependencies = [
     { name = "setuptools" },
     { name = "z3c-jbot" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c9/63/5efd06ea4725b75454d95362167af5b8b1c0cab9263b8e7e58e9da011ea0/redturtle.rssservice-2.2.1.tar.gz", hash = "sha256:2068a10ff44969cdf60d1e5af9d93d1ca5f4a17b6f511e4a417a55951dfa1059", size = 24946 }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/04/b6c6c8885d2dfc15dbf730ae3c9e5e61315a394a76aa74bf702bdf169c6d/redturtle.rssservice-2.2.0.tar.gz", hash = "sha256:13026b1558f3574cdeb3578ff338fb708508ecd29213f181a987672b9c20321e", size = 24681 }
 
 [[package]]
 name = "referencing"

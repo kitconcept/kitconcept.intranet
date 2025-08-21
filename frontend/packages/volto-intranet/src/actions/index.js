@@ -11,4 +11,4 @@
  * };
  */
 
-export { emailSend, submitFeedbackContactForm } from './emailSend';
+export { submitFeedbackContactForm } from './emailSend';

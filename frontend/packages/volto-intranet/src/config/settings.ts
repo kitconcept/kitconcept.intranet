@@ -4,7 +4,6 @@ import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContact
 export default function install(config: ConfigType) {
   const nonContentRoutes = [
     ...config.settings.nonContentRoutes,
-    /\/kontaktformular/,
     '/feedback-form',
     /^.*\/feedback-form$/,
   ];

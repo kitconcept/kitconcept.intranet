@@ -170,7 +170,8 @@ const FeedBackForm = () => {
     });
   }, []);
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     for (let field of requiredField) {
       if (form[field].length < 1) {
         if (field === 'feedback') {

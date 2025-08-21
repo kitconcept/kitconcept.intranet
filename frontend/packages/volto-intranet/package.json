@@ -46,12 +46,14 @@
     "volto-form-block",
     "volto-rss-block",
     "@kitconcept/core",
+    "@plone-collective/volto-authomatic",
     "@kitconcept/volto-solr"
   ],
   "dependencies": {
     "@plone/components": "workspace:*",
     "@kitconcept/core": "workspace:*",
     "@kitconcept/volto-solr": "2.0.0-alpha.1",
+    "@plone-collective/volto-authomatic": "3.0.0-alpha.4",
     "volto-rss-block": "^3.0.1"
   }
 }

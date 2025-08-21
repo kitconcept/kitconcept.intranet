@@ -33,6 +33,12 @@ class IIntranetSettings(Interface):
         required=False,
     )
 
+    body_classnames = schema.TextLine(
+        title=_("Body Tag Classnames"),
+        description=_("Body tag classnames to be injected in for the intranet."),
+        required=False,
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
@@ -75,3 +81,4 @@ class IntranetSiteEndpointExpander:
             settings.search_field_placeholder
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
+        data["kitconcept.body_classnames"] = settings.body_classnames

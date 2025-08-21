@@ -6,6 +6,7 @@ import installBlocks from './config/blocks';
 declare module '@plone/types' {
   export interface GetSiteResponse {
     'kitconcept.intranet.custom_css': string;
+    'kitconcept.body_classnames': string;
   }
 }
 

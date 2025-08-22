@@ -1,18 +1,19 @@
-import logging
-from kitconcept.intranet import _
-from plone.restapi.services import Service
+from datetime import datetime
 from email.message import EmailMessage
 from email.utils import formataddr
+from kitconcept.intranet import _
 from plone import api
-from plone.restapi.deserializer import json_body
-from Products.CMFPlone.interfaces.controlpanel import IMailSchema
+from plone.app.uuid.utils import uuidToObject
 from plone.registry.interfaces import IRegistry
+from plone.restapi.deserializer import json_body
+from plone.restapi.services import Service
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces.controlpanel import IMailSchema
 from zExceptions import BadRequest
 from zope.component import getUtility
 from zope.i18n import translate
-from datetime import datetime
-from plone.app.uuid.utils import uuidToObject
+
+import logging
 import traceback
 
 
@@ -39,7 +40,6 @@ class FeedbackPostContactForm(Service):
             feedback_recipient_email.endswith("@fz-juelich.de")
             or feedback_recipient_email.endswith("@kitconcept.com")
         ):
-
             feedback_recipient_email = DEFAULT_EMAIL
         data["feedback_recipient_email"] = feedback_recipient_email
         validated = self._validate(data, parent_object)
@@ -87,20 +87,20 @@ We have received new feedback on the intranet that requires your attention and, 
 
 **************************************************************************
 
-Date: {data['date']}
-Content title: {data['title']}
-URL: {data['url']}
+Date: {data["date"]}
+Content title: {data["title"]}
+URL: {data["url"]}
 
 **Feedback:**
-{data['feedback']}
+{data["feedback"]}
 
 **Metadata:**
-User-Agent: {data['user_agent']}
-Window size: {data['window_width']}px * {data['window_height']}px
+User-Agent: {data["user_agent"]}
+Window size: {data["window_width"]}px * {data["window_height"]}px
 
 **Contact details:**
-Name: {data['name']}
-Email: {data['reporter_email']}
+Name: {data["name"]}
+Email: {data["reporter_email"]}
 
 ***********************************************************************************
 
@@ -119,20 +119,20 @@ ein neues Feedback zum Intranet ist eingegangen und erfordert Ihre Prüfung sowi
 
 **************************************************************************
 
-Datum: {data['date']}
-Titel des Inhalts: {data['title']}
-URL: {data['url']}
+Datum: {data["date"]}
+Titel des Inhalts: {data["title"]}
+URL: {data["url"]}
 
 **Feedback:**
-{data['feedback']}
+{data["feedback"]}
 
 **Metadaten:**
-User-Agent: {data['user_agent']}
-Window size: {data['window_width']}px * {data['window_height']}px
+User-Agent: {data["user_agent"]}
+Window size: {data["window_width"]}px * {data["window_height"]}px
 
 **Kontaktdaten:**
-Name (optional): {data['name']}
-E-Mail: {data['reporter_email']}
+Name (optional): {data["name"]}
+E-Mail: {data["reporter_email"]}
 
 ***********************************************************************************
 
@@ -186,9 +186,9 @@ Ihr Intranet-Team
         if lang == "en":
             body = f"""
 
-Hello {name or data['reporter_email']},
+Hello {name or data["reporter_email"]},
 
-Thank you for "your feedback on {data['title']}" on the intranet. We value your feedback as it helps us to further improve the intranet.
+Thank you for "your feedback on {data["title"]}" on the intranet. We value your feedback as it helps us to further improve the intranet.
 
 What happens next?
 
@@ -202,14 +202,14 @@ The intranet team
 *****************************************************
 
 You provided us with the following feedback:
-{data['feedback']}
+{data["feedback"]}
 """
             from_name = f"{name} via feedback contact form"
         else:
             body = f"""
-Hallo {name or data['reporter_email']},
+Hallo {name or data["reporter_email"]},
 
-vielen Dank für "Ihr Feedback zu {data['title']}" in unserem Intranet. Ihre Rückmeldung ist für uns wertvoll, da sie uns dabei unterstützt, das Intranet weiter zu verbessern.
+vielen Dank für "Ihr Feedback zu {data["title"]}" in unserem Intranet. Ihre Rückmeldung ist für uns wertvoll, da sie uns dabei unterstützt, das Intranet weiter zu verbessern.
 
 Wie geht es jetzt weiter?
 
@@ -223,7 +223,7 @@ Ihr Intranet-Team
 *****************************************************
 
 Das haben Sie uns als Feedback eingereicht:
-{data['feedback']}
+{data["feedback"]}
 """
             from_name = f"{name} über Kontaktformular"
         message = EmailMessage()

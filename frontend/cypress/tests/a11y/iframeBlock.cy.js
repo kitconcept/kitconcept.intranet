@@ -9,20 +9,12 @@ describe('a11y tests', () => {
     cy.wait('@content');
   });
 
-  // RSS-block
-  it('RSS block (/features/block/rss-block)', () => {
-    cy.navigate('/features/block/rss-block');
+  // IFrame-block
+  it('IFrame block (/features/block/iframe-block)', () => {
+    cy.navigate('/features/block/iframe-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe({
-      // Disabling 'image-alt'
-      rules: [
-        {
-          id: 'image-alt',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

@@ -197,7 +197,7 @@ html_theme_options = {
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io"
+html_use_opensearch = "https://kitconceptintranet.readthedocs.io/"
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -283,9 +283,9 @@ mermaid_version = "11.2.0"
 
 
 # -- OpenGraph configuration ----------------------------------
-ogp_site_url = "https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io/"
+ogp_site_url = "https://kitconceptintranet.readthedocs.io/"
 ogp_description_length = 200
-ogp_image = "https://MY_READTHEDOCS_PROJECT_SLUG/_static/MY_LOGO.svg"
+ogp_image = "https://kitconceptintranet.readthedocs.io/_static/logo.svg"
 ogp_site_name = "Project Title Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
@@ -321,7 +321,7 @@ tippy_props = {
 # -- Options for HTML help output -------------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "Project TitleDocumentation"
+htmlhelp_basename = "kitconcept.intranet"
 
 
 # -- Options for LaTeX output -------------------------------------------------

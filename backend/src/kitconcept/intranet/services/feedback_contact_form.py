@@ -78,14 +78,12 @@ class FeedbackPostContactForm(Service):
 
     def _send_email(self, data):
         mailhost = getToolByName(self.context, "MailHost")
-        print(type(mailhost))
-        breakpoint()
         lang = api.portal.get_current_language()
         name = data["name"]
         if lang == "en":
             body = f"""Dear Intranet Editors and Page Owners,
 
-We have received new feedback on the FZJ intranet that requires your attention and, where appropriate, action. The person who submitted the feedback has already received an automatic confirmation of receipt via email. The following data were sent to us:
+We have received new feedback on the intranet that requires your attention and, where appropriate, action. The person who submitted the feedback has already received an automatic confirmation of receipt via email. The following data were sent to us:
 
 **************************************************************************
 
@@ -117,7 +115,7 @@ The intranet team
 Liebe Redakteur:innen,
 liebe Seitenverantwortliche,
 
-ein neues Feedback zum FZJ-Intranet ist eingegangen und erfordert Ihre Prüfung sowie gegebenenfalls eine Bearbeitung. Der/die Einreicher:in hat bereits eine  automatische Eingangsbestätigung via E-Mail erhalten. Folgende Daten wurden uns übermittelt:
+ein neues Feedback zum Intranet ist eingegangen und erfordert Ihre Prüfung sowie gegebenenfalls eine Bearbeitung. Der/die Einreicher:in hat bereits eine  automatische Eingangsbestätigung via E-Mail erhalten. Folgende Daten wurden uns übermittelt:
 
 **************************************************************************
 
@@ -150,7 +148,7 @@ Ihr Intranet-Team
         message["Cc"] = CC_EMAIL
         registry = getUtility(IRegistry)
         mail_settings = registry.forInterface(IMailSchema, prefix="plone")
-        from_email = "info@kitconcept.com"
+        from_email = mail_settings.email_from_address
         recipient_email = data["feedback_recipient_email"]
         subject = self._translate(_("Intranet feedback form: {title}")).format(
             title=data["title"]
@@ -175,12 +173,14 @@ Ihr Intranet-Team
                 immediate=True,
             )
         except Exception as e:
-            print(f"Unable to send email: {str(e)}\n{traceback.format_exc()}")
-            logger.error(f"Unable to send email: {str(e)}\n{traceback.format_exc()}")
+            logger.error(f"Unable to send email: {str(e)}")
             raise Exception(self._translate(_("error.email")))
 
     def _send_confirmation_email(self, data):
         mailhost = getToolByName(self.context, "MailHost")
+        registry = getUtility(IRegistry)
+        mail_settings = registry.forInterface(IMailSchema, prefix="plone")
+        from_email = mail_settings.email_from_address
         lang = api.portal.get_current_language()
         name = data["name"]
         if lang == "en":
@@ -188,15 +188,13 @@ Ihr Intranet-Team
 
 Hello {name or data['reporter_email']},
 
-Thank you for "your feedback on {data['title']}" on FZJ’s intranet. We value your feedback as it helps us to further improve the intranet.
+Thank you for "your feedback on {data['title']}" on the intranet. We value your feedback as it helps us to further improve the intranet.
 
 What happens next?
 
 Your feedback has been successfully recorded in our system. It will be carefully reviewed by the intranet editors responsible and processed as quickly as possible. If we have any questions about your feedback, we will email you directly.
 
-If you have any technical questions, please contact intranet@fz-juelich.de.
-
-If you have any editorial or general questions, please contact Michaela Weyermanns (email: m.weyermanns@fz-juelich.de, tel: 02461 61-6041).
+If you have any technical questions, please contact {from_email}.
 
 Kind regards,
 The intranet team
@@ -211,15 +209,13 @@ You provided us with the following feedback:
             body = f"""
 Hallo {name or data['reporter_email']},
 
-vielen Dank für "Ihr Feedback zu {data['title']}" in unserem FZJ-Intranet. Ihre Rückmeldung ist für uns wertvoll, da sie uns dabei unterstützt, das Intranet weiter zu verbessern.
+vielen Dank für "Ihr Feedback zu {data['title']}" in unserem Intranet. Ihre Rückmeldung ist für uns wertvoll, da sie uns dabei unterstützt, das Intranet weiter zu verbessern.
 
 Wie geht es jetzt weiter?
 
 Ihr Feedback wurde erfolgreich in unser System aufgenommen. Es wird von den zuständigen Intranet-Redakteur:innen sorgfältig geprüft und möglichst schnell bearbeitet. Sollten wir Rückfragen zu Ihrem Feedback haben, setzen wir uns direkt per E-Mail mit Ihnen in Verbindung.
 
-Für technische Fragen wenden Sie sich gerne an intranet@fz-juelich.de.
-
-Sollten Sie redaktionelle oder übergeordnete Fragen haben, kontaktieren Sie gerne Michaela Weyermanns (E-Mail: m.weyermanns@fz-juelich.de, 02461 61/6041).
+Für technische Fragen wenden Sie sich gerne an {from_email}.
 
 Mit freundlichen Grüßen
 Ihr Intranet-Team
@@ -233,9 +229,6 @@ Das haben Sie uns als Feedback eingereicht:
         message = EmailMessage()
         message.set_content(body)
         message["Reply-To"] = data["feedback_recipient_email"]
-        registry = getUtility(IRegistry)
-        mail_settings = registry.forInterface(IMailSchema, prefix="plone")
-        from_email = mail_settings.email_from_address
         recipient_email = data["reporter_email"]
         subject = self._translate(
             _("Your feedback on our intranet content: {title}")

@@ -33,6 +33,13 @@ class IIntranetSettings(Interface):
         required=False,
     )
 
+    person_squared_images = schema.Bool(
+        title=_("Person Squared Images"),
+        description=_("Enable squared images for person teasers and listings."),
+        required=False,
+        default=False,
+    )
+
     body_classnames = schema.TextLine(
         title=_("Body Tag Classnames"),
         description=_("Body tag classnames to be injected in for the intranet."),
@@ -81,4 +88,5 @@ class IntranetSiteEndpointExpander:
             settings.search_field_placeholder
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
+        data["kitconcept.person_squared_images"] = settings.person_squared_images
         data["kitconcept.body_classnames"] = settings.body_classnames

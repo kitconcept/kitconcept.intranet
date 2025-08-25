@@ -6,7 +6,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { toast } from 'react-toastify';
-import { submitFeedbackContactForm } from '../actions';
+import { submitFeedbackContactForm } from '../../actions';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Form } from '@plone/components';
 import { Button } from '@plone/components';
@@ -71,13 +71,13 @@ const messages = defineMessages({
     defaultMessage: 'Please fill in the Feedback field',
   },
   emailError: {
-    id: 'Please enter your FZJ email address.',
-    defaultMessage: 'Please enter your FZJ email address.',
+    id: 'Please enter your Organizational email address.',
+    defaultMessage: 'Please enter your Organizational email address.',
   },
   emailHelpText: {
-    id: 'Only internal e-mail addresses ending with @fz-juelich.de are permitted..',
+    id: 'Only internal e-mail addresses ending with @kitconcept.com are permitted..',
     defaultMessage:
-      'Only internal e-mail addresses ending with @fz-juelich.de are permitted..',
+      'Only internal e-mail addresses ending with @kitconcept.com are permitted..',
   },
 });
 
@@ -203,10 +203,7 @@ const FeedBackForm = () => {
       }
     }
     if (event.target.name === 'email') {
-      if (
-        event.target.value.endsWith('@fz-juelich.de') ||
-        event.target.value.endsWith('@kitconcept.com')
-      ) {
+      if (event.target.value.endsWith('@kitconcept.com')) {
         setEmailError(false);
       } else {
         setEmailError(true);

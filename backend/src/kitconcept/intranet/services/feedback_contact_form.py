@@ -17,8 +17,8 @@ import logging
 
 
 logger = logging.getLogger("kitconcept.intranet")
-CC_EMAIL = "m.weyermanns@fz-juelich.de"
-DEFAULT_EMAIL = "m.weyermanns@fz-juelich.de"
+CC_EMAIL = "info@kitconcept.com"
+DEFAULT_EMAIL = "info@kitconcept.com"
 
 
 class FeedbackPostContactForm(Service):
@@ -31,14 +31,11 @@ class FeedbackPostContactForm(Service):
         feedback_member = uuidToObject(data.get("feedback_member"))
         responsible_member = uuidToObject(data.get("responsible_member"))
         feedback_recipient_email = (
-            getattr(feedback_member, "email", None)
-            or getattr(responsible_member, "email", None)
+            getattr(feedback_member, "contact_email", None)
+            or getattr(responsible_member, "contact_email", None)
             or ""
         )
-        if not (
-            feedback_recipient_email.endswith("@fz-juelich.de")
-            or feedback_recipient_email.endswith("@kitconcept.com")
-        ):
+        if not (feedback_recipient_email):
             feedback_recipient_email = DEFAULT_EMAIL
         data["feedback_recipient_email"] = feedback_recipient_email
         validated = self._validate(data, parent_object)

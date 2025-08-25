@@ -1,5 +1,5 @@
 import { ConfigType } from '@plone/registry';
-import FeedBackForm from '../components/FeedBackForm';
+import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
 export default function install(config: ConfigType) {
   const nonContentRoutes = [

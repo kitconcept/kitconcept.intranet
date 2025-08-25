@@ -1,1 +1,1 @@
-Added feature for allowing injection of CSS classnames TTW from the site endpoint. @sneridagh
+Added suport for squared person images in teaser and listings. @sneridagh

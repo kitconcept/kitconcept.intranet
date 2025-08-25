@@ -22,5 +22,4 @@ https://diataxis.fr/how-to-guides/
 :maxdepth: 2
 
 blocks-config-ttw
-body-classnames-ttw
 squared-person-images-support

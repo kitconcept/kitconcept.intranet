@@ -13,7 +13,6 @@ const CustomCSS = () => {
   );
   const customCSS = site['kitconcept.intranet.custom_css'];
   const personSquaredImages = site['kitconcept.person_squared_images'];
-  const bodyClassnames = site['kitconcept.body_classnames'];
 
   return (
     <>
@@ -27,7 +26,6 @@ const CustomCSS = () => {
       {personSquaredImages ? (
         <BodyClass className="person-squared-images" />
       ) : null}
-      {bodyClassnames ? <BodyClass className={bodyClassnames} /> : null}
     </>
   );
 };

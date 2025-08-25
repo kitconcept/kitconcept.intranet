@@ -11,6 +11,41 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Contact"
+#: components/Blocks/EventMetadata/View
+msgid "Contact"
+msgstr ""
+
+#. Default: "End"
+#: components/Blocks/EventMetadata/View
+msgid "End"
+msgstr ""
+
+#. Default: "ICS Download"
+#: components/Blocks/EventMetadata/View
+msgid "ICS-Download"
+msgstr ""
+
+#. Default: "Location"
+#: components/Blocks/EventMetadata/View
+msgid "Location"
+msgstr ""
+
+#. Default: "Phone"
+#: components/Blocks/EventMetadata/View
+msgid "Phone"
+msgstr ""
+
+#. Default: "Start"
+#: components/Blocks/EventMetadata/View
+msgid "Start"
+msgstr ""
+
+#. Default: "Website"
+#: components/Blocks/EventMetadata/View
+msgid "Website"
+msgstr ""
+
 #. Default: "By"
 #: slots/DocumentByLine/DocumentByLine
 msgid "author"
@@ -24,4 +59,18 @@ msgstr ""
 #. Default: "published"
 #: slots/DocumentByLine/DocumentByLine
 msgid "published"
+msgstr ""
+
+#. Default: "No results from RSS feed."
+#: components/Blocks/RSS/DefaultTemplate
+#: components/Blocks/RSS/GridTemplate
+#: components/Blocks/RSS/SummaryTemplate
+msgid "rss_no_results"
+msgstr ""
+
+#. Default: "Read more"
+#: components/Blocks/RSS/DefaultTemplate
+#: components/Blocks/RSS/GridTemplate
+#: components/Blocks/RSS/SummaryTemplate
+msgid "rss_read_more"
 msgstr ""

@@ -29,7 +29,7 @@ export default function install(config: ConfigType) {
   // Add byline expander
   config.settings.apiExpanders = [
     ...config.settings.apiExpanders,
-    { match: '', GET_CONTENT: ['byline'] },
+    { match: '', GET_CONTENT: ['byline', 'lcm'] },
   ];
 
   return config;

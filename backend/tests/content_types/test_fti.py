@@ -37,6 +37,7 @@ class TestContentTypeFTI:
                     "plone.translatable",
                     "kitconcept.intranet.location",
                     "kitconcept.intranet.organisational_unit",
+                    "kitconcept.intranet.lcm",
                 ),
             ),
             ("Event", "title", "Event"),

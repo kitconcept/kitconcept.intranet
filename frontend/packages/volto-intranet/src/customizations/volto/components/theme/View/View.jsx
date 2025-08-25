@@ -271,7 +271,7 @@ class View extends Component {
           votes={this.props.content?.votes}
           user={this.props.user}
         />
-        {/* START CUSTOMIZATION */}
+        {/* END CUSTOMIZATION */}
         {this.props.content.allow_discussion && (
           <Comments pathname={this.props.pathname} />
         )}

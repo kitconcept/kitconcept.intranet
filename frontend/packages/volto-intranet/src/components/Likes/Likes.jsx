@@ -3,7 +3,7 @@ import { Button, Container } from '@plone/components';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import { Icon } from '@plone/volto/components/theme/Icon/Icon';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { getLikes, addLike, removeLike } from '../../actions/likes/likes';

@@ -7,6 +7,7 @@ import installBlocks from './config/blocks';
 declare module '@plone/types' {
   export interface GetSiteResponse {
     'kitconcept.intranet.custom_css': string;
+    'kitconcept.person_squared_images': boolean;
   }
 }
 

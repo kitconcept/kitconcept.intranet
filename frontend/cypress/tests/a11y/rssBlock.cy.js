@@ -9,17 +9,16 @@ describe('a11y tests', () => {
     cy.wait('@content');
   });
 
-  // Image-Block
-  it('Image-Block (/features/block/image-block)', () => {
-    cy.navigate('/features/block/image-block');
+  // Listing-block
+  it('RSS block (/features/block/rss-block)', () => {
+    cy.navigate('/features/block/rss-block');
     cy.wait('@content');
     cy.injectAxe();
     cy.configureAxe({
+      // Disabling 'image-alt'
       rules: [
-        // there are two copies of slate h3,
-        // which have with the same id
         {
-          id: 'duplicate-id-active',
+          id: 'image-alt',
           enabled: false,
         },
       ],

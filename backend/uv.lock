@@ -1321,6 +1321,7 @@ dependencies = [
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "python-dateutil" },
+    { name = "redturtle-rssservice" },
 ]
 
 [package.dev-dependencies]
@@ -1358,6 +1359,7 @@ requires-dist = [
     { name = "plone-restapi" },
     { name = "plone-volto", specifier = ">=5.1.0" },
     { name = "python-dateutil" },
+    { name = "redturtle-rssservice", specifier = "==2.2.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -4809,6 +4811,20 @@ sdist = { url = "https://files.pythonhosted.org/packages/ef/3f/199e693ffb884d68e
 wheels = [
     { url = "https://files.pythonhosted.org/packages/94/2e/f3018733b29bd0420f8e2b876f42389206f9d01984a10ac0e062493eea97/Record-4.1-py3-none-any.whl", hash = "sha256:bdfe5e9da6d138f2e17732b39db5c2bdae049088dda09aad3bd74738f78e5a01", size = 6435 },
 ]
+
+[[package]]
+name = "redturtle-rssservice"
+version = "2.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "feedparser" },
+    { name = "plone-api" },
+    { name = "plone-app-dexterity" },
+    { name = "plone-restapi" },
+    { name = "setuptools" },
+    { name = "z3c-jbot" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1e/04/b6c6c8885d2dfc15dbf730ae3c9e5e61315a394a76aa74bf702bdf169c6d/redturtle.rssservice-2.2.0.tar.gz", hash = "sha256:13026b1558f3574cdeb3578ff338fb708508ecd29213f181a987672b9c20321e", size = 24681 }
 
 [[package]]
 name = "referencing"

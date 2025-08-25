@@ -1,9 +1,17 @@
 /**
- * View container.
- * @module components/theme/View/View
+ * OVERRIDE View.jsx
+ * REASON: Add Rating content component below content.
+ * FILE: https://github.com/plone/volto/blob/2c5e67b9ed474617b631822eda6914886e53c0b3/packages/volto/src/components/theme/View/View.jsx
+ * FILE VERSION: Volto 19.0.0
+ * PULL REQUEST: https://github.com/kitconcept/kitconcept.intranet/pull/185
+ * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/issues/56
+ * DATE: 2025-08-25
+ * DEVELOPER: @Tishasoumya-02
+ * CHANGELOG:
+ *  - Add Rating content component below content. @Tishasoumya-02
  */
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';

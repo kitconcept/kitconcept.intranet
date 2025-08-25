@@ -1,6 +1,7 @@
 import { ConfigType } from '@plone/registry';
 import installSettings from './config/settings';
 import installSlots from './config/slots';
+import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 
 declare module '@plone/types' {
@@ -12,6 +13,7 @@ declare module '@plone/types' {
 const applyConfig = (config: ConfigType) => {
   installSettings(config);
   installSlots(config);
+  installWidgets(config);
   installBlocks(config);
   return config;
 };

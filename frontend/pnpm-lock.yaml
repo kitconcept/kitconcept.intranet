@@ -1802,6 +1802,9 @@ importers:
       '@kitconcept/volto-solr':
         specifier: 2.0.0-alpha.1
         version: 2.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone-collective/volto-authomatic':
+        specifier: 3.0.0-alpha.4
+        version: 3.0.0-alpha.4(@plone/components@core+packages+components)(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -4206,6 +4209,16 @@ packages:
 
   '@plone-collective/volto-authomatic@3.0.0-alpha.3':
     resolution: {integrity: sha512-XPVUZUsvhR01bZX7PoR/jOhI+g3NHuGBBRwO94whc19GkXZvrA9VAG7rQJPgs2PYFtjgEut+mwqPulVBLW2aUw==}
+    peerDependencies:
+      '@plone/components': 3.0.2
+      '@plone/registry': 2.5.2
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-intl: '*'
+      semantic-ui-react: '*'
+
+  '@plone-collective/volto-authomatic@3.0.0-alpha.4':
+    resolution: {integrity: sha512-i3KjIHAFOqdGIy515/eejk2Wkgy864l/xYXUiEr1H/OAEYpHfoop0O6oUBAuxzxjSDnQUXW79iVUCuE50zMxqA==}
     peerDependencies:
       '@plone/components': 3.0.2
       '@plone/registry': 2.5.2
@@ -18386,6 +18399,15 @@ snapshots:
   '@pkgr/core@0.2.7': {}
 
   '@plone-collective/volto-authomatic@3.0.0-alpha.3(@plone/components@core+packages+components)(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+    dependencies:
+      '@plone/components': link:core/packages/components
+      '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-intl: 3.12.1(react@18.2.0)
+      semantic-ui-react: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+
+  '@plone-collective/volto-authomatic@3.0.0-alpha.4(@plone/components@core+packages+components)(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
     dependencies:
       '@plone/components': link:core/packages/components
       '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

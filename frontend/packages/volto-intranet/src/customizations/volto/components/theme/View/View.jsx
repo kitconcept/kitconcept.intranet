@@ -264,12 +264,14 @@ class View extends Component {
         />
 
         <SlotRenderer name="belowContent" content={this.props.content} />
+        {/* START CUSTOMIZATION */}
         <Likes
           pathname={this.props.pathname}
           loggedIn={this.props.token ? true : false}
           votes={this.props.content?.votes}
           user={this.props.user}
         />
+        {/* START CUSTOMIZATION */}
         {this.props.content.allow_discussion && (
           <Comments pathname={this.props.pathname} />
         )}

@@ -1,6 +1,3 @@
-from kitconcept.core import PACKAGE_NAME
-from kitconcept.core import __version__
-
 import pytest
 
 

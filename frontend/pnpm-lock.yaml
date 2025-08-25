@@ -2113,22 +2113,6 @@ importers:
         specifier: ^17.7.0
         version: 17.11.0(typescript@5.8.3)
 
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.1
-      release-it:
-        specifier: ^17.1.1
-        version: 17.11.0(typescript@5.8.3)
-
 packages:
 
   '@adobe/css-tools@4.4.3':
@@ -21585,7 +21569,7 @@ snapshots:
       sirv: 3.0.1
       tinyglobby: 0.2.14
       tinyrainbow: 1.2.0
-      vitest: 2.1.9(@types/node@22.16.2)(@vitest/ui@2.1.9)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
+      vitest: 2.1.9(@types/node@20.19.6)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
     optional: true
 
   '@vitest/ui@2.1.9(vitest@3.2.4)':

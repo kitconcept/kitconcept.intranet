@@ -1,0 +1,37 @@
+.line {
+  position: relative;
+  display: block;
+  width: calc(100cqw - 40px);
+  max-width: inherit;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  border-color: var(--theme-foreground-color);
+  border-top: 1px solid;
+  margin-top: 80px;
+  content: '';
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+}
+.likes {
+  display: flex;
+  justify-content: flex-start;
+
+  button {
+    padding: 0 5px 0 0;
+    border: none;
+  }
+
+  .likeamount {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    .text {
+      span {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+      }
+    }
+  }
+}

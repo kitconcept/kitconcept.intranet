@@ -14,7 +14,6 @@ from zope.component import getUtility
 from zope.i18n import translate
 
 import logging
-import traceback
 
 
 logger = logging.getLogger("kitconcept.intranet")
@@ -173,7 +172,7 @@ Ihr Intranet-Team
                 immediate=True,
             )
         except Exception as e:
-            logger.error(f"Unable to send email: {str(e)}")
+            logger.error(f"Unable to send email: {e!s}")
             raise Exception(self._translate(_("error.email")))
 
     def _send_confirmation_email(self, data):
@@ -242,6 +241,6 @@ Das haben Sie uns als Feedback eingereicht:
                 charset="utf-8",
                 immediate=True,
             )
-        except Exception as e:  # noqa
-            logger.error(f"Unable to send email: {str(e)}")
+        except Exception as e:
+            logger.error(f"Unable to send email: {e!s}")
             raise Exception(self._translate(_("error.email")))

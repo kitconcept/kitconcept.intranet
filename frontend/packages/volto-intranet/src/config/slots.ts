@@ -23,7 +23,7 @@ export default function install(config: ConfigType) {
     component: DocumentByLine,
   });
   config.registerSlotComponent({
-    name: 'PostFooterFollowUsLogoAndLinks',
+    name: 'StickyFeedbackButton',
     slot: 'headerTools',
     component: StickyFeedbackButton,
   });

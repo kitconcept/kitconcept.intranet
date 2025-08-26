@@ -1,4 +1,4 @@
-.line {
+.content-engagement {
   position: relative;
   display: block;
   width: calc(100cqw - 40px);
@@ -12,26 +12,53 @@
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
 }
-.likes {
+.engagement-container {
   display: flex;
-  justify-content: flex-start;
-
+  width: 100%;
   button {
     padding: 0 5px 0 0;
     border: none;
+    background: none;
   }
+}
+.engagement-section {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
 
-  .likeamount {
+  .likes-section,
+  .comments-section,
+  .shares-section {
     display: flex;
     align-items: center;
     margin-right: 30px;
 
-    .text {
+    .likes-count,
+    .comments-count {
       span {
         font-size: 14px;
         font-weight: 400;
         line-height: 18px;
       }
     }
+  }
+}
+.content-metadata {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  .created,
+  .modified {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    .created-date,
+    .modified-date {
+      display: flex;
+    }
+  }
+  .created {
+    margin-right: 50px;
   }
 }

@@ -270,6 +270,9 @@ class View extends Component {
           loggedIn={this.props.token ? true : false}
           votes={this.props.content?.votes}
           user={this.props.user}
+          allow_discussion={this.props.content?.allow_discussion}
+          link={this.props.content['@id']}
+          comments={this.props.content?.comment_count ?? null}
         />
         {/* END CUSTOMIZATION */}
         {this.props.content.allow_discussion && (
@@ -297,6 +300,7 @@ export default compose(
       apiError: state.apierror.error,
       connectionRefused: state.apierror.connectionRefused,
       pathname: props.location.pathname,
+      allow_discussion: state.content.data?.allow_discussion,
       versionId:
         qs.parse(props.location.search) &&
         qs.parse(props.location.search).version,

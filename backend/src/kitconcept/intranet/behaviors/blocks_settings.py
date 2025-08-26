@@ -33,7 +33,7 @@ class ITTWBlocksSettings(model.Schema):
     directives.widget(
         "blocks_config_mutator",
         frontendOptions={
-            "widget": "blockConfigEditor",
+            "widget": "modalJSONEditor",
         },
     )
     blocks_config_mutator = JSONField(

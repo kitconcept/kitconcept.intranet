@@ -1808,6 +1808,9 @@ importers:
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1833,6 +1836,9 @@ importers:
       '@testing-library/react':
         specifier: ^16.2.0
         version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@types/lodash':
+        specifier: ^4.14.201
+        version: 4.17.20
       '@types/react':
         specifier: ^18
         version: 18.3.23
@@ -1921,6 +1927,12 @@ importers:
       classnames:
         specifier: ^2.2.6
         version: 2.5.1
+      embla-carousel-autoplay:
+        specifier: ^8.0.0
+        version: 8.5.2(embla-carousel@8.5.2)
+      embla-carousel-react:
+        specifier: ^8.0.0
+        version: 8.5.2(react@18.2.0)
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -21532,7 +21544,7 @@ snapshots:
       sirv: 3.0.1
       tinyglobby: 0.2.14
       tinyrainbow: 1.2.0
-      vitest: 2.1.9(@types/node@20.19.6)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
+      vitest: 2.1.9(@types/node@22.16.2)(@vitest/ui@2.1.9)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
     optional: true
 
   '@vitest/ui@2.1.9(vitest@3.2.4)':

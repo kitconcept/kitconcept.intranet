@@ -38,4 +38,5 @@ jobs:
       build-args: ${{ inputs.build-args }}
     secrets:
       username: ${{ github.actor }}
-      password: ${{ secrets.GITHUB_TOKEN }}
+      password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN}}
+

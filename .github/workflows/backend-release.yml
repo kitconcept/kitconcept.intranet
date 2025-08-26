@@ -42,7 +42,7 @@ jobs:
         KC_VERSION=${{ inputs.kc-version }}
     secrets:
       username: ${{ github.actor }}
-      password: ${{ secrets.GITHUB_TOKEN }}
+      password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN}}
 
   release-beispiele:
     name: "Backend: Build and publish Demo Image"
@@ -64,4 +64,5 @@ jobs:
         KC_VERSION=${{ inputs.kc-version }}
     secrets:
       username: ${{ github.actor }}
-      password: ${{ secrets.GITHUB_TOKEN }}
+      password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN}}
+

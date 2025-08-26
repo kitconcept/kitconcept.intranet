@@ -6,10 +6,12 @@ from plone import api
 from plone.app.uuid.utils import uuidToObject
 from plone.registry.interfaces import IRegistry
 from plone.restapi.deserializer import json_body
+from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.controlpanel import IMailSchema
 from zExceptions import BadRequest
+from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.i18n import translate
 
@@ -28,14 +30,30 @@ class FeedbackPostContactForm(Service):
         """Send an email to the responsible person and the person who submitted the feedback."""
         parent_object = self.context
         data = json_body(self.request)
-        feedback_member = uuidToObject(data.get("feedback_member"))
-        responsible_member = uuidToObject(data.get("responsible_member"))
+        expander = getMultiAdapter(
+            (parent_object, self.request),
+            IExpandableElement,
+            name="lcm",
+        )
+        expanded_data = expander(expand=True)
+        responsible_person_uuid = (
+            expanded_data.get("lcm", {})
+            .get("responsible_person", {})
+            .get("value", "no-person")
+        )
+        feedback_person_uuid = parent_object.feedback_person
+        feedback_member = (
+            uuidToObject(feedback_person_uuid) if feedback_person_uuid else None
+        )
+        responsible_member = (
+            uuidToObject(responsible_person_uuid) if responsible_person_uuid else None
+        )
         feedback_recipient_email = (
             getattr(feedback_member, "contact_email", None)
             or getattr(responsible_member, "contact_email", None)
             or ""
         )
-        if not (feedback_recipient_email):
+        if not feedback_recipient_email:
             feedback_recipient_email = DEFAULT_EMAIL
         data["feedback_recipient_email"] = feedback_recipient_email
         validated = self._validate(data, parent_object)

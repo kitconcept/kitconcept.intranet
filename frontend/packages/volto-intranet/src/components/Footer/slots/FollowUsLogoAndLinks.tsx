@@ -43,9 +43,7 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
     'voltolighttheme.footer',
     'footer_links',
   );
-  {
-    /* START CUSTOMIZATION */
-  }
+  /* START CUSTOMIZATION */
   footer_links = [
     ...(footer_links || []),
     {
@@ -60,10 +58,7 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
       title: intl.formatMessage(messages.feedback),
     },
   ];
-  {
-    /* END CUSTOMIZATION */
-  }
-
+  /* END CUSTOMIZATION */
   const post_footer_logo = useLiveData<SiteFooterSettings['post_footer_logo']>(
     content,
     'kitconcept.footer',

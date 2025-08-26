@@ -129,11 +129,6 @@ const FeedBackForm = () => {
 
   const content = useSelector((state: any) => state.content.data);
 
-  const responsiblePersonUUID =
-    content?.['@components']?.lcm?.responsible_person?.value;
-
-  const feedbackPersonUUID = content?.feedback_person;
-
   React.useEffect(() => {
     if (loaded && isLoading) {
       toast.success(
@@ -187,8 +182,6 @@ const FeedBackForm = () => {
     dispatch(
       submitFeedbackContactForm(flattenToAppURL(content['@id']), {
         ...form,
-        feedback_member: feedbackPersonUUID,
-        responsible_member: responsiblePersonUUID,
         ...metadata,
       }),
     );
@@ -218,7 +211,7 @@ const FeedBackForm = () => {
         <h2>
           {intl.formatMessage(messages.feedbackOn)} {content?.title}
         </h2>
-        <Form>
+        <Form onSubmit={onSubmit}>
           <TextField>
             <Label className="feedback-label" htmlFor="url">
               {intl.formatMessage(messages.url)}:
@@ -297,7 +290,7 @@ const FeedBackForm = () => {
             )}
           </p>
           <div className="feedback-form-buttons">
-            <Button type="submit" className="reset-button" onClick={onCancel}>
+            <Button className="reset-button" onClick={onCancel}>
               {intl.formatMessage(messages.cancel)}
             </Button>
             <Button type="submit" className="send-button" onClick={onSubmit}>

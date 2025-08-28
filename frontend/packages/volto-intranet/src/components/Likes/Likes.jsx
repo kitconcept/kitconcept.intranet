@@ -41,26 +41,26 @@ const Likes = (props) => {
   );
   const link = props.link.replace('/api', '');
   const userData = useSelector((state) => state.users.user);
-  useEffect(() => {
-    setLoop(false);
-    dispatch(getLikes(flattenToAppURL(pathname))).then((resp) => {
-      if (resp) {
-        setAmount(parseInt(resp));
-      }
-    });
-    dispatch(getUser(user)).then((resp) => {
-      if (!votes) {
-        setLiked(false);
-      } else {
-        if (resp && resp.username && votes.includes(resp.username)) {
-          setLiked(true);
-        } else {
-          setLiked(false);
-        }
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [votes]);
+  // useEffect(() => {
+  //   setLoop(false);
+  //   dispatch(getLikes(flattenToAppURL(pathname))).then((resp) => {
+  //     if (resp) {
+  //       setAmount(parseInt(resp));
+  //     }
+  //   });
+  //   dispatch(getUser(user)).then((resp) => {
+  //     if (!votes) {
+  //       setLiked(false);
+  //     } else {
+  //       if (resp && resp.username && votes.includes(resp.username)) {
+  //         setLiked(true);
+  //       } else {
+  //         setLiked(false);
+  //       }
+  //     }
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [votes]);
 
   const deBody = `Sehr%20geehrte/r,%0D%0A%0D%0AIch%20möchte%20folgende%20Meldung%20mit%20Ihnen%20teilen:%0D%0A%0D%0A${link}%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A${
     userData.fullname ? userData.fullname : ''
@@ -137,7 +137,7 @@ const Likes = (props) => {
         <div className="engagement-section">
           <div className={cx('likes-section', { anon: !loggedIn })}>
             {loggedIn ? (
-              <Button onClick={() => onLike()}>
+              <Button>
                 <div className="icon-wrapper">
                   {liked ? (
                     <Icon

@@ -38,7 +38,7 @@ const Rating = (props) => {
   // const [liked, setLiked] = useState(
   //   loggedIn && votes && votes.length > 0 ? votes.includes(user) : false,
   // );
-  const link = props.link.replace('/api', '');
+  // const link = props.link.replace('/api', '');
   const userData = useSelector((state) => state.users.user);
 
   // useEffect(() => {
@@ -62,16 +62,16 @@ const Rating = (props) => {
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, [votes]);
 
-  const deBody = `Sehr%20geehrte/r,%0D%0A%0D%0AIch%20möchte%20folgende%20Meldung%20mit%20Ihnen%20teilen:%0D%0A%0D%0A${link}%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A${
-    userData.fullname ? userData.fullname : ''
-  }`;
+  // const deBody = `Sehr%20geehrte/r,%0D%0A%0D%0AIch%20möchte%20folgende%20Meldung%20mit%20Ihnen%20teilen:%0D%0A%0D%0A${link}%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A${
+  //   userData.fullname ? userData.fullname : ''
+  // }`;
 
-  const enBody = `Dear,%0D%0A%0D%0AI%20would%20like%20to%20share%20the%20following%20News%20with%20you:%0D%0A%0D%0A${link}%0D%0A%0D%0AKind%20regards%0D%0A${
-    userData.fullname ? userData.fullname : ''
-  }`;
+  // const enBody = `Dear,%0D%0A%0D%0AI%20would%20like%20to%20share%20the%20following%20News%20with%20you:%0D%0A%0D%0A${link}%0D%0A%0D%0AKind%20regards%0D%0A${
+  //   userData.fullname ? userData.fullname : ''
+  // }`;
 
-  const deMailTo = `mailto:?body=${deBody}&subject=Intranet-Lesetipp`;
-  const enMailTo = `mailto:?body=${enBody}&subject=Intranet%20reading%20tip`;
+  // const deMailTo = `mailto:?body=${deBody}&subject=Intranet-Lesetipp`;
+  // const enMailTo = `mailto:?body=${enBody}&subject=Intranet%20reading%20tip`;
 
   // const onLike = () => {
   //   if (!loop) {
@@ -179,11 +179,11 @@ const Rating = (props) => {
             </div>
           )}
           <div className="shares-section">
-            <a href={intl.locale === 'de' ? deMailTo : enMailTo}>
-              <Button className="icon-wrapper">
-                <Icon name={shareSVG} size="33px" />
-              </Button>
-            </a>
+            {/* <a href={intl.locale === 'de' ? deMailTo : enMailTo}> */}
+            <Button className="icon-wrapper">
+              <Icon name={shareSVG} size="33px" />
+            </Button>
+            {/* </a> */}
           </div>
         </div>
         <div className="content-metadata">

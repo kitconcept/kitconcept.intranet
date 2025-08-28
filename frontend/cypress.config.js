@@ -17,5 +17,13 @@ module.exports = defineConfig({
     specPattern: 'cypress/tests/**/*.cy.{js,jsx,ts,tsx}',
     supportFolder: `${currentDir}/cypress/support`,
     supportFile: `${currentDir}/cypress/support/e2e.js`,
+    setupNodeEvents(on, config) {
+      on('task', {
+        table(message) {
+          console.table(message);
+          return null;
+        },
+      });
+    },
   },
 });

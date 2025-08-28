@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import { Button, Container } from '@plone/components';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
-import { addLike, removeLike } from '../../actions/likes/likes';
 import thumbsSVG from '../../icons/icon-thumbs.svg';
 import thumbsFilledSVG from '../../icons/icon-thumbs-filled.svg';
 import commentSVG from '../../icons/comment.svg';
@@ -28,18 +25,22 @@ const messages = defineMessages({
   },
 });
 
-const Likes = (props) => {
-  const { pathname, loggedIn, votes, user, allow_discussion, comments } = props;
+const Rating = (props) => {
+  const { pathname, loggedIn, allow_discussion, comments } = props;
   const intl = useIntl();
-  const [loop, setLoop] = useState(false);
-  const [amount, setAmount] = useState(votes ? parseInt(votes.length) : 0);
   const content = useSelector((state) => state.content);
-  const dispatch = useDispatch();
-  const [liked, setLiked] = useState(
-    loggedIn && votes && votes.length > 0 ? votes.includes(user) : false,
-  );
+  const liked = false;
+  const amount = 0;
+  // const [loop, setLoop] = useState(false);
+  // const [amount, setAmount] = useState(votes ? parseInt(votes.length) : 0);
+
+  // const dispatch = useDispatch();
+  // const [liked, setLiked] = useState(
+  //   loggedIn && votes && votes.length > 0 ? votes.includes(user) : false,
+  // );
   const link = props.link.replace('/api', '');
   const userData = useSelector((state) => state.users.user);
+
   // useEffect(() => {
   //   setLoop(false);
   //   dispatch(getLikes(flattenToAppURL(pathname))).then((resp) => {
@@ -109,7 +110,7 @@ const Likes = (props) => {
   //     }
   //   }
   // };
-  
+
   const DotFormattedDate = ({ date, className, locale }) => {
     return (
       <FormattedDate
@@ -208,4 +209,4 @@ const Likes = (props) => {
   );
 };
 
-export default Likes;
+export default Rating;

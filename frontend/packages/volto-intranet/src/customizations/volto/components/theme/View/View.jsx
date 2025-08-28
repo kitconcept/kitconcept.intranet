@@ -34,7 +34,7 @@ import { AlternateHrefLangs } from '@plone/volto/components/theme/AlternateHrefL
 import config from '@plone/volto/registry';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
-import Likes from '../../../../../components/Likes/Likes';
+import Rating from '../../../../../components/Rating/Rating';
 
 /**
  * View container class.
@@ -265,7 +265,7 @@ class View extends Component {
 
         <SlotRenderer name="belowContent" content={this.props.content} />
         {/* START CUSTOMIZATION */}
-        <Likes
+        <Rating
           pathname={this.props.pathname}
           loggedIn={this.props.token ? true : false}
           votes={this.props.content?.votes}

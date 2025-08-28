@@ -1,0 +1,102 @@
+{
+  "@id": "/features/block/rss-block",
+  "@type": "Document",
+  "UID": "2a658c6d9f2442ebbb3b63484c677d47",
+  "allow_discussion": null,
+  "blocks": {
+    "1d2ee961-74fb-4c76-b3dd-caa8c8762f71": {
+      "@type": "rssBlock",
+      "feeds": [
+        {
+          "@id": "eac07854-e40f-4baf-a3ad-7990563bff4f",
+          "source": "NYT",
+          "url": "https://rss.nytimes.com/services/xml/rss/nyt/ArtandDesign.xml"
+        }
+      ],
+      "limit": 4,
+      "template": "grid",
+      "title": "Grid"
+    },
+    "4e361535-6f7c-459f-9cd9-c0cd2eaa0143": {
+      "@type": "rssBlock",
+      "feeds": [
+        {
+          "@id": "bfd72f29-3c23-4fd9-8c6c-643c5da8e60e",
+          "source": "NASA",
+          "url": "https://www.nasa.gov/missions/station/feed/"
+        }
+      ],
+      "limit": 4,
+      "template": "summary",
+      "title": "List with Image"
+    },
+    "8f7e5d74-4fa1-4f17-8d68-4018272dfbce": {
+      "@type": "title"
+    },
+    "d4dc1fee-ebcb-4743-b835-8a9dfae45d16": {
+      "@type": "rssBlock",
+      "feeds": [
+        {
+          "@id": "19968a09-3989-4986-bc39-5381826e4a56",
+          "source": "Conservation International",
+          "url": "https://feeds.feedburner.com/ConservationInternationalBlog/ClimateChange"
+        }
+      ],
+      "limit": 4,
+      "template": "default",
+      "title": "List"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "8f7e5d74-4fa1-4f17-8d68-4018272dfbce",
+      "d4dc1fee-ebcb-4743-b835-8a9dfae45d16",
+      "4e361535-6f7c-459f-9cd9-c0cd2eaa0143",
+      "1d2ee961-74fb-4c76-b3dd-caa8c8762f71"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-18T20:11:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "rss",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-08-18T22:01:22+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "RSS",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-08-18T20:11:08+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

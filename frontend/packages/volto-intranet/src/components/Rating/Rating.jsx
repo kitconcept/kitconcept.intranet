@@ -39,7 +39,7 @@ const Rating = (props) => {
   //   loggedIn && votes && votes.length > 0 ? votes.includes(user) : false,
   // );
   // const link = props.link.replace('/api', '');
-  const userData = useSelector((state) => state.users.user);
+  // const userData = useSelector((state) => state.users.user);
 
   // useEffect(() => {
   //   setLoop(false);

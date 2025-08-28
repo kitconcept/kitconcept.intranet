@@ -40,6 +40,24 @@ class IIntranetSettings(Interface):
         default=False,
     )
 
+    default_feedback_email = schema.TextLine(
+        title=_("Default Feedback Email"),
+        description=_("Email address used in feedback forms if none is set."),
+        required=False,
+    )
+
+    feedback_cc_email = schema.TextLine(
+        title=_("Feedback CC email"),
+        description=_("Email address to be CCed in feedback forms."),
+        required=False,
+    )
+    allowed_email_domains = schema.List(
+        title=_("Allowed Email Domains"),
+        description=_("List of allowed email domains for feedback forms."),
+        value_type=schema.TextLine(),
+        required=False,
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
@@ -83,3 +101,10 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_squared_images"] = settings.person_squared_images
+        data["kitconcept.intranet.default_feedback_email"] = (
+            settings.default_feedback_email
+        )
+        data["kitconcept.intranet.feedback_cc_email"] = settings.feedback_cc_email
+        data["kitconcept.intranet.allowed_email_domains"] = (
+            settings.allowed_email_domains
+        )

@@ -75,9 +75,8 @@ const messages = defineMessages({
     defaultMessage: 'Please enter your Organizational email address.',
   },
   emailHelpText: {
-    id: 'Only internal e-mail addresses ending with @kitconcept.com are permitted..',
-    defaultMessage:
-      'Only internal e-mail addresses ending with @kitconcept.com are permitted..',
+    id: 'Only internal e-mail addresses are permitted..',
+    defaultMessage: 'Only internal e-mail addresses are permitted..',
   },
 });
 
@@ -195,14 +194,14 @@ const FeedBackForm = () => {
         setFeedbackError(false);
       }
     }
-    if (event.target.name === 'email') {
-      if (event.target.value.endsWith('@kitconcept.com')) {
-        setEmailError(false);
-      } else {
-        setEmailError(true);
-        setEmailErrorSubmit(false);
-      }
-    }
+    // if (event.target.name === 'email') {
+    //   if (event.target.value.endsWith('@kitconcept.com')) {
+    //     setEmailError(false);
+    //   } else {
+    //     setEmailError(true);
+    //     setEmailErrorSubmit(false);
+    //   }
+    // }
     setForm({ ...form, [event.target.name]: event.target.value });
   };
   return (

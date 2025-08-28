@@ -2,6 +2,7 @@ from datetime import datetime
 from email.message import EmailMessage
 from email.utils import formataddr
 from kitconcept.intranet import _
+from kitconcept.intranet.controlpanels.intranet import IIntranetSettings
 from plone import api
 from plone.app.uuid.utils import uuidToObject
 from plone.registry.interfaces import IRegistry
@@ -19,8 +20,14 @@ import logging
 
 
 logger = logging.getLogger("kitconcept.intranet")
-CC_EMAIL = "info@kitconcept.com"
-DEFAULT_EMAIL = "info@kitconcept.com"
+
+
+def get_registry_value(interface, field_name, prefix=None):
+    """Generic helper to fetch a registry field from a control panel schema."""
+    registry = getUtility(IRegistry)
+    settings = registry.forInterface(interface, prefix=prefix, check=False)
+    value = getattr(settings, field_name, None)
+    return value
 
 
 class FeedbackPostContactForm(Service):
@@ -29,6 +36,12 @@ class FeedbackPostContactForm(Service):
     def reply(self):
         """Send an email to the responsible person and the person who submitted the feedback."""
         parent_object = self.context
+        cc_email = get_registry_value(
+            IIntranetSettings, "feedback_cc_email", "kitconcept.intranet"
+        )
+        default_email = get_registry_value(
+            IIntranetSettings, "default_feedback_email", "kitconcept.intranet"
+        )
         data = json_body(self.request)
         expander = getMultiAdapter(
             (parent_object, self.request),
@@ -54,8 +67,9 @@ class FeedbackPostContactForm(Service):
             or ""
         )
         if not feedback_recipient_email:
-            feedback_recipient_email = DEFAULT_EMAIL
+            feedback_recipient_email = default_email
         data["feedback_recipient_email"] = feedback_recipient_email
+        data["cc_email"] = cc_email
         validated = self._validate(data, parent_object)
         self._send_email(validated)
         self._send_confirmation_email(validated)
@@ -65,22 +79,42 @@ class FeedbackPostContactForm(Service):
         return translate(msg, context=self.request)
 
     def _validate(self, data, parent_object):
+        allowed_emails_domain = get_registry_value(
+            IIntranetSettings, "allowed_email_domains", "kitconcept.intranet"
+        )
         reporter_email = data.get("email")
         name = data.get("name")
         feedback = data.get("feedback")
+        feedback_recipient_email = data.get("feedback_recipient_email")
+
+        if not feedback_recipient_email:
+            raise BadRequest(
+                self._translate(
+                    _(
+                        "No responsible person or default feedback email is configured. "
+                        "Please contact the site administrator."
+                    )
+                )
+            )
 
         if not feedback:
             raise BadRequest(self._translate(_("Please enter your feedback.")))
 
-        if not reporter_email:
+        if not reporter_email or (
+            allowed_emails_domain
+            and not any(
+                reporter_email.endswith(domain) for domain in allowed_emails_domain
+            )
+        ):
             raise BadRequest(
-                self._translate(_("Please enter your name and email address."))
+                self._translate(_("Please enter your organisational email address."))
             )
 
         return {
             "name": name,
             "reporter_email": reporter_email,
             "feedback": feedback,
+            "cc_email": data.get("cc_email"),
             "date": datetime.now().strftime("%Y-%m-%d, %H:%M:%S"),
             "title": parent_object.title,
             "url": parent_object.absolute_url(),
@@ -159,10 +193,10 @@ Ihr Intranet-Team
         message = EmailMessage()
         message.set_content(body)
         message["Reply-To"] = data["reporter_email"]
-        message["Cc"] = CC_EMAIL
-        registry = getUtility(IRegistry)
-        mail_settings = registry.forInterface(IMailSchema, prefix="plone")
-        from_email = mail_settings.email_from_address
+        cc_email = data["cc_email"]
+        if cc_email:
+            message["Cc"] = cc_email
+        from_email = get_registry_value(IMailSchema, "email_from_address", "plone")
         recipient_email = data["feedback_recipient_email"]
         subject = self._translate(_("Intranet feedback form: {title}")).format(
             title=data["title"]
@@ -192,9 +226,7 @@ Ihr Intranet-Team
 
     def _send_confirmation_email(self, data):
         mailhost = getToolByName(self.context, "MailHost")
-        registry = getUtility(IRegistry)
-        mail_settings = registry.forInterface(IMailSchema, prefix="plone")
-        from_email = mail_settings.email_from_address
+        from_email = get_registry_value(IMailSchema, "email_from_address", "plone")
         lang = api.portal.get_current_language()
         name = data["name"]
         if lang == "en":

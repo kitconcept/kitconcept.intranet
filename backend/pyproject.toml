@@ -35,7 +35,7 @@ dependencies = [
     "pas.plugins.authomatic==2.0.0",
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
-    "kitconcept.solr==2.0.0a1",
+    "kitconcept.solr @ git+https://github.com/kitconcept/kitconcept.solr.git@additional-solr-updates#subdirectory=backend",
 ]
 
 [dependency-groups]
@@ -60,6 +60,9 @@ container = [
     "relstorage==4.1.1",
     "zeo==6.0.0",
 ]
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [project.urls]
 Homepage = "https://github.com/kitconcept/kitconcept.intranet"

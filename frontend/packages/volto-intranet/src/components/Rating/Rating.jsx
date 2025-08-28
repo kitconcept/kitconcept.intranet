@@ -138,7 +138,7 @@ const Rating = (props) => {
         <div className="engagement-section">
           <div className={cx('likes-section', { anon: !loggedIn })}>
             {loggedIn ? (
-              <Button>
+              <Button aria-label="liked">
                 <div className="icon-wrapper">
                   {liked ? (
                     <Icon
@@ -153,6 +153,7 @@ const Rating = (props) => {
               </Button>
             ) : (
               <Button
+                aria-label="unliked"
                 as={Link}
                 to={`${pathname}/login`}
                 title={intl.formatMessage(messages.loginToLike)}
@@ -168,7 +169,7 @@ const Rating = (props) => {
           </div>
           {(allow_discussion || comments >= 0) && (
             <div className="comments-section">
-              <Button>
+              <Button aria-label="comments">
                 <div className="icon-wrapper">
                   <Icon name={commentSVG} size="33px" />
                 </div>
@@ -180,7 +181,7 @@ const Rating = (props) => {
           )}
           <div className="shares-section">
             {/* <a href={intl.locale === 'de' ? deMailTo : enMailTo}> */}
-            <Button className="icon-wrapper">
+            <Button aria-label="share">
               <Icon name={shareSVG} size="33px" />
             </Button>
             {/* </a> */}

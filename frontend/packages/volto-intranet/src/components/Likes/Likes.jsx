@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, Container } from '@plone/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -6,8 +6,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
-import { getLikes, addLike, removeLike } from '../../actions/likes/likes';
-import { getUser } from '@plone/volto/actions/users/users';
+import { addLike, removeLike } from '../../actions/likes/likes';
 import thumbsSVG from '../../icons/icon-thumbs.svg';
 import thumbsFilledSVG from '../../icons/icon-thumbs-filled.svg';
 import commentSVG from '../../icons/comment.svg';
@@ -73,43 +72,44 @@ const Likes = (props) => {
   const deMailTo = `mailto:?body=${deBody}&subject=Intranet-Lesetipp`;
   const enMailTo = `mailto:?body=${enBody}&subject=Intranet%20reading%20tip`;
 
-  const onLike = () => {
-    if (!loop) {
-      if (votes && votes.length !== 0 && votes.includes(user)) {
-        dispatch(removeLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(false);
-            setAmount(amount - 1);
-            setLoop(true);
-          }
-        });
-      } else {
-        dispatch(addLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(true);
-            setAmount(amount + 1);
-            setLoop(true);
-          }
-        });
-      }
-    } else {
-      if (liked) {
-        dispatch(removeLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(false);
-            setAmount(amount - 1);
-          }
-        });
-      } else {
-        dispatch(addLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(true);
-            setAmount(amount + 1);
-          }
-        });
-      }
-    }
-  };
+  // const onLike = () => {
+  //   if (!loop) {
+  //     if (votes && votes.length !== 0 && votes.includes(user)) {
+  //       dispatch(removeLike(flattenToAppURL(pathname))).then((resp) => {
+  //         if (resp) {
+  //           setLiked(false);
+  //           setAmount(amount - 1);
+  //           setLoop(true);
+  //         }
+  //       });
+  //     } else {
+  //       dispatch(addLike(flattenToAppURL(pathname))).then((resp) => {
+  //         if (resp) {
+  //           setLiked(true);
+  //           setAmount(amount + 1);
+  //           setLoop(true);
+  //         }
+  //       });
+  //     }
+  //   } else {
+  //     if (liked) {
+  //       dispatch(removeLike(flattenToAppURL(pathname))).then((resp) => {
+  //         if (resp) {
+  //           setLiked(false);
+  //           setAmount(amount - 1);
+  //         }
+  //       });
+  //     } else {
+  //       dispatch(addLike(flattenToAppURL(pathname))).then((resp) => {
+  //         if (resp) {
+  //           setLiked(true);
+  //           setAmount(amount + 1);
+  //         }
+  //       });
+  //     }
+  //   }
+  // };
+  
   const DotFormattedDate = ({ date, className, locale }) => {
     return (
       <FormattedDate

@@ -115,10 +115,7 @@ jobs:
         with:
           filters: |
             acceptance:
-              - '.github/workflows/acceptance*'
-              - '.github/workflows/backend*'
-              - '.github/workflows/config*'
-              - '.github/workflows/frontend*'
+              - '.github/workflows/*'
               - 'backend/**'
               - 'frontend/**'
             backend:

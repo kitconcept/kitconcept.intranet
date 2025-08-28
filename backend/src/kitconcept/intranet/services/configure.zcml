@@ -10,12 +10,25 @@
       name="byline"
       />
 
+  <adapter
+      factory=".lcm.LCMExpander"
+      name="lcm"
+      />
+
   <plone:service
       method="GET"
       factory=".byline.BylineGet"
       for="zope.interface.Interface"
       permission="zope2.View"
       name="@byline"
+      />
+
+  <plone:service
+      method="GET"
+      factory=".lcm.LCMGet"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@lcm"
       />
 
   <cache:ruleset

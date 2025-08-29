@@ -40,12 +40,10 @@ class IIntranetSettings(Interface):
         description=_("Enable squared images for person teasers and listings."),
         required=False,
         default="disabled",
-        vocabulary=SimpleVocabulary(
-            [
-                SimpleTerm("disabled", "disabled", _("Disabled")),
-                SimpleTerm("squared4to5", "squared4to5", _("4:5")),
-            ]
-        ),
+        vocabulary=SimpleVocabulary([
+            SimpleTerm("disabled", "disabled", _("Disabled")),
+            SimpleTerm("squared4to5", "squared4to5", _("4:5")),
+        ]),
     )
 
     iframe_allowed_domains = schema.List(

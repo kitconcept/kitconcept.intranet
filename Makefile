@@ -216,7 +216,7 @@ acceptance-test: ## Start Acceptance tests in interactive mode
 .PHONY: acceptance-a11y-backend-dev-start
 acceptance-a11y-backend-dev-start: ## Start a11y acceptance backend in dev mode
 	@echo "Start acceptance backend"
-	$(MAKE) -C "./backend/" a11y-backend-start
+	$(MAKE) -C "./backend/" acceptance-a11y-backend-start
 
 .PHONY: acceptance-a11y-frontend-dev-start
 acceptance-a11y-frontend-dev-start: ## Start a11y acceptance frontend in dev mode

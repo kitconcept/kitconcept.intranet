@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250825001"
+      destination="20250829001"
+      >
+    <genericsetup:upgradeDepends
+        title="Changes kitconcept.person_squared_images field type in the control panel registry."
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

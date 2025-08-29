@@ -23,7 +23,7 @@ const CustomCSS = () => {
           </Helmet>
         </>
       ) : null}
-      {personSquaredImages ? (
+      {personSquaredImages === 'squared4to5' ? (
         <BodyClass className="person-squared-images" />
       ) : null}
     </>

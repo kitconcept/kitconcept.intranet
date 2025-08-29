@@ -8,7 +8,7 @@ import type { CustomInheritBehavior, BlocksConfigSettings } from './types';
 declare module '@plone/types' {
   export interface GetSiteResponse {
     'kitconcept.intranet.custom_css': string;
-    'kitconcept.person_squared_images': boolean;
+    'kitconcept.person_squared_images': 'disabled' | 'squared4to5';
   }
 
   export interface Expanders {

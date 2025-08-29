@@ -5,10 +5,10 @@
   <genericsetup:upgradeSteps
       profile="kitconcept.intranet:default"
       source="20250825001"
-      destination="20250828001"
+      destination="20250829001"
       >
     <genericsetup:upgradeDepends
-        title="Adds kitconcept.intranet.cc_email, default_email and allowed domains to the control panel registry."
+        title="Changes kitconcept.person_squared_images field type in the control panel registry."
         import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>

@@ -24,13 +24,35 @@ const messages = defineMessages({
     defaultMessage: 'Created On',
   },
 });
-
+const DotFormattedDate = ({ date, className, locale }) => {
+  return (
+    <FormattedDate
+      className={className}
+      date={date}
+      format={{
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }}
+      locale={locale}
+    >
+      {(parts) => {
+        const day = parts.find((p) => p.type === 'day')?.value;
+        const month = parts.find((p) => p.type === 'month')?.value;
+        const year = parts.find((p) => p.type === 'year')?.value;
+        return `${day}.${month}.${year}`;
+      }}
+    </FormattedDate>
+  );
+};
 const Rating = (props) => {
   const { pathname, loggedIn, allow_discussion, comments } = props;
   const intl = useIntl();
   const content = useSelector((state) => state.content);
   const liked = false;
   const amount = 0;
+
+  //---will work with values from backend---
   // const [loop, setLoop] = useState(false);
   // const [amount, setAmount] = useState(votes ? parseInt(votes.length) : 0);
 
@@ -110,28 +132,8 @@ const Rating = (props) => {
   //     }
   //   }
   // };
+  //---will work with values from backend---
 
-  const DotFormattedDate = ({ date, className, locale }) => {
-    return (
-      <FormattedDate
-        className={className}
-        date={date}
-        format={{
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        }}
-        locale={locale}
-      >
-        {(parts) => {
-          const day = parts.find((p) => p.type === 'day')?.value;
-          const month = parts.find((p) => p.type === 'month')?.value;
-          const year = parts.find((p) => p.type === 'year')?.value;
-          return `${day}.${month}.${year}`;
-        }}
-      </FormattedDate>
-    );
-  };
   return (
     <Container className="content-engagement">
       <div className="engagement-container">

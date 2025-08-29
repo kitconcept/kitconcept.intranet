@@ -139,7 +139,7 @@ acceptance-a11y-backend-dev-start: ## Start a11y acceptance frontend in prod mod
 
 .PHONY: acceptance-a11y-frontend-dev-start
 acceptance-a11y-frontend-dev-start: ## Start a11y acceptance frontend in prod mode
-	pnpm start
+	RAZZLE_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
 
 .PHONY: acceptance-a11y-frontend-prod-start
 acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode

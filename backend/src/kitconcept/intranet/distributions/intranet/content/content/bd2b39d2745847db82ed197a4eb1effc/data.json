@@ -3,6 +3,7 @@
   "@type": "Document",
   "UID": "bd2b39d2745847db82ed197a4eb1effc",
   "allow_discussion": false,
+  "authors": null,
   "blocks": {
     "01b99520-a930-4601-ade9-69d87431787d": {
       "@type": "heading",
@@ -100,19 +101,6 @@
       },
       "theme": "default"
     },
-    "0ccca451-2fc3-42be-b450-d75bfa9b5afe": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
     "132264cd-dd57-4403-b4ac-25cd12c918e4": {
       "@type": "teaser",
       "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
@@ -151,49 +139,10 @@
       "theme": "default",
       "title": "Teaser to a News item with Image aligned left"
     },
-    "138a8778-9d82-4cd9-a15e-b19448f9be12": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
-    "172d0e54-11e5-4ccc-9617-ccb8a4a34d2a": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
     "1e6e426f-64d9-4e0e-91f9-0d901626880a": {
       "@type": "heading",
       "heading": "Event Teasers",
       "styles": {},
-      "theme": "default"
-    },
-    "2067c710-ee57-4990-ab18-b5645bfca399": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
       "theme": "default"
     },
     "2162a7b6-33bc-43a9-8c2d-8c572de6c1d4": {
@@ -348,45 +297,6 @@
       "theme": "default",
       "title": "Teaser to an Image with Image aligned right"
     },
-    "2eb6abdd-be5b-46b2-829f-e8d0a187dc3e": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
-    "2ef3acc5-583a-496e-b159-4e9c0c89aa2e": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
-    "351cd24d-6424-4242-9357-c9511b9d8abf": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
     "44872d84-e4db-40b6-b5f5-8a5b217da231": {
       "@type": "introduction",
       "plaintext": "The Teaser Block has three basic variations: one with the image centered, one with the image on the right side, and one with the image on the left side.",
@@ -484,19 +394,6 @@
       "heading": "Person\u00a0Teaser",
       "styles": {},
       "tag": "h2",
-      "theme": "default"
-    },
-    "548ace80-27f8-4c0b-95d5-ab8c5dd10bf1": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
       "theme": "default"
     },
     "5c3c08e0-1beb-4cf8-9458-4b2918785359": {
@@ -708,35 +605,9 @@
       "theme": "default",
       "title": "Teaser to an external Link with Image aligned left"
     },
-    "79f207f9-489b-4f83-bc5f-cc308cee9a72": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
     "7fb5ccb3-ba7e-402f-a8d2-3d887bbb0a8f": {
       "@type": "heading",
       "heading": "News Item Teasers",
-      "theme": "default"
-    },
-    "82c9a113-5cd5-4499-b7be-ee7270b9f6af": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
       "theme": "default"
     },
     "83f8a95f-17cd-4ab1-9525-a2583a44bd38": {
@@ -776,19 +647,6 @@
       },
       "theme": "default",
       "title": "Teaser to a Person with image aligned right"
-    },
-    "8d180be8-a33b-4b8e-9977-6037f0cc5d83": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
     },
     "8dda44ba-d25c-4b06-85a4-1943db8b553a": {
       "@type": "heading",
@@ -886,19 +744,6 @@
       "theme": "grey",
       "title": "Teaser Block with Image aligned centered on grey background"
     },
-    "98b6ee41-68a9-4ee1-9f77-15ba570cb09e": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
     "a3bca7b5-1c8d-46e5-985c-6c7028905827": {
       "@type": "teaser",
       "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
@@ -947,19 +792,6 @@
     "a70344c8-358d-4041-abb6-ffde52550983": {
       "@type": "heading",
       "heading": "Image Teaser",
-      "theme": "default"
-    },
-    "ad290bc9-d5bd-4c83-a7e0-a9953ac5a98e": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
       "theme": "default"
     },
     "b16453c6-4497-4766-b47a-83167362dedf": {
@@ -1084,19 +916,6 @@
       "theme": "default",
       "title": "Teaser to a News Item with Image aligend right"
     },
-    "cf32d4d2-02c5-4969-8d45-f5b24629d65f": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
     "cf5174a1-c29a-4840-984c-956e1db8400d": {
       "@type": "teaser",
       "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
@@ -1136,19 +955,6 @@
       "title": "Teaser to a File with Image aligned right"
     },
     "d5f206c9-dae5-4aa5-8d5b-bc5fd27420e4": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
-    "db523a9a-f82e-4ddf-8788-0b5406c875da": {
       "@type": "separator",
       "styles": {
         "align:noprefix": {
@@ -1236,32 +1042,6 @@
       },
       "theme": "default",
       "title": "Teaser to an Image with Image aligned left"
-    },
-    "f923c45a-c393-4b1e-bf4f-402c68abf4ae": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
-    },
-    "fb559fc0-65d6-4f6d-9093-ae115da341e7": {
-      "@type": "separator",
-      "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
-        "shortLine": false
-      },
-      "theme": "default"
     }
   },
   "blocks_layout": {
@@ -1273,9 +1053,7 @@
       "8dda44ba-d25c-4b06-85a4-1943db8b553a",
       "44872d84-e4db-40b6-b5f5-8a5b217da231",
       "61f0e286-0527-43a7-b8fe-29f1be40a8c3",
-      "f923c45a-c393-4b1e-bf4f-402c68abf4ae",
       "03fd3352-0845-4c70-9d01-805996bd127b",
-      "138a8778-9d82-4cd9-a15e-b19448f9be12",
       "0478dcde-b77f-46a7-be12-cd67027f28b1",
       "c6794540-6ae0-4295-9665-8e2a4a8c8454",
       "95648579-7116-401f-a448-e48938c88246",
@@ -1283,43 +1061,28 @@
       "620f0540-8c3d-422d-a1c6-47037b5dbfbc",
       "7fb5ccb3-ba7e-402f-a8d2-3d887bbb0a8f",
       "25a0c896-7a3f-4a75-8b03-d920f51d92cd",
-      "2067c710-ee57-4990-ab18-b5645bfca399",
       "132264cd-dd57-4403-b4ac-25cd12c918e4",
-      "8d180be8-a33b-4b8e-9977-6037f0cc5d83",
       "cdab2a7c-9e9d-4c38-9956-92c54e7f3773",
-      "79f207f9-489b-4f83-bc5f-cc308cee9a72",
       "1e6e426f-64d9-4e0e-91f9-0d901626880a",
       "6b754b44-880d-431e-8d08-d710d6403b64",
       "b16453c6-4497-4766-b47a-83167362dedf",
-      "351cd24d-6424-4242-9357-c9511b9d8abf",
       "459338b2-65a5-4bc4-8a06-52e2697ac9aa",
-      "db523a9a-f82e-4ddf-8788-0b5406c875da",
       "5c3c08e0-1beb-4cf8-9458-4b2918785359",
       "a3bca7b5-1c8d-46e5-985c-6c7028905827",
-      "ad290bc9-d5bd-4c83-a7e0-a9953ac5a98e",
       "74f67aa2-7966-4491-9f04-67b0883cf2cf",
-      "0ccca451-2fc3-42be-b450-d75bfa9b5afe",
       "72a35770-ba1d-4ab3-b618-ecbe97f7e044",
-      "cf32d4d2-02c5-4969-8d45-f5b24629d65f",
       "a70344c8-358d-4041-abb6-ffde52550983",
       "27cec447-3657-4e4e-a462-32b0859965d9",
-      "2ef3acc5-583a-496e-b159-4e9c0c89aa2e",
       "e0e5584d-abf5-46b5-9b25-063bb707e07f",
-      "172d0e54-11e5-4ccc-9617-ccb8a4a34d2a",
       "285d29a6-0b0d-4d2e-9905-884b2e4e6ee4",
-      "82c9a113-5cd5-4499-b7be-ee7270b9f6af",
       "01b99520-a930-4601-ade9-69d87431787d",
       "dd867b1c-f261-4e13-be00-9c82dc935ef3",
-      "548ace80-27f8-4c0b-95d5-ab8c5dd10bf1",
       "2162a7b6-33bc-43a9-8c2d-8c572de6c1d4",
-      "2eb6abdd-be5b-46b2-829f-e8d0a187dc3e",
       "cf5174a1-c29a-4840-984c-956e1db8400d",
-      "98b6ee41-68a9-4ee1-9f77-15ba570cb09e",
       "51b29875-35c3-478f-9641-8a45a12b33eb",
       "8f6f1127-aaf9-4f93-9c43-251fbbf1bf3d",
       "469d0e61-9ee4-435d-8d04-09a4c8b4dfbc",
-      "83f8a95f-17cd-4ab1-9525-a2583a44bd38",
-      "fb559fc0-65d6-4f6d-9093-ae115da341e7"
+      "83f8a95f-17cd-4ab1-9525-a2583a44bd38"
     ]
   },
   "changeNote": "",
@@ -1334,6 +1097,7 @@
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "feedback_person": null,
   "head_title": null,
   "id": "teaser-block",
   "is_folderish": true,
@@ -1343,9 +1107,10 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-22T14:05:40+00:00",
+  "modified": "2025-08-28T12:17:56+00:00",
   "nav_title": null,
   "preview_caption_link": null,
+  "responsible_person": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],

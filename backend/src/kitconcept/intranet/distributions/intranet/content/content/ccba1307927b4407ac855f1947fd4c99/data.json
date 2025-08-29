@@ -3,6 +3,7 @@
   "@type": "Document",
   "UID": "ccba1307927b4407ac855f1947fd4c99",
   "allow_discussion": false,
+  "authors": null,
   "blocks": {
     "15064f53-213d-48e7-a514-9d9cf0d187b2": {
       "@type": "slider",
@@ -351,6 +352,13 @@
       ],
       "styles": {}
     },
+    "18b0403a-ee57-40f3-b639-4375fdf4d90d": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Simple Variation with Grey Background",
+      "styles": {},
+      "theme": "grey"
+    },
     "2acaf75c-42b4-4a55-8810-664cfa9c8282": {
       "@type": "slider",
       "autoplayDelay": 4000,
@@ -620,7 +628,9 @@
           "title": "Introduction"
         }
       ],
-      "styles": {}
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
     },
     "445aa65d-e0a0-47cb-9c49-7958d214db37": {
       "@type": "heading",
@@ -629,6 +639,306 @@
     },
     "5012da82-0e4a-44aa-912f-39d197a6a4e9": {
       "@type": "title"
+    },
+    "589949f7-cbc7-4350-b2dd-458970dabf11": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "cd8736cc-5823-4147-833a-c486fb1f1fd1",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "href": [
+            {
+              "@id": "../../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": null,
+              "image_field": "preview_image_link",
+              "title": "Highlight"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2025-07-09T16:22:00+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "2025-07-09T16:22:00+05:30",
+              "ExpirationDate": "None",
+              "ModificationDate": "2025-07-09T16:24:29+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "cmf_uid": 48,
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "country": null,
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "2025-07-09T10:52:00+00:00",
+              "end": null,
+              "exclude_from_nav": null,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/features/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/features/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "is_folderish": false,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "location_reference": "",
+              "mime_type": "image/jpeg",
+              "modified": "2025-07-09T10:54:29+00:00",
+              "nav_title": null,
+              "organisational_unit_reference": "",
+              "portal_type": "Image",
+              "review_state": null,
+              "roles": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "type_title": "Image",
+              "username": null
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "d339b9ae-a500-4564-8f61-a2c825ac27c2",
+          "description": "The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/6bd32a3367ea4254b295db642655b9d3",
+              "@type": "Document",
+              "Description": "The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').",
+              "Title": "Listing Block",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Listing Block"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2025-07-09T16:22:00+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "2025-07-09T16:22:00+05:30",
+              "ExpirationDate": "None",
+              "ModificationDate": "2025-07-09T16:24:29+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "cmf_uid": 48,
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "country": null,
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "2025-07-09T10:52:00+00:00",
+              "end": null,
+              "exclude_from_nav": null,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/features/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/features/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "is_folderish": false,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "location_reference": "",
+              "mime_type": "image/jpeg",
+              "modified": "2025-07-09T10:54:29+00:00",
+              "nav_title": null,
+              "organisational_unit_reference": "",
+              "portal_type": "Image",
+              "review_state": null,
+              "roles": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "type_title": "Image",
+              "username": null
+            }
+          ],
+          "title": "Listing Block"
+        },
+        {
+          "@id": "35383a92-9eb9-4eb9-9ca7-ecef69f84154",
+          "description": " The introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/00cef5f245a342958288ace545e3c097",
+              "@type": "Document",
+              "Description": " The introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.",
+              "Title": "Introduction",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Introduction"
+            }
+          ],
+          "title": "Introduction"
+        }
+      ],
+      "styles": {},
+      "theme": "default",
+      "variation": "simple"
+    },
+    "5cf364b2-0b86-43f6-861a-4d8df3223c8b": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "e58c2a40-3da9-40de-aa98-1f25a374580c",
+          "description": "Publish company-wide or department events, that can be shown in calendar apps.",
+          "flagAlign": "right",
+          "href": [
+            {
+              "@id": "../../../resolveuid/37bcbfabfe6b47bca2af52fc08fead0a",
+              "Description": "Publish company-wide or department events, that can be shown in calendar apps.",
+              "Title": "Calendar",
+              "hasPreviewImage": null,
+              "image_field": "preview_image_link",
+              "title": "Calendar"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+              "@type": "Image",
+              "CreationDate": "2025-08-01T15:11:02+05:30",
+              "Creator": "admin",
+              "Date": "2025-08-01T15:11:02+05:30",
+              "Description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2025-08-01T15:11:02+05:30",
+              "Subject": [],
+              "Title": "Image for Link",
+              "Type": "Image",
+              "UID": "902fad18bb584693bac78e5ffeaf39d3",
+              "cmf_uid": 52,
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "country": null,
+              "created": "2025-08-01T09:41:02+00:00",
+              "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": null,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "link-image.jpeg",
+              "getObjSize": "882.6 KB",
+              "getPath": "/Plone/features/content-types/link-image.jpeg",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/features/content-types/link-image.jpeg",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "link-image.jpeg",
+              "image_field": "image",
+              "is_folderish": false,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "location_reference": "",
+              "mime_type": "image/jpeg",
+              "modified": "2025-08-01T09:41:02+00:00",
+              "nav_title": null,
+              "organisational_unit_reference": "",
+              "portal_type": "Image",
+              "review_state": null,
+              "roles": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image for Link",
+              "type_title": "Image",
+              "username": null
+            }
+          ],
+          "title": "Calendar"
+        },
+        {
+          "@id": "50e8c690-c224-49cb-b901-ae03bcc0a35a",
+          "description": "Design forms, collect responses that can be mailed out or downloaded for further processing.",
+          "flagAlign": "right",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/0e78d2b30abb4d4283068556dc58c9e2",
+              "@type": "Document",
+              "Description": "Design forms, collect responses that can be mailed out or downloaded for further processing.",
+              "Title": "Forms",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Forms"
+            }
+          ],
+          "title": "Forms"
+        },
+        {
+          "@id": "3799cfd2-bdce-4ef2-892a-79482d26ffc7",
+          "description": "Blocks allow you to create sophisticated and flexibel page layouts for landing pages, pages, or any other content.  ",
+          "flagAlign": "right",
+          "href": [
+            {
+              "@id": "../../../resolveuid/3906609d0456404ca7146f6aa1f12f32",
+              "@type": "Document",
+              "Description": "The table of contents block automatically generates a table of contents with links to the corresponding positions on the page from the headings used.",
+              "Title": "Table of Contents",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Table of Contents"
+            }
+          ],
+          "title": "Blocks"
+        }
+      ],
+      "styles": {},
+      "theme": "grey",
+      "variation": "simple"
     },
     "6173dc0f-f2b9-4936-b4b9-64771fa065c9": {
       "@type": "heading",
@@ -1108,6 +1418,7 @@
     },
     "c5f7eb49-a37e-4413-a985-1200aa5757b4": {
       "@type": "heading",
+      "alignment": "left",
       "heading": "Slider with Grey Background",
       "styles": {},
       "theme": "grey"
@@ -1116,6 +1427,11 @@
       "@type": "heading",
       "heading": "Custom Head Title\u00a0",
       "styles": {},
+      "theme": "default"
+    },
+    "f96dd63d-396d-4b10-9e32-01c434cb7569": {
+      "@type": "heading",
+      "heading": "Simple Variation",
       "theme": "default"
     }
   },
@@ -1131,9 +1447,13 @@
       "7eb40607-b61c-4560-ab45-7ede4c393e73",
       "9226ebdd-788b-49ea-bea0-42d8f1d9a398",
       "2ec50754-9d4a-49bb-a71b-957482028abe",
+      "f96dd63d-396d-4b10-9e32-01c434cb7569",
+      "589949f7-cbc7-4350-b2dd-458970dabf11",
       "c5f7eb49-a37e-4413-a985-1200aa5757b4",
       "2acaf75c-42b4-4a55-8810-664cfa9c8282",
-      "15064f53-213d-48e7-a514-9d9cf0d187b2"
+      "15064f53-213d-48e7-a514-9d9cf0d187b2",
+      "18b0403a-ee57-40f3-b639-4375fdf4d90d",
+      "5cf364b2-0b86-43f6-861a-4d8df3223c8b"
     ]
   },
   "changeNote": "",
@@ -1148,6 +1468,7 @@
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "feedback_person": null,
   "head_title": null,
   "id": "slider",
   "is_folderish": true,
@@ -1157,9 +1478,10 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-07T13:28:43+00:00",
+  "modified": "2025-08-28T08:33:35+00:00",
   "nav_title": null,
   "preview_caption_link": null,
+  "responsible_person": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],

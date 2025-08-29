@@ -1815,7 +1815,7 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       react-aria-components:
-        specifier: 1.10.1
+        specifier: ^1.6.0
         version: 1.10.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-dom:
         specifier: 18.2.0
@@ -1930,12 +1930,6 @@ importers:
       classnames:
         specifier: ^2.2.6
         version: 2.5.1
-      embla-carousel-autoplay:
-        specifier: ^8.0.0
-        version: 8.5.2(embla-carousel@8.5.2)
-      embla-carousel-react:
-        specifier: ^8.0.0
-        version: 8.5.2(react@18.2.0)
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -2089,43 +2083,6 @@ importers:
         version: 3.10.1
       release-it:
         specifier: ^17.1.1
-        version: 17.11.0(typescript@5.8.3)
-
-  packages/volto-social-media/frontend/packages/volto-social-media:
-    dependencies:
-      '@plone/components':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/components
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.2
-        version: 3.10.1
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@types/jest':
-        specifier: ^29.5.8
-        version: 29.5.14
-      '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.17.20
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.23
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.23)
-      react-intl:
-        specifier: ^3.12.1
-        version: 3.12.1(react@18.2.0)
-      release-it:
-        specifier: ^17.7.0
         version: 17.11.0(typescript@5.8.3)
 
 packages:

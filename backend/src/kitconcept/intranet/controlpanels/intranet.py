@@ -54,7 +54,7 @@ class IIntranetSettings(Interface):
     allowed_email_domains = schema.List(
         title=_("Allowed Email Domains"),
         description=_("List of allowed email domains for feedback forms."),
-        value_type=schema.TextLine(),
+        value_type=schema.TextLine(required=False),
         required=False,
     )
 

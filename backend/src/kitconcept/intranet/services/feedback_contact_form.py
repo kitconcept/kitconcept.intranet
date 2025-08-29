@@ -2,18 +2,14 @@ from datetime import datetime
 from email.message import EmailMessage
 from email.utils import formataddr
 from kitconcept.intranet import _
-from kitconcept.intranet.controlpanels.intranet import IIntranetSettings
 from plone import api
 from plone.app.uuid.utils import uuidToObject
-from plone.registry.interfaces import IRegistry
 from plone.restapi.deserializer import json_body
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.interfaces.controlpanel import IMailSchema
 from zExceptions import BadRequest
 from zope.component import getMultiAdapter
-from zope.component import getUtility
 from zope.i18n import translate
 
 import logging
@@ -22,25 +18,17 @@ import logging
 logger = logging.getLogger("kitconcept.intranet")
 
 
-def get_registry_value(interface, field_name, prefix=None):
-    """Generic helper to fetch a registry field from a control panel schema."""
-    registry = getUtility(IRegistry)
-    settings = registry.forInterface(interface, prefix=prefix, check=False)
-    value = getattr(settings, field_name, None)
-    return value
-
-
 class FeedbackPostContactForm(Service):
     """Submit the contact form and send an email depending of the category."""
 
     def reply(self):
         """Send an email to the responsible person and the person who submitted the feedback."""
         parent_object = self.context
-        cc_email = get_registry_value(
-            IIntranetSettings, "feedback_cc_email", "kitconcept.intranet"
+        cc_email = api.portal.get_registry_record(
+            "kitconcept.intranet.feedback_cc_email"
         )
-        default_email = get_registry_value(
-            IIntranetSettings, "default_feedback_email", "kitconcept.intranet"
+        default_email = api.portal.get_registry_record(
+            "kitconcept.intranet.default_feedback_email"
         )
         data = json_body(self.request)
         expander = getMultiAdapter(
@@ -79,8 +67,8 @@ class FeedbackPostContactForm(Service):
         return translate(msg, context=self.request)
 
     def _validate(self, data, parent_object):
-        allowed_emails_domain = get_registry_value(
-            IIntranetSettings, "allowed_email_domains", "kitconcept.intranet"
+        allowed_emails_domain = api.portal.get_registry_record(
+            "kitconcept.intranet.allowed_email_domains"
         )
         reporter_email = data.get("email")
         name = data.get("name")
@@ -197,7 +185,7 @@ Ihr Intranet-Team
         cc_email = data["cc_email"]
         if cc_email:
             message["Cc"] = cc_email
-        from_email = get_registry_value(IMailSchema, "email_from_address", "plone")
+        from_email = api.portal.get_registry_record("plone.email_from_address")
         recipient_email = data["feedback_recipient_email"]
         subject = self._translate(_("Intranet feedback form: {title}")).format(
             title=data["title"]
@@ -227,7 +215,7 @@ Ihr Intranet-Team
 
     def _send_confirmation_email(self, data):
         mailhost = getToolByName(self.context, "MailHost")
-        from_email = get_registry_value(IMailSchema, "email_from_address", "plone")
+        from_email = api.portal.get_registry_record("plone.email_from_address")
         lang = api.portal.get_current_language()
         name = data["name"]
         if lang == "en":

@@ -10,6 +10,8 @@ from zope.component import adapter
 from zope.component import getUtility
 from zope.interface import Interface
 from zope.interface import implementer
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 
 class IIntranetSettings(Interface):
@@ -31,6 +33,17 @@ class IIntranetSettings(Interface):
         title=_("Custom CSS"),
         description=_("Custom CSS for the intranet."),
         required=False,
+    )
+
+    person_squared_images = schema.Choice(
+        title=_("Person Squared Images"),
+        description=_("Enable squared images for person teasers and listings."),
+        required=False,
+        default="disabled",
+        vocabulary=SimpleVocabulary([
+            SimpleTerm("disabled", "disabled", _("Disabled")),
+            SimpleTerm("squared4to5", "squared4to5", _("4:5")),
+        ]),
     )
 
 
@@ -75,3 +88,4 @@ class IntranetSiteEndpointExpander:
             settings.search_field_placeholder
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
+        data["kitconcept.person_squared_images"] = settings.person_squared_images

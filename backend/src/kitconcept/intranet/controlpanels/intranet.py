@@ -101,4 +101,6 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_squared_images"] = settings.person_squared_images
-        data["kitconcept.intranet.iframe_allowed_domains"] = settings.iframe_allowed_domains
+        data["kitconcept.intranet.iframe_allowed_domains"] = (
+            settings.iframe_allowed_domains
+        )

@@ -101,10 +101,3 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_squared_images"] = settings.person_squared_images
-        data["kitconcept.intranet.default_feedback_email"] = (
-            settings.default_feedback_email
-        )
-        data["kitconcept.intranet.feedback_cc_email"] = settings.feedback_cc_email
-        data["kitconcept.intranet.allowed_email_domains"] = (
-            settings.allowed_email_domains
-        )

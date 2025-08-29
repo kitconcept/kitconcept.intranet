@@ -103,7 +103,8 @@ class FeedbackPostContactForm(Service):
         if not reporter_email or (
             allowed_emails_domain
             and not any(
-                reporter_email.endswith(domain) for domain in allowed_emails_domain
+                reporter_email.endswith("@" + domain)
+                for domain in allowed_emails_domain
             )
         ):
             raise BadRequest(

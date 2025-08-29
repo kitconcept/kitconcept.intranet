@@ -110,7 +110,6 @@ const FeedBackForm = () => {
     name: '',
   });
   const [metadata, setMetadata] = useState({});
-  const [emailError, setEmailError] = useState(false);
   const [emailErrorSubmit, setEmailErrorSubmit] = useState(false);
 
   const [feedbackError, setFeedbackError] = useState(false);
@@ -194,14 +193,6 @@ const FeedBackForm = () => {
         setFeedbackError(false);
       }
     }
-    // if (event.target.name === 'email') {
-    //   if (event.target.value.endsWith('@kitconcept.com')) {
-    //     setEmailError(false);
-    //   } else {
-    //     setEmailError(true);
-    //     setEmailErrorSubmit(false);
-    //   }
-    // }
     setForm({ ...form, [event.target.name]: event.target.value });
   };
   return (
@@ -252,7 +243,7 @@ const FeedBackForm = () => {
               value={form.name}
             />
           </TextField>
-          <TextField isInvalid={emailErrorSubmit || emailError}>
+          <TextField isInvalid={emailErrorSubmit}>
             <Label className="feedback-label" htmlFor="email">
               {intl.formatMessage(messages.email)}: *
             </Label>

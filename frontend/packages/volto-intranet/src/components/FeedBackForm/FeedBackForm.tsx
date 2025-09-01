@@ -75,8 +75,8 @@ const messages = defineMessages({
     defaultMessage: 'Please enter your Organizational email address.',
   },
   emailHelpText: {
-    id: 'Only internal e-mail addresses are permitted..',
-    defaultMessage: 'Only internal e-mail addresses are permitted..',
+    id: 'Only internal e-mail addresses are permitted.',
+    defaultMessage: 'Only internal e-mail addresses are permitted.',
   },
 });
 
@@ -141,7 +141,7 @@ const FeedBackForm = () => {
   }, [loaded, isLoading, intl, history]);
 
   useEffect(() => {
-    if (error) {
+    if (error && isLoading) {
       toast.error(
         <Toast
           error
@@ -150,7 +150,7 @@ const FeedBackForm = () => {
         />,
       );
     }
-  }, [error, intl]);
+  }, [error, intl, isLoading]);
 
   React.useEffect(() => {
     const userAgent = navigator.userAgent;

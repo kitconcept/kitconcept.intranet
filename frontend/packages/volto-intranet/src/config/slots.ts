@@ -3,6 +3,7 @@ import CustomCSS from '../slots/CustomCSS/CustomCSS';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import ConfigInjector from '../slots/ConfigInjector/ConfigInjector';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
+import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -22,6 +23,12 @@ export default function install(config: ConfigType) {
     name: 'documentByLine',
     component: DocumentByLine,
   });
+  config.registerSlotComponent({
+    name: 'StickyFeedbackButton',
+    slot: 'headerTools',
+    component: StickyFeedbackButton,
+  });
+
   config.registerSlotComponent({
     name: 'PostFooterFollowUsLogoAndLinks',
     slot: 'postFooter',

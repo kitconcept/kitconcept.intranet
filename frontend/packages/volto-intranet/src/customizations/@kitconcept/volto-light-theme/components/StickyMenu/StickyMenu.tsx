@@ -30,7 +30,7 @@ const StickyMenu = ({ content }: { content: Content }) => {
   ];
 
   //To restrain the sticky menus from showing on settings/controlpanel pages
-  const endsWithSettingPage = setting_page.some((page) =>
+  const isSettingsPage = setting_page.some((page) =>
     location.pathname.includes(page),
   );
 
@@ -42,7 +42,7 @@ const StickyMenu = ({ content }: { content: Content }) => {
     StickyMenuSettings['sticky_menu_foreground_color']
   >(content, 'kitconcept.sticky_menu', 'sticky_menu_foreground_color');
 
-  return !endsWithSettingPage ? (
+  return !isSettingsPage ? (
     <div
       className="sticky-menu"
       role="navigation"

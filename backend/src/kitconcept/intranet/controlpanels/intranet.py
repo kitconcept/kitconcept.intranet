@@ -46,6 +46,16 @@ class IIntranetSettings(Interface):
         ]),
     )
 
+    iframe_allowed_domains = schema.List(
+        title=_("Allowed Iframe Domains"),
+        description="A list of allowed domains for iframes. Example: ['example.com']",
+        min_length=0,
+        value_type=schema.TextLine(
+            title="Domain", description="Allowed domain", default="example.com"
+        ),
+        required=False,
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
@@ -89,3 +99,6 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_squared_images"] = settings.person_squared_images
+        data["kitconcept.intranet.iframe_allowed_domains"] = (
+            settings.iframe_allowed_domains
+        )

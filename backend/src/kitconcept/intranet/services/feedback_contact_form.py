@@ -199,7 +199,6 @@ Ihr Intranet-Team
                     )
                 )
             )
-
         try:
             mailhost.send(
                 message.as_bytes(),
@@ -279,4 +278,4 @@ Das haben Sie uns als Feedback eingereicht:
             )
         except Exception as e:
             logger.error(f"Unable to send email: {e!s}")
-            raise Exception(self._translate(_("error.email")))
+            raise Exception(self._translate(_("error.email"))) from e

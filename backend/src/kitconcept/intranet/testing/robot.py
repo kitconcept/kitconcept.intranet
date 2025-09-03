@@ -8,7 +8,6 @@ from plone.app.robotframework.quickinstaller import QuickInstaller
 from plone.app.robotframework.remote import RemoteLibraryLayer
 from plone.app.robotframework.server import Zope2ServerRemote
 from plone.app.robotframework.testing import WSGI_SERVER_SINGLE_THREADED_FIXTURE
-from plone.app.robotframework.testing import MockMailHostLayer as BaseMailLayer
 from plone.app.robotframework.testing import PloneRobotFixture
 from plone.app.robotframework.users import Users
 from plone.app.testing import FunctionalTesting
@@ -33,17 +32,10 @@ class ContentFixture(BaseFixture):
 CONTENT_FIXTURE = ContentFixture()
 
 
-class MockMailHostLayer(BaseMailLayer):
-    defaultBases = (CONTENT_FIXTURE,)
-
-
-MOCK_MAILHOST_FIXTURE = MockMailHostLayer()
-
-
 class RobotFixture(PloneRobotFixture):
     """Acceptance testing fixture, using robot framework, for kitconcept.intranet."""
 
-    defaultBases = (MOCK_MAILHOST_FIXTURE,)
+    defaultBases = (CONTENT_FIXTURE,)
 
     def setUpPloneSite(self, portal):
         super().setUpPloneSite(portal)

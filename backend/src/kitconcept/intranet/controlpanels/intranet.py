@@ -46,24 +46,6 @@ class IIntranetSettings(Interface):
         ]),
     )
 
-    default_feedback_email = schema.TextLine(
-        title=_("Default Feedback Email"),
-        description=_("Email address used in feedback forms if none is set."),
-        required=False,
-    )
-
-    feedback_cc_email = schema.TextLine(
-        title=_("Feedback CC email"),
-        description=_("Email address to be CCed in feedback forms."),
-        required=False,
-    )
-    allowed_email_domains = schema.List(
-        title=_("Allowed Email Domains"),
-        description=_("List of allowed email domains for feedback forms."),
-        value_type=schema.TextLine(required=False),
-        required=False,
-    )
-
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings

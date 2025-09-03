@@ -45,7 +45,6 @@ build = [
 ]
 test = [
     "horse-with-no-namespace>=20250408.0",
-    "Products.PrintingMailHost",
     "mypy>=1.15.0",
     "plone.app.testing",
     "plone.restapi[test]",

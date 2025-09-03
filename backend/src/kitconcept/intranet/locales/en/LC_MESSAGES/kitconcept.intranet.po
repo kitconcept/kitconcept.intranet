@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-01 09:51+0000\n"
+"POT-Creation-Date: 2025-08-18 19:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,20 +22,8 @@ msgstr ""
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:45
-msgid "4:5"
-msgstr ""
-
 #: kitconcept/intranet/distributions.zcml:16
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
-msgstr ""
-
-#: kitconcept/intranet/behaviors/configure.zcml:46
-msgid "Add the lifecycle management fields"
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:61
-msgid "Allowed Email Domains"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:19
@@ -51,20 +39,12 @@ msgstr ""
 msgid "Can only be seen and edited by the owner."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:33
+#: kitconcept/intranet/controlpanels/intranet.py:31
 msgid "Custom CSS"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:34
+#: kitconcept/intranet/controlpanels/intranet.py:32
 msgid "Custom CSS for the intranet."
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:50
-msgid "Default Feedback Email"
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:44
-msgid "Disabled"
 msgstr ""
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
@@ -72,24 +52,8 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:57
-msgid "Email address to be CCed in feedback forms."
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:51
-msgid "Email address used in feedback forms if none is set."
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:40
-msgid "Enable squared images for person teasers and listings."
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:21
+#: kitconcept/intranet/controlpanels/intranet.py:19
 msgid "External Search URL"
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:56
-msgid "Feedback CC email"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:29
@@ -113,20 +77,8 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:70
+#: kitconcept/intranet/controlpanels/intranet.py:39
 msgid "Intranet Settings"
-msgstr ""
-
-#: kitconcept/intranet/services/feedback_contact_form.py:190
-msgid "Intranet feedback form: {title}"
-msgstr ""
-
-#: kitconcept/intranet/behaviors/configure.zcml:46
-msgid "Lifecycle Management fields"
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:62
-msgid "List of allowed email domains for feedback forms."
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:29
@@ -145,10 +97,6 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
-#: kitconcept/intranet/services/feedback_contact_form.py:81
-msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
-msgstr ""
-
 #: kitconcept/intranet/behaviors/configure.zcml:39
 #: kitconcept/intranet/behaviors/organisational_unit.py:20
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
@@ -160,20 +108,8 @@ msgstr ""
 msgid "Pending review"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:39
-msgid "Person Squared Images"
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:28
+#: kitconcept/intranet/controlpanels/intranet.py:26
 msgid "Placeholder text for the search field."
-msgstr ""
-
-#: kitconcept/intranet/services/feedback_contact_form.py:89
-msgid "Please enter your feedback."
-msgstr ""
-
-#: kitconcept/intranet/services/feedback_contact_form.py:99
-msgid "Please enter your organisational email address."
 msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:14
@@ -220,7 +156,7 @@ msgstr ""
 msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:27
+#: kitconcept/intranet/controlpanels/intranet.py:25
 msgid "Search Field Placeholder"
 msgstr ""
 
@@ -251,15 +187,11 @@ msgstr ""
 msgid "Taxonomy"
 msgstr ""
 
-#: kitconcept/intranet/services/feedback_contact_form.py:196
-msgid "This contact's email address is not known, so the message cannot be delivered."
-msgstr ""
-
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Through The Web blocks configuration"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:22
+#: kitconcept/intranet/controlpanels/intranet.py:20
 msgid "Used in the intranet header seach bar."
 msgstr ""
 
@@ -279,14 +211,6 @@ msgstr ""
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Waiting to be reviewed, not editable by the owner."
-msgstr ""
-
-#: kitconcept/intranet/services/feedback_contact_form.py:269
-msgid "Your feedback on our intranet content: {title}"
-msgstr ""
-
-#: kitconcept/intranet/services/feedback_contact_form.py:214
-msgid "error.email"
 msgstr ""
 
 #. Default: "Configure some aspects of the default blocks configuration."
@@ -320,16 +244,6 @@ msgstr ""
 msgid "kitconcept.intranet: Solr Support"
 msgstr ""
 
-#. Default: "Authors"
-#: kitconcept/intranet/behaviors/lcm.py:53
-msgid "label_authors"
-msgstr ""
-
-#. Default: "Feedback to"
-#: kitconcept/intranet/behaviors/lcm.py:40
-msgid "label_feedback_person"
-msgstr ""
-
 #. Default: "Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_organisational_unit"
@@ -338,9 +252,4 @@ msgstr ""
 #. Default: "Place"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_place"
-msgstr ""
-
-#. Default: "Content Owner:"
-#: kitconcept/intranet/behaviors/lcm.py:27
-msgid "label_responsible"
 msgstr ""

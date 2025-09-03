@@ -216,7 +216,7 @@ class TestContentTypeFTI:
                 "Person",
                 "behaviors",
                 (
-                    "volto.preview_image_link",
+                    "kitconcept.core.person_image",
                     "volto.kicker",
                     "collective.person.person",
                     "collective.contact_behaviors.contact_info",

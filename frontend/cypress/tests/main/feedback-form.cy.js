@@ -54,6 +54,8 @@ describe('Feedback form', () => {
     cy.get('.feedback-form textarea[name="feedback"]').type('Test feedback');
     cy.get('.feedback-form input[name="name"]').type('Test Name');
     cy.get('.feedback-form input[name="email"]').type('test@test.com');
-    // cy.get('.feedback-form-buttons .send-button').click();
+    cy.get('.feedback-form-buttons .send-button').click();
+    cy.location('pathname').should('eq', '/my-page');
+    cy.get('h1.documentFirstHeading').should('contain', 'My Page');
   });
 });

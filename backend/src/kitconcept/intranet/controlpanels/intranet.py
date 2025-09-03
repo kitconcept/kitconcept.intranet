@@ -35,14 +35,18 @@ class IIntranetSettings(Interface):
         required=False,
     )
 
-    person_squared_images = schema.Choice(
-        title=_("Person Squared Images"),
-        description=_("Enable squared images for person teasers and listings."),
+    person_picture_aspect_ratio = schema.Choice(
+        title=_("Person Picture Aspect Ratio"),
+        description=_(
+            "Image aspect ratio of the person's picture. This setting is used for the "
+            "person picture on the person profile page, on teasers that point to a "
+            "person profile page and on listings where persons are displayed."
+        ),
         required=False,
         default="disabled",
         vocabulary=SimpleVocabulary([
-            SimpleTerm("disabled", "disabled", _("Disabled")),
-            SimpleTerm("squared4to5", "squared4to5", _("4:5")),
+            SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
+            SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
         ]),
     )
 
@@ -88,4 +92,6 @@ class IntranetSiteEndpointExpander:
             settings.search_field_placeholder
         )
         data["kitconcept.intranet.custom_css"] = settings.custom_css
-        data["kitconcept.person_squared_images"] = settings.person_squared_images
+        data["kitconcept.person_picture_aspect_ratio"] = (
+            settings.person_picture_aspect_ratio
+        )

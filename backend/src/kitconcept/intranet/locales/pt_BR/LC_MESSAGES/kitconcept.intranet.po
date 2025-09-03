@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-18 19:48+0000\n"
+"POT-Creation-Date: 2025-09-01 09:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,9 +22,21 @@ msgstr "- Workflow para Intranets. Acesso público ao conteúdo publicado."
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr "- Workflow para Intranets. Requer autenticação."
 
+#: kitconcept/intranet/controlpanels/intranet.py:45
+msgid "4:5"
+msgstr ""
+
 #: kitconcept/intranet/distributions.zcml:16
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Uma distribuição Plone para Intranets com Plone. Criada pela kitconcept."
+
+#: kitconcept/intranet/behaviors/configure.zcml:46
+msgid "Add the lifecycle management fields"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:61
+msgid "Allowed Email Domains"
+msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Allows to set configuration that will be injected into the blocks default configuration."
@@ -39,22 +51,46 @@ msgstr "Configuração de blocos"
 msgid "Can only be seen and edited by the owner."
 msgstr "Só pode ser visto e editado pelo proprietário."
 
-#: kitconcept/intranet/controlpanels/intranet.py:31
+#: kitconcept/intranet/controlpanels/intranet.py:33
 msgid "Custom CSS"
 msgstr "CSS personalizado"
 
-#: kitconcept/intranet/controlpanels/intranet.py:32
+#: kitconcept/intranet/controlpanels/intranet.py:34
 msgid "Custom CSS for the intranet."
 msgstr "CSS personalizado para a intranet."
+
+#: kitconcept/intranet/controlpanels/intranet.py:50
+msgid "Default Feedback Email"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:44
+msgid "Disabled"
+msgstr ""
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Edit"
 msgstr "Editar"
 
-#: kitconcept/intranet/controlpanels/intranet.py:19
+#: kitconcept/intranet/controlpanels/intranet.py:57
+msgid "Email address to be CCed in feedback forms."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:51
+msgid "Email address used in feedback forms if none is set."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:40
+msgid "Enable squared images for person teasers and listings."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr "URL de busca externa"
+
+#: kitconcept/intranet/controlpanels/intranet.py:56
+msgid "Feedback CC email"
+msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:29
 msgid "Fields for Location"
@@ -77,9 +113,21 @@ msgstr "Workflow público para Intranet"
 msgid "Intranet Restricted Workflow"
 msgstr "Workflow restrito para Intranet"
 
-#: kitconcept/intranet/controlpanels/intranet.py:39
+#: kitconcept/intranet/controlpanels/intranet.py:70
 msgid "Intranet Settings"
 msgstr "Configurações da Intranet"
+
+#: kitconcept/intranet/services/feedback_contact_form.py:190
+msgid "Intranet feedback form: {title}"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:46
+msgid "Lifecycle Management fields"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:62
+msgid "List of allowed email domains for feedback forms."
+msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:29
 #: kitconcept/intranet/behaviors/location.py:19
@@ -97,6 +145,10 @@ msgstr "Membro retira a submissão"
 msgid "Member submits content for publication"
 msgstr "Membro envia conteúdo para publicação"
 
+#: kitconcept/intranet/services/feedback_contact_form.py:81
+msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
+msgstr ""
+
 #: kitconcept/intranet/behaviors/configure.zcml:39
 #: kitconcept/intranet/behaviors/organisational_unit.py:20
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
@@ -108,9 +160,21 @@ msgstr "Área"
 msgid "Pending review"
 msgstr "Aguardando revisão"
 
-#: kitconcept/intranet/controlpanels/intranet.py:26
+#: kitconcept/intranet/controlpanels/intranet.py:39
+msgid "Person Squared Images"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
 msgstr "Texto de exemplo para o campo de busca."
+
+#: kitconcept/intranet/services/feedback_contact_form.py:89
+msgid "Please enter your feedback."
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:99
+msgid "Please enter your organisational email address."
+msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:14
 msgid "Policy package to install our site"
@@ -156,7 +220,7 @@ msgstr "Revisor publica conteúdo"
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Revisor envia conteúdo de volta para reescrita"
 
-#: kitconcept/intranet/controlpanels/intranet.py:25
+#: kitconcept/intranet/controlpanels/intranet.py:27
 msgid "Search Field Placeholder"
 msgstr "Texto de exemplo para o campo de busca"
 
@@ -187,11 +251,15 @@ msgstr "Enviar para publicação"
 msgid "Taxonomy"
 msgstr "Taxonomia"
 
+#: kitconcept/intranet/services/feedback_contact_form.py:196
+msgid "This contact's email address is not known, so the message cannot be delivered."
+msgstr ""
+
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Through The Web blocks configuration"
 msgstr "Configuração de blocos TTW"
 
-#: kitconcept/intranet/controlpanels/intranet.py:20
+#: kitconcept/intranet/controlpanels/intranet.py:22
 msgid "Used in the intranet header seach bar."
 msgstr "Utilizado na barra de busca do cabeçalho do intranet."
 
@@ -212,6 +280,14 @@ msgstr "Visível para usuários autenticados, editável por editores e revisores
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr "Aguardando revisão, não editável pelo proprietário."
+
+#: kitconcept/intranet/services/feedback_contact_form.py:269
+msgid "Your feedback on our intranet content: {title}"
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:214
+msgid "error.email"
+msgstr ""
 
 #. Default: "Configure some aspects of the default blocks configuration."
 #: kitconcept/intranet/behaviors/blocks_settings.py:41
@@ -244,6 +320,16 @@ msgstr "kitconcept.intranet: Restringir acesso"
 msgid "kitconcept.intranet: Solr Support"
 msgstr "kitconcept.intranet: Suporte a buscas com Solr"
 
+#. Default: "Authors"
+#: kitconcept/intranet/behaviors/lcm.py:53
+msgid "label_authors"
+msgstr ""
+
+#. Default: "Feedback to"
+#: kitconcept/intranet/behaviors/lcm.py:40
+msgid "label_feedback_person"
+msgstr ""
+
 #. Default: "Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_organisational_unit"
@@ -253,3 +339,8 @@ msgstr "Área"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_place"
 msgstr "Localização"
+
+#. Default: "Content Owner:"
+#: kitconcept/intranet/behaviors/lcm.py:27
+msgid "label_responsible"
+msgstr ""

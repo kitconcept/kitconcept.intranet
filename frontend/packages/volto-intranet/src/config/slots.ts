@@ -2,6 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import CustomCSS from '../slots/CustomCSS/CustomCSS';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import ConfigInjector from '../slots/ConfigInjector/ConfigInjector';
+import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 
 export default function install(config: ConfigType) {
@@ -26,6 +27,12 @@ export default function install(config: ConfigType) {
     name: 'StickyFeedbackButton',
     slot: 'headerTools',
     component: StickyFeedbackButton,
+  });
+
+  config.registerSlotComponent({
+    name: 'PostFooterFollowUsLogoAndLinks',
+    slot: 'postFooter',
+    component: FollowUsLogoAndLinks,
   });
 
   return config;

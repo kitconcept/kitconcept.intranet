@@ -1,0 +1,60 @@
+.feedback-form {
+  margin: 16px 0 60px 0;
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+  h2 {
+    margin-bottom: $spacing-small;
+  }
+
+  .react-aria-TextField {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .feedback-to {
+    margin-top: 0;
+  }
+  .feedback-form-buttons {
+    display: flex;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+    gap: $spacing-small;
+  }
+  .feedback-label {
+    margin-bottom: 4px;
+  }
+  .help {
+    padding-top: 10px;
+    font-size: 13px;
+  }
+  .reset-button,
+  .send-button {
+    display: inline-block;
+    min-height: 1em;
+    padding: 10px 30px 10px;
+    border: none;
+    border-radius: 0.25rem;
+    background: #003d66;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+
+    &:hover {
+      background: #fff;
+      color: #003d66;
+    }
+
+    &:focus {
+      background: #003d66;
+      color: #fff;
+    }
+  }
+
+  .reset-button {
+    background: #333;
+  }
+  .feedback-textarea {
+    border-radius: none;
+  }
+}

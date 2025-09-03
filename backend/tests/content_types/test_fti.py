@@ -221,7 +221,6 @@ class TestContentTypeFTI:
                     "collective.person.person",
                     "collective.contact_behaviors.contact_info",
                     "kitconcept.core.additional_contact_info",
-                    "volto.blocks.editable.layout",
                     "plone.namefromtitle",
                     "plone.shortname",
                     "volto.navtitle",

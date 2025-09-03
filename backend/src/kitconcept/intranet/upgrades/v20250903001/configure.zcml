@@ -7,9 +7,9 @@
       source="20250829001"
       destination="20250903001"
       >
-    <genericsetup:upgradeStep
-        title="Upgrade Plone to 6.1.2"
-        handler=".upgrade_plone_612"
+    <genericsetup:upgradeDepends
+        title="Changes name of the field from kitconcept.person_squared_images to kitconcept.person_picture_aspect_ratio in the control panel registry and sets new default."
+        import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>
 </configure>

@@ -12,7 +12,8 @@ const CustomCSS = () => {
     (state) => state.site.data,
   );
   const customCSS = site['kitconcept.intranet.custom_css'];
-  const personSquaredImages = site['kitconcept.person_squared_images'];
+  const personPictureAspectRatio =
+    site['kitconcept.person_picture_aspect_ratio'];
 
   return (
     <>
@@ -23,7 +24,7 @@ const CustomCSS = () => {
           </Helmet>
         </>
       ) : null}
-      {personSquaredImages ? (
+      {personPictureAspectRatio === 'squared4to5' ? (
         <BodyClass className="person-squared-images" />
       ) : null}
     </>

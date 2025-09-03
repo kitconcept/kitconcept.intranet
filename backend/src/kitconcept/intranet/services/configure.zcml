@@ -31,14 +31,6 @@
       name="@lcm"
       />
 
-  <plone:service
-      method="POST"
-      factory=".feedback_contact_form.FeedbackPostContactForm"
-      for="zope.interface.Interface"
-      permission="zope2.View"
-      name="@contact-form-feedback"
-      />
-
   <cache:ruleset
       for=".byline.BylineGet"
       ruleset="plone.content.dynamic"

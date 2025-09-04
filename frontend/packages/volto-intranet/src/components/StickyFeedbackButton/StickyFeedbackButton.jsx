@@ -43,7 +43,10 @@ const StickyFeedbackButton = () => {
       className={cx('sticky-feedback-button-container', {
         animate,
       })}
-      style={{ transform: 'translateX(-100%) translateY(-50%)' }}
+      style={{
+        transform: 'translateX(-100%) translateY(-50%)',
+        display: 'none',
+      }}
     >
       <Link
         to={`${location.pathname.replace(/\/$/, '')}/feedback-form`}

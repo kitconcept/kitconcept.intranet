@@ -18,14 +18,14 @@ export default function install(config: ConfigType) {
   });
 
   config.registerSlotComponent({
+    name: 'StickyFeedbackButton',
+    slot: 'aboveContent',
+    component: StickyFeedbackButton,
+  });
+  config.registerSlotComponent({
     slot: 'belowContentTitle',
     name: 'documentByLine',
     component: DocumentByLine,
-  });
-  config.registerSlotComponent({
-    name: 'StickyFeedbackButton',
-    slot: 'headerTools',
-    component: StickyFeedbackButton,
   });
 
   return config;

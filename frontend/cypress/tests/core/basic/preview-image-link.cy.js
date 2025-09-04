@@ -68,4 +68,20 @@ describe('Preview Image Link Tests', () => {
     });
     cy.get('#toolbar-save').click();
   });
+  it('Add preview image from url, only internal URLs allowed', function () {
+    cy.navigate('/document/edit');
+    cy.wait('@schema');
+    cy.get('#metadataform-fieldset-preview_image')
+      .findByLabelText('Enter a URL to an image')
+      .click();
+
+    cy.get('.ui.input.editor-link.input-anchorlink-theme input').type(
+      `https://github.com/plone/volto/raw/main/logos/volto-colorful.png{enter}`,
+    );
+
+    cy.get('#metadataform-fieldset-preview_image');
+    cy.get('.image-upload-widget-image img').should('not.exist');
+
+    cy.get('#toolbar-save').click();
+  });
 });

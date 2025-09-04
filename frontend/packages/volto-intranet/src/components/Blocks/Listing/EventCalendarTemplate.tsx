@@ -26,9 +26,9 @@ const itemDates = (item: any, lang: string) => {
       ? item.start
         ? new Date(item.start)
         : null
-      : item.Effective
-        ? new Date(item.Effective)
-        : new Date(item.CreationDate);
+      : item.effective
+        ? new Date(item.effective)
+        : new Date(item.created);
 
   const end =
     item['@type'] === 'Event' && (item.end ? new Date(item.end) : null);

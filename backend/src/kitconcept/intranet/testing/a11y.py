@@ -18,7 +18,7 @@ ANSWERS_EXAMPLE_CONTENT = {
     "site_id": "plone",
     "title": "Intranet",
     "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
-    "default_language": "en",
+    "available_languages": ["en"],
     "portal_timezone": "Europe/Berlin",
     "workflow": "public",
     "setup_content": True,

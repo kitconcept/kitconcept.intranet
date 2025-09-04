@@ -3,11 +3,13 @@ from email.message import EmailMessage
 from email.utils import formataddr
 from kitconcept.intranet import _
 from plone import api
+from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.deserializer import json_body
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 from zExceptions import BadRequest
 from zope.component import getMultiAdapter
+from zope.interface import alsoProvides
 from zope.i18n import translate
 
 import logging
@@ -117,6 +119,7 @@ class FeedbackPostContactForm(Service):
 
     def reply(self):
         """Send an email to the responsible person and the person who submitted the feedback."""
+        alsoProvides(self.request, IDisableCSRFProtection)
         parent_object = self.context
         cc_email = api.portal.get_registry_record(
             "kitconcept.intranet.feedback_cc_email"

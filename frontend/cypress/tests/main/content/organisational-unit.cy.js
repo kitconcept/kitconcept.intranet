@@ -30,7 +30,7 @@ describe('Add Content Tests', () => {
         '/institute-of-robotics-and-mechatronics-organisational-unit',
     );
   });
-  it.only('As editor I can add a organisational unit to Document content type and find it in listing block', function () {
+  it('As editor I can add a organisational unit to Document content type and find it in listing block', function () {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.createContent({
       contentType: 'Organisational Unit',

@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { useHistory, useLocation } from 'react-router-dom';
-import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { toast } from 'react-toastify';
 import { submitFeedbackContactForm } from '../../actions';
@@ -119,38 +118,7 @@ const FeedBackForm = () => {
   let PageURl = getBaseUrl(useLocation().pathname);
 
   const dispatch = useDispatch();
-  const { loading, loaded, error } = useSelector(
-    (state: any) => state.feedbackContactForm,
-  );
-
-  const isLoading = usePrevious(loading);
-
   const content = useSelector((state: any) => state.content.data);
-
-  React.useEffect(() => {
-    if (loaded && isLoading) {
-      toast.success(
-        <Toast
-          success
-          title={intl.formatMessage(messages.success)}
-          content={intl.formatMessage(messages.successContent)}
-        />,
-      );
-      history.goBack();
-    }
-  }, [loaded, isLoading, intl, history]);
-
-  useEffect(() => {
-    if (error && isLoading) {
-      toast.error(
-        <Toast
-          error
-          title={intl.formatMessage(messages.error)}
-          content={error?.response?.body?.message}
-        />,
-      );
-    }
-  }, [error, intl, isLoading]);
 
   React.useEffect(() => {
     const userAgent = navigator.userAgent;
@@ -182,7 +150,27 @@ const FeedBackForm = () => {
         ...form,
         ...metadata,
       }),
-    );
+    )
+      .then(() => {
+        toast.success(
+          <Toast
+            success
+            title={intl.formatMessage(messages.success)}
+            content={intl.formatMessage(messages.successContent)}
+          />,
+        );
+
+        history.goBack();
+      })
+      .catch((error) => {
+        toast.error(
+          <Toast
+            error
+            title={intl.formatMessage(messages.error)}
+            content={error?.response?.body?.message}
+          />,
+        );
+      });
   };
   const onCancel = () => {
     history.goBack();
@@ -262,25 +250,21 @@ const FeedBackForm = () => {
               <>
                 By submitting this feedback, I agree to the{' '}
                 <span>
-                  <a href="https://intranet.fz-juelich.de/en/data-protection">
-                    data protection declaration.
-                  </a>
+                  <a href="/en/data-protection">data protection declaration.</a>
                 </span>
               </>
             ) : (
               <>
                 Mit dem Absenden dieses Feedbacks erkläre ich mich mit den{' '}
                 <span>
-                  <a href="https://intranet.fz-juelich.de/de/datenschutz">
-                    Datenschutzbestimmungen
-                  </a>
+                  <a href="/de/datenschutz">Datenschutzbestimmungen</a>
                 </span>{' '}
                 einverstanden.
               </>
             )}
           </p>
           <div className="feedback-form-buttons">
-            <Button className="reset-button" onClick={onCancel}>
+            <Button type="button" className="reset-button" onClick={onCancel}>
               {intl.formatMessage(messages.cancel)}
             </Button>
             <Button type="submit" className="send-button" onClick={onSubmit}>

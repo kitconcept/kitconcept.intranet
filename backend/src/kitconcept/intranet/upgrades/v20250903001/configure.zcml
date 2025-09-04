@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250829001"
+      destination="20250903001"
+      >
+    <genericsetup:upgradeDepends
+        title="Changes name of the field from kitconcept.person_squared_images to kitconcept.person_picture_aspect_ratio in the control panel registry and sets new default."
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

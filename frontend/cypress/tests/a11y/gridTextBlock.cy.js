@@ -22,12 +22,6 @@ describe('a11y tests', () => {
           id: 'duplicate-id-active',
           enabled: false,
         },
-        // there are missing heading of grid-block
-        // because we are using multiple grid block
-        {
-          id: 'empty-heading',
-          enabled: false,
-        },
       ],
     });
     cy.checkAccessibility();

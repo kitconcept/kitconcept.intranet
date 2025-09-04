@@ -138,10 +138,10 @@ class FeedbackPostContactForm(Service):
         )
         feedback_person_uuid = parent_object.feedback_person
         feedback_member = (
-            api.content.get(feedback_person_uuid) if feedback_person_uuid else None
+            api.content.get(UID=feedback_person_uuid) if feedback_person_uuid else None
         )
         responsible_member = (
-            api.content.get(responsible_person_uuid)
+            api.content.get(UID=responsible_person_uuid)
             if responsible_person_uuid
             else None
         )

@@ -2,8 +2,8 @@ import './theme/custom.scss';
 import { ConfigType } from '@plone/registry';
 import installSettings from './config/settings';
 import installSlots from './config/slots';
-import installWidgets from './config/widgets';
-import installBlocks from './config/blocks';
+// import installWidgets from './config/widgets';
+// import installBlocks from './config/blocks';
 import type { CustomInheritBehavior, BlocksConfigSettings } from './types';
 
 declare module '@plone/types' {

@@ -32,6 +32,10 @@ describe('Add Content Tests', () => {
   });
   it('As editor I can add a organisational unit to Document content type and find it in listing block', function () {
     cy.intercept('PATCH', '/**/my-page').as('save');
+    cy.intercept(
+      'GET',
+      '/**/@vocabularies/kitconcept.intranet.vocabularies.organisational_unit_objects*',
+    ).as('vocab');
     cy.createContent({
       contentType: 'Organisational Unit',
       contentId: 'institute-of-robotics-and-mechatronics-organisational-unit',
@@ -45,6 +49,7 @@ describe('Add Content Tests', () => {
     });
     cy.navigate('/my-page/edit');
     cy.wait('@schema');
+    cy.wait('@vocab');
     cy.get('#field-organisational_unit_reference').click();
     cy.get(
       '#field-organisational_unit_reference .react-select__menu .react-select__option',

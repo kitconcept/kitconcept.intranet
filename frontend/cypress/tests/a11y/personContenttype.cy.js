@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Person content type
   it('Person (/people/dr-ayla-demir)', () => {
     cy.navigate('/people/dr-ayla-demir');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

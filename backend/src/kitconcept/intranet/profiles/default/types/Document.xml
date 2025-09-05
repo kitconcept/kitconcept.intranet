@@ -4,6 +4,8 @@
         name="Document"
         i18n:domain="plone"
 >
+
+  <property name="allow_discussion">True</property>
   <property name="behaviors"
             purge="false"
   >
@@ -12,6 +14,7 @@
     <element value="kitconcept.intranet.organisational_unit" />
     <element value="kitconcept.intranet.lcm" />
     <element value="kitconcept.intranet.votes" />
+    <element value="kitconcept.intranet.comment_count" />
   </property>
 
 </object>

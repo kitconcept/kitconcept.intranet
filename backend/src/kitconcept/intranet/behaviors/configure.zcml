@@ -25,6 +25,14 @@
       provides=".votes.IVotes"
       />
 
+
+  <plone:behavior
+      name="kitconcept.intranet.comment_count"
+      title="Add Comment Count"
+      description="Add a Comment Counter to a content object"
+      provides=".comment_count.ICommentCount"
+      />
+
   <plone:behavior
       name="kitconcept.intranet.location"
       title="Location"

@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
+import useUser from '@plone/volto/hooks/user/useUser';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { getLikes, addLike, removeLike } from '../../actions/likes/likes';
-import { getUser } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import thumbsSVG from '../../icons/icon-thumbs.svg';
 import thumbsFilledSVG from '../../icons/icon-thumbs-filled.svg';
@@ -50,7 +50,9 @@ const DotFormattedDate = ({ date, className, locale }) => {
   );
 };
 const Rating = (props) => {
-  const { pathname, loggedIn, allow_discussion, comments, votes, user } = props;
+  const { pathname, loggedIn, allow_discussion, comments, votes } = props;
+  const user = useUser();
+  console.log('this is user', user);
   const intl = useIntl();
   const content = useSelector((state) => state.content);
 
@@ -62,8 +64,7 @@ const Rating = (props) => {
   const [liked, setLiked] = useState(
     loggedIn && votes && votes.length > 0 ? votes.includes(user) : false,
   );
-  const link = props.link.replace('/api', '');
-  const userData = useSelector((state) => state.users.user);
+  const link = props.link;
 
   useEffect(() => {
     setLoop(false);
@@ -72,26 +73,20 @@ const Rating = (props) => {
         setAmount(parseInt(resp));
       }
     });
-    dispatch(getUser(user)).then((resp) => {
-      if (!votes) {
-        setLiked(false);
-      } else {
-        if (resp && resp.username && votes.includes(resp.username)) {
-          setLiked(true);
-        } else {
-          setLiked(false);
-        }
-      }
-    });
+    if (user && user.username && votes?.includes(user.username)) {
+      setLiked(true);
+    } else {
+      setLiked(false);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [votes]);
 
   const deBody = `Sehr%20geehrte/r,%0D%0A%0D%0AIch%20möchte%20folgende%20Meldung%20mit%20Ihnen%20teilen:%0D%0A%0D%0A${link}%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A${
-    userData.fullname ? userData.fullname : ''
+    user.fullname ? user.fullname : ''
   }`;
 
   const enBody = `Dear,%0D%0A%0D%0AI%20would%20like%20to%20share%20the%20following%20News%20with%20you:%0D%0A%0D%0A${link}%0D%0A%0D%0AKind%20regards%0D%0A${
-    userData.fullname ? userData.fullname : ''
+    user.fullname ? user.fullname : ''
   }`;
 
   const deMailTo = `mailto:?body=${deBody}&subject=Intranet-Lesetipp`;
@@ -99,7 +94,7 @@ const Rating = (props) => {
 
   const onLike = () => {
     if (!loop) {
-      if (votes && votes.length !== 0 && votes.includes(user)) {
+      if (votes && votes.length !== 0 && votes.includes(user.username)) {
         dispatch(removeLike(flattenToAppURL(pathname))).then((resp) => {
           if (resp) {
             setLiked(false);

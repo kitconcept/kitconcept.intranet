@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   //Page
   it('Page (/features/content-types/page)', () => {
     cy.navigate('/features/content-types/page');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({
       rules: [

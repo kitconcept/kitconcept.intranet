@@ -16,21 +16,12 @@ describe('a11y tests', () => {
     cy.injectAxe();
     cy.configureAxe({
       rules: [
-        // the example page intentionally omits the h1
-        {
-          id: 'page-has-heading-one',
-          enabled: false,
-        },
         {
           id: 'duplicate-id',
           enabled: false,
         },
         {
           id: 'duplicate-id-active',
-          enabled: false,
-        },
-        {
-          id: 'color-contrast',
           enabled: false,
         },
       ],

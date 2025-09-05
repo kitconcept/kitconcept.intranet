@@ -19,14 +19,6 @@ describe('a11y tests', () => {
       // semantic-ui-react's Embed doesn't include an alt tag for the placeholder image
       rules: [
         {
-          id: 'image-alt',
-          enabled: false,
-        },
-        {
-          id: 'nested-interactive',
-          enabled: false,
-        },
-        {
           id: 'landmark-unique',
           enabled: false,
         },

@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Accordion Block
   it('Accordion Block (/features/block/block-accordion)', () => {
     cy.navigate('/features/block/block-accordion');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({
       rules: [

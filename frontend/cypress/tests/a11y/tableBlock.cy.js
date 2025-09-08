@@ -12,17 +12,8 @@ describe('a11y tests', () => {
   // Table-block
   it('Table-block (/features/block/table-block)', () => {
     cy.navigate('/features/block/table-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // the example page intentionally omits the h1
-        {
-          id: 'page-has-heading-one',
-          enabled: false,
-        },
-      ],
-    });
     cy.checkAccessibility();
   });
 });

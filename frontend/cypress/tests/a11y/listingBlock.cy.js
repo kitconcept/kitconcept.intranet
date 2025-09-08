@@ -12,20 +12,12 @@ describe('a11y tests', () => {
   // Listing-block
   it('Listing-block (/features/block/listing-block)', () => {
     cy.navigate('/features/block/listing-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({
       // Disabling 'image-alt'
       // semantic-ui-react's Embed doesn't include an alt tag for the placeholder image
       rules: [
-        {
-          id: 'image-alt',
-          enabled: false,
-        },
-        {
-          id: 'nested-interactive',
-          enabled: false,
-        },
         {
           id: 'landmark-unique',
           enabled: false,

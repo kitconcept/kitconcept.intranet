@@ -100,6 +100,7 @@ backend-update-example-content-bug-workaround: ## Export example content inside 
 	git checkout origin/main backend/src/kitconcept/intranet/distributions/intranet/content/portlets.json
 	# RSS block example content is deleted without any actual deletion
 	git checkout origin/main backend/src/kitconcept/intranet/distributions/intranet/content/content/7c7cf1aae1a9431db3a706615a410cdc/data.json
+	# "remoteUrl" starts with "http://nohost/"
 	git checkout origin/main backend/src/kitconcept/intranet/distributions/intranet/content/content/195d96ca9952493cbffa69cda040b8b3/data.json
 
 .PHONY: backend-delete-and-create-site

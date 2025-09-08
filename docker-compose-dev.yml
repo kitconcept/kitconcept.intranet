@@ -1,7 +1,6 @@
 ---
 name: kitconcept-intranet-dev
 
-
 x-frontend: &frontend
   image: ghcr.io/kitconcept/kitconcept-intranet-frontend:latest
   pull_policy: build
@@ -56,9 +55,7 @@ x-solr: &solr
     - plone
     - /plone-config
 
-
 services:
-
   traefik:
     image: traefik:v2.11
     profiles: ["dev"]
@@ -177,6 +174,7 @@ services:
     environment:
       RAZZLE_API_PATH: http://localhost:55001/plone
       RAZZLE_INTERNAL_API_PATH: http://backend-acceptance:55001/plone
+      SITE_DEFAULT_LANGUAGE: en
     depends_on:
       - backend-acceptance
 

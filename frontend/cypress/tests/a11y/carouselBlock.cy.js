@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Carousel Block
   it('Carousel-block (/features/block/carousel-block)', () => {
     cy.navigate('/features/block/carousel-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

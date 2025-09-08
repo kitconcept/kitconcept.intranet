@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Location content type
   it('Location (/features/content-types/location-1)', () => {
     cy.navigate('/features/content-types/location-1');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

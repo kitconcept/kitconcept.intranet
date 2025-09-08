@@ -14,7 +14,7 @@ describe('a11y tests', () => {
     cy.navigate(
       '/features/content-types/institute-of-robotics-and-mechatronics-organisational-unit',
     );
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

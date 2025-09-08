@@ -3,8 +3,7 @@ import type { apiExpandersType } from '@plone/types';
 
 export default function install(config: ConfigType) {
   config.settings.isMultilingual = false;
-  config.settings.supportedLanguages = ['en'];
-  config.settings.defaultLanguage = 'en';
+  config.settings.supportedLanguages = ['de', 'en'];
 
   // Volto Light Theme Configuration
   config.settings.intranetHeader = true;

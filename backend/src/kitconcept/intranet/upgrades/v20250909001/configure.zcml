@@ -7,9 +7,9 @@
       source="20250903002"
       destination="20250909001"
       >
-    <genericsetup:upgradeDepends
+    <genericsetup:upgradeStep
         title="Upgrade collective.person"
-        import_profile="collective.person:default"
+        handler=".upgrade_collective_person"
         />
     <genericsetup:upgradeDepends
         title="Apply changes to Person content type"

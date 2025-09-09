@@ -36,27 +36,10 @@
       ruleset="plone.content.dynamic"
       />
 
-
-  <plone:service
-    method="GET"
-    for="zope.interface.Interface"
-    factory=".votes.get.VotesGet"
-    name="@votes"
-    permission="zope2.View"
-    />
-
   <plone:service
     method="POST"
     for="zope.interface.Interface"
-    factory=".votes.add.VotesPost"
-    name="@vote"
-    permission="zope2.View"
-    />
-
-  <plone:service
-    method="DELETE"
-    for="zope.interface.Interface"
-    factory=".votes.remove.VotesDelete"
+    factory=".votes.VotesPost"
     name="@vote"
     permission="zope2.View"
     />

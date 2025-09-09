@@ -1,18 +1,4 @@
-import {
-  GET_LIKES,
-  ADD_LIKE,
-  REMOVE_LIKE,
-} from './../../constants/ActionTypes';
-
-export function getLikes(url) {
-  return {
-    type: GET_LIKES,
-    request: {
-      op: 'get',
-      path: `${url}/@votes`,
-    },
-  };
-}
+import { ADD_LIKE, REMOVE_LIKE } from './../../constants/ActionTypes';
 
 export function addLike(url) {
   return {
@@ -28,7 +14,7 @@ export function removeLike(url) {
   return {
     type: REMOVE_LIKE,
     request: {
-      op: 'del',
+      op: 'post',
       path: `${url}/@vote`,
     },
   };

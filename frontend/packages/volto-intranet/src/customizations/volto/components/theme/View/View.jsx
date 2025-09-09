@@ -269,10 +269,8 @@ class View extends Component {
           pathname={this.props.pathname}
           loggedIn={this.props.token ? true : false}
           votes={this.props.content?.votes}
-          user={this.props.user}
           allow_discussion={this.props.content?.allow_discussion}
           link={this.props.content['@id']}
-          comments={this.props.content?.comment_count ?? null}
         />
         {/* END CUSTOMIZATION */}
         {this.props.content.allow_discussion && (

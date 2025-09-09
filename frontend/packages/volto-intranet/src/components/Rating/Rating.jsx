@@ -1,6 +1,6 @@
 import { Button, Container } from '@plone/components';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import useUser from '@plone/volto/hooks/user/useUser';
@@ -50,36 +50,25 @@ const DotFormattedDate = ({ date, className, locale }) => {
   );
 };
 const Rating = (props) => {
-  const { pathname, loggedIn, allow_discussion, comments, votes } = props;
-  const user = useUser();
-  console.log('this is user', user);
-  const intl = useIntl();
-  const content = useSelector((state) => state.content);
-
-  //---will work with values from backend---
-  const [loop, setLoop] = useState(false);
-  const [amount, setAmount] = useState(votes ? parseInt(votes.length) : 0);
-
-  const dispatch = useDispatch();
-  const [liked, setLiked] = useState(
-    loggedIn && votes && votes.length > 0 ? votes.includes(user) : false,
-  );
+  const { pathname, loggedIn, allow_discussion, votes } = props;
   const link = props.link;
+  const user = useUser();
+  const intl = useIntl();
+  const flattenPathname = flattenToAppURL(pathname);
+  const dispatch = useDispatch();
+  const content = useSelector((state) => state.content);
+  const comment_count = useSelector(
+    (state) => state.comments.items_total,
+    shallowEqual,
+  );
+  const [amount, setAmount] = useState(votes ? parseInt(votes.length) : 0);
+  const [liked, setLiked] = useState(false);
 
   useEffect(() => {
-    setLoop(false);
-    dispatch(getLikes(flattenToAppURL(pathname))).then((resp) => {
-      if (resp) {
-        setAmount(parseInt(resp));
-      }
-    });
-    if (user && user.username && votes?.includes(user.username)) {
-      setLiked(true);
-    } else {
-      setLiked(false);
+    if (loggedIn && votes?.length > 0 && user) {
+      setLiked(votes.includes(user.username));
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [votes]);
+  }, [loggedIn, votes, user, setLiked]);
 
   const deBody = `Sehr%20geehrte/r,%0D%0A%0D%0AIch%20möchte%20folgende%20Meldung%20mit%20Ihnen%20teilen:%0D%0A%0D%0A${link}%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A${
     user.fullname ? user.fullname : ''
@@ -93,43 +82,22 @@ const Rating = (props) => {
   const enMailTo = `mailto:?body=${enBody}&subject=Intranet%20reading%20tip`;
 
   const onLike = () => {
-    if (!loop) {
-      if (votes && votes.length !== 0 && votes.includes(user.username)) {
-        dispatch(removeLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(false);
-            setAmount(amount - 1);
-            setLoop(true);
-          }
-        });
-      } else {
-        dispatch(addLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(true);
-            setAmount(amount + 1);
-            setLoop(true);
-          }
-        });
-      }
+    if (liked) {
+      dispatch(removeLike(flattenPathname)).then((resp) => {
+        if (resp) {
+          setLiked(false);
+          setAmount(amount - 1);
+        }
+      });
     } else {
-      if (liked) {
-        dispatch(removeLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(false);
-            setAmount(amount - 1);
-          }
-        });
-      } else {
-        dispatch(addLike(flattenToAppURL(pathname))).then((resp) => {
-          if (resp) {
-            setLiked(true);
-            setAmount(amount + 1);
-          }
-        });
-      }
+      dispatch(addLike(flattenPathname)).then((resp) => {
+        if (resp) {
+          setLiked(true);
+          setAmount(amount + 1);
+        }
+      });
     }
   };
-  //---will work with values from backend---
 
   return (
     <Container className="content-engagement">
@@ -166,7 +134,7 @@ const Rating = (props) => {
               <span>({amount})</span>
             </div>
           </div>
-          {(allow_discussion || comments >= 0) && (
+          {(allow_discussion || comment_count >= 0) && (
             <div className="comments-section">
               <Button aria-label="comments">
                 <div className="icon-wrapper">
@@ -174,16 +142,16 @@ const Rating = (props) => {
                 </div>
               </Button>
               <div className="comments-count">
-                <span>({comments ? comments : 0})</span>
+                <span>({comment_count ? comment_count : 0})</span>
               </div>
             </div>
           )}
           <div className="shares-section">
-            {/* <a href={intl.locale === 'de' ? deMailTo : enMailTo}> */}
-            <Button aria-label="share">
-              <Icon name={shareSVG} size="33px" />
-            </Button>
-            {/* </a> */}
+            <a href={intl.locale === 'de' ? deMailTo : enMailTo}>
+              <Button aria-label="share">
+                <Icon name={shareSVG} size="33px" />
+              </Button>
+            </a>
           </div>
         </div>
         <div className="content-metadata">

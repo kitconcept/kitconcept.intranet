@@ -27,14 +27,4 @@
   <include package=".services" />
   <include package=".vocabularies" />
 
-  <subscriber
-      for="plone.app.discussion.interfaces.ICommentAddedEvent"
-      handler=".subscribers.increase_comment_count"
-      />
-
-  <subscriber
-      for="plone.app.discussion.interfaces.ICommentRemovedEvent"
-      handler=".subscribers.decrease_comment_count_and_set_deleted_flag"
-      />
-
 </configure>

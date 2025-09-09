@@ -1,5 +1,4 @@
 from kitconcept.intranet import _
-from plone.autoform.directives import order_after
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema

@@ -39,16 +39,18 @@ class IIntranetSettings(Interface):
         title=_("Person Picture Aspect Ratio"),
         description=_(
             "help_person_picture_aspect_ratio",
-            default="Image aspect ratio of the person's picture. This setting is used for the "
-            "person picture on the person profile page, on teasers that point to a "
-            "person profile page and on listings where persons are displayed.",
+            default="Image aspect ratio of the person's picture. This setting is used "
+            "for the person picture on the person profile page, on teasers that point "
+            "to a person profile page and on listings where persons are displayed.",
         ),
         required=True,
         default="rounded1to1",
-        vocabulary=SimpleVocabulary([
-            SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
-            SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
-        ]),
+        vocabulary=SimpleVocabulary(
+            [
+                SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
+                SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
+            ]
+        ),
     )
 
 

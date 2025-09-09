@@ -1,5 +1,3 @@
-from kitconcept.intranet.vocabularies.base import CatalogVocabulary
-from plone import api
 from plone.app.vocabularies import SimpleVocabulary
 
 import pytest

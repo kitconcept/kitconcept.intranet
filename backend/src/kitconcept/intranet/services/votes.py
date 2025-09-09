@@ -1,8 +1,7 @@
 from plone.restapi.services import Service
 from zope.interface import alsoProvides
-from zope.interface import noLongerProvides
+from plone.protect.interfaces import IDisableCSRFProtection
 import plone.protect.interfaces
-from plone.restapi.interfaces import IPloneRestapiLayer
 from plone import api
 
 
@@ -19,7 +18,7 @@ class VotesPost(Service):
             return "No logged-in user."
 
         # Disable CSRF protection
-        alsoProvides(self.request, plone.protect.interfaces.IDisableCSRFProtection)
+        alsoProvides(self.request, IDisableCSRFProtection)
 
         votes = self.context.votes or []
 

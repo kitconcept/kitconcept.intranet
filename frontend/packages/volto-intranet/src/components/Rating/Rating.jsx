@@ -6,7 +6,7 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import useUser from '@plone/volto/hooks/user/useUser';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
-import { getLikes, addLike, removeLike } from '../../actions/likes/likes';
+import { addLike, removeLike } from '../../actions/likes/likes';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import thumbsSVG from '../../icons/icon-thumbs.svg';
 import thumbsFilledSVG from '../../icons/icon-thumbs-filled.svg';

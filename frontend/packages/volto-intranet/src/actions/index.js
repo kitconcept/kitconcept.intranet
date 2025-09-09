@@ -11,4 +11,4 @@
  * };
  */
 
-export { getLikes, addLike, removeLike } from './likes/likes';
+export { addLike, removeLike } from './likes/likes';

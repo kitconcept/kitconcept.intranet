@@ -43,8 +43,8 @@
       name="kitconcept.intranet.person"
       title="Intranet-specific Person fields"
       description="Add the intranet-specific person fields"
-      for="collective.person.content.person.IPerson"
       provides=".person.IPersonBehavior"
+      for="collective.person.content.person.IPerson"
       />
 
 </configure>

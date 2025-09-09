@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250903002"
+      destination="20250909001"
+      >
+    <genericsetup:upgradeDepends
+        title="Upgrade collective.person"
+        import_profile="collective.person:default"
+        />
+    <genericsetup:upgradeDepends
+        title="Apply changes to Person content type"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

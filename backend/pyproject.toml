@@ -36,6 +36,7 @@ dependencies = [
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
     "kitconcept.solr==2.0.0a1",
+    "collective.person==1.0.0b1",
 ]
 
 [dependency-groups]
@@ -232,6 +233,7 @@ constraint-dependencies = [
     "cmarkgfm==2024.11.20",
     "collective.MockMailHost==3.0.0",
     "collective.monkeypatcher==2.0.0",
+    "collective.person==1.0.0b1",
     "collective.recipe.omelette==2.0.0",
     "collective.recipe.template==2.2",
     "collective.recipe.vscode==0.1.9",

@@ -10,7 +10,7 @@
       "collapsed": false,
       "data": {
         "blocks": {
-          "262a2478-3a63-445a-aab7-edf55cceebcf": {
+          "e62a2478-3a63-445a-aab7-edf55cceebcf": {
             "@type": "accordionPanel",
             "blocks": {
               "58f244db-9609-49d7-bb9c-4ddecb92467e": {
@@ -39,9 +39,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "News Item"
-                      ]
+                      "v": ["News Item"]
                     }
                   ],
                   "sort_order": "ascending"
@@ -60,9 +58,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Event"
-                      ]
+                      "v": ["Event"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -610,12 +606,12 @@
               },
               "5b70e4b4-fb68-4bd0-9027-045d283d8116": {
                 "@type": "slate",
-                "plaintext": "Text with image aligned left",
+                "plaintext": "More text with image aligned left",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text with image aligned left"
+                        "text": "More text with image aligned left"
                       }
                     ],
                     "type": "h2"
@@ -1607,9 +1603,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           }
@@ -1619,7 +1613,7 @@
             "bc2c120e-51df-4c47-b4d0-5a11311d020d",
             "d2168440-888d-4081-8409-b59392abc189",
             "b58c92b4-6604-4408-9039-a147965fa4bd",
-            "262a2478-3a63-445a-aab7-edf55cceebcf",
+            "e62a2478-3a63-445a-aab7-edf55cceebcf",
             "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
           ]
         }
@@ -1640,16 +1634,14 @@
             "blocks": {
               "3b586718-75a0-4801-986f-65dfcb6147a3": {
                 "@type": "listing",
-                "headline": "List with images",
+                "headline": "Another list with images",
                 "headlineTag": "h2",
                 "querystring": {
                   "query": [
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "News Item"
-                      ]
+                      "v": ["News Item"]
                     }
                   ],
                   "sort_order": "ascending"
@@ -1684,9 +1676,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Document"
-                      ]
+                      "v": ["Document"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1715,7 +1705,7 @@
               },
               "f36a69e0-d064-42b2-8ec5-e1ef73d23928": {
                 "@type": "listing",
-                "headline": "Grid",
+                "headline": "One more Grid",
                 "headlineTag": "h2",
                 "querystring": {
                   "b_size": "4",
@@ -1723,9 +1713,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Event"
-                      ]
+                      "v": ["Event"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1924,7 +1912,7 @@
             },
             "title": "Accordion with text"
           },
-          "b58c92b4-6604-4408-9039-a147965fa4bd": {
+          "f58c92b4-6604-4408-9039-a147965fa4bd": {
             "@type": "accordionPanel",
             "blocks": {
               "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
@@ -2207,19 +2195,19 @@
             "selected": "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
             "title": "Accordion with teaser"
           },
-          "d2168440-888d-4081-8409-b59392abc189": {
+          "d2168440-999d-4081-8409-b59392abc189": {
             "@type": "accordionPanel",
             "blocks": {
               "0c660015-12f2-4d1a-93f4-2b5b5ecc1133": {
                 "@type": "slate",
-                "plaintext": "Text with image (Medium) aligned right",
+                "plaintext": "More text with image (Medium) aligned right",
                 "styles": {},
                 "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text with image (Medium) aligned right"
+                        "text": "More text with image (Medium) aligned right"
                       }
                     ],
                     "type": "h2"
@@ -2288,14 +2276,14 @@
               },
               "3cc147fe-29af-4e78-a896-3cba6f953ac9": {
                 "@type": "slate",
-                "plaintext": "Text with image (small) aligned left",
+                "plaintext": "More text with image (small) aligned left",
                 "styles": {},
                 "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text with image (small) aligned left"
+                        "text": "More text with image (small) aligned left"
                       }
                     ],
                     "type": "h2"
@@ -2383,14 +2371,14 @@
               },
               "94542f86-67a9-427b-96f1-dfb78a0273fc": {
                 "@type": "slate",
-                "plaintext": "Text with image (Medium) aligned left",
+                "plaintext": "More text with image (Medium) aligned left",
                 "styles": {},
                 "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text with image (Medium) aligned left"
+                        "text": "More text with image (Medium) aligned left"
                       }
                     ],
                     "type": "h2"
@@ -2399,14 +2387,14 @@
               },
               "a21b32e7-f7ee-47bc-8813-a78fee77f175": {
                 "@type": "slate",
-                "plaintext": "Text with image (small) aligned right",
+                "plaintext": "More text with image (small) aligned right",
                 "styles": {},
                 "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text with image (small) aligned right"
+                        "text": "More text with image (small) aligned right"
                       }
                     ],
                     "type": "h2"
@@ -2431,14 +2419,14 @@
               },
               "b5c6c126-ed37-4915-865b-294886c30a68": {
                 "@type": "slate",
-                "plaintext": "Text with image aligned right",
+                "plaintext": "More text with image aligned right",
                 "styles": {},
                 "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text with image aligned right"
+                        "text": "More text with image aligned right"
                       }
                     ],
                     "type": "h2"
@@ -2569,7 +2557,7 @@
             "selected": "d2524e67-999c-4421-82c5-b32506024541",
             "title": "Accordion with image"
           },
-          "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
+          "e80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
             "@type": "accordionPanel",
             "blocks": {
               "f56375fe-70a1-4ac1-a94c-adc9998db548": {
@@ -3247,9 +3235,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           }
@@ -3257,10 +3243,10 @@
         "blocks_layout": {
           "items": [
             "39f75787-bd7a-42dc-ab40-a6c9dfd2a8f1",
-            "d2168440-888d-4081-8409-b59392abc189",
-            "b58c92b4-6604-4408-9039-a147965fa4bd",
+            "d2168440-999d-4081-8409-b59392abc189",
+            "f58c92b4-6604-4408-9039-a147965fa4bd",
             "262a2478-3a63-445a-aab7-edf55cceebcf",
-            "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
+            "e80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
           ]
         }
       },
@@ -3284,9 +3270,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-27T19:48:00+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The accordion contains other blocks in an accordion behavior layout.",
   "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,

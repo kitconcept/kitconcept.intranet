@@ -37,11 +37,11 @@
       />
 
   <plone:service
-    method="POST"
-    for="zope.interface.Interface"
-    factory=".votes.VotesPost"
-    name="@vote"
-    permission="zope2.View"
-    />
+      method="POST"
+      factory=".votes.VotesPost"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@vote"
+      />
 
 </configure>

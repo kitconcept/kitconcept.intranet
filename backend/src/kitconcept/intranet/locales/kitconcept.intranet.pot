@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-11 14:49+0000\n"
+"POT-Creation-Date: 2025-09-11 15:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,27 @@ msgstr ""
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr ""
 
-#: kitconcept/intranet/distributions.zcml:16
+#: kitconcept/intranet/controlpanels/intranet.py:49
+msgid "1:1 round picture"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:50
+msgid "4:5 square picture"
+msgstr ""
+
+#: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:53
+#: kitconcept/intranet/behaviors/person.py:13
+msgid "Academic Title"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:55
+msgid "Add the intranet-specific person fields"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Add the lifecycle management fields"
 msgstr ""
 
@@ -50,12 +66,20 @@ msgstr ""
 msgid "Can only be seen and edited by the owner."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:31
+#: kitconcept/intranet/controlpanels/intranet.py:33
 msgid "Custom CSS"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:32
+#: kitconcept/intranet/controlpanels/intranet.py:34
 msgid "Custom CSS for the intranet."
+msgstr ""
+
+#: kitconcept/intranet/behaviors/person.py:25
+msgid "Department"
+msgstr ""
+
+#: kitconcept/intranet/vocabularies/person.py:17
+msgid "Dr."
 msgstr ""
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
@@ -63,19 +87,15 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:38
-msgid "Enable squared images for person teasers and listings."
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:19
+#: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:36
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Fields for Location"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:46
+#: kitconcept/intranet/behaviors/configure.zcml:40
 msgid "Fields for Organisational Unit"
 msgstr ""
 
@@ -92,11 +112,19 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:46
+#: kitconcept/intranet/controlpanels/intranet.py:57
 msgid "Intranet Settings"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:53
+#: kitconcept/intranet/behaviors/configure.zcml:55
+msgid "Intranet-specific Person fields"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/person.py:19
+msgid "Job Title"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Lifecycle Management fields"
 msgstr ""
 
@@ -104,8 +132,8 @@ msgstr ""
 msgid "List of user IDs"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:36
-#: kitconcept/intranet/behaviors/location.py:19
+#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/location.py:16
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
 msgstr ""
@@ -120,8 +148,8 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:46
-#: kitconcept/intranet/behaviors/organisational_unit.py:20
+#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/organisational_unit.py:16
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
 msgstr ""
@@ -131,12 +159,20 @@ msgstr ""
 msgid "Pending review"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:37
-msgid "Person Squared Images"
+#: kitconcept/intranet/controlpanels/intranet.py:39
+msgid "Person Picture Aspect Ratio"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:26
+#: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
+msgstr ""
+
+#: kitconcept/intranet/behaviors/person.py:26
+msgid "Please input the department of the person."
+msgstr ""
+
+#: kitconcept/intranet/behaviors/person.py:20
+msgid "Please input the job title of the person."
 msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:14
@@ -146,6 +182,14 @@ msgstr ""
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Private"
+msgstr ""
+
+#: kitconcept/intranet/vocabularies/person.py:16
+msgid "Prof."
+msgstr ""
+
+#: kitconcept/intranet/vocabularies/person.py:18
+msgid "Prof. Dr."
 msgstr ""
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
@@ -187,7 +231,7 @@ msgstr ""
 msgid "Saves userID who liked an item"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:25
+#: kitconcept/intranet/controlpanels/intranet.py:27
 msgid "Search Field Placeholder"
 msgstr ""
 
@@ -222,7 +266,7 @@ msgstr ""
 msgid "Through The Web blocks configuration"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:20
+#: kitconcept/intranet/controlpanels/intranet.py:22
 msgid "Used in the intranet header seach bar."
 msgstr ""
 
@@ -258,12 +302,17 @@ msgstr ""
 msgid "help_organisational_unit"
 msgstr ""
 
+#. Default: "Image aspect ratio of the person's picture. This setting is used for the person picture on the person profile page, on teasers that point to a person profile page and on listings where persons are displayed."
+#: kitconcept/intranet/controlpanels/intranet.py:40
+msgid "help_person_picture_aspect_ratio"
+msgstr ""
+
 #. Default: "Filter by location"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_place"
 msgstr ""
 
-#: kitconcept/intranet/distributions.zcml:16
+#: kitconcept/intranet/distributions.zcml:17
 msgid "kitconcept Intranet"
 msgstr ""
 

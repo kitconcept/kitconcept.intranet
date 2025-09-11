@@ -19,3 +19,66 @@
 h1.documentFirstHeading:has(+ .documentByLine) {
   margin-bottom: $spacing-small;
 }
+
+// ### StickyFeedbackButton ###
+
+.sticky-feedback-button-container {
+  position: fixed;
+  z-index: 11;
+  top: 50%;
+  left: 0%;
+  width: 140px;
+  opacity: 0;
+  transform: translateY(-50%) translateX(-100%);
+
+  @media only screen and (max-width: $largest-mobile-screen) {
+    display: none;
+  }
+
+  &.animate {
+    opacity: 1;
+    transform: translateX(0%) translateY(-50%) !important;
+    transition: all 0.5s ease-in-out;
+  }
+
+  a.sticky-button {
+    padding: 0;
+    background: none;
+    color: unset;
+
+    .icon-container {
+      position: relative;
+
+      .feedback-button-like {
+        position: absolute;
+        top: 15px;
+        left: 11px;
+      }
+
+      .title {
+        position: absolute;
+        bottom: 68px;
+        left: 0px;
+        width: 77%;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+body {
+  &.has-toolbar {
+    .sticky-feedback-button-container {
+      left: 80px;
+    }
+  }
+
+  &.has-toolbar-menu-open {
+    .sticky-feedback-button-container {
+      display: none;
+    }
+  }
+}

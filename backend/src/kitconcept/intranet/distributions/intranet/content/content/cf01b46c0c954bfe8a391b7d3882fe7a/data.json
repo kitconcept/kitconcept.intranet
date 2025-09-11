@@ -1,0 +1,189 @@
+{
+  "@id": "/organisation/institut-fur-energie-und-klimaforschung",
+  "@type": "Organisational Unit",
+  "UID": "cf01b46c0c954bfe8a391b7d3882fe7a",
+  "allow_discussion": null,
+  "blocks": {
+    "02c86455-2526-4db1-9683-984417171681": {
+      "@type": "title"
+    },
+    "5ec5fca7-524d-4298-a1a1-faa1e218422f": {
+      "@type": "introduction",
+      "plaintext": "Das Institut f\u00fcr Energie- und Klimaforschung untersucht erneuerbare Energien, Energiespeicherung und Klimaschutzma\u00dfnahmen, um wissenschaftliche Grundlagen f\u00fcr eine nachhaltige Energieversorgung zu schaffen.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das Institut f\u00fcr Energie- und Klimaforschung untersucht erneuerbare Energien, Energiespeicherung und Klimaschutzma\u00dfnahmen, um wissenschaftliche Grundlagen f\u00fcr eine nachhaltige Energieversorgung zu schaffen."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "709dc9ba-4aae-4336-9e25-a1d74983d365": {
+      "@type": "gridBlock",
+      "blocks": {
+        "35c8b2f6-a7d7-4865-8913-6264095fffc1": {
+          "@type": "teaser",
+          "description": "Dr. Sophie Lehner ist Referentin f\u00fcr Risikobewertung und Strahlenschutz in der Abteilung Gesundheit und Vorsorge. Ihr Schwerpunkt liegt auf der Analyse von Expositionsszenarien und der Entwicklung von Schutzkonzepten im Bereich ionisierender Strahlung. Sie erstellt Richtlinien und ber\u00e4t interne Stellen in fachlichen sowie regulatorischen Fragen. Ihre Expertise in Strahlenbiologie, Risikoanalyse und den gesetzlichen Rahmenwerken (StrlSchG, StrlSchV) macht sie zu einer wichtigen Ansprechpartnerin f\u00fcr Themen des Strahlenschutzes.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/37d87d573b4448369afb431a0eb1f728",
+              "@type": "Person",
+              "Description": "Dr. Sophie Lehner ist Referentin f\u00fcr Risikobewertung und Strahlenschutz in der Abteilung Gesundheit und Vorsorge. Ihr Schwerpunkt liegt auf der Analyse von Expositionsszenarien und der Entwicklung von Schutzkonzepten im Bereich ionisierender Strahlung. Sie erstellt Richtlinien und ber\u00e4t interne Stellen in fachlichen sowie regulatorischen Fragen. Ihre Expertise in Strahlenbiologie, Risikoanalyse und den gesetzlichen Rahmenwerken (StrlSchG, StrlSchV) macht sie zu einer wichtigen Ansprechpartnerin f\u00fcr Themen des Strahlenschutzes.",
+              "Subject": [],
+              "Title": "Dr. Sophie Lehner",
+              "contact_building": "B34",
+              "contact_email": "sophie.lehner@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R985",
+              "description": "Dr. Sophie Lehner ist Referentin f\u00fcr Risikobewertung und Strahlenschutz in der Abteilung Gesundheit und Vorsorge. Ihr Schwerpunkt liegt auf der Analyse von Expositionsszenarien und der Entwicklung von Schutzkonzepten im Bereich ionisierender Strahlung. Sie erstellt Richtlinien und ber\u00e4t interne Stellen in fachlichen sowie regulatorischen Fragen. Ihre Expertise in Strahlenbiologie, Risikoanalyse und den gesetzlichen Rahmenwerken (StrlSchG, StrlSchV) macht sie zu einer wichtigen Ansprechpartnerin f\u00fcr Themen des Strahlenschutzes.",
+              "effective": "1969-12-30T22:00:00+00:00",
+              "end": null,
+              "getObjSize": "15.0 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Dr. Sophie Lehner",
+              "type_title": "Person"
+            }
+          ],
+          "overwrite": false,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Dr. Sophie Lehner"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "35c8b2f6-a7d7-4865-8913-6264095fffc1"
+        ]
+      },
+      "headline": "Leitung",
+      "styles": {},
+      "theme": "default"
+    },
+    "7273b59b-9c9b-4277-bb7f-b3e7e8c0eeb7": {
+      "@type": "listing",
+      "headline": "Mitarbeitende",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Person"
+            ]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "88bf8556-4549-45d9-8cca-92483c886e32": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "b6c1d1fe-3fcf-4996-ba1a-bc26d7d9b0d3": {
+      "@type": "slate"
+    },
+    "e1248b44-90b4-4f2f-b6cc-145301c043bb": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "02c86455-2526-4db1-9683-984417171681",
+      "88bf8556-4549-45d9-8cca-92483c886e32",
+      "5ec5fca7-524d-4298-a1a1-faa1e218422f",
+      "e1248b44-90b4-4f2f-b6cc-145301c043bb",
+      "709dc9ba-4aae-4336-9e25-a1d74983d365",
+      "7273b59b-9c9b-4277-bb7f-b3e7e8c0eeb7",
+      "b6c1d1fe-3fcf-4996-ba1a-bc26d7d9b0d3"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-04T11:54:30+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Untersucht erneuerbare Energien, Energiespeicherung und Klimaschutzma\u00dfnahmen, um wissenschaftliche Grundlagen f\u00fcr eine nachhaltige Energieversorgung zu schaffen.",
+  "effective": "2025-09-08T08:05:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institut-fur-energie-und-klimaforschung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-08T08:05:50+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Institut f\u00fcr Energie- und Klimaforschung",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-04T11:54:30+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-08T08:05:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

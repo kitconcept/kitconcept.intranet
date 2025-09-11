@@ -10,7 +10,7 @@
       "collapsed": false,
       "data": {
         "blocks": {
-          "262a2478-3a63-445a-aab7-edf55cceebcf": {
+          "e62a2478-3a63-445a-aab7-edf55cceebcf": {
             "@type": "accordionPanel",
             "blocks": {
               "58f244db-9609-49d7-bb9c-4ddecb92467e": {
@@ -39,9 +39,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "News Item"
-                      ]
+                      "v": ["News Item"]
                     }
                   ],
                   "sort_order": "ascending"
@@ -60,9 +58,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Event"
-                      ]
+                      "v": ["Event"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -134,7 +130,7 @@
                     "review_state": "published",
                     "start": "2023-01-01T11:00:00+00:00",
                     "title": "Event",
-                    "type_title": "Event"
+                    "type_title": "Termin"
                   }
                 ],
                 "overwrite": true,
@@ -187,7 +183,7 @@
                     "review_state": "published",
                     "start": null,
                     "title": "News Item",
-                    "type_title": "News Item"
+                    "type_title": "Nachricht"
                   }
                 ],
                 "overwrite": true,
@@ -240,7 +236,7 @@
                     "review_state": null,
                     "start": null,
                     "title": "Image",
-                    "type_title": "Image"
+                    "type_title": "Bild"
                   }
                 ],
                 "overwrite": true,
@@ -278,7 +274,7 @@
                     "review_state": null,
                     "start": null,
                     "title": "File",
-                    "type_title": "File"
+                    "type_title": "Datei"
                   }
                 ],
                 "overwrite": true,
@@ -361,7 +357,7 @@
                     "review_state": "published",
                     "start": null,
                     "title": "Page",
-                    "type_title": "Page"
+                    "type_title": "Seite"
                   }
                 ],
                 "overwrite": true,
@@ -423,47 +419,6 @@
                       }
                     ],
                     "type": "ul"
-                  }
-                ]
-              },
-              "7e7d2fec-1cb5-4240-8705-ab84cfc34fe1": {
-                "@type": "slate",
-                "plaintext": "   This is link. ",
-                "styles": {},
-                "theme": "default",
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": ""
-                      },
-                      {
-                        "children": [
-                          {
-                            "text": ""
-                          }
-                        ],
-                        "type": "em"
-                      },
-                      {
-                        "text": ""
-                      },
-                      {
-                        "children": [
-                          {
-                            "text": "This is link."
-                          }
-                        ],
-                        "data": {
-                          "url": "https://www.google.com/"
-                        },
-                        "type": "link"
-                      },
-                      {
-                        "text": ""
-                      }
-                    ],
-                    "type": "p"
                   }
                 ]
               },
@@ -595,7 +550,6 @@
               "items": [
                 "c85ec1d2-f371-4ed4-be65-8fa0a091b833",
                 "b9c04394-91cd-44a8-927a-0b4af417f36f",
-                "7e7d2fec-1cb5-4240-8705-ab84cfc34fe1",
                 "938f774b-530a-4ec5-85ec-127e37870a13",
                 "b314ee6a-b847-4bc8-ba0d-b700725a37c9",
                 "3272740e-1998-4a82-a4ae-dbd303f31021",
@@ -607,21 +561,6 @@
           "d2168440-888d-4081-8409-b59392abc189": {
             "@type": "accordionPanel",
             "blocks": {
-              "05ee41f0-e8b8-4181-a773-366ca209dbc8": {
-                "@type": "slate",
-                "plaintext": "Text Heading H3",
-                "styles": {},
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": "Text Heading H3"
-                      }
-                    ],
-                    "type": "h2"
-                  }
-                ]
-              },
               "1060e842-2b14-43dc-9e43-c25022029a94": {
                 "@type": "image",
                 "align": "left",
@@ -665,15 +604,30 @@
                   "align": "left"
                 }
               },
-              "1eb2924b-8de0-4152-8ae0-50eb27c3fad8": {
+              "5b70e4b4-fb68-4bd0-9027-045d283d8116": {
                 "@type": "slate",
-                "plaintext": "Text Heading H3",
-                "styles": {},
+                "plaintext": "More text with image aligned left",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text Heading H3"
+                        "text": "More text with image aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "5d649a59-6967-4e98-a3c3-f2b95810e45e": {
+                "@type": "slate",
+                "plaintext": "Text with image (small) aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image (small) aligned right"
                       }
                     ],
                     "type": "h2"
@@ -749,6 +703,22 @@
                   "align": "left"
                 }
               },
+              "817aaa07-faa7-4cc3-a358-9d4c91100976": {
+                "@type": "slate",
+                "plaintext": "Text with image aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
               "863bd937-9644-4258-aaf2-3cc780eecb4f": {
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
@@ -797,15 +767,16 @@
                 "title": "Image",
                 "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
-              "b4536f61-92a1-4b65-aa40-c142d799f0ba": {
+              "9e3e036a-ec07-415f-83c2-42638f20e5b4": {
                 "@type": "slate",
-                "plaintext": "Text Heading H3",
+                "plaintext": "Text with image (Medium) aligned right",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text Heading H3"
+                        "text": "Text with image (Medium) aligned right"
                       }
                     ],
                     "type": "h2"
@@ -828,21 +799,6 @@
                 "theme": "default",
                 "title": "Image",
                 "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
-              },
-              "c3344b1c-89b9-4119-993e-58ef6bece880": {
-                "@type": "slate",
-                "plaintext": "Text Heading H3",
-                "styles": {},
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": "Text Heading H3"
-                      }
-                    ],
-                    "type": "h2"
-                  }
-                ]
               },
               "c3d2c41a-8e53-45a4-b212-cb54dad6045d": {
                 "@type": "slate",
@@ -872,6 +828,7 @@
                     "--block-width": "var(--default-container-width)"
                   }
                 },
+                "theme": "default",
                 "title": "Image - Light",
                 "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
               },
@@ -890,15 +847,32 @@
                   }
                 ]
               },
-              "da31d046-9d5f-48db-9368-c5a943c35aa1": {
+              "dd0849eb-8452-4ee4-94a1-02388df1ca5a": {
                 "@type": "slate",
-                "plaintext": "Text Heading H3",
+                "plaintext": "Text with image (Medium) aligned left",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text Heading H3"
+                        "text": "Text with image (Medium) aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "e1aa2fde-194c-472f-b9e2-4e4a4d65b3fd": {
+                "@type": "slate",
+                "plaintext": "Text with image (small) aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image (small) aligned left"
                       }
                     ],
                     "type": "h2"
@@ -927,26 +901,28 @@
                 "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35",
                 "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c",
                 "d754b95e-7fa8-4cbd-9997-f2bb6cde26df",
-                "b4536f61-92a1-4b65-aa40-c142d799f0ba",
+                "5b70e4b4-fb68-4bd0-9027-045d283d8116",
                 "725bfc52-49f6-4e70-8d11-48c537cfb5ff",
                 "773db1b3-7504-40e2-bf09-ce96e31249b2",
                 "c0b3b08e-c350-43e6-84e9-787903d91f8c",
-                "1eb2924b-8de0-4152-8ae0-50eb27c3fad8",
+                "817aaa07-faa7-4cc3-a358-9d4c91100976",
                 "c3d2c41a-8e53-45a4-b212-cb54dad6045d",
                 "1060e842-2b14-43dc-9e43-c25022029a94",
-                "da31d046-9d5f-48db-9368-c5a943c35aa1",
+                "dd0849eb-8452-4ee4-94a1-02388df1ca5a",
                 "1becedb6-65f6-4bee-9b36-5c38deaa4141",
                 "11af3b59-7720-4875-b0b9-90be5807d476",
                 "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961",
-                "05ee41f0-e8b8-4181-a773-366ca209dbc8",
+                "9e3e036a-ec07-415f-83c2-42638f20e5b4",
                 "d77557e0-793a-408f-9940-a0ad80d3be8f",
                 "8f1ad076-32b9-432b-9308-8b0972a8f57e",
-                "c3344b1c-89b9-4119-993e-58ef6bece880",
+                "e1aa2fde-194c-472f-b9e2-4e4a4d65b3fd",
                 "76ab99ce-789c-41b2-9df8-4322c8c8c1ad",
                 "5e9ba51a-2462-476c-b89e-66cddc10479f",
+                "5d649a59-6967-4e98-a3c3-f2b95810e45e",
                 "863bd937-9644-4258-aaf2-3cc780eecb4f"
               ]
             },
+            "selected": "e4420d7e-a0bc-4bdb-bbd7-4aacf63b84f4",
             "title": "Accordion with image"
           },
           "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
@@ -1627,9 +1603,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           }
@@ -1639,7 +1613,7 @@
             "bc2c120e-51df-4c47-b4d0-5a11311d020d",
             "d2168440-888d-4081-8409-b59392abc189",
             "b58c92b4-6604-4408-9039-a147965fa4bd",
-            "262a2478-3a63-445a-aab7-edf55cceebcf",
+            "e62a2478-3a63-445a-aab7-edf55cceebcf",
             "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
           ]
         }
@@ -1660,16 +1634,14 @@
             "blocks": {
               "3b586718-75a0-4801-986f-65dfcb6147a3": {
                 "@type": "listing",
-                "headline": "List with images",
+                "headline": "Another list with images",
                 "headlineTag": "h2",
                 "querystring": {
                   "query": [
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "News Item"
-                      ]
+                      "v": ["News Item"]
                     }
                   ],
                   "sort_order": "ascending"
@@ -1704,9 +1676,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Document"
-                      ]
+                      "v": ["Document"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1735,7 +1705,7 @@
               },
               "f36a69e0-d064-42b2-8ec5-e1ef73d23928": {
                 "@type": "listing",
-                "headline": "Grid",
+                "headline": "One more Grid",
                 "headlineTag": "h2",
                 "querystring": {
                   "b_size": "4",
@@ -1743,9 +1713,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Event"
-                      ]
+                      "v": ["Event"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1773,58 +1741,17 @@
             "blocks": {
               "09269ef9-7209-448b-b7ff-4d93a01918d0": {
                 "@type": "slate",
-                "plaintext": "This is H3",
+                "plaintext": "Heading with H3",
                 "styles": {},
                 "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "This is H3\n"
+                        "text": "Heading with H3\n"
                       }
                     ],
                     "type": "h3"
-                  }
-                ]
-              },
-              "0cc52a89-6b2f-46b4-b05b-a318451351d2": {
-                "@type": "slate",
-                "plaintext": "   This is link. ",
-                "styles": {},
-                "theme": "default",
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": ""
-                      },
-                      {
-                        "children": [
-                          {
-                            "text": ""
-                          }
-                        ],
-                        "type": "em"
-                      },
-                      {
-                        "text": ""
-                      },
-                      {
-                        "children": [
-                          {
-                            "text": "This is link."
-                          }
-                        ],
-                        "data": {
-                          "url": "https://www.google.com/"
-                        },
-                        "type": "link"
-                      },
-                      {
-                        "text": ""
-                      }
-                    ],
-                    "type": "p"
                   }
                 ]
               },
@@ -1867,14 +1794,14 @@
               },
               "7472a4e0-4108-4716-b175-da54ed67495b": {
                 "@type": "slate",
-                "plaintext": "This is H2",
+                "plaintext": "Heading with H2",
                 "styles": {},
                 "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "This is H2"
+                        "text": "Heading with H2"
                       }
                     ],
                     "type": "h2"
@@ -1977,7 +1904,6 @@
               "items": [
                 "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35",
                 "9e002af6-1d9f-4dd7-abad-d0a78eda482a",
-                "0cc52a89-6b2f-46b4-b05b-a318451351d2",
                 "7472a4e0-4108-4716-b175-da54ed67495b",
                 "09269ef9-7209-448b-b7ff-4d93a01918d0",
                 "62769217-d9fe-4317-af1b-0f52e1d403ce",
@@ -1986,7 +1912,7 @@
             },
             "title": "Accordion with text"
           },
-          "b58c92b4-6604-4408-9039-a147965fa4bd": {
+          "f58c92b4-6604-4408-9039-a147965fa4bd": {
             "@type": "accordionPanel",
             "blocks": {
               "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
@@ -2017,7 +1943,7 @@
                     "review_state": "published",
                     "start": null,
                     "title": "News Item",
-                    "type_title": "News Item"
+                    "type_title": "Nachricht"
                   }
                 ],
                 "overwrite": true,
@@ -2054,7 +1980,7 @@
                     "review_state": "published",
                     "start": "2023-01-01T11:00:00+00:00",
                     "title": "Event",
-                    "type_title": "Event"
+                    "type_title": "Termin"
                   }
                 ],
                 "overwrite": true,
@@ -2152,7 +2078,7 @@
                     "review_state": null,
                     "start": null,
                     "title": "Image",
-                    "type_title": "Image"
+                    "type_title": "Bild"
                   }
                 ],
                 "overwrite": true,
@@ -2206,7 +2132,7 @@
                     "review_state": null,
                     "start": null,
                     "title": "File",
-                    "type_title": "File"
+                    "type_title": "Datei"
                   }
                 ],
                 "overwrite": true,
@@ -2244,7 +2170,7 @@
                     "review_state": "published",
                     "start": null,
                     "title": "Page",
-                    "type_title": "Page"
+                    "type_title": "Seite"
                   }
                 ],
                 "overwrite": true,
@@ -2269,18 +2195,19 @@
             "selected": "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
             "title": "Accordion with teaser"
           },
-          "d2168440-888d-4081-8409-b59392abc189": {
+          "d2168440-999d-4081-8409-b59392abc189": {
             "@type": "accordionPanel",
             "blocks": {
-              "05ee41f0-e8b8-4181-a773-366ca209dbc8": {
+              "0c660015-12f2-4d1a-93f4-2b5b5ecc1133": {
                 "@type": "slate",
-                "plaintext": "Text Heading H3",
+                "plaintext": "More text with image (Medium) aligned right",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text Heading H3"
+                        "text": "More text with image (Medium) aligned right"
                       }
                     ],
                     "type": "h2"
@@ -2300,8 +2227,25 @@
                   },
                   "size:noprefix": "medium"
                 },
+                "theme": "default",
                 "title": "Image - Light",
                 "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "10a106da-d0d1-4095-b24c-b3aabe862d27": {
+                "@type": "slate",
+                "plaintext": "Text with image aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
               },
               "11af3b59-7720-4875-b0b9-90be5807d476": {
                 "@type": "separator",
@@ -2330,15 +2274,16 @@
                   "align": "left"
                 }
               },
-              "1eb2924b-8de0-4152-8ae0-50eb27c3fad8": {
+              "3cc147fe-29af-4e78-a896-3cba6f953ac9": {
                 "@type": "slate",
-                "plaintext": "Text Heading H3",
+                "plaintext": "More text with image (small) aligned left",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text Heading H3"
+                        "text": "More text with image (small) aligned left"
                       }
                     ],
                     "type": "h2"
@@ -2424,6 +2369,38 @@
                 "title": "Image",
                 "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
               },
+              "94542f86-67a9-427b-96f1-dfb78a0273fc": {
+                "@type": "slate",
+                "plaintext": "More text with image (Medium) aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image (Medium) aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "a21b32e7-f7ee-47bc-8813-a78fee77f175": {
+                "@type": "slate",
+                "plaintext": "More text with image (small) aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image (small) aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
               "a632b02c-d68b-44fa-8039-8197876728ea": {
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
@@ -2440,15 +2417,16 @@
                   }
                 ]
               },
-              "b4536f61-92a1-4b65-aa40-c142d799f0ba": {
+              "b5c6c126-ed37-4915-865b-294886c30a68": {
                 "@type": "slate",
-                "plaintext": "Text Heading H3",
+                "plaintext": "More text with image aligned right",
                 "styles": {},
+                "theme": "default",
                 "value": [
                   {
                     "children": [
                       {
-                        "text": "Text Heading H3"
+                        "text": "More text with image aligned right"
                       }
                     ],
                     "type": "h2"
@@ -2487,21 +2465,6 @@
                 },
                 "title": "Image",
                 "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
-              },
-              "c3344b1c-89b9-4119-993e-58ef6bece880": {
-                "@type": "slate",
-                "plaintext": "Text Heading H3",
-                "styles": {},
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": "Text Heading H3"
-                      }
-                    ],
-                    "type": "h2"
-                  }
-                ]
               },
               "c3d2c41a-8e53-45a4-b212-cb54dad6045d": {
                 "@type": "slate",
@@ -2548,21 +2511,6 @@
                   }
                 ]
               },
-              "da31d046-9d5f-48db-9368-c5a943c35aa1": {
-                "@type": "slate",
-                "plaintext": "Text Heading H3",
-                "styles": {},
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": "Text Heading H3"
-                      }
-                    ],
-                    "type": "h2"
-                  }
-                ]
-              },
               "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c": {
                 "@type": "slate",
                 "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
@@ -2585,29 +2533,31 @@
                 "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35",
                 "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c",
                 "d754b95e-7fa8-4cbd-9997-f2bb6cde26df",
-                "b4536f61-92a1-4b65-aa40-c142d799f0ba",
+                "10a106da-d0d1-4095-b24c-b3aabe862d27",
                 "725bfc52-49f6-4e70-8d11-48c537cfb5ff",
                 "773db1b3-7504-40e2-bf09-ce96e31249b2",
                 "c0b3b08e-c350-43e6-84e9-787903d91f8c",
-                "1eb2924b-8de0-4152-8ae0-50eb27c3fad8",
+                "b5c6c126-ed37-4915-865b-294886c30a68",
                 "c3d2c41a-8e53-45a4-b212-cb54dad6045d",
                 "1060e842-2b14-43dc-9e43-c25022029a94",
-                "da31d046-9d5f-48db-9368-c5a943c35aa1",
+                "94542f86-67a9-427b-96f1-dfb78a0273fc",
                 "1becedb6-65f6-4bee-9b36-5c38deaa4141",
                 "11af3b59-7720-4875-b0b9-90be5807d476",
                 "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961",
-                "05ee41f0-e8b8-4181-a773-366ca209dbc8",
+                "0c660015-12f2-4d1a-93f4-2b5b5ecc1133",
                 "d77557e0-793a-408f-9940-a0ad80d3be8f",
                 "8f1ad076-32b9-432b-9308-8b0972a8f57e",
-                "c3344b1c-89b9-4119-993e-58ef6bece880",
+                "3cc147fe-29af-4e78-a896-3cba6f953ac9",
                 "76ab99ce-789c-41b2-9df8-4322c8c8c1ad",
                 "beed6d62-0753-4183-915e-9704b178e4ff",
+                "a21b32e7-f7ee-47bc-8813-a78fee77f175",
                 "a632b02c-d68b-44fa-8039-8197876728ea"
               ]
             },
+            "selected": "d2524e67-999c-4421-82c5-b32506024541",
             "title": "Accordion with image"
           },
-          "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
+          "e80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
             "@type": "accordionPanel",
             "blocks": {
               "f56375fe-70a1-4ac1-a94c-adc9998db548": {
@@ -3285,9 +3235,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           }
@@ -3295,10 +3243,10 @@
         "blocks_layout": {
           "items": [
             "39f75787-bd7a-42dc-ab40-a6c9dfd2a8f1",
-            "d2168440-888d-4081-8409-b59392abc189",
-            "b58c92b4-6604-4408-9039-a147965fa4bd",
+            "d2168440-999d-4081-8409-b59392abc189",
+            "f58c92b4-6604-4408-9039-a147965fa4bd",
             "262a2478-3a63-445a-aab7-edf55cceebcf",
-            "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
+            "e80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
           ]
         }
       },
@@ -3322,9 +3270,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-27T19:48:00+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The accordion contains other blocks in an accordion behavior layout.",
   "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,
@@ -3341,12 +3287,14 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-07T14:35:28+00:00",
+  "modified": "2025-09-09T14:22:57+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
   "review_state": "published",
   "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
   "subjects": [],
   "title": "Accordion",
   "type_title": "Page",

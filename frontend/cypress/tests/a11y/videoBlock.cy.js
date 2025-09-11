@@ -6,13 +6,13 @@ describe('a11y tests', () => {
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
     cy.visit('/');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
   });
 
   // Video Block
   it('Video Block (/features/block/video-block)', () => {
     cy.navigate('/features/block/video-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({
       // Disabling 'image-alt'
@@ -20,10 +20,6 @@ describe('a11y tests', () => {
       rules: [
         {
           id: 'image-alt',
-          enabled: false,
-        },
-        {
-          id: 'duplicate-id-active',
           enabled: false,
         },
       ],

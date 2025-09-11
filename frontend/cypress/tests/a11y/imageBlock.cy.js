@@ -12,18 +12,9 @@ describe('a11y tests', () => {
   // Image-Block
   it('Image-Block (/features/block/image-block)', () => {
     cy.navigate('/features/block/image-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // there are two copies of slate h3,
-        // which have with the same id
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

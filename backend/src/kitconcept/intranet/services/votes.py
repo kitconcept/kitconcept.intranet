@@ -1,8 +1,7 @@
+from plone import api
+from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.services import Service
 from zope.interface import alsoProvides
-from plone.protect.interfaces import IDisableCSRFProtection
-import plone.protect.interfaces
-from plone import api
 
 
 class VotesPost(Service):

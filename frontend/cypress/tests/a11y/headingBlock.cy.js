@@ -12,16 +12,9 @@ describe('a11y tests', () => {
   // Heading
   it('Heading-Block (/features/block/heading-block)', () => {
     cy.navigate('/features/block/heading-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

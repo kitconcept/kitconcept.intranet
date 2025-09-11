@@ -1,18 +1,8 @@
-import { ADD_LIKE, REMOVE_LIKE } from './../../constants/ActionTypes';
+import { TOOGLE_LIKE } from './../../constants/ActionTypes';
 
-export function addLike(url) {
+export function toogleLike(url) {
   return {
-    type: ADD_LIKE,
-    request: {
-      op: 'post',
-      path: `${url}/@vote`,
-    },
-  };
-}
-
-export function removeLike(url) {
-  return {
-    type: REMOVE_LIKE,
+    type: TOOGLE_LIKE,
     request: {
       op: 'post',
       path: `${url}/@vote`,

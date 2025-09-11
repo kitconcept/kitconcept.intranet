@@ -1,12 +1,14 @@
 import { Button, Container } from '@plone/components';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import useUser from '@plone/volto/hooks/user/useUser';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
-import { addLike, removeLike } from '../../actions/likes/likes';
+import { toast } from 'react-toastify';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
+import { toogleLike } from '../../actions/likes/likes';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import thumbsSVG from '../../icons/icon-thumbs.svg';
 import thumbsFilledSVG from '../../icons/icon-thumbs-filled.svg';
@@ -26,6 +28,19 @@ const messages = defineMessages({
   created: {
     id: 'Created On',
     defaultMessage: 'Created On',
+  },
+  share: {
+    id: 'Share Content',
+    defaultMessage:
+      'Dear, I would like to share the following News with you: {link} Kind regards {fullname}',
+  },
+  likeFailed: {
+    id: 'Something went wrong while liking this post.',
+    defaultMessage: 'Something went wrong while liking this post.',
+  },
+  unlikeFailed: {
+    id: 'Something went wrong while unliking this post.',
+    defaultMessage: 'Something went wrong while unliking this post.',
   },
 });
 const DotFormattedDate = ({ date, className, locale }) => {
@@ -50,13 +65,19 @@ const DotFormattedDate = ({ date, className, locale }) => {
   );
 };
 const Rating = (props) => {
-  const { pathname, loggedIn, allow_discussion, votes } = props;
-  const link = props.link;
+  const location = useLocation();
+  const content = useSelector((state) => state.content.data);
+  const pathname = location.pathname;
+  const allow_discussion = content?.allow_discussion;
+  const votes = content?.votes;
+  const loggedIn = useSelector((state) => state.userSession.token, shallowEqual)
+    ? true
+    : false;
+  const link = content['@id'];
   const user = useUser();
   const intl = useIntl();
   const flattenPathname = flattenToAppURL(pathname);
   const dispatch = useDispatch();
-  const content = useSelector((state) => state.content);
   const comment_count = useSelector(
     (state) => state.comments.items_total,
     shallowEqual,
@@ -70,32 +91,44 @@ const Rating = (props) => {
     }
   }, [loggedIn, votes, user, setLiked]);
 
-  const deBody = `Sehr%20geehrte/r,%0D%0A%0D%0AIch%20möchte%20folgende%20Meldung%20mit%20Ihnen%20teilen:%0D%0A%0D%0A${link}%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A${
-    user.fullname ? user.fullname : ''
-  }`;
-
-  const enBody = `Dear,%0D%0A%0D%0AI%20would%20like%20to%20share%20the%20following%20News%20with%20you:%0D%0A%0D%0A${link}%0D%0A%0D%0AKind%20regards%0D%0A${
-    user.fullname ? user.fullname : ''
-  }`;
-
-  const deMailTo = `mailto:?body=${deBody}&subject=Intranet-Lesetipp`;
-  const enMailTo = `mailto:?body=${enBody}&subject=Intranet%20reading%20tip`;
+  const encodeBody = encodeURIComponent(
+    intl.formatMessage(messages.share, {
+      link: link,
+      fullname: user.username ? user.username : '',
+    }),
+  );
+  const deSubject = encodeURIComponent('Intranet-Lesetipp');
+  const enSubject = encodeURIComponent('Intranet reading tip');
+  const deMailTo = `mailto:?body=${encodeBody}&subject=${deSubject}`;
+  const enMailTo = `mailto:?body=${encodeBody}&subject=${enSubject}`;
 
   const onLike = () => {
     if (liked) {
-      dispatch(removeLike(flattenPathname)).then((resp) => {
-        if (resp) {
-          setLiked(false);
-          setAmount(amount - 1);
-        }
-      });
+      dispatch(toogleLike(flattenPathname))
+        .then((resp) => {
+          if (resp) {
+            setLiked(false);
+            setAmount(amount - 1);
+          }
+        })
+        .catch((error) => {
+          toast.error(
+            <Toast error title={intl.formatMessage(messages.unlikeFailed)} />,
+          );
+        });
     } else {
-      dispatch(addLike(flattenPathname)).then((resp) => {
-        if (resp) {
-          setLiked(true);
-          setAmount(amount + 1);
-        }
-      });
+      dispatch(toogleLike(flattenPathname))
+        .then((resp) => {
+          if (resp) {
+            setLiked(true);
+            setAmount(amount + 1);
+          }
+        })
+        .catch((error) => {
+          toast.error(
+            <Toast error title={intl.formatMessage(messages.likeFailed)} />,
+          );
+        });
     }
   };
 
@@ -119,16 +152,15 @@ const Rating = (props) => {
                 </div>
               </Button>
             ) : (
-              <Button
+              <Link
                 aria-label="unliked"
-                as={Link}
                 to={`${pathname}/login`}
                 title={intl.formatMessage(messages.loginToLike)}
               >
                 <div className="icon-wrapper">
                   <Icon name={thumbsSVG} size="33px" />
                 </div>
-              </Button>
+              </Link>
             )}
             <div className="likes-count">
               <span>({amount})</span>
@@ -159,7 +191,7 @@ const Rating = (props) => {
             {intl.formatMessage(messages.created)}
             <DotFormattedDate
               className="created-date"
-              date={content?.data?.created}
+              date={content?.created}
               locale={intl.locale}
             />
           </span>
@@ -167,7 +199,7 @@ const Rating = (props) => {
             {intl.formatMessage(messages.modified)}
             <DotFormattedDate
               className="modified-date"
-              date={content?.data?.modified}
+              date={content?.modified}
               locale={intl.locale}
             />
           </span>

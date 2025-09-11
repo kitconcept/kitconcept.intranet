@@ -11,4 +11,4 @@
  * };
  */
 
-export { addLike, removeLike } from './likes/likes';
+export { toogleLike } from './likes/likes';

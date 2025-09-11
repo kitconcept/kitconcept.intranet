@@ -5,5 +5,4 @@
  * export const UPDATE_CONTENT = 'UPDATE_CONTENT';
  */
 
-export const ADD_LIKE = 'ADD_LIKE';
-export const REMOVE_LIKE = 'REMOVE_LIKE';
+export const TOOGLE_LIKE = 'TOOGLE_LIKE';

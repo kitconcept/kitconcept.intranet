@@ -16,6 +16,11 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. Default: "Created On"
+#: components/Rating/Rating
+msgid "Created On"
+msgstr "Erstellt am"
+
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
@@ -25,6 +30,11 @@ msgstr ""
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
 msgstr ""
+
+#. Default: "Last Modified On"
+#: components/Rating/Rating
+msgid "Last Modified On"
+msgstr "Zuletzt geändert am"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
@@ -36,10 +46,30 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
+#. Default: "Dear, I would like to share the following News with you: {link} Kind regards {fullname}"
+#: components/Rating/Rating
+msgid "Share Content"
+msgstr "Sehr geehrte/r, Ich möchte folgende Meldung mit Ihnen teilen: {link} Mit freundlichen Grüßen {fullname}"
+
+#. Default: "Something went wrong while liking this post."
+#: components/Rating/Rating
+msgid "Something went wrong while liking this post."
+msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
+
+#. Default: "Something went wrong while unliking this post."
+#: components/Rating/Rating
+msgid "Something went wrong while unliking this post."
+msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
+
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
 msgstr ""
+
+#. Default: "To submit a Like you must be logged in"
+#: components/Rating/Rating
+msgid "To submit a Like you must be logged in"
+msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-08-18T19:48:07.604Z\n"
+"POT-Creation-Date: 2025-09-11T14:49:37.539Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,6 +18,11 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. Default: "Created On"
+#: components/Rating/Rating
+msgid "Created On"
+msgstr ""
+
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
@@ -26,6 +31,11 @@ msgstr ""
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
+msgstr ""
+
+#. Default: "Last Modified On"
+#: components/Rating/Rating
+msgid "Last Modified On"
 msgstr ""
 
 #. Default: "Location"
@@ -38,9 +48,29 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
+#. Default: "Dear, I would like to share the following News with you: {link} Kind regards {fullname}"
+#: components/Rating/Rating
+msgid "Share Content"
+msgstr ""
+
+#. Default: "Something went wrong while liking this post."
+#: components/Rating/Rating
+msgid "Something went wrong while liking this post."
+msgstr ""
+
+#. Default: "Something went wrong while unliking this post."
+#: components/Rating/Rating
+msgid "Something went wrong while unliking this post."
+msgstr ""
+
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
+msgstr ""
+
+#. Default: "To submit a Like you must be logged in"
+#: components/Rating/Rating
+msgid "To submit a Like you must be logged in"
 msgstr ""
 
 #. Default: "Website"

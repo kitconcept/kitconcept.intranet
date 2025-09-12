@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-09 16:49+0000\n"
+"POT-Creation-Date: 2025-09-10 19:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Eine Plone-Distribution für Intranets mit Plone. Erstellt von kitconcept."
 
-#: kitconcept/intranet/behaviors/person.py:14
+#: kitconcept/intranet/behaviors/person.py:15
 msgid "Academic Title"
 msgstr "Akademischer Titel"
 
-#: kitconcept/intranet/behaviors/configure.zcml:48
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Add the intranet-specific person fields"
 msgstr "Fügen Sie die intranet-spezifischen Personenfelder hinzu"
 
@@ -109,11 +109,11 @@ msgstr "Intranet-beschränkter Workflow"
 msgid "Intranet Settings"
 msgstr "Intranet-Einstellungen"
 
-#: kitconcept/intranet/behaviors/configure.zcml:48
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Intranet-specific Person fields"
 msgstr "Intranet-spezifische Personenfelder"
 
-#: kitconcept/intranet/behaviors/person.py:20
+#: kitconcept/intranet/behaviors/person.py:21
 msgid "Job Title"
 msgstr "Berufsbezeichnung"
 
@@ -155,14 +155,6 @@ msgstr ""
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
 msgstr "Platzhaltertext für das Suchfeld."
-
-#: kitconcept/intranet/behaviors/person.py:27
-msgid "Please input the department of the person."
-msgstr "Bitte geben Sie die Abteilung der Person an."
-
-#: kitconcept/intranet/behaviors/person.py:21
-msgid "Please input the job title of the person."
-msgstr "Bitte geben Sie die Berufsbezeichnung der Person an."
 
 #: kitconcept/intranet/profiles.zcml:14
 msgid "Policy package to install our site"

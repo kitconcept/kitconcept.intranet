@@ -44,11 +44,11 @@ msgstr "Fügen Sie die intranet-spezifischen Personenfelder hinzu"
 
 #: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Add the lifecycle management fields"
-msgstr ""
+msgstr "Fügen Sie die Felder für das Lebenszyklusmanagement hinzu."
 
 #: kitconcept/intranet/behaviors/configure.zcml:26
 msgid "Adds votes field"
-msgstr ""
+msgstr "Feld „Stimmen“ hinzufügen"
 
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Allows to set configuration that will be injected into the blocks default configuration."
@@ -123,11 +123,11 @@ msgstr "Berufsbezeichnung"
 
 #: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Lifecycle Management fields"
-msgstr ""
+msgstr "Lebenszyklusmanagement-Felder"
 
 #: kitconcept/intranet/behaviors/votes.py:13
 msgid "List of user IDs"
-msgstr ""
+msgstr "Liste der Benutzer-IDs"
 
 #: kitconcept/intranet/behaviors/configure.zcml:33
 #: kitconcept/intranet/behaviors/location.py:16
@@ -158,7 +158,7 @@ msgstr "In Bearbeitung"
 
 #: kitconcept/intranet/controlpanels/intranet.py:39
 msgid "Person Picture Aspect Ratio"
-msgstr ""
+msgstr "Bildformat der Person"
 
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
@@ -226,7 +226,7 @@ msgstr "Der Prüfer sendet den Inhalt zur Überarbeitung zurück."
 
 #: kitconcept/intranet/behaviors/configure.zcml:26
 msgid "Saves userID who liked an item"
-msgstr ""
+msgstr "Speichert die Benutzer-ID, die einen Artikel geliked hat."
 
 #: kitconcept/intranet/controlpanels/intranet.py:27
 msgid "Search Field Placeholder"
@@ -302,7 +302,7 @@ msgstr "Nach Organisationseinheit filtern"
 #. Default: "Image aspect ratio of the person's picture. This setting is used for the person picture on the person profile page, on teasers that point to a person profile page and on listings where persons are displayed."
 #: kitconcept/intranet/controlpanels/intranet.py:40
 msgid "help_person_picture_aspect_ratio"
-msgstr ""
+msgstr "Seitenverhältnis des Bildes der Person. Diese Einstellung wird für das Bild der Person auf der Profilseite der Person, in Teasern, die auf eine Profilseite der Person verweisen, und in Listen, in denen Personen angezeigt werden, verwendet."
 
 #. Default: "Filter by location"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
@@ -328,12 +328,12 @@ msgstr ""
 #. Default: "Authors"
 #: kitconcept/intranet/behaviors/lcm.py:53
 msgid "label_authors"
-msgstr ""
+msgstr "Autoren"
 
 #. Default: "Feedback to"
 #: kitconcept/intranet/behaviors/lcm.py:40
 msgid "label_feedback_person"
-msgstr ""
+msgstr "Feedback an"
 
 #. Default: "Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
@@ -348,4 +348,4 @@ msgstr "Ort"
 #. Default: "Content Owner:"
 #: kitconcept/intranet/behaviors/lcm.py:27
 msgid "label_responsible"
-msgstr ""
+msgstr "Inhaltseigentümer:"

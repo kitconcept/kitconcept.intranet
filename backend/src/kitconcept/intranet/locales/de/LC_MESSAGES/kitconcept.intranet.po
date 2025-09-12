@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-10 19:48+0000\n"
+"POT-Creation-Date: 2025-09-12 22:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,11 +24,11 @@ msgstr "- Workflow für Intranets. Authentifizierung erforderlich."
 
 #: kitconcept/intranet/controlpanels/intranet.py:49
 msgid "1:1 round picture"
-msgstr ""
+msgstr "1:1 kreisförmiges Bild"
 
 #: kitconcept/intranet/controlpanels/intranet.py:50
 msgid "4:5 square picture"
-msgstr ""
+msgstr "4:5 quadratisches Bild"
 
 #: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
@@ -52,7 +52,7 @@ msgstr "Ermöglicht die Festlegung einer Konfiguration, die in die Standardkonfi
 
 #: kitconcept/intranet/behaviors/blocks_settings.py:24
 msgid "Blocks configuration"
-msgstr "Blockkonfiguration"
+msgstr "Blocks Konfiguration"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -268,7 +268,7 @@ msgstr "Wartet auf Überprüfung, kann vom Eigentümer nicht bearbeitet werden."
 #. Default: "Configure some aspects of the default blocks configuration."
 #: kitconcept/intranet/behaviors/blocks_settings.py:41
 msgid "help_blocks_config_mutator"
-msgstr "Konfigurieren Sie einige Aspekte der Standardblockkonfiguration."
+msgstr "Blocks Konfiguration anpassen"
 
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml

@@ -6,7 +6,7 @@ describe('a11y tests', () => {
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
     cy.visit('/');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
   });
 
   // Introduction-Block
@@ -14,14 +14,7 @@ describe('a11y tests', () => {
     cy.navigate('/features/block/introduction-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

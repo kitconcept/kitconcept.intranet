@@ -6,17 +6,17 @@ import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
-  author: {
-    id: 'author',
-    defaultMessage: 'By ',
+  by: {
+    id: 'By',
+    defaultMessage: 'By',
   },
   published: {
     id: 'published',
-    defaultMessage: ' published ',
+    defaultMessage: 'published',
   },
   modified: {
     id: 'modified',
-    defaultMessage: ' last modified ',
+    defaultMessage: 'last modified',
   },
 });
 
@@ -78,7 +78,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
       <div className="documentByLine">
         {creatorsWithData.length > 0 && (
           <span>
-            {intl.formatMessage(messages.author)}
+            {intl.formatMessage(messages.by)}{' '}
             {creatorsWithData.map(({ name, homepage }, index) => (
               <React.Fragment key={name}>
                 {homepage ? (
@@ -98,7 +98,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
           <span>
             {content.review_state === 'published' ? (
               <span>
-                {intl.formatMessage(messages.published)}
+                {intl.formatMessage(messages.published)}{' '}
                 <FormattedDate
                   date={form.global?.effective ?? content?.effective}
                   format={{
@@ -117,7 +117,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
         )}
         {content.modified && !isAddMode && (
           <span>
-            {intl.formatMessage(messages.modified)}
+            {intl.formatMessage(messages.modified)}{' '}
             <FormattedDate
               date={content.modified}
               format={{

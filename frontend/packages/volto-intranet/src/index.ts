@@ -4,7 +4,7 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import type { CustomInheritBehavior, BlocksConfigSettings } from './types';
-import {  defineMessages } from 'react-intl';
+import { defineMessages } from 'react-intl';
 
 declare module '@plone/types' {
   export interface GetSiteResponse {

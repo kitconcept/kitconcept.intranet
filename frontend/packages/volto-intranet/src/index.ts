@@ -4,6 +4,7 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import type { CustomInheritBehavior, BlocksConfigSettings } from './types';
+import {  defineMessages } from 'react-intl';
 
 declare module '@plone/types' {
   export interface GetSiteResponse {
@@ -17,6 +18,16 @@ declare module '@plone/types' {
     };
   }
 }
+defineMessages({
+  FollowUs: {
+    id: 'Follow Us',
+    defaultMessage: 'Follow Us',
+  },
+  FollowUsBlock: {
+    id: 'Follow Us Block',
+    defaultMessage: 'Follow Us Block',
+  },
+});
 
 const applyConfig = (config: ConfigType) => {
   installSettings(config);

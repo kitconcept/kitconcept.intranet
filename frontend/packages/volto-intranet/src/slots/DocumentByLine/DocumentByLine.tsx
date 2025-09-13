@@ -91,7 +91,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
                 {index < creatorsWithData.length - 1 && ', '}
               </React.Fragment>
             ))}
-            {' —'}
+            {' — '}
           </span>
         )}
         {content.effective && !isAddMode && (
@@ -108,7 +108,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
                   }}
                   locale={intl.locale}
                 />
-                ,
+                ,{' '}
               </span>
             ) : (
               ''

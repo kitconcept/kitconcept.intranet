@@ -28,7 +28,10 @@ describe('Add Content Tests', () => {
   });
   it('As editor I can add a location to Document content type and find it in listing block', function () {
     cy.intercept('PATCH', '/**/my-page').as('save');
-
+    cy.intercept(
+      'GET',
+      '/**/@vocabularies/kitconcept.intranet.vocabularies.location_objects*',
+    ).as('vocab');
     cy.createContent({
       contentType: 'Location',
       contentId: 'headquarters-bonn-page',
@@ -41,6 +44,7 @@ describe('Add Content Tests', () => {
     });
     cy.navigate('/my-page/edit');
     cy.wait('@schema');
+    cy.wait('@vocab');
     cy.get('#field-location_reference').click();
     cy.get(
       '#field-location_reference .react-select__menu .react-select__option',

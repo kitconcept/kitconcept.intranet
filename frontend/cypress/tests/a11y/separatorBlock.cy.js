@@ -14,16 +14,7 @@ describe('a11y tests', () => {
     cy.navigate('/features/block/separator-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // there are copies of slate h3,
-        // which have with the same id
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

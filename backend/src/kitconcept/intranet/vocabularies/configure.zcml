@@ -16,6 +16,11 @@
       />
 
   <utility
+      name="kitconcept.intranet.vocabularies.academic_titles"
+      component=".person.academic_titles_vocabulary"
+      />
+
+  <utility
       name="kitconcept.intranet.vocabularies.organisational_unit_objects"
       component=".organisational_unit.OrganisationalsUnitRelationVocabularyFactory"
       />

@@ -46,10 +46,6 @@ describe('Add Content Tests', () => {
     )
       .contains('Institute of Robotics and Mechatronics(Organisational unit)')
       .click();
-    cy.get('#field-roles').click();
-    cy.get(
-      '#field-roles .react-select__menu .react-select__option:first-of-type',
-    ).click();
     cy.get('#toolbar-save').focus().click();
     cy.wait('@content');
   });

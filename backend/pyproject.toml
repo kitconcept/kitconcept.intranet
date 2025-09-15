@@ -25,7 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "kitconcept.core==1.0.0a23",
+    "kitconcept.core==1.0.0a25",
     "plone.api",
     "plone.distribution",
     "plone.restapi",
@@ -35,7 +35,8 @@ dependencies = [
     "pas.plugins.authomatic==2.0.0",
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
-    "kitconcept.solr==2.0.0a2"
+    "kitconcept.solr==2.0.0a2",
+    "collective.person==1.0.0b2",
 ]
 
 [dependency-groups]
@@ -235,6 +236,7 @@ constraint-dependencies = [
     "cmarkgfm==2024.11.20",
     "collective.MockMailHost==3.0.0",
     "collective.monkeypatcher==2.0.0",
+    "collective.person==1.0.0b2",
     "collective.recipe.omelette==2.0.0",
     "collective.recipe.template==2.2",
     "collective.recipe.vscode==0.1.9",
@@ -290,9 +292,9 @@ constraint-dependencies = [
     "jsonschema-specifications==2025.4.1",
     "jsonschema==4.24.0",
     "keyring==25.6.0",
-    "kitconcept.core==1.0.0a23",
+    "kitconcept.core==1.0.0a25",
     "kitconcept.solr==2.0.0a2",
-    "kitconcept.voltolighttheme==7.0.0a28",
+    "kitconcept.voltolighttheme==7.0.0b2",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.2",

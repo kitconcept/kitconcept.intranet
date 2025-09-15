@@ -39,4 +39,11 @@
       provides=".lcm.ILCM"
       />
 
+  <plone:behavior
+      name="kitconcept.intranet.person"
+      title="Intranet-specific Person fields"
+      description="Add the intranet-specific person fields"
+      provides=".person.IPersonBehavior"
+      />
+
 </configure>

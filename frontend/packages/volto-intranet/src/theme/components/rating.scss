@@ -1,3 +1,8 @@
+@mixin text-style() {
+  font-size: map-get($font-sizes, xs);
+  font-weight: map-get($font-weights, regular);
+  line-height: map-get($line-heights, s);
+}
 .content-engagement {
   padding-top: 30px;
   padding-bottom: 80px;
@@ -35,9 +40,7 @@
     .likes-count,
     .comments-count {
       span {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 18px;
+        @include text-style();
       }
     }
   }
@@ -55,10 +58,7 @@
   gap: 50px;
   .created,
   .modified {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 18px;
+    @include text-style();
     .created-date,
     .modified-date {
       display: flex;

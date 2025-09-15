@@ -91,7 +91,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.4.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==1.0.0a26" },
+    { name = "kitconcept-core", specifier = "==1.0.0a27" },
     { name = "kitconcept-solr", specifier = "==2.0.0a1" },
     { name = "kitconcept-voltolighttheme", specifier = "==7.0.0b2" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
@@ -1297,7 +1297,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.0a26"
+version = "1.0.0a27"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1311,9 +1311,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/11/52/33ba51722073945974f66ae0cd1c42da73c20ab2d6ead4a085693a23ec92/kitconcept_core-1.0.0a26.tar.gz", hash = "sha256:f4fbc6357860e3720ebcde13702521958f3d8eca5c04d3be1fc6fa78769ebc90", size = 323166 }
+sdist = { url = "https://files.pythonhosted.org/packages/43/a5/f4b51030e19608d98c78b3a54a379a14872335ce488b27c9666a84ef3bb1/kitconcept_core-1.0.0a27.tar.gz", hash = "sha256:39b7de111055ddc4f89a09b8fc8b5ca4211c83fc78d0b8f50ae3455e9fbeacbd", size = 323285 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/34/78/e8a1448719a8f5cc5f60cffbc33f29a0671761aa6f3d839f6edc75b7307c/kitconcept_core-1.0.0a26-py3-none-any.whl", hash = "sha256:182681d6f739ae1b3944c0d0c6b19198ac264b7c0825d910db437f0a660c3cd5", size = 233687 },
+    { url = "https://files.pythonhosted.org/packages/eb/99/cc1bab8692e734cf834ee5628d58b1502b6d4081f7bbe7f5d1a000b594d5/kitconcept_core-1.0.0a27-py3-none-any.whl", hash = "sha256:42a7e607abe643777b8642f84a9a99c0ba722b7b6a0a47bc1b28aa744a15a4de", size = 234345 },
 ]
 
 [[package]]
@@ -1360,7 +1360,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-person", specifier = "==1.0.0b2" },
-    { name = "kitconcept-core", specifier = "==1.0.0a26" },
+    { name = "kitconcept-core", specifier = "==1.0.0a27" },
     { name = "kitconcept-solr", specifier = "==2.0.0a1" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

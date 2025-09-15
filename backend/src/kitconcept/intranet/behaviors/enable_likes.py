@@ -7,7 +7,6 @@ from zope.interface import provider
 
 @provider(IFormFieldProvider)
 class IEnableLikes(model.Schema):
-
     enable_likes = schema.Bool(
         title=_("Enable Likes"),
         description=_("Enable Likes for this Content Object"),

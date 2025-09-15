@@ -64,11 +64,19 @@ const DotFormattedDate = ({ date, className, locale }) => {
     </FormattedDate>
   );
 };
+
+// I will remove it once I update the useLiveData function of VLT.
+function useLiveData(field) {
+  const formData = useSelector((state) => state.form.global?.[field]);
+  return formData;
+}
 const Rating = (props) => {
   const location = useLocation();
   const content = useSelector((state) => state.content.data);
   const pathname = location.pathname;
-  const allow_discussion = content?.allow_discussion;
+  const allow_discussion =
+    useLiveData('allow_discussion') || content?.allow_discussion;
+  const enable_likes = useLiveData('enable_likes') || content?.enable_likes;
   const votes = content?.votes;
   const loggedIn = useSelector((state) => state.userSession.token, shallowEqual)
     ? true
@@ -136,37 +144,39 @@ const Rating = (props) => {
     <Container className="content-engagement">
       <div className="engagement-container">
         <div className="engagement-section">
-          <div className={cx('likes-section', { anon: !loggedIn })}>
-            {loggedIn ? (
-              <Button aria-label="liked" onClick={() => onLike()}>
-                <div className="icon-wrapper">
-                  {liked ? (
-                    <Icon
-                      name={thumbsFilledSVG}
-                      size="33px"
-                      className="liked"
-                    />
-                  ) : (
+          {enable_likes && (
+            <div className={cx('likes-section', { anon: !loggedIn })}>
+              {loggedIn ? (
+                <Button aria-label="liked" onClick={() => onLike()}>
+                  <div className="icon-wrapper">
+                    {liked ? (
+                      <Icon
+                        name={thumbsFilledSVG}
+                        size="33px"
+                        className="liked"
+                      />
+                    ) : (
+                      <Icon name={thumbsSVG} size="33px" />
+                    )}
+                  </div>
+                </Button>
+              ) : (
+                <Link
+                  aria-label="unliked"
+                  to={`${pathname}/login`}
+                  title={intl.formatMessage(messages.loginToLike)}
+                >
+                  <div className="icon-wrapper">
                     <Icon name={thumbsSVG} size="33px" />
-                  )}
-                </div>
-              </Button>
-            ) : (
-              <Link
-                aria-label="unliked"
-                to={`${pathname}/login`}
-                title={intl.formatMessage(messages.loginToLike)}
-              >
-                <div className="icon-wrapper">
-                  <Icon name={thumbsSVG} size="33px" />
-                </div>
-              </Link>
-            )}
-            <div className="likes-count">
-              <span>({amount})</span>
+                  </div>
+                </Link>
+              )}
+              <div className="likes-count">
+                <span>({amount})</span>
+              </div>
             </div>
-          </div>
-          {(allow_discussion || comment_count >= 0) && (
+          )}
+          {(allow_discussion || comment_count > 0) && (
             <div className="comments-section">
               <Button aria-label="comments">
                 <div className="icon-wrapper">

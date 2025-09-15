@@ -1,14 +1,9 @@
 .content-engagement {
-  position: relative;
-  display: block;
-  width: calc(100cqw - 40px);
-  max-width: inherit;
   padding-top: 30px;
   padding-bottom: 80px;
   border-color: var(--theme-foreground-color);
   border-top: 1px solid;
   margin-top: 80px;
-  content: '';
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
 }
@@ -33,6 +28,10 @@
     align-items: center;
     margin-right: 30px;
 
+    button {
+      cursor: pointer;
+    }
+
     .likes-count,
     .comments-count {
       span {
@@ -42,11 +41,18 @@
       }
     }
   }
+
+  .comments-section {
+    button {
+      cursor: default;
+    }
+  }
 }
 .content-metadata {
   display: flex;
   flex: 1;
   justify-content: flex-end;
+  gap: 50px;
   .created,
   .modified {
     font-size: 14px;
@@ -57,8 +63,5 @@
     .modified-date {
       display: flex;
     }
-  }
-  .created {
-    margin-right: 50px;
   }
 }

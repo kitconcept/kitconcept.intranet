@@ -39,7 +39,7 @@ class TestContentTypeFTI:
                     "kitconcept.intranet.organisational_unit",
                     "kitconcept.intranet.lcm",
                     "kitconcept.intranet.votes",
-                    "kitconcept.enable_likes",
+                    "kitconcept.intranet.enable_likes",
                 ),
             ),
             ("Event", "title", "Event"),

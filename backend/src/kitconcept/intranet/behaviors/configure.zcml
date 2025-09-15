@@ -19,7 +19,7 @@
       />
 
   <plone:behavior
-      name="kitconcept.enable_likes"
+      name="kitconcept.intranet.enable_likes"
       title="Enable Like functionality"
       description="Enables the like functionality for content objects"
       provides=".enable_likes.IEnableLikes"

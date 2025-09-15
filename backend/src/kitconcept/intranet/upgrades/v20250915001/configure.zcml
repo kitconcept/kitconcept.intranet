@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250909001"
+      destination="20250915001"
+      >
+    <genericsetup:upgradeDepends
+        title="Remove custom model_schema in Person content type from c.person"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

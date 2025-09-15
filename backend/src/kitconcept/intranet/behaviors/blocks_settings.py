@@ -1,4 +1,4 @@
-from kitconcept.voltolighttheme import _
+from kitconcept.intranet import _
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField

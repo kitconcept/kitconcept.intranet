@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-11 15:06+0000\n"
+"POT-Creation-Date: 2025-09-15 11:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,19 +34,19 @@ msgstr ""
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Uma distribuição Plone para Intranets com Plone. Criada pela kitconcept."
 
-#: kitconcept/intranet/behaviors/person.py:13
+#: kitconcept/intranet/behaviors/person.py:15
 msgid "Academic Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:55
+#: kitconcept/intranet/behaviors/configure.zcml:61
 msgid "Add the intranet-specific person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/configure.zcml:54
 msgid "Add the lifecycle management fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Adds votes field"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr "CSS personalizado"
 msgid "Custom CSS for the intranet."
 msgstr "CSS personalizado para a intranet."
 
-#: kitconcept/intranet/behaviors/person.py:25
+#: kitconcept/intranet/behaviors/person.py:26
 msgid "Department"
 msgstr ""
 
@@ -84,15 +84,31 @@ msgstr ""
 msgid "Edit"
 msgstr "Editar"
 
+#: kitconcept/intranet/behaviors/configure.zcml:26
+msgid "Enable Like functionality"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/enable_likes.py:12
+msgid "Enable Likes"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/enable_likes.py:13
+msgid "Enable Likes for this Content Object"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:26
+msgid "Enables the like functionality for content objects"
+msgstr ""
+
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr "URL de busca externa"
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:40
 msgid "Fields for Location"
 msgstr "Campo de relacionamento com locais"
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Fields for Organisational Unit"
 msgstr "Campo de relacionamento com áreas"
 
@@ -113,23 +129,23 @@ msgstr "Workflow restrito para Intranet"
 msgid "Intranet Settings"
 msgstr "Configurações da Intranet"
 
-#: kitconcept/intranet/behaviors/configure.zcml:55
+#: kitconcept/intranet/behaviors/configure.zcml:61
 msgid "Intranet-specific Person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:19
+#: kitconcept/intranet/behaviors/person.py:21
 msgid "Job Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/configure.zcml:54
 msgid "Lifecycle Management fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/votes.py:13
+#: kitconcept/intranet/behaviors/votes.py:12
 msgid "List of user IDs"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:40
 #: kitconcept/intranet/behaviors/location.py:16
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
@@ -145,7 +161,7 @@ msgstr "Membro retira a submissão"
 msgid "Member submits content for publication"
 msgstr "Membro envia conteúdo para publicação"
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:47
 #: kitconcept/intranet/behaviors/organisational_unit.py:16
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
@@ -163,14 +179,6 @@ msgstr ""
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
 msgstr "Texto de exemplo para o campo de busca."
-
-#: kitconcept/intranet/behaviors/person.py:26
-msgid "Please input the department of the person."
-msgstr ""
-
-#: kitconcept/intranet/behaviors/person.py:20
-msgid "Please input the job title of the person."
-msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:14
 msgid "Policy package to install our site"
@@ -224,7 +232,7 @@ msgstr "Revisor publica conteúdo"
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Revisor envia conteúdo de volta para reescrita"
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Saves userID who liked an item"
 msgstr ""
 
@@ -280,7 +288,7 @@ msgstr "Visível para usuários anônimos, editável por editores e revisores."
 msgid "Visible to authenticated users, editable by editors and reviewers."
 msgstr "Visível para usuários autenticados, editável por editores e revisores."
 
-#: kitconcept/intranet/behaviors/votes.py:12
+#: kitconcept/intranet/behaviors/votes.py:11
 msgid "Votes"
 msgstr ""
 

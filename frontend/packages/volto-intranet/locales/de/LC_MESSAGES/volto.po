@@ -11,10 +11,15 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "By"
+#: slots/DocumentByLine/DocumentByLine
+msgid "By"
+msgstr "Von"
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. Default: "Created On"
 #: components/Rating/Rating
@@ -24,7 +29,7 @@ msgstr "Erstellt am"
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
-msgstr ""
+msgstr "Ende"
 
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
@@ -34,7 +39,7 @@ msgstr ""
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
-msgstr ""
+msgstr "Termin importieren (.ics)"
 
 #. Default: "Last Modified On"
 #: components/Rating/Rating
@@ -44,12 +49,12 @@ msgstr "Zuletzt geändert am"
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
-msgstr ""
+msgstr "Standort"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 msgid "Phone"
-msgstr ""
+msgstr "Telefonnummer"
 
 #. Default: "Dear, I would like to share the following News with you: {link} Kind regards {fullname}"
 #: components/Rating/Rating
@@ -69,7 +74,7 @@ msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
-msgstr ""
+msgstr "Anfang"
 
 #. Default: "To submit a Like you must be logged in"
 #: components/Rating/Rating
@@ -81,20 +86,15 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 msgid "Website"
 msgstr ""
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "author"
-msgstr ""
-
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr ""
+msgstr "zuletzt verändert"
 
 #. Default: "published"
 #: slots/DocumentByLine/DocumentByLine
 msgid "published"
-msgstr ""
+msgstr "Veröffentlicht"
 
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate

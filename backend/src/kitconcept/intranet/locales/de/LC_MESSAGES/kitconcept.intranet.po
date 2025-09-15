@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-11 15:06+0000\n"
+"POT-Creation-Date: 2025-09-15 11:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,29 +24,29 @@ msgstr "- Workflow für Intranets. Authentifizierung erforderlich."
 
 #: kitconcept/intranet/controlpanels/intranet.py:49
 msgid "1:1 round picture"
-msgstr ""
+msgstr "1:1 kreisförmiges Bild"
 
 #: kitconcept/intranet/controlpanels/intranet.py:50
 msgid "4:5 square picture"
-msgstr ""
+msgstr "4:5 quadratisches Bild"
 
 #: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Eine Plone-Distribution für Intranets mit Plone. Erstellt von kitconcept."
 
-#: kitconcept/intranet/behaviors/person.py:13
+#: kitconcept/intranet/behaviors/person.py:15
 msgid "Academic Title"
 msgstr "Akademischer Titel"
 
-#: kitconcept/intranet/behaviors/configure.zcml:55
+#: kitconcept/intranet/behaviors/configure.zcml:61
 msgid "Add the intranet-specific person fields"
 msgstr "Fügen Sie die intranet-spezifischen Personenfelder hinzu"
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/configure.zcml:54
 msgid "Add the lifecycle management fields"
 msgstr "Fügen Sie die Felder für das Lebenszyklusmanagement hinzu."
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Adds votes field"
 msgstr "Feld „Stimmen“ hinzufügen"
 
@@ -56,7 +56,7 @@ msgstr "Ermöglicht die Festlegung einer Konfiguration, die in die Standardkonfi
 
 #: kitconcept/intranet/behaviors/blocks_settings.py:24
 msgid "Blocks configuration"
-msgstr "Blockkonfiguration"
+msgstr "Blocks Konfiguration"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -71,7 +71,7 @@ msgstr "Benutzerdefiniertes CSS"
 msgid "Custom CSS for the intranet."
 msgstr "Benutzerdefiniertes CSS für das Intranet."
 
-#: kitconcept/intranet/behaviors/person.py:25
+#: kitconcept/intranet/behaviors/person.py:26
 msgid "Department"
 msgstr "Abteilung"
 
@@ -84,15 +84,31 @@ msgstr "Dr."
 msgid "Edit"
 msgstr "Bearbeiten"
 
+#: kitconcept/intranet/behaviors/configure.zcml:26
+msgid "Enable Like functionality"
+msgstr "Like-Funktion aktivieren"
+
+#: kitconcept/intranet/behaviors/enable_likes.py:12
+msgid "Enable Likes"
+msgstr "Likes aktivieren"
+
+#: kitconcept/intranet/behaviors/enable_likes.py:13
+msgid "Enable Likes for this Content Object"
+msgstr "Likes für dieses Inhaltsobjekt aktivieren"
+
+#: kitconcept/intranet/behaviors/configure.zcml:26
+msgid "Enables the like functionality for content objects"
+msgstr "Aktiviert die Like-Funktion für Inhaltsobjekte"
+
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr "Externe Such-URL"
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:40
 msgid "Fields for Location"
 msgstr "Felder für Standort"
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Fields for Organisational Unit"
 msgstr "Felder für Organisationseinheit"
 
@@ -113,23 +129,23 @@ msgstr "Intranet-beschränkter Workflow"
 msgid "Intranet Settings"
 msgstr "Intranet-Einstellungen"
 
-#: kitconcept/intranet/behaviors/configure.zcml:55
+#: kitconcept/intranet/behaviors/configure.zcml:61
 msgid "Intranet-specific Person fields"
 msgstr "Intranet-spezifische Personenfelder"
 
-#: kitconcept/intranet/behaviors/person.py:19
+#: kitconcept/intranet/behaviors/person.py:21
 msgid "Job Title"
 msgstr "Berufsbezeichnung"
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/configure.zcml:54
 msgid "Lifecycle Management fields"
 msgstr "Lebenszyklusmanagement-Felder"
 
-#: kitconcept/intranet/behaviors/votes.py:13
+#: kitconcept/intranet/behaviors/votes.py:12
 msgid "List of user IDs"
 msgstr "Liste der Benutzer-IDs"
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:40
 #: kitconcept/intranet/behaviors/location.py:16
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
@@ -145,7 +161,7 @@ msgstr "Mitglied zieht Einreichung zurück"
 msgid "Member submits content for publication"
 msgstr "Mitglied reicht Inhalte zur Veröffentlichung ein"
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:47
 #: kitconcept/intranet/behaviors/organisational_unit.py:16
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
@@ -163,14 +179,6 @@ msgstr "Bildformat der Person"
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
 msgstr "Platzhaltertext für das Suchfeld."
-
-#: kitconcept/intranet/behaviors/person.py:26
-msgid "Please input the department of the person."
-msgstr "Bitte geben Sie die Abteilung der Person an."
-
-#: kitconcept/intranet/behaviors/person.py:20
-msgid "Please input the job title of the person."
-msgstr "Bitte geben Sie die Berufsbezeichnung der Person an."
 
 #: kitconcept/intranet/profiles.zcml:14
 msgid "Policy package to install our site"
@@ -224,7 +232,7 @@ msgstr "Der Prüfer veröffentlicht Inhalte."
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Der Prüfer sendet den Inhalt zur Überarbeitung zurück."
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Saves userID who liked an item"
 msgstr "Speichert die Benutzer-ID, die einen Artikel geliked hat."
 
@@ -280,7 +288,7 @@ msgstr "Für anonyme Benutzer sichtbar, für Redakteure und Prüfer editierbar."
 msgid "Visible to authenticated users, editable by editors and reviewers."
 msgstr "Für authentifizierte Benutzer sichtbar, für Redakteure und Prüfer editierbar."
 
-#: kitconcept/intranet/behaviors/votes.py:12
+#: kitconcept/intranet/behaviors/votes.py:11
 msgid "Votes"
 msgstr "Stimmen"
 
@@ -292,7 +300,7 @@ msgstr "Wartet auf Überprüfung, kann vom Eigentümer nicht bearbeitet werden."
 #. Default: "Configure some aspects of the default blocks configuration."
 #: kitconcept/intranet/behaviors/blocks_settings.py:41
 msgid "help_blocks_config_mutator"
-msgstr "Konfigurieren Sie einige Aspekte der Standardblockkonfiguration."
+msgstr "Blocks Konfiguration anpassen"
 
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml

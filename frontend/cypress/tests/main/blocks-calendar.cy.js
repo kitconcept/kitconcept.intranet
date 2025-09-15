@@ -48,6 +48,11 @@ describe('Event Calendar Block Tests', () => {
       contentType: 'Event',
       contentId: 'my-second-event',
       contentTitle: 'Second Event',
+      bodyModifier(body) {
+        body.start = formatDate(now);
+        body.end = formatDate(new Date(now.getTime() + 1000));
+        return body;
+      },
     });
     cy.visit('/my-page');
     cy.wait('@content');

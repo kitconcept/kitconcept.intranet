@@ -1,4 +1,5 @@
 from kitconcept.intranet import _
+from plone.autoform.directives import order_before
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
@@ -9,6 +10,7 @@ from zope.interface import provider
 class IPersonBehavior(model.Schema):
     """Behavior: Additional fields for a Person."""
 
+    order_before(academic_title="first_name")
     academic_title = schema.Choice(
         title=_("Academic Title"),
         vocabulary="kitconcept.intranet.vocabularies.academic_titles",
@@ -17,12 +19,10 @@ class IPersonBehavior(model.Schema):
 
     job_title = schema.TextLine(
         title=_("Job Title"),
-        description=_("Please input the job title of the person."),
         required=False,
     )
 
-    departament = schema.TextLine(
+    department = schema.TextLine(
         title=_("Department"),
-        description=_("Please input the department of the person."),
         required=False,
     )

@@ -33,7 +33,26 @@
     },
     "undefined": {
       "@type": "search",
-      "listingBodyTemplate": "default",
+      "listingBodyTemplate": "summary",
+      "query": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": ""
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
       "showSearchInput": true,
       "showSortOn": true,
       "showTotalResults": true,
@@ -53,7 +72,7 @@
   "creators": [
     "admin"
   ],
-  "description": "",
+  "description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
   "effective": "2025-06-13T09:28:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
@@ -69,7 +88,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-14T16:08:28+00:00",
+  "modified": "2025-09-08T08:02:58+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,

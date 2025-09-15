@@ -14,15 +14,6 @@ describe('a11y tests', () => {
     cy.navigate('/features/block/rss-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      // Disabling 'image-alt'
-      rules: [
-        {
-          id: 'image-alt',
-          enabled: false,
-        },
-      ],
-    });
     cy.checkAccessibility();
   });
 });

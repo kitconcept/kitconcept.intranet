@@ -90,9 +90,9 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.4.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==1.0.0a22" },
+    { name = "kitconcept-core", specifier = "==1.0.0a23" },
     { name = "kitconcept-solr", specifier = "==2.0.0a1" },
-    { name = "kitconcept-voltolighttheme", specifier = "==7.0.0a27" },
+    { name = "kitconcept-voltolighttheme", specifier = "==7.0.0a28" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.4.0" },
@@ -1294,7 +1294,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.0a22"
+version = "1.0.0a23"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1308,9 +1308,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/fb/45/3458dc51f7755e178ff5ec3b481ec7e006658d14545131484a179bea4543/kitconcept_core-1.0.0a22.tar.gz", hash = "sha256:3561ff05f3819589ce66d43eca57dab5f63aba2aa44500b882f6db482898035a", size = 315917 }
+sdist = { url = "https://files.pythonhosted.org/packages/c2/dc/e3ad4e05bb66f0d1142be3b371d784c383ba19e7dcd33910a1d237eda046/kitconcept_core-1.0.0a23.tar.gz", hash = "sha256:d43eb38132608bd0e5c445c155f204629b5b4caf817977be1b05e62881ed2388", size = 315983 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/61/36/484de1dd632126c993964e92edfffd57677b636e6a59ad874b76e1a4a5fb/kitconcept_core-1.0.0a22-py3-none-any.whl", hash = "sha256:f6d9aca56d8f3ba0651e87d931bb55628dd8f4b22b8f66a69ecadc75b8c10cc5", size = 233509 },
+    { url = "https://files.pythonhosted.org/packages/88/4a/7bd0264a0f9ef132604173e56c8486f3a0af0c2951ebc0e81e6719da8f75/kitconcept_core-1.0.0a23-py3-none-any.whl", hash = "sha256:cd0d7ed3a86ec4bbe0cb9ff0ae91716985cd5685c01314fa27294771c21bf4dd", size = 233510 },
 ]
 
 [[package]]
@@ -1355,7 +1355,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "kitconcept-core", specifier = "==1.0.0a22" },
+    { name = "kitconcept-core", specifier = "==1.0.0a23" },
     { name = "kitconcept-solr", specifier = "==2.0.0a1" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1410,7 +1410,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "7.0.0a27"
+version = "7.0.0a28"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1419,9 +1419,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/20/e5/4617a613e8258e7998d4f734718e55f18735850b468d544906febfc4a3bc/kitconcept_voltolighttheme-7.0.0a27.tar.gz", hash = "sha256:3421e54366ade7f36b61680b60a8e252eb1f3d2863149ece685b601028284b3a", size = 8999410 }
+sdist = { url = "https://files.pythonhosted.org/packages/d9/86/54408a381b9324b8958b1a8c7124ba6fcdee3a21a0f454002bf49ad6e433/kitconcept_voltolighttheme-7.0.0a28.tar.gz", hash = "sha256:086883686f04011c612c977801b4e5d5cdcf126d34ff8b29acd85311d4c2f0d7", size = 8999422 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/93/81/fd80e32f5623ca614fa2e5051f7af931f456f78594476e63ff3f265abb22/kitconcept_voltolighttheme-7.0.0a27-py3-none-any.whl", hash = "sha256:67922ea6f065f464c003bda9be1e58e3fa624fe0d9ff35b9b36731b10ec6f773", size = 9053313 },
+    { url = "https://files.pythonhosted.org/packages/02/ff/7ab0719d3bc40381afb9e1f422e8a54e407586be683e2b5ec3e49e108d4f/kitconcept_voltolighttheme-7.0.0a28-py3-none-any.whl", hash = "sha256:a91da8bc3295e3d45e8745b74a0f0dddee649362f6fc7f5ea4502f07c1948f0f", size = 9053314 },
 ]
 
 [[package]]

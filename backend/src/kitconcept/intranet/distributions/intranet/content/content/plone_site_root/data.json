@@ -111,7 +111,7 @@
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
-              "image_field": "",
+              "image_field": "preview_image_link",
               "mime_type": "text/plain",
               "nav_title": null,
               "review_state": "published",
@@ -402,7 +402,8 @@
         }
       ],
       "styles": {},
-      "theme": "default"
+      "theme": "default",
+      "variation": "default"
     }
   },
   "blocks_config_mutator": {},
@@ -617,7 +618,7 @@
   "id": "Plone",
   "intranet_flag": "Intranet",
   "is_folderish": true,
-  "items_total": 6,
+  "items_total": 7,
   "language": "##DEFAULT##",
   "lock": {
     "locked": false,

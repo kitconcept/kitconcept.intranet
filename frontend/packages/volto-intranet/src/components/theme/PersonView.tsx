@@ -51,7 +51,6 @@ interface PersonViewProps {
  */
 const PersonView: React.FC<PersonViewProps> = ({ content }) => {
   const Container = config.getComponent({ name: 'Container' }).component;
-  console.log(content);
 
   const profile = {
     imageUrl:

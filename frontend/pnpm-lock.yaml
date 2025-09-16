@@ -1574,6 +1574,9 @@ importers:
       '@plone/components':
         specifier: workspace:*
         version: link:../../../../../core/packages/components
+      '@plonegovbr/volto-social-media':
+        specifier: ^2.0.0-alpha.8
+        version: 2.0.0-alpha.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1793,22 +1796,6 @@ importers:
       release-it:
         specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
-
-  packages/volto-iframe-block/packages/volto-iframe-block:
-    dependencies:
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.1
-      release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.8.3)
 
   packages/volto-intranet:
     dependencies:
@@ -4257,6 +4244,12 @@ packages:
 
   '@plonegovbr/volto-social-media@2.0.0-alpha.6':
     resolution: {integrity: sha512-XM49Y64RlYA4reuSDiW7b6OZE33UMEeIMZv9pl6/reBux3Ep5wOvhh6PFsl7eCbYJNUtFAs89bLtyI7gn1THwQ==}
+    peerDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0
+
+  '@plonegovbr/volto-social-media@2.0.0-alpha.8':
+    resolution: {integrity: sha512-iRr6qTMtW9qpUxheOFmdhYJwumlvJo1KLRTIGZOY/msbI7jBrBz5behHmBXFPV6PwXGqHYxciYTay8XFkMCWhA==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -18451,6 +18444,14 @@ snapshots:
       - utf-8-validate
 
   '@plonegovbr/volto-social-media@2.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))':
+    dependencies:
+      '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - storybook
+
+  '@plonegovbr/volto-social-media@2.0.0-alpha.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))':
     dependencies:
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
       react: 18.2.0

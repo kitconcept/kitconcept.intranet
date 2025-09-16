@@ -19,6 +19,9 @@ interface PersonViewProps {
     first_name: string;
     last_name?: string;
     description?: string;
+    text?: {
+      data: string;
+    };
     image?: {
       scales?: {
         preview?: {
@@ -65,7 +68,9 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
       ? content.last_name
         ? `${content.academic_title.title} ${content.first_name} ${content.last_name}`
         : `${content.academic_title.title} ${content.first_name}`
-      : content.first_name,
+      : content.last_name
+        ? `${content.first_name} ${content.last_name}`
+        : content.first_name,
     department: content.department ?? null,
     organisationalUnit: content.organisational_unit_reference?.title ?? null,
   };
@@ -239,13 +244,13 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
           </div>
         )}
 
-        {content.description && (
+        {content.text && (
           <section className="bio-section" aria-labelledby="bio-heading">
             <h2 id="bio-heading">
               <FormattedMessage id="Bio" defaultMessage="Bio" />
             </h2>
             <div className="bio-content">
-              <p>{content.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: content.text.data }} />
             </div>
             <svg
               viewBox="0 0 948 63"

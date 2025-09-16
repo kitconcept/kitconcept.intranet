@@ -21,9 +21,10 @@ export default function install(config: ConfigType) {
     feedbackContactForm,
   };
   config.settings.isMultilingual = false;
-  config.settings.supportedLanguages = ['en'];
-  config.settings.defaultLanguage = 'en';
   config.settings.nonContentRoutes = nonContentRoutes;
+  config.settings.defaultLanguage = process.env.SITE_DEFAULT_LANGUAGE || 'de';
+  config.settings.supportedLanguages = ['de', 'en'];
+
   // Volto Light Theme Configuration
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';

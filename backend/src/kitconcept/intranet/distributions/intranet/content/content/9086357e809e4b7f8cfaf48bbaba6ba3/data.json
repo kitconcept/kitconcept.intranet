@@ -1,0 +1,223 @@
+{
+  "@id": "/organisation/institut-fur-materialforschung-und-nanotechnologie",
+  "@type": "Organisational Unit",
+  "UID": "9086357e809e4b7f8cfaf48bbaba6ba3",
+  "allow_discussion": null,
+  "blocks": {
+    "0add49c8-3f2f-4e54-8197-0bc27cdac8cb": {
+      "@type": "listing",
+      "headline": "Mitarbeitende",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Person"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "5996ad3d-76d3-4b5f-a6cb-79fac71d1f8c": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "default"
+    },
+    "9a7e158c-4cd6-43c6-941b-2a313c5a5678": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "default"
+    },
+    "a1baf34b-14f6-4bcb-a362-aa9ef5767172": {
+      "@type": "gridBlock",
+      "blocks": {
+        "41e42462-f20c-438f-8c15-b99251a894e6": {
+          "@type": "teaser",
+          "description": "Dr. Miriam Engelhardt ist wissenschaftliche Mitarbeiterin im Bereich Umweltanalytik mit Schwerpunkt auf atmosph\u00e4rischen Spurengasen und Emissionsdaten. Sie f\u00fchrt Messkampagnen durch, entwickelt Klimamodelle und validiert diese mit Hilfe statistischer Methoden. Ihre Expertise in Umweltchemie und datenbasierter Klimamodellierung mit Python und R unterst\u00fctzt die Forschung zu Klimawirkungen und tr\u00e4gt zur Ver\u00f6ffentlichung fundierter wissenschaftlicher Ergebnisse bei.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/bd745550cae741bf9932d2fd362b5bbf",
+              "@type": "Person",
+              "Description": "Dr. Miriam Engelhardt ist wissenschaftliche Mitarbeiterin im Bereich Umweltanalytik mit Schwerpunkt auf atmosph\u00e4rischen Spurengasen und Emissionsdaten. Sie f\u00fchrt Messkampagnen durch, entwickelt Klimamodelle und validiert diese mit Hilfe statistischer Methoden. Ihre Expertise in Umweltchemie und datenbasierter Klimamodellierung mit Python und R unterst\u00fctzt die Forschung zu Klimawirkungen und tr\u00e4gt zur Ver\u00f6ffentlichung fundierter wissenschaftlicher Ergebnisse bei.",
+              "Subject": [],
+              "Title": "Dr. Miriam Engelhardt",
+              "contact_building": "B33",
+              "contact_email": "miriam.engelhardt@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R921",
+              "description": "Dr. Miriam Engelhardt ist wissenschaftliche Mitarbeiterin im Bereich Umweltanalytik mit Schwerpunkt auf atmosph\u00e4rischen Spurengasen und Emissionsdaten. Sie f\u00fchrt Messkampagnen durch, entwickelt Klimamodelle und validiert diese mit Hilfe statistischer Methoden. Ihre Expertise in Umweltchemie und datenbasierter Klimamodellierung mit Python und R unterst\u00fctzt die Forschung zu Klimawirkungen und tr\u00e4gt zur Ver\u00f6ffentlichung fundierter wissenschaftlicher Ergebnisse bei.",
+              "effective": "1969-12-30T22:00:00+00:00",
+              "end": null,
+              "getObjSize": "9.3 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Dr. Miriam Engelhardt",
+              "type_title": "Person"
+            }
+          ],
+          "overwrite": false,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Dr. Miriam Engelhardt"
+        },
+        "e1336a8c-ac4f-4b0a-88fd-1e60afb77e91": {
+          "@type": "teaser",
+          "description": "Lukas Brandt, M.Sc. ist IT-Systemarchitekt im Rechenzentrum und spezialisiert auf Hochleistungsrechner, Netzwerksicherheit und IT-Automatisierung. Er plant und betreut die Serverinfrastruktur, \u00fcberwacht und optimiert Netzwerke und ist f\u00fcr die Anbindung von Forschungsdatenbanken zust\u00e4ndig. Seine Fachkenntnisse in der Linux-Administration, modernen Netzwerkarchitekturen sowie der Automatisierung mit Ansible und Terraform bilden die Grundlage f\u00fcr einen stabilen und leistungsf\u00e4higen IT-Betrieb.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/29619a2394d7421980fabaa99b742eda",
+              "@type": "Person",
+              "Description": "Lukas Brandt, M.Sc. ist IT-Systemarchitekt im Rechenzentrum und spezialisiert auf Hochleistungsrechner, Netzwerksicherheit und IT-Automatisierung. Er plant und betreut die Serverinfrastruktur, \u00fcberwacht und optimiert Netzwerke und ist f\u00fcr die Anbindung von Forschungsdatenbanken zust\u00e4ndig. Seine Fachkenntnisse in der Linux-Administration, modernen Netzwerkarchitekturen sowie der Automatisierung mit Ansible und Terraform bilden die Grundlage f\u00fcr einen stabilen und leistungsf\u00e4higen IT-Betrieb.",
+              "Subject": [],
+              "Title": "Lukas Brandt, M.Sc.",
+              "contact_building": "b243",
+              "contact_email": "lukas.brandt@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R18",
+              "description": "Lukas Brandt, M.Sc. ist IT-Systemarchitekt im Rechenzentrum und spezialisiert auf Hochleistungsrechner, Netzwerksicherheit und IT-Automatisierung. Er plant und betreut die Serverinfrastruktur, \u00fcberwacht und optimiert Netzwerke und ist f\u00fcr die Anbindung von Forschungsdatenbanken zust\u00e4ndig. Seine Fachkenntnisse in der Linux-Administration, modernen Netzwerkarchitekturen sowie der Automatisierung mit Ansible und Terraform bilden die Grundlage f\u00fcr einen stabilen und leistungsf\u00e4higen IT-Betrieb.",
+              "effective": "1969-12-30T22:00:00+00:00",
+              "end": null,
+              "getObjSize": "374.6 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Lukas Brandt, M.Sc.",
+              "type_title": "Person"
+            }
+          ],
+          "overwrite": false,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Lukas Brandt, M.Sc."
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "41e42462-f20c-438f-8c15-b99251a894e6",
+          "e1336a8c-ac4f-4b0a-88fd-1e60afb77e91"
+        ]
+      },
+      "headline": "Leitung",
+      "styles": {},
+      "theme": "default"
+    },
+    "b31e6b2d-ca48-443e-aedc-7499f1f7bcd4": {
+      "@type": "slate"
+    },
+    "d0acdce9-141f-4b07-83a1-8fc507199c4b": {
+      "@type": "introduction",
+      "plaintext": "Das Institut f\u00fcr Materialforschung und Nanotechnologie entwickelt neue Werkstoffe und Technologien im Nanometerbereich, um Innovationen in Bereichen wie Elektronik, Medizintechnik oder Energiewirtschaft zu erm\u00f6glichen.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das Institut f\u00fcr Materialforschung und Nanotechnologie entwickelt neue Werkstoffe und Technologien im Nanometerbereich, um Innovationen in Bereichen wie Elektronik, Medizintechnik oder Energiewirtschaft zu erm\u00f6glichen."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "e5ff67c2-5751-47ad-90bc-634ffe6e8582": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "e5ff67c2-5751-47ad-90bc-634ffe6e8582",
+      "9a7e158c-4cd6-43c6-941b-2a313c5a5678",
+      "d0acdce9-141f-4b07-83a1-8fc507199c4b",
+      "5996ad3d-76d3-4b5f-a6cb-79fac71d1f8c",
+      "a1baf34b-14f6-4bcb-a362-aa9ef5767172",
+      "0add49c8-3f2f-4e54-8197-0bc27cdac8cb",
+      "b31e6b2d-ca48-443e-aedc-7499f1f7bcd4"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-04T11:49:06+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Institut f\u00fcr Materialforschung und Nanotechnologie entwickelt neue Werkstoffe und Technologien im Nanometerbereich, um Innovationen in Bereichen wie Elektronik, Medizintechnik oder Energiewirtschaft zu erm\u00f6glichen.",
+  "effective": "2025-09-08T08:05:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institut-fur-materialforschung-und-nanotechnologie",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-08T08:05:50+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Institut f\u00fcr Materialforschung und Nanotechnologie",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-04T11:49:06+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-08T08:05:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

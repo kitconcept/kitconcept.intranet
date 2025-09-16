@@ -19,7 +19,7 @@ ANSWERS = {
     "title": os.getenv("SITE_TITLE"),
     "description": os.getenv("SITE_DESCRIPTION"),
     "available_languages": _string_as_list(
-        os.getenv("SITE_AVAILABLE_LANGUAGES", os.getenv("SITE_DEFAULT_LANGUAGE", "en"))
+        os.getenv("SITE_AVAILABLE_LANGUAGES", os.getenv("SITE_DEFAULT_LANGUAGE", "de"))
     ),
     "portal_timezone": os.getenv("SITE_PORTAL_TIMEZONE"),
     "setup_content": os.getenv("SITE_SETUP_CONTENT", "true"),

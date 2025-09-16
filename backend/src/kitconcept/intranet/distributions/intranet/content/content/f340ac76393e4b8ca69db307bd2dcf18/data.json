@@ -1,0 +1,133 @@
+{
+  "@id": "/organisation/institut-fur-informations-und-datenwissenschaften",
+  "@type": "Organisational Unit",
+  "UID": "f340ac76393e4b8ca69db307bd2dcf18",
+  "allow_discussion": null,
+  "blocks": {
+    "11f050f0-eeba-4b59-a604-8f5ab34504d9": {
+      "@type": "slate"
+    },
+    "26ef9831-11a1-4b6b-9f42-0015cd62a298": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Leitung",
+      "styles": {},
+      "theme": "default"
+    },
+    "55da1550-31a5-43fa-bd6f-46b8c05eaf26": {
+      "@type": "title"
+    },
+    "b7e77595-c593-4074-adc3-88f12dff0581": {
+      "@type": "listing",
+      "headline": "Mitarbeitende",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Person"
+            ]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "e852ab4d-4574-4b15-9e40-230810ab9b5f": {
+      "@type": "teaser",
+      "description": "Tim Werner, LL.M. ist Pr\u00fcfer im Bereich \u00d6ffentliche Finanzen und in der Abteilung Haushalts- und Strukturkontrolle t\u00e4tig. Seine Schwerpunkte liegen im Haushaltsrecht, der Mittelverwendung und der Bewertung \u00f6ffentlicher Projekte. Er f\u00fchrt Pr\u00fcfungen durch, erstellt fundierte Pr\u00fcfberichte und ber\u00e4t zu Optimierungspotenzialen im Haushaltsvollzug. Mit seiner juristischen Expertise im Verwaltungsrecht, seiner Erfahrung in der Bilanzanalyse sowie dem sicheren Umgang mit MS Excel und spezialisierter Pr\u00fcfsoftware tr\u00e4gt er zur Transparenz und Effizienz \u00f6ffentlicher Finanzen bei.",
+      "head_title": null,
+      "href": [
+        {
+          "@id": "../../resolveuid/059feee144a44bf88a3b38fbe9deca65",
+          "@type": "Person",
+          "Description": "Tim Werner, LL.M. ist Pr\u00fcfer im Bereich \u00d6ffentliche Finanzen und in der Abteilung Haushalts- und Strukturkontrolle t\u00e4tig. Seine Schwerpunkte liegen im Haushaltsrecht, der Mittelverwendung und der Bewertung \u00f6ffentlicher Projekte. Er f\u00fchrt Pr\u00fcfungen durch, erstellt fundierte Pr\u00fcfberichte und ber\u00e4t zu Optimierungspotenzialen im Haushaltsvollzug. Mit seiner juristischen Expertise im Verwaltungsrecht, seiner Erfahrung in der Bilanzanalyse sowie dem sicheren Umgang mit MS Excel und spezialisierter Pr\u00fcfsoftware tr\u00e4gt er zur Transparenz und Effizienz \u00f6ffentlicher Finanzen bei.",
+          "Title": "Tim Werner, LL.M.",
+          "contact_email": "tim.werner@example.com",
+          "contact_phone": "0221 3902 323",
+          "contact_room": "R874",
+          "description": "Tim Werner, LL.M. ist Pr\u00fcfer im Bereich \u00d6ffentliche Finanzen und in der Abteilung Haushalts- und Strukturkontrolle t\u00e4tig. Seine Schwerpunkte liegen im Haushaltsrecht, der Mittelverwendung und der Bewertung \u00f6ffentlicher Projekte. Er f\u00fchrt Pr\u00fcfungen durch, erstellt fundierte Pr\u00fcfberichte und ber\u00e4t zu Optimierungspotenzialen im Haushaltsvollzug. Mit seiner juristischen Expertise im Verwaltungsrecht, seiner Erfahrung in der Bilanzanalyse sowie dem sicheren Umgang mit MS Excel und spezialisierter Pr\u00fcfsoftware tr\u00e4gt er zur Transparenz und Effizienz \u00f6ffentlicher Finanzen bei.",
+          "effective": "1969-12-30T22:00:00+00:00",
+          "end": null,
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "image",
+          "start": null,
+          "title": "Tim Werner, LL.M."
+        }
+      ],
+      "overwrite": false,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Tim Werner, LL.M."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "55da1550-31a5-43fa-bd6f-46b8c05eaf26",
+      "26ef9831-11a1-4b6b-9f42-0015cd62a298",
+      "e852ab4d-4574-4b15-9e40-230810ab9b5f",
+      "b7e77595-c593-4074-adc3-88f12dff0581",
+      "11f050f0-eeba-4b59-a604-8f5ab34504d9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-04T12:00:24+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Forscht an Methoden der K\u00fcnstlichen Intelligenz, Datenanalyse und Hochleistungsrechenzentren, um gro\u00dfe Datenmengen aus Wissenschaft und Industrie nutzbar zu machen.",
+  "effective": "2025-09-08T08:05:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institut-fur-informations-und-datenwissenschaften",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-08T08:05:50+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Institut f\u00fcr Informations- und Datenwissenschaften",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-04T12:00:24+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-08T08:05:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,103 @@
+{
+  "@id": "/organisation",
+  "@type": "Document",
+  "UID": "4d9a9737b78842b2a8454f8c26c02cab",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "6f81fa09-bb26-4819-abdd-1abeafcc59b0": {
+      "@type": "title"
+    },
+    "9ce20fcf-eecb-4480-b042-21a5f65c0866": {
+      "@type": "slate"
+    },
+    "dd64f84b-828d-44d4-9a64-5c4f86b3d980": {
+      "@type": "listing",
+      "headline": "Organisationseinheiten",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Organisational Unit"
+            ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "."
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "6f81fa09-bb26-4819-abdd-1abeafcc59b0",
+      "dd64f84b-828d-44d4-9a64-5c4f86b3d980",
+      "9ce20fcf-eecb-4480-b042-21a5f65c0866"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-04T11:29:07+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+  "effective": "2025-09-08T08:05:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "organisation",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-08T08:05:50+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Organisation",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-04T11:29:07+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-08T08:05:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

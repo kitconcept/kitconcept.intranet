@@ -11,10 +11,15 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "By"
+#: slots/DocumentByLine/DocumentByLine
+msgid "By"
+msgstr "Von"
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
@@ -41,6 +46,11 @@ msgstr "Rückmeldung"
 msgid "Feedback about this page"
 msgstr "Feedback zu dieser Seite"
 
+#. Default: "Feedback on this page"
+#: components/StickyFeedbackButton/StickyFeedbackButton
+msgid "Feedback on this page"
+msgstr ""
+
 #. Default: "Feedback on:"
 #: components/FeedBackForm/FeedBackForm
 msgid "Feedback on:"
@@ -56,20 +66,15 @@ msgstr "Feedback an:"
 msgid "Follow us:"
 msgstr "Folgen Sie uns:"
 
-#. Default: "Feedback on this page"
-#: components/StickyFeedbackButton/StickyFeedbackButton
-msgid "Feedback on this page"
-msgstr ""
-
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
-msgstr ""
+msgstr "Termin importieren (.ics)"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
-msgstr ""
+msgstr "Standort"
 
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
@@ -84,7 +89,7 @@ msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 msgid "Phone"
-msgstr ""
+msgstr "Telefonnummer"
 
 #. Default: "Please enter your Organizational email address."
 #: components/FeedBackForm/FeedBackForm
@@ -109,7 +114,7 @@ msgstr "Gesponsert von:"
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
-msgstr ""
+msgstr "Anfang"
 
 #. Default: "Subject page/URL"
 #: components/FeedBackForm/FeedBackForm
@@ -131,11 +136,6 @@ msgstr ""
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr "Ihr Feedback wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "author"
-msgstr ""
-
 #. Default: "cancel"
 #: components/FeedBackForm/FeedBackForm
 msgid "cancel"
@@ -144,12 +144,12 @@ msgstr "abbrechen"
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr ""
+msgstr "zuletzt verändert"
 
 #. Default: "published"
 #: slots/DocumentByLine/DocumentByLine
 msgid "published"
-msgstr ""
+msgstr "Veröffentlicht"
 
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate

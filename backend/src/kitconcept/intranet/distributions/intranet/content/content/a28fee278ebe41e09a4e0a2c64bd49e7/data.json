@@ -1,0 +1,102 @@
+{
+  "@id": "/images/icons",
+  "@type": "Document",
+  "UID": "a28fee278ebe41e09a4e0a2c64bd49e7",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "465bf508-725a-4cd1-a923-741f058b14a3": {
+      "@type": "title"
+    },
+    "c88128f6-dffb-40e8-a20f-845ff38be44c": {
+      "@type": "slate"
+    },
+    "fe4b3269-552f-4d60-8371-80460271dca4": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Image"
+            ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "."
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "465bf508-725a-4cd1-a923-741f058b14a3",
+      "fe4b3269-552f-4d60-8371-80460271dca4",
+      "c88128f6-dffb-40e8-a20f-845ff38be44c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-04T12:39:33+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-09-08T09:52:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "icons",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-08T09:52:04+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Icons",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-04T12:39:33+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-08T09:52:04+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

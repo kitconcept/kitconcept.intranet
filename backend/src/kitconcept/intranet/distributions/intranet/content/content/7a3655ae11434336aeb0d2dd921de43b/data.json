@@ -2,6 +2,7 @@
   "@id": "/people/patrick-maier-m-sc",
   "@type": "Person",
   "UID": "7a3655ae11434336aeb0d2dd921de43b",
+  "academic_title": null,
   "allow_discussion": null,
   "blocks": {
     "2943a1d9-8d31-4b98-94b9-3caf064566f3": {
@@ -51,6 +52,7 @@
   "contact_room": "R975",
   "contact_website": "https://plone.org",
   "created": "2025-06-12T11:28:43+00:00",
+  "department": null,
   "description": "Patrick Maier, M.Sc. ist technischer Spezialist f\u00fcr Luft- und Raumfahrtsysteme in der Abteilung Automatisierung und Simulation. Er entwickelt und testet autonome Systeme, simuliert komplexe Missionsabl\u00e4ufe und erstellt technische Dokumentationen f\u00fcr anspruchsvolle Anwendungen. Seine Schwerpunkte liegen in der Flugmechanik, Robotik und der Entwicklung moderner Steuerungssysteme. Mit fundierten Kenntnissen in Regelungstechnik, der Arbeit mit MATLAB/Simulink sowie dem Einsatz von Robotik-Frameworks wie ROS und PX4 tr\u00e4gt er zur Weiterentwicklung intelligenter und zuverl\u00e4ssiger Luft- und Raumfahrtl\u00f6sungen bei.",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
@@ -58,7 +60,16 @@
   "first_name": "Patrick",
   "head_title": null,
   "id": "patrick-maier-m-sc",
+  "image": {
+    "blob_path": "7a3655ae11434336aeb0d2dd921de43b/image/patrick-maier.jpeg",
+    "content-type": "image/jpeg",
+    "filename": "patrick-maier.jpeg",
+    "height": 230,
+    "size": 7210,
+    "width": 345
+  },
   "is_folderish": true,
+  "job_title": null,
   "language": "##DEFAULT##",
   "last_name": "Maier, M.Sc.",
   "layout": "view",
@@ -66,9 +77,8 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-13T09:29:27+00:00",
+  "modified": "2025-09-04T08:20:45+00:00",
   "nav_title": null,
-  "preview_caption_link": null,
   "review_state": "published",
   "roles": [
     "member"

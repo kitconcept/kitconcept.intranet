@@ -15,7 +15,7 @@ class TestSolrSearch:
         "query,items",
         [
             ("plone", 9),
-            ("kitconcept", 2),
+            ("kitconcept", 3),
         ],
     )
     def test_queries(self, query: str, items: int):

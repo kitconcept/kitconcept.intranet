@@ -2,6 +2,7 @@
   "@id": "/people/dr-nadine-paulsen",
   "@type": "Person",
   "UID": "34d45ae4d36c4fa1a678358dd5320609",
+  "academic_title": null,
   "allow_discussion": null,
   "blocks": {
     "0ab383e4-b4db-43ab-8a2f-d53cd865651a": {
@@ -51,6 +52,7 @@
   "contact_room": "R974",
   "contact_website": "https://plone.org",
   "created": "2025-06-12T11:20:40+00:00",
+  "department": null,
   "description": "Dr. Nadine Paulsen ist Wissenschaftlerin im Bereich Energiesysteme der Zukunft und arbeitet in der Abteilung Nachhaltigkeit und Innovation. Ihre Forschung konzentriert sich auf Wasserstofftechnologien, zuk\u00fcnftige Energieszenarien und innovative Speicherl\u00f6sungen. Sie entwickelt Energiemodelle, koordiniert interdisziplin\u00e4re Studien und ber\u00e4t Projektpartner zu technologischen und systemischen Fragestellungen. Mit ihrer Expertise in der Energiesystemanalyse, dem Einsatz von Simulationstools wie EnergyPLAN und Modelica sowie der Technologiebewertung leistet sie einen wichtigen Beitrag zur Gestaltung nachhaltiger Energiestrategien.",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
@@ -58,7 +60,16 @@
   "first_name": "Dr. Nadine",
   "head_title": null,
   "id": "dr-nadine-paulsen",
+  "image": {
+    "blob_path": "34d45ae4d36c4fa1a678358dd5320609/image/Nadine-Paulsen.jpeg",
+    "content-type": "image/jpeg",
+    "filename": "Nadine-Paulsen.jpeg",
+    "height": 400,
+    "size": 27324,
+    "width": 600
+  },
   "is_folderish": true,
+  "job_title": null,
   "language": "##DEFAULT##",
   "last_name": "Paulsen",
   "layout": "view",
@@ -66,9 +77,8 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-13T09:29:27+00:00",
+  "modified": "2025-09-04T08:19:09+00:00",
   "nav_title": null,
-  "preview_caption_link": null,
   "review_state": "published",
   "roles": [
     "member"

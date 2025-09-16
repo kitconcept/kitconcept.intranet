@@ -219,6 +219,7 @@ class TestContentTypeFTI:
                     "kitconcept.core.person_image",
                     "volto.kicker",
                     "collective.person.person",
+                    "kitconcept.intranet.person",
                     "collective.contact_behaviors.contact_info",
                     "kitconcept.core.additional_contact_info",
                     "plone.namefromtitle",

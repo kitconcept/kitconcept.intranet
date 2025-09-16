@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-01 09:51+0000\n"
+"POT-Creation-Date: 2025-09-16 11:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,19 +22,31 @@ msgstr "- Workflow für Intranets. Öffentlicher Zugriff auf veröffentlichte In
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr "- Workflow für Intranets. Authentifizierung erforderlich."
 
-#: kitconcept/intranet/controlpanels/intranet.py:45
-msgid "4:5"
-msgstr ""
+#: kitconcept/intranet/controlpanels/intranet.py:49
+msgid "1:1 round picture"
+msgstr "1:1 kreisförmiges Bild"
 
-#: kitconcept/intranet/distributions.zcml:16
+#: kitconcept/intranet/controlpanels/intranet.py:50
+msgid "4:5 square picture"
+msgstr "4:5 quadratisches Bild"
+
+#: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Eine Plone-Distribution für Intranets mit Plone. Erstellt von kitconcept."
 
-#: kitconcept/intranet/behaviors/configure.zcml:46
+#: kitconcept/intranet/behaviors/person.py:15
+msgid "Academic Title"
+msgstr "Akademischer Titel"
+
+#: kitconcept/intranet/behaviors/configure.zcml:47
+msgid "Add the intranet-specific person fields"
+msgstr "Fügen Sie die intranet-spezifischen Personenfelder hinzu"
+
+#: kitconcept/intranet/behaviors/configure.zcml:40
 msgid "Add the lifecycle management fields"
 msgstr "Felder für das Lebenszyklusmanagement hinzufügen."
 
-#: kitconcept/intranet/controlpanels/intranet.py:61
+#: kitconcept/intranet/controlpanels/intranet.py:66
 msgid "Allowed Email Domains"
 msgstr "Zulässige E-Mail-Domains"
 
@@ -44,7 +56,7 @@ msgstr "Ermöglicht die Festlegung einer Konfiguration, die in die Standardkonfi
 
 #: kitconcept/intranet/behaviors/blocks_settings.py:24
 msgid "Blocks configuration"
-msgstr "Blockkonfiguration"
+msgstr "Blocks Konfiguration"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -59,44 +71,44 @@ msgstr "Benutzerdefiniertes CSS"
 msgid "Custom CSS for the intranet."
 msgstr "Benutzerdefiniertes CSS für das Intranet."
 
-#: kitconcept/intranet/controlpanels/intranet.py:50
+#: kitconcept/intranet/controlpanels/intranet.py:55
 msgid "Default Feedback Email"
 msgstr "Standard-Feedback-E-Mail"
 
-#: kitconcept/intranet/controlpanels/intranet.py:44
-msgid "Disabled"
-msgstr "Deaktiviert"
+#: kitconcept/intranet/behaviors/person.py:26
+msgid "Department"
+msgstr "Abteilung"
+
+#: kitconcept/intranet/vocabularies/person.py:17
+msgid "Dr."
+msgstr "Dr."
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: kitconcept/intranet/controlpanels/intranet.py:57
+#: kitconcept/intranet/controlpanels/intranet.py:62
 msgid "Email address to be CCed in feedback forms."
 msgstr "E-Mail-Adresse, die in Feedback-Formularen in CC gesetzt werden soll."
 
-#: kitconcept/intranet/controlpanels/intranet.py:51
+#: kitconcept/intranet/controlpanels/intranet.py:56
 msgid "Email address used in feedback forms if none is set."
 msgstr "E-Mail-Adresse, die in Feedback-Formularen verwendet wird, wenn keine andere angegeben ist."
-
-#: kitconcept/intranet/controlpanels/intranet.py:40
-msgid "Enable squared images for person teasers and listings."
-msgstr "Quadratische Bilder für Personenteaser und Einträge aktivieren."
 
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr "Externe Such-URL"
 
-#: kitconcept/intranet/controlpanels/intranet.py:56
+#: kitconcept/intranet/controlpanels/intranet.py:61
 msgid "Feedback CC email"
 msgstr "Feedback CC E-Mail"
 
-#: kitconcept/intranet/behaviors/configure.zcml:29
+#: kitconcept/intranet/behaviors/configure.zcml:26
 msgid "Fields for Location"
 msgstr "Felder für Standort"
 
-#: kitconcept/intranet/behaviors/configure.zcml:39
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Fields for Organisational Unit"
 msgstr "Felder für Organisationseinheit"
 
@@ -113,24 +125,32 @@ msgstr "Öffentlicher Intranet-Workflow"
 msgid "Intranet Restricted Workflow"
 msgstr "Intranet-beschränkter Workflow"
 
-#: kitconcept/intranet/controlpanels/intranet.py:70
+#: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Intranet Settings"
 msgstr "Intranet-Einstellungen"
 
-#: kitconcept/intranet/services/feedback_contact_form.py:190
+#: kitconcept/intranet/services/feedback_contact_form.py:229
 msgid "Intranet feedback form: {title}"
 msgstr "Feedback-Formular für das Intranet: {title}"
 
-#: kitconcept/intranet/behaviors/configure.zcml:46
-msgid "Lifecycle Management fields"
-msgstr ""
+#: kitconcept/intranet/behaviors/configure.zcml:47
+msgid "Intranet-specific Person fields"
+msgstr "Intranet-spezifische Personenfelder"
 
-#: kitconcept/intranet/controlpanels/intranet.py:62
+#: kitconcept/intranet/behaviors/person.py:21
+msgid "Job Title"
+msgstr "Berufsbezeichnung"
+
+#: kitconcept/intranet/behaviors/configure.zcml:40
+msgid "Lifecycle Management fields"
+msgstr "Lebenszyklusmanagement-Felder"
+
+#: kitconcept/intranet/controlpanels/intranet.py:67
 msgid "List of allowed email domains for feedback forms."
 msgstr "Liste der zulässigen E-Mail-Domains für Feedback-Formulare."
 
-#: kitconcept/intranet/behaviors/configure.zcml:29
-#: kitconcept/intranet/behaviors/location.py:19
+#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/location.py:16
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
 msgstr "Standort"
@@ -145,12 +165,12 @@ msgstr "Mitglied zieht Einreichung zurück"
 msgid "Member submits content for publication"
 msgstr "Mitglied reicht Inhalte zur Veröffentlichung ein"
 
-#: kitconcept/intranet/services/feedback_contact_form.py:81
+#: kitconcept/intranet/services/feedback_contact_form.py:180
 msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
 msgstr "Es ist keine verantwortliche Person oder Standard-Feedback-E-Mail konfiguriert. Bitte wenden Sie sich an den Website-Administrator."
 
-#: kitconcept/intranet/behaviors/configure.zcml:39
-#: kitconcept/intranet/behaviors/organisational_unit.py:20
+#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/organisational_unit.py:16
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
 msgstr "Organisationseinheit"
@@ -161,18 +181,18 @@ msgid "Pending review"
 msgstr "In Bearbeitung"
 
 #: kitconcept/intranet/controlpanels/intranet.py:39
-msgid "Person Squared Images"
+msgid "Person Picture Aspect Ratio"
 msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
 msgstr "Platzhaltertext für das Suchfeld."
 
-#: kitconcept/intranet/services/feedback_contact_form.py:89
+#: kitconcept/intranet/services/feedback_contact_form.py:188
 msgid "Please enter your feedback."
 msgstr "Bitte geben Sie Ihr Feedback ein."
 
-#: kitconcept/intranet/services/feedback_contact_form.py:99
+#: kitconcept/intranet/services/feedback_contact_form.py:198
 msgid "Please enter your organisational email address."
 msgstr "Bitte geben Sie Ihre geschäftliche E-Mail-Adresse ein."
 
@@ -184,6 +204,14 @@ msgstr "Paket mit Richtlinien zur Installation unserer Website"
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Private"
 msgstr "Privat"
+
+#: kitconcept/intranet/vocabularies/person.py:16
+msgid "Prof."
+msgstr "Prof."
+
+#: kitconcept/intranet/vocabularies/person.py:18
+msgid "Prof. Dr."
+msgstr "Prof. Dr."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -251,10 +279,6 @@ msgstr "Zur Veröffentlichung einreichen"
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: kitconcept/intranet/services/feedback_contact_form.py:196
-msgid "This contact's email address is not known, so the message cannot be delivered."
-msgstr "Die E-Mail-Adresse dieses Kontakts ist nicht bekannt, daher kann die Nachricht nicht zugestellt werden."
-
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Through The Web blocks configuration"
 msgstr "Blockkonfiguration durch die Weboberfläche"
@@ -281,30 +305,36 @@ msgstr "Für authentifizierte Benutzer sichtbar, für Redakteure und Prüfer edi
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr "Wartet auf Überprüfung, kann vom Eigentümer nicht bearbeitet werden."
 
-#: kitconcept/intranet/services/feedback_contact_form.py:269
+#: kitconcept/intranet/services/feedback_contact_form.py:251
 msgid "Your feedback on our intranet content: {title}"
 msgstr "Ihr Feedback zu unseren Intranet-Inhalten: {title}"
 
-#: kitconcept/intranet/services/feedback_contact_form.py:214
-msgid "error.email"
-msgstr "Fehler.E-Mail"
+#. Default: "Sorry, your feedback could not be delivered."
+#: kitconcept/intranet/services/feedback_contact_form.py:273
+msgid "error_email"
+msgstr "Leider konnte Ihr Feedback nicht übermittelt werden."
 
 #. Default: "Configure some aspects of the default blocks configuration."
 #: kitconcept/intranet/behaviors/blocks_settings.py:41
 msgid "help_blocks_config_mutator"
-msgstr "Konfigurieren Sie einige Aspekte der Standardblockkonfiguration."
+msgstr "Blocks Konfiguration anpassen"
 
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_organisational_unit"
 msgstr "Nach Organisationseinheit filtern"
 
+#. Default: "Image aspect ratio of the person's picture. This setting is used for the person picture on the person profile page, on teasers that point to a person profile page and on listings where persons are displayed."
+#: kitconcept/intranet/controlpanels/intranet.py:40
+msgid "help_person_picture_aspect_ratio"
+msgstr ""
+
 #. Default: "Filter by location"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_place"
 msgstr "Nach Standort filtern"
 
-#: kitconcept/intranet/distributions.zcml:16
+#: kitconcept/intranet/distributions.zcml:17
 msgid "kitconcept Intranet"
 msgstr ""
 

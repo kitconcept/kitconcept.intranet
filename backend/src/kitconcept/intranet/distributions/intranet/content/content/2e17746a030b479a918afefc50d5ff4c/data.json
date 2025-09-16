@@ -2,6 +2,7 @@
   "@id": "/people/dr-clara-beck",
   "@type": "Person",
   "UID": "2e17746a030b479a918afefc50d5ff4c",
+  "academic_title": null,
   "allow_discussion": null,
   "blocks": {
     "5699d5b6-3df6-4b3c-bbb3-e629294a9145": {
@@ -51,6 +52,7 @@
   "contact_room": "R965",
   "contact_website": "https://plone.org",
   "created": "2025-06-12T11:31:42+00:00",
+  "department": null,
   "description": "Dr. Clara Beck ist wissenschaftliche Beraterin f\u00fcr Gesundheits- und Umweltschutz in der Abteilung Politikberatung und Wissenschaftstransfer. Sie erstellt evidenzbasierte Gutachten, begleitet politische Entscheidungsprozesse fachlich und pflegt den Austausch mit relevanten Stakeholdern. Ihre Arbeit verbindet Risikoanalyse mit gezielter \u00d6ffentlichkeitsarbeit, um wissenschaftliche Erkenntnisse wirksam in die Praxis zu \u00fcberf\u00fchren. Mit ihrer Expertise in Wissenschaftskommunikation, fundierter Literaturrecherche und Metaanalysen sowie dem Verfassen pr\u00e4gnanter Policy Briefs tr\u00e4gt sie zur fundierten und transparenten politischen Beratung bei.",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
@@ -58,7 +60,16 @@
   "first_name": "Dr. Clara",
   "head_title": null,
   "id": "dr-clara-beck",
+  "image": {
+    "blob_path": "2e17746a030b479a918afefc50d5ff4c/image/Clara-Beck .jpeg",
+    "content-type": "image/jpeg",
+    "filename": "Clara-Beck .jpeg",
+    "height": 3797,
+    "size": 2058047,
+    "width": 5687
+  },
   "is_folderish": true,
+  "job_title": null,
   "language": "##DEFAULT##",
   "last_name": "Beck",
   "layout": "view",
@@ -66,9 +77,8 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-13T09:29:28+00:00",
+  "modified": "2025-09-04T08:18:23+00:00",
   "nav_title": null,
-  "preview_caption_link": null,
   "review_state": "published",
   "roles": [
     "member"

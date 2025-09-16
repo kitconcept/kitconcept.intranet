@@ -12,18 +12,9 @@ describe('a11y tests', () => {
   // grid tex block
   it('Grid-Block text (/features/block/grid-block/text)', () => {
     cy.navigate('/features/block/grid-block/text');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // there are copies of slate h2,
-        // which have with the same id
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

@@ -6,13 +6,13 @@ describe('a11y tests', () => {
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
     cy.visit('/');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
   });
 
   // Location content type
   it('Location (/features/content-types/location-1)', () => {
     cy.navigate('/features/content-types/location-1');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

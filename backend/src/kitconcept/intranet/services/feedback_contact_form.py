@@ -9,10 +9,11 @@ from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 from zExceptions import BadRequest
 from zope.component import getMultiAdapter
-from zope.interface import alsoProvides
 from zope.i18n import translate
+from zope.interface import alsoProvides
 
 import logging
+
 
 FEEDBACK_EMAIL_EN = """Dear Intranet Editors and Page Owners,
 

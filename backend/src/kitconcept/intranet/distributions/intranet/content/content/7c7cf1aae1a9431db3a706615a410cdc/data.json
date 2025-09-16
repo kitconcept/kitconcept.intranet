@@ -1,0 +1,114 @@
+{
+  "@id": "/features/block/rss-block",
+  "@type": "Document",
+  "UID": "7c7cf1aae1a9431db3a706615a410cdc",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "115a6976-02f3-4f7c-b0e1-23b73334d170": {
+      "@type": "rssBlock",
+      "feeds": [
+        {
+          "@id": "c2fed1f4-6dec-42d0-99e2-bca91e143afb",
+          "source": "Conservation International",
+          "url": "https://feeds.feedburner.com/ConservationInternationalBlog/ClimateChange"
+        }
+      ],
+      "limit": 10,
+      "template": "default",
+      "title": "RSS List"
+    },
+    "45754f5f-cdfb-4990-a55d-a821ac9ec84d": {
+      "@type": "rssBlock",
+      "feeds": [
+        {
+          "@id": "8381334e-49df-4c93-b257-94af73db68f7",
+          "source": "NYT",
+          "url": "https://rss.nytimes.com/services/xml/rss/nyt/ArtandDesign.xml"
+        }
+      ],
+      "limit": 4,
+      "template": "grid",
+      "title": "RSS grid"
+    },
+    "802d1e5b-0f68-467a-a412-b4c289081116": {
+      "@type": "rssBlock",
+      "feeds": [
+        {
+          "@id": "dd7f9392-d1b7-4b93-a7be-2360ff6b351d",
+          "source": "NASA",
+          "url": "https://www.nasa.gov/missions/station/feed/\""
+        }
+      ],
+      "limit": 10,
+      "template": "summary",
+      "title": "RSS List with image"
+    },
+    "bc8b4aca-7419-439c-af35-443a34996c2e": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "bc8b4aca-7419-439c-af35-443a34996c2e",
+      "115a6976-02f3-4f7c-b0e1-23b73334d170",
+      "45754f5f-cdfb-4990-a55d-a821ac9ec84d",
+      "802d1e5b-0f68-467a-a412-b4c289081116"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-05T10:41:15+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-09-05T11:04:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "rss-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-05T11:04:57+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "RSS",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-05T10:41:15+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-05T11:04:57+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

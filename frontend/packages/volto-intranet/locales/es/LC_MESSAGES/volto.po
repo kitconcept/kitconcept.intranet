@@ -18,6 +18,11 @@ msgstr ""
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 2.2.1\n"
 
+#. Default: "By"
+#: slots/DocumentByLine/DocumentByLine
+msgid "By"
+msgstr ""
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 msgid "Contact"
@@ -48,6 +53,11 @@ msgstr ""
 msgid "Feedback about this page"
 msgstr ""
 
+#. Default: "Feedback on this page"
+#: components/StickyFeedbackButton/StickyFeedbackButton
+msgid "Feedback on this page"
+msgstr ""
+
 #. Default: "Feedback on:"
 #: components/FeedBackForm/FeedBackForm
 msgid "Feedback on:"
@@ -61,11 +71,6 @@ msgstr ""
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Follow us:"
-msgstr ""
-
-#. Default: "Feedback on this page"
-#: components/StickyFeedbackButton/StickyFeedbackButton
-msgid "Feedback on this page"
 msgstr ""
 
 #. Default: "ICS Download"
@@ -136,11 +141,6 @@ msgstr ""
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
-msgstr ""
-
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "author"
 msgstr ""
 
 #. Default: "cancel"

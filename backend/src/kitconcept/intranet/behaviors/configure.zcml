@@ -22,20 +22,14 @@
       name="kitconcept.intranet.location"
       title="Location"
       description="Fields for Location"
-      factory=".location.LocationAdapter"
       provides=".location.ILocationBehavior"
-      for=".location.ILocationMarker"
-      marker=".location.ILocationMarker"
       />
 
   <plone:behavior
       name="kitconcept.intranet.organisational_unit"
       title="Organisational Unit"
       description="Fields for Organisational Unit"
-      factory=".organisational_unit.OrganisationalUnitAdapter"
       provides=".organisational_unit.IOrganisationalUnitBehavior"
-      for=".organisational_unit.IOrganisationalUnitMarker"
-      marker=".organisational_unit.IOrganisationalUnitMarker"
       />
 
   <plone:behavior
@@ -43,6 +37,13 @@
       title="Lifecycle Management fields"
       description="Add the lifecycle management fields"
       provides=".lcm.ILCM"
+      />
+
+  <plone:behavior
+      name="kitconcept.intranet.person"
+      title="Intranet-specific Person fields"
+      description="Add the intranet-specific person fields"
+      provides=".person.IPersonBehavior"
       />
 
 </configure>

@@ -23,16 +23,17 @@
     },
     "26accd80-9715-43ea-9b7c-aa0b3be7d0da": {
       "@type": "slate",
-      "plaintext": "Headline H2",
+      "plaintext": "Headline H3",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Headline H2"
+              "text": "Headline H3"
             }
           ],
-          "type": "h2"
+          "type": "h3"
         }
       ]
     },
@@ -44,7 +45,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "grey"
     },
@@ -78,6 +80,7 @@
     "d35f209e-12c1-4a30-ae36-52f84a4a0b7b": {
       "@type": "introduction",
       "plaintext": "Highlight Title H2\nLorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.",
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -99,13 +102,14 @@
     },
     "e2fc823f-4dbd-4c0d-9522-865b3c80b5c6": {
       "@type": "introduction",
-      "plaintext": "Highlight Title H2\nLorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.",
+      "plaintext": "Highlight Title\nLorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper null a non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.",
+      "styles": {},
       "theme": "grey",
       "value": [
         {
           "children": [
             {
-              "text": "Highlight Title H2 "
+              "text": "Highlight Title"
             }
           ],
           "type": "h2"
@@ -113,7 +117,7 @@
         {
           "children": [
             {
-              "text": "Lorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper."
+              "text": "Lorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper null a non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper."
             }
           ],
           "type": "p"
@@ -162,12 +166,14 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-07T13:23:55+00:00",
+  "modified": "2025-09-09T13:25:03+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
   "review_state": "published",
   "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
   "subjects": [],
   "title": "Introduction",
   "type_title": "Page",

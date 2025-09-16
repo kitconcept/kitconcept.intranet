@@ -52,6 +52,10 @@
   gap: 10px;
   font-size: 24px;
   line-height: 33px;
+
+  span {
+    white-space: pre-line;
+  }
 }
 
 .contact-wrapper {
@@ -100,6 +104,11 @@ address {
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
+  }
+
+  .address,
+  .department {
+    white-space: pre-line;
   }
 }
 

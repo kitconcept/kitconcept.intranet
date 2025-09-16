@@ -9,6 +9,9 @@ import config from '@plone/volto/registry';
 import phoneSVG from '@plone/volto/icons/mobile.svg';
 import mailSVG from '@plone/volto/icons/email.svg';
 import worldSVG from '@plone/volto/icons/world.svg';
+import faxSVG from '@plone/volto/icons/printer.svg';
+import phone2SVG from '../../icons/phone.svg';
+
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 interface PersonViewProps {
@@ -37,6 +40,9 @@ interface PersonViewProps {
     contact_website?: string;
     contact_building?: string;
     contact_room?: string;
+    office_phone?: string;
+    fax?: string;
+    address?: string;
     location_reference?: {
       title: string;
     };
@@ -65,9 +71,9 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
   };
 
   const contact = {
-    officePhone: content.contact_phone ?? null,
-    mobilePhone: null,
-    fax: null,
+    officePhone: content.office_phone ?? null,
+    mobilePhone: content.contact_phone ?? null,
+    fax: content.fax ?? null,
     email: content.contact_email ?? null,
     website: content.contact_website ?? null,
     contactBuilding: content.contact_building ?? null,
@@ -114,7 +120,7 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
                       title={
                         <FormattedMessage id="Phone" defaultMessage="Phone" />
                       }
-                      name={phoneSVG}
+                      name={phone2SVG}
                       size="36px"
                     />
                     <a
@@ -128,12 +134,33 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
 
                 {contact.mobilePhone && (
                   <div className="contact-item">
-                    <span aria-label="Mobile phone">{contact.mobilePhone}</span>
+                    <Icon
+                      title={
+                        <FormattedMessage id="Phone" defaultMessage="Phone" />
+                      }
+                      name={phoneSVG}
+                      size="36px"
+                    />
+                    <a
+                      href={`tel:${contact.officePhone}`}
+                      aria-label="Office phone"
+                    >
+                      <span aria-label="Mobile phone">
+                        {contact.mobilePhone}
+                      </span>
+                    </a>
                   </div>
                 )}
 
                 {contact.fax && (
                   <div className="contact-item">
+                    <Icon
+                      title={
+                        <FormattedMessage id="Phone" defaultMessage="Phone" />
+                      }
+                      name={faxSVG}
+                      size="36px"
+                    />
                     <span aria-label="Fax">{contact.fax}</span>
                   </div>
                 )}
@@ -177,7 +204,9 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
                 </h2>
                 <address>
                   <h3>{content.location_reference.title}</h3>
-                  {profile.department && <p>{profile.department}</p>}
+                  {profile.department && (
+                    <p className="department">{profile.department}</p>
+                  )}
 
                   <div className="building-room">
                     {contact.contactBuilding && (
@@ -201,6 +230,9 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
                       </div>
                     )}
                   </div>
+                  {content.address && (
+                    <p className="address">{content.address}</p>
+                  )}
                 </address>
               </section>
             )}

@@ -3,48 +3,8 @@
   "@type": "Person",
   "UID": "95a19878c3b34b0584db198524b0b58b",
   "academic_title": null,
+  "address": null,
   "allow_discussion": null,
-  "blocks": {
-    "0167e73a-551a-4c67-a6a7-fa2a991b4c23": {
-      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
-      "@type": "title",
-      "block": "0167e73a-551a-4c67-a6a7-fa2a991b4c23",
-      "fixed": true,
-      "readOnly": true,
-      "required": true
-    },
-    "6e2e1795-8720-4083-92a2-738c4976eea0": {
-      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
-      "@type": "slate",
-      "block": "6e2e1795-8720-4083-92a2-738c4976eea0",
-      "plaintext": "",
-      "styles": {},
-      "value": [
-        {
-          "children": [
-            {
-              "text": ""
-            }
-          ],
-          "type": "p"
-        }
-      ]
-    },
-    "95062c97-b407-4b1a-82ef-d0953eb402b2": {
-      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
-      "@type": "description",
-      "block": "95062c97-b407-4b1a-82ef-d0953eb402b2",
-      "fixed": true,
-      "required": true
-    }
-  },
-  "blocks_layout": {
-    "items": [
-      "0167e73a-551a-4c67-a6a7-fa2a991b4c23",
-      "95062c97-b407-4b1a-82ef-d0953eb402b2",
-      "6e2e1795-8720-4083-92a2-738c4976eea0"
-    ]
-  },
   "changeNote": "",
   "contact_building": "B32",
   "contact_email": "max.berger@example.com",
@@ -53,10 +13,11 @@
   "contact_website": "https://plone.org",
   "created": "2025-06-12T11:36:31+00:00",
   "department": null,
-  "description": "Max Berger, M.A. ist Kommunikationsmanager f\u00fcr interne Kommunikation in der Abteilung Kommunikation & \u00d6ffentlichkeitsarbeit. Er betreut redaktionell das Intranet, entwickelt zielgerichtete Kommunikationskampagnen und erstellt visuelle Inhalte wie Infografiken und Videos. Seine Schwerpunkte liegen in der Mitarbeiterkommunikation und der Gestaltung verst\u00e4ndlicher interner Botschaften. Mit seiner Erfahrung im Umgang mit Content-Management-Systemen, Grafiksoftware wie Adobe Creative Cloud und Canva sowie seiner Kompetenz in der Change-Kommunikation unterst\u00fctzt er wirkungsvoll die interne Vernetzung und Informationskultur.",
+  "description": "",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "fax": null,
   "first_name": "Max",
   "head_title": null,
   "id": "max-berger-m-a",
@@ -79,10 +40,16 @@
   },
   "modified": "2025-09-04T08:20:25+00:00",
   "nav_title": null,
+  "office_phone": null,
   "review_state": "published",
   "roles": [
     "member"
   ],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>Max Berger, M.A. ist Kommunikationsmanager f\u00fcr interne Kommunikation in der Abteilung Kommunikation & \u00d6ffentlichkeitsarbeit. Er betreut redaktionell das Intranet, entwickelt zielgerichtete Kommunikationskampagnen und erstellt visuelle Inhalte wie Infografiken und Videos. Seine Schwerpunkte liegen in der Mitarbeiterkommunikation und der Gestaltung verst\u00e4ndlicher interner Botschaften. Mit seiner Erfahrung im Umgang mit Content-Management-Systemen, Grafiksoftware wie Adobe Creative Cloud und Canva sowie seiner Kompetenz in der Change-Kommunikation unterst\u00fctzt er wirkungsvoll die interne Vernetzung und Informationskultur.</p>",
+    "encoding": "utf8"
+  },
   "title": "Max Berger, M.A.",
   "type_title": "Person",
   "version": "current",

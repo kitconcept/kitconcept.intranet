@@ -3,48 +3,8 @@
   "@type": "Person",
   "UID": "a141e40436404245941b2a4c4b5fcee2",
   "academic_title": "Prof.",
+  "address": null,
   "allow_discussion": null,
-  "blocks": {
-    "a1be543b-705a-419e-8579-e8991b4eeef4": {
-      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
-      "@type": "description",
-      "block": "a1be543b-705a-419e-8579-e8991b4eeef4",
-      "fixed": true,
-      "required": true
-    },
-    "a9c7f9e3-8cc2-4ccc-a980-149e726e2281": {
-      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
-      "@type": "title",
-      "block": "a9c7f9e3-8cc2-4ccc-a980-149e726e2281",
-      "fixed": true,
-      "readOnly": true,
-      "required": true
-    },
-    "b061bf14-b855-4bdd-b5d0-a5ec53927d89": {
-      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
-      "@type": "slate",
-      "block": "b061bf14-b855-4bdd-b5d0-a5ec53927d89",
-      "plaintext": "",
-      "styles": {},
-      "value": [
-        {
-          "children": [
-            {
-              "text": ""
-            }
-          ],
-          "type": "p"
-        }
-      ]
-    }
-  },
-  "blocks_layout": {
-    "items": [
-      "a9c7f9e3-8cc2-4ccc-a980-149e726e2281",
-      "a1be543b-705a-419e-8579-e8991b4eeef4",
-      "b061bf14-b855-4bdd-b5d0-a5ec53927d89"
-    ]
-  },
   "changeNote": "",
   "contact_building": null,
   "contact_email": null,
@@ -57,6 +17,7 @@
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "fax": null,
   "first_name": "Erika",
   "head_title": "(Without Location and Organisational Unit)",
   "id": "erika-musterfrau",
@@ -72,8 +33,10 @@
   },
   "modified": "2025-09-15T13:08:30+00:00",
   "nav_title": null,
+  "office_phone": null,
   "review_state": "published",
   "roles": [],
+  "text": null,
   "title": "Erika Musterfrau",
   "type_title": "Person",
   "version": "current",

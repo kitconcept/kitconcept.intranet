@@ -42,6 +42,9 @@ SEED=$(shell date +'%Y%m%d-%H%M%S')
 export ALLOWED_DISTRIBUTIONS := kitconcept-intranet
 export PYTHONWARNINGS := ignore
 export DOCKER_BUILDKIT := 1
+## Enable Printing MailHost by default, unless the environment variable is set to False
+export ENABLE_PRINTING_MAILHOST ?= True
+
 
 all: build
 

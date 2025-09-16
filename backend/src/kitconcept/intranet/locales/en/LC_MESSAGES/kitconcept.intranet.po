@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-12 22:19+0000\n"
+"POT-Creation-Date: 2025-09-16 11:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,10 @@ msgstr ""
 msgid "Add the lifecycle management fields"
 msgstr ""
 
+#: kitconcept/intranet/controlpanels/intranet.py:66
+msgid "Allowed Email Domains"
+msgstr ""
+
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Allows to set configuration that will be injected into the blocks default configuration."
 msgstr ""
@@ -67,6 +71,10 @@ msgstr ""
 msgid "Custom CSS for the intranet."
 msgstr ""
 
+#: kitconcept/intranet/controlpanels/intranet.py:55
+msgid "Default Feedback Email"
+msgstr ""
+
 #: kitconcept/intranet/behaviors/person.py:26
 msgid "Department"
 msgstr ""
@@ -80,8 +88,20 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+#: kitconcept/intranet/controlpanels/intranet.py:62
+msgid "Email address to be CCed in feedback forms."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:56
+msgid "Email address used in feedback forms if none is set."
+msgstr ""
+
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:61
+msgid "Feedback CC email"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:26
@@ -105,8 +125,12 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:57
+#: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Intranet Settings"
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:229
+msgid "Intranet feedback form: {title}"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:47
@@ -119,6 +143,10 @@ msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:40
 msgid "Lifecycle Management fields"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:67
+msgid "List of allowed email domains for feedback forms."
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:26
@@ -135,6 +163,10 @@ msgstr ""
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Member submits content for publication"
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:180
+msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:33
@@ -154,6 +186,14 @@ msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:188
+msgid "Please enter your feedback."
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:198
+msgid "Please enter your organisational email address."
 msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:14
@@ -263,6 +303,15 @@ msgstr ""
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Waiting to be reviewed, not editable by the owner."
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:251
+msgid "Your feedback on our intranet content: {title}"
+msgstr ""
+
+#. Default: "Sorry, your feedback could not be delivered."
+#: kitconcept/intranet/services/feedback_contact_form.py:273
+msgid "error_email"
 msgstr ""
 
 #. Default: "Configure some aspects of the default blocks configuration."

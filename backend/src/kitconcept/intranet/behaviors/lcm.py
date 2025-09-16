@@ -12,6 +12,11 @@ class ILCM(model.Schema):
     """LCM behavior"""
 
     model.fieldset("LCM", fields=["authors", "responsible_person", "feedback_person"])
+    directives.write_permission(
+        authors="kitconcept.intranet.siteadminsonly",
+        responsible_person="kitconcept.intranet.siteadminsonly",
+        feedback_person="kitconcept.intranet.siteadminsonly",
+    )
 
     directives.widget(
         "responsible_person",

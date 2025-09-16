@@ -8,6 +8,10 @@
       destination="20250912001"
       >
     <genericsetup:upgradeDepends
+        title="Install plone.app.discussion"
+        import_profile="plone.app.discussion:default"
+        />
+    <genericsetup:upgradeDepends
         title="Add votes behaviour to Document content type and install plone.app.discussion"
         import_steps="typeinfo"
         />

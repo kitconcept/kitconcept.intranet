@@ -14,27 +14,27 @@
 .profile-header {
   display: flex;
   align-items: center;
-  gap: $spacing-small;
-  padding-bottom: $spacing-xlarge;
   padding-top: $spacing-large;
-  margin-bottom: $spacing-large;
+  padding-bottom: $spacing-xlarge;
   border-top: 1px solid var(--accent-foreground-color);
+  margin-bottom: $spacing-large;
+  gap: $spacing-small;
 }
 
 .profile-image {
   width: 300px;
   height: 300px;
+  flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
 }
 
 .profile-info {
   .organisational-unit {
     font-size: 14px;
     font-weight: 700;
-    line-height: 18px; /* 128.571% */
     letter-spacing: 1px;
+    line-height: 18px; /* 128.571% */
     text-transform: uppercase;
   }
 
@@ -49,8 +49,8 @@
 .affiliations {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   font-size: 24px;
+  gap: 10px;
   line-height: 33px;
 
   span {
@@ -60,29 +60,29 @@
 
 .contact-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $spacing-large;
   padding-bottom: $spacing-large;
+  gap: $spacing-large;
+  grid-template-columns: 1fr 1fr;
 }
 
 .contact-wrapper,
 .bio-section {
   h2 {
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0;
-    letter-spacing: 1px;
     padding-bottom: $spacing-small;
     border-bottom: 1px solid var(--accent-foreground-color);
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 }
 
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: $spacing-small;
   padding-top: $spacing-medium;
+  gap: $spacing-small;
 
   .contact-item {
     display: flex;
@@ -136,8 +136,8 @@ address {
 @media (max-width: 769px) {
   .profile-header {
     flex-direction: column;
-    text-align: center;
     gap: $spacing-small;
+    text-align: center;
   }
 
   .profile-info h1 {
@@ -145,7 +145,7 @@ address {
   }
 
   .contact-wrapper {
-    grid-template-columns: 1fr;
     gap: $spacing-medium;
+    grid-template-columns: 1fr;
   }
 }

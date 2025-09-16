@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250909001"
+      destination="20250916001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add biography behavior to Person content type"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

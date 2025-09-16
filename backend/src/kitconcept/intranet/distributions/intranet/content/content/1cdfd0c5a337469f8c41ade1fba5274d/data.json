@@ -3,48 +3,8 @@
   "@type": "Person",
   "UID": "1cdfd0c5a337469f8c41ade1fba5274d",
   "academic_title": null,
+  "address": null,
   "allow_discussion": null,
-  "blocks": {
-    "5568d237-e7d6-4418-8be8-9ad914b7b7bb": {
-      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
-      "@type": "slate",
-      "block": "5568d237-e7d6-4418-8be8-9ad914b7b7bb",
-      "plaintext": "",
-      "styles": {},
-      "value": [
-        {
-          "children": [
-            {
-              "text": ""
-            }
-          ],
-          "type": "p"
-        }
-      ]
-    },
-    "7c42288b-1dbc-414b-910b-f03cbcd95097": {
-      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
-      "@type": "title",
-      "block": "7c42288b-1dbc-414b-910b-f03cbcd95097",
-      "fixed": true,
-      "readOnly": true,
-      "required": true
-    },
-    "e1877148-3b50-421f-8848-b86bed67a239": {
-      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
-      "@type": "description",
-      "block": "e1877148-3b50-421f-8848-b86bed67a239",
-      "fixed": true,
-      "required": true
-    }
-  },
-  "blocks_layout": {
-    "items": [
-      "7c42288b-1dbc-414b-910b-f03cbcd95097",
-      "e1877148-3b50-421f-8848-b86bed67a239",
-      "5568d237-e7d6-4418-8be8-9ad914b7b7bb"
-    ]
-  },
   "changeNote": "",
   "contact_building": "B32",
   "contact_email": "ayla.demir@example.com",
@@ -53,10 +13,11 @@
   "contact_website": "https://plone.org",
   "created": "2025-06-12T11:26:07+00:00",
   "department": null,
-  "description": "Dr. Ayla Demir ist Projektkoordinatorin f\u00fcr Internationale Zusammenarbeit in der Abteilung Wissenschaftspolitische Beziehungen. Sie koordiniert internationale Partnerschaften, begleitet das Antragsmanagement f\u00fcr EU- und Drittmittelprojekte und organisiert Fachkonferenzen. Ihre Schwerpunkte liegen in der Entwicklung von F\u00f6rderprogrammen, dem Aufbau wissenschaftlicher Netzwerke und der strategischen Projektentwicklung. Mit fundierten Kenntnissen im Drittmittelrecht (z.\u202fB. Horizon, BMBF), interkultureller Kommunikation sowie Projektmanagement-Standards wie PRINCE2 und GPM/IPMA unterst\u00fctzt sie wirkungsvoll die internationale Wissenschaftskooperation.",
+  "description": "",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "fax": null,
   "first_name": "Dr. Ayla",
   "head_title": null,
   "id": "dr-ayla-demir",
@@ -79,10 +40,16 @@
   },
   "modified": "2025-09-04T08:18:07+00:00",
   "nav_title": null,
+  "office_phone": null,
   "review_state": "published",
   "roles": [
     "member"
   ],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>Dr. Ayla Demir ist Projektkoordinatorin f\u00fcr Internationale Zusammenarbeit in der Abteilung Wissenschaftspolitische Beziehungen. Sie koordiniert internationale Partnerschaften, begleitet das Antragsmanagement f\u00fcr EU- und Drittmittelprojekte und organisiert Fachkonferenzen. Ihre Schwerpunkte liegen in der Entwicklung von F\u00f6rderprogrammen, dem Aufbau wissenschaftlicher Netzwerke und der strategischen Projektentwicklung. Mit fundierten Kenntnissen im Drittmittelrecht (z.\u202fB. Horizon, BMBF), interkultureller Kommunikation sowie Projektmanagement-Standards wie PRINCE2 und GPM/IPMA unterst\u00fctzt sie wirkungsvoll die internationale Wissenschaftskooperation.</p>",
+    "encoding": "utf8"
+  },
   "title": "Dr. Ayla Demir",
   "type_title": "Person",
   "version": "current",

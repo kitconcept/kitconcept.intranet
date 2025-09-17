@@ -4,8 +4,8 @@
     >
   <genericsetup:upgradeSteps
       profile="kitconcept.intranet:default"
-      source="20250909001"
-      destination="20250912001"
+      source="20250916001"
+      destination="20250917001"
       >
     <genericsetup:upgradeDepends
         title="Install plone.app.discussion"

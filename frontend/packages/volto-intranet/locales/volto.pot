@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-09-12T22:20:01.073Z\n"
+"POT-Creation-Date: 2025-09-17T14:28:06.967Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,6 +13,21 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "Address"
+#: components/theme/PersonView
+msgid "Address"
+msgstr ""
+
+#. Default: "Bio"
+#: components/theme/PersonView
+msgid "Bio"
+msgstr ""
+
+#. Default: "Building"
+#: components/theme/PersonView
+msgid "Building"
+msgstr ""
+
 #. Default: "By"
 #: slots/DocumentByLine/DocumentByLine
 msgid "By"
@@ -20,12 +35,18 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Contact"
 msgstr ""
 
 #. Default: "Created On"
 #: components/Rating/Rating
 msgid "Created On"
+msgstr ""
+
+#. Default: "E-mail"
+#: components/theme/PersonView
+msgid "E-mail"
 msgstr ""
 
 #. Default: "End"
@@ -55,12 +76,23 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Phone"
+msgstr ""
+
+#. Default: "Room"
+#: components/theme/PersonView
+msgid "Room"
 msgstr ""
 
 #. Default: "Dear, I would like to share the following News with you: {link} Kind regards {fullname}"
 #: components/Rating/Rating
 msgid "Share Content"
+msgstr ""
+
+#. Default: "Site"
+#: components/theme/PersonView
+msgid "Site"
 msgstr ""
 
 #. Default: "Something went wrong while liking this post."

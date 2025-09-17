@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-15 11:57+0000\n"
+"POT-Creation-Date: 2025-09-17 14:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,15 +38,15 @@ msgstr ""
 msgid "Academic Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:61
+#: kitconcept/intranet/behaviors/configure.zcml:54
 msgid "Add the intranet-specific person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:54
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Add the lifecycle management fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:26
 msgid "Adds votes field"
 msgstr ""
 
@@ -84,31 +84,31 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
-msgid "Enable Like functionality"
+#: kitconcept/intranet/controlpanels/intranet.py:55
+msgid "Enable Content Rating"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/enable_likes.py:12
+#: kitconcept/intranet/behaviors/votes.py:21
 msgid "Enable Likes"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/enable_likes.py:13
+#: kitconcept/intranet/behaviors/votes.py:22
 msgid "Enable Likes for this Content Object"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
-msgid "Enables the like functionality for content objects"
+#: kitconcept/intranet/controlpanels/intranet.py:56
+msgid "Enable content rating globally for the Intranet"
 msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Fields for Location"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/configure.zcml:40
 msgid "Fields for Organisational Unit"
 msgstr ""
 
@@ -125,11 +125,11 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:57
+#: kitconcept/intranet/controlpanels/intranet.py:64
 msgid "Intranet Settings"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:61
+#: kitconcept/intranet/behaviors/configure.zcml:54
 msgid "Intranet-specific Person fields"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "Job Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:54
+#: kitconcept/intranet/behaviors/configure.zcml:47
 msgid "Lifecycle Management fields"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid "List of user IDs"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:33
 #: kitconcept/intranet/behaviors/location.py:16
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
@@ -161,7 +161,7 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/configure.zcml:40
 #: kitconcept/intranet/behaviors/organisational_unit.py:16
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
@@ -232,7 +232,7 @@ msgstr ""
 msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:26
 msgid "Saves userID who liked an item"
 msgstr ""
 

@@ -11,6 +11,21 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Address"
+#: components/theme/PersonView
+msgid "Address"
+msgstr "Adresse"
+
+#. Default: "Bio"
+#: components/theme/PersonView
+msgid "Bio"
+msgstr "Vita"
+
+#. Default: "Building"
+#: components/theme/PersonView
+msgid "Building"
+msgstr ""
+
 #. Default: "By"
 #: slots/DocumentByLine/DocumentByLine
 msgid "By"
@@ -18,13 +33,19 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. Default: "Created On"
 #: components/Rating/Rating
 msgid "Created On"
 msgstr ""
+
+#. Default: "E-mail"
+#: components/theme/PersonView
+msgid "E-mail"
+msgstr "E-mail"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -53,13 +74,24 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Phone"
+msgstr "Telefon"
+
+#. Default: "Room"
+#: components/theme/PersonView
+msgid "Room"
 msgstr ""
 
 #. Default: "Dear, I would like to share the following News with you: {link} Kind regards {fullname}"
 #: components/Rating/Rating
 msgid "Share Content"
 msgstr ""
+
+#. Default: "Site"
+#: components/theme/PersonView
+msgid "Site"
+msgstr "Website"
 
 #. Default: "Something went wrong while liking this post."
 #: components/Rating/Rating

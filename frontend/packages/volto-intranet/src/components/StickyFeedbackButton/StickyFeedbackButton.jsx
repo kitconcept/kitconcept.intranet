@@ -45,6 +45,7 @@ const StickyFeedbackButton = () => {
       })}
       style={{
         transform: 'translateX(-100%) translateY(-50%)',
+        display: 'none',
       }}
     >
       <Link

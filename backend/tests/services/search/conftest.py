@@ -13,7 +13,7 @@ def answers():
         "title": "Intranet",
         "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
         "workflow": "public",
-        "default_language": "en",
+        "available_languages": ["en"],
         "portal_timezone": "Europe/Berlin",
         "setup_content": True,
         "authentication": {"provider": "internal"},

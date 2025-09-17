@@ -12,29 +12,8 @@ describe('a11y tests', () => {
   // Accordion Block
   it('Accordion Block (/features/block/block-accordion)', () => {
     cy.navigate('/features/block/block-accordion');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // the example page intentionally omits the h1
-        {
-          id: 'page-has-heading-one',
-          enabled: false,
-        },
-        {
-          id: 'duplicate-id',
-          enabled: false,
-        },
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-        {
-          id: 'color-contrast',
-          enabled: false,
-        },
-      ],
-    });
     // To prevent color contrast error during css transition
     cy.wait(200);
     cy.checkAccessibility();

@@ -95,7 +95,7 @@ def current_versions() -> CurrentVersions:
     from kitconcept.core import __version__
 
     return CurrentVersions(
-        base="20250612001",
+        base="20250916001",
         dependencies="1000",
         package=__version__,
     )
@@ -201,3 +201,41 @@ def example_content_factory(example_content_folder):
         _ = importer.import_site(example_content_folder)
 
     return factory
+
+
+@pytest.fixture(scope="module")
+def checker():
+    def func(value: Any, oper: str, expected: Any):
+        match oper:
+            case "in":
+                assert expected in value, f"{expected} not found in {value}"
+            case "not in":
+                assert expected not in value, f"{expected} found in {value}"
+            case "eq":
+                assert expected == value, f"{expected} != {value}"
+            case "ne":
+                assert expected != value, f"{expected} == {value}"
+            case "is":
+                assert value is expected, f"{value} is not {expected}"
+            case "is not":
+                assert value is not expected, f"{value} is {expected}"
+            case "starts":
+                assert value.startswith(expected), (
+                    f"{value} does not start with {expected}"
+                )
+            case _:
+                raise ValueError(f"Unknown operation: {oper}")
+
+    return func
+
+
+@pytest.fixture
+def registry_checker(checker):
+    """Fixture to check registry settings."""
+
+    def func(record: str, oper: str, expected: Any):
+        """Check registry settings."""
+        value = api.portal.get_registry_record(record, default=None)
+        return checker(value, oper, expected)
+
+    return func

@@ -70,33 +70,41 @@
     "96789bf6-953b-4777-a022-0f4cd852be64": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
-    "aaf7adb1-00b2-4cc2-8729-91c33ea8fe6a": {
+    "b94908e2-0600-493a-8a92-0b8a23e2938b": {
       "@type": "slate",
-      "plaintext": "Text Heading H3",
+      "plaintext": "Text with map aligned right",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H3"
+              "text": "Text with map aligned right"
             }
           ],
           "type": "h3"
         }
       ]
     },
-    "b94908e2-0600-493a-8a92-0b8a23e2938b": {
+    "bb99a8d2-11b9-46b2-8bb0-9169c0c42e3a": {
       "@type": "slate",
-      "plaintext": "Text Heading H3",
+      "plaintext": "Text with map aligned left",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H3"
+              "text": "Text with map aligned left"
             }
           ],
           "type": "h3"
@@ -114,6 +122,7 @@
       "@type": "slate",
       "plaintext": "Text Heading H2",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -135,7 +144,13 @@
     "d5fe5f6d-2a9b-4e65-b5bf-2faded6073b7": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "e36a9020-5e7e-4ef5-97f7-862c45fea81c": {
@@ -162,7 +177,7 @@
       "6ce27ed7-7470-4f83-a418-31b2c23e7f50",
       "0e3611aa-3dfe-421b-a8dc-c45ec3cf7262",
       "642c75ac-0c4a-4138-8ad7-954a3fa561e6",
-      "aaf7adb1-00b2-4cc2-8729-91c33ea8fe6a",
+      "bb99a8d2-11b9-46b2-8bb0-9169c0c42e3a",
       "43a4b392-f0c3-4b8d-a17d-9b4ddea3f0f0",
       "ceee1cfa-80ff-44f1-b3af-3cfd4be3f4ba",
       "f9dec030-b72d-4940-af4c-6dc123cea7a6"
@@ -190,12 +205,14 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2025-09-09T12:22:45+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
   "review_state": "published",
   "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
   "subjects": [],
   "title": "Maps",
   "type_title": "Page",

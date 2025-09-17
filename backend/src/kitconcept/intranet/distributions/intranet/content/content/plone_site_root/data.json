@@ -111,7 +111,7 @@
               "getRemoteUrl": null,
               "hasPreviewImage": null,
               "head_title": null,
-              "image_field": "",
+              "image_field": "preview_image_link",
               "mime_type": "text/plain",
               "nav_title": null,
               "review_state": "published",
@@ -402,7 +402,8 @@
         }
       ],
       "styles": {},
-      "theme": "default"
+      "theme": "default",
+      "variation": "default"
     }
   },
   "blocks_config_mutator": {},
@@ -607,7 +608,14 @@
       "title": "Impressum"
     }
   ],
-  "footer_logo": null,
+  "footer_logo": {
+    "blob_path": "plone_site_root/footer_logo/plone-logo-white.svg",
+    "content-type": "image/svg+xml",
+    "filename": "plone-logo-white.svg",
+    "height": 40,
+    "size": 3823,
+    "width": 158
+  },
   "footer_logos": [],
   "footer_logos_container_width": "default",
   "footer_logos_size": "s",
@@ -617,7 +625,7 @@
   "id": "Plone",
   "intranet_flag": "Intranet",
   "is_folderish": true,
-  "items_total": 6,
+  "items_total": 7,
   "language": "##DEFAULT##",
   "lock": {
     "locked": false,

@@ -10,13 +10,19 @@
     },
     "dea1bfe1-28eb-4f61-8264-309d8ccc46f3": {
       "@type": "image",
-      "align": "full",
+      "align": "center",
       "credit": {},
       "description": "",
       "image_field": "image",
       "size": "l",
-      "title": "jr-korpa-SFT9G3pAxLY-unsplash.jpg",
-      "url": "../../resolveuid/5f1077b5414743429689927de357c350"
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "100%"
+        }
+      },
+      "theme": "default",
+      "title": "jr-korpa-SFT9G3pAxLY-unsplash.jpeg",
+      "url": "../../resolveuid/895d71d4500b41ecb85e9f4855556325"
     },
     "fa4c83af-3fa5-45d9-b465-fbfb55d72af1": {
       "@type": "slate"
@@ -51,12 +57,14 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-06-24T17:09:41+00:00",
+  "modified": "2025-09-04T12:54:42+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
   "review_state": "published",
   "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
   "subjects": [],
   "title": "Theme",
   "type_title": "Page",

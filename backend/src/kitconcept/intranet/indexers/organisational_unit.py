@@ -1,12 +1,12 @@
 from Acquisition import aq_base
-from kitconcept.intranet.behaviors.organisational_unit import IOrganisationalUnitMarker
 from plone import api
 from plone.dexterity.content import DexterityContent
+from plone.dexterity.interfaces import IDexterityContent
 from plone.indexer.decorator import indexer
 from z3c.relationfield.relation import RelationValue
 
 
-@indexer(IOrganisationalUnitMarker)
+@indexer(IDexterityContent)
 def organisational_unit_indexer(obj: DexterityContent) -> str:
     """Indexer for organisational_unit_reference attribute from
     IOrganisationalUnitBehavior behavior."""
@@ -16,7 +16,9 @@ def organisational_unit_indexer(obj: DexterityContent) -> str:
         base_obj, "organisational_unit_reference", None
     )
     if organisational_unit_reference is None:
-        return ""
+        # Don't store a value in the index
+        raise AttributeError
+
     # A relation field
     organisational_unit = organisational_unit_reference.to_object
     uid = api.content.get_uuid(organisational_unit)

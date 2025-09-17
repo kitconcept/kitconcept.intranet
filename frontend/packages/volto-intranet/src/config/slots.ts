@@ -2,6 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import CustomCSS from '../slots/CustomCSS/CustomCSS';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import ConfigInjector from '../slots/ConfigInjector/ConfigInjector';
+import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -16,6 +17,11 @@ export default function install(config: ConfigType) {
     component: CustomCSS,
   });
 
+  config.registerSlotComponent({
+    name: 'StickyFeedbackButton',
+    slot: 'aboveContent',
+    component: StickyFeedbackButton,
+  });
   config.registerSlotComponent({
     slot: 'belowContentTitle',
     name: 'documentByLine',

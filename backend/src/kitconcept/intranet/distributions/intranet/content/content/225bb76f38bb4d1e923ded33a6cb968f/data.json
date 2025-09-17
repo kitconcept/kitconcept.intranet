@@ -1,0 +1,101 @@
+{
+  "@id": "/features/content-types/location-1",
+  "@type": "Location",
+  "UID": "225bb76f38bb4d1e923ded33a6cb968f",
+  "allow_discussion": null,
+  "blocks": {
+    "61bd8944-4521-43f8-9562-ef26bc6b1d10": {
+      "@type": "slate",
+      "plaintext": "Our office is located at:",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Our office is located at:"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "a278b99a-1e0f-4f0d-89ab-f771001dcb9c": {
+      "@type": "title"
+    },
+    "b86306b0-7046-477d-b8e9-5cc473452fcd": {
+      "@type": "slate",
+      "plaintext": "Rieststr. 21\n53113\nBonn",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Rieststr. 21\n53113\nBonn"
+            }
+          ],
+          "type": "blockquote"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "a278b99a-1e0f-4f0d-89ab-f771001dcb9c",
+      "61bd8944-4521-43f8-9562-ef26bc6b1d10",
+      "b86306b0-7046-477d-b8e9-5cc473452fcd"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-03T10:08:58+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The Location content type can be used to display location content on the website.",
+  "effective": "2025-09-03T10:14:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": "Head title",
+  "id": "location-1",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-03T10:14:47+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Location",
+  "type_title": "Location",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-03T10:08:58+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-03T10:14:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

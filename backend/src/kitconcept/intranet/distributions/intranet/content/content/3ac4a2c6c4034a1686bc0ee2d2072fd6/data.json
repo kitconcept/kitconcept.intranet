@@ -435,7 +435,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -899,7 +900,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -1282,7 +1284,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -1605,7 +1608,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -1624,7 +1628,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -1765,7 +1770,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -1827,7 +1833,7 @@
             "sort_on": "sortable_title",
             "sort_order": "ascending"
           },
-          "variation": "imageGallery"
+          "variation": "summary"
         },
         "d4b170f0-5be7-4df8-9a98-cfe0cc40ece0": {
           "@type": "listing",
@@ -1869,7 +1875,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -2038,7 +2045,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -2081,7 +2089,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -2269,7 +2278,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -3115,7 +3125,8 @@
         },
         "blockWidth:noprefix": {
           "--block-width": "var(--default-container-width)"
-        }
+        },
+        "shortLine": false
       },
       "theme": "default"
     },
@@ -3588,12 +3599,14 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-12T19:41:06+00:00",
+  "modified": "2025-09-04T08:34:01+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
   "review_state": "published",
   "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
   "subjects": [],
   "title": "Grid-Listing",
   "type_title": "Page",

@@ -4,11 +4,12 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import type { CustomInheritBehavior, BlocksConfigSettings } from './types';
+import PersonView from './components/theme/PersonView';
 
 declare module '@plone/types' {
   export interface GetSiteResponse {
     'kitconcept.intranet.custom_css': string;
-    'kitconcept.person_squared_images': 'disabled' | 'squared4to5';
+    'kitconcept.person_picture_aspect_ratio': 'rounded1to1' | 'squared4to5';
   }
 
   export interface Expanders {
@@ -23,6 +24,8 @@ const applyConfig = (config: ConfigType) => {
   installSlots(config);
   installWidgets(config);
   installBlocks(config);
+
+  config.views.contentTypesViews.Person = PersonView;
   return config;
 };
 

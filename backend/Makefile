@@ -104,7 +104,7 @@ update-example-content: $(VENV_FOLDER) ## Export example content inside package
 .PHONY: cleanup-example-content
 cleanup-example-content: $(VENV_FOLDER) ## Remove invalid references to http://nohost/Plone
 	@echo "$(GREEN)==> Remove invalid references to http://nohost/Plone $(RESET)"
-	@find $(EXAMPLE_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i 's/http:\/\/nohost\/Plone\//\//' {} \;
+	@find $(EXAMPLE_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i '' -e 's#http://nohost/Plone/#/#g' {} \;
 
 # QA
 .PHONY: lint

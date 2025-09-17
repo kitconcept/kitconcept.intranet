@@ -11,14 +11,45 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Address"
+#: components/theme/PersonView
+msgid "Address"
+msgstr "Adresse"
+
+#. Default: "Bio"
+#: components/theme/PersonView
+msgid "Bio"
+msgstr "Vita"
+
+#. Default: "Building"
+#: components/theme/PersonView
+msgid "Building"
+msgstr ""
+
+#. Default: "By"
+#: slots/DocumentByLine/DocumentByLine
+msgid "By"
+msgstr ""
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
+
+#. Default: "E-mail"
+#: components/theme/PersonView
+msgid "E-mail"
+msgstr "E-mail"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
+msgstr ""
+
+#. Default: "Feedback on this page"
+#: components/StickyFeedbackButton/StickyFeedbackButton
+msgid "Feedback on this page"
 msgstr ""
 
 #. Default: "ICS Download"
@@ -33,8 +64,19 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Phone"
+msgstr "Telefon"
+
+#. Default: "Room"
+#: components/theme/PersonView
+msgid "Room"
 msgstr ""
+
+#. Default: "Site"
+#: components/theme/PersonView
+msgid "Site"
+msgstr "Website"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
@@ -44,11 +86,6 @@ msgstr ""
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
-msgstr ""
-
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "author"
 msgstr ""
 
 #. Default: "last modified"

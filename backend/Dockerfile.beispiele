@@ -8,8 +8,6 @@ LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
       org.label-schema.description="A Plone distribution for Intranets with Plone. Created by kitconcept." \
       org.label-schema.vendor="kitconcept GmbH"
 
-# Disable MO Compilation
-ENV zope_i18n_compile_mo_files=
 # Show only our distributions
 ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
 

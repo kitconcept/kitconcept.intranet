@@ -16,3 +16,10 @@ class IVotes(model.Schema):
         required=False,
         readonly=True,
     )
+
+    enable_likes = schema.Bool(
+        title=_("Enable Likes"),
+        description=_("Enable Likes for this Content Object"),
+        required=False,
+        default=False,
+    )

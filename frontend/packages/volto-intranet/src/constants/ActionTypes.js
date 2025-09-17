@@ -5,4 +5,4 @@
  * export const UPDATE_CONTENT = 'UPDATE_CONTENT';
  */
 
-export const TOOGLE_LIKE = 'TOOGLE_LIKE';
+export const TOGGLE_LIKE = 'TOGGLE_LIKE';

@@ -51,6 +51,13 @@ class IIntranetSettings(Interface):
         ]),
     )
 
+    enable_content_rating = schema.Bool(
+        title=_("Enable Content Rating"),
+        description=_("Enable content rating globally for the Intranet"),
+        required=False,
+        default=False,
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
@@ -95,4 +102,7 @@ class IntranetSiteEndpointExpander:
         data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_picture_aspect_ratio"] = (
             settings.person_picture_aspect_ratio
+        )
+        data["kitconcept.intranet.enable_content_rating"] = (
+            settings.enable_content_rating
         )

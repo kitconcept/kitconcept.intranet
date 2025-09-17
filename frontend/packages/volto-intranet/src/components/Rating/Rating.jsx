@@ -8,7 +8,7 @@ import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
-import { toogleLike } from '../../actions/likes/likes';
+import { toggleLike } from '../../actions/likes/likes';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import thumbsSVG from '../../icons/icon-thumbs.svg';
 import thumbsFilledSVG from '../../icons/icon-thumbs-filled.svg';
@@ -43,27 +43,8 @@ const messages = defineMessages({
     defaultMessage: 'Something went wrong while unliking this post.',
   },
 });
-const DotFormattedDate = ({ date, className, locale }) => {
-  return (
-    <FormattedDate
-      className={className}
-      date={date}
-      format={{
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-      }}
-      locale={locale}
-    >
-      {(parts) => {
-        const day = parts.find((p) => p.type === 'day')?.value;
-        const month = parts.find((p) => p.type === 'month')?.value;
-        const year = parts.find((p) => p.type === 'year')?.value;
-        return `${day}.${month}.${year}`;
-      }}
-    </FormattedDate>
-  );
-};
+
+const dateFormat = { year: 'numeric', month: '2-digit', day: '2-digit' };
 
 // I will remove it once I update the useLiveData function of VLT.
 function useLiveData(field) {
@@ -112,7 +93,7 @@ const Rating = (props) => {
 
   const onLike = () => {
     if (liked) {
-      dispatch(toogleLike(flattenPathname))
+      dispatch(toggleLike(flattenPathname))
         .then((resp) => {
           if (resp) {
             setLiked(false);
@@ -125,7 +106,7 @@ const Rating = (props) => {
           );
         });
     } else {
-      dispatch(toogleLike(flattenPathname))
+      dispatch(toggleLike(flattenPathname))
         .then((resp) => {
           if (resp) {
             setLiked(true);
@@ -199,18 +180,20 @@ const Rating = (props) => {
         <div className="content-metadata">
           <span className="created">
             {intl.formatMessage(messages.created)}
-            <DotFormattedDate
+            <FormattedDate
               className="created-date"
               date={content?.created}
               locale={intl.locale}
+              format={dateFormat}
             />
           </span>
           <span className="modified">
             {intl.formatMessage(messages.modified)}
-            <DotFormattedDate
+            <FormattedDate
               className="modified-date"
               date={content?.modified}
               locale={intl.locale}
+              format={dateFormat}
             />
           </span>
         </div>

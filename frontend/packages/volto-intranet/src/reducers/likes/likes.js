@@ -3,7 +3,7 @@
  * @module reducers/likes/likes
  */
 
-import { TOOGLE_LIKE } from '../../constants/ActionTypes';
+import { TOGGLE_LIKE } from '../../constants/ActionTypes';
 
 const initialState = {
   error: null,
@@ -13,21 +13,21 @@ const initialState = {
 
 export default function likes(state = initialState, action = {}) {
   switch (action.type) {
-    case `${TOOGLE_LIKE}_PENDING`:
+    case `${TOGGLE_LIKE}_PENDING`:
       return {
         ...state,
         error: null,
         loaded: true,
         loading: false,
       };
-    case `${TOOGLE_LIKE}_SUCCESS`:
+    case `${TOGGLE_LIKE}_SUCCESS`:
       return {
         ...state,
         error: null,
         loaded: true,
         loading: false,
       };
-    case `${TOOGLE_LIKE}_FAIL`:
+    case `${TOGGLE_LIKE}_FAIL`:
       return {
         ...state,
         error: null,

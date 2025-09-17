@@ -1,8 +1,8 @@
-import { TOOGLE_LIKE } from './../../constants/ActionTypes';
+import { TOGGLE_LIKE } from './../../constants/ActionTypes';
 
-export function toogleLike(url) {
+export function toggleLike(url) {
   return {
-    type: TOOGLE_LIKE,
+    type: TOGGLE_LIKE,
     request: {
       op: 'post',
       path: `${url}/@vote`,

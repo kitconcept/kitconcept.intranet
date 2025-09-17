@@ -11,4 +11,4 @@
  * };
  */
 
-export { toogleLike } from './likes/likes';
+export { toggleLike } from './likes/likes';

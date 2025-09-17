@@ -3,6 +3,12 @@
   font-weight: map-get($font-weights, regular);
   line-height: map-get($line-heights, s);
 }
+
+body.siteroot {
+  .content-engagement {
+    display: none;
+  }
+}
 .content-engagement {
   padding-top: 30px;
   padding-bottom: 80px;

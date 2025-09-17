@@ -4,8 +4,8 @@
     >
   <genericsetup:upgradeSteps
       profile="kitconcept.intranet:default"
-      source="20250829001"
-      destination="20250829002"
+      source="20250916001"
+      destination="20250917001"
       >
     <genericsetup:upgradeDepends
         title="Adds the iframe allowed domains to the control panel registry"

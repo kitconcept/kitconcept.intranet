@@ -4,6 +4,7 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import type { CustomInheritBehavior, BlocksConfigSettings } from './types';
+import PersonView from './components/theme/PersonView';
 
 declare module '@plone/types' {
   export interface GetSiteResponse {
@@ -23,6 +24,8 @@ const applyConfig = (config: ConfigType) => {
   installSlots(config);
   installWidgets(config);
   installBlocks(config);
+
+  config.views.contentTypesViews.Person = PersonView;
   return config;
 };
 

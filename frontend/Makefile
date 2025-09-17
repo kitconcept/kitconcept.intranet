@@ -118,11 +118,11 @@ storybook-build: ## Build Storybook
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
 acceptance-frontend-dev-start: ## Start acceptance frontend in development mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
+	RAZZLE_API_PATH=http://127.0.0.1:55001/plone SITE_DEFAULT_LANGUAGE=en NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
 
 .PHONY: acceptance-frontend-prod-start
 acceptance-frontend-prod-start: ## Start acceptance frontend in production mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone pnpm build && pnpm start:prod
+	RAZZLE_API_PATH=http://127.0.0.1:55001/plone SITE_DEFAULT_LANGUAGE=en pnpm build && pnpm start:prod
 
 .PHONY: acceptance-test
 acceptance-test: ## Start Cypress in interactive mode

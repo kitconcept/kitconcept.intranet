@@ -2,48 +2,9 @@
   "@id": "/people/jonas-seidel-b-a",
   "@type": "Person",
   "UID": "4de23606a34b4db284c6125a94ca1c41",
+  "academic_title": null,
+  "address": null,
   "allow_discussion": null,
-  "blocks": {
-    "70f0b205-1699-4b41-8cbc-e4e3a639df32": {
-      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
-      "@type": "slate",
-      "block": "70f0b205-1699-4b41-8cbc-e4e3a639df32",
-      "plaintext": "",
-      "styles": {},
-      "value": [
-        {
-          "children": [
-            {
-              "text": ""
-            }
-          ],
-          "type": "p"
-        }
-      ]
-    },
-    "7719f1f3-73cf-436d-a3ac-65e54354c4b7": {
-      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
-      "@type": "description",
-      "block": "7719f1f3-73cf-436d-a3ac-65e54354c4b7",
-      "fixed": true,
-      "required": true
-    },
-    "7abad02a-27b8-4929-abd9-12fb236f62df": {
-      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
-      "@type": "title",
-      "block": "7abad02a-27b8-4929-abd9-12fb236f62df",
-      "fixed": true,
-      "readOnly": true,
-      "required": true
-    }
-  },
-  "blocks_layout": {
-    "items": [
-      "7abad02a-27b8-4929-abd9-12fb236f62df",
-      "7719f1f3-73cf-436d-a3ac-65e54354c4b7",
-      "70f0b205-1699-4b41-8cbc-e4e3a639df32"
-    ]
-  },
   "changeNote": "",
   "contact_building": "B32",
   "contact_email": "jonas.seidel@example.com",
@@ -51,10 +12,12 @@
   "contact_room": "R875",
   "contact_website": "https://plone.org",
   "created": "2025-06-12T10:48:42+00:00",
-  "description": "Jonas Seidel, B.A. ist Sachbearbeiter in der Personalentwicklung und unterst\u00fctzt die Abteilung Interne Services in den Bereichen Weiterbildung, Karriereplanung und Onboarding. Er organisiert Fortbildungsprogramme, betreut E-Learning-Plattformen und begleitet Personalgespr\u00e4che. Dank seiner Kompetenzen in HR-Systemen wie SAP HCM, seiner ausgepr\u00e4gten Kommunikationsf\u00e4higkeit sowie seiner Erfahrung in der Projektkoordination tr\u00e4gt er ma\u00dfgeblich zur nachhaltigen Entwicklung der Mitarbeitenden bei.",
+  "department": null,
+  "description": "",
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "fax": null,
   "first_name": "Jonas",
   "head_title": null,
   "id": "jonas-seidel-b-a",
@@ -67,6 +30,7 @@
     "width": 7619
   },
   "is_folderish": true,
+  "job_title": null,
   "language": "##DEFAULT##",
   "last_name": "Seidel, B.A.",
   "layout": "view",
@@ -76,10 +40,16 @@
   },
   "modified": "2025-09-04T08:19:52+00:00",
   "nav_title": null,
+  "office_phone": null,
   "review_state": "published",
   "roles": [
     "member"
   ],
+  "text": {
+    "content-type": "text/html",
+    "data": "<p>Jonas Seidel, B.A. ist Sachbearbeiter in der Personalentwicklung und unterst\u00fctzt die Abteilung Interne Services in den Bereichen Weiterbildung, Karriereplanung und Onboarding. Er organisiert Fortbildungsprogramme, betreut E-Learning-Plattformen und begleitet Personalgespr\u00e4che. Dank seiner Kompetenzen in HR-Systemen wie SAP HCM, seiner ausgepr\u00e4gten Kommunikationsf\u00e4higkeit sowie seiner Erfahrung in der Projektkoordination tr\u00e4gt er ma\u00dfgeblich zur nachhaltigen Entwicklung der Mitarbeitenden bei.</p>",
+    "encoding": "utf8"
+  },
   "title": "Jonas Seidel, B.A.",
   "type_title": "Person",
   "version": "current",

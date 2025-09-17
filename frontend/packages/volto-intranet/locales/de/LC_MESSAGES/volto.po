@@ -11,15 +11,41 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Address"
+#: components/theme/PersonView
+msgid "Address"
+msgstr "Adresse"
+
+#. Default: "Bio"
+#: components/theme/PersonView
+msgid "Bio"
+msgstr "Vita"
+
+#. Default: "Building"
+#: components/theme/PersonView
+msgid "Building"
+msgstr "Gebäude"
+
+#. Default: "By"
+#: slots/DocumentByLine/DocumentByLine
+msgid "By"
+msgstr "Von"
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
+
+#. Default: "E-mail"
+#: components/theme/PersonView
+msgid "E-mail"
+msgstr "E-mail"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
-msgstr ""
+msgstr "Ende"
 
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
@@ -29,42 +55,48 @@ msgstr ""
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
-msgstr ""
+msgstr "Termin importieren (.ics)"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
-msgstr ""
+msgstr "Standort"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Phone"
-msgstr ""
+msgstr "Telefonnummer"
+
+#. Default: "Room"
+#: components/theme/PersonView
+msgid "Room"
+msgstr "Raum"
+
+#. Default: "Site"
+#: components/theme/PersonView
+msgid "Site"
+msgstr "Website"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
-msgstr ""
+msgstr "Anfang"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr ""
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "author"
-msgstr ""
-
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr ""
+msgstr "zuletzt verändert"
 
 #. Default: "published"
 #: slots/DocumentByLine/DocumentByLine
 msgid "published"
-msgstr ""
+msgstr "Veröffentlicht"
 
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate

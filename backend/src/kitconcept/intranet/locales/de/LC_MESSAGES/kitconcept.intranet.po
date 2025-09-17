@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-18 19:48+0000\n"
+"POT-Creation-Date: 2025-09-15 23:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,9 +22,29 @@ msgstr "- Workflow für Intranets. Öffentlicher Zugriff auf veröffentlichte In
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr "- Workflow für Intranets. Authentifizierung erforderlich."
 
-#: kitconcept/intranet/distributions.zcml:16
+#: kitconcept/intranet/controlpanels/intranet.py:49
+msgid "1:1 round picture"
+msgstr "1:1 kreisförmiges Bild"
+
+#: kitconcept/intranet/controlpanels/intranet.py:50
+msgid "4:5 square picture"
+msgstr "4:5 quadratisches Bild"
+
+#: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Eine Plone-Distribution für Intranets mit Plone. Erstellt von kitconcept."
+
+#: kitconcept/intranet/behaviors/person.py:15
+msgid "Academic Title"
+msgstr "Akademischer Titel"
+
+#: kitconcept/intranet/behaviors/configure.zcml:47
+msgid "Add the intranet-specific person fields"
+msgstr "Fügen Sie die intranet-spezifischen Personenfelder hinzu"
+
+#: kitconcept/intranet/behaviors/configure.zcml:40
+msgid "Add the lifecycle management fields"
+msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:19
 msgid "Allows to set configuration that will be injected into the blocks default configuration."
@@ -32,35 +52,43 @@ msgstr "Ermöglicht die Festlegung einer Konfiguration, die in die Standardkonfi
 
 #: kitconcept/intranet/behaviors/blocks_settings.py:24
 msgid "Blocks configuration"
-msgstr "Blockkonfiguration"
+msgstr "Blocks Konfiguration"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Can only be seen and edited by the owner."
 msgstr "Kann nur vom Eigentümer angesehen und bearbeitet werden."
 
-#: kitconcept/intranet/controlpanels/intranet.py:31
+#: kitconcept/intranet/controlpanels/intranet.py:33
 msgid "Custom CSS"
 msgstr "Benutzerdefiniertes CSS"
 
-#: kitconcept/intranet/controlpanels/intranet.py:32
+#: kitconcept/intranet/controlpanels/intranet.py:34
 msgid "Custom CSS for the intranet."
 msgstr "Benutzerdefiniertes CSS für das Intranet."
+
+#: kitconcept/intranet/behaviors/person.py:26
+msgid "Department"
+msgstr "Abteilung"
+
+#: kitconcept/intranet/vocabularies/person.py:17
+msgid "Dr."
+msgstr "Dr."
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: kitconcept/intranet/controlpanels/intranet.py:19
+#: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr "Externe Such-URL"
 
-#: kitconcept/intranet/behaviors/configure.zcml:29
+#: kitconcept/intranet/behaviors/configure.zcml:26
 msgid "Fields for Location"
 msgstr "Felder für Standort"
 
-#: kitconcept/intranet/behaviors/configure.zcml:39
+#: kitconcept/intranet/behaviors/configure.zcml:33
 msgid "Fields for Organisational Unit"
 msgstr "Felder für Organisationseinheit"
 
@@ -77,12 +105,24 @@ msgstr "Öffentlicher Intranet-Workflow"
 msgid "Intranet Restricted Workflow"
 msgstr "Intranet-beschränkter Workflow"
 
-#: kitconcept/intranet/controlpanels/intranet.py:39
+#: kitconcept/intranet/controlpanels/intranet.py:57
 msgid "Intranet Settings"
 msgstr "Intranet-Einstellungen"
 
-#: kitconcept/intranet/behaviors/configure.zcml:29
-#: kitconcept/intranet/behaviors/location.py:19
+#: kitconcept/intranet/behaviors/configure.zcml:47
+msgid "Intranet-specific Person fields"
+msgstr "Intranet-spezifische Personenfelder"
+
+#: kitconcept/intranet/behaviors/person.py:21
+msgid "Job Title"
+msgstr "Berufsbezeichnung"
+
+#: kitconcept/intranet/behaviors/configure.zcml:40
+msgid "Lifecycle Management fields"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/location.py:16
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
 msgstr "Standort"
@@ -97,8 +137,8 @@ msgstr "Mitglied zieht Einreichung zurück"
 msgid "Member submits content for publication"
 msgstr "Mitglied reicht Inhalte zur Veröffentlichung ein"
 
-#: kitconcept/intranet/behaviors/configure.zcml:39
-#: kitconcept/intranet/behaviors/organisational_unit.py:20
+#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/organisational_unit.py:16
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
 msgstr "Organisationseinheit"
@@ -108,7 +148,11 @@ msgstr "Organisationseinheit"
 msgid "Pending review"
 msgstr "In Bearbeitung"
 
-#: kitconcept/intranet/controlpanels/intranet.py:26
+#: kitconcept/intranet/controlpanels/intranet.py:39
+msgid "Person Picture Aspect Ratio"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
 msgstr "Platzhaltertext für das Suchfeld."
 
@@ -120,6 +164,14 @@ msgstr "Paket mit Richtlinien zur Installation unserer Website"
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Private"
 msgstr "Privat"
+
+#: kitconcept/intranet/vocabularies/person.py:16
+msgid "Prof."
+msgstr "Prof."
+
+#: kitconcept/intranet/vocabularies/person.py:18
+msgid "Prof. Dr."
+msgstr "Prof. Dr."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -156,7 +208,7 @@ msgstr "Der Prüfer veröffentlicht Inhalte."
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Der Prüfer sendet den Inhalt zur Überarbeitung zurück."
 
-#: kitconcept/intranet/controlpanels/intranet.py:25
+#: kitconcept/intranet/controlpanels/intranet.py:27
 msgid "Search Field Placeholder"
 msgstr "Suchfeld-Platzhalter"
 
@@ -191,7 +243,7 @@ msgstr "Taxonomie"
 msgid "Through The Web blocks configuration"
 msgstr "Blockkonfiguration durch die Weboberfläche"
 
-#: kitconcept/intranet/controlpanels/intranet.py:20
+#: kitconcept/intranet/controlpanels/intranet.py:22
 msgid "Used in the intranet header seach bar."
 msgstr "Verwendet in der Suchleiste der Intranet-Kopfzeile."
 
@@ -216,19 +268,24 @@ msgstr "Wartet auf Überprüfung, kann vom Eigentümer nicht bearbeitet werden."
 #. Default: "Configure some aspects of the default blocks configuration."
 #: kitconcept/intranet/behaviors/blocks_settings.py:41
 msgid "help_blocks_config_mutator"
-msgstr "Konfigurieren Sie einige Aspekte der Standardblockkonfiguration."
+msgstr "Blocks Konfiguration anpassen"
 
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_organisational_unit"
 msgstr "Nach Organisationseinheit filtern"
 
+#. Default: "Image aspect ratio of the person's picture. This setting is used for the person picture on the person profile page, on teasers that point to a person profile page and on listings where persons are displayed."
+#: kitconcept/intranet/controlpanels/intranet.py:40
+msgid "help_person_picture_aspect_ratio"
+msgstr ""
+
 #. Default: "Filter by location"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_place"
 msgstr "Nach Standort filtern"
 
-#: kitconcept/intranet/distributions.zcml:16
+#: kitconcept/intranet/distributions.zcml:17
 msgid "kitconcept Intranet"
 msgstr ""
 
@@ -244,6 +301,16 @@ msgstr ""
 msgid "kitconcept.intranet: Solr Support"
 msgstr ""
 
+#. Default: "Authors"
+#: kitconcept/intranet/behaviors/lcm.py:53
+msgid "label_authors"
+msgstr ""
+
+#. Default: "Feedback to"
+#: kitconcept/intranet/behaviors/lcm.py:40
+msgid "label_feedback_person"
+msgstr ""
+
 #. Default: "Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_organisational_unit"
@@ -253,3 +320,8 @@ msgstr "Organisationseinheit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_place"
 msgstr "Ort"
+
+#. Default: "Content Owner:"
+#: kitconcept/intranet/behaviors/lcm.py:27
+msgid "label_responsible"
+msgstr ""

@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250916001"
+      destination="20250918002"
+      >
+    <genericsetup:upgradeDepends
+        title="Adds the iframe allowed domains to the control panel registry"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

@@ -18,6 +18,7 @@ overrides:
   '@kitconcept/volto-banner-block': workspace:*
   '@kitconcept/volto-logos-block': workspace:*
   '@kitconcept/volto-carousel-block': workspace:*
+  '@kitconcept/volto-iframe-block': workspace:*
   '@kitconcept/volto-bm3-compat': workspace:*
 
 importers:
@@ -1815,11 +1816,30 @@ importers:
         specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
 
+  packages/volto-iframe-block/packages/volto-iframe-block:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.1
+      release-it:
+        specifier: ^17.1.1
+        version: 17.1.1(typescript@5.8.3)
+
   packages/volto-intranet:
     dependencies:
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
+      '@kitconcept/volto-iframe-block':
+        specifier: workspace:*
+        version: link:../volto-iframe-block/packages/volto-iframe-block
       '@kitconcept/volto-solr':
         specifier: 2.0.0-alpha.1
         version: 2.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

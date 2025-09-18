@@ -55,6 +55,10 @@ module.exports = {
             './packages/volto-light-theme/frontend/packages/volto-light-theme/src',
           ],
           [
+            '@kitconcept/volto-iframe-block',
+            './packages/volto-iframe-block/packages/volto-iframe-block/src',
+          ],
+          [
             '@kitconcept/volto-solr',
             './packages/volto-solr/frontend/packages/volto-solr/src',
           ],

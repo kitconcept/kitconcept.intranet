@@ -48,11 +48,11 @@ class IIntranetSettings(Interface):
     iframe_allowed_domains = schema.List(
         title=_("Allowed Iframe Domains"),
         description="A list of allowed domains for iframes. Example: ['example.com']",
-        min_length=0,
         value_type=schema.TextLine(
             title="Domain", description="Allowed domain", default="example.com"
         ),
         required=False,
+        defaultFactory=list,
     )
 
 

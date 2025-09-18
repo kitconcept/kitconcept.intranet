@@ -36,7 +36,6 @@ dependencies = [
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
     "kitconcept.solr==2.0.0a1",
-    "collective.person==1.0.0b3",
 ]
 
 [dependency-groups]
@@ -435,6 +434,7 @@ constraint-dependencies = [
     "plone.volto>=5.1.0",
     "plone.z3cform==2.0.5",
     "Plone==6.1.2",
+    "plonegovbr.socialmedia==2.0.0a8",
     "plonetheme.barceloneta==3.3.0",
     "pluggy==1.6.0",
     "Products.BTreeFolder2==5.1",

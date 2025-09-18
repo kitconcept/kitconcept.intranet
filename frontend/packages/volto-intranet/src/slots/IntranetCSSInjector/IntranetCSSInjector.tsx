@@ -1,4 +1,3 @@
-import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { useSelector } from 'react-redux';
 import type { GetSiteResponse } from '@plone/types';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';

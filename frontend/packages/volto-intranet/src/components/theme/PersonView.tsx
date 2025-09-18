@@ -60,10 +60,10 @@ interface PersonViewProps {
  */
 const PersonView: React.FC<PersonViewProps> = ({ content }) => {
   const Container = config.getComponent({ name: 'Container' }).component;
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   const profile = {
-    imageUrl:
-      content.image?.scales?.preview?.download ?? content.image?.download,
+    imageUrl: content.image ?? null,
     fullName: content.academic_title?.title
       ? content.last_name
         ? `${content.academic_title.title} ${content.first_name} ${content.last_name}`
@@ -90,11 +90,11 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
       <div className="person-profile">
         <header className="profile-header">
           {profile.imageUrl && (
-            <img
-              src={profile.imageUrl}
-              alt={profile.fullName}
+            <Image
               className="profile-image"
-              loading="lazy"
+              item={content}
+              imageField="image"
+              alt={profile.fullName}
             />
           )}
           <div className="profile-info">

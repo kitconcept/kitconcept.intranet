@@ -29,12 +29,6 @@ class IIntranetSettings(Interface):
         required=False,
     )
 
-    custom_css = schema.Text(
-        title=_("Custom CSS"),
-        description=_("Custom CSS for the intranet."),
-        required=False,
-    )
-
     person_picture_aspect_ratio = schema.Choice(
         title=_("Person Picture Aspect Ratio"),
         description=_(
@@ -102,7 +96,6 @@ class IntranetSiteEndpointExpander:
         data["kitconcept.intranet.search_field_placeholder"] = (
             settings.search_field_placeholder
         )
-        data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_picture_aspect_ratio"] = (
             settings.person_picture_aspect_ratio
         )

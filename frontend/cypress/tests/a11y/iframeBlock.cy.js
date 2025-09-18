@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // IFrame-block
   it('IFrame block (/features/block/iframe-block)', () => {
     cy.navigate('/features/block/iframe-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

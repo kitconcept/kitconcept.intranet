@@ -36,7 +36,7 @@ constraints = [
     { name = "cmarkgfm", specifier = "==2024.11.20" },
     { name = "collective-mockmailhost", specifier = "==3.0.0" },
     { name = "collective-monkeypatcher", specifier = "==2.0.0" },
-    { name = "collective-person", specifier = "==1.0.0b2" },
+    { name = "collective-person", specifier = "==1.0.0b3" },
     { name = "collective-recipe-omelette", specifier = "==2.0.0" },
     { name = "collective-recipe-template", specifier = "==2.2" },
     { name = "collective-recipe-vscode", specifier = "==0.1.9" },
@@ -91,9 +91,9 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.4.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==1.0.0a28" },
+    { name = "kitconcept-core", specifier = "==1.0.0a30" },
     { name = "kitconcept-solr", specifier = "==2.0.0a1" },
-    { name = "kitconcept-voltolighttheme", specifier = "==7.0.0b4" },
+    { name = "kitconcept-voltolighttheme", specifier = "==7.0.0b5" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.4.0" },
@@ -237,6 +237,7 @@ constraints = [
     { name = "plone-versioncheck", specifier = "==1.8.2" },
     { name = "plone-volto", specifier = ">=5.1.0" },
     { name = "plone-z3cform", specifier = "==2.0.5" },
+    { name = "plonegovbr-socialmedia", specifier = "==2.0.0a8" },
     { name = "plonetheme-barceloneta", specifier = "==3.3.0" },
     { name = "pluggy", specifier = "==1.6.0" },
     { name = "products-btreefolder2", specifier = "==5.1" },
@@ -701,7 +702,7 @@ wheels = [
 
 [[package]]
 name = "collective-contact-behaviors"
-version = "1.0.0b4"
+version = "1.0.0b5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -709,9 +710,9 @@ dependencies = [
     { name = "products-cmfplone" },
     { name = "pycountry" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9b/81/cac7f302c2a0da4d4065436413f41f46289a1ce3e92f8147d2a141078390/collective_contact_behaviors-1.0.0b4.tar.gz", hash = "sha256:0d38d4a9d0072a5f3d82f7848f9c6973c6155331f065133fa27bdf7f42f80230", size = 74915, upload-time = "2025-09-11T08:40:18.986Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c4/f3/56d1f02fd3352e6e864df05bf35e9691962d62dcca357acc46e239ec3dc7/collective_contact_behaviors-1.0.0b5.tar.gz", hash = "sha256:969a3f95bf8e3efd776e30acc078dfcadca9d6b676596a89f13d15c530f58450", size = 25700, upload-time = "2025-09-17T14:35:04.852Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b6/44/c52e8876a2768a04d6b8b6aff96dd155ed80b09f3ed614ee4509ee15e12b/collective_contact_behaviors-1.0.0b4-py3-none-any.whl", hash = "sha256:e3ea8dbeb950e1e1d89dc15841ebf75407758f8b84b44ea1f767cf385e235d7b", size = 82582, upload-time = "2025-09-11T08:40:17.906Z" },
+    { url = "https://files.pythonhosted.org/packages/23/ce/7441e06e412b7d246275f82cb05cb85d180a39aeca8280498b943fa6a44d/collective_contact_behaviors-1.0.0b5-py3-none-any.whl", hash = "sha256:a232ede73e3e6a922a369972dc1df6946bda2045d1423eee310941efabe50c00", size = 42401, upload-time = "2025-09-17T14:35:03.828Z" },
 ]
 
 [[package]]
@@ -760,7 +761,7 @@ wheels = [
 
 [[package]]
 name = "collective-person"
-version = "1.0.0b2"
+version = "1.0.0b3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-contact-behaviors" },
@@ -770,9 +771,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5b/82/4cd195fefeeb1271fb615dd388f72bdbc39694e85c67175fd796265793c0/collective_person-1.0.0b2.tar.gz", hash = "sha256:272310fc9db796ba1533fec2273b711fe744b5cb656810ab68f217cd1788bf5a", size = 1423573, upload-time = "2025-09-11T08:59:01.051Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cc/f8/9574432bbf68f0606b23897ef9a63800bc2f49a1ca67b14e72fe703cff09/collective_person-1.0.0b3.tar.gz", hash = "sha256:2c491f26c388ab835aa0037c56717963c456e6d1e7506bf332f99fd99643f027", size = 1423616, upload-time = "2025-09-17T15:06:52.004Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/28/52/317d74094e67cf609143032f663edb5f3a0662f5a3cfbe165351f5894e47/collective_person-1.0.0b2-py3-none-any.whl", hash = "sha256:6a08dd2d855f82a7cbb3660ecf4c6d40b46dcf4418042f48724d43a470ed03cf", size = 1440577, upload-time = "2025-09-11T08:58:58.483Z" },
+    { url = "https://files.pythonhosted.org/packages/fe/b7/d35d27ebd322a2aa418df65253ebb6a8418d7f92cab1290d875b5aa476ac/collective_person-1.0.0b3-py3-none-any.whl", hash = "sha256:df822c9baaa3c0d7039d0419b65e065afa808c5f985de7f657b5d2d65e4346fb", size = 1440576, upload-time = "2025-09-17T15:06:49.602Z" },
 ]
 
 [[package]]
@@ -1297,7 +1298,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.0a28"
+version = "1.0.0a30"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1311,9 +1312,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/16/2e/36f0be7cf9c329edff29d14d8e2fca1dbbff23093da2ec2562388cc77595/kitconcept_core-1.0.0a28.tar.gz", hash = "sha256:73191a0bb5cfec3c36b5dc83cc1a6c2b7b880f5d27cf88c6101ebc981981e8e8", size = 324268, upload-time = "2025-09-16T20:19:32.124Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/64/18/b59d61ee2feed2930ef2799080c34204b23621e9489bde1383bc8f037253/kitconcept_core-1.0.0a30.tar.gz", hash = "sha256:cf78ae273bc3a73499a17845d7d83c61cca8c41478058230cb932d33004e1343", size = 318818, upload-time = "2025-09-18T17:15:39.136Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/c9/cd05c5b76e153b9a13f0580d3bf563683b9df45c3c95c1ea32cac3f921fe/kitconcept_core-1.0.0a28-py3-none-any.whl", hash = "sha256:1f8cf2ab192e08a72d3e6c1e3338d90fd2631eb4ffd320271d68f07dc49ad5c1", size = 236402, upload-time = "2025-09-16T20:19:29.822Z" },
+    { url = "https://files.pythonhosted.org/packages/8f/67/71739945ff22174e7bd16b7fc6c24a92ae927269489ee17d0668800ecc82/kitconcept_core-1.0.0a30-py3-none-any.whl", hash = "sha256:bf27d1b9037563d8f4a8c9b301feb31a1740f4e45314fae5c9b71306c3dbb0c6", size = 240973, upload-time = "2025-09-18T17:15:40.77Z" },
 ]
 
 [[package]]
@@ -1359,8 +1360,8 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "collective-person", specifier = "==1.0.0b2" },
-    { name = "kitconcept-core", specifier = "==1.0.0a28" },
+    { name = "collective-person", specifier = "==1.0.0b3" },
+    { name = "kitconcept-core", specifier = "==1.0.0a30" },
     { name = "kitconcept-solr", specifier = "==2.0.0a1" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1415,7 +1416,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "7.0.0b4"
+version = "7.0.0b5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1424,9 +1425,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/20/05/cd917d49409879991b6b9bd430bd6f48eacaf53a1ad9bc8130b76f6e8c6c/kitconcept_voltolighttheme-7.0.0b4.tar.gz", hash = "sha256:2415a975215b3a9080765020ad1f58853aa53e204a578300a28372918234a109", size = 8999720, upload-time = "2025-09-16T15:54:11.037Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e7/18/835a61ab10c9e3e20b5fd0042d361bc1a7f6ea3cb1032f76b48e3d1b5731/kitconcept_voltolighttheme-7.0.0b5.tar.gz", hash = "sha256:e2b637c1e9940cfd4e48f9bdff77732a9cd5b030287b3f8ca63c0d4fd2828e6b", size = 8999671, upload-time = "2025-09-18T16:51:49.847Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5e/8d/86c721addafcdea716181f70a655341754cec34324883dae62edea36ec3d/kitconcept_voltolighttheme-7.0.0b4-py3-none-any.whl", hash = "sha256:d7a80efc06c46e9b753b05a4bd4410dd8ef70b62fb134a64fb80b9d3ff01a7c6", size = 9054674, upload-time = "2025-09-16T15:54:07.206Z" },
+    { url = "https://files.pythonhosted.org/packages/e7/58/06da75e6d3d88441869f79c6cc1665469949e48932072a267a85f3b74ea0/kitconcept_voltolighttheme-7.0.0b5-py3-none-any.whl", hash = "sha256:4e59b7d69951b14c38d73234a1bc522c710bc01903fbd492a332a33708e2fee0", size = 9054406, upload-time = "2025-09-18T16:51:52.918Z" },
 ]
 
 [[package]]

@@ -1829,6 +1829,9 @@ importers:
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
+      classnames:
+        specifier: 2.5.1
+        version: 2.5.1
       lodash:
         specifier: 4.17.21
         version: 4.17.21

@@ -37,6 +37,11 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
 
   const intl = useIntl();
   const location = useLocation();
+  const showFeedbackFormLink =
+    content?.authors ||
+    content?.responsible_person ||
+    content?.feedback_person ||
+    content?.['@components'].lcm?.responsible_person?.url;
 
   let footer_links = useLiveData<SiteFooterSettings['footer_links']>(
     content,
@@ -46,17 +51,21 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
   /* START CUSTOMIZATION */
   footer_links = [
     ...(footer_links || []),
-    {
-      '@id': '8b42f8f4-3d6e-4c97-9b8c-27c51e8b29a1',
-      href: [
-        {
-          '@id': `${location.pathname === '/' ? '' : location.pathname}/feedback-form`,
-          Title: intl.formatMessage(messages.feedback),
-          title: intl.formatMessage(messages.feedback),
-        },
-      ],
-      title: intl.formatMessage(messages.feedback),
-    },
+    ...(showFeedbackFormLink
+      ? [
+          {
+            '@id': '8b42f8f4-3d6e-4c97-9b8c-27c51e8b29a1',
+            href: [
+              {
+                '@id': `${location.pathname === '/' ? '' : location.pathname}/feedback-form`,
+                Title: intl.formatMessage(messages.feedback),
+                title: intl.formatMessage(messages.feedback),
+              },
+            ],
+            title: intl.formatMessage(messages.feedback),
+          },
+        ]
+      : []),
   ];
   /* END CUSTOMIZATION */
   const post_footer_logo = useLiveData<SiteFooterSettings['post_footer_logo']>(

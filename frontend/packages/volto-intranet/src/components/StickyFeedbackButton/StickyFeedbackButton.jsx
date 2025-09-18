@@ -2,6 +2,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import FeedbackButtonBackground from '../../icons/feedback-button-background.svg';
 import FeedbackButtonLike from '../../icons/feedback-button-like.svg';
@@ -17,6 +18,9 @@ const StickyFeedbackButton = () => {
   const intl = useIntl();
   const location = useLocation();
   const [animate, setAnimate] = useState(false);
+  const site = useSelector((state) => state.site.data);
+  const enableStickyFeedbackButton =
+    site['kitconcept.intranet.enable_sticky_feedback_button'];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +46,7 @@ const StickyFeedbackButton = () => {
     <div
       className={cx('sticky-feedback-button-container', {
         animate,
+        show: enableStickyFeedbackButton,
       })}
       style={{ transform: 'translateX(-100%) translateY(-50%)' }}
     >

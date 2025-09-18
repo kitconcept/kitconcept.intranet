@@ -45,10 +45,12 @@ class IIntranetSettings(Interface):
         ),
         required=True,
         default="rounded1to1",
-        vocabulary=SimpleVocabulary([
-            SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
-            SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
-        ]),
+        vocabulary=SimpleVocabulary(
+            [
+                SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
+                SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
+            ]
+        ),
     )
 
     default_feedback_email = schema.TextLine(
@@ -67,6 +69,13 @@ class IIntranetSettings(Interface):
         description=_("List of allowed email domains for feedback forms."),
         value_type=schema.TextLine(required=False),
         required=False,
+    )
+
+    enable_sticky_feedback_button = schema.Bool(
+        title=_("Enable Sticky Feedback Button"),
+        description=_("Enable or disable the sticky feedback button on all pages."),
+        required=False,
+        default=False,
     )
 
 
@@ -113,4 +122,7 @@ class IntranetSiteEndpointExpander:
         data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_picture_aspect_ratio"] = (
             settings.person_picture_aspect_ratio
+        )
+        data["kitconcept.intranet.enable_sticky_feedback_button"] = (
+            settings.enable_sticky_feedback_button
         )

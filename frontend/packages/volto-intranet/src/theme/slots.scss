@@ -23,6 +23,7 @@ h1.documentFirstHeading:has(+ .documentByLine) {
 // ### StickyFeedbackButton ###
 
 .sticky-feedback-button-container {
+  display: none;
   position: fixed;
   z-index: 11;
   top: 50%;
@@ -30,6 +31,9 @@ h1.documentFirstHeading:has(+ .documentByLine) {
   width: 140px;
   opacity: 0;
   transform: translateY(-50%) translateX(-100%);
+  &.show {
+    display: block;
+  }
 
   @media only screen and (max-width: $largest-mobile-screen) {
     display: none;

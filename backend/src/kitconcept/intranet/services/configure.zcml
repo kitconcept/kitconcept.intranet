@@ -36,4 +36,12 @@
       ruleset="plone.content.dynamic"
       />
 
+  <plone:service
+      method="POST"
+      factory=".votes.VotesPost"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@vote"
+      />
+
 </configure>

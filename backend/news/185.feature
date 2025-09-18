@@ -1,0 +1,1 @@
+Add @votes service, votes behaviour and enable plone.app.discussion for Document content type. @iFlameing

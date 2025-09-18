@@ -10,95 +10,6 @@
       "collapsed": false,
       "data": {
         "blocks": {
-          "e62a2478-3a63-445a-aab7-edf55cceebcf": {
-            "@type": "accordionPanel",
-            "blocks": {
-              "58f244db-9609-49d7-bb9c-4ddecb92467e": {
-                "@type": "slate",
-                "plaintext": "",
-                "styles": {},
-                "theme": "default",
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": ""
-                      }
-                    ],
-                    "type": "p"
-                  }
-                ]
-              },
-              "6b666cc0-6006-408c-8dc5-060a193b8684": {
-                "@type": "listing",
-                "headline": "List with images",
-                "headlineTag": "h2",
-                "querystring": {
-                  "b_size": "6",
-                  "query": [
-                    {
-                      "i": "portal_type",
-                      "o": "plone.app.querystring.operation.selection.any",
-                      "v": ["News Item"]
-                    }
-                  ],
-                  "sort_order": "ascending"
-                },
-                "styles": {},
-                "theme": "default",
-                "variation": "summary"
-              },
-              "7a3d2262-a290-41ea-8741-aa0cd92a316b": {
-                "@type": "listing",
-                "headline": "Grid",
-                "headlineTag": "h2",
-                "querystring": {
-                  "b_size": "4",
-                  "query": [
-                    {
-                      "i": "portal_type",
-                      "o": "plone.app.querystring.operation.selection.any",
-                      "v": ["Event"]
-                    }
-                  ],
-                  "sort_on": "sortable_title",
-                  "sort_order": "ascending"
-                },
-                "styles": {},
-                "theme": "default",
-                "variation": "grid"
-              },
-              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
-                "@type": "listing",
-                "headlineTag": "h2",
-                "querystring": {
-                  "limit": "3",
-                  "query": [
-                    {
-                      "i": "Description",
-                      "o": "plone.app.querystring.operation.string.contains",
-                      "v": "block"
-                    }
-                  ],
-                  "sort_order": "descending",
-                  "sort_order_boolean": true
-                },
-                "styles": {},
-                "theme": "default",
-                "variation": "default"
-              }
-            },
-            "blocks_layout": {
-              "items": [
-                "c9580c7a-ab67-44f7-8532-59a4ba9fd846",
-                "6b666cc0-6006-408c-8dc5-060a193b8684",
-                "58f244db-9609-49d7-bb9c-4ddecb92467e",
-                "7a3d2262-a290-41ea-8741-aa0cd92a316b"
-              ]
-            },
-            "selected": "58f244db-9609-49d7-bb9c-4ddecb92467e",
-            "title": "Accordion with listing"
-          },
           "b58c92b4-6604-4408-9039-a147965fa4bd": {
             "@type": "accordionPanel",
             "blocks": {
@@ -1603,9 +1514,104 @@
               }
             },
             "blocks_layout": {
-              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
+              "items": [
+                "f56375fe-70a1-4ac1-a94c-adc9998db548"
+              ]
             },
             "title": "Accordion with table"
+          },
+          "e62a2478-3a63-445a-aab7-edf55cceebcf": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "58f244db-9609-49d7-bb9c-4ddecb92467e": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "6b666cc0-6006-408c-8dc5-060a193b8684": {
+                "@type": "listing",
+                "headline": "List with images",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "6",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": [
+                        "News Item"
+                      ]
+                    }
+                  ],
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "summary"
+              },
+              "7a3d2262-a290-41ea-8741-aa0cd92a316b": {
+                "@type": "listing",
+                "headline": "Grid",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "4",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": [
+                        "Event"
+                      ]
+                    }
+                  ],
+                  "sort_on": "sortable_title",
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "grid"
+              },
+              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
+                "@type": "listing",
+                "headlineTag": "h2",
+                "querystring": {
+                  "limit": "3",
+                  "query": [
+                    {
+                      "i": "Description",
+                      "o": "plone.app.querystring.operation.string.contains",
+                      "v": "block"
+                    }
+                  ],
+                  "sort_order": "descending",
+                  "sort_order_boolean": true
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "default"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "c9580c7a-ab67-44f7-8532-59a4ba9fd846",
+                "6b666cc0-6006-408c-8dc5-060a193b8684",
+                "58f244db-9609-49d7-bb9c-4ddecb92467e",
+                "7a3d2262-a290-41ea-8741-aa0cd92a316b"
+              ]
+            },
+            "selected": "58f244db-9609-49d7-bb9c-4ddecb92467e",
+            "title": "Accordion with listing"
           }
         },
         "blocks_layout": {
@@ -1641,7 +1647,9 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": ["News Item"]
+                      "v": [
+                        "News Item"
+                      ]
                     }
                   ],
                   "sort_order": "ascending"
@@ -1676,7 +1684,9 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": ["Document"]
+                      "v": [
+                        "Document"
+                      ]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1713,7 +1723,9 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": ["Event"]
+                      "v": [
+                        "Event"
+                      ]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1911,289 +1923,6 @@
               ]
             },
             "title": "Accordion with text"
-          },
-          "f58c92b4-6604-4408-9039-a147965fa4bd": {
-            "@type": "accordionPanel",
-            "blocks": {
-              "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
-                "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
-                "head_title": "News Item Teaser",
-                "href": [
-                  {
-                    "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
-                    "@type": "News Item",
-                    "Description": "The News Item content type can be used to display News content on the website.",
-                    "Subject": [],
-                    "Title": "News Item",
-                    "contact_building": null,
-                    "contact_email": null,
-                    "contact_phone": null,
-                    "contact_room": null,
-                    "description": "The News Item content type can be used to display News content on the website.",
-                    "effective": "2023-01-01T10:42:00+00:00",
-                    "end": null,
-                    "getObjSize": "0 KB",
-                    "getRemoteUrl": null,
-                    "hasPreviewImage": null,
-                    "head_title": "Head title",
-                    "image_field": "preview_image_link",
-                    "mime_type": "text/plain",
-                    "nav_title": null,
-                    "review_state": "published",
-                    "start": null,
-                    "title": "News Item",
-                    "type_title": "Nachricht"
-                  }
-                ],
-                "overwrite": true,
-                "styles": {
-                  "align": "left"
-                },
-                "title": "Teaser to a News Item with Image"
-              },
-              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
-                "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
-                "head_title": "Event Teaser",
-                "href": [
-                  {
-                    "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
-                    "@type": "Event",
-                    "Description": "The event content type can be used to display an event on the website.",
-                    "Subject": [],
-                    "Title": "Event",
-                    "contact_building": null,
-                    "contact_email": "m.mustermann@plone.com",
-                    "contact_phone": "+49 1234 567-890",
-                    "contact_room": null,
-                    "description": "The event content type can be used to display an event on the website.",
-                    "effective": "2023-07-06T18:35:00+00:00",
-                    "end": "2023-12-31T12:00:00+00:00",
-                    "getObjSize": "0 KB",
-                    "getRemoteUrl": null,
-                    "hasPreviewImage": null,
-                    "head_title": null,
-                    "image_field": "preview_image_link",
-                    "mime_type": "text/plain",
-                    "nav_title": null,
-                    "review_state": "published",
-                    "start": "2023-01-01T11:00:00+00:00",
-                    "title": "Event",
-                    "type_title": "Termin"
-                  }
-                ],
-                "overwrite": true,
-                "styles": {
-                  "align": "right"
-                },
-                "title": "Teaser to an Event with Image "
-              },
-              "32053cfb-3906-4883-b929-2f0d475167ea": {
-                "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
-                "head_title": "External Link Teaser",
-                "href": [
-                  {
-                    "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
-                    "@type": "Link",
-                    "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
-                    "Subject": [],
-                    "Title": "Link",
-                    "contact_building": null,
-                    "contact_email": null,
-                    "contact_phone": null,
-                    "contact_room": null,
-                    "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
-                    "effective": "2023-07-06T18:35:00+00:00",
-                    "end": null,
-                    "getObjSize": "0 KB",
-                    "getRemoteUrl": "https://www.google.com",
-                    "hasPreviewImage": null,
-                    "head_title": null,
-                    "image_field": "",
-                    "mime_type": "text/plain",
-                    "nav_title": null,
-                    "review_state": "published",
-                    "start": null,
-                    "title": "Link",
-                    "type_title": "Link"
-                  }
-                ],
-                "overwrite": true,
-                "preview_image": [
-                  {
-                    "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
-                    "image_field": "image",
-                    "title": "Image for Link"
-                  }
-                ],
-                "styles": {
-                  "align": "left"
-                },
-                "theme": "default",
-                "title": "Teaser to an external Link with Image"
-              },
-              "56df2459-adbd-48ac-9e96-95933678c979": {
-                "@type": "slate",
-                "plaintext": "",
-                "styles": {},
-                "theme": "default",
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": ""
-                      }
-                    ],
-                    "type": "p"
-                  }
-                ]
-              },
-              "76245078-f513-459e-88a0-12cfa5a265af": {
-                "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
-                "head_title": "Image Teaser",
-                "href": [
-                  {
-                    "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
-                    "@type": "Image",
-                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
-                    "Subject": [],
-                    "Title": "Image",
-                    "contact_building": null,
-                    "contact_email": null,
-                    "contact_phone": null,
-                    "contact_room": null,
-                    "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
-                    "effective": "2025-07-09T10:52:00+00:00",
-                    "end": null,
-                    "getObjSize": "676.8 KB",
-                    "getRemoteUrl": null,
-                    "hasPreviewImage": null,
-                    "head_title": null,
-                    "image_field": "image",
-                    "mime_type": "image/jpeg",
-                    "nav_title": null,
-                    "review_state": null,
-                    "start": null,
-                    "title": "Image",
-                    "type_title": "Bild"
-                  }
-                ],
-                "overwrite": true,
-                "styles": {
-                  "align": "left"
-                },
-                "theme": "default",
-                "title": "Teaser to an Image with Image aligned left"
-              },
-              "a8e11fa5-a423-45f9-8de2-060c8ea00e5f": {
-                "@type": "slate",
-                "plaintext": "",
-                "styles": {},
-                "theme": "default",
-                "value": [
-                  {
-                    "children": [
-                      {
-                        "text": ""
-                      }
-                    ],
-                    "type": "p"
-                  }
-                ]
-              },
-              "d235847d-eb7d-4627-9247-dd92f8bbea79": {
-                "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
-                "head_title": "File Teaser",
-                "href": [
-                  {
-                    "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
-                    "@type": "File",
-                    "Description": "The File content type can be used to upload any file and make it available for download on the site.",
-                    "Subject": [],
-                    "Title": "File",
-                    "contact_building": null,
-                    "contact_email": null,
-                    "contact_phone": null,
-                    "contact_room": null,
-                    "description": "The File content type can be used to upload any file and make it available for download on the site.",
-                    "effective": "2025-07-09T10:52:00+00:00",
-                    "end": null,
-                    "getObjSize": "72.7 KB",
-                    "getRemoteUrl": null,
-                    "hasPreviewImage": null,
-                    "head_title": null,
-                    "image_field": "preview_image_link",
-                    "mime_type": "application/pdf",
-                    "nav_title": null,
-                    "review_state": null,
-                    "start": null,
-                    "title": "File",
-                    "type_title": "Datei"
-                  }
-                ],
-                "overwrite": true,
-                "styles": {
-                  "align": "right"
-                },
-                "theme": "default",
-                "title": "Teaser to a File with Image aligned right"
-              },
-              "eb600a9b-7400-4b4e-bb40-70ddb6911749": {
-                "@type": "teaser",
-                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
-                "head_title": "Page Teaser",
-                "href": [
-                  {
-                    "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
-                    "@type": "Document",
-                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-                    "Subject": [],
-                    "Title": "Page",
-                    "contact_building": null,
-                    "contact_email": null,
-                    "contact_phone": null,
-                    "contact_room": null,
-                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-                    "effective": "2023-07-06T18:35:00+00:00",
-                    "end": null,
-                    "getObjSize": "0 KB",
-                    "getRemoteUrl": null,
-                    "hasPreviewImage": true,
-                    "head_title": null,
-                    "image_field": "preview_image_link",
-                    "mime_type": "text/plain",
-                    "nav_title": null,
-                    "review_state": "published",
-                    "start": null,
-                    "title": "Page",
-                    "type_title": "Seite"
-                  }
-                ],
-                "overwrite": true,
-                "styles": {
-                  "align": "center"
-                },
-                "title": "Teaser Title H2"
-              }
-            },
-            "blocks_layout": {
-              "items": [
-                "eb600a9b-7400-4b4e-bb40-70ddb6911749",
-                "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03",
-                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a",
-                "56df2459-adbd-48ac-9e96-95933678c979",
-                "32053cfb-3906-4883-b929-2f0d475167ea",
-                "d235847d-eb7d-4627-9247-dd92f8bbea79",
-                "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
-                "76245078-f513-459e-88a0-12cfa5a265af"
-              ]
-            },
-            "selected": "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
-            "title": "Accordion with teaser"
           },
           "d2168440-999d-4081-8409-b59392abc189": {
             "@type": "accordionPanel",
@@ -3235,9 +2964,294 @@
               }
             },
             "blocks_layout": {
-              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
+              "items": [
+                "f56375fe-70a1-4ac1-a94c-adc9998db548"
+              ]
             },
             "title": "Accordion with table"
+          },
+          "f58c92b4-6604-4408-9039-a147965fa4bd": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "News Item Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+                    "@type": "News Item",
+                    "Description": "The News Item content type can be used to display News content on the website.",
+                    "Subject": [],
+                    "Title": "News Item",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The News Item content type can be used to display News content on the website.",
+                    "effective": "2023-01-01T10:42:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": "Head title",
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "News Item",
+                    "type_title": "Nachricht"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "title": "Teaser to a News Item with Image"
+              },
+              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "Event Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+                    "@type": "Event",
+                    "Description": "The event content type can be used to display an event on the website.",
+                    "Subject": [],
+                    "Title": "Event",
+                    "contact_building": null,
+                    "contact_email": "m.mustermann@plone.com",
+                    "contact_phone": "+49 1234 567-890",
+                    "contact_room": null,
+                    "description": "The event content type can be used to display an event on the website.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": "2023-12-31T12:00:00+00:00",
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": "2023-01-01T11:00:00+00:00",
+                    "title": "Event",
+                    "type_title": "Termin"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "title": "Teaser to an Event with Image "
+              },
+              "32053cfb-3906-4883-b929-2f0d475167ea": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "External Link Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+                    "@type": "Link",
+                    "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "Subject": [],
+                    "Title": "Link",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": "https://www.google.com",
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Link",
+                    "type_title": "Link"
+                  }
+                ],
+                "overwrite": true,
+                "preview_image": [
+                  {
+                    "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+                    "image_field": "image",
+                    "title": "Image for Link"
+                  }
+                ],
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an external Link with Image"
+              },
+              "56df2459-adbd-48ac-9e96-95933678c979": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "76245078-f513-459e-88a0-12cfa5a265af": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "Image Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+                    "@type": "Image",
+                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "Subject": [],
+                    "Title": "Image",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "676.8 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "image",
+                    "mime_type": "image/jpeg",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "Image",
+                    "type_title": "Bild"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an Image with Image aligned left"
+              },
+              "a8e11fa5-a423-45f9-8de2-060c8ea00e5f": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d235847d-eb7d-4627-9247-dd92f8bbea79": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "File Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+                    "@type": "File",
+                    "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "Subject": [],
+                    "Title": "File",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "72.7 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "application/pdf",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "File",
+                    "type_title": "Datei"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "theme": "default",
+                "title": "Teaser to a File with Image aligned right"
+              },
+              "eb600a9b-7400-4b4e-bb40-70ddb6911749": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
+                "head_title": "Page Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@type": "Document",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Subject": [],
+                    "Title": "Page",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": true,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Page",
+                    "type_title": "Seite"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "center"
+                },
+                "title": "Teaser Title H2"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "eb600a9b-7400-4b4e-bb40-70ddb6911749",
+                "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03",
+                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a",
+                "56df2459-adbd-48ac-9e96-95933678c979",
+                "32053cfb-3906-4883-b929-2f0d475167ea",
+                "d235847d-eb7d-4627-9247-dd92f8bbea79",
+                "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
+                "76245078-f513-459e-88a0-12cfa5a265af"
+              ]
+            },
+            "selected": "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
+            "title": "Accordion with teaser"
           }
         },
         "blocks_layout": {
@@ -3270,7 +3284,9 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-27T19:48:00+00:00",
-  "creators": ["admin"],
+  "creators": [
+    "admin"
+  ],
   "description": "The accordion contains other blocks in an accordion behavior layout.",
   "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,

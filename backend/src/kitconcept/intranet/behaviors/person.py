@@ -22,7 +22,7 @@ class IPersonBehavior(model.Schema):
         required=False,
     )
 
-    department = schema.TextLine(
+    department = schema.Text(
         title=_("Department"),
         required=False,
     )

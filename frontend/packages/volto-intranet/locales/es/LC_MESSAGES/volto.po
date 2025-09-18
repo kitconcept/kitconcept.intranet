@@ -18,6 +18,21 @@ msgstr ""
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: Poedit 2.2.1\n"
 
+#. Default: "Address"
+#: components/theme/PersonView
+msgid "Address"
+msgstr ""
+
+#. Default: "Bio"
+#: components/theme/PersonView
+msgid "Bio"
+msgstr ""
+
+#. Default: "Building"
+#: components/theme/PersonView
+msgid "Building"
+msgstr ""
+
 #. Default: "By"
 #: slots/DocumentByLine/DocumentByLine
 msgid "By"
@@ -25,7 +40,13 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Contact"
+msgstr ""
+
+#. Default: "E-mail"
+#: components/theme/PersonView
+msgid "E-mail"
 msgstr ""
 
 #. Default: "End"
@@ -50,7 +71,18 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Phone"
+msgstr ""
+
+#. Default: "Room"
+#: components/theme/PersonView
+msgid "Room"
+msgstr ""
+
+#. Default: "Site"
+#: components/theme/PersonView
+msgid "Site"
 msgstr ""
 
 #. Default: "Start"

@@ -166,4 +166,51 @@ describe('Folder Contents Tests', () => {
         expect($img[0].naturalWidth).to.be.greaterThan(0);
       });
   });
+  it('Should render list with date template with Event Content Type', () => {
+    let startDate;
+    let endDate;
+    const now = new Date();
+    startDate = new Date(now);
+    startDate.setMonth(startDate.getMonth() + 1);
+    // End = start + 7 days
+    endDate = new Date(startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const formatDate = (date) => date.toISOString().replace('.000Z', '+00:00');
+    const eventStart = new Date((startDate.getTime() + endDate.getTime()) / 2);
+    const eventEnd = new Date(eventStart.getTime() + 2 * 24 * 60 * 60 * 1000);
+    cy.createContent({
+      contentType: 'Event',
+      contentId: 'my-event',
+      contentTitle: 'My Event',
+      bodyModifier(body) {
+        body.start = formatDate(eventStart);
+        body.end = formatDate(eventEnd);
+        return body;
+      },
+    });
+    cy.createContent({
+      contentType: 'Event',
+      contentId: 'my-next-event',
+      contentTitle: 'My Next Event',
+      bodyModifier(body) {
+        body.start = formatDate(eventStart);
+        body.end = formatDate(eventEnd);
+        return body;
+      },
+    });
+    cy.visit('/my-folder/my-document');
+
+    cy.get('.edit').click();
+    cy.addNewBlock('listing');
+    cy.get('#field-variation').click().type('list with date{enter}');
+
+    // set Type criteria filter to Event
+    cy.configureListingWith('Event');
+    cy.wait('@content');
+    cy.get('#toolbar-save').click();
+    cy.wait('@content');
+    cy.get('.card-inner .date-inset')
+      .should('be.visible')
+      .and('contain', eventStart.getDate())
+      .and('contain', eventEnd.getDate());
+  });
 });

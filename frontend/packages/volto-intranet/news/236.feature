@@ -1,0 +1,1 @@
+Add custom view for Person content type. @danalvrz

@@ -1,0 +1,159 @@
+{
+  "@id": "/features/listing-search-block-criteria-organisational-unit",
+  "@type": "Document",
+  "UID": "42c4de0f3db945249b76279ab77070db",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "0e070abe-8d02-48a9-b95e-743a3edb84f4": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "51ae211a-3f4a-4336-afa9-144a48d64046": {
+      "@type": "introduction",
+      "plaintext": "Search Block",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Search Block"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "9c6a6d28-ee00-42ac-94c2-87b3ec248e8c": {
+      "@type": "slate"
+    },
+    "a4316da5-49b6-4915-9a05-b9d3cbbe4a3e": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "1a22eddf0e7941a0962cbfaa785e4b4d"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "cd7a12aa-ed92-406d-b41f-ed5604bc98b8": {
+      "@type": "title"
+    },
+    "faff7421-e948-4389-a188-483092f619d0": {
+      "@type": "search",
+      "query": {
+        "query": [
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "558d8bf9875844da847a9c5539944b83"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    },
+    "undefined": {
+      "@type": "search",
+      "listingBodyTemplate": "default",
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "cd7a12aa-ed92-406d-b41f-ed5604bc98b8",
+      "a4316da5-49b6-4915-9a05-b9d3cbbe4a3e",
+      "0e070abe-8d02-48a9-b95e-743a3edb84f4",
+      "51ae211a-3f4a-4336-afa9-144a48d64046",
+      "faff7421-e948-4389-a188-483092f619d0",
+      "9c6a6d28-ee00-42ac-94c2-87b3ec248e8c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-15T12:51:39+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-09-15T12:52:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "listing-search-block-criteria-organisational-unit",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-15T12:52:26+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Listing/Search block criteria \"Organisational Unit\"",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-15T12:51:39+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-15T12:52:26+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

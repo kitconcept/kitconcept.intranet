@@ -1,0 +1,151 @@
+#page-document.view-wrapper.person-view {
+  .person-profile {
+    background: var(--accent-color);
+  }
+
+  header.profile-header,
+  .contact-wrapper,
+  .bio-section {
+    max-width: var(--default-container-width);
+    margin: 0 auto;
+  }
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-xlarge;
+  border-top: 1px solid var(--accent-foreground-color);
+  margin-bottom: $spacing-large;
+  gap: $spacing-small;
+}
+
+.profile-image {
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  .organisational-unit {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 18px; /* 128.571% */
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+  }
+}
+
+.affiliations {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  gap: 10px;
+  line-height: 33px;
+
+  span {
+    white-space: pre-line;
+  }
+}
+
+.contact-wrapper {
+  display: grid;
+  padding-bottom: $spacing-large;
+  gap: $spacing-large;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-wrapper,
+.bio-section {
+  h2 {
+    padding-bottom: $spacing-small;
+    border-bottom: 1px solid var(--accent-foreground-color);
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: $spacing-medium;
+  gap: $spacing-small;
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+address {
+  padding-top: $spacing-medium;
+  font-style: normal;
+
+  h3 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .address,
+  .department {
+    white-space: pre-line;
+  }
+}
+
+.bio-section {
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-large;
+
+  .bio-content {
+    padding: $spacing-medium 0;
+
+    p {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 33px;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .person-profile {
+    padding: 0 $spacing-small;
+  }
+}
+
+@media (max-width: 769px) {
+  .profile-header {
+    flex-direction: column;
+    gap: $spacing-small;
+    text-align: center;
+  }
+
+  .profile-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-wrapper {
+    gap: $spacing-medium;
+    grid-template-columns: 1fr;
+  }
+}

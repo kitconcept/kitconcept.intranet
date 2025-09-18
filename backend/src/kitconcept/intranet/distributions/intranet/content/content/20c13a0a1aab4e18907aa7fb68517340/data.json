@@ -1,0 +1,159 @@
+{
+  "@id": "/features/listing-search-block-criteria-location",
+  "@type": "Document",
+  "UID": "20c13a0a1aab4e18907aa7fb68517340",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "0c7af138-fe20-4237-a51b-97ad5a58a613": {
+      "@type": "introduction",
+      "plaintext": "Search Block",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Search Block"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "10383f17-1d43-44c2-9cdb-55bc66958493": {
+      "@type": "title"
+    },
+    "2b663ee6-0522-40ff-bc2f-c2acd10314fa": {
+      "@type": "slate"
+    },
+    "3ba6313b-bfc3-41c4-a60d-040045bfdcf9": {
+      "@type": "search",
+      "query": {
+        "query": [
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    },
+    "7859b75a-0911-4d63-b322-c2deb51ebbe7": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "f0df1a09-3fca-4bbc-8ef5-356be8388410": {
+      "@type": "introduction",
+      "plaintext": "Listing Block",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Listing Block"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "undefined": {
+      "@type": "search",
+      "listingBodyTemplate": "default",
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "10383f17-1d43-44c2-9cdb-55bc66958493",
+      "f0df1a09-3fca-4bbc-8ef5-356be8388410",
+      "7859b75a-0911-4d63-b322-c2deb51ebbe7",
+      "0c7af138-fe20-4237-a51b-97ad5a58a613",
+      "3ba6313b-bfc3-41c4-a60d-040045bfdcf9",
+      "2b663ee6-0522-40ff-bc2f-c2acd10314fa"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-15T13:01:36+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-09-15T13:01:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "listing-search-block-criteria-location",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-15T13:01:39+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Listing/Search block criteria \"Location\"",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-15T13:01:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-15T13:01:39+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -58,14 +58,14 @@ const StickyFeedbackButton = () => {
             title="feedbackButton"
             name={FeedbackButtonBackground}
             color="#4E4E4E"
-            size={160}
+            size="160px"
           />
           <Icon
             key="like-button"
             title="feedbackButton"
             className="feedback-button-like"
             name={FeedbackButtonLike}
-            size={33}
+            size="33px"
             color="#fff"
           />
           <h3 className="title">{intl.formatMessage(messages.FeedbackText)}</h3>

@@ -1,0 +1,71 @@
+{
+  "@id": "/features/content-types/institute-of-aeroelasticity-organisational-unit",
+  "@type": "Organisational Unit",
+  "UID": "558d8bf9875844da847a9c5539944b83",
+  "allow_discussion": null,
+  "blocks": {
+    "49c3f87f-3eb4-4c56-a974-2a9fd2bf4e8a": {
+      "@type": "slate"
+    },
+    "df7278fa-e3be-49ac-abc9-3970544c12f2": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "df7278fa-e3be-49ac-abc9-3970544c12f2",
+      "49c3f87f-3eb4-4c56-a974-2a9fd2bf4e8a"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-15T12:48:43+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-09-15T12:49:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institute-of-aeroelasticity-organisational-unit",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-15T12:49:08+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Institute of Aeroelasticity (Organisational unit)",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-15T12:48:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-15T12:49:08+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

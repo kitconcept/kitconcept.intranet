@@ -21,5 +21,5 @@ https://diataxis.fr/how-to-guides/
 ```{toctree}
 :maxdepth: 2
 
-blocks-config-ttw
 squared-person-image-support
+```

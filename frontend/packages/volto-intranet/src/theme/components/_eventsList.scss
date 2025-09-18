@@ -1,0 +1,66 @@
+.event-calendar {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+
+  .card-listing {
+    margin-bottom: 47px;
+    &:last-of-type {
+      .card-inner {
+        .card-summary {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .card-inner {
+      align-items: flex-start;
+      .image-wrapper {
+        flex-basis: 140px;
+        .date-inset {
+          width: 140px;
+          height: 140px;
+          &.has-end-date {
+            .day {
+              font-size: 36px;
+              line-height: 38px;
+            }
+
+            .month {
+              font-size: 10px;
+              font-weight: 400;
+              line-height: 18px;
+            }
+          }
+          .separator {
+            width: 71%;
+            height: 1px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background: $black;
+          }
+        }
+      }
+
+      .card-summary {
+        align-self: stretch;
+        padding-bottom: 38px;
+        border-bottom: 1px solid $black;
+
+        .headline {
+          display: none;
+          &.calendar {
+            display: block;
+          }
+        }
+
+        .event-title {
+          &:before {
+            margin-right: 5px;
+            margin-left: 5px;
+            content: '|';
+          }
+        }
+      }
+    }
+  }
+}

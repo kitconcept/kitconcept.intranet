@@ -204,6 +204,35 @@ stack-rm:  ## Local Stack: Remove Services and Volumes
 	@docker volume rm $(PROJECT_NAME)_vol-site-data
 
 ####################################################
+## Solr Development Support
+####################################################
+
+.PHONY: solr-start
+solr-start: ## Start solr
+	@echo "Start solr"
+	$(COMPOSE_DEV) up -d solr
+
+.PHONY: solr-start-and-rebuild
+solr-start-and-rebuild: ## Start solr, force rebuild
+	@echo "Start solr, force rebuild, erases data"
+	$(COMPOSE_DEV) up -d --build solr
+
+.PHONY: solr-stop
+solr-stop: ## Stop solr
+	@echo "Stop solr"
+	$(COMPOSE_DEV) down solr
+
+.PHONY: solr-logs
+solr-logs: ## Show solr logs
+	@echo "Show solr logs"
+	$(COMPOSE_DEV) logs -f solr
+
+.PHONY: solr-activate-and-reindex
+solr-activate-and-reindex: ## Activate solr and reindex
+	@echo "Activate solr and reindex"
+	$(MAKE) -C "./backend/" solr-activate-and-reindex
+
+####################################################
 ## Acceptance
 ####################################################
 .PHONY: acceptance-backend-dev-start

@@ -4,6 +4,14 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import PersonView from './components/theme/PersonView';
+import { defineMessages } from 'react-intl';
+
+defineMessages({
+  listDate: {
+    id: 'List with date',
+    defaultMessage: 'List with date',
+  },
+});
 
 declare module '@plone/types' {
   export interface GetSiteResponse {

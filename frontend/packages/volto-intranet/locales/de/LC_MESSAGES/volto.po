@@ -47,6 +47,11 @@ msgstr "E-mail"
 msgid "End"
 msgstr "Ende"
 
+#. Default: "Error"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Error"
+msgstr "Fehler"
+
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
 msgid "Feedback on this page"
@@ -56,6 +61,16 @@ msgstr ""
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
 msgstr "Termin importieren (.ics)"
+
+#. Default: "Invalid url"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Invalid url"
+msgstr "Ungültige URL"
+
+#. Default: "List with date"
+#: index
+msgid "List with date"
+msgstr "Liste mit Datum"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View

@@ -18,7 +18,6 @@ if __name__ == "__main__":
     portal = app.unrestrictedTraverse(site_id)
     with site(portal):
         setup_tool: SetupTool = api.portal.get_tool("portal_setup")
-        breakpoint()
         version = setup_tool.getLastVersionForProfile("kitconcept.intranet:solr")
         if version == "unknown":
             print("Solr is not configured for this Plone site.")

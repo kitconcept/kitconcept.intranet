@@ -10,7 +10,7 @@ defineMessages({
   listDate: {
     id: 'List with date',
     defaultMessage: 'List with date',
-  }
+  },
 });
 
 declare module '@plone/types' {

@@ -157,7 +157,9 @@ class IntranetSearchWidget extends Component {
     // Get the SolrSearchAutosuggest widget from the registry,
     // with a fallback in case kitconcept.solr is not installed
     const SolrSearchAutosuggest =
-      config.widgets.SolrSearchAutosuggest || FallbackInput;
+      (this.props.site?.['collective.solr.active'] === true &&
+        config.widgets.SolrSearchAutosuggest) ||
+      FallbackInput;
     const { intl } = this.props;
     const searchFieldPlaceholder =
       this.props.site['kitconcept.intranet.search_field_placeholder'];

@@ -7,7 +7,7 @@ import PersonView from './components/theme/PersonView';
 import { defineMessages } from 'react-intl';
 
 defineMessages({
-  listWithDate: {
+  listDate: {
     id: 'List with date',
     defaultMessage: 'List with date',
   }

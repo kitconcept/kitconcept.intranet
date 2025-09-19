@@ -25,7 +25,7 @@ export default function install(config: ConfigType) {
   const listingBlockVariations = [
     ...(config.blocks.blocksConfig.listing.variations || []),
     {
-      id: 'List with date',
+      id: 'listDate',
       title: 'List with date',
       template: EventCalendarTemplate,
     },

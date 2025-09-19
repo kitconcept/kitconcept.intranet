@@ -12,13 +12,6 @@
       />
 
   <plone:behavior
-      name="kitconcept.blocks.config"
-      title="Through The Web blocks configuration"
-      description="Allows to set configuration that will be injected into the blocks default configuration."
-      provides=".blocks_settings.ITTWBlocksSettings"
-      />
-
-  <plone:behavior
       name="kitconcept.intranet.location"
       title="Location"
       description="Fields for Location"

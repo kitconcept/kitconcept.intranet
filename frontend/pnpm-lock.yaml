@@ -18,6 +18,7 @@ overrides:
   '@kitconcept/volto-banner-block': workspace:*
   '@kitconcept/volto-logos-block': workspace:*
   '@kitconcept/volto-carousel-block': workspace:*
+  '@kitconcept/volto-iframe-block': workspace:*
   '@kitconcept/volto-bm3-compat': workspace:*
 
 importers:
@@ -1583,6 +1584,12 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      react-intl:
+        specifier: ^3.12.1
+        version: 3.12.1(react@18.2.0)
+      react-redux:
+        specifier: ^8.1.2
+        version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
@@ -1590,15 +1597,27 @@ importers:
       '@plone/types':
         specifier: workspace:*
         version: link:../../../../../core/packages/types
+      '@types/lodash':
+        specifier: ^4.14.201
+        version: 4.17.20
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.23
       '@types/react-dom':
         specifier: ^18.3.1
         version: 18.3.7(@types/react@18.3.23)
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
       release-it:
         specifier: ^19.0.4
         version: 19.0.4(@types/node@22.16.2)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.8.3
+      vitest:
+        specifier: ^3.1.2
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@22.16.2)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
 
   packages/volto-banner-block/packages/volto-banner-block:
     dependencies:
@@ -1797,11 +1816,30 @@ importers:
         specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
 
+  packages/volto-iframe-block/packages/volto-iframe-block:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.1
+      release-it:
+        specifier: ^17.1.1
+        version: 17.1.1(typescript@5.8.3)
+
   packages/volto-intranet:
     dependencies:
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
+      '@kitconcept/volto-iframe-block':
+        specifier: workspace:*
+        version: link:../volto-iframe-block/packages/volto-iframe-block
       '@kitconcept/volto-solr':
         specifier: 2.0.0-alpha.1
         version: 2.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

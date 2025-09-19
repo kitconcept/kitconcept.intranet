@@ -13,7 +13,7 @@
     "package": "@kitconcept/volto-light-theme",
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
-    "tag": "7.0.0b4",
+    "tag": "7.0.0b5",
     "filterBlobs": true
   },
   "kitconcept-core": {
@@ -22,7 +22,7 @@
     "package": "@kitconcept/core",
     "url": "git@github.com:kitconcept/kitconcept-core.git",
     "https": "https://github.com/kitconcept/kitconcept-core.git",
-    "tag": "1.0.0a28"
+    "tag": "1.0.0a30"
   },
   "volto-banner-block": {
     "develop": true,
@@ -103,6 +103,14 @@
     "url": "git@github.com:kitconcept/volto-separator-block.git",
     "https": "https://github.com/kitconcept/volto-separator-block.git",
     "tag": "4.2.1"
+  },
+  "volto-iframe-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-iframe-block",
+    "url": "git@github.com:kitconcept/volto-iframe-block.git",
+    "https": "https://github.com/kitconcept/volto-iframe-block.git",
+    "tag": "2.3.1"
   },
   "volto-slider-block": {
     "develop": true,

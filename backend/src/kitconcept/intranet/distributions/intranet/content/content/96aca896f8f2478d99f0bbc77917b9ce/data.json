@@ -1,0 +1,536 @@
+{
+  "@id": "/features/block/form-block",
+  "@type": "Document",
+  "UID": "96aca896f8f2478d99f0bbc77917b9ce",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "03980cdc-fc0c-4834-a15d-06bfa8643555": {
+      "@type": "title"
+    },
+    "dea94ec9-b926-493c-969a-ecc5f7c4f87e": {
+      "@type": "schemaForm",
+      "cancel_label": "Abbrechen",
+      "data_wipe": -1,
+      "description": "This Form Block provides a versatile and user-friendly way to create forms in Volto. It supports a wide range of field types\u2014including text, email, date, file upload, radio groups, checkboxes, and more.",
+      "schema": {
+        "fieldsets": [
+          {
+            "fields": [
+              "name_3",
+              "name",
+              "name_1",
+              "name_2",
+              "message_3",
+              "message",
+              "message_1",
+              "message_2",
+              "number_1",
+              "number_1",
+              "number_",
+              "email_1",
+              "email_2",
+              "email",
+              "choice",
+              "choice_1",
+              "choice",
+              "boolean",
+              "boolean_1",
+              "subscribe_to_newsletter",
+              "date_2",
+              "date_1",
+              "date",
+              "datetime",
+              "datetime_1",
+              "date__time",
+              "time_1",
+              "time",
+              "preferred_contact_time",
+              "upload_resume",
+              "file",
+              "gender_1",
+              "gender",
+              "radio_group",
+              "checkbox_group_1",
+              "checkbox_group",
+              "checkbox",
+              "content",
+              "static_text",
+              "form_id",
+              "hidden_field",
+              "hidden_fields"
+            ],
+            "id": "default",
+            "title": "Default"
+          }
+        ],
+        "properties": {
+          "boolean": {
+            "factory": "label_boolean_field",
+            "id": "boolean",
+            "parentFieldSet": "default",
+            "title": "Boolean",
+            "type": "boolean"
+          },
+          "boolean_1": {
+            "description": "Boolean with required",
+            "factory": "label_boolean_field",
+            "id": "boolean_1",
+            "title": "Boolean",
+            "type": "boolean"
+          },
+          "checkbox": {
+            "default": "Music, Travel",
+            "description": "checkbox with default value",
+            "factory": "checkbox_group",
+            "id": "checkbox",
+            "title": "Checkbox Group",
+            "type": "array",
+            "values": "",
+            "widget": "checkbox_group"
+          },
+          "checkbox_group": {
+            "description": "Checkbox Group with required",
+            "factory": "checkbox_group",
+            "id": "checkbox_group",
+            "title": "Checkbox Group",
+            "type": "array",
+            "widget": "checkbox_group"
+          },
+          "checkbox_group_1": {
+            "factory": "checkbox_group",
+            "id": "checkbox_group_1",
+            "title": "Checkbox Group",
+            "type": "array",
+            "widget": "checkbox_group"
+          },
+          "choice": {
+            "choices": [],
+            "description": "Choice with required",
+            "factory": "label_choice_field",
+            "id": "choice",
+            "title": "Choice",
+            "type": "string",
+            "values": ""
+          },
+          "choice_1": {
+            "choices": [],
+            "default": "India",
+            "description": "Choice with default value",
+            "factory": "label_choice_field",
+            "id": "choice_1",
+            "title": "Choice",
+            "type": "string"
+          },
+          "content": {
+            "default": {
+              "data": "<p>Static Text field with text</p>"
+            },
+            "factory": "static_text",
+            "id": "content",
+            "parentFieldSet": "default",
+            "title": "Content",
+            "type": "object",
+            "values": "",
+            "widget": "static_text"
+          },
+          "date": {
+            "default": "1995-04-07",
+            "description": "Date with default value",
+            "factory": "label_date_field",
+            "id": "date",
+            "parentFieldSet": "default",
+            "title": "Date ",
+            "type": "string",
+            "values": "",
+            "widget": "date"
+          },
+          "date_1": {
+            "description": "Date with required",
+            "factory": "label_date_field",
+            "id": "date_1",
+            "title": "Date",
+            "type": "string",
+            "widget": "date"
+          },
+          "date_2": {
+            "factory": "label_date_field",
+            "id": "date_2",
+            "title": "Date",
+            "type": "string",
+            "widget": "date"
+          },
+          "date__time": {
+            "default": "2025-09-26T19:40:00.712Z",
+            "description": "Date and time with default value",
+            "factory": "label_datetime_field",
+            "id": "date__time",
+            "parentFieldSet": "default",
+            "title": "Date/time",
+            "type": "string",
+            "values": "",
+            "widget": "datetime"
+          },
+          "datetime": {
+            "factory": "label_datetime_field",
+            "id": "datetime",
+            "parentFieldSet": "default",
+            "title": "Date/Time",
+            "type": "string",
+            "values": "",
+            "widget": "datetime"
+          },
+          "datetime_1": {
+            "description": "Date and time are required",
+            "factory": "label_datetime_field",
+            "id": "datetime_1",
+            "title": "Date/Time",
+            "type": "string",
+            "widget": "datetime"
+          },
+          "email": {
+            "default": "jone@example.com",
+            "description": "Email with default value",
+            "factory": "label_email",
+            "id": "email",
+            "parentFieldSet": "default",
+            "title": "Email Address",
+            "type": "string",
+            "values": "",
+            "widget": "email"
+          },
+          "email_1": {
+            "factory": "label_email",
+            "id": "email_1",
+            "title": "Email Address",
+            "type": "string",
+            "widget": "email"
+          },
+          "email_2": {
+            "description": "E-Mail with required",
+            "factory": "label_email",
+            "id": "email_2",
+            "title": "E-Mail",
+            "type": "string",
+            "widget": "email"
+          },
+          "file": {
+            "factory": "File Upload",
+            "id": "file",
+            "title": "File",
+            "type": "object"
+          },
+          "form_id": {
+            "default": "contact_form_001",
+            "description": "Hidden field with default value",
+            "factory": "hidden",
+            "id": "form_id",
+            "title": "Form ID",
+            "type": "string",
+            "values": "",
+            "widget": "hidden"
+          },
+          "gender": {
+            "choices": [],
+            "default": "Male",
+            "description": "Radio group field with default value",
+            "factory": "radio_group",
+            "id": "gender",
+            "parentFieldSet": "default",
+            "title": "Gender",
+            "type": "string",
+            "values": "",
+            "widget": "radio_group"
+          },
+          "gender_1": {
+            "choices": [],
+            "default": "Male",
+            "description": "Radio Group with no required no default value",
+            "factory": "radio_group",
+            "id": "gender_1",
+            "title": "Radio Group",
+            "type": "string",
+            "values": "",
+            "widget": "radio_group"
+          },
+          "hidden_field": {
+            "description": "Hidden field with required",
+            "factory": "hidden",
+            "id": "hidden_field",
+            "title": "Hidden field",
+            "type": "string",
+            "widget": "hidden"
+          },
+          "hidden_fields": {
+            "description": "Hidden field no required and no default value",
+            "factory": "hidden",
+            "id": "hidden_fields",
+            "title": "Hidden fields",
+            "type": "string",
+            "widget": "hidden"
+          },
+          "message": {
+            "description": "Text area field with required",
+            "factory": "textarea",
+            "id": "message",
+            "parentFieldSet": "default",
+            "title": "Message",
+            "type": "string",
+            "values": "",
+            "widget": "textarea"
+          },
+          "message_1": {
+            "default": "Hello, I would like to know more about your services.",
+            "description": "Text area field with default value",
+            "factory": "textarea",
+            "id": "message_1",
+            "maxLength": 100,
+            "minLength": 1,
+            "parentFieldSet": "default",
+            "title": "Message",
+            "type": "string",
+            "values": "",
+            "widget": "textarea"
+          },
+          "message_2": {
+            "description": "Text area with placeholder",
+            "factory": "textarea",
+            "id": "message_2",
+            "maxLength": "100",
+            "minLength": "1",
+            "parentFieldSet": "default",
+            "placeholder": "Hello, I would like to know more about your services.",
+            "title": "Message",
+            "type": "string",
+            "widget": "textarea"
+          },
+          "message_3": {
+            "factory": "textarea",
+            "id": "message_3",
+            "parentFieldSet": "default",
+            "title": "Message",
+            "type": "string",
+            "widget": "textarea"
+          },
+          "name": {
+            "default": "Jone deo",
+            "description": "Text field with Required",
+            "factory": {
+              "label": "Textfeld",
+              "value": "label_text_field"
+            },
+            "id": "name",
+            "maxLength": 100,
+            "minLength": 1,
+            "parentFieldSet": "default",
+            "placeholder": "Max Mustermann",
+            "title": "Name",
+            "type": "string",
+            "values": ""
+          },
+          "name_1": {
+            "default": "Jonny str",
+            "description": "Text field with Default value",
+            "factory": {
+              "label": "Textfeld",
+              "value": "label_text_field"
+            },
+            "id": "name_1",
+            "title": "Name",
+            "type": "string",
+            "values": ""
+          },
+          "name_2": {
+            "description": "Text field with placeholder",
+            "factory": {
+              "label": "Textfeld",
+              "value": "label_text_field"
+            },
+            "id": "name_2",
+            "placeholder": "Max Alexender",
+            "title": "Name",
+            "type": "string",
+            "values": ""
+          },
+          "name_3": {
+            "factory": {
+              "label": "Textfeld",
+              "value": "label_text_field"
+            },
+            "id": "name_3",
+            "title": "Name",
+            "type": "string"
+          },
+          "number_": {
+            "default": "35",
+            "description": "Number with default value",
+            "factory": "number",
+            "id": "number_",
+            "parentFieldSet": "default",
+            "title": "Number ",
+            "type": "number",
+            "values": ""
+          },
+          "number_1": {
+            "description": "Number with required",
+            "factory": "number",
+            "id": "number_1",
+            "parentFieldSet": "default",
+            "title": "Number",
+            "type": "number",
+            "values": ""
+          },
+          "preferred_contact_time": {
+            "default": "03:42",
+            "description": "Time with default value",
+            "factory": "time",
+            "id": "preferred_contact_time",
+            "parentFieldSet": "default",
+            "title": "Time",
+            "type": "string",
+            "values": "",
+            "widget": "time"
+          },
+          "radio_group": {
+            "choices": [],
+            "description": "Radio group with required",
+            "factory": "radio_group",
+            "id": "radio_group",
+            "parentFieldSet": "default",
+            "title": "Radio Group",
+            "type": "string",
+            "values": "",
+            "widget": "radio_group"
+          },
+          "static_text": {
+            "description": "Static Text with required",
+            "factory": "static_text",
+            "id": "static_text",
+            "title": "Static Text",
+            "type": "object",
+            "widget": "static_text"
+          },
+          "subscribe_to_newsletter": {
+            "default": "Yes",
+            "description": "Boolean with default value",
+            "factory": "label_boolean_field",
+            "id": "subscribe_to_newsletter",
+            "parentFieldSet": "default",
+            "title": "Boolean",
+            "type": "boolean",
+            "values": ""
+          },
+          "time": {
+            "description": "Time with required",
+            "factory": "time",
+            "id": "time",
+            "title": "Time",
+            "type": "string",
+            "widget": "time"
+          },
+          "time_1": {
+            "factory": "time",
+            "id": "time_1",
+            "parentFieldSet": "default",
+            "title": "Time",
+            "type": "string",
+            "widget": "time"
+          },
+          "upload_resume": {
+            "description": "File with required",
+            "factory": "File Upload",
+            "id": "upload_resume",
+            "title": "Upload Resume",
+            "type": "object",
+            "values": ""
+          }
+        },
+        "required": [
+          "name",
+          "email_2",
+          "boolean_1",
+          "date_1",
+          "datetime_1",
+          "message",
+          "choice",
+          "time",
+          "number_1",
+          "upload_resume",
+          "checkbox_group",
+          "static_text",
+          "hidden_field",
+          "radio_group"
+        ]
+      },
+      "sender": "noreply@plone.org",
+      "sender_name": "Plone",
+      "show_cancel": false,
+      "subject": "Volto Form Block",
+      "submit_label": "Senden",
+      "success": "Vielen Dank! Sie haben folgende Daten \u00fcbermittelt:",
+      "thankyou": "${formfields}",
+      "title": "Form block with Required , Placeholder and Default value."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "03980cdc-fc0c-4834-a15d-06bfa8643555",
+      "dea94ec9-b926-493c-969a-ecc5f7c4f87e"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-09-19T09:29:28+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-09-19T11:48:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "form-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-22T13:41:16+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Form",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-09-19T09:29:28+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-19T11:48:03+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

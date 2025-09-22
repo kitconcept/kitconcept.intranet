@@ -1,1 +1,0 @@
-Additional solr updates @reebalazs

@@ -1,1 +1,0 @@
-Add IFrame block example content and IFrane allowed domains setting. @danalvrz

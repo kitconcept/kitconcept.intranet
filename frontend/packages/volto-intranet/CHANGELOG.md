@@ -8,6 +8,67 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.8 (2025-09-22)
+
+### Feature
+
+- Add sticky feedback button @iRohitSingh [#123](https://github.com/kitconcept/kitconcept.intranet/issue/123)
+- Add a wrapper(InheritedFieldWrapper) for showing inheritedField description and add expanders of lcm. @iFlameing [#178](https://github.com/kitconcept/kitconcept.intranet/issue/178)
+- Added support for squared person images in teaser and listings. @sneridagh [#181](https://github.com/kitconcept/kitconcept.intranet/issue/181)
+- Move https://github.com/kitconcept/volto-light-theme/pull/614 to here.
+  Added TTW ConfigInjector feature. @sneridagh [#186](https://github.com/kitconcept/kitconcept.intranet/issue/186)
+- Additional solr updates @reebalazs [#191](https://github.com/kitconcept/kitconcept.intranet/issue/191)
+- Use new image field for persons. Upgrade to Plone 6.1.2, core 1a21, VLT7a26. @sneridagh [#201](https://github.com/kitconcept/kitconcept.intranet/issue/201)
+- Add custom view for Person content type. @danalvrz [#236](https://github.com/kitconcept/kitconcept.intranet/issue/236)
+- Add German as a supported frontend language. @davisagli 
+- Add IFrame block. @danalvrz 
+- Add RSS block. @danalvrz 
+- Add byline in a slot below the title. @Tishasoumya-02 
+- Add documentByLine feature @Tishasoumya-02 
+- Add listing template listing with Date and cypress test for the same @Tishasoumya-02 
+- Implement SOLR support using @kitconcept/volto-solr version 2.0.0-alpha.2. @ericof 
+- Move the person square control panel field to have a dropdown, in order for it to be future proof. @sneridagh 
+
+### Bugfix
+
+- Fix extra pipe separator after "Log in" link. @davisagli [#138](https://github.com/kitconcept/kitconcept.intranet/issue/138)
+- Upgrade @plone-collective/volto-authomatic to version 3.0.0-alpha.4. @ericof [#180](https://github.com/kitconcept/kitconcept.intranet/issue/180)
+- Several misc fixes. Update to core 1a18 and VLT 7a25. @sneridagh [#196](https://github.com/kitconcept/kitconcept.intranet/issue/196)
+- Fix console error in StickyFeedbackButton @iRohitSingh [#238](https://github.com/kitconcept/kitconcept.intranet/issue/238)
+- Add missing translations. Includes updating to Volto 18.26.0, VLT 7.0.0b2, and kitconcept-core 1.0.0a25. @davisagli 
+- Change name of person_picture_aspect_ratio setting. @sneridagh 
+- Fixed CSS problem in Search block. @sneridagh 
+- Fixed problem with Person still showing blocks. Update core to 1a27. @sneridagh 
+- Fixed regression in person grid teasers in edit mode. @sneridagh 
+- Fixed slider flag position in simple variant, and calendar block icon. @sneridagh 
+- Hide Roles field from Person edit form. @davisagli 
+- Update iframe block to version 2.3.2. @danalvrz 
+- Use Image component for showing image in PersonView component. @iFlameing 
+
+### Internal
+
+- Fix acceptance test stability. @davisagli [#139](https://github.com/kitconcept/kitconcept.intranet/issue/139)
+- Fix A11y test @iRohitSingh [#171](https://github.com/kitconcept/kitconcept.intranet/issue/171)
+- Add cypress test for location and organisational unit content type. @iFlameing [#172](https://github.com/kitconcept/kitconcept.intranet/issue/172)
+- Add cypress test of organisational_unit and location behaviors of Person content type. @iFlameing [#174](https://github.com/kitconcept/kitconcept.intranet/issue/174)
+- Fix A11y of image block @iRohitSingh [#182](https://github.com/kitconcept/kitconcept.intranet/issue/182)
+- Revert all the changes of feedback form. @iFlameing [#198](https://github.com/kitconcept/kitconcept.intranet/issue/198)
+- Add missing a11y test @iRohitSingh [#202](https://github.com/kitconcept/kitconcept.intranet/issue/202)
+- remove empty text rule in gridtext axe test jackahl [#203](https://github.com/kitconcept/kitconcept.intranet/issue/203)
+- remove unnecessary rule disabelings in axe tests to harden them @jackahl [#212](https://github.com/kitconcept/kitconcept.intranet/issue/212)
+- add a check for succesfull content request on all axe a11y tests to avaoid checking the 404 page @jackahl [#217](https://github.com/kitconcept/kitconcept.intranet/issue/217)
+- remove further axe rule disabelings @jackahl [#221](https://github.com/kitconcept/kitconcept.intranet/issue/221)
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#227](https://github.com/kitconcept/kitconcept.intranet/issue/227)
+- remove unique-id rule disabling in accordion a11y block @jackahl [#229](https://github.com/kitconcept/kitconcept.intranet/issue/229)
+- Fix A11y of grid text @iRohitSingh [#231](https://github.com/kitconcept/kitconcept.intranet/issue/231)
+- Remove the features transfered already to k.core. @sneridagh [#240](https://github.com/kitconcept/kitconcept.intranet/issue/240)
+- Add German Translation for List with date @Tishasoumya-02 
+- Add cypress test for preview image link using Image Widget @Tishasoumya-02 
+- Add cypress test for sticky Menu @Tishasoumya-02 
+- Check for 200 status in a11y tests. @davisagli 
+- Hide LCM field and StickyFeedbackButton slide from left. @iFlameing 
+- Update example content for slider-simple @Tishasoumya-02 
+
 ## 1.0.0-beta.7 (2025-08-05)
 
 ### Feature

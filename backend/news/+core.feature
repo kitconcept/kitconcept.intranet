@@ -1,1 +1,0 @@
-Update kitconcept to 1.0.0a29 version. @iFlameing

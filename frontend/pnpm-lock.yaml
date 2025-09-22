@@ -1841,8 +1841,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-iframe-block/packages/volto-iframe-block
       '@kitconcept/volto-solr':
-        specifier: 2.0.0-alpha.2
-        version: 2.0.0-alpha.2(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 2.0.0-alpha.3
+        version: 2.0.0-alpha.3(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone-collective/volto-authomatic':
         specifier: 3.0.0-alpha.4
         version: 3.0.0-alpha.4(@plone/components@core+packages+components)(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -2118,59 +2118,6 @@ importers:
       embla-carousel-react:
         specifier: ^8.0.0
         version: 8.5.2(react@18.2.0)
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.1
-      release-it:
-        specifier: ^17.1.1
-        version: 17.11.0(typescript@5.8.3)
-
-  packages/volto-social-media/frontend/packages/volto-social-media:
-    dependencies:
-      '@plone/components':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/components
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.2
-        version: 3.10.1
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@types/jest':
-        specifier: ^29.5.8
-        version: 29.5.14
-      '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.17.20
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.23
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.23)
-      react-intl:
-        specifier: ^3.12.1
-        version: 3.12.1(react@18.2.0)
-      release-it:
-        specifier: ^17.7.0
-        version: 17.11.0(typescript@5.8.3)
-
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -3771,8 +3718,8 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
 
-  '@kitconcept/volto-solr@2.0.0-alpha.2':
-    resolution: {integrity: sha512-pMCSGTgQmbTY/KgBJDvECl5Z8649dr5gKI4L0H0eGxPwoWnLSFYaCq5sKqir//CVgwpY26O2nzKrj5qzuXkttQ==}
+  '@kitconcept/volto-solr@2.0.0-alpha.3':
+    resolution: {integrity: sha512-/SOu00sG7mNep0iQpc8S2RqMqh0aTzd4f5zHHmLDH9NuR52KACrR7aBaYVsi91zpMWRsP64ULLSNF4UUHdgLGg==}
     peerDependencies:
       react: 18.2.0
       react-autosuggest: 10.1.0
@@ -17642,7 +17589,7 @@ snapshots:
     transitivePeerDependencies:
       - embla-carousel
 
-  '@kitconcept/volto-solr@2.0.0-alpha.2(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-solr@2.0.0-alpha.3(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       buffer: 5.7.1
       lodash.debounce: 4.0.8
@@ -21415,7 +21362,7 @@ snapshots:
       sirv: 3.0.1
       tinyglobby: 0.2.14
       tinyrainbow: 1.2.0
-      vitest: 2.1.9(@types/node@22.16.2)(@vitest/ui@2.1.9)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
+      vitest: 2.1.9(@types/node@20.19.6)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
     optional: true
 
   '@vitest/ui@2.1.9(vitest@3.2.4)':

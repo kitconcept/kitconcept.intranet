@@ -38,13 +38,40 @@
       },
       "title": "codioful-formerly-gradienta-lweK7Wme_jo-unsplash.jpg",
       "url": "../resolveuid/75f2d0b5a1f04f7a922c47be34f9f532"
+    },
+    "cc82ccc2-8e5d-4a33-9dc1-ab954d2412a8": {
+      "@type": "slate"
+    },
+    "d0b44ce9-497b-4611-8da3-78e4dac2eba6": {
+      "@type": "listing",
+      "headline": "Unsere Standorte",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Location"
+            ]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending",
+        "sort_order_boolean": false
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
     }
   },
   "blocks_layout": {
     "items": [
       "bafa192c-a61e-499b-9e22-f1799d22aaad",
       "c30a11c1-a250-47b2-bab3-63380c662442",
-      "9bdc943a-3a45-4cf5-854b-8f5238cb714a"
+      "9bdc943a-3a45-4cf5-854b-8f5238cb714a",
+      "d0b44ce9-497b-4611-8da3-78e4dac2eba6",
+      "cc82ccc2-8e5d-4a33-9dc1-ab954d2412a8"
     ]
   },
   "changeNote": "",
@@ -69,7 +96,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-09-08T08:05:40+00:00",
+  "modified": "2025-09-22T09:24:05+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,

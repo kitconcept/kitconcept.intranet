@@ -1,5 +1,4 @@
-import './theme/custom.scss';
-import { ConfigType } from '@plone/registry';
+import type { ConfigType } from '@plone/registry';
 import installSettings from './config/settings';
 import installSlots from './config/slots';
 import installWidgets from './config/widgets';

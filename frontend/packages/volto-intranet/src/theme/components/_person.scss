@@ -127,25 +127,107 @@ address {
   }
 }
 
-@media (max-width: 980px) {
-  .person-profile {
-    padding: 0 $spacing-small;
+// Bio section border responsive display
+.bio-section-border--desktop,
+.bio-section-border--tablet,
+.bio-section-border--mobile {
+  width: 100%;
+  height: auto;
+}
+
+.bio-section-border--desktop {
+  display: block;
+}
+
+.bio-section-border--tablet,
+.bio-section-border--mobile {
+  display: none;
+}
+
+@media (max-width: 730px) {
+  .bio-section-border--desktop {
+    display: none;
+  }
+  .bio-section-border--tablet {
+    display: block;
   }
 }
 
-@media (max-width: 769px) {
-  .profile-header {
-    flex-direction: column;
-    gap: $spacing-small;
-    text-align: center;
-  }
+@media (max-width: 980px) {
+  .person-profile {
+    padding: 0 $spacing-small;
 
-  .profile-info h1 {
-    font-size: 1.5rem;
-  }
+    .profile-header {
+      padding-bottom: $spacing-large;
 
-  .contact-wrapper {
-    gap: $spacing-medium;
-    grid-template-columns: 1fr;
+      .profile-info {
+        h1 {
+          margin-top: 25px;
+          margin-bottom: $spacing-small;
+          font-size: 30px;
+          font-weight: $bold;
+          line-height: 36px;
+        }
+        .affiliations {
+          font-size: 21px;
+          font-weight: $light;
+          line-height: 30px;
+        }
+      }
+    }
+
+    .profile-image {
+      width: 210px;
+      height: 210px;
+    }
+    .contact-wrapper,
+    .bio-section {
+      padding-bottom: $spacing-large;
+
+      h2 {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+    .bio-section {
+      padding-top: 30px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .bio-section-border--tablet {
+    display: none;
+  }
+  .bio-section-border--mobile {
+    display: block;
+  }
+}
+
+@media (max-width: $largest-mobile-screen) {
+  .person-profile {
+    .profile-header {
+      flex-direction: column;
+      align-items: start;
+      padding-bottom: $spacing-small;
+      gap: $spacing-small;
+      text-align: left;
+
+      .profile-info h1 {
+        margin-bottom: $spacing-medium !important;
+      }
+    }
+    .contact-wrapper {
+      gap: $spacing-small;
+      grid-template-columns: 1fr;
+
+      section {
+        padding-top: $spacing-medium;
+      }
+    }
+    .bio-section {
+      padding-top: 0;
+      padding-bottom: $spacing-medium;
+    }
   }
 }

@@ -1,8 +1,8 @@
-import pytest
+from kitconcept.intranet.vocabularies.base import CatalogVocabulary
 from plone import api
 from plone.app.vocabularies import SimpleVocabulary
 
-from kitconcept.intranet.vocabularies.base import CatalogVocabulary
+import pytest
 
 
 class TestVocab:

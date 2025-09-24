@@ -4,6 +4,7 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import PersonView from './components/theme/PersonView';
+import PersonSummary from './components/Summary/PersonSummary';
 import { defineMessages } from 'react-intl';
 
 defineMessages({
@@ -27,7 +28,14 @@ const applyConfig = (config: ConfigType) => {
   (
     config.settings.solrSearchOptions as { showSearchInput?: boolean }
   ).showSearchInput = false;
+
   config.views.contentTypesViews.Person = PersonView;
+  config.registerComponent({
+    name: 'Summary',
+    component: PersonSummary,
+    dependencies: ['Person'],
+  });
+
   return config;
 };
 

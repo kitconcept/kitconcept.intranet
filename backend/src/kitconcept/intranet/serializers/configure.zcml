@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="dlr.internet"
+    >
+
+  <utility
+      factory=".summary.JSONSummarySerializerMetadata"
+      name="kitconcept.intranet.summary_serializer_metadata"
+      />
+
+</configure>

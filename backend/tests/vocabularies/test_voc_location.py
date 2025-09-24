@@ -1,8 +1,8 @@
-from kitconcept.intranet.vocabularies.base import CatalogVocabulary
+import pytest
 from plone import api
 from plone.app.vocabularies import SimpleVocabulary
 
-import pytest
+from kitconcept.intranet.vocabularies.base import CatalogVocabulary
 
 
 class TestVocab:
@@ -19,7 +19,7 @@ class TestVocab:
         assert isinstance(self.vocab, self.vocab_type)
 
     @pytest.mark.parametrize(
-        "token,title", [("97e82b07b5444728b1517de15c79fefb", "Headquarters (Bonn)")]
+        "token,title", [("97e82b07b5444728b1517de15c79fefb", "Standort Bonn")]
     )
     def test_vocab_terms(self, token: str, title: str):
         term = self.vocab.getTermByToken(token)

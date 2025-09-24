@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250918002"
+      destination="20250924001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add job_title to catalog metadata"
+        import_steps="catalog"
+        />
+    <genericsetup:upgradeDepends
+        title="Add academic title to Person title"
+        import_steps="plone.app.registry"
+        />
+    <genericsetup:upgradeStep
+        title="Reindex Person content"
+        handler=".reindex_person"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

@@ -39,4 +39,9 @@
       provides=".person.IPersonBehavior"
       />
 
+  <utility
+      factory=".person.AcademicTitleFirstLastName"
+      name="academic_title_first_last"
+      />
+
 </configure>

@@ -77,5 +77,6 @@ const PersonSummary = (props) => {
     </>
   );
 };
+PersonSummary.hideLink = true;
 
 export default PersonSummary;

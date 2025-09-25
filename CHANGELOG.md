@@ -1,6 +1,34 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b10 (2025-09-25)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix search input styles in header @reebalazs [#173](https://github.com/kitconcept/kitconcept.intranet/issue/173)
+
+#### Internal
+
+- Fix cypress test for calendar block. @iFlameing 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b9 (2025-09-25)
 
 ### Backend

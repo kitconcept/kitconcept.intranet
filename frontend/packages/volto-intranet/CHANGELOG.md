@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.10 (2025-09-25)
+
+### Bugfix
+
+- Fix search input styles in header @reebalazs [#173](https://github.com/kitconcept/kitconcept.intranet/issue/173)
+
+### Internal
+
+- Fix cypress test for calendar block. @iFlameing 
+
 ## 1.0.0-beta.9 (2025-09-25)
 
 ### Bugfix

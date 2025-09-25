@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.9 (2025-09-25)
+
+### Bugfix
+
+- Fix Person Profile View Tablet and Mobile View @iRohitSingh [#247](https://github.com/kitconcept/kitconcept.intranet/issue/247)
+- Fix link font size of person view @iRohitSingh [#249](https://github.com/kitconcept/kitconcept.intranet/issue/249)
+- Add Person job title to the summary used in listings and teasers. @davisagli 
+- Don't link to Person profile view in listings and teasers. @davisagli 
+- Fix correct import for custom search css @reebalazs 
+- Reset teaser button fix. Update to core 1b0. @sneridagh 
+
 ## 1.0.0-beta.8 (2025-09-22)
 
 ### Feature

@@ -1,6 +1,52 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b9 (2025-09-25)
+
+### Backend
+
+
+#### Bugfix
+
+- Add Person job title to catalog metadata and default summary fields.
+  There is an upgrade step to update the catalog.
+  @davisagli 
+- Include academic title in Person content title.
+  There is an upgrade step to enable this and reindex existing Person content.
+  @davisagli 
+- Reset teaser button fix. Update to core 1b0. @sneridagh 
+
+
+#### Internal
+
+- Add example content of volto form block and update example content of
+  Person Profile @iRohitSingh [#244](https://github.com/kitconcept/kitconcept.intranet/issue/244)
+- Add three location example content objects [#246](https://github.com/kitconcept/kitconcept.intranet/issue/246)
+- Add job titles to person example content @tisto [#254](https://github.com/kitconcept/kitconcept.intranet/issue/254)
+- Update to kitconcept.voltolighttheme 7.0.0b7 and kitconcept.core 1.0.0a31. @davisagli 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix Person Profile View Tablet and Mobile View @iRohitSingh [#247](https://github.com/kitconcept/kitconcept.intranet/issue/247)
+- Fix link font size of person view @iRohitSingh [#249](https://github.com/kitconcept/kitconcept.intranet/issue/249)
+- Add Person job title to the summary used in listings and teasers. @davisagli 
+- Don't link to Person profile view in listings and teasers. @davisagli 
+- Fix correct import for custom search css @reebalazs 
+- Reset teaser button fix. Update to core 1b0. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b8 (2025-09-22)
 
 ### Backend

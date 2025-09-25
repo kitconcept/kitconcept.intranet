@@ -2,6 +2,7 @@
 Based on the PersonSummary in volto-light-theme.
 Customizations:
 - Add the job_title
+- Set hideLink = true
 */
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
@@ -77,5 +78,6 @@ const PersonSummary = (props) => {
     </>
   );
 };
+PersonSummary.hideLink = true;
 
 export default PersonSummary;

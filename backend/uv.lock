@@ -91,9 +91,9 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.4.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==1.0.0a30" },
+    { name = "kitconcept-core", specifier = "==1.0.0a31" },
     { name = "kitconcept-solr", specifier = "==2.0.0a3" },
-    { name = "kitconcept-voltolighttheme", specifier = "==7.0.0b5" },
+    { name = "kitconcept-voltolighttheme", specifier = "==7.0.0b7" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.4.0" },
@@ -1298,7 +1298,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.0a30"
+version = "1.0.0a31"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1312,9 +1312,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/64/18/b59d61ee2feed2930ef2799080c34204b23621e9489bde1383bc8f037253/kitconcept_core-1.0.0a30.tar.gz", hash = "sha256:cf78ae273bc3a73499a17845d7d83c61cca8c41478058230cb932d33004e1343", size = 318818, upload-time = "2025-09-18T17:15:39.136Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/12/4c/b5d536322e929c5ce11f25e8fc432b4d89e63927cbcec40e9b66653cab16/kitconcept_core-1.0.0a31.tar.gz", hash = "sha256:533b3d523756c90b098bedfd0a44f1d547870efb275ad638bae0c076eb94de01", size = 326235, upload-time = "2025-09-25T03:10:31.325Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8f/67/71739945ff22174e7bd16b7fc6c24a92ae927269489ee17d0668800ecc82/kitconcept_core-1.0.0a30-py3-none-any.whl", hash = "sha256:bf27d1b9037563d8f4a8c9b301feb31a1740f4e45314fae5c9b71306c3dbb0c6", size = 240973, upload-time = "2025-09-18T17:15:40.77Z" },
+    { url = "https://files.pythonhosted.org/packages/3e/99/3a8fb4c4f390078ae48792ad62eef304e25b0135c03d76623094c5845c62/kitconcept_core-1.0.0a31-py3-none-any.whl", hash = "sha256:55e445bdccaad0d9efd5107ab799213ffbc2dbb7af4d762d75f5e784a3d62362", size = 240973, upload-time = "2025-09-25T03:10:29.627Z" },
 ]
 
 [[package]]
@@ -1359,7 +1359,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "kitconcept-core", specifier = "==1.0.0a30" },
+    { name = "kitconcept-core", specifier = "==1.0.0a31" },
     { name = "kitconcept-solr", specifier = "==2.0.0a3" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1414,7 +1414,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "7.0.0b5"
+version = "7.0.0b7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1423,9 +1423,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e7/18/835a61ab10c9e3e20b5fd0042d361bc1a7f6ea3cb1032f76b48e3d1b5731/kitconcept_voltolighttheme-7.0.0b5.tar.gz", hash = "sha256:e2b637c1e9940cfd4e48f9bdff77732a9cd5b030287b3f8ca63c0d4fd2828e6b", size = 8999671, upload-time = "2025-09-18T16:51:49.847Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/98/03/149136265928e5c3067c489f755a00b44be8cbbc66e42888efe10c6862fb/kitconcept_voltolighttheme-7.0.0b7.tar.gz", hash = "sha256:9927148775acf371e7298ed54952c7bd3947f79e77cf0c3b8923ac163b57d75c", size = 8999665, upload-time = "2025-09-25T02:51:32.186Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e7/58/06da75e6d3d88441869f79c6cc1665469949e48932072a267a85f3b74ea0/kitconcept_voltolighttheme-7.0.0b5-py3-none-any.whl", hash = "sha256:4e59b7d69951b14c38d73234a1bc522c710bc01903fbd492a332a33708e2fee0", size = 9054406, upload-time = "2025-09-18T16:51:52.918Z" },
+    { url = "https://files.pythonhosted.org/packages/23/c0/07f49dbc04ff49059603b061fb60f21cd3e0b0dca1f3c62547a3e062f537/kitconcept_voltolighttheme-7.0.0b7-py3-none-any.whl", hash = "sha256:55b6d5e4cfdd2e89eac81426ec52a2af342b4166e454781c169aa61942485095", size = 9054925, upload-time = "2025-09-25T02:51:28.985Z" },
 ]
 
 [[package]]

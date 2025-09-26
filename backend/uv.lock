@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = "==3.12.*"
 
 [options]
@@ -91,7 +91,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.4.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==1.0.0b0" },
+    { name = "kitconcept-core", specifier = "==1.0.0b1" },
     { name = "kitconcept-solr", specifier = "==2.0.0a3" },
     { name = "kitconcept-voltolighttheme", specifier = "==7.0.0" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
@@ -1298,7 +1298,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.0b0"
+version = "1.0.0b1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1312,9 +1312,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b5/fa/c6f47c31f8279d2671e632b16711f5c9b96fd6611397f3b9bb56c162c279/kitconcept_core-1.0.0b0.tar.gz", hash = "sha256:8a95ccfd30ed80b57c8b0e34d0da233f5f77ce5abd356c91cb58386ef80b7b7b", size = 326348, upload-time = "2025-09-25T08:28:13.539Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0f/bd/c43494f7698c74d843186437e3fa6fc371ac331de0858c25c3e7d930cfac/kitconcept_core-1.0.0b1.tar.gz", hash = "sha256:a0b5b50ab08c7e21fe8513187467f6117310259b5cae205b199b7351f53cfcf5", size = 326353, upload-time = "2025-09-26T14:27:42.515Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/02/f5/61d94ec6763b465ad4bdecffb9911170835be344edf799121c755324f551/kitconcept_core-1.0.0b0-py3-none-any.whl", hash = "sha256:5dee8754d64a48e8dfdf04afa05abe3af87dd83f42ec1993a95764dfaece05c1", size = 240961, upload-time = "2025-09-25T08:28:12.158Z" },
+    { url = "https://files.pythonhosted.org/packages/44/e4/4fb164009ce388880ccc41f0a29108d9556f34844543b11de950147ba2b6/kitconcept_core-1.0.0b1-py3-none-any.whl", hash = "sha256:7a29452e9af57f711f5a8ea835355dae6e9d5e69fb68f5bdb0bb8bc49710d6d2", size = 240959, upload-time = "2025-09-26T14:27:43.851Z" },
 ]
 
 [[package]]
@@ -1359,7 +1359,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "kitconcept-core", specifier = "==1.0.0b0" },
+    { name = "kitconcept-core", specifier = "==1.0.0b1" },
     { name = "kitconcept-solr", specifier = "==2.0.0a3" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

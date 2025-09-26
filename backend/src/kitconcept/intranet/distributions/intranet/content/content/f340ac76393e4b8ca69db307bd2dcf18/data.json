@@ -29,6 +29,11 @@
             "v": [
               "Person"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/personen"
           }
         ],
         "sort_on": "sortable_title",
@@ -40,26 +45,34 @@
     },
     "e852ab4d-4574-4b15-9e40-230810ab9b5f": {
       "@type": "teaser",
-      "description": "Tim Werner, LL.M. ist Pr\u00fcfer im Bereich \u00d6ffentliche Finanzen und in der Abteilung Haushalts- und Strukturkontrolle t\u00e4tig. Seine Schwerpunkte liegen im Haushaltsrecht, der Mittelverwendung und der Bewertung \u00f6ffentlicher Projekte. Er f\u00fchrt Pr\u00fcfungen durch, erstellt fundierte Pr\u00fcfberichte und ber\u00e4t zu Optimierungspotenzialen im Haushaltsvollzug. Mit seiner juristischen Expertise im Verwaltungsrecht, seiner Erfahrung in der Bilanzanalyse sowie dem sicheren Umgang mit MS Excel und spezialisierter Pr\u00fcfsoftware tr\u00e4gt er zur Transparenz und Effizienz \u00f6ffentlicher Finanzen bei.",
+      "description": "",
       "head_title": null,
       "href": [
         {
           "@id": "../../resolveuid/059feee144a44bf88a3b38fbe9deca65",
           "@type": "Person",
           "Description": "Tim Werner, LL.M. ist Pr\u00fcfer im Bereich \u00d6ffentliche Finanzen und in der Abteilung Haushalts- und Strukturkontrolle t\u00e4tig. Seine Schwerpunkte liegen im Haushaltsrecht, der Mittelverwendung und der Bewertung \u00f6ffentlicher Projekte. Er f\u00fchrt Pr\u00fcfungen durch, erstellt fundierte Pr\u00fcfberichte und ber\u00e4t zu Optimierungspotenzialen im Haushaltsvollzug. Mit seiner juristischen Expertise im Verwaltungsrecht, seiner Erfahrung in der Bilanzanalyse sowie dem sicheren Umgang mit MS Excel und spezialisierter Pr\u00fcfsoftware tr\u00e4gt er zur Transparenz und Effizienz \u00f6ffentlicher Finanzen bei.",
+          "Subject": [],
           "Title": "Tim Werner, LL.M.",
+          "contact_building": "B19",
           "contact_email": "tim.werner@example.com",
           "contact_phone": "0221 3902 323",
           "contact_room": "R874",
-          "description": "Tim Werner, LL.M. ist Pr\u00fcfer im Bereich \u00d6ffentliche Finanzen und in der Abteilung Haushalts- und Strukturkontrolle t\u00e4tig. Seine Schwerpunkte liegen im Haushaltsrecht, der Mittelverwendung und der Bewertung \u00f6ffentlicher Projekte. Er f\u00fchrt Pr\u00fcfungen durch, erstellt fundierte Pr\u00fcfberichte und ber\u00e4t zu Optimierungspotenzialen im Haushaltsvollzug. Mit seiner juristischen Expertise im Verwaltungsrecht, seiner Erfahrung in der Bilanzanalyse sowie dem sicheren Umgang mit MS Excel und spezialisierter Pr\u00fcfsoftware tr\u00e4gt er zur Transparenz und Effizienz \u00f6ffentlicher Finanzen bei.",
+          "description": "",
           "effective": "1969-12-30T22:00:00+00:00",
           "end": null,
+          "getObjSize": "7.7 KB",
           "getRemoteUrl": null,
           "hasPreviewImage": null,
           "head_title": null,
           "image_field": "image",
+          "job_title": "Pr\u00fcfer \u2013 \u00d6ffentliche Finanzen",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
           "start": null,
-          "title": "Tim Werner, LL.M."
+          "title": "Tim Werner, LL.M.",
+          "type_title": "Person"
         }
       ],
       "overwrite": false,
@@ -100,7 +113,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-09-08T08:05:50+00:00",
+  "modified": "2025-09-26T19:37:27+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

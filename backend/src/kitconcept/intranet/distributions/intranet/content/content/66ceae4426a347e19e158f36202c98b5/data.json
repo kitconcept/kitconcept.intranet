@@ -7,6 +7,18 @@
   "blocks": {
     "3ffb70b3-51f1-4d9f-bbe6-a23e8bb1ca1a": {
       "@type": "eventCalendar",
+      "query": {
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "."
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
       "showSearchInput": true,
       "showTotalResults": true
     },
@@ -15,6 +27,16 @@
     },
     "undefined": {
       "@type": "eventCalendar",
+      "query": {
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "."
+          }
+        ],
+        "sort_order": "ascending"
+      },
       "showSearchInput": true,
       "showTotalResults": true
     }
@@ -47,7 +69,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-09-08T08:03:41+00:00",
+  "modified": "2025-09-26T19:06:03+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,

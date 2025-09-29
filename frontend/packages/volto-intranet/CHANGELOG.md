@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.11 (2025-09-29)
+
+### Bugfix
+
+- Fixed CSS issue with top blocks. Upgrade to core 1b2 (Volto 18.27.2 and VLT 7.1.0) @sneridagh 
+- Fixed reset button in teasers using `preview_image_link`. Update to Volto 18.27.0. @sneridagh
+  Redirect the user to homepage after logout. Update kitconcept-core to `1.0.0-beta.1`. @iFlameing 
+
 ## 1.0.0-beta.10 (2025-09-25)
 
 ### Bugfix

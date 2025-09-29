@@ -1,6 +1,40 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b11 (2025-09-29)
+
+### Backend
+
+
+#### Bugfix
+
+- Update kitconcept.core to 1.0.0b1. @iFlameing [#258](https://github.com/kitconcept/kitconcept.intranet/issue/258)
+- Fixed CSS issue with top blocks. Upgrade to core 1b2 (Volto 18.27.2 and VLT 7.1.0) @sneridagh 
+
+
+#### Internal
+
+- Update example content. Use German names, fix multiple smaller issues. @tisto [#259](https://github.com/kitconcept/kitconcept.intranet/issue/259)
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed CSS issue with top blocks. Upgrade to core 1b2 (Volto 18.27.2 and VLT 7.1.0) @sneridagh 
+- Fixed reset button in teasers using `preview_image_link`. Update to Volto 18.27.0. @sneridagh
+  Redirect the user to homepage after logout. Update kitconcept-core to `1.0.0-beta.1`. @iFlameing 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b10 (2025-09-25)
 
 ### Backend

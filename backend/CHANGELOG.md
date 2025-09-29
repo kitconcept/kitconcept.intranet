@@ -2,6 +2,19 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b11 (2025-09-29)
+
+
+### Bugfix
+
+- Update kitconcept.core to 1.0.0b1. @iFlameing [#258](https://github.com/kitconcept/kitconcept.intranet/issue/258)
+- Fixed CSS issue with top blocks. Upgrade to core 1b2 (Volto 18.27.2 and VLT 7.1.0) @sneridagh 
+
+
+### Internal
+
+- Update example content. Use German names, fix multiple smaller issues. @tisto [#259](https://github.com/kitconcept/kitconcept.intranet/issue/259)
+
 ## 1.0.0b10 (2025-09-25)
 
 No significant changes.

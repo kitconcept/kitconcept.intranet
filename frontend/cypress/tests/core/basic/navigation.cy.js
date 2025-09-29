@@ -15,7 +15,6 @@ describe('Navigation', () => {
     cy.findByLabelText('Personal tools').click();
     cy.get('#toolbar-logout').click();
     cy.wait(1000);
-    cy.navigate('/');
     cy.wait('@content');
     cy.get('#navigation ul').contains('My Page').should('not.exist');
   });

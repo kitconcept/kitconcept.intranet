@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.13 (2025-10-01)
+
+### Bugfix
+
+- Added smartRenderer for customization of PersonSummary. @sneridagh 
+
 ## 1.0.0-beta.12 (2025-10-01)
 
 ### Bugfix

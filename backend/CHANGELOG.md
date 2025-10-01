@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b12 (2025-10-01)
+
+
+### Bugfix
+
+- Added smartTextRenderer, fix icons in calendar, fix low res images in cards, fix regression in teasers in edit mode. @sneridagh 
+
 ## 1.0.0b11 (2025-09-29)
 
 

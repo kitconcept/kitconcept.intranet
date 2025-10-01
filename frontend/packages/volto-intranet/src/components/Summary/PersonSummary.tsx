@@ -10,6 +10,7 @@ import mailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@plone/volto/icons/map.svg';
 import phoneSVG from '@plone/volto/icons/mobile.svg';
 import { defineMessages, useIntl } from 'react-intl';
+import { smartTextRenderer } from '@kitconcept/volto-light-theme/helpers/smartText';
 
 const messages = defineMessages({
   phone: {
@@ -36,7 +37,9 @@ const PersonSummary = (props) => {
       <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!hide_description && <p className="description">{item.description}</p>}
+      {!hide_description && (
+        <p className="description">{smartTextRenderer(item.description)}</p>
+      )}
 
       {item.job_title && (
         <div className="summary-extra-info job-title">{item.job_title}</div>

@@ -37,12 +37,13 @@ const PersonSummary = (props) => {
       <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!hide_description && (
-        <p className="description">{smartTextRenderer(item.description)}</p>
-      )}
 
       {item.job_title && (
         <div className="summary-extra-info job-title">{item.job_title}</div>
+      )}
+
+      {!hide_description && (
+        <p className="description">{smartTextRenderer(item.description)}</p>
       )}
 
       {item.contact_email && (

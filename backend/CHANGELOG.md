@@ -2,6 +2,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b14 (2025-10-07)
+
+
+### Bugfix
+
+- Fix phone icon not horizontally centered in the sticky menu. @tisto [#153](https://github.com/kitconcept/kitconcept.intranet/issue/153)
+- Several fixes. Update to coreb4. @sneridagh [#265](https://github.com/kitconcept/kitconcept.intranet/issue/265)
+
 ## 1.0.0b13 (2025-10-01)
 
 No significant changes.

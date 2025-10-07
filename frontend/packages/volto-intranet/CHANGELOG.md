@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.14 (2025-10-07)
+
+### Bugfix
+
+- Several fixes. Update to coreb4. @sneridagh [#265.1](https://github.com/kitconcept/kitconcept.intranet/issue/265.1)
+- Show job title above the description. @sneridagh [#265.2](https://github.com/kitconcept/kitconcept.intranet/issue/265.2)
+
 ## 1.0.0-beta.13 (2025-10-01)
 
 ### Bugfix

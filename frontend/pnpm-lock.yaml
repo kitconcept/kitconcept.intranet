@@ -1280,8 +1280,8 @@ importers:
         specifier: workspace:*
         version: link:../../../../../core/packages/components
       '@plonegovbr/volto-social-media':
-        specifier: ^2.0.0-alpha.8
-        version: 2.0.0-alpha.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
+        specifier: ^2.0.0-alpha.10
+        version: 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1476,7 +1476,7 @@ importers:
         version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       volto-subblocks:
         specifier: ^2.1.0
-        version: 2.1.0(@plone/volto@18.27.2(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0)
+        version: 2.1.0(@plone/volto@18.28.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
@@ -1573,7 +1573,7 @@ importers:
         version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       volto-rss-block:
         specifier: ^3.0.1
-        version: 3.0.1(@plone/volto@18.27.2(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+        version: 3.0.1(@plone/volto@18.28.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.2
@@ -4181,24 +4181,18 @@ packages:
     resolution: {integrity: sha512-DgA37HZhvVB93jPl6GFiQIkaSpyn9cwVX+HJJKT4S1EbXpvuiqIqsPZdwwrDkzDEwOYbZVGK7jbFbYGQtbjlCA==}
     hasBin: true
 
-  '@plone/volto-slate@18.6.0':
-    resolution: {integrity: sha512-fRv85b6AXPx6OODgiYMrfSpZ+FJrFdq5Bu43fAVx8OnL3IkyED0VcUaIU5nJJ1CpBGaPs1wOjQ398qWAVr5IZw==}
+  '@plone/volto-slate@18.7.0':
+    resolution: {integrity: sha512-8pLn7OZ5UpMQtEjdkBqLInWFxjaCGPJpnPzzPM1bkSqmKVLw4LxKx0sAOeiBNK+/ogUC3ba6pc44XXBH3QgPyQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@plone/volto@18.27.2':
-    resolution: {integrity: sha512-ugNuxEoiKbCGRig82BMYBm3ljXPr4MSNTNuwri8nhsp7ZT8Dus9IN0MIXLocjMACDgE4m8/mKpgbFkTrFrZsDQ==}
+  '@plone/volto@18.28.0':
+    resolution: {integrity: sha512-vQJRD7XbAvdJTSwbZbUMRyJuBAioGvsSyETfK6omZpCs3WNtItR2Wow8l/EUuXZYLD0RI7yxeOn4nOMrhkYAgA==}
     engines: {node: ^20 || ^22}
 
   '@plonegovbr/volto-social-media@2.0.0-alpha.10':
     resolution: {integrity: sha512-pg/yq+ifOah5TIwHeSwOi19njzTipqfOl0tVMOiO2nNcoDwFu1RE9/KyaRMAnIUMMjMpeu6Y8E4pkVJRSYKasg==}
-    peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
-
-  '@plonegovbr/volto-social-media@2.0.0-alpha.8':
-    resolution: {integrity: sha512-iRr6qTMtW9qpUxheOFmdhYJwumlvJo1KLRTIGZOY/msbI7jBrBz5behHmBXFPV6PwXGqHYxciYTay8XFkMCWhA==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -18436,7 +18430,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/volto-slate@18.6.0(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
+  '@plone/volto-slate@18.7.0(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
     dependencies:
       classnames: 2.5.1
       github-slugger: 1.4.0
@@ -18470,13 +18464,13 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.27.2(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.28.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
       '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/scripts': 3.10.2(debug@4.3.2)
-      '@plone/volto-slate': 18.6.0(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      '@plone/volto-slate': 18.7.0(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
       classnames: 2.5.1
       connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
@@ -18578,14 +18572,6 @@ snapshots:
       - utf-8-validate
 
   '@plonegovbr/volto-social-media@2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))':
-    dependencies:
-      '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - storybook
-
-  '@plonegovbr/volto-social-media@2.0.0-alpha.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))':
     dependencies:
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
       react: 18.2.0
@@ -33303,14 +33289,14 @@ snapshots:
       - supports-color
       - terser
 
-  volto-rss-block@3.0.1(@plone/volto@18.27.2(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)):
+  volto-rss-block@3.0.1(@plone/volto@18.28.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)):
     dependencies:
-      '@plone/volto': 18.27.2(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.28.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       rss-parser: 3.7.5
 
-  volto-subblocks@2.1.0(@plone/volto@18.27.2(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0):
+  volto-subblocks@2.1.0(@plone/volto@18.28.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0):
     dependencies:
-      '@plone/volto': 18.27.2(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.28.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       react-dnd: 5.0.0(react@18.2.0)
       react-dnd-html5-backend: 5.0.1
     transitivePeerDependencies:

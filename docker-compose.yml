@@ -33,7 +33,7 @@ services:
       - --api
 
   frontend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${RELEASE:-1.0.0b14}
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${RELEASE:-1.0.0b15}
     platform: linux/amd64
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
@@ -52,7 +52,7 @@ services:
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${RELEASE:-1.0.0b14}
+    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${RELEASE:-1.0.0b15}
     platform: linux/amd64
     environment:
       ZOPE_FORM_MEMORY_LIMIT: 250MB

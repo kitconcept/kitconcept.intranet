@@ -1,6 +1,32 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b15 (2025-10-08)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to coreb5. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to coreb5. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b14 (2025-10-07)
 
 ### Backend

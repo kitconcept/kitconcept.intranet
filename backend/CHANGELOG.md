@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b15 (2025-10-08)
+
+
+### Bugfix
+
+- Update to coreb5. @sneridagh 
+
 ## 1.0.0b14 (2025-10-07)
 
 

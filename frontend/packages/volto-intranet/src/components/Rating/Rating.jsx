@@ -32,7 +32,11 @@ const messages = defineMessages({
   share: {
     id: 'Share Content',
     defaultMessage:
-      'Dear, I would like to share the following News with you: {link} Kind regards {fullname}',
+      'Recommendation from the Intranet&body=I would like to share this intranet content with you:',
+  },
+  shareTitle: {
+    id: 'Share this page via email',
+    defaultMessage: 'Share this page via email',
   },
   likeFailed: {
     id: 'Something went wrong while liking this post.',
@@ -82,12 +86,11 @@ const Rating = (props) => {
     }
   }, [loggedIn, votes, user, setLiked]);
 
-  const encodeBody = encodeURIComponent(
-    intl.formatMessage(messages.share, {
-      link: link,
-      fullname: user.username ? user.username : '',
-    }),
-  );
+  const body = `${intl.formatMessage(messages.share)}
+${content?.title}
+${link}`;
+
+  const encodeBody = encodeURIComponent(body);
   const deSubject = encodeURIComponent('Intranet-Lesetipp');
   const enSubject = encodeURIComponent('Intranet reading tip');
   const deMailTo = `mailto:?body=${encodeBody}&subject=${deSubject}`;
@@ -176,7 +179,10 @@ const Rating = (props) => {
             </div>
           )}
           <div className="shares-section">
-            <a href={intl.locale === 'de' ? deMailTo : enMailTo}>
+            <a
+              href={intl.locale === 'de' ? deMailTo : enMailTo}
+              title={intl.formatMessage(messages.shareTitle)}
+            >
               <Button aria-label="share">
                 <Icon name={shareSVG} size="33px" />
               </Button>

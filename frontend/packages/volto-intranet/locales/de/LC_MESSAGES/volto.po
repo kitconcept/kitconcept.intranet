@@ -101,10 +101,15 @@ msgstr "Telefonnummer"
 msgid "Room"
 msgstr "Raum"
 
-#. Default: "Dear, I would like to share the following News with you: {link} Kind regards {fullname}"
+#. Default: "Recommendation from the Intranet&body=I would like to share this intranet content with you:"
 #: components/Rating/Rating
 msgid "Share Content"
-msgstr "Sehr geehrte/r, Ich möchte folgende Meldung mit Ihnen teilen: {link} Mit freundlichen Grüßen {fullname}"
+msgstr "Empfehlung aus dem Intranet&body=Ich möchte diesen Intranet-Inhalt mit Ihnen teilen:"
+
+#. Default: "Share this page via email"
+#: components/Rating/Rating
+msgid "Share this page via email"
+msgstr "Seite per E-Mail teilen"
 
 #. Default: "Site"
 #: components/theme/PersonView

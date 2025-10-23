@@ -14,6 +14,8 @@ import { connect } from 'react-redux';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 
+import config from '@plone/volto/registry';
+
 const messages = defineMessages({
   search: {
     id: 'Search',
@@ -29,11 +31,16 @@ const messages = defineMessages({
   },
 });
 
+// Fallback Input component in case kitconcept.solr is not installed
+// (which provides the SolrSearchAutosuggest widget)
+const FallbackInput = (props) => <Input {...props} />;
+
 /**
  * IntranetSearchWidget component class.
  * @class IntranetSearchWidget
  * @extends Component
  */
+
 class IntranetSearchWidget extends Component {
   /**
    * Property types.
@@ -86,6 +93,7 @@ class IntranetSearchWidget extends Component {
         ? `&path=${encodeURIComponent(this.props.pathname)}`
         : '';
 
+    /* START CUSTOMIZATION */
     if (searchURL) {
       // If searchURL contains {searchTerm}, replace it with the encoded search text
       const externalUrl =
@@ -93,11 +101,45 @@ class IntranetSearchWidget extends Component {
         path;
       window.open(externalUrl, '_blank', 'noopener,noreferrer');
     } else {
-      this.props.history.push(
-        `/search?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
-      );
+      /*
+       * These could be imported directly:
+       *
+       * ```js
+       * import {
+       *   queryStateFromParams,
+       *   queryStateToParams,
+       *   qs,
+       * } from '@kitconcept/volto-solr/components';
+       * ```
+       *
+       * However, we want to avoid to require a dependency on kitconcept.volto-solr.
+       * So we access these utilities via the registry.
+       *
+       */
+      const voltoSolrUtils = config.views.voltoSolrUtils;
+      if (voltoSolrUtils !== undefined) {
+        const { queryStateFromParams, queryStateToParams, qs } = voltoSolrUtils;
+        // Update the URL query parameters with the new search text
+        // Keep the other query params, only update SearchableText.
+        // This way, sorting, filters, etc. are preserved.
+        const newQueryParams = queryStateToParams({
+          ...queryStateFromParams(qs.parse(this.props.history.location.search)),
+          searchword: this.state.text,
+          // Reset pagination
+          currentPage: 1,
+        });
+        this.props.history.push({
+          pathname: '/search',
+          search: qs.stringify(newQueryParams),
+        });
+      } else {
+        // Fall back without volto-solr. Only the search text is set, all other
+        // query parameters are lost.
+        this.props.history.push(
+          `/search?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
+        );
+      }
     }
-    /* START CUSTOMIZATION */
     // reset input value
     // this.setState({
     //   text: '',
@@ -112,15 +154,22 @@ class IntranetSearchWidget extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
+    // Get the SolrSearchAutosuggest widget from the registry,
+    // with a fallback in case kitconcept.solr is not installed
+    const SolrSearchAutosuggest =
+      (this.props.site?.['collective.solr.active'] === true &&
+        config.widgets.SolrSearchAutosuggest) ||
+      FallbackInput;
     const { intl } = this.props;
     const searchFieldPlaceholder =
       this.props.site['kitconcept.intranet.search_field_placeholder'];
     return (
       <Form action="/search" onSubmit={this.onSubmit}>
         <Form.Field className="searchbox">
-          <Input
+          <SolrSearchAutosuggest
             aria-label={intl.formatMessage(messages.search)}
             onChange={this.onChangeText}
+            onSubmit={this.onSubmit}
             name="SearchableText"
             value={this.state.text}
             transparent

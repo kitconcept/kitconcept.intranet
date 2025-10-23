@@ -11,15 +11,18 @@
   .search-wrapper
   .search
   .field.searchbox {
+  padding-right: 0;
   border: 1px solid transparent !important;
   border-radius: 2px;
   &:hover,
   &:focus,
   &:focus-within {
-    border-color: #2563b5 !important;
-    box-shadow: 0 0 0 3px rgba(124, 128, 131, 0.3);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
     transition:
       box-shadow 0.2s,
       border-color 0.2s;
+  }
+  > div {
+    margin-left: 1em;
   }
 }

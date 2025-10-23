@@ -21,7 +21,7 @@ module.exports = {
   rules: {
     'import/no-unresolved': 1,
     'import/named': 'error',
-    'react/jsx-filename-extension': 'error',
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
     'no-restricted-imports': [
       'error',
       {
@@ -53,6 +53,10 @@ module.exports = {
           [
             '@kitconcept/volto-light-theme',
             './packages/volto-light-theme/frontend/packages/volto-light-theme/src',
+          ],
+          [
+            '@kitconcept/volto-iframe-block',
+            './packages/volto-iframe-block/packages/volto-iframe-block/src',
           ],
           [
             '@kitconcept/volto-solr',

@@ -1,1 +1,0 @@
-Add german translation. @iFlameing

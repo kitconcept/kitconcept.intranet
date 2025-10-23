@@ -1,61 +1,92 @@
 {
-  "@id": "/ueber-uns/headquarters-bonn",
+  "@id": "/ueber-uns/standort-bonn",
   "@type": "Location",
   "UID": "97e82b07b5444728b1517de15c79fefb",
   "allow_discussion": null,
   "blocks": {
-    "14d4dd01-8c6d-4875-b673-20865958dbbe": {
+    "3efe7c62-baf7-455d-8300-a54e33362dc8": {
       "@type": "slate",
-      "plaintext": "Rieststr. 21\n53113\nBonn",
+      "plaintext": "Unsere Adresse:\n\nStandort Bonn\nPoppelsdorfer Allee 1\n53113 Bonn",
       "styles": {},
       "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Rieststr. 21\n53113\nBonn"
-            }
-          ],
-          "type": "blockquote"
-        }
-      ]
-    },
-    "d6da7272-2cde-4fcf-9933-073844719bec": {
-      "@type": "slate",
-      "plaintext": "Our office is located at:",
-      "styles": {},
-      "theme": "default",
-      "value": [
-        {
-          "children": [
-            {
-              "text": "Our office is located at:"
+              "text": "Unsere Adresse:\n\nStandort Bonn\nPoppelsdorfer Allee 1\n53113 Bonn"
             }
           ],
           "type": "p"
         }
       ]
     },
-    "dd8be8b4-4f84-4e2d-aa68-65bdd38ac197": {
-      "@type": "eventCalendar",
-      "headline": "Termine",
-      "query": {
+    "41158054-c70e-4faf-9341-ab13e1bb3288": {
+      "@type": "maps",
+      "align": "full",
+      "styles": {},
+      "theme": "default",
+      "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40430.06901494008!2d7.076100551291741!3d50.703624099994606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bee19f7ccbda49%3A0x86dbf8c6685c9617!2sBonn!5e0!3m2!1sde!2sde!4v1758539319610!5m2!1sde!2sde"
+    },
+    "71cdba4a-33cb-49df-a038-d46cdec339cb": {
+      "@type": "listing",
+      "headline": "Institute am Standort Bonn",
+      "headlineTag": "h2",
+      "querystring": {
         "query": [
           {
-            "i": "location",
+            "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
             "v": [
-              "97e82b07b5444728b1517de15c79fefb"
+              "Organisational Unit"
             ]
           }
         ],
         "sort_order": "ascending"
       },
-      "showSearchInput": true,
-      "showTotalResults": true
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
     },
-    "fe023b1c-9da2-4639-b457-4ad8c534dab9": {
-      "@type": "title"
+    "94b0ccec-70bc-4ac8-87a6-e492bb224e57": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "a98ab793-1dcf-4581-b463-9dc582ec0be3": {
+      "@type": "heading",
+      "heading": "Anfahrt",
+      "theme": "default"
+    },
+    "cc50367e-b548-4df2-8f3d-9e7e357bac8f": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "Unser Standort Bonn vereint als ehemalige Bundeshauptstadt eine reiche wissenschaftliche Tradition mit modernster Forschungsinfrastruktur und internationaler Vernetzung. Die strategisch g\u00fcnstige Lage im Herzen Europas, die N\u00e4he zu f\u00fchrenden Universit\u00e4ten und die ausgezeichnete Verkehrsanbindung schaffen optimale Bedingungen f\u00fcr innovative Forschung und interdisziplin\u00e4re Zusammenarbeit. Hier entsteht Spitzenforschung mit gesellschaftlicher Relevanz \u2013 von der Grundlagenforschung bis zur anwendungsorientierten Entwicklung.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-1"
+      },
+      "title": "Standort Bonn",
+      "url": "../../resolveuid/88043a3357d7412dbc345642e2824c79",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Unser Standort Bonn vereint als ehemalige Bundeshauptstadt eine reiche wissenschaftliche Tradition mit modernster Forschungsinfrastruktur und internationaler Vernetzung. Die strategisch g\u00fcnstige Lage im Herzen Europas, die N\u00e4he zu f\u00fchrenden Universit\u00e4ten und die ausgezeichnete Verkehrsanbindung schaffen optimale Bedingungen f\u00fcr innovative Forschung und interdisziplin\u00e4re Zusammenarbeit. Hier entsteht Spitzenforschung mit gesellschaftlicher Relevanz \u2013 von der Grundlagenforschung bis zur anwendungsorientierten Entwicklung."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     },
     "undefined": {
       "@type": "eventCalendar",
@@ -77,10 +108,12 @@
   },
   "blocks_layout": {
     "items": [
-      "fe023b1c-9da2-4639-b457-4ad8c534dab9",
-      "d6da7272-2cde-4fcf-9933-073844719bec",
-      "14d4dd01-8c6d-4875-b673-20865958dbbe",
-      "dd8be8b4-4f84-4e2d-aa68-65bdd38ac197"
+      "cc50367e-b548-4df2-8f3d-9e7e357bac8f",
+      "71cdba4a-33cb-49df-a038-d46cdec339cb",
+      "a98ab793-1dcf-4581-b463-9dc582ec0be3",
+      "41158054-c70e-4faf-9341-ab13e1bb3288",
+      "3efe7c62-baf7-455d-8300-a54e33362dc8",
+      "94b0ccec-70bc-4ac8-87a6-e492bb224e57"
     ]
   },
   "changeNote": "",
@@ -96,7 +129,7 @@
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "head_title": null,
-  "id": "headquarters-bonn",
+  "id": "standort-bonn",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "view",
@@ -104,13 +137,13 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-09-08T08:05:40+00:00",
+  "modified": "2025-09-26T19:49:36+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],
-  "title": "Headquarters (Bonn)",
+  "title": "Standort Bonn",
   "type_title": "Location",
   "version": "current",
   "versioning_enabled": true,

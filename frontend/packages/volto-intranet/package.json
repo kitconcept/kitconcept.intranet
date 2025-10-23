@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-intranet",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.15",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -35,26 +35,29 @@
   "devDependencies": {
     "@plone/scripts": "^3.6.2",
     "@plone/types": "workspace:*",
+    "@testing-library/react": "^16.2.0",
     "@types/lodash": "^4.14.201",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@testing-library/react": "^16.2.0",
     "release-it": "^17.1.1",
     "typescript": "^5.7.3",
     "vitest": "^3.1.2"
   },
   "addons": [
     "volto-form-block",
+    "@kitconcept/volto-iframe-block",
     "volto-rss-block",
     "@kitconcept/core",
     "@plone-collective/volto-authomatic",
     "@kitconcept/volto-solr"
   ],
   "dependencies": {
-    "@plone/components": "workspace:*",
     "@kitconcept/core": "workspace:*",
-    "@kitconcept/volto-solr": "2.0.0-alpha.1",
-    "@plone-collective/volto-authomatic": "3.0.0-alpha.4",
+    "@kitconcept/volto-solr": "2.0.0-alpha.3",
+    "@kitconcept/volto-iframe-block": "workspace:*",
+    "@kitconcept/volto-light-theme": "workspace:*",
+    "@plone/components": "workspace:*",
+    "classnames": "2.5.1",
     "lodash": "4.17.21",
     "volto-rss-block": "^3.0.1"
   }

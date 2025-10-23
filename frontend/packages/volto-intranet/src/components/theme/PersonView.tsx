@@ -60,10 +60,10 @@ interface PersonViewProps {
  */
 const PersonView: React.FC<PersonViewProps> = ({ content }) => {
   const Container = config.getComponent({ name: 'Container' }).component;
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   const profile = {
-    imageUrl:
-      content.image?.scales?.preview?.download ?? content.image?.download,
+    imageUrl: content.image ?? null,
     fullName: content.academic_title?.title
       ? content.last_name
         ? `${content.academic_title.title} ${content.first_name} ${content.last_name}`
@@ -90,11 +90,11 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
       <div className="person-profile">
         <header className="profile-header">
           {profile.imageUrl && (
-            <img
-              src={profile.imageUrl}
-              alt={profile.fullName}
+            <Image
               className="profile-image"
-              loading="lazy"
+              item={content}
+              imageField="image"
+              alt={profile.fullName}
             />
           )}
           <div className="profile-info">
@@ -253,12 +253,36 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
               <p dangerouslySetInnerHTML={{ __html: content.text.data }} />
             </div>
             <svg
+              className="bio-section-border bio-section-border--desktop"
               viewBox="0 0 948 63"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M0.582031 1H117.744V60.9434L177.688 1H947.416"
+                stroke="black"
+              />
+            </svg>
+            <svg
+              className="bio-section-border bio-section-border--tablet"
+              width="730"
+              height="63"
+              viewBox="0 0 730 63"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 1H56.7997V60.9434L116.766 1H730" stroke="black" />
+            </svg>
+            <svg
+              className="bio-section-border bio-section-border--mobile"
+              width="335"
+              height="63"
+              viewBox="0 0 335 63"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.652344 1H57.4304V60.9434L117.374 1H334.347"
                 stroke="black"
               />
             </svg>

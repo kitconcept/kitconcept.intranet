@@ -4,7 +4,7 @@
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
     "https": "https://github.com/plone/volto.git",
-    "tag": "18.26.0",
+    "tag": "18.28.1",
     "filterBlobs": true
   },
   "volto-light-theme": {
@@ -13,7 +13,7 @@
     "package": "@kitconcept/volto-light-theme",
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
-    "tag": "7.0.0b4",
+    "tag": "7.3.1",
     "filterBlobs": true
   },
   "kitconcept-core": {
@@ -22,7 +22,7 @@
     "package": "@kitconcept/core",
     "url": "git@github.com:kitconcept/kitconcept-core.git",
     "https": "https://github.com/kitconcept/kitconcept-core.git",
-    "tag": "1.0.0a28"
+    "tag": "1.0.0-beta.5"
   },
   "volto-banner-block": {
     "develop": true,
@@ -104,6 +104,14 @@
     "https": "https://github.com/kitconcept/volto-separator-block.git",
     "tag": "4.2.1"
   },
+  "volto-iframe-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-iframe-block",
+    "url": "git@github.com:kitconcept/volto-iframe-block.git",
+    "https": "https://github.com/kitconcept/volto-iframe-block.git",
+    "tag": "2.3.2"
+  },
   "volto-slider-block": {
     "develop": true,
     "output": "packages",
@@ -128,6 +136,6 @@
     "url": "git@github.com:kitconcept/kitconcept.solr.git",
     "https": "https://github.com/kitconcept/kitconcept.solr.git",
     "path": "frontend",
-    "branch": "monorepo"
+    "branch": "2.0.0-alpha.3"
   }
 }

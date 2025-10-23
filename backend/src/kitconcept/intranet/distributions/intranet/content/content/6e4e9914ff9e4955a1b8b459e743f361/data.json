@@ -1,5 +1,5 @@
 {
-  "@id": "/people",
+  "@id": "/personen",
   "@type": "Document",
   "UID": "6e4e9914ff9e4955a1b8b459e743f361",
   "allow_discussion": null,
@@ -19,6 +19,11 @@
             "v": [
               "Person"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "."
           }
         ],
         "sort_on": "sortable_title",
@@ -30,7 +35,20 @@
     },
     "undefined": {
       "@type": "search",
-      "listingBodyTemplate": "default",
+      "listingBodyTemplate": "summary",
+      "query": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Person"
+            ]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
       "showSearchInput": true,
       "showSortOn": true,
       "showTotalResults": true,
@@ -59,7 +77,7 @@
   "exportimport.conversation": [],
   "feedback_person": null,
   "head_title": null,
-  "id": "people",
+  "id": "personen",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -67,7 +85,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-09-04T12:43:06+00:00",
+  "modified": "2025-09-26T20:00:23+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,

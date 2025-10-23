@@ -43,6 +43,7 @@ msgid "Created On"
 msgstr "Erstellt am"
 
 #. Default: "E-mail"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "E-mail"
 msgstr "E-mail"
@@ -52,20 +53,35 @@ msgstr "E-mail"
 msgid "End"
 msgstr "Ende"
 
+#. Default: "Error"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Error"
+msgstr "Fehler"
+
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
 msgid "Feedback on this page"
-msgstr ""
+msgstr "Feedback zu dieser Seite"
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
 msgstr "Termin importieren (.ics)"
 
+#. Default: "Invalid url"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Invalid url"
+msgstr "Ungültige URL"
+
 #. Default: "Last Modified On"
 #: components/Rating/Rating
 msgid "Last Modified On"
 msgstr "Zuletzt geändert am"
+
+#. Default: "List with date"
+#: index
+msgid "List with date"
+msgstr "Liste mit Datum"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
@@ -74,11 +90,13 @@ msgstr "Standort"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Phone"
 msgstr "Telefonnummer"
 
 #. Default: "Room"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
 msgstr "Raum"
@@ -116,7 +134,7 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine

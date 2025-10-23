@@ -31,6 +31,7 @@ class TestSiteCreation:
             ["collective.solr.host", "127.0.0.1"],
             ["collective.solr.port", 8983],
             ["collective.solr.base", "/solr/plone"],
+            ["collective.solr.use_tika", True],
         ],
     )
     def test_registry_keys(self, key, expected):

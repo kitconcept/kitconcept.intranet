@@ -1,21 +1,14 @@
 import type { ConfigType } from '@plone/registry';
-import CustomCSS from '../slots/CustomCSS/CustomCSS';
+import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
-import ConfigInjector from '../slots/ConfigInjector/ConfigInjector';
 import Rating from '../components/Rating/Rating';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
     slot: 'aboveHeader',
-    name: 'ConfigInjector',
-    component: ConfigInjector,
-  });
-
-  config.registerSlotComponent({
-    slot: 'aboveHeader',
-    name: 'CustomCSS',
-    component: CustomCSS,
+    name: 'IntranetCSSInjector',
+    component: IntranetCSSInjector,
   });
 
   config.registerSlotComponent({

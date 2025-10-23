@@ -50,6 +50,7 @@ msgid "Created On"
 msgstr ""
 
 #. Default: "E-mail"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "E-mail"
 msgstr ""
@@ -57,6 +58,11 @@ msgstr ""
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
+msgstr ""
+
+#. Default: "Error"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Error"
 msgstr ""
 
 #. Default: "Feedback on this page"
@@ -69,9 +75,19 @@ msgstr ""
 msgid "ICS-Download"
 msgstr ""
 
+#. Default: "Invalid url"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Invalid url"
+msgstr ""
+
 #. Default: "Last Modified On"
 #: components/Rating/Rating
 msgid "Last Modified On"
+msgstr ""
+
+#. Default: "List with date"
+#: index
+msgid "List with date"
 msgstr ""
 
 #. Default: "Location"
@@ -81,11 +97,13 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Phone"
 msgstr ""
 
 #. Default: "Room"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
 msgstr ""

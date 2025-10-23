@@ -56,7 +56,6 @@ const Rating = (props) => {
   const content = useSelector((state) => state.content.data);
   const site = useSelector((state) => state.site.data);
   const enableContentRating = site['kitconcept.intranet.enable_content_rating'];
-  console.log('enableContentRating', enableContentRating);
   const pathname = location.pathname;
   const allow_discussion =
     useLiveData('allow_discussion') || content?.allow_discussion;
@@ -125,7 +124,7 @@ const Rating = (props) => {
   };
 
   if (!enableContentRating) {
-    return <div>this is srateont</div>;
+    return null;
   }
 
   return (

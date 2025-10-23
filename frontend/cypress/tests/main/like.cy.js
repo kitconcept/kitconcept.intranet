@@ -11,11 +11,18 @@ describe('Like', () => {
     });
     cy.visit('/my-page');
     cy.wait('@content');
-    cy.navigate('/my-page/edit');
-    cy.wait('@content');
   });
 
   it('Test like functionality', () => {
+    cy.visit('/controlpanel/intranet-settings');
+    cy.findByText('Enable Content Rating').click();
+    cy.get('#toolbar-save').click();
+    cy.visit('/my-page');
+    cy.wait('@content');
+    cy.reload();
+    cy.wait('@content');
+    cy.navigate('/my-page/edit');
+    cy.wait('@content');
     cy.get('#sidebar-metadata .field-wrapper-enable_likes input').click({
       force: true,
     });

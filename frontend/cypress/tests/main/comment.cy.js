@@ -15,6 +15,13 @@ describe('comment test', () => {
   });
 
   it('Adding comment on page', function () {
+    cy.visit('/controlpanel/intranet-settings');
+    cy.findByText('Enable Content Rating').click();
+    cy.get('#toolbar-save').click();
+    cy.visit('/my-page');
+    cy.wait('@content');
+    cy.reload();
+    cy.wait('@content');
     cy.get('textarea[id="field-comment"]').clear().type('This is a comment');
     cy.get('button[type="submit"').click();
     cy.get('.comments-section .comments-count').contains('1');

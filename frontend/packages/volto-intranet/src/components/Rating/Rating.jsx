@@ -126,15 +126,11 @@ ${link}`;
     }
   };
 
-  if (!enableContentRating) {
-    return null;
-  }
-
   return (
     <Container className="content-engagement">
       <div className="engagement-container">
         <div className="engagement-section">
-          {enable_likes && (
+          {enableContentRating && enable_likes && (
             <div className={cx('likes-section', { anon: !loggedIn })}>
               {loggedIn ? (
                 <Button aria-label="liked" onClick={() => onLike()}>

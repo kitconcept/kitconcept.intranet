@@ -12,7 +12,7 @@
         import_profile="plone.app.discussion:default"
         />
     <genericsetup:upgradeDepends
-        title="Add votes behaviour to Document content type, add global settings for content rating in controlpane and install plone.app.discussion"
+        title="Add votes behaviour to Document content type, add global settings for content rating in controlpanel and install plone.app.discussion"
         import_steps="typeinfo plone.app.registry"
         />
   </genericsetup:upgradeSteps>

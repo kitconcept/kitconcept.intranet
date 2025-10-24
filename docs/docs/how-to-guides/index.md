@@ -22,4 +22,5 @@ https://diataxis.fr/how-to-guides/
 :maxdepth: 2
 
 squared-person-image-support
+content-rating-and-metadata
 ```

@@ -51,9 +51,14 @@ all: build
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-instance/etc/zope.ini instance/etc/zope.conf: ## Create instance configuration
+instance/etc/zope.ini instance/etc/zope.conf: instance.yaml instance-local.yaml ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
-	@uvx cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+	if [[ -s instance-local.yaml ]]; then \
+		echo ">>> Using instance-local.yaml"; \
+		uvx cookiecutter -f --no-input --config-file instance-local.yaml gh:plone/cookiecutter-zope-instance; \
+	else \
+		uvx cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance; \
+	fi
 
 .PHONY: config
 config: instance/etc/zope.ini

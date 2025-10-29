@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.16 (2025-10-29)
+
+### Internal
+
+- Force a release to test the prepublish script. 
+
 ## 1.0.0-beta.15 (2025-10-08)
 
 ### Bugfix

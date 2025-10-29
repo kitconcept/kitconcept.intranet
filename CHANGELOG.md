@@ -1,6 +1,30 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b16 (2025-10-29)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Force a release to test the prepublish script. 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b15 (2025-10-08)
 
 ### Backend

@@ -86,6 +86,15 @@ const Rating = (props) => {
     }
   }, [loggedIn, votes, user, setLiked]);
 
+  useEffect(() => {
+    if (votes?.length > 0) {
+      setAmount(parseInt(votes.length));
+    } else {
+      setAmount(0);
+      setLiked(false);
+    }
+  }, [votes]);
+
   const body = `${intl.formatMessage(messages.share)}
 ${content?.title}
 ${link}`;

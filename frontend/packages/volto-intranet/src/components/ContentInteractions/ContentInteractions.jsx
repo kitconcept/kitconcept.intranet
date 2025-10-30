@@ -55,7 +55,7 @@ function useLiveData(field) {
   const formData = useSelector((state) => state.form.global?.[field]);
   return formData;
 }
-const Rating = (props) => {
+const ContentInteractions = (props) => {
   const location = useLocation();
   const content = useSelector((state) => state.content.data);
   const site = useSelector((state) => state.site.data);
@@ -63,7 +63,7 @@ const Rating = (props) => {
   const pathname = location.pathname;
   const allow_discussion =
     useLiveData('allow_discussion') || content?.allow_discussion;
-  const enable_likes = useLiveData('enable_likes') || content?.enable_likes;
+  const enable_likes = useLiveData('enable_likes') ?? content?.enable_likes;
   const votes = content?.votes;
   const loggedIn = useSelector((state) => state.userSession.token, shallowEqual)
     ? true
@@ -219,4 +219,4 @@ ${link}`;
   );
 };
 
-export default Rating;
+export default ContentInteractions;

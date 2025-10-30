@@ -1,7 +1,7 @@
 import type { ConfigType } from '@plone/registry';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
-import Rating from '../components/Rating/Rating';
+import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 
 export default function install(config: ConfigType) {
@@ -24,8 +24,8 @@ export default function install(config: ConfigType) {
 
   config.registerSlotComponent({
     slot: 'belowContent',
-    name: 'Content Binder',
-    component: Rating,
+    name: 'Content Interactions',
+    component: ContentInteractions,
   });
 
   return config;

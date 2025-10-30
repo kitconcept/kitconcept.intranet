@@ -15,13 +15,13 @@ It enhances content engagement by allowing users to express reactions and access
 
 ## Screenshot
 
-![Example of content binder](/_static/content-binder.png)
+![Example of content interactions](/_static/content-interactions.png)
 
 ---
 
 ## Overview
 
-The **Rating.jsx** component is a custom React component that integrates:
+The **ContentInteractions.jsx** component is a custom React component that integrates:
 
 - 👍 **Likes**: Users can like or unlike content
   - Must be enabled globally in the control panel
@@ -57,5 +57,5 @@ Then, enable it for your content type:
 
 ## Component Location
 ```text
-src/components/Rating/Rating.jsx
+src/components/ContentInteractions/ContentInteractions.jsx
 ```

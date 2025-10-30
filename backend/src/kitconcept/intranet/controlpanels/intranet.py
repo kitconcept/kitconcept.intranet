@@ -49,7 +49,7 @@ class IIntranetSettings(Interface):
         title=_("Enable Content Rating"),
         description=_("Enable content rating globally for the Intranet"),
         required=False,
-        default=False,
+        default=True,
     )
 
     iframe_allowed_domains = schema.List(

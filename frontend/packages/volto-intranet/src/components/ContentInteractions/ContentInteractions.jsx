@@ -38,6 +38,10 @@ const messages = defineMessages({
     id: 'Share this page via email',
     defaultMessage: 'Share this page via email',
   },
+  shareSubject: {
+    id: 'shareSubject',
+    defaultMessage: 'Intranet reading tip',
+  },
   likeFailed: {
     id: 'Something went wrong while liking this post.',
     defaultMessage: 'Something went wrong while liking this post.',
@@ -95,15 +99,11 @@ const ContentInteractions = (props) => {
     }
   }, [votes]);
 
-  const body = `${intl.formatMessage(messages.share)}
+  const subject = encodeURIComponent(intl.formatMessage(messages.shareSubject));
+  const body = encodeURIComponent(`${intl.formatMessage(messages.share)}
 ${content?.title}
-${link}`;
-
-  const encodeBody = encodeURIComponent(body);
-  const deSubject = encodeURIComponent('Intranet-Lesetipp');
-  const enSubject = encodeURIComponent('Intranet reading tip');
-  const deMailTo = `mailto:?body=${encodeBody}&subject=${deSubject}`;
-  const enMailTo = `mailto:?body=${encodeBody}&subject=${enSubject}`;
+${link}`);
+  const mailtoLink = `mailto:?body=${body}&subject=${subject}`;
 
   const onLike = () => {
     if (liked) {
@@ -185,7 +185,7 @@ ${link}`;
           )}
           <div className="shares-section">
             <a
-              href={intl.locale === 'de' ? deMailTo : enMailTo}
+              href={mailtoLink}
               title={intl.formatMessage(messages.shareTitle)}
             >
               <Button aria-label="share">

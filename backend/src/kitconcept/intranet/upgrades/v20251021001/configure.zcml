@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20250924001"
+      destination="20251021001"
+      >
+    <genericsetup:upgradeDepends
+        title="Install plone.app.discussion"
+        import_profile="plone.app.discussion:default"
+        />
+    <genericsetup:upgradeDepends
+        title="Add votes behaviour to Document content type, add global settings for content rating in controlpanel and install plone.app.discussion"
+        import_steps="typeinfo plone.app.registry"
+        />
+    <genericsetup:upgradeStep
+        title="Disable content rating feature for upgraded sites"
+        handler=".disable_rating_for_upgraded_sites"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

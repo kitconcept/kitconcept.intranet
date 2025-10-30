@@ -1,0 +1,73 @@
+@mixin text-style() {
+  font-size: map-get($font-sizes, xs);
+  font-weight: map-get($font-weights, regular);
+  line-height: map-get($line-heights, s);
+}
+
+body.siteroot {
+  .content-engagement {
+    display: none;
+  }
+}
+.content-engagement {
+  padding-top: 30px;
+  padding-bottom: 80px;
+  border-color: var(--theme-foreground-color);
+  border-top: 1px solid;
+  margin-top: 80px;
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+}
+.engagement-container {
+  display: flex;
+  width: 100%;
+  button {
+    padding: 0 5px 0 0;
+    border: none;
+    background: none;
+  }
+}
+.engagement-section {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+
+  .likes-section,
+  .comments-section,
+  .shares-section {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    button {
+      cursor: pointer;
+    }
+
+    .likes-count,
+    .comments-count {
+      span {
+        @include text-style();
+      }
+    }
+  }
+
+  .comments-section {
+    button {
+      cursor: default;
+    }
+  }
+}
+.content-metadata {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 50px;
+  .created,
+  .modified {
+    @include text-style();
+    .created-date,
+    .modified-date {
+      display: flex;
+    }
+  }
+}

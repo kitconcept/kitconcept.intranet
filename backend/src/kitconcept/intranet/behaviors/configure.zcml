@@ -11,6 +11,15 @@
       file="meta.zcml"
       />
 
+
+  <plone:behavior
+      name="kitconcept.intranet.votes"
+      title="Saves userID who liked an item"
+      description="Adds votes field"
+      provides=".votes.IVotes"
+      />
+
+
   <plone:behavior
       name="kitconcept.intranet.location"
       title="Location"

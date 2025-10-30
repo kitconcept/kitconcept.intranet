@@ -1,1 +1,1 @@
-Add @votes service, votes behaviour and enable plone.app.discussion for Document content type. @iFlameing
+Add backend for content ratings, and enable discussion and ratings for the Page content type. @iFlameing

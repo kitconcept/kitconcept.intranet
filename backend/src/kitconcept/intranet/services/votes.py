@@ -29,7 +29,6 @@ class VotesPost(Service):
             msg = "Like added"
 
         self.context.votes = votes
-        self.context.reindexObject(idxs=["votes"])
 
         self.request.response.setStatus(200)
         return msg

@@ -5,6 +5,15 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     >
 
+  <!-- Override /@types service to conditionally hide some behaviors -->
+  <plone:service
+      method="GET"
+      factory=".types.TypesGet"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@types"
+      />
+
   <adapter
       factory=".byline.BylineExpander"
       name="byline"
@@ -34,6 +43,14 @@
   <cache:ruleset
       for=".byline.BylineGet"
       ruleset="plone.content.dynamic"
+      />
+
+  <plone:service
+      method="POST"
+      factory=".votes.VotesPost"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@vote"
       />
 
 </configure>

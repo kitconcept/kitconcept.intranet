@@ -37,7 +37,13 @@ msgstr "Von"
 msgid "Contact"
 msgstr "Kontakt"
 
+#. Default: "Created On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Created On"
+msgstr "Erstellt am"
+
 #. Default: "E-mail"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "E-mail"
 msgstr "E-mail"
@@ -55,7 +61,7 @@ msgstr "Fehler"
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
 msgid "Feedback on this page"
-msgstr ""
+msgstr "Feedback zu dieser Seite"
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
@@ -66,6 +72,11 @@ msgstr "Termin importieren (.ics)"
 #: components/Blocks/IFrame/isValidUrl
 msgid "Invalid url"
 msgstr "Ungültige URL"
+
+#. Default: "Last Modified On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Last Modified On"
+msgstr "Zuletzt geändert am"
 
 #. Default: "List with date"
 #: index
@@ -79,29 +90,56 @@ msgstr "Standort"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Phone"
 msgstr "Telefonnummer"
 
 #. Default: "Room"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
 msgstr "Raum"
+
+#. Default: "Recommendation from the Intranet&body=I would like to share this intranet content with you:"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share Content"
+msgstr "Empfehlung aus dem Intranet&body=Ich möchte diesen Intranet-Inhalt mit Ihnen teilen:"
+
+#. Default: "Share this page via email"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share this page via email"
+msgstr "Seite per E-Mail teilen"
 
 #. Default: "Site"
 #: components/theme/PersonView
 msgid "Site"
 msgstr "Website"
 
+#. Default: "Something went wrong while liking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while liking this post."
+msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
+
+#. Default: "Something went wrong while unliking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while unliking this post."
+msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
+
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
 msgstr "Anfang"
 
+#. Default: "To submit a Like you must be logged in"
+#: components/ContentInteractions/ContentInteractions
+msgid "To submit a Like you must be logged in"
+msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
+
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
@@ -126,3 +164,8 @@ msgstr "Keine Ergebnisse aus dem RSS-Feed."
 #: components/Blocks/RSS/SummaryTemplate
 msgid "rss_read_more"
 msgstr "Weiterlesen"
+
+#. Default: "Intranet reading tip"
+#: components/ContentInteractions/ContentInteractions
+msgid "shareSubject"
+msgstr "Intranet-Lesetipp"

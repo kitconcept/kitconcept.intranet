@@ -1,6 +1,7 @@
 import type { ConfigType } from '@plone/registry';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
+import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 
 export default function install(config: ConfigType) {
@@ -19,6 +20,12 @@ export default function install(config: ConfigType) {
     slot: 'belowContentTitle',
     name: 'documentByLine',
     component: DocumentByLine,
+  });
+
+  config.registerSlotComponent({
+    slot: 'belowContent',
+    name: 'Content Interactions',
+    component: ContentInteractions,
   });
 
   return config;

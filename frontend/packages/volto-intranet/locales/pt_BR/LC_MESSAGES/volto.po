@@ -42,7 +42,13 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#. Default: "Created On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Created On"
+msgstr ""
+
 #. Default: "E-mail"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "E-mail"
 msgstr ""
@@ -72,6 +78,11 @@ msgstr ""
 msgid "Invalid url"
 msgstr ""
 
+#. Default: "Last Modified On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Last Modified On"
+msgstr ""
+
 #. Default: "List with date"
 #: index
 msgid "List with date"
@@ -84,13 +95,25 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Phone"
 msgstr ""
 
 #. Default: "Room"
+#: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
+msgstr ""
+
+#. Default: "Recommendation from the Intranet&body=I would like to share this intranet content with you:"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share Content"
+msgstr ""
+
+#. Default: "Share this page via email"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share this page via email"
 msgstr ""
 
 #. Default: "Site"
@@ -98,9 +121,24 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
+#. Default: "Something went wrong while liking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while liking this post."
+msgstr ""
+
+#. Default: "Something went wrong while unliking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while unliking this post."
+msgstr ""
+
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
+msgstr ""
+
+#. Default: "To submit a Like you must be logged in"
+#: components/ContentInteractions/ContentInteractions
+msgid "To submit a Like you must be logged in"
 msgstr ""
 
 #. Default: "Website"
@@ -130,4 +168,9 @@ msgstr ""
 #: components/Blocks/RSS/GridTemplate
 #: components/Blocks/RSS/SummaryTemplate
 msgid "rss_read_more"
+msgstr ""
+
+#. Default: "Intranet reading tip"
+#: components/ContentInteractions/ContentInteractions
+msgid "shareSubject"
 msgstr ""

@@ -45,6 +45,13 @@ class IIntranetSettings(Interface):
         ]),
     )
 
+    enable_content_rating = schema.Bool(
+        title=_("Enable Content Rating"),
+        description=_("Enable content rating globally for the Intranet"),
+        required=False,
+        default=True,
+    )
+
     iframe_allowed_domains = schema.List(
         title=_("Allowed Iframe Domains"),
         description="A list of allowed domains for iframes. Example: ['example.com']",
@@ -101,4 +108,8 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.iframe_allowed_domains"] = (
             settings.iframe_allowed_domains
+        )
+
+        data["kitconcept.intranet.enable_content_rating"] = (
+            settings.enable_content_rating
         )

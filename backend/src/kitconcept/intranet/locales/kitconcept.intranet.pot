@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-15 23:05+0000\n"
+"POT-Creation-Date: 2025-10-30 20:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:49
+#: kitconcept/intranet/controlpanels/intranet.py:43
 msgid "1:1 round picture"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:50
+#: kitconcept/intranet/controlpanels/intranet.py:44
 msgid "4:5 square picture"
 msgstr ""
 
@@ -37,24 +37,28 @@ msgstr ""
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:15
+#: kitconcept/intranet/behaviors/person.py:17
 msgid "Academic Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/person.py:37
+msgid "Academic Title, First and Last Name"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:49
 msgid "Add the intranet-specific person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:42
 msgid "Add the lifecycle management fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:19
-msgid "Allows to set configuration that will be injected into the blocks default configuration."
+#: kitconcept/intranet/behaviors/configure.zcml:20
+msgid "Adds votes field"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/blocks_settings.py:24
-msgid "Blocks configuration"
+#: kitconcept/intranet/controlpanels/intranet.py:56
+msgid "Allowed Iframe Domains"
 msgstr ""
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
@@ -62,15 +66,7 @@ msgstr ""
 msgid "Can only be seen and edited by the owner."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:33
-msgid "Custom CSS"
-msgstr ""
-
-#: kitconcept/intranet/controlpanels/intranet.py:34
-msgid "Custom CSS for the intranet."
-msgstr ""
-
-#: kitconcept/intranet/behaviors/person.py:26
+#: kitconcept/intranet/behaviors/person.py:28
 msgid "Department"
 msgstr ""
 
@@ -83,15 +79,31 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+#: kitconcept/intranet/controlpanels/intranet.py:49
+msgid "Enable Content Rating"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/votes.py:23
+msgid "Enable Likes"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/votes.py:24
+msgid "Enable Likes for this Content Object"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:50
+msgid "Enable content rating globally for the Intranet"
+msgstr ""
+
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/configure.zcml:28
 msgid "Fields for Location"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:35
 msgid "Fields for Organisational Unit"
 msgstr ""
 
@@ -108,23 +120,31 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:57
+#: kitconcept/intranet/controlpanels/intranet.py:68
 msgid "Intranet Settings"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:47
+#: kitconcept/intranet/behaviors/configure.zcml:49
 msgid "Intranet-specific Person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:21
+#: kitconcept/intranet/behaviors/person.py:23
 msgid "Job Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:40
+#: kitconcept/intranet/behaviors/configure.zcml:42
 msgid "Lifecycle Management fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:26
+#: kitconcept/intranet/behaviors/votes.py:10
+msgid "Likes"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/votes.py:14
+msgid "List of user IDs"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/configure.zcml:28
 #: kitconcept/intranet/behaviors/location.py:16
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
@@ -140,7 +160,7 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:33
+#: kitconcept/intranet/behaviors/configure.zcml:35
 #: kitconcept/intranet/behaviors/organisational_unit.py:16
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
@@ -151,7 +171,7 @@ msgstr ""
 msgid "Pending review"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:39
+#: kitconcept/intranet/controlpanels/intranet.py:33
 msgid "Person Picture Aspect Ratio"
 msgstr ""
 
@@ -211,6 +231,10 @@ msgstr ""
 msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
+#: kitconcept/intranet/behaviors/configure.zcml:20
+msgid "Saves userID who liked an item"
+msgstr ""
+
 #: kitconcept/intranet/controlpanels/intranet.py:27
 msgid "Search Field Placeholder"
 msgstr ""
@@ -242,10 +266,6 @@ msgstr ""
 msgid "Taxonomy"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:19
-msgid "Through The Web blocks configuration"
-msgstr ""
-
 #: kitconcept/intranet/controlpanels/intranet.py:22
 msgid "Used in the intranet header seach bar."
 msgstr ""
@@ -263,14 +283,13 @@ msgstr ""
 msgid "Visible to authenticated users, editable by editors and reviewers."
 msgstr ""
 
+#: kitconcept/intranet/behaviors/votes.py:13
+msgid "Votes"
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Waiting to be reviewed, not editable by the owner."
-msgstr ""
-
-#. Default: "Configure some aspects of the default blocks configuration."
-#: kitconcept/intranet/behaviors/blocks_settings.py:41
-msgid "help_blocks_config_mutator"
 msgstr ""
 
 #. Default: "Filter by Organisational Unit"
@@ -279,7 +298,7 @@ msgid "help_organisational_unit"
 msgstr ""
 
 #. Default: "Image aspect ratio of the person's picture. This setting is used for the person picture on the person profile page, on teasers that point to a person profile page and on listings where persons are displayed."
-#: kitconcept/intranet/controlpanels/intranet.py:40
+#: kitconcept/intranet/controlpanels/intranet.py:34
 msgid "help_person_picture_aspect_ratio"
 msgstr ""
 

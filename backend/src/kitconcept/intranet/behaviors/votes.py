@@ -7,6 +7,8 @@ from zope.interface import provider
 
 @provider(IFormFieldProvider)
 class IVotes(model.Schema):
+    model.fieldset("likes", label=_("Likes"), fields=["votes", "enable_likes"])
+
     votes = schema.List(
         title=_("Votes"),
         description=_("List of user IDs"),

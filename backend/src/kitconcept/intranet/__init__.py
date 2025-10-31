@@ -5,7 +5,7 @@ from zope.i18nmessageid import MessageFactory
 import logging
 
 
-__version__ = "1.0.0b16"
+__version__ = "1.0.0b17"
 
 PACKAGE_NAME = "kitconcept.intranet"
 

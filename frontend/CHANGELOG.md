@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.17 (2025-10-31)
+
+### Internal
+
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+
 ## 1.0.0-beta.16 (2025-10-29)
 
 ### Internal

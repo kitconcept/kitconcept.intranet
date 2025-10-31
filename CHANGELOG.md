@@ -1,6 +1,32 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b17 (2025-10-31)
+
+### Backend
+
+
+#### Internal
+
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+
+
+
+### Frontend
+
+#### Internal
+
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b16 (2025-10-29)
 
 ### Backend

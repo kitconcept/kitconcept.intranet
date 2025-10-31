@@ -493,6 +493,15 @@ importers:
 
   core/packages/volto:
     dependencies:
+      '@dnd-kit/core':
+        specifier: 6.0.8
+        version: 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@dnd-kit/sortable':
+        specifier: 7.0.2
+        version: 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      '@dnd-kit/utilities':
+        specifier: 3.2.2
+        version: 3.2.2(react@18.2.0)
       '@loadable/component':
         specifier: 5.14.1
         version: 5.14.1(react@18.2.0)
@@ -538,6 +547,9 @@ importers:
       filesize:
         specifier: '6'
         version: 6.4.0
+      full-icu:
+        specifier: 1.4.0
+        version: 1.4.0
       github-slugger:
         specifier: 1.4.0
         version: 1.4.0
@@ -800,15 +812,6 @@ importers:
       '@babel/types':
         specifier: 7.20.5
         version: 7.20.5
-      '@dnd-kit/core':
-        specifier: 6.0.8
-        version: 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@dnd-kit/sortable':
-        specifier: 7.0.2
-        version: 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
-      '@dnd-kit/utilities':
-        specifier: 3.2.2
-        version: 3.2.2(react@18.2.0)
       '@fiverr/afterbuild-webpack-plugin':
         specifier: ^1.0.0
         version: 1.0.0
@@ -890,12 +893,18 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.7(@types/react@18.3.23)
+      '@types/react-intl-redux':
+        specifier: ^0.1.19
+        version: 0.1.19(react@18.2.0)
       '@types/react-router-dom':
         specifier: ^5.3.3
         version: 5.3.3
       '@types/react-test-renderer':
         specifier: 18.0.7
         version: 18.0.7
+      '@types/redux-mock-store':
+        specifier: ^1.5.0
+        version: 1.5.0
       '@types/uuid':
         specifier: ^9.0.2
         version: 9.0.8
@@ -989,9 +998,6 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.2(eslint@8.57.1)
-      full-icu:
-        specifier: 1.4.0
-        version: 1.4.0
       html-webpack-plugin:
         specifier: 5.5.0
         version: 5.5.0(webpack@5.90.1(esbuild@0.25.6))
@@ -1275,10 +1281,7 @@ importers:
         version: 0.5.1(react@18.2.0)
       '@plone-collective/volto-authomatic':
         specifier: 3.0.0-alpha.6
-        version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
-      '@plone/components':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/components
+        version: 3.0.0-alpha.6(@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2)))(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1473,7 +1476,7 @@ importers:
         version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       volto-subblocks:
         specifier: ^2.1.0
-        version: 2.1.0(@plone/volto@18.28.1(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0)
+        version: 2.1.0(@plone/volto@18.29.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
@@ -1570,7 +1573,7 @@ importers:
         version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       volto-rss-block:
         specifier: ^3.0.1
-        version: 3.0.1(@plone/volto@18.28.1(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+        version: 3.0.1(@plone/volto@18.29.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.2
@@ -1661,11 +1664,11 @@ importers:
         specifier: workspace:*
         version: link:../../../../volto-separator-block/packages/volto-separator-block
       '@kitconcept/volto-slider-block':
-        specifier: ^6.4.0
-        version: 6.4.0(embla-carousel@8.5.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^6.4.1
+        version: 6.4.1(embla-carousel@8.5.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
-        specifier: workspace:^
-        version: link:../../../../../core/packages/components
+        specifier: ^3.0.2
+        version: 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
       '@plonegovbr/volto-social-media':
         specifier: ^2.0.0-alpha.10
         version: 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
@@ -1793,7 +1796,10 @@ importers:
         version: 18.3.7(@types/react@18.3.23)
       release-it:
         specifier: ^19.0.2
-        version: 19.0.4(@types/node@22.16.2)(magicast@0.3.5)
+        version: 19.0.5(@types/node@22.16.2)(magicast@0.3.5)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@22.16.2)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
 
   packages/volto-separator-block/packages/volto-separator-block:
     dependencies:
@@ -1841,6 +1847,9 @@ importers:
       release-it:
         specifier: ^17.1.1
         version: 17.11.0(typescript@5.8.3)
+      vitest:
+        specifier: 3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@22.16.2)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.1)(sass@1.89.2)(terser@5.43.1)
 
 packages:
 
@@ -3556,8 +3565,8 @@ packages:
   '@keyv/serialize@1.0.3':
     resolution: {integrity: sha512-qnEovoOp5Np2JDGonIDL6Ayihw0RhnRh6vxPuHo4RDn1UOzwEo4AeIfpL6UGIrsceWrCMiVPgwRjbHu4vYFc3g==}
 
-  '@kitconcept/volto-slider-block@6.4.0':
-    resolution: {integrity: sha512-Dm1TB4ubHjF4It1CN78HMEiPb9smCY1I6jmFWyjYhQHkN7TF/uGeS+rDofk8jv5XzKanpr6chPR7+vDf5t9CRg==}
+  '@kitconcept/volto-slider-block@6.4.1':
+    resolution: {integrity: sha512-hM+WREJmz5qmxHBZOOg/ffFG/BD4lvtbNqiDADVyze48SUbw+ALdUtYdNeap0Bjx4o1DOIR/mImSojsoLqAcBA==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -4178,14 +4187,14 @@ packages:
     resolution: {integrity: sha512-ehklcOoczX1Ji06qA5Y6MZgz87YgR2GeW5zSaY4CzSG3YG7fF6pTnFa7MVVHAOcY8isSN2s97T6jB6PD75pQng==}
     hasBin: true
 
-  '@plone/volto-slate@18.7.0':
-    resolution: {integrity: sha512-8pLn7OZ5UpMQtEjdkBqLInWFxjaCGPJpnPzzPM1bkSqmKVLw4LxKx0sAOeiBNK+/ogUC3ba6pc44XXBH3QgPyQ==}
+  '@plone/volto-slate@18.7.1':
+    resolution: {integrity: sha512-obvVdk8AlBNCeUAMLGjZoUzS+WrSasTQ2vRqe2WuJJIn+bfpnG35fhsTEf7OERbAANNrLgUMADrnDWeWL/0xYg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@plone/volto@18.28.1':
-    resolution: {integrity: sha512-v5FzUfQV8nVDcA2Ym90YS68eXMkG9/5B0D3XttqDuoMe67c7Rah/TXk1bXU8Kncj/qthO8SwZPBLhnZvjbtJTQ==}
+  '@plone/volto@18.29.0':
+    resolution: {integrity: sha512-CMn9wXdOklTOqBUNwONj0GgC2G6p8gXz5GeVzZJnsJxOIgH3P/REG7HVQ/4H3MuvOpZKQfenSvoSoEpIdYVdDQ==}
     engines: {node: ^20 || ^22}
 
   '@plonegovbr/volto-social-media@2.0.0-alpha.10':
@@ -5629,6 +5638,9 @@ packages:
     peerDependencies:
       '@types/react': ^18.0.0
 
+  '@types/react-intl-redux@0.1.19':
+    resolution: {integrity: sha512-upa3MY7MiskgTAHBza0nS/D/a4YmnKol7ieHOpkgds8AQBEEXHwP0MKDGni7TcsjWekqYnXSExiTj/jg1pNhDg==}
+
   '@types/react-redux@7.1.34':
     resolution: {integrity: sha512-GdFaVjEbYv4Fthm2ZLvj1VSCedV7TqE5y1kNwnjSdBOTXuRSgowux6J8TAct15T3CKBr63UMk+2CO7ilRhyrAQ==}
 
@@ -5643,6 +5655,9 @@ packages:
 
   '@types/react@18.3.23':
     resolution: {integrity: sha512-/LDXMQh55EzZQ0uVAZmKKhfENivEvWz6E+EYzh+/MCjMhNsotd+ZHhBGIjFDTi6+fz0OhQQQLbTgdQIxxCsC0w==}
+
+  '@types/redux-mock-store@1.5.0':
+    resolution: {integrity: sha512-jcscBazm6j05Hs6xYCca6psTUBbFT2wqMxT7wZEHAYFxHB/I8jYk7d5msrHUlDiSL02HdTqTmkK2oIV8i3C8DA==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -17085,9 +17100,9 @@ snapshots:
 
   '@inquirer/checkbox@4.1.9(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
       '@inquirer/figures': 1.0.12
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       ansi-escapes: 4.3.2
       yoctocolors-cjs: 2.1.2
     optionalDependencies:
@@ -17105,8 +17120,8 @@ snapshots:
 
   '@inquirer/confirm@5.1.13(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
     optionalDependencies:
       '@types/node': 22.16.2
 
@@ -17120,7 +17135,7 @@ snapshots:
   '@inquirer/core@10.1.14(@types/node@22.16.2)':
     dependencies:
       '@inquirer/figures': 1.0.12
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       ansi-escapes: 4.3.2
       cli-width: 4.1.0
       mute-stream: 2.0.0
@@ -17145,8 +17160,8 @@ snapshots:
 
   '@inquirer/editor@4.2.14(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       external-editor: 3.1.0
     optionalDependencies:
       '@types/node': 22.16.2
@@ -17161,8 +17176,8 @@ snapshots:
 
   '@inquirer/expand@4.0.16(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       yoctocolors-cjs: 2.1.2
     optionalDependencies:
       '@types/node': 22.16.2
@@ -17188,8 +17203,8 @@ snapshots:
 
   '@inquirer/input@4.2.0(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
     optionalDependencies:
       '@types/node': 22.16.2
 
@@ -17202,8 +17217,8 @@ snapshots:
 
   '@inquirer/number@3.0.16(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
     optionalDependencies:
       '@types/node': 22.16.2
 
@@ -17216,8 +17231,8 @@ snapshots:
 
   '@inquirer/password@4.0.16(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       ansi-escapes: 4.3.2
     optionalDependencies:
       '@types/node': 22.16.2
@@ -17262,8 +17277,8 @@ snapshots:
 
   '@inquirer/rawlist@4.1.4(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       yoctocolors-cjs: 2.1.2
     optionalDependencies:
       '@types/node': 22.16.2
@@ -17278,9 +17293,9 @@ snapshots:
 
   '@inquirer/search@3.0.16(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
       '@inquirer/figures': 1.0.12
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       yoctocolors-cjs: 2.1.2
     optionalDependencies:
       '@types/node': 22.16.2
@@ -17296,9 +17311,9 @@ snapshots:
 
   '@inquirer/select@4.2.4(@types/node@22.16.2)':
     dependencies:
-      '@inquirer/core': 10.1.14(@types/node@22.16.2)
+      '@inquirer/core': 10.2.2(@types/node@22.16.2)
       '@inquirer/figures': 1.0.12
-      '@inquirer/type': 3.0.7(@types/node@22.16.2)
+      '@inquirer/type': 3.0.8(@types/node@22.16.2)
       ansi-escapes: 4.3.2
       yoctocolors-cjs: 2.1.2
     optionalDependencies:
@@ -17617,7 +17632,7 @@ snapshots:
     dependencies:
       buffer: 6.0.3
 
-  '@kitconcept/volto-slider-block@6.4.0(embla-carousel@8.5.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-slider-block@6.4.1(embla-carousel@8.5.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       deepmerge: 4.2.2
       embla-carousel-autoplay: 8.5.2(embla-carousel@8.5.2)
@@ -18396,9 +18411,9 @@ snapshots:
 
   '@pkgr/core@0.2.7': {}
 
-  '@plone-collective/volto-authomatic@3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+  '@plone-collective/volto-authomatic@3.0.0-alpha.6(@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2)))(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
     dependencies:
-      '@plone/components': link:core/packages/components
+      '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.6.2))
       '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -18474,7 +18489,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/volto-slate@18.7.0(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
+  '@plone/volto-slate@18.7.1(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
     dependencies:
       classnames: 2.5.1
       github-slugger: 1.4.0
@@ -18508,13 +18523,16 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.28.1(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.29.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
+      '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      '@dnd-kit/utilities': 3.2.2(react@18.2.0)
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
       '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/scripts': 3.10.3(debug@4.3.2)
-      '@plone/volto-slate': 18.7.0(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      '@plone/volto-slate': 18.7.1(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
       classnames: 2.5.1
       connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
@@ -18525,6 +18543,7 @@ snapshots:
       diff: 3.5.0
       express: 4.19.2
       filesize: 6.4.0
+      full-icu: 1.4.0
       github-slugger: 1.4.0
       history: 4.10.1
       hoist-non-react-statics: 3.3.2
@@ -20869,6 +20888,14 @@ snapshots:
     dependencies:
       '@types/react': 18.3.23
 
+  '@types/react-intl-redux@0.1.19(react@18.2.0)':
+    dependencies:
+      '@types/react-redux': 7.1.34
+      react-intl: 3.12.1(react@18.2.0)
+      redux: 4.2.1
+    transitivePeerDependencies:
+      - react
+
   '@types/react-redux@7.1.34':
     dependencies:
       '@types/hoist-non-react-statics': 3.3.6
@@ -20895,6 +20922,10 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.15
       csstype: 3.1.3
+
+  '@types/redux-mock-store@1.5.0':
+    dependencies:
+      redux: 4.2.1
 
   '@types/resolve@1.20.6': {}
 
@@ -28578,7 +28609,7 @@ snapshots:
       citty: 0.1.6
       consola: 3.4.2
       pathe: 2.0.3
-      pkg-types: 2.2.0
+      pkg-types: 2.3.0
       tinyexec: 0.3.2
 
   oauth-sign@0.9.0: {}
@@ -33380,14 +33411,14 @@ snapshots:
       - supports-color
       - terser
 
-  volto-rss-block@3.0.1(@plone/volto@18.28.1(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)):
+  volto-rss-block@3.0.1(@plone/volto@18.29.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)):
     dependencies:
-      '@plone/volto': 18.28.1(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.29.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       rss-parser: 3.7.5
 
-  volto-subblocks@2.1.0(@plone/volto@18.28.1(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0):
+  volto-subblocks@2.1.0(@plone/volto@18.29.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0):
     dependencies:
-      '@plone/volto': 18.28.1(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.29.0(@babel/runtime@7.27.6)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.23))(@types/react@18.3.23)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       react-dnd: 5.0.0(react@18.2.0)
       react-dnd-html5-backend: 5.0.1
     transitivePeerDependencies:

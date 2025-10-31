@@ -1,9 +1,10 @@
 import { Button, Container } from '@plone/components';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import jwtDecode from 'jwt-decode';
+import { getUser } from '@plone/volto/actions/users/users';
 import { Link, useLocation } from 'react-router-dom';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import useUser from '@plone/volto/hooks/user/useUser';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { toast } from 'react-toastify';
@@ -59,6 +60,26 @@ function useLiveData(field) {
   const formData = useSelector((state) => state.form.global?.[field]);
   return formData;
 }
+
+// Remove once we merged the pr in volto for the same changes.
+const useUser = () => {
+  const users = useSelector((state) => state.users);
+  const user = users?.user;
+  const userId = useSelector((state) =>
+    state.userSession.token ? jwtDecode(state.userSession.token).sub : '',
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Only added the userId check to avoid infinite loop in anonymous user case.
+    if (userId && !user?.id && users?.get.loading === false) {
+      dispatch(getUser(userId));
+    }
+  }, [dispatch, userId, user, users?.get.loading]);
+
+  return user;
+};
+
 const ContentInteractions = (props) => {
   const location = useLocation();
   const content = useSelector((state) => state.content.data);

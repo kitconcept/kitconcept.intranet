@@ -105,6 +105,7 @@ exclude = [
 ]
 
 [tool.hatch.build.targets.wheel]
+packages = ["src/kitconcept"]
 include = [
   "src/kitconcept/**",
   "docs/**",

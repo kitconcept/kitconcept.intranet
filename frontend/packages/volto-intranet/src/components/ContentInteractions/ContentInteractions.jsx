@@ -31,8 +31,7 @@ const messages = defineMessages({
   },
   share: {
     id: 'Share Content',
-    defaultMessage:
-      'Recommendation from the Intranet&body=I would like to share this intranet content with you:',
+    defaultMessage: 'I would like to share this intranet content with you:',
   },
   shareTitle: {
     id: 'Share this page via email',
@@ -40,7 +39,7 @@ const messages = defineMessages({
   },
   shareSubject: {
     id: 'shareSubject',
-    defaultMessage: 'Intranet reading tip',
+    defaultMessage: 'Recommendation from the Intranet',
   },
   likeFailed: {
     id: 'Something went wrong while liking this post.',

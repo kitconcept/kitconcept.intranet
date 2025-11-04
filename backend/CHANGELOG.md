@@ -2,6 +2,21 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b18 (2025-11-04)
+
+
+### Bugfix
+
+- New blocks error boundary.
+  Fixed image widget flaw on uploading to non-folderish content.
+  Several fixes.
+  Update to core 1.0.0a7. @sneridagh 
+
+
+### Internal
+
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+
 ## 1.0.0b17 (2025-10-31)
 
 

@@ -141,7 +141,6 @@ class TestContentTypeFTI:
                     "plone.allowdiscussion",
                     "kitconcept.intranet.location",
                     "kitconcept.intranet.organisational_unit",
-                    "kitconcept.intranet.votes",
                 ),
             ),
             ("Location", "title", "Location"),

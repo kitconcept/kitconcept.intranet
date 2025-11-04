@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20251021001"
+      destination="20251031001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add votes behaviour to Event, File, Image, and News Item content types"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

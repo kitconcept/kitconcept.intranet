@@ -382,8 +382,8 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0
       '@types/node':
-        specifier: ^20
-        version: 20.19.23
+        specifier: ^22
+        version: 22.18.12
       '@types/react':
         specifier: ^18
         version: 18.3.26
@@ -401,16 +401,16 @@ importers:
         version: link:../tsconfig
       tsup:
         specifier: ^8.3.5
-        version: 8.5.0(@microsoft/api-extractor@7.43.0(@types/node@20.19.23))(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.1)
+        version: 8.5.0(@microsoft/api-extractor@7.43.0(@types/node@22.18.12))(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.1)
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
       vite:
         specifier: ^5.4.9
-        version: 5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+        version: 5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
       vitest:
         specifier: ^2.1.3
-        version: 2.1.9(@types/node@20.19.23)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+        version: 2.1.9(@types/node@22.18.12)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
 
   core/packages/scripts:
     dependencies:
@@ -861,8 +861,8 @@ importers:
         specifier: ^8.0.4
         version: 8.6.14(storybook@8.6.14(prettier@3.2.5))
       '@testing-library/cypress':
-        specifier: 10.0.1
-        version: 10.0.1(cypress@13.13.2)
+        specifier: 10.1.0
+        version: 10.1.0(cypress@13.17.0)
       '@testing-library/jest-dom':
         specifier: 6.4.2
         version: 6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.14)(jest@26.6.3)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@22.18.12)(@vitest/ui@2.1.9)(jsdom@16.7.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0))
@@ -885,7 +885,7 @@ importers:
         specifier: ^4.14.201
         version: 4.17.20
       '@types/node':
-        specifier: ^22.13.0
+        specifier: ^22
         version: 22.18.12
       '@types/react':
         specifier: ^18
@@ -954,14 +954,14 @@ importers:
         specifier: 5.2.7
         version: 5.2.7(webpack@5.90.1(esbuild@0.25.11))
       cypress:
-        specifier: 13.13.2
-        version: 13.13.2
+        specifier: 13.17.0
+        version: 13.17.0
       cypress-axe:
-        specifier: 1.5.0
-        version: 1.5.0(axe-core@4.4.2)(cypress@13.13.2)
+        specifier: 1.7.0
+        version: 1.7.0(axe-core@4.4.2)(cypress@13.17.0)
       cypress-file-upload:
         specifier: 5.0.8
-        version: 5.0.8(cypress@13.13.2)
+        version: 5.0.8(cypress@13.17.0)
       deep-freeze:
         specifier: 0.0.1
         version: 0.0.1
@@ -1281,7 +1281,7 @@ importers:
         version: 0.5.1(react@18.2.0)
       '@plone-collective/volto-authomatic':
         specifier: 3.0.0-alpha.6
-        version: 3.0.0-alpha.6(@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+        version: 3.0.0-alpha.6(@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@plone/registry@2.6.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1476,7 +1476,7 @@ importers:
         version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       volto-subblocks:
         specifier: ^2.1.0
-        version: 2.1.0(@plone/volto@18.29.0(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0)
+        version: 2.1.0(@plone/volto@18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
@@ -1573,7 +1573,7 @@ importers:
         version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       volto-rss-block:
         specifier: ^3.0.1
-        version: 3.0.1(@plone/volto@18.29.0(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+        version: 3.0.1(@plone/volto@18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.2
@@ -1723,7 +1723,7 @@ importers:
         version: 8.6.14(@storybook/test@8.6.14(storybook@8.6.14(prettier@3.2.5)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))(typescript@5.9.3)
       '@testing-library/cypress':
         specifier: 10.0.3
-        version: 10.0.3(cypress@13.13.2)
+        version: 10.0.3(cypress@13.17.0)
       '@testing-library/jest-dom':
         specifier: ^6.8.0
         version: 6.9.1
@@ -3955,8 +3955,8 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/registry@2.5.4':
-    resolution: {integrity: sha512-ygUm4LuOiwWBsyK/2Z4xI3ORvDAIWL4nn1bgcrUc+BconM4bsY1N0ycDH+VpylEMovx/K2r6BR4R82oBa6KP8g==}
+  '@plone/registry@2.6.0':
+    resolution: {integrity: sha512-2s7d8i5GTywzuYcglqljFbP2uTQaHv5Ln0uHcdq6GypqKBfc2kztckDF9COArp9I9F0dodISviNvDBhKcs/36A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3974,8 +3974,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@plone/volto@18.29.0':
-    resolution: {integrity: sha512-CMn9wXdOklTOqBUNwONj0GgC2G6p8gXz5GeVzZJnsJxOIgH3P/REG7HVQ/4H3MuvOpZKQfenSvoSoEpIdYVdDQ==}
+  '@plone/volto@18.29.1':
+    resolution: {integrity: sha512-pVe9Pqu6ddNTSXYecTjwULKYtMF7RRMpm/whfrYdqstoDJHzsFtLsaZ4ewqQr1CLgWud9sZ7KC/WvI1HaXCW4w==}
     engines: {node: ^20 || ^22}
 
   '@plonegovbr/volto-social-media@2.0.0-alpha.10':
@@ -5116,6 +5116,12 @@ packages:
     peerDependencies:
       cypress: ^12.0.0 || ^13.0.0 || ^14.0.0
 
+  '@testing-library/cypress@10.1.0':
+    resolution: {integrity: sha512-tNkNtYRqPQh71xXKuMizr146zlellawUfDth7A/urYU4J66g0VGZ063YsS0gqS79Z58u1G/uo9UxN05qvKXMag==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      cypress: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
+
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
     engines: {node: '>=18'}
@@ -5393,9 +5399,6 @@ packages:
 
   '@types/node@15.14.9':
     resolution: {integrity: sha512-qjd88DrCxupx/kJD5yQgZdcYKZKSIGBVDIBE1/LTGcNm3d2Np/jxojkdePDdfnBHJc5W7vSMpbJ1aB7p/Py69A==}
-
-  '@types/node@20.19.23':
-    resolution: {integrity: sha512-yIdlVVVHXpmqRhtyovZAcSy0MiPcYWGkoO4CGe/+jpP0hmNuihm4XhHbADpK++MsiLHP5MVlv+bcgdF99kSiFQ==}
 
   '@types/node@22.18.12':
     resolution: {integrity: sha512-BICHQ67iqxQGFSzfCFTT7MRQ5XcBjG5aeKh5Ok38UBbPe5fxTyE+aHFxwVrGyr8GNlqFMLKD1D3P2K/1ks8tog==}
@@ -7465,6 +7468,13 @@ packages:
       axe-core: ^3 || ^4
       cypress: ^10 || ^11 || ^12 || ^13
 
+  cypress-axe@1.7.0:
+    resolution: {integrity: sha512-zzJpvAAjauEB3GZl0KYXb8i3w6MztWAt2WM3czYTFyNVC30alDmqCm9E7GwZ4bgkldZJlmHakaVEyu73R5St4w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      axe-core: ^3 || ^4
+      cypress: ^10 || ^11 || ^12 || ^13 || ^14 || ^15
+
   cypress-file-upload@5.0.8:
     resolution: {integrity: sha512-+8VzNabRk3zG6x8f8BWArF/xA/W0VK4IZNx3MV0jFWrJS/qKn8eHfa5nU73P9fOQAgwHFJx7zjg4lwOnljMO8g==}
     engines: {node: '>=8.2.1'}
@@ -7473,6 +7483,11 @@ packages:
 
   cypress@13.13.2:
     resolution: {integrity: sha512-PvJQU33933NvS1StfzEb8/mu2kMy4dABwCF+yd5Bi7Qly1HOVf+Bufrygee/tlmty/6j5lX+KIi8j9Q3JUMbhA==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+    hasBin: true
+
+  cypress@13.17.0:
+    resolution: {integrity: sha512-5xWkaPurwkIljojFidhw8lFScyxhtiFHl/i/3zov+1Z5CmY4t9tjIdvSXfu82Y3w7wt0uR9KkucbhkVvJZLQSA==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
 
@@ -17237,15 +17252,6 @@ snapshots:
       '@types/react': 18.3.26
       react: 18.2.0
 
-  '@microsoft/api-extractor-model@7.28.13(@types/node@20.19.23)':
-    dependencies:
-      '@microsoft/tsdoc': 0.14.2
-      '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.0.2(@types/node@20.19.23)
-    transitivePeerDependencies:
-      - '@types/node'
-    optional: true
-
   '@microsoft/api-extractor-model@7.28.13(@types/node@22.18.12)':
     dependencies:
       '@microsoft/tsdoc': 0.14.2
@@ -17253,25 +17259,6 @@ snapshots:
       '@rushstack/node-core-library': 4.0.2(@types/node@22.18.12)
     transitivePeerDependencies:
       - '@types/node'
-
-  '@microsoft/api-extractor@7.43.0(@types/node@20.19.23)':
-    dependencies:
-      '@microsoft/api-extractor-model': 7.28.13(@types/node@20.19.23)
-      '@microsoft/tsdoc': 0.14.2
-      '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.0.2(@types/node@20.19.23)
-      '@rushstack/rig-package': 0.5.2
-      '@rushstack/terminal': 0.10.0(@types/node@20.19.23)
-      '@rushstack/ts-command-line': 4.19.1(@types/node@20.19.23)
-      lodash: 4.17.21
-      minimatch: 3.0.8
-      resolve: 1.22.11
-      semver: 7.5.4
-      source-map: 0.6.1
-      typescript: 5.4.2
-    transitivePeerDependencies:
-      - '@types/node'
-    optional: true
 
   '@microsoft/api-extractor@7.43.0(@types/node@22.18.12)':
     dependencies:
@@ -17840,10 +17827,10 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@plone-collective/volto-authomatic@3.0.0-alpha.6(@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+  '@plone-collective/volto-authomatic@3.0.0-alpha.6(@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5)))(@plone/registry@2.6.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
     dependencies:
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
-      '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/registry': 2.6.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-intl: 3.12.1(@types/react@18.3.26)(react@18.2.0)
@@ -17862,7 +17849,7 @@ snapshots:
     transitivePeerDependencies:
       - storybook
 
-  '@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@plone/registry@2.6.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       auto-config-loader: 1.7.8
       crypto-random-string: 3.2.0
@@ -17952,14 +17939,14 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.29.0(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       '@dnd-kit/utilities': 3.2.2(react@18.2.0)
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
-      '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/registry': 2.6.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/scripts': 3.10.3(debug@4.3.2)
       '@plone/volto-slate': 18.7.1(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
@@ -19242,18 +19229,6 @@ snapshots:
 
   '@rushstack/eslint-patch@1.14.0': {}
 
-  '@rushstack/node-core-library@4.0.2(@types/node@20.19.23)':
-    dependencies:
-      fs-extra: 7.0.1
-      import-lazy: 4.0.0
-      jju: 1.4.0
-      resolve: 1.22.11
-      semver: 7.5.4
-      z-schema: 5.0.5
-    optionalDependencies:
-      '@types/node': 20.19.23
-    optional: true
-
   '@rushstack/node-core-library@4.0.2(@types/node@22.18.12)':
     dependencies:
       fs-extra: 7.0.1
@@ -19270,30 +19245,12 @@ snapshots:
       resolve: 1.22.11
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.10.0(@types/node@20.19.23)':
-    dependencies:
-      '@rushstack/node-core-library': 4.0.2(@types/node@20.19.23)
-      supports-color: 8.1.1
-    optionalDependencies:
-      '@types/node': 20.19.23
-    optional: true
-
   '@rushstack/terminal@0.10.0(@types/node@22.18.12)':
     dependencies:
       '@rushstack/node-core-library': 4.0.2(@types/node@22.18.12)
       supports-color: 8.1.1
     optionalDependencies:
       '@types/node': 22.18.12
-
-  '@rushstack/ts-command-line@4.19.1(@types/node@20.19.23)':
-    dependencies:
-      '@rushstack/terminal': 0.10.0(@types/node@20.19.23)
-      '@types/argparse': 1.0.38
-      argparse: 1.0.10
-      string-argv: 0.3.2
-    transitivePeerDependencies:
-      - '@types/node'
-    optional: true
 
   '@rushstack/ts-command-line@4.19.1(@types/node@22.18.12)':
     dependencies:
@@ -19754,11 +19711,17 @@ snapshots:
       '@testing-library/dom': 9.3.4
       cypress: 13.13.2
 
-  '@testing-library/cypress@10.0.3(cypress@13.13.2)':
+  '@testing-library/cypress@10.0.3(cypress@13.17.0)':
     dependencies:
       '@babel/runtime': 7.20.6
       '@testing-library/dom': 10.4.1
-      cypress: 13.13.2
+      cypress: 13.17.0
+
+  '@testing-library/cypress@10.1.0(cypress@13.17.0)':
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@testing-library/dom': 10.4.1
+      cypress: 13.17.0
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -20131,10 +20094,6 @@ snapshots:
       '@types/node': 22.18.12
 
   '@types/node@15.14.9': {}
-
-  '@types/node@20.19.23':
-    dependencies:
-      undici-types: 6.21.0
 
   '@types/node@22.18.12':
     dependencies:
@@ -20641,25 +20600,9 @@ snapshots:
       chai: 5.3.3
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@2.1.9(vite@5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0))':
-    dependencies:
-      '@vitest/spy': 2.1.9
-      estree-walker: 3.0.3
-      magic-string: 0.30.19
-    optionalDependencies:
-      vite: 5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-
   '@vitest/mocker@2.1.9(vite@5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0))':
     dependencies:
       '@vitest/spy': 2.1.9
-      estree-walker: 3.0.3
-      magic-string: 0.30.19
-    optionalDependencies:
-      vite: 5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-
-  '@vitest/mocker@3.2.4(vite@5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0))':
-    dependencies:
-      '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
       magic-string: 0.30.19
     optionalDependencies:
@@ -20671,8 +20614,7 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.19
     optionalDependencies:
-      vite: 5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-    optional: true
+      vite: 5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
 
   '@vitest/pretty-format@2.0.5':
     dependencies:
@@ -21702,7 +21644,7 @@ snapshots:
     dependencies:
       ansi-align: 3.0.1
       camelcase: 7.0.1
-      chalk: 5.3.0
+      chalk: 5.6.2
       cli-boxes: 3.0.0
       string-width: 5.1.2
       type-fest: 2.19.0
@@ -22739,19 +22681,23 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cypress-axe@1.5.0(axe-core@4.4.2)(cypress@13.13.2):
-    dependencies:
-      axe-core: 4.4.2
-      cypress: 13.13.2
-
   cypress-axe@1.5.0(axe-core@4.8.4)(cypress@13.13.2):
     dependencies:
       axe-core: 4.8.4
       cypress: 13.13.2
 
+  cypress-axe@1.7.0(axe-core@4.4.2)(cypress@13.17.0):
+    dependencies:
+      axe-core: 4.4.2
+      cypress: 13.17.0
+
   cypress-file-upload@5.0.8(cypress@13.13.2):
     dependencies:
       cypress: 13.13.2
+
+  cypress-file-upload@5.0.8(cypress@13.17.0):
+    dependencies:
+      cypress: 13.17.0
 
   cypress@13.13.2:
     dependencies:
@@ -22795,6 +22741,52 @@ snapshots:
       semver: 7.7.3
       supports-color: 8.1.1
       tmp: 0.2.5
+      untildify: 4.0.0
+      yauzl: 2.10.0
+
+  cypress@13.17.0:
+    dependencies:
+      '@cypress/request': 3.0.9
+      '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
+      '@types/sinonjs__fake-timers': 8.1.1
+      '@types/sizzle': 2.3.10
+      arch: 2.2.0
+      blob-util: 2.0.2
+      bluebird: 3.7.2
+      buffer: 5.7.1
+      cachedir: 2.4.0
+      chalk: 4.1.2
+      check-more-types: 2.24.0
+      ci-info: 4.3.1
+      cli-cursor: 3.1.0
+      cli-table3: 0.6.5
+      commander: 6.2.1
+      common-tags: 1.8.2
+      dayjs: 1.11.18
+      debug: 4.3.4(supports-color@8.1.1)
+      enquirer: 2.4.1
+      eventemitter2: 6.4.7
+      execa: 4.1.0
+      executable: 4.1.1
+      extract-zip: 2.0.1(supports-color@8.1.1)
+      figures: 3.2.0
+      fs-extra: 9.1.0
+      getos: 3.2.1
+      is-installed-globally: 0.4.0
+      lazy-ass: 1.6.0
+      listr2: 3.14.0(enquirer@2.4.1)
+      lodash: 4.17.21
+      log-symbols: 4.1.0
+      minimist: 1.2.8
+      ospath: 1.2.2
+      pretty-bytes: 5.6.0
+      process: 0.11.10
+      proxy-from-env: 1.0.0
+      request-progress: 3.0.0
+      semver: 7.7.3
+      supports-color: 8.1.1
+      tmp: 0.2.5
+      tree-kill: 1.2.2
       untildify: 4.0.0
       yauzl: 2.10.0
 
@@ -24323,7 +24315,7 @@ snapshots:
 
   fork-ts-checker-webpack-plugin@4.1.6(eslint@8.57.1)(typescript@5.9.3)(vue-template-compiler@2.7.16)(webpack@5.90.1(esbuild@0.25.11)):
     dependencies:
-      '@babel/code-frame': 7.10.4
+      '@babel/code-frame': 7.27.1
       chalk: 2.4.2
       micromatch: 3.1.10
       minimatch: 3.1.2
@@ -26679,12 +26671,12 @@ snapshots:
 
   log-symbols@5.1.0:
     dependencies:
-      chalk: 5.3.0
+      chalk: 5.6.2
       is-unicode-supported: 1.3.0
 
   log-symbols@6.0.0:
     dependencies:
-      chalk: 5.3.0
+      chalk: 5.6.2
       is-unicode-supported: 1.3.0
 
   log-symbols@7.0.1:
@@ -28096,7 +28088,7 @@ snapshots:
       got: 12.6.1
       registry-auth-token: 5.1.0
       registry-url: 6.0.1
-      semver: 7.6.0
+      semver: 7.7.3
 
   pacote@12.0.3:
     dependencies:
@@ -30403,7 +30395,7 @@ snapshots:
 
   semver-diff@4.0.0:
     dependencies:
-      semver: 7.6.0
+      semver: 7.7.3
 
   semver@5.7.2: {}
 
@@ -31557,35 +31549,6 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.5.0(@microsoft/api-extractor@7.43.0(@types/node@20.19.23))(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.1):
-    dependencies:
-      bundle-require: 5.1.0(esbuild@0.25.11)
-      cac: 6.7.14
-      chokidar: 4.0.3
-      consola: 3.4.2
-      debug: 4.4.3
-      esbuild: 0.25.11
-      fix-dts-default-cjs-exports: 1.0.1
-      joycon: 3.1.1
-      picocolors: 1.1.1
-      postcss-load-config: 6.0.1(jiti@2.6.1)(postcss@8.5.6)(yaml@2.8.1)
-      resolve-from: 5.0.0
-      rollup: 4.52.5
-      source-map: 0.8.0-beta.0
-      sucrase: 3.35.0
-      tinyexec: 0.3.2
-      tinyglobby: 0.2.15
-      tree-kill: 1.2.2
-    optionalDependencies:
-      '@microsoft/api-extractor': 7.43.0(@types/node@20.19.23)
-      postcss: 8.5.6
-      typescript: 5.9.3
-    transitivePeerDependencies:
-      - jiti
-      - supports-color
-      - tsx
-      - yaml
-
   tsup@8.5.0(@microsoft/api-extractor@7.43.0(@types/node@22.18.12))(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.1):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.25.11)
@@ -32065,24 +32028,6 @@ snapshots:
       remove-trailing-separator: 1.1.0
       replace-ext: 1.0.1
 
-  vite-node@2.1.9(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
-    dependencies:
-      cac: 6.7.14
-      debug: 4.4.3
-      es-module-lexer: 1.7.0
-      pathe: 1.1.2
-      vite: 5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-
   vite-node@2.1.9(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
     dependencies:
       cac: 6.7.14
@@ -32100,25 +32045,6 @@ snapshots:
       - sugarss
       - supports-color
       - terser
-
-  vite-node@3.2.4:
-    dependencies:
-      cac: 6.7.14
-      debug: 4.4.3
-      es-module-lexer: 1.7.0
-      pathe: 2.0.3
-      vite: 5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    optional: true
 
   vite-node@3.2.4(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
     dependencies:
@@ -32155,19 +32081,6 @@ snapshots:
       - rollup
       - supports-color
 
-  vite@5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
-    dependencies:
-      esbuild: 0.21.5
-      postcss: 8.5.6
-      rollup: 4.52.5
-    optionalDependencies:
-      '@types/node': 20.19.23
-      fsevents: 2.3.3
-      less: 3.11.1
-      lightningcss: 1.30.2
-      sass: 1.93.2
-      terser: 5.44.0
-
   vite@5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
     dependencies:
       esbuild: 0.21.5
@@ -32190,43 +32103,6 @@ snapshots:
       lodash-es: 4.17.21
       redent: 3.0.0
       vitest: 2.1.9(@types/node@22.18.12)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-
-  vitest@2.1.9(@types/node@20.19.23)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
-    dependencies:
-      '@vitest/expect': 2.1.9
-      '@vitest/mocker': 2.1.9(vite@5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0))
-      '@vitest/pretty-format': 2.1.9
-      '@vitest/runner': 2.1.9
-      '@vitest/snapshot': 2.1.9
-      '@vitest/spy': 2.1.9
-      '@vitest/utils': 2.1.9
-      chai: 5.3.3
-      debug: 4.4.3
-      expect-type: 1.2.2
-      magic-string: 0.30.19
-      pathe: 1.1.2
-      std-env: 3.10.0
-      tinybench: 2.9.0
-      tinyexec: 0.3.2
-      tinypool: 1.1.1
-      tinyrainbow: 1.2.0
-      vite: 5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-      vite-node: 2.1.9(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-      why-is-node-running: 2.3.0
-    optionalDependencies:
-      '@types/node': 20.19.23
-      '@vitest/ui': 2.1.9(vitest@2.1.9)
-      jsdom: 22.1.0
-    transitivePeerDependencies:
-      - less
-      - lightningcss
-      - msw
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
 
   vitest@2.1.9(@types/node@22.18.12)(@vitest/ui@2.1.9)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
     dependencies:
@@ -32324,8 +32200,8 @@ snapshots:
       tinyglobby: 0.2.15
       tinypool: 1.1.1
       tinyrainbow: 2.0.0
-      vite: 5.4.21(@types/node@20.19.23)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
-      vite-node: 3.2.4
+      vite: 5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+      vite-node: 3.2.4(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
       - less
@@ -32343,7 +32219,7 @@ snapshots:
     dependencies:
       '@types/chai': 5.2.3
       '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(vite@5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0))
+      '@vitest/mocker': 3.2.4(vite@5.4.21)
       '@vitest/pretty-format': 3.2.4
       '@vitest/runner': 3.2.4
       '@vitest/snapshot': 3.2.4
@@ -32384,7 +32260,7 @@ snapshots:
     dependencies:
       '@types/chai': 5.2.3
       '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(vite@5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0))
+      '@vitest/mocker': 3.2.4(vite@5.4.21)
       '@vitest/pretty-format': 3.2.4
       '@vitest/runner': 3.2.4
       '@vitest/snapshot': 3.2.4
@@ -32420,14 +32296,14 @@ snapshots:
       - supports-color
       - terser
 
-  volto-rss-block@3.0.1(@plone/volto@18.29.0(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)):
+  volto-rss-block@3.0.1(@plone/volto@18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)):
     dependencies:
-      '@plone/volto': 18.29.0(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       rss-parser: 3.7.5
 
-  volto-subblocks@2.1.0(@plone/volto@18.29.0(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0):
+  volto-subblocks@2.1.0(@plone/volto@18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0):
     dependencies:
-      '@plone/volto': 18.29.0(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       react-dnd: 5.0.0(react@18.2.0)
       react-dnd-html5-backend: 5.0.1
     transitivePeerDependencies:

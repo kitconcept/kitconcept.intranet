@@ -41,7 +41,7 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
     content?.authors ||
     content?.responsible_person ||
     content?.feedback_person ||
-    content?.['@components'].lcm?.responsible_person?.url;
+    content?.['@components']?.lcm?.responsible_person?.url;
 
   let footer_links = useLiveData<SiteFooterSettings['footer_links']>(
     content,

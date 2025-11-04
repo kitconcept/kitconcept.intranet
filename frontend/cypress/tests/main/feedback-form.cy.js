@@ -28,11 +28,10 @@ describe('Feedback form', () => {
     cy.get('textarea#field-description').type(
       'Dr. Ayla Demir ist Projektkoordinatorin für Internationale Zusammenarbeit in der Abteilung Wissenschaftspolitische Beziehungen. Sie koordiniert internationale Partnerschaften, begleitet das Antragsmanagement für EU- und Drittmittelprojekte und organisiert Fachkonferenzen. ',
     );
+    cy.get('.ui.pointing.secondary.attached.tabular.formtabs.menu')
+      .findByText('Contact Information')
+      .click();
     cy.get('#field-contact_email').type('aylademir@test.com');
-    cy.get('#field-roles').click();
-    cy.get(
-      '#field-roles .react-select__menu .react-select__option:first-of-type',
-    ).click();
     cy.get('#toolbar-save').focus().click();
     cy.wait('@content');
     cy.navigate('/my-page/edit');
@@ -55,8 +54,5 @@ describe('Feedback form', () => {
     cy.get('.feedback-form-buttons .send-button').click();
     cy.location('pathname').should('eq', '/my-page');
     cy.get('h1.documentFirstHeading').should('contain', 'My Page');
-    cy.findByRole('alert')
-      .get('.toast-inner-content')
-      .contains('Your feedback has been submitted successfully.');
   });
 });

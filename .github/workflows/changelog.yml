@@ -4,9 +4,10 @@ on:
     types: [assigned, opened, synchronize, reopened, labeled, unlabeled]
     branches:
       - main
+      - 1.x.x
 
 env:
-  NODE_VERSION: 22.x
+  NODE_VERSION: 24.x
   ADDON_NAME: volto-intranet
   BASE_BRANCH: main
 

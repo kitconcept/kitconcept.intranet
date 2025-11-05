@@ -39,12 +39,10 @@ class IIntranetSettings(Interface):
         ),
         required=True,
         default="rounded1to1",
-        vocabulary=SimpleVocabulary(
-            [
-                SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
-                SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
-            ]
-        ),
+        vocabulary=SimpleVocabulary([
+            SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
+            SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
+        ]),
     )
 
     default_feedback_email = schema.TextLine(

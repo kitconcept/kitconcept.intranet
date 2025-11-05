@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { useIntl, defineMessages } from 'react-intl';
 import { useSelector, useDispatch } from 'react-redux';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { useHistory, useLocation } from 'react-router-dom';
-import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { toast } from 'react-toastify';
-import { submitFeedbackContactForm } from '../../actions';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import { Form } from '@plone/components';
-import { Button } from '@plone/components';
-import { Container } from '@plone/components';
+import { Form, Button, Container } from '@plone/components';
+import { submitFeedbackContactForm } from '../../actions';
 
 import {
   Label,

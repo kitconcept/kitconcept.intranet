@@ -11,12 +11,14 @@
       file="meta.zcml"
       />
 
+
   <plone:behavior
-      name="kitconcept.blocks.config"
-      title="Through The Web blocks configuration"
-      description="Allows to set configuration that will be injected into the blocks default configuration."
-      provides=".blocks_settings.ITTWBlocksSettings"
+      name="kitconcept.intranet.votes"
+      title="Saves userID who liked an item"
+      description="Adds votes field"
+      provides=".votes.IVotes"
       />
+
 
   <plone:behavior
       name="kitconcept.intranet.location"
@@ -44,6 +46,11 @@
       title="Intranet-specific Person fields"
       description="Add the intranet-specific person fields"
       provides=".person.IPersonBehavior"
+      />
+
+  <utility
+      factory=".person.AcademicTitleFirstLastName"
+      name="academic_title_first_last"
       />
 
 </configure>

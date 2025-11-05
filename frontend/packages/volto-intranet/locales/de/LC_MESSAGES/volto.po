@@ -11,6 +11,21 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Address"
+#: components/theme/PersonView
+msgid "Address"
+msgstr "Adresse"
+
+#. Default: "Bio"
+#: components/theme/PersonView
+msgid "Bio"
+msgstr "Vita"
+
+#. Default: "Building"
+#: components/theme/PersonView
+msgid "Building"
+msgstr "Gebäude"
+
 #. Default: "By"
 #: slots/DocumentByLine/DocumentByLine
 msgid "By"
@@ -18,8 +33,20 @@ msgstr "Von"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Contact"
 msgstr "Kontakt"
+
+#. Default: "Created On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Created On"
+msgstr "Erstellt am"
+
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+#: components/theme/PersonView
+msgid "E-mail"
+msgstr "E-mail"
 
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
@@ -32,6 +59,7 @@ msgid "End"
 msgstr "Ende"
 
 #. Default: "Error"
+#: components/Blocks/IFrame/isValidUrl
 #: components/FeedBackForm/FeedBackForm
 msgid "Error"
 msgstr "Fehler"
@@ -49,7 +77,7 @@ msgstr "Feedback zu dieser Seite"
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
 msgid "Feedback on this page"
-msgstr ""
+msgstr "Feedback zu dieser Seite"
 
 #. Default: "Feedback on:"
 #: components/FeedBackForm/FeedBackForm
@@ -71,6 +99,21 @@ msgstr "Folgen Sie uns:"
 msgid "ICS-Download"
 msgstr "Termin importieren (.ics)"
 
+#. Default: "Invalid url"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Invalid url"
+msgstr "Ungültige URL"
+
+#. Default: "Last Modified On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Last Modified On"
+msgstr "Zuletzt geändert am"
+
+#. Default: "List with date"
+#: index
+msgid "List with date"
+msgstr "Liste mit Datum"
+
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
@@ -88,6 +131,8 @@ msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
+#: components/theme/PersonView
 msgid "Phone"
 msgstr "Telefonnummer"
 
@@ -101,10 +146,41 @@ msgstr "Bitte geben Sie Ihre geschäftliche E-Mail-Adresse ein."
 msgid "Please fill in the Feedback field"
 msgstr "Bitte füllen Sie das Feld „Feedback“ aus."
 
+#. Default: "Room"
+#: components/Summary/PersonSummary
+#: components/theme/PersonView
+msgid "Room"
+msgstr "Raum"
+
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
 msgid "Send feedback"
 msgstr "Feedback senden"
+
+#. Default: "I would like to share this intranet content with you:"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share Content"
+msgstr "Ich möchte diesen Intranet-Inhalt mit Ihnen teilen:"
+
+#. Default: "Share this page via email"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share this page via email"
+msgstr "Seite per E-Mail teilen"
+
+#. Default: "Site"
+#: components/theme/PersonView
+msgid "Site"
+msgstr "Website"
+
+#. Default: "Something went wrong while liking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while liking this post."
+msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
+
+#. Default: "Something went wrong while unliking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while unliking this post."
+msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
 
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
@@ -124,12 +200,17 @@ msgstr "Betreff Seite/URL"
 #. Default: "Success"
 #: components/FeedBackForm/FeedBackForm
 msgid "Success"
-msgstr ""
+msgstr "Erfolg"
+
+#. Default: "To submit a Like you must be logged in"
+#: components/ContentInteractions/ContentInteractions
+msgid "To submit a Like you must be logged in"
+msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
@@ -164,3 +245,8 @@ msgstr "Keine Ergebnisse aus dem RSS-Feed."
 #: components/Blocks/RSS/SummaryTemplate
 msgid "rss_read_more"
 msgstr "Weiterlesen"
+
+#. Default: "Recommendation from the Intranet"
+#: components/ContentInteractions/ContentInteractions
+msgid "shareSubject"
+msgstr "Empfehlung aus dem Intranet"

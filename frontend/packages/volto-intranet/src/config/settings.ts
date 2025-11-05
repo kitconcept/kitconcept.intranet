@@ -28,6 +28,7 @@ export default function install(config: ConfigType) {
   // Volto Light Theme Configuration
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';
+  config.settings.displayLogout = false;
 
   const EXPANDERS_INHERIT_BEHAVIORS = 'kitconcept.blocks.config';
 

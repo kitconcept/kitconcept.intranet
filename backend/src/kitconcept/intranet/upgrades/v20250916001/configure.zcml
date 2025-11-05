@@ -8,8 +8,8 @@
       destination="20250916001"
       >
     <genericsetup:upgradeDepends
-        title="Adds kitconcept.intranet.cc_email, default_email and allowed domains to the control panel registry."
-        import_steps="plone.app.registry"
+        title="Add biography behavior to Person content type"
+        import_steps="typeinfo"
         />
   </genericsetup:upgradeSteps>
 </configure>

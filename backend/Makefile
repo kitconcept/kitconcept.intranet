@@ -150,6 +150,11 @@ build-image:  ## Build Docker Images
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-acceptance:$(IMAGE_TAG) $(RESET)"
 	@docker build .  --pull=false --platform linux/amd64 -t $(IMAGE_NAME_PREFIX)-acceptance:$(IMAGE_TAG) -f Dockerfile.acceptance --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)
 
+# Solr
+.PHONY: solr-activate-and-reindex
+solr-activate-and-reindex: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and reindex
+	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
+
 # Acceptance tests
 .PHONY: acceptance-backend-start
 acceptance-backend-start: ## Start backend acceptance server

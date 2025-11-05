@@ -9,7 +9,7 @@ describe('a11y tests', () => {
     cy.wait('@content');
   });
 
-  // Listing-block
+  // RSS-block
   it('RSS block (/features/block/rss-block)', () => {
     cy.navigate('/features/block/rss-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);

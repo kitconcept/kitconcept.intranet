@@ -63,6 +63,8 @@ def handler(distribution: Distribution, site: PloneSite, answers: dict) -> Plone
     if workflow == "restricted":
         profiles["base"].append("kitconcept.intranet:restricted")
     if answers.get("setup_solr", False):
+        # Explicitly add Solr profiles
+        profiles["base"].append("kitconcept.solr:default")
         profiles["base"].append("kitconcept.intranet:solr")
     distribution._profiles = profiles
     site = default_handler(distribution, site, answers)

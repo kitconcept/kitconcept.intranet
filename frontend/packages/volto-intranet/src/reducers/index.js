@@ -5,6 +5,7 @@
 
 import defaultReducers from '@plone/volto/reducers';
 import feedbackContactForm from './feedbackContactForm/feedbackContactForm';
+import likes from './likes/likes';
 
 /**
  * Root reducer.
@@ -15,8 +16,8 @@ import feedbackContactForm from './feedbackContactForm/feedbackContactForm';
  */
 const reducers = {
   ...defaultReducers,
-
   feedbackContactForm,
+  likes,
   // Add your reducers here
 };
 

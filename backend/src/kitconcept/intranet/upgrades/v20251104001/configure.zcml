@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20251031001"
+      destination="20251104001"
+      >
+    <genericsetup:upgradeDepends
+        title="Adds kitconcept.intranet.cc_email, default_email and allowed domains to the control panel registry."
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

@@ -12,3 +12,4 @@
  */
 
 export { submitFeedbackContactForm } from './emailSend';
+export { toggleLike } from './likes/likes';

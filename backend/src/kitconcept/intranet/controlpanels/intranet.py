@@ -29,12 +29,6 @@ class IIntranetSettings(Interface):
         required=False,
     )
 
-    custom_css = schema.Text(
-        title=_("Custom CSS"),
-        description=_("Custom CSS for the intranet."),
-        required=False,
-    )
-
     person_picture_aspect_ratio = schema.Choice(
         title=_("Person Picture Aspect Ratio"),
         description=_(
@@ -45,10 +39,12 @@ class IIntranetSettings(Interface):
         ),
         required=True,
         default="rounded1to1",
-        vocabulary=SimpleVocabulary([
-            SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
-            SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
-        ]),
+        vocabulary=SimpleVocabulary(
+            [
+                SimpleTerm("rounded1to1", "rounded1to1", _("1:1 round picture")),
+                SimpleTerm("squared4to5", "squared4to5", _("4:5 square picture")),
+            ]
+        ),
     )
 
     default_feedback_email = schema.TextLine(
@@ -74,6 +70,23 @@ class IIntranetSettings(Interface):
         description=_("Enable or disable the sticky feedback button on all pages."),
         required=False,
         default=False,
+    )
+
+    enable_content_rating = schema.Bool(
+        title=_("Enable Content Rating"),
+        description=_("Enable content rating globally for the Intranet"),
+        required=False,
+        default=True,
+    )
+
+    iframe_allowed_domains = schema.List(
+        title=_("Allowed Iframe Domains"),
+        description="A list of allowed domains for iframes. Example: ['example.com']",
+        value_type=schema.TextLine(
+            title="Domain", description="Allowed domain", default="example.com"
+        ),
+        required=False,
+        defaultFactory=list,
     )
 
 
@@ -117,10 +130,15 @@ class IntranetSiteEndpointExpander:
         data["kitconcept.intranet.search_field_placeholder"] = (
             settings.search_field_placeholder
         )
-        data["kitconcept.intranet.custom_css"] = settings.custom_css
         data["kitconcept.person_picture_aspect_ratio"] = (
             settings.person_picture_aspect_ratio
         )
         data["kitconcept.intranet.enable_sticky_feedback_button"] = (
             settings.enable_sticky_feedback_button
+        )
+        data["kitconcept.intranet.iframe_allowed_domains"] = (
+            settings.iframe_allowed_domains
+        )
+        data["kitconcept.intranet.enable_content_rating"] = (
+            settings.enable_content_rating
         )

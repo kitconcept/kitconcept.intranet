@@ -1,0 +1,101 @@
+{
+  "@id": "/features/block/iframe-block",
+  "@type": "Document",
+  "UID": "ab703fadef904394a5b6d192c5f932cd",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "371fc53b-7396-4967-8ee7-f9f5c5698824": {
+      "@type": "title"
+    },
+    "4d886792-a260-4107-81e3-3d8c2257015f": {
+      "@type": "iframe",
+      "credit": {
+        "data": "<p>Plone foundation</p>"
+      },
+      "description": "Plone is an open-source content management system (CMS) with over 20 years of stability and security wrapped in a modern, powerful user-centric package with Plone 6. It continues to set the standard for content management systems by offering the most functionality and customization out of the box. ",
+      "height": "400",
+      "src": "https://plone.org",
+      "title": "Plone.org",
+      "width": "wide"
+    },
+    "b0b71bd1-69c0-418e-9167-1b469296a2b0": {
+      "@type": "slate",
+      "plaintext": "The iframe block acts as a window, displaying content from a different source, like a video, map, or even another full webpage, without redirecting the user. This allows for seamless integration of external content into a website.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The iframe block acts as a window, displaying content from a different source, like a video, map, or even another full webpage, without redirecting the user. This allows for seamless integration of external content into a website."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "371fc53b-7396-4967-8ee7-f9f5c5698824",
+      "b0b71bd1-69c0-418e-9167-1b469296a2b0",
+      "4d886792-a260-4107-81e3-3d8c2257015f"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-21T23:46:00+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The iframe block acts as a window, displaying content from a different source, like a video, map, or even another full webpage, without redirecting the user. This allows for seamless integration of external content into a website.",
+  "effective": "2025-09-18T22:25:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "iframe-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-09-18T22:25:12+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "IFrame",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-08-21T23:46:00+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-09-18T22:25:12+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

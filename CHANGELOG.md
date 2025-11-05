@@ -1,6 +1,369 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b15 (2025-10-08)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to coreb5. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to coreb5. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 1.0.0b14 (2025-10-07)
+
+### Backend
+
+
+#### Bugfix
+
+- Fix phone icon not horizontally centered in the sticky menu. @tisto [#153](https://github.com/kitconcept/kitconcept.intranet/issue/153)
+- Several fixes. Update to coreb4. @sneridagh [#265](https://github.com/kitconcept/kitconcept.intranet/issue/265)
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Several fixes. Update to coreb4. @sneridagh [#265.1](https://github.com/kitconcept/kitconcept.intranet/issue/265.1)
+- Show job title above the description. @sneridagh [#265.2](https://github.com/kitconcept/kitconcept.intranet/issue/265.2)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 1.0.0b13 (2025-10-01)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Added smartRenderer for customization of PersonSummary. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 1.0.0b12 (2025-10-01)
+
+### Backend
+
+
+#### Bugfix
+
+- Added smartTextRenderer, fix icons in calendar, fix low res images in cards, fix regression in teasers in edit mode. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Added smartTextRenderer, fix icons in calendar, fix low res images in cards, fix regression in teasers in edit mode. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 1.0.0b11 (2025-09-29)
+
+### Backend
+
+
+#### Bugfix
+
+- Update kitconcept.core to 1.0.0b1. @iFlameing [#258](https://github.com/kitconcept/kitconcept.intranet/issue/258)
+- Fixed CSS issue with top blocks. Upgrade to core 1b2 (Volto 18.27.2 and VLT 7.1.0) @sneridagh 
+
+
+#### Internal
+
+- Update example content. Use German names, fix multiple smaller issues. @tisto [#259](https://github.com/kitconcept/kitconcept.intranet/issue/259)
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed CSS issue with top blocks. Upgrade to core 1b2 (Volto 18.27.2 and VLT 7.1.0) @sneridagh 
+- Fixed reset button in teasers using `preview_image_link`. Update to Volto 18.27.0. @sneridagh
+  Redirect the user to homepage after logout. Update kitconcept-core to `1.0.0-beta.1`. @iFlameing 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 1.0.0b10 (2025-09-25)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix search input styles in header @reebalazs [#173](https://github.com/kitconcept/kitconcept.intranet/issue/173)
+
+#### Internal
+
+- Fix cypress test for calendar block. @iFlameing 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 1.0.0b9 (2025-09-25)
+
+### Backend
+
+
+#### Bugfix
+
+- Add Person job title to catalog metadata and default summary fields.
+  There is an upgrade step to update the catalog.
+  @davisagli 
+- Include academic title in Person content title.
+  There is an upgrade step to enable this and reindex existing Person content.
+  @davisagli 
+- Reset teaser button fix. Update to core 1b0. @sneridagh 
+
+
+#### Internal
+
+- Add example content of volto form block and update example content of
+  Person Profile @iRohitSingh [#244](https://github.com/kitconcept/kitconcept.intranet/issue/244)
+- Add three location example content objects [#246](https://github.com/kitconcept/kitconcept.intranet/issue/246)
+- Add job titles to person example content @tisto [#254](https://github.com/kitconcept/kitconcept.intranet/issue/254)
+- Update to kitconcept.voltolighttheme 7.0.0b7 and kitconcept.core 1.0.0a31. @davisagli 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix Person Profile View Tablet and Mobile View @iRohitSingh [#247](https://github.com/kitconcept/kitconcept.intranet/issue/247)
+- Fix link font size of person view @iRohitSingh [#249](https://github.com/kitconcept/kitconcept.intranet/issue/249)
+- Add Person job title to the summary used in listings and teasers. @davisagli 
+- Don't link to Person profile view in listings and teasers. @davisagli 
+- Fix correct import for custom search css @reebalazs 
+- Reset teaser button fix. Update to core 1b0. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 1.0.0b8 (2025-09-22)
+
+### Backend
+
+
+#### Feature
+
+- Add a new behavior `kitconcept.intranet.person` with fields academic_title, job_title, department. @ericof [#134](https://github.com/kitconcept/kitconcept.intranet/issue/134)
+- Add organisational_unit and location behaviors to Person content type. @iFlameing [#174](https://github.com/kitconcept/kitconcept.intranet/issue/174)
+- Add german translation. @iFlameing [#176](https://github.com/kitconcept/kitconcept.intranet/issue/176)
+- Add lcm behaviour and lcm service for inheritance. @iFlameing. [#178](https://github.com/kitconcept/kitconcept.intranet/issue/178)
+- Added `kitconcept.person_squared_images` control panel setting for supporting person squared images option. @sneridagh [#181](https://github.com/kitconcept/kitconcept.intranet/issue/181)
+- Add support for an autocomplete livesearch widget @reebalazs [#191](https://github.com/kitconcept/kitconcept.intranet/issue/191)
+- Use new image field for persons. Upgrade to Plone 6.1.2, core 1a21, VLT7a26. @sneridagh [#201](https://github.com/kitconcept/kitconcept.intranet/issue/201)
+- Add German and Brazilian Portuguese translation support. @ericof 
+- Add IFrame block example content and IFrane allowed domains setting. @danalvrz 
+- Add RSS service for RSS block. @danalvrz 
+- Add a `byline` expander with details about the content creators for the byline. @davisagli 
+- Create new sites in German by default. @davisagli 
+- Implement SOLR support using kitconcept.solr. @ericof 
+- Move the person square control panel field to have a dropdown, in order for it to be future proof. @sneridagh 
+- Update kitconcept to 1.0.0a29 version. @iFlameing 
+
+
+#### Bugfix
+
+- Fix site language settings not being honored. @ericof [#133](https://github.com/kitconcept/kitconcept.intranet/issue/133)
+- Move Location and Organisational Unit fields to Categorization fieldset. @davisagli [#139](https://github.com/kitconcept/kitconcept.intranet/issue/139)
+- Several misc fixes. Update to core 1a18 and VLT 7a25. @sneridagh [#196](https://github.com/kitconcept/kitconcept.intranet/issue/196)
+- Change the Person `department` field to use Textarea instead of input. @iFlameing [#236](https://github.com/kitconcept/kitconcept.intranet/issue/236)
+- Add missing translations. Includes updating to Volto 18.26.0, VLT 7.0.0b2, and kitconcept-core 1.0.0a25. @davisagli 
+- Adjust Person schema. @davisagli 
+- Change name of person_picture_aspect_ratio setting. @sneridagh 
+- Fix registry settings after site creation. @ericof 
+- Fix setting the logo on the Plone site root `logo` field. @ericof 
+- Fixed CSS problem in Search block. @sneridagh 
+- Fixed problem with Person still showing blocks. Update core to 1a27. @sneridagh 
+- Fixed regression in person grid teasers in edit mode. @sneridagh 
+- Fixed slider flag position in simple variant, and calendar block icon. @sneridagh 
+
+
+#### Internal
+
+- Add Solr startup scripts for development. @ericof [#108](https://github.com/kitconcept/kitconcept.intranet/issue/108)
+- Upgrade collective.person to version 1.0.0b1. @ericof [#134](https://github.com/kitconcept/kitconcept.intranet/issue/134)
+- Update example content of grid block @iRohitSingh [#171](https://github.com/kitconcept/kitconcept.intranet/issue/171)
+- Add example content for list with date variation for listing block @Tishasoumya-02 [#177](https://github.com/kitconcept/kitconcept.intranet/issue/177)
+- Update example content of image block @iRohitSingh [#182](https://github.com/kitconcept/kitconcept.intranet/issue/182)
+- Revert all the changes of feedback form. @iFlameing [#198](https://github.com/kitconcept/kitconcept.intranet/issue/198)
+- Add example content of location content type @iRohitSingh [#202](https://github.com/kitconcept/kitconcept.intranet/issue/202)
+- remove one empty h2 from example content @jackahl [#203](https://github.com/kitconcept/kitconcept.intranet/issue/203)
+- Fix example content of person @iRohitSingh [#208](https://github.com/kitconcept/kitconcept.intranet/issue/208)
+- Example content update: preview_image and description; remove duplicate images; polish slider block page. [#219](https://github.com/kitconcept/kitconcept.intranet/issue/219)
+- Add white Plone logo to the footer. [#226](https://github.com/kitconcept/kitconcept.intranet/issue/226)
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#227](https://github.com/kitconcept/kitconcept.intranet/issue/227)
+- Make all headings and ids in accordion example content unique @jackahl [#229](https://github.com/kitconcept/kitconcept.intranet/issue/229)
+- Update example content of grid text @iRohitSingh [#231](https://github.com/kitconcept/kitconcept.intranet/issue/231)
+- Remove the features transfered already to k.core. @sneridagh [#240](https://github.com/kitconcept/kitconcept.intranet/issue/240)
+- Add RSS block example content @iRohitSingh 
+- Add example content for Organisational Unit, Location content, Person content and listing criteria for them. @iFlameing 
+- Add example content for organisational unit. @tisto 
+- Fix the upgrade steps source and destination field. @iFlameing 
+- Update example content , remove separator blocks from in-between teaser blocks @Tishasoumya-02 
+- Update simple-slider example content and fix the remoteUrl which gets appended by /nohost/plone on updating example content @Tishasoumya-02 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add sticky feedback button @iRohitSingh [#123](https://github.com/kitconcept/kitconcept.intranet/issue/123)
+- Add a wrapper(InheritedFieldWrapper) for showing inheritedField description and add expanders of lcm. @iFlameing [#178](https://github.com/kitconcept/kitconcept.intranet/issue/178)
+- Added support for squared person images in teaser and listings. @sneridagh [#181](https://github.com/kitconcept/kitconcept.intranet/issue/181)
+- Move https://github.com/kitconcept/volto-light-theme/pull/614 to here.
+  Added TTW ConfigInjector feature. @sneridagh [#186](https://github.com/kitconcept/kitconcept.intranet/issue/186)
+- Additional solr updates @reebalazs [#191](https://github.com/kitconcept/kitconcept.intranet/issue/191)
+- Use new image field for persons. Upgrade to Plone 6.1.2, core 1a21, VLT7a26. @sneridagh [#201](https://github.com/kitconcept/kitconcept.intranet/issue/201)
+- Add custom view for Person content type. @danalvrz [#236](https://github.com/kitconcept/kitconcept.intranet/issue/236)
+- Add German as a supported frontend language. @davisagli 
+- Add IFrame block. @danalvrz 
+- Add RSS block. @danalvrz 
+- Add byline in a slot below the title. @Tishasoumya-02 
+- Add documentByLine feature @Tishasoumya-02 
+- Add listing template listing with Date and cypress test for the same @Tishasoumya-02 
+- Implement SOLR support using @kitconcept/volto-solr version 2.0.0-alpha.2. @ericof 
+- Move the person square control panel field to have a dropdown, in order for it to be future proof. @sneridagh 
+
+#### Bugfix
+
+- Fix extra pipe separator after "Log in" link. @davisagli [#138](https://github.com/kitconcept/kitconcept.intranet/issue/138)
+- Upgrade @plone-collective/volto-authomatic to version 3.0.0-alpha.4. @ericof [#180](https://github.com/kitconcept/kitconcept.intranet/issue/180)
+- Several misc fixes. Update to core 1a18 and VLT 7a25. @sneridagh [#196](https://github.com/kitconcept/kitconcept.intranet/issue/196)
+- Fix console error in StickyFeedbackButton @iRohitSingh [#238](https://github.com/kitconcept/kitconcept.intranet/issue/238)
+- Add missing translations. Includes updating to Volto 18.26.0, VLT 7.0.0b2, and kitconcept-core 1.0.0a25. @davisagli 
+- Change name of person_picture_aspect_ratio setting. @sneridagh 
+- Fixed CSS problem in Search block. @sneridagh 
+- Fixed problem with Person still showing blocks. Update core to 1a27. @sneridagh 
+- Fixed regression in person grid teasers in edit mode. @sneridagh 
+- Fixed slider flag position in simple variant, and calendar block icon. @sneridagh 
+- Hide Roles field from Person edit form. @davisagli 
+- Update iframe block to version 2.3.2. @danalvrz 
+- Use Image component for showing image in PersonView component. @iFlameing 
+
+#### Internal
+
+- Fix acceptance test stability. @davisagli [#139](https://github.com/kitconcept/kitconcept.intranet/issue/139)
+- Fix A11y test @iRohitSingh [#171](https://github.com/kitconcept/kitconcept.intranet/issue/171)
+- Add cypress test for location and organisational unit content type. @iFlameing [#172](https://github.com/kitconcept/kitconcept.intranet/issue/172)
+- Add cypress test of organisational_unit and location behaviors of Person content type. @iFlameing [#174](https://github.com/kitconcept/kitconcept.intranet/issue/174)
+- Fix A11y of image block @iRohitSingh [#182](https://github.com/kitconcept/kitconcept.intranet/issue/182)
+- Revert all the changes of feedback form. @iFlameing [#198](https://github.com/kitconcept/kitconcept.intranet/issue/198)
+- Add missing a11y test @iRohitSingh [#202](https://github.com/kitconcept/kitconcept.intranet/issue/202)
+- remove empty text rule in gridtext axe test jackahl [#203](https://github.com/kitconcept/kitconcept.intranet/issue/203)
+- remove unnecessary rule disabelings in axe tests to harden them @jackahl [#212](https://github.com/kitconcept/kitconcept.intranet/issue/212)
+- add a check for succesfull content request on all axe a11y tests to avaoid checking the 404 page @jackahl [#217](https://github.com/kitconcept/kitconcept.intranet/issue/217)
+- remove further axe rule disabelings @jackahl [#221](https://github.com/kitconcept/kitconcept.intranet/issue/221)
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#227](https://github.com/kitconcept/kitconcept.intranet/issue/227)
+- remove unique-id rule disabling in accordion a11y block @jackahl [#229](https://github.com/kitconcept/kitconcept.intranet/issue/229)
+- Fix A11y of grid text @iRohitSingh [#231](https://github.com/kitconcept/kitconcept.intranet/issue/231)
+- Remove the features transfered already to k.core. @sneridagh [#240](https://github.com/kitconcept/kitconcept.intranet/issue/240)
+- Add German Translation for List with date @Tishasoumya-02 
+- Add cypress test for preview image link using Image Widget @Tishasoumya-02 
+- Add cypress test for sticky Menu @Tishasoumya-02 
+- Check for 200 status in a11y tests. @davisagli 
+- Hide LCM field and StickyFeedbackButton slide from left. @iFlameing 
+- Update example content for slider-simple @Tishasoumya-02 
+
+
+
+### Project
+
+
+#### Feature
+
+- Additional solr updates @reebalazs [#191](https://github.com/kitconcept/kitconcept.intranet/pull/191)
+- Add SOLR to docker-compose files. @ericof 
+
+
+#### Internal
+
+- Add Solr startup scripts for development. @ericof [#108](https://github.com/kitconcept/kitconcept.intranet/pull/108)
+- Use persistent GH token when deploying so, that containers can move between swarm nodes. @fredvd 
+
+
+#### Documentation
+
+- Added documentation for the squared person images for teasers and listings. @sneridagh [#181](https://github.com/kitconcept/kitconcept.intranet/pull/181)
+
+
+
 ## 1.0.0b7 (2025-08-05)
 
 ### Backend

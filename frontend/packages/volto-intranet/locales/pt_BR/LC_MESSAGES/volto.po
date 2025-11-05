@@ -16,6 +16,21 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "Address"
+#: components/theme/PersonView
+msgid "Address"
+msgstr ""
+
+#. Default: "Bio"
+#: components/theme/PersonView
+msgid "Bio"
+msgstr ""
+
+#. Default: "Building"
+#: components/theme/PersonView
+msgid "Building"
+msgstr ""
+
 #. Default: "By"
 #: slots/DocumentByLine/DocumentByLine
 msgid "By"
@@ -23,7 +38,19 @@ msgstr ""
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
+#: components/theme/PersonView
 msgid "Contact"
+msgstr ""
+
+#. Default: "Created On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Created On"
+msgstr ""
+
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+#: components/theme/PersonView
+msgid "E-mail"
 msgstr ""
 
 #. Default: "Email"
@@ -37,6 +64,7 @@ msgid "End"
 msgstr ""
 
 #. Default: "Error"
+#: components/Blocks/IFrame/isValidUrl
 #: components/FeedBackForm/FeedBackForm
 msgid "Error"
 msgstr ""
@@ -76,6 +104,21 @@ msgstr ""
 msgid "ICS-Download"
 msgstr ""
 
+#. Default: "Invalid url"
+#: components/Blocks/IFrame/isValidUrl
+msgid "Invalid url"
+msgstr ""
+
+#. Default: "Last Modified On"
+#: components/ContentInteractions/ContentInteractions
+msgid "Last Modified On"
+msgstr ""
+
+#. Default: "List with date"
+#: index
+msgid "List with date"
+msgstr ""
+
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
@@ -93,6 +136,8 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
+#: components/theme/PersonView
 msgid "Phone"
 msgstr ""
 
@@ -106,9 +151,40 @@ msgstr ""
 msgid "Please fill in the Feedback field"
 msgstr ""
 
+#. Default: "Room"
+#: components/Summary/PersonSummary
+#: components/theme/PersonView
+msgid "Room"
+msgstr ""
+
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
 msgid "Send feedback"
+msgstr ""
+
+#. Default: "I would like to share this intranet content with you:"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share Content"
+msgstr ""
+
+#. Default: "Share this page via email"
+#: components/ContentInteractions/ContentInteractions
+msgid "Share this page via email"
+msgstr ""
+
+#. Default: "Site"
+#: components/theme/PersonView
+msgid "Site"
+msgstr ""
+
+#. Default: "Something went wrong while liking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while liking this post."
+msgstr ""
+
+#. Default: "Something went wrong while unliking this post."
+#: components/ContentInteractions/ContentInteractions
+msgid "Something went wrong while unliking this post."
 msgstr ""
 
 #. Default: "Sponsored by:"
@@ -129,6 +205,11 @@ msgstr ""
 #. Default: "Success"
 #: components/FeedBackForm/FeedBackForm
 msgid "Success"
+msgstr ""
+
+#. Default: "To submit a Like you must be logged in"
+#: components/ContentInteractions/ContentInteractions
+msgid "To submit a Like you must be logged in"
 msgstr ""
 
 #. Default: "Website"
@@ -168,4 +249,9 @@ msgstr ""
 #: components/Blocks/RSS/GridTemplate
 #: components/Blocks/RSS/SummaryTemplate
 msgid "rss_read_more"
+msgstr ""
+
+#. Default: "Recommendation from the Intranet"
+#: components/ContentInteractions/ContentInteractions
+msgid "shareSubject"
 msgstr ""

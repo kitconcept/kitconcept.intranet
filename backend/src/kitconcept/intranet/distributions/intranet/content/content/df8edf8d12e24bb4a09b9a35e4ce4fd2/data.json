@@ -3,48 +3,8 @@
   "@type": "Person",
   "UID": "df8edf8d12e24bb4a09b9a35e4ce4fd2",
   "academic_title": null,
+  "address": null,
   "allow_discussion": null,
-  "blocks": {
-    "42324592-53ce-46ee-a508-05d734af8bf4": {
-      "@layout": "aad6de27-6178-4b09-b19a-56ad8c5829e4",
-      "@type": "description",
-      "block": "42324592-53ce-46ee-a508-05d734af8bf4",
-      "fixed": true,
-      "required": true
-    },
-    "65e18374-bdfd-4b21-a06e-22dbe5d93ec0": {
-      "@layout": "2444e746-f496-4c3e-a3c7-f6eea28cad16",
-      "@type": "slate",
-      "block": "65e18374-bdfd-4b21-a06e-22dbe5d93ec0",
-      "plaintext": "",
-      "styles": {},
-      "value": [
-        {
-          "children": [
-            {
-              "text": ""
-            }
-          ],
-          "type": "p"
-        }
-      ]
-    },
-    "e9709613-f4ed-4724-9fd8-659160ec34cb": {
-      "@layout": "4ffbd230-2a04-44bb-89f4-6d9e0b71e0c5",
-      "@type": "title",
-      "block": "e9709613-f4ed-4724-9fd8-659160ec34cb",
-      "fixed": true,
-      "readOnly": true,
-      "required": true
-    }
-  },
-  "blocks_layout": {
-    "items": [
-      "e9709613-f4ed-4724-9fd8-659160ec34cb",
-      "42324592-53ce-46ee-a508-05d734af8bf4",
-      "65e18374-bdfd-4b21-a06e-22dbe5d93ec0"
-    ]
-  },
   "changeNote": "",
   "contact_building": "Berlin",
   "contact_email": null,
@@ -57,6 +17,7 @@
   "exclude_from_nav": false,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
+  "fax": null,
   "first_name": "Max",
   "head_title": null,
   "id": "max-mustermann",
@@ -72,8 +33,10 @@
   },
   "modified": "2025-09-15T13:07:19+00:00",
   "nav_title": null,
+  "office_phone": null,
   "review_state": "published",
   "roles": [],
+  "text": null,
   "title": "Max Mustermann",
   "type_title": "Person",
   "version": "current",

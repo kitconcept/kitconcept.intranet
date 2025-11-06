@@ -180,7 +180,7 @@ jobs:
       stack-file: "devops/stacks/demo.yml"
       registry: "ghcr.io"
       username: ${{ github.actor }}
-      scale-after: "plone-intranet-kitconcept-dev_solr_reindex=1"
+      scale-after: "plone-intranet-kitconcept-dev_solr-reindex=1"
     secrets:
       password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN }}
       remote-host: ${{ secrets.DEPLOY_HOST }}

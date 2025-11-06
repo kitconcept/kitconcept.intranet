@@ -101,6 +101,11 @@ services:
   solr-reindex:
     image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
     command: "run scripts/solr_activate_and_reindex.py"
+    environment:
+      COLLECTIVE_SOLR_HOST: solr
+      COLLECTIVE_SOLR_PORT: 8983
+    healthcheck:
+      disable: true
     deploy:
       replicas: 0
       placement:
@@ -109,6 +114,8 @@ services:
           - node.labels.env == production
       restart_policy:
         condition: none
+    networks:
+      - public
 
 networks:
   public:

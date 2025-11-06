@@ -12,9 +12,10 @@ LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
 ENV zope_i18n_compile_mo_files=
 # Show only our distributions
 ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
-
 # Increase Upload limit to 6MB
 ENV ZOPE_FORM_MEMORY_LIMIT=6MB
+# Install solr add-ons
+ENV SITE_SETUP_SOLR=true
 
 RUN <<EOT
     set -e

@@ -100,7 +100,7 @@ services:
   # The solr-reindex service is scaled to 1 after a successful deployment.
   solr-reindex:
     image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
-    command: "run scripts/solr_activate_and_reindex.py"
+    command: "run scripts/solr_activate_and_reindex.py --clear"
     environment:
       COLLECTIVE_SOLR_HOST: solr
       COLLECTIVE_SOLR_PORT: 8983

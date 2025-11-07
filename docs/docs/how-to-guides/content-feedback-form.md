@@ -4,12 +4,12 @@ myst:
     "description": "Implements a feedback form for Plone/Volto pages with configurable recipients, CC, and allowed email domains."
     "property=og:description": "Implements a feedback form for Plone/Volto pages with configurable recipients, CC, and allowed email domains."
     "property=og:title": "Content Feedback Form"
-    "keywords": "Volto, Plone, feedback, form, intranet, LCM behavior"
+    "keywords": "Volto, Plone, feedback, form, intranet, CLM behavior"
 ---
 
 # Content Feedback Form
 
-The **Content Feedback Form** feature allows users to send feedback for a specific content item (e.g., a page or event) within the Intranet. It uses the **LCM behavior** to define feedback-related metadata for each content item and global settings to control the default behavior.
+The **Content Feedback Form** feature allows users to send feedback for a specific content item (e.g., a page or event) within the Intranet. It uses the **CLM behavior** to define feedback-related metadata for each content item and global settings to control the default behavior.
 
 ---
 
@@ -39,9 +39,9 @@ You also need to fill in the **Site 'From' address** field in the Mail control p
 
 ![Example of feedback form](/_static/content-feedback-form.png)
 
-### LCM Fields
+### CLM Fields
 
-![LCM fields](/_static/lcm.png)
+![CLM fields](/_static/clm.png)
 
 ### Email Control Panel Fields
 
@@ -54,7 +54,7 @@ You also need to fill in the **Site 'From' address** field in the Mail control p
 
 ---
 
-## Behavior: `ILCM`
+## Behavior: `ICLM`
 
 | Field | Type | Description | Permissions | Notes |
 |-------|------|-------------|-------------|-------|
@@ -67,7 +67,7 @@ You also need to fill in the **Site 'From' address** field in the Mail control p
 - All person fields use the `kitconcept.intranet.vocabularies.person` vocabulary.
 - `authors` is **multi-select**.
 - `responsible_person` and `feedback_person` are **single-select autocomplete** fields.
-- The fields are grouped under the **LCM** fieldset.
+- The fields are grouped under the **CLM** fieldset.
 
 ---
 

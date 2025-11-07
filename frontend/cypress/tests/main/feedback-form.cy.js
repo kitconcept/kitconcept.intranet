@@ -13,7 +13,6 @@ describe('Feedback form', () => {
     cy.wait('@content');
   });
 
-  // I am commenting it out because we need lcm fields for this test to work and currently it is hidden
   it('Add feedback form', () => {
     // Add sending email address in control panel
     cy.visit('/controlpanel/mail');

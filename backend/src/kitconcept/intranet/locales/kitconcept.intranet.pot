@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-11-04 12:58+0000\n"
+"POT-Creation-Date: 2025-11-07 09:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:44
+#: kitconcept/intranet/controlpanels/intranet.py:43
 msgid "1:1 round picture"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:45
+#: kitconcept/intranet/controlpanels/intranet.py:44
 msgid "4:5 square picture"
 msgstr ""
 
@@ -57,11 +57,11 @@ msgstr ""
 msgid "Adds votes field"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:62
+#: kitconcept/intranet/controlpanels/intranet.py:60
 msgid "Allowed Email Domains"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:83
+#: kitconcept/intranet/controlpanels/intranet.py:81
 msgid "Allowed Iframe Domains"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Can only be seen and edited by the owner."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:51
+#: kitconcept/intranet/controlpanels/intranet.py:49
 msgid "Default Feedback Email"
 msgstr ""
 
@@ -87,15 +87,15 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:58
+#: kitconcept/intranet/controlpanels/intranet.py:56
 msgid "Email address to be CCed in feedback forms."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:52
+#: kitconcept/intranet/controlpanels/intranet.py:50
 msgid "Email address used in feedback forms if none is set."
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:76
+#: kitconcept/intranet/controlpanels/intranet.py:74
 msgid "Enable Content Rating"
 msgstr ""
 
@@ -107,15 +107,15 @@ msgstr ""
 msgid "Enable Likes for this Content Object"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:69
+#: kitconcept/intranet/controlpanels/intranet.py:67
 msgid "Enable Sticky Feedback Button"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:77
+#: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Enable content rating globally for the Intranet"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:70
+#: kitconcept/intranet/controlpanels/intranet.py:68
 msgid "Enable or disable the sticky feedback button on all pages."
 msgstr ""
 
@@ -123,7 +123,7 @@ msgstr ""
 msgid "External Search URL"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:57
+#: kitconcept/intranet/controlpanels/intranet.py:55
 msgid "Feedback CC email"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:95
+#: kitconcept/intranet/controlpanels/intranet.py:93
 msgid "Intranet Settings"
 msgstr ""
 
@@ -172,7 +172,7 @@ msgstr ""
 msgid "Likes"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:63
+#: kitconcept/intranet/controlpanels/intranet.py:61
 msgid "List of allowed email domains for feedback forms."
 msgstr ""
 
@@ -381,12 +381,12 @@ msgid "kitconcept.intranet: Solr Support"
 msgstr ""
 
 #. Default: "Authors"
-#: kitconcept/intranet/behaviors/lcm.py:58
+#: kitconcept/intranet/behaviors/clm.py:58
 msgid "label_authors"
 msgstr ""
 
 #. Default: "Feedback to"
-#: kitconcept/intranet/behaviors/lcm.py:45
+#: kitconcept/intranet/behaviors/clm.py:45
 msgid "label_feedback_person"
 msgstr ""
 
@@ -401,6 +401,6 @@ msgid "label_place"
 msgstr ""
 
 #. Default: "Content Owner:"
-#: kitconcept/intranet/behaviors/lcm.py:32
+#: kitconcept/intranet/behaviors/clm.py:32
 msgid "label_responsible"
 msgstr ""

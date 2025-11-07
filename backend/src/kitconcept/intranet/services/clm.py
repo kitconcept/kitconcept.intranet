@@ -1,4 +1,4 @@
-from kitconcept.intranet.behaviors.lcm import ILCM
+from kitconcept.intranet.behaviors.clm import ICLM
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 from zope.component import adapter
@@ -8,8 +8,8 @@ from zope.interface import implementer
 
 @implementer(IExpandableElement)
 @adapter(Interface, Interface)
-class LCMExpander:
-    """Expandable element to add inherited LCM information"""
+class CLMExpander:
+    """Expandable element to add inherited CLM information"""
 
     def __init__(self, context, request):
         self.context = context
@@ -17,28 +17,28 @@ class LCMExpander:
 
     def __call__(self, expand=False):
         if not expand:
-            return {"lcm": {"@id": f"{self.context.absolute_url()}/@lcm"}}
+            return {"clm": {"@id": f"{self.context.absolute_url()}/@clm"}}
 
         for obj in self.context.aq_chain:
-            lcm = ILCM(obj, None)
+            clm = ICLM(obj, None)
 
-            if lcm is None:
+            if clm is None:
                 continue
 
-            if lcm.responsible_person:
+            if clm.responsible_person:
                 return {
-                    "lcm": {
+                    "clm": {
                         "responsible_person": {
-                            "value": lcm.responsible_person,
+                            "value": clm.responsible_person,
                             "url": f"{obj.absolute_url()}",
                         },
                     }
                 }
 
-        return {"lcm": {"responsible_person": {}}}
+        return {"clm": {"responsible_person": {}}}
 
 
-class LCMGet(Service):
+class CLMGet(Service):
     def reply(self):
-        lcm = LCMExpander(self.context, self.request)
-        return lcm(expand=True)["lcm"]
+        clm = CLMExpander(self.context, self.request)
+        return clm(expand=True)["clm"]

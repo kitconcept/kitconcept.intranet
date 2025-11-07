@@ -20,8 +20,8 @@
       />
 
   <adapter
-      factory=".lcm.LCMExpander"
-      name="lcm"
+      factory=".clm.CLMExpander"
+      name="clm"
       />
 
   <plone:service
@@ -34,10 +34,10 @@
 
   <plone:service
       method="GET"
-      factory=".lcm.LCMGet"
+      factory=".clm.CLMGet"
       for="zope.interface.Interface"
       permission="zope2.View"
-      name="@lcm"
+      name="@clm"
       />
 
   <plone:service

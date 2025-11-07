@@ -132,11 +132,11 @@ class FeedbackPostContactForm(Service):
         expander = getMultiAdapter(
             (parent_object, self.request),
             IExpandableElement,
-            name="lcm",
+            name="clm",
         )
         expanded_data = expander(expand=True)
         responsible_person_uuid = (
-            expanded_data.get("lcm", {})
+            expanded_data.get("clm", {})
             .get("responsible_person", {})
             .get("value", "no-person")
         )

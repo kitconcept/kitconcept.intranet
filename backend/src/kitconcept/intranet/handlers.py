@@ -57,6 +57,7 @@ def pre_handler(answers: dict) -> dict:
 
 def handler(distribution: Distribution, site: PloneSite, answers: dict) -> PloneSite:
     """Handler to create a new site."""
+    transaction.commit()
     default_profiles = distribution._profiles
     profiles = deepcopy(default_profiles)
     workflow = answers.get("workflow", "public")

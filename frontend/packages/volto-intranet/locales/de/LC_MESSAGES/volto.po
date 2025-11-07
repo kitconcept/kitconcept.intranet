@@ -48,6 +48,11 @@ msgstr "Erstellt am"
 msgid "E-mail"
 msgstr "E-mail"
 
+#. Default: "Email"
+#: components/FeedBackForm/FeedBackForm
+msgid "Email"
+msgstr "E-Mail"
+
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
@@ -55,13 +60,39 @@ msgstr "Ende"
 
 #. Default: "Error"
 #: components/Blocks/IFrame/isValidUrl
+#: components/FeedBackForm/FeedBackForm
 msgid "Error"
 msgstr "Fehler"
+
+#. Default: "Feedback"
+#: components/FeedBackForm/FeedBackForm
+msgid "Feedback"
+msgstr "Rückmeldung"
+
+#. Default: "Feedback about this page"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Feedback about this page"
+msgstr "Feedback zu dieser Seite"
 
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
 msgid "Feedback on this page"
 msgstr "Feedback zu dieser Seite"
+
+#. Default: "Feedback on:"
+#: components/FeedBackForm/FeedBackForm
+msgid "Feedback on:"
+msgstr "Feedback zu:"
+
+#. Default: "Feedback to:"
+#: components/FeedBackForm/FeedBackForm
+msgid "Feedback to:"
+msgstr "Feedback an:"
+
+#. Default: "Follow us:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Follow us:"
+msgstr "Folgen Sie uns:"
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
@@ -88,6 +119,16 @@ msgstr "Liste mit Datum"
 msgid "Location"
 msgstr "Standort"
 
+#. Default: "Name"
+#: components/FeedBackForm/FeedBackForm
+msgid "Name"
+msgstr "Name"
+
+#. Default: "Only internal e-mail addresses are permitted."
+#: components/FeedBackForm/FeedBackForm
+msgid "Only internal e-mail addresses are permitted."
+msgstr "Es sind nur interne E-Mail-Adressen zulässig."
+
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 #: components/Summary/PersonSummary
@@ -95,11 +136,26 @@ msgstr "Standort"
 msgid "Phone"
 msgstr "Telefonnummer"
 
+#. Default: "Please enter your Organizational email address."
+#: components/FeedBackForm/FeedBackForm
+msgid "Please enter your Organizational email address."
+msgstr "Bitte geben Sie Ihre geschäftliche E-Mail-Adresse ein."
+
+#. Default: "Please fill in the Feedback field"
+#: components/FeedBackForm/FeedBackForm
+msgid "Please fill in the Feedback field"
+msgstr "Bitte füllen Sie das Feld „Feedback“ aus."
+
 #. Default: "Room"
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
 msgstr "Raum"
+
+#. Default: "Send feedback"
+#: components/FeedBackForm/FeedBackForm
+msgid "Send feedback"
+msgstr "Feedback senden"
 
 #. Default: "I would like to share this intranet content with you:"
 #: components/ContentInteractions/ContentInteractions
@@ -126,10 +182,25 @@ msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
 msgid "Something went wrong while unliking this post."
 msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
 
+#. Default: "Sponsored by:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Sponsored by:"
+msgstr "Gesponsert von:"
+
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
 msgstr "Anfang"
+
+#. Default: "Subject page/URL"
+#: components/FeedBackForm/FeedBackForm
+msgid "Subject page/URL"
+msgstr "Betreff Seite/URL"
+
+#. Default: "Success"
+#: components/FeedBackForm/FeedBackForm
+msgid "Success"
+msgstr "Erfolg"
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions
@@ -140,6 +211,16 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Website"
+
+#. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
+#: components/FeedBackForm/FeedBackForm
+msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
+msgstr "Ihr Feedback wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
+
+#. Default: "cancel"
+#: components/FeedBackForm/FeedBackForm
+msgid "cancel"
+msgstr "abbrechen"
 
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine

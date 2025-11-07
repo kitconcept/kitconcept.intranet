@@ -11,7 +11,7 @@ import transaction
 import unittest
 
 
-class TestLCMService(unittest.TestCase):
+class TestCLMService(unittest.TestCase):
     layer = FUNCTIONAL_TESTING
 
     def setUp(self):
@@ -44,24 +44,24 @@ class TestLCMService(unittest.TestCase):
     def tearDown(self):
         self.api_session.close()
 
-    def test_get_lcm_info_empty(self):
-        response = self.api_session.get("/document/@lcm")
+    def test_get_clm_info_empty(self):
+        response = self.api_session.get("/document/@clm")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), {"responsible_person": {}})
 
-    def test_get_lcm_info_empty_in_nested(self):
-        response = self.api_session.get("/document/nested_document/@lcm")
+    def test_get_clm_info_empty_in_nested(self):
+        response = self.api_session.get("/document/nested_document/@clm")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), {"responsible_person": {}})
 
-    def test_get_lcm_info_current(self):
+    def test_get_clm_info_current(self):
         self.portal.document.responsible_person = "John Doe"
 
         transaction.commit()
 
-        response = self.api_session.get("/document/@lcm")
+        response = self.api_session.get("/document/@clm")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
@@ -74,12 +74,12 @@ class TestLCMService(unittest.TestCase):
             },
         )
 
-    def test_get_lcm_info_inherited(self):
+    def test_get_clm_info_inherited(self):
         self.portal.document.responsible_person = "John Doe"
 
         transaction.commit()
 
-        response = self.api_session.get("/document/nested_document/@lcm")
+        response = self.api_session.get("/document/nested_document/@clm")
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
@@ -92,14 +92,14 @@ class TestLCMService(unittest.TestCase):
             },
         )
 
-    def test_get_lcm_info_inherited_we_stop_once_we_find_both(self):
+    def test_get_clm_info_inherited_we_stop_once_we_find_both(self):
         self.portal.document.responsible_person = "John Doe"
         self.portal.document.nested_document.responsible_person = "James T. Kirk"
 
         transaction.commit()
 
         response = self.api_session.get(
-            "/document/nested_document/nested_nested_document/@lcm"
+            "/document/nested_document/nested_nested_document/@clm"
         )
 
         self.assertEqual(response.status_code, 200)
@@ -113,14 +113,14 @@ class TestLCMService(unittest.TestCase):
             },
         )
 
-    def test_get_lcm_info_inherited_ticket_1357(self):
+    def test_get_clm_info_inherited_ticket_1357(self):
         self.portal.document.responsible_person = "John Doe"
         self.portal.document.nested_document.responsible_person = "James T. Kirk"
 
         transaction.commit()
 
         response = self.api_session.get(
-            "/document/nested_document/nested_nested_document/@lcm"
+            "/document/nested_document/nested_nested_document/@clm"
         )
 
         self.assertEqual(response.status_code, 200)

@@ -27,9 +27,13 @@ h1.documentFirstHeading:has(+ .documentByLine) {
   z-index: 11;
   top: 50%;
   left: 0%;
+  display: none;
   width: 140px;
   opacity: 0;
   transform: translateY(-50%) translateX(-100%);
+  &.show {
+    display: block;
+  }
 
   @media only screen and (max-width: $largest-mobile-screen) {
     display: none;

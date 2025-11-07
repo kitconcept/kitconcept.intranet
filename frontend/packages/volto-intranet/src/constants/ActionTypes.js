@@ -5,4 +5,6 @@
  * export const UPDATE_CONTENT = 'UPDATE_CONTENT';
  */
 
+export const EMAIL_SEND = 'EMAIL_SEND';
+export const CONTACTFORM_SUBMIT = 'CONTACTFORM_SUBMIT';
 export const TOGGLE_LIKE = 'TOGGLE_LIKE';

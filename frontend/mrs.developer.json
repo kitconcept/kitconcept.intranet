@@ -130,12 +130,12 @@
     "tag": "4.x.x-xfs8"
   },
   "volto-solr": {
-    "develop": false,
+    "develop": true,
     "output": "packages",
     "package": "@kitconcept/volto-solr",
     "url": "git@github.com:kitconcept/kitconcept.solr.git",
     "https": "https://github.com/kitconcept/kitconcept.solr.git",
     "path": "frontend",
-    "branch": "2.0.0-alpha.3"
+    "branch": "main"
   }
 }

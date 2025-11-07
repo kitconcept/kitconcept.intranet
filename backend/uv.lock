@@ -92,7 +92,7 @@ constraints = [
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
     { name = "kitconcept-core", specifier = "==1.0.0b6" },
-    { name = "kitconcept-solr", specifier = "==2.0.0a3" },
+    { name = "kitconcept-solr", editable = "../frontend/packages/volto-solr/backend" },
     { name = "kitconcept-voltolighttheme", specifier = "==7.3.1" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
@@ -1358,7 +1358,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "kitconcept-core", specifier = "==1.0.0b6" },
-    { name = "kitconcept-solr", specifier = "==2.0.0a3" },
+    { name = "kitconcept-solr", editable = "../frontend/packages/volto-solr/backend" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1396,8 +1396,7 @@ test = [
 
 [[package]]
 name = "kitconcept-solr"
-version = "2.0.0a3"
-source = { registry = "https://pypi.org/simple" }
+source = { editable = "../frontend/packages/volto-solr/backend" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },
@@ -1406,10 +1405,24 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/89/37/f83d22ea50d9df3c70e7f7e929eb4a0243de67cdcc608fda7c46e9acdfe5/kitconcept_solr-2.0.0a3.tar.gz", hash = "sha256:675b15813e8351b5e24f3b028b20272016fd7ed2f8587de942d28f617089ef35", size = 40919, upload-time = "2025-09-22T10:07:26.644Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/57/06/4eb9a3c32ab7915390b3d5bff2844313eb0764c2348c5af6fb5aadec3cce/kitconcept_solr-2.0.0a3-py3-none-any.whl", hash = "sha256:fefd3e915e905d03a0530d50047e5e0a05c54d9703d828f5e9cbb8c3219d67a3", size = 33882, upload-time = "2025-09-22T10:07:27.965Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "collective-solr", specifier = ">=9.0.1" },
+    { name = "horse-with-no-namespace", marker = "extra == 'test'" },
+    { name = "plone-api" },
+    { name = "plone-app-multilingual" },
+    { name = "plone-app-testing", marker = "extra == 'test'" },
+    { name = "plone-restapi" },
+    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+    { name = "pytest", marker = "extra == 'test'" },
+    { name = "pytest-cov", marker = "extra == 'test'" },
+    { name = "pytest-docker", marker = "extra == 'test'" },
+    { name = "pytest-plone", marker = "extra == 'test'" },
 ]
+provides-extras = ["test"]
 
 [[package]]
 name = "kitconcept-voltolighttheme"

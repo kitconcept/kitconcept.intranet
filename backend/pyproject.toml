@@ -36,7 +36,7 @@ dependencies = [
     "pas.plugins.authomatic==2.0.0",
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
-    "kitconcept.solr==2.0.0a3",
+    "kitconcept-solr==2.0.0a3",
 ]
 
 [dependency-groups]
@@ -659,3 +659,6 @@ constraint-dependencies = [
     "Zope==5.13",
     "ZopeUndo==6.0",
 ]
+
+[tool.uv.sources]
+kitconcept-solr = { path = "../frontend/packages/volto-solr/backend", editable = true }

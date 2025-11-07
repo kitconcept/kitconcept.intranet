@@ -34,8 +34,7 @@ RUN --mount=type=cache,target=/root/.cache \
 RUN <<EOT
     mv /app_base/* /app
     rm -Rf /app_base
-    mv scripts/create_site.py /app/scripts/create_site.py
-    mv scripts/default.json /app/scripts/default.json
+    mv scripts/* /app/scripts/
 EOT
 
 # Compile translation files

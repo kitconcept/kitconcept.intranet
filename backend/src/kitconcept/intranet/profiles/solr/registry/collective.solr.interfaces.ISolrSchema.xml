@@ -3,6 +3,7 @@
   <records interface="collective.solr.interfaces.ISolrSchema"
            prefix="collective.solr"
   >
+    <!-- <value key="active">True</value> -->
     <value key="use_tika">True</value>
   </records>
 </registry>

@@ -11,5 +11,9 @@
         title="Adds kitconcept.intranet.cc_email, default_email and allowed domains to the control panel registry."
         import_steps="plone.app.registry"
         />
+    <genericsetup:upgradeDepends
+        title="Update CLM behavior name."
+        import_steps="typeinfo"
+        />
   </genericsetup:upgradeSteps>
 </configure>

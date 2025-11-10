@@ -113,7 +113,7 @@ const DropzoneContent = (props) => {
     setTotalFiles(0);
   };
 
-  const onSubmit = () => { 
+  const onSubmit = () => {
     Promise.all(droppedFiles.map((file) => readAsDataURL(file))).then(
       (dataUrls) => {
         dispatch(

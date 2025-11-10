@@ -1143,25 +1143,25 @@ class Contents extends Component {
     return this.props.token && this.props.objectActions?.length > 0 ? (
       <>
         {folderContentsAction ? (
-          <DropzoneContent
-            onOk={this.onUploadOk}
-            onCancel={this.onUploadCancel}
-            pathname={getBaseUrl(this.props.pathname)}
+          <Container
+            id="page-contents"
+            className="folder-contents"
+            aria-live="polite"
           >
-            <Container
-              id="page-contents"
-              className="folder-contents"
-              aria-live="polite"
-            >
-              <Dimmer.Dimmable as="div" blurring dimmed={loading}>
-                <Dimmer active={loading} inverted>
-                  <Loader indeterminate size="massive">
-                    {this.props.intl.formatMessage(messages.loading)}
-                  </Loader>
-                </Dimmer>
-                <Helmet
-                  title={this.props.intl.formatMessage(messages.contents)}
-                />
+            <Dimmer.Dimmable as="div" blurring dimmed={loading}>
+              <Dimmer active={loading} inverted>
+                <Loader indeterminate size="massive">
+                  {this.props.intl.formatMessage(messages.loading)}
+                </Loader>
+              </Dimmer>
+              <Helmet
+                title={this.props.intl.formatMessage(messages.contents)}
+              />
+              <DropzoneContent
+                onOk={this.onUploadOk}
+                onCancel={this.onUploadCancel}
+                pathname={getBaseUrl(this.props.pathname)}
+              >
                 <div className="container">
                   <article id="content">
                     <ContentsDeleteModal
@@ -1864,31 +1864,31 @@ class Contents extends Component {
                     </section>
                   </article>
                 </div>
-                {this.state.isClient &&
-                  createPortal(
-                    <Toolbar
-                      pathname={this.props.pathname}
-                      inner={
-                        <Link
-                          to={`${path}`}
-                          aria-label={this.props.intl.formatMessage(
-                            messages.back,
-                          )}
-                        >
-                          <Icon
-                            name={backSVG}
-                            className="contents circled"
-                            size="30px"
-                            title={this.props.intl.formatMessage(messages.back)}
-                          />
-                        </Link>
-                      }
-                    />,
-                    document.getElementById('toolbar'),
-                  )}
-              </Dimmer.Dimmable>
-            </Container>
-          </DropzoneContent>
+              </DropzoneContent>
+              {this.state.isClient &&
+                createPortal(
+                  <Toolbar
+                    pathname={this.props.pathname}
+                    inner={
+                      <Link
+                        to={`${path}`}
+                        aria-label={this.props.intl.formatMessage(
+                          messages.back,
+                        )}
+                      >
+                        <Icon
+                          name={backSVG}
+                          className="contents circled"
+                          size="30px"
+                          title={this.props.intl.formatMessage(messages.back)}
+                        />
+                      </Link>
+                    }
+                  />,
+                  document.getElementById('toolbar'),
+                )}
+            </Dimmer.Dimmable>
+          </Container>
         ) : (
           <Unauthorized staticContext={this.props.staticContext} />
         )}

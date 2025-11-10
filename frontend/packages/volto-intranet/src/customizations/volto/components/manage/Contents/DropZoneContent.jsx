@@ -58,6 +58,7 @@ const DropzoneContent = (props) => {
     (state) => state.content.subrequests?.[SUBREQUEST] || {},
     shallowEqual,
   );
+
   const uploadedFiles = useSelector((state) => state.content.uploadedFiles);
   const prevrequestloading = usePrevious(request.loading);
 
@@ -112,7 +113,7 @@ const DropzoneContent = (props) => {
     setTotalFiles(0);
   };
 
-  const onSubmit = () => {
+  const onSubmit = () => { 
     Promise.all(droppedFiles.map((file) => readAsDataURL(file))).then(
       (dataUrls) => {
         dispatch(
@@ -139,14 +140,10 @@ const DropzoneContent = (props) => {
     );
     handleCloseModal();
   };
-  const onRemoveFile = (event) => {
-    setDroppedFiles(
-      droppedFiles.filter(
-        (file, index) =>
-          index !== parseInt(event.target.getAttribute('value'), 10),
-      ),
-    );
-    setTotalFiles(totalFiles - 1);
+  const onRemoveFile = (index) => {
+    const updatedFiles = droppedFiles.filter((file, i) => i !== index);
+    setDroppedFiles(updatedFiles);
+    setTotalFiles(updatedFiles.length);
   };
 
   const onChangeFileName = (e, index) => {
@@ -262,9 +259,8 @@ const DropzoneContent = (props) => {
                     <Table.Cell>
                       <Icon
                         name={clearSVG}
-                        value={index}
-                        link
-                        onClick={onRemoveFile}
+                        size="24px"
+                        onClick={() => onRemoveFile(index)}
                       />
                     </Table.Cell>
                   </Table.Row>

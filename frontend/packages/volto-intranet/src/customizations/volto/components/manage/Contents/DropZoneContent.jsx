@@ -100,7 +100,6 @@ const DropzoneContent = (props) => {
         validFiles.push(newFiles[i]);
       }
     }
-    console.log('validFiles', validFiles, 'droppedFiles', droppedFiles);
     setDroppedFiles(droppedFiles.concat(validFiles));
     setTotalFiles(validFiles.length);
     setShowModal(true);

@@ -1,46 +1,42 @@
 .contents-dropzone {
   position: relative;
+
+  &.drag-over {
+    overflow: hidden;
+  }
 }
 
 .dropzone-overlay {
   position: absolute;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 3px dashed black;
-  border-radius: 8px;
   animation: fadeIn 0.3s ease-in;
-  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
 }
 
 .dropzone-content {
-  padding: 2rem;
   animation: scaleIn 0.3s ease-out;
   color: black;
   text-align: center;
-}
 
-.dropzone-content h3 {
-  margin: 16px 0 8px 0;
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
+  h3 {
+    margin-top: 16px;
+    font-size: 24px;
+    font-weight: 600;
+  }
 
-.dropzone-content p {
-  margin: 0;
-  color: black;
-  font-size: 1rem;
-}
+  p {
+    font-size: 18px;
+  }
 
-.contents-dropzone.drag-over {
-  overflow: hidden;
+  h3,
+  p {
+    color: black;
+  }
 }
 
 @keyframes fadeIn {

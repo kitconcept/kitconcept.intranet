@@ -24,8 +24,6 @@ import uploadSVG from '@plone/volto/icons/upload.svg';
 import FormattedRelativeDate from '@plone/volto/components/theme/FormattedDate/FormattedRelativeDate';
 import Image from '@plone/volto/components/theme/Image/Image';
 
-import './dropdown.css';
-
 const SUBREQUEST = 'batch-upload';
 
 const messages = defineMessages({
@@ -57,13 +55,14 @@ const DropzoneContent = (props) => {
 
   const intl = useIntl();
   const dispatch = useDispatch();
+
   const request = useSelector(
     (state) => state.content.subrequests?.[SUBREQUEST] || {},
     shallowEqual,
   );
   const uploadedFiles = useSelector((state) => state.content.uploadedFiles);
-
   const prevrequestloading = usePrevious(request.loading);
+
   useEffect(() => {
     if (prevrequestloading && request.loaded) {
       onOk();
@@ -184,7 +183,7 @@ const DropzoneContent = (props) => {
             <div className="dropzone-content">
               <Icon name={uploadSVG} size="48px" />
               <h3>Drop files here to upload</h3>
-              <p>Release to add files to this folder</p>
+              <p>Release to add file(s) to this folder</p>
             </div>
           </div>
         )}

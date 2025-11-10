@@ -3,7 +3,6 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { defineMessages, useIntl, FormattedMessage } from 'react-intl';
 import {
   Button,
-  Icon,
   Modal,
   Table,
   Input,
@@ -11,16 +10,15 @@ import {
   Progress,
 } from 'semantic-ui-react';
 import cx from 'classnames';
-import map from 'lodash/map';
-import concat from 'lodash/concat';
-import filter from 'lodash/filter';
 import filesize from 'filesize';
 import { readAsDataURL } from 'promise-file-reader';
 
 import { createContent } from '@plone/volto/actions/content/content';
 import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
 import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import uploadSVG from '@plone/volto/icons/upload.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
 import FormattedRelativeDate from '@plone/volto/components/theme/FormattedDate/FormattedRelativeDate';
 import Image from '@plone/volto/components/theme/Image/Image';
 
@@ -102,7 +100,8 @@ const DropzoneContent = (props) => {
         validFiles.push(newFiles[i]);
       }
     }
-    setDroppedFiles(concat(droppedFiles, validFiles));
+    console.log('validFiles', validFiles, 'droppedFiles', droppedFiles);
+    setDroppedFiles(droppedFiles.concat(validFiles));
     setTotalFiles(validFiles.length);
     setShowModal(true);
   };
@@ -115,12 +114,12 @@ const DropzoneContent = (props) => {
   };
 
   const onSubmit = () => {
-    Promise.all(map(droppedFiles, (file) => readAsDataURL(file))).then(
+    Promise.all(droppedFiles.map((file) => readAsDataURL(file))).then(
       (dataUrls) => {
         dispatch(
           createContent(
             pathname,
-            map(droppedFiles, (file, index) => {
+            droppedFiles.map((file, index) => {
               const fields = dataUrls[index].match(/^data:(.*);(.*),(.*)$/);
               const image = fields[1].split('/')[0] === 'image';
               return {
@@ -143,8 +142,7 @@ const DropzoneContent = (props) => {
   };
   const onRemoveFile = (event) => {
     setDroppedFiles(
-      filter(
-        droppedFiles,
+      droppedFiles.filter(
         (file, index) =>
           index !== parseInt(event.target.getAttribute('value'), 10),
       ),
@@ -193,10 +191,7 @@ const DropzoneContent = (props) => {
         onClose={handleCloseModal}
         className="contents-upload-modal"
       >
-        <Modal.Header>
-          <Icon name={uploadSVG} size="24px" />
-          Upload Files ({droppedFiles.length})
-        </Modal.Header>
+        <Modal.Header>Upload Files ({droppedFiles.length})</Modal.Header>
         <Dimmer active={request.loading}>
           <div className="progress-container">
             <Progress
@@ -241,7 +236,7 @@ const DropzoneContent = (props) => {
                 </Table.Row>
               </Table.Header>
               <Table.Body>
-                {map(droppedFiles, (file, index) => (
+                {droppedFiles.map((file, index) => (
                   <Table.Row className="upload-row" key={index}>
                     <Table.Cell>
                       <Input
@@ -267,7 +262,7 @@ const DropzoneContent = (props) => {
                     </Table.Cell>
                     <Table.Cell>
                       <Icon
-                        name="close"
+                        name={clearSVG}
                         value={index}
                         link
                         onClick={onRemoveFile}

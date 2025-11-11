@@ -38,7 +38,6 @@ class BaseRelationVocabulary:
 
     def query(self, context: DexterityContent) -> dict:
         return {
-            "context": context,
             "portal_type": self.portal_type,
             "sort_on": "sortable_title",
         }
@@ -68,7 +67,7 @@ class BaseSimpleVocabulary:
 
     def __call__(self, context: DexterityContent) -> SimpleVocabulary:
         brains = api.content.find(
-            context=context, portal_type=self.portal_type, sort_on="sortable_title"
+            portal_type=self.portal_type, sort_on="sortable_title"
         )
         terms = [SimpleTerm(brain.UID, brain.UID, brain.Title) for brain in brains]
         return SimpleVocabulary(terms)

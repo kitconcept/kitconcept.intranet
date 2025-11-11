@@ -26,6 +26,9 @@ const recommendedAddons = readJSON(
   "frontend/packages/volto-light-theme/recommendedAddons.json"
 );
 const mrsDeveloper = readJSON("frontend/mrs.developer.json");
+const intranetPackage = readJSON(
+  "frontend/packages/volto-intranet/package.json"
+);
 
 const normalizeVersion = (version) =>
   typeof version === "string" ? version.replace(/^[\\^~]/, "") : version;
@@ -80,6 +83,50 @@ Object.entries(recommendedAddons).forEach(
   }
 );
 
+const intranetDependencies = intranetPackage.dependencies || {};
+const intranetAddons = intranetPackage.addons || [];
+
+Object.entries(recommendedAddons).forEach(
+  ([packageName, recommendedVersion]) => {
+    if (excludedPackages.has(packageName)) {
+      return;
+    }
+
+    const dependencyVersion = intranetDependencies[packageName];
+
+    if (!dependencyVersion) {
+      issues.push(
+        `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/volto-intranet/package.json dependencies.`
+      );
+      return;
+    }
+
+    const normalizedRecommended = normalizeVersion(recommendedVersion);
+    const normalizedDependency = normalizeVersion(dependencyVersion);
+
+    if (
+      recommendedVersion !== dependencyVersion &&
+      normalizedRecommended !== normalizedDependency
+    ) {
+      issues.push(
+        `${packageName} differs: recommendedAddons.json=${recommendedVersion} vs frontend/packages/volto-intranet/package.json dependencies=${dependencyVersion}.`
+      );
+    }
+  }
+);
+
+Object.keys(recommendedAddons).forEach((packageName) => {
+  if (excludedPackages.has(packageName)) {
+    return;
+  }
+
+  if (!intranetAddons.includes(packageName)) {
+    issues.push(
+      `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/volto-intranet/package.json addons.`
+    );
+  }
+});
+
 if (issues.length) {
   console.error("Add-on version mismatches detected:");
   issues.forEach((issue) => console.error(`- ${issue}`));
@@ -87,5 +134,5 @@ if (issues.length) {
 }
 
 console.log(
-  "Add-on versions match between recommendedAddons.json and frontend/mrs.developer.json."
+  "Add-on versions match between recommendedAddons.json, frontend/mrs.developer.json, frontend/packages/volto-intranet/package.json dependencies, and all recommended add-ons are listed in its addons section."
 );

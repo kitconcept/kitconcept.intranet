@@ -1796,8 +1796,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-slider-block/packages/volto-slider-block
       '@kitconcept/volto-solr':
-        specifier: 2.0.0-alpha.4
-        version: 2.0.0-alpha.4(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 2.0.0-alpha.5
+        version: 2.0.0-alpha.5(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -3765,8 +3765,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-solr@2.0.0-alpha.4':
-    resolution: {integrity: sha512-GMbpqn1x1GEqwxKAzKDMPsm6nW4azPwjxwMJzi03QGqj59nv4j7K/luTjdVw9qcomcGHt7ghWwzVoaOyDNzBjg==}
+  '@kitconcept/volto-solr@2.0.0-alpha.5':
+    resolution: {integrity: sha512-pKczCUMywaW2PeNDOmJEDbsmXNWEm6KgWcI8gtak/KuTl0j79x2Ous0iSsLtQoC7dpl5D2/UTJaU/s4x8dPTiA==}
     peerDependencies:
       react: 18.2.0
       react-autosuggest: 10.1.0
@@ -17119,7 +17119,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-solr@2.0.0-alpha.4(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-solr@2.0.0-alpha.5(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       buffer: 5.7.1
       lodash.debounce: 4.0.8

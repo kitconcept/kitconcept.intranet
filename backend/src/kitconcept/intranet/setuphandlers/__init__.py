@@ -1,6 +1,12 @@
+from collective.solr.interfaces import ISolrSchema
 from kitconcept.intranet.upgrades import remove_preview_image_behavior
+from plone import api
+from plone.registry.interfaces import IRegistry
 from Products.CMFPlone.interfaces import INonInstallable
+from zope.component import getUtility
 from zope.interface import implementer
+
+import os
 
 
 @implementer(INonInstallable)
@@ -17,3 +23,12 @@ class HiddenProfiles:
 
 def post_install(setup_tool):
     remove_preview_image_behavior(setup_tool)
+
+
+def post_solr_install(setup_tool):
+    """Post install script for kitconcept.intranet:solr profile."""
+    # Activate solr _if_ a solr host is configured
+    if os.environ.get("COLLECTIVE_SOLR_HOST"):
+        api.site.set_registry_record(
+            "collective.solr.interfaces.ISolrSchema.active", True
+        )

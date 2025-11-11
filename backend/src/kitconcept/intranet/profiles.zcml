@@ -26,6 +26,7 @@
       description="Setup the intranet to use Solr."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/solr"
+      post_handler=".setuphandlers.post_solr_install"
       />
 
   <include package=".upgrades" />

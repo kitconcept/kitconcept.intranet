@@ -24,5 +24,9 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: "Install dependencies"
+        working-directory: ./frontend
+        run: make install
+
       - name: "Compare VLT recommendedAddons.json with frontend/mrs.developer.json"
         run: node check-recommended-addons.js

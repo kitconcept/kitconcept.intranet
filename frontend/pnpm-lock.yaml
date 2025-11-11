@@ -1753,21 +1753,57 @@ importers:
 
   packages/volto-intranet:
     dependencies:
+      '@eeacms/volto-accordion-block':
+        specifier: ^10.4.6
+        version: 10.4.6
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
+      '@kitconcept/volto-banner-block':
+        specifier: workspace:*
+        version: link:../volto-banner-block/packages/volto-banner-block
+      '@kitconcept/volto-bm3-compat':
+        specifier: workspace:*
+        version: link:../volto-bm3-compat/packages/volto-bm3-compat
+      '@kitconcept/volto-button-block':
+        specifier: workspace:*
+        version: link:../volto-button-block/packages/volto-button-block
+      '@kitconcept/volto-carousel-block':
+        specifier: workspace:*
+        version: link:../volto-carousel-block/packages/volto-carousel-block
+      '@kitconcept/volto-heading-block':
+        specifier: workspace:*
+        version: link:../volto-heading-block/packages/volto-heading-block
+      '@kitconcept/volto-highlight-block':
+        specifier: workspace:*
+        version: link:../volto-highlight-block/packages/volto-highlight-block
       '@kitconcept/volto-iframe-block':
         specifier: workspace:*
         version: link:../volto-iframe-block/packages/volto-iframe-block
+      '@kitconcept/volto-introduction-block':
+        specifier: workspace:*
+        version: link:../volto-introduction-block/packages/volto-introduction-block
       '@kitconcept/volto-light-theme':
         specifier: workspace:*
         version: link:../volto-light-theme/frontend/packages/volto-light-theme
+      '@kitconcept/volto-logos-block':
+        specifier: workspace:*
+        version: link:../volto-logos-block/packages/volto-logos-block
+      '@kitconcept/volto-separator-block':
+        specifier: workspace:*
+        version: link:../volto-separator-block/packages/volto-separator-block
+      '@kitconcept/volto-slider-block':
+        specifier: ^7.0.0-alpha.0
+        version: 7.0.0-alpha.0(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-toastify@5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(uuid@13.0.0)
       '@kitconcept/volto-solr':
         specifier: 2.0.0-alpha.4
         version: 2.0.0-alpha.4(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
+      '@plonegovbr/volto-social-media':
+        specifier: ^2.0.0-alpha.10
+        version: 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
       classnames:
         specifier: 2.5.1
         version: 2.5.1
@@ -2119,34 +2155,6 @@ importers:
       vitest:
         specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
-
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
-      buffer:
-        specifier: ^5.5.0
-        version: 5.7.1
-      lodash.debounce:
-        specifier: ^4.0.8
-        version: 4.0.8
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-portal:
-        specifier: 4.2.1
-        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.3
-      react-autosuggest:
-        specifier: 10.1.0
-        version: 10.1.0(react@18.2.0)
-      release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.9.3)
 
 packages:
 
@@ -3036,6 +3044,12 @@ packages:
   '@dual-bundle/import-meta-resolve@4.2.1':
     resolution: {integrity: sha512-id+7YRUgoUX6CgV0DtuhirQWodeeA7Lf4i2x71JS/vtA5pRb/hIGWlw+G6MeXvsM+MXrz0VAydTGElX1rAfgPg==}
 
+  '@eeacms/volto-accordion-block@10.4.6':
+    resolution: {integrity: sha512-IZfAg8By1dZA2SSr4MNu2gFCs0F67/ZMAlpdqkevSMvkBREjny97cEFtMjkhGyOc3MBTp1vd0TtqvL3cN1GehQ==}
+
+  '@eeacms/volto-widget-theme-picker@2.0.0':
+    resolution: {integrity: sha512-f3+B7ATw0EoehO2rqU9NZoJABBtFUGy+zDGynm7MCSsfWcy6yafmCsOw2MKssBFXkgBicfpLLdE8ESEEITy6aA==}
+
   '@emnapi/core@1.6.0':
     resolution: {integrity: sha512-zq/ay+9fNIJJtJiZxdTnXS20PllcYMX3OE23ESc4HK/bdYu3cOWYVhsOhVnXALfU/uqJIxn5NBPd9z4v+SfoSg==}
 
@@ -3751,6 +3765,18 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
+  '@kitconcept/volto-slider-block@7.0.0-alpha.0':
+    resolution: {integrity: sha512-wnmf4CfV1+orzN5U3eN687HG/MFt7eCVbzFAhxr/HR/S5hgy0hr64fan8cRrSJixlJtzaxCvqXPrymaGvfoZWQ==}
+    peerDependencies:
+      classnames: ^2.5.1
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-intl: ^3.12.1
+      react-redux: 8.1.2
+      react-toastify: 5.5.0
+      uuid: ^13.0.0
+
   '@kitconcept/volto-solr@2.0.0-alpha.4':
     resolution: {integrity: sha512-GMbpqn1x1GEqwxKAzKDMPsm6nW4azPwjxwMJzi03QGqj59nv4j7K/luTjdVw9qcomcGHt7ghWwzVoaOyDNzBjg==}
     peerDependencies:
@@ -4174,6 +4200,15 @@ packages:
       react-intl: '*'
       semantic-ui-react: '*'
 
+  '@plone/components@3.0.2':
+    resolution: {integrity: sha512-BLxq4HMcmGux+CD6nOyl0YOqpTiB4yz/h4y/dcGSH3EwhxB3vaEq/Vcoss4qlzHJFfguemNPehJPGP8tq/Z6ww==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   '@plone/components@4.0.0-alpha.1':
     resolution: {integrity: sha512-VZiE/kj6A7PVXcJwMCralMOC2VnsjIjX+T6LTQXWz9+1M9DrFuse5sNMw7ryZqFWRvY+E06BPhHgeNuKOKM2Hw==}
     peerDependencies:
@@ -4186,6 +4221,12 @@ packages:
   '@plone/scripts@3.10.3':
     resolution: {integrity: sha512-ehklcOoczX1Ji06qA5Y6MZgz87YgR2GeW5zSaY4CzSG3YG7fF6pTnFa7MVVHAOcY8isSN2s97T6jB6PD75pQng==}
     hasBin: true
+
+  '@plonegovbr/volto-social-media@2.0.0-alpha.10':
+    resolution: {integrity: sha512-pg/yq+ifOah5TIwHeSwOi19njzTipqfOl0tVMOiO2nNcoDwFu1RE9/KyaRMAnIUMMjMpeu6Y8E4pkVJRSYKasg==}
+    peerDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0
 
   '@pmmmwh/react-refresh-webpack-plugin@0.5.17':
     resolution: {integrity: sha512-tXDyE1/jzFsHXjhRZQ3hMl0IVhYe5qula43LDWIhVfjp9G/nT5OQY5AORVOrkEGAUltBJOfOWeETbmhm6kHhuQ==}
@@ -16201,6 +16242,12 @@ snapshots:
 
   '@dual-bundle/import-meta-resolve@4.2.1': {}
 
+  '@eeacms/volto-accordion-block@10.4.6':
+    dependencies:
+      '@eeacms/volto-widget-theme-picker': 2.0.0
+
+  '@eeacms/volto-widget-theme-picker@2.0.0': {}
+
   '@emnapi/core@1.6.0':
     dependencies:
       '@emnapi/wasi-threads': 1.1.0
@@ -17084,6 +17131,23 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
+  '@kitconcept/volto-slider-block@7.0.0-alpha.0(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-toastify@5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(uuid@13.0.0)':
+    dependencies:
+      '@plone/components': 4.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      classnames: 2.5.1
+      deepmerge: 4.2.2
+      embla-carousel-autoplay: 8.5.2(embla-carousel@8.5.2)
+      embla-carousel-react: 8.5.2(react@18.2.0)
+      lodash: 4.17.21
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-intl: 3.12.1(@types/react@18.3.26)(react@18.2.0)
+      react-redux: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-toastify: 5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      uuid: 13.0.0
+    transitivePeerDependencies:
+      - embla-carousel
+
   '@kitconcept/volto-solr@2.0.0-alpha.4(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       buffer: 5.7.1
@@ -17574,6 +17638,19 @@ snapshots:
       react-intl: 3.12.1(@types/react@18.3.26)(react@18.2.0)
       semantic-ui-react: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
+  '@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))':
+    dependencies:
+      '@react-aria/utils': 3.31.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-spectrum/utils': 3.12.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@storybook/test': 8.6.14(storybook@8.6.14(prettier@3.2.5))
+      clsx: 2.1.1
+      react: 18.2.0
+      react-aria-components: 1.12.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    optionalDependencies:
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - storybook
+
   '@plone/components@4.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@internationalized/date': 3.10.0
@@ -17611,6 +17688,14 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - supports-color
+
+  '@plonegovbr/volto-social-media@2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))':
+    dependencies:
+      '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.14(prettier@3.2.5))
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - storybook
 
   '@pmmmwh/react-refresh-webpack-plugin@0.5.17(react-refresh@0.14.2)(sockjs-client@1.4.0)(type-fest@4.41.0)(webpack-dev-server@4.11.1(debug@4.3.4)(webpack@5.90.1))(webpack-hot-middleware@2.26.1)(webpack@5.90.1)':
     dependencies:
@@ -25132,11 +25217,7 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
-      - bufferutil
-      - canvas
       - supports-color
-      - ts-node
-      - utf-8-validate
 
   jest-leak-detector@26.6.2:
     dependencies:

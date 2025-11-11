@@ -1,13 +1,11 @@
 ---
-version: '3.9'
+version: "3.9"
 
 services:
-
   frontend:
     image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://${STACK_NAME}_backend:8080/Plone
-      RAZZLE_API_PATH: https://${HOSTNAME}
     networks:
       - public
     healthcheck:

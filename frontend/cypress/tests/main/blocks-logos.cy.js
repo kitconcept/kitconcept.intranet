@@ -56,22 +56,54 @@ context('Blocks Acceptance Tests', () => {
       .uncheck({ force: true })
       .should('not.be.checked');
     // Test the Logos Size button group
-    cy.get('button[aria-label="Large"]').click();
-    cy.get('button[aria-label="Large"]').should('have.class', 'active');
-    cy.get('button[aria-label="Small"]').should('not.have.class', 'active');
+    cy.get('input[aria-label="Large"]').click({ force: true });
+    cy.get('.buttons-widget-option:has(input[aria-label="Large"])').should(
+      'have.attr',
+      'data-selected',
+      'true',
+    );
+    cy.get('.buttons-widget-option:has(input[aria-label="Small"])').should(
+      'not.have.attr',
+      'data-selected',
+      'true',
+    );
 
-    cy.get('button[aria-label="Small"]').click();
-    cy.get('button[aria-label="Small"]').should('have.class', 'active');
-    cy.get('button[aria-label="Large"]').should('not.have.class', 'active');
+    cy.get('input[aria-label="Small"]').click({ force: true });
+    cy.get('.buttons-widget-option:has(input[aria-label="Small"])').should(
+      'have.attr',
+      'data-selected',
+      'true',
+    );
+    cy.get('.buttons-widget-option:has(input[aria-label="Large"])').should(
+      'not.have.attr',
+      'data-selected',
+      'true',
+    );
 
     // Test the Logos Container Width button group
-    cy.get('button[aria-label="Layout"]').click();
-    cy.get('button[aria-label="Layout"]').should('have.class', 'active');
-    cy.get('button[aria-label="Default"]').should('not.have.class', 'active');
+    cy.get('input[aria-label="Layout"]').click({ force: true });
+    cy.get('.buttons-widget-option:has(input[aria-label="Layout"])').should(
+      'have.attr',
+      'data-selected',
+      'true',
+    );
+    cy.get('.buttons-widget-option:has(input[aria-label="Default"])').should(
+      'not.have.attr',
+      'data-selected',
+      'true',
+    );
 
-    cy.get('button[aria-label="Default"]').click();
-    cy.get('button[aria-label="Default"]').should('have.class', 'active');
-    cy.get('button[aria-label="Layout"]').should('not.have.class', 'active');
+    cy.get('input[aria-label="Default"]').click({ force: true });
+    cy.get('.buttons-widget-option:has(input[aria-label="Default"])').should(
+      'have.attr',
+      'data-selected',
+      'true',
+    );
+    cy.get('.buttons-widget-option:has(input[aria-label="Layout"])').should(
+      'not.have.attr',
+      'data-selected',
+      'true',
+    );
 
     cy.wait(500);
 

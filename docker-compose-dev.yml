@@ -172,7 +172,6 @@ services:
     <<: *frontend-tests
     profiles: ["acceptance"]
     environment:
-      RAZZLE_API_PATH: http://localhost:55001/plone
       RAZZLE_INTERNAL_API_PATH: http://backend-acceptance:55001/plone
       SITE_DEFAULT_LANGUAGE: en
     depends_on:
@@ -182,7 +181,6 @@ services:
     <<: *frontend-tests
     profiles: ["a11y"]
     environment:
-      RAZZLE_API_PATH: http://localhost:8080/plone
       RAZZLE_INTERNAL_API_PATH: http://backend-a11y:8080/plone
     depends_on:
       - backend-a11y

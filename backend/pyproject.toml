@@ -25,7 +25,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "kitconcept.core==1.0.0b6",
+    "kitconcept.core==2.0.0a1",
     "plone.api",
     "plone.app.discussion",
     "plone.distribution",
@@ -36,7 +36,7 @@ dependencies = [
     "pas.plugins.authomatic==2.0.0",
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
-    "kitconcept.solr==2.0.0a3",
+    "kitconcept.solr==2.0.0a4",
 ]
 
 [dependency-groups]
@@ -293,9 +293,9 @@ constraint-dependencies = [
     "jsonschema-specifications==2025.9.1",
     "jsonschema==4.24.0",
     "keyring==25.6.0",
-    "kitconcept.core==1.0.0b6",
-    "kitconcept.solr==2.0.0a3",
-    "kitconcept.voltolighttheme==7.3.1",
+    "kitconcept.core==2.0.0a1",
+    "kitconcept.solr==2.0.0a4",
+    "kitconcept.voltolighttheme>=8.0.0a5",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
     "lxml-html-clean==0.4.2",

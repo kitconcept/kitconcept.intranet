@@ -16,6 +16,7 @@ ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
 ENV ZOPE_FORM_MEMORY_LIMIT=6MB
 # Install solr add-ons
 ENV SITE_SETUP_SOLR=true
+ENV SOLR_ACTIVATE=true
 
 RUN <<EOT
     set -e
@@ -24,4 +25,3 @@ RUN <<EOT
     echo ${SEED:-$(date +'%Y%m%d%H%M%S')} > /app/__created__.txt
     SEED=$(cat /app/__created__.txt) ./docker-entrypoint.sh create-site
 EOT
-

@@ -101,15 +101,9 @@ Object.entries(recommendedAddons).forEach(
       return;
     }
 
-    const normalizedRecommended = normalizeVersion(recommendedVersion);
-    const normalizedDependency = normalizeVersion(dependencyVersion);
-
-    if (
-      recommendedVersion !== dependencyVersion &&
-      normalizedRecommended !== normalizedDependency
-    ) {
+    if (dependencyVersion !== "workspace:*") {
       issues.push(
-        `${packageName} differs: recommendedAddons.json=${recommendedVersion} vs frontend/packages/volto-intranet/package.json dependencies=${dependencyVersion}.`
+        `${packageName} is pinned to a specific version in frontend/packages/volto-intranet/package.json dependencies; expected 'workspace:*'.`
       );
     }
   }

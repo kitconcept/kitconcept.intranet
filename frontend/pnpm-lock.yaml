@@ -1793,8 +1793,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
       '@kitconcept/volto-slider-block':
-        specifier: ^7.0.0-alpha.0
-        version: 7.0.0-alpha.0(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-toastify@5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(uuid@13.0.0)
+        specifier: workspace:*
+        version: link:../volto-slider-block/packages/volto-slider-block
       '@kitconcept/volto-solr':
         specifier: 2.0.0-alpha.4
         version: 2.0.0-alpha.4(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -3764,18 +3764,6 @@ packages:
 
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
-
-  '@kitconcept/volto-slider-block@7.0.0-alpha.0':
-    resolution: {integrity: sha512-wnmf4CfV1+orzN5U3eN687HG/MFt7eCVbzFAhxr/HR/S5hgy0hr64fan8cRrSJixlJtzaxCvqXPrymaGvfoZWQ==}
-    peerDependencies:
-      classnames: ^2.5.1
-      lodash: 4.17.21
-      react: 18.2.0
-      react-dom: 18.2.0
-      react-intl: ^3.12.1
-      react-redux: 8.1.2
-      react-toastify: 5.5.0
-      uuid: ^13.0.0
 
   '@kitconcept/volto-solr@2.0.0-alpha.4':
     resolution: {integrity: sha512-GMbpqn1x1GEqwxKAzKDMPsm6nW4azPwjxwMJzi03QGqj59nv4j7K/luTjdVw9qcomcGHt7ghWwzVoaOyDNzBjg==}
@@ -17131,23 +17119,6 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-slider-block@7.0.0-alpha.0(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-toastify@5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(uuid@13.0.0)':
-    dependencies:
-      '@plone/components': 4.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      classnames: 2.5.1
-      deepmerge: 4.2.2
-      embla-carousel-autoplay: 8.5.2(embla-carousel@8.5.2)
-      embla-carousel-react: 8.5.2(react@18.2.0)
-      lodash: 4.17.21
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-intl: 3.12.1(@types/react@18.3.26)(react@18.2.0)
-      react-redux: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
-      react-toastify: 5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      uuid: 13.0.0
-    transitivePeerDependencies:
-      - embla-carousel
-
   '@kitconcept/volto-solr@2.0.0-alpha.4(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       buffer: 5.7.1
@@ -25217,7 +25188,11 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   jest-leak-detector@26.6.2:
     dependencies:

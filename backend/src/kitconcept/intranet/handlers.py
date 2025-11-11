@@ -97,7 +97,7 @@ def post_handler(
         "plone.site_title": title,
     }
     if os.environ.get("SOLR_ACTIVATE"):
-        registry_data["collective.solr.interfaces.ISolrSchema.active"] = True
+        registry_data["collective.solr.active"] = True
 
     raw_logo = answers.get("site_logo")
     if raw_logo:

@@ -109,15 +109,14 @@ context('Blocks Acceptance Tests', () => {
     // THEN I can see the Teaser block
     cy.visit('/document');
     cy.get('.block.teaser').should('have.class', 'has--align--center');
-
-    // No preview_image in Events by default
     // cy.get('.block.teaser .image-wrapper img')
-    //   .should('have.attr', 'src')
-    //   .and('include', '/document/blue-orchids/@@images/preview_image-');
+    //   .should(($img) => {
+    //     expect($img[0].naturalWidth).to.be.greaterThan(0);
+    //     expect($img[0].naturalHeight).to.be.greaterThan(0);
+    //   })
+    //   .should('have.attr', 'src');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.headline .day').should('exist');
-
-    // The createContent command has to be improved
     // cy.get('.block.teaser .card-summary p').contains(
     //   'are growing on the mountain tops',
     // );
@@ -158,11 +157,12 @@ context('Blocks Acceptance Tests', () => {
     // THEN I can see the Teaser block
     cy.visit('/document');
     cy.get('.block.teaser').should('have.class', 'has--align--center');
-
-    // No preview_image in News Items by default
-    // cy.get('.block.teaser .image-wrapper img')
-    //   .should('have.attr', 'src')
-    //   .and('include', '/document/blue-orchids/@@images/preview_image-');
+    cy.get('.block.teaser .image-wrapper img')
+      .should(($img) => {
+        expect($img[0].naturalWidth).to.be.greaterThan(0);
+        expect($img[0].naturalHeight).to.be.greaterThan(0);
+      })
+      .should('have.attr', 'src');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.headline .day').should('exist');
     cy.get('.block.teaser .card-summary p').contains(
@@ -205,12 +205,13 @@ context('Blocks Acceptance Tests', () => {
     cy.visit('/document');
     cy.wait('@content');
     cy.get('.block.teaser').should('have.class', 'has--align--center');
-
-    // No preview_image in Files by default
-    // cy.get('.block.teaser .image-wrapper img')
-    //   .should('have.attr', 'src')
-    //   .and('include', '/document/blue-orchids/@@images/preview_image-');
-    // cy.get('.headline').should('exist');
+    cy.get('.block.teaser .image-wrapper img')
+      .should(($img) => {
+        expect($img[0].naturalWidth).to.be.greaterThan(0);
+        expect($img[0].naturalHeight).to.be.greaterThan(0);
+      })
+      .should('have.attr', 'src');
+    cy.get('.headline').should('exist');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',

@@ -1,4 +1,4 @@
-name: 'kitconcept-intranet: Compute Config variables'
+name: "kitconcept-intranet: Compute Config variables"
 
 on:
   workflow_call:
@@ -135,6 +135,7 @@ jobs:
               - 'frontend/**'
               - '.github/workflows/backend*'
               - '.github/workflows/frontend*'
+              - 'devops/**'
 
       - name: Test vars
         run: |

@@ -37,7 +37,7 @@ services:
   backend:
     image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
     environment:
-      COLLECTIVE_SOLR_HOST: ${STACK_NAME}-solr
+      COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
       COLLECTIVE_SOLR_PORT: 8983
     networks:
       - public
@@ -101,7 +101,7 @@ services:
     image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
     command: "run scripts/solr_activate_and_reindex.py --clear"
     environment:
-      COLLECTIVE_SOLR_HOST: ${STACK_NAME}-solr
+      COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
       COLLECTIVE_SOLR_PORT: 8983
     healthcheck:
       disable: true

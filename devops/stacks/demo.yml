@@ -95,6 +95,8 @@ services:
         constraints:
           - node.labels.type == app
           - node.labels.env == production
+    networks:
+      - public
 
   # The solr-reindex service is scaled to 1 after a successful deployment.
   solr-reindex:
@@ -119,4 +121,3 @@ services:
 networks:
   public:
     external: true
-

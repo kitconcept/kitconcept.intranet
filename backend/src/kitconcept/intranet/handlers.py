@@ -10,6 +10,7 @@ from plone.exportimport.importers import get_importer
 from Products.CMFPlone.Portal import PloneSite
 from Products.CMFPlone.WorkflowTool import WorkflowTool
 
+import os
 import transaction
 
 
@@ -95,6 +96,8 @@ def post_handler(
         "plone.email_from_name": title,
         "plone.site_title": title,
     }
+    if os.environ.get("SOLR_ACTIVATE"):
+        registry_data["collective.solr.active"] = True
 
     raw_logo = answers.get("site_logo")
     if raw_logo:

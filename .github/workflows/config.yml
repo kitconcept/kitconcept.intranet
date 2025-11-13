@@ -6,7 +6,7 @@ on:
       hostname:
         required: false
         type: string
-        default: "plone-intranet.kitconcept.dev"
+        default: "brh-intranet.kitconcept.dev"
       certresolver:
         required: false
         type: string
@@ -14,7 +14,7 @@ on:
       stack-prefix:
         required: false
         type: string
-        default: "kc-intranet-dev"
+        default: "brh-intranet-dev"
       image-name-prefix:
         required: false
         type: string

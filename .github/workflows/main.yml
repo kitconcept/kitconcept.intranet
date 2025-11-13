@@ -166,17 +166,17 @@ jobs:
       packages: write
 
   deploy:
-    name: "Deploy: plone-intranet.kitconcept.dev"
+    name: "Deploy: brh-intranet.kitconcept.dev"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
+    if: ${{ always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/1.x.x' && !contains(needs.*.result, 'failure') }}
     needs:
       - config
       - backend-release
       - frontend-release
     with:
       tag: ${{ needs.config.outputs.base-tag }}
-      environment: "plone-intranet.kitconcept.dev"
-      stack-name: "plone-intranet-kitconcept-dev"
+      environment: "brh-intranet.kitconcept.dev"
+      stack-name: "brh-intranet-kitconcept-dev"
       stack-file: "devops/stacks/demo.yml"
       registry: "ghcr.io"
       username: ${{ github.actor }}

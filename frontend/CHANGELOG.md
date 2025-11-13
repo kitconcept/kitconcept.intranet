@@ -8,6 +8,28 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.0 (2025-11-13)
+
+### Breaking
+
+- Update to use Volto 19 and VLT 8. @sneridagh 
+
+### Feature
+
+- Add Content Interactions component including rating, discussion, and sharing. @Tishasoumya-02, @iFlameing [#185](https://github.com/kitconcept/kitconcept.intranet/issue/185)
+- Add Feedback Form @Tishasoumya-02 
+
+### Bugfix
+
+- Fix aria-label for search input when solr is enabled. @reekitconcept, @davisagli 
+
+### Internal
+
+- Update to Volto 19a13 VLT 8a6. @sneridagh [#282.vlt8a6volto19a13](https://github.com/kitconcept/kitconcept.intranet/issue/282.vlt8a6volto19a13)
+- Added the prepublish script. 
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+- Update Share email text. @iFlameing 
+
 ## 1.0.0-beta.15 (2025-10-08)
 
 ### Bugfix

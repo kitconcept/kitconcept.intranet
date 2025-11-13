@@ -91,9 +91,9 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a1" },
+    { name = "kitconcept-core", specifier = "==2.0.0a2" },
     { name = "kitconcept-solr", specifier = "==2.0.0a5" },
-    { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a5" },
+    { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a6" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.4.0" },
@@ -1298,7 +1298,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0a1"
+version = "2.0.0a2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1309,9 +1309,9 @@ dependencies = [
     { name = "plone-distribution" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c0/db/5428d89e7fd3c73db77be3d59366e2dc21515b8e1e78d15c56af736856ec/kitconcept_core-2.0.0a1.tar.gz", hash = "sha256:effa79d4154e71d636f4bdc6b08b4913e2e4f5152329b16dddfa3d5e81b1a6d9", size = 326332, upload-time = "2025-11-11T11:37:32.627Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/6b/7b/5cb093a1813efd564f239c5b4938d587714e30b2b97cf38a30411a4b36a2/kitconcept_core-2.0.0a2.tar.gz", hash = "sha256:36174f4377e24a867846e8eecc396cef715f315eb5d0073e7dc4b28401e3fddc", size = 326335, upload-time = "2025-11-13T11:40:35.678Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e6/26/40648d3d668c5e45e7864bb2a4bf5bfb2a1e16baf42ac5eb897e287f7542/kitconcept_core-2.0.0a1-py3-none-any.whl", hash = "sha256:078fa1f5209fa571a92eb3f8966c2bb9e91904831c57d52ab57ea37a50d4cf33", size = 240917, upload-time = "2025-11-11T11:37:31.182Z" },
+    { url = "https://files.pythonhosted.org/packages/c4/49/e0502296b3f7bffd5e7e8189e00fb9f7b29a4b050e7c0b44f2742a08b437/kitconcept_core-2.0.0a2-py3-none-any.whl", hash = "sha256:8ea8b943cad05a74d48a2d4365b522661923960b33e6be08157969c1897c480d", size = 240916, upload-time = "2025-11-13T11:40:34.252Z" },
 ]
 
 [[package]]
@@ -1358,7 +1358,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "kitconcept-core", specifier = "==2.0.0a1" },
+    { name = "kitconcept-core", specifier = "==2.0.0a2" },
     { name = "kitconcept-solr", specifier = "==2.0.0a5" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1415,7 +1415,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "8.0.0a5"
+version = "8.0.0a6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1424,9 +1424,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/85/50/0a5677b00c61dda163293b9b24ab1647a5df9ef0452318ee0aef3849544b/kitconcept_voltolighttheme-8.0.0a5.tar.gz", hash = "sha256:cf7bdfb7361c570e0ba3decfb83f6ca47a583ae62daefa47e73d65226bb7aec0", size = 1364914, upload-time = "2025-11-11T11:08:59.967Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2e/80/6bd89f0defd56d8d464700178c7f871df8f6c8e1f056dad726f3a149a59e/kitconcept_voltolighttheme-8.0.0a6.tar.gz", hash = "sha256:6378cec80ebaf5ab91a0681286580520a3ed4cfc098eb906352f5192508ad489", size = 1364913, upload-time = "2025-11-13T10:42:19.493Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/dc/39/49abdd72081b98bdac974a78a72f3097566d12b8bf0bc2f967f0ad4527a2/kitconcept_voltolighttheme-8.0.0a5-py3-none-any.whl", hash = "sha256:eb9e2555f19052ded7c04c20cd1547e6ec4f01fb4eaba74b640e0f87599e78c5", size = 1431621, upload-time = "2025-11-11T11:08:57.464Z" },
+    { url = "https://files.pythonhosted.org/packages/3b/ea/6fc116d164039de7234e84ddb296d0baf694cc584c8278c1f2900a048835/kitconcept_voltolighttheme-8.0.0a6-py3-none-any.whl", hash = "sha256:b58d934c1e7a0ba21a04eead6db6e5a0c3d069f2c892a457746304c9903029e5", size = 1431621, upload-time = "2025-11-13T10:42:17.471Z" },
 ]
 
 [[package]]

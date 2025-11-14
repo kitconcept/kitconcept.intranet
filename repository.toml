@@ -17,9 +17,9 @@ base_package = "kitconcept.core"
 publish = true
 
 [frontend.package]
-name = "@kitconcept/volto-intranet"
-path = "frontend/packages/volto-intranet"
-changelog = "frontend/packages/volto-intranet/CHANGELOG.md"
-towncrier_settings = "frontend/packages/volto-intranet/towncrier.toml"
+name = "@kitconcept/intranet"
+path = "frontend/packages/kitconcept-intranet"
+changelog = "frontend/packages/kitconcept-intranet/CHANGELOG.md"
+towncrier_settings = "frontend/packages/kitconcept-intranet/towncrier.toml"
 base_package = "@kitconcept/core"
 publish = true

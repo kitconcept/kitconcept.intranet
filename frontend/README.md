@@ -1,11 +1,11 @@
-# kitconcept Intranet (@kitconcept/volto-intranet)
+# kitconcept Intranet (@kitconcept/intranet)
 
 A Plone distribution for Intranets with Plone. Created by kitconcept.
 
-[![npm](https://img.shields.io/npm/v/volto-intranet)](https://www.npmjs.com/package/volto-intranet)
-[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://kitconcept.github.io/volto-intranet/)
-[![Code analysis checks](https://github.com/kitconcept/volto-intranet/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-intranet/actions/workflows/code.yml)
-[![Unit tests](https://github.com/kitconcept/volto-intranet/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-intranet/actions/workflows/unit.yml)
+[![npm](https://img.shields.io/npm/v/kitconcept-intranet)](https://www.npmjs.com/package/kitconcept-intranet)
+[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://kitconcept.github.io/kitconcept-intranet/)
+[![Code analysis checks](https://github.com/kitconcept/kitconcept-intranet/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/kitconcept-intranet/actions/workflows/code.yml)
+[![Unit tests](https://github.com/kitconcept/kitconcept-intranet/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/kitconcept-intranet/actions/workflows/unit.yml)
 
 ## Features
 

@@ -27,7 +27,7 @@ const recommendedAddons = readJSON(
 );
 const mrsDeveloper = readJSON("frontend/mrs.developer.json");
 const intranetPackage = readJSON(
-  "frontend/packages/volto-intranet/package.json"
+  "frontend/packages/kitconcept-intranet/package.json"
 );
 
 const normalizeVersion = (version) =>
@@ -96,14 +96,14 @@ Object.entries(recommendedAddons).forEach(
 
     if (!dependencyVersion) {
       issues.push(
-        `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/volto-intranet/package.json dependencies.`
+        `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/kitconcept-intranet/package.json dependencies.`
       );
       return;
     }
 
     if (dependencyVersion !== "workspace:*") {
       issues.push(
-        `${packageName} is pinned to a specific version in frontend/packages/volto-intranet/package.json dependencies; expected 'workspace:*'.`
+        `${packageName} is pinned to a specific version in frontend/packages/kitconcept-intranet/package.json dependencies; expected 'workspace:*'.`
       );
     }
   }
@@ -116,7 +116,7 @@ Object.keys(recommendedAddons).forEach((packageName) => {
 
   if (!intranetAddons.includes(packageName)) {
     issues.push(
-      `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/volto-intranet/package.json addons.`
+      `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/kitconcept-intranet/package.json addons.`
     );
   }
 });
@@ -128,5 +128,5 @@ if (issues.length) {
 }
 
 console.log(
-  "Add-on versions match between recommendedAddons.json, frontend/mrs.developer.json, frontend/packages/volto-intranet/package.json dependencies, and all recommended add-ons are listed in its addons section."
+  "Add-on versions match between recommendedAddons.json, frontend/mrs.developer.json, frontend/packages/kitconcept-intranet/package.json dependencies, and all recommended add-ons are listed in its addons section."
 );

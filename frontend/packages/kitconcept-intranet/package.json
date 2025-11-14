@@ -1,5 +1,5 @@
 {
-  "name": "@kitconcept/volto-intranet",
+  "name": "@kitconcept/intranet",
   "version": "2.0.0-alpha.0",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
@@ -44,7 +44,6 @@
     "vitest": "^3.1.2"
   },
   "addons": [
-    "volto-form-block",
     "@kitconcept/volto-iframe-block",
     "volto-rss-block",
     "@eeacms/volto-accordion-block",
@@ -59,6 +58,7 @@
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-slider-block",
     "@plonegovbr/volto-social-media",
+    "@plone/volto-form-block",
     "@kitconcept/volto-light-theme",
     "@kitconcept/core",
     "@plone-collective/volto-authomatic",
@@ -82,6 +82,7 @@
     "@kitconcept/volto-iframe-block": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
     "@plone/components": "workspace:*",
+    "@plone/volto-form-block": "^1.0.0-alpha.0",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
     "react-aria-components": "1.13.0",

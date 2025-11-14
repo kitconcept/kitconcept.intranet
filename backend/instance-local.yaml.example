@@ -1,0 +1,6 @@
+default_context:
+    initial_user_password: 'admin'
+    zcml_package_includes: 'kitconcept.intranet'
+    db_storage: direct
+    db_filestorage_location: ../data/filestorage/Data.fs
+    db_blobs_location: ../data/blobstorage

@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.19 (2025-11-18)
+
+### Bugfix
+
+- Fix accordion icons. Update to core 1.0.0. @sneridagh 
+
 ## 1.0.0-beta.18 (2025-11-04)
 
 ### Bugfix

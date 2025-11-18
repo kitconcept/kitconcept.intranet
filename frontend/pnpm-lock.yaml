@@ -1466,24 +1466,42 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       react:
-        specifier: 18.2.0
+        specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       react-google-recaptcha-v3:
         specifier: ^1.8.0
         version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      volto-subblocks:
-        specifier: ^2.1.0
-        version: 2.1.0(@plone/volto@18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
         version: 3.10.3
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/types
+      '@types/lodash':
+        specifier: ^4.14.201
+        version: 4.17.20
+      '@types/react':
+        specifier: ^18.3.1
+        version: 18.3.26
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.26)
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
       release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.9.3)
+        specifier: ^19.0.5
+        version: 19.0.5(@types/node@22.18.12)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.1.2
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@22.18.12)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
 
   packages/volto-heading-block/packages/volto-heading-block:
     dependencies:
@@ -14848,11 +14866,6 @@ packages:
 
   volto-rss-block@3.0.1:
     resolution: {integrity: sha512-psK0Ytm3JZ12pok3t349mdxxMZab/LYNHBItaC+KmZL2/WWwfcy7m7DMwxKBLI/G5Le5WhtMBgwd17872Sm/XQ==}
-    peerDependencies:
-      '@plone/volto': '>=16.0.0-alpha.38'
-
-  volto-subblocks@2.1.0:
-    resolution: {integrity: sha512-AlhMb+PacQRGCIY/xc7p1zr3RhN64An/+ckVQ2YOytIVOtoChMUwxxSIj5Fkz7uScgIlzL/n976QqJlIf4k0rg==}
     peerDependencies:
       '@plone/volto': '>=16.0.0-alpha.38'
 
@@ -31888,7 +31901,7 @@ snapshots:
       is-npm: 6.1.0
       latest-version: 7.0.0
       pupa: 3.3.0
-      semver: 7.6.0
+      semver: 7.7.3
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
 
@@ -32300,14 +32313,6 @@ snapshots:
     dependencies:
       '@plone/volto': 18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       rss-parser: 3.7.5
-
-  volto-subblocks@2.1.0(@plone/volto@18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(react@18.2.0):
-    dependencies:
-      '@plone/volto': 18.29.1(@babel/runtime@7.28.4)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
-      react-dnd: 5.0.0(react@18.2.0)
-      react-dnd-html5-backend: 5.0.1
-    transitivePeerDependencies:
-      - react
 
   vue-template-compiler@2.7.16:
     dependencies:

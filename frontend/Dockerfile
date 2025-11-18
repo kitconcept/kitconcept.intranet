@@ -2,7 +2,7 @@
 ARG VOLTO_VERSION=undefined
 FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
 
-COPY --chown=node packages/volto-intranet /app/packages/volto-intranet
+COPY --chown=node packages/kitconcept-intranet /app/packages/kitconcept-intranet
 COPY --chown=node volto.config.js /app/
 COPY --chown=node pnpm-workspace.yaml /app/
 COPY --chown=node package.json /app/package.json.temp

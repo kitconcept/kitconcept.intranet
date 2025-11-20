@@ -46,8 +46,8 @@ x-backend-acceptance: &backend-acceptance
   pull_policy: build
 
 x-solr: &solr
-  image: ghcr.io/kitconcept/solr:latest
-  platform: linux/amd64
+  build:
+    context: ./frontend/packages/volto-solr/solr
   ports:
     - 8983:8983
   command:

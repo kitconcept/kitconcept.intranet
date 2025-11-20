@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20251104001"
+      destination="20251118001"
+      >
+    <genericsetup:upgradeDepends
+        title="Adds custom kitconcept.solr.interfaces to registry."
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

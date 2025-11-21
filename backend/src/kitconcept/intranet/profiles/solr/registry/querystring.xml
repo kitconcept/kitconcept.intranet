@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone"
+>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.userRelevance"
+  >
+    <value key="title"
+           i18n:translate=""
+    >User relevance</value>
+    <value key="description"
+           i18n:translate=""
+    >Relevance of the item to the current user</value>
+    <value key="enabled">False</value>
+    <value key="sortable">True</value>
+    <!-- This is not a real index, but a way to control the order of results. -->
+    <value key="operations"></value>
+    <value key="group"
+           i18n:translate=""
+    >Metadata</value>
+  </records>
+
+</registry>

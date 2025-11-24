@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = "==3.12.*"
 
 [options]
@@ -92,7 +92,7 @@ constraints = [
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
     { name = "kitconcept-core", specifier = "==2.0.0a2" },
-    { name = "kitconcept-solr", specifier = "==2.0.0a5" },
+    { name = "kitconcept-solr", specifier = "==2.0.0a6" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a6" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
@@ -1359,7 +1359,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "kitconcept-core", specifier = "==2.0.0a2" },
-    { name = "kitconcept-solr", specifier = "==2.0.0a5" },
+    { name = "kitconcept-solr", specifier = "==2.0.0a6" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1398,7 +1398,7 @@ test = [
 
 [[package]]
 name = "kitconcept-solr"
-version = "2.0.0a5"
+version = "2.0.0a6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-solr" },
@@ -1408,9 +1408,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/a5/e9/e7d5e36c98a17cddef723c39edb826e094fac268429d26d90c206911faf4/kitconcept_solr-2.0.0a5.tar.gz", hash = "sha256:8be897b9d3082df1825e60fd33a57fba94c07e2f9c98ad5f5982608b76e1d99d", size = 40768, upload-time = "2025-11-11T21:00:48.927Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/93/2a/0279aefe22801773b7a0a7703502e4c77a1e38daaaa0f690b3714bedf8e8/kitconcept_solr-2.0.0a6.tar.gz", hash = "sha256:073ee752cdf20890d84635d53864cc34b44303369f334c09017a99c093d27082", size = 40981, upload-time = "2025-11-20T21:12:10.969Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ef/3c/6b37b5ff160c86d3367a5b9934fb0727c77b7c8c0783c883dec3b2c1897e/kitconcept_solr-2.0.0a5-py3-none-any.whl", hash = "sha256:70aec3103c285c55e4a625d778f3e48821284d08b30bb234adbbd0c65ebbb866", size = 33880, upload-time = "2025-11-11T21:00:47.6Z" },
+    { url = "https://files.pythonhosted.org/packages/37/ab/f23465158ec5f0aea735b4fd24498b383037f919181d68fa244c2e034bba/kitconcept_solr-2.0.0a6-py3-none-any.whl", hash = "sha256:867c6ed1d13126925717c011cd0a65d047882d06a0a5e8feb0aa50d8ef08f5f5", size = 34392, upload-time = "2025-11-20T21:12:09.883Z" },
 ]
 
 [[package]]

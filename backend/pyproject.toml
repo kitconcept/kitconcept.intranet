@@ -28,6 +28,7 @@ dependencies = [
     "kitconcept.core==2.0.0a1",
     "plone.api",
     "plone.app.discussion",
+    "plone.app.querystring>=3.0.0a2",
     "plone.distribution",
     "plone.restapi",
     "plone.volto>=5.1.0",
@@ -36,7 +37,8 @@ dependencies = [
     "pas.plugins.authomatic==2.0.0",
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
-    "kitconcept-solr==2.0.0a5",
+    "collective-solr==10.0.0",
+    "kitconcept-solr==2.0.0a7",
 ]
 
 [dependency-groups]
@@ -294,7 +296,7 @@ constraint-dependencies = [
     "jsonschema==4.24.0",
     "keyring==25.6.0",
     "kitconcept.core==2.0.0a1",
-    "kitconcept.solr==2.0.0a5",
+    "kitconcept.solr==2.0.0a7",
     "kitconcept.voltolighttheme>=8.0.0a5",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",
@@ -361,7 +363,7 @@ constraint-dependencies = [
     "plone.app.mosaic==3.3.1",
     "plone.app.multilingual==8.3.1",
     "plone.app.portlets==6.0.3",
-    "plone.app.querystring==2.1.4",
+    "plone.app.querystring==3.0.0a2",
     "plone.app.redirector==3.0.5",
     "plone.app.registry==2.0.7",
     "plone.app.relationfield==4.0.3",
@@ -660,5 +662,3 @@ constraint-dependencies = [
     "Zope==5.13",
     "ZopeUndo==6.0",
 ]
-[tool.uv.sources]
-kitconcept-solr = { path = "../frontend/packages/volto-solr/backend", editable = true }

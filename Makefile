@@ -120,8 +120,8 @@ backend-test:  ## Test backend codebase
 .PHONY: install
 install:  ## Install
 	@echo "Install Backend & Frontend"
-	$(MAKE) frontend-install
 	$(MAKE) backend-install
+	$(MAKE) frontend-install
 
 .PHONY: start
 start:  ## Start

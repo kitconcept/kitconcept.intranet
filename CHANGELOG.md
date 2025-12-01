@@ -1,6 +1,42 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a1 (2025-12-01)
+
+### Backend
+
+
+#### Bugfix
+
+- Update kitconcept.solr to 2.0.0.a6 @reebalazs 
+
+
+#### Internal
+
+- Hide secondary logo in mobile. Fixed teaser description update problem. Update core 2a4. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update kitconcept.solr to 2.0.0.a6 @reebalazs 
+
+#### Internal
+
+- Hide secondary logo in mobile. Fixed teaser description update problem. Update core 2a4. @sneridagh 
+- Rename internal package and folder for consistency. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 2.0.0a0 (2025-11-13)
 
 ### Backend

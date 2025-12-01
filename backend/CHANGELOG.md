@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b20 (2025-12-01)
+
+
+### Bugfix
+
+- Hide secondary logo on mobile. Fixed teaser description override. Upgrade to use core 1.0.1. @sneridagh 
+
 ## 1.0.0b19 (2025-11-18)
 
 

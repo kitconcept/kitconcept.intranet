@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.20 (2025-12-01)
+
+### Bugfix
+
+- Hide secondary logo on mobile. Fixed teaser description override. Upgrade to use core 1.0.1. @sneridagh 
+
+### Internal
+
+- Rename intranet package and the internal folder name. @sneridagh 
+
 ## 1.0.0-beta.19 (2025-11-18)
 
 ### Bugfix

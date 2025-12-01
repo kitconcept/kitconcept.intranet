@@ -1,6 +1,36 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b20 (2025-12-01)
+
+### Backend
+
+
+#### Bugfix
+
+- Hide secondary logo on mobile. Fixed teaser description override. Upgrade to use core 1.0.1. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Hide secondary logo on mobile. Fixed teaser description override. Upgrade to use core 1.0.1. @sneridagh 
+
+#### Internal
+
+- Rename intranet package and the internal folder name. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b19 (2025-11-18)
 
 ### Backend

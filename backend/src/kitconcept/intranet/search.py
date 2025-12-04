@@ -40,9 +40,27 @@ class QueryBuilder(BaseQueryBuilder):
         if person.location_reference:
             boosts.append(f"location_reference:({person.location_reference})^10")
         if boosts:
-            query["bq"] = " ".join(boosts)
+            # Specify OR operator, since AND is default
+            query["bq"] = " OR " + " OR ".join(boosts)
+
+
+# At the moment collective.solr discards the bq param,
+# so we need to patch it back in here.
+from collective.solr.search import Search
+
+orig_buildQueryAndParameters = Search.buildQueryAndParameters
+
+
+def buildQueryAndParameters(self, default=None, **args):
+    bq = args.pop("bq", None)
+    query, params = orig_buildQueryAndParameters(self, default=default, **args)
+    if bq:
+        query["bq"] = bq
+    return query, params
+
+
+Search.buildQueryAndParameters = buildQueryAndParameters
 
 
 # To do:
-# - test
 # - also boost recent content

@@ -1,0 +1,50 @@
+{
+  "@id": "/qa/content-types/image",
+  "@type": "Image",
+  "UID": "0231e377bff44d4a89d4508378f073d9",
+  "allow_discussion": null,
+  "changeNote": "",
+  "contributors": [],
+  "created": "2023-07-06T21:35:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+  "effective": "2025-07-09T10:52:00+00:00",
+  "enable_likes": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "image",
+  "image": {
+    "blob_path": "0231e377bff44d4a89d4508378f073d9/image/black-starry-night.jpg",
+    "content-type": "image/jpeg",
+    "filename": "black-starry-night.jpg",
+    "height": 1708,
+    "size": 693013,
+    "width": 2400
+  },
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "image_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-02T08:58:31+00:00",
+  "nav_title": null,
+  "review_state": null,
+  "rights": "Credits: ipsum dolor sit amet.",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Image",
+  "type_title": "Image",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null
+}

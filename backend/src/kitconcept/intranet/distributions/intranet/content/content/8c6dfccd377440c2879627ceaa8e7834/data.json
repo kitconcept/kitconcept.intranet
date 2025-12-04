@@ -1,0 +1,1145 @@
+{
+  "@id": "/qa/block/teaser-block",
+  "@type": "Document",
+  "UID": "8c6dfccd377440c2879627ceaa8e7834",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "01b99520-a930-4601-ade9-69d87431787d": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "File Teaser",
+      "styles": {},
+      "theme": "default"
+    },
+    "03fd3352-0845-4c70-9d01-805996bd127b": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Page Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "Subject": [],
+          "Title": "Page",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Page",
+          "type_title": "Page"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Teaser Block with image aligned left"
+    },
+    "0478dcde-b77f-46a7-be12-cd67027f28b1": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Page Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "Subject": [],
+          "Title": "Page",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Page",
+          "type_title": "Page"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "right"
+      },
+      "theme": "default",
+      "title": "Teaser Block with image aligned right"
+    },
+    "06e5eb1e-e44f-4d2c-b9bd-82af24898862": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "132264cd-dd57-4403-b4ac-25cd12c918e4": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "News Item Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+          "@type": "News Item",
+          "Description": "The News Item content type can be used to display News content on the website.",
+          "Subject": [],
+          "Title": "News Item",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The News Item content type can be used to display News content on the website.",
+          "effective": "2023-01-01T10:42:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": "Head title",
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "News Item",
+          "type_title": "News Item"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Teaser to a News item with Image aligned left"
+    },
+    "1e6e426f-64d9-4e0e-91f9-0d901626880a": {
+      "@type": "heading",
+      "heading": "Event Teasers",
+      "styles": {},
+      "theme": "default"
+    },
+    "2162a7b6-33bc-43a9-8c2d-8c572de6c1d4": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "File Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+          "@type": "File",
+          "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+          "Subject": [],
+          "Title": "File",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The File content type can be used to upload any file and make it available for download on the site.",
+          "effective": "2025-07-09T10:52:00+00:00",
+          "end": null,
+          "getObjSize": "72.7 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "application/pdf",
+          "nav_title": null,
+          "review_state": null,
+          "start": null,
+          "title": "File",
+          "type_title": "File"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Teaser to a File with Image aligned left"
+    },
+    "25a0c896-7a3f-4a75-8b03-d920f51d92cd": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "head_title": "News Item Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+          "@type": "News Item",
+          "Description": "The News Item content type can be used to display News content on the website.",
+          "Subject": [],
+          "Title": "News Item",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The News Item content type can be used to display News content on the website.",
+          "effective": "2023-01-01T10:42:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": "Head title",
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "News Item",
+          "type_title": "News Item"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "center"
+      },
+      "theme": "default",
+      "title": "Teaser to a News Item with Image aligned centered"
+    },
+    "27cec447-3657-4e4e-a462-32b0859965d9": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Image Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+          "@type": "Image",
+          "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "Subject": [],
+          "Title": "Image",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "effective": "2025-07-09T10:52:00+00:00",
+          "end": null,
+          "getObjSize": "676.8 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "image",
+          "mime_type": "image/jpeg",
+          "nav_title": null,
+          "review_state": null,
+          "start": null,
+          "title": "Image",
+          "type_title": "Image"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "center"
+      },
+      "theme": "default",
+      "title": "Teaser to an Image with image aligned centered"
+    },
+    "285d29a6-0b0d-4d2e-9905-884b2e4e6ee4": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Image Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+          "@type": "Image",
+          "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "Subject": [],
+          "Title": "Image",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "effective": "2025-07-09T10:52:00+00:00",
+          "end": null,
+          "getObjSize": "676.8 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "image",
+          "mime_type": "image/jpeg",
+          "nav_title": null,
+          "review_state": null,
+          "start": null,
+          "title": "Image",
+          "type_title": "Image"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "right"
+      },
+      "theme": "default",
+      "title": "Teaser to an Image with Image aligned right"
+    },
+    "44872d84-e4db-40b6-b5f5-8a5b217da231": {
+      "@type": "introduction",
+      "plaintext": "The Teaser Block has three basic variations: one with the image centered, one with the image on the right side, and one with the image on the left side.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The Teaser Block has three basic variations: one with the image centered, one with the image on the right side, and one with the image on the left side."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "459338b2-65a5-4bc4-8a06-52e2697ac9aa": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Event Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+          "@type": "Event",
+          "Description": "The event content type can be used to display an event on the website.",
+          "Subject": [],
+          "Title": "Event",
+          "contact_building": null,
+          "contact_email": "m.mustermann@plone.com",
+          "contact_phone": "+49 1234 567-890",
+          "contact_room": null,
+          "description": "The event content type can be used to display an event on the website.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": "2023-12-31T12:00:00+00:00",
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": "2023-01-01T11:00:00+00:00",
+          "title": "Event",
+          "type_title": "Event"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "right"
+      },
+      "theme": "default",
+      "title": "Teaser to an Event with Image aligned right"
+    },
+    "469d0e61-9ee4-435d-8d04-09a4c8b4dfbc": {
+      "@type": "teaser",
+      "description": "Dr. Sophie Lehner ist Referentin f\u00fcr Risikobewertung und Strahlenschutz in der Abteilung Gesundheit und Vorsorge. Ihr Schwerpunkt liegt auf der Analyse von Expositionsszenarien und der Entwicklung von Schutzkonzepten im Bereich ionisierender Strahlung. Sie erstellt Richtlinien und ber\u00e4t interne Stellen in fachlichen sowie regulatorischen Fragen. Ihre Expertise in Strahlenbiologie, Risikoanalyse und den gesetzlichen Rahmenwerken (StrlSchG, StrlSchV) macht sie zu einer wichtigen Ansprechpartnerin f\u00fcr Themen des Strahlenschutzes.",
+      "head_title": "Person Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/37d87d573b4448369afb431a0eb1f728",
+          "@type": "Person",
+          "Description": "Dr. Sophie Lehner ist Referentin f\u00fcr Risikobewertung und Strahlenschutz in der Abteilung Gesundheit und Vorsorge. Ihr Schwerpunkt liegt auf der Analyse von Expositionsszenarien und der Entwicklung von Schutzkonzepten im Bereich ionisierender Strahlung. Sie erstellt Richtlinien und ber\u00e4t interne Stellen in fachlichen sowie regulatorischen Fragen. Ihre Expertise in Strahlenbiologie, Risikoanalyse und den gesetzlichen Rahmenwerken (StrlSchG, StrlSchV) macht sie zu einer wichtigen Ansprechpartnerin f\u00fcr Themen des Strahlenschutzes.",
+          "Subject": [],
+          "Title": "Dr. Sophie Lehner",
+          "contact_building": "B34",
+          "contact_email": "sophie.lehner@example.com",
+          "contact_phone": "0221 3902 323",
+          "contact_room": "R985",
+          "description": "Dr. Sophie Lehner ist Referentin f\u00fcr Risikobewertung und Strahlenschutz in der Abteilung Gesundheit und Vorsorge. Ihr Schwerpunkt liegt auf der Analyse von Expositionsszenarien und der Entwicklung von Schutzkonzepten im Bereich ionisierender Strahlung. Sie erstellt Richtlinien und ber\u00e4t interne Stellen in fachlichen sowie regulatorischen Fragen. Ihre Expertise in Strahlenbiologie, Risikoanalyse und den gesetzlichen Rahmenwerken (StrlSchG, StrlSchV) macht sie zu einer wichtigen Ansprechpartnerin f\u00fcr Themen des Strahlenschutzes.",
+          "effective": "1969-12-30T18:30:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Dr. Sophie Lehner",
+          "type_title": "Person"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Teaser to a Person with image aligned left"
+    },
+    "51b29875-35c3-478f-9641-8a45a12b33eb": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Person\u00a0Teaser",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "5c3c08e0-1beb-4cf8-9458-4b2918785359": {
+      "@type": "heading",
+      "heading": "External Link Teaser",
+      "theme": "default"
+    },
+    "61f0e286-0527-43a7-b8fe-29f1be40a8c3": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "head_title": "Page Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "Subject": [],
+          "Title": "Page",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Page",
+          "type_title": "Page"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "center"
+      },
+      "theme": "default",
+      "title": "Teaser Block with Image aligned centered"
+    },
+    "620f0540-8c3d-422d-a1c6-47037b5dbfbc": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Page Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "Subject": [],
+          "Title": "Page",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Page",
+          "type_title": "Page"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "right"
+      },
+      "theme": "grey",
+      "title": "Teaser Block with Image aligned right with grey background"
+    },
+    "6b754b44-880d-431e-8d08-d710d6403b64": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Event Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+          "@type": "Event",
+          "Description": "The event content type can be used to display an event on the website.",
+          "Subject": [],
+          "Title": "Event",
+          "contact_building": null,
+          "contact_email": "m.mustermann@plone.com",
+          "contact_phone": "+49 1234 567-890",
+          "contact_room": null,
+          "description": "The event content type can be used to display an event on the website.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": "2023-12-31T12:00:00+00:00",
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": "2023-01-01T11:00:00+00:00",
+          "title": "Event",
+          "type_title": "Event"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "center"
+      },
+      "theme": "default",
+      "title": "Teaser to an Event with Image aligened centered"
+    },
+    "72a35770-ba1d-4ab3-b618-ecbe97f7e044": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "External Link Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+          "@type": "Link",
+          "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+          "Subject": [],
+          "Title": "Link",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": "https://www.google.com",
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Link",
+          "type_title": "Link"
+        }
+      ],
+      "overwrite": true,
+      "preview_image": [
+        {
+          "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+          "image_field": "image",
+          "title": "Image for Link"
+        }
+      ],
+      "styles": {
+        "align": "right"
+      },
+      "theme": "default",
+      "title": "Teaser to an external Link with Image aligned right"
+    },
+    "74f67aa2-7966-4491-9f04-67b0883cf2cf": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "External Link Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+          "@type": "Link",
+          "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+          "Subject": [],
+          "Title": "Link",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": "https://www.google.com",
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Link",
+          "type_title": "Link"
+        }
+      ],
+      "overwrite": true,
+      "preview_image": [
+        {
+          "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+          "image_field": "image",
+          "title": "Image for Link"
+        }
+      ],
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Teaser to an external Link with Image aligned left"
+    },
+    "7fb5ccb3-ba7e-402f-a8d2-3d887bbb0a8f": {
+      "@type": "heading",
+      "heading": "News Item Teasers",
+      "theme": "default"
+    },
+    "83f8a95f-17cd-4ab1-9525-a2583a44bd38": {
+      "@type": "teaser",
+      "description": "Dr. Nadine Paulsen ist Wissenschaftlerin im Bereich Energiesysteme der Zukunft und arbeitet in der Abteilung Nachhaltigkeit und Innovation. Ihre Forschung konzentriert sich auf Wasserstofftechnologien, zuk\u00fcnftige Energieszenarien und innovative Speicherl\u00f6sungen. Sie entwickelt Energiemodelle, koordiniert interdisziplin\u00e4re Studien und ber\u00e4t Projektpartner zu technologischen und systemischen Fragestellungen. Mit ihrer Expertise in der Energiesystemanalyse, dem Einsatz von Simulationstools wie EnergyPLAN und Modelica sowie der Technologiebewertung leistet sie einen wichtigen Beitrag zur Gestaltung nachhaltiger Energiestrategien.",
+      "head_title": "Person Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/34d45ae4d36c4fa1a678358dd5320609",
+          "@type": "Person",
+          "Description": "Dr. Nadine Paulsen ist Wissenschaftlerin im Bereich Energiesysteme der Zukunft und arbeitet in der Abteilung Nachhaltigkeit und Innovation. Ihre Forschung konzentriert sich auf Wasserstofftechnologien, zuk\u00fcnftige Energieszenarien und innovative Speicherl\u00f6sungen. Sie entwickelt Energiemodelle, koordiniert interdisziplin\u00e4re Studien und ber\u00e4t Projektpartner zu technologischen und systemischen Fragestellungen. Mit ihrer Expertise in der Energiesystemanalyse, dem Einsatz von Simulationstools wie EnergyPLAN und Modelica sowie der Technologiebewertung leistet sie einen wichtigen Beitrag zur Gestaltung nachhaltiger Energiestrategien.",
+          "Subject": [],
+          "Title": "Dr. Nadine Paulsen",
+          "contact_building": "B32",
+          "contact_email": "nadine.paulsen@example.com",
+          "contact_phone": "0221 3902 323",
+          "contact_room": "R974",
+          "description": "Dr. Nadine Paulsen ist Wissenschaftlerin im Bereich Energiesysteme der Zukunft und arbeitet in der Abteilung Nachhaltigkeit und Innovation. Ihre Forschung konzentriert sich auf Wasserstofftechnologien, zuk\u00fcnftige Energieszenarien und innovative Speicherl\u00f6sungen. Sie entwickelt Energiemodelle, koordiniert interdisziplin\u00e4re Studien und ber\u00e4t Projektpartner zu technologischen und systemischen Fragestellungen. Mit ihrer Expertise in der Energiesystemanalyse, dem Einsatz von Simulationstools wie EnergyPLAN und Modelica sowie der Technologiebewertung leistet sie einen wichtigen Beitrag zur Gestaltung nachhaltiger Energiestrategien.",
+          "effective": "1969-12-30T18:30:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Dr. Nadine Paulsen",
+          "type_title": "Person"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "right"
+      },
+      "theme": "default",
+      "title": "Teaser to a Person with image aligned right"
+    },
+    "8dda44ba-d25c-4b06-85a4-1943db8b553a": {
+      "@type": "heading",
+      "heading": "Teaser Variations (Image: center, left, right)",
+      "theme": "default"
+    },
+    "8f6f1127-aaf9-4f93-9c43-251fbbf1bf3d": {
+      "@type": "teaser",
+      "description": "Dr. Miriam Engelhardt ist wissenschaftliche Mitarbeiterin im Bereich Umweltanalytik mit Schwerpunkt auf atmosph\u00e4rischen Spurengasen und Emissionsdaten. Sie f\u00fchrt Messkampagnen durch, entwickelt Klimamodelle und validiert diese mit Hilfe statistischer Methoden. Ihre Expertise in Umweltchemie und datenbasierter Klimamodellierung mit Python und R unterst\u00fctzt die Forschung zu Klimawirkungen und tr\u00e4gt zur Ver\u00f6ffentlichung fundierter wissenschaftlicher Ergebnisse bei.",
+      "head_title": "Person Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/bd745550cae741bf9932d2fd362b5bbf",
+          "@type": "Person",
+          "Description": "Dr. Miriam Engelhardt ist wissenschaftliche Mitarbeiterin im Bereich Umweltanalytik mit Schwerpunkt auf atmosph\u00e4rischen Spurengasen und Emissionsdaten. Sie f\u00fchrt Messkampagnen durch, entwickelt Klimamodelle und validiert diese mit Hilfe statistischer Methoden. Ihre Expertise in Umweltchemie und datenbasierter Klimamodellierung mit Python und R unterst\u00fctzt die Forschung zu Klimawirkungen und tr\u00e4gt zur Ver\u00f6ffentlichung fundierter wissenschaftlicher Ergebnisse bei.",
+          "Subject": [],
+          "Title": "Dr. Miriam Engelhardt",
+          "contact_building": "B33",
+          "contact_email": "miriam.engelhardt@example.com",
+          "contact_phone": "0221 3902 323",
+          "contact_room": "R921",
+          "description": "Dr. Miriam Engelhardt ist wissenschaftliche Mitarbeiterin im Bereich Umweltanalytik mit Schwerpunkt auf atmosph\u00e4rischen Spurengasen und Emissionsdaten. Sie f\u00fchrt Messkampagnen durch, entwickelt Klimamodelle und validiert diese mit Hilfe statistischer Methoden. Ihre Expertise in Umweltchemie und datenbasierter Klimamodellierung mit Python und R unterst\u00fctzt die Forschung zu Klimawirkungen und tr\u00e4gt zur Ver\u00f6ffentlichung fundierter wissenschaftlicher Ergebnisse bei.",
+          "effective": "1969-12-30T18:30:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Dr. Miriam Engelhardt",
+          "type_title": "Person"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "center"
+      },
+      "theme": "default",
+      "title": "Teaser to a Person with image aligend centered"
+    },
+    "9128296e-d159-4b24-9e98-f6d2c8b408d6": {
+      "@type": "introduction",
+      "plaintext": "The Teaser Block in Plone can be used to link to an existing content object from an overview or landing page. The Teaser block will automatically fetch the content from the connected object (Title, Description, Kicker, Preview Image), making the lives of editors as easy as possible. This page demonstrates all possible variations and configurations of the Teaser block in Plone.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The Teaser Block in Plone can be used to link to an existing content object from an overview or landing page. The Teaser block will automatically fetch the content from the connected object (Title, Description, Kicker, Preview Image), making the lives of editors as easy as possible. This page demonstrates all possible variations and configurations of the Teaser block in Plone."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "95648579-7116-401f-a448-e48938c88246": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
+      "head_title": "Page Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "Subject": [],
+          "Title": "Page",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Page",
+          "type_title": "Page"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "center"
+      },
+      "theme": "grey",
+      "title": "Teaser Block with Image aligned centered on grey background"
+    },
+    "a3bca7b5-1c8d-46e5-985c-6c7028905827": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "External Link Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+          "@type": "Link",
+          "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+          "Subject": [],
+          "Title": "Link",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": "https://www.google.com",
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Link",
+          "type_title": "Link"
+        }
+      ],
+      "overwrite": true,
+      "preview_image": [
+        {
+          "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+          "image_field": "image",
+          "title": "Image for Link"
+        }
+      ],
+      "styles": {
+        "align": "center"
+      },
+      "theme": "default",
+      "title": "Teaser to an external Link with Image aligened centered"
+    },
+    "a70344c8-358d-4041-abb6-ffde52550983": {
+      "@type": "heading",
+      "heading": "Image Teaser",
+      "theme": "default"
+    },
+    "b16453c6-4497-4766-b47a-83167362dedf": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Event Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+          "@type": "Event",
+          "Description": "The event content type can be used to display an event on the website.",
+          "Subject": [],
+          "Title": "Event",
+          "contact_building": null,
+          "contact_email": "m.mustermann@plone.com",
+          "contact_phone": "+49 1234 567-890",
+          "contact_room": null,
+          "description": "The event content type can be used to display an event on the website.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": "2023-12-31T12:00:00+00:00",
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": "2023-01-01T11:00:00+00:00",
+          "title": "Event",
+          "type_title": "Event"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Teaser to an Event with image aligened left"
+    },
+    "b798dde4-6a5d-4cef-9e25-fd532e1ea9a7": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Page Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "Subject": [],
+          "Title": "Page",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Page",
+          "type_title": "Page"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "grey",
+      "title": "Teaser Block with Image aligned left with grey background"
+    },
+    "b986b92c-e180-42d3-b755-4728854e5a50": {
+      "@type": "title"
+    },
+    "c6794540-6ae0-4295-9665-8e2a4a8c8454": {
+      "@type": "heading",
+      "heading": "Teasers Variations on Grey Background",
+      "theme": "grey"
+    },
+    "cdab2a7c-9e9d-4c38-9956-92c54e7f3773": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "News Item Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+          "@type": "News Item",
+          "Description": "The News Item content type can be used to display News content on the website.",
+          "Subject": [],
+          "Title": "News Item",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The News Item content type can be used to display News content on the website.",
+          "effective": "2023-01-01T10:42:00+00:00",
+          "end": null,
+          "getObjSize": "0 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": "Head title",
+          "image_field": "preview_image_link",
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "News Item",
+          "type_title": "News Item"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "right"
+      },
+      "theme": "default",
+      "title": "Teaser to a News Item with Image aligend right"
+    },
+    "cf5174a1-c29a-4840-984c-956e1db8400d": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "File Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+          "@type": "File",
+          "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+          "Subject": [],
+          "Title": "File",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The File content type can be used to upload any file and make it available for download on the site.",
+          "effective": "2025-07-09T10:52:00+00:00",
+          "end": null,
+          "getObjSize": "72.7 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "application/pdf",
+          "nav_title": null,
+          "review_state": null,
+          "start": null,
+          "title": "File",
+          "type_title": "File"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "right"
+      },
+      "theme": "default",
+      "title": "Teaser to a File with Image aligned right"
+    },
+    "d5f206c9-dae5-4aa5-8d5b-bc5fd27420e4": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "dd867b1c-f261-4e13-be00-9c82dc935ef3": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "File Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+          "@type": "File",
+          "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+          "Subject": [],
+          "Title": "File",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": "The File content type can be used to upload any file and make it available for download on the site.",
+          "effective": "2025-07-09T10:52:00+00:00",
+          "end": null,
+          "getObjSize": "72.7 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "preview_image_link",
+          "mime_type": "application/pdf",
+          "nav_title": null,
+          "review_state": null,
+          "start": null,
+          "title": "File",
+          "type_title": "File"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "center"
+      },
+      "theme": "default",
+      "title": "Teaser to a File with image aligend centered"
+    },
+    "e0e5584d-abf5-46b5-9b25-063bb707e07f": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+      "head_title": "Image Teaser",
+      "href": [
+        {
+          "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+          "@type": "Image",
+          "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "Subject": [],
+          "Title": "Image",
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "effective": "2025-07-09T10:52:00+00:00",
+          "end": null,
+          "getObjSize": "676.8 KB",
+          "getRemoteUrl": null,
+          "hasPreviewImage": null,
+          "head_title": null,
+          "image_field": "image",
+          "mime_type": "image/jpeg",
+          "nav_title": null,
+          "review_state": null,
+          "start": null,
+          "title": "Image",
+          "type_title": "Image"
+        }
+      ],
+      "overwrite": true,
+      "styles": {
+        "align": "left"
+      },
+      "theme": "default",
+      "title": "Teaser to an Image with Image aligned left"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "b986b92c-e180-42d3-b755-4728854e5a50",
+      "06e5eb1e-e44f-4d2c-b9bd-82af24898862",
+      "9128296e-d159-4b24-9e98-f6d2c8b408d6",
+      "d5f206c9-dae5-4aa5-8d5b-bc5fd27420e4",
+      "8dda44ba-d25c-4b06-85a4-1943db8b553a",
+      "44872d84-e4db-40b6-b5f5-8a5b217da231",
+      "61f0e286-0527-43a7-b8fe-29f1be40a8c3",
+      "03fd3352-0845-4c70-9d01-805996bd127b",
+      "0478dcde-b77f-46a7-be12-cd67027f28b1",
+      "c6794540-6ae0-4295-9665-8e2a4a8c8454",
+      "95648579-7116-401f-a448-e48938c88246",
+      "b798dde4-6a5d-4cef-9e25-fd532e1ea9a7",
+      "620f0540-8c3d-422d-a1c6-47037b5dbfbc",
+      "7fb5ccb3-ba7e-402f-a8d2-3d887bbb0a8f",
+      "25a0c896-7a3f-4a75-8b03-d920f51d92cd",
+      "132264cd-dd57-4403-b4ac-25cd12c918e4",
+      "cdab2a7c-9e9d-4c38-9956-92c54e7f3773",
+      "1e6e426f-64d9-4e0e-91f9-0d901626880a",
+      "6b754b44-880d-431e-8d08-d710d6403b64",
+      "b16453c6-4497-4766-b47a-83167362dedf",
+      "459338b2-65a5-4bc4-8a06-52e2697ac9aa",
+      "5c3c08e0-1beb-4cf8-9458-4b2918785359",
+      "a3bca7b5-1c8d-46e5-985c-6c7028905827",
+      "74f67aa2-7966-4491-9f04-67b0883cf2cf",
+      "72a35770-ba1d-4ab3-b618-ecbe97f7e044",
+      "a70344c8-358d-4041-abb6-ffde52550983",
+      "27cec447-3657-4e4e-a462-32b0859965d9",
+      "e0e5584d-abf5-46b5-9b25-063bb707e07f",
+      "285d29a6-0b0d-4d2e-9905-884b2e4e6ee4",
+      "01b99520-a930-4601-ade9-69d87431787d",
+      "dd867b1c-f261-4e13-be00-9c82dc935ef3",
+      "2162a7b6-33bc-43a9-8c2d-8c572de6c1d4",
+      "cf5174a1-c29a-4840-984c-956e1db8400d",
+      "51b29875-35c3-478f-9641-8a45a12b33eb",
+      "8f6f1127-aaf9-4f93-9c43-251fbbf1bf3d",
+      "469d0e61-9ee4-435d-8d04-09a4c8b4dfbc",
+      "83f8a95f-17cd-4ab1-9525-a2583a44bd38"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2023-07-06T21:35:20+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+  "effective": "2023-07-06T18:35:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "teaser-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-02T08:59:43+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Teaser Block",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-02T08:59:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-02T11:20:52+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

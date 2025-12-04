@@ -24,7 +24,9 @@ class QueryBuilder(BaseQueryBuilder):
         user = api.user.get_current()
         if user is None:
             return
-        brains = api.content.find(type="Person", userid=user.getId())
+        brains = api.content.find(
+            type="Person", username=user.getId(), unrestricted=True
+        )
         if len(brains) != 1:
             return
         person = brains[0]

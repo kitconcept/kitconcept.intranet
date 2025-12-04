@@ -8,6 +8,7 @@
   <browser:page
       name="querybuilderresults"
       for="*"
+      layer=".interfaces.IBrowserLayer"
       class=".search.QueryBuilder"
       permission="zope2.View"
       />

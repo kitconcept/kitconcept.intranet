@@ -115,7 +115,7 @@ backend-start: ## Start Plone Backend
 .PHONY: backend-test
 backend-test:  ## Test backend codebase
 	@echo "Test backend"
-	$(MAKE) -C "./backend/" test
+	$(MAKE) -C "./backend/" test -- $(filter-out $@ --,$(MAKECMDGOALS))
 
 .PHONY: install
 install:  ## Install

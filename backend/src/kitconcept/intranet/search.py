@@ -48,6 +48,7 @@ class QueryBuilder(BaseQueryBuilder):
 # so we need to patch it back in here.
 from collective.solr.search import Search
 
+
 orig_buildQueryAndParameters = Search.buildQueryAndParameters
 
 

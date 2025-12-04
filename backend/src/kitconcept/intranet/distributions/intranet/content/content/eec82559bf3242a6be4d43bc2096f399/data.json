@@ -11,6 +11,7 @@
   ],
   "description": "\nThe Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
   "effective": "2025-07-09T10:52:00+00:00",
+  "enable_likes": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
@@ -42,6 +43,7 @@
   "type_title": "Image",
   "version": "current",
   "versioning_enabled": true,
+  "votes": null,
   "workflow_history": {
     "simple_publication_workflow": [
       {

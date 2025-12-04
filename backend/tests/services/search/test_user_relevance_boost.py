@@ -1,5 +1,6 @@
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
+
 import pytest
 import transaction
 
@@ -10,7 +11,6 @@ def portal(site):
 
 
 class TestUserRelevanceBoost:
-
     def test_sort_on_user_relevance(self, request_api_factory, portal):
         username = "timo"
         password = "barcelona"

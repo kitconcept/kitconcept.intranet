@@ -566,7 +566,7 @@ describe('Listing Block Tests', () => {
     );
   });
 
-  it('Listing block - Test Criteria: Location relative', () => {
+  it('Listing block - Test Criteria: Path relative', () => {
     cy.intercept('PATCH', '/**/my-page/my-folder').as('save');
     cy.intercept('GET', '/**/my-page/my-folder').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -600,15 +600,13 @@ describe('Listing Block Tests', () => {
     cy.navigate('/my-page/my-folder/edit');
     cy.wait('@schema');
 
-    cy.clearSlateTitle().type(
-      'Listing block - Test Criteria: Location relative',
-    );
+    cy.clearSlateTitle().type('Listing block - Test Criteria: Path relative');
 
     //add listing block
     cy.addNewBlock('listing');
 
     //********  add relative location criteria filter
-    cy.addLocationQuerystring('Relative path', '../my-folder');
+    cy.addPathQuerystring('Relative path', '../my-folder');
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -639,7 +637,7 @@ describe('Listing Block Tests', () => {
       .should('not.exist');
   });
 
-  it('Listing block - Test Criteria: Location absolute', () => {
+  it('Listing block - Test Criteria: Path absolute', () => {
     cy.intercept('PATCH', '/**/my-page/my-folder').as('save');
     cy.intercept('GET', '/**/my-page/my-folder').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -673,15 +671,13 @@ describe('Listing Block Tests', () => {
     cy.navigate('/my-page/my-folder/edit');
     cy.wait('@schema');
 
-    cy.clearSlateTitle().type(
-      'Listing block - Test Criteria: Location absolute',
-    );
+    cy.clearSlateTitle().type('Listing block - Test Criteria: Path absolute');
 
     //add listing block
     cy.addNewBlock('listing');
 
     //********  add absolute location criteria filter
-    cy.addLocationQuerystring('Absolute path', '/my-page/my-folder');
+    cy.addPathQuerystring('Absolute path', '/my-page/my-folder');
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -712,7 +708,7 @@ describe('Listing Block Tests', () => {
       .should('not.exist');
   });
 
-  it('Listing block - Test Criteria: Location relative with some outside content', () => {
+  it('Listing block - Test Criteria: Path relative with some outside content', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -756,7 +752,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //********  add location criteria filter
-    cy.addLocationQuerystring('Relative path', '.');
+    cy.addPathQuerystring('Relative path', '.');
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(

@@ -1,1 +1,0 @@
-Add backend for content ratings, and enable discussion and ratings for the Page content type. @iFlameing

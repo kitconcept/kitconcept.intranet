@@ -2,6 +2,46 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a1 (2025-12-01)
+
+
+### Bugfix
+
+- Update kitconcept.solr to 2.0.0.a6 @reebalazs 
+
+
+### Internal
+
+- Hide secondary logo in mobile. Fixed teaser description update problem. Update core 2a4. @sneridagh 
+
+## 2.0.0a0 (2025-11-13)
+
+
+### Breaking
+
+- Renamed code related to content lifecycle management from LCM to CLM. @iFlameing [#240](https://github.com/kitconcept/kitconcept.intranet/issue/240)
+- Update to use Volto 19 and VLT 8. @sneridagh 
+
+
+### Feature
+
+- Add backend for content ratings, and enable discussion and ratings for the Page content type. @iFlameing [#185](https://github.com/kitconcept/kitconcept.intranet/issue/185)
+- Add service for feedback form. @iFlameing [#240](https://github.com/kitconcept/kitconcept.intranet/issue/240)
+- Add votes behaviour to all default Plone content type. @iFlameing 
+
+
+### Bugfix
+
+- Activate solr when creating a site with the setup_solr option enabled. @davisagli 
+
+
+### Internal
+
+- Update to Volto 19a13 VLT 8a6. @sneridagh [#282.vlt8a6volto19a13](https://github.com/kitconcept/kitconcept.intranet/issue/282.vlt8a6volto19a13)
+- Enable solr by default in the beispiele image. @davisagli 
+- Enable solr for demo site. @davisagli 
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+
 ## 1.0.0b15 (2025-10-08)
 
 

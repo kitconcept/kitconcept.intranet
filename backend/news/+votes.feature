@@ -1,1 +1,0 @@
-Add votes behaviour to all default Plone content type. @iFlameing

@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b21 (2025-12-08)
+
+
+### Internal
+
+- Update to k.core 1.0.2. @sneridagh 
+
 ## 1.0.0b20 (2025-12-01)
 
 

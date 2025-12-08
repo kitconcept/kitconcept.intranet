@@ -1,6 +1,35 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b21 (2025-12-08)
+
+### Backend
+
+
+#### Internal
+
+- Update to k.core 1.0.2. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Add classname for unauthorized page. Update Volto 18.30.1.
+  Cross language support for blocks chooser search. Fixed highlight block ENTER, create a new block consistently. Update highlight block to 4.5.1. Update Volto 18.30.0.
+  Fixed error on pressing ENTER in introduction block. Update add-on to 1.2.0.
+  Update to k.core 1.0.2 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b20 (2025-12-01)
 
 ### Backend

@@ -8,7 +8,7 @@
       destination="20251118001"
       >
     <genericsetup:upgradeDepends
-        title="Configure solr for intranet objects, add user relevance sorting."
+        title="Configure solr for intranet objects, add user relevance sorting, rename Location criterion to Path."
         import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>

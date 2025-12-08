@@ -38,7 +38,7 @@ class QueryBuilder(BaseQueryBuilder):
                 f"organisational_unit_reference:({person.organisational_unit_reference})^10"
             )
         if person.location_reference:
-            boosts.append(f"location_reference:({person.location_reference})^10")
+            boosts.append(f"location_reference:({person.location_reference})^8")
         if boosts:
             # Specify OR operator, since AND is default
             query["bq"] = " OR " + " OR ".join(boosts)

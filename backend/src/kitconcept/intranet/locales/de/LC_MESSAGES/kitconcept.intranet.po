@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-11-07 09:56+0000\n"
+"POT-Creation-Date: 2025-12-08 04:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,6 +203,10 @@ msgstr "Es ist keine verantwortliche Person oder Standard-Feedback-E-Mail konfig
 msgid "Organisational Unit"
 msgstr "Organisationseinheit"
 
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "Path"
+msgstr "Pfad"
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Pending review"
@@ -310,6 +314,10 @@ msgstr "Zur Veröffentlichung einreichen"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "Taxonomy"
 msgstr "Taxonomie"
+
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "The path of an item"
+msgstr "Der Pfad eines Inhalts"
 
 #: kitconcept/intranet/controlpanels/intranet.py:22
 msgid "Used in the intranet header seach bar."

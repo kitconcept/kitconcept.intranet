@@ -30,6 +30,9 @@ describe('Add Content Tests', () => {
     cy.get('#toolbar-add-person').click();
     cy.get('input#field-first_name').type('Dr. Ayla');
     cy.get('input#field-last_name').type('Demir');
+    cy.get('.ui.pointing.secondary.attached.tabular.formtabs.menu')
+      .findByText('Categorization')
+      .click();
     cy.get('#field-location_reference').click();
     cy.get(
       '#field-location_reference .react-select__menu .react-select__option',

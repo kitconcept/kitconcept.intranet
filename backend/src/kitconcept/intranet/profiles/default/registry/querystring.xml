@@ -3,18 +3,6 @@
           i18n:domain="kitconcept.intranet"
 >
 
-  <!-- Path -->
-  <records interface="plone.app.querystring.interfaces.IQueryField"
-           prefix="plone.app.querystring.field.path"
-  >
-    <value key="title"
-           i18n:translate=""
-    >Path</value>
-    <value key="description"
-           i18n:translate=""
-    >The path of an item</value>
-  </records>
-
   <!-- Location -->
   <records interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.location_reference"

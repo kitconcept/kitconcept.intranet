@@ -92,7 +92,7 @@ describe('Folder Contents Tests', () => {
     // test that the same query shows up in the rendered html when using query params
     cy.get('.block-editor-listing').click();
     cy.configureListingWith('Page');
-    cy.addPathQuerystring();
+    cy.addLocationQuerystring();
     cy.get('#toolbar-save').click();
     cy.wait('@content');
 
@@ -131,7 +131,7 @@ describe('Folder Contents Tests', () => {
 
     // test that the same markup shows up in the rendered html when using query params
     cy.get('.edit').click();
-    cy.addPathQuerystring();
+    cy.addLocationQuerystring();
     cy.get('#toolbar-save').click();
     cy.wait('@content');
 

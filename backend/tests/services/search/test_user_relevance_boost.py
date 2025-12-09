@@ -1,3 +1,4 @@
+from collective.person.behaviors.user import IPloneUser
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
 
@@ -35,6 +36,7 @@ class TestUserRelevanceBoost:
                 title="Timo",
                 username=username,
             )
+            IPloneUser(person).username = "timo"
             api.relation.create(
                 source=person,
                 target=org_unit,

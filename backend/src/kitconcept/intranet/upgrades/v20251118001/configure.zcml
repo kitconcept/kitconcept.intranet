@@ -9,7 +9,7 @@
       >
     <genericsetup:upgradeDepends
         title="Configure solr for intranet objects, add user relevance sorting."
-        import_steps="plone.app.registry"
+        import_steps="typeinfo plone.app.registry"
         />
   </genericsetup:upgradeSteps>
 </configure>

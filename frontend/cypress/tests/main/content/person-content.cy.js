@@ -30,9 +30,6 @@ describe('Add Content Tests', () => {
     cy.get('#toolbar-add-person').click();
     cy.get('input#field-first_name').type('Dr. Ayla');
     cy.get('input#field-last_name').type('Demir');
-    cy.get('textarea#field-description').type(
-      'Dr. Ayla Demir ist Projektkoordinatorin für Internationale Zusammenarbeit in der Abteilung Wissenschaftspolitische Beziehungen. Sie koordiniert internationale Partnerschaften, begleitet das Antragsmanagement für EU- und Drittmittelprojekte und organisiert Fachkonferenzen. ',
-    );
     cy.get('#field-location_reference').click();
     cy.get(
       '#field-location_reference .react-select__menu .react-select__option',

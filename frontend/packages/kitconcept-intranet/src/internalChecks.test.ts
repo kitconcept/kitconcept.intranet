@@ -110,14 +110,14 @@ describe('internal checks', () => {
 
       if (!dependencyVersion) {
         issues.push(
-          `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/kitconcept-website/package.json dependencies.`,
+          `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/kitconcept-intranet/package.json dependencies.`,
         );
         return;
       }
 
       if (dependencyVersion !== 'workspace:*') {
         issues.push(
-          `${packageName} is pinned to a specific version in frontend/packages/kitconcept-website/package.json dependencies; expected 'workspace:*'.`,
+          `${packageName} is pinned to a specific version in frontend/packages/kitconcept-intranet/package.json dependencies; expected 'workspace:*'.`,
         );
       }
     });
@@ -127,7 +127,7 @@ describe('internal checks', () => {
 
       if (!intranetAddons.includes(packageName)) {
         issues.push(
-          `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/kitconcept-website/package.json addons.`,
+          `${packageName} is listed in recommendedAddons.json but missing from frontend/packages/kitconcept-intranet/package.json addons.`,
         );
       }
     });

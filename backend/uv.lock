@@ -91,9 +91,9 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a4" },
+    { name = "kitconcept-core", specifier = "==2.0.0a5" },
     { name = "kitconcept-solr", specifier = "==2.0.0a7" },
-    { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a8" },
+    { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.4.0" },
@@ -119,7 +119,7 @@ constraints = [
     { name = "orderedmultidict", specifier = "==1.0.1" },
     { name = "outcome", specifier = "==1.3.0.post0" },
     { name = "overrides", specifier = "==7.7.0" },
-    { name = "packaging", specifier = "==24.2" },
+    { name = "packaging", specifier = "==25.0" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -379,13 +379,13 @@ constraints = [
     { name = "z3c-formwidget-query", specifier = "==3.0" },
     { name = "z3c-jbot", specifier = "==3.1" },
     { name = "z3c-objpath", specifier = "==3.0" },
-    { name = "z3c-pt", specifier = "==5.0" },
+    { name = "z3c-pt", specifier = "==5.1" },
     { name = "z3c-relationfield", specifier = "==3.0" },
     { name = "z3c-unconfigure", specifier = "==3.0" },
     { name = "z3c-zcmlhook", specifier = "==3.0" },
     { name = "zc-buildout", specifier = "==4.1.12" },
     { name = "zc-lockfile", specifier = "==3.0.post1" },
-    { name = "zc-recipe-egg", specifier = "===3.0.0" },
+    { name = "zc-recipe-egg", specifier = "==3.0.0" },
     { name = "zc-recipe-testrunner", specifier = "==3.2" },
     { name = "zc-relation", specifier = "==2.1" },
     { name = "zconfig", specifier = "==4.2" },
@@ -1298,7 +1298,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0a4"
+version = "2.0.0a5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1309,9 +1309,9 @@ dependencies = [
     { name = "plone-distribution" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/77/81/cfd2516d248fb0ce6844a1d02b00b8d4774c83d7b89d57fb6bd9266cd646/kitconcept_core-2.0.0a4.tar.gz", hash = "sha256:b0de6a4cef631c5c832ad38f60789c2c770f0e7270903adab8513f2563b36345", size = 326408, upload-time = "2025-12-01T15:26:14.736Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9b/a6/77399d3d8e079791c18052f1080d86a947cbc7442ac8a248dd7915d25442/kitconcept_core-2.0.0a5.tar.gz", hash = "sha256:4c08da7ba8724700cdd7cd6fee1764bb9999c0fb76a2118c3343df0ad3f22474", size = 326480, upload-time = "2025-12-08T16:11:03.82Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/04/51/e10398a770f6fafc1fae9a3271af859dfbdda36f00761b52d7449249f665/kitconcept_core-2.0.0a4-py3-none-any.whl", hash = "sha256:738ee4a6b94b2fc6a39ac1e0a3eec1a58035192310efdc6ecb1d2374fc3216dc", size = 240916, upload-time = "2025-12-01T15:26:17.358Z" },
+    { url = "https://files.pythonhosted.org/packages/43/29/9360037ab1a813f60f233fd5dd31f5c00cb646215d70f36e62ab801fc175/kitconcept_core-2.0.0a5-py3-none-any.whl", hash = "sha256:bef732fab1b002c288473ff3bd2434b05371ff310864cd2d9a6bd7674edc997e", size = 240917, upload-time = "2025-12-08T16:11:02.087Z" },
 ]
 
 [[package]]
@@ -1361,7 +1361,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a4" },
+    { name = "kitconcept-core", specifier = "==2.0.0a5" },
     { name = "kitconcept-solr", specifier = "==2.0.0a7" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1419,7 +1419,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "8.0.0a8"
+version = "8.0.0a9"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1428,9 +1428,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7f/44/a538374d5e6b576f62b0aa04edd3910e2c9a3e75cf899937dbeac9577312/kitconcept_voltolighttheme-8.0.0a8.tar.gz", hash = "sha256:e9e72904a86e04585c0d976883103e44241cb70e2ec4e501cff0d2c8dd84ddf9", size = 1364901, upload-time = "2025-12-01T13:16:30.717Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/14/cd90eafb2923b1ff648e17801870884ae645d3b1243ba3a684dbb7387628/kitconcept_voltolighttheme-8.0.0a9.tar.gz", hash = "sha256:b3b0d921fe1eff1e007e583ae0adf669bf8645421c1237ea7f4441ace7506ff9", size = 1364910, upload-time = "2025-12-08T15:45:04.406Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c8/cd/ce5e76b86f061c8e3904667fe890724abe2bbc17c153d3c401ef9990f735/kitconcept_voltolighttheme-8.0.0a8-py3-none-any.whl", hash = "sha256:e4f51fecc7330b0151805e10c8288ba8a7422df2391fc47f71c8a5453e07f38d", size = 1431619, upload-time = "2025-12-01T13:16:27.431Z" },
+    { url = "https://files.pythonhosted.org/packages/14/e3/b41e8f5ecdce2dbf2493043737fd488713a092990478e326685159d6cebe/kitconcept_voltolighttheme-8.0.0a9-py3-none-any.whl", hash = "sha256:d247f5ef13240e08841427813be3d349afd07190a44de65a5ac27e056e43ae0c", size = 1431620, upload-time = "2025-12-08T15:44:50.195Z" },
 ]
 
 [[package]]
@@ -1683,11 +1683,11 @@ wheels = [
 
 [[package]]
 name = "packaging"
-version = "24.2"
+version = "25.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz", hash = "sha256:c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f", size = 163950, upload-time = "2024-11-08T09:47:47.202Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz", hash = "sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f", size = 165727, upload-time = "2025-04-19T11:48:59.673Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/88/ef/eb23f262cca3c0c4eb7ab1933c3b1f03d021f2c48f54763065b6f0e321be/packaging-24.2-py3-none-any.whl", hash = "sha256:09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759", size = 65451, upload-time = "2024-11-08T09:47:44.722Z" },
+    { url = "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl", hash = "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484", size = 66469, upload-time = "2025-04-19T11:48:57.875Z" },
 ]
 
 [[package]]
@@ -5563,7 +5563,7 @@ wheels = [
 
 [[package]]
 name = "z3c-pt"
-version = "5.0"
+version = "5.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "chameleon" },
@@ -5574,9 +5574,9 @@ dependencies = [
     { name = "zope-interface" },
     { name = "zope-traversing" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8d/a0/3d3dd3982f4cfabc9e5c958b48e1f8a756143184b6f1729c257f2bac2848/z3c_pt-5.0.tar.gz", hash = "sha256:b4754d4c3a97593e35a2fbb8c959534423200395412d48bfb2ca17b78872b986", size = 68927, upload-time = "2025-04-14T06:17:35.923Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/7e/8e/fa4d41abe07fb70c878a489681f1dfb53ab92670bb133ecf419283069358/z3c_pt-5.1.tar.gz", hash = "sha256:1185c09178fd9719025ede5d4d32cb0de720f8a6532d615f2dde584101b9c5d6", size = 69816, upload-time = "2025-06-19T06:55:40.504Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/21/a6/65f6bd0a8b726ec7097d9f1ec000882c9f711e255ba8be86b80be1a6ef71/z3c_pt-5.0-py3-none-any.whl", hash = "sha256:d998eb83efd604f28228ce6ac126f54fdaf3ba47f3d82184d1b1e6805b41960b", size = 39904, upload-time = "2025-04-14T06:17:34.506Z" },
+    { url = "https://files.pythonhosted.org/packages/df/f5/99cb2ccf605383c5084fdc86342924c76c2209412638032d86e9b6663505/z3c_pt-5.1-py3-none-any.whl", hash = "sha256:871827359171888eba4c6e4c7a50e589515f6ae6ac229731b45a23f641abfd2b", size = 40277, upload-time = "2025-06-19T06:55:39.085Z" },
 ]
 
 [[package]]

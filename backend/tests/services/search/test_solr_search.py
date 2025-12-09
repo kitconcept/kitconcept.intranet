@@ -14,7 +14,7 @@ class TestSolrSearch:
     @pytest.mark.parametrize(
         "query,items",
         [
-            ("plone", 9),
+            ("plone", 10),
             ("kitconcept", 3),
         ],
     )

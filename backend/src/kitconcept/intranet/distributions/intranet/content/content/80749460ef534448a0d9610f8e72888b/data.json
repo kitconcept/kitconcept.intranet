@@ -23,7 +23,7 @@
           {
             "i": "path",
             "o": "plone.app.querystring.operation.string.absolutePath",
-            "v": "/features/content-types::1"
+            "v": "/qa"
           }
         ],
         "sort_on": "getObjPositionInParent",
@@ -58,7 +58,7 @@
           {
             "i": "path",
             "o": "plone.app.querystring.operation.string.absolutePath",
-            "v": "/features/content-types::1"
+            "v": "/qa"
           }
         ],
         "sort_on": "getObjPositionInParent",
@@ -78,9 +78,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Person"
-            ]
+            "v": ["Person"]
           }
         ],
         "sort_on": "sortable_title",
@@ -102,7 +100,7 @@
           {
             "i": "path",
             "o": "plone.app.querystring.operation.string.absolutePath",
-            "v": "/features/content-types::1"
+            "v": "/qa"
           }
         ],
         "sort_on": "getObjPositionInParent",
@@ -129,9 +127,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Link"
-            ]
+            "v": ["Link"]
           }
         ],
         "sort_order": "ascending"
@@ -150,9 +146,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "News Item"
-            ]
+            "v": ["News Item"]
           }
         ],
         "sort_on": "sortable_title",
@@ -195,9 +189,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "File"
-            ]
+            "v": ["File"]
           }
         ],
         "sort_order": "ascending"
@@ -218,7 +210,7 @@
           {
             "i": "path",
             "o": "plone.app.querystring.operation.string.absolutePath",
-            "v": "/features/content-types::1"
+            "v": "/qa"
           }
         ],
         "sort_on": "getObjPositionInParent",
@@ -251,9 +243,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event"
-            ]
+            "v": ["Event"]
           }
         ],
         "sort_on": "sortable_title",
@@ -279,9 +269,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event"
-            ]
+            "v": ["Event"]
           }
         ],
         "sort_on": "sortable_title",
@@ -301,9 +289,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "News Item"
-            ]
+            "v": ["News Item"]
           }
         ],
         "sort_on": "sortable_title",
@@ -323,9 +309,12 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
           }
         ],
         "sort_on": "sortable_title",
@@ -365,9 +354,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "File"
-            ]
+            "v": ["File"]
           }
         ],
         "sort_order": "ascending"
@@ -386,9 +373,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event"
-            ]
+            "v": ["Event"]
           }
         ],
         "sort_on": "sortable_title",
@@ -408,9 +393,12 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
           }
         ],
         "sort_on": "sortable_title",
@@ -429,9 +417,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "File"
-            ]
+            "v": ["File"]
           }
         ],
         "sort_order": "ascending"
@@ -450,9 +436,12 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
           }
         ],
         "sort_on": "sortable_title",
@@ -487,14 +476,17 @@
       "@type": "listing",
       "headlineTag": "h2",
       "querystring": {
+        "limit": "4",
         "query": [
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Event",
-              "Document"
-            ]
+            "v": ["Event", "Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
           }
         ],
         "sort_order": "ascending"
@@ -514,9 +506,12 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Image"
-            ]
+            "v": ["Image"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
           }
         ],
         "sort_order": "ascending"
@@ -534,9 +529,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Link"
-            ]
+            "v": ["Link"]
           }
         ],
         "sort_order": "ascending"
@@ -555,9 +548,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "News Item"
-            ]
+            "v": ["News Item"]
           }
         ],
         "sort_on": "sortable_title",
@@ -582,9 +573,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Person"
-            ]
+            "v": ["Person"]
           }
         ],
         "sort_on": "sortable_title",
@@ -604,9 +593,7 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Person"
-            ]
+            "v": ["Person"]
           }
         ],
         "sort_on": "sortable_title",
@@ -633,9 +620,12 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Link"
-            ]
+            "v": ["Link"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
           }
         ],
         "sort_order": "ascending"
@@ -704,9 +694,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:19+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').",
   "effective": "2023-07-06T18:35:00+00:00",
   "enable_likes": false,
@@ -724,14 +712,14 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-12-02T08:59:43+00:00",
+  "modified": "2025-12-10T13:18:59+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
   "review_state": "published",
   "rights": "",
   "searchwords": [],
-  "showinsearch": true,
+  "showinsearch": false,
   "subjects": [],
   "title": "Listing Block",
   "type_title": "Page",

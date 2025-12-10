@@ -1514,9 +1514,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           },
@@ -1549,9 +1547,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "News Item"
-                      ]
+                      "v": ["News Item"]
                     }
                   ],
                   "sort_order": "ascending"
@@ -1570,9 +1566,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Event"
-                      ]
+                      "v": ["Event"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1647,9 +1641,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "News Item"
-                      ]
+                      "v": ["News Item"]
                     }
                   ],
                   "sort_order": "ascending"
@@ -1684,9 +1676,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Document"
-                      ]
+                      "v": ["Document"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -1723,9 +1713,7 @@
                     {
                       "i": "portal_type",
                       "o": "plone.app.querystring.operation.selection.any",
-                      "v": [
-                        "Event"
-                      ]
+                      "v": ["Event"]
                     }
                   ],
                   "sort_on": "sortable_title",
@@ -2964,9 +2952,7 @@
               }
             },
             "blocks_layout": {
-              "items": [
-                "f56375fe-70a1-4ac1-a94c-adc9998db548"
-              ]
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
             },
             "title": "Accordion with table"
           },
@@ -3284,9 +3270,7 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-27T19:48:00+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The accordion contains other blocks in an accordion behavior layout.",
   "effective": "2023-09-22T16:09:00+00:00",
   "enable_likes": false,
@@ -3311,7 +3295,7 @@
   "review_state": "published",
   "rights": "",
   "searchwords": [],
-  "showinsearch": true,
+  "showinsearch": false,
   "subjects": [],
   "title": "Accordion",
   "type_title": "Page",

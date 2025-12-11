@@ -38,7 +38,7 @@ dependencies = [
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
     "collective-solr==10.0.0",
-    "kitconcept-solr==2.0.0a7",
+    "kitconcept.solr==2.0.0a8",
 ]
 
 [dependency-groups]
@@ -296,8 +296,8 @@ constraint-dependencies = [
     "jsonschema-specifications==2025.9.1",
     "jsonschema==4.24.0",
     "keyring==25.6.0",
-    "kitconcept-solr==2.0.0a7",
     "kitconcept.core==2.0.0a6",
+    "kitconcept.solr==2.0.0a8",
     "kitconcept.voltolighttheme>=8.0.0a9",
     "legacy-cgi==2.6.2",
     "lockfile==0.12.2",

@@ -83,12 +83,26 @@ services:
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.service=svc-${STACK_PREFIX}-back
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.middlewares=gzip,mw-${STACK_PREFIX}-back-auth,mw-${STACK_PREFIX}-back-vhm-classic
 
+  tika:
+    image: apache/tika:3.2.3.0-full
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == production
+    networks:
+      - public
+
   solr:
     image: ghcr.io/kitconcept/solr:latest
     command:
       - solr-precreate
       - plone
       - /plone-config
+    environment:
+      SOLR_MODULES: extraction
+      SOLR_OPTS: "-Dsolr.tika.url=http://${STACK_NAME}_tika:9998"
     deploy:
       replicas: 1
       placement:

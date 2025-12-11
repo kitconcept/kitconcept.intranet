@@ -28,4 +28,6 @@
   <include package=".services" />
   <include package=".vocabularies" />
 
+  <includeOverrides file="overrides.zcml" />
+
 </configure>

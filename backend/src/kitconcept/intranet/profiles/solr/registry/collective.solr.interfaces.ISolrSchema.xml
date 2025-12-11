@@ -4,5 +4,11 @@
            prefix="collective.solr"
   >
     <value key="use_tika">True</value>
+    <value key="required">
+      <element>SearchableText</element>
+      <!-- Add bq to params that cause the query to be routed to solr.
+           We use this for custom boosting. -->
+      <element>bq</element>
+    </value>
   </records>
 </registry>

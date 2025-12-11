@@ -1972,28 +1972,6 @@ importers:
         specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
 
-  packages/volto-dsgvo-banner/packages/volto-dsgvo-banner:
-    dependencies:
-      '@datapunt/matomo-tracker-js':
-        specifier: 0.5.1
-        version: 0.5.1
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-ga4:
-        specifier: ^2.1.0
-        version: 2.1.0
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.3
-      release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.9.3)
-
   packages/volto-form-block/frontend/packages/volto-form-block:
     dependencies:
       '@hcaptcha/react-hcaptcha':
@@ -2380,34 +2358,6 @@ importers:
       vitest:
         specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
-
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
-      buffer:
-        specifier: ^5.5.0
-        version: 5.7.1
-      lodash.debounce:
-        specifier: ^4.0.8
-        version: 4.0.8
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-portal:
-        specifier: 4.2.1
-        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.3
-      react-autosuggest:
-        specifier: 10.1.0
-        version: 10.1.0(react@18.2.0)
-      release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.9.3)
 
 packages:
 
@@ -3270,9 +3220,6 @@ packages:
 
   '@cypress/xvfb@1.2.4':
     resolution: {integrity: sha512-skbBzPggOVYCbnGgV+0dmBdW/s77ZkAOXIC1knS8NagwDjBrNC1LuXtQJeiN6l+m7lzmHtaoUw/ctJKdqkG57Q==}
-
-  '@datapunt/matomo-tracker-js@0.5.1':
-    resolution: {integrity: sha512-9/MW9vt/BA5Db7tO6LqCeQKtuvBNjyq51faF3AzUmPMlYsJCnASIxcut3VqJKiribhUoey7aYbPIYuj9x4DLPA==}
 
   '@discoveryjs/json-ext@0.5.7':
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -12218,9 +12165,6 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
-  react-ga4@2.1.0:
-    resolution: {integrity: sha512-ZKS7PGNFqqMd3PJ6+C2Jtz/o1iU9ggiy8Y8nUeksgVuvNISbmrQtJiZNvC/TjDsqD0QlU5Wkgs7i+w9+OjHhhQ==}
-
   react-google-recaptcha-v3@1.11.0:
     resolution: {integrity: sha512-kLQqpz/77m8+trpBwzqcxNtvWZYoZ/YO6Vm2cVTHW8hs80BWUfDpC7RDwuAvpswwtSYApWfaSpIDFWAIBNIYxQ==}
     peerDependencies:
@@ -15856,8 +15800,6 @@ snapshots:
       lodash.once: 4.1.1
     transitivePeerDependencies:
       - supports-color
-
-  '@datapunt/matomo-tracker-js@0.5.1': {}
 
   '@discoveryjs/json-ext@0.5.7': {}
 
@@ -27050,8 +26992,6 @@ snapshots:
   react-fast-compare@2.0.4: {}
 
   react-fast-compare@3.2.2: {}
-
-  react-ga4@2.1.0: {}
 
   react-google-recaptcha-v3@1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:

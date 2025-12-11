@@ -21,6 +21,7 @@ https://diataxis.fr/how-to-guides/
 ```{toctree}
 :maxdepth: 2
 
+passive-targeting
 squared-person-image-support
 content-interactions
 content-feedback-form

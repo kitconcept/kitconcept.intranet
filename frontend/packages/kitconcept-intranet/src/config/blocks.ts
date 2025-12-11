@@ -49,5 +49,6 @@ export default function install(config: ConfigType) {
       template: RssSummaryTemplate,
     },
   };
+
   return config;
 }

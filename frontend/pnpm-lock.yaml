@@ -1717,8 +1717,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-slider-block/packages/volto-slider-block
       '@kitconcept/volto-solr':
-        specifier: 2.0.0-alpha.6
-        version: 2.0.0-alpha.6(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 2.0.0-alpha.8
+        version: 2.0.0-alpha.8(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -2003,42 +2003,24 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       react:
-        specifier: ^18.2.0
+        specifier: 18.2.0
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-google-recaptcha-v3:
         specifier: ^1.8.0
         version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      volto-subblocks:
+        specifier: ^2.1.0
+        version: 2.1.0(@plone/volto@core+packages+volto)(react@18.2.0)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
         version: 3.10.3
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.17.20
-      '@types/react':
-        specifier: ^18.3.1
-        version: 18.3.26
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.26)
-      lodash:
-        specifier: 4.17.21
-        version: 4.17.21
       release-it:
-        specifier: ^19.0.5
-        version: 19.0.5(@types/node@24.10.0)(magicast@0.3.5)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-      vitest:
-        specifier: ^3.1.2
-        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+        specifier: ^17.1.1
+        version: 17.1.1(typescript@5.9.3)
 
   packages/volto-heading-block/packages/volto-heading-block:
     dependencies:
@@ -2398,6 +2380,34 @@ importers:
       vitest:
         specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+
+  packages/volto-solr/frontend/packages/volto-solr:
+    dependencies:
+      buffer:
+        specifier: ^5.5.0
+        version: 5.7.1
+      lodash.debounce:
+        specifier: ^4.0.8
+        version: 4.0.8
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-portal:
+        specifier: 4.2.1
+        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.3
+      react-autosuggest:
+        specifier: 10.1.0
+        version: 10.1.0(react@18.2.0)
+      release-it:
+        specifier: ^17.1.1
+        version: 17.1.1(typescript@5.9.3)
 
 packages:
 
@@ -3974,8 +3984,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-solr@2.0.0-alpha.6':
-    resolution: {integrity: sha512-7t04bE7cbfPrcLB4TJp1X2O4HA7C2Bqug6Bi2IjXN5gPbTW9Ec0Dmp7+DtYENOnNqQ0gFWb0B6T/lUc+8eaMwQ==}
+  '@kitconcept/volto-solr@2.0.0-alpha.8':
+    resolution: {integrity: sha512-CeC+gm+u6XlOzuZ327VfTTXvdArp028clg5m/1tL3Wm7hKrN2ZaDVst2jWD/lf6jKZlehpYe4M3aiU7QdCVjVA==}
     peerDependencies:
       react: 18.2.0
       react-autosuggest: 10.1.0
@@ -14336,6 +14346,11 @@ packages:
     peerDependencies:
       '@plone/volto': '>=16.0.0-alpha.38'
 
+  volto-subblocks@2.1.0:
+    resolution: {integrity: sha512-AlhMb+PacQRGCIY/xc7p1zr3RhN64An/+ckVQ2YOytIVOtoChMUwxxSIj5Fkz7uScgIlzL/n976QqJlIf4k0rg==}
+    peerDependencies:
+      '@plone/volto': '>=16.0.0-alpha.38'
+
   vue-template-compiler@2.7.16:
     resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
 
@@ -16622,7 +16637,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-solr@2.0.0-alpha.6(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-solr@2.0.0-alpha.8(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       buffer: 5.7.1
       lodash.debounce: 4.0.8
@@ -29953,6 +29968,14 @@ snapshots:
     dependencies:
       '@plone/volto': link:core/packages/volto
       rss-parser: 3.7.5
+
+  volto-subblocks@2.1.0(@plone/volto@core+packages+volto)(react@18.2.0):
+    dependencies:
+      '@plone/volto': link:core/packages/volto
+      react-dnd: 5.0.0(react@18.2.0)
+      react-dnd-html5-backend: 5.0.1
+    transitivePeerDependencies:
+      - react
 
   vue-template-compiler@2.7.16:
     dependencies:

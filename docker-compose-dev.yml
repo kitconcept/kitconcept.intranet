@@ -45,6 +45,12 @@ x-backend-acceptance: &backend-acceptance
       - KC_VERSION=${KC_VERSION}
   pull_policy: build
 
+x-tika: &tika
+  image: apache/tika:3.2.3.0-full
+  platform: linux/amd64
+  ports:
+    - 9998:9998
+
 x-solr: &solr
   image: ghcr.io/kitconcept/solr:latest
   platform: linux/amd64
@@ -54,6 +60,8 @@ x-solr: &solr
     - solr-precreate
     - plone
     - /plone-config
+  environment:
+    SOLR_MODULES: extraction
 
 services:
   traefik:
@@ -161,11 +169,20 @@ services:
     volumes:
       - vol-site-data:/var/lib/postgresql/data
 
+  tika:
+    <<: *tika
+    profiles: ["dev"]
+
   solr:
     <<: *solr
     profiles: ["dev"]
+    depends_on:
+      - tika
     volumes:
       - vol-solr-data:/var/solr/data
+    environment:
+      SOLR_MODULES: extraction
+      SOLR_OPTS: "-Dsolr.tika.url=http://tika:9998"
 
   # Acceptance / A11y Testing Services
   frontend-acceptance:
@@ -199,9 +216,18 @@ services:
     ports:
       - 8080:8080
 
+  tika-acceptance:
+    <<: *tika
+    profiles: ["solr", "acceptance", "a11y"]
+
   solr-acceptance:
     <<: *solr
     profiles: ["solr", "acceptance", "a11y"]
+    depends_on:
+      - tika-acceptance
+    environment:
+      SOLR_MODULES: extraction
+      SOLR_OPTS: "-Dsolr.tika.url=http://tika-acceptance:9998"
 
 volumes:
   vol-site-data: {}

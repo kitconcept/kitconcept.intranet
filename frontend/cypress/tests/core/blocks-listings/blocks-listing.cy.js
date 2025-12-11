@@ -606,7 +606,33 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //********  add relative path criteria filter
-    cy.addPathQuerystring('Relative path', '../my-folder');
+    cy.get('.block-editor-listing').click();
+    cy.get('.querystring-widget .fields').contains('Add criteria').click();
+    cy.get('.querystring-widget .react-select__menu .react-select__option')
+      .contains('Path')
+      .click();
+
+    cy.get(
+      '#sidebar-properties #default-query-0-querystring #field-query-0-querystring',
+    )
+      .eq(1)
+      .click();
+
+    cy.get(
+      '.querystring-widget .fields:first-of-type .main-fields-wrapper .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('Relative path')
+      .click();
+
+    //insert relative path
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type',
+    ).click();
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('./')
+      .click();
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -684,7 +710,28 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //********  add absolute path criteria filter
-    cy.addPathQuerystring('Absolute path', '/my-page/my-folder');
+    cy.get('.block-editor-listing').click();
+    cy.get('.querystring-widget .fields').contains('Add criteria').click();
+    cy.get('.querystring-widget .react-select__menu .react-select__option')
+      .contains('Path')
+      .click();
+
+    cy.get('.querystring-widget .fields').contains('Absolute path').click();
+
+    cy.get(
+      '#sidebar-properties #default-query-0-querystring div[aria-labelledby="fieldset-default-field-label-query-reference-widget-0"] button[aria-label="Open object browser"]',
+    ).click({ force: true });
+
+    cy.get(
+      '.sidebar-container.sidebar-container-enter-done .object-listing li[aria-label="Select My Image"]',
+    ).should('have.class', 'disabled');
+
+    //insert absolute path
+    cy.get('.sidebar-container button[aria-label="Search SVG"]').click();
+    cy.get(
+      '.sidebar-container .input.search input[placeholder="Search content"]',
+    ).type('My Folder');
+    cy.get('[aria-label="Select My Folder"]').dblclick();
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -759,7 +806,33 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //********  add path criteria filter
-    cy.addPathQuerystring('Relative path', '.');
+    cy.get('.block-editor-listing').click();
+    cy.get('.querystring-widget .fields').contains('Add criteria').click();
+    cy.get('.querystring-widget .react-select__menu .react-select__option')
+      .contains('Path')
+      .click();
+
+    cy.get(
+      '#sidebar-properties #default-query-0-querystring #field-query-0-querystring',
+    )
+      .eq(1)
+      .click();
+
+    cy.get(
+      '.querystring-widget .fields:first-of-type .main-fields-wrapper .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('Relative path')
+      .click();
+
+    //insert relative path
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type',
+    ).click();
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('./')
+      .click();
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -1182,8 +1255,4 @@ describe('Listing Block Tests', () => {
       '/my-page/my-news-item-test',
     );
   });
-
-  // it('Listing block - Test Criteria: Path Navigation', () => {
-  //   /*not implemented because Navigation ui is not yet developed in Listing Block sidebar*/
-  // });
 });

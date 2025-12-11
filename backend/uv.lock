@@ -36,10 +36,11 @@ constraints = [
     { name = "cmarkgfm", specifier = "==2024.11.20" },
     { name = "collective-mockmailhost", specifier = "==3.0.0" },
     { name = "collective-monkeypatcher", specifier = "==2.0.1" },
-    { name = "collective-person", specifier = "==1.0.0b3" },
+    { name = "collective-person", specifier = "==1.0.0b4" },
     { name = "collective-recipe-omelette", specifier = "==2.0.0" },
     { name = "collective-recipe-template", specifier = "==2.2" },
     { name = "collective-recipe-vscode", specifier = "==0.1.9" },
+    { name = "collective-solr", specifier = "==10.0.0" },
     { name = "collective-volto-formsupport", specifier = "==3.2.3" },
     { name = "collective-xmltestreport", specifier = "==2.0.2" },
     { name = "collective-z3cform-datagridfield", specifier = "==3.0.4" },
@@ -91,7 +92,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a5" },
+    { name = "kitconcept-core", specifier = "==2.0.0a6" },
     { name = "kitconcept-solr", specifier = "==2.0.0a7" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
@@ -160,7 +161,7 @@ constraints = [
     { name = "plone-app-mosaic", specifier = "==3.3.1" },
     { name = "plone-app-multilingual", specifier = "==8.3.1" },
     { name = "plone-app-portlets", specifier = "==6.0.3" },
-    { name = "plone-app-querystring", specifier = "==3.0.0a2" },
+    { name = "plone-app-querystring", specifier = ">=3.0.0a2" },
     { name = "plone-app-redirector", specifier = "==3.0.5" },
     { name = "plone-app-registry", specifier = "==2.0.7" },
     { name = "plone-app-relationfield", specifier = "==4.0.3" },
@@ -761,7 +762,7 @@ wheels = [
 
 [[package]]
 name = "collective-person"
-version = "1.0.0b3"
+version = "1.0.0b4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-contact-behaviors" },
@@ -771,9 +772,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cc/f8/9574432bbf68f0606b23897ef9a63800bc2f49a1ca67b14e72fe703cff09/collective_person-1.0.0b3.tar.gz", hash = "sha256:2c491f26c388ab835aa0037c56717963c456e6d1e7506bf332f99fd99643f027", size = 1423616, upload-time = "2025-09-17T15:06:52.004Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e4/b4/17535192712fe4959fcf200fa5b43082a237b452f7d8d5bf37240248bd2c/collective_person-1.0.0b4.tar.gz", hash = "sha256:c59080b4de6ba6dbfbb4809e4aaf75634bd8543314c1e037d9c4121f440684da", size = 1423763, upload-time = "2025-12-11T10:32:03.727Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fe/b7/d35d27ebd322a2aa418df65253ebb6a8418d7f92cab1290d875b5aa476ac/collective_person-1.0.0b3-py3-none-any.whl", hash = "sha256:df822c9baaa3c0d7039d0419b65e065afa808c5f985de7f657b5d2d65e4346fb", size = 1440576, upload-time = "2025-09-17T15:06:49.602Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/ff/800f1ec9189e89eefd416d01db8913ea031910e97b7aaffba894cca5dfb5/collective_person-1.0.0b4-py3-none-any.whl", hash = "sha256:589890369ec54d47735548630711d18d4dcfeff68cdf4ab41dab05a13a447038", size = 1440692, upload-time = "2025-12-11T10:32:01.667Z" },
 ]
 
 [[package]]
@@ -1298,7 +1299,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0a5"
+version = "2.0.0a6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1309,9 +1310,9 @@ dependencies = [
     { name = "plone-distribution" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9b/a6/77399d3d8e079791c18052f1080d86a947cbc7442ac8a248dd7915d25442/kitconcept_core-2.0.0a5.tar.gz", hash = "sha256:4c08da7ba8724700cdd7cd6fee1764bb9999c0fb76a2118c3343df0ad3f22474", size = 326480, upload-time = "2025-12-08T16:11:03.82Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a0/9d/ba281fa4f40457f8142c8fbeba0a8a3e24a2d93e22c1daefd7632f85db44/kitconcept_core-2.0.0a6.tar.gz", hash = "sha256:aff8ad97f35fb3b3e67347c0e8fa5a36252a5297d50a65ef507a62a7126194a9", size = 326743, upload-time = "2025-12-11T18:15:10.523Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/29/9360037ab1a813f60f233fd5dd31f5c00cb646215d70f36e62ab801fc175/kitconcept_core-2.0.0a5-py3-none-any.whl", hash = "sha256:bef732fab1b002c288473ff3bd2434b05371ff310864cd2d9a6bd7674edc997e", size = 240917, upload-time = "2025-12-08T16:11:02.087Z" },
+    { url = "https://files.pythonhosted.org/packages/03/0d/41834ebd82c9e9b69ba947f0fd14517e7dc696274fc37ccc5170839db074/kitconcept_core-2.0.0a6-py3-none-any.whl", hash = "sha256:deb3b719db0e6f72c129fcd30be14054818945d13585d4d9c1292cc696dbeccc", size = 242293, upload-time = "2025-12-11T18:15:08.793Z" },
 ]
 
 [[package]]
@@ -1361,7 +1362,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a5" },
+    { name = "kitconcept-core", specifier = "==2.0.0a6" },
     { name = "kitconcept-solr", specifier = "==2.0.0a7" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

@@ -1,0 +1,96 @@
+{
+  "@id": "/qa/vertical-spacing",
+  "@type": "Document",
+  "UID": "f03a3cb3356b412c8e168def4c969a24",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "13b52470-9851-4e61-87d3-27fb05bf9343": {
+      "@type": "title"
+    },
+    "d468debb-5f8c-4580-9a52-1cafb049a19b": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa/vertical-spacing"
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "13b52470-9851-4e61-87d3-27fb05bf9343",
+      "d468debb-5f8c-4580-9a52-1cafb049a19b"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-12-10T08:59:46+00:00",
+  "creators": ["admin"],
+  "description": "",
+  "effective": "2025-12-10T12:42:44+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "vertical-spacing",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-10T12:42:44+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Vertical Spacing",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-10T08:59:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-10T12:42:44+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

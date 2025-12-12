@@ -1,0 +1,749 @@
+{
+  "@id": "/qa/block/listing-block",
+  "@type": "Document",
+  "UID": "80749460ef534448a0d9610f8e72888b",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "07cbecd4-a99b-4506-9b5c-4c860bccef83": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Link Listing",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "0a0a5549-573a-4163-9759-02c53cfd7728": {
+      "@type": "listing",
+      "headline": "List",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "default"
+    },
+    "214b08c3-54ff-4e0b-bdaa-afb977e476d1": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "24280e07-e962-4414-8ee5-cdaf58ca5f35": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing : List",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "245f8bda-5a49-4639-bbeb-d005c6a1a731": {
+      "@type": "listing",
+      "headline": "Person Grid",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Person"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "2a597dde-dd2b-4c66-816c-09e243a188f5": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing: Grid",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "2c65a556-7b16-4ae3-afb7-a4324a7e49c9": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Event Listing\u00a0",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "325977c8-7a6a-40fe-81d7-4dab99864d7e": {
+      "@type": "listing",
+      "headline": "Link Grid",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Link"]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "34932f0e-0455-47b1-b2b8-587d22e7b74f": {
+      "@type": "listing",
+      "headline": "News Item List with images",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["News Item"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "43068b6d-d8e9-4acc-912b-eabcdc650939": {
+      "@type": "title"
+    },
+    "44b37993-1fa9-49fd-b8bf-480da94c32f5": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "44c40409-04fc-4cf5-ace4-14a3428d202d": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Page Listing",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "5117e7e5-4c9e-4d23-86be-c24ad51c08f9": {
+      "@type": "listing",
+      "headline": "File List",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["File"]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "53ececaa-4219-42a9-861d-862be364fd60": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing  : List with image",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "566ffe1e-045d-40a3-af5b-7e4e9b68f4b5": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "58583e53-2368-456d-8d05-b6ba3a3f9417": {
+      "@type": "listing",
+      "headline": "Event List",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Event"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "585c0c7d-8d03-4ed0-8757-ccfa04525aad": {
+      "@type": "heading",
+      "heading": "Listing on Grey Background",
+      "styles": {},
+      "theme": "grey"
+    },
+    "5c3116ae-7d43-4b7c-9493-afe8a50e2f6b": {
+      "@type": "listing",
+      "headline": "Event Grid",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Event"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "63b61ec2-bb83-4fdc-a6b7-3e3794b2cc3c": {
+      "@type": "listing",
+      "headline": "News Item List",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["News Item"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "6ccabf4a-8270-4e3c-b8cb-b1dbf6003aa5": {
+      "@type": "listing",
+      "headline": "Page List ",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "6dfd9430-e17e-4def-b4c3-22e9d6d06cb4": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "746478bc-f528-445c-9280-f551b4c806f9": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "News Item Listing",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "8513fc0e-790c-441c-86c9-4ef1ebf43f69": {
+      "@type": "listing",
+      "headline": "File List with images",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["File"]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "98ba6cfe-1769-4413-83a3-96fdf9ba8e67": {
+      "@type": "listing",
+      "headline": "Event List With Images",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Event"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "a0d4797d-614a-4232-b3b6-ca3e3cab28d0": {
+      "@type": "listing",
+      "headline": "Page Grid",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "a0e09437-7605-4348-82ac-46442837b40f": {
+      "@type": "listing",
+      "headline": "File Grid",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["File"]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "a15e8e44-4220-49b0-8891-a11d898a32f1": {
+      "@type": "listing",
+      "headline": "Page List with images ",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "ab005953-3360-4186-97ad-a4e1b4903b1c": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Person\u00a0Listing",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "adb4956c-7a5d-46b3-9fb5-cd746ac8b02b": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "b72b932a-c191-4116-afed-024d0893b340": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Event", "Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "listDate"
+    },
+    "c2eaacd0-4e96-4344-a0ac-26ed644fc503": {
+      "@type": "listing",
+      "block": "c2eaacd0-4e96-4344-a0ac-26ed644fc503",
+      "headline": "Listing: Bilder-Slider",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Image"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "imageGallery"
+    },
+    "ce947973-00d3-43de-aa46-04702f662c0c": {
+      "@type": "listing",
+      "headline": "Link List",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Link"]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "cef0c3e1-3415-445b-a04a-a5408b7256e2": {
+      "@type": "listing",
+      "headline": "News Item Grid",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["News Item"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "dacab3f8-187e-45da-9823-e67e6db70498": {
+      "@type": "heading",
+      "heading": "List with date",
+      "theme": "default"
+    },
+    "e405a8b2-9a83-47b7-a1c6-52a919f01e08": {
+      "@type": "listing",
+      "headline": "Person List",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Person"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "e87a3b1a-493e-4cd7-8ca5-76b83a3595c2": {
+      "@type": "listing",
+      "headline": "Person List with images",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Person"]
+          }
+        ],
+        "sort_on": "sortable_title",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "e9c4f237-27f6-4fbf-b338-e19324456037": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "File\u00a0Listing\u00a0",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "eded63f5-0af2-4f91-b588-03a962820f3c": {
+      "@type": "listing",
+      "headline": "Link List with images",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Link"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "f1c44331-2962-477d-92df-c8623e84f077": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "43068b6d-d8e9-4acc-912b-eabcdc650939",
+      "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "585c0c7d-8d03-4ed0-8757-ccfa04525aad",
+      "0a0a5549-573a-4163-9759-02c53cfd7728",
+      "53ececaa-4219-42a9-861d-862be364fd60",
+      "2a597dde-dd2b-4c66-816c-09e243a188f5",
+      "c2eaacd0-4e96-4344-a0ac-26ed644fc503",
+      "adb4956c-7a5d-46b3-9fb5-cd746ac8b02b",
+      "44c40409-04fc-4cf5-ace4-14a3428d202d",
+      "6ccabf4a-8270-4e3c-b8cb-b1dbf6003aa5",
+      "a15e8e44-4220-49b0-8891-a11d898a32f1",
+      "a0d4797d-614a-4232-b3b6-ca3e3cab28d0",
+      "44b37993-1fa9-49fd-b8bf-480da94c32f5",
+      "746478bc-f528-445c-9280-f551b4c806f9",
+      "63b61ec2-bb83-4fdc-a6b7-3e3794b2cc3c",
+      "34932f0e-0455-47b1-b2b8-587d22e7b74f",
+      "cef0c3e1-3415-445b-a04a-a5408b7256e2",
+      "214b08c3-54ff-4e0b-bdaa-afb977e476d1",
+      "2c65a556-7b16-4ae3-afb7-a4324a7e49c9",
+      "58583e53-2368-456d-8d05-b6ba3a3f9417",
+      "98ba6cfe-1769-4413-83a3-96fdf9ba8e67",
+      "5c3116ae-7d43-4b7c-9493-afe8a50e2f6b",
+      "566ffe1e-045d-40a3-af5b-7e4e9b68f4b5",
+      "07cbecd4-a99b-4506-9b5c-4c860bccef83",
+      "ce947973-00d3-43de-aa46-04702f662c0c",
+      "eded63f5-0af2-4f91-b588-03a962820f3c",
+      "325977c8-7a6a-40fe-81d7-4dab99864d7e",
+      "f1c44331-2962-477d-92df-c8623e84f077",
+      "e9c4f237-27f6-4fbf-b338-e19324456037",
+      "5117e7e5-4c9e-4d23-86be-c24ad51c08f9",
+      "8513fc0e-790c-441c-86c9-4ef1ebf43f69",
+      "a0e09437-7605-4348-82ac-46442837b40f",
+      "6dfd9430-e17e-4def-b4c3-22e9d6d06cb4",
+      "ab005953-3360-4186-97ad-a4e1b4903b1c",
+      "e405a8b2-9a83-47b7-a1c6-52a919f01e08",
+      "e87a3b1a-493e-4cd7-8ca5-76b83a3595c2",
+      "245f8bda-5a49-4639-bbeb-d005c6a1a731",
+      "dacab3f8-187e-45da-9823-e67e6db70498",
+      "b72b932a-c191-4116-afed-024d0893b340"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2023-07-06T21:35:19+00:00",
+  "creators": ["admin"],
+  "description": "The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').",
+  "effective": "2023-07-06T18:35:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "listing-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-10T13:18:59+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Listing Block",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-02T08:59:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-02T12:03:42+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

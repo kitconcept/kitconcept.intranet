@@ -1,0 +1,534 @@
+{
+  "@id": "/qa/block/slider",
+  "@type": "Document",
+  "UID": "c1941927e8fe4ebd97cdfdaecf93466d",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "16a2702d-4fb0-4e73-a17c-884ef9d04e6d": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "8089c4fd-efe2-4cf4-9ae5-7f80f907f16d",
+          "description": "Slider Block in der Standard-Variante mit dem Text auf der linken Seite.",
+          "flagAlign": "left",
+          "head_title": "Default Variante",
+          "href": [
+            {
+              "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Page"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:58:04+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "Subject": [],
+              "Title": "Image",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image",
+              "getObjSize": "676.8 KB",
+              "getPath": "/Plone/content-types/image",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": ["admin"],
+              "location_reference": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:28:04+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Slider Block"
+        },
+        {
+          "@id": "4aed26df-c641-48a4-8348-ed452bd227a0",
+          "description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/7fce8b9becbb43d091604ae5b3e84ac0",
+              "@type": "Document",
+              "Description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+              "Title": "Aktuelles",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Aktuelles"
+            }
+          ],
+          "title": "Aktuelles"
+        },
+        {
+          "@id": "6f13f7e9-70cb-49aa-8c06-987f1e5f6f6b",
+          "description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/66ceae4426a347e19e158f36202c98b5",
+              "@type": "Document",
+              "Description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+              "Title": "Termine",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Termine"
+            }
+          ],
+          "title": "Termine"
+        },
+        {
+          "@id": "f8955fc8-39be-44a8-9e33-99ba22c935c3",
+          "description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/4d9a9737b78842b2a8454f8c26c02cab",
+              "@type": "Document",
+              "Description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+              "Title": "Organisation",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Organisation"
+            }
+          ],
+          "title": "Organisation"
+        }
+      ],
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "326a11d7-21ee-4774-8d72-5a1d90564cf3": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "5012da82-0e4a-44aa-912f-39d197a6a4e9": {
+      "@type": "title"
+    },
+    "589949f7-cbc7-4350-b2dd-458970dabf11": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "cd8736cc-5823-4147-833a-c486fb1f1fd1",
+          "description": "Slider Block in der einfachen Variante mit dem Text auf der linken Seite.",
+          "flagAlign": "left",
+          "head_title": "Einfache Variante",
+          "href": [
+            {
+              "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Page"
+            }
+          ],
+          "preview_image": [],
+          "title": "Slider Block"
+        },
+        {
+          "@id": "35f8491e-d89c-442e-9954-fb3e565df3e9",
+          "description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/7fce8b9becbb43d091604ae5b3e84ac0",
+              "@type": "Document",
+              "Description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+              "Title": "Aktuelles",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Aktuelles"
+            }
+          ],
+          "title": "Aktuelles"
+        },
+        {
+          "@id": "16faa21a-98cd-406d-98b6-858c9dd5163e",
+          "description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/66ceae4426a347e19e158f36202c98b5",
+              "@type": "Document",
+              "Description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+              "Title": "Termine",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Termine"
+            }
+          ],
+          "title": "Termine"
+        },
+        {
+          "@id": "ad4af07c-4348-42d1-8ae0-131e5e0f8c00",
+          "description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/4d9a9737b78842b2a8454f8c26c02cab",
+              "@type": "Document",
+              "Description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+              "Title": "Organisation",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Organisation"
+            }
+          ],
+          "title": "Organisation"
+        }
+      ],
+      "styles": {},
+      "theme": "default",
+      "variation": "simple"
+    },
+    "8209f05e-3586-4b67-bdf3-25830ea26ad3": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "8504088e-e855-43fd-a94d-b21ffa1e1fde": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "7c6f7559-be1a-499d-b549-8ab7af952ce8",
+          "description": "Slider Block in der Standard-Variante mit dem Text auf der rechten Seite.",
+          "flagAlign": "right",
+          "head_title": "Default Variante",
+          "href": [
+            {
+              "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Page"
+            }
+          ],
+          "preview_image": [],
+          "title": "Slider Block"
+        },
+        {
+          "@id": "347f1902-1d6e-4a37-a6ea-160a06eec325",
+          "description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/7fce8b9becbb43d091604ae5b3e84ac0",
+              "@type": "Document",
+              "Description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+              "Title": "Aktuelles",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Aktuelles"
+            }
+          ],
+          "title": "Aktuelles"
+        },
+        {
+          "@id": "c4b73e07-61ac-49b2-be12-2ec1723e36f8",
+          "description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/66ceae4426a347e19e158f36202c98b5",
+              "@type": "Document",
+              "Description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+              "Title": "Termine",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Termine"
+            }
+          ],
+          "title": "Termine"
+        },
+        {
+          "@id": "055f9a73-b0a4-41d9-922c-74e98215980a",
+          "description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/4d9a9737b78842b2a8454f8c26c02cab",
+              "@type": "Document",
+              "Description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+              "Title": "Organisation",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Organisation"
+            }
+          ],
+          "title": "Organisation"
+        }
+      ],
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "88fc964e-2e51-4999-8090-4fa93824d82d": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "cd8736cc-5823-4147-833a-c486fb1f1fd1",
+          "description": "Slider Block in der einfachen Variante mit dem Text auf der rechten Seite.",
+          "flagAlign": "right",
+          "head_title": "Einfache Variante",
+          "href": [
+            {
+              "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Page"
+            }
+          ],
+          "preview_image": [],
+          "title": "Slider Block"
+        },
+        {
+          "@id": "e5e7ff6b-a14c-46b3-9a56-7b01171e329b",
+          "description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/7fce8b9becbb43d091604ae5b3e84ac0",
+              "@type": "Document",
+              "Description": "Die \"Aktuelles\" Sektion dient als zentrale Kommunikationsplattform f\u00fcr alle wichtigen Neuigkeiten, Entwicklungen und Ereignisse innerhalb unserer Forschungseinrichtung. Hier finden Mitarbeiter, Wissenschaftler und Verwaltungspersonal zeitnah alle relevanten Informationen, die f\u00fcr den Arbeitsalltag und die strategische Ausrichtung der Institution von Bedeutung sind.",
+              "Title": "Aktuelles",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Aktuelles"
+            }
+          ],
+          "title": "Aktuelles"
+        },
+        {
+          "@id": "e95ec817-4461-4e56-91d6-dabaf2467110",
+          "description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/66ceae4426a347e19e158f36202c98b5",
+              "@type": "Document",
+              "Description": "Die \"Termine\" Sektion fungiert als umfassende Termin\u00fcbersicht und Veranstaltungskalender f\u00fcr alle institutionsrelevanten Ereignisse unserer Forschungseinrichtung. Diese zentrale Plattform erm\u00f6glicht es allen Mitarbeitern, wichtige Termine, Deadlines und Veranstaltungen im \u00dcberblick zu behalten und ihre Arbeitsplanung entsprechend auszurichten.",
+              "Title": "Termine",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Termine"
+            }
+          ],
+          "title": "Termine"
+        },
+        {
+          "@id": "c6932b1c-def7-464a-a175-9eadb4f906ef",
+          "description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/4d9a9737b78842b2a8454f8c26c02cab",
+              "@type": "Document",
+              "Description": "Die \"Organisation\" Sektion bietet eine umfassende \u00dcbersicht \u00fcber die institutionelle Struktur, Organisationsabl\u00e4ufe und administrative Rahmenbedingungen unserer Forschungseinrichtung. Diese zentrale Informationsquelle erm\u00f6glicht es allen Mitarbeitern, sich \u00fcber Zust\u00e4ndigkeiten, Hierarchien und organisatorische Prozesse zu informieren und unterst\u00fctzt damit eine effiziente Zusammenarbeit innerhalb der Institution.",
+              "Title": "Organisation",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "title": "Organisation"
+            }
+          ],
+          "title": "Organisation"
+        }
+      ],
+      "styles": {},
+      "theme": "default",
+      "variation": "simple"
+    },
+    "f1ee3df4-bea7-4317-9cca-24922de98bd6": {
+      "@type": "introduction",
+      "plaintext": "Mit dem Slider-Block k\u00f6nnen verschiedene Inhalte der Seite prominent angeteasert werden. Der Slider-Block  wird \u00fcblicherweise als erstes Element als Eye-Catcher eingesetzt. Ein Slider-Block kann beliebig viele Elemente anzeigen. Verlinkte Inhalte werden mit einem Bild, einem Titel, einer Beschreibung, einem Kopftitel dargestellt. Optional kann ein Button mit einem angepassten Text eingef\u00fcgt werden.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Mit dem Slider-Block k\u00f6nnen verschiedene Inhalte der Seite prominent angeteasert werden. Der Slider-Block  wird \u00fcblicherweise als erstes Element als "
+            },
+            {
+              "children": [
+                {
+                  "text": "Eye-Catcher"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": " eingesetzt. Ein Slider-Block kann beliebig viele Elemente anzeigen. Verlinkte Inhalte werden mit einem Bild, einem Titel, einer Beschreibung, einem Kopftitel dargestellt. Optional kann ein Button mit einem angepassten Text eingef\u00fcgt werden."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5012da82-0e4a-44aa-912f-39d197a6a4e9",
+      "8209f05e-3586-4b67-bdf3-25830ea26ad3",
+      "f1ee3df4-bea7-4317-9cca-24922de98bd6",
+      "326a11d7-21ee-4774-8d72-5a1d90564cf3",
+      "16a2702d-4fb0-4e73-a17c-884ef9d04e6d",
+      "8504088e-e855-43fd-a94d-b21ffa1e1fde",
+      "589949f7-cbc7-4350-b2dd-458970dabf11",
+      "88fc964e-2e51-4999-8090-4fa93824d82d"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2024-04-08T11:46:58+00:00",
+  "creators": ["admin"],
+  "description": "Mit dem Slider-Block k\u00f6nnen verschieden Inhalte der Seite prominent angeteasert werden. Der Slider-Block  wird \u00fcblicherweise als erstes Element als Eye-Catcher eingesetzt. Ein Slider-Block kann beliebig viele Elemente anzeigen. Verlinkte Inhalte werden mit einem Bild, einem Titel, einer Beschreibung, einem Kopftitel dargestellt. Optional kann ein Button mit einem angepassten Text eingef\u00fcgt werden.",
+  "effective": "2024-04-08T17:54:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "slider",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-02T08:59:43+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Slider Block",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-02T08:59:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-02T11:21:19+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

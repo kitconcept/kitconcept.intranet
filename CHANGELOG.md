@@ -1,6 +1,56 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a3 (2025-12-16)
+
+### Backend
+
+
+#### Feature
+
+- Add option to sort listing blocks by user relevance (when solr is enabled). @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/issue/207)
+
+
+#### Bugfix
+
+- Update to kitconcept.core 2.0.0a6 (rename Path criteria, fix validation of Person username). @davisagli 
+
+
+#### Internal
+
+- Update kitconcept.solr to 2.0.0a8. @reebalazs 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to kitconcept.solr 2.0.0.alpha-7. @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/issue/207)
+- Re-enable acceptance tests for Person content type. @davisagli 
+- Update @kitconcept/volto-solr to 2.0.0-alpha.8. @reebalazs 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix solr configuration for demo sites. @davisagli 
+
+
+#### Internal
+
+- Update kitconcept.solr to 2.0.0a8 and @kitconcept/volto-solr to 2.0.0-alpha.8. Add tika service for SOLR text extraction. @reebalazs 
+
+
+#### Documentation
+
+- Add docs for passive targeting. @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/pull/207)
+
+
+
 ## 2.0.0a2 (2025-12-09)
 
 ### Backend

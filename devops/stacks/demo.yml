@@ -38,7 +38,6 @@ services:
     image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
     environment:
       COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
-      COLLECTIVE_SOLR_PORT: 8983
     networks:
       - public
     deploy:
@@ -92,7 +91,9 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      - public
+      public:
+        aliases:
+          - ${STACK_NAME}-tika
 
   solr:
     image: ghcr.io/kitconcept/solr:latest
@@ -102,7 +103,7 @@ services:
       - /plone-config
     environment:
       SOLR_MODULES: extraction
-      SOLR_OPTS: "-Dsolr.tika.url=http://${STACK_NAME}_tika:9998"
+      SOLR_OPTS: "-Dsolr.tika.url=http://${STACK_NAME}-tika:9998"
     deploy:
       replicas: 1
       placement:

@@ -4,7 +4,7 @@
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
     "https": "https://github.com/plone/volto.git",
-    "tag": "19.0.0-alpha.18",
+    "tag": "19.0.0-alpha.19",
     "filterBlobs": true
   },
   "volto-light-theme": {
@@ -13,7 +13,7 @@
     "package": "@kitconcept/volto-light-theme",
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
-    "tag": "8.0.0a8",
+    "tag": "8.0.0a9",
     "filterBlobs": true
   },
   "kitconcept-core": {
@@ -22,7 +22,7 @@
     "package": "@kitconcept/core",
     "url": "git@github.com:kitconcept/kitconcept-core.git",
     "https": "https://github.com/kitconcept/kitconcept-core.git",
-    "tag": "2.0.0a4"
+    "tag": "2.0.0a6"
   },
   "volto-banner-block": {
     "develop": true,
@@ -48,6 +48,14 @@
     "https": "https://github.com/kitconcept/volto-button-block.git",
     "tag": "5.0.0-alpha.0"
   },
+  "volto-calendar-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-calendar-block",
+    "url": "git@github.com:kitconcept/volto-calendar-block.git",
+    "https": "https://github.com/kitconcept/volto-calendar-block.git",
+    "tag": "1.0.0-alpha.3"
+  },
   "volto-carousel-block": {
     "develop": true,
     "output": "packages",
@@ -70,7 +78,7 @@
     "package": "@kitconcept/volto-highlight-block",
     "url": "git@github.com:kitconcept/volto-highlight-block.git",
     "https": "https://github.com/kitconcept/volto-highlight-block.git",
-    "tag": "4.5.0"
+    "tag": "4.5.1"
   },
   "volto-introduction-block": {
     "develop": true,
@@ -78,7 +86,7 @@
     "package": "@kitconcept/volto-introduction-block",
     "url": "git@github.com:kitconcept/volto-introduction-block.git",
     "https": "https://github.com/kitconcept/volto-introduction-block.git",
-    "tag": "1.1.0"
+    "tag": "1.2.0"
   },
   "volto-logos-block": {
     "develop": true,
@@ -127,6 +135,6 @@
     "url": "git@github.com:kitconcept/kitconcept.solr.git",
     "https": "https://github.com/kitconcept/kitconcept.solr.git",
     "path": "frontend",
-    "tag": "2.0.0a6"
+    "tag": "2.0.0a8"
   }
 }

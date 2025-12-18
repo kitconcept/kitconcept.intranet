@@ -2,6 +2,31 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a3 (2025-12-16)
+
+
+### Feature
+
+- Add option to sort listing blocks by user relevance (when solr is enabled). @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/issue/207)
+
+
+### Bugfix
+
+- Update to kitconcept.core 2.0.0a6 (rename Path criteria, fix validation of Person username). @davisagli 
+
+
+### Internal
+
+- Update kitconcept.solr to 2.0.0a8. @reebalazs 
+
+## 2.0.0a2 (2025-12-09)
+
+
+### Bugfix
+
+- Update to core 2a5.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a5 @sneridagh 
+
 ## 2.0.0a1 (2025-12-01)
 
 

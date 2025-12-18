@@ -38,7 +38,6 @@ services:
     image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
     environment:
       COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
-      COLLECTIVE_SOLR_PORT: 8983
     networks:
       - public
     deploy:
@@ -83,12 +82,28 @@ services:
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.service=svc-${STACK_PREFIX}-back
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.middlewares=gzip,mw-${STACK_PREFIX}-back-auth,mw-${STACK_PREFIX}-back-vhm-classic
 
+  tika:
+    image: apache/tika:3.2.3.0-full
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == production
+    networks:
+      public:
+        aliases:
+          - ${STACK_NAME}-tika
+
   solr:
     image: ghcr.io/kitconcept/solr:latest
     command:
       - solr-precreate
       - plone
       - /plone-config
+    environment:
+      SOLR_MODULES: extraction
+      SOLR_OPTS: "-Dsolr.tika.url=http://${STACK_NAME}-tika:9998"
     deploy:
       replicas: 1
       placement:

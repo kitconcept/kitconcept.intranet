@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.3 (2025-12-16)
+
+### Internal
+
+- Update to kitconcept.solr 2.0.0.alpha-7. @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/issue/207)
+- Re-enable acceptance tests for Person content type. @davisagli 
+- Update @kitconcept/volto-solr to 2.0.0-alpha.8. @reebalazs 
+
+## 2.0.0-alpha.2 (2025-12-09)
+
+### Bugfix
+
+- Update to core 2a5.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a5 @sneridagh 
+
 ## 2.0.0-alpha.1 (2025-12-01)
 
 ### Bugfix

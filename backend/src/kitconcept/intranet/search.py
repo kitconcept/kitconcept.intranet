@@ -34,7 +34,7 @@ class QueryBuilder(BaseQueryBuilder):
         # Add bq param, which is handled by solr
         boosts = []
         if person.organisational_unit_reference:
-            for value in person.organizational_unit_reference:
+            for value in person.organisational_unit_reference:
                 boosts.append(f"organisational_unit_reference:({value})^10")
         if person.location_reference:
             for value in person.location_reference:

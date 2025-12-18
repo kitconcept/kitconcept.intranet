@@ -100,6 +100,7 @@ class TestUserRelevanceBoost:
                 "sort_on": "userRelevance",
             },
         )
+        breakpoint()
         results = response.json()["items"]
         assert len(results) >= 4
         assert [r["@id"] for r in results[:4]] == [

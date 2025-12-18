@@ -1,12 +1,11 @@
 """Utilities to process content in transactional batches."""
 
+from collections.abc import Callable
 from collections.abc import Sequence
 from dataclasses import dataclass
 from plone import api
 from transaction.interfaces import TransientError
-from typing import Callable
 from typing import Any
-
 
 import itertools
 import logging

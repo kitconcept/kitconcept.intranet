@@ -1,8 +1,9 @@
-from plone import api
-from zope.component import getUtility
-from zc.relation.interfaces import ICatalog
-from z3c.relationfield.interfaces import IRelationValue
 from kitconcept.intranet.utils.batch_process import BatchProcess
+from plone import api
+from z3c.relationfield.interfaces import IRelationValue
+from zc.relation.interfaces import ICatalog
+from zope.component import getUtility
+
 import transaction
 
 

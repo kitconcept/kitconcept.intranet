@@ -7,7 +7,7 @@ from z3c.relationfield.relation import RelationValue
 
 
 @indexer(IDexterityContent)
-def organisational_unit_indexer(obj: DexterityContent) -> str:
+def organisational_unit_indexer(obj: DexterityContent) -> list[str]:
     """Indexer for organisational_unit_reference attribute from
     IOrganisationalUnitBehavior behavior."""
 
@@ -19,7 +19,9 @@ def organisational_unit_indexer(obj: DexterityContent) -> str:
         # Don't store a value in the index
         raise AttributeError
 
-    # A relation field
-    organisational_unit = organisational_unit_reference.to_object
-    uid = api.content.get_uuid(organisational_unit)
-    return f"{uid}"
+    uids = []
+    for ref in organisational_unit_reference:
+        organisational_unit = ref.to_object
+        uid = api.content.get_uuid(organisational_unit)
+        uids.append(uid)
+    return uids

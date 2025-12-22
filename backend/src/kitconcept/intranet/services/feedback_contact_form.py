@@ -136,7 +136,8 @@ class FeedbackPostContactForm(Service):
         )
         expanded_data = expander(expand=True)
         responsible_person_uuid = (
-            expanded_data.get("clm", {})
+            expanded_data
+            .get("clm", {})
             .get("responsible_person", {})
             .get("value", "no-person")
         )

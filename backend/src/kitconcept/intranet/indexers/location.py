@@ -7,7 +7,7 @@ from z3c.relationfield.relation import RelationValue
 
 
 @indexer(IDexterityContent)
-def location_indexer(obj: DexterityContent) -> str:
+def location_indexer(obj: DexterityContent) -> list[str]:
     """Indexer for location attribute from ILocation behavior."""
     base_obj = aq_base(obj)
     location_reference: RelationValue | None = getattr(
@@ -17,7 +17,9 @@ def location_indexer(obj: DexterityContent) -> str:
         # Don't store a value in the index
         raise AttributeError
 
-    # A relation field
-    location = location_reference.to_object
-    uid = api.content.get_uuid(location)
-    return f"{uid}"
+    uids = []
+    for ref in location_reference:
+        location = ref.to_object
+        uid = api.content.get_uuid(location)
+        uids.append(uid)
+    return uids

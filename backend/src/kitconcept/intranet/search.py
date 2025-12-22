@@ -34,11 +34,11 @@ class QueryBuilder(BaseQueryBuilder):
         # Add bq param, which is handled by solr
         boosts = []
         if person.organisational_unit_reference:
-            boosts.append(
-                f"organisational_unit_reference:({person.organisational_unit_reference})^10"
-            )
+            for value in person.organisational_unit_reference:
+                boosts.append(f"organisational_unit_reference:({value})^10")
         if person.location_reference:
-            boosts.append(f"location_reference:({person.location_reference})^8")
+            for value in person.location_reference:
+                boosts.append(f"location_reference:({value})^8")
         if boosts:
             # Specify OR operator, since AND is default
             query["bq"] = " OR " + " OR ".join(boosts)

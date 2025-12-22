@@ -9,7 +9,7 @@ myst:
 
 # Passive targeting
 
-Passive targeting makes it possible to sort a listing or search block to highlight content which matches the current user's organizational unit or location, creating a personalized browsing experience.
+Passive targeting makes it possible to sort a listing or search block to highlight content which matches the current user's organisational unit or location, creating a personalized browsing experience.
 
 ## Enable passive targeting for a block
 
@@ -19,7 +19,7 @@ To use passive targeting on a listing or search block:
 2. **Configure the block criteria** to specify what content should be included (e.g., content type, review state, etc.)
 3. **Choose "User relevance" as the sort order** from the sort dropdown
 
-Once configured with "User relevance" sorting, content that matches the current user's organizational unit or location will automatically appear at the top of the listing or search results.
+Once configured with "User relevance" sorting, content that matches the current user's organisational unit or location will automatically appear at the top of the listing or search results.
 
 ## Caveats
 

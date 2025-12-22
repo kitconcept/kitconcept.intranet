@@ -16,14 +16,14 @@
     <indexed_attr value="contact_room" />
   </index>
 
-  <index meta_type="FieldIndex"
+  <index meta_type="KeywordIndex"
          name="organisational_unit_reference"
   >
     <indexed_attr value="organisational_unit_reference" />
   </index>
 
 
-  <index meta_type="FieldIndex"
+  <index meta_type="KeywordIndex"
          name="location_reference"
   >
     <indexed_attr value="location_reference" />

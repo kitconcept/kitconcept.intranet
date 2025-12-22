@@ -1,0 +1,207 @@
+{
+  "@id": "/qa/vertical-spacing/listing-and-listing",
+  "@type": "Document",
+  "UID": "ef63f15d93f9486ab2f8df75aca83075",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "08f14f22-3e6b-453e-83b4-0dd6ff3abc2c": {
+      "@type": "listing",
+      "headline": "Listing: Standard",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa/content-types"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "default"
+    },
+    "24d8ef38-3241-427c-8b36-b11d4e9af385": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["News Item"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa/content-types"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "default"
+    },
+    "52e9739e-1ace-4bb9-844d-951f19653aee": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa/block"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "summary"
+    },
+    "5c450d5d-3d3f-46a1-899f-35a6c231e0ea": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["News Item"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa/content-types"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "default"
+    },
+    "8cea8b5c-6462-4cf0-bcf8-2e9e7e4ebee5": {
+      "@type": "listing",
+      "headline": "Listing: Zusammenfassung",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa/content-types"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "summary"
+    },
+    "bb480889-17a4-4fd1-b458-c39a4fcffe44": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ["Document"]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa/block"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "default"
+    },
+    "efbe748f-c505-41b5-a8ba-5869fa4dac59": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "efbe748f-c505-41b5-a8ba-5869fa4dac59",
+      "bb480889-17a4-4fd1-b458-c39a4fcffe44",
+      "52e9739e-1ace-4bb9-844d-951f19653aee",
+      "24d8ef38-3241-427c-8b36-b11d4e9af385",
+      "08f14f22-3e6b-453e-83b4-0dd6ff3abc2c",
+      "8cea8b5c-6462-4cf0-bcf8-2e9e7e4ebee5",
+      "5c450d5d-3d3f-46a1-899f-35a6c231e0ea"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-12-10T12:04:16+00:00",
+  "creators": ["admin"],
+  "description": "",
+  "effective": "2025-12-10T12:44:56+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "listing-and-listing",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-10T12:47:11+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Listing and Listing",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-10T12:04:16+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-10T12:44:56+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

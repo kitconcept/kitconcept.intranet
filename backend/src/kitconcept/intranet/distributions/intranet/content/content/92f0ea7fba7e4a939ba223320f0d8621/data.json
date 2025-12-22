@@ -1,0 +1,95 @@
+{
+  "@id": "/qa/block/grid-block",
+  "@type": "Document",
+  "UID": "92f0ea7fba7e4a939ba223320f0d8621",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "616b625c-b79f-4881-8536-b67a9e401a7d": {
+      "@type": "listing",
+      "block": "616b625c-b79f-4881-8536-b67a9e401a7d",
+      "headlineTag": "h2",
+      "query": [],
+      "variation": "default"
+    },
+    "7624cf59-05d0-4055-8f55-5fd6597d84b0": {
+      "@type": "slate",
+      "plaintext": "",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d3f1c443-583f-4e8e-a682-3bf25752a300": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d3f1c443-583f-4e8e-a682-3bf25752a300",
+      "616b625c-b79f-4881-8536-b67a9e401a7d",
+      "7624cf59-05d0-4055-8f55-5fd6597d84b0"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2023-07-06T21:35:07+00:00",
+  "creators": ["admin"],
+  "description": "\nThe Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+  "effective": "2023-07-06T18:35:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "grid-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-02T08:59:43+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Grid",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-02T08:59:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-02T12:05:06+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

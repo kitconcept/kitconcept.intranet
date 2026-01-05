@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20251118001"
+      destination="20251218001"
+      >
+    <genericsetup:upgradeStep
+        title="Migrate content to support multiple values for organisational unit and location."
+        handler=".migrate_relation_fields"
+        />
+    <genericsetup:upgradeStep
+        title="Migrate location and organisational_unit indexes to KeywordIndex."
+        handler=".migrate_relation_indexes"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

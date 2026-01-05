@@ -35,7 +35,7 @@ interface PersonViewProps {
     };
     organisational_unit_reference?: {
       title: string;
-    };
+    }[];
     department?: string;
     contact_name?: string;
     contact_email?: string;
@@ -48,7 +48,7 @@ interface PersonViewProps {
     address?: string;
     location_reference?: {
       title: string;
-    };
+    }[];
   };
 }
 
@@ -72,7 +72,9 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
         ? `${content.first_name} ${content.last_name}`
         : content.first_name,
     department: content.department ?? null,
-    organisationalUnit: content.organisational_unit_reference?.title ?? null,
+    organisationalUnit: (content.organisational_unit_reference || [])
+      .map((ref) => ref.title)
+      .join(', '),
   };
 
   const contact = {
@@ -208,7 +210,11 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
                   <FormattedMessage id="Address" defaultMessage="Address" />
                 </h2>
                 <address>
-                  <h3>{content.location_reference.title}</h3>
+                  <h3>
+                    {content.location_reference
+                      .map((ref) => ref.title)
+                      .join(', ')}
+                  </h3>
                   {profile.department && (
                     <p className="department">{profile.department}</p>
                   )}

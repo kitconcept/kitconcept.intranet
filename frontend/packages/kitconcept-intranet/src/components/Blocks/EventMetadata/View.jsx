@@ -1,3 +1,4 @@
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
@@ -14,12 +15,14 @@ const EventLocation = ({ content }) => {
         </span>
         <div className="event-detail">
           {content?.location_reference ? (
-            <UniversalLink
-              className="event-location"
-              item={content.location_reference}
-            >
-              {content.location_reference.title}
-            </UniversalLink>
+            content.location_reference.map((ref) => (
+              <React.Fragment key={ref['@id']}>
+                <UniversalLink className="event-location" item={ref['@id']}>
+                  {ref.title}
+                </UniversalLink>
+                <br />
+              </React.Fragment>
+            ))
           ) : (
             <span>{content.location}</span>
           )}

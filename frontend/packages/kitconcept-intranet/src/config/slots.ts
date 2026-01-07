@@ -4,6 +4,7 @@ import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
+import ResultsDisclamer from '../components/Blocks/Listing/ResultsDisclamer';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -31,6 +32,11 @@ export default function install(config: ConfigType) {
     name: 'PostFooterFollowUsLogoAndLinks',
     slot: 'postFooter',
     component: FollowUsLogoAndLinks,
+  });
+  config.registerSlotComponent({
+    name: 'ResultsDisclamer',
+    slot: 'aboveListingItems',
+    component: ResultsDisclamer,
   });
 
   return config;

@@ -104,7 +104,7 @@ class TestUserRelevanceBoost:
         assert len(results) >= 4
         assert [r["@id"] for r in results[:4]] == [
             kitconcept_bonn_doc.absolute_url(),
-            bonn_doc.absolute_url(),
             kitconcept_doc.absolute_url(),
+            bonn_doc.absolute_url(),
             unrelated_doc.absolute_url(),
         ]

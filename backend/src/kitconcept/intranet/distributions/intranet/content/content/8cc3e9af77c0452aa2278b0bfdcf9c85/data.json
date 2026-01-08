@@ -799,6 +799,7 @@
   ],
   "description": "The News Item content type can be used to display News content on the website.",
   "effective": "2023-01-01T10:42:00+00:00",
+  "enable_likes": false,
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
@@ -824,6 +825,7 @@
   "type_title": "News Item",
   "version": "current",
   "versioning_enabled": true,
+  "votes": null,
   "workflow_history": {
     "simple_intranet_workflow": [
       {

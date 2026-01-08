@@ -1,0 +1,3325 @@
+{
+  "@id": "/qa/block/block-accordion",
+  "@type": "Document",
+  "UID": "318f93f699924ddfb6bb1fc0e7fd5904",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "41a82a93-c00c-4a40-bac8-53a3e3420c8e": {
+      "@type": "accordion",
+      "collapsed": false,
+      "data": {
+        "blocks": {
+          "b58c92b4-6604-4408-9039-a147965fa4bd": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "54bee7c1-0d30-41e9-983e-e97645ce1ba0": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "Event Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+                    "@type": "Event",
+                    "Description": "The event content type can be used to display an event on the website.",
+                    "Subject": [],
+                    "Title": "Event",
+                    "contact_building": null,
+                    "contact_email": "m.mustermann@plone.com",
+                    "contact_phone": "+49 1234 567-890",
+                    "contact_room": null,
+                    "description": "The event content type can be used to display an event on the website.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": "2023-12-31T12:00:00+00:00",
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": "2023-01-01T11:00:00+00:00",
+                    "title": "Event",
+                    "type_title": "Termin"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "title": "Teaser to an Event with Image "
+              },
+              "685afe6a-4c46-4cf8-b7e6-a7788fa5a46f": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "6c16bdbd-c642-4fab-9905-202ef4ed0aba": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "News Item Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+                    "@type": "News Item",
+                    "Description": "The News Item content type can be used to display News content on the website.",
+                    "Subject": [],
+                    "Title": "News Item",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The News Item content type can be used to display News content on the website.",
+                    "effective": "2023-01-01T10:42:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": "Head title",
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "News Item",
+                    "type_title": "Nachricht"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "title": "Teaser to a News Item with Image"
+              },
+              "7c927302-5731-482d-aa04-039e73ff68e0": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "86b37c48-9b94-46d1-8736-8f0b71dbee8b": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "Image Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+                    "@type": "Image",
+                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "Subject": [],
+                    "Title": "Image",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "676.8 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "image",
+                    "mime_type": "image/jpeg",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "Image",
+                    "type_title": "Bild"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an Image with Image aligned left"
+              },
+              "89734769-234c-40db-a9e2-d353b6c35dd7": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "File Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+                    "@type": "File",
+                    "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "Subject": [],
+                    "Title": "File",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "72.7 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "application/pdf",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "File",
+                    "type_title": "Datei"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "theme": "default",
+                "title": "Teaser to a File with Image aligned right"
+              },
+              "c8fb7e1e-7ca4-4fcf-86a3-d475ad577324": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "External Link Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+                    "@type": "Link",
+                    "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "Subject": [],
+                    "Title": "Link",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": "https://www.google.com",
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Link",
+                    "type_title": "Link"
+                  }
+                ],
+                "overwrite": true,
+                "preview_image": [
+                  {
+                    "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+                    "image_field": "image",
+                    "title": "Image for Link"
+                  }
+                ],
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an external Link with Image"
+              },
+              "d6a38fa5-e8a8-40ee-9078-5788c494086b": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
+                "head_title": "Page Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@type": "Document",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Subject": [],
+                    "Title": "Page",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": true,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Page",
+                    "type_title": "Seite"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "center"
+                },
+                "title": "Teaser Title H2"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "d6a38fa5-e8a8-40ee-9078-5788c494086b",
+                "6c16bdbd-c642-4fab-9905-202ef4ed0aba",
+                "54bee7c1-0d30-41e9-983e-e97645ce1ba0",
+                "7c927302-5731-482d-aa04-039e73ff68e0",
+                "c8fb7e1e-7ca4-4fcf-86a3-d475ad577324",
+                "89734769-234c-40db-a9e2-d353b6c35dd7",
+                "685afe6a-4c46-4cf8-b7e6-a7788fa5a46f",
+                "86b37c48-9b94-46d1-8736-8f0b71dbee8b"
+              ]
+            },
+            "selected": "6a14fdb0-e0cf-470e-95dd-15aadb0e85c1",
+            "title": "Accordion with teaser"
+          },
+          "bc2c120e-51df-4c47-b4d0-5a11311d020d": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "3272740e-1998-4a82-a4ae-dbd303f31021": {
+                "@type": "slate",
+                "plaintext": "This is unordered list This is unordered list This is unordered list",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ul"
+                  }
+                ]
+              },
+              "938f774b-530a-4ec5-85ec-127e37870a13": {
+                "@type": "slate",
+                "plaintext": "This is H2",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "This is H2"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "b314ee6a-b847-4bc8-ba0d-b700725a37c9": {
+                "@type": "slate",
+                "plaintext": "This is H3",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "This is H3\n"
+                      }
+                    ],
+                    "type": "h3"
+                  }
+                ]
+              },
+              "b9c04394-91cd-44a8-927a-0b4af417f36f": {
+                "@type": "slate",
+                "plaintext": " This is Italics.  This is bold text. ",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is Italics.\n"
+                          }
+                        ],
+                        "type": "em"
+                      },
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is bold text."
+                          }
+                        ],
+                        "type": "strong"
+                      },
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "c85ec1d2-f371-4ed4-be65-8fa0a091b833": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d54db3fd-b376-49a5-ae3f-e9ea31fb98f3": {
+                "@type": "slate",
+                "plaintext": "one two three",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "one"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "two"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "three"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ol"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "c85ec1d2-f371-4ed4-be65-8fa0a091b833",
+                "b9c04394-91cd-44a8-927a-0b4af417f36f",
+                "938f774b-530a-4ec5-85ec-127e37870a13",
+                "b314ee6a-b847-4bc8-ba0d-b700725a37c9",
+                "3272740e-1998-4a82-a4ae-dbd303f31021",
+                "d54db3fd-b376-49a5-ae3f-e9ea31fb98f3"
+              ]
+            },
+            "title": "Accordion with text"
+          },
+          "d2168440-888d-4081-8409-b59392abc189": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "1060e842-2b14-43dc-9e43-c25022029a94": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "m",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "medium"
+                },
+                "title": "Image - Light",
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "11af3b59-7720-4875-b0b9-90be5807d476": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "1becedb6-65f6-4bee-9b36-5c38deaa4141": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "5b70e4b4-fb68-4bd0-9027-045d283d8116": {
+                "@type": "slate",
+                "plaintext": "More text with image aligned left",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "5d649a59-6967-4e98-a3c3-f2b95810e45e": {
+                "@type": "slate",
+                "plaintext": "Text with image (small) aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image (small) aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "5e9ba51a-2462-476c-b89e-66cddc10479f": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "image_field": "image",
+                "size": "s",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "small"
+                },
+                "theme": "default",
+                "title": "Image for Link",
+                "url": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3"
+              },
+              "6e94c839-855c-43ff-92fa-a2f9dfac2bc9": {
+                "@type": "image",
+                "align": "center",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  }
+                },
+                "title": "Image - Light",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "725bfc52-49f6-4e70-8d11-48c537cfb5ff": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "76ab99ce-789c-41b2-9df8-4322c8c8c1ad": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "773db1b3-7504-40e2-bf09-ce96e31249b2": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "817aaa07-faa7-4cc3-a358-9d4c91100976": {
+                "@type": "slate",
+                "plaintext": "Text with image aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "863bd937-9644-4258-aaf2-3cc780eecb4f": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "m",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "medium"
+                },
+                "title": "Image - Light",
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "s",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "small"
+                },
+                "title": "Image",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "9e3e036a-ec07-415f-83c2-42638f20e5b4": {
+                "@type": "slate",
+                "plaintext": "Text with image (Medium) aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image (Medium) aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "c0b3b08e-c350-43e6-84e9-787903d91f8c": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "large"
+                },
+                "theme": "default",
+                "title": "Image",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "c3d2c41a-8e53-45a4-b212-cb54dad6045d": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d754b95e-7fa8-4cbd-9997-f2bb6cde26df": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  }
+                },
+                "theme": "default",
+                "title": "Image - Light",
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "d77557e0-793a-408f-9940-a0ad80d3be8f": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "dd0849eb-8452-4ee4-94a1-02388df1ca5a": {
+                "@type": "slate",
+                "plaintext": "Text with image (Medium) aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image (Medium) aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "e1aa2fde-194c-472f-b9e2-4e4a4d65b3fd": {
+                "@type": "slate",
+                "plaintext": "Text with image (small) aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image (small) aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "6e94c839-855c-43ff-92fa-a2f9dfac2bc9",
+                "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35",
+                "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c",
+                "d754b95e-7fa8-4cbd-9997-f2bb6cde26df",
+                "5b70e4b4-fb68-4bd0-9027-045d283d8116",
+                "725bfc52-49f6-4e70-8d11-48c537cfb5ff",
+                "773db1b3-7504-40e2-bf09-ce96e31249b2",
+                "c0b3b08e-c350-43e6-84e9-787903d91f8c",
+                "817aaa07-faa7-4cc3-a358-9d4c91100976",
+                "c3d2c41a-8e53-45a4-b212-cb54dad6045d",
+                "1060e842-2b14-43dc-9e43-c25022029a94",
+                "dd0849eb-8452-4ee4-94a1-02388df1ca5a",
+                "1becedb6-65f6-4bee-9b36-5c38deaa4141",
+                "11af3b59-7720-4875-b0b9-90be5807d476",
+                "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961",
+                "9e3e036a-ec07-415f-83c2-42638f20e5b4",
+                "d77557e0-793a-408f-9940-a0ad80d3be8f",
+                "8f1ad076-32b9-432b-9308-8b0972a8f57e",
+                "e1aa2fde-194c-472f-b9e2-4e4a4d65b3fd",
+                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad",
+                "5e9ba51a-2462-476c-b89e-66cddc10479f",
+                "5d649a59-6967-4e98-a3c3-f2b95810e45e",
+                "863bd937-9644-4258-aaf2-3cc780eecb4f"
+              ]
+            },
+            "selected": "e4420d7e-a0bc-4bdb-bbd7-4aacf63b84f4",
+            "title": "Accordion with image"
+          },
+          "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "f56375fe-70a1-4ac1-a94c-adc9998db548": {
+                "@type": "slateTable",
+                "styles": {
+                  "backgroundColor": "transparent"
+                },
+                "table": {
+                  "basic": false,
+                  "celled": true,
+                  "compact": false,
+                  "fixed": true,
+                  "hideHeaders": false,
+                  "inverted": false,
+                  "rows": [
+                    {
+                      "cells": [
+                        {
+                          "key": "f446n",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "26qcg",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "dhv72",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "dda2b"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "52vlv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "5ko7h",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "878jv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "3ihrs"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "754if",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "1bjdt",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "32g6k",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "au6so"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "5fhem",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "e78dh",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "feacr",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "fqhgk"
+                    }
+                  ],
+                  "striped": true
+                }
+              }
+            },
+            "blocks_layout": {
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
+            },
+            "title": "Accordion with table"
+          },
+          "e62a2478-3a63-445a-aab7-edf55cceebcf": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "58f244db-9609-49d7-bb9c-4ddecb92467e": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "6b666cc0-6006-408c-8dc5-060a193b8684": {
+                "@type": "listing",
+                "headline": "List with images",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "6",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": ["News Item"]
+                    }
+                  ],
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "summary"
+              },
+              "7a3d2262-a290-41ea-8741-aa0cd92a316b": {
+                "@type": "listing",
+                "headline": "Grid",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "4",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": ["Event"]
+                    }
+                  ],
+                  "sort_on": "sortable_title",
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "grid"
+              },
+              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
+                "@type": "listing",
+                "headlineTag": "h2",
+                "querystring": {
+                  "limit": "3",
+                  "query": [
+                    {
+                      "i": "Description",
+                      "o": "plone.app.querystring.operation.string.contains",
+                      "v": "block"
+                    }
+                  ],
+                  "sort_order": "descending",
+                  "sort_order_boolean": true
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "default"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "c9580c7a-ab67-44f7-8532-59a4ba9fd846",
+                "6b666cc0-6006-408c-8dc5-060a193b8684",
+                "58f244db-9609-49d7-bb9c-4ddecb92467e",
+                "7a3d2262-a290-41ea-8741-aa0cd92a316b"
+              ]
+            },
+            "selected": "58f244db-9609-49d7-bb9c-4ddecb92467e",
+            "title": "Accordion with listing"
+          }
+        },
+        "blocks_layout": {
+          "items": [
+            "bc2c120e-51df-4c47-b4d0-5a11311d020d",
+            "d2168440-888d-4081-8409-b59392abc189",
+            "b58c92b4-6604-4408-9039-a147965fa4bd",
+            "e62a2478-3a63-445a-aab7-edf55cceebcf",
+            "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
+          ]
+        }
+      },
+      "filtering": false,
+      "non_exclusive": false,
+      "right_arrows": true,
+      "styles": {},
+      "theme": "default"
+    },
+    "8f68209e-220e-4230-9d42-8b0602573bd9": {
+      "@type": "accordion",
+      "collapsed": false,
+      "data": {
+        "blocks": {
+          "262a2478-3a63-445a-aab7-edf55cceebcf": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "3b586718-75a0-4801-986f-65dfcb6147a3": {
+                "@type": "listing",
+                "headline": "Another list with images",
+                "headlineTag": "h2",
+                "querystring": {
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": ["News Item"]
+                    }
+                  ],
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "summary"
+              },
+              "ab870338-007a-4400-9364-3588fcffd9e8": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
+                "@type": "listing",
+                "headline": "List",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "5",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": ["Document"]
+                    }
+                  ],
+                  "sort_on": "sortable_title",
+                  "sort_order": "descending",
+                  "sort_order_boolean": true
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "default"
+              },
+              "dffa8bfa-df0a-4b42-abf9-746195893b29": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "f36a69e0-d064-42b2-8ec5-e1ef73d23928": {
+                "@type": "listing",
+                "headline": "One more Grid",
+                "headlineTag": "h2",
+                "querystring": {
+                  "b_size": "4",
+                  "query": [
+                    {
+                      "i": "portal_type",
+                      "o": "plone.app.querystring.operation.selection.any",
+                      "v": ["Event"]
+                    }
+                  ],
+                  "sort_on": "sortable_title",
+                  "sort_order": "ascending"
+                },
+                "styles": {},
+                "theme": "default",
+                "variation": "grid"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "c9580c7a-ab67-44f7-8532-59a4ba9fd846",
+                "dffa8bfa-df0a-4b42-abf9-746195893b29",
+                "3b586718-75a0-4801-986f-65dfcb6147a3",
+                "ab870338-007a-4400-9364-3588fcffd9e8",
+                "f36a69e0-d064-42b2-8ec5-e1ef73d23928"
+              ]
+            },
+            "selected": "ab870338-007a-4400-9364-3588fcffd9e8",
+            "title": "Accordion with listing"
+          },
+          "39f75787-bd7a-42dc-ab40-a6c9dfd2a8f1": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "09269ef9-7209-448b-b7ff-4d93a01918d0": {
+                "@type": "slate",
+                "plaintext": "Heading with H3",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Heading with H3\n"
+                      }
+                    ],
+                    "type": "h3"
+                  }
+                ]
+              },
+              "62769217-d9fe-4317-af1b-0f52e1d403ce": {
+                "@type": "slate",
+                "plaintext": "This is unordered list This is unordered list This is unordered list",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is unordered list"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ul"
+                  }
+                ]
+              },
+              "7472a4e0-4108-4716-b175-da54ed67495b": {
+                "@type": "slate",
+                "plaintext": "Heading with H2",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Heading with H2"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "9e002af6-1d9f-4dd7-abad-d0a78eda482a": {
+                "@type": "slate",
+                "plaintext": " This is Italics.  This is bold text. ",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is Italics.\n"
+                          }
+                        ],
+                        "type": "em"
+                      },
+                      {
+                        "text": ""
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "This is bold text."
+                          }
+                        ],
+                        "type": "strong"
+                      },
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "b4d8c43d-c2cf-4d89-9060-18eb27540fef": {
+                "@type": "slate",
+                "plaintext": "one two three",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "text": "one"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "two"
+                          }
+                        ],
+                        "type": "li"
+                      },
+                      {
+                        "children": [
+                          {
+                            "text": "three"
+                          }
+                        ],
+                        "type": "li"
+                      }
+                    ],
+                    "type": "ol"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35",
+                "9e002af6-1d9f-4dd7-abad-d0a78eda482a",
+                "7472a4e0-4108-4716-b175-da54ed67495b",
+                "09269ef9-7209-448b-b7ff-4d93a01918d0",
+                "62769217-d9fe-4317-af1b-0f52e1d403ce",
+                "b4d8c43d-c2cf-4d89-9060-18eb27540fef"
+              ]
+            },
+            "title": "Accordion with text"
+          },
+          "d2168440-999d-4081-8409-b59392abc189": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "0c660015-12f2-4d1a-93f4-2b5b5ecc1133": {
+                "@type": "slate",
+                "plaintext": "More text with image (Medium) aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image (Medium) aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "1060e842-2b14-43dc-9e43-c25022029a94": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "m",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "medium"
+                },
+                "theme": "default",
+                "title": "Image - Light",
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "10a106da-d0d1-4095-b24c-b3aabe862d27": {
+                "@type": "slate",
+                "plaintext": "Text with image aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text with image aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "11af3b59-7720-4875-b0b9-90be5807d476": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "1becedb6-65f6-4bee-9b36-5c38deaa4141": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "3cc147fe-29af-4e78-a896-3cba6f953ac9": {
+                "@type": "slate",
+                "plaintext": "More text with image (small) aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image (small) aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "6e94c839-855c-43ff-92fa-a2f9dfac2bc9": {
+                "@type": "image",
+                "align": "center",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "l",
+                "title": "Image - Light",
+                "url": "../../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "725bfc52-49f6-4e70-8d11-48c537cfb5ff": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "76ab99ce-789c-41b2-9df8-4322c8c8c1ad": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "773db1b3-7504-40e2-bf09-ce96e31249b2": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "m",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "medium"
+                },
+                "title": "Image",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "s",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "small"
+                },
+                "title": "Image",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "94542f86-67a9-427b-96f1-dfb78a0273fc": {
+                "@type": "slate",
+                "plaintext": "More text with image (Medium) aligned left",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image (Medium) aligned left"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "a21b32e7-f7ee-47bc-8813-a78fee77f175": {
+                "@type": "slate",
+                "plaintext": "More text with image (small) aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image (small) aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "a632b02c-d68b-44fa-8039-8197876728ea": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "b5c6c126-ed37-4915-865b-294886c30a68": {
+                "@type": "slate",
+                "plaintext": "More text with image aligned right",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "More text with image aligned right"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "beed6d62-0753-4183-915e-9704b178e4ff": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "image_field": "image",
+                "size": "s",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "small"
+                },
+                "theme": "default",
+                "title": "Image for Link",
+                "url": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3"
+              },
+              "c0b3b08e-c350-43e6-84e9-787903d91f8c": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  },
+                  "size:noprefix": "large"
+                },
+                "title": "Image",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "c3d2c41a-8e53-45a4-b212-cb54dad6045d": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d754b95e-7fa8-4cbd-9997-f2bb6cde26df": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "size": "l",
+                "styles": {
+                  "blockWidth:noprefix": {
+                    "--block-width": "var(--default-container-width)"
+                  }
+                },
+                "title": "Image",
+                "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "d77557e0-793a-408f-9940-a0ad80d3be8f": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "6e94c839-855c-43ff-92fa-a2f9dfac2bc9",
+                "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35",
+                "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c",
+                "d754b95e-7fa8-4cbd-9997-f2bb6cde26df",
+                "10a106da-d0d1-4095-b24c-b3aabe862d27",
+                "725bfc52-49f6-4e70-8d11-48c537cfb5ff",
+                "773db1b3-7504-40e2-bf09-ce96e31249b2",
+                "c0b3b08e-c350-43e6-84e9-787903d91f8c",
+                "b5c6c126-ed37-4915-865b-294886c30a68",
+                "c3d2c41a-8e53-45a4-b212-cb54dad6045d",
+                "1060e842-2b14-43dc-9e43-c25022029a94",
+                "94542f86-67a9-427b-96f1-dfb78a0273fc",
+                "1becedb6-65f6-4bee-9b36-5c38deaa4141",
+                "11af3b59-7720-4875-b0b9-90be5807d476",
+                "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961",
+                "0c660015-12f2-4d1a-93f4-2b5b5ecc1133",
+                "d77557e0-793a-408f-9940-a0ad80d3be8f",
+                "8f1ad076-32b9-432b-9308-8b0972a8f57e",
+                "3cc147fe-29af-4e78-a896-3cba6f953ac9",
+                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad",
+                "beed6d62-0753-4183-915e-9704b178e4ff",
+                "a21b32e7-f7ee-47bc-8813-a78fee77f175",
+                "a632b02c-d68b-44fa-8039-8197876728ea"
+              ]
+            },
+            "selected": "d2524e67-999c-4421-82c5-b32506024541",
+            "title": "Accordion with image"
+          },
+          "e80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "f56375fe-70a1-4ac1-a94c-adc9998db548": {
+                "@type": "slateTable",
+                "styles": {
+                  "backgroundColor": "transparent"
+                },
+                "table": {
+                  "basic": false,
+                  "celled": true,
+                  "compact": false,
+                  "fixed": true,
+                  "hideHeaders": false,
+                  "inverted": false,
+                  "rows": [
+                    {
+                      "cells": [
+                        {
+                          "key": "f446n",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "26qcg",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "dhv72",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "dda2b"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "52vlv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "5ko7h",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "878jv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "3ihrs"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "754if",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "1bjdt",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "32g6k",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "au6so"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "5fhem",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "e78dh",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "feacr",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "fqhgk"
+                    }
+                  ],
+                  "striped": true
+                }
+              }
+            },
+            "blocks_layout": {
+              "items": ["f56375fe-70a1-4ac1-a94c-adc9998db548"]
+            },
+            "title": "Accordion with table"
+          },
+          "f58c92b4-6604-4408-9039-a147965fa4bd": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "News Item Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+                    "@type": "News Item",
+                    "Description": "The News Item content type can be used to display News content on the website.",
+                    "Subject": [],
+                    "Title": "News Item",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The News Item content type can be used to display News content on the website.",
+                    "effective": "2023-01-01T10:42:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": "Head title",
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "News Item",
+                    "type_title": "Nachricht"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "title": "Teaser to a News Item with Image"
+              },
+              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": "Event Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+                    "@type": "Event",
+                    "Description": "The event content type can be used to display an event on the website.",
+                    "Subject": [],
+                    "Title": "Event",
+                    "contact_building": null,
+                    "contact_email": "m.mustermann@plone.com",
+                    "contact_phone": "+49 1234 567-890",
+                    "contact_room": null,
+                    "description": "The event content type can be used to display an event on the website.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": "2023-12-31T12:00:00+00:00",
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": "2023-01-01T11:00:00+00:00",
+                    "title": "Event",
+                    "type_title": "Termin"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "title": "Teaser to an Event with Image "
+              },
+              "32053cfb-3906-4883-b929-2f0d475167ea": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "External Link Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/51aa57a0fb694d528ee5a76af0107131",
+                    "@type": "Link",
+                    "Description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "Subject": [],
+                    "Title": "Link",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": "https://www.google.com",
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Link",
+                    "type_title": "Link"
+                  }
+                ],
+                "overwrite": true,
+                "preview_image": [
+                  {
+                    "@id": "../../../resolveuid/902fad18bb584693bac78e5ffeaf39d3",
+                    "image_field": "image",
+                    "title": "Image for Link"
+                  }
+                ],
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an external Link with Image"
+              },
+              "56df2459-adbd-48ac-9e96-95933678c979": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "76245078-f513-459e-88a0-12cfa5a265af": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "Image Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+                    "@type": "Image",
+                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "Subject": [],
+                    "Title": "Image",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "676.8 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "image",
+                    "mime_type": "image/jpeg",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "Image",
+                    "type_title": "Bild"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "left"
+                },
+                "theme": "default",
+                "title": "Teaser to an Image with Image aligned left"
+              },
+              "a8e11fa5-a423-45f9-8de2-060c8ea00e5f": {
+                "@type": "slate",
+                "plaintext": "",
+                "styles": {},
+                "theme": "default",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d235847d-eb7d-4627-9247-dd92f8bbea79": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.",
+                "head_title": "File Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/453f894078814ffbb290ad61a23a6693",
+                    "@type": "File",
+                    "Description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "Subject": [],
+                    "Title": "File",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The File content type can be used to upload any file and make it available for download on the site.",
+                    "effective": "2025-07-09T10:52:00+00:00",
+                    "end": null,
+                    "getObjSize": "72.7 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "application/pdf",
+                    "nav_title": null,
+                    "review_state": null,
+                    "start": null,
+                    "title": "File",
+                    "type_title": "Datei"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "right"
+                },
+                "theme": "default",
+                "title": "Teaser to a File with Image aligned right"
+              },
+              "eb600a9b-7400-4b4e-bb40-70ddb6911749": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
+                "head_title": "Page Teaser",
+                "href": [
+                  {
+                    "@id": "../../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@type": "Document",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Subject": [],
+                    "Title": "Page",
+                    "contact_building": null,
+                    "contact_email": null,
+                    "contact_phone": null,
+                    "contact_room": null,
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T18:35:00+00:00",
+                    "end": null,
+                    "getObjSize": "0 KB",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": true,
+                    "head_title": null,
+                    "image_field": "preview_image_link",
+                    "mime_type": "text/plain",
+                    "nav_title": null,
+                    "review_state": "published",
+                    "start": null,
+                    "title": "Page",
+                    "type_title": "Seite"
+                  }
+                ],
+                "overwrite": true,
+                "styles": {
+                  "align": "center"
+                },
+                "title": "Teaser Title H2"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "eb600a9b-7400-4b4e-bb40-70ddb6911749",
+                "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03",
+                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a",
+                "56df2459-adbd-48ac-9e96-95933678c979",
+                "32053cfb-3906-4883-b929-2f0d475167ea",
+                "d235847d-eb7d-4627-9247-dd92f8bbea79",
+                "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
+                "76245078-f513-459e-88a0-12cfa5a265af"
+              ]
+            },
+            "selected": "a8e11fa5-a423-45f9-8de2-060c8ea00e5f",
+            "title": "Accordion with teaser"
+          }
+        },
+        "blocks_layout": {
+          "items": [
+            "39f75787-bd7a-42dc-ab40-a6c9dfd2a8f1",
+            "d2168440-999d-4081-8409-b59392abc189",
+            "f58c92b4-6604-4408-9039-a147965fa4bd",
+            "262a2478-3a63-445a-aab7-edf55cceebcf",
+            "e80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
+          ]
+        }
+      },
+      "filtering": false,
+      "non_exclusive": false,
+      "right_arrows": true,
+      "styles": {},
+      "theme": "grey"
+    },
+    "fec13476-1231-42fc-84d5-b110e8e3c6e7": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "fec13476-1231-42fc-84d5-b110e8e3c6e7",
+      "41a82a93-c00c-4a40-bac8-53a3e3420c8e",
+      "8f68209e-220e-4230-9d42-8b0602573bd9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2023-07-27T19:48:00+00:00",
+  "creators": ["admin"],
+  "description": "The accordion contains other blocks in an accordion behavior layout.",
+  "effective": "2023-09-22T16:09:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "block-accordion",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-02T08:59:42+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Accordion",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-02T08:59:42+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-02T12:02:11+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

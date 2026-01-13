@@ -2,6 +2,15 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b22 (2026-01-13)
+
+
+### Bugfix
+
+- Update core to 1.0.4
+  Fixed sticky menu cut off at the bottom on smaller screens @iRohitSingh
+  Fixed double navigation in cards that contains inner links in its body. @sneridagh 
+
 ## 1.0.0b21 (2025-12-08)
 
 

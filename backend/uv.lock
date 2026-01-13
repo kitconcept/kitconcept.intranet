@@ -1298,7 +1298,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.3"
+version = "1.0.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1309,9 +1309,9 @@ dependencies = [
     { name = "plone-distribution" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c5/d2/d2cdae281dadf1a0640165f2b8b6e2e1712e5e6fae8a523516bba50269c7/kitconcept_core-1.0.3.tar.gz", hash = "sha256:0772b97bd4164ac9fdd2e1817e74156363d0b40b8b56f35fa4be78b96a2c148b", size = 330484, upload-time = "2026-01-13T09:51:03.639Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/82/e7/0c53e3aaa67be6da7b2933f550e8f1c20c1c2de1baf9692862e6f49b6214/kitconcept_core-1.0.4.tar.gz", hash = "sha256:42311c9b1dc168c59596824bb0537f62918ffd041dd68ad1f6d21b5c52a2f0e4", size = 330847, upload-time = "2026-01-13T13:17:22.604Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6c/8c/61df06f749dcdb06cc71efd19d5cb17b214b028cd84c94fedd55abc9c44b/kitconcept_core-1.0.3-py3-none-any.whl", hash = "sha256:e715168abd057a8242bffd10dd65e7ac01f22a146934b6a37313610cc36e4557", size = 240888, upload-time = "2026-01-13T09:51:09.777Z" },
+    { url = "https://files.pythonhosted.org/packages/04/bb/7dc0d05725f271e6f8df90a843df8b39e3bb0839b188fa34d588e94dae81/kitconcept_core-1.0.4-py3-none-any.whl", hash = "sha256:df6f2e698c518b5a7f4fdd15e649e6732579dc9c66ffe9f58aa0d79400e31b06", size = 242213, upload-time = "2026-01-13T13:17:20.869Z" },
 ]
 
 [[package]]

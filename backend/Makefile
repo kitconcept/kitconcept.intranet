@@ -62,6 +62,8 @@ config: instance/etc/zope.ini
 sync: ## Sync project dependencies
 	@echo "$(GREEN)==> Sync project dependencies$(RESET)"
 	@uv sync
+	@echo "$(GREEN)==> Force kitconcept.core update$(RESET)"
+	@uv sync --upgrade-package kitconcept.core
 
 .PHONY: install
 install: sync config ## Install Plone and dependencies

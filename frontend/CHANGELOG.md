@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.4 (2026-01-14)
+
+### Bugfix
+
+- Fixed sticky menu cut off at the bottom on smaller screens @iRohitSingh
+  Fixed double navigation in cards that contains inner links in its body. @sneridagh
+  Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+- Update Person and Event views to support multiple values for organisational unit and location. @davisagli 
+
+### Internal
+
+- Add Cypress tests for Enter key behavior on focused blocks @iRohitSingh 
+
 ## 2.0.0-alpha.3 (2025-12-16)
 
 ### Internal

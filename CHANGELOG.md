@@ -1,6 +1,54 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a4 (2026-01-14)
+
+### Backend
+
+
+#### Breaking
+
+- Convert organisational unit and location behaviors to support multiple values. There is an upgrade step which must be run to update existing content and indexes. @davisagli 
+
+
+#### Bugfix
+
+- Fixed sticky menu cut off at the bottom on smaller screens @iRohitSingh
+  Fixed double navigation in cards that contains inner links in its body. @sneridagh
+  Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+
+
+#### Internal
+
+- Add example content for differentiate between technical and user-facing example content
+  @iRohitSingh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed sticky menu cut off at the bottom on smaller screens @iRohitSingh
+  Fixed double navigation in cards that contains inner links in its body. @sneridagh
+  Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+- Update Person and Event views to support multiple values for organisational unit and location. @davisagli 
+
+#### Internal
+
+- Add Cypress tests for Enter key behavior on focused blocks @iRohitSingh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Fix spelling. @davisagli 
+
+
+
 ## 2.0.0a3 (2025-12-16)
 
 ### Backend

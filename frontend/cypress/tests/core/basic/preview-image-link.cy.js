@@ -36,7 +36,8 @@ describe('Preview Image Link Tests', () => {
     cy.wait('@getImage');
     cy.wait('@content');
 
-    cy.visit('/document/edit');
+    cy.navigate('/document/edit');
+    cy.wait('@schema');
 
     cy.get('#metadataform-fieldset-preview_image').within(() => {
       cy.get('.image-upload-widget-image img')
@@ -60,6 +61,7 @@ describe('Preview Image Link Tests', () => {
     cy.get('#toolbar-save').click();
 
     cy.navigate('/document/edit');
+    cy.wait('@schema');
     cy.get('#metadataform-fieldset-preview_image').within(() => {
       cy.get('.image-upload-widget-image img')
         .should('have.attr', 'src')

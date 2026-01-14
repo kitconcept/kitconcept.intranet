@@ -36,7 +36,7 @@ constraints = [
     { name = "cmarkgfm", specifier = "==2024.11.20" },
     { name = "collective-mockmailhost", specifier = "==3.0.0" },
     { name = "collective-monkeypatcher", specifier = "==2.0.1" },
-    { name = "collective-person", specifier = "==1.0.0b3" },
+    { name = "collective-person", specifier = "==1.0.0b4" },
     { name = "collective-recipe-omelette", specifier = "==2.0.0" },
     { name = "collective-recipe-template", specifier = "==2.2" },
     { name = "collective-recipe-vscode", specifier = "==0.1.9" },
@@ -91,9 +91,9 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==1.0.4" },
+    { name = "kitconcept-core", specifier = "==1.0.5" },
     { name = "kitconcept-solr", specifier = "==2.0.0a3" },
-    { name = "kitconcept-voltolighttheme", specifier = ">=7.6.5" },
+    { name = "kitconcept-voltolighttheme", specifier = ">=7.6.5,<8.0.0" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.4.0" },
@@ -761,7 +761,7 @@ wheels = [
 
 [[package]]
 name = "collective-person"
-version = "1.0.0b3"
+version = "1.0.0b4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-contact-behaviors" },
@@ -771,9 +771,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cc/f8/9574432bbf68f0606b23897ef9a63800bc2f49a1ca67b14e72fe703cff09/collective_person-1.0.0b3.tar.gz", hash = "sha256:2c491f26c388ab835aa0037c56717963c456e6d1e7506bf332f99fd99643f027", size = 1423616, upload-time = "2025-09-17T15:06:52.004Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e4/b4/17535192712fe4959fcf200fa5b43082a237b452f7d8d5bf37240248bd2c/collective_person-1.0.0b4.tar.gz", hash = "sha256:c59080b4de6ba6dbfbb4809e4aaf75634bd8543314c1e037d9c4121f440684da", size = 1423763, upload-time = "2025-12-11T10:32:03.727Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fe/b7/d35d27ebd322a2aa418df65253ebb6a8418d7f92cab1290d875b5aa476ac/collective_person-1.0.0b3-py3-none-any.whl", hash = "sha256:df822c9baaa3c0d7039d0419b65e065afa808c5f985de7f657b5d2d65e4346fb", size = 1440576, upload-time = "2025-09-17T15:06:49.602Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/ff/800f1ec9189e89eefd416d01db8913ea031910e97b7aaffba894cca5dfb5/collective_person-1.0.0b4-py3-none-any.whl", hash = "sha256:589890369ec54d47735548630711d18d4dcfeff68cdf4ab41dab05a13a447038", size = 1440692, upload-time = "2025-12-11T10:32:01.667Z" },
 ]
 
 [[package]]
@@ -1298,7 +1298,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "1.0.4"
+version = "1.0.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1309,9 +1309,9 @@ dependencies = [
     { name = "plone-distribution" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/82/e7/0c53e3aaa67be6da7b2933f550e8f1c20c1c2de1baf9692862e6f49b6214/kitconcept_core-1.0.4.tar.gz", hash = "sha256:42311c9b1dc168c59596824bb0537f62918ffd041dd68ad1f6d21b5c52a2f0e4", size = 330847, upload-time = "2026-01-13T13:17:22.604Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/80/9d/5ee4eb991d8698a205cc918a4fa79487b581413ee120fb720f6e859c3f4d/kitconcept_core-1.0.5.tar.gz", hash = "sha256:a56f9fcba3e49a0f24dd88f2e2294441b7aaf542aaf060b11b109e4089e309d6", size = 330886, upload-time = "2026-01-14T09:40:18.14Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/04/bb/7dc0d05725f271e6f8df90a843df8b39e3bb0839b188fa34d588e94dae81/kitconcept_core-1.0.4-py3-none-any.whl", hash = "sha256:df6f2e698c518b5a7f4fdd15e649e6732579dc9c66ffe9f58aa0d79400e31b06", size = 242213, upload-time = "2026-01-13T13:17:20.869Z" },
+    { url = "https://files.pythonhosted.org/packages/4b/94/d20c6bc6aea280a2a832d58c239b63c05e5fe1816b24d9b0819ed1a97f61/kitconcept_core-1.0.5-py3-none-any.whl", hash = "sha256:fb5b6b0e049c026a69d7b8cb36052ed48321aa664079299b576f221bd8a0611a", size = 242221, upload-time = "2026-01-14T09:40:21.138Z" },
 ]
 
 [[package]]
@@ -1356,7 +1356,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "kitconcept-core", specifier = "==1.0.4" },
+    { name = "kitconcept-core", specifier = "==1.0.5" },
     { name = "kitconcept-solr", specifier = "==2.0.0a3" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

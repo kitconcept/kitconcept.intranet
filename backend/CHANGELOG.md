@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b23 (2026-01-14)
+
+
+### Internal
+
+- We can't update the core version with an interval, since repoplone do not allow it and it's better to stick to one. @sneridagh 
+
 ## 1.0.0b22 (2026-01-13)
 
 

@@ -1,6 +1,29 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b23 (2026-01-14)
+
+### Backend
+
+
+#### Internal
+
+- We can't update the core version with an interval, since repoplone do not allow it and it's better to stick to one. @sneridagh 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b22 (2026-01-13)
 
 ### Backend

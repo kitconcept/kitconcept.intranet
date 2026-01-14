@@ -65,7 +65,7 @@ config: instance/etc/zope.ini
 sync: ## Sync project dependencies
 	@echo "$(GREEN)==> Sync project dependencies$(RESET)"
 	@uv sync
-	@echo "$(GREEN)==> Force update of kitconcept.voltolighttheme$(RESET)"
+	@echo "$(GREEN)==> Force update of kitconcept.voltolighttheme and kitconcept.core$(RESET)"
 	@uv sync --upgrade-package kitconcept.core
 	@uv sync --upgrade-package kitconcept.voltolighttheme
 

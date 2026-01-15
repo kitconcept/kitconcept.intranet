@@ -92,7 +92,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a7" },
+    { name = "kitconcept-core", specifier = "==2.0.0a8" },
     { name = "kitconcept-solr", specifier = "==2.0.0a8" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
@@ -1299,7 +1299,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0a7"
+version = "2.0.0a8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1310,9 +1310,9 @@ dependencies = [
     { name = "plone-distribution" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/06/92/ed86616e082270e19f6bb01a792a31be194d767740d691d8bf7a0088390a/kitconcept_core-2.0.0a7.tar.gz", hash = "sha256:f1186d45840a9321ba599e21ac3379101859f8245870ef86247bc0d334b59ebd", size = 327001, upload-time = "2026-01-14T08:56:16.63Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/db/54/9ba810c7ef1ff19822c1a31aa757d357a3e7b41bd8d9d9ac4ea7c239a53d/kitconcept_core-2.0.0a8.tar.gz", hash = "sha256:c100abe5487e763664754ad3d95467b9d644410e862b78026d0445328c82f4c6", size = 327628, upload-time = "2026-01-15T09:26:25.139Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/da/03/bb87df705867d07b5ed08968e968f51d92fd37aaecf174072f6bec6dd095/kitconcept_core-2.0.0a7-py3-none-any.whl", hash = "sha256:6c5904a32b58cbcbe1d2328d1dc445a79baefc3bb3323a8d0cd80161c6b2eda2", size = 242248, upload-time = "2026-01-14T08:56:14.139Z" },
+    { url = "https://files.pythonhosted.org/packages/64/07/3b42222783425dcee7dc4fc3c4bedfc8c60665131bf8ef6709bcf46fd6b1/kitconcept_core-2.0.0a8-py3-none-any.whl", hash = "sha256:13a66ae43cc188642bca60cfcced7658628aa1fcff1e2086ff172645ac9b34ce", size = 242246, upload-time = "2026-01-15T09:26:18.662Z" },
 ]
 
 [[package]]
@@ -1362,7 +1362,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a7" },
+    { name = "kitconcept-core", specifier = "==2.0.0a8" },
     { name = "kitconcept-solr", specifier = "==2.0.0a8" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1420,7 +1420,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "8.0.0a11"
+version = "8.0.0a12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1429,9 +1429,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b6/cf/03e573219465b660137454eb697b2d27ab996683d978aac1ba713193167c/kitconcept_voltolighttheme-8.0.0a11.tar.gz", hash = "sha256:1e4b92a5ab4f783440d711ea93fd6bbb917a66af7d12c73352f9ef6d1dde7435", size = 1365007, upload-time = "2026-01-14T17:10:38.875Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f7/63/1f4a4bb9ac4c9e394d2c17db8098a0022e68da08e83cf6e2eb8507471541/kitconcept_voltolighttheme-8.0.0a12.tar.gz", hash = "sha256:504c63456321d57a48d61cf852f5cde713382dd41158bac3206df8eb4713a667", size = 1365006, upload-time = "2026-01-15T09:23:51.132Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4b/32/a743d75ab3438ba9a87e42eefa58697c0e3be0c81495b980e915a38524c1/kitconcept_voltolighttheme-8.0.0a11-py3-none-any.whl", hash = "sha256:d625f51b2677ec7de0140903ab094b233678060d042ad220ccd9814f1a23a667", size = 1431715, upload-time = "2026-01-14T17:10:36.647Z" },
+    { url = "https://files.pythonhosted.org/packages/35/b1/fb96a58f2c551a45bc19a228cc1869cedfc51932dcd42c8877871362e7eb/kitconcept_voltolighttheme-8.0.0a12-py3-none-any.whl", hash = "sha256:4fbe996ce9d6b35716349e43b110455fba4edd84e8d5c5ed5e84db4ce15cff1e", size = 1431718, upload-time = "2026-01-15T09:23:41.316Z" },
 ]
 
 [[package]]

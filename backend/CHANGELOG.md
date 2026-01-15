@@ -2,6 +2,16 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a5 (2026-01-15)
+
+
+### Internal
+
+- Fixed bug where markdown inline links in descriptions are rendered as a separate paragraph @jackahl
+  Use the CSS prop --breadcrumbs-foregound for breadcrumbs links as default, with --link-foreground-color as fallback. @danalvrz
+  Removed `Contents` shadow in favor of the core implementation. @sneridagh
+  New reindex script @davisagli @jnptk 
+
 ## 2.0.0a4 (2026-01-14)
 
 

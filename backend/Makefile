@@ -64,6 +64,8 @@ sync: ## Sync project dependencies
 	@uv sync
 	@echo "$(GREEN)==> Force kitconcept.core update$(RESET)"
 	@uv sync --upgrade-package kitconcept.core
+	@echo "$(GREEN)==> Force kitconcept.voltolighttheme update$(RESET)"
+	@uv sync --upgrade-package kitconcept.voltolighttheme
 
 .PHONY: install
 install: sync config ## Install Plone and dependencies

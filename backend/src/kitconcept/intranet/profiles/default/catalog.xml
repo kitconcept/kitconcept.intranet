@@ -34,4 +34,11 @@
   <column value="organisational_unit_reference" />
   <column value="job_title" />
 
+  <!-- Responsabilities index for Person content type -->
+  <index meta_type="KeywordIndex"
+         name="responsabilities"
+  >
+    <indexed_attr value="responsabilities" />
+  </index>
+
 </object>

@@ -1,0 +1,6 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Custom deserializer for responsabilities field -->
+  <adapter factory=".responsabilities.ResponsabilitiesFieldDeserializer" />
+
+</configure>

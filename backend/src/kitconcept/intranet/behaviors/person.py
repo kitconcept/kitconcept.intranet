@@ -1,9 +1,15 @@
 from collective.person.interfaces import IPersonTitle
 from kitconcept.intranet import _
+from kitconcept.intranet.deserializers.responsabilities import IResponsabilitiesField
+from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
+from plone.autoform import directives
 from plone.autoform.directives import order_before
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
+from z3c.form.interfaces import IAddForm
+from z3c.form.interfaces import IEditForm
 from zope import schema
+from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.interface import provider
 
@@ -28,6 +34,35 @@ class IPersonBehavior(model.Schema):
         title=_("Department"),
         required=False,
     )
+
+    # Responsabilities fieldset
+    model.fieldset(
+        "responsability_categorization",
+        label=_("label_schema_responsability_categorization", default="Responsabilities & Expertise"),
+        fields=["responsabilities"],
+    )
+
+    responsabilities = schema.Tuple(
+        title=_("label_responsabilities", default="Responsabilities"),
+        description=_(
+            "help_tags",
+            default="Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organizational knowledge to understand whether you are the right contact.",
+        ),
+        value_type=schema.TextLine(),
+        required=False,
+        missing_value=(),
+    )
+    directives.widget(
+        "responsabilities", AjaxSelectFieldWidget, vocabulary="kitconcept.intranet.vocabularies.responsabilities"
+    )
+
+    directives.omitted("responsabilities")
+    directives.no_omit(IEditForm, "responsabilities")
+    directives.no_omit(IAddForm, "responsabilities")
+
+
+# Tag the responsabilities field with the marker interface for the custom deserializer
+alsoProvides(IPersonBehavior["responsabilities"], IResponsabilitiesField)
 
 
 @implementer(IPersonTitle)

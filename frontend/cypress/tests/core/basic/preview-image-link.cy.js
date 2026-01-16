@@ -51,7 +51,6 @@ describe('Preview Image Link Tests', () => {
   it('Add preview image from existing Image Content', function () {
     cy.navigate('/document/edit');
     cy.wait('@schema');
-
     cy.get('#metadataform-fieldset-preview_image');
     cy.get('.toolbar-inner button.ui.basic.icon.button').first().click();
     cy.findByLabelText('Search SVG').click();
@@ -59,6 +58,7 @@ describe('Preview Image Link Tests', () => {
     cy.findByLabelText('Select My Image').dblclick();
 
     cy.get('#toolbar-save').click();
+    cy.wait('@content');
 
     cy.navigate('/document/edit');
     cy.wait('@schema');

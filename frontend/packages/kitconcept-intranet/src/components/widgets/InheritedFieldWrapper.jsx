@@ -11,6 +11,7 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
     const inheritedField = inheritedFieldFunction(content, props);
     const dispatch = useDispatch();
     const vocabBaseUrl = props.widgetOptions.vocabulary?.['@id'];
+    const subrequest = `widget-${props.id}-${props.intl.locale}`;
 
     React.useEffect(() => {
       if (inheritedField && !props.value && vocabBaseUrl) {
@@ -18,18 +19,16 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
         dispatch(
           getVocabularyTokenTitle({
             vocabNameOrURL: vocabBaseUrl,
-            subrequest: `widget-${props.id}-${props.intl.locale}`,
+            subrequest: subrequest,
             ...tokensQuery,
           }),
         );
       }
-    }, [dispatch, inheritedField, vocabBaseUrl, props]);
+    }, [dispatch, inheritedField, vocabBaseUrl, props.value, subrequest]);
 
     const displayNameInheritedField = useSelector(
       (state) =>
-        state.vocabularies?.[vocabBaseUrl]?.subrequests?.[
-          `widget-${props.id}-${props.intl.locale}`
-        ]?.items,
+        state.vocabularies?.[vocabBaseUrl]?.subrequests?.[subrequest]?.items,
     )?.[0]?.label;
 
     if (props.inheritedField && inheritedField?.value && !props.value) {

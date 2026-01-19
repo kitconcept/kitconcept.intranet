@@ -5,11 +5,11 @@
   <genericsetup:upgradeSteps
       profile="kitconcept.intranet:default"
       source="20251218001"
-      destination="20260116001"
+      destination="20260119001"
       >
     <genericsetup:upgradeStep
-        title="Add Responsabilities index for Person content type."
-        handler=".add_responsabilities_index"
+        title="Add Responsibilities index for Person content type."
+        handler=".add_responsibilities_index"
         />
   </genericsetup:upgradeSteps>
 </configure>

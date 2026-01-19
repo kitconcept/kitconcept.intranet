@@ -70,7 +70,9 @@
         }
       },
       "blocks_layout": {
-        "items": ["b792dfcc-e69a-4933-b39d-a7b0695ef045"]
+        "items": [
+          "b792dfcc-e69a-4933-b39d-a7b0695ef045"
+        ]
       },
       "styles": {},
       "theme": "default"
@@ -350,7 +352,9 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": ["Document"]
+            "v": [
+              "Document"
+            ]
           }
         ],
         "sort_order": "ascending"
@@ -371,7 +375,9 @@
               "@id": "../../resolveuid/9faea2810c2e4c3798d6fe1f3c69a2ff",
               "@type": "Document",
               "Description": "This section has a sample of content types available in this site.",
-              "Subject": ["main folder"],
+              "Subject": [
+                "main folder"
+              ],
               "Title": "Content Types",
               "contact_building": null,
               "contact_email": null,
@@ -402,7 +408,9 @@
         }
       },
       "blocks_layout": {
-        "items": ["91c43f7a-ce5a-4cc6-99e8-cbf360efd7fc"]
+        "items": [
+          "91c43f7a-ce5a-4cc6-99e8-cbf360efd7fc"
+        ]
       },
       "styles": {},
       "theme": "default"
@@ -571,7 +579,10 @@
     },
     "fac3b432-30b0-4249-b2fa-6e20deceb3a0": {
       "@type": "toc",
-      "levels": ["h2", "h3"],
+      "levels": [
+        "h2",
+        "h3"
+      ],
       "styles": {},
       "theme": "default"
     },
@@ -620,9 +631,11 @@
   "changeNote": "",
   "contributors": [],
   "created": "2025-12-10T08:35:27+00:00",
-  "creators": ["admin"],
+  "creators": [
+    "admin"
+  ],
   "description": "",
-  "effective": "2025-12-10T12:42:30+00:00",
+  "effective": "2025-12-10T12:42:00+00:00",
   "enable_likes": false,
   "exclude_from_nav": false,
   "expires": null,

@@ -11,11 +11,11 @@
       factory=".organisational_unit.organisational_unit_indexer"
       name="organisational_unit_reference"
       />
-      
-  <!-- Responsabilities indexers -->
+
+  <!-- Responsibilities indexers -->
   <adapter
-    factory=".responsabilities.responsabilities_indexer"
-    name="Responsabilities"
+    factory=".responsibilities.responsibilities_indexer"
+    name="responsibilities"
     />
 
 

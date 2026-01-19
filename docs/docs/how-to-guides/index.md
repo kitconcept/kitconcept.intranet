@@ -22,6 +22,7 @@ https://diataxis.fr/how-to-guides/
 :maxdepth: 2
 
 passive-targeting
+person-responsibilities
 squared-person-image-support
 content-interactions
 content-feedback-form

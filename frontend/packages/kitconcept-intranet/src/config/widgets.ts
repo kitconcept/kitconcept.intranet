@@ -12,6 +12,7 @@ const install = (config: ConfigType) => {
     config.widgets.widget.autocomplete,
     (content: any, props: any) => content?.['@components']?.clm?.[props.id],
   );
+  config.widgets.id.responsibilities = config.widgets.widget.token;
   return config;
 };
 

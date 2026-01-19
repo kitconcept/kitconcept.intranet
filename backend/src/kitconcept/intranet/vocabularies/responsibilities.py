@@ -8,10 +8,10 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 
 @implementer(IVocabularyFactory)
-class ResponsabilitiesVocabulary:
-    """Vocabulary factory listing all catalog keywords from the 'Responsabilities' index"""
+class ResponsibilitiesVocabulary:
+    """Vocabulary factory listing all catalog keywords from the 'Responsibilities' index"""
 
-    keyword_index = "Responsabilities"
+    keyword_index = "responsibilities"
 
     def all_keywords(self, kwfilter):
         site = getSite()
@@ -25,4 +25,4 @@ class ResponsabilitiesVocabulary:
         return self.all_keywords(query)
 
 
-ResponsabilitiesVocabularyFactory = ResponsabilitiesVocabulary()
+ResponsibilitiesVocabularyFactory = ResponsibilitiesVocabulary()

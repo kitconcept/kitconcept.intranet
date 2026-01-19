@@ -8,7 +8,6 @@ from plone.supermodel import model
 from z3c.form.interfaces import IAddForm
 from z3c.form.interfaces import IEditForm
 from zope import schema
-from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.interface import provider
 

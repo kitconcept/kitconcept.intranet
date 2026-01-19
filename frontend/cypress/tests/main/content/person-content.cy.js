@@ -46,6 +46,15 @@ describe('Add Content Tests', () => {
     )
       .contains('Institute of Robotics and Mechatronics(Organisational unit)')
       .click();
+
+    // Add a responsibility tag
+    cy.get('.ui.pointing.secondary.attached.tabular.formtabs.menu')
+      .findByText('Responsibilities & Expertise')
+      .click();
+    cy.get('#field-responsibilities')
+      .click()
+      .type('Project Management{enter}');
+
     cy.get('#toolbar-save').focus().click();
     cy.wait('@content');
   });

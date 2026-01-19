@@ -51,6 +51,7 @@ class IPersonBehavior(model.Schema):
         ),
         value_type=schema.TextLine(),
         required=False,
+        default=(),
         missing_value=(),
     )
     directives.widget(

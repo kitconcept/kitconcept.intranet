@@ -12,6 +12,7 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
     const dispatch = useDispatch();
     const vocabBaseUrl = props.widgetOptions.vocabulary?.['@id'];
     const subrequest = `widget-${props.id}-${props.intl.locale}`;
+    
     React.useEffect(() => {
       if (inheritedField && !props.value && vocabBaseUrl) {
         const tokensQuery = convertValueToVocabQuery([inheritedField.value]);

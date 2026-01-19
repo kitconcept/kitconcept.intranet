@@ -17,7 +17,10 @@ class ResponsibilitiesVocabulary:
         self.catalog = getToolByName(site, "portal_catalog", None)
         if self.catalog is None:
             return SimpleVocabulary([])
-        index = self.catalog._catalog.getIndex(self.keyword_index)
+        try:
+            index = self.catalog._catalog.getIndex(self.keyword_index)
+        except KeyError:
+            return SimpleVocabulary([])
         return safe_simplevocabulary_from_values(index._index, query=kwfilter)
 
     def __call__(self, context, query=None):

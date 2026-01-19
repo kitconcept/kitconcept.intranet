@@ -37,7 +37,10 @@ class IPersonBehavior(model.Schema):
     # responsibilities fieldset
     model.fieldset(
         "responsability_categorization",
-        label=_("label_schema_responsability_categorization", default="Responsibilities & Expertise"),
+        label=_(
+            "label_schema_responsability_categorization",
+            default="Responsibilities & Expertise",
+        ),
         fields=["responsibilities"],
     )
 
@@ -52,7 +55,9 @@ class IPersonBehavior(model.Schema):
         missing_value=(),
     )
     directives.widget(
-        "responsibilities", AjaxSelectFieldWidget, vocabulary="kitconcept.intranet.vocabularies.responsibilities"
+        "responsibilities",
+        AjaxSelectFieldWidget,
+        vocabulary="kitconcept.intranet.vocabularies.responsibilities",
     )
 
     directives.omitted("responsibilities")

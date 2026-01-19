@@ -1,4 +1,3 @@
-
 from plone.app.vocabularies.terms import safe_simplevocabulary_from_values
 from Products.CMFCore.utils import getToolByName
 from zope.component.hooks import getSite

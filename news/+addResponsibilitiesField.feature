@@ -1,0 +1,1 @@
+Add docs about the Responsibilities field in Person content type. @danalvrz

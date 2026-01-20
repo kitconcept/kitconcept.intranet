@@ -1,0 +1,105 @@
+{
+  "@id": "/features/content-types/event/loc-1-ou-2-townhall-bonn",
+  "@type": "Event",
+  "UID": "cbe2caf0a2aa403192c65c4ab1fd4785",
+  "allow_discussion": null,
+  "attendees": [],
+  "blocks": {
+    "2c3a9153-428c-40cc-b335-b3ce77732b04": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "7bf21c5d-d329-4f21-9089-0f63c7042056": {
+      "@type": "eventMetadata",
+      "fixed": true,
+      "required": true
+    },
+    "9e6a74af-5f5a-4ba9-aa5a-e437ed6f15cd": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "9e6a74af-5f5a-4ba9-aa5a-e437ed6f15cd",
+      "7bf21c5d-d329-4f21-9089-0f63c7042056",
+      "2c3a9153-428c-40cc-b335-b3ce77732b04"
+    ]
+  },
+  "changeNote": "",
+  "contact_email": null,
+  "contact_name": null,
+  "contact_phone": null,
+  "contributors": [],
+  "created": "2026-01-19T13:42:43+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Standort\u00fcbergreifende Townhall mit Updates aus dem Institut, strategischen Themen und offener Fragerunde f\u00fcr Mitarbeitende in Bonn.",
+  "effective": "2026-01-19T13:42:00+00:00",
+  "enable_likes": false,
+  "end": "2026-01-19T14:00:00+00:00",
+  "event_url": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "loc-1-ou-2-townhall-bonn",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "event_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-19T13:44:13+00:00",
+  "nav_title": null,
+  "open_end": false,
+  "preview_caption_link": null,
+  "recurrence": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "start": "2026-01-19T13:00:00+00:00",
+  "subjects": [],
+  "sync_uid": null,
+  "title": "Loc-1, OU-2: Townhall Bonn",
+  "type_title": "Event",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "whole_day": false,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T13:42:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T13:42:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

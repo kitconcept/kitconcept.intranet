@@ -1,0 +1,68 @@
+{
+  "@id": "/features/content-types/news-item/global-intranet-allgemein",
+  "@type": "News Item",
+  "UID": "b69ac3e0456b4a2784477abd1b331401",
+  "allow_discussion": null,
+  "blocks": {
+    "2ca650c2-5dea-4408-8bb5-92e911e5afbb": {
+      "@type": "slate"
+    },
+    "7c5cd07b-b55b-4c03-9ecf-6124fb0a999b": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7c5cd07b-b55b-4c03-9ecf-6124fb0a999b",
+      "2ca650c2-5dea-4408-8bb5-92e911e5afbb"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-01-19T13:38:39+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Allgemeine Mitteilungen zur Nutzung des Intranets, neue Servicebereiche sowie Informationen zu Support- und Kontaktm\u00f6glichkeiten.",
+  "effective": null,
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "global-intranet-allgemein",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-19T13:38:39+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "private",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Global: Intranet Allgemein",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T13:38:39+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

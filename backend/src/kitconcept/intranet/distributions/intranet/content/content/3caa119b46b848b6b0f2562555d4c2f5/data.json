@@ -1,0 +1,75 @@
+{
+  "@id": "/features/content-types/news-item/loc-2-kantineninfo-koeln",
+  "@type": "News Item",
+  "UID": "3caa119b46b848b6b0f2562555d4c2f5",
+  "allow_discussion": null,
+  "blocks": {
+    "2003120d-ab23-47a2-854c-5d24c2ab2eb0": {
+      "@type": "title"
+    },
+    "65756746-475b-47f2-b23f-0ff785e53ada": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "2003120d-ab23-47a2-854c-5d24c2ab2eb0",
+      "65756746-475b-47f2-b23f-0ff785e53ada"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-01-19T13:37:35+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Hinweise zu ge\u00e4nderten \u00d6ffnungszeiten, Men\u00fcangeboten und Sonderregelungen der Kantine am Standort K\u00f6ln in den kommenden Wochen.",
+  "effective": "2026-01-19T13:37:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "loc-2-kantineninfo-koeln",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-19T13:39:05+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Loc-2: Kantineninfo K\u00f6ln",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T13:37:35+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T13:37:41+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

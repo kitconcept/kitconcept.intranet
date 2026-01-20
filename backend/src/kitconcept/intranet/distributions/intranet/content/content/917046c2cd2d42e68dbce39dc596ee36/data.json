@@ -1,0 +1,92 @@
+{
+  "@id": "/features/content-types/event/loc-3-ou-3-data-lunch-berlin",
+  "@type": "Event",
+  "UID": "917046c2cd2d42e68dbce39dc596ee36",
+  "allow_discussion": null,
+  "attendees": [],
+  "blocks": {
+    "0596eb32-f143-4a65-b5ed-16591e718561": {
+      "@type": "title"
+    },
+    "5743a3a6-f85f-47ed-8a39-847b4cb44bf1": {
+      "@type": "eventMetadata",
+      "fixed": true,
+      "required": true
+    },
+    "980f7d00-78ed-4780-9777-de5926dff1d9": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "0596eb32-f143-4a65-b5ed-16591e718561",
+      "5743a3a6-f85f-47ed-8a39-847b4cb44bf1",
+      "980f7d00-78ed-4780-9777-de5926dff1d9"
+    ]
+  },
+  "changeNote": "",
+  "contact_email": null,
+  "contact_name": null,
+  "contact_phone": null,
+  "contributors": [],
+  "created": "2026-01-19T13:45:09+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-01-19T13:45:00+00:00",
+  "enable_likes": false,
+  "end": "2026-01-19T14:00:00+00:00",
+  "event_url": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "loc-3-ou-3-data-lunch-berlin",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "event_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-19T13:45:17+00:00",
+  "nav_title": null,
+  "open_end": false,
+  "preview_caption_link": null,
+  "recurrence": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "start": "2026-01-19T13:00:00+00:00",
+  "subjects": [],
+  "sync_uid": null,
+  "title": "Loc-3, OU-3: Data Lunch Berlin",
+  "type_title": "Event",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "whole_day": false,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T13:45:09+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T13:45:17+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,75 @@
+{
+  "@id": "/features/content-types/news-item/loc-1-ou-1-labor-update-bonn",
+  "@type": "News Item",
+  "UID": "28db0069a6cc4909ae6e4ecbc107d2b3",
+  "allow_discussion": null,
+  "blocks": {
+    "26d88097-10b2-48a8-aa9d-61665f7704ee": {
+      "@type": "slate"
+    },
+    "31a72de8-8519-4c15-816f-5e2ab915fa44": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "31a72de8-8519-4c15-816f-5e2ab915fa44",
+      "26d88097-10b2-48a8-aa9d-61665f7704ee"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-01-19T13:12:06+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Aktualisierte Informationen zu Labor\u00f6ffnungszeiten, Sicherheitsvorgaben und Zugangsregelungen am Standort Bonn. Enth\u00e4lt Hinweise zu neuen Prozessen, Ansprechpartnern und \u00dcbergangsregelungen.",
+  "effective": "2026-01-19T13:12:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "loc-1-ou-1-labor-update-bonn",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-19T13:13:36+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Loc-1, OU-1: Labor-Update Bonn",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T13:12:07+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T13:12:18+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

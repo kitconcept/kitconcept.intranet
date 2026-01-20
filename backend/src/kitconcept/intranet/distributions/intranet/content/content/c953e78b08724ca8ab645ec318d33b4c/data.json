@@ -1,0 +1,75 @@
+{
+  "@id": "/features/content-types/news-item/loc-3-ou-3-datenplattform-berlin",
+  "@type": "News Item",
+  "UID": "c953e78b08724ca8ab645ec318d33b4c",
+  "allow_discussion": null,
+  "blocks": {
+    "9c245a56-1eef-4757-a99f-15a966345807": {
+      "@type": "slate"
+    },
+    "e757f0ac-a05b-4d46-95a6-153ea3cdd58f": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "e757f0ac-a05b-4d46-95a6-153ea3cdd58f",
+      "9c245a56-1eef-4757-a99f-15a966345807"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-01-19T13:35:34+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Informationen zu Wartungsfenstern, Funktionsupdates und bekannten Einschr\u00e4nkungen der zentralen Datenplattform f\u00fcr Mitarbeitende in Berlin.",
+  "effective": "2026-01-19T13:35:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "loc-3-ou-3-datenplattform-berlin",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-19T13:35:38+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Loc-3, OU-3: Datenplattform Berlin",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T13:35:34+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T13:35:38+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,39 +1,60 @@
 {
-  "@id": "/passive-pages/loc-2-ou-2-notfallplan-koeln",
+  "@id": "/passive-pages",
   "@type": "Document",
-  "UID": "9dd721a3887942d1a176b827fd1d39cb",
+  "UID": "25a15e1d954e4e2da65f4603cafb8c05",
   "allow_discussion": null,
   "authors": null,
   "blocks": {
-    "13007282-2e8a-424d-b98a-7deca99e85bb": {
+    "0f77febc-e814-4e3a-a31d-059517030739": {
       "@type": "title"
     },
-    "f03f4c49-b67b-412e-8090-38cc52ed487b": {
+    "7bab326a-fa7c-4930-aa3e-39c262b0672b": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "userRelevance",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "e3a9f44c-2f28-49d9-8e03-d74ec7a038fa": {
       "@type": "slate"
     }
   },
   "blocks_layout": {
     "items": [
-      "13007282-2e8a-424d-b98a-7deca99e85bb",
-      "f03f4c49-b67b-412e-8090-38cc52ed487b"
+      "0f77febc-e814-4e3a-a31d-059517030739",
+      "7bab326a-fa7c-4930-aa3e-39c262b0672b",
+      "e3a9f44c-2f28-49d9-8e03-d74ec7a038fa"
     ]
   },
   "changeNote": "",
   "contributors": [],
-  "created": "2026-01-19T14:06:55+00:00",
+  "created": "2026-01-21T12:59:44+00:00",
   "creators": [
     "admin"
   ],
-  "description": "Detaillierter Notfallplan mit Kontaktketten, Evakuierungswegen und Verhaltenshinweisen f\u00fcr den Standort K\u00f6ln.",
-  "effective": "2026-01-19T14:06:00+00:00",
+  "description": "",
+  "effective": "2026-01-21T12:59:47+00:00",
   "enable_likes": false,
-  "exclude_from_nav": false,
+  "exclude_from_nav": true,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
   "feedback_person": null,
   "head_title": null,
-  "id": "loc-2-ou-2-notfallplan-koeln",
+  "id": "passive-pages",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "document_view",
@@ -41,7 +62,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2026-01-21T13:00:04+00:00",
+  "modified": "2026-01-21T13:59:45+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
@@ -50,7 +71,7 @@
   "searchwords": [],
   "showinsearch": true,
   "subjects": [],
-  "title": "Loc-2, OU-2: Notfallplan K\u00f6ln",
+  "title": "Passive Pages",
   "type_title": "Page",
   "version": "current",
   "versioning_enabled": true,
@@ -62,14 +83,14 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2026-01-19T14:06:55+00:00"
+        "time": "2026-01-21T12:59:44+00:00"
       },
       {
         "action": "publish",
         "actor": "admin",
         "comments": "",
         "review_state": "published",
-        "time": "2026-01-19T14:06:59+00:00"
+        "time": "2026-01-21T12:59:47+00:00"
       }
     ]
   },

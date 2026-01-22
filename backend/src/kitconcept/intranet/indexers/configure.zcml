@@ -12,11 +12,5 @@
       name="organisational_unit_reference"
       />
 
-  <!-- Responsibilities indexers -->
-  <adapter
-      factory=".responsibilities.responsibilities_indexer"
-      name="responsibilities"
-      />
-
 
 </configure>

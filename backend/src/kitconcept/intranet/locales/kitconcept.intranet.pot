@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-01-19 17:53+0000\n"
+"POT-Creation-Date: 2026-01-22 09:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Academic Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:72
+#: kitconcept/intranet/behaviors/person.py:68
 msgid "Academic Title, First and Last Name"
 msgstr ""
 
@@ -364,6 +364,11 @@ msgstr ""
 msgid "help_place"
 msgstr ""
 
+#. Default: "Filter by responsibilities"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_responsibilities_filter"
+msgstr ""
+
 #. Default: "Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organizational knowledge to understand whether you are the right contact."
 #: kitconcept/intranet/behaviors/person.py:48
 msgid "help_tags"
@@ -407,6 +412,7 @@ msgstr ""
 
 #. Default: "Responsibilities"
 #: kitconcept/intranet/behaviors/person.py:47
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_responsibilities"
 msgstr ""
 
@@ -417,5 +423,5 @@ msgstr ""
 
 #. Default: "Responsibilities & Expertise"
 #: kitconcept/intranet/behaviors/person.py:39
-msgid "label_schema_responsability_categorization"
+msgid "label_schema_responsibility_categorization"
 msgstr ""

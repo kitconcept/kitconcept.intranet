@@ -35,7 +35,7 @@ export default function install(config: ConfigType) {
   });
   config.registerSlotComponent({
     name: 'ListingBlockDisclaimer',
-    slot: 'aboveListingBlockItems',
+    slot: 'aboveListingItems',
     component: ListingBlockDisclaimer,
   });
 

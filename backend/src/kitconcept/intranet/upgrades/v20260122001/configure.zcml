@@ -7,9 +7,9 @@
       source="20251218001"
       destination="20260122001"
       >
-      <genericsetup:upgradeDepends
+    <genericsetup:upgradeDepends
         title="Add Responsibilities field for Person content type."
         import_steps="catalog"
-      />
+        />
   </genericsetup:upgradeSteps>
 </configure>

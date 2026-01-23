@@ -182,11 +182,6 @@ msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
 msgid "Something went wrong while unliking this post."
 msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
 
-#. Default: "Sorted by relevance based on your location and organisational unit."
-#: slots/ListingBlockDisclaimer/ListingBlockDisclaimer
-msgid "Sorted by relevance based on your location and organisational unit."
-msgstr "Sortiert nach Relevanz basierend auf Ihrem Standort und Ihrer Organisationseinheit"
-
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
@@ -206,6 +201,11 @@ msgstr "Betreff Seite/URL"
 #: components/FeedBackForm/FeedBackForm
 msgid "Success"
 msgstr "Erfolg"
+
+#. Default: "The displayed content is tailored to your organizational unit and location."
+#: slots/ListingDisclaimer/ListingDisclaimer
+msgid "The displayed content is tailored to your organizational unit and location."
+msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und Deines Standorts zusammengestellt."
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions

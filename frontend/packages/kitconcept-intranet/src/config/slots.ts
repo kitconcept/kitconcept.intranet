@@ -4,7 +4,7 @@ import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
-import ListingBlockDisclaimer from '../slots/ListingBlockDisclaimer/ListingBlockDisclaimer';
+import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -34,9 +34,9 @@ export default function install(config: ConfigType) {
     component: FollowUsLogoAndLinks,
   });
   config.registerSlotComponent({
-    name: 'ListingBlockDisclaimer',
+    name: 'ListingDisclaimer',
     slot: 'aboveListingItems',
-    component: ListingBlockDisclaimer,
+    component: ListingDisclaimer,
   });
 
   return config;

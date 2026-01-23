@@ -3,9 +3,9 @@ import React from 'react';
 
 const messages = defineMessages({
   DisclaimerText: {
-    id: 'Sorted by relevance based on your location and organisational unit.',
+    id: 'The displayed content is tailored to your organizational unit and location.',
     defaultMessage:
-      'Sorted by relevance based on your location and organisational unit.',
+      'The displayed content is tailored to your organizational unit and location.',
   },
 });
 

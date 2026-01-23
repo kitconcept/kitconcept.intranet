@@ -8,8 +8,8 @@
       destination="20260122001"
       >
     <genericsetup:upgradeDepends
-        title="Add Responsibilities field for Person content type."
-        import_steps="catalog"
+        title="Add Responsibilities field for Person content type and update Solr configuration."
+        import_steps="plone.app.registry catalog"
         />
   </genericsetup:upgradeSteps>
 </configure>

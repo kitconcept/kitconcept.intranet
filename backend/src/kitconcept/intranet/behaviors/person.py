@@ -45,7 +45,7 @@ class IPersonBehavior(model.Schema):
         title=_("label_responsibilities", default="Responsibilities"),
         description=_(
             "help_tags",
-            default="Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organizational knowledge to understand whether you are the right contact.",
+            default="Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organisational knowledge to understand whether you are the right contact.",
         ),
         value_type=schema.TextLine(),
         required=False,

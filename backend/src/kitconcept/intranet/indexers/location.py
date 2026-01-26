@@ -23,3 +23,22 @@ def location_indexer(obj: DexterityContent) -> list[str]:
         uid = api.content.get_uuid(location)
         uids.append(uid)
     return uids
+
+
+@indexer(IDexterityContent)
+def location_label_indexer(obj: DexterityContent) -> list[str]:
+    """Indexer for location titles (for facet display)."""
+    base_obj = aq_base(obj)
+    location_reference: RelationValue | None = getattr(
+        base_obj, "location_reference", None
+    )
+    if location_reference is None:
+        # Don't store a value in the index
+        raise AttributeError
+
+    labels = []
+    for ref in location_reference:
+        location = ref.to_object
+        if location:
+            labels.append(location.Title())
+    return labels

@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20251218001"
+      destination="20260126001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add location_label and organisational_unit_label indexes and update Solr config"
+        import_steps="catalog plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

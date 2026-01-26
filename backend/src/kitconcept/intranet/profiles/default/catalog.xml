@@ -22,11 +22,23 @@
     <indexed_attr value="organisational_unit_reference" />
   </index>
 
+  <index meta_type="KeywordIndex"
+         name="organisational_unit_label"
+  >
+    <indexed_attr value="organisational_unit_label" />
+  </index>
+
 
   <index meta_type="KeywordIndex"
          name="location_reference"
   >
     <indexed_attr value="location_reference" />
+  </index>
+
+  <index meta_type="KeywordIndex"
+         name="location_label"
+  >
+    <indexed_attr value="location_label" />
   </index>
 
   <column value="contact_room" />

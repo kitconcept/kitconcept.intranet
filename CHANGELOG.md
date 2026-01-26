@@ -1,6 +1,47 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a6 (2026-01-26)
+
+### Backend
+
+
+#### Internal
+
+- Resize images in the example content. @sneridagh [#305](https://github.com/kitconcept/kitconcept.intranet/issue/305)
+- Regenerated .pot files (no string changes). @danalvrz 
+- Update to k.core 2a9:
+    https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a9 @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add and register ListingBlockDisclaimer component for targeted listings. @danalvrz 
+
+#### Bugfix
+
+- Fix repeated vocabulary request for each keystroke in a text block @Tishasoumya-02 [#306](https://github.com/kitconcept/kitconcept.intranet/issue/306)
+
+#### Internal
+
+- Fix flaky preview-image-link cypress test @Tishasoumya-02 [#304](https://github.com/kitconcept/kitconcept.intranet/issue/304)
+- Update to k.core 2a9:
+    https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a9 @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Removed coverage tests from CI. @sneridagh 
+
+
+
 ## 2.0.0a5 (2026-01-15)
 
 ### Backend

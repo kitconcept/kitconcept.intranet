@@ -93,7 +93,7 @@ constraints = [
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
     { name = "kitconcept-core", specifier = "==2.0.0a9" },
-    { name = "kitconcept-solr", specifier = "==2.0.0a8" },
+    { name = "kitconcept-solr", specifier = "==2.0.0a9" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
@@ -1381,7 +1381,7 @@ test = [
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
     { name = "kitconcept-core", specifier = "==2.0.0a9" },
-    { name = "kitconcept-solr", specifier = "==2.0.0a8" },
+    { name = "kitconcept-solr", specifier = "==2.0.0a9" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },

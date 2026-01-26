@@ -2,6 +2,16 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a6 (2026-01-26)
+
+
+### Internal
+
+- Resize images in the example content. @sneridagh [#305](https://github.com/kitconcept/kitconcept.intranet/issue/305)
+- Regenerated .pot files (no string changes). @danalvrz 
+- Update to k.core 2a9:
+    https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a9 @sneridagh 
+
 ## 2.0.0a5 (2026-01-15)
 
 

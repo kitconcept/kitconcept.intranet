@@ -1,1 +1,0 @@
-Add and register ListingBlockDisclaimer component for targeted listings. @danalvrz

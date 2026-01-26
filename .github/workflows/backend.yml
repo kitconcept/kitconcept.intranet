@@ -31,10 +31,13 @@ jobs:
       plone-version: ${{ inputs.kc-version }}
       working-directory: ${{ inputs.working-directory }}
 
-  coverage:
-    name: "Backend: Test - Coverage"
-    uses: plone/meta/.github/workflows/backend-pytest-coverage.yml@2.x
-    with:
-      python-version: ${{ inputs.python-version }}
-      plone-version: ${{ inputs.kc-version }}
-      working-directory: ${{ inputs.working-directory }}
+# Removed for now since coverage takes forever and
+# nobody really looks at the results or try to improve them.
+# https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/issues/275
+  # coverage:
+  #   name: "Backend: Test - Coverage"
+  #   uses: plone/meta/.github/workflows/backend-pytest-coverage.yml@2.x
+  #   with:
+  #     python-version: ${{ inputs.python-version }}
+  #     plone-version: ${{ inputs.kc-version }}
+  #     working-directory: ${{ inputs.working-directory }}

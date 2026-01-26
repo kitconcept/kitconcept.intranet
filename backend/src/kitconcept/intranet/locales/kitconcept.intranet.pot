@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-11-07 09:56+0000\n"
+"POT-Creation-Date: 2026-01-23 14:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Intranet Settings"
 msgstr ""
 
-#: kitconcept/intranet/services/feedback_contact_form.py:230
+#: kitconcept/intranet/services/feedback_contact_form.py:231
 msgid "Intranet feedback form: {title}"
 msgstr ""
 
@@ -181,7 +181,7 @@ msgid "List of user IDs"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:28
-#: kitconcept/intranet/behaviors/location.py:16
+#: kitconcept/intranet/behaviors/location.py:19
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
 msgstr ""
@@ -196,12 +196,12 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
-#: kitconcept/intranet/services/feedback_contact_form.py:181
+#: kitconcept/intranet/services/feedback_contact_form.py:182
 msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:35
-#: kitconcept/intranet/behaviors/organisational_unit.py:16
+#: kitconcept/intranet/behaviors/organisational_unit.py:19
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
 msgstr ""
@@ -219,11 +219,11 @@ msgstr ""
 msgid "Placeholder text for the search field."
 msgstr ""
 
-#: kitconcept/intranet/services/feedback_contact_form.py:189
+#: kitconcept/intranet/services/feedback_contact_form.py:190
 msgid "Please enter your feedback."
 msgstr ""
 
-#: kitconcept/intranet/services/feedback_contact_form.py:199
+#: kitconcept/intranet/services/feedback_contact_form.py:200
 msgid "Please enter your organisational email address."
 msgstr ""
 
@@ -340,12 +340,12 @@ msgstr ""
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr ""
 
-#: kitconcept/intranet/services/feedback_contact_form.py:252
+#: kitconcept/intranet/services/feedback_contact_form.py:253
 msgid "Your feedback on our intranet content: {title}"
 msgstr ""
 
 #. Default: "Sorry, your feedback could not be delivered."
-#: kitconcept/intranet/services/feedback_contact_form.py:274
+#: kitconcept/intranet/services/feedback_contact_form.py:275
 msgid "error_email"
 msgstr ""
 

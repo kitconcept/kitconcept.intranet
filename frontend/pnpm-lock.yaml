@@ -1716,42 +1716,24 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       react:
-        specifier: ^18.2.0
+        specifier: 18.2.0
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-google-recaptcha-v3:
         specifier: ^1.8.0
         version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      volto-subblocks:
+        specifier: ^2.1.0
+        version: 2.1.0(@plone/volto@core+packages+volto)(react@18.2.0)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
         version: 3.10.3
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.17.20
-      '@types/react':
-        specifier: ^18.3.1
-        version: 18.3.26
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.26)
-      lodash:
-        specifier: 4.17.21
-        version: 4.17.21
       release-it:
-        specifier: ^19.0.5
-        version: 19.0.5(@types/node@24.10.0)(magicast@0.3.5)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-      vitest:
-        specifier: ^3.1.2
-        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+        specifier: ^17.1.1
+        version: 17.1.1(typescript@5.9.3)
 
   packages/volto-heading-block/packages/volto-heading-block:
     dependencies:
@@ -2117,6 +2099,34 @@ importers:
       vitest:
         specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+
+  packages/volto-solr/frontend/packages/volto-solr:
+    dependencies:
+      buffer:
+        specifier: ^5.5.0
+        version: 5.7.1
+      lodash.debounce:
+        specifier: ^4.0.8
+        version: 4.0.8
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-portal:
+        specifier: 4.2.1
+        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.3
+      react-autosuggest:
+        specifier: 10.1.0
+        version: 10.1.0(react@18.2.0)
+      release-it:
+        specifier: ^17.1.1
+        version: 17.1.1(typescript@5.9.3)
 
 packages:
 
@@ -14019,6 +14029,11 @@ packages:
     peerDependencies:
       '@plone/volto': '>=16.0.0-alpha.38'
 
+  volto-subblocks@2.1.0:
+    resolution: {integrity: sha512-AlhMb+PacQRGCIY/xc7p1zr3RhN64An/+ckVQ2YOytIVOtoChMUwxxSIj5Fkz7uScgIlzL/n976QqJlIf4k0rg==}
+    peerDependencies:
+      '@plone/volto': '>=16.0.0-alpha.38'
+
   vue-template-compiler@2.7.16:
     resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
 
@@ -18995,7 +19010,7 @@ snapshots:
   '@testing-library/jest-dom@6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.14)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))':
     dependencies:
       '@adobe/css-tools': 4.4.4
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.28.4
       aria-query: 5.3.2
       chalk: 3.0.0
       css.escape: 1.5.1
@@ -19010,7 +19025,7 @@ snapshots:
   '@testing-library/jest-dom@6.4.2(@jest/globals@29.7.0)(@types/jest@29.5.14)(vitest@3.2.4)':
     dependencies:
       '@adobe/css-tools': 4.4.4
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.28.4
       aria-query: 5.3.2
       chalk: 3.0.0
       css.escape: 1.5.1
@@ -19053,7 +19068,7 @@ snapshots:
 
   '@testing-library/react@14.3.1(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.28.4
       '@testing-library/dom': 9.3.4
       '@types/react-dom': 18.3.7(@types/react@18.3.26)
       react: 18.2.0
@@ -26636,7 +26651,7 @@ snapshots:
   react-docgen@7.1.1:
     dependencies:
       '@babel/core': 7.28.5
-      '@babel/traverse': 7.28.4
+      '@babel/traverse': 7.28.5
       '@babel/types': 7.20.5
       '@types/babel__core': 7.20.5
       '@types/babel__traverse': 7.28.0
@@ -29057,15 +29072,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite-node@3.2.4(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
+  vite-node@3.2.4(@types/node@22.18.12)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+      vite: 6.4.1(@types/node@22.18.12)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@types/node'
+      - jiti
       - less
       - lightningcss
       - sass
@@ -29074,16 +29090,19 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+      - tsx
+      - yaml
 
-  vite-node@3.2.4(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0):
+  vite-node@3.2.4(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0)(yaml@2.8.1):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 5.4.21(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0)
+      vite: 6.4.1(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@types/node'
+      - jiti
       - less
       - lightningcss
       - sass
@@ -29092,16 +29111,19 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+      - tsx
+      - yaml
 
-  vite-node@3.2.4(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
+  vite-node@3.2.4(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 5.4.21(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+      vite: 6.4.1(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@types/node'
+      - jiti
       - less
       - lightningcss
       - sass
@@ -29110,6 +29132,8 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+      - tsx
+      - yaml
 
   vite-plugin-svgr@4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@6.4.1(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)):
     dependencies:
@@ -29132,32 +29156,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
-
-  vite@5.4.21(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
-    dependencies:
-      esbuild: 0.21.5
-      postcss: 8.5.6
-      rollup: 4.52.5
-    optionalDependencies:
-      '@types/node': 22.18.12
-      fsevents: 2.3.3
-      less: 3.11.1
-      lightningcss: 1.30.2
-      sass: 1.93.2
-      terser: 5.44.0
-
-  vite@5.4.21(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0):
-    dependencies:
-      esbuild: 0.21.5
-      postcss: 8.5.6
-      rollup: 4.52.5
-    optionalDependencies:
-      '@types/node': 24.10.0
-      fsevents: 2.3.3
-      less: 3.11.1
-      lightningcss: 1.30.2
-      sass: 1.58.0
-      terser: 5.44.0
 
   vite@5.4.21(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0):
     dependencies:
@@ -29333,7 +29331,7 @@ snapshots:
       tinypool: 1.1.1
       tinyrainbow: 2.0.0
       vite: 6.4.1(@types/node@22.18.12)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
-      vite-node: 3.2.4(@types/node@22.18.12)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+      vite-node: 3.2.4(@types/node@22.18.12)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/debug': 4.1.12
@@ -29376,7 +29374,7 @@ snapshots:
       tinypool: 1.1.1
       tinyrainbow: 2.0.0
       vite: 6.4.1(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0)(yaml@2.8.1)
-      vite-node: 3.2.4(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0)
+      vite-node: 3.2.4(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.0)(yaml@2.8.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/debug': 4.1.12
@@ -29420,7 +29418,7 @@ snapshots:
       tinypool: 1.1.1
       tinyrainbow: 2.0.0
       vite: 6.4.1(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
-      vite-node: 3.2.4(@types/node@24.10.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+      vite-node: 3.2.4(@types/node@24.10.0)(jiti@2.6.1)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/debug': 4.1.12
@@ -29444,6 +29442,14 @@ snapshots:
     dependencies:
       '@plone/volto': link:core/packages/volto
       rss-parser: 3.7.5
+
+  volto-subblocks@2.1.0(@plone/volto@core+packages+volto)(react@18.2.0):
+    dependencies:
+      '@plone/volto': link:core/packages/volto
+      react-dnd: 5.0.0(react@18.2.0)
+      react-dnd-html5-backend: 5.0.1
+    transitivePeerDependencies:
+      - react
 
   vue-template-compiler@2.7.16:
     dependencies:

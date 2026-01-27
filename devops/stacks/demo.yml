@@ -92,7 +92,9 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      - nw-internal
+      nw-internal:
+        aliases:
+          - ${STACK_NAME}-tika
 
   solr:
     image: ghcr.io/kitconcept/solr:latest
@@ -110,9 +112,7 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      nw-internal:
-        aliases:
-          - ${STACK_NAME}-tika
+      - nw-internal
 
   # The solr-reindex service is scaled to 1 after a successful deployment.
   solr-reindex:

@@ -107,7 +107,7 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      public:
+      nw-internal:
         aliases:
           - ${STACK_NAME}-tika
 
@@ -127,7 +127,7 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      - public
+      - nw-internal
 
 volumes:
   vol-site-data:
@@ -139,6 +139,7 @@ volumes:
 networks:
   public:
     external: true
+
   nw-internal:
     internal: true
     driver: overlay

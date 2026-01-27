@@ -36,7 +36,7 @@ describe('Preview Image Link Tests', () => {
     cy.wait('@getImage');
     cy.wait('@content');
 
-    cy.navigate('/document/edit');
+    cy.get("#toolbar-body a[aria-label='Edit']").click();
     cy.url().should('include', '/document/edit');
     cy.wait('@schema');
 
@@ -61,7 +61,7 @@ describe('Preview Image Link Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@content');
 
-    cy.navigate('/document/edit');
+    cy.get("#toolbar-body a[aria-label='Edit']").click();
     cy.url().should('include', '/document/edit');
     cy.wait('@schema');
     cy.get('#metadataform-fieldset-preview_image').within(() => {

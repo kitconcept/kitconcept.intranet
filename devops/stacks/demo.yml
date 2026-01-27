@@ -110,7 +110,9 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      - nw-internal
+      nw-internal:
+        aliases:
+          - ${STACK_NAME}-tika
 
   # The solr-reindex service is scaled to 1 after a successful deployment.
   solr-reindex:

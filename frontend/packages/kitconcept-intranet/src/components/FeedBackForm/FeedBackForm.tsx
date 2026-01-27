@@ -68,8 +68,8 @@ const messages = defineMessages({
     defaultMessage: 'Please fill in the Feedback field',
   },
   emailError: {
-    id: 'Please enter your Organizational email address.',
-    defaultMessage: 'Please enter your Organizational email address.',
+    id: 'Please enter your Organisational email address.',
+    defaultMessage: 'Please enter your Organisational email address.',
   },
   emailHelpText: {
     id: 'Only internal e-mail addresses are permitted.',

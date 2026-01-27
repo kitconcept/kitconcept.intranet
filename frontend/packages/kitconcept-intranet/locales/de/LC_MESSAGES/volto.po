@@ -129,6 +129,11 @@ msgstr "Name"
 msgid "Only internal e-mail addresses are permitted."
 msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 
+#. Default: "Organisational Unit"
+#: index
+msgid "Organisational Unit"
+msgstr "Organisationseinheit"
+
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 #: components/Summary/PersonSummary
@@ -136,15 +141,20 @@ msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 msgid "Phone"
 msgstr "Telefonnummer"
 
-#. Default: "Please enter your Organizational email address."
+#. Default: "Please enter your Organisational email address."
 #: components/FeedBackForm/FeedBackForm
-msgid "Please enter your Organizational email address."
+msgid "Please enter your Organisational email address."
 msgstr "Bitte geben Sie Ihre geschäftliche E-Mail-Adresse ein."
 
 #. Default: "Please fill in the Feedback field"
 #: components/FeedBackForm/FeedBackForm
 msgid "Please fill in the Feedback field"
 msgstr "Bitte füllen Sie das Feld „Feedback“ aus."
+
+#. Default: "Responsibilities"
+#: index
+msgid "Responsibilities"
+msgstr "Zuständigkeiten"
 
 #. Default: "Room"
 #: components/Summary/PersonSummary
@@ -201,6 +211,11 @@ msgstr "Betreff Seite/URL"
 #: components/FeedBackForm/FeedBackForm
 msgid "Success"
 msgstr "Erfolg"
+
+#. Default: "The displayed content is tailored to your organizational unit and location."
+#: slots/ListingDisclaimer/ListingDisclaimer
+msgid "The displayed content is tailored to your organizational unit and location."
+msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und Deines Standorts zusammengestellt."
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions

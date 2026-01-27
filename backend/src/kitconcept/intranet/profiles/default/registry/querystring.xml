@@ -45,4 +45,25 @@
     >Taxonomy</value>
   </records>
 
+  <!-- Responsibilities -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.responsibilities"
+  >
+    <value key="title"
+           i18n:translate="label_responsibilities"
+    >Responsibilities</value>
+    <value key="description"
+           i18n:translate="help_responsibilities_filter"
+    >Filter by responsibilities</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="vocabulary">kitconcept.intranet.vocabularies.responsibilities</value>
+    <value key="group"
+           i18n:translate=""
+    >Taxonomy</value>
+  </records>
+
 </registry>

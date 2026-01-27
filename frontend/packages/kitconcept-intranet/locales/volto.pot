@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-11-04T12:58:24.980Z\n"
+"POT-Creation-Date: 2026-01-23T14:38:56.135Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -131,6 +131,11 @@ msgstr ""
 msgid "Only internal e-mail addresses are permitted."
 msgstr ""
 
+#. Default: "Organisational Unit"
+#: index
+msgid "Organisational Unit"
+msgstr ""
+
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 #: components/Summary/PersonSummary
@@ -138,14 +143,19 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#. Default: "Please enter your Organizational email address."
+#. Default: "Please enter your Organisational email address."
 #: components/FeedBackForm/FeedBackForm
-msgid "Please enter your Organizational email address."
+msgid "Please enter your Organisational email address."
 msgstr ""
 
 #. Default: "Please fill in the Feedback field"
 #: components/FeedBackForm/FeedBackForm
 msgid "Please fill in the Feedback field"
+msgstr ""
+
+#. Default: "Responsibilities"
+#: index
+msgid "Responsibilities"
 msgstr ""
 
 #. Default: "Room"
@@ -202,6 +212,11 @@ msgstr ""
 #. Default: "Success"
 #: components/FeedBackForm/FeedBackForm
 msgid "Success"
+msgstr ""
+
+#. Default: "The displayed content is tailored to your organizational unit and location."
+#: slots/ListingDisclaimer/ListingDisclaimer
+msgid "The displayed content is tailored to your organizational unit and location."
 msgstr ""
 
 #. Default: "To submit a Like you must be logged in"

@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20251218001"
+      destination="20260122001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add Responsibilities field for Person content type and update Solr configuration."
+        import_steps="plone.app.registry catalog"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

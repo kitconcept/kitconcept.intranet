@@ -33,7 +33,9 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": ["News Item"]
+            "v": [
+              "News Item"
+            ]
           },
           {
             "i": "path",
@@ -56,7 +58,9 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": ["Document"]
+            "v": [
+              "Document"
+            ]
           },
           {
             "i": "path",
@@ -78,7 +82,9 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": ["News Item"]
+            "v": [
+              "News Item"
+            ]
           },
           {
             "i": "path",
@@ -120,7 +126,9 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": ["Document"]
+            "v": [
+              "Document"
+            ]
           },
           {
             "i": "path",
@@ -152,9 +160,11 @@
   "changeNote": "",
   "contributors": [],
   "created": "2025-12-10T12:04:16+00:00",
-  "creators": ["admin"],
+  "creators": [
+    "admin"
+  ],
   "description": "",
-  "effective": "2025-12-10T12:44:56+00:00",
+  "effective": "2025-12-10T12:44:00+00:00",
   "enable_likes": false,
   "exclude_from_nav": false,
   "expires": null,

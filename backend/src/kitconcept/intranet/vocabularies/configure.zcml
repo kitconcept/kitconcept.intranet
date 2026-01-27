@@ -30,4 +30,10 @@
       component=".organisational_unit.organisational_unit_vocabulary"
       />
 
+  <utility
+      name="kitconcept.intranet.vocabularies.responsibilities"
+      component=".responsibilities.ResponsibilitiesVocabularyFactory"
+      />
+
+
 </configure>

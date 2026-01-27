@@ -34,11 +34,11 @@ msgstr ""
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Uma distribuição Plone para Intranets com Plone. Criada pela kitconcept."
 
-#: kitconcept/intranet/behaviors/person.py:17
+#: kitconcept/intranet/behaviors/person.py:19
 msgid "Academic Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:37
+#: kitconcept/intranet/behaviors/person.py:66
 msgid "Academic Title, First and Last Name"
 msgstr ""
 
@@ -71,7 +71,7 @@ msgstr "Só pode ser visto e editado pelo proprietário."
 msgid "Default Feedback Email"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:28
+#: kitconcept/intranet/behaviors/person.py:30
 msgid "Department"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Intranet-specific Person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:23
+#: kitconcept/intranet/behaviors/person.py:25
 msgid "Job Title"
 msgstr ""
 
@@ -361,6 +361,16 @@ msgstr ""
 msgid "help_place"
 msgstr "Filtrar por localização"
 
+#. Default: "Filter by responsibilities"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_responsibilities_filter"
+msgstr ""
+
+#. Default: "Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organizational knowledge to understand whether you are the right contact."
+#: kitconcept/intranet/behaviors/person.py:46
+msgid "help_tags"
+msgstr ""
+
 #: kitconcept/intranet/distributions.zcml:17
 msgid "kitconcept Intranet"
 msgstr "kitconcept Intranet"
@@ -397,7 +407,18 @@ msgstr "Área"
 msgid "label_place"
 msgstr "Localização"
 
+#. Default: "Responsibilities"
+#: kitconcept/intranet/behaviors/person.py:45
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_responsibilities"
+msgstr ""
+
 #. Default: "Content Owner:"
 #: kitconcept/intranet/behaviors/clm.py:32
 msgid "label_responsible"
+msgstr ""
+
+#. Default: "Responsibilities & Expertise"
+#: kitconcept/intranet/behaviors/person.py:37
+msgid "label_schema_responsibility_categorization"
 msgstr ""

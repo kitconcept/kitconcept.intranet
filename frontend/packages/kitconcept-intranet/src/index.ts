@@ -12,6 +12,15 @@ defineMessages({
     id: 'List with date',
     defaultMessage: 'List with date',
   },
+  // Solr facet labels
+  organisationalUnit: {
+    id: 'Organisational Unit',
+    defaultMessage: 'Organisational Unit',
+  },
+  responsibilities: {
+    id: 'Responsibilities',
+    defaultMessage: 'Responsibilities',
+  },
 });
 
 declare module '@plone/types' {

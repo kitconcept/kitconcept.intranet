@@ -1,5 +1,7 @@
 from collective.person.interfaces import IPersonTitle
 from kitconcept.intranet import _
+from plone.app.z3cform.widgets.select import AjaxSelectFieldWidget
+from plone.autoform import directives
 from plone.autoform.directives import order_before
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
@@ -27,6 +29,33 @@ class IPersonBehavior(model.Schema):
     department = schema.Text(
         title=_("Department"),
         required=False,
+    )
+
+    # responsibilities fieldset
+    model.fieldset(
+        "responsibility_categorization",
+        label=_(
+            "label_schema_responsibility_categorization",
+            default="Responsibilities & Expertise",
+        ),
+        fields=["responsibilities"],
+    )
+
+    responsibilities = schema.Tuple(
+        title=_("label_responsibilities", default="Responsibilities"),
+        description=_(
+            "help_tags",
+            default="Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organisational knowledge to understand whether you are the right contact.",
+        ),
+        value_type=schema.TextLine(),
+        required=False,
+        default=(),
+        missing_value=(),
+    )
+    directives.widget(
+        "responsibilities",
+        AjaxSelectFieldWidget,
+        vocabulary="kitconcept.intranet.vocabularies.responsibilities",
     )
 
 

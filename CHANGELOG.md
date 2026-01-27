@@ -1,6 +1,43 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a7 (2026-01-27)
+
+### Backend
+
+
+#### Feature
+
+- Add Responsibilities field to Person content type. @danalvrz 
+
+
+#### Bugfix
+
+- Update the footer colophon text in example content. @iFlameing 
+
+
+
+### Frontend
+
+#### Feature
+
+- Configure token widget for responsibilities field on Person content type. @danalvrz 
+
+#### Bugfix
+
+- Fix flaky cypress test. @iFlameing 
+
+
+
+### Project
+
+
+#### Feature
+
+- Add docs about the Responsibilities field in Person content type. @danalvrz 
+
+
+
 ## 2.0.0a6 (2026-01-26)
 
 ### Backend

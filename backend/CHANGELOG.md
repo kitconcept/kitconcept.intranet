@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a7 (2026-01-27)
+
+
+### Feature
+
+- Add Responsibilities field to Person content type. @danalvrz 
+
+
+### Bugfix
+
+- Update the footer colophon text in example content. @iFlameing 
+
 ## 2.0.0a6 (2026-01-26)
 
 

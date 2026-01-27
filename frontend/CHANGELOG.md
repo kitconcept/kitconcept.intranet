@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.7 (2026-01-27)
+
+### Feature
+
+- Configure token widget for responsibilities field on Person content type. @danalvrz 
+
+### Bugfix
+
+- Fix flaky cypress test. @iFlameing 
+
 ## 2.0.0-alpha.6 (2026-01-26)
 
 ### Feature

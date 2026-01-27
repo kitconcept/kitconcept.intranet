@@ -107,9 +107,7 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      public:
-        aliases:
-          - ${STACK_NAME}-tika
+      - nw-internal
 
   solr:
     image: ghcr.io/kitconcept/solr:latest
@@ -127,7 +125,7 @@ services:
           - node.labels.type == app
           - node.labels.env == production
     networks:
-      - public
+      - nw-internal
 
 volumes:
   vol-site-data:
@@ -139,6 +137,7 @@ volumes:
 networks:
   public:
     external: true
+
   nw-internal:
     internal: true
     driver: overlay

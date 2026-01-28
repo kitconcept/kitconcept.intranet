@@ -1,0 +1,92 @@
+{
+  "@id": "/termine/global-betriebsversammlung",
+  "@type": "Event",
+  "UID": "0438cfa88449490aad3b7378866c3e13",
+  "allow_discussion": null,
+  "attendees": [],
+  "blocks": {
+    "03d3f9e5-e74f-4e98-86cf-0d0679747d16": {
+      "@type": "title"
+    },
+    "0d6af074-44f1-410b-b5ad-cd8cada20bb8": {
+      "@type": "eventMetadata",
+      "fixed": true,
+      "required": true
+    },
+    "cbc0308f-faa7-447e-9dea-c13b63032a13": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "03d3f9e5-e74f-4e98-86cf-0d0679747d16",
+      "0d6af074-44f1-410b-b5ad-cd8cada20bb8",
+      "cbc0308f-faa7-447e-9dea-c13b63032a13"
+    ]
+  },
+  "changeNote": "",
+  "contact_email": null,
+  "contact_name": null,
+  "contact_phone": null,
+  "contributors": [],
+  "created": "2026-01-19T14:03:11+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Zentrale Betriebsversammlung mit Beitr\u00e4gen der Leitung, aktuellen Entwicklungen und M\u00f6glichkeit zur anonymen Fragerstellung.",
+  "effective": "2026-01-19T14:03:00+00:00",
+  "enable_likes": false,
+  "end": "2026-01-19T15:00:00+00:00",
+  "event_url": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "global-betriebsversammlung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "event_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-21T12:57:38+00:00",
+  "nav_title": null,
+  "open_end": false,
+  "preview_caption_link": null,
+  "recurrence": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "start": "2026-01-19T14:00:00+00:00",
+  "subjects": [],
+  "sync_uid": null,
+  "title": "Global: Betriebsversammlung",
+  "type_title": "Event",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "whole_day": false,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T14:03:11+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T14:03:14+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -17,6 +17,9 @@
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
             "v": [
+              "Document",
+              "Event",
+              "File",
               "News Item"
             ]
           }
@@ -46,7 +49,7 @@
     "admin"
   ],
   "description": "",
-  "effective": "2026-01-21T12:59:47+00:00",
+  "effective": "2026-01-21T12:59:00+00:00",
   "enable_likes": false,
   "exclude_from_nav": true,
   "expires": null,
@@ -62,7 +65,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2026-01-21T13:59:45+00:00",
+  "modified": "2026-01-28T10:52:38+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,

@@ -1,6 +1,34 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b25 (2026-01-29)
+
+### Backend
+
+
+#### Feature
+
+- Mobile Sticky Menu.
+  See also: https://github.com/kitconcept/volto-light-theme/releases/tag/7.7.0 @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Mobile Sticky Menu.
+  See also: https://github.com/kitconcept/volto-light-theme/releases/tag/7.7.0 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b24 (2026-01-15)
 
 ### Backend

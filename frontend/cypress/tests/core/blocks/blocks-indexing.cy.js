@@ -22,8 +22,7 @@ describe('Block Indexing Tests', () => {
     cy.get('#toolbar-save').click();
 
     // WHEN: I search for Avram
-    cy.get('.navigation-desktop button').findByLabelText('Search').click();
-    cy.get('.navigation-desktop input[name="SearchableText"]')
+    cy.get('.navigation-desktop input[placeholder="Search Site"]')
       .should('not.be.disabled')
       .clear()
       .type('Avram{enter}');

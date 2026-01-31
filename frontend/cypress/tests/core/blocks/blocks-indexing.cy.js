@@ -23,7 +23,8 @@ describe('Block Indexing Tests', () => {
 
     cy.visit('/my-page');
     // WHEN: I search for Avram
-    cy.get('.header-intranet  .searchbox input[title="Search"]')
+    cy.get('.navigation-desktop button').findByLabelText('Search').click();
+    cy.get('.navigation-desktop input[name="SearchableText"]')
       .should('not.be.disabled')
       .type('Avram{enter}');
 

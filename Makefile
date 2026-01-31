@@ -220,7 +220,7 @@ solr-start-and-rebuild: ## Start solr, force rebuild
 .PHONY: solr-stop
 solr-stop: ## Stop solr
 	@echo "Stop solr"
-	$(COMPOSE_DEV) down solr
+	$(COMPOSE_DEV) down solr tika
 
 .PHONY: solr-logs
 solr-logs: ## Show solr logs

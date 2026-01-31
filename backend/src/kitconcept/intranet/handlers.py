@@ -109,6 +109,9 @@ def post_handler(
     site.title = title
     site.description = description
 
+    # Make sure intranet header is used even if we didn't import content
+    site.has_intranet_header = True
+
     # Update registry
     utils.update_registry(registry_data)
     # Configure authentication

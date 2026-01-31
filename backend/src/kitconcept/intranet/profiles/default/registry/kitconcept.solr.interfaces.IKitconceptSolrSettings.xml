@@ -28,6 +28,11 @@
       "organisational_unit_reference",
       "location_reference"
       ],
+      "highlightingFields": [
+        {"field": "content", "prop": "highlighting"},
+        {"field": "Title", "prop": "highlighting_title"},
+        {"field": "Description", "prop": "highlighting_description"}
+      ],
       "searchTabs": [
       {
       "label": "All",

@@ -41,7 +41,7 @@ context('Blocks Acceptance Tests', () => {
       },
       path: '/document',
     });
-    cy.visit('/document/edit');
+    cy.navigate('/document/edit');
     cy.wait('@schema');
 
     // WHEN I create a Teaser block
@@ -182,7 +182,7 @@ context('Blocks Acceptance Tests', () => {
       },
       path: '/document',
     });
-    cy.visit('/document/edit');
+    cy.navigate('/document/edit');
     cy.wait('@schema');
 
     // WHEN I create a Teaser block

@@ -41,7 +41,7 @@ context('Blocks Acceptance Tests', () => {
       },
       path: '/document',
     });
-    cy.visit('/document/edit');
+    cy.navigate('/document/edit');
     cy.wait('@schema');
 
     // WHEN I create a Teaser block
@@ -133,7 +133,7 @@ context('Blocks Acceptance Tests', () => {
       },
       path: '/document',
     });
-    cy.visit('/document/edit');
+    cy.navigate('/document/edit');
     // WHEN I create a Teaser block and change the data of the referenced object
     cy.addNewBlock('teaser');
     cy.get(
@@ -148,9 +148,8 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.block.teaser .card-summary h2').contains(
       'Blue Orchids and Tulips',
     );
-
-    cy.visit('/document/blue-orchids/edit');
-    cy.get('.documentFirstHeading').type(' but no Tulips');
+    cy.navigate('/document/blue-orchids/edit');
+    cy.get('.title .documentFirstHeading').type(' but no Tulips');
     cy.get('#toolbar-save').click();
     cy.visit('/document/blue-orchids');
     cy.get('.documentFirstHeading').contains('Blue Orchids but no Tulips');

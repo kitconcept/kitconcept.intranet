@@ -22,9 +22,8 @@ describe('Block Indexing Tests', () => {
     cy.get('#toolbar-save').click();
 
     // WHEN: I search for Avram
-    cy.get('.header-intranet input[title="Search"]')
+    cy.get('.header-intranet .searchbox input[title="Search"]')
       .should('not.be.disabled')
-      .click()
       .clear()
       .type('Avram{enter}');
 

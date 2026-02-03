@@ -148,9 +148,8 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.block.teaser .card-summary h2').contains(
       'Blue Orchids and Tulips',
     );
-
     cy.navigate('/document/blue-orchids/edit');
-    cy.get('.documentFirstHeading').type(' but no Tulips');
+    cy.get('.title .documentFirstHeading').type(' but no Tulips');
     cy.get('#toolbar-save').click();
     cy.visit('/document/blue-orchids');
     cy.get('.documentFirstHeading').contains('Blue Orchids but no Tulips');

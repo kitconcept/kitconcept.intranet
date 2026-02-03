@@ -24,6 +24,7 @@ describe('Block Indexing Tests', () => {
     // WHEN: I search for Avram
     cy.get('.header-intranet input[title="Search"]')
       .should('not.be.disabled')
+      .click()
       .clear()
       .type('Avram{enter}');
 

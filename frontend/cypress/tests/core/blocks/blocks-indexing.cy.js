@@ -20,11 +20,10 @@ describe('Block Indexing Tests', () => {
       'Noam Avram Chomsky',
     );
     cy.get('#toolbar-save').click();
-
+    cy.wait('@content');
     // WHEN: I search for Avram
-    cy.get('.header-intranet .searchbox input[title="Search"]')
+    cy.get('.header-intranet .search-wrapper .searchbox input[title="Search"]')
       .should('not.be.disabled')
-      .click()
       .clear()
       .type('Avram{enter}');
 

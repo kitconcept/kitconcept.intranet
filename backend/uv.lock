@@ -1380,7 +1380,7 @@ test = [
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
     { name = "kitconcept-core", specifier = "==2.0.0a9" },
-    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&rev=fhnw-features-e5ac96d" },
+    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&rev=fhnw-features-7676fac" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1421,7 +1421,7 @@ test = [
 [[package]]
 name = "kitconcept-solr"
 version = "2.0.0a9"
-source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&rev=fhnw-features-e5ac96d#e5ac96d9caf562ad3bcc286c900265eba16718c7" }
+source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&rev=fhnw-features-7676fac#7676facc1d8983b89f9722baf77734f07ff5afa8" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },

@@ -110,8 +110,7 @@ def post_handler(
     site.description = description
 
     # Make sure intranet header is used even if we didn't import content
-    # (Commented out because it broke acceptance tests with hydration errors)
-    # site.has_intranet_header = True
+    site.has_intranet_header = True
 
     # Update registry
     utils.update_registry(registry_data)

@@ -129,6 +129,7 @@ class View extends Component {
     this.setState({ isClient: true });
   }
 
+  //re-visit
   componentDidUpdate(prevProps) {
     const prevReturnUrl = qs.parse(prevProps.location.search).return_to;
     const currentReturnUrl = qs.parse(this.props.location.search).return_to;

@@ -53,8 +53,9 @@ describe('Blocks Enter Key Tests - Special Cases', () => {
     cy.wait(500);
 
     cy.focused().type('{enter}');
-    // Now we can see two slate editor
-    cy.get('.block-editor-slate').should('have.length', 2);
+
+    // Now we can see two introduction editor
+    cy.get('.block-editor-introduction').should('have.length', 2);
   });
 
   it('Pressing Enter on a focused Highlight block opens Slate editor or block chooser', () => {

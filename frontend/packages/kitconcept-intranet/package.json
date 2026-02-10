@@ -63,7 +63,8 @@
     "@kitconcept/volto-light-theme",
     "@kitconcept/core",
     "@plone-collective/volto-authomatic",
-    "@kitconcept/volto-solr"
+    "@kitconcept/volto-solr",
+    "@kitconcept/volto-contact-block"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^10.4.6",
@@ -83,6 +84,7 @@
     "@kitconcept/volto-solr": "2.0.0-alpha.9",
     "@kitconcept/volto-iframe-block": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
+    "@kitconcept/volto-contact-block": "workspace:*",
     "@plone/components": "workspace:*",
     "@plone/volto-form-block": "^1.0.0-alpha.0",
     "classnames": "2.5.1",

@@ -1,0 +1,298 @@
+{
+  "@id": "/features/block/block-contactlist",
+  "@type": "Document",
+  "UID": "1c5606e465654ec7adf1a478635ee756",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "065cc41f-c3e7-4457-8d6b-8c367183ae3b": {
+      "@type": "contactList",
+      "hrefList": []
+    },
+    "12cd4104-911f-4e33-b02a-0860b63c0de7": {
+      "@type": "title"
+    },
+    "16b16c66-bc26-456e-b212-15310a6057a0": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": "left",
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": true
+      },
+      "theme": "default"
+    },
+    "1d9bdad8-af13-4207-a599-07cdbaa19121": {
+      "@type": "contactList",
+      "hrefList": [
+        {
+          "@id": "14d4c5db-4dcd-4788-81c6-0acd4723946d",
+          "href": [
+            {
+              "@id": "../../../resolveuid/bd745550cae741bf9932d2fd362b5bbf",
+              "contact_building": "B33",
+              "contact_email": "miriam.engelhardt@example.com",
+              "contact_phone": "+49 151 23456789",
+              "contact_room": "R921",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Miriam",
+              "has_email": true,
+              "job_title": "Wissenschaftliche Mitarbeiterin \u2013 Umweltanalytik",
+              "last_name": "Engelhardt",
+              "office_phone": "+49 30 1234567",
+              "title": "Dr. Miriam Engelhardt"
+            }
+          ]
+        },
+        {
+          "@id": "d3d497b9-26f6-401e-a482-6a2729a7e407",
+          "href": [
+            {
+              "@id": "../../../resolveuid/37d87d573b4448369afb431a0eb1f728",
+              "contact_building": "B34",
+              "contact_email": "sophie.lehner@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R985",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Sophie",
+              "has_email": true,
+              "job_title": "Referentin \u2013 Risikobewertung und Strahlenschutz",
+              "last_name": "Lehner",
+              "office_phone": null,
+              "title": "Dr. Sophie Lehner"
+            }
+          ]
+        },
+        {
+          "@id": "b851a1fd-675a-499b-a425-60411bacd070",
+          "href": [
+            {
+              "@id": "../../../resolveuid/4de23606a34b4db284c6125a94ca1c41",
+              "contact_building": "B32",
+              "contact_email": "jonas.seidel@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R875",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Jonas",
+              "has_email": true,
+              "job_title": "Sachbearbeiter \u2013 Personalentwicklung",
+              "last_name": "Seidel, B.A.",
+              "office_phone": null,
+              "title": "Jonas Seidel, B.A."
+            }
+          ]
+        },
+        {
+          "@id": "9659c8b7-88d0-4f0f-be97-91392cd7528e",
+          "href": [
+            {
+              "@id": "../../../resolveuid/1cdfd0c5a337469f8c41ade1fba5274d",
+              "contact_building": "B32",
+              "contact_email": "ayla.demir@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R943",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Ayla",
+              "has_email": true,
+              "job_title": "Projektkoordinatorin \u2013 Internationale Zusammenarbeit",
+              "last_name": "Demir",
+              "office_phone": null,
+              "title": "Dr. Ayla Demir"
+            }
+          ]
+        }
+      ],
+      "styles": {},
+      "theme": "default"
+    },
+    "80261dfd-5de8-41d0-9875-61b78c29e215": {
+      "@type": "introduction",
+      "plaintext": "Contact on Grey Background",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Contact on Grey Background"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b8da7574-bc37-4aba-a805-2278dc747836": {
+      "@type": "slate"
+    },
+    "d51b0b53-3de5-4d11-84ae-aa33d72d5aea": {
+      "@type": "introduction",
+      "plaintext": "Contact on White Background",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Contact on White Background"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "efe68ffd-edc0-48bb-af43-51a4b54c6c69": {
+      "@type": "contactList",
+      "hrefList": [
+        {
+          "@id": "c652f18c-741b-4ae2-81d9-54244c7435ed",
+          "href": [
+            {
+              "@id": "../../../resolveuid/bd745550cae741bf9932d2fd362b5bbf",
+              "contact_building": "B33",
+              "contact_email": "miriam.engelhardt@example.com",
+              "contact_phone": "+49 151 23456789",
+              "contact_room": "R921",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Miriam",
+              "has_email": true,
+              "job_title": "Wissenschaftliche Mitarbeiterin \u2013 Umweltanalytik",
+              "last_name": "Engelhardt",
+              "office_phone": "+49 30 1234567",
+              "title": "Dr. Miriam Engelhardt"
+            }
+          ]
+        },
+        {
+          "@id": "456216ce-7cbc-4663-9db9-5449d40ed91b",
+          "href": [
+            {
+              "@id": "../../../resolveuid/29619a2394d7421980fabaa99b742eda",
+              "contact_building": "b243",
+              "contact_email": "lukas.brandt@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R18",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Lukas",
+              "has_email": true,
+              "job_title": "IT-Systemarchitekt \u2013 Rechenzentrum",
+              "last_name": "Brandt, M.Sc.",
+              "office_phone": null,
+              "title": "Lukas Brandt, M.Sc."
+            }
+          ]
+        },
+        {
+          "@id": "7acb75ae-c747-4ca3-99c4-8d04d9a7969a",
+          "href": [
+            {
+              "@id": "../../../resolveuid/37d87d573b4448369afb431a0eb1f728",
+              "contact_building": "B34",
+              "contact_email": "sophie.lehner@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R985",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Sophie",
+              "has_email": true,
+              "job_title": "Referentin \u2013 Risikobewertung und Strahlenschutz",
+              "last_name": "Lehner",
+              "office_phone": null,
+              "title": "Dr. Sophie Lehner"
+            }
+          ]
+        },
+        {
+          "@id": "b8952bfc-5254-42f7-a2ef-1156c5410b1f",
+          "href": [
+            {
+              "@id": "../../../resolveuid/4de23606a34b4db284c6125a94ca1c41",
+              "contact_building": "B32",
+              "contact_email": "jonas.seidel@example.com",
+              "contact_phone": "0221 3902 323",
+              "contact_room": "R875",
+              "contact_website": "https://plone.org",
+              "description": "",
+              "first_name": "Jonas",
+              "has_email": true,
+              "job_title": "Sachbearbeiter \u2013 Personalentwicklung",
+              "last_name": "Seidel, B.A.",
+              "office_phone": null,
+              "title": "Jonas Seidel, B.A."
+            }
+          ]
+        }
+      ],
+      "styles": {},
+      "theme": "grey"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "12cd4104-911f-4e33-b02a-0860b63c0de7",
+      "16b16c66-bc26-456e-b212-15310a6057a0",
+      "d51b0b53-3de5-4d11-84ae-aa33d72d5aea",
+      "1d9bdad8-af13-4207-a599-07cdbaa19121",
+      "80261dfd-5de8-41d0-9875-61b78c29e215",
+      "efe68ffd-edc0-48bb-af43-51a4b54c6c69",
+      "b8da7574-bc37-4aba-a805-2278dc747836",
+      "065cc41f-c3e7-4457-8d6b-8c367183ae3b"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-02-05T10:30:23+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "block-contactlist",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-02-05T11:16:12+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Contact List",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-02-05T10:30:23+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

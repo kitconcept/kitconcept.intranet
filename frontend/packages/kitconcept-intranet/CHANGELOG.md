@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.26 (2026-02-11)
+
+### Internal
+
+- Fixed a misleading translation (de). @jnptk 
+
 ## 1.0.0-beta.25 (2026-01-29)
 
 ### Feature

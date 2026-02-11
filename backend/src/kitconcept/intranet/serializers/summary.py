@@ -9,4 +9,5 @@ class JSONSummarySerializerMetadata:
     def default_metadata_fields(self):
         return {
             "job_title",
+            "getRemoteUrl"
         }

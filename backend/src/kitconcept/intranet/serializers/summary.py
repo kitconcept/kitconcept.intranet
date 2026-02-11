@@ -7,6 +7,4 @@ class JSONSummarySerializerMetadata:
     """Add additional catalog metadata to serialized items"""
 
     def default_metadata_fields(self):
-        return {
-            "job_title",
-        }
+        return {"job_title", "getRemoteUrl"}

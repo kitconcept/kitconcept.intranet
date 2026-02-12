@@ -1,6 +1,32 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b26 (2026-02-11)
+
+### Backend
+
+
+#### Bugfix
+
+- add getRemoteUrl to summary indexer @jackahl [#266](https://github.com/kitconcept/kitconcept.intranet/issue/266)
+
+
+
+### Frontend
+
+#### Internal
+
+- Fixed a misleading translation (de). @jnptk 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b25 (2026-01-29)
 
 ### Backend

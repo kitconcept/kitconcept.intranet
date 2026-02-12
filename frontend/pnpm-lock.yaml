@@ -1471,6 +1471,40 @@ importers:
         specifier: ^19.0.2
         version: 19.0.5(@types/node@22.18.12)(magicast@0.3.5)
 
+  packages/volto-calendar-block/packages/volto-calendar-block:
+    dependencies:
+      '@kitconcept/volto-light-theme':
+        specifier: workspace:*
+        version: link:../../../volto-light-theme/frontend/packages/volto-light-theme
+      '@plone/components':
+        specifier: workspace:^
+        version: link:../../../../core/packages/components
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-aria-components:
+        specifier: ^1.13.0
+        version: 1.14.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/registry':
+        specifier: workspace:*
+        version: link:../../../../core/packages/registry
+      '@plone/scripts':
+        specifier: workspace:*
+        version: link:../../../../core/packages/scripts
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../core/packages/types
+      release-it:
+        specifier: ^19.0.5
+        version: 19.0.6(@types/node@22.18.12)(magicast@0.3.5)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@22.18.12)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)
+
   packages/volto-carousel-block/packages/volto-carousel-block:
     dependencies:
       '@kitconcept/volto-bm3-compat':
@@ -12382,7 +12416,6 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     deprecated: |-
       You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
-
       (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   qified@0.5.1:

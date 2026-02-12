@@ -35,6 +35,9 @@ const messages = defineMessages({
 // (which provides the SolrSearchAutosuggest widget)
 const FallbackInput = (props) => <Input {...props} />;
 
+const toBase64Unicode = (value) =>
+  btoa(String.fromCharCode(...new TextEncoder().encode(value)));
+
 /**
  * IntranetSearchWidget component class.
  * @class IntranetSearchWidget
@@ -55,7 +58,7 @@ class IntranetSearchWidget extends Component {
    * Constructor
    * @method constructor
    * @param {Object} props Component properties
-   * @constructs WysiwygEditor
+   * @constructs IntranetSearchWidget
    */
   constructor(props) {
     super(props);
@@ -95,10 +98,35 @@ class IntranetSearchWidget extends Component {
 
     /* START CUSTOMIZATION */
     if (searchURL) {
-      // If searchURL contains {searchTerm}, replace it with the encoded search text
-      const externalUrl =
-        searchURL.replace('{searchTerm}', encodeURIComponent(this.state.text)) +
-        path;
+      let externalUrl;
+      if (searchURL.includes('ifs-state')) {
+        const payload = {
+          params: {
+            sFacetView: 'compact',
+            sRlViewMode: 'standard',
+            profileId: 'c2VhcmNocHJvZmlsZS1zdGFuZGFyZA==',
+            hierarchicalFacets: 'navigationTree',
+            sSearchTerm: this.state.text,
+          },
+          filter: ['++navigationTree|[Intranet]'],
+          customDateFilters: [],
+          sQueryId: 'c2VhcmNocHJvZmlsZS1zdGFuZGFyZA==',
+          searchSettings: {},
+          searchFields: {},
+          searchDomain: 'all',
+        };
+
+        // Special handling for the search if includes `ifs-state` parameter, which expects the search term in BASE64
+        const base64 = toBase64Unicode(JSON.stringify(payload));
+        externalUrl = `${searchURL}${base64}`;
+      } else {
+        // If searchURL contains {searchTerm}, replace it with the encoded search text
+        externalUrl =
+          searchURL.replace(
+            '{searchTerm}',
+            encodeURIComponent(this.state.text),
+          ) + path;
+      }
       window.open(externalUrl, '_blank', 'noopener,noreferrer');
     } else {
       /*

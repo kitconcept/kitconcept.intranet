@@ -35,5 +35,8 @@ export default function install(config: ConfigType) {
     } as apiExpandersType,
   ];
 
+  config.settings.viewableInBrowserObjects = ['File'];
+  config.settings.downloadableObjects = [];
+
   return config;
 }

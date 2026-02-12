@@ -61,7 +61,7 @@ describe('createContent Tests', () => {
     cy.get('.view-wrapper a').should(
       'have.attr',
       'href',
-      '/my-file/@@download/file',
+      '/my-file/@@display-file/file',
     );
     // cy.get('.view-wrapper a').click();
   });

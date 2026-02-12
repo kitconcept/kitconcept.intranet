@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.27 (2026-02-12)
+
+### Feature
+
+- Handle special use case using Base64 encoded params in a GET if `ifs-state` parameter is present. @sneridagh [#320](https://github.com/kitconcept/kitconcept.intranet/issue/320)
+- Open PDF links in a new tab instead of downloading (for logged out users only). @davisagli 
+
 ## 1.0.0-beta.26 (2026-02-11)
 
 ### Internal

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-01-23 14:52+0000\n"
+"POT-Creation-Date: 2026-02-12 13:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -346,6 +346,11 @@ msgstr "Ihr Feedback zu unseren Intranet-Inhalten: {title}"
 msgid "error_email"
 msgstr "Leider konnte Ihr Feedback nicht übermittelt werden."
 
+#. Default: "Matches the value(s) assigned to the currently logged-in user"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_current_user_filter"
+msgstr "Entspricht den Werten, die dem aktuell angemeldeten Benutzer zugewiesen sind."
+
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_organisational_unit"
@@ -366,7 +371,7 @@ msgstr "Nach Standort filtern"
 msgid "help_responsibilities_filter"
 msgstr ""
 
-#. Default: "Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organizational knowledge to understand whether you are the right contact."
+#. Default: "Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organisational knowledge to understand whether you are the right contact."
 #: kitconcept/intranet/behaviors/person.py:46
 msgid "help_tags"
 msgstr "Beschreiben Sie, wofür andere Sie konkret kontaktieren können. Nennen Sie Themen, Aufgaben oder Fragestellungen, für die Sie ansprechbar oder verantwortlich sind, zum Beispiel die Beratung zu bestimmten Förderprogrammen, die Begleitung von Antragsverfahren oder die Klärung formaler Anforderungen. Formulieren Sie die Angaben so, dass auch neue Kolleg:innen ohne Organisationswissen erkennen können, ob Sie die richtige Ansprechperson sind."
@@ -391,6 +396,11 @@ msgstr ""
 #: kitconcept/intranet/behaviors/clm.py:58
 msgid "label_authors"
 msgstr "Autoren"
+
+#. Default: "Current logged in user"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_current_user_filter"
+msgstr "Aktuell eingeloggter Benutzer"
 
 #. Default: "Feedback to"
 #: kitconcept/intranet/behaviors/clm.py:45

@@ -56,6 +56,11 @@ class TestRegistrySettings:
                 "plone.app.querystring.operation.selection.any",
             ),
             (
+                "plone.app.querystring.field.location_reference.operations",
+                "in",
+                "plone.app.querystring.operation.selection.currentUser",
+            ),
+            (
                 "plone.app.querystring.field.location_reference.vocabulary",
                 "in",
                 "kitconcept.intranet.vocabularies.location",
@@ -90,6 +95,11 @@ class TestRegistrySettings:
                 "plone.app.querystring.field.organisational_unit_reference.operations",
                 "in",
                 "plone.app.querystring.operation.selection.any",
+            ),
+            (
+                "plone.app.querystring.field.organisational_unit_reference.operations",
+                "in",
+                "plone.app.querystring.operation.selection.currentUser",
             ),
             (
                 "plone.app.querystring.field.organisational_unit_reference.vocabulary",

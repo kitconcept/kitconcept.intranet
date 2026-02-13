@@ -9,9 +9,7 @@ def get_current_user_person():
     user = api.user.get_current()
     if user is None:
         return None
-    brains = api.content.find(
-        type="Person", username=user.getId(), unrestricted=True
-    )
+    brains = api.content.find(type="Person", username=user.getId(), unrestricted=True)
     if len(brains) != 1:
         return None
     return brains[0]

@@ -88,7 +88,7 @@ export default function ReturnToOriginalToast() {
         toast.dismiss('returnToOrigin');
       }
     };
-  }, [location.search, location.pathname, returnToUrl]);
+  }, [location.search, location.pathname, returnToUrl, history, intl]);
 
   return null;
 }

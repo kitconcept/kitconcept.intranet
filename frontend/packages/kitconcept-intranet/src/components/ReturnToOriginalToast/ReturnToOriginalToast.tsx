@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import qs from 'query-string';
@@ -48,6 +48,7 @@ export default function ReturnToOriginalToast() {
   const returnToUrl = qs.parse(location.search).return_to as string | undefined;
   const returnToUrlRef = useRef<string | null>(null);
   const locationUrlRef = useRef(location.pathname);
+
   useEffect(() => {
     if (returnToUrl) {
       returnToUrlRef.current = returnToUrl;

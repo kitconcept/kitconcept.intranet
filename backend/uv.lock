@@ -94,7 +94,7 @@ constraints = [
     { name = "keyring", specifier = "==25.6.0" },
     { name = "kitconcept-core", specifier = "==2.0.0a9" },
     { name = "kitconcept-solr", specifier = "==2.0.0a9" },
-    { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
+    { name = "kitconcept-voltolighttheme", specifier = "==8.0.0a14" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
     { name = "lockfile", specifier = "==0.12.2" },
     { name = "lxml", specifier = "==5.4.0" },
@@ -1438,7 +1438,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "8.0.0a15"
+version = "8.0.0a14"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1447,9 +1447,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/75/73/a5d7b82d2988e186b28abcd7e850eb143e918f103ba68b6081eb63ef75c3/kitconcept_voltolighttheme-8.0.0a15.tar.gz", hash = "sha256:ba67d0ecaed54afc164e7d066201542d60f6b38df7efde153ea11a91377eff7a", size = 1365205, upload-time = "2026-02-06T15:45:15.06Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5e/f2/4a544c750a246c61974b55d91a79e5a994e9d8df5e00cb90c4312a5fb1dc/kitconcept_voltolighttheme-8.0.0a14.tar.gz", hash = "sha256:d9c9f5ee214d105c12809aa9bf1094e5df0415962bf3d5d68e977a4c10de6120", size = 1365202, upload-time = "2026-02-05T12:11:44.742Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6e/05/7c079c96386d771244cb543c31e68b5b7c3ab9b3ee7cd649f361a06f72ae/kitconcept_voltolighttheme-8.0.0a15-py3-none-any.whl", hash = "sha256:9b053438d35d32b04ecaa0fcc21bfe23b975679f5b8994ad22eda24079dfc4e0", size = 1432163, upload-time = "2026-02-06T15:45:08.662Z" },
+    { url = "https://files.pythonhosted.org/packages/cb/08/c57f8b16e9b8251575ce9e4e3cba24463af17af8e9912e8949beb7eb0293/kitconcept_voltolighttheme-8.0.0a14-py3-none-any.whl", hash = "sha256:2b4d5ebb13302663a2a286e54b3a06a7717a9ee792c362a5474fbd9c73ba95ae", size = 1432164, upload-time = "2026-02-05T12:11:41.541Z" },
 ]
 
 [[package]]

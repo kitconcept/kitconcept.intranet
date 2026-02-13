@@ -47,6 +47,13 @@
       description="Add the intranet-specific person fields"
       provides=".person.IPersonBehavior"
       />
+  
+  <plone:behavior
+      name="kitconcept.intranet.content_review"
+      title="CLM: Reminders for potentially outdated content"
+      description="Fields for reviewing content (part of CLM)"
+      provides=".content_review.IContentReview"
+      />
 
   <utility
       factory=".person.AcademicTitleFirstLastName"

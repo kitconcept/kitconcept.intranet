@@ -34,6 +34,15 @@
       name="kitconcept.intranet.vocabularies.responsibilities"
       component=".responsibilities.ResponsibilitiesVocabularyFactory"
       />
+  
+  <utility 
+      name="kitconcept.intranet.vocabularies.content_review_intervals"
+      component=".content_review.review_intervals_vocabulary"
+      />
 
+  <utility 
+      name="kitconcept.intranet.vocabularies.content_review_users"
+      component=".content_review.review_users_vocabulary"
+      />
 
 </configure>

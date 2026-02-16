@@ -2,7 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import type { apiExpandersType } from '@plone/types';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
-import ReturnToOriginalToast from '../components/ReturnToOriginalToast/ReturnToOriginalToast';
+import ReturnToOriginToast from '../components/ReturnToOriginToast/ReturnToOriginToast';
 
 export default function install(config: ConfigType) {
   const nonContentRoutes = [
@@ -34,7 +34,7 @@ export default function install(config: ConfigType) {
     ...config.settings.appExtras,
     {
       match: '/',
-      component: ReturnToOriginalToast,
+      component: ReturnToOriginToast,
     },
   ];
   const EXPANDERS_INHERIT_BEHAVIORS = 'kitconcept.blocks.config';

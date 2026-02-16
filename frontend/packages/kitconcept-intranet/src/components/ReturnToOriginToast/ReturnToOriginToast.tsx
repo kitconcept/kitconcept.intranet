@@ -20,15 +20,19 @@ const messages = defineMessages({
   },
 });
 
-const ToastDesign = ({ onReturn, userMessage }) => {
-  const handleClickReturn = () => onReturn();
-
+const ToastContent = ({
+  onReturn,
+  userMessage,
+}: {
+  onReturn: () => void;
+  userMessage: string;
+}) => {
   return (
     <div className="toast-box-center">
       <Button
         aria-label="Return to original page"
         className="return toast-box"
-        onClick={handleClickReturn}
+        onClick={onReturn}
       >
         <Icon
           name={backSVG}
@@ -41,7 +45,7 @@ const ToastDesign = ({ onReturn, userMessage }) => {
   );
 };
 
-export default function ReturnToOriginalToast() {
+export default function ReturnToOriginToast() {
   const intl = useIntl();
   const location = useLocation();
   const history = useHistory();
@@ -66,7 +70,7 @@ export default function ReturnToOriginalToast() {
             info
             title={intl.formatMessage(messages.returnTitle)}
             content={
-              <ToastDesign
+              <ToastContent
                 onReturn={() => {
                   toast.dismiss('returnToOrigin');
                   history.replace(returnToUrlRef.current);

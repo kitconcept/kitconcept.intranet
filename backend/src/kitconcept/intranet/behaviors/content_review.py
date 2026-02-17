@@ -10,8 +10,8 @@ from zope.interface import provider
 class IContentReview(model.Schema):
     """Content Review behavior"""
 
-    model.Fieldset(
-        "",
+    model.fieldset(
+        "Content Review",
         label=_("label_review_fieldset", "Content Review"),
         fields=[
             "review_status",

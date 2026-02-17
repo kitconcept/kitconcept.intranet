@@ -44,6 +44,9 @@ export PYTHONWARNINGS := ignore
 export DOCKER_BUILDKIT := 1
 ## Enable Printing MailHost by default, unless the environment variable is set to False
 export ENABLE_PRINTING_MAILHOST ?= True
+## Solr configuration
+export SITE_SETUP_SOLR ?= true
+export SOLR_ACTIVATE ?= true
 
 
 all: build

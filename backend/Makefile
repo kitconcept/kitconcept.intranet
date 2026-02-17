@@ -73,8 +73,8 @@ $(VENV_FOLDER): sync ## Install Plone and dependencies
 
 .PHONY: upgrade
 upgrade: ## Force upgrade of kitconcept.voltolighttheme and kitconcept.core
-	@echo "$(GREEN)==> Force update of kitconcept.voltolighttheme and kitconcept.core$(RESET)"
-	@uv sync --upgrade-package kitconcept.core --upgrade-package kitconcept.voltolighttheme
+	@echo "$(GREEN)==> Force update of dependencies$(RESET)"
+	@uv sync --upgrade-package kitconcept.voltolighttheme
 
 .PHONY: clean
 clean: ## Clean environment

@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260122001"
+      destination="20260217001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add content_review behaviour to a bunch of content types"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

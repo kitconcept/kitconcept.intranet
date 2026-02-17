@@ -23,15 +23,17 @@ class IContentReview(model.Schema):
     )
 
     review_status = schema.Choice(
-        title=_("label_review_status", default="Review status"),
-        values=("up-to-date", "due", "changes requested"),
-        default="up-to-date",
+        title=_("label_review_status", default="Status"),
+        values=("Up-to-date", "Due", "Changes requested"),
+        default="Up-to-date",
         required=False,
         readonly=True,
     )
 
-    review_interval = schema.Choice(
-        title=_("label_review_interval", default="Review interval")
+    review_interval = schema.List(
+        title=_("label_review_interval", default="Interval"),
+        value_type=schema.TextLine(),
+        required=False,
     )
 
     directives.widget(
@@ -44,18 +46,18 @@ class IContentReview(model.Schema):
     )
 
     review_due_date = schema.Date(
-        title=_("label_review_due_date", default="Review due date"),
+        title=_("label_review_due_date", default="Due date"),
         required=False,
     )
 
     review_completed_date = schema.Date(
-        title=_("label_review_completed_date", default="Review completed date"),
+        title=_("label_review_completed_date", default="Completed date"),
         required=False,
         readonly=True,
     )
 
-    review_assignee = schema.Tuple(
-        title=_("label_review_assignee", default="Review assignee"),
+    review_assignee = schema.List(
+        title=_("label_review_assignee", default="Assignee"),
         value_type=schema.TextLine(),
         required=False,
     )

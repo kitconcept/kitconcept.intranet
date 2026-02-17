@@ -47,7 +47,7 @@
       description="Add the intranet-specific person fields"
       provides=".person.IPersonBehavior"
       />
-  
+
   <plone:behavior
       name="kitconcept.intranet.content_review"
       title="CLM: Reminders for potentially outdated content"

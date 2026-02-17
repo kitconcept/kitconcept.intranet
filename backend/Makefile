@@ -44,9 +44,6 @@ export PYTHONWARNINGS := ignore
 export DOCKER_BUILDKIT := 1
 ## Enable Printing MailHost by default, unless the environment variable is set to False
 export ENABLE_PRINTING_MAILHOST ?= True
-## Solr configuration
-export SITE_SETUP_SOLR ?= true
-export SOLR_ACTIVATE ?= true
 
 
 all: build
@@ -100,7 +97,7 @@ console: $(VENV_FOLDER) instance/etc/zope.conf ## Start a console into a Plone i
 
 .PHONY: create-site
 create-site: $(VENV_FOLDER) instance/etc/zope.ini ## Create a new site from scratch
-	@uv run zconsole run instance/etc/zope.conf ./scripts/create_site.py
+	SITE_SETUP_SOLR=true uv run zconsole run instance/etc/zope.conf ./scripts/create_site.py
 
 ## Example Content
 .PHONY: update-example-content
@@ -159,7 +156,7 @@ build-image:  ## Build Docker Images
 # Solr
 .PHONY: solr-activate-and-reindex
 solr-activate-and-reindex: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and reindex
-	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
+	SITE_SETUP_SOLR=true SOLR_ACTIVATE=true uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
 
 # Acceptance tests
 .PHONY: acceptance-backend-start

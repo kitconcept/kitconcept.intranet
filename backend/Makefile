@@ -156,7 +156,7 @@ build-image:  ## Build Docker Images
 # Solr
 .PHONY: solr-activate-and-reindex
 solr-activate-and-reindex: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and reindex
-	SITE_SETUP_SOLR=true SOLR_ACTIVATE=true uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
+	SOLR_ACTIVATE=true uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
 
 # Acceptance tests
 .PHONY: acceptance-backend-start

@@ -61,4 +61,12 @@
       name="@vote"
       />
 
+  <plone:service
+      method="POST"
+      factory=".review.ReviewPost"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@review"
+      />
+
 </configure>

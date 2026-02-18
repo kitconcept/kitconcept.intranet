@@ -1,3 +1,4 @@
+import kitconcept.intranet.vocabularies.location
 from kitconcept.intranet import _
 from kitconcept.intranet.interfaces import IBrowserLayer
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
@@ -85,6 +86,12 @@ class IIntranetSettings(Interface):
         ),
         required=False,
         defaultFactory=list,
+    )
+
+    content_review_default_interval = schema.Choice(
+        title=_("Default review interval"),
+        vocabulary="kitconcept.intranet.vocabularies.content_review_intervals",
+        required=False,
     )
 
 

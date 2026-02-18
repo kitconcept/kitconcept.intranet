@@ -1,0 +1,26 @@
+.block.listing {
+  &:has(.results-disclaimer-container) {
+    h2.headline {
+      margin-bottom: $spacing-medium;
+    }
+  }
+  .results-disclaimer-container {
+    @include default-container-width();
+
+    margin-bottom: $spacing-large;
+
+    @container (max-width: #{$largest-mobile-screen}) {
+      margin-bottom: $spacing-medium;
+    }
+
+    p.disclaimer {
+      color: var(--theme-low-contrast-foreground-color);
+      font-style: italic;
+    }
+  }
+}
+#page-document {
+  .block.listing .results-disclaimer-container {
+    @include adjustMarginsToContainer($default-container-width);
+  }
+}

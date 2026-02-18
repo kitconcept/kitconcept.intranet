@@ -1,0 +1,280 @@
+{
+  "@id": "/qa/vertical-spacing/heading-and-introduction",
+  "@type": "Document",
+  "UID": "872e7439aa624a6f8569a49bd12be7d4",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "0945d851-c9b1-4e5b-b311-a700ea2adc96": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": "left",
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "09b81890-a218-4c9e-9f8f-5c4eaa9499c7": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": "left",
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "grey"
+    },
+    "1834c943-2717-4600-ad06-48deda74766b": {
+      "@type": "slate",
+      "plaintext": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "2fae7e37-71bb-4142-a115-4d6420fefcf0": {
+      "@type": "heading",
+      "heading": "This is a Heading",
+      "theme": "default"
+    },
+    "373dbeb5-fdc0-444d-8195-757246e951ea": {
+      "@type": "slate",
+      "plaintext": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "3e86801f-6862-4da7-8e2b-362940c48d50": {
+      "@type": "heading",
+      "heading": "This is a Heading",
+      "styles": {},
+      "theme": "grey"
+    },
+    "6bbe3d1d-37d2-4a3d-8d63-a278e63b6e33": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": "left",
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "default"
+    },
+    "7a42e985-6ba8-40b5-8e72-ec790093793c": {
+      "@type": "heading",
+      "heading": "This is a Heading",
+      "theme": "grey"
+    },
+    "82b0c240-f449-4a0b-93a5-298f21190487": {
+      "@type": "introduction",
+      "plaintext": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "9c873c05-6cc8-4d2d-bd04-976caba7cde5": {
+      "@type": "slate",
+      "plaintext": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b7598e2d-e3ab-446c-bb74-78434c08974b": {
+      "@type": "heading",
+      "heading": "This is a Heading",
+      "theme": "default"
+    },
+    "b7ee43f3-9e1e-4bc2-a4dc-0cf8bdfe6427": {
+      "@type": "introduction",
+      "plaintext": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c3474cd1-e8fd-4a69-811b-bad869704736": {
+      "@type": "introduction",
+      "plaintext": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh.",
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "cf7e3c90-9263-4acf-920f-8c490466f94a": {
+      "@type": "title"
+    },
+    "d0f985c6-32b9-40b6-a24d-f9d445b0953a": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": "left",
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
+      },
+      "theme": "grey"
+    },
+    "dea48048-98ee-4925-95e5-2db53b7f04c4": {
+      "@type": "introduction",
+      "plaintext": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh.",
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f3b452d1-27e7-4c56-bf79-87bea8e8b306": {
+      "@type": "slate",
+      "plaintext": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "cf7e3c90-9263-4acf-920f-8c490466f94a",
+      "b7598e2d-e3ab-446c-bb74-78434c08974b",
+      "82b0c240-f449-4a0b-93a5-298f21190487",
+      "373dbeb5-fdc0-444d-8195-757246e951ea",
+      "7a42e985-6ba8-40b5-8e72-ec790093793c",
+      "c3474cd1-e8fd-4a69-811b-bad869704736",
+      "f3b452d1-27e7-4c56-bf79-87bea8e8b306",
+      "2fae7e37-71bb-4142-a115-4d6420fefcf0",
+      "6bbe3d1d-37d2-4a3d-8d63-a278e63b6e33",
+      "b7ee43f3-9e1e-4bc2-a4dc-0cf8bdfe6427",
+      "0945d851-c9b1-4e5b-b311-a700ea2adc96",
+      "1834c943-2717-4600-ad06-48deda74766b",
+      "3e86801f-6862-4da7-8e2b-362940c48d50",
+      "09b81890-a218-4c9e-9f8f-5c4eaa9499c7",
+      "dea48048-98ee-4925-95e5-2db53b7f04c4",
+      "d0f985c6-32b9-40b6-a24d-f9d445b0953a",
+      "9c873c05-6cc8-4d2d-bd04-976caba7cde5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-12-10T11:42:09+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-12-10T12:44:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "heading-and-introduction",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-10T12:44:18+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Heading and Introduction",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-10T11:42:09+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-10T12:44:18+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

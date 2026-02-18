@@ -566,7 +566,7 @@ describe('Listing Block Tests', () => {
     );
   });
 
-  it('Listing block - Test Criteria: Location relative', () => {
+  it('Listing block - Test Criteria: Path relative', () => {
     cy.intercept('PATCH', '/**/my-page/my-folder').as('save');
     cy.intercept('GET', '/**/my-page/my-folder').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -600,15 +600,39 @@ describe('Listing Block Tests', () => {
     cy.navigate('/my-page/my-folder/edit');
     cy.wait('@schema');
 
-    cy.clearSlateTitle().type(
-      'Listing block - Test Criteria: Location relative',
-    );
+    cy.clearSlateTitle().type('Listing block - Test Criteria: Path relative');
 
     //add listing block
     cy.addNewBlock('listing');
 
-    //********  add relative location criteria filter
-    cy.addLocationQuerystring('Relative path', '../my-folder');
+    //********  add relative path criteria filter
+    cy.get('.block-editor-listing').click();
+    cy.get('.querystring-widget .fields').contains('Add criteria').click();
+    cy.get('.querystring-widget .react-select__menu .react-select__option')
+      .contains('Path')
+      .click();
+
+    cy.get(
+      '#sidebar-properties #default-query-0-querystring #field-query-0-querystring',
+    )
+      .eq(1)
+      .click();
+
+    cy.get(
+      '.querystring-widget .fields:first-of-type .main-fields-wrapper .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('Relative path')
+      .click();
+
+    //insert relative path
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type',
+    ).click();
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('./')
+      .click();
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -624,7 +648,7 @@ describe('Listing Block Tests', () => {
     cy.wait('@save');
     cy.wait('@content');
 
-    //test location relative criteria after save
+    //test path relative criteria after save
     // test SSR results first
     cy.isInHTML({
       parent: '#page-document .listing-item:first-of-type',
@@ -639,7 +663,7 @@ describe('Listing Block Tests', () => {
       .should('not.exist');
   });
 
-  it('Listing block - Test Criteria: Location absolute', () => {
+  it('Listing block - Test Criteria: Path absolute', () => {
     cy.intercept('PATCH', '/**/my-page/my-folder').as('save');
     cy.intercept('GET', '/**/my-page/my-folder').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -667,21 +691,47 @@ describe('Listing Block Tests', () => {
       path: 'my-page/my-folder',
     });
 
+    cy.createContent({
+      contentType: 'Image',
+      contentId: 'my-image',
+      contentTitle: 'My Image',
+      path: 'my-page/my-folder',
+    });
+
     cy.navigate('/my-page/my-folder');
     cy.wait('@content');
 
     cy.navigate('/my-page/my-folder/edit');
     cy.wait('@schema');
 
-    cy.clearSlateTitle().type(
-      'Listing block - Test Criteria: Location absolute',
-    );
+    cy.clearSlateTitle().type('Listing block - Test Criteria: Path absolute');
 
     //add listing block
     cy.addNewBlock('listing');
 
-    //********  add absolute location criteria filter
-    cy.addLocationQuerystring('Absolute path', '/my-page/my-folder');
+    //********  add absolute path criteria filter
+    cy.get('.block-editor-listing').click();
+    cy.get('.querystring-widget .fields').contains('Add criteria').click();
+    cy.get('.querystring-widget .react-select__menu .react-select__option')
+      .contains('Path')
+      .click();
+
+    cy.get('.querystring-widget .fields').contains('Absolute path').click();
+
+    cy.get(
+      '#sidebar-properties #default-query-0-querystring div[aria-labelledby="fieldset-default-field-label-query-reference-widget-0"] button[aria-label="Open object browser"]',
+    ).click({ force: true });
+
+    cy.get(
+      '.sidebar-container.sidebar-container-enter-done .object-listing li[aria-label="Select My Image"]',
+    ).should('have.class', 'disabled');
+
+    //insert absolute path
+    cy.get('.sidebar-container button[aria-label="Search SVG"]').click();
+    cy.get(
+      '.sidebar-container .input.search input[placeholder="Search content"]',
+    ).type('My Folder');
+    cy.get('[aria-label="Select My Folder"]').dblclick();
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -697,7 +747,7 @@ describe('Listing Block Tests', () => {
     cy.wait('@save');
     cy.wait('@content');
 
-    //test location absolute criteria after save
+    //test path absolute criteria after save
     // test SSR results first
     cy.isInHTML({
       parent: '#page-document .listing-item:first-of-type',
@@ -712,7 +762,7 @@ describe('Listing Block Tests', () => {
       .should('not.exist');
   });
 
-  it('Listing block - Test Criteria: Location relative with some outside content', () => {
+  it('Listing block - Test Criteria: Path relative with some outside content', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -755,8 +805,34 @@ describe('Listing Block Tests', () => {
     //add listing block
     cy.addNewBlock('listing');
 
-    //********  add location criteria filter
-    cy.addLocationQuerystring('Relative path', '.');
+    //********  add path criteria filter
+    cy.get('.block-editor-listing').click();
+    cy.get('.querystring-widget .fields').contains('Add criteria').click();
+    cy.get('.querystring-widget .react-select__menu .react-select__option')
+      .contains('Path')
+      .click();
+
+    cy.get(
+      '#sidebar-properties #default-query-0-querystring #field-query-0-querystring',
+    )
+      .eq(1)
+      .click();
+
+    cy.get(
+      '.querystring-widget .fields:first-of-type .main-fields-wrapper .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('Relative path')
+      .click();
+
+    //insert relative path
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type',
+    ).click();
+    cy.get(
+      '.querystring-widget .fields:first-of-type > .field:last-of-type .react-select__menu .react-select__option',
+    )
+      .contains('./')
+      .click();
 
     // verify if in list there's a page with name "Document within Folder"
     cy.get(`.block.listing .listing-item:first-of-type`).contains(
@@ -772,7 +848,7 @@ describe('Listing Block Tests', () => {
     cy.wait('@save');
     cy.wait('@content');
 
-    //test location relative criteria after save
+    //test path relative criteria after save
     // test SSR results first
     cy.isInHTML({
       parent: '#page-document .listing-item:first-of-type',
@@ -1014,6 +1090,7 @@ describe('Listing Block Tests', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
+    cy.intercept('GET', '/**/@querystring-search*').as('querystring');
 
     cy.createContent({
       contentType: 'Document',
@@ -1107,6 +1184,7 @@ describe('Listing Block Tests', () => {
     cy.isInHTML({ parent: '.listing-item', content: 'My Folder 3' });
     cy.url().should('not.include', '=3');
     cy.go(-1);
+    cy.wait(500);
     cy.isInHTML({ parent: '.listing-item', content: 'My Folder 2' });
     cy.url().should('not.include', '=2');
     cy.url().should('not.include', '=3');
@@ -1177,8 +1255,4 @@ describe('Listing Block Tests', () => {
       '/my-page/my-news-item-test',
     );
   });
-
-  // it('Listing block - Test Criteria: Location Navigation', () => {
-  //   /*not implemented because Navigation ui is not yet developed in Listing Block sidebar*/
-  // });
 });

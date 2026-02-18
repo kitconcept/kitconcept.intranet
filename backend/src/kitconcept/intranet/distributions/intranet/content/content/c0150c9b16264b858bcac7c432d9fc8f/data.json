@@ -1,0 +1,303 @@
+{
+  "@id": "/qa/vertical-spacing/highlight-and-text",
+  "@type": "Document",
+  "UID": "c0150c9b16264b858bcac7c432d9fc8f",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "018384a7-e19d-49f1-848d-8a02c2c76e88": {
+      "@type": "title"
+    },
+    "1edae2dc-c16c-41ae-aebd-e4de310ebb52": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "711f52ac-6ce2-43f2-acc5-4a85e9ccae4f": {
+      "@type": "heading",
+      "heading": "Grey variant",
+      "theme": "default"
+    },
+    "8d87707c-3170-4800-9c08-a0a581f95163": {
+      "@type": "highlight",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+          "@type": "Document",
+          "CreationDate": "2023-07-07T03:05:20+05:30",
+          "Creator": "admin",
+          "Date": "2023-07-07T00:05:00+05:30",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "EffectiveDate": "2023-07-07T00:05:00+05:30",
+          "ExpirationDate": "None",
+          "ModificationDate": "2025-12-02T14:28:31+05:30",
+          "Subject": [],
+          "Title": "Page",
+          "Type": "Seite",
+          "UID": "8e95863945614257b0d593590769a699",
+          "author_name": null,
+          "cmf_uid": 175,
+          "commentators": [],
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "country": null,
+          "created": "2023-07-06T21:35:20+00:00",
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T18:30:00+00:00",
+          "getIcon": null,
+          "getId": "page",
+          "getObjSize": "0 KB",
+          "getPath": "/Plone/qa/content-types/page",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:3000/qa/content-types/page",
+          "hasPreviewImage": null,
+          "head_title": null,
+          "id": "page",
+          "image_field": "preview_image_link",
+          "in_response_to": null,
+          "is_folderish": true,
+          "job_title": null,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "location_reference": null,
+          "mime_type": "text/plain",
+          "modified": "2025-12-02T08:58:31+00:00",
+          "nav_title": null,
+          "organisational_unit_reference": "1a22eddf0e7941a0962cbfaa785e4b4d",
+          "portal_type": "Document",
+          "review_state": "published",
+          "roles": null,
+          "start": null,
+          "sync_uid": null,
+          "title": "Page",
+          "total_comments": 0,
+          "type_title": "Seite",
+          "username": null
+        }
+      ],
+      "buttonText": "Mehr Infos",
+      "image_field": "image",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "Highlight-Block",
+      "url": "../../../resolveuid/b391c580c3ef40d99a56b7d87f561889",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "e4a8b1be-905c-4cc6-b3dd-39e25ecd1c29": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f2cae4e6-ef5f-465e-82c8-ce7640ec357d": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f59ae818-b31c-4567-acd9-cd45508b0933": {
+      "@type": "highlight",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "../../../resolveuid/8d5bee6a93b74c6a94ffd6f608cb128d",
+          "@type": "Document",
+          "CreationDate": "2025-12-02T14:27:14+05:30",
+          "Creator": "admin",
+          "Date": "2025-12-02T17:37:00+05:30",
+          "Description": "",
+          "EffectiveDate": "2025-12-02T17:37:00+05:30",
+          "ExpirationDate": "None",
+          "ModificationDate": "2025-12-02T17:37:11+05:30",
+          "Subject": [],
+          "Title": "Blocks",
+          "Type": "Seite",
+          "UID": "8d5bee6a93b74c6a94ffd6f608cb128d",
+          "author_name": null,
+          "cmf_uid": 129,
+          "commentators": [],
+          "contact_building": null,
+          "contact_email": null,
+          "contact_phone": null,
+          "contact_room": null,
+          "country": null,
+          "created": "2025-12-02T08:57:14+00:00",
+          "description": "",
+          "effective": "2025-12-02T12:07:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T18:30:00+00:00",
+          "getIcon": null,
+          "getId": "block",
+          "getObjSize": "0 KB",
+          "getPath": "/Plone/qa/block",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:3000/qa/block",
+          "hasPreviewImage": null,
+          "head_title": null,
+          "id": "block",
+          "image_field": "",
+          "in_response_to": null,
+          "is_folderish": true,
+          "job_title": null,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "location_reference": null,
+          "mime_type": "text/plain",
+          "modified": "2025-12-02T12:07:11+00:00",
+          "nav_title": null,
+          "organisational_unit_reference": null,
+          "portal_type": "Document",
+          "review_state": "published",
+          "roles": null,
+          "start": null,
+          "sync_uid": null,
+          "title": "Blocks",
+          "total_comments": 0,
+          "type_title": "Seite",
+          "username": null
+        }
+      ],
+      "buttonText": "Mehr Infos",
+      "image_field": "image",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-1"
+      },
+      "title": "Highlight-Block",
+      "url": "../../../resolveuid/0231e377bff44d4a89d4508378f073d9",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "018384a7-e19d-49f1-848d-8a02c2c76e88",
+      "f59ae818-b31c-4567-acd9-cd45508b0933",
+      "1edae2dc-c16c-41ae-aebd-e4de310ebb52",
+      "711f52ac-6ce2-43f2-acc5-4a85e9ccae4f",
+      "8d87707c-3170-4800-9c08-a0a581f95163",
+      "e4a8b1be-905c-4cc6-b3dd-39e25ecd1c29",
+      "f2cae4e6-ef5f-465e-82c8-ce7640ec357d"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-12-10T12:27:21+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-12-10T12:47:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "highlight-and-text",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-10T12:47:40+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Highlight and Text",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-10T12:27:21+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-10T12:47:40+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

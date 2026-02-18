@@ -36,7 +36,9 @@ describe('Preview Image Link Tests', () => {
     cy.wait('@getImage');
     cy.wait('@content');
 
-    cy.visit('/document/edit');
+    cy.get("#toolbar-body a[aria-label='Edit']").click();
+    cy.url().should('include', '/document/edit');
+    cy.wait('@schema');
 
     cy.get('#metadataform-fieldset-preview_image').within(() => {
       cy.get('.image-upload-widget-image img')
@@ -50,7 +52,6 @@ describe('Preview Image Link Tests', () => {
   it('Add preview image from existing Image Content', function () {
     cy.navigate('/document/edit');
     cy.wait('@schema');
-
     cy.get('#metadataform-fieldset-preview_image');
     cy.get('.toolbar-inner button.ui.basic.icon.button').first().click();
     cy.findByLabelText('Search SVG').click();
@@ -58,8 +59,11 @@ describe('Preview Image Link Tests', () => {
     cy.findByLabelText('Select My Image').dblclick();
 
     cy.get('#toolbar-save').click();
+    cy.wait('@content');
 
-    cy.navigate('/document/edit');
+    cy.get("#toolbar-body a[aria-label='Edit']").click();
+    cy.url().should('include', '/document/edit');
+    cy.wait('@schema');
     cy.get('#metadataform-fieldset-preview_image').within(() => {
       cy.get('.image-upload-widget-image img')
         .should('have.attr', 'src')
@@ -70,6 +74,7 @@ describe('Preview Image Link Tests', () => {
   });
   it('Add preview image from url, only internal URLs allowed', function () {
     cy.navigate('/document/edit');
+    cy.url().should('include', '/document/edit');
     cy.wait('@schema');
     cy.get('#metadataform-fieldset-preview_image')
       .findByLabelText('Enter a URL to an image')

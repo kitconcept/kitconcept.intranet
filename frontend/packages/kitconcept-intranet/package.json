@@ -1,0 +1,93 @@
+{
+  "name": "@kitconcept/intranet",
+  "version": "2.0.0-alpha.8",
+  "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react"
+  ],
+  "author": "kitconcept GmbH",
+  "homepage": "https://github.com/kitconcept/kitconcept.intranet#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kitconcept/kitconcept.intranet.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intl": "^3.12.1",
+    "react-redux": "^8.1.2"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.2",
+    "@plone/types": "workspace:*",
+    "@testing-library/react": "^16.2.0",
+    "@types/lodash": "^4.14.201",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "release-it": "^19.0.5",
+    "typescript": "^5.7.3",
+    "vitest": "^3.1.2"
+  },
+  "addons": [
+    "@kitconcept/volto-iframe-block",
+    "volto-rss-block",
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-banner-block",
+    "@kitconcept/volto-bm3-compat",
+    "@kitconcept/volto-button-block",
+    "@kitconcept/volto-calendar-block",
+    "@kitconcept/volto-carousel-block",
+    "@kitconcept/volto-heading-block",
+    "@kitconcept/volto-highlight-block",
+    "@kitconcept/volto-introduction-block",
+    "@kitconcept/volto-logos-block",
+    "@kitconcept/volto-separator-block",
+    "@kitconcept/volto-slider-block",
+    "@plonegovbr/volto-social-media",
+    "@plone/volto-form-block",
+    "@kitconcept/volto-light-theme",
+    "@kitconcept/core",
+    "@plone-collective/volto-authomatic",
+    "@kitconcept/volto-solr"
+  ],
+  "dependencies": {
+    "@eeacms/volto-accordion-block": "^10.4.6",
+    "@kitconcept/core": "workspace:*",
+    "@kitconcept/volto-banner-block": "workspace:*",
+    "@kitconcept/volto-bm3-compat": "workspace:*",
+    "@kitconcept/volto-button-block": "workspace:*",
+    "@kitconcept/volto-calendar-block": "workspace:*",
+    "@kitconcept/volto-carousel-block": "workspace:*",
+    "@kitconcept/volto-heading-block": "workspace:*",
+    "@kitconcept/volto-highlight-block": "workspace:*",
+    "@kitconcept/volto-introduction-block": "workspace:*",
+    "@kitconcept/volto-logos-block": "workspace:*",
+    "@kitconcept/volto-separator-block": "workspace:*",
+    "@kitconcept/volto-slider-block": "workspace:*",
+    "@plonegovbr/volto-social-media": "^2.0.0-alpha.10",
+    "@kitconcept/volto-solr": "2.0.0-alpha.9",
+    "@kitconcept/volto-iframe-block": "workspace:*",
+    "@kitconcept/volto-light-theme": "workspace:*",
+    "@plone/components": "workspace:*",
+    "@plone/volto-form-block": "^1.0.0-alpha.0",
+    "classnames": "2.5.1",
+    "lodash": "4.17.21",
+    "react-aria-components": "1.13.0",
+    "volto-rss-block": "^3.0.1"
+  }
+}

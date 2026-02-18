@@ -1,0 +1,688 @@
+{
+  "@id": "/qa/typography",
+  "@type": "Document",
+  "UID": "de877c80fc1441338374d86ffd00f81f",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "09d7e9c6-942a-489d-9fe0-6565c622a514": {
+      "@type": "slate",
+      "plaintext": " bold / italic / strikethrough ",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "bold"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " / italic / "
+            },
+            {
+              "children": [
+                {
+                  "text": "strikethrough"
+                }
+              ],
+              "type": "del"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "12b70221-2a40-4e9e-a218-5ba993019f97": {
+      "@type": "gridBlock",
+      "blocks": {
+        "b792dfcc-e69a-4933-b39d-a7b0695ef045": {
+          "@type": "slate",
+          "plaintext": "Text Heading (H2, 30/36px)\nFor grid blocks, the font of the headlines are variable, depending on the number of cells in the grid.",
+          "value": [
+            {
+              "children": [
+                {
+                  "text": "Text Heading (H2, 30/36px)"
+                }
+              ],
+              "type": "h2"
+            },
+            {
+              "children": [
+                {
+                  "text": "For grid blocks, the font of the headlines are variable, depending on the number of cells in the grid."
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b792dfcc-e69a-4933-b39d-a7b0695ef045"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "1395b0c6-377a-457e-af41-a8af364bdd56": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "1a87918a-8da6-4d7e-b92f-022215cdce0b": {
+      "@type": "slate",
+      "plaintext": "ordered list ordered list",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "ordered list"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "ordered list"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        }
+      ]
+    },
+    "211fa6a8-45dc-409a-b7ed-e35d010d53b9": {
+      "@type": "slateTable",
+      "styles": {},
+      "table": {
+        "basic": false,
+        "celled": true,
+        "compact": false,
+        "fixed": true,
+        "hideHeaders": false,
+        "inverted": false,
+        "rows": [
+          {
+            "cells": [
+              {
+                "key": "bb9jl",
+                "type": "header",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table Header (THEAD, 18/24)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              {
+                "key": "56e4i",
+                "type": "header",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table Header (THEAD, 18/24)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            ],
+            "key": "c6hn9"
+          },
+          {
+            "cells": [
+              {
+                "key": "4f40g",
+                "type": "data",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table cell (td p, 18/24px)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              {
+                "key": "9v721",
+                "type": "data",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table cell (td p, 18/24px)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            ],
+            "key": "25r4t"
+          }
+        ],
+        "striped": false
+      },
+      "theme": "default"
+    },
+    "3510ee6a-24d4-4469-b670-bc5c5eff83ba": {
+      "@type": "image",
+      "align": "center",
+      "credit": {},
+      "description": "Caption Description (14/18px). The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Caption Title (14/18px). Image",
+      "url": "../../resolveuid/ac94c9f5bc894fe0813ed8446eb426b5"
+    },
+    "7c483378-67b8-4af2-a142-f4670e242458": {
+      "@type": "slate",
+      "plaintext": "Paragraph (p, 18px/24px)",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Paragraph (p, 18px/24px)"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "7f3fbd39-21e0-4763-8f1c-9dfd8b147228": {
+      "@type": "introduction",
+      "plaintext": "Text Heading H2 (H2, 36/48px)\nParagraph text (p, 24/33px) -> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2 (H2, 36/48px)"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Paragraph text (p, 24/33px) -> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "87abc991-3832-4bc3-9791-dc6aaf1535f2": {
+      "@type": "slate",
+      "plaintext": "unordered list unordered list",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "unordered list"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "unordered list"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "ac12122e-439f-4ce9-b264-89add30013e1": {
+      "@type": "title"
+    },
+    "b10fb8d6-33b9-432f-a876-a360ea708d20": {
+      "@type": "slate",
+      "plaintext": "blockquote",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "blockquote"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c48d636d-8630-4268-9df2-201e03ace2c0": {
+      "@type": "__button",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Button text (button, 18/24px)"
+    },
+    "c66791c2-69fe-4bb5-b467-33d4d1b13646": {
+      "@type": "heading",
+      "heading": "Heading (H2, 33/42px)",
+      "theme": "default"
+    },
+    "ce0951a2-742b-4640-b4ec-e2047c7717ac": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2 (H2, 30/36px)",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2 (H2, 30/36px)"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "d4180e7d-56b5-4965-bbaa-66e9fbda05cb": {
+      "@type": "listing",
+      "headline": "Heading (H2, 33/42px)",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "7",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "e98cbea8-64d3-4c18-a700-e3af05bbd4d5": {
+      "@type": "gridBlock",
+      "blocks": {
+        "91c43f7a-ce5a-4cc6-99e8-cbf360efd7fc": {
+          "@type": "teaser",
+          "description": "For grid blocks, the font of the headlines are variable, depending on the number of cells in the grid.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/9faea2810c2e4c3798d6fe1f3c69a2ff",
+              "@type": "Document",
+              "Description": "This section has a sample of content types available in this site.",
+              "Subject": [
+                "main folder"
+              ],
+              "Title": "Content Types",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "This section has a sample of content types available in this site.",
+              "effective": "2023-09-22T16:09:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "job_title": null,
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Content Types",
+              "type_title": "Seite"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title (H2, 30/36px)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "91c43f7a-ce5a-4cc6-99e8-cbf360efd7fc"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "ecc557b0-2060-4e4c-950e-fc25f4557373": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3b04c7e9-2942-469d-82f2-5c9f71eba309": {
+          "@type": "slate",
+          "plaintext": "Text Heading (H3, 24/30px)\nParagraph Text (p, 18/24px)",
+          "value": [
+            {
+              "children": [
+                {
+                  "text": "Text Heading (H3, 24/30px)"
+                }
+              ],
+              "type": "h2"
+            },
+            {
+              "children": [
+                {
+                  "text": "Paragraph Text (p, 18/24px)"
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        },
+        "6ae2b6cb-0970-48c6-9238-ab5d71bc6092": {
+          "@type": "slate",
+          "plaintext": "Text Heading (H3, 24/30px)\nParagraph Text (p, 18/24px)",
+          "value": [
+            {
+              "children": [
+                {
+                  "text": "Text Heading (H3, 24/30px)"
+                }
+              ],
+              "type": "h2"
+            },
+            {
+              "children": [
+                {
+                  "text": "Paragraph Text (p, 18/24px)"
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "3b04c7e9-2942-469d-82f2-5c9f71eba309",
+          "6ae2b6cb-0970-48c6-9238-ab5d71bc6092"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "f30104c1-e256-441c-af9d-6be169bd0c18": {
+      "@type": "gridBlock",
+      "blocks": {
+        "26c41167-6c4e-46d7-8898-16a87b714894": {
+          "@type": "teaser",
+          "description": " The Text Block allows you to add text to a web page. The text can be formatted and structured in different ways (bold, headings, etc.).",
+          "head_title": "Teaser Headtitle (DIV, 14/18px)",
+          "href": [
+            {
+              "@id": "../../resolveuid/220bc67910f34ffc9e81b732f7b2e1f8",
+              "@type": "Document",
+              "Description": " The video block can contain videos from YouTube.",
+              "Subject": [],
+              "Title": "Video",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": " The video block can contain videos from YouTube.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "job_title": null,
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Video",
+              "type_title": "Seite"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title (H3, 24/30px)"
+        },
+        "b25c54a7-b373-40f0-ac95-1dfabf793a49": {
+          "@type": "teaser",
+          "description": " The introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.",
+          "head_title": "Teaser Headtitle (DIV, 14/18px)",
+          "href": [
+            {
+              "@id": "../../resolveuid/c1941927e8fe4ebd97cdfdaecf93466d",
+              "@type": "Document",
+              "Description": "Mit dem Slider-Block k\u00f6nnen verschieden Inhalte der Seite prominent angeteasert werden. Der Slider-Block  wird \u00fcblicherweise als erstes Element als Eye-Catcher eingesetzt. Ein Slider-Block kann beliebig viele Elemente anzeigen. Verlinkte Inhalte werden mit einem Bild, einem Titel, einer Beschreibung, einem Kopftitel dargestellt. Optional kann ein Button mit einem angepassten Text eingef\u00fcgt werden.",
+              "Subject": [],
+              "Title": "Slider Block",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "Mit dem Slider-Block k\u00f6nnen verschieden Inhalte der Seite prominent angeteasert werden. Der Slider-Block  wird \u00fcblicherweise als erstes Element als Eye-Catcher eingesetzt. Ein Slider-Block kann beliebig viele Elemente anzeigen. Verlinkte Inhalte werden mit einem Bild, einem Titel, einer Beschreibung, einem Kopftitel dargestellt. Optional kann ein Button mit einem angepassten Text eingef\u00fcgt werden.",
+              "effective": "2024-04-08T17:54:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "job_title": null,
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Slider Block",
+              "type_title": "Seite"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title (H3, 24/30px)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b25c54a7-b373-40f0-ac95-1dfabf793a49",
+          "26c41167-6c4e-46d7-8898-16a87b714894"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "f84fd037-7eb0-4bf1-b2f7-32ff31d08f83": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "fac3b432-30b0-4249-b2fa-6e20deceb3a0": {
+      "@type": "toc",
+      "levels": [
+        "h2",
+        "h3"
+      ],
+      "styles": {},
+      "theme": "default"
+    },
+    "fbd68015-f72e-4702-ab66-51d96621e5a9": {
+      "@type": "slate",
+      "plaintext": "Text Heading H3 (H3, 24/30px)",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H3 (H3, 24/30px)"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "ac12122e-439f-4ce9-b264-89add30013e1",
+      "c66791c2-69fe-4bb5-b467-33d4d1b13646",
+      "e98cbea8-64d3-4c18-a700-e3af05bbd4d5",
+      "f30104c1-e256-441c-af9d-6be169bd0c18",
+      "ce0951a2-742b-4640-b4ec-e2047c7717ac",
+      "7c483378-67b8-4af2-a142-f4670e242458",
+      "87abc991-3832-4bc3-9791-dc6aaf1535f2",
+      "1a87918a-8da6-4d7e-b92f-022215cdce0b",
+      "b10fb8d6-33b9-432f-a876-a360ea708d20",
+      "09d7e9c6-942a-489d-9fe0-6565c622a514",
+      "1395b0c6-377a-457e-af41-a8af364bdd56",
+      "fbd68015-f72e-4702-ab66-51d96621e5a9",
+      "f84fd037-7eb0-4bf1-b2f7-32ff31d08f83",
+      "7f3fbd39-21e0-4763-8f1c-9dfd8b147228",
+      "d4180e7d-56b5-4965-bbaa-66e9fbda05cb",
+      "3510ee6a-24d4-4469-b670-bc5c5eff83ba",
+      "c48d636d-8630-4268-9df2-201e03ace2c0",
+      "12b70221-2a40-4e9e-a218-5ba993019f97",
+      "ecc557b0-2060-4e4c-950e-fc25f4557373",
+      "fac3b432-30b0-4249-b2fa-6e20deceb3a0",
+      "211fa6a8-45dc-409a-b7ed-e35d010d53b9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-12-10T08:35:27+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-12-10T12:42:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "typography",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-10T12:42:30+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Typography - Page Title (H1, 48/56px)",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-10T08:35:27+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-10T12:42:30+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

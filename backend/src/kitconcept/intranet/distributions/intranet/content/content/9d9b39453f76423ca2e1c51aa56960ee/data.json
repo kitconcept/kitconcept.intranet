@@ -1,0 +1,92 @@
+{
+  "@id": "/termine/ou-1-nano-onboarding-online",
+  "@type": "Event",
+  "UID": "9d9b39453f76423ca2e1c51aa56960ee",
+  "allow_discussion": null,
+  "attendees": [],
+  "blocks": {
+    "bafaaec1-b573-410c-8b6c-b8594a75b877": {
+      "@type": "eventMetadata",
+      "fixed": true,
+      "required": true
+    },
+    "cf5e0522-c5d0-4a95-a96a-75e98d1468c2": {
+      "@type": "slate"
+    },
+    "f4d8d349-e1ee-43ac-a5f8-556b59f3b4ff": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "f4d8d349-e1ee-43ac-a5f8-556b59f3b4ff",
+      "bafaaec1-b573-410c-8b6c-b8594a75b877",
+      "cf5e0522-c5d0-4a95-a96a-75e98d1468c2"
+    ]
+  },
+  "changeNote": "",
+  "contact_email": null,
+  "contact_name": null,
+  "contact_phone": null,
+  "contributors": [],
+  "created": "2026-01-19T14:02:23+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Online-Onboarding f\u00fcr neue Mitarbeitende mit Einf\u00fchrung in Strukturen, Tools und Sicherheitsregeln der Organisationseinheit.",
+  "effective": "2026-01-19T14:02:00+00:00",
+  "enable_likes": false,
+  "end": "2026-01-19T15:00:00+00:00",
+  "event_url": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "ou-1-nano-onboarding-online",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "event_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-21T12:57:38+00:00",
+  "nav_title": null,
+  "open_end": false,
+  "preview_caption_link": null,
+  "recurrence": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "start": "2026-01-19T14:00:00+00:00",
+  "subjects": [],
+  "sync_uid": null,
+  "title": "OU-1: Nano-Onboarding (online)",
+  "type_title": "Event",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "whole_day": false,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T14:02:23+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T14:02:26+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

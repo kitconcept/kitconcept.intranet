@@ -81,6 +81,11 @@
             "v": [
               "Person"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -132,6 +137,11 @@
             "v": [
               "Link"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -153,6 +163,11 @@
             "v": [
               "News Item"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -198,6 +213,11 @@
             "v": [
               "File"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -254,6 +274,11 @@
             "v": [
               "Event"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -282,6 +307,11 @@
             "v": [
               "Event"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -304,6 +334,11 @@
             "v": [
               "News Item"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -326,6 +361,11 @@
             "v": [
               "Document"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -368,6 +408,11 @@
             "v": [
               "File"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -389,6 +434,11 @@
             "v": [
               "Event"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -411,6 +461,11 @@
             "v": [
               "Document"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -432,6 +487,11 @@
             "v": [
               "File"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -453,6 +513,11 @@
             "v": [
               "Document"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -495,6 +560,11 @@
               "Event",
               "Document"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -517,6 +587,11 @@
             "v": [
               "Image"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -537,6 +612,11 @@
             "v": [
               "Link"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -558,6 +638,11 @@
             "v": [
               "News Item"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -585,6 +670,11 @@
             "v": [
               "Person"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -607,6 +697,11 @@
             "v": [
               "Person"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_on": "sortable_title",
@@ -636,6 +731,11 @@
             "v": [
               "Link"
             ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/features"
           }
         ],
         "sort_order": "ascending"
@@ -709,6 +809,7 @@
   ],
   "description": "The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').",
   "effective": "2023-07-06T18:35:00+00:00",
+  "enable_likes": false,
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
@@ -723,7 +824,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-09-09T13:37:45+00:00",
+  "modified": "2025-12-11T10:39:20+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,
@@ -736,6 +837,7 @@
   "type_title": "Page",
   "version": "current",
   "versioning_enabled": true,
+  "votes": null,
   "workflow_history": {
     "simple_intranet_workflow": [
       {

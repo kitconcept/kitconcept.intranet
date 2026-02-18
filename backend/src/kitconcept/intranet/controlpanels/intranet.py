@@ -45,6 +45,31 @@ class IIntranetSettings(Interface):
         ]),
     )
 
+    default_feedback_email = schema.TextLine(
+        title=_("Default Feedback Email"),
+        description=_("Email address used in feedback forms if none is set."),
+        required=False,
+    )
+
+    feedback_cc_email = schema.TextLine(
+        title=_("Feedback CC email"),
+        description=_("Email address to be CCed in feedback forms."),
+        required=False,
+    )
+    allowed_email_domains = schema.List(
+        title=_("Allowed Email Domains"),
+        description=_("List of allowed email domains for feedback forms."),
+        value_type=schema.TextLine(required=False),
+        required=False,
+    )
+
+    enable_sticky_feedback_button = schema.Bool(
+        title=_("Enable Sticky Feedback Button"),
+        description=_("Enable or disable the sticky feedback button on all pages."),
+        required=False,
+        default=False,
+    )
+
     enable_content_rating = schema.Bool(
         title=_("Enable Content Rating"),
         description=_("Enable content rating globally for the Intranet"),
@@ -106,10 +131,12 @@ class IntranetSiteEndpointExpander:
         data["kitconcept.person_picture_aspect_ratio"] = (
             settings.person_picture_aspect_ratio
         )
+        data["kitconcept.intranet.enable_sticky_feedback_button"] = (
+            settings.enable_sticky_feedback_button
+        )
         data["kitconcept.intranet.iframe_allowed_domains"] = (
             settings.iframe_allowed_domains
         )
-
         data["kitconcept.intranet.enable_content_rating"] = (
             settings.enable_content_rating
         )

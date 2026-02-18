@@ -1,13 +1,11 @@
 ---
-version: '3.9'
+version: "3.9"
 
 services:
-
   frontend:
     image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://${STACK_NAME}_backend:8080/Plone
-      RAZZLE_API_PATH: https://${HOSTNAME}
     networks:
       - public
     healthcheck:
@@ -40,6 +38,7 @@ services:
     image: ${IMAGE_NAME_PREFIX}-backend:${IMAGE_TAG:-latest}
     environment:
       ZEO_ADDRESS: "${STACK_NAME}_zeo:8100"
+      COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
     networks:
       - public
       - nw-internal
@@ -99,6 +98,37 @@ services:
     networks:
       - nw-internal
 
+  tika:
+    image: apache/tika:3.2.3.0-full
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == production
+    networks:
+      nw-internal:
+        aliases:
+          - ${STACK_NAME}-tika
+
+  solr:
+    image: ghcr.io/kitconcept/solr:latest
+    command:
+      - solr-precreate
+      - plone
+      - /plone-config
+    environment:
+      SOLR_MODULES: extraction
+      SOLR_OPTS: "-Dsolr.tika.url=http://${STACK_NAME}-tika:9998"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == production
+    networks:
+      - nw-internal
+
 volumes:
   vol-site-data:
     driver_opts:
@@ -109,6 +139,7 @@ volumes:
 networks:
   public:
     external: true
+
   nw-internal:
     internal: true
     driver: overlay

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="kitconcept.solr"
+>
+
+  <records interface="kitconcept.solr.interfaces.IKitconceptSolrSettings"
+           prefix="kitconcept.solr"
+  >
+    <value key="config"
+           purge="false"
+    >{
+      "fieldList": [
+      "UID",
+      "Title",
+      "Description",
+      "Type",
+      "effective",
+      "start",
+      "created",
+      "end",
+      "path_string",
+      "mime_type",
+      "location",
+      "contact_email",
+      "contact_phone",
+      "image_scales",
+      "image_field",
+      "organisational_unit_reference",
+      "location_reference"
+      ],
+      "searchTabs": [
+      {
+      "label": "All",
+      "filter": "Type(*)"
+      },
+      {
+      "label": "Pages",
+      "filter": "Type:(Page)"
+      },
+      {
+      "label": "Events",
+      "filter": "Type:(Event)"
+      },
+      {
+      "label": "Images",
+      "filter": "Type:(Image)"
+      },
+      {
+      "label": "Files",
+      "filter": "Type:(File)"
+      },
+      {
+      "label": "Persons",
+      "filter": "Type:(Person)",
+      "layouts": ["grid"],
+      "facetFields": [
+      {
+      "name": "responsibilities",
+      "label": "Responsibilities"
+      }
+      ]
+      }
+      ]
+      }</value>
+  </records>
+</registry>

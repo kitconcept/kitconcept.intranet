@@ -1,9 +1,9 @@
 {
-  "name": "volto-intranet-dev",
-  "version": "1.0.0-alpha.0",
+  "name": "intranet-dev",
+  "version": "2.0.0-alpha.8",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "author": "kitconcept GmbH",
-  "homepage": "https://github.com/kitconcept/volto-intranet",
+  "homepage": "https://github.com/kitconcept/intranet",
   "license": "MIT",
   "keywords": [
     "volto-addon",
@@ -17,8 +17,8 @@
     "start:prod": "pnpm --filter @plone/volto start:prod",
     "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
     "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
-    "i18n": "pnpm --filter volto-intranet i18n",
-    "test": "pnpm --filter @kitconcept/volto-intranet exec vitest --passWithNoTests",
+    "i18n": "pnpm --filter @kitconcept/intranet i18n",
+    "test": "pnpm --filter @kitconcept/intranet exec vitest --passWithNoTests",
     "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
@@ -33,9 +33,9 @@
     "build-storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
   },
   "dependencies": {
-    "@plone/volto": "workspace:*",
+    "@kitconcept/intranet": "workspace:*",
     "@plone/registry": "workspace:*",
-    "@kitconcept/volto-intranet": "workspace:*"
+    "@plone/volto": "workspace:*"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0"
@@ -57,7 +57,20 @@
       "@kitconcept/volto-carousel-block": "workspace:*",
       "@kitconcept/volto-iframe-block": "workspace:*",
       "@kitconcept/volto-bm3-compat": "workspace:*"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher"
+    ],
+    "onlyBuiltDependencies": [
+      "core-js",
+      "core-js-pure",
+      "cypress",
+      "es5-ext",
+      "esbuild",
+      "full-icu",
+      "lightningcss-cli",
+      "unrs-resolver"
+    ]
   },
-  "packageManager": "pnpm@9.1.1"
+  "packageManager": "pnpm@10.20.0"
 }

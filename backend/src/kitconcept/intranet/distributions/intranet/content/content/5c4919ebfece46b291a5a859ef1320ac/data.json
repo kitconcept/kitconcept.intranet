@@ -1,0 +1,86 @@
+{
+  "@id": "/files",
+  "@type": "Document",
+  "UID": "5c4919ebfece46b291a5a859ef1320ac",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "7039dae4-3fc9-4c46-930f-5e71fbecf60b": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "8ea078e9-ed8f-4762-a3dc-ce754972335a": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "8ea078e9-ed8f-4762-a3dc-ce754972335a",
+      "7039dae4-3fc9-4c46-930f-5e71fbecf60b"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-01-19T14:13:24+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-01-19T14:18:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": true,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "files",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-21T13:00:28+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Files",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-19T14:13:24+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-19T14:18:34+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -167,7 +167,7 @@ jobs:
 
   deploy:
     name: "Deploy: plone-intranet.kitconcept.dev"
-    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    uses: kitconcept/meta/.github/workflows/deploy.yml@scale-after
     if: ${{ always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
     needs:
       - config
@@ -180,6 +180,7 @@ jobs:
       stack-file: "devops/stacks/demo.yml"
       registry: "ghcr.io"
       username: ${{ github.actor }}
+      scale-after: "plone-intranet-kitconcept-dev_solr-reindex=1"
     secrets:
       password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN }}
       remote-host: ${{ secrets.DEPLOY_HOST }}

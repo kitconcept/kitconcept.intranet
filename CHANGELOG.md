@@ -1,6 +1,393 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a8 (2026-02-05)
+
+### Backend
+
+
+#### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a14 @sneridagh 
+
+
+#### Internal
+
+- Add example content for Passive Targteing feature @iRohitSingh [#309](https://github.com/kitconcept/kitconcept.intranet/issue/309)
+- Show intranet header in accpetance tests. @davisagli 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a14 @sneridagh 
+
+#### Internal
+
+- Fix acceptance test for header search. @davisagli 
+
+
+
+### Project
+
+
+#### Internal
+
+- Demo sites: Ensure tika and solr services are always on an internal network. @ericof 
+
+
+
+## 2.0.0a7 (2026-01-27)
+
+### Backend
+
+
+#### Feature
+
+- Add Responsibilities field to Person content type. @danalvrz 
+
+
+#### Bugfix
+
+- Update the footer colophon text in example content. @iFlameing 
+
+
+
+### Frontend
+
+#### Feature
+
+- Configure token widget for responsibilities field on Person content type. @danalvrz 
+
+#### Bugfix
+
+- Fix flaky cypress test. @iFlameing 
+
+
+
+### Project
+
+
+#### Feature
+
+- Add docs about the Responsibilities field in Person content type. @danalvrz 
+
+
+
+## 2.0.0a6 (2026-01-26)
+
+### Backend
+
+
+#### Internal
+
+- Resize images in the example content. @sneridagh [#305](https://github.com/kitconcept/kitconcept.intranet/issue/305)
+- Regenerated .pot files (no string changes). @danalvrz 
+- Update to k.core 2a9:
+    https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a9 @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add and register ListingBlockDisclaimer component for targeted listings. @danalvrz 
+
+#### Bugfix
+
+- Fix repeated vocabulary request for each keystroke in a text block @Tishasoumya-02 [#306](https://github.com/kitconcept/kitconcept.intranet/issue/306)
+
+#### Internal
+
+- Fix flaky preview-image-link cypress test @Tishasoumya-02 [#304](https://github.com/kitconcept/kitconcept.intranet/issue/304)
+- Update to k.core 2a9:
+    https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a9 @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Removed coverage tests from CI. @sneridagh 
+
+
+
+## 2.0.0a5 (2026-01-15)
+
+### Backend
+
+
+#### Internal
+
+- Fixed bug where markdown inline links in descriptions are rendered as a separate paragraph @jackahl
+  Use the CSS prop --breadcrumbs-foregound for breadcrumbs links as default, with --link-foreground-color as fallback. @danalvrz
+  Removed `Contents` shadow in favor of the core implementation. @sneridagh
+  New reindex script @davisagli @jnptk 
+
+
+
+### Frontend
+
+#### Internal
+
+- Fixed bug where markdown inline links in descriptions are rendered as a separate paragraph @jackahl
+  Use the CSS prop --breadcrumbs-foregound for breadcrumbs links as default, with --link-foreground-color as fallback. @danalvrz
+  Removed `Contents` shadow in favor of the core implementation. @sneridagh
+  New reindex script @davisagli @jnptk 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a4 (2026-01-14)
+
+### Backend
+
+
+#### Breaking
+
+- Convert organisational unit and location behaviors to support multiple values. There is an upgrade step which must be run to update existing content and indexes. @davisagli 
+
+
+#### Bugfix
+
+- Fixed sticky menu cut off at the bottom on smaller screens @iRohitSingh
+  Fixed double navigation in cards that contains inner links in its body. @sneridagh
+  Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+
+
+#### Internal
+
+- Add example content for differentiate between technical and user-facing example content
+  @iRohitSingh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed sticky menu cut off at the bottom on smaller screens @iRohitSingh
+  Fixed double navigation in cards that contains inner links in its body. @sneridagh
+  Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+- Update Person and Event views to support multiple values for organisational unit and location. @davisagli 
+
+#### Internal
+
+- Add Cypress tests for Enter key behavior on focused blocks @iRohitSingh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Fix spelling. @davisagli 
+
+
+
+## 2.0.0a3 (2025-12-16)
+
+### Backend
+
+
+#### Feature
+
+- Add option to sort listing blocks by user relevance (when solr is enabled). @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/issue/207)
+
+
+#### Bugfix
+
+- Update to kitconcept.core 2.0.0a6 (rename Path criteria, fix validation of Person username). @davisagli 
+
+
+#### Internal
+
+- Update kitconcept.solr to 2.0.0a8. @reebalazs 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to kitconcept.solr 2.0.0.alpha-7. @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/issue/207)
+- Re-enable acceptance tests for Person content type. @davisagli 
+- Update @kitconcept/volto-solr to 2.0.0-alpha.8. @reebalazs 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix solr configuration for demo sites. @davisagli 
+
+
+#### Internal
+
+- Update kitconcept.solr to 2.0.0a8 and @kitconcept/volto-solr to 2.0.0-alpha.8. Add tika service for SOLR text extraction. @reebalazs 
+
+
+#### Documentation
+
+- Add docs for passive targeting. @davisagli [#207](https://github.com/kitconcept/kitconcept.intranet/pull/207)
+
+
+
+## 2.0.0a2 (2025-12-09)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to core 2a5.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a5 @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to core 2a5.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a5 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a1 (2025-12-01)
+
+### Backend
+
+
+#### Bugfix
+
+- Update kitconcept.solr to 2.0.0.a6 @reebalazs 
+
+
+#### Internal
+
+- Hide secondary logo in mobile. Fixed teaser description update problem. Update core 2a4. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update kitconcept.solr to 2.0.0.a6 @reebalazs 
+
+#### Internal
+
+- Hide secondary logo in mobile. Fixed teaser description update problem. Update core 2a4. @sneridagh 
+- Rename internal package and folder for consistency. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a0 (2025-11-13)
+
+### Backend
+
+
+#### Breaking
+
+- Renamed code related to content lifecycle management from LCM to CLM. @iFlameing [#240](https://github.com/kitconcept/kitconcept.intranet/issue/240)
+- Update to use Volto 19 and VLT 8. @sneridagh 
+
+
+#### Feature
+
+- Add backend for content ratings, and enable discussion and ratings for the Page content type. @iFlameing [#185](https://github.com/kitconcept/kitconcept.intranet/issue/185)
+- Add service for feedback form. @iFlameing [#240](https://github.com/kitconcept/kitconcept.intranet/issue/240)
+- Add votes behaviour to all default Plone content type. @iFlameing 
+
+
+#### Bugfix
+
+- Activate solr when creating a site with the setup_solr option enabled. @davisagli 
+
+
+#### Internal
+
+- Update to Volto 19a13 VLT 8a6. @sneridagh [#282.vlt8a6volto19a13](https://github.com/kitconcept/kitconcept.intranet/issue/282.vlt8a6volto19a13)
+- Enable solr by default in the beispiele image. @davisagli 
+- Enable solr for demo site. @davisagli 
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+
+
+
+### Frontend
+
+#### Breaking
+
+- Update to use Volto 19 and VLT 8. @sneridagh 
+
+#### Feature
+
+- Add Content Interactions component including rating, discussion, and sharing. @Tishasoumya-02, @iFlameing [#185](https://github.com/kitconcept/kitconcept.intranet/issue/185)
+- Add Feedback Form @Tishasoumya-02 
+
+#### Bugfix
+
+- Fix aria-label for search input when solr is enabled. @reekitconcept, @davisagli 
+
+#### Internal
+
+- Update to Volto 19a13 VLT 8a6. @sneridagh [#282.vlt8a6volto19a13](https://github.com/kitconcept/kitconcept.intranet/issue/282.vlt8a6volto19a13)
+- Added the prepublish script. 
+- Several fixes - Update Volto 18.29.0 and vlt 7.5.1. @sneridagh 
+- Update Share email text. @iFlameing 
+
+
+
+### Project
+
+
+#### Breaking
+
+- Added versions consistency check in mrs-developer. @sneridagh 
+
+
+#### Internal
+
+- Enable solr for demo site. @davisagli 
+- Fix solr hostname for demo stack. @davisagli 
+
+
+#### Documentation
+
+- Add documentation for content interactions. @iFlameing [#185](https://github.com/kitconcept/kitconcept.intranet/pull/185)
+- Add docs for Feedback Contact Form and CLM fields. @iFlameing 
+
+
+
 ## 1.0.0b15 (2025-10-08)
 
 ### Backend

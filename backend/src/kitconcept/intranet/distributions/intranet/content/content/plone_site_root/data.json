@@ -427,7 +427,16 @@
   "facebook_app_id": "",
   "facebook_username": "",
   "footer_address": "kitconcept GmbH\nRieststr. 21\n53113 Bonn",
-  "footer_colophon_text": "Powered by kitconcept Intranet",
+  "footer_colophon_text": [
+    {
+      "children": [
+        {
+          "text": "Powered by kitconcept Intranet"
+        }
+      ],
+      "type": "p"
+    }
+  ],
   "footer_column_left": [
     {
       "@id": "6ffa227c-965d-4eec-b76c-6cf34dc80739",
@@ -625,8 +634,9 @@
   "id": "Plone",
   "intranet_flag": "Intranet",
   "is_folderish": true,
-  "items_total": 7,
+  "items_total": 10,
   "language": "##DEFAULT##",
+  "layout": "document_view",
   "lock": {
     "locked": false,
     "stealable": true

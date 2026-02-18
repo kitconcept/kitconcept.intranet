@@ -1,0 +1,844 @@
+{
+  "@id": "/qa/vertical-spacing/grid-and-text",
+  "@type": "Document",
+  "UID": "77d4a8332ab846648cba950015973f24",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "0b47e681-6533-4ef5-93bb-d2d61f372581": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "2e0426d2-e9af-44fd-8265-fba841fff99b": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "31151982-4c4c-4c4e-9f96-041ff1aa8334": {
+      "@type": "gridBlock",
+      "blocks": {
+        "14a16ea8-93e8-4941-8163-2110d9d1c085": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "afec6a30-48ce-4c4e-b25b-a77e2caf823e": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "afec6a30-48ce-4c4e-b25b-a77e2caf823e",
+          "14a16ea8-93e8-4941-8163-2110d9d1c085"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "510f27dd-8ed1-4283-a33c-72ea0a82bf4f": {
+      "@type": "gridBlock",
+      "blocks": {
+        "c1c827ef-d5ae-406e-913a-fa57fc053d7e": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "e8599798-1cc6-49bb-b527-a8f0718fe4a5": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "c1c827ef-d5ae-406e-913a-fa57fc053d7e",
+          "e8599798-1cc6-49bb-b527-a8f0718fe4a5"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "5c321306-e8c0-45c3-a5e3-b34b1184ee13": {
+      "@type": "gridBlock",
+      "blocks": {
+        "2747492c-2199-432d-b9d1-c51c04cba690": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "3957a284-ed92-42d9-8649-e1aedb8f211f": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "3957a284-ed92-42d9-8649-e1aedb8f211f",
+          "2747492c-2199-432d-b9d1-c51c04cba690"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "5d38523f-d594-4011-bf0f-80ce09b85226": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "606ff45e-34a2-41d6-b5fb-7e0fb4691226": {
+      "@type": "gridBlock",
+      "blocks": {
+        "1c893f23-1ef8-4df7-882c-66c55c338f7f": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "8f8b6a4c-729b-4b6b-9d65-cf44adf5b096": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "8f8b6a4c-729b-4b6b-9d65-cf44adf5b096",
+          "1c893f23-1ef8-4df7-882c-66c55c338f7f"
+        ]
+      },
+      "headline": "This one has heading",
+      "styles": {},
+      "theme": "grey"
+    },
+    "62a2158e-dce9-4704-8d92-0944f62aef5e": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "6462fe15-b644-4b5f-9abd-e56a475738f0": {
+      "@type": "gridBlock",
+      "blocks": {
+        "00338dee-76bc-41aa-b47d-4780d7e46c2b": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "fa8e387e-4652-440b-98cb-99c4accbf0c8": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "00338dee-76bc-41aa-b47d-4780d7e46c2b",
+          "fa8e387e-4652-440b-98cb-99c4accbf0c8"
+        ]
+      },
+      "headline": "This one has heading",
+      "styles": {},
+      "theme": "default"
+    },
+    "7ccf3398-d6f4-4a5f-b742-a57b559482c8": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "8458c697-bec1-4a51-b333-770b8ae052f6": {
+      "@type": "title"
+    },
+    "8ea5dba0-b8eb-47e2-a35e-f2f8bce0943e": {
+      "@type": "gridBlock",
+      "blocks": {
+        "b5217bab-39f3-4157-a72a-5bd612bb5ccd": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "d9887677-ea98-460a-a01d-b85d2a95267f": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b5217bab-39f3-4157-a72a-5bd612bb5ccd",
+          "d9887677-ea98-460a-a01d-b85d2a95267f"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    },
+    "a847c547-7625-42f2-8f68-006f6a105790": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c1b78f0e-ca88-4b7c-99a7-a448c9cbd25c": {
+      "@type": "gridBlock",
+      "blocks": {
+        "9e72f02f-28f2-4813-9e76-678064ee3356": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "bdab19bf-d28a-4635-9415-c437a24d6a9f": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "9e72f02f-28f2-4813-9e76-678064ee3356",
+          "bdab19bf-d28a-4635-9415-c437a24d6a9f"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "c838c0b0-ee9f-4b3f-bed8-bf4e70857d03": {
+      "@type": "gridBlock",
+      "blocks": {
+        "b5008950-7770-4f12-bf7d-fd6f1b055bab": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "db9708e5-8ef3-4099-b06d-cecb3f404f85": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "db9708e5-8ef3-4099-b06d-cecb3f404f85",
+          "b5008950-7770-4f12-bf7d-fd6f1b055bab"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "da4461cf-3e9e-43de-b547-3b3ea1863a75": {
+      "@type": "gridBlock",
+      "blocks": {
+        "741dcd7a-f8d6-466b-b9f1-a9c3685cbf18": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "f8889931-2639-4244-91d9-8875400b5b7e": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../../resolveuid/8e95863945614257b0d593590769a699",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "start": null,
+              "title": "Page"
+            }
+          ],
+          "overwrite": true,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f8889931-2639-4244-91d9-8875400b5b7e",
+          "741dcd7a-f8d6-466b-b9f1-a9c3685cbf18"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "8458c697-bec1-4a51-b333-770b8ae052f6",
+      "7ccf3398-d6f4-4a5f-b742-a57b559482c8",
+      "c838c0b0-ee9f-4b3f-bed8-bf4e70857d03",
+      "2e0426d2-e9af-44fd-8265-fba841fff99b",
+      "31151982-4c4c-4c4e-9f96-041ff1aa8334",
+      "5c321306-e8c0-45c3-a5e3-b34b1184ee13",
+      "a847c547-7625-42f2-8f68-006f6a105790",
+      "6462fe15-b644-4b5f-9abd-e56a475738f0",
+      "c1b78f0e-ca88-4b7c-99a7-a448c9cbd25c",
+      "5d38523f-d594-4011-bf0f-80ce09b85226",
+      "da4461cf-3e9e-43de-b547-3b3ea1863a75",
+      "510f27dd-8ed1-4283-a33c-72ea0a82bf4f",
+      "0b47e681-6533-4ef5-93bb-d2d61f372581",
+      "606ff45e-34a2-41d6-b5fb-7e0fb4691226",
+      "8ea5dba0-b8eb-47e2-a35e-f2f8bce0943e",
+      "62a2158e-dce9-4704-8d92-0944f62aef5e"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-12-10T11:28:30+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-12-10T12:44:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "grid-and-text",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-12-10T12:44:11+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": false,
+  "subjects": [],
+  "title": "Grids and Text",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-12-10T11:28:30+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-12-10T12:44:11+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

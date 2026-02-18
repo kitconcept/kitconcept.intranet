@@ -1,13 +1,11 @@
 ---
-version: '3.9'
+version: "3.9"
 
 services:
-
   frontend:
     image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://${STACK_NAME}_backend:8080/Plone
-      RAZZLE_API_PATH: https://${HOSTNAME}
     networks:
       - public
     healthcheck:
@@ -38,8 +36,11 @@ services:
 
   backend:
     image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
+    environment:
+      COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
     networks:
       - public
+      - nw-internal
     deploy:
       replicas: 1
       placement:
@@ -82,6 +83,63 @@ services:
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.service=svc-${STACK_PREFIX}-back
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.middlewares=gzip,mw-${STACK_PREFIX}-back-auth,mw-${STACK_PREFIX}-back-vhm-classic
 
+  tika:
+    image: apache/tika:3.2.3.0-full
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == production
+    networks:
+      nw-internal:
+        aliases:
+          - ${STACK_NAME}-tika
+
+  solr:
+    image: ghcr.io/kitconcept/solr:latest
+    command:
+      - solr-precreate
+      - plone
+      - /plone-config
+    environment:
+      SOLR_MODULES: extraction
+      SOLR_OPTS: "-Dsolr.tika.url=http://${STACK_NAME}-tika:9998"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == production
+    networks:
+      - nw-internal
+
+  # The solr-reindex service is scaled to 1 after a successful deployment.
+  solr-reindex:
+    image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
+    command: "run scripts/solr_activate_and_reindex.py --clear"
+    environment:
+      COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
+      COLLECTIVE_SOLR_PORT: 8983
+    healthcheck:
+      disable: true
+    deploy:
+      replicas: 0
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == production
+      restart_policy:
+        condition: none
+    networks:
+      - nw-internal
+
 networks:
   public:
     external: true
+
+  nw-internal:
+    internal: true
+    driver: overlay
+    driver_opts:
+      com.docker.network.driver.mtu: 1450

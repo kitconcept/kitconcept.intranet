@@ -1,0 +1,102 @@
+{
+  "@id": "/passive-pages",
+  "@type": "Document",
+  "UID": "25a15e1d954e4e2da65f4603cafb8c05",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "0f77febc-e814-4e3a-a31d-059517030739": {
+      "@type": "title"
+    },
+    "7bab326a-fa7c-4930-aa3e-39c262b0672b": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document",
+              "Event",
+              "File",
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "userRelevance",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "e3a9f44c-2f28-49d9-8e03-d74ec7a038fa": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "0f77febc-e814-4e3a-a31d-059517030739",
+      "7bab326a-fa7c-4930-aa3e-39c262b0672b",
+      "e3a9f44c-2f28-49d9-8e03-d74ec7a038fa"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-01-21T12:59:44+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-01-21T12:59:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": true,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "passive-pages",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-01-28T10:52:38+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Passive Pages",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-01-21T12:59:44+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-01-21T12:59:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

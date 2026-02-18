@@ -10,6 +10,7 @@ from plone.exportimport.importers import get_importer
 from Products.CMFPlone.Portal import PloneSite
 from Products.CMFPlone.WorkflowTool import WorkflowTool
 
+import os
 import transaction
 
 
@@ -57,6 +58,7 @@ def pre_handler(answers: dict) -> dict:
 
 def handler(distribution: Distribution, site: PloneSite, answers: dict) -> PloneSite:
     """Handler to create a new site."""
+    transaction.commit()
     default_profiles = distribution._profiles
     profiles = deepcopy(default_profiles)
     workflow = answers.get("workflow", "public")
@@ -94,6 +96,8 @@ def post_handler(
         "plone.email_from_name": title,
         "plone.site_title": title,
     }
+    if os.environ.get("SOLR_ACTIVATE"):
+        registry_data["collective.solr.active"] = True
 
     raw_logo = answers.get("site_logo")
     if raw_logo:
@@ -104,6 +108,9 @@ def post_handler(
     # This should be fixed on plone.distribution
     site.title = title
     site.description = description
+
+    # Make sure intranet header is used even if we didn't import content
+    site.has_intranet_header = True
 
     # Update registry
     utils.update_registry(registry_data)

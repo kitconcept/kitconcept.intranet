@@ -21,14 +21,10 @@ describe('Block Indexing Tests', () => {
     );
     cy.get('#toolbar-save').click();
 
+    cy.visit('/my-page');
     // WHEN: I search for Avram
-    cy.get('.navigation-desktop .search-button')
-      .findByLabelText('Search')
-      .filter('button')
-      .click();
-    cy.get('.navigation-desktop input[name="SearchableText"]')
+    cy.get('.header-intranet  .searchbox input[title="Search"]')
       .should('not.be.disabled')
-      .clear()
       .type('Avram{enter}');
 
     // THEN: The search results should contain the page 'Noam Avram Chomsky'

@@ -19,7 +19,7 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-ADDON_NAME='@kitconcept/volto-intranet'
+ADDON_NAME='@kitconcept/intranet'
 IMAGE_NAME=ghcr.io/kitconcept/kitconcept-intranet-frontend
 IMAGE_TAG=latest
 VOLTO_VERSION = $(shell cat ./mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
@@ -31,7 +31,7 @@ help: ## Show this help
 # Dev Helpers
 .PHONY: clean
 clean: ## Clean up environment
-	rm -Rf core node_modules packages/volto-light-theme packages/volto-intranet/node_modules
+	rm -Rf core node_modules packages/volto-light-theme packages/kitconcept-intranet/node_modules
 
 .PHONY: install
 install: ## Installs the add-on in a development environment
@@ -100,8 +100,8 @@ test: ## Run unit tests
 .PHONY: test-ci
 ci-test: ## Run unit tests in CI
 	# Unit Tests need the i18n to be built
-	pnpm --filter @kitconcept/volto-intranet i18n && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto i18n
-	CI=1 pnpm --filter @kitconcept/volto-intranet exec vitest --passWithNoTests
+	pnpm --filter @kitconcept/intranet i18n && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto i18n
+	CI=1 pnpm --filter @kitconcept/intranet exec vitest --passWithNoTests
 
 ## Storybook
 .PHONY: storybook-start
@@ -118,11 +118,11 @@ storybook-build: ## Build Storybook
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
 acceptance-frontend-dev-start: ## Start acceptance frontend in development mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone SITE_DEFAULT_LANGUAGE=en NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
+	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone SITE_DEFAULT_LANGUAGE=en NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
 
 .PHONY: acceptance-frontend-prod-start
 acceptance-frontend-prod-start: ## Start acceptance frontend in production mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone SITE_DEFAULT_LANGUAGE=en pnpm build && pnpm start:prod
+	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone SITE_DEFAULT_LANGUAGE=en pnpm build && pnpm start:prod
 
 .PHONY: acceptance-test
 acceptance-test: ## Start Cypress in interactive mode
@@ -139,7 +139,7 @@ acceptance-a11y-backend-dev-start: ## Start a11y acceptance frontend in prod mod
 
 .PHONY: acceptance-a11y-frontend-dev-start
 acceptance-a11y-frontend-dev-start: ## Start a11y acceptance frontend in prod mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
+	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
 
 .PHONY: acceptance-a11y-frontend-prod-start
 acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-30 20:45+0000\n"
+"POT-Creation-Date: 2026-02-12 13:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:17
+#: kitconcept/intranet/behaviors/person.py:19
 msgid "Academic Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:37
+#: kitconcept/intranet/behaviors/person.py:66
 msgid "Academic Title, First and Last Name"
 msgstr ""
 
@@ -54,7 +54,11 @@ msgstr ""
 msgid "Adds votes field"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:56
+#: kitconcept/intranet/controlpanels/intranet.py:60
+msgid "Allowed Email Domains"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:81
 msgid "Allowed Iframe Domains"
 msgstr ""
 
@@ -63,7 +67,11 @@ msgstr ""
 msgid "Can only be seen and edited by the owner."
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:28
+#: kitconcept/intranet/controlpanels/intranet.py:49
+msgid "Default Feedback Email"
+msgstr ""
+
+#: kitconcept/intranet/behaviors/person.py:30
 msgid "Department"
 msgstr ""
 
@@ -76,7 +84,15 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:49
+#: kitconcept/intranet/controlpanels/intranet.py:56
+msgid "Email address to be CCed in feedback forms."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:50
+msgid "Email address used in feedback forms if none is set."
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:74
 msgid "Enable Content Rating"
 msgstr ""
 
@@ -88,12 +104,24 @@ msgstr ""
 msgid "Enable Likes for this Content Object"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:50
+#: kitconcept/intranet/controlpanels/intranet.py:67
+msgid "Enable Sticky Feedback Button"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Enable content rating globally for the Intranet"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:68
+msgid "Enable or disable the sticky feedback button on all pages."
 msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:55
+msgid "Feedback CC email"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:28
@@ -117,15 +145,19 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:68
+#: kitconcept/intranet/controlpanels/intranet.py:93
 msgid "Intranet Settings"
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:231
+msgid "Intranet feedback form: {title}"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:49
 msgid "Intranet-specific Person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/person.py:23
+#: kitconcept/intranet/behaviors/person.py:25
 msgid "Job Title"
 msgstr ""
 
@@ -137,12 +169,16 @@ msgstr ""
 msgid "Likes"
 msgstr ""
 
+#: kitconcept/intranet/controlpanels/intranet.py:61
+msgid "List of allowed email domains for feedback forms."
+msgstr ""
+
 #: kitconcept/intranet/behaviors/votes.py:14
 msgid "List of user IDs"
 msgstr ""
 
 #: kitconcept/intranet/behaviors/configure.zcml:28
-#: kitconcept/intranet/behaviors/location.py:16
+#: kitconcept/intranet/behaviors/location.py:19
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
 msgstr ""
@@ -157,8 +193,12 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
+#: kitconcept/intranet/services/feedback_contact_form.py:182
+msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
+msgstr ""
+
 #: kitconcept/intranet/behaviors/configure.zcml:35
-#: kitconcept/intranet/behaviors/organisational_unit.py:16
+#: kitconcept/intranet/behaviors/organisational_unit.py:19
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
 msgstr ""
@@ -174,6 +214,14 @@ msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:190
+msgid "Please enter your feedback."
+msgstr ""
+
+#: kitconcept/intranet/services/feedback_contact_form.py:200
+msgid "Please enter your organisational email address."
 msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:14
@@ -289,6 +337,20 @@ msgstr ""
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr ""
 
+#: kitconcept/intranet/services/feedback_contact_form.py:253
+msgid "Your feedback on our intranet content: {title}"
+msgstr ""
+
+#. Default: "Sorry, your feedback could not be delivered."
+#: kitconcept/intranet/services/feedback_contact_form.py:275
+msgid "error_email"
+msgstr ""
+
+#. Default: "Matches the value(s) assigned to the currently logged-in user"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_current_user_filter"
+msgstr ""
+
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_organisational_unit"
@@ -302,6 +364,16 @@ msgstr ""
 #. Default: "Filter by location"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_place"
+msgstr ""
+
+#. Default: "Filter by responsibilities"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_responsibilities_filter"
+msgstr ""
+
+#. Default: "Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organisational knowledge to understand whether you are the right contact."
+#: kitconcept/intranet/behaviors/person.py:46
+msgid "help_tags"
 msgstr ""
 
 #: kitconcept/intranet/distributions.zcml:17
@@ -321,12 +393,17 @@ msgid "kitconcept.intranet: Solr Support"
 msgstr ""
 
 #. Default: "Authors"
-#: kitconcept/intranet/behaviors/lcm.py:53
+#: kitconcept/intranet/behaviors/clm.py:58
 msgid "label_authors"
 msgstr ""
 
+#. Default: "Current logged in user"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_current_user_filter"
+msgstr ""
+
 #. Default: "Feedback to"
-#: kitconcept/intranet/behaviors/lcm.py:40
+#: kitconcept/intranet/behaviors/clm.py:45
 msgid "label_feedback_person"
 msgstr ""
 
@@ -340,7 +417,18 @@ msgstr ""
 msgid "label_place"
 msgstr ""
 
+#. Default: "Responsibilities"
+#: kitconcept/intranet/behaviors/person.py:45
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_responsibilities"
+msgstr ""
+
 #. Default: "Content Owner:"
-#: kitconcept/intranet/behaviors/lcm.py:27
+#: kitconcept/intranet/behaviors/clm.py:32
 msgid "label_responsible"
+msgstr ""
+
+#. Default: "Responsibilities & Expertise"
+#: kitconcept/intranet/behaviors/person.py:37
+msgid "label_schema_responsibility_categorization"
 msgstr ""

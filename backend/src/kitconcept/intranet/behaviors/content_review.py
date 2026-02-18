@@ -1,5 +1,4 @@
 from kitconcept.intranet import _
-from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
@@ -30,19 +29,10 @@ class IContentReview(model.Schema):
         readonly=True,
     )
 
-    review_interval = schema.List(
+    review_interval = schema.Choice(
         title=_("label_review_interval", default="Interval"),
-        value_type=schema.TextLine(),
+        vocabulary="kitconcept.intranet.vocabularies.content_review_intervals",
         required=False,
-    )
-
-    directives.widget(
-        "review_interval",
-        vocabulary="kitconcept.intranet.vocabularies.review_intervals",
-        frontendOptions={
-            "widget": "autocomplete",
-            "widgetProps": {"isMulti": False},
-        },
     )
 
     review_due_date = schema.Date(
@@ -56,17 +46,8 @@ class IContentReview(model.Schema):
         readonly=True,
     )
 
-    review_assignee = schema.List(
+    review_assignee = schema.Choice(
         title=_("label_review_assignee", default="Assignee"),
-        value_type=schema.TextLine(),
+        vocabulary="plone.app.vocabularies.Users",
         required=False,
-    )
-
-    directives.widget(
-        "review_assignee",
-        vocabulary="kitconcept.intranet.vocabularies.review_users",
-        frontendOptions={
-            "widget": "autocomplete",
-            "widgetProps": {"isMulti": False},
-        },
     )

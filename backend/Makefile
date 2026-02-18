@@ -97,7 +97,7 @@ console: $(VENV_FOLDER) instance/etc/zope.conf ## Start a console into a Plone i
 
 .PHONY: create-site
 create-site: $(VENV_FOLDER) instance/etc/zope.ini ## Create a new site from scratch
-	SITE_SETUP_SOLR=true uv run zconsole run instance/etc/zope.conf ./scripts/create_site.py
+	@uv run zconsole run instance/etc/zope.conf ./scripts/create_site.py
 
 ## Example Content
 .PHONY: update-example-content
@@ -156,7 +156,7 @@ build-image:  ## Build Docker Images
 # Solr
 .PHONY: solr-activate-and-reindex
 solr-activate-and-reindex: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and reindex
-	SOLR_ACTIVATE=true uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
+	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
 
 # Acceptance tests
 .PHONY: acceptance-backend-start

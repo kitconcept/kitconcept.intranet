@@ -17,6 +17,7 @@
     <value key="sortable">False</value>
     <value key="operations">
       <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.currentUser</element>
     </value>
     <value key="vocabulary">kitconcept.intranet.vocabularies.location</value>
     <value key="group"
@@ -38,6 +39,7 @@
     <value key="sortable">False</value>
     <value key="operations">
       <element>plone.app.querystring.operation.selection.any</element>
+      <element>plone.app.querystring.operation.selection.currentUser</element>
     </value>
     <value key="vocabulary">kitconcept.intranet.vocabularies.organisational_unit</value>
     <value key="group"
@@ -64,6 +66,20 @@
     <value key="group"
            i18n:translate=""
     >Taxonomy</value>
+  </records>
+
+  <!-- Current User operation (generic for any Person reference field) -->
+  <records interface="plone.app.querystring.interfaces.IQueryOperation"
+           prefix="plone.app.querystring.operation.selection.currentUser"
+  >
+    <value key="title"
+           i18n:translate="label_current_user_filter"
+    >Current logged in user</value>
+    <value key="description"
+           i18n:translate="help_current_user_filter"
+    >Matches the value(s) assigned to the currently logged-in user</value>
+    <value key="operation">kitconcept.intranet.queryparser._currentUser</value>
+    <value key="widget" />
   </records>
 
 </registry>

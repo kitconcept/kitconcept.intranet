@@ -9,7 +9,7 @@
       >
     <genericsetup:upgradeDepends
         title="Add content_review behaviour to a bunch of content types"
-        import_steps="typeinfo"
+        import_steps="typeinfo plone.app.registry"
         />
   </genericsetup:upgradeSteps>
 </configure>

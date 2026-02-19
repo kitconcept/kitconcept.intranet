@@ -18,11 +18,7 @@ const PersonResultItem = ({ item }) => {
     <article className="tileItem personResultItem">
       <div className="itemWrapper">
         <div className="itemImageWrapper">
-          <MaybeWrap
-            condition={!hideProfileLinks}
-            as={Link}
-            to={item['@id']}
-          >
+          <MaybeWrap condition={!hideProfileLinks} as={Link} to={item['@id']}>
             <Icon
               size="64px"
               name={fallbackAvatarSVG}

@@ -21,22 +21,30 @@ class ReviewPost(Service):
 
     def reply(self):
         if not self.params:
-            raise BadRequest("Missing parameter")
+            raise BadRequest(
+                "Missing action: expected /@review/approve, "
+                "/@review/delegate, or /@review/postpone"
+            )
 
         if len(self.params) > 1:
-            raise BadRequest("Too many parameters")
+            raise BadRequest(
+                "Too many path segments: expected /@review/approve, "
+                "/@review/delegate, or /@review/postpone"
+            )
 
         param = self.params[0]
         match param:
             case "approve":
                 # update review_status
-                status = IContentReview["review_status"]
-                status.readonly = False
-                status.set("Up-to-date")
-                status.readonly = True
+                self.context.review_status = "Up-to-date"
                 # TODO: update review_completed_date & review_due_date
             case "delegate":
                 data = json_body(self.request)
             case "postpone":
                 # TODO: handle postpone
                 data = json_body(self.request)
+            case _:
+                raise BadRequest(
+                    "Unknown action: expected /@review/approve, "
+                    "/@review/delegate, or /@review/postpone"
+                )

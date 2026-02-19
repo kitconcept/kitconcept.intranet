@@ -64,7 +64,7 @@
   <plone:service
       method="POST"
       factory=".review.ReviewPost"
-      for="kitconcept.intranet.content_review"
+      for="kitconcept.intranet.behaviors.content_review.IContentReview"
       permission="cmf.ModifyPortalContent"
       name="@review"
       />

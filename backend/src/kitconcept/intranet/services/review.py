@@ -26,9 +26,6 @@ class ReviewPost(Service):
         if len(self.params) > 1:
             raise BadRequest("Too many parameters")
 
-        if not IContentReview.providedBy(self.context):
-            raise BadRequest("Endpoint not supported in this context")
-
         param = self.params[0]
         match param:
             case "approve":

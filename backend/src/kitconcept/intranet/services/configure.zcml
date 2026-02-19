@@ -64,8 +64,8 @@
   <plone:service
       method="POST"
       factory=".review.ReviewPost"
-      for="zope.interface.Interface"
-      permission="zope2.View"
+      for="kitconcept.intranet.content_review"
+      permission="cmf.ModifyPortalContent"
       name="@review"
       />
 

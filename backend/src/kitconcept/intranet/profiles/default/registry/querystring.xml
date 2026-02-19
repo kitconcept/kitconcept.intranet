@@ -66,4 +66,23 @@
     >Taxonomy</value>
   </records>
 
+  <!-- Content Review -->
+  <records>
+    <value key="title"
+           i18n:translate="label_review_status"
+    >
+    Review status</value>
+    <value key="description"
+           i18n:translate="help_review_status_filter"
+    >Filter by review status</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="group"
+           i18n:translate=""
+    >Taxonomy</value>
+  </records>
+
 </registry>

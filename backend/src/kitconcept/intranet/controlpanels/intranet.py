@@ -1,4 +1,3 @@
-import kitconcept.intranet.vocabularies.location
 from kitconcept.intranet import _
 from kitconcept.intranet.interfaces import IBrowserLayer
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper

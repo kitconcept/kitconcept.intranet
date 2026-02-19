@@ -41,4 +41,17 @@
     <indexed_attr value="responsibilities" />
   </index>
 
+  <!-- Field indexes for IContentReview behavior -->
+  <index meta_type="FieldIndex"
+         name="review_status"
+  >
+    <indexed_attr value="review_status" />
+  </index>
+
+  <index meta_type="FieldIndex"
+         name="review_due_date"
+  >
+    <indexed_attr value="review_due_date" />
+  </index>
+
 </object>

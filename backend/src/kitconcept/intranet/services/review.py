@@ -1,4 +1,3 @@
-from kitconcept.intranet.behaviors.content_review import IContentReview
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
 from zExceptions import BadRequest

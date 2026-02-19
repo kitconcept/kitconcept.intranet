@@ -23,6 +23,10 @@
       "location",
       "contact_email",
       "contact_phone",
+      "contact_room",
+      "contact_building",
+      "job_title",
+      "responsibilities",
       "image_scales",
       "image_field",
       "organisational_unit_reference",
@@ -54,6 +58,14 @@
       "filter": "Type:(Person)",
       "layouts": ["grid"],
       "facetFields": [
+      {
+      "name": "contact_building",
+      "label": "Building"
+      },
+      {
+      "name": "contact_room",
+      "label": "Room"
+      },
       {
       "name": "responsibilities",
       "label": "Responsibilities"

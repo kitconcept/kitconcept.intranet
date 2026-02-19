@@ -6,6 +6,8 @@ import installBlocks from './config/blocks';
 import PersonView from './components/theme/PersonView';
 import PersonSummary from './components/Summary/PersonSummary';
 import { defineMessages } from 'react-intl';
+import PersonResultItem from './components/SolrSearch/resultItems/PersonResultItem';
+import personSVG from '@plone/volto/icons/user.svg';
 
 defineMessages({
   listDate: {
@@ -44,7 +46,9 @@ const applyConfig = (config: ConfigType) => {
     component: PersonSummary,
     dependencies: ['Person'],
   });
-
+  config.settings.solrSearchOptions.contentTypeSearchResultViews.Person =
+    PersonResultItem;
+  config.settings.contentIcons.Person = personSVG;
   return config;
 };
 

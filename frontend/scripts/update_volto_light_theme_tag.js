@@ -18,13 +18,9 @@ function toPythonStyleTag(version) {
 }
 
 function latestPublishedVersion(packageName) {
-  const stdout = execFileSync(
-    'pnpm',
-    ['view', packageName, 'time', '--json'],
-    {
-      encoding: 'utf8',
-    },
-  );
+  const stdout = execFileSync('pnpm', ['view', packageName, 'time', '--json'], {
+    encoding: 'utf8',
+  });
   const payload = JSON.parse(stdout);
   const versions = Object.entries(payload).filter(
     ([version]) => version !== 'created' && version !== 'modified',

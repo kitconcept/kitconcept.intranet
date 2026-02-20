@@ -87,6 +87,12 @@ class IIntranetSettings(Interface):
         defaultFactory=list,
     )
 
+    content_review_default_interval = schema.Choice(
+        title=_("Default review interval"),
+        vocabulary="kitconcept.intranet.vocabularies.content_review_intervals",
+        required=False,
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings

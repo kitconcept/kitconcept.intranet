@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260212001"
+      destination="20260217001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add content_review behaviour to a bunch of content types"
+        import_steps="typeinfo plone.app.registry catalog"
+        />
+    <genericsetup:upgradeStep
+        title="Add and update review_status index"
+        handler=".upgrade.add_review_status_indexer"
+        />
+    <genericsetup:upgradeStep
+        title="Add and update review_due_date index"
+        handler=".upgrade.add_review_due_date_indexer"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

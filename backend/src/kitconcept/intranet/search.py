@@ -1,4 +1,4 @@
-from plone import api
+from kitconcept.intranet.utils.get_person import get_current_user_person
 from plone.app.querystring.querybuilder import QueryBuilder as BaseQueryBuilder
 
 
@@ -21,15 +21,9 @@ class QueryBuilder(BaseQueryBuilder):
         query.pop("sort_on")
 
         # Find Person object for the current user
-        user = api.user.get_current()
-        if user is None:
+        person = get_current_user_person()
+        if person is None:
             return
-        brains = api.content.find(
-            type="Person", username=user.getId(), unrestricted=True
-        )
-        if len(brains) != 1:
-            return
-        person = brains[0]
 
         # Add bq param, which is handled by solr
         boosts = []

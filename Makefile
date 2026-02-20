@@ -129,6 +129,7 @@ upgrade:  ## Upgrade dependencies
 	@uvx repoplone deps upgrade backend
 	@uvx repoplone deps upgrade frontend
 	$(MAKE) -C "./backend/" upgrade
+	$(MAKE) -C "./frontend/" upgrade
 
 .PHONY: start
 start:  ## Start

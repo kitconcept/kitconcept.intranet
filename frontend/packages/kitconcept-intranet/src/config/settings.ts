@@ -2,6 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import type { apiExpandersType } from '@plone/types';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
+import ReturnToOriginToast from '../components/ReturnToOriginToast/ReturnToOriginToast';
 
 export default function install(config: ConfigType) {
   const nonContentRoutes = [
@@ -29,7 +30,13 @@ export default function install(config: ConfigType) {
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';
   config.settings.displayLogout = false;
-
+  config.settings.appExtras = [
+    ...config.settings.appExtras,
+    {
+      match: '/',
+      component: ReturnToOriginToast,
+    },
+  ];
   const EXPANDERS_INHERIT_BEHAVIORS = 'kitconcept.blocks.config';
 
   config.settings.apiExpanders = [

@@ -15,5 +15,9 @@
         title="Add and update review_status index"
         handler=".upgrade.add_review_status_indexer"
         />
+    <genericsetup:upgradeStep
+        title="Add and update review_due_date index"
+        handler=".upgrade.add_review_due_date_indexer"
+        />
   </genericsetup:upgradeSteps>
 </configure>

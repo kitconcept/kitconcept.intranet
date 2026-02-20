@@ -92,7 +92,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.1" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a9" },
+    { name = "kitconcept-core", specifier = "==2.0.0a10" },
     { name = "kitconcept-solr", specifier = "==2.0.0a9" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
@@ -193,7 +193,7 @@ constraints = [
     { name = "plone-dexterity", specifier = "==3.0.8" },
     { name = "plone-distribution", specifier = "==3.2.1" },
     { name = "plone-event", specifier = "==2.0.3" },
-    { name = "plone-exportimport", specifier = "==1.3.1" },
+    { name = "plone-exportimport", specifier = ">=2.0.0a2" },
     { name = "plone-folder", specifier = "==4.0.1" },
     { name = "plone-formwidget-autocomplete", specifier = "==1.5.0" },
     { name = "plone-formwidget-namedfile", specifier = "==3.1.2" },
@@ -1317,7 +1317,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0a9"
+version = "2.0.0a10"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1326,11 +1326,12 @@ dependencies = [
     { name = "kitconcept-voltolighttheme" },
     { name = "plone-api" },
     { name = "plone-distribution" },
+    { name = "plone-exportimport" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/de/36/b218bcfd68be2ff18d4260086f9f8d35616f9a3aa1f841d6b567b080afbb/kitconcept_core-2.0.0a9.tar.gz", hash = "sha256:d8e948fc3a5da39c141c0cc6363f0ce72294e5c9ee93fd1d41336dc8b01087bd", size = 332282, upload-time = "2026-01-26T12:09:34.709Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/25/8b/033ee75a6f6fb768d1d455c689ef216da5837fb2b303cef0d10ab2308668/kitconcept_core-2.0.0a10.tar.gz", hash = "sha256:4d81e93e6fbe7fe270e479ab78fd7032f864dc3fe8aa3ae67e0cbf1a61d32279", size = 332385, upload-time = "2026-02-16T15:29:06.627Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1a/ac/70bcefb85b43f972ada0772808221d2a9e0987bf220122600d74142ca41d/kitconcept_core-2.0.0a9-py3-none-any.whl", hash = "sha256:0b91e2d0d530e6d0f67890ef9a9296c98c7635eb58bc6d0d274dd265067ae99c", size = 243377, upload-time = "2026-01-26T12:09:33.048Z" },
+    { url = "https://files.pythonhosted.org/packages/16/ab/acbcd1e425a68cca26408b9e525e0a968c49a4b3503e5fb034449150eb1a/kitconcept_core-2.0.0a10-py3-none-any.whl", hash = "sha256:6bf4d4d96670e5fe35ee3a95b0311d603be19904d0523b50e62295b70c1dea05", size = 243408, upload-time = "2026-02-16T15:29:02.941Z" },
 ]
 
 [[package]]
@@ -1380,7 +1381,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a9" },
+    { name = "kitconcept-core", specifier = "==2.0.0a10" },
     { name = "kitconcept-solr", specifier = "==2.0.0a9" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1438,7 +1439,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-voltolighttheme"
-version = "8.0.0a14"
+version = "8.0.0a16"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1447,9 +1448,9 @@ dependencies = [
     { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5e/f2/4a544c750a246c61974b55d91a79e5a994e9d8df5e00cb90c4312a5fb1dc/kitconcept_voltolighttheme-8.0.0a14.tar.gz", hash = "sha256:d9c9f5ee214d105c12809aa9bf1094e5df0415962bf3d5d68e977a4c10de6120", size = 1365202, upload-time = "2026-02-05T12:11:44.742Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9d/ab/754b385af2f31c61f345b03b93762ef7c80692466b856958ed0c513cdd7e/kitconcept_voltolighttheme-8.0.0a16.tar.gz", hash = "sha256:e33369137a01dafc6f4aff457ba649b7471a560ce0d1614c26557d6b312ad13e", size = 1365445, upload-time = "2026-02-16T14:55:51.946Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cb/08/c57f8b16e9b8251575ce9e4e3cba24463af17af8e9912e8949beb7eb0293/kitconcept_voltolighttheme-8.0.0a14-py3-none-any.whl", hash = "sha256:2b4d5ebb13302663a2a286e54b3a06a7717a9ee792c362a5474fbd9c73ba95ae", size = 1432164, upload-time = "2026-02-05T12:11:41.541Z" },
+    { url = "https://files.pythonhosted.org/packages/fe/65/bcf636bf6d0a50fab8390aeda4166b57af9d10dd89bee28c2d03c35c7644/kitconcept_voltolighttheme-8.0.0a16-py3-none-any.whl", hash = "sha256:fa5feda1ddb70163ba53b1a9b3ed63f0ea8b0413589facca6b4dd9342c3ea766", size = 1432447, upload-time = "2026-02-16T14:55:53.545Z" },
 ]
 
 [[package]]
@@ -3197,7 +3198,7 @@ wheels = [
 
 [[package]]
 name = "plone-exportimport"
-version = "1.3.1"
+version = "2.0.0a2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -3217,14 +3218,13 @@ dependencies = [
     { name = "products-plonepas" },
     { name = "products-portaltransforms" },
     { name = "python-dateutil" },
-    { name = "setuptools" },
     { name = "z3c-relationfield" },
     { name = "zc-relation" },
     { name = "zope" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/97/91/9ce87c4e1b490eb5092df27f801978246c4e6647126fece25b2a8af06d8a/plone_exportimport-1.3.1.tar.gz", hash = "sha256:fc79e6686870d165b5f58cd98be2ddbf37481f82907c6c91b5c9fb685f08bb56", size = 198577, upload-time = "2025-10-06T16:23:51.929Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/65/65/0c4afa1dcb546c66ed242ea5a7c5e3f3d7d932849f642c9c886b9b04f0f3/plone_exportimport-2.0.0a2.tar.gz", hash = "sha256:867e15defcba07b90f2231135f8be9b999dc0295377c96723df101759eb5b046", size = 202327, upload-time = "2026-02-10T02:35:07.129Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cf/d3/022d6631428910dd13b5899bed1a5ba89699b83597eabe70ab55a4e181a6/plone_exportimport-1.3.1-py3-none-any.whl", hash = "sha256:8b10164f9f34dd1cc1fd6102f229e1f4b8b9dfc3f50c7cb3594b2993aef5a948", size = 66745, upload-time = "2025-10-06T16:23:49.96Z" },
+    { url = "https://files.pythonhosted.org/packages/77/42/291e1408185acc08b9ad5bd0cec071f5624a31a553c5ac40e3cb8f494661/plone_exportimport-2.0.0a2-py3-none-any.whl", hash = "sha256:29d321af33fd8e1ca257373787135d7de92023d6fc711eb367e7b3777e797b5b", size = 69621, upload-time = "2026-02-10T02:35:05.098Z" },
 ]
 
 [[package]]

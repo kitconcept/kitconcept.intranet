@@ -39,6 +39,11 @@ install: ## Installs the add-on in a development environment
 	pnpm i
 	pnpm build:deps
 
+.PHONY: upgrade
+upgrade: ## Force upgrade of @kitconcept/volto-light-theme
+	@echo "$(GREEN)==> Update @kitconcept/volto-light-theme tag in mrs.developer.json$(RESET)"
+	node ./scripts/update_volto_light_theme_tag.js
+
 .PHONY: status
 status:  ## Show status
 	@echo "Show status"

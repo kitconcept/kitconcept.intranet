@@ -123,6 +123,14 @@ install:  ## Install
 	$(MAKE) backend-install
 	$(MAKE) frontend-install
 
+.PHONY: upgrade
+upgrade:  ## Upgrade dependencies
+	@echo "Upgrade dependencies"
+	@uvx repoplone deps upgrade backend
+	@uvx repoplone deps upgrade frontend
+	$(MAKE) -C "./backend/" upgrade
+	$(MAKE) -C "./frontend/" upgrade
+
 .PHONY: start
 start:  ## Start
 	@echo "Starting application"

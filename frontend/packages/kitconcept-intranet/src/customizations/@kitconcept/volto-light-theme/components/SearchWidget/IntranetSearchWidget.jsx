@@ -15,6 +15,7 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 
 import config from '@plone/volto/registry';
+import { toBase64Latin1 } from '../../../../../utils/base64';
 
 const messages = defineMessages({
   search: {
@@ -34,9 +35,6 @@ const messages = defineMessages({
 // Fallback Input component in case kitconcept.solr is not installed
 // (which provides the SolrSearchAutosuggest widget)
 const FallbackInput = (props) => <Input {...props} />;
-
-const toBase64Unicode = (value) =>
-  btoa(String.fromCharCode(...new TextEncoder().encode(value)));
 
 /**
  * IntranetSearchWidget component class.
@@ -117,7 +115,9 @@ class IntranetSearchWidget extends Component {
         };
 
         // Special handling for the search if includes `ifs-state` parameter, which expects the search term in BASE64
-        const base64 = toBase64Unicode(JSON.stringify(payload));
+        const base64 = encodeURIComponent(
+          toBase64Latin1(JSON.stringify(payload)),
+        );
         externalUrl = `${searchURL}${base64}`;
       } else {
         // If searchURL contains {searchTerm}, replace it with the encoded search text

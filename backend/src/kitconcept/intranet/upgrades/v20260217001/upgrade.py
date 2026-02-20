@@ -11,7 +11,7 @@ logger = logging.getLogger("kitconcept.intranet")
 def add_review_status_indexer(context):
     catalog = api.portal.get_tool("portal_catalog")
     indexes = catalog.indexes()
-    if "review_status" in indexes:
+    if "review_status" not in indexes:
         catalog.addIndex("review_status", "FieldIndex")
         logger.info("Added review_status index.")
     brains = catalog(object_provides=IContentReview)

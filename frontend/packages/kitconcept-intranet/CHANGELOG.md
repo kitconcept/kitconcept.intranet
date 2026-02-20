@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.28 (2026-02-20)
+
+### Feature
+
+- Use latin1 encoding in base64 use case in external search. @sneridagh [#336](https://github.com/kitconcept/kitconcept.intranet/issue/336)
+
 ## 1.0.0-beta.27 (2026-02-12)
 
 ### Feature

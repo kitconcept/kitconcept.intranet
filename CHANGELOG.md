@@ -1,6 +1,32 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b28 (2026-02-20)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Use latin1 encoding in base64 use case in external search. @sneridagh [#336](https://github.com/kitconcept/kitconcept.intranet/issue/336)
+
+
+
+### Project
+
+
+#### Internal
+
+- GHA: Only run the tag workflow on tags starting with `2.`. @ericof 
+
+
+
 ## 1.0.0b27 (2026-02-12)
 
 ### Backend

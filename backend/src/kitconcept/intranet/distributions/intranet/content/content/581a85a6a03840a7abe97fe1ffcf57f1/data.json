@@ -5,25 +5,30 @@
   "allow_discussion": null,
   "authors": null,
   "blocks": {
-    "3d4a86cf-c97a-4e68-88f8-6f2f0489c5e0": {
-      "@type": "heading",
-      "alignment": "left",
-      "heading": "Search block criteria \"Location\"",
-      "styles": {},
+    "3c5b7d1c-530e-4853-939f-04c5936b41f8": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-center)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
+      },
       "theme": "default"
     },
     "43f4d4b7-820d-407e-89d9-b12238d0901a": {
       "@type": "listing",
+      "headline": "Filtered by User's Location",
       "headlineTag": "h2",
       "querystring": {
-        "limit": "5",
+        "b_size": "5",
         "query": [
           {
             "i": "location_reference",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "97e82b07b5444728b1517de15c79fefb"
-            ]
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
           }
         ],
         "sort_order": "ascending"
@@ -31,53 +36,18 @@
       "styles": {},
       "theme": "default",
       "variation": "default"
-    },
-    "657e2a83-e838-48e1-bf4e-d33120cc86b7": {
-      "@type": "heading",
-      "heading": "Passive\u00a0Listings",
-      "styles": {},
-      "theme": "default"
-    },
-    "6aa6b005-256c-4ce4-b894-534fa3ddbed4": {
-      "@type": "search",
-      "query": {
-        "query": [
-          {
-            "i": "organisational_unit_reference",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "558d8bf9875844da847a9c5539944b83"
-            ]
-          }
-        ],
-        "sort_order": "ascending"
-      }
-    },
-    "740b2e6c-ab36-4147-9582-e0ffb1a07920": {
-      "@type": "heading",
-      "heading": "Listing block criteria \"Organisational Unit\"",
-      "styles": {},
-      "theme": "default"
-    },
-    "83bc3e32-39b6-4e46-b66f-0f7c9699fc6d": {
-      "@type": "heading",
-      "alignment": "left",
-      "heading": "Search block criteria \"Organisational Unit\"",
-      "styles": {},
-      "tag": "h2",
-      "theme": "default"
     },
     "86df73cd-16d6-48af-8757-4f7afd990bd7": {
       "@type": "listing",
+      "headline": "Filtered by User's Organisational Unit",
       "headlineTag": "h2",
       "querystring": {
+        "b_size": "5",
         "query": [
           {
             "i": "organisational_unit_reference",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "1a22eddf0e7941a0962cbfaa785e4b4d"
-            ]
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
           }
         ],
         "sort_order": "ascending"
@@ -86,18 +56,25 @@
       "theme": "default",
       "variation": "default"
     },
-    "c7041488-a35f-4ce6-8b51-27dfe520cd87": {
-      "@type": "heading",
-      "alignment": "left",
-      "heading": "Listing block criteria \"Location\"",
-      "styles": {},
+    "89397342-e0cb-48ca-bf54-4e831c26097d": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-center)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": true
+      },
       "theme": "default"
     },
     "cb18773a-c90b-4da3-b92b-55a4e4923731": {
       "@type": "listing",
+      "headline": "Sorted on User relevance",
       "headlineTag": "h2",
       "querystring": {
-        "limit": "7",
+        "b_size": "5",
         "query": [
           {
             "i": "portal_type",
@@ -122,28 +99,52 @@
     },
     "e447bbae-8bcc-4500-aef0-21736624f133": {
       "@type": "search",
+      "headline": "Filtered by User's Location and Organisational Unit",
       "query": {
-        "limit": "5",
+        "b_size": "5",
         "query": [
           {
             "i": "location_reference",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "97e82b07b5444728b1517de15c79fefb"
-            ]
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
           }
         ],
         "sort_order": "ascending"
       }
     },
+    "fa03a061-c24d-4e26-b166-4c417ed8b8dc": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-center)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
+      },
+      "theme": "default"
+    },
     "undefined": {
       "@type": "search",
+      "headline": "Filtered by User's Location and Organisational Unit",
       "listingBodyTemplate": "default",
       "query": {
+        "limit": "10",
         "query": [
           {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.any",
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
             "v": ""
           }
         ],
@@ -159,15 +160,12 @@
   "blocks_layout": {
     "items": [
       "d2fb6151-a556-4cf2-8882-4640edc9677f",
-      "657e2a83-e838-48e1-bf4e-d33120cc86b7",
       "cb18773a-c90b-4da3-b92b-55a4e4923731",
-      "740b2e6c-ab36-4147-9582-e0ffb1a07920",
+      "fa03a061-c24d-4e26-b166-4c417ed8b8dc",
       "86df73cd-16d6-48af-8757-4f7afd990bd7",
-      "83bc3e32-39b6-4e46-b66f-0f7c9699fc6d",
-      "6aa6b005-256c-4ce4-b894-534fa3ddbed4",
-      "c7041488-a35f-4ce6-8b51-27dfe520cd87",
+      "89397342-e0cb-48ca-bf54-4e831c26097d",
       "43f4d4b7-820d-407e-89d9-b12238d0901a",
-      "3d4a86cf-c97a-4e68-88f8-6f2f0489c5e0",
+      "3c5b7d1c-530e-4853-939f-04c5936b41f8",
       "e447bbae-8bcc-4500-aef0-21736624f133"
     ]
   },
@@ -178,7 +176,7 @@
     "admin"
   ],
   "description": "",
-  "effective": "2026-02-23T13:49:39+00:00",
+  "effective": "2026-02-23T13:49:00+00:00",
   "enable_likes": false,
   "exclude_from_nav": false,
   "expires": null,
@@ -194,7 +192,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2026-02-23T13:49:39+00:00",
+  "modified": "2026-02-23T14:38:33+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "responsible_person": null,

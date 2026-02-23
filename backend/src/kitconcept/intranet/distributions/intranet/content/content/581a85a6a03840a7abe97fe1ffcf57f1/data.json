@@ -1,0 +1,231 @@
+{
+  "@id": "/features/personalized-listings",
+  "@type": "Document",
+  "UID": "581a85a6a03840a7abe97fe1ffcf57f1",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "3d4a86cf-c97a-4e68-88f8-6f2f0489c5e0": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Search block criteria \"Location\"",
+      "styles": {},
+      "theme": "default"
+    },
+    "43f4d4b7-820d-407e-89d9-b12238d0901a": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "657e2a83-e838-48e1-bf4e-d33120cc86b7": {
+      "@type": "heading",
+      "heading": "Passive\u00a0Listings",
+      "styles": {},
+      "theme": "default"
+    },
+    "6aa6b005-256c-4ce4-b894-534fa3ddbed4": {
+      "@type": "search",
+      "query": {
+        "query": [
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "558d8bf9875844da847a9c5539944b83"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      }
+    },
+    "740b2e6c-ab36-4147-9582-e0ffb1a07920": {
+      "@type": "heading",
+      "heading": "Listing block criteria \"Organisational Unit\"",
+      "styles": {},
+      "theme": "default"
+    },
+    "83bc3e32-39b6-4e46-b66f-0f7c9699fc6d": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Search block criteria \"Organisational Unit\"",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "86df73cd-16d6-48af-8757-4f7afd990bd7": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "1a22eddf0e7941a0962cbfaa785e4b4d"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "c7041488-a35f-4ce6-8b51-27dfe520cd87": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Listing block criteria \"Location\"",
+      "styles": {},
+      "theme": "default"
+    },
+    "cb18773a-c90b-4da3-b92b-55a4e4923731": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "7",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document",
+              "Event",
+              "File",
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "userRelevance",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "d2fb6151-a556-4cf2-8882-4640edc9677f": {
+      "@type": "title"
+    },
+    "e447bbae-8bcc-4500-aef0-21736624f133": {
+      "@type": "search",
+      "query": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      }
+    },
+    "undefined": {
+      "@type": "search",
+      "listingBodyTemplate": "default",
+      "query": {
+        "query": [
+          {
+            "i": "Subject",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": ""
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d2fb6151-a556-4cf2-8882-4640edc9677f",
+      "657e2a83-e838-48e1-bf4e-d33120cc86b7",
+      "cb18773a-c90b-4da3-b92b-55a4e4923731",
+      "740b2e6c-ab36-4147-9582-e0ffb1a07920",
+      "86df73cd-16d6-48af-8757-4f7afd990bd7",
+      "83bc3e32-39b6-4e46-b66f-0f7c9699fc6d",
+      "6aa6b005-256c-4ce4-b894-534fa3ddbed4",
+      "c7041488-a35f-4ce6-8b51-27dfe520cd87",
+      "43f4d4b7-820d-407e-89d9-b12238d0901a",
+      "3d4a86cf-c97a-4e68-88f8-6f2f0489c5e0",
+      "e447bbae-8bcc-4500-aef0-21736624f133"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-02-23T12:26:01+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-02-23T13:49:39+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "personalized-listings",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-02-23T13:49:39+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Personalized Listings",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-02-23T12:26:01+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-02-23T13:49:39+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

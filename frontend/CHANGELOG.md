@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.29 (2026-02-23)
+
+### Bugfix
+
+- Update VLT7.8.0.
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/7.8.0 @sneridagh 
+
 ## 1.0.0-beta.28 (2026-02-20)
 
 ### Feature

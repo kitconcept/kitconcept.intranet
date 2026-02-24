@@ -54,9 +54,14 @@ all: build
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-instance/etc/zope.ini instance/etc/zope.conf: ## Create instance configuration
+instance/etc/zope.ini instance/etc/zope.conf: instance.yaml ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
-	@uvx cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+	if [[ -s instance-local.yaml ]]; then \
+		echo ">>> Using instance-local.yaml"; \
+		uvx cookiecutter -f --no-input --config-file instance-local.yaml gh:plone/cookiecutter-zope-instance; \
+	else \
+		uvx cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance; \
+	fi
 
 .PHONY: config
 config: instance/etc/zope.ini
@@ -65,14 +70,16 @@ config: instance/etc/zope.ini
 sync: ## Sync project dependencies
 	@echo "$(GREEN)==> Sync project dependencies$(RESET)"
 	@uv sync
-	@echo "$(GREEN)==> Force update of kitconcept.voltolighttheme and kitconcept.core$(RESET)"
-	@uv sync --upgrade-package kitconcept.core
-	@uv sync --upgrade-package kitconcept.voltolighttheme
 
 .PHONY: install
 install: sync config ## Install Plone and dependencies
 
 $(VENV_FOLDER): sync ## Install Plone and dependencies
+
+.PHONY: upgrade
+upgrade: ## Force upgrade of kitconcept.voltolighttheme
+	@echo "$(GREEN)==> Force update of dependencies$(RESET)"
+	@uv sync --upgrade-package kitconcept.voltolighttheme
 
 .PHONY: clean
 clean: ## Clean environment

@@ -81,9 +81,11 @@
     <value key="operation">kitconcept.intranet.queryparser._currentUser</value>
     <value key="widget" />
   </records>
-  
+
   <!-- Content Review -->
-  <records>
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.review_status"
+  >
     <value key="title"
            i18n:translate="label_review_status"
     >

@@ -82,6 +82,11 @@ class IContentReview(model.Schema):
         readonly=True,
     )
 
+    review_comment = schema.Text(
+        title=_("label_review_comment", default="Comment"),
+        required=False,
+    )
+
     @invariant
     def validate_due_date_field(data):
         is_reviewable = getattr(data, "review_enabled", False)

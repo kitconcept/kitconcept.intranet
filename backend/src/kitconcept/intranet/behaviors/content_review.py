@@ -85,6 +85,7 @@ class IContentReview(model.Schema):
     review_comment = schema.Text(
         title=_("label_review_comment", default="Comment"),
         required=False,
+        readonly=True,
     )
 
     @invariant

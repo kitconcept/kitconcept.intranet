@@ -5,10 +5,8 @@ from plone import api
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
 from zExceptions import BadRequest
-from zope.component import getUtility
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
-from zope.schema.interfaces import IVocabularyFactory
 
 
 @implementer(IPublishTraverse)
@@ -62,10 +60,8 @@ class ReviewPost(Service):
                 # update review_completed_date
                 self.context.review_completed_date = date.today()
             case "delegate":
-                field = IContentReview["review_assignee"]
-                vocabularyName = field.vocabularyName
-                factory = getUtility(IVocabularyFactory, name=vocabularyName)
-                vocabulary = factory(self.context)
+                field = IContentReview["review_assignee"].bind(self.context)
+                vocabulary = field.vocabulary
                 data = json_body(self.request)
                 if comment := data.get("comment"):
                     self.context.review_comment = comment

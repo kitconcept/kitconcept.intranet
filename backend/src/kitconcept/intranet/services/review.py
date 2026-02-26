@@ -1,6 +1,7 @@
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from kitconcept.intranet.behaviors.content_review import IContentReview
+from plone import api
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
 from zExceptions import BadRequest
@@ -53,10 +54,10 @@ class ReviewPost(Service):
                 # update review_status
                 self.context.review_status = "Up-to-date"
                 # update review_due_date
-                interval = self.context.review_interval
-                if not interval:
-                    # TODO: send an email that the default still has to be set?
-                    pass
+                default_interval = api.portal.get_registry_record(
+                    "kitconcept.intranet.content_review_default_interval"
+                )
+                interval = self.context.review_interval or default_interval
                 self.context.review_due_date = self._calc_due_date(interval)
                 # update review_completed_date
                 self.context.review_completed_date = date.today()

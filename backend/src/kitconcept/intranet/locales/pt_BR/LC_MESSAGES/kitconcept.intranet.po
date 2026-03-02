@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-02-12 13:36+0000\n"
+"POT-Creation-Date: 2026-02-25 14:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,11 +24,11 @@ msgstr "- Workflow para Intranets. Requer autenticação."
 
 #: kitconcept/intranet/controlpanels/intranet.py:43
 msgid "1:1 round picture"
-msgstr ""
+msgstr "Foto redonda 1:1"
 
 #: kitconcept/intranet/controlpanels/intranet.py:44
 msgid "4:5 square picture"
-msgstr ""
+msgstr "Foto quadrada 4:5"
 
 #: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
@@ -36,31 +36,31 @@ msgstr "Uma distribuição Plone para Intranets com Plone. Criada pela kitconcep
 
 #: kitconcept/intranet/behaviors/person.py:19
 msgid "Academic Title"
-msgstr ""
+msgstr "Título acadêmico"
 
 #: kitconcept/intranet/behaviors/person.py:66
 msgid "Academic Title, First and Last Name"
-msgstr ""
+msgstr "Título acadêmico, nome e sobrenome"
 
 #: kitconcept/intranet/behaviors/configure.zcml:49
 msgid "Add the intranet-specific person fields"
-msgstr ""
+msgstr "Adicionar campos de pessoa específicos da intranet"
 
 #: kitconcept/intranet/behaviors/configure.zcml:42
 msgid "Add the lifecycle management fields"
-msgstr ""
+msgstr "Adicionar campos de gerenciamento do ciclo de vida"
 
 #: kitconcept/intranet/behaviors/configure.zcml:20
 msgid "Adds votes field"
-msgstr ""
+msgstr "Adiciona campo de votos"
 
 #: kitconcept/intranet/controlpanels/intranet.py:60
 msgid "Allowed Email Domains"
-msgstr ""
+msgstr "Domínios de e-mail permitidos"
 
 #: kitconcept/intranet/controlpanels/intranet.py:81
 msgid "Allowed Iframe Domains"
-msgstr ""
+msgstr "Domínios de iframe permitidos"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -69,15 +69,15 @@ msgstr "Só pode ser visto e editado pelo proprietário."
 
 #: kitconcept/intranet/controlpanels/intranet.py:49
 msgid "Default Feedback Email"
-msgstr ""
+msgstr "E-mail padrão de feedback"
 
 #: kitconcept/intranet/behaviors/person.py:30
 msgid "Department"
-msgstr ""
+msgstr "Departamento"
 
 #: kitconcept/intranet/vocabularies/person.py:17
 msgid "Dr."
-msgstr ""
+msgstr "Dr."
 
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
@@ -86,35 +86,35 @@ msgstr "Editar"
 
 #: kitconcept/intranet/controlpanels/intranet.py:56
 msgid "Email address to be CCed in feedback forms."
-msgstr ""
+msgstr "Endereço de e-mail para cópia nos formulários de feedback."
 
 #: kitconcept/intranet/controlpanels/intranet.py:50
 msgid "Email address used in feedback forms if none is set."
-msgstr ""
+msgstr "Endereço de e-mail usado nos formulários de feedback se nenhum estiver definido."
 
 #: kitconcept/intranet/controlpanels/intranet.py:74
 msgid "Enable Content Rating"
-msgstr ""
+msgstr "Habilitar avaliação de conteúdo"
 
 #: kitconcept/intranet/behaviors/votes.py:23
 msgid "Enable Likes"
-msgstr ""
+msgstr "Habilitar curtidas"
 
 #: kitconcept/intranet/behaviors/votes.py:24
 msgid "Enable Likes for this Content Object"
-msgstr ""
+msgstr "Habilitar curtidas para este objeto de conteúdo"
 
 #: kitconcept/intranet/controlpanels/intranet.py:67
 msgid "Enable Sticky Feedback Button"
-msgstr ""
+msgstr "Habilitar botão de feedback fixo"
 
 #: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Enable content rating globally for the Intranet"
-msgstr ""
+msgstr "Habilitar avaliação de conteúdo globalmente para a Intranet"
 
 #: kitconcept/intranet/controlpanels/intranet.py:68
 msgid "Enable or disable the sticky feedback button on all pages."
-msgstr ""
+msgstr "Habilitar ou desabilitar o botão de feedback fixo em todas as páginas."
 
 #: kitconcept/intranet/controlpanels/intranet.py:21
 msgid "External Search URL"
@@ -122,7 +122,7 @@ msgstr "URL de busca externa"
 
 #: kitconcept/intranet/controlpanels/intranet.py:55
 msgid "Feedback CC email"
-msgstr ""
+msgstr "E-mail de cópia do feedback"
 
 #: kitconcept/intranet/behaviors/configure.zcml:28
 msgid "Fields for Location"
@@ -151,31 +151,31 @@ msgstr "Configurações da Intranet"
 
 #: kitconcept/intranet/services/feedback_contact_form.py:231
 msgid "Intranet feedback form: {title}"
-msgstr ""
+msgstr "Formulário de feedback da intranet: {title}"
 
 #: kitconcept/intranet/behaviors/configure.zcml:49
 msgid "Intranet-specific Person fields"
-msgstr ""
+msgstr "Campos de pessoa específicos da intranet"
 
 #: kitconcept/intranet/behaviors/person.py:25
 msgid "Job Title"
-msgstr ""
+msgstr "Cargo"
 
 #: kitconcept/intranet/behaviors/configure.zcml:42
 msgid "Lifecycle Management fields"
-msgstr ""
+msgstr "Campos de gerenciamento do ciclo de vida"
 
 #: kitconcept/intranet/behaviors/votes.py:10
 msgid "Likes"
-msgstr ""
+msgstr "Curtidas"
 
 #: kitconcept/intranet/controlpanels/intranet.py:61
 msgid "List of allowed email domains for feedback forms."
-msgstr ""
+msgstr "Lista de domínios de e-mail permitidos para formulários de feedback."
 
 #: kitconcept/intranet/behaviors/votes.py:14
 msgid "List of user IDs"
-msgstr ""
+msgstr "Lista de IDs de usuários"
 
 #: kitconcept/intranet/behaviors/configure.zcml:28
 #: kitconcept/intranet/behaviors/location.py:19
@@ -195,7 +195,7 @@ msgstr "Membro envia conteúdo para publicação"
 
 #: kitconcept/intranet/services/feedback_contact_form.py:182
 msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
-msgstr ""
+msgstr "Nenhuma pessoa responsável ou e-mail de feedback padrão está configurado. Por favor, entre em contato com o administrador do site."
 
 #: kitconcept/intranet/behaviors/configure.zcml:35
 #: kitconcept/intranet/behaviors/organisational_unit.py:19
@@ -210,7 +210,7 @@ msgstr "Aguardando revisão"
 
 #: kitconcept/intranet/controlpanels/intranet.py:33
 msgid "Person Picture Aspect Ratio"
-msgstr ""
+msgstr "Proporção da foto da pessoa"
 
 #: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Placeholder text for the search field."
@@ -218,11 +218,11 @@ msgstr "Texto de exemplo para o campo de busca."
 
 #: kitconcept/intranet/services/feedback_contact_form.py:190
 msgid "Please enter your feedback."
-msgstr ""
+msgstr "Por favor, insira seu feedback."
 
 #: kitconcept/intranet/services/feedback_contact_form.py:200
 msgid "Please enter your organisational email address."
-msgstr ""
+msgstr "Por favor, insira seu endereço de e-mail organizacional."
 
 #: kitconcept/intranet/profiles.zcml:14
 msgid "Policy package to install our site"
@@ -235,11 +235,11 @@ msgstr "Privado"
 
 #: kitconcept/intranet/vocabularies/person.py:16
 msgid "Prof."
-msgstr ""
+msgstr "Prof."
 
 #: kitconcept/intranet/vocabularies/person.py:18
 msgid "Prof. Dr."
-msgstr ""
+msgstr "Prof. Dr."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -278,7 +278,7 @@ msgstr "Revisor envia conteúdo de volta para reescrita"
 
 #: kitconcept/intranet/behaviors/configure.zcml:20
 msgid "Saves userID who liked an item"
-msgstr ""
+msgstr "Salva o ID do usuário que curtiu um item"
 
 #: kitconcept/intranet/controlpanels/intranet.py:27
 msgid "Search Field Placeholder"
@@ -330,7 +330,7 @@ msgstr "Visível para usuários autenticados, editável por editores e revisores
 
 #: kitconcept/intranet/behaviors/votes.py:13
 msgid "Votes"
-msgstr ""
+msgstr "Votos"
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
@@ -339,17 +339,17 @@ msgstr "Aguardando revisão, não editável pelo proprietário."
 
 #: kitconcept/intranet/services/feedback_contact_form.py:253
 msgid "Your feedback on our intranet content: {title}"
-msgstr ""
+msgstr "Seu feedback sobre nosso conteúdo da intranet: {title}"
 
 #. Default: "Sorry, your feedback could not be delivered."
 #: kitconcept/intranet/services/feedback_contact_form.py:275
 msgid "error_email"
-msgstr ""
+msgstr "Desculpe, não foi possível enviar seu feedback."
 
 #. Default: "Matches the value(s) assigned to the currently logged-in user"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_current_user_filter"
-msgstr ""
+msgstr "Corresponde ao(s) valor(es) atribuído(s) ao usuário atualmente logado"
 
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
@@ -359,7 +359,7 @@ msgstr "Filtrar por Área"
 #. Default: "Image aspect ratio of the person's picture. This setting is used for the person picture on the person profile page, on teasers that point to a person profile page and on listings where persons are displayed."
 #: kitconcept/intranet/controlpanels/intranet.py:34
 msgid "help_person_picture_aspect_ratio"
-msgstr ""
+msgstr "Proporção da imagem da foto da pessoa. Esta configuração é usada para a foto da pessoa na página de perfil, em teasers que apontam para uma página de perfil e em listagens onde pessoas são exibidas."
 
 #. Default: "Filter by location"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
@@ -369,12 +369,12 @@ msgstr "Filtrar por localização"
 #. Default: "Filter by responsibilities"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_responsibilities_filter"
-msgstr ""
+msgstr "Filtrar por responsabilidades"
 
 #. Default: "Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organisational knowledge to understand whether you are the right contact."
 #: kitconcept/intranet/behaviors/person.py:46
 msgid "help_tags"
-msgstr ""
+msgstr "Descreva sobre o que outros podem entrar em contato com você. Foque em tópicos, tarefas ou perguntas pelas quais você é responsável, como orientar sobre programas de financiamento específicos, apoiar processos de candidatura ou esclarecer requisitos formais. Escreva de forma que colegas sem conhecimento organizacional detalhado possam entender se você é o contato certo."
 
 #: kitconcept/intranet/distributions.zcml:17
 msgid "kitconcept Intranet"
@@ -395,17 +395,17 @@ msgstr "kitconcept.intranet: Suporte a buscas com Solr"
 #. Default: "Authors"
 #: kitconcept/intranet/behaviors/clm.py:58
 msgid "label_authors"
-msgstr ""
+msgstr "Autores"
 
 #. Default: "Current logged in user"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_current_user_filter"
-msgstr ""
+msgstr "Usuário logado atualmente"
 
 #. Default: "Feedback to"
 #: kitconcept/intranet/behaviors/clm.py:45
 msgid "label_feedback_person"
-msgstr ""
+msgstr "Feedback para"
 
 #. Default: "Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
@@ -421,14 +421,14 @@ msgstr "Localização"
 #: kitconcept/intranet/behaviors/person.py:45
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "label_responsibilities"
-msgstr ""
+msgstr "Responsabilidades"
 
 #. Default: "Content Owner:"
 #: kitconcept/intranet/behaviors/clm.py:32
 msgid "label_responsible"
-msgstr ""
+msgstr "Responsável pelo conteúdo:"
 
 #. Default: "Responsibilities & Expertise"
 #: kitconcept/intranet/behaviors/person.py:37
 msgid "label_schema_responsibility_categorization"
-msgstr ""
+msgstr "Responsabilidades e Especialidades"

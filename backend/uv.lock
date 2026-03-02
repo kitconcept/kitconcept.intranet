@@ -92,7 +92,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.1" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a10" },
+    { name = "kitconcept-core", specifier = "==2.0.0a12" },
     { name = "kitconcept-solr", specifier = "==2.0.0a9" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
     { name = "legacy-cgi", specifier = "==2.6.2" },
@@ -1317,7 +1317,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0a10"
+version = "2.0.0a12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1329,9 +1329,9 @@ dependencies = [
     { name = "plone-exportimport" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/25/8b/033ee75a6f6fb768d1d455c689ef216da5837fb2b303cef0d10ab2308668/kitconcept_core-2.0.0a10.tar.gz", hash = "sha256:4d81e93e6fbe7fe270e479ab78fd7032f864dc3fe8aa3ae67e0cbf1a61d32279", size = 332385, upload-time = "2026-02-16T15:29:06.627Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/00/9d/7a7ae0ec8f65009d1381def3454e0c92b4dc5af03091e4207ab439272467/kitconcept_core-2.0.0a12.tar.gz", hash = "sha256:40095e8c317455fdaa79200785075a36c984feb239a44946c8a6644a63ef3540", size = 332972, upload-time = "2026-02-27T18:18:21.095Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/16/ab/acbcd1e425a68cca26408b9e525e0a968c49a4b3503e5fb034449150eb1a/kitconcept_core-2.0.0a10-py3-none-any.whl", hash = "sha256:6bf4d4d96670e5fe35ee3a95b0311d603be19904d0523b50e62295b70c1dea05", size = 243408, upload-time = "2026-02-16T15:29:02.941Z" },
+    { url = "https://files.pythonhosted.org/packages/09/4b/396e62755c229be9d3096950d9fab843adbdb3ae96c6791d5daf9b6eb199/kitconcept_core-2.0.0a12-py3-none-any.whl", hash = "sha256:9d7a6063c6d85f0bb6436b68cdda6e17295016c2a7fcba34eedfe43f255cf325", size = 245343, upload-time = "2026-02-27T18:18:18.651Z" },
 ]
 
 [[package]]
@@ -1381,7 +1381,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0a10" },
+    { name = "kitconcept-core", specifier = "==2.0.0a12" },
     { name = "kitconcept-solr", specifier = "==2.0.0a9" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

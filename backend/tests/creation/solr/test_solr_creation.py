@@ -55,6 +55,8 @@ class TestSiteCreation:
             "location",
             "image_scales",
             "image_field",
+            "organisational_unit_reference",
+            "location_reference",
         ],
     )
     def test_solr_config_fieldlist(self, item):
@@ -66,6 +68,6 @@ class TestSiteCreation:
         key = "kitconcept.solr.config"
         config: dict = api.portal.get_registry_record(key)
         values = config["searchTabs"]
-        assert len(values) == 5
+        assert len(values) == 6
         assert values[0]["label"] == "All"
         assert values[0]["filter"] == "Type(*)"

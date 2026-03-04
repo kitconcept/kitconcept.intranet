@@ -1,0 +1,1 @@
+Add current user querystring operation. @danalvrz

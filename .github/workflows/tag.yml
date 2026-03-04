@@ -3,7 +3,7 @@ name: 'kitconcept Intranet - Tag'
 on:
   push:
     tags:
-      - '*'
+      - '2.*'
   workflow_dispatch:
 
 env:

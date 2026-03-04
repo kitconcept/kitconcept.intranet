@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.8 (2026-02-05)
+
+### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a14 @sneridagh 
+
+### Internal
+
+- Fix acceptance test for header search. @davisagli 
+
 ## 2.0.0-alpha.7 (2026-01-27)
 
 ### Feature

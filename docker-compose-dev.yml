@@ -119,6 +119,8 @@ services:
       SOLR_HOST: solr
       SOLR_PORT: 8983
       SOLR_BASE: /solr/plone
+      SITE_SETUP_SOLR: "true"
+      SOLR_ACTIVATE: "true"
     depends_on:
       - db
       - solr
@@ -178,8 +180,6 @@ services:
     profiles: ["dev"]
     depends_on:
       - tika
-    volumes:
-      - vol-solr-data:/var/solr/data
     environment:
       SOLR_MODULES: extraction
       SOLR_OPTS: "-Dsolr.tika.url=http://tika:9998"
@@ -231,4 +231,3 @@ services:
 
 volumes:
   vol-site-data: {}
-  vol-solr-data: {}

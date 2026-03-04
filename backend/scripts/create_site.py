@@ -25,7 +25,7 @@ ANSWERS = {
     "setup_content": os.getenv("SITE_SETUP_CONTENT", "true"),
     "demo_content": os.getenv("SITE_DEMO_CONTENT", "true"),
     "workflow": os.getenv("SITE_WORFLOW", "public"),
-    "setup_solr": os.getenv("SITE_SETUP_SOLR", "false"),
+    "setup_solr": (os.getenv("SITE_SETUP_SOLR") or "false") != "false",
     "authentication": {
         "provider": os.getenv("SITE_AUTHENTICATION_PROVIDER", "internal"),
         "oidc-server_url": os.getenv("SITE_AUTHENTICATION_OIDC-SERVER_URL"),

@@ -2,6 +2,19 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a8 (2026-02-05)
+
+
+### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a14 @sneridagh 
+
+
+### Internal
+
+- Add example content for Passive Targteing feature @iRohitSingh [#309](https://github.com/kitconcept/kitconcept.intranet/issue/309)
+- Show intranet header in accpetance tests. @davisagli 
+
 ## 2.0.0a7 (2026-01-27)
 
 

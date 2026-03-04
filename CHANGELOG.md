@@ -1,6 +1,44 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a8 (2026-02-05)
+
+### Backend
+
+
+#### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a14 @sneridagh 
+
+
+#### Internal
+
+- Add example content for Passive Targteing feature @iRohitSingh [#309](https://github.com/kitconcept/kitconcept.intranet/issue/309)
+- Show intranet header in accpetance tests. @davisagli 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a14 @sneridagh 
+
+#### Internal
+
+- Fix acceptance test for header search. @davisagli 
+
+
+
+### Project
+
+
+#### Internal
+
+- Demo sites: Ensure tika and solr services are always on an internal network. @ericof 
+
+
+
 ## 2.0.0a7 (2026-01-27)
 
 ### Backend

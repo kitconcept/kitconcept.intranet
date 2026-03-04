@@ -1,0 +1,1 @@
+Add room and building facet fields for person solr search. @danalvrz

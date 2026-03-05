@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.9 (2026-03-05)
+
+### Feature
+
+- Update to VLT 8a17.
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a17 @sneridagh [#vlt8a17](https://github.com/kitconcept/kitconcept.intranet/issue/vlt8a17)
+- Added command for upgrading dependencies. @davisagli @sneridagh [#333](https://github.com/kitconcept/kitconcept.intranet/issue/333)
+- Add custom Person view for solr search results and customized search tabs with icons. @danalvrz 
+- Update kitconcept-core to 2.0.0a12. @iFlameing 
+
+### Internal
+
+- Added pt-br translations. @humanaice 
+- Fixed a misleading translation (de). @jnptk 
+- Regenerate lock file with no changes. @danalvrz 
+
 ## 2.0.0-alpha.8 (2026-02-05)
 
 ### Bugfix

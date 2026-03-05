@@ -34,6 +34,11 @@ function latestPublishedVersion(packageName) {
   return versions[versions.length - 1][0];
 }
 
+function installFrontendDependencies() {
+  const frontendDir = path.resolve(__dirname, '..');
+  execFileSync('make', ['install'], { cwd: frontendDir, stdio: 'inherit' });
+}
+
 function updateMrsDeveloper(tag) {
   const frontendDir = path.resolve(__dirname, '..');
   const mrsPath = path.join(frontendDir, 'mrs.developer.json');
@@ -57,6 +62,7 @@ function updateMrsDeveloper(tag) {
 function main() {
   try {
     const latestVersion = latestPublishedVersion(PACKAGE_NAME);
+    installFrontendDependencies();
     const tag = toPythonStyleTag(latestVersion);
     updateMrsDeveloper(tag);
   } catch (error) {

@@ -1,1 +1,0 @@
-Add custom Person view for solr search results and customized search tabs with icons. @danalvrz

@@ -1,1 +1,0 @@
-Update kitconcept-core to 2.0.0a12. @iFlameing

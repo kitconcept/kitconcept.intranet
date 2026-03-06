@@ -1,6 +1,63 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a9 (2026-03-05)
+
+### Backend
+
+
+#### Feature
+
+- Update to VLT 8a17.
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a17 @sneridagh [#vlt8a17](https://github.com/kitconcept/kitconcept.intranet/issue/vlt8a17)
+- Added command for upgrading dependencies. @davisagli @sneridagh [#333](https://github.com/kitconcept/kitconcept.intranet/issue/333)
+- Add current user querystring operation. @danalvrz 
+- Add room and building facet fields for person solr search. @danalvrz 
+- Update kitconcept-core to 2.0.0a12. @iFlameing 
+
+
+#### Bugfix
+
+- Fix initial kitconcept.solr search config in newly created sites. @davisagli 
+
+
+#### Internal
+
+- Support optional instance-local.yaml in the backed to override cookiecutter zope settings on a development install. @fredvd [#225](https://github.com/kitconcept/kitconcept.intranet/issue/225)
+- Improve example content of Personalized Listings @iRohitSingh [#338](https://github.com/kitconcept/kitconcept.intranet/issue/338)
+- Added more pt-br translations. @humanaice 
+- Install kitconcept.solr by default for local development. @danalvrz 
+
+
+
+### Frontend
+
+#### Feature
+
+- Update to VLT 8a17.
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a17 @sneridagh [#vlt8a17](https://github.com/kitconcept/kitconcept.intranet/issue/vlt8a17)
+- Added command for upgrading dependencies. @davisagli @sneridagh [#333](https://github.com/kitconcept/kitconcept.intranet/issue/333)
+- Add custom Person view for solr search results and customized search tabs with icons. @danalvrz 
+- Update kitconcept-core to 2.0.0a12. @iFlameing 
+
+#### Internal
+
+- Added pt-br translations. @humanaice 
+- Fixed a misleading translation (de). @jnptk 
+- Regenerate lock file with no changes. @danalvrz 
+
+
+
+### Project
+
+
+#### Internal
+
+- GHA: Only run the tag workflow on tags starting with `2.`. @ericof 
+- Update the dev Docker Compose configuration to activate solr by default, but not use a persistent volume. @danalvrz 
+
+
+
 ## 2.0.0a8 (2026-02-05)
 
 ### Backend

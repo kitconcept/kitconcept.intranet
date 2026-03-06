@@ -1,6 +1,5 @@
 from plone.app.vocabularies import SimpleVocabulary
 
-
 import pytest
 
 

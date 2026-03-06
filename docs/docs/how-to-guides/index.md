@@ -26,4 +26,5 @@ person-responsibilities
 squared-person-image-support
 content-interactions
 content-feedback-form
+content-review
 ```

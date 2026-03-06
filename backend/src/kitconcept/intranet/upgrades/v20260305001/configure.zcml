@@ -12,12 +12,8 @@
         import_steps="typeinfo plone.app.registry catalog"
         />
     <genericsetup:upgradeStep
-        title="Add and update review_status index"
-        handler=".upgrade.add_review_status_indexer"
-        />
-    <genericsetup:upgradeStep
-        title="Add and update review_due_date index"
-        handler=".upgrade.add_review_due_date_indexer"
+        title="Update existing content objects"
+        handler=".upgrade.update_existing_content"
         />
   </genericsetup:upgradeSteps>
 </configure>

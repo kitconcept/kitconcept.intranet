@@ -1,6 +1,6 @@
 from datetime import date
-from dateutil.relativedelta import relativedelta
 from kitconcept.intranet.behaviors.content_review import IContentReview
+from kitconcept.intranet.utils.calc_due_date import calc_due_date
 from plone import api
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
@@ -21,17 +21,6 @@ class ReviewPost(Service):
         # Treat any path segments after /@review as parameters
         self.params.append(name)
         return self
-
-    def _calc_due_date(self, interval: str) -> date:
-        mapping = {
-            "d": "days",
-            "w": "weeks",
-            "m": "months",
-            "y": "years",
-        }
-        unit = mapping.get(interval[-1])
-        amount = int(interval[:-1])
-        return date.today() + relativedelta(**{unit: amount})
 
     def reply(self):
         if not self.params:
@@ -56,7 +45,7 @@ class ReviewPost(Service):
                     "kitconcept.intranet.content_review_default_interval"
                 )
                 interval = self.context.review_interval or default_interval
-                self.context.review_due_date = self._calc_due_date(interval)
+                self.context.review_due_date = calc_due_date(interval=interval)
                 # update review_completed_date
                 self.context.review_completed_date = date.today()
             case "delegate":

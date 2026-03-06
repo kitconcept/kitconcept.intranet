@@ -1,0 +1,229 @@
+{
+  "@id": "/features/personalized-listings",
+  "@type": "Document",
+  "UID": "581a85a6a03840a7abe97fe1ffcf57f1",
+  "allow_discussion": null,
+  "authors": null,
+  "blocks": {
+    "3c5b7d1c-530e-4853-939f-04c5936b41f8": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-center)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
+      },
+      "theme": "default"
+    },
+    "43f4d4b7-820d-407e-89d9-b12238d0901a": {
+      "@type": "listing",
+      "headline": "Filtered by User's Location",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "86df73cd-16d6-48af-8757-4f7afd990bd7": {
+      "@type": "listing",
+      "headline": "Filtered by User's Organisational Unit",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "89397342-e0cb-48ca-bf54-4e831c26097d": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-center)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": true
+      },
+      "theme": "default"
+    },
+    "cb18773a-c90b-4da3-b92b-55a4e4923731": {
+      "@type": "listing",
+      "headline": "Sorted on User relevance",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document",
+              "Event",
+              "File",
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "userRelevance",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "d2fb6151-a556-4cf2-8882-4640edc9677f": {
+      "@type": "title"
+    },
+    "e447bbae-8bcc-4500-aef0-21736624f133": {
+      "@type": "search",
+      "headline": "Filtered by User's Location and Organisational Unit",
+      "query": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          }
+        ],
+        "sort_order": "ascending"
+      }
+    },
+    "fa03a061-c24d-4e26-b166-4c417ed8b8dc": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-center)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
+      },
+      "theme": "default"
+    },
+    "undefined": {
+      "@type": "search",
+      "headline": "Filtered by User's Location and Organisational Unit",
+      "listingBodyTemplate": "default",
+      "query": {
+        "limit": "10",
+        "query": [
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.currentUser",
+            "v": ""
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d2fb6151-a556-4cf2-8882-4640edc9677f",
+      "cb18773a-c90b-4da3-b92b-55a4e4923731",
+      "fa03a061-c24d-4e26-b166-4c417ed8b8dc",
+      "86df73cd-16d6-48af-8757-4f7afd990bd7",
+      "89397342-e0cb-48ca-bf54-4e831c26097d",
+      "43f4d4b7-820d-407e-89d9-b12238d0901a",
+      "3c5b7d1c-530e-4853-939f-04c5936b41f8",
+      "e447bbae-8bcc-4500-aef0-21736624f133"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-02-23T12:26:01+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-02-23T13:49:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "personalized-listings",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-02-23T14:38:33+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_state": "published",
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Personalized Listings",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-02-23T12:26:01+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-02-23T13:49:39+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

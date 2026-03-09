@@ -1316,6 +1316,22 @@ wheels = [
 ]
 
 [[package]]
+name = "kitconcept-contactblock"
+version = "1.0.0a5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "collective-person" },
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/55/6c/8dc0eb6af1e18f84ab41da89972b9851dcd496e8b4c3afb11a3a09904f03/kitconcept_contactblock-1.0.0a5.tar.gz", hash = "sha256:46328e05dee08bfbd1a8b603afa441a884fc5765e13bd6b4ae374dcf5d541dac", size = 78234, upload-time = "2026-02-16T09:56:53.272Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9f/0d/c022ae66ac4d2dd9f28d5da97236932b52c786a1ae8f0e7f1d5649903af9/kitconcept_contactblock-1.0.0a5-py3-none-any.whl", hash = "sha256:1fb4d2c9d29dc6680f51f2fbc5863c9f7210ba52bb940b9a10b509cd1eddafa6", size = 84589, upload-time = "2026-02-16T09:56:52.297Z" },
+]
+
+[[package]]
 name = "kitconcept-core"
 version = "2.0.0a12"
 source = { registry = "https://pypi.org/simple" }
@@ -1339,6 +1355,7 @@ name = "kitconcept-intranet"
 source = { editable = "." }
 dependencies = [
     { name = "collective-solr" },
+    { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
     { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
@@ -1381,6 +1398,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.0.0" },
+    { name = "kitconcept-contactblock", specifier = "==1.0.0a5" },
     { name = "kitconcept-core", specifier = "==2.0.0a12" },
     { name = "kitconcept-solr", specifier = "==2.0.0a11" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },

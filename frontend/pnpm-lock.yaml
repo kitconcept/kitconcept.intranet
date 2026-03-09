@@ -1412,6 +1412,9 @@ importers:
       '@kitconcept/volto-carousel-block':
         specifier: workspace:*
         version: link:../volto-carousel-block/packages/volto-carousel-block
+      '@kitconcept/volto-contact-block':
+        specifier: workspace:*
+        version: link:../volto-contact-block/frontend/packages/volto-contact-block
       '@kitconcept/volto-heading-block':
         specifier: workspace:*
         version: link:../volto-heading-block/packages/volto-heading-block

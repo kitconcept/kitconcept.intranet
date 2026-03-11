@@ -1,6 +1,33 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b31 (2026-03-11)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix mobile sticky menu not showing from 768 to 620px. @iFlameing 
+- See:
+  https://github.com/plone/volto/releases/tag/18.32.2
+  https://github.com/plone/volto/releases/tag/18.32.3 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b30 (2026-03-11)
 
 ### Backend

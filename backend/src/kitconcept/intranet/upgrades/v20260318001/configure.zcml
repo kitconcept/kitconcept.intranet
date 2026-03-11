@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260304001"
+      destination="20260318001"
+      >
+    <genericsetup:upgradeStep
+        title="Initialize vocabulary cache"
+        handler=".init_vocabulary_cache"
+        />
+    <genericsetup:upgradeDepends
+        title="Update kitconcept.solr configuration"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

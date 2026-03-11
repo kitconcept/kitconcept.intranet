@@ -194,6 +194,8 @@ jobs:
           STACK_PREFIX=${{ vars.STACK_PREFIX }}
           HOSTNAME=${{ vars.HOSTNAME }}
           CERTRESOLVER=${{ vars.CERTRESOLVER }}
+          BASIC_AUTH_USER=${{ vars.BASIC_AUTH_USER }}
+          BASIC_AUTH_PASSWORD=${{ vars.BASIC_AUTH_PASSWORD }}
 
     permissions:
         contents: read

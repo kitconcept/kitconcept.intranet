@@ -64,10 +64,7 @@ services:
         - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/${HOSTNAME}/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
         ## Basic Authentication
-        ### Note: all dollar signs in the hash need to be doubled for escaping.
-        ### To create user:password pair, it's possible to use this command:
-        ### echo $(htpasswd -nb user password) | sed -e s/\\$/\\$\\$/g
-        - traefik.http.middlewares.mw-${STACK_PREFIX}-back-auth.basicauth.users=kitconcept:$$apr1$$6RN5HfVi$$gB0AHNAzvzKXudmevCYdU.
+        - traefik.http.middlewares.mw-${STACK_PREFIX}-back-auth.basicauth.users=${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD}
 
         # Routes
         ## /++api++

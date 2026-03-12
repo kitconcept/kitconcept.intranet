@@ -4,10 +4,12 @@ import RssGridTemplate from '../components/Blocks/RSS/GridTemplate';
 import RssSummaryTemplate from '../components/Blocks/RSS/SummaryTemplate';
 import type { StyleDefinition } from '@plone/types';
 import EventCalendarTemplate from '../components/Blocks/Listing/EventCalendarTemplate';
+import { ContactListStylingSchema } from '../components/Blocks/ContactList/schema';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
     rssBlock: BlockConfigBase;
+    contactList: BlockConfigBase;
   }
 
   export interface BlockConfigBase {
@@ -49,6 +51,9 @@ export default function install(config: ConfigType) {
       template: RssSummaryTemplate,
     },
   };
+
+  config.blocks.blocksConfig.contactList.schemaEnhancer =
+    ContactListStylingSchema;
 
   return config;
 }

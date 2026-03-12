@@ -65,7 +65,7 @@ services:
         - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.mw-${STACK_PREFIX}-back-vhm-classic.replacepathregex.replacement=/VirtualHostBase/https/${HOSTNAME}/Plone/VirtualHostRoot/_vh_ClassicUI$$1"
         ## Basic Authentication
-        - traefik.http.middlewares.mw-${STACK_PREFIX}-back-auth.basicauth.users=${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD_CLASSICUI}
+        - traefik.http.middlewares.mw-${STACK_PREFIX}-back-auth.basicauth.users=${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD}
 
         # Routes
         ## /++api++

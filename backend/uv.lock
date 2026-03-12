@@ -40,7 +40,7 @@ constraints = [
     { name = "collective-recipe-omelette", specifier = "==2.0.0" },
     { name = "collective-recipe-template", specifier = "==2.2" },
     { name = "collective-recipe-vscode", specifier = "==0.1.9" },
-    { name = "collective-solr", specifier = "==10.0.0" },
+    { name = "collective-solr", specifier = "==10.1.1" },
     { name = "collective-volto-formsupport", specifier = "==3.2.3" },
     { name = "collective-xmltestreport", specifier = "==2.0.2" },
     { name = "collective-z3cform-datagridfield", specifier = "==3.0.4" },
@@ -780,7 +780,7 @@ wheels = [
 
 [[package]]
 name = "collective-solr"
-version = "10.0.0"
+version = "10.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "acquisition" },
@@ -807,9 +807,9 @@ dependencies = [
     { name = "zope-publisher" },
     { name = "zope-schema" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/df/59/afe7e66b1caf678bb86488a1f070733da01335ae5d48c6adc2e656f52323/collective_solr-10.0.0.tar.gz", hash = "sha256:8bb874fb0b2d198a25a7f6608de25daf203e2ef31bac7dfed64a5d7fef2bdc04", size = 207843, upload-time = "2025-11-26T08:18:03.355Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a4/d5/4c3bd4c1c51b1eab61ca06541c8e72563da6b70e384d122a98dbf07df083/collective_solr-10.1.1.tar.gz", hash = "sha256:6df4bdca150e9b1c20605c1be7d825aa60be53a2a359bc9578a3ae9d1f363d61", size = 208270, upload-time = "2026-03-11T17:08:09.988Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f7/b1/6f2c393fe37f6a22be1252ff9c3576dff9e03e303e3248a501c5888cb141/collective_solr-10.0.0-py3-none-any.whl", hash = "sha256:b2896d46817c1b9a0b2a70d1bd47263e1e4338660975cd13cdfe1719160a5cde", size = 212336, upload-time = "2025-11-26T08:18:00.671Z" },
+    { url = "https://files.pythonhosted.org/packages/9d/2d/363ecb7a9e87b74c60d261d47e5afd90c72292b09b58b483eba1da7658ed/collective_solr-10.1.1-py3-none-any.whl", hash = "sha256:fe879466d069d0a466f0b044f3b9606676dc02f30af5aadf64da17393a4a70b2", size = 212536, upload-time = "2026-03-11T17:08:07.342Z" },
 ]
 
 [[package]]
@@ -1397,7 +1397,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "collective-solr", specifier = "==10.0.0" },
+    { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a5" },
     { name = "kitconcept-core", specifier = "==2.0.0a12" },
     { name = "kitconcept-solr", specifier = "==2.0.0a11" },

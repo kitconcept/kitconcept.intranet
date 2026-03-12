@@ -45,7 +45,7 @@ jobs:
           fetch-depth: '0'
 
       - name: 'Example Content QA: Evaluate Image Sizes'
-        uses: kitconcept/image-checker@v1.0.0
+        uses: kitconcept/image-checker@v1.1.0
         with:
           paths: '${{ inputs.content-folders }}'
           max-size: '1048576'   # 1 MB

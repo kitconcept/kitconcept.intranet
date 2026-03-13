@@ -1,0 +1,15 @@
+---
+myst:
+  html_meta:
+    description: "Configure which domains are allowed to be embedded in iFrames."
+    keywords: "how-to, intranet, admin"
+doc_type: how-to
+audience: admin
+status: draft
+---
+
+# How to Configure Allowed iFrame Domains
+
+:::{note}
+This page is a stub. Content is pending and will be added in a future update.
+:::

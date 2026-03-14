@@ -1339,12 +1339,6 @@ importers:
 
   packages/kitconcept-core/frontend/packages/kitconcept-core:
     dependencies:
-      '@mbarde/volto-image-crop-widget':
-        specifier: ^0.5.1
-        version: 0.5.1(react@18.2.0)
-      '@plone-collective/volto-authomatic':
-        specifier: 3.0.0-alpha.6
-        version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plone/components':
         specifier: workspace:^
         version: link:../../../../../core/packages/components
@@ -3961,9 +3955,6 @@ packages:
     engines: {node: '>=8'}
     peerDependencies:
       webpack: '>=4.6.0'
-
-  '@mbarde/volto-image-crop-widget@0.5.1':
-    resolution: {integrity: sha512-Dv7EYr1gj9Eahq6vtFAlhllk9JNK8yI9kHkvxkgauK/VBph3t+6reJC8hi1vchfbOtI9tbDfA1R/A4Aul0gVVg==}
 
   '@mdx-js/react@3.1.1':
     resolution: {integrity: sha512-f++rKLQgUVYDAtECQ6fn/is15GkEH9+nZPM3MS0RcxVqoTfawHvDlSCH7JbMhAM6uJ32v3eXLvLmLvjGu7PTQw==}
@@ -11932,11 +11923,6 @@ packages:
       react: ^16.3 || ^17.0 || ^18.0 || ^19.0
       react-dom: ^17.0 || ^18.0 || ^19.0
 
-  react-image-crop@10.0.9:
-    resolution: {integrity: sha512-fqn6a811cx/sE7jtu8txL4lBTwgZYuEVNvy7UPKMNMWeRcZa6v0ja11+Gd9nZQiBfaxDal3PBcKhGBLQ956UNg==}
-    peerDependencies:
-      react: '>=16.13.1'
-
   react-image-gallery@1.2.7:
     resolution: {integrity: sha512-ts7yMWykvZhslGMuvVAUk7a1dJIx9QtIwK6Clv8dOGxPsJid92FRrLvXbZDvkYcUyj48sHalnBhqU6mZNCB2jg==}
     peerDependencies:
@@ -16402,15 +16388,6 @@ snapshots:
     dependencies:
       make-dir: 3.1.0
       webpack: 5.90.1(esbuild@0.25.12)
-
-  '@mbarde/volto-image-crop-widget@0.5.1(react@18.2.0)':
-    dependencies:
-      '@plone/scripts': 3.10.3
-      react-image-crop: 10.0.9(react@18.2.0)
-    transitivePeerDependencies:
-      - debug
-      - react
-      - supports-color
 
   '@mdx-js/react@3.1.1(@types/react@18.3.26)(react@18.2.0)':
     dependencies:
@@ -26410,11 +26387,6 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-
-  react-image-crop@10.0.9(react@18.2.0):
-    dependencies:
-      clsx: 1.2.1
-      react: 18.2.0
 
   react-image-gallery@1.2.7(react@18.2.0):
     dependencies:

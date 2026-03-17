@@ -1,3 +1,4 @@
+from datetime import date
 from kitconcept.intranet import _
 from plone import api
 from plone.autoform.interfaces import IFormFieldProvider
@@ -73,6 +74,7 @@ class IContentReview(model.Schema):
 
     review_due_date = schema.Date(
         title=_("label_review_due_date", default="Due date"),
+        default=date.today(),
         required=False,
     )
 

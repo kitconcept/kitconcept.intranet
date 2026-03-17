@@ -15,5 +15,13 @@ with api.env.adopt_roles(["Manager"]):
         reviewer = api.user.get(
             obj.review_assignee if obj.review_assignee else obj.Creator()
         )
+
         breakpoint()
-        # TODO: send mail to assignee or content owner
+        mail_subject = "Lorem Ipsum"
+        mail_body = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+
+        api.portal.send_email(
+            recipient=reviewer.getProperty("email"),
+            subject=mail_subject,
+            body=mail_body,
+        )

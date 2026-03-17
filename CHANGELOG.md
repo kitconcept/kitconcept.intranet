@@ -1,6 +1,53 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a10 (2026-03-14)
+
+### Backend
+
+
+#### Feature
+
+- Add kitconcept.contactblock. @iFlameing 
+
+
+#### Bugfix
+
+- Add missing upgrade file(v20260217001) in upgrades/configure.zcml. @iFlameing 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+- Update to collective.solr 10.1.1 (fixes edge case with pagination). @davisagli 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add ContactList block. @iFlameing [#contactlist](https://github.com/kitconcept/kitconcept.intranet/issue/contactlist)
+- Added add-on @plone-collective/volto-image-editor. @sneridagh 
+
+#### Bugfix
+
+- Fix colors in Person profile view. @danalvrz 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix basic authentication not being set on backend deployments. @ericof [#331](https://github.com/kitconcept/kitconcept.intranet/pull/331)
+
+
+
 ## 2.0.0a9 (2026-03-05)
 
 ### Backend

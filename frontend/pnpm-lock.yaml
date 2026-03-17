@@ -1339,12 +1339,6 @@ importers:
 
   packages/kitconcept-core/frontend/packages/kitconcept-core:
     dependencies:
-      '@mbarde/volto-image-crop-widget':
-        specifier: ^0.5.1
-        version: 0.5.1(react@18.2.0)
-      '@plone-collective/volto-authomatic':
-        specifier: 3.0.0-alpha.6
-        version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plone/components':
         specifier: workspace:^
         version: link:../../../../../core/packages/components
@@ -1412,6 +1406,9 @@ importers:
       '@kitconcept/volto-carousel-block':
         specifier: workspace:*
         version: link:../volto-carousel-block/packages/volto-carousel-block
+      '@kitconcept/volto-contact-block':
+        specifier: workspace:*
+        version: link:../volto-contact-block/frontend/packages/volto-contact-block
       '@kitconcept/volto-heading-block':
         specifier: workspace:*
         version: link:../volto-heading-block/packages/volto-heading-block
@@ -1439,6 +1436,12 @@ importers:
       '@kitconcept/volto-solr':
         specifier: 2.0.0-alpha.11
         version: 2.0.0-alpha.11(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone-collective/volto-authomatic':
+        specifier: 3.0.0-alpha.6
+        version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.26)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+      '@plone-collective/volto-image-editor':
+        specifier: 1.0.1
+        version: 1.0.1(@plone/registry@core+packages+registry)(@plone/types@core+packages+types)(advanced-cropper@0.17.1)(classnames@2.5.1)(react-aria-components@1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -1699,6 +1702,46 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^3.1.2
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+
+  packages/volto-contact-block/frontend/packages/volto-contact-block:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-aria-components:
+        specifier: ^1.13.0
+        version: 1.14.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/registry':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/registry
+      '@plone/scripts':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/scripts
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/types
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@18.3.7(@types/react@18.3.26))(@types/react@18.3.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@types/react':
+        specifier: ^18.3.1
+        version: 18.3.26
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.26)
+      release-it:
+        specifier: ^19.0.5
+        version: 19.0.5(@types/node@24.10.0)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
 
   packages/volto-dsgvo-banner/packages/volto-dsgvo-banner:
@@ -2133,34 +2176,6 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.0)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
-
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
-      buffer:
-        specifier: ^5.5.0
-        version: 5.7.1
-      lodash.debounce:
-        specifier: ^4.0.8
-        version: 4.0.8
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-portal:
-        specifier: 4.2.1
-        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.3
-      react-autosuggest:
-        specifier: 10.1.0
-        version: 10.1.0(react@18.2.0)
-      release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.9.3)
 
 packages:
 
@@ -3941,9 +3956,6 @@ packages:
     peerDependencies:
       webpack: '>=4.6.0'
 
-  '@mbarde/volto-image-crop-widget@0.5.1':
-    resolution: {integrity: sha512-Dv7EYr1gj9Eahq6vtFAlhllk9JNK8yI9kHkvxkgauK/VBph3t+6reJC8hi1vchfbOtI9tbDfA1R/A4Aul0gVVg==}
-
   '@mdx-js/react@3.1.1':
     resolution: {integrity: sha512-f++rKLQgUVYDAtECQ6fn/is15GkEH9+nZPM3MS0RcxVqoTfawHvDlSCH7JbMhAM6uJ32v3eXLvLmLvjGu7PTQw==}
     peerDependencies:
@@ -4272,8 +4284,28 @@ packages:
       react-intl: '*'
       semantic-ui-react: '*'
 
+  '@plone-collective/volto-image-editor@1.0.1':
+    resolution: {integrity: sha512-uTTKKz3sywT8mMAEb/VLVFn+vkVg///n7fe160LMTHlamhnZ8GUWsY0gAYn6dC+StPQGXYR6osyXqRV4VNaBGw==}
+    peerDependencies:
+      '@plone/registry': 3.0.0-alpha.9
+      '@plone/types': 2.0.0-alpha.14
+      advanced-cropper: ~0.17.1
+      classnames: '*'
+      react: 18.2.0
+      react-aria-components: '*'
+      react-dom: 18.2.0
+
   '@plone/components@3.0.2':
     resolution: {integrity: sha512-BLxq4HMcmGux+CD6nOyl0YOqpTiB4yz/h4y/dcGSH3EwhxB3vaEq/Vcoss4qlzHJFfguemNPehJPGP8tq/Z6ww==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
+  '@plone/components@4.0.0-alpha.6':
+    resolution: {integrity: sha512-x8nIF9iweA3ctx5K473XRfc3Gfc2fcZOQjVhaOLfdsGjrB6EvBEQe8CK2blMyYpNqcub9HvMG/ir4YckgR228Q==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -6420,6 +6452,10 @@ packages:
     resolution: {integrity: sha512-YBrGyT2/uVQ/c6Rr+t6ZJXniY03YtHGMJQYal368burRGYKqhx9qGTWqcBU5s1CwYY9E/ri63RYyG1IacMZtqw==}
     engines: {node: '>=8.9'}
 
+  advanced-cropper@0.17.1:
+    resolution: {integrity: sha512-Z1P0sYOXa2tqZjeY742QtNERofXh1AuOa27LEurO9rbx3IfzLrGQlzy7sWEc5VN9hRg+J/qCiMmnB6tUDLb1TA==}
+    engines: {node: '>=8', npm: '>=5'}
+
   agent-base@6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
@@ -7425,6 +7461,9 @@ packages:
   content-type@1.0.5:
     resolution: {integrity: sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==}
     engines: {node: '>= 0.6'}
+
+  context-filter-polyfill@0.3.23:
+    resolution: {integrity: sha512-kkr1NpyK6XeDVZ7ua/WtVV3sGPp/zubQ6gPaI/MdwL3LsWASlEYPiqigQWdQO/YVC4tJx/OcuiBgBCtsKgKabA==}
 
   convert-source-map@0.3.5:
     resolution: {integrity: sha512-+4nRk0k3oEpwUB7/CalD7xE2z4VmtEnnq0GO2IPTkrooTrAhEsWvuLF5iWP1dXrwluki/azwXV1ve7gtYuPldg==}
@@ -11733,6 +11772,12 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
+  react-advanced-cropper@0.20.1:
+    resolution: {integrity: sha512-Pcmkv0xQMpig6+LkM+zLbEuqBbYG3+CwXvIfYU+LDNn9l8t91Jm0fp9MSTNW0pjIvT6frAGTfmlnvnZW4PEs7Q==}
+    engines: {node: '>=8', npm: '>=5'}
+    peerDependencies:
+      react: '>=16.8.0'
+
   react-anchor-link-smooth-scroll@1.0.12:
     resolution: {integrity: sha512-aaY+9X0yh8YnC0jBfoTKpsiCLdO/Y6pCltww+VB+NnTBPDOvnIdnp1AlazajsDitc1j+cVSQ+yNtaVeTIMQbxw==}
 
@@ -11877,11 +11922,6 @@ packages:
     peerDependencies:
       react: ^16.3 || ^17.0 || ^18.0 || ^19.0
       react-dom: ^17.0 || ^18.0 || ^19.0
-
-  react-image-crop@10.0.9:
-    resolution: {integrity: sha512-fqn6a811cx/sE7jtu8txL4lBTwgZYuEVNvy7UPKMNMWeRcZa6v0ja11+Gd9nZQiBfaxDal3PBcKhGBLQ956UNg==}
-    peerDependencies:
-      react: '>=16.13.1'
 
   react-image-gallery@1.2.7:
     resolution: {integrity: sha512-ts7yMWykvZhslGMuvVAUk7a1dJIx9QtIwK6Clv8dOGxPsJid92FRrLvXbZDvkYcUyj48sHalnBhqU6mZNCB2jg==}
@@ -16349,15 +16389,6 @@ snapshots:
       make-dir: 3.1.0
       webpack: 5.90.1(esbuild@0.25.12)
 
-  '@mbarde/volto-image-crop-widget@0.5.1(react@18.2.0)':
-    dependencies:
-      '@plone/scripts': 3.10.3
-      react-image-crop: 10.0.9(react@18.2.0)
-    transitivePeerDependencies:
-      - debug
-      - react
-      - supports-color
-
   '@mdx-js/react@3.1.1(@types/react@18.3.26)(react@18.2.0)':
     dependencies:
       '@types/mdx': 2.0.13
@@ -16735,6 +16766,19 @@ snapshots:
       react-intl: 3.12.1(@types/react@18.3.26)(react@18.2.0)
       semantic-ui-react: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
+  '@plone-collective/volto-image-editor@1.0.1(@plone/registry@core+packages+registry)(@plone/types@core+packages+types)(advanced-cropper@0.17.1)(classnames@2.5.1)(react-aria-components@1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@plone/components': 4.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/registry': link:core/packages/registry
+      '@plone/types': link:core/packages/types
+      advanced-cropper: 0.17.1
+      classnames: 2.5.1
+      context-filter-polyfill: 0.3.23
+      react: 18.2.0
+      react-advanced-cropper: 0.20.1(react@18.2.0)
+      react-aria-components: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+
   '@plone/components@3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.15(prettier@3.2.5))':
     dependencies:
       '@react-aria/utils': 3.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -16747,6 +16791,23 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - storybook
+
+  '@plone/components@4.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@internationalized/date': 3.10.1
+      '@react-aria/utils': 3.32.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-spectrum/utils': 3.12.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      clsx: 2.1.1
+      react: 18.2.0
+      react-aria: 3.45.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-aria-components: 1.14.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-stately: 3.43.0(react@18.2.0)
+      tailwind-merge: 3.4.0
+      tailwind-variants: 1.0.0(tailwindcss@4.1.17)
+      tailwindcss: 4.1.17
+      tailwindcss-animate: 1.0.7(tailwindcss@4.1.17)
+    optionalDependencies:
+      react-dom: 18.2.0(react@18.2.0)
 
   '@plone/scripts@3.10.3':
     dependencies:
@@ -19730,6 +19791,10 @@ snapshots:
       loader-utils: 2.0.4
       regex-parser: 2.3.1
 
+  advanced-cropper@0.17.1:
+    dependencies:
+      tslib: 2.8.1
+
   agent-base@6.0.2:
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
@@ -20937,6 +21002,8 @@ snapshots:
       safe-buffer: 5.2.1
 
   content-type@1.0.5: {}
+
+  context-filter-polyfill@0.3.23: {}
 
   convert-source-map@0.3.5: {}
 
@@ -26000,6 +26067,13 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
+  react-advanced-cropper@0.20.1(react@18.2.0):
+    dependencies:
+      advanced-cropper: 0.17.1
+      classnames: 2.5.1
+      react: 18.2.0
+      tslib: 2.8.1
+
   react-anchor-link-smooth-scroll@1.0.12: {}
 
   react-animate-height@2.0.17(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
@@ -26313,11 +26387,6 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-
-  react-image-crop@10.0.9(react@18.2.0):
-    dependencies:
-      clsx: 1.2.1
-      react: 18.2.0
 
   react-image-gallery@1.2.7(react@18.2.0):
     dependencies:

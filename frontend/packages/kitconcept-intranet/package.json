@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/intranet",
-  "version": "2.0.0-alpha.9",
+  "version": "2.0.0-alpha.10",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -60,10 +60,12 @@
     "@kitconcept/volto-slider-block",
     "@plonegovbr/volto-social-media",
     "@plone/volto-form-block",
+    "@plone-collective/volto-image-editor",
     "@kitconcept/volto-light-theme",
     "@kitconcept/core",
     "@plone-collective/volto-authomatic",
-    "@kitconcept/volto-solr"
+    "@kitconcept/volto-solr",
+    "@kitconcept/volto-contact-block"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^10.4.6",
@@ -83,8 +85,11 @@
     "@kitconcept/volto-solr": "2.0.0-alpha.11",
     "@kitconcept/volto-iframe-block": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
+    "@kitconcept/volto-contact-block": "workspace:*",
     "@plone/components": "workspace:*",
     "@plone/volto-form-block": "^1.0.0-alpha.0",
+    "@plone-collective/volto-authomatic": "3.0.0-alpha.6",
+    "@plone-collective/volto-image-editor": "1.0.1",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
     "react-aria-components": "1.13.0",

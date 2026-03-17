@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.10 (2026-03-14)
+
+### Feature
+
+- Add ContactList block. @iFlameing [#contactlist](https://github.com/kitconcept/kitconcept.intranet/issue/contactlist)
+- Added add-on @plone-collective/volto-image-editor. @sneridagh 
+
+### Bugfix
+
+- Fix colors in Person profile view. @danalvrz 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+
 ## 2.0.0-alpha.9 (2026-03-05)
 
 ### Feature

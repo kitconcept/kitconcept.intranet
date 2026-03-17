@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260217001"
+      destination="20260304001"
+      >
+    <genericsetup:upgradeDepends
+        title="Install kitconcept.contactblock"
+        import_profile="kitconcept.contactblock:default"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>

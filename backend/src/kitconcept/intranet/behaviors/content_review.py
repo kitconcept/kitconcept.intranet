@@ -1,5 +1,6 @@
 from datetime import date
 from kitconcept.intranet import _
+from kitconcept.intranet.utils.calc_due_date import calc_due_date
 from plone import api
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
@@ -19,6 +20,11 @@ def default_review_interval(context) -> str:
         # TODO: maybe send an email that a default has to be set?
         pass
     return record
+
+
+@provider(IContextAwareDefaultFactory)
+def default_review_due_date(context) -> date:
+    return calc_due_date()
 
 
 @provider(IFormFieldProvider)
@@ -74,8 +80,8 @@ class IContentReview(model.Schema):
 
     review_due_date = schema.Date(
         title=_("label_review_due_date", default="Due date"),
-        default=date.today(),
         required=False,
+        defaultFactory=default_review_due_date,
     )
 
     review_completed_date = schema.Date(

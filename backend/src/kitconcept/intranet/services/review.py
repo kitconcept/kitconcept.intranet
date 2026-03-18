@@ -8,6 +8,8 @@ from zExceptions import BadRequest
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
 
+import transaction
+
 
 @implementer(IPublishTraverse)
 class ReviewPost(Service):
@@ -48,6 +50,7 @@ class ReviewPost(Service):
                 self.context.review_due_date = calc_due_date(interval=interval)
                 # update review_completed_date
                 self.context.review_completed_date = date.today()
+                transaction.commit()
             case "delegate":
                 field = IContentReview["review_assignee"].bind(self.context)
                 vocabulary = field.vocabulary
@@ -57,6 +60,8 @@ class ReviewPost(Service):
                 assignee = data.get("assignee", None)
                 if assignee not in vocabulary:
                     raise BadRequest(f"Assignee not found in vocabulary: {vocabulary}")
+                self.context.review_assignee = assignee
+                transaction.commit()
             case "postpone":
                 self.context.review_status = "Up-to-date"
                 data = json_body(self.request)
@@ -65,6 +70,7 @@ class ReviewPost(Service):
                 due_date = data.get("due_date", None)
                 if due_date:
                     self.context.review_due_date = date.fromisoformat(due_date)
+                transaction.commit()
             case _:
                 raise BadRequest(
                     "Unknown action: expected /@review/approve, "

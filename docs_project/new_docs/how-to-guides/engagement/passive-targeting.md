@@ -5,7 +5,8 @@ tags: [engagement, passive-targeting]
 myst:
   html_meta:
     "description": "Sort content in listings based on its relevance to the current user."
-     keywords: "Volto, Plone, intranet, passive targeting"
+    "keywords": "Volto, Plone, intranet, passive targeting"
+last_updated: 2026-03-18
 ---
 
 # Passive targeting

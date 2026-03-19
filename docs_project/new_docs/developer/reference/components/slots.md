@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Volto Light Theme slots definitions"    "keywords": "Volto Light Theme, Slots"
+    "description": "Volto Light Theme slots definitions"
+    "keywords": "Volto Light Theme, Slots"
+last_updated: 2026-03-18
 ---
 
 # Slots

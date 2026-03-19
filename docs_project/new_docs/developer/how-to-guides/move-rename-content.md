@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Move/Rename content objects via an instance script"    "keywords": "kitconcept Intranet Distribution, moving content objects, renaming content objects, instance script"
+    "description": "Move/Rename content objects via an instance script"
+    "keywords": "kitconcept Intranet Distribution, moving content objects, renaming content objects, instance script"
+last_updated: 2026-03-18
 ---
 
 # Move/Rename content objects via an instance script

@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Volto Light Theme provides a set of widgets that provide structural features."    "keywords": "Plone, Volto Light Theme, widgets"
+    "description": "Volto Light Theme provides a set of widgets that provide structural features."
+    "keywords": "Plone, Volto Light Theme, widgets"
+last_updated: 2026-03-18
 ---
 
 # Widgets
@@ -70,7 +72,7 @@ export const ButtonStylingSchema = ({ schema, formData, intl }) => {
 }
 ```
 
-```{image} /_static/colorSwatch.png
+```{image} /_static/images/colorSwatch.png
 :alt: colorSwatch widget
 ```
 
@@ -118,7 +120,7 @@ This is the recommended way to use this widget, as it allows you to decouple the
 The `themeColorSwatch` widget is used for choosing a configured theme color, which is stored in `config.blocks.themes`.
 It uses the {file}`/src/components/widgets/ThemeColorSwatch` component which is a wrapper around the `ColorSwatch` component.
 
-```{image} /_static/themeColorSwatch.png
+```{image} /_static/images/themeColorSwatch.png
 :alt: themeColorSwatch
 ```
 
@@ -144,7 +146,7 @@ It might be renamed to `colorSwatch` in future versions of Volto.
 The `colorPicker` widget is a color picker with an RGB visual color chooser, and a `hex` color field.
 It uses the {file}`/src/components/widgets/ColorPicker` component.
 
-```{image} /_static/colorPicker.png
+```{image} /_static/images/colorPicker.png
 :alt: colorPicker
 ```
 
@@ -153,7 +155,7 @@ It uses the {file}`/src/components/widgets/ColorPicker` component.
 The `ColorContrastChecker` is a component that helps ensure text accessibility by calculating the contrast ratio between two colors. It is based on WCAG (Web Content Accessibility Guidelines) accessibility standards. It can be added in a widget following a color input field to let the user know in real-time of insufficient contrast. It can be found at {file}`/src/components/widgets/ColorContrastChecker`.
 
 
-```{image} /_static/colorContrastChecker.png
+```{image} /_static/images/colorContrastChecker.png
 :alt: colorContrastChecker
 ```
 
@@ -233,7 +235,7 @@ It allows to introduce a list of ordered objects with the same shape.
 It allows to reorder them using drag and drop.
 It uses `@plone/components`.
 
-```{image} /_static/blocksObject.png
+```{image} /_static/images/blocksObject.png
 :alt: blocksObject
 ```
 
@@ -424,7 +426,7 @@ export type ButtonsWidgetProps = {
 `blockWidth` is a widget to select a width from the defined `config.blocks.widths`.
 It uses the {file}`/src/components/widgets/BlockWidth` component.
 
-```{image} /_static/blockWidth.png
+```{image} /_static/images/blockWidth.png
 :alt: blockWidth
 ```
 
@@ -434,7 +436,7 @@ It uses the {file}`/src/components/widgets/BlockWidth` component.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/BlockAlignment` component.
 
-```{image} /_static/blockAlignment.png
+```{image} /_static/images/blockAlignment.png
 :alt: BlockAlignment
 ```
 
@@ -444,7 +446,7 @@ It uses the {file}`/src/components/widgets/BlockAlignment` component.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/Size` component.
 
-```{image} /_static/size.png
+```{image} /_static/images/size.png
 :alt: size
 ```
 
@@ -457,7 +459,7 @@ However, it allows the editor to save the content, if it's necessary to exceed t
 
 It uses {file}`/src/components/Widgets/SoftTextWidget.tsx` and {file}`/src/components/Widgets/SoftTextareaWidget.tsx` components.
 
-```{image} /_static/seoWidget.png
+```{image} /_static/images/seoWidget.png
 :alt: SEO widgets softTextWidget/SoftTextareaWidget
 ```
 

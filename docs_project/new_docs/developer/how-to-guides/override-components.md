@@ -6,6 +6,7 @@ myst:
 doc_type: how-to
 audience: developer
 status: draft
+last_updated: 2026-03-18
 ---
 
 # How to Override Frontend Components

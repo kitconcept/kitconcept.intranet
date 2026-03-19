@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Remove the colophon from Volto Light Theme"    "keywords": "Volto Light Theme, colophon, remove colophon"
+    "description": "Remove the colophon from Volto Light Theme"
+    "keywords": "Volto Light Theme, colophon, remove colophon"
+last_updated: 2026-03-18
 ---
 
 # Remove the default colophon slot

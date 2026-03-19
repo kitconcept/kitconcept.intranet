@@ -5,6 +5,7 @@ myst:
     keywords: "voltolighttheme, behaviors, header, theme, footer, site, subsite, XML, developer"
 doc_type: reference
 audience: developer
+last_updated: 2026-03-18
 ---
 
 # VLT Site Customization Behaviors

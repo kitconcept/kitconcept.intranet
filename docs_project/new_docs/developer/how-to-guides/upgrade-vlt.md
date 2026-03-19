@@ -4,7 +4,9 @@ audience: developer
 status: review
 myst:
   html_meta:
-    "description": "Volto Light Theme upgrade guide"    "keywords": "Volto Light Theme, upgrade guide"
+    "description": "Volto Light Theme upgrade guide"
+    "keywords": "Volto Light Theme, upgrade guide"
+last_updated: 2026-03-18
 ---
 
 # Upgrade guide
@@ -159,7 +161,7 @@ See the section {ref}`plonegovbr-volto-social-media-label` for more information.
 
 If you have customized the footer in your site, you might need to adapt your customizations to use the new elements or remove the things that your design doesn't need.
 
-```{image} /_static/footer6.png
+```{image} /_static/images/footer6.png
 :alt: Updated footer in VLT 6.0.0
 ```
 

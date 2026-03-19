@@ -4,7 +4,9 @@ audience: developer
 status: review
 myst:
   html_meta:
-    "description": "Frontend Styleguide"    "keywords": "Plone, reference, styleguide, frontend"
+    "description": "Frontend Styleguide"
+    "keywords": "Plone, reference, styleguide, frontend"
+last_updated: 2026-03-18
 ---
 
 # Frontend Styleguide
@@ -381,7 +383,7 @@ https://6.docs.plone.org/volto/blocks/block-style-wrapper.html
 
 ### Block width
 
-```{figure} /_static/blockWidth.png
+```{figure} /_static/images/blockWidth.png
 :name: block-width-example
 :alt: Block Width widget
 :align: center
@@ -413,7 +415,7 @@ export const MyBlockSchema = ({ schema, formData, intl }) => {
 
 ### Alignment
 
-```{figure} /_static/blockAlignment.png
+```{figure} /_static/images/blockAlignment.png
 :name: block-alignment-example
 :alt: Block Alignment Example
 :align: center

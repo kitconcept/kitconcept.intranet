@@ -6,6 +6,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [blocks, configuration, site-settings]
+last_updated: 2026-03-18
 ---
 
 # How to Configure Blocks Through the Web
@@ -27,7 +28,7 @@ You can configure:
 
 Go to **Site Setup → Plone Site** tab and look for the **Blocks configuration** field.
 
-```{image} /_static/ttwblocksconfig.png
+```{image} /_static/images/ttwblocksconfig.png
 :alt: Blocks configuration TTW screenshot
 :width: 600px
 :align: center
@@ -37,7 +38,7 @@ Go to **Site Setup → Plone Site** tab and look for the **Blocks configuration*
 
 Click the field to open the JSON editor modal.
 
-```{image} /_static/ttwconfigjsonfieldmodal.png
+```{image} /_static/images/ttwconfigjsonfieldmodal.png
 :alt: Blocks modal configuration TTW screenshot
 :width: 600px
 :align: center

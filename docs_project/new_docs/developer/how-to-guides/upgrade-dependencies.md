@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Upgrade add-on dependencies in kitconcept.core"    "keywords": "kitconcept Intranet Distribution, upgrade"
+    "description": "Upgrade add-on dependencies in kitconcept.core"
+    "keywords": "kitconcept Intranet Distribution, upgrade"
+last_updated: 2026-03-18
 ---
 
 # How to upgrade an add-on dependency in kitconcept.core

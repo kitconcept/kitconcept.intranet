@@ -3,6 +3,7 @@ myst:
   html_meta:
     description: "Developer documentation for extending and customizing the kitconcept Intranet Distribution."
     keywords: "developer, developer docs, extend, customize, integrate"
+last_updated: 2026-03-18
 ---
 
 # Developer Documentation

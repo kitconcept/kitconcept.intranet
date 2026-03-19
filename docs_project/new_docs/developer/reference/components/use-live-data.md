@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "React hook for live value updates in Volto add and edit modes."    "keywords": "Volto, Hook, Redux, useLiveData, live update"
+    "description": "React hook for live value updates in Volto add and edit modes."
+    "keywords": "Volto, Hook, Redux, useLiveData, live update"
+last_updated: 2026-03-18
 ---
 
 # useLiveData Hook

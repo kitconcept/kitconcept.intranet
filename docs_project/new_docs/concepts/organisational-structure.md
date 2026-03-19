@@ -6,6 +6,7 @@ myst:
 doc_type: explanation
 audience: admin
 status: draft
+last_updated: 2026-03-18
 ---
 
 # Organisational Structure

@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Upgrade Plone version in kitconcept.core"    "keywords": "kitconcept Intranet Distribution, upgrade Plone"
+    "description": "Upgrade Plone version in kitconcept.core"
+    "keywords": "kitconcept Intranet Distribution, upgrade Plone"
+last_updated: 2026-03-18
 ---
 
 # How to upgrade Plone in kitconcept.core

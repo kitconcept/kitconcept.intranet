@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Ensure versions in distribution projects via an instance script"    "keywords": "kitconcept distribution, ensuring versions, distribution projects instance script"
+    "description": "Ensure versions in distribution projects via an instance script"
+    "keywords": "kitconcept distribution, ensuring versions, distribution projects instance script"
+last_updated: 2026-03-18
 ---
 
 # How to configure a project based on a distribution to ensure versions are consistent with the distribution

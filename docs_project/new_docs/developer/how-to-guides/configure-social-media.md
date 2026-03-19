@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Social media integration in Volto Light Theme"    "keywords": "Volto Light Theme, social media"
+    "description": "Social media integration in Volto Light Theme"
+    "keywords": "Volto Light Theme, social media"
+last_updated: 2026-03-18
 ---
 
 (social-media)=

@@ -5,6 +5,7 @@ myst:
     keywords: "site customization, logo, colors, footer, header, admin"
 doc_type: reference
 audience: admin
+last_updated: 2026-03-18
 ---
 
 # Site Customization

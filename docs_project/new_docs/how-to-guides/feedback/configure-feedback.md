@@ -6,6 +6,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [feedback, email, configuration]
+last_updated: 2026-03-18
 ---
 
 # How to Configure the Content Feedback Form
@@ -28,25 +29,25 @@ The recipient of the feedback is determined by the following priority:
 
 If **Enable Sticky Feedback Button** is enabled, a button will appear in a fixed position on the left side of the page. It appears automatically after 4 seconds or when the user scrolls past 500px.
 
-![Sticky Feedback Button](/_static/sticky-feedback-button.png)
+![Sticky Feedback Button](/_static/images/sticky-feedback-button.png)
 
 ## Screenshots
 
 ### Feedback Form
 
-![Example of feedback form](/_static/content-feedback-form.png)
+![Example of feedback form](/_static/images/content-feedback-form.png)
 
 ### CLM Fields on a content item
 
-![CLM fields](/_static/clm.png)
+![CLM fields](/_static/images/clm.png)
 
 ### Mail control panel
 
-![Email fields](/_static/email.png)
+![Email fields](/_static/images/email.png)
 
 ### Intranet Settings
 
-![Intranet settings](/_static/intranet.png)
+![Intranet settings](/_static/images/intranet.png)
 
 ## Global feedback settings
 

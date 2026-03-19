@@ -3,9 +3,92 @@
 
 ---
 
+## SECTION 0 — Migration Index (Quick Reference)
+
+> All source paths are relative to their repo root. All target paths are relative to `new_docs/`.
+
+### Moves
+
+| # | Source (repo / path) | → | Target (`new_docs/…`) |
+|---|----------------------|---|----------------------|
+| 1 | `intranet` / `how-to-guides/passive-targeting.md` | → | `how-to-guides/engagement/passive-targeting.md` |
+| 3 | `intranet` / `how-to-guides/squared-person-image-support.md` | → | `how-to-guides/settings/person-image-style.md` |
+| 9 | `core` / `how-to-guides/reindex-content-script.md` | → | `developer/how-to-guides/reindex-content.md` |
+| 10 | `core` / `how-to-guides/move-rename-content-objects.md` | → | `developer/how-to-guides/move-rename-content.md` |
+| 11 | `core` / `how-to-guides/upgrade-dependencies.md` | → | `developer/how-to-guides/upgrade-dependencies.md` |
+| 12 | `core` / `how-to-guides/upgrade-plone.md` | → | `developer/how-to-guides/upgrade-plone.md` |
+| 13 | `core` / `how-to-guides/ensure-versions-distribution-projects.md` | → | `developer/how-to-guides/ensure-versions-distribution-projects.md` |
+| 14 | `core` / `how-to-guides/upgrade-distribution-make-upgrade.md` | → | `developer/how-to-guides/upgrade-distribution.md` |
+| 15 | `core` / `how-to-guides/import-export.md` | → | `how-to-guides/settings/import-export.md` |
+| 16 | `core` / `reference/frontend-styleguide.md` | → | `developer/reference/frontend-styleguide.md` |
+| 17 | `vlt` / `conceptual-guides/block-model-v3.md` | → | `developer/concepts/block-model.md` |
+| 18 | `vlt` / `conceptual-guides/layout.md` | → | `developer/concepts/layout.md` |
+| 21 | `vlt` / `conceptual-guides/vertical-spacing.md` | → | `developer/concepts/vertical-spacing.md` |
+| 27 | `vlt` / `how-to-guides/remove-colophon.md` | → | `developer/how-to-guides/remove-colophon.md` |
+| 28 | `vlt` / `how-to-guides/social-media.md` | → | `developer/how-to-guides/configure-social-media.md` |
+| 29 | `vlt` / `how-to-guides/summary.md` | → | `developer/reference/components/summary.md` |
+| 30 | `vlt` / `how-to-guides/upgrade-guide.md` | → | `developer/how-to-guides/upgrade-vlt.md` |
+| 32 | `vlt` / `reference/card.md` | → | `developer/reference/components/card.md` |
+| 33 | `vlt` / `reference/colors.md` | → | `developer/reference/colors.md` |
+| 34 | `vlt` / `reference/compatibility.md` | → | `developer/reference/compatibility.md` |
+| 35 | `vlt` / `reference/helpers.md` | → | `developer/reference/components/helpers.md` |
+| 36 | `vlt` / `reference/image-aspect-ratio.md` | → | `developer/reference/image-aspect-ratio.md` |
+| 37 | `vlt` / `reference/recommended-addons.md` | → | `developer/reference/recommended-addons.md` |
+| 38 | `vlt` / `reference/slots.md` | → | `developer/reference/components/slots.md` |
+| 39 | `vlt` / `reference/storybook.md` | → | `developer/reference/storybook.md` |
+| 40 | `vlt` / `reference/use-live-data.md` | → | `developer/reference/components/use-live-data.md` |
+| 41 | `vlt` / `reference/widgets.md` | → | `developer/reference/components/widgets.md` |
+
+### Splits
+
+| # | Source (repo / path) | → | Target A (`new_docs/…`) | Target B (`new_docs/…`) |
+|---|----------------------|---|------------------------|------------------------|
+| 4 | `intranet` / `how-to-guides/content-interactions.md` | → | `how-to-guides/engagement/enable-likes.md` | `developer/reference/components/content-interactions.md` |
+| 5 | `intranet` / `how-to-guides/content-feedback-form.md` | → | `how-to-guides/feedback/configure-feedback.md` | `developer/reference/behaviors/clm.md` |
+| 8 | `core` / `how-to-guides/blocks-config-ttw.md` | → | `how-to-guides/settings/blocks-config.md` | `developer/how-to-guides/blocks-config-ttw.md` |
+| 20 | `vlt` / `conceptual-guides/site-customization.md` | → | `reference/site-customization.md` | `developer/reference/behaviors/voltolighttheme.md` |
+
+### Rewrites
+
+| # | Source (repo / path) | → | Target (`new_docs/…`) | Note |
+|---|----------------------|---|----------------------|------|
+| 2 | `intranet` / `how-to-guides/person-responsibilities.md` | → | `reference/content-types.md` (as a section under "Person") | Content absorbed into new file |
+| 7 | `core` / `concepts/what-is-core.md` | → | `developer/concepts/architecture.md` | Retitled; restructured to Diataxis explanation |
+
+### Merge
+
+| # | Sources (repo / path) | → | Target (`new_docs/…`) |
+|---|----------------------|---|----------------------|
+| 6 | `intranet` / `glossary.md` + `core` / `glossary.md` | → | `glossary.md` |
+
+### Skipped (not migrated)
+
+| # | Source (repo / path) | Reason |
+|---|----------------------|--------|
+| 19 | `vlt` / `conceptual-guides/requirements-and-specifications.md` | VLT-internal design decisions; not relevant to intranet distribution |
+| 22 | `vlt` / `how-to-guides/acceptance-tests.md` | VLT-internal CI test runner |
+| 23 | `vlt` / `how-to-guides/contributing.md` | VLT-internal; replaced by new `developer/getting-started/contributing.md` |
+| 24 | `vlt` / `how-to-guides/develop-add-ons.md` | VLT-repo-specific; not about intranet distribution development |
+| 25 | `vlt` / `how-to-guides/install.md` | VLT bundled as dependency; content captured in `recommended-addons.md` |
+| 26 | `vlt` / `how-to-guides/releases.md` | VLT-internal release process |
+| 31 | `vlt` / `how-to-guides/visual-regression-tests.md` | VLT-internal Playwright visual testing |
+
+---
+
 ## SECTION 1 — File Disposition Table
 
 > **Key:** Source paths are relative to their repo root. Target paths are relative to the unified `new_docs/` root (the output folder for all migrated content).
+
+> **Template Reference:** When writing or rewriting a file, use the matching template from `documentation_instructions.md` Section 4:
+> | Doc Type | Template |
+> |----------|----------|
+> | `tutorial` | **4.1** — Tutorial |
+> | `how-to` (user) | **4.2** — How-to (User) |
+> | `reference` (user) | **4.3** — Reference (User) |
+> | `reference` (developer) | **4.4** — Reference (Developer) |
+> | `explanation` | **4.5** — Concept/Explanation |
+>
+> Each split, rewrite, and new-file task in this plan references the applicable template (e.g., "Follow template 4.2").
 
 | # | Source File | Source Repo | Action | Target Path | Doc Type | Audience | Notes |
 |---|------------|------------|--------|-------------|----------|----------|-------|
@@ -107,6 +190,20 @@
 
 ## SECTION 2 — Execution Order
 
+> **Writing Standards:** All content authored or rewritten during this migration must follow the writing guidelines in `documentation_instructions.md` **Section 6**, summarised below:
+>
+> | Guideline area | Key rules |
+> |----------------|-----------|
+> | **Voice & tone** (§6.1) | Active voice, present tense, direct imperatives ("Do X", not "You might want to do X") |
+> | **Structure** (§6.1) | Lead with the most important information; one idea per paragraph; max 6–8 lines; use headings for scanning |
+> | **Terminology** (§6.1) | Define acronyms on first use; link domain terms to the glossary; use backticks for code/settings |
+> | **User docs — admins** (§6.2) | Explain "why" alongside "how"; warn about impacts before instructions; include verification steps; use screenshots for control panel navigation |
+> | **User docs — editors** (§6.2) | Numbered steps, one action per step; screenshot every significant action; avoid jargon; reassure where relevant |
+> | **Developer docs** (§6.3) | Technical accuracy over simplicity; show code first, explain after; include complete working examples; reference specific versions |
+> | **Screenshots** (§6.4) | 1280 px browser width; PNG format; crop to relevant area; store at `/_static/images/`; always include alt text |
+>
+> Refer to Section 6 of `documentation_instructions.md` for the full rules before authoring any content.
+
 ### Phase 1 — Directory Scaffolding
 
 Create the `new_docs/` root folder and all required subdirectories. All migrated and new content lands here. Empty `index.md` stubs are created now and filled in Phase 5.
@@ -133,6 +230,9 @@ mkdir -p $TARGET/developer/reference/api
 mkdir -p $TARGET/developer/reference/behaviors
 mkdir -p $TARGET/developer/reference/components
 mkdir -p $TARGET/developer/concepts
+
+# Static assets — images live in a dedicated subfolder, separate from CSS/JS
+mkdir -p $TARGET/_static/images
 ```
 
 Touch stub `index.md` in every new directory (filled in Phase 5):
@@ -163,22 +263,22 @@ For each file: **copy** to target path, update frontmatter (see Section 6), upda
 | Step | Source | Target | Image Path Update? |
 |------|--------|--------|--------------------|
 | 2.1 | `intranet/how-to-guides/passive-targeting.md` | `how-to-guides/engagement/passive-targeting.md` | No |
-| 2.2 | `intranet/how-to-guides/squared-person-image-support.md` | `how-to-guides/settings/person-image-style.md` | Yes: copy `/_static/rounded-person.jpg`, `/_static/squared-person.jpg` to unified `_static/` |
+| 2.2 | `intranet/how-to-guides/squared-person-image-support.md` | `how-to-guides/settings/person-image-style.md` | Yes: copy `rounded-person.jpg`, `squared-person.jpg` to unified `_static/images/`; update references to `/_static/images/` |
 | 2.3 | `core/how-to-guides/reindex-content-script.md` | `developer/how-to-guides/reindex-content.md` | No |
 | 2.4 | `core/how-to-guides/move-rename-content-objects.md` | `developer/how-to-guides/move-rename-content.md` | No |
 | 2.5 | `core/how-to-guides/upgrade-dependencies.md` | `developer/how-to-guides/upgrade-dependencies.md` | No |
 | 2.6 | `core/how-to-guides/upgrade-plone.md` | `developer/how-to-guides/upgrade-plone.md` | No |
 | 2.7 | `core/how-to-guides/ensure-versions-distribution-projects.md` | `developer/how-to-guides/ensure-versions-distribution-projects.md` | No |
 | 2.8 | `core/how-to-guides/upgrade-distribution-make-upgrade.md` | `developer/how-to-guides/upgrade-distribution.md` | No — update cross-reference: `[](/how-to-guides/ensure-versions-distribution-projects)` → `[](/developer/how-to-guides/ensure-versions-distribution-projects)` |
-| 2.9 | `core/how-to-guides/import-export.md` | `how-to-guides/settings/import-export.md` | Yes: `../_static/importExport.png`, `../_static/export.png`, etc. → copy all to unified `_static/` |
-| 2.10 | `core/reference/frontend-styleguide.md` | `developer/reference/frontend-styleguide.md` | Yes: `../_static/blockWidth.png` etc. → copy to unified `_static/` |
+| 2.9 | `core/how-to-guides/import-export.md` | `how-to-guides/settings/import-export.md` | Yes: `../_static/importExport.png`, `../_static/export.png`, etc. → copy to `_static/images/`; update references to `/_static/images/` |
+| 2.10 | `core/reference/frontend-styleguide.md` | `developer/reference/frontend-styleguide.md` | Yes: `../_static/blockWidth.png` etc. → copy to `_static/images/`; update references to `/_static/images/` |
 | 2.11 | `vlt/conceptual-guides/block-model-v3.md` | `developer/concepts/block-model.md` | No |
 | 2.12 | `vlt/conceptual-guides/layout.md` | `developer/concepts/layout.md` | No |
 | 2.13 | `vlt/conceptual-guides/vertical-spacing.md` | `developer/concepts/vertical-spacing.md` | No |
 | 2.14 | `vlt/how-to-guides/remove-colophon.md` | `developer/how-to-guides/remove-colophon.md` | No |
 | 2.15 | `vlt/how-to-guides/social-media.md` | `developer/how-to-guides/configure-social-media.md` | No — also fix malformed frontmatter on line 6 (extra trailing `"`) |
-| 2.16 | `vlt/how-to-guides/summary.md` | `developer/reference/components/summary.md` | Yes: `/_static/summary.png` → copy to unified `_static/` |
-| 2.17 | `vlt/how-to-guides/upgrade-guide.md` | `developer/how-to-guides/upgrade-vlt.md` | Yes: `/_static/footer6.png` → copy |
+| 2.16 | `vlt/how-to-guides/summary.md` | `developer/reference/components/summary.md` | Yes: `/_static/summary.png` → copy to `_static/images/`; update reference to `/_static/images/summary.png` |
+| 2.17 | `vlt/how-to-guides/upgrade-guide.md` | `developer/how-to-guides/upgrade-vlt.md` | Yes: `/_static/footer6.png` → copy to `_static/images/`; update reference to `/_static/images/footer6.png` |
 | 2.18 | `vlt/reference/card.md` | `developer/reference/components/card.md` | No |
 | 2.19 | `vlt/reference/colors.md` | `developer/reference/colors.md` | No |
 | 2.20 | `vlt/reference/compatibility.md` | `developer/reference/compatibility.md` | No |
@@ -190,14 +290,18 @@ For each file: **copy** to target path, update frontmatter (see Section 6), upda
 | 2.26 | `vlt/reference/use-live-data.md` | `developer/reference/components/use-live-data.md` | No |
 | 2.27 | `vlt/reference/widgets.md` | `developer/reference/components/widgets.md` | No |
 
-**Image consolidation step (run once during Phase 2):** Copy all `_static/` assets from each source repo into the unified `docs/_static/`. Check for filename collisions first:
+**Image consolidation step (run once during Phase 2):** Copy all image assets from each source repo's `_static/` into the unified `docs/_static/images/`. Non-image assets (CSS, JS, fonts) go directly into `docs/_static/`. Check for filename collisions first:
 
 ```bash
-# Check for conflicts before copying
-ls intranet/_static/ core/_static/ vlt/_static/ | sort | uniq -d
+# Check for image conflicts before copying
+ls intranet/_static/*.png intranet/_static/*.jpg core/_static/*.png core/_static/*.jpg vlt/_static/*.png vlt/_static/*.jpg 2>/dev/null | xargs -I{} basename {} | sort | uniq -d
 ```
 
 Known collision risk: generic filenames like `logo.png`, `favicon.ico`. Prefix with source repo name if conflict found (e.g., `vlt-logo.png`) and update all references in the same commit.
+
+> **Image path convention after consolidation:** All image references in migrated files must use `/_static/images/filename.ext` (absolute path from docs root). References to non-image static assets (CSS, fonts) continue to use `/_static/filename.ext`.
+
+> **`html_meta` frontmatter formatting:** When migrating files, ensure `description` and `keywords` are on **separate lines** inside the `myst.html_meta` block. A known issue in several source files is that both fields are concatenated on one line (e.g., `"description": "..."    "keywords": "..."`). This produces invalid YAML and must be fixed during Phase 2. After completing all moves, run the audit check in Phase 7.8.
 
 ---
 
@@ -283,6 +387,11 @@ grep -rL "toctree" new_docs/*/index.md new_docs/*/*/index.md
 
 # 7.6 Check image references resolve after _static/ consolidation
 grep -r '\.\./\_static' new_docs/  # should return nothing
+# 7.7 Check all image references use the /_static/images/ subfolder
+grep -rE '!\[.*\]\(/_static/[^i]' new_docs/  # should return nothing (images must be under /_static/images/)
+
+# 7.8 Check for malformed html_meta frontmatter (description and keywords on same line)
+grep -rn '"description".*"keywords"' new_docs/ --include="*.md"  # should return nothing
 ```
 
 ---
@@ -291,7 +400,7 @@ grep -r '\.\./\_static' new_docs/  # should return nothing
 
 ### Split 3.1 — `content-interactions.md` → 2 files
 
-**File A: `how-to-guides/engagement/enable-likes.md`**
+**File A: `how-to-guides/engagement/enable-likes.md`** — Follow template 4.2 (How-to User)
 
 ```yaml
 ---
@@ -302,6 +411,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [engagement, likes, ratings]
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -314,7 +424,7 @@ Content map from source:
 - **Add:** H2 "Prerequisites" at top: "The `kitconcept.intranet.votes` behavior must be enabled for the content type (contact your developer if unsure)"
 - **Add:** H2 "See Also" linking to `developer/reference/components/content-interactions.md`
 
-**File B: `developer/reference/components/content-interactions.md`**
+**File B: `developer/reference/components/content-interactions.md`** — Follow template 4.4 (Reference Developer)
 
 ```yaml
 ---
@@ -324,6 +434,7 @@ myst:
     keywords: "ContentInteractions, JSX, votes, component, developer"
 doc_type: reference
 audience: developer
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -338,7 +449,7 @@ Content map from source:
 
 ### Split 3.2 — `content-feedback-form.md` → 2 files
 
-**File A: `how-to-guides/feedback/configure-feedback.md`**
+**File A: `how-to-guides/feedback/configure-feedback.md`** — Follow template 4.2 (How-to User)
 
 ```yaml
 ---
@@ -349,6 +460,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [feedback, email, configuration]
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -363,7 +475,7 @@ Content map from source:
 - **Add:** Note: "The Authors, Content Owner, and Feedback to fields are added via the CLM behavior. See the [CLM behavior reference](/developer/reference/behaviors/clm) for technical details."
 - **Add:** H2 "See Also" linking to `developer/reference/behaviors/clm.md`, `developer/reference/api/feedback.md`
 
-**File B: `developer/reference/behaviors/clm.md`**
+**File B: `developer/reference/behaviors/clm.md`** — Follow template 4.4 (Reference Developer)
 
 ```yaml
 ---
@@ -373,6 +485,7 @@ myst:
     keywords: "CLM, ICLM, behavior, responsible_person, feedback_person, authors, developer"
 doc_type: reference
 audience: developer
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -387,7 +500,7 @@ Content map from source:
 
 ### Split 3.3 — `blocks-config-ttw.md` → 2 files
 
-**File A: `how-to-guides/settings/blocks-config.md`**
+**File A: `how-to-guides/settings/blocks-config.md`** — Follow template 4.2 (How-to User)
 
 ```yaml
 ---
@@ -398,6 +511,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [blocks, configuration, site-settings]
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -409,7 +523,7 @@ Content map from source:
 - **Exclude:** The TypeScript `MutatorDSL` type definition → File B
 - **Add:** Note: "The JSON format must use double quotes and no trailing commas. For the full DSL specification, see [Blocks Configuration TTW developer reference](/developer/how-to-guides/blocks-config-ttw)."
 
-**File B: `developer/how-to-guides/blocks-config-ttw.md`**
+**File B: `developer/how-to-guides/blocks-config-ttw.md`** — Follow template 4.2 (How-to Developer)
 
 ```yaml
 ---
@@ -419,6 +533,7 @@ myst:
     keywords: "blocks, configuration, TTW, mutator DSL, kitconcept.blocks.config, developer"
 doc_type: how-to
 audience: developer
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -434,7 +549,7 @@ Content map from source:
 
 ### Split 3.4 — `vlt/site-customization.md` → 2 files
 
-**File A: `reference/site-customization.md`**
+**File A: `reference/site-customization.md`** — Follow template 4.3 (Reference User)
 
 ```yaml
 ---
@@ -444,6 +559,7 @@ myst:
     keywords: "site customization, logo, colors, footer, header, admin"
 doc_type: reference
 audience: admin
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -455,7 +571,7 @@ Content map from source:
 - **Exclude:** "Plone site root", "Subsites", "Add behaviors" → File B
 - **Add:** Note at top: "These settings are available once your site has VLT behaviors applied. For setup, see [Configure VLT Behaviors](/developer/reference/behaviors/voltolighttheme)."
 
-**File B: `developer/reference/behaviors/voltolighttheme.md`**
+**File B: `developer/reference/behaviors/voltolighttheme.md`** — Follow template 4.4 (Reference Developer)
 
 ```yaml
 ---
@@ -465,6 +581,7 @@ myst:
     keywords: "voltolighttheme, behaviors, header, theme, footer, site, subsite, XML, developer"
 doc_type: reference
 audience: developer
+last_updated: YYYY-MM-DD
 ---
 ```
 
@@ -720,37 +837,44 @@ myst:
 
 ### Recommended fields by document type
 
-**How-to (user):**
+> **`last_updated`** is a required field on every migrated and new document. Set it to the date the file is written or last substantively edited (ISO 8601 format: `YYYY-MM-DD`). Update it whenever content changes, not just on initial migration.
+
+**How-to (user) — Follow template 4.2:**
 ```yaml
 doc_type: how-to
 audience: admin  # or editor
 tags: [tag1, tag2]
+last_updated: YYYY-MM-DD
 ```
 
-**How-to (developer):**
+**How-to (developer) — Follow template 4.2:**
 ```yaml
 doc_type: how-to
 audience: developer
+last_updated: YYYY-MM-DD
 ```
 
-**Reference (user):**
+**Reference (user) — Follow template 4.3:**
 ```yaml
 doc_type: reference
 audience: admin  # or editor
+last_updated: YYYY-MM-DD
 ```
 
-**Reference (developer):**
+**Reference (developer) — Follow template 4.4:**
 ```yaml
 doc_type: reference
 audience: developer
+last_updated: YYYY-MM-DD
 ```
 
-**Explanation/Concept:**
+**Explanation/Concept — Follow template 4.5:**
 ```yaml
 doc_type: explanation
 audience: developer  # or admin/editor
 related:
   - /path/to/reference
+last_updated: YYYY-MM-DD
 ```
 
 ---
@@ -784,7 +908,7 @@ related:
 | # | Risk | Affected Files | Severity | Mitigation |
 |---|------|---------------|----------|------------|
 | R1 | **Broken internal cross-links after moves.** Source files use relative links that will break after consolidation. | All MOVE and SPLIT files | HIGH | After Phase 2+3, run `sphinx-build -b linkcheck` before Phase 6. Specifically check `upgrade-distribution.md` which has a known link to `ensure-versions-distribution-projects`. |
-| R2 | **Image paths diverge.** The `core` docs use `../_static/` relative paths that will break when moved to a different directory depth. | `core/import-export.md`, `core/frontend-styleguide.md`, `core/blocks-config-ttw.md` | HIGH | During Phase 2, normalize all image paths to absolute `/_static/filename.ext`. Audit after move: `grep -r '\.\./\_static' docs/` should return nothing. |
+| R2 | **Image paths diverge.** The `core` docs use `../_static/` relative paths that will break when moved to a different directory depth. | `core/import-export.md`, `core/frontend-styleguide.md`, `core/blocks-config-ttw.md` | HIGH | During Phase 2, normalize all image paths to absolute `/_static/images/filename.ext`. Audit after move: `grep -r '\.\./\_static' docs/` should return nothing. |
 | R3 | **Filename collision in `_static/`.** Three separate `_static/` directories merged into one. Generic filenames may clash. | All image-containing docs | HIGH | Run collision audit in Phase 2 before copying. Prefix colliding filenames with source repo slug (`intranet-`, `core-`, `vlt-`) and update all references in the same commit. |
 | R4 | **`what-is-core.md` contains version-specific upgrade step XML** (profile versions like `20251209001`). Will become stale. | `developer/concepts/architecture.md` | MEDIUM | During Rewrite 4.2, wrap the XML upgrade step example in a `{note}` saying "This is an illustrative example. Use current version numbers from the codebase." Do not hardcode version numbers in conceptual docs. **Domain expert review required.** |
 | R5 | **`upgrade-vlt.md` version history will drift.** The VLT upgrade guide covers versions 3.x through 8.x. Old sections may confuse users on the current intranet version. | `developer/how-to-guides/upgrade-vlt.md` | MEDIUM | During Phase 2.17, set `status: review` in frontmatter. Assign a domain expert to prune versions that predate the minimum VLT version bundled with the current intranet distribution. |
@@ -794,7 +918,8 @@ related:
 | R9 | **Split content leaves orphaned URLs.** After splitting `content-feedback-form.md`, any external inbound link to the original URL will 404. | `how-to-guides/feedback/configure-feedback.md`, `developer/reference/behaviors/clm.md` | LOW | Check server redirect config. If inbound links exist, add a Sphinx redirect rule or `{deprecated}` notice at the old path. |
 | R10 | **VLT `site-customization.md` uses `{ref}` labels** (`(site-customization)=`, `(site-customization-actions)=`, `(plonegovbr-volto-social-media-label)=`). These labels break when content is split. | `reference/site-customization.md`, `developer/reference/behaviors/voltolighttheme.md` | MEDIUM | During Split 3.4, reassign each anchor to the file it lands in. Update `upgrade-guide.md` which cross-references `` {ref}`site-customization` `` — change to `/reference/site-customization`. |
 | R11 | **`social-media.md` has malformed frontmatter** on line 6: extra trailing `"` after the `og:title` value. | `developer/how-to-guides/configure-social-media.md` | LOW | Fix during Phase 2.15: change `"property=og:title": "Social media""` to `"property=og:title": "Social media"`. |
-| R12 | **Glossary is currently a useless placeholder.** Publishing it with only generic terms (Plone, MyST, Sphinx) adds noise without value. | `glossary.md` | MEDIUM | Set `status: draft` in frontmatter. Gate on domain expert review for actual intranet-specific term definitions before publishing. |
+| R12 | **Malformed `html_meta` frontmatter in VLT source files.** Multiple VLT source files have `description` and `keywords` concatenated on a single line (e.g., `"description": "...text..."    "keywords": "..."`), producing invalid YAML that Sphinx silently ignores, causing missing SEO meta tags. | 23 files sourced from `docs(vlt)/` | MEDIUM | Fix during Phase 2 for each affected file. After Phase 2, run audit: `grep -rn '"description".*"keywords"' new_docs/ --include="*.md"` — must return nothing. See Phase 7.8. |
+| R13 | **Glossary is currently a useless placeholder.** Publishing it with only generic terms (Plone, MyST, Sphinx) adds noise without value. | `glossary.md` | MEDIUM | Set `status: draft` in frontmatter. Gate on domain expert review for actual intranet-specific term definitions before publishing. |
 | R13 | **No tutorials exist.** The target structure defines 3 user tutorials and 3 developer tutorials but none have source material. | All `tutorials/` files | LOW | Tutorials are lowest priority. Create stubs with `status: draft`. Exclude from build using `exclude_patterns` in `conf.py` until written. |
 | R14 | **`blocks-config-ttw.md` behavior name needs verification.** The doc references `kitconcept.blocks.config` as "enabled by default on the Plone site for the kitconcept intranet distribution." If this changed, the admin doc is wrong. | `how-to-guides/settings/blocks-config.md`, `developer/how-to-guides/blocks-config-ttw.md` | MEDIUM | **Domain expert must confirm** the behavior is still active in the current intranet distribution before the admin-facing how-to is published. |
 | R15 | **`developer/concepts/` has stub-only files with no source.** `data-model.md` and `security-model.md` have no source material and require authoring from scratch. | `developer/concepts/data-model.md`, `developer/concepts/security-model.md` | LOW | Stub with `status: draft`. Exclude from published toctree until complete. These are high-value but require domain expert authoring. |

@@ -6,6 +6,7 @@ myst:
 doc_type: how-to
 audience: admin
 status: draft
+last_updated: 2026-03-18
 ---
 
 # How to Set a Content Owner

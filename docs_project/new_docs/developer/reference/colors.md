@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Volto Light Theme colors definitions"    "keywords": "Volto Light Theme, Colors"
+    "description": "Volto Light Theme colors definitions"
+    "keywords": "Volto Light Theme, Colors"
+last_updated: 2026-03-18
 ---
 
 # Colors

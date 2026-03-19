@@ -5,6 +5,7 @@ myst:
     keywords: "blocks, configuration, TTW, mutator DSL, kitconcept.blocks.config, developer"
 doc_type: how-to
 audience: developer
+last_updated: 2026-03-18
 ---
 
 # Blocks Configuration Through the Web (TTW) — Developer Reference
@@ -25,7 +26,7 @@ These configurations are modeled through a **mutator field** in JSON format. The
 
 You find it in the **Plone Site** tab of the site or subsite settings, under the name **Blocks configuration**.
 
-```{image} /_static/ttwblocksconfig.png
+```{image} /_static/images/ttwblocksconfig.png
 :alt: Blocks configuration TTW screenshot
 :width: 600px
 :align: center
@@ -33,7 +34,7 @@ You find it in the **Plone Site** tab of the site or subsite settings, under the
 
 A modal will open with the mutator field, where you can define the configuration in JSON format.
 
-```{image} /_static/ttwconfigjsonfieldmodal.png
+```{image} /_static/images/ttwconfigjsonfieldmodal.png
 :alt: Blocks modal configuration TTW screenshot
 :width: 600px
 :align: center

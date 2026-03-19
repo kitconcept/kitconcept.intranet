@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Volto Light Theme recommended add-ons"    "keywords": "Volto Light Theme, add-ons, recommended"
+    "description": "Volto Light Theme recommended add-ons"
+    "keywords": "Volto Light Theme, add-ons, recommended"
+last_updated: 2026-03-18
 ---
 
 # Recommended add-ons

@@ -9,6 +9,7 @@ status: review
 related:
   - /developer/concepts/data-model
   - /developer/getting-started/project-structure
+last_updated: 2026-03-18
 ---
 
 # System Architecture

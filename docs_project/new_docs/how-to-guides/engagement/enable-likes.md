@@ -6,6 +6,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [engagement, likes, ratings]
+last_updated: 2026-03-18
 ---
 
 # How to Enable Likes and Ratings
@@ -32,13 +33,13 @@ Once enabled, the following is displayed below each content item:
 
 Go to the Intranet Settings control panel and enable the `enable_content_rating` setting.
 
-![Enable rating globally](/_static/globally-rating.png)
+![Enable rating globally](/_static/images/globally-rating.png)
 
 ### 2. Enable Rating on a Content Item
 
 Open the content item you want to enable likes on, then enable the `enable_likes` field.
 
-![Enable rating on content item](/_static/content-rating.png)
+![Enable rating on content item](/_static/images/content-rating.png)
 
 ## Verification
 

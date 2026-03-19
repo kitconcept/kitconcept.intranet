@@ -3,7 +3,9 @@ doc_type: explanation
 audience: developer
 myst:
   html_meta:
-    "description": "Vertical spacing of elements in the layout"    "keywords": "Plone, Volto Light Theme, vertical, spacing, elements, layout"
+    "description": "Vertical spacing of elements in the layout"
+    "keywords": "Plone, Volto Light Theme, vertical, spacing, elements, layout"
+last_updated: 2026-03-18
 ---
 
 # Vertical spacing

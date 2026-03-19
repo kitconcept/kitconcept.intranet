@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Helper utilities in Volto Light Theme"    "keywords": "Plone, Volto Light Theme, helper, utilities"
+    "description": "Helper utilities in Volto Light Theme"
+    "keywords": "Plone, Volto Light Theme, helper, utilities"
+last_updated: 2026-03-18
 ---
 
 # Helpers

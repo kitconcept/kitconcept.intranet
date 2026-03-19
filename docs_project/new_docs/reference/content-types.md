@@ -5,6 +5,7 @@ myst:
     keywords: "content types, Person, Location, Organisational Unit, reference, intranet"
 doc_type: reference
 audience: editor
+last_updated: 2026-03-18
 ---
 
 # Content Types

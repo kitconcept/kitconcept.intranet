@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Upgrade a distribution-based frontend project using make upgrade"    "keywords": "kitconcept distribution, make upgrade, volto distribution upgrade"
+    "description": "Upgrade a distribution-based frontend project using make upgrade"
+    "keywords": "kitconcept distribution, make upgrade, volto distribution upgrade"
+last_updated: 2026-03-18
 ---
 
 # How to upgrade a distribution-based project

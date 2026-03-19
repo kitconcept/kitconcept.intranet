@@ -3,6 +3,7 @@ myst:
   html_meta:
     description: "Frontend component reference for the kitconcept Intranet Distribution."
     keywords: "components, React, Volto, developer, reference"
+last_updated: 2026-03-18
 ---
 
 # Components Reference

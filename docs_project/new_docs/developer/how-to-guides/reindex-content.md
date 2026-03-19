@@ -3,7 +3,9 @@ doc_type: how-to
 audience: developer
 myst:
   html_meta:
-    "description": "Reindexing content via an instance script"    "keywords": "kitconcept Intranet Distribution, reindexing content, instance script"
+    "description": "Reindexing content via an instance script"
+    "keywords": "kitconcept Intranet Distribution, reindexing content, instance script"
+last_updated: 2026-03-18
 ---
 
 # Reindexing content via an instance script

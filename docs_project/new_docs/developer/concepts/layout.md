@@ -3,7 +3,9 @@ doc_type: explanation
 audience: developer
 myst:
   html_meta:
-    "description": "Layout concepts in Volto Light Theme"    "keywords": "Plone, layout, concepts, Volto Light Theme, container, queries, media"
+    "description": "Layout concepts in Volto Light Theme"
+    "keywords": "Plone, layout, concepts, Volto Light Theme, container, queries, media"
+last_updated: 2026-03-18
 ---
 
 # Layout

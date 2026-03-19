@@ -5,6 +5,7 @@ myst:
   html_meta:
     "description": "Volto Light Theme Storybook — interactive component explorer for kitconcept Intranet Distribution."
     "keywords": "Plone, Volto, storybook, components, VLT"
+last_updated: 2026-03-18
 ---
 
 # Storybook

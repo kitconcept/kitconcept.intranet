@@ -3,6 +3,7 @@ myst:
   html_meta:
     description: "kitconcept Intranet Distribution — documentation for admins, editors, and developers."
     keywords: "kitconcept, intranet, Plone, documentation"
+last_updated: 2026-03-18
 ---
 
 # kitconcept Intranet Distribution

@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Volto Light Theme image aspect ratio"    "keywords": "Volto Light Theme, aspect ratio"
+    "description": "Volto Light Theme image aspect ratio"
+    "keywords": "Volto Light Theme, aspect ratio"
+last_updated: 2026-03-18
 ---
 
 # Image aspect ratio

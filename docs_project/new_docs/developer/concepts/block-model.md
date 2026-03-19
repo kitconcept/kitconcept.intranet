@@ -3,7 +3,9 @@ doc_type: explanation
 audience: developer
 myst:
   html_meta:
-    "description": "Block model version 3"    "keywords": "Volto Light Theme, Block model version 3"
+    "description": "Block model version 3"
+    "keywords": "Volto Light Theme, Block model version 3"
+last_updated: 2026-03-18
 ---
 
 # Block Model Version 3

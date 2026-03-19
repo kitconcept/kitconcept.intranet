@@ -3,6 +3,7 @@ myst:
   html_meta:
     description: "Tutorials for getting started with the kitconcept Intranet."
     keywords: "tutorials, getting started, intranet"
+last_updated: 2026-03-18
 ---
 
 # Tutorials

@@ -5,13 +5,14 @@ myst:
     keywords: "ContentInteractions, JSX, votes, component, developer"
 doc_type: reference
 audience: developer
+last_updated: 2026-03-18
 ---
 
 # ContentInteractions
 
 The **ContentInteractions** component displays likes, comments, share options, and content metadata (creation and modification dates) below the content view in an Intranet site.
 
-![Example of content interactions](/_static/content-interactions.png)
+![Example of content interactions](/_static/images/content-interactions.png)
 
 ## Overview
 

@@ -4,7 +4,9 @@ audience: admin
 tags: [settings, import, export]
 myst:
   html_meta:
-    "description": "Import and export content in your Plone site using the Import/Export control panel."    "keywords": "Plone, Import, Export, Content Transfer, Control Panel, kitconcept"
+    "description": "Import and export content in your Plone site using the Import/Export control panel."
+    "keywords": "Plone, Import, Export, Content Transfer, Control Panel, kitconcept"
+last_updated: 2026-03-18
 ---
 
 # Import/Export Control Panel
@@ -25,7 +27,7 @@ The export feature creates a `.zip` archive containing the site content.
 
 1. Navigate to **Site Setup(/controlpanel) → Import/Export**.
 
-```{image} /_static/importExport.png
+```{image} /_static/images/importExport.png
 :alt: site setup screenshot
 :width: 600px
 :align: center
@@ -33,7 +35,7 @@ The export feature creates a `.zip` archive containing the site content.
 
 2. Click the **Export Site** button.
 
-```{image} /_static/export.png
+```{image} /_static/images/export.png
 :alt: export button screenshot
 :width: 600px
 :align: center
@@ -56,7 +58,7 @@ The import feature restores content from a previously exported archive.
 
 1. Navigate to **Site Setup(/controlpanel) → Import/Export**.
 
-```{image} /_static/importExport.png
+```{image} /_static/images/importExport.png
 :alt: site setup screenshot
 :width: 600px
 :align: center
@@ -64,7 +66,7 @@ The import feature restores content from a previously exported archive.
 
 2. Click the file selection input.
 
-```{image} /_static/selectfile.png
+```{image} /_static/images/selectfile.png
 :alt: file selection screenshot
 :width: 600px
 :align: center
@@ -73,7 +75,7 @@ The import feature restores content from a previously exported archive.
 3. Select a `.zip` file previously exported from a Plone site.
 4. Click the **Import Site** button.
 
-```{image} /_static/import.png
+```{image} /_static/images/import.png
 :alt: import button screenshot
 :width: 600px
 :align: center

@@ -4,6 +4,7 @@ myst:
     description: "Terms and definitions used throughout the kitconcept Intranet Distribution documentation."
     keywords: "glossary, terms, definitions, intranet, Plone"
 status: draft
+last_updated: 2026-03-18
 ---
 
 # Glossary

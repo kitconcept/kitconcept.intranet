@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Volto Light Theme compatibility"    "keywords": "Volto Light Theme, Compatibility"
+    "description": "Volto Light Theme compatibility"
+    "keywords": "Volto Light Theme, Compatibility"
+last_updated: 2026-03-18
 ---
 
 # Compatibility

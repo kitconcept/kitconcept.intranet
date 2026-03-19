@@ -5,6 +5,7 @@ myst:
   html_meta:
     'description': 'How to use the Summary component in Volto Light Theme'
     'keywords': 'Volto Light Theme, summary, listing, teaser, content type'
+last_updated: 2026-03-18
 ---
 
 # Summary component
@@ -19,9 +20,9 @@ The `Summary` component is used to render key information about a content item i
 - search block
 - teaser block
 
-```{figure} /_static/summary.png
+```{figure} /_static/images/summary.png
 :alt: Screenshot of a Volto listing highlighting the Summary component
-:target: /_static/summary.png
+:target: /_static/images/summary.png
 The default summary includes the kicker, title, and description.
 ```
 

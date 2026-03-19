@@ -3,7 +3,9 @@ doc_type: reference
 audience: developer
 myst:
   html_meta:
-    "description": "Card primitive"    "keywords": "Volto Light Theme, Card, primitive"
+    "description": "Card primitive"
+    "keywords": "Volto Light Theme, Card, primitive"
+last_updated: 2026-03-18
 ---
 
 # Card primitive

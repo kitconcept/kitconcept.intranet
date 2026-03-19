@@ -1,25 +1,21 @@
 ---
 myst:
   html_meta:
-    "description": "A Plone 6 distribution targeted to build intranets."
-    "property=og:description": "A Plone 6 distribution targeted to build intranets."
-    "property=og:title": "kitconcept Intranet Distribution"
-    "keywords": "kitconcept Intranet Distribution, documentation"
+    description: "kitconcept Intranet Distribution — documentation for admins, editors, and developers."
+    keywords: "kitconcept, intranet, Plone, documentation"
+last_updated: 2026-03-18
 ---
 
 # kitconcept Intranet Distribution
 
-Welcome to the documentation for kitconcept Intranet Distribution!
-A Plone distribution for Intranets with Plone. Created by kitconcept.
+Welcome to the documentation for the kitconcept Intranet Distribution — a Plone 6 distribution for building intranets. Created by kitconcept.
 
-This scaffold provides a ready-to-use environment for creating comprehensive documentation for {term}`Plone` projects, based on {term}`Plone Sphinx Theme`.
+This site covers usage for admins and editors, and technical reference for developers. Built on Plone 6, kitconcept.core, and Volto Light Theme.
 
-Built with Markedly Structured Text ({term}`MyST`), this environment supports rich formatting, directives, and extensions tailored for technical documentation.
-
-It's structured following the [Diátaxis](https://diataxis.fr/) documentation framework.
+It is structured following the [Diátaxis](https://diataxis.fr/) documentation framework.
 
 ```{toctree}
-:caption: How to guides
+:caption: How-to Guides
 :maxdepth: 2
 :hidden: true
 
@@ -51,10 +47,17 @@ concepts/index
 ```
 
 ```{toctree}
-:caption: Appendices
+:caption: Developer Documentation
 :maxdepth: 2
 :hidden: true
 
+developer/index
+```
+
+```{toctree}
+:caption: Appendices
+:maxdepth: 1
+:hidden: true
+
 glossary
-genindex
 ```

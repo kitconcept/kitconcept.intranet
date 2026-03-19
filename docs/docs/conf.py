@@ -180,7 +180,7 @@ html_theme_options = {
         "text": "Intranet Distribution",
     },
     "navigation_with_keys": True,
-    "path_to_docs": "docs/docs",
+    "path_to_docs": "docs_project/new_docs",
     "repository_branch": "main",
     "repository_url": "https://github.com/kitconcept/kitconcept.intranet",
     "search_bar_text": "Search",

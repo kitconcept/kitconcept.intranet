@@ -13,6 +13,7 @@
         />
     <genericsetup:upgradeDepends
         title="Update kitconcept.solr configuration"
+        import_profile="kitconcept.intranet:solr"
         import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>

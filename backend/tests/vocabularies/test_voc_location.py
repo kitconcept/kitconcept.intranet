@@ -30,30 +30,6 @@ class TestVocab:
         assert term.value == token
 
 
-class TestVocabRelation:
-    """Test vocabulary used in the location relation."""
-
-    name: str = "kitconcept.intranet.vocabularies.location_objects"
-    vocab_type = CatalogVocabulary
-
-    @pytest.fixture(autouse=True)
-    def _setup(self, portal, get_vocabulary):
-        self.portal = portal
-        self.vocab = get_vocabulary(self.name, portal)
-
-    def test_vocabulary_type(self):
-        assert isinstance(self.vocab, self.vocab_type)
-
-    @pytest.mark.parametrize(
-        "token,title", [("97e82b07b5444728b1517de15c79fefb", "Standort Bonn")]
-    )
-    def test_vocab_terms(self, token: str, title: str):
-        term = self.vocab.getTermByToken(token)
-        assert term.title == title
-        assert term.token == token
-        assert term.value == api.content.get(UID=token)
-
-
 class TestLocationsVocabulary:
     """Test the locations vocabulary with dynamically created content."""
 

@@ -16,5 +16,9 @@
         import_profile="kitconcept.intranet:solr"
         import_steps="plone.app.registry"
         />
+    <genericsetup:upgradeStep
+        title="Migrate organisational unit and location"
+        handler=".migrate_values"
+        />
   </genericsetup:upgradeSteps>
 </configure>

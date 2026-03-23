@@ -36,36 +36,6 @@ class TestVocab:
         assert term.value == token
 
 
-class TestVocabRelation:
-    """Test vocabulary used in the organisational unit relation."""
-
-    name: str = "kitconcept.intranet.vocabularies.organisational_unit_objects"
-    vocab_type = CatalogVocabulary
-
-    @pytest.fixture(autouse=True)
-    def _setup(self, portal, get_vocabulary):
-        self.portal = portal
-        self.vocab = get_vocabulary(self.name, portal)
-
-    def test_vocabulary_type(self):
-        assert isinstance(self.vocab, self.vocab_type)
-
-    @pytest.mark.parametrize(
-        "token,title",
-        [
-            (
-                "1a22eddf0e7941a0962cbfaa785e4b4d",
-                "Institute of Robotics and Mechatronics(Organisational unit)",
-            )
-        ],
-    )
-    def test_vocab_terms(self, token: str, title: str):
-        term = self.vocab.getTermByToken(token)
-        assert term.title == title
-        assert term.token == token
-        assert term.value == api.content.get(UID=token)
-
-
 class TestOrganisationalUnitVocabulary:
     """Test the organisational unit vocabulary with dynamically created content."""
 

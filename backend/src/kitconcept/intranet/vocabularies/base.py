@@ -96,35 +96,6 @@ class CatalogVocabulary(SimpleVocabulary):
         return bool(api.content.find(**query))
 
 
-class BaseRelationVocabulary:
-    """Base class for relation vocabularies"""
-
-    portal_type: str
-
-    def __init__(self, portal_type: str):
-        self.portal_type = portal_type
-
-    def query(self, context: DexterityContent) -> dict:
-        return {
-            "portal_type": self.portal_type,
-            "sort_on": "sortable_title",
-        }
-
-    def prepare_title(self, result) -> str:
-        return result.Title
-
-    def __call__(
-        self, context: DexterityContent, query: dict | None = None
-    ) -> CatalogVocabulary:
-        query = self.query(context)
-        results = api.content.find(**query)
-        terms = [
-            SimpleTerm(result.getObject(), result.UID, self.prepare_title(result))
-            for result in results
-        ]
-        return CatalogVocabulary(terms)
-
-
 class BaseSimpleVocabulary:
     """Base class for simple UID-Title vocabularies."""
 

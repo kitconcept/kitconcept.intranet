@@ -1,9 +1,18 @@
 from BTrees.OIBTree import OIBTree
 from plone import api
 from plone.dexterity.content import DexterityContent
-from plone.uuid.interfaces import IUUID
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+
+
+class RelaxedSimpleVocabulary(SimpleVocabulary):
+    """Like SimpleVocabulary, but don't fail validation.
+
+    This helps during initial import, when referenced items might not exist yet.
+    """
+
+    def __contains__(self, value):
+        return True
 
 
 def get_translated_vocabulary(params: tuple, language: str) -> SimpleVocabulary:
@@ -37,7 +46,7 @@ def get_translated_vocabulary(params: tuple, language: str) -> SimpleVocabulary:
                 terms_by_translation_group[translation_group].title = brain.Title
 
     terms = sorted(terms_by_token.values(), key=lambda term: term.title)
-    return SimpleVocabulary(terms)
+    return RelaxedSimpleVocabulary(terms)
 
 
 class VocabularyCounter:
@@ -71,29 +80,6 @@ def get_vocabulary_counter(vocab: str):
 def invalidate_vocabulary_cache(vocab: str):
     """Invalidate the cache for vocab"""
     VocabularyCounter().invalidate(vocab)
-
-
-class CatalogVocabulary(SimpleVocabulary):
-    """Vocabulary supporting value validation against the Catalog."""
-
-    def __contains__(self, value: DexterityContent | str) -> bool:
-        """used during validation to make sure the selected item is found with
-        the specified query.
-
-        value can be either a string (hex value of uuid or path) or a plone
-        content object.
-        """
-        if not isinstance(value, str):
-            value = IUUID(value)
-        if value.startswith("/"):
-            # it is a path query
-            site_path = "/".join(api.portal.get().getPhysicalPath())
-            path = f"{site_path}{value}"
-            query = {"path": {"query": path, "depth": 0}}
-        else:
-            # its a uuid
-            query = {"UID": value}
-        return bool(api.content.find(**query))
 
 
 class BaseSimpleVocabulary:

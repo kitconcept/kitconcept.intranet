@@ -1,11 +1,13 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    i18n_domain="dlr.internet"
+    i18n_domain="kitconcept.intranet"
     >
 
   <utility
       factory=".summary.JSONSummarySerializerMetadata"
       name="kitconcept.intranet.summary_serializer_metadata"
       />
+
+  <adapter factory=".person.PersonSerializer" />
 
 </configure>

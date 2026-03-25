@@ -1,6 +1,32 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b32 (2026-03-25)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to VLT 7.8.3 and Volto 18.32.4. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to VLT 7.8.3 and Volto 18.32.4. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b31 (2026-03-11)
 
 ### Backend

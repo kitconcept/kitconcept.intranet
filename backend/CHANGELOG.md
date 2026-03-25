@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b32 (2026-03-25)
+
+
+### Bugfix
+
+- Update to VLT 7.8.3 and Volto 18.32.4. @sneridagh 
+
 ## 1.0.0b31 (2026-03-11)
 
 No significant changes.

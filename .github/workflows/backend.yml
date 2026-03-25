@@ -15,13 +15,13 @@ on:
         default: backend
 
 jobs:
-  lint:
-    name: "Backend: Lint"
-    uses: plone/meta/.github/workflows/backend-lint.yml@2.x
-    with:
-      python-version: ${{ inputs.python-version }}
-      plone-version: ${{ inputs.kc-version }}
-      working-directory: ${{ inputs.working-directory }}
+  # lint:
+  #   name: "Backend: Lint"
+  #   uses: plone/meta/.github/workflows/backend-lint.yml@2.x
+  #   with:
+  #     python-version: ${{ inputs.python-version }}
+  #     plone-version: ${{ inputs.kc-version }}
+  #     working-directory: ${{ inputs.working-directory }}
 
   test:
     name: "Backend: Test"

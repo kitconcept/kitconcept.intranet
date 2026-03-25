@@ -1,0 +1,109 @@
+name: "Lint Python codebase"
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      plone-version:
+        required: true
+        type: string
+      working-directory:
+        required: false
+        default: '.'
+        type: string
+      check-typing:
+        default: false
+        type: boolean
+      version-ruff:
+        required: false
+        default: 'latest'
+        type: string
+      version-zpretty:
+        required: false
+        default: 'latest'
+        type: string
+      version-pyroma:
+        required: false
+        default: 'latest'
+        type: string
+      version-check-python:
+        required: false
+        default: 'latest'
+        type: string
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    env:
+      PYTHON_VERSION: ${{ inputs.python-version }}
+      PLONE_VERSION: ${{ inputs.plone-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup codebase
+        uses: plone/meta/.github/actions/setup_backend_uv@2.x
+        with:
+          python-version: ${{ inputs.python-version }}
+          plone-version: ${{ inputs.plone-version }}
+          working-directory: ${{ inputs.working-directory }}
+
+      - name: Check formatting
+        if: ${{ success() || failure() }}
+        id: ruff-format
+        shell: bash
+        run: |
+          uvx ruff@${{ inputs.version-ruff }} format --diff
+
+      - name: Check lint
+        if: ${{ success() || failure() }}
+        id: ruff-lint
+        shell: bash
+        run: |
+          uvx ruff@${{ inputs.version-ruff }} check --diff
+
+      - name: Check XML / ZCML
+        if: ${{ success() || failure() }}
+        id: zpretty
+        shell: bash
+        run: |
+          uvx zpretty@${{ inputs.version-zpretty }} --check src
+
+      - name: Check Package Metadata
+        if: ${{ success() || failure() }}
+        id: pyroma
+        shell: bash
+        run: |
+          uvx pyroma@${{ inputs.version-pyroma }} -d .
+
+      - name: Check Python Versions
+        if: ${{ success() || failure() }}
+        id: py-versions
+        shell: bash
+        run: |
+          uvx check-python-versions@${{ inputs.version-check-python }} .
+
+      - name: Check typing
+        if: ${{ (success() || failure()) && inputs.check-typing }}
+        id: typing
+        run: |
+          uv run mypy src
+
+      - name: Report
+        if: ${{ success() || failure() }}
+        run: |
+          echo '# Code Analysis' >> $GITHUB_STEP_SUMMARY
+          echo '| Test | Status |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| Format | ${{ steps.ruff-format.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Lint | ${{ steps.ruff-lint.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| XML / ZCML | ${{ steps.zpretty.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Package Metadata | ${{ steps.pyroma.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Python Versions | ${{ steps.py-versions.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Typing | ${{ steps.typing.conclusion == 'failure' && '❌' || steps.typing.conclusion == 'skipped' && '⏭️' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY

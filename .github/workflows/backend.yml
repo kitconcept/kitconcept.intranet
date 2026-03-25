@@ -18,7 +18,7 @@ jobs:
   lint:
     name: "Backend: Lint"
     #uses: plone/meta/.github/workflows/backend-lint.yml@2.x
-    uses: plone/meta/.github/workflows/backend-lint.yml
+    uses: ./.github/workflows/backend-lint.yml
     with:
       python-version: ${{ inputs.python-version }}
       plone-version: ${{ inputs.kc-version }}

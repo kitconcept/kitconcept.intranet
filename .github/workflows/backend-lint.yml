@@ -80,7 +80,7 @@ jobs:
         id: pyroma
         shell: bash
         run: |
-          uvx pyroma@${{ inputs.version-pyroma }} -d .
+          uvx --with hatchling pyroma@${{ inputs.version-pyroma }} -d .
 
       - name: Check Python Versions
         if: ${{ success() || failure() }}

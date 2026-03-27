@@ -1,10 +1,12 @@
 ---
+doc_type: how-to
+audience: editor
+tags: [engagement, passive-targeting]
 myst:
   html_meta:
     "description": "Sort content in listings based on its relevance to the current user."
-    "property=og:description": "Sort content in listings based on its relevance to the current user."
-    "property=og:title": "Passive targeting"
     "keywords": "Volto, Plone, intranet, passive targeting"
+last_updated: 2026-03-18
 ---
 
 # Passive targeting

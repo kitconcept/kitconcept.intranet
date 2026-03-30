@@ -2,6 +2,23 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a10 (2026-03-14)
+
+
+### Feature
+
+- Add kitconcept.contactblock. @iFlameing 
+
+
+### Bugfix
+
+- Add missing upgrade file(v20260217001) in upgrades/configure.zcml. @iFlameing 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+- Update to collective.solr 10.1.1 (fixes edge case with pagination). @davisagli 
+
 ## 2.0.0a9 (2026-03-05)
 
 

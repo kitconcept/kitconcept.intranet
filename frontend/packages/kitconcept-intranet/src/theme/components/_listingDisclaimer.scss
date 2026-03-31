@@ -1,4 +1,5 @@
-.block.listing {
+.block.listing,
+.block.search {
   &:has(.results-disclaimer-container) {
     h2.headline {
       margin-bottom: $spacing-medium;

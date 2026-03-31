@@ -1,0 +1,47 @@
+/* Customized to backport LinkToItem */
+
+import { parseDateFromCatalog } from '@kitconcept/volto-light-theme/helpers/dates';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import type { DefaultSummaryProps } from './DefaultSummary';
+import Card from '@kitconcept/volto-light-theme/primitives/Card/Card';
+import { smartTextRenderer } from '@kitconcept/volto-light-theme/helpers/smartText';
+
+const NewsItemSummary = (props: DefaultSummaryProps) => {
+  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
+  // @ts-ignore
+  const LinkToItem: React.ElementType = React.useContext(Card.LinkContext);
+  const effective = parseDateFromCatalog(item.effective);
+  const headline = [
+    effective ? (
+      // @ts-expect-error
+      <FormattedDate
+        key="day"
+        date={effective}
+        format={{
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }}
+        className="day"
+      />
+    ) : null,
+    item.head_title,
+  ]
+    .filter((x) => x)
+    .flatMap((x) => [' | ', x])
+    .slice(1);
+
+  return (
+    <>
+      {headline.length ? <div className="headline">{headline}</div> : null}
+      <HeadingTag className="title" id={a11yLabelId}>
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
+      </HeadingTag>
+      {!hide_description && (
+        <p className="description">{smartTextRenderer(item.description)}</p>
+      )}
+    </>
+  );
+};
+
+export default NewsItemSummary;

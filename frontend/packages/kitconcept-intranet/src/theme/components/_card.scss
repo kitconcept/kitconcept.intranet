@@ -1,0 +1,17 @@
+.card {
+  .card-primary-link {
+    color: inherit !important;
+    font: inherit !important;
+    text-decoration: none !important;
+    &::before {
+      position: absolute;
+      z-index: 0;
+      content: '';
+      inset: 0;
+    }
+  }
+
+  a:not(.card-primary-link) {
+    z-index: 1;
+  }
+}

@@ -33,9 +33,7 @@ interface PersonViewProps {
     academic_title?: {
       title: string;
     };
-    organisational_unit_reference?: {
-      title: string;
-    }[];
+    organisational_units?: string[];
     department?: string;
     contact_name?: string;
     contact_email?: string;
@@ -46,9 +44,7 @@ interface PersonViewProps {
     office_phone?: string;
     fax?: string;
     address?: string;
-    location_reference?: {
-      title: string;
-    }[];
+    locations?: string[];
   };
 }
 
@@ -72,9 +68,6 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
         ? `${content.first_name} ${content.last_name}`
         : content.first_name,
     department: content.department ?? null,
-    organisationalUnit: (content.organisational_unit_reference || [])
-      .map((ref) => ref.title)
-      .join(', '),
   };
 
   const contact = {
@@ -101,7 +94,7 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
           )}
           <div className="profile-info">
             <span className="organisational-unit">
-              {profile.organisationalUnit}
+              {(content.organisational_units || []).join(', ')}
             </span>
             <h1>{profile.fullName}</h1>
             <div className="affiliations">
@@ -204,17 +197,13 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
               </div>
             </section>
 
-            {content?.location_reference && (
+            {content?.locations && (
               <section aria-labelledby="address-heading">
                 <h2 id="address-heading">
                   <FormattedMessage id="Address" defaultMessage="Address" />
                 </h2>
                 <address>
-                  <h3>
-                    {content.location_reference
-                      .map((ref) => ref.title)
-                      .join(', ')}
-                  </h3>
+                  <h3>{content.locations.join(', ')}</h3>
                   {profile.department && (
                     <p className="department">{profile.department}</p>
                   )}

@@ -1,14 +1,15 @@
-from kitconcept.intranet.vocabularies.base import CatalogVocabulary
 from plone import api
 from plone.app.vocabularies import SimpleVocabulary
 
 import pytest
 
 
+VOCABULARY = "kitconcept.intranet.vocabularies.location"
+
+
 class TestVocab:
-    name: str = "kitconcept.intranet.vocabularies.location"
+    name: str = VOCABULARY
     vocab_type = SimpleVocabulary
-    value_type = "uid"
 
     @pytest.fixture(autouse=True)
     def _setup(self, portal, get_vocabulary):
@@ -25,13 +26,57 @@ class TestVocab:
         term = self.vocab.getTermByToken(token)
         assert term.title == title
         assert term.token == token
-        value = token if self.value_type == "uid" else api.content.get(UID=token)
-        assert term.value == value
+        assert term.value == token
 
 
-class TestVocabRelation(TestVocab):
-    """Test vocabulary used in the location relation."""
+class TestLocationsVocabulary:
+    """Test the locations vocabulary with dynamically created content."""
 
-    name: str = "kitconcept.intranet.vocabularies.location_objects"
-    vocab_type = CatalogVocabulary
-    value_type = "object"
+    @pytest.fixture(autouse=True)
+    def _setup(self, portal):
+        self.portal = portal
+
+    def test_location_appears_in_vocabulary(self):
+        """Test that a created location appears in the vocabulary."""
+        with api.env.adopt_roles(["Manager"]):
+            api.content.create(
+                self.portal,
+                "Location",
+                id="bonn",
+                title="Bonn",
+            )
+
+        vocab = api.portal.get_vocabulary(VOCABULARY)
+        items = [item.title for item in vocab]
+        assert "Bonn" in items
+
+    def test_non_location_not_in_vocabulary(self):
+        """Test that non-Location content does not appear in the vocabulary."""
+        with api.env.adopt_roles(["Manager"]):
+            api.content.create(
+                self.portal,
+                "Document",
+                id="my-page",
+                title="My Page",
+            )
+
+        vocab = api.portal.get_vocabulary(VOCABULARY)
+        items = [item.title for item in vocab]
+        assert "My Page" not in items
+
+    def test_vocabulary_uses_uid_as_token_and_value(self):
+        """Test that vocabulary terms use UID as both token and value."""
+        with api.env.adopt_roles(["Manager"]):
+            location = api.content.create(
+                self.portal,
+                "Location",
+                id="koeln",
+                title="Köln",
+            )
+            uid = api.content.get_uuid(location)
+
+        vocab = api.portal.get_vocabulary(VOCABULARY)
+        tokens = [item.token for item in vocab]
+        values = [item.value for item in vocab]
+        assert uid in tokens
+        assert uid in values

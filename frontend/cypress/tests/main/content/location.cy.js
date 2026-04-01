@@ -30,7 +30,7 @@ describe('Add Content Tests', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept(
       'GET',
-      '/**/@vocabularies/kitconcept.intranet.vocabularies.location_objects*',
+      '/**/@vocabularies/kitconcept.intranet.vocabularies.location*',
     ).as('vocab');
     cy.createContent({
       contentType: 'Location',

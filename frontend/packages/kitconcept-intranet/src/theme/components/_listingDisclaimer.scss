@@ -1,4 +1,6 @@
-.block.listing {
+.block.listing,
+.block.search,
+.block.eventsearch.eventCalendar {
   &:has(.results-disclaimer-container) {
     h2.headline {
       margin-bottom: $spacing-medium;

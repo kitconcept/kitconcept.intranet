@@ -4,8 +4,8 @@
     >
   <genericsetup:upgradeSteps
       profile="kitconcept.intranet:default"
-      source="20260304001"
-      destination="20260305001"
+      source="20260305001"
+      destination="20260401001"
       >
     <genericsetup:upgradeDepends
         title="Add content_review behaviour to a bunch of content types"

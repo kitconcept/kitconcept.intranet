@@ -1,24 +1,23 @@
 from kitconcept.intranet import _
+from plone.app.multilingual.dx.directives import languageindependent
 from plone.autoform.directives import order_after
-from plone.autoform.directives import widget
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
-from z3c.relationfield.schema import RelationChoice
-from z3c.relationfield.schema import RelationList
 from zope.interface import provider
+from zope import schema
 
 
 @provider(IFormFieldProvider)
 class ILocationBehavior(model.Schema):
-    """Behavior: Select a Location from a vocabulary."""
+    """Behavior: Select Locations from a vocabulary."""
 
     model.fieldset("categorization", fields=["location_reference"])
     order_after(location_reference="subjects")
-    widget("location_reference", frontendOptions={"widget": "select"})
-    location_reference = RelationList(
+    languageindependent("location_reference")
+    location_reference = schema.List(
         title=_("Location"),
-        value_type=RelationChoice(
-            vocabulary="kitconcept.intranet.vocabularies.location_objects"
+        value_type=schema.Choice(
+            vocabulary="kitconcept.intranet.vocabularies.location"
         ),
         required=False,
     )

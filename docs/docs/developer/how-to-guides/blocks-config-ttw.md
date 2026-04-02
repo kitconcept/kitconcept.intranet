@@ -8,7 +8,7 @@ audience: developer
 last_updated: 2026-03-18
 ---
 
-# Blocks Configuration Through the Web (TTW) — Developer Reference
+# Configure blocks through the web (TTW)
 
 This document describes how to configure blocks TTW (through the web) in a Plone site or subsite, including the full mutator DSL specification.
 

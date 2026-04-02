@@ -9,7 +9,7 @@ tags: [blocks, configuration, site-settings]
 last_updated: 2026-03-18
 ---
 
-# How to Configure Blocks Through the Web
+# Configure blocks through the web
 
 This guide shows you how to control which blocks are available to editors, and configure their themes and variations, using the Blocks Configuration field in Site Setup — no code deployment required.
 

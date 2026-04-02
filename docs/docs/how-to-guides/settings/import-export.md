@@ -9,7 +9,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# Import/Export Control Panel
+# Import and export site content
 
 The **Import/Export** control panel allows administrators to export site content into a file and import content from a previously exported archive.
 

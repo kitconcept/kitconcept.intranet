@@ -9,7 +9,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# Upgrade guide
+# Upgrade Volto Light Theme
 
 ## volto-light-theme 8.0.0
 

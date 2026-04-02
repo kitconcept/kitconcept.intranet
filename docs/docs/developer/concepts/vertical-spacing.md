@@ -68,5 +68,5 @@ The latter defaults to `transparent` if no `backgroundColor` property is set in 
 ```{important}
 A new block model is in the development planning.
 It will be a new integral Block Model for VLT and Volto.
-For more information see {doc}`block-model-v3`.
+For more information see {doc}`block-model`.
 ```

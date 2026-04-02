@@ -129,7 +129,7 @@ suppress_warnings = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = "plone_sphinx_theme"  # This can be configured
-html_logo = "_static/logo.svg"
+html_logo = "_static/images/logo.svg"
 html_favicon = "_static/favicon.ico"
 # The default value includes icon-links, so override it with that one omitted, and add it to html_theme_options[footer_content_items].
 html_sidebars = {
@@ -180,7 +180,7 @@ html_theme_options = {
         "text": "Intranet Distribution",
     },
     "navigation_with_keys": True,
-    "path_to_docs": "docs_project/new_docs",
+    "path_to_docs": "docs_project/docs",
     "repository_branch": "main",
     "repository_url": "https://github.com/kitconcept/kitconcept.intranet",
     "search_bar_text": "Search",
@@ -285,7 +285,7 @@ mermaid_version = "11.2.0"
 # -- OpenGraph configuration ----------------------------------
 ogp_site_url = "https://kitconceptintranet.readthedocs.io/"
 ogp_description_length = 200
-ogp_image = "https://kitconceptintranet.readthedocs.io/_static/logo.svg"
+ogp_image = "https://kitconceptintranet.readthedocs.io/_static/images/logo.svg"
 ogp_site_name = "Project Title Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
@@ -340,7 +340,7 @@ latex_documents = [
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = "_static/logo.svg"
+latex_logo = "_static/images/logo.svg"
 
 
 # --  Configuration for source_replacements extension -----------------------

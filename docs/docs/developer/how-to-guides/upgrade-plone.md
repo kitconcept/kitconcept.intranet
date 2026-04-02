@@ -8,7 +8,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# How to upgrade Plone in kitconcept.core
+# Upgrade Plone in kitconcept.core
 
 This document describes how to upgrade Plone in kitconcept.core.
 

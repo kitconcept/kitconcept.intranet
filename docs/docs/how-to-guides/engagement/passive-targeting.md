@@ -9,7 +9,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# Passive targeting
+# Configure passive targeting
 
 Passive targeting makes it possible to sort a listing or search block to highlight content which matches the current user's organisational unit or location, creating a personalized browsing experience.
 

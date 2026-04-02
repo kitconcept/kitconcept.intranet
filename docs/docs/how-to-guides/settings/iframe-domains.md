@@ -9,7 +9,7 @@ status: draft
 last_updated: 2026-03-18
 ---
 
-# How to Configure Allowed iFrame Domains
+# Configure allowed iFrame domains
 
 :::{note}
 This page is a stub. Content is pending and will be added in a future update.

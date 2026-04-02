@@ -8,7 +8,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# How to configure a project based on a distribution to ensure versions are consistent with the distribution
+# Configure a project based on a distribution to ensure versions are consistent with the distribution
 
 When you have a project that is based on a distribution, we need to make sure that the versions of the frontend packages in the project are consistent with the versions in the distribution and that these versions are all in sync across all the build.
 

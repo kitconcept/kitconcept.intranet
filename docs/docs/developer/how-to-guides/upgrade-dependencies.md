@@ -8,7 +8,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# How to upgrade an add-on dependency in kitconcept.core
+# Upgrade an add-on dependency in kitconcept.core
 
 This document describes how to upgrade the version of an add-on in kitconcept.core.
 

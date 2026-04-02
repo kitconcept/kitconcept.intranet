@@ -9,7 +9,7 @@ status: draft
 last_updated: 2026-03-18
 ---
 
-# How to Extend the Control Panel
+# Extend the control panel
 
 :::{note}
 This page is a stub. Content is pending and will be added in a future update.

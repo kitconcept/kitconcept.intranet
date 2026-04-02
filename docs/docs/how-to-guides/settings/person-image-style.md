@@ -9,7 +9,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# Squared person images in teasers and listings setting
+# Configure squared person images in teasers and listings
 
 The kitconcept intranet distribution provides a setting to enable squared person images in teasers and listings.
 This is an example of the default setting (rounded):

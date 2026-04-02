@@ -8,7 +8,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# How to upgrade a distribution-based project
+# Upgrade a distribution-based project
 
 Use this guide in projects based on a frontend distribution where `frontend/Makefile` provides an `upgrade` target.
 

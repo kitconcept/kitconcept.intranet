@@ -115,8 +115,8 @@ As a general rule, if the block's content requires internal spacing in _all_ pos
 
 ### View Mode Structure
 ```jsx
-<div 
-  style="$StyleWrapperStyles" 
+<div
+  style="$StyleWrapperStyles"
   className="block $type category-$category $StyleWrapperClassNames"
 >
   <div className="block-inner-container">
@@ -127,8 +127,8 @@ As a general rule, if the block's content requires internal spacing in _all_ pos
 
 ### Edit Mode Structure
 ```jsx
-<div 
-  style="$StyleWrapperStyles" 
+<div
+  style="$StyleWrapperStyles"
   className="block $type category-$category $StyleWrapperClassNames"
 >
   <div className="block-inner-container">
@@ -141,7 +141,7 @@ As a general rule, if the block's content requires internal spacing in _all_ pos
 ```
 
 ### CSS Framework
-```css
+```scss
 .block {
   background: var(--theme-color, --background-color);
   color: var(--theme-foreground-color, --font-color);
@@ -149,10 +149,10 @@ As a general rule, if the block's content requires internal spacing in _all_ pos
   .block-inner-container {
     @include default-container-width(); /* This mixin sets a max-width and left/right margins to auto */
     display: grid;
-    
+
     /* Spacing between sibling blocks, this is the place to increase spacing based on block categories */
     padding-bottom: $block-vertical-space; /* Default spacing between blocks */
-    
+
     /* Generic content alignment */
     place-content: var(--block-alignment, start);
   }
@@ -167,8 +167,8 @@ Block Model v3 aims for simplicity in block components. A button block should be
 
 **View Component:**
 ```jsx
-<div 
-  style="$StyleWrapperStyles" 
+<div
+  style="$StyleWrapperStyles"
   className="block __button category-action $StyleWrapperClassNames"
 >
   <div className="block-inner-container">
@@ -181,8 +181,8 @@ Block Model v3 aims for simplicity in block components. A button block should be
 
 **Edit Component:**
 ```jsx
-<div 
-  style="$StyleWrapperStyles" 
+<div
+  style="$StyleWrapperStyles"
   className="block __button category-action $StyleWrapperClassNames"
 >
   <div className="block-inner-container">

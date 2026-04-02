@@ -10,7 +10,7 @@ last_updated: 2026-03-18
 
 (social-media)=
 
-# Social media
+# Configure social media
 
 ```{versionadded} 6.0.0-alpha.22
 ```

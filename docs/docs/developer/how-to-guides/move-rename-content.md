@@ -8,7 +8,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# Move/Rename content objects via an instance script
+# Move or rename content objects via an instance script
 
 This document describes how to run the `move_rename_object.py` instance script locally or inside a Docker container.
 

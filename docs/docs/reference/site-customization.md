@@ -8,6 +8,8 @@ audience: admin
 last_updated: 2026-03-18
 ---
 
+(site-customization)=
+
 # Site Customization
 
 This page describes the settings available to customize your site's header, theme colors, and footer. These settings are available once the VLT site customization behaviors have been applied to your site's content types.

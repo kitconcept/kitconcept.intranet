@@ -8,7 +8,7 @@ myst:
 last_updated: 2026-03-18
 ---
 
-# Reindexing content via an instance script
+# Reindex content via an instance script
 
 This document describes how to run the `reindex_content.py` instance script locally or inside a Docker container.
 

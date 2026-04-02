@@ -9,7 +9,7 @@ tags: [engagement, likes, ratings]
 last_updated: 2026-03-18
 ---
 
-# How to Enable Likes and Ratings
+# Enable likes and ratings
 
 This guide shows you how to enable content likes, ratings, and the content interactions bar for pages in your intranet.
 

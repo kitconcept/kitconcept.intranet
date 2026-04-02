@@ -12,7 +12,7 @@ last_updated: 2026-03-18
 
 Volto Light Theme provides a set of slots to customize the layout and structure of your pages.
 Slots are predefined areas in the page where you can place components.
-Learn more about slots in the Volto documentation chapter {doc}`plone:/volto/configuration/slots`.
+Learn more about slots in the Volto documentation chapter {doc}`plone:volto/configuration/slots`.
 
 ## Usage
 

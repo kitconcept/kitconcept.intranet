@@ -9,7 +9,7 @@ tags: [feedback, email, configuration]
 last_updated: 2026-03-18
 ---
 
-# How to Configure the Content Feedback Form
+# Configure the content feedback form
 
 This guide shows you how to configure who receives feedback submissions for your intranet content, and how to set up global feedback defaults.
 

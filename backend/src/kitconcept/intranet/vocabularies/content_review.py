@@ -6,10 +6,10 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 
 INTERVALS = [
-    ("2w", _("Every 2 weeks")),
-    ("1m", _("Every month")),
+    ("3m", _("Every 3 months")),
     ("6m", _("Every 6 months")),
     ("1y", _("Every year")),
+    ("2y", _("Every 2 years")),
 ]
 
 

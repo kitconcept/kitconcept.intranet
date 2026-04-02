@@ -3,6 +3,7 @@ from plone import api
 
 import logging
 
+
 logger = logging.getLogger("kitconcept.intranet")
 
 

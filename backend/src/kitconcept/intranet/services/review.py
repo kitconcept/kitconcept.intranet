@@ -25,21 +25,8 @@ class ReviewPost(Service):
         return self
 
     def reply(self):
-        if not self.params:
-            raise BadRequest(
-                "Missing action: expected /@review/approve, "
-                "/@review/delegate, or /@review/postpone"
-            )
-
-        if len(self.params) > 1:
-            raise BadRequest(
-                "Too many path segments: expected /@review/approve, "
-                "/@review/delegate, or /@review/postpone"
-            )
-
-        param = self.params[0]
-        match param:
-            case "approve":
+        match self.params:
+            case ["approve"]:
                 # update review_status
                 self.context.review_status = "Up-to-date"
                 # update review_due_date
@@ -51,7 +38,7 @@ class ReviewPost(Service):
                 # update review_completed_date
                 self.context.review_completed_date = date.today()
                 transaction.commit()
-            case "delegate":
+            case ["delegate"]:
                 field = IContentReview["review_assignee"].bind(self.context)
                 vocabulary = field.vocabulary
                 data = json_body(self.request)
@@ -62,7 +49,7 @@ class ReviewPost(Service):
                     raise BadRequest(f"Assignee not found in vocabulary: {vocabulary}")
                 self.context.review_assignee = assignee
                 transaction.commit()
-            case "postpone":
+            case ["postpone"]:
                 self.context.review_status = "Up-to-date"
                 data = json_body(self.request)
                 if comment := data.get("comment"):

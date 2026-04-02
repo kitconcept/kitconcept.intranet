@@ -15,16 +15,10 @@ class TestVocab:
     def test_vocabulary_type(self):
         assert isinstance(self.vocab, self.vocab_type)
 
-    @pytest.mark.parametrize(
-        "token,title",
-        [
-            ("2w", "Every 2 weeks"),
-            ("1m", "Every month"),
+    def test_vocab_terms(self):
+        assert [(term.token, term.title) for term in self.vocab._terms] == [
+            ("3m", "Every 3 months"),
             ("6m", "Every 6 months"),
             ("1y", "Every year"),
-        ],
-    )
-    def test_vocab_terms(self, token: str, title: str):
-        term = self.vocab.getTermByToken(token)
-        assert term.title == title
-        assert term.token == token
+            ("2y", "Every 2 years"),
+        ]

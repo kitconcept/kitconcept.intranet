@@ -13,13 +13,9 @@ from zope.schema.interfaces import IContextAwareDefaultFactory
 
 @provider(IContextAwareDefaultFactory)
 def default_review_interval(context) -> str:
-    record = api.portal.get_registry_record(
+    return api.portal.get_registry_record(
         "kitconcept.intranet.content_review_default_interval"
     )
-    if record is None:
-        # TODO: maybe send an email that a default has to be set?
-        pass
-    return record
 
 
 @provider(IContextAwareDefaultFactory)

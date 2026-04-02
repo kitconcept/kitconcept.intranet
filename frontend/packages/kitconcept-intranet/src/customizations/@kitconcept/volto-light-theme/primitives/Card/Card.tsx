@@ -1,0 +1,157 @@
+import * as React from 'react';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import cx from 'classnames';
+import type { ObjectBrowserItem } from '@plone/types';
+
+type BaseCardProps = {
+  /** Optional additional CSS class names to apply to the card. */
+  className?: string;
+  openLinkInNewTab?: boolean;
+  children?: React.ReactNode;
+};
+
+type CardPropsWithItem = BaseCardProps & {
+  /** List of items rendered within the card. Mutually exclusive with `href`. */
+  href?: never;
+  item: Partial<ObjectBrowserItem>;
+};
+
+type CardPropsWithoutItem = BaseCardProps & {
+  /** Optional URL to make the card clickable as a link. */
+  href?: string | undefined | null;
+  item?: never;
+};
+
+type CardProps = CardPropsWithItem | CardPropsWithoutItem;
+
+const DefaultImage = (props: any) => {
+  const { src, item, imageField, alt, loading, responsive } = props;
+  return (
+    <img
+      src={src || item?.image_scales?.[imageField]?.[0].download}
+      alt={alt}
+      loading={loading}
+      className={responsive ? 'responsive' : ''}
+    />
+  );
+};
+
+const childrenWithProps = (children, extraProps) => {
+  return React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, extraProps);
+    }
+    return child;
+  });
+};
+
+const CardLinkContext = React.createContext<React.ElementType>(React.Fragment);
+
+const Card = (props: CardProps) => {
+  const hasItem = !!props.item;
+  const item = hasItem ? props.item : undefined;
+  const href = !hasItem ? props.href : undefined;
+  const { className, openLinkInNewTab } = props;
+
+  const a11yLabelId = React.useId();
+  const isInteractive = !!props.href || !!props.item;
+
+  const LinkToItem = React.useCallback(
+    ({ children }: { children: React.ReactNode }) => {
+      return (
+        <ConditionalLink
+          className="card-primary-link"
+          condition={isInteractive}
+          href={href}
+          item={item}
+          openLinkInNewTab={openLinkInNewTab}
+        >
+          {children}
+        </ConditionalLink>
+      );
+    },
+    [href, item, isInteractive, openLinkInNewTab],
+  );
+
+  return (
+    <div className={cx('card', className)}>
+      <div className="card-inner">
+        <CardLinkContext.Provider value={LinkToItem}>
+          {childrenWithProps(props.children, {
+            a11yLabelId,
+            LinkToItem,
+          })}
+        </CardLinkContext.Provider>
+      </div>
+    </div>
+  );
+};
+
+type CardImageProps = {
+  /** The source URL of the image to display. */
+  src?: string;
+  /** An optional item object, used to provide image data from the current item. */
+  item?: Partial<ObjectBrowserItem>;
+  /** An optional image object, used as an alternative source of image data for the item. */
+  image?: Partial<ObjectBrowserItem>;
+  /** A custom React component to render the image. */
+  imageComponent?: React.ComponentType<any>;
+  children?: React.ReactNode;
+  showPlaceholderImage?: boolean;
+};
+
+const CardImage = (props: CardImageProps) => {
+  const { src, item, image, imageComponent, showPlaceholderImage } = props;
+  const Image = imageComponent || DefaultImage;
+
+  return (
+    <div className="image-wrapper">
+      {src ? (
+        <Image src={src} alt="" loading="lazy" responsive={true} />
+      ) : item || image ? (
+        (item?.hasPreviewImage ||
+          item?.image_field ||
+          image ||
+          showPlaceholderImage) && (
+          <Image
+            item={image || item}
+            imageField={image ? image.image_field : item?.image_field}
+            alt=""
+            loading="lazy"
+            responsive={true}
+          />
+        )
+      ) : (
+        props.children
+      )}
+    </div>
+  );
+};
+
+type CardSummaryProps = {
+  /** The ID of the element that labels the card. */
+  a11yLabelId?: string;
+  children?: React.ReactNode;
+};
+
+const CardSummary = (props: CardSummaryProps) => {
+  const { a11yLabelId } = props;
+  return (
+    <div className="card-summary">
+      {childrenWithProps(props.children, {
+        a11yLabelId,
+      })}
+    </div>
+  );
+};
+
+const CardActions = (props: any) => (
+  <div className="actions-wrapper">{props.children}</div>
+);
+
+Card.Image = CardImage;
+Card.Summary = CardSummary;
+Card.Actions = CardActions;
+Card.LinkContext = CardLinkContext;
+
+export default Card;

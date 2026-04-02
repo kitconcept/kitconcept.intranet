@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b33 (2026-04-02)
+
+
+### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/7.8.4 @jackahl 
+
 ## 1.0.0b32 (2026-03-25)
 
 

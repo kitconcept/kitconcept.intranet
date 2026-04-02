@@ -1,6 +1,33 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b33 (2026-04-02)
+
+### Backend
+
+
+#### Bugfix
+
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/7.8.4 @jackahl 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix markup for Card element to use a real link around the title. @danalvrz, @davisagli 
+- See https://github.com/kitconcept/volto-light-theme/releases/tag/7.8.4 @jackahl 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b32 (2026-03-25)
 
 ### Backend

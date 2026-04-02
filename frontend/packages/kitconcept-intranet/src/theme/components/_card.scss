@@ -12,6 +12,7 @@
   }
 
   a:not(.card-primary-link) {
+    position: relative;
     z-index: 1;
   }
 }

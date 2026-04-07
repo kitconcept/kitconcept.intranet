@@ -72,7 +72,7 @@ class IContentReview(model.Schema):
     review_due_date = schema.Date(
         title=_("label_review_due_date", default="Due date"),
         required=False,
-        defaultFactory=calc_due_date(),
+        defaultFactory=calc_due_date,
     )
 
     review_completed_date = schema.Date(

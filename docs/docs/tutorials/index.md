@@ -1,19 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": "Project Title Tutorials"
-    "property=og:description": "Project Title Tutorials"
-    "property=og:title": "Project Title Tutorials"
-    "keywords": "Plone, Project Title, tutorials"
+    description: "Tutorials for getting started with the kitconcept Intranet."
+    keywords: "tutorials, getting started, intranet"
+last_updated: 2026-03-18
 ---
 
 # Tutorials
 
-This part of the documentation contains tutorials.
+Learning-oriented guides for getting started with the intranet.
 
-> A tutorial is an experience that takes place under the guidance of a tutor.
-> A tutorial is always learning-oriented.
+```{toctree}
+:maxdepth: 1
 
-```{seealso}
-https://diataxis.fr/tutorials/
+your-first-page
+organizing-content
+using-feedback
 ```

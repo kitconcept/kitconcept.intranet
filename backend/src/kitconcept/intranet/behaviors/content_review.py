@@ -1,4 +1,3 @@
-from datetime import date
 from kitconcept.intranet import _
 from kitconcept.intranet.utils.calc_due_date import calc_due_date
 from plone import api
@@ -26,7 +25,7 @@ class IContentReview(model.Schema):
         "Content Review & Reminders",
         label=_("label_review_fieldset", "Content Review & Reminders"),
         fields=[
-            "review_enabled",
+            "review_timeless",
             "review_status",
             "review_interval",
             "review_assignee",
@@ -35,9 +34,9 @@ class IContentReview(model.Schema):
         ],
     )
 
-    review_enabled = schema.Bool(
+    review_timeless = schema.Bool(
         title=_(
-            "label_review_enabled",
+            "label_review_timeless",
             default="Timeless content - exclude from review reminders",
         ),
         required=False,
@@ -70,13 +69,13 @@ class IContentReview(model.Schema):
     )
 
     review_due_date = schema.Date(
-        title=_("label_review_due_date", default="Due date"),
+        title=_("label_review_due_date", default="Next review on"),
         required=False,
         defaultFactory=calc_due_date,
     )
 
     review_completed_date = schema.Date(
-        title=_("label_review_completed_date", default="Completed date"),
+        title=_("label_review_completed_date", default="Last review on"),
         required=False,
         readonly=True,
     )
@@ -89,9 +88,9 @@ class IContentReview(model.Schema):
 
     @invariant
     def validate_due_date_field(data):
-        is_reviewable = getattr(data, "review_enabled", False)
+        is_timeless = getattr(data, "review_timeless", False)
         has_due_date = getattr(data, "review_due_date", None)
-        if not is_reviewable and not has_due_date:
+        if not is_timeless and not has_due_date:
             raise Invalid("You have to set a due date if the content is not timeless")
-        elif is_reviewable and has_due_date:
+        elif is_timeless and has_due_date:
             raise Invalid("Cannot set due date if content is timeless")

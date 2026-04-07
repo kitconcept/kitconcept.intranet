@@ -1,6 +1,6 @@
 from datetime import date
-from plone import api
 from kitconcept.intranet.utils.calc_due_date import calc_due_date
+from plone import api
 
 
 def test_1_day():

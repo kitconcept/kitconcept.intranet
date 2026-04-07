@@ -18,7 +18,9 @@ def nofity_reviewer(portal):
         )
 
         if not reviewer:
-            logger.warning("Couldn't find user. No mail will be sent.")
+            logger.warning(
+                f"Couldn't find user for {brain.getPath()}. No mail will be sent."
+            )
             continue
 
         owner_name = reviewer.getProperty("fullname") or reviewer.getUserName()

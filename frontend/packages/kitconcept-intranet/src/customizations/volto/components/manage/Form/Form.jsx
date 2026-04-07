@@ -438,7 +438,7 @@ class Form extends Component {
    * @returns {Array} Filtered fields array
    */
   getFieldsToRender(fields, formData) {
-    if (formData.review_timeless) {
+    if (formData?.review_timeless) {
       return fields.filter(
         (field) => field === 'review_timeless' || !field.startsWith('review_'),
       );

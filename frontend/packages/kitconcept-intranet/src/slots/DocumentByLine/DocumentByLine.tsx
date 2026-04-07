@@ -73,6 +73,10 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     });
   }, [creators, content]);
 
+  if (!content) {
+    return null;
+  }
+
   return (
     <>
       <div className="documentByLine">

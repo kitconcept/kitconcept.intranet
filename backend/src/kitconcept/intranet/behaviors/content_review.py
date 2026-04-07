@@ -18,11 +18,6 @@ def default_review_interval(context) -> str:
     )
 
 
-@provider(IContextAwareDefaultFactory)
-def default_review_due_date(context) -> date:
-    return calc_due_date()
-
-
 @provider(IFormFieldProvider)
 class IContentReview(model.Schema):
     """Content Review behavior"""
@@ -77,7 +72,7 @@ class IContentReview(model.Schema):
     review_due_date = schema.Date(
         title=_("label_review_due_date", default="Due date"),
         required=False,
-        defaultFactory=default_review_due_date,
+        defaultFactory=calc_due_date(),
     )
 
     review_completed_date = schema.Date(

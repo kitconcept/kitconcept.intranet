@@ -14,7 +14,7 @@ def portal(portal_class):
 @pytest.fixture(scope="class")
 def contents(portal):
     with api.env.adopt_roles(["Manager"]):
-        doc = api.content.create(portal, type="Document", id="foobar")
+        doc = api.content.create(portal, type="Document", id="doc1")
         api.content.transition(obj=doc, transition="publish")
         api.user.create(email="jdoe@example.org", username="jdoe")
         transaction.commit()
@@ -34,28 +34,28 @@ class TestReviewPost:
         assert resp.status_code == 404
 
     def test_response_no_action(self):
-        resp = self.api_session.post("/foobar/@review")
+        resp = self.api_session.post("/doc1/@review")
         assert resp.status_code == 400
 
     def test_response_anonymous(self):
-        resp = self.anon_api_session.post("/foobar/@review")
+        resp = self.anon_api_session.post("/doc1/@review")
         assert resp.status_code == 401
 
     def test_response_unknown_action(self):
-        resp = self.api_session.post("/foobar/@review/foobar")
+        resp = self.api_session.post("/doc1/@review/doc1")
         assert resp.status_code == 400
 
     def test_action_approve(self):
-        doc = api.content.get("/foobar")
+        doc = api.content.get("/doc1")
         doc.review_status = "Due"
         doc.review_due_date = date(2002, 12, 30)
         transaction.commit()
 
-        resp = self.api_session.post("/foobar/@review/approve")
+        resp = self.api_session.post("/doc1/@review/approve")
         assert resp.status_code == 200
 
         interval = doc.review_interval or self.default_review_interval
-        resp = self.api_session.get("/foobar").json()
+        resp = self.api_session.get("/doc1").json()
         assert resp["review_status"]["token"] == "Up-to-date"  # noqa: S105
         assert resp["review_due_date"] == calc_due_date(interval=interval).isoformat()
         assert resp["review_completed_date"] == date.today().isoformat()
@@ -63,32 +63,32 @@ class TestReviewPost:
     def test_action_delegate(self):
         comment = "Lorem Ipsum dolor sit amet"
         resp = self.api_session.post(
-            "/foobar/@review/delegate",
+            "/doc1/@review/delegate",
             json={"assignee": "jdoe", "comment": comment},
         )
         assert resp.status_code == 200
 
-        resp = self.api_session.get("/foobar").json()
+        resp = self.api_session.get("/doc1").json()
         assert resp["review_assignee"]["token"] == "jdoe"  # noqa: S105
         assert resp["review_comment"] == comment
 
     def test_action_delegate_unknown_assignee(self):
         resp = self.api_session.post(
-            "/foobar/@review/delegate",
+            "/doc1/@review/delegate",
             json={"assignee": "f.bar"},
         )
         assert resp.status_code == 400
 
     def test_action_postpone(self):
-        doc = api.content.get("/foobar")
+        doc = api.content.get("/doc1")
         due_date = calc_due_date(base_date=doc.review_due_date)
         comment = "Lorem Ipsum dolor sit amet"
         resp = self.api_session.post(
-            "/foobar/@review/postpone",
+            "/doc1/@review/postpone",
             json={"due_date": due_date.isoformat(), "comment": comment},
         )
         assert resp.status_code == 200
 
-        resp = self.api_session.get("/foobar").json()
+        resp = self.api_session.get("/doc1").json()
         assert resp["review_due_date"] == due_date.isoformat()
         assert resp["review_comment"] == comment

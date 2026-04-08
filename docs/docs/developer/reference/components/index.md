@@ -15,7 +15,9 @@ Frontend components provided by the kitconcept Intranet Distribution and Volto L
 
 content-interactions
 feedback-form
+listing-disclaimer
 person-view
+sticky-menu-slot
 summary
 card
 slots

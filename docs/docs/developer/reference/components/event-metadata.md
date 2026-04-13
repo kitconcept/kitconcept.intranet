@@ -65,9 +65,9 @@ A download link is rendered pointing to `{content-url}/ics_view`, allowing users
 - The customization file at `src/customizations/@kitconcept/volto-light-theme/components/Blocks/EventMetadata/View.jsx` is a re-export that routes to the intranet implementation — no additional logic is added there.
 - `isOpenEnd` is evaluated as `!content.end || !!content.open_end`, so a missing `end` value also suppresses the end section.
 
-## Missing or unclear
-
-- The exact Plone behavior package that provides `location_reference` (`ILocation` or a custom behavior) is not confirmed from frontend code alone.
+```{note}
+The exact Plone behavior package that provides `location_reference` (`ILocation` or a custom behavior) is not confirmed from frontend code alone.
+```
 
 ## See Also
 

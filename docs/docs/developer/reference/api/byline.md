@@ -84,9 +84,9 @@ By Jane Smith · published 8 Apr 2026 · last modified 9 Apr 2026
 
 ---
 
-## Missing or unclear
-
-- The exact backend package that registers the `byline` expander is not confirmed from frontend code alone.
+```{note}
+The exact backend package that registers the `byline` expander is not confirmed from frontend code alone.
+```
 
 ## See Also
 

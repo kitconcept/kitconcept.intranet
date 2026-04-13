@@ -46,9 +46,9 @@ Registry key: `kitconcept.person_picture_aspect_ratio`
 
 Controls the visual style of person images throughout the site (teasers, listings, detail view). When set to `squared4to5`, the `person-squared-images` CSS class is added to the `<body>` element by the `IntranetCSSInjector` slot component, which applies the corresponding CSS rules.
 
-## Missing or unclear
-
-- Full list of backend registry field names and their Python types requires confirmation from the backend `IIntranetSettings` interface definition.
+```{note}
+Full list of backend registry field names and their Python types requires confirmation from the backend `IIntranetSettings` interface definition.
+```
 
 ## See Also
 

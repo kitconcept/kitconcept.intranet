@@ -17,6 +17,8 @@ content-interactions
 feedback-form
 listing-disclaimer
 person-view
+person-result-item
+search-tabs
 sticky-menu-slot
 summary
 card

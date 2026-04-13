@@ -24,20 +24,27 @@ Enable and configure SOLR-powered search for the kitconcept Intranet, including 
 
 ### 1. Enable SOLR search
 
-In your frontend configuration, `volto-solr` is registered as an add-on in `volto.config.js`. No additional frontend configuration is required for basic SOLR search.
+`volto-solr` is bundled as a dependency of `@kitconcept/intranet` and registered automatically when the intranet add-on is loaded. No additional frontend configuration is required for basic SOLR search.
 
 Verify the SOLR endpoint is reachable from the backend by checking the Plone control panel at **Site Setup → SOLR**.
 
-### 2. Configure Person search results
+### 2. Configure custom search result views per content type
 
-Person content items receive a dedicated compact card view in search results. This is registered automatically:
+By default, SOLR search results use a generic card layout. You can register a custom result component for any content type by setting it in `solrSearchOptions.contentTypeSearchResultViews` and providing a matching icon in `contentIcons`:
+
+```typescript
+config.settings.solrSearchOptions.contentTypeSearchResultViews.MyType = MyTypeResultItem;
+config.settings.contentIcons.MyType = myTypeSVG;
+```
+
+For example, the intranet registers a dedicated compact card for `Person` content automatically:
 
 ```typescript
 config.settings.solrSearchOptions.contentTypeSearchResultViews.Person = PersonResultItem;
 config.settings.contentIcons.Person = personSVG;
 ```
 
-No additional configuration is needed unless you want to override the result card.
+No additional configuration is needed unless you want to override an existing result card.
 
 ### 3. Control Person profile links in search results
 
@@ -65,9 +72,9 @@ The `SearchTabs` component displays tabbed navigation in the SOLR search UI, gro
 - SOLR indexes must include the `extras` fields (`job_title`, `contact_phone`, `contact_building`, `contact_room`, `contact_email`) for the `PersonResultItem` to display contact details.
 - If SOLR is not reachable, the frontend falls back to the standard Plone search.
 
-## Missing or unclear
-
-- Exact SOLR schema field mappings for the `extras` object require confirmation from the backend SOLR configuration.
+```{note}
+Exact SOLR schema field mappings for the `extras` object require confirmation from the backend SOLR configuration.
+```
 
 ## See Also
 

@@ -64,9 +64,9 @@ When `hasError` is true, the `ErrorBoundaryMessage` component is rendered. It di
 - In view mode, the error boundary catches the error and holds the fallback UI until the page is reloaded or navigated away from.
 - Console errors are not suppressed — they remain visible in developer tools.
 
-## Missing or unclear
-
-- The exact registration point where `ErrorBoundary` wraps each block (the HOC or block engine integration) was not confirmed from the component file alone.
+```{note}
+The exact registration point where `ErrorBoundary` wraps each block (the HOC or block engine integration) was not confirmed from the component file alone.
+```
 
 ## See Also
 

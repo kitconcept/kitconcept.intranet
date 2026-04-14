@@ -427,3 +427,20 @@ You have successfully:
 - DEFAULT to `reference` when unsure of doc type
 - DEFAULT to `developer` audience when the feature requires writing code
 - NEVER duplicate content — cross-reference instead
+
+### Constraints for all docs with audience: admin or editor
+
+- NEVER include code snippets (TypeScript, Python, JSX, or any other language)
+- NEVER reference internal component names, hook names, or configuration keys — these are invisible to the reader
+- NEVER describe internal behavior (e.g. "the component renders as plain text") — describe only what the user sees in the UI
+- EVERY step must correspond to a visible UI action (clicking a button, filling in a field, navigating to a page)
+- If a feature has no UI controls (configured only by a developer), add a single `## Notes` line explaining that, do NOT write steps for it, and link to the developer doc instead
+
+### When a feature has both a UI aspect and a developer/code aspect
+
+Split the documentation into two documents:
+
+1. **Admin/editor doc** (`docs/docs/`) — UI steps only, no code. At the top of the `## See also` section, add a link to the developer doc: e.g. `- [Developer: configure X for custom setups](/developer/how-to-guides/configure-x)`
+2. **Developer doc** (`docs/docs/developer/`) — code-level configuration, TypeScript/Python snippets, component names, registry keys. At the top of its `## See also` section, link back to the admin/editor doc.
+
+This ensures admins see only what they can do in the UI, while developers can navigate from the admin doc to the deeper technical guide.

@@ -64,9 +64,7 @@ When `hasError` is true, the `ErrorBoundaryMessage` component is rendered. It di
 - In view mode, the error boundary catches the error and holds the fallback UI until the page is reloaded or navigated away from.
 - Console errors are not suppressed — they remain visible in developer tools.
 
-```{note}
-The exact registration point where `ErrorBoundary` wraps each block (the HOC or block engine integration) was not confirmed from the component file alone.
-```
+- `ErrorBoundary` wraps each block in two places in `volto-light-theme`: in `RenderBlocks.jsx` (view mode) and in `Block/Edit.jsx` (edit mode).
 
 ## See Also
 

@@ -84,9 +84,7 @@ By Jane Smith · published 8 Apr 2026 · last modified 9 Apr 2026
 
 ---
 
-```{note}
-The exact backend package that registers the `byline` expander is not confirmed from frontend code alone.
-```
+The `byline` expander is implemented in `kitconcept.intranet` at `backend/src/kitconcept/intranet/services/byline.py`. It is registered as a `plone.restapi` `IExpandableElement` adapter and resolves each user ID in `content.creators` via `plone.api.user.get()`.
 
 ## See Also
 

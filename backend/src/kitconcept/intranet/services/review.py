@@ -11,7 +11,6 @@ from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
 
 
-
 @implementer(IPublishTraverse)
 class ReviewPost(Service):
     """@review endpoint."""

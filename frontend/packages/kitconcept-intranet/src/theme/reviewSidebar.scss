@@ -1,0 +1,46 @@
+.delegate-review-buttons,
+.postpone-review-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+.comment-field {
+  margin-top: 40px;
+  margin-left: 10px;
+}
+.comment-label {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+}
+.postpone-review-form .help {
+  padding-left: 10px;
+}
+
+.review-info {
+  display: flex;
+  color: $grey;
+  flex-direction: row;
+  gap: 10px;
+  padding: 8px;
+
+  background-color: $lightgrey;
+
+  .review-info-labels {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-info-values {
+    display: flex;
+    flex-direction: column;
+    .due_date {
+      color: red;
+    }
+  }
+}
+
+.review_menu:disabled {
+  opacity: 0.5;
+}

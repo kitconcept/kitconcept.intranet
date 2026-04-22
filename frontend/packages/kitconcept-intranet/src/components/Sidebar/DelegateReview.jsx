@@ -2,15 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { TextArea, TextField, Label } from 'react-aria-components';
 import { useIntl, defineMessages } from 'react-intl';
-import {
-  Accordion,
-  Button,
-  Container as SemanticContainer,
-  Form as UiForm,
-  Message,
-  Segment,
-  Tab,
-} from 'semantic-ui-react';
+import { Accordion, Button, Form as UiForm, Segment } from 'semantic-ui-react';
 import { toast } from 'react-toastify';
 
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';

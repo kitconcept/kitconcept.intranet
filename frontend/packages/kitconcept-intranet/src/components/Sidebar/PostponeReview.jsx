@@ -113,6 +113,7 @@ const PostponeReview = (props) => {
                 title="Next Review on"
                 fieldSet="default"
                 dateOnly={true}
+                noPastDates={true}
                 isDisabled={presetReviewInterval}
                 onChange={(id, value) => setDueDate(value)}
                 value={!presetReviewInterval ? dueDate : review_due_date}

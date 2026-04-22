@@ -17,7 +17,6 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import find from 'lodash/find';
 import { toast } from 'react-toastify';
-import cx from 'classnames';
 
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { Pluggable, Plug } from '@plone/volto/components/manage/Pluggable';

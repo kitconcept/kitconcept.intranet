@@ -1,4 +1,8 @@
-import { POSTPONE_REVIEW, DELEGATE_REVIEW , APPROVE_REVIEW} from '../../constants/ActionTypes';
+import {
+  POSTPONE_REVIEW,
+  DELEGATE_REVIEW,
+  APPROVE_REVIEW,
+} from '../../constants/ActionTypes';
 
 export function postponeReview(url, data) {
   return {
@@ -22,7 +26,7 @@ export function delegateReview(url, data) {
 }
 export function approveReview(url) {
   return {
-    type: 'APPROVE_REVIEW',
+    type: APPROVE_REVIEW,
     request: {
       op: 'post',
       path: `${url}/@review/approve`,

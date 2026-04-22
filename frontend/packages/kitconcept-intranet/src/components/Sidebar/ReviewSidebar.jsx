@@ -1,17 +1,18 @@
 import { useState, Fragment, useCallback, useEffect, useRef } from 'react';
 import { Button, Tab } from 'semantic-ui-react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { compose } from 'redux';
 import { withCookies } from 'react-cookie';
 import { defineMessages, useIntl } from 'react-intl';
 import cx from 'classnames';
+import { createPortal } from 'react-dom';
+
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { getCookieOptions } from '@plone/volto/helpers/Cookies/cookies';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import expandSVG from '@plone/volto/icons/left-key.svg';
 import collapseSVG from '@plone/volto/icons/right-key.svg';
 import DelegateReview from './DelegateReview';
-import { createPortal } from 'react-dom';
 import { useClient } from '@plone/volto/hooks/client/useClient';
 import PostponeReview from './PostponeReview';
 

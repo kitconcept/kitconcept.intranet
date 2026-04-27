@@ -1,5 +1,5 @@
-from kitconcept.intranet.subscribers.vocabulary import cache_buster
 from kitconcept.intranet.subscribers.vocabulary import KEYS
+from kitconcept.intranet.subscribers.vocabulary import cache_buster
 from kitconcept.intranet.vocabularies.base import get_vocabulary_counter
 from plone import api
 from zope.lifecycleevent import ObjectModifiedEvent

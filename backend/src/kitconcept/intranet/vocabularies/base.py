@@ -17,6 +17,7 @@ class RelaxedSimpleVocabulary(SimpleVocabulary):
 
 class TermWithUrl(SimpleTerm):
     """A term that also holds the URL of the item it's based on."""
+
     def __init__(self, value, url, token=None, title=None):
         super().__init__(value, token, title)
         self.url = url

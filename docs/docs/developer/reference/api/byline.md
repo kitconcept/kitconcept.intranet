@@ -5,7 +5,7 @@ myst:
     keywords: "byline, documentByLine, slot, belowContentTitle, author, expander, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-09
+last_updated: 2026-04-27
 ---
 
 # Byline / DocumentByLine
@@ -64,7 +64,6 @@ config.registerSlotComponent({
 |------|------|-------------|
 | `content` | `Content` | Full content object including `@components.byline.users` |
 | `content.creators` | `string[]` | Array of user IDs |
-| `content.created` | `string` | ISO 8601 creation date |
 | `content.modified` | `string` | ISO 8601 last-modified date |
 | `content.review_state` | `string` | If `'published'`, the creation date is shown as "published" |
 | `location.pathname` | `string` | Used to detect add mode |

@@ -5,12 +5,14 @@ myst:
     keywords: "SearchTabs, SOLR, search, tabs, developer, reference"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-09
+last_updated: 2026-04-27
 ---
 
 # SearchTabs
 
 **File:** `frontend/packages/kitconcept-intranet/src/components/SolrSearch/SearchTabs.jsx`
+
+**Shadows:** `@kitconcept/volto-solr/components/theme/SolrSearch/SearchTabs` via `src/customizations/@kitconcept/volto-solr/components/theme/SolrSearch/SearchTabs.jsx` — the customization adds icons to each tab, which the upstream component does not have.
 
 Renders tab buttons (Pages, Events, Files, Images, News Items, Persons) for navigating across content type groups in the SOLR search UI. Icons are pulled from `config.settings.contentIcons`. Tab click is suppressed when the result count is 0.
 

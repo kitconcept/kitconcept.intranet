@@ -5,17 +5,16 @@ myst:
     keywords: "event calendar, block, events, how-to, editor"
 doc_type: how-to
 audience: editor
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
 # Use the Event Calendar block
 
-The Event Calendar block displays upcoming events from your intranet in a calendar or list view. It supports query-based filtering so you can show events from specific folders, categories, or date ranges.
+The Event Calendar block displays upcoming events from your intranet in a list view. It supports query-based filtering so you can show events from specific folders, categories, or date ranges.
 
 ## Prerequisites
 
 - You have Editor or Manager access to the page.
-- At least one Event content item exists on the site (or in the folder you want to display).
 
 ## Adding the Event Calendar Block
 
@@ -50,32 +49,6 @@ To show only future events, add a **Start date** criterion with the operator set
 | **Title** | Optional heading shown above the calendar |
 | **Number of items** | Maximum number of events to display |
 | **Sort by** | Order events by start date (ascending/descending) or title |
-| **View mode** | Switch between calendar grid view and list view |
-
-### Calendar Grid View
-
-In grid mode the block renders a monthly calendar. Days that have events are highlighted. Clicking a day expands the event entries for that day.
-
-### List View
-
-In list view the block renders events as a chronological list, showing the event title, start date/time, and location if available.
-
-## Refreshing Content
-
-The block includes a **Refresh Content** button in the toolbar. Click it to force the block to reload its query results without reloading the full page. This is useful on pages that stay open for a long time (such as a dashboard).
-
-## Example: Showing This Week's Events
-
-1. Add the Event Calendar block.
-2. Add a **Start date** criterion: operator **greater than or equal to**, value **today**.
-3. Add a second **Start date** criterion: operator **less than**, value **+7 days**.
-4. Set **Sort by** to **Start date (ascending)**.
-5. Set **Number of items** to `10`.
-6. Click **Save**.
-
-:::{note}
-Events that span multiple days will appear on each day they cover in calendar grid view, but only once in list view (on their start date).
-:::
 
 ## See Also
 

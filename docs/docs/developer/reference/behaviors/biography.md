@@ -1,69 +1,61 @@
 ---
 myst:
   html_meta:
-    description: "Schema reference for the IBiography Dexterity behavior."
-    keywords: "IBiography, behavior, Person, biography, description, developer"
+    description: "Schema reference for the IPersonBiography Dexterity behavior from kitconcept.core."
+    keywords: "IPersonBiography, behavior, Person, biography, text, RichText, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
-# IBiography
+# IPersonBiography
 
-The `IBiography` behavior adds a rich-text biography field to a content type. It is applied to the **Person** content type so that employees and staff members can have a professional biography or extended description displayed on their profile page.
+The `IPersonBiography` behavior adds a rich-text biography field to a content type. It is defined in `kitconcept.core` and applied to the **Person** content type.
 
-## Interface
+## Behavior name
 
 ```
-kitconcept.intranet.behaviors.biography.IBiography
+kitconcept.core.biography
 ```
 
 ## Fields
 
-| Field name | Type | Required | Description |
-|------------|------|----------|-------------|
-| `biography` | `RichText` | No | Free-text biography or extended description of the person. Supports basic HTML formatting (bold, italic, links, lists). |
+| Field name | Type | Required | Label | Description |
+|---|---|---|---|---|
+| `text` | `RichText` | No | Biography | A short biography for this person. |
 
-:::{note}
-The `biography` field supplements—but does not replace—the standard Plone `description` field (plain-text summary). The `description` field is used for search snippets and metadata, while `biography` is intended for the full-page narrative displayed in the person's profile.
-:::
+The field is declared as `primary` (the main content field of the type) and is indexed in `SearchableText` via `plone.app.dexterity.textindexer`.
+
+## Side effects
+
+The behavior sets `IPersonData["description"]` to read-only, hiding the standard `description` field inherited from `collective.person`.
+
+## Field ordering
+
+`text` is ordered after `last_name` via `form.order_after`.
 
 ## Registration
 
-```xml
-<property name="behaviors" purge="false">
-  <element value="kitconcept.intranet.behaviors.biography.IBiography"/>
-</property>
-```
-
-## Frontend rendering
-
-The biography field is rendered in the **Person view** below the contact details section. It uses the standard Volto rich-text renderer, which respects HTML markup stored in the field.
-
-### Conditional display
-
-The biography section is only rendered if the `biography` field contains content. If the field is empty, the section is omitted entirely from the rendered page.
-
-## Adding to a Custom Content Type
-
-Apply the behavior via GenericSetup:
+Registered in `kitconcept/core/behaviors/configure.zcml`:
 
 ```xml
-<!-- profiles/default/types/MyType.xml -->
-<property name="behaviors" purge="false">
-  <element value="kitconcept.intranet.behaviors.biography.IBiography"/>
-</property>
+<plone:behavior
+    name="kitconcept.core.biography"
+    title="Person: Biography information"
+    description="Add a field for a biography."
+    provides=".person_bio.IPersonBiography"
+    />
 ```
 
-Or enable it through the Plone control panel: **Dexterity Content Types** → select your type → **Behaviors** tab → enable **Biography**.
+## Applied to Person
 
-## Indexing
+The behavior is applied to the Person content type in both the `kitconcept-core` dependencies profile and the `kitconcept.intranet` default profile:
 
-The `biography` field content is indexed in the Plone catalog's `SearchableText` index (after HTML stripping) so that keyword searches also match biography text. If you are using SOLR, the field is included in the full-text SOLR index by default.
+```xml
+<element value="kitconcept.core.biography" />
+```
 
-## See Also
+## See also
 
-- [IPersonBehavior reference](/developer/reference/behaviors/person)
 - [IAdditionalContactInfo behavior reference](/developer/reference/behaviors/additional-contact-info)
 - [Person content type reference](/reference/content-types)
-- [Person view component](/developer/reference/components/person-view)

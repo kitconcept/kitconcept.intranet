@@ -5,7 +5,7 @@ myst:
     keywords: "blocks, how-to, intranet, editor, content"
 doc_type: how-to
 audience: editor
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
 # Working with blocks
@@ -37,17 +37,6 @@ The kitconcept Intranet provides a rich set of content blocks for building pages
 | [RSS](rss) | Show live RSS feed content | Editors |
 | [Slider](slider) | Display content in a slideshow/carousel | Editors |
 | [Form](form) | Add interactive forms to pages | Editors |
-
-## Adding a Block
-
-To add any block to a page:
-
-1. Open the page in edit mode.
-2. Click the **+** button to add a new block or click on an empty area.
-3. Search for the block by name in the block chooser.
-4. Click the block to insert it.
-5. Configure the block using the sidebar panel on the right.
-6. Click **Save** to publish your changes.
 
 ## See Also
 

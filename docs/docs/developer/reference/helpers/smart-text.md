@@ -5,30 +5,28 @@ myst:
     keywords: "smartTextRenderer, markdown links, text renderer, helper, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-09
+last_updated: 2026-04-27
 ---
 
 # smartTextRenderer
 
-## Overview
+`smartTextRenderer` converts a plain-text string that may contain Markdown-style links (`[text](href)`) into React nodes. Non-link text and newlines are also handled. It is used to support lightweight link authoring in content fields that do not use a rich-text editor.
 
-`smartTextRenderer` converts a plain-text string that may contain Markdown-style links (`[text](href)`) into React nodes. Non-link text and newlines are also handled. It is used to support lightweight link authoring in content fields that do not use a rich-text editor (e.g. the `description` field on `Person` items).
-
-**File:** `frontend/packages/volto-light-theme/src/helpers/smartText.tsx`
+**File:** `frontend/packages/volto-light-theme/frontend/packages/volto-light-theme/src/helpers/smartText.tsx`
 
 ---
 
 ## API
 
-```typescript
-smartTextRenderer(smartText: string | null | undefined): React.ReactNode
+```js
+smartTextRenderer(smartText)
 ```
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `smartText` | `string \| null \| undefined` | Input text, possibly containing Markdown links |
+| `smartText` | `string`, `null`, or `undefined` | Input text, possibly containing Markdown links |
 
-**Returns:** A React node (or array of nodes), or `null` if the input is empty, null, or undefined.
+**Returns:** An array of React nodes, or `null` if the input is falsy (`null`, `undefined`, or `""`).
 
 ---
 
@@ -51,11 +49,12 @@ Whitespace around link text and href is trimmed automatically.
 ## Usage
 
 ```tsx
-import { smartTextRenderer } from '@kitconcept/volto-light-theme/helpers/smartText';
+import { smartTextRenderer } from '../../helpers/smartText';
 
-// In PersonSummary:
 <p className="description">{smartTextRenderer(item.description)}</p>
 ```
+
+Used in: `DefaultSummary`, `NewsItemSummary`, `EventSummary`, `FileSummary`, and `PersonSummary`.
 
 ---
 
@@ -80,10 +79,11 @@ Output: "[not a link] some text"  (no href — rendered as plain text)
 
 ## Notes
 
+- The Markdown link regex uses the `/g` flag, which is stateful. `linkPattern.lastIndex` is reset to `0` on every call — without this, repeated calls on different strings would produce incorrect results.
 - Links are rendered using Volto's `UniversalLink` component, which handles both internal and external URLs correctly.
 - The function is stateless and safe to call on every render.
 - Test coverage is in `src/helpers/smartText.test.tsx`.
 
-## See Also
+## See also
 
 - [PersonSummary](../components/person-summary.md)

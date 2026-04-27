@@ -5,22 +5,24 @@ myst:
     keywords: "styleDefinitions, styleWrapperStyleObjectEnhancer, ColorSwatch, themes, block styles, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-09
+last_updated: 2026-04-27
 ---
 
-# styleDefinitions Registry
+# styleDefinitions registry
 
 ## Overview
 
 The `styleDefinitions` registry is a Volto utility system that maps block style field values to CSS custom property objects. Two utility enhancers are registered — `blockThemesEnhancer` and `styleDefinitionsEnhancer` — both of type `styleWrapperStyleObjectEnhancer`. They are called by the style wrapper mechanism to compute the inline `style` object applied to each block's container.
 
-**File:** `frontend/packages/volto-light-theme/src/helpers/styleDefinitions.ts`
+**Implementation:** `frontend/packages/volto-light-theme/frontend/packages/volto-light-theme/src/helpers/styleDefinitions.ts`
+
+**Registration:** `frontend/packages/volto-light-theme/frontend/packages/volto-light-theme/src/config/blocks.tsx`
 
 ---
 
 ## Registered utilities
 
-### blockThemesEnhancer
+Both utilities are registered in `blocks.tsx`:
 
 ```typescript
 config.registerUtility({
@@ -28,31 +30,30 @@ config.registerUtility({
   type: 'styleWrapperStyleObjectEnhancer',
   method: blockThemesEnhancer,
 });
-```
 
-**Signature:**
-```typescript
-blockThemesEnhancer({ data, container }): Record<string, string> | {}
-```
-
-Resolves the active theme for the block from `data.theme`, then looks up the theme definition in (in order):
-1. `blockConfig.themes`
-2. `blockConfig.colors`
-3. `config.blocks.themes` (global fallback)
-
-Returns the theme's `style` object, which contains CSS custom properties such as `--theme-color`, `--theme-high-contrast-color`, `--theme-foreground-color`. Returns `{}` if no matching theme is found.
-
----
-
-### styleDefinitionsEnhancer
-
-```typescript
 config.registerUtility({
   name: 'styleDefinitionsEnhancer',
   type: 'styleWrapperStyleObjectEnhancer',
   method: styleDefinitionsEnhancer,
 });
 ```
+
+### blockThemesEnhancer
+
+**Signature:**
+```typescript
+blockThemesEnhancer({ data, container }): Record<string, string> | {}
+```
+
+Resolves the active theme for a block using the following logic (in order):
+
+1. Returns `{}` immediately if `data['@type']` is missing or the block type has no registered config.
+2. Looks up the block's style definitions from (in order): `blockConfig.themes` → `blockConfig.colors` → `config.blocks.themes`.
+3. If `container.theme` is set and the block has no theme or its theme is `'default'`, returns the container's theme style.
+4. If `data.theme` is set, returns the matching theme's style object.
+5. If no theme is set at all, falls back to the `'default'` entry in `config.blocks.themes`.
+
+### styleDefinitionsEnhancer
 
 **Signature:**
 ```typescript
@@ -74,6 +75,7 @@ config.blocks.themes = [
       '--theme-color': '#fff',
       '--theme-high-contrast-color': '#ecebeb',
       '--theme-foreground-color': '#000',
+      '--theme-low-contrast-foreground-color': '#555555',
     },
     name: 'default',
     label: 'Default',
@@ -86,45 +88,13 @@ Block widths follow the same pattern on `config.blocks.widths`.
 
 ---
 
-## ColorSwatch widget
-
-**File:** `frontend/packages/volto-light-theme/src/components/Widgets/ColorSwatch.tsx`
-
-The `ColorSwatch` widget renders a horizontal radio group of coloured swatches, used in the block sidebar to let editors pick a theme or colour.
-
-### Props
-
-| Prop | Type | Required | Description |
-|------|------|----------|-------------|
-| `id` | `string` | Yes | Field ID |
-| `title` | `string` | Yes | Field label |
-| `label` | `string` | Yes | Accessible label |
-| `onChange` | `(id, value) => void` | Yes | Change callback |
-| `colors` | `StyleDefinition[]` | No* | Array of colour definitions (mutually exclusive with `themes`) |
-| `themes` | `StyleDefinition[]` | No* | Array of theme definitions (mutually exclusive with `colors`) |
-| `value` | `string` | No | Currently selected value |
-| `default` | `string` | No | Default value if none is selected |
-| `required` | `boolean` | No | Whether selection is required |
-| `disabled` / `isDisabled` | `boolean` | No | Disables the widget |
-
-\* Exactly one of `colors` or `themes` must be provided.
-
-### Behaviour
-
-- Uses React Aria Components (`Radio`, `RadioGroup`, `Tooltip`) for full accessibility.
-- Selection priority: current `value` → `default` prop → theme named `'default'` → first entry in the list.
-- Each swatch applies the theme's `style` object directly as `style` on the swatch `div`, so the preview reflects the actual CSS custom properties.
-- A tooltip shows the theme label on hover.
-
----
-
 ## Notes
 
-- `blockThemesEnhancer` returns `{}` (not an error) when the block type is unknown — this is intentional to allow blocks without registered themes to render without inline styles.
-- The `ColorSwatch` `colors` and `themes` props are mutually exclusive by TypeScript type — passing both is a type error.
+- `blockThemesEnhancer` returns `{}` when the block type is unknown or has no registered config — this is intentional to allow such blocks to render without inline styles.
+- The `ColorSwatch` `colors` and `themes` props are mutually exclusive by TypeScript union type (`ColorsOnly | ThemesOnly`).
 
-## See Also
+## See also
 
 - [Colors reference](colors.md)
 - [Frontend styleguide](frontend-styleguide.md)
-- [Widgets reference](components/widgets.md)
+- [Widgets reference](components/widgets.md) — includes the `ColorSwatch` widget used to select themes in the block sidebar

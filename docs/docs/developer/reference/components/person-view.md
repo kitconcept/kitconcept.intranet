@@ -5,7 +5,7 @@ myst:
     keywords: "PersonView, Person, developer, reference"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-09
+last_updated: 2026-04-27
 ---
 
 # PersonView
@@ -48,12 +48,6 @@ Renders the full detail page for a `Person` content item.
 4. Contact section (phone, fax, email, website) with SVG icons
 5. Address section (locations, building, room)
 6. Bio section (`content.text.data` via `dangerouslySetInnerHTML`)
-
-## Notes
-
-- `content.text.data` is rendered with `dangerouslySetInnerHTML` — ensure the backend sanitises HTML before delivery.
-- The image field reads `scales.preview.download` first; falls back to `image.download`.
-- Responsive SVG dividers are used for different breakpoints (desktop, tablet, mobile).
 
 ## See Also
 

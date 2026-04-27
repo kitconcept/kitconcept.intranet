@@ -1,67 +1,67 @@
 ---
 myst:
   html_meta:
-    description: "Schema reference for the IAdditionalContactInfo Dexterity behavior."
-    keywords: "IAdditionalContactInfo, behavior, Person, address, phone, fax, developer"
+    description: "Schema reference for the IAdditionalContactInfo Dexterity behavior from kitconcept.core."
+    keywords: "IAdditionalContactInfo, behavior, Person, contact_building, contact_room, address, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
 # IAdditionalContactInfo
 
-The `IAdditionalContactInfo` behavior adds physical address and telephone fields to a content type. It is applied to the **Person** content type to capture office location and phone contact details beyond the standard email address.
+The `IAdditionalContactInfo` behavior adds location-related contact fields to a content type. It is defined in `kitconcept.core` and applied to the **Person** content type.
 
-## Interface
+## Behavior name
 
 ```
-kitconcept.intranet.behaviors.additional_contact_info.IAdditionalContactInfo
+kitconcept.core.additional_contact_info
 ```
 
 ## Fields
 
-| Field name | Type | Required | Description |
-|------------|------|----------|-------------|
-| `address` | `Text` | No | Street address or office location of the person. Supports multi-line input. |
-| `office_phone` | `TextLine` | No | Direct office phone number. Free-form text to accommodate various national formats. |
-| `fax` | `TextLine` | No | Fax number. Free-form text. |
+All fields are optional. `contact_building` and `contact_room` carry a custom read permission (see [Permissions](#permissions) below).
 
-:::{note}
-All fields are optional. If none are filled in, the fields are simply not rendered in the Person view.
-:::
+| Field name | Type | Required | Label | Description |
+|---|---|---|---|---|
+| `contact_building` | `TextLine` | No | Building | Single-line text for the building name or identifier. |
+| `contact_room` | `TextLine` | No | Room | Single-line text for the room name or number. |
+| `address` | `Text` | No | Address | Multi-line text for a postal address. |
+
+All three fields are grouped in the `contact_location` fieldset, labelled **Location**.
+
+## Permissions
+
+`contact_building` and `contact_room` are protected by the read permission:
+
+```
+kitconcept.core.behaviors.additional_contact_info.view
+```
+
+`address` carries no custom read permission.
 
 ## Registration
 
-The behavior is registered in `configure.zcml` and applied to the `Person` content type via the Generic Setup profile:
+Registered in `kitconcept/core/behaviors/configure.zcml`:
 
 ```xml
-<property name="behaviors" purge="false">
-  <element value="kitconcept.intranet.behaviors.additional_contact_info.IAdditionalContactInfo"/>
-</property>
+<plone:behavior
+    name="kitconcept.core.additional_contact_info"
+    title="Person: Additional contact information"
+    description="Fields with additional person information"
+    provides=".additional_contact_info.IAdditionalContactInfo"
+    />
 ```
 
-## Frontend rendering
+## Applied to Person
 
-The additional contact fields are rendered in the **Person view** component alongside other contact details. The address field is rendered with preserved line breaks. Phone numbers are rendered as `tel:` links where applicable.
-
-To customise rendering, override the `PersonView` component or the relevant slot in the person view template.
-
-## Adding to a Custom Content Type
-
-To apply this behavior to a custom content type, add it to the type's behavior list via GenericSetup or TTW (through-the-web):
+The behavior is applied to the Person content type in both the `kitconcept-core` dependencies profile and the `kitconcept.intranet` default profile:
 
 ```xml
-<!-- profiles/default/types/MyType.xml -->
-<property name="behaviors" purge="false">
-  <element value="kitconcept.intranet.behaviors.additional_contact_info.IAdditionalContactInfo"/>
-</property>
+<element value="kitconcept.core.additional_contact_info" />
 ```
 
-Or via the Plone control panel: **Dexterity Content Types** → select your type → **Behaviors** tab → enable **Additional Contact Info**.
+## See also
 
-## See Also
-
-- [IPersonBehavior reference](/developer/reference/behaviors/person)
-- [IBiography behavior reference](/developer/reference/behaviors/biography)
+- [IPersonBiography behavior reference](/developer/reference/behaviors/biography)
 - [Person content type reference](/reference/content-types)
-- [Person view component](/developer/reference/components/person-view)

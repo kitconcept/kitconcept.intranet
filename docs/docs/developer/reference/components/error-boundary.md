@@ -5,7 +5,7 @@ myst:
     keywords: "ErrorBoundary, error boundary, blocks, recoverable, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-09
+last_updated: 2026-04-27
 ---
 
 # ErrorBoundary (Recoverable Block Error Boundary)
@@ -60,8 +60,8 @@ When `hasError` is true, the `ErrorBoundaryMessage` component is rendered. It di
 
 ## Notes
 
-- Recovery only works in edit mode because `blocks` and `blocksLayout` state only changes during editing.
-- In view mode, the error boundary catches the error and holds the fallback UI until the page is reloaded or navigated away from.
+- The error boundary catches errors in both view and edit mode — corrupt block data can be stored and rendered regardless of whether the user is editing.
+- Automatic recovery (resetting `hasError` without a page reload) only works in edit mode, because a change to `blocks` or `blocksLayout` triggers a re-render that resets the error state. In view mode, the fallback UI persists until the page is reloaded or navigated away from.
 - Console errors are not suppressed — they remain visible in developer tools.
 
 - `ErrorBoundary` wraps each block in two places in `volto-light-theme`: in `RenderBlocks.jsx` (view mode) and in `Block/Edit.jsx` (edit mode).

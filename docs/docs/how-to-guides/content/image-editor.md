@@ -5,7 +5,7 @@ myst:
     keywords: "image editor, crop, resize, rotate, image, how-to, editor"
 doc_type: how-to
 audience: editor
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
 # Edit images
@@ -24,23 +24,15 @@ The kitconcept Intranet includes a built-in image editor (provided by the `@plon
 1. Navigate to the Image content item you want to edit.
 2. Click **Edit** in the toolbar.
 3. In the edit form, locate the image field.
-4. Click the **Edit image** button (pencil or crop icon) next to the image preview.
+4. Click the **Edit image** button next to the image preview.
    The image editor will open in a modal overlay.
-
-### From within a block (e.g. Image block)
-
-1. Open the page containing the block in edit mode.
-2. Click on the Image block.
-3. In the sidebar, click the **Edit image** icon next to the selected image.
 
 ## Using the Editor
 
 ### Crop
 
-1. Click the **Crop** tool in the editor toolbar.
-2. Drag the corner or edge handles on the image to define the crop area.
-3. Optionally, select a preset aspect ratio (e.g. **16:9**, **4:3**, **1:1 square**) from the ratio buttons.
-4. Click **Apply** to confirm the crop.
+1. Drag the corner or edge handles on the image to define the crop area.
+2. Optionally, select a preset aspect ratio (e.g. **16:9**, **4:3**, **1:1 square**) from the settings buttons.
 
 :::{tip}
 Use the **1:1** ratio preset for person profile photos to ensure consistent square thumbnails across the intranet directory.
@@ -60,9 +52,8 @@ Use the **1:1** ratio preset for person profile photos to ensure consistent squa
 
 If available in your installation:
 
-1. Click the **Adjust** tab.
-2. Drag the **Brightness** slider to lighten or darken the image.
-3. Drag the **Contrast** slider to increase or reduce contrast.
+1. Drag the **Brightness** slider to lighten or darken the image.
+2. Drag the **Contrast** slider to increase or reduce contrast.
 
 ## Saving Changes
 
@@ -87,7 +78,7 @@ If you want to discard your edits and start over:
 2. Open the edit form and click **Edit image**.
 3. Select the **Crop** tool and set the aspect ratio to **1:1**.
 4. Drag the crop area to frame the face with a small amount of background space.
-5. Click **Apply**, then **Save** in the editor.
+5. Click **Save** in the editor.
 6. Save the content item.
 7. The square portrait is now ready to use in the Person content item.
 

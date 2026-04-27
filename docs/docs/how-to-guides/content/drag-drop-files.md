@@ -5,7 +5,7 @@ myst:
     keywords: "drag and drop, file upload, folder contents, files, how-to, editor"
 doc_type: how-to
 audience: editor
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
 # Upload files by drag and drop
@@ -20,12 +20,12 @@ The folder contents view supports drag-and-drop file uploading. You can drag fil
 ## Uploading Files by Drag and Drop
 
 1. Navigate to the folder where you want to upload files.
-2. Click the **Contents** tab (or the toolbar icon) to open the contents view.
+2. Click the **Contents** icon in toolbar action to open the contents view.
 3. Open your operating system's file explorer (Finder on macOS, Explorer on Windows) and locate the files you want to upload.
 4. Drag one or more files from the file explorer and drop them anywhere onto the contents table.
    - A highlighted drop zone or upload indicator will appear while you are dragging.
 5. Release the mouse button to start the upload.
-6. A progress indicator will appear for each file as it uploads.
+6. A loading indicator will appear while the files are uploading.
 7. Once complete, the new file items will appear in the contents list.
 
 :::{note}
@@ -50,14 +50,14 @@ You can select and drag multiple files simultaneously:
 
 1. In your file explorer, select multiple files (use Shift+click or Ctrl/Cmd+click).
 2. Drag the entire selection to the contents view.
-3. All selected files will upload in parallel. Individual progress bars are shown for each file.
+3. All selected files will upload in parallel.
 
 ## After Uploading
 
 After upload, each file appears as a new content item in the folder. The item is in **Private** state by default. To make it accessible to other users:
 
 1. Select the file(s) in the contents view.
-2. Use the **Change State** toolbar option to publish or submit for review.
+2. Use the **State** toolbar option to publish or submit for review.
 
 ## Troubleshooting
 

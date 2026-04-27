@@ -5,7 +5,7 @@ myst:
     keywords: "ContentInteractions, JSX, votes, component, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-03-18
+last_updated: 2026-04-27
 ---
 
 # ContentInteractions
@@ -18,7 +18,7 @@ The **ContentInteractions** component displays likes, comments, share options, a
 
 The **ContentInteractions.jsx** component is a custom React component that integrates:
 
-- **Likes**: Users can like or unlike content
+- **Likes**: Users can like content and revert their like.
   - The `enable_content_rating` setting must be enabled in the Intranet Settings control panel
   - The `kitconcept.intranet.votes` behavior must be enabled for the content type
   - The `enable_likes` field must be True for the specific content item

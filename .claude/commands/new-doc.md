@@ -8,11 +8,67 @@ Before writing anything:
 
 1. Find all files related to `$ARGUMENTS`:
    - components, hooks, utils, services, types
-   - Look in `frontend/packages/` for frontend/package-level code
-2. Read ALL of them.
+   - If code is not found in the main repo, check `frontend/packages/` — each subdirectory there is a package that may contain both `backend/` and `frontend/` code
+2. Read ALL of them — including every Python source file, not just ZCML or XML.
 3. List each module and its responsibility.
 4. Do NOT document anything you have not read in the code.
-5. Do NOT assume or invent behavior. If something is unclear, note it.
+5. Do NOT assume or invent behavior — not field names, not types, not defaults, not registration paths.
+
+### Search the codebase first rule
+
+Before using any syntax, pattern, configuration, or API call — **always search the existing codebase first for a working example**. If a working example exists, copy that pattern exactly. Only if no example exists in the codebase should you search the internet for a solution. Never try to reason from documentation versions, changelogs, or general knowledge when the answer may already be present in the project. This applies to everything: intersphinx syntax, Sphinx directives, TypeScript patterns, Python registrations, slot configurations, test patterns, and anything else.
+
+### Hard stop rule
+
+If you cannot find the source file for something, **stop and tell the user** what you found and what is missing. Do NOT fill gaps with plausible guesses. A missing piece of information must be flagged explicitly, not papered over. Invented content that looks correct is worse than an honest gap.
+
+### Code example rule
+
+Every code example in the documentation — including API calls, function signatures, import paths, and configuration snippets — **must be verified against either an existing usage in the codebase or the actual implementation source**. Do NOT write examples based on analogy, naming patterns, or similarity to other APIs. If you cannot find a real usage or read the implementation, do not write the example — flag the gap instead.
+
+### Backend-first type resolution rule
+
+When documenting props or fields passed from the backend to a frontend component, **always determine the type from the backend source, not from how the frontend code uses the value**. The frontend may expect a shape that the backend does not yet deliver — inferring types from JSX usage (e.g. seeing `ref['@id']` and `ref.title`) documents what the frontend assumes, not what the backend actually sends.
+
+Follow this order for every field:
+
+1. **Find the backend schema** — read the Python behavior or content type (`schema.List`, `schema.Choice`, `schema.TextLine`, etc.) to find the stored type.
+2. **Find the serializer** — search `serializers/` for a custom `ISerializeToJson` adapter registered for that content type. If one exists, read it to see how the field is transformed before it reaches the frontend.
+3. **If no serializer exists**, the raw stored value is what the frontend receives. Document that type, and flag any mismatch with what the frontend expects.
+4. **Never infer a type from JSX alone.** A component reading `ref['@id']` does not prove the backend sends an object — it may be broken.
+
+### TypeScript type resolution rule
+
+When reading a TypeScript file that uses a type imported from another file, **always follow the import and read the type definition in that file before documenting it**. Do not assume what a type looks like from its name alone. If `icon: Image` and `Image` is imported from `@plone/types`, go read `@plone/types` to find the exact shape of `Image` before writing anything about it.
+
+### Trace field usage through all consuming components rule
+
+A TypeScript type declaring a field is not sufficient proof that the field is active and meaningful. **Always trace each field through every component that consumes the type** to verify it is actually read and used. For example, if `iconLink` has `openInNewTab` and `StickyMenu` renders via `IconLinkList`, read `IconLinkList.tsx` to confirm `openInNewTab` is passed through before documenting it. If a field is declared in the type but never read by any component, flag it as unused rather than documenting it as an active field.
+
+The same rule applies to every field declared in the backend — behavior interfaces, content type schemas, or any other Python or XML source. Every field must be traced to confirm it is actually used by the feature being documented.
+
+**Scope this rule strictly to the feature being documented.** When writing docs for feature X, only include fields that are read and used by feature X — by its frontend component, its backend view, or its serialiser. Do not include fields simply because they appear in a shared schema or a type that is also used by other features. If a shared schema has ten fields but the feature only reads three of them, document only those three. The question to ask for every field is: "Is this field used by this specific feature?" — not "Does this field exist somewhere in the codebase?"
+
+### Verify before correcting rule
+
+When the user questions something that was documented, **go back to the source code and re-read it first**. State exactly what the code says and why it matches or does not match what was documented. Do NOT assume the user is right and immediately overwrite correct documentation. If the code confirms the original documentation is correct, say so clearly and confidently, and **show the user the exact code or type definition that proves it** — for example: "I have re-checked the source and what is documented is correct. The `Image` type in `@plone/types` is defined as `{ 'content-type': string; download: string; filename: string; height: number; scales: ...; size: number; width: number }`, which matches what was documented." Only correct documentation when the source code actually contradicts it.
+
+### Customization shadow rule
+
+When documenting a frontend component, **always check whether a customization shadow exists** for it. Search `src/customizations/` for a file at the same relative path as the component. If a shadow exists:
+
+1. Read the shadow file to confirm it re-exports the implementation and to extract the stated `REASON`.
+2. Add a **Shadows** line directly below the **File** line in the document:
+   ```
+   **Shadows:** `<upstream-package>/path/to/Component` via `src/customizations/<upstream-package>/path/to/Component` — <reason from the override header>.
+   ```
+3. The reason must explain what the customization adds or changes compared to the upstream component — not just that it overrides it.
+
+If no shadow exists, omit the **Shadows** line entirely.
+
+### Interface and class names
+
+Interface and class names must be copied **verbatim from the Python source file** (`class IFoo`). They must never be inferred from the ZCML `name` attribute, the filename, or the behavior title — these are often different. Example: the ZCML name `kitconcept.core.biography` does not tell you the class is `IPersonBiography`; only reading the `.py` file does.
 
 ---
 
@@ -407,6 +463,32 @@ You have successfully:
 - Store screenshots in `docs/_static/images/` and reference them with a relative path
 - Output one document at a time, clearly separated with the target file path
 
+### No registration code rule
+
+Do NOT include code blocks showing how a component or utility is registered (e.g. `config.registerComponent`, `config.registerUtility`, `config.addonRoutes`) when that registration pattern is already documented elsewhere. The source code is available in the repo — repeating it in the docs adds noise, not value.
+
+Instead: state the registration file path in one line and link to the relevant docs (VLT, Plone, or internal) that explain the mechanism. Only include a registration code block if the pattern is non-obvious and not documented anywhere else.
+
+### Cross-referencing external documentation
+
+When linking to documentation from an external project (such as Volto Light Theme, Plone, or Python), **always use an intersphinx cross-reference** instead of a plain URL. Intersphinx references are verified at build time and automatically use the correct title from the target docs.
+
+Available intersphinx targets (defined in `docs/docs/conf.py`):
+
+| Key | Documentation site |
+|-----|--------------------|
+| `vlt` | Volto Light Theme (`https://volto-light-theme.readthedocs.io/`) |
+| `plone` | Plone 6 (`https://6.docs.plone.org/`) |
+| `python` | Python 3 (`https://docs.python.org/3/`) |
+
+Usage:
+```
+{doc}`vlt:how-to-guides/summary`
+{doc}`plone:volto/configuration/slots`
+```
+
+If the target project is not yet in `intersphinx_mapping`, **stop and ask the user to add it** before writing the link. Never use a plain `https://` URL to link to a project that has intersphinx support.
+
 ---
 
 ## STEP 6 — Execution order
@@ -421,7 +503,8 @@ You have successfully:
 ## Strict constraints
 
 - NEVER mix doc types in one document
-- NEVER invent or assume functionality not found in the code
+- NEVER invent or assume functionality not found in the code — this includes field names, types, defaults, dotted names, registration paths, and component props
+- If you cannot find the source, stop and report the gap to the user rather than guessing
 - ALWAYS follow the correct template structure
 - ALWAYS include `## Notes` when something cannot be inferred from the code
 - DEFAULT to `reference` when unsure of doc type

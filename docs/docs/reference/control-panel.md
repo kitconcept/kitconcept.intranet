@@ -5,12 +5,12 @@ myst:
     keywords: "control panel, settings, IIntranetSettings, admin"
 doc_type: reference
 audience: admin
-last_updated: 2026-04-09
+last_updated: 2026-04-27
 ---
 
 # Control Panel Settings
 
-All settings available in the **kitconcept Intranet Settings** control panel (`/@@intranet-settings-controlpanel`). Settings are stored in the Plone registry under the `IIntranetSettings` interface.
+All settings available in the **kitconcept Intranet Settings** control panel (`/@controlpanels/intranet-settings`). Settings are stored in the Plone registry under the `IIntranetSettings` interface.
 
 ## Feedback settings
 
@@ -31,7 +31,7 @@ All settings available in the **kitconcept Intranet Settings** control panel (`/
 
 | Setting | Type | Description | Default |
 |---------|------|-------------|---------|
-| `disable_profile_links` | Boolean | When enabled, person names in teasers and listings are not linked to the person's profile page | `False` |
+| `disable_profile_links`(This is in kitconcept settings controlpanel) | Boolean | When enabled, person names in teasers and listings are not linked to the person's profile page | `False` |
 | `person_picture_aspect_ratio` | Choice | Controls the CSS aspect ratio applied to person profile images. Options: `rounded1to1` (circular, default) or `squared4to5` (portrait rectangle) | `rounded1to1` |
 
 ### disable_profile_links

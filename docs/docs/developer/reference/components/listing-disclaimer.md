@@ -1,109 +1,92 @@
 ---
 myst:
   html_meta:
-    description: "Reference for the ListingBlockDisclaimer component and the listingBodyDisclaimer slot."
-    keywords: "ListingBlockDisclaimer, disclaimer, listing, slot, component, developer"
+    description: "Reference for the ListingBlockDisclaimer component and the aboveListingItems slot."
+    keywords: "ListingBlockDisclaimer, disclaimer, listing, slot, component, personalization, developer"
 doc_type: reference
 audience: developer
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
 # ListingBlockDisclaimer
 
-The `ListingBlockDisclaimer` component displays contextual disclaimer text below a listing block. It is rendered via the `listingBodyDisclaimer` slot, which is placed at the bottom of the `ListingBody` component.
+The `ListingBlockDisclaimer` component displays a disclaimer below a listing block when the listing results are personalized for the current user.
 
-Disclaimers can be targeted to specific listing contexts using the same targeting/personalisation rules used elsewhere in the intranet, making it possible to show different disclaimer text depending on the user's organisational unit, role, or other attributes.
+## Slot: `aboveListingItems`
 
-## Slot: `listingBodyDisclaimer`
-
-The disclaimer is injected into the listing body through a registered slot:
+The disclaimer is injected into listing blocks through the `aboveListingItems` slot:
 
 | Property | Value |
 |----------|-------|
-| **Slot name** | `listingBodyDisclaimer` |
-| **Location** | Bottom of `ListingBody`, after all listing items |
-| **Rendered when** | At least one disclaimer component is registered for the slot |
+| **Slot name** | `aboveListingItems` |
+| **Registration name** | `ListingDisclaimer` |
+| **Registered in** | `frontend/packages/kitconcept-intranet/src/config/slots.ts` |
 
-### Registering a disclaimer component
+### Registering a custom disclaimer component
 
 ```ts
 import MyDisclaimer from './MyDisclaimer';
 
 config.registerSlotComponent({
-  slot: 'listingBodyDisclaimer',
+  slot: 'aboveListingItems',
   name: 'myDisclaimer',
   component: MyDisclaimer,
-  predicates: [/* optional targeting predicates */],
 });
 ```
 
-The built-in `ListingBlockDisclaimer` component is already registered by default with the intranet distribution.
+### Removing the built-in disclaimer
+
+```ts
+config.unRegisterSlotComponent('aboveListingItems', 'ListingDisclaimer', 0);
+```
+
+The third argument is the index of the registered entry to remove. Pass `0` to remove the first (and only) registration.
 
 ## Component: `ListingBlockDisclaimer`
 
-### Import
-
-```ts
-import ListingBlockDisclaimer from '@kitconcept/volto-light-theme/components/Blocks/ListingBlockDisclaimer';
-```
+Located at `frontend/packages/kitconcept-intranet/src/slots/ListingDisclaimer/ListingDisclaimer.tsx`. Not part of the public package API — referenced internally via the slot registration.
 
 ### Props
 
 | Prop | Type | Required | Description |
 |------|------|----------|-------------|
-| `content` | `object` | Yes | The current page/context content object |
-| `properties` | `object` | Yes | The listing block's data properties |
-| `metadata` | `object` | No | Additional metadata passed from the slot system |
+| `data` | `object` | No (defaults to `{}`) | The listing block's data object, containing `querystring` |
+
+The component reads personalization state from `data.querystring` or from `data` directly.
 
 ### Behaviour
 
-The component reads disclaimer configuration from the intranet settings or from a targeted content source and renders the applicable disclaimer text. If no disclaimer is configured for the current context, the component renders nothing (returns `null`).
+The component renders only when the listing is personalized for the current user. A listing is considered personalized if either condition is true:
 
-Disclaimers are matched by:
+- `sort_on === 'userRelevance'`
+- The query contains a filter using `plone.app.querystring.operation.selection.currentUser`
 
-1. **Organisational unit** – the disclaimer can be scoped to a specific OU.
-2. **Content path** – the disclaimer can be scoped to a folder path.
-3. **User role** – the disclaimer can be restricted to certain Plone roles.
-4. **Fallback** – a default disclaimer displayed when no specific rule matches.
+When neither condition is met, the component returns `null` and renders nothing.
+
+When a personalized listing is detected, the component renders a fixed, translated message:
+
+> The displayed content is tailored to your organizational unit and location.
+
+The message is defined via `react-intl` and can be overridden through the standard i18n translation mechanism.
 
 ### Example output
 
-When a disclaimer is applicable, the component renders:
-
 ```html
-<div class="listing-block-disclaimer">
-  <p>This list is maintained by the Legal department. For questions contact legal@example.com.</p>
+<div class="results-disclaimer-container">
+  <p class="disclaimer">The displayed content is tailored to your organizational unit and location.</p>
 </div>
 ```
 
 ## Styling
 
-The disclaimer wrapper uses the CSS class `listing-block-disclaimer`. Override it in your custom theme:
+The component uses two CSS classes:
 
-```css
-.listing-block-disclaimer {
-  margin-top: var(--spacing-medium);
-  padding: var(--spacing-small);
-  border-left: 4px solid var(--color-warning);
-  background-color: var(--color-warning-bg);
-  font-size: var(--font-size-small);
-  color: var(--color-text-muted);
-}
-```
-
-## Disabling the Default Disclaimer
-
-To remove the built-in disclaimer globally:
-
-```ts
-config.unRegisterSlotComponent({
-  slot: 'listingBodyDisclaimer',
-  name: 'listingBlockDisclaimer', // the name used during default registration
-});
-```
+| Class | Element |
+|-------|---------|
+| `results-disclaimer-container` | Outer `<div>` wrapper |
+| `disclaimer` | Inner `<p>` text element |
 
 ## See Also
 
 - [Slots reference](/developer/reference/components/slots)
-- [Sticky Menu Slot reference](/developer/reference/components/sticky-menu-slot)
-- [Personalisation concepts](/concepts/personalization)
+- [StickyMenu reference](/developer/reference/components/sticky-menu)

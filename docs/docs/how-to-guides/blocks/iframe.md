@@ -5,7 +5,7 @@ myst:
     keywords: "iframe, embed, external content, block, how-to, editor"
 doc_type: how-to
 audience: editor
-last_updated: 2026-04-08
+last_updated: 2026-04-27
 ---
 
 # Use the IFrame block
@@ -50,14 +50,6 @@ For dashboards and interactive tools, a height of 700–900 px usually works wel
 | Option | Description |
 |--------|-------------|
 | **Title / Label** | A descriptive title for screen readers. Required for accessibility. Example: `"Project status dashboard"`. |
-| **Allow fullscreen** | If enabled, the embedded page can request fullscreen mode. |
-
-### Advanced Settings
-
-| Option | Description |
-|--------|-------------|
-| **Sandbox** | Restrict the capabilities of the embedded page. Enable this for untrusted content. |
-| **Allow scripts** | Only relevant when Sandbox is enabled. Grants the iframe permission to run JavaScript. |
 
 ## Saving and Previewing
 

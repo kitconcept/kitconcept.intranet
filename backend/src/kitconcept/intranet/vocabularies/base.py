@@ -15,6 +15,13 @@ class RelaxedSimpleVocabulary(SimpleVocabulary):
         return True
 
 
+class TermWithUrl(SimpleTerm):
+    """A term that also holds the URL of the item it's based on."""
+    def __init__(self, value, url, token=None, title=None):
+        super().__init__(value, token, title)
+        self.url = url
+
+
 def get_translated_vocabulary(params: tuple, language: str) -> SimpleVocabulary:
     """Return a SimpleVocabulary with ordered terms by title."""
     default_language = api.portal.get_default_language()
@@ -25,8 +32,9 @@ def get_translated_vocabulary(params: tuple, language: str) -> SimpleVocabulary:
     terms_by_token = {}
     for brain in brains:
         uid = brain.UID
-        term = SimpleTerm(
+        term = TermWithUrl(
             value=uid,
+            url=brain.getURL(),
             token=uid,
             title=brain.Title,
         )
@@ -44,6 +52,7 @@ def get_translated_vocabulary(params: tuple, language: str) -> SimpleVocabulary:
             translation_group = getattr(brain, "TranslationGroup", None)
             if translation_group and translation_group in terms_by_translation_group:
                 terms_by_translation_group[translation_group].title = brain.Title
+                terms_by_translation_group[translation_group].url = brain.getURL()
 
     terms = sorted(terms_by_token.values(), key=lambda term: term.title)
     return RelaxedSimpleVocabulary(terms)

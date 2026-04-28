@@ -1,40 +1,58 @@
-.delegate-review-buttons,
-.postpone-review-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 10px;
-}
-.comment-field {
-  margin-top: 40px;
-  margin-left: 10px;
-}
-.comment-label {
-  color: #000;
-  font-size: 14px;
-  font-weight: 500;
-}
-.postpone-review-form .help {
-  padding-left: 10px;
-}
-
-.review-info {
-  display: flex;
-  flex-direction: row;
-  padding: 8px;
-  background-color: $lightgrey;
-  color: $grey;
-  gap: 10px;
-
-  .review-info-labels {
+#sidebar-review {
+  .delegate-review-buttons,
+  .postpone-review-buttons {
     display: flex;
-    flex-direction: column;
+    justify-content: right;
+    margin-top: 40px;
+    gap: 10px;
+
+    .postpone-button,
+    .cancel-button,
+    .delegate-button {
+      @include button-style;
+    }
+    .cancel-button {
+      color: red;
+      border-color: red;
+    }
+  }
+  .postpone-review-form .help {
+    @include marginal-description();
+    color: $grey;
   }
 
-  .review-info-values {
+  .postpone-form-title,
+  .delegate-form-title {
+    font-size: 12px;
+    background: #f3f4f5;
+    color: #000;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    font-weight: 400;
+  }
+
+  .postpone-form-content,
+  .delegate-form-content {
+    padding: 1em;
+  }
+
+  #field-review-comment {
+    outline: none;
+    resize: vertical;
+    border: none;
+    border-bottom: 1px solid #c7d5d8;
+  }
+}
+
+.review-menu {
+  .review-info-row {
     display: flex;
-    flex-direction: column;
-    .due_date {
+    flex-direction: row;
+    background-color: $lightgrey;
+    color: $grey;
+    gap: 18px;
+
+    .review-info-value.due_date {
       color: red;
     }
   }

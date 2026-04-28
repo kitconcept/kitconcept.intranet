@@ -99,14 +99,23 @@ const DocumentReview = (props) => {
             {intl.formatMessage(messages.postponeReview)}
           </button>
         </li>
-        <div className="review-info">
-          <div className="review-info-labels">
-            <p>{intl.formatMessage(messages.last_updated)}:</p>
-            <p>{intl.formatMessage(messages.next_review)}:</p>
+
+        <div className="review-info-item">
+          <div className="review-info-row">
+            <p className="review-info-label">
+              {intl.formatMessage(messages.last_updated)}:
+            </p>
+            <p className="review-info-value">
+              {content?.review_completed_date ?? ''}
+            </p>
           </div>
-          <div className="review-info-values">
-            <p>{content?.review_completed_date ?? 'dd-mm-yyyy'}</p>
-            <p className="due_date">{content?.review_due_date}</p>
+          <div className="review-info-row">
+            <p className="review-info-label">
+              {intl.formatMessage(messages.next_review)}:
+            </p>
+            <p className="review-info-value due_date">
+              {content?.review_due_date ?? ''}
+            </p>
           </div>
         </div>
       </ul>

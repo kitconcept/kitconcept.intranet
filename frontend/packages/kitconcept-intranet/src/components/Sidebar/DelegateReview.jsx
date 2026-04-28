@@ -1,14 +1,20 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { TextArea, TextField, Label } from 'react-aria-components';
 import { useIntl, defineMessages } from 'react-intl';
-import { Accordion, Button, Form as UiForm, Segment } from 'semantic-ui-react';
+import {
+  Accordion,
+  Form as UiForm,
+  AccordionItem,
+  AccordionPanel,
+  Button,
+} from '@plone/components';
 import { toast } from 'react-toastify';
 
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import SelectAutoComplete from '@plone/volto/components/manage/Widgets/SelectAutoComplete';
 import { delegateReview } from '../../actions';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
+import TextareaWidget from '@plone/volto/components/manage/Widgets/TextareaWidget';
 
 const messages = defineMessages({
   comment: {
@@ -16,12 +22,12 @@ const messages = defineMessages({
     defaultMessage: 'Comment',
   },
   delegateReview: {
-    id: 'Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task',
+    id: 'delegateReview',
     defaultMessage:
-      'Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task',
+      'Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task. ',
   },
   delegateTitle: {
-    id: 'Delegate Review',
+    id: 'delegateTitle',
     defaultMessage: 'Delegate Review',
   },
   cancel: {
@@ -40,11 +46,25 @@ const messages = defineMessages({
     id: 'Review has been successfully delegated',
     defaultMessage: 'Review has been successfully delegated',
   },
+  commentPlaceholder: {
+    id: 'commentPlaceholder',
+    defaultMessage:
+      'If you wish, you can leave a comment for the person incharge here',
+  },
+  selectAssignee: {
+    id: 'Assignee',
+    defaultMessage: 'Assignee: *',
+  },
+  select: {
+    id: 'Select',
+    defaultMessage: 'Please Select . . .',
+  },
+  error: {
+    id: 'Error',
+    defaultMessage: 'Error',
+  },
 });
-const englishPlaceholder =
-  'If you wish, you can leave a comment for the person incharge here';
-const germanPlaceholder =
-  'Wenn Sie möchten, können Sie hier einen Kommentar für die verantwortliche Person hinterlassen';
+
 const DelegateReview = (props) => {
   const { onClose } = props;
   const dispatch = useDispatch();
@@ -53,92 +73,90 @@ const DelegateReview = (props) => {
   const [comment, setComment] = useState('');
 
   const intl = useIntl();
-  const { locale } = useIntl();
   const handleSubmit = () => {
     const data = {};
     if (comment) data.comment = comment;
     if (assignee) data.assignee = assignee;
-    if (Object.keys(data).length === 0) return;
-    data?.assignee &&
-      dispatch(delegateReview(flattenToAppURL(content['@id']), data)).then(
-        () => {
-          onClose();
-          toast.success(
-            <Toast
-              success
-              title={intl.formatMessage(messages.success)}
-              content={intl.formatMessage(messages.messageDelegate)}
-            />,
-          );
-        },
-      );
+    dispatch(delegateReview(flattenToAppURL(content['@id']), data))
+      .then(() => {
+        onClose();
+        toast.success(
+          <Toast
+            success
+            title={intl.formatMessage(messages.success)}
+            content={intl.formatMessage(messages.messageDelegate)}
+          />,
+        );
+      })
+      .catch((error) => {
+        toast.error(
+          <Toast
+            title={intl.formatMessage(messages.error)}
+            content={error.response?.body?.message}
+          />,
+        );
+      });
   };
   return (
     <UiForm
       method="post"
       className="delegate-review-form"
-      onSubmit={() => {
-        handleSubmit();
-      }}
+      onSubmit={handleSubmit}
     >
-      <Accordion fluid styled className="form" key="delegate-review">
-        <div key="delegate-review" id={`metadataform-fieldset-delegate-review`}>
-          <Accordion.Title active={true} index="delegate-review">
+      <Accordion
+        className="delegate-form"
+        defaultExpandedKeys={['delegate-review']}
+      >
+        <AccordionItem id="delegate-review">
+          <div className="delegate-form-title">
             {intl.formatMessage(messages.delegateTitle)}
-          </Accordion.Title>
-          <Accordion.Content active={true}>
-            <Segment className="attached">
-              <p>{intl.formatMessage(messages.delegateReview)}</p>
+          </div>
+          <AccordionPanel className="delegate-form-content">
+            <p>{intl.formatMessage(messages.delegateReview)}</p>
 
-              <SelectAutoComplete
-                id="assignee"
-                title="Assignee: *"
-                placeholder="Please Select . . ."
-                value={assignee}
-                isMulti={false}
-                items={{
-                  vocabulary: {
-                    '@id': 'plone.app.vocabularies.Users',
-                  },
+            <SelectAutoComplete
+              id="assignee"
+              title={intl.formatMessage(messages.selectAssignee)}
+              placeholder={intl.formatMessage(messages.select)}
+              value={assignee}
+              isMulti={false}
+              items={{
+                vocabulary: {
+                  '@id': 'plone.app.vocabularies.Users',
+                },
+              }}
+              onChange={(id, value) => setAssignee(value)}
+              wrapped={true}
+            />
+
+            <TextareaWidget
+              id="review-comment"
+              title={intl.formatMessage(messages.comment)}
+              fieldSet="default"
+              rows={3}
+              style={{ height: 'initial' }}
+              onChange={(id, value) => setComment(value)}
+              value={comment}
+              isDisabled={false}
+              placeholder={intl.formatMessage(messages.commentPlaceholder)}
+            />
+
+            <div className="delegate-review-buttons ">
+              <Button
+                type="button"
+                className="cancel-button"
+                onClick={() => {
+                  onClose();
                 }}
-                onChange={(id, value) => setAssignee(value)}
-                wrapped={true}
-              />
-              <TextField className="comment-field">
-                <Label htmlFor="comment" className="comment-label">
-                  {intl.formatMessage(messages.comment)}:
-                </Label>
-                <TextArea
-                  id="comment"
-                  rows={4}
-                  cols={50}
-                  style={{ height: 'unset' }}
-                  name="comment"
-                  className="comment-textarea"
-                  onChange={(e) => setComment(e.target.value)}
-                  value={comment}
-                  placeholder={
-                    locale === 'en' ? englishPlaceholder : germanPlaceholder
-                  }
-                />
-              </TextField>
-              <div className="delegate-review-buttons ">
-                <Button
-                  type="button"
-                  className="cancel-button"
-                  onClick={() => {
-                    onClose();
-                  }}
-                >
-                  {intl.formatMessage(messages.cancel)}
-                </Button>
-                <Button type="submit" className="delegate-button">
-                  {intl.formatMessage(messages.delegateButton)}
-                </Button>
-              </div>
-            </Segment>
-          </Accordion.Content>
-        </div>
+              >
+                {intl.formatMessage(messages.cancel)}
+              </Button>
+              <Button type="submit" className="delegate-button">
+                {intl.formatMessage(messages.delegateButton)}
+              </Button>
+            </div>
+          </AccordionPanel>
+        </AccordionItem>
       </Accordion>
     </UiForm>
   );

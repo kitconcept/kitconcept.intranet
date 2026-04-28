@@ -118,7 +118,9 @@ const DelegateReview = (props) => {
             <SelectAutoComplete
               id="assignee"
               title={intl.formatMessage(messages.selectAssignee)}
-              placeholder={intl.formatMessage(messages.selectAssigneePlaceholder)}
+              placeholder={intl.formatMessage(
+                messages.selectAssigneePlaceholder,
+              )}
               value={assignee}
               isMulti={false}
               items={{

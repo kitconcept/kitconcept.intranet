@@ -12,8 +12,8 @@
       @include button-style;
     }
     .cancel-button {
-      color: red;
       border-color: red;
+      color: red;
     }
   }
   .postpone-review-form .help {
@@ -23,12 +23,12 @@
 
   .postpone-form-title,
   .delegate-form-title {
-    font-size: 12px;
+    padding: 12px 14px;
     background: #f3f4f5;
     color: #000;
-    text-transform: uppercase;
-    padding: 12px 14px;
+    font-size: 12px;
     font-weight: 400;
+    text-transform: uppercase;
   }
 
   .postpone-form-content,
@@ -37,10 +37,10 @@
   }
 
   #field-review-comment {
-    outline: none;
-    resize: vertical;
     border: none;
     border-bottom: 1px solid #c7d5d8;
+    outline: none;
+    resize: vertical;
   }
 }
 

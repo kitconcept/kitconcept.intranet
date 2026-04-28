@@ -16,10 +16,10 @@ msgstr ""
 msgid "Address"
 msgstr "Adresse"
 
-#. Default: "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task"
+#. Default: "Assignee: *"
 #: components/Sidebar/DelegateReview
-msgid "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task"
-msgstr ""
+msgid "Assignee"
+msgstr "Beauftragte Person: *"
 
 #. Default: "Bio"
 #: components/theme/PersonView
@@ -40,13 +40,13 @@ msgstr "Von"
 #: components/Sidebar/DelegateReview
 #: components/Sidebar/PostponeReview
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
-#. Default: "Comment"
+#. Default: "Comment:"
 #: components/Sidebar/DelegateReview
 #: components/Sidebar/PostponeReview
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar:"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -64,25 +64,20 @@ msgstr ""
 msgid "Created On"
 msgstr "Erstellt am"
 
-#. Default: "Delegate"
-#: components/Sidebar/DelegateReview
-msgid "Delegate"
-msgstr ""
-
-#. Default: "Delegate Review"
-#: components/Sidebar/DelegateReview
-msgid "Delegate Review"
-msgstr ""
-
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
 msgid "Delegate Review Update"
-msgstr ""
+msgstr "Prüfung/Anpassung delegieren"
+
+#. Default: "Delegate"
+#: components/Sidebar/DelegateReview
+msgid "DelegateButton"
+msgstr "Delegieren"
 
 #. Default: "Document Review"
 #: components/Toolbar/DocumentReview
 msgid "Document Review"
-msgstr ""
+msgstr "Review dokumentieren"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
@@ -103,6 +98,7 @@ msgstr "Ende"
 #. Default: "Error"
 #: components/Blocks/IFrame/isValidUrl
 #: components/FeedBackForm/FeedBackForm
+#: components/Sidebar/DelegateReview
 msgid "Error"
 msgstr "Fehler"
 
@@ -174,12 +170,12 @@ msgstr "Standort"
 #. Default: "Mark Changes Required"
 #: components/Toolbar/DocumentReview
 msgid "Mark Changes Required"
-msgstr ""
+msgstr "Überarbeitung erforderlich"
 
 #. Default: "Mark as Reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Mark as Reviewed"
-msgstr ""
+msgstr "Als geprüft markieren"
 
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
@@ -221,18 +217,17 @@ msgstr "Bitte füllen Sie das Feld „Feedback“ aus."
 #. Default: "Postpone"
 #: components/Sidebar/PostponeReview
 msgid "Postpone"
-msgstr ""
+msgstr "Verschieben"
+
+#. Default: "Postpone Review"
+#: components/Toolbar/DocumentReview
+msgid "Postpone Review"
+msgstr "Überprüfung verschieben"
 
 #. Default: "Postpone Review"
 #: components/Sidebar/PostponeReview
-#: components/Toolbar/DocumentReview
-msgid "Postpone Review"
-msgstr ""
-
-#. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
-#: components/Sidebar/PostponeReview
-msgid "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
-msgstr ""
+msgid "PostponeTitle"
+msgstr "Überprüfung verschieben"
 
 #. Default: "Responsibilities"
 #: index
@@ -242,23 +237,18 @@ msgstr "Zuständigkeiten"
 #. Default: "Review"
 #: components/Sidebar/ReviewSidebar
 msgid "Review"
-msgstr ""
-
-#. Default: "Review has been successfully delegated"
-#: components/Sidebar/DelegateReview
-msgid "Review has been successfully delegated"
-msgstr ""
-
-#. Default: "Review has been successfully postponed"
-#: components/Sidebar/PostponeReview
-msgid "Review has been successfully postponed"
-msgstr ""
+msgstr "Inhaltsprüfung"
 
 #. Default: "Room"
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
 msgstr "Raum"
+
+#. Default: "Please Select ..."
+#: components/Sidebar/DelegateReview
+msgid "SelectAssigneePlaceholder"
+msgstr "Bitte auswählen ..."
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
@@ -318,11 +308,6 @@ msgstr "Betreff Seite/URL"
 msgid "Success"
 msgstr "Erfolg"
 
-#. Default: "The check interval is set to %{interval}. To change it, you must edit the content."
-#: components/Sidebar/PostponeReview
-msgid "The check interval is set to %{interval}. To change it, you must edit the content."
-msgstr ""
-
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
@@ -336,7 +321,7 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 #. Default: "Use preset review interval"
 #: components/Sidebar/PostponeReview
 msgid "Use preset review interval"
-msgstr ""
+msgstr "Voreingestelltes Überprüfungsintervall verwenden."
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
@@ -353,10 +338,55 @@ msgstr "Ihr Feedback wurde erfolgreich übermittelt. Sie erhalten in Kürze eine
 msgid "cancel"
 msgstr "abbrechen"
 
+#. Default: "If you wish, you can leave a comment for the person incharge here"
+#: components/Sidebar/DelegateReview
+msgid "delegateComment"
+msgstr "Wenn Sie möchten, können Sie hier einen Kommentar für die beauftragte Person hinterlassen."
+
+#. Default: "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task."
+#: components/Sidebar/DelegateReview
+msgid "delegateReview"
+msgstr "Geben Sie die Überprüfung oder Überarbeitung dieses Inhalts an eine andere Person weiter. Wählen Sie die zuständige Person aus und fügen Sie eine kurze Beschreibung des Auftrags hinzu."
+
+#. Default: "Review has been successfully delegated"
+#: components/Sidebar/DelegateReview
+msgid "delegateSuccessful"
+msgstr "Die Überprüfung wurde erfolgreich delegiert."
+
+#. Default: "Delegate Review or Update"
+#: components/Sidebar/DelegateReview
+msgid "delegateTitle"
+msgstr "Prüfung oder Anpassung delegieren"
+
+#. Default: "The check interval is set to {interval}. To change it, you must edit the content."
+#: components/Sidebar/PostponeReview
+msgid "help"
+msgstr "Das Überprüfungsintervall ist auf %{intervall} eingestellt. Um es zu ändern, müssen Sie den Inhalt bearbeiten."
+
+#. Default: "Review has been successfully postponed"
+#: components/Sidebar/PostponeReview
+msgid "messagePostpone"
+msgstr "Die Überprüfung wurde erfolgreich verschoben."
+
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
 msgstr "zuletzt verändert"
+
+#. Default: "Next Review on:"
+#: components/Sidebar/PostponeReview
+msgid "nextReview"
+msgstr "Nächste Kontrolle am: "
+
+#. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."
+#: components/Sidebar/PostponeReview
+msgid "postponeComment"
+msgstr "Wenn Sie möchten, können Sie hier einen Kommentar hinterlassen, beispielsweise den Grund für die "
+
+#. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
+#: components/Sidebar/PostponeReview
+msgid "postponeReview"
+msgstr "Verschieben Sie den nächsten Prüftermin für diesen Inhalt. Wählen Sie ein neues Datum oder einen Zeitraum, nach dem Sie erneut erinnert werden möchten."
 
 #. Default: "published"
 #: slots/DocumentByLine/DocumentByLine

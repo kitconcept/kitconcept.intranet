@@ -22,7 +22,7 @@ const messages = defineMessages({
     defaultMessage: 'Use preset review interval',
   },
   postponeTitle: {
-    id: 'Postpone Review',
+    id: 'PostponeTitle',
     defaultMessage: 'Postpone Review',
   },
   postponeReview: {
@@ -52,17 +52,17 @@ const messages = defineMessages({
     defaultMessage: 'Success',
   },
   messagePostpone: {
-    id: 'Review has been successfully postponed',
+    id: 'messagePostpone',
     defaultMessage: 'Review has been successfully postponed',
   },
-  commentPlaceholder: {
-    id: 'commentPlaceholder',
+  postponeComment: {
+    id: 'postponeComment',
     defaultMessage:
       'If you wish, you can leave a comment here, for example, the reason for the postponement.',
   },
   nextReview: {
     id: 'nextReview',
-    defaultMessage: 'Next Review on',
+    defaultMessage: 'Next Review on: ',
   },
 });
 
@@ -145,7 +145,7 @@ const PostponeReview = (props) => {
               onChange={(id, value) => setComment(value)}
               value={comment}
               isDisabled={false}
-              placeholder={intl.formatMessage(messages.commentPlaceholder)}
+              placeholder={intl.formatMessage(messages.postponeComment)}
             />
 
             <div className="postpone-review-buttons">

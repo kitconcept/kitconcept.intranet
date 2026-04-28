@@ -16,9 +16,9 @@ msgstr ""
 msgid "Address"
 msgstr "Adresse"
 
-#. Default: "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task"
+#. Default: "Assignee: *"
 #: components/Sidebar/DelegateReview
-msgid "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task"
+msgid "Assignee"
 msgstr ""
 
 #. Default: "Bio"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#. Default: "Comment"
+#. Default: "Comment:"
 #: components/Sidebar/DelegateReview
 #: components/Sidebar/PostponeReview
 msgid "Comment"
@@ -64,19 +64,14 @@ msgstr ""
 msgid "Created On"
 msgstr ""
 
-#. Default: "Delegate"
-#: components/Sidebar/DelegateReview
-msgid "Delegate"
-msgstr ""
-
-#. Default: "Delegate Review"
-#: components/Sidebar/DelegateReview
-msgid "Delegate Review"
-msgstr ""
-
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
 msgid "Delegate Review Update"
+msgstr ""
+
+#. Default: "Delegate"
+#: components/Sidebar/DelegateReview
+msgid "DelegateButton"
 msgstr ""
 
 #. Default: "Document Review"
@@ -103,6 +98,7 @@ msgstr ""
 #. Default: "Error"
 #: components/Blocks/IFrame/isValidUrl
 #: components/FeedBackForm/FeedBackForm
+#: components/Sidebar/DelegateReview
 msgid "Error"
 msgstr ""
 
@@ -224,14 +220,13 @@ msgid "Postpone"
 msgstr ""
 
 #. Default: "Postpone Review"
-#: components/Sidebar/PostponeReview
 #: components/Toolbar/DocumentReview
 msgid "Postpone Review"
 msgstr ""
 
-#. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
+#. Default: "Postpone Review"
 #: components/Sidebar/PostponeReview
-msgid "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
+msgid "PostponeTitle"
 msgstr ""
 
 #. Default: "Responsibilities"
@@ -244,20 +239,15 @@ msgstr ""
 msgid "Review"
 msgstr ""
 
-#. Default: "Review has been successfully delegated"
-#: components/Sidebar/DelegateReview
-msgid "Review has been successfully delegated"
-msgstr ""
-
-#. Default: "Review has been successfully postponed"
-#: components/Sidebar/PostponeReview
-msgid "Review has been successfully postponed"
-msgstr ""
-
 #. Default: "Room"
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
+msgstr ""
+
+#. Default: "Please Select ..."
+#: components/Sidebar/DelegateReview
+msgid "SelectAssigneePlaceholder"
 msgstr ""
 
 #. Default: "Send feedback"
@@ -318,11 +308,6 @@ msgstr ""
 msgid "Success"
 msgstr ""
 
-#. Default: "The check interval is set to %{interval}. To change it, you must edit the content."
-#: components/Sidebar/PostponeReview
-msgid "The check interval is set to %{interval}. To change it, you must edit the content."
-msgstr ""
-
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
@@ -353,9 +338,54 @@ msgstr ""
 msgid "cancel"
 msgstr ""
 
+#. Default: "If you wish, you can leave a comment for the person incharge here"
+#: components/Sidebar/DelegateReview
+msgid "delegateComment"
+msgstr ""
+
+#. Default: "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task."
+#: components/Sidebar/DelegateReview
+msgid "delegateReview"
+msgstr ""
+
+#. Default: "Review has been successfully delegated"
+#: components/Sidebar/DelegateReview
+msgid "delegateSuccessful"
+msgstr ""
+
+#. Default: "Delegate Review or Update"
+#: components/Sidebar/DelegateReview
+msgid "delegateTitle"
+msgstr ""
+
+#. Default: "The check interval is set to {interval}. To change it, you must edit the content."
+#: components/Sidebar/PostponeReview
+msgid "help"
+msgstr ""
+
+#. Default: "Review has been successfully postponed"
+#: components/Sidebar/PostponeReview
+msgid "messagePostpone"
+msgstr ""
+
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
+msgstr ""
+
+#. Default: "Next Review on:"
+#: components/Sidebar/PostponeReview
+msgid "nextReview"
+msgstr ""
+
+#. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."
+#: components/Sidebar/PostponeReview
+msgid "postponeComment"
+msgstr ""
+
+#. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
+#: components/Sidebar/PostponeReview
+msgid "postponeReview"
 msgstr ""
 
 #. Default: "published"

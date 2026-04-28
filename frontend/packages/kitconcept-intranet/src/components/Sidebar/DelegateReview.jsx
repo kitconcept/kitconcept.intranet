@@ -19,7 +19,7 @@ import TextareaWidget from '@plone/volto/components/manage/Widgets/TextareaWidge
 const messages = defineMessages({
   comment: {
     id: 'Comment',
-    defaultMessage: 'Comment',
+    defaultMessage: 'Comment: ',
   },
   delegateReview: {
     id: 'delegateReview',
@@ -28,14 +28,14 @@ const messages = defineMessages({
   },
   delegateTitle: {
     id: 'delegateTitle',
-    defaultMessage: 'Delegate Review',
+    defaultMessage: 'Delegate Review or Update',
   },
   cancel: {
     id: 'Cancel',
     defaultMessage: 'Cancel',
   },
   delegateButton: {
-    id: 'Delegate',
+    id: 'DelegateButton',
     defaultMessage: 'Delegate',
   },
   success: {
@@ -43,11 +43,11 @@ const messages = defineMessages({
     defaultMessage: 'Success',
   },
   messageDelegate: {
-    id: 'Review has been successfully delegated',
+    id: 'delegateSuccessful',
     defaultMessage: 'Review has been successfully delegated',
   },
-  commentPlaceholder: {
-    id: 'commentPlaceholder',
+  delegateComment: {
+    id: 'delegateComment',
     defaultMessage:
       'If you wish, you can leave a comment for the person incharge here',
   },
@@ -55,9 +55,9 @@ const messages = defineMessages({
     id: 'Assignee',
     defaultMessage: 'Assignee: *',
   },
-  select: {
-    id: 'Select',
-    defaultMessage: 'Please Select . . .',
+  selectAssigneePlaceholder: {
+    id: 'SelectAssigneePlaceholder',
+    defaultMessage: 'Please Select ...',
   },
   error: {
     id: 'Error',
@@ -73,7 +73,8 @@ const DelegateReview = (props) => {
   const [comment, setComment] = useState('');
 
   const intl = useIntl();
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const data = {};
     if (comment) data.comment = comment;
     if (assignee) data.assignee = assignee;
@@ -117,7 +118,7 @@ const DelegateReview = (props) => {
             <SelectAutoComplete
               id="assignee"
               title={intl.formatMessage(messages.selectAssignee)}
-              placeholder={intl.formatMessage(messages.select)}
+              placeholder={intl.formatMessage(messages.selectAssigneePlaceholder)}
               value={assignee}
               isMulti={false}
               items={{
@@ -138,7 +139,7 @@ const DelegateReview = (props) => {
               onChange={(id, value) => setComment(value)}
               value={comment}
               isDisabled={false}
-              placeholder={intl.formatMessage(messages.commentPlaceholder)}
+              placeholder={intl.formatMessage(messages.delegateComment)}
             />
 
             <div className="delegate-review-buttons ">

@@ -4,6 +4,8 @@
   },
   "hooks": {
     "after:bump": [
+      "node -e \"const fs=require('fs');const m=JSON.parse(fs.readFileSync('../../mrs.developer.json','utf8'));if(!m.core||!m.core.tag){console.error('Missing mrs.developer core.tag');process.exit(1);}const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.volto_version=m.core.tag;fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\\n');\"",
+      "git add package.json",
       "pipx run towncrier build --draft --yes --version ${version} > .changelog.draft",
       "pipx run towncrier build --yes --version ${version}",
       "cp ../../README.md ./ && cp CHANGELOG.md ../../CHANGELOG.md",

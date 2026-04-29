@@ -1,6 +1,6 @@
+from kitconcept.intranet.vocabularies.base import VocabularyCounter
 from kitconcept.intranet.vocabularies.base import get_vocabulary_counter
 from kitconcept.intranet.vocabularies.base import invalidate_vocabulary_cache
-from kitconcept.intranet.vocabularies.base import VocabularyCounter
 from plone import api
 
 import pytest

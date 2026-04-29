@@ -1,10 +1,10 @@
 from collective.person.content.person import IPerson
 from kitconcept.intranet.interfaces import IBrowserLayer
+from plone import api
 from plone.restapi.interfaces import ISerializeToJson
+from plone.restapi.serializer.dxcontent import SerializeToJson
 from zope.component import adapter
 from zope.interface import implementer
-from plone.restapi.serializer.dxcontent import SerializeToJson
-from plone import api
 
 
 @implementer(ISerializeToJson)

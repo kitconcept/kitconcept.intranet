@@ -5,32 +5,50 @@ myst:
     keywords: "control panel, settings, IIntranetSettings, admin"
 doc_type: reference
 audience: admin
-status: draft
-last_updated: 2026-03-18
+last_updated: 2026-04-27
 ---
 
 # Control Panel Settings
 
-All settings available in the kitconcept Intranet Settings control panel.
+All settings available in the **kitconcept Intranet Settings** control panel (`/@controlpanels/intranet-settings`). Settings are stored in the Plone registry under the `IIntranetSettings` interface.
 
-:::{note}
-This page is a stub pending domain expert input. For the schema definition, see [IIntranetSettings registry reference](/developer/reference/registry).
-:::
-
-## Settings
+## Feedback settings
 
 | Setting | Type | Description | Default |
 |---------|------|-------------|---------|
-| `enable_content_rating` | Boolean | Enable the likes/rating feature globally | `False` |
-| `enable_sticky_feedback_button` | Boolean | Show a floating feedback button on all pages | `False` |
-| `default_feedback_email` | Text | Fallback email for feedback when no CLM fields are set | *(empty)* |
-| `feedback_cc_email` | Text | CC address for all feedback submissions | *(empty)* |
-| `allowed_email_domains` | List | Restrict feedback to these email domains | *(empty)* |
+| `enable_sticky_feedback_button` | Boolean | Show a floating feedback button on all content pages | `False` |
+| `default_feedback_email` | Text | Fallback email address for feedback submissions when no CLM fields are set on the content | *(empty)* |
+| `feedback_cc_email` | Text | CC address added to all feedback submission emails | *(empty)* |
+| `allowed_email_domains` | List | If set, only email addresses from these domains may submit feedback | *(empty)* |
 
-:::{note}
-Additional settings are pending documentation. Domain expert review required.
-:::
+## Content interaction settings
+
+| Setting | Type | Description | Default |
+|---------|------|-------------|---------|
+| `enable_content_rating` | Boolean | Enable the likes / rating feature globally across the site | `False` |
+
+## Person settings
+
+| Setting | Type | Description | Default |
+|---------|------|-------------|---------|
+| `disable_profile_links`(This is in kitconcept settings controlpanel) | Boolean | When enabled, person names in teasers and listings are not linked to the person's profile page | `False` |
+| `person_picture_aspect_ratio` | Choice | Controls the CSS aspect ratio applied to person profile images. Options: `rounded1to1` (circular, default) or `squared4to5` (portrait rectangle) | `rounded1to1` |
+
+### disable_profile_links
+
+Registry key: `kitconcept.disable_profile_links`
+
+When set to `True`, the `PersonResultItem` and teaser/listing components wrap person links in a no-op `MaybeWrap`, effectively removing the hyperlink. This is useful on intranets where person profiles should not be publicly discoverable through search results.
+
+### person_picture_aspect_ratio
+
+Registry key: `kitconcept.person_picture_aspect_ratio`
+
+Controls the visual style of person images throughout the site (teasers, listings, detail view). When set to `squared4to5`, the `person-squared-images` CSS class is added to the `<body>` element by the `IntranetCSSInjector` slot component, which applies the corresponding CSS rules.
+
 
 ## See Also
 
-- [IIntranetSettings registry schema](/developer/reference/registry)
+- [Person image style](../how-to-guides/settings/person-image-style.md)
+- [Configure the feedback form](../how-to-guides/feedback/configure-feedback.md)
+- [Person View component](../developer/reference/components/person-view.md)

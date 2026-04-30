@@ -19,4 +19,6 @@ organisational-unit
 votes
 clm
 voltolighttheme
+additional-contact-info
+biography
 ```

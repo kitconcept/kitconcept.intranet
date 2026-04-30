@@ -14,6 +14,7 @@ Goal-oriented guides for accomplishing specific tasks in the intranet.
 :maxdepth: 1
 
 content/index
+blocks/index
 feedback/index
 engagement/index
 settings/index

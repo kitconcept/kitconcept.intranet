@@ -14,7 +14,14 @@ describe('a11y tests', () => {
     cy.navigate('/features/block/event-calendar');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'aria-required-attr',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });

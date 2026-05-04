@@ -55,7 +55,7 @@ import userSVG from '@plone/volto/icons/user.svg';
 import backSVG from '@plone/volto/icons/back.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import DocumentReview from '@kitconcept/intranet/components/Toolbar/DocumentReview';
-import ReviewSidebar from '@kitconcept/intranet/components/Sidebar/ReviewSidebar';
+import ReviewSidebar from '@kitconcept/intranet/components/ContentReviewSidebar/ReviewSidebar';
 
 const messages = defineMessages({
   edit: {

@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import {
   Accordion,
-  Form as UiForm,
   AccordionItem,
   AccordionPanel,
   Button,
-} from '@plone/components';
+} from '@plone/components/quanta';
+import { Form as UiForm } from '@plone/components';
 import CheckboxWidget from '@plone/volto/components/manage/Widgets/CheckboxWidget';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import DatetimeWidget from '@plone/volto/components/manage/Widgets/DatetimeWidget';

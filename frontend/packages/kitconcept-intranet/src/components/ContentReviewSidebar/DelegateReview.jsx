@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import {
   Accordion,
-  Form as UiForm,
   AccordionItem,
   AccordionPanel,
   Button,
-} from '@plone/components';
+} from '@plone/components/quanta';
 import { toast } from 'react-toastify';
-
+import { Form as UiForm } from '@plone/components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import SelectAutoComplete from '@plone/volto/components/manage/Widgets/SelectAutoComplete';
 import { delegateReview } from '../../actions';

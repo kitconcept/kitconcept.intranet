@@ -1,6 +1,84 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a11 (2026-04-30)
+
+### Backend
+
+
+#### Breaking
+
+- Migrate storage of location_reference and organisational_unit_reference fields to make them language-independent.
+  There is an upgrade step which must be run to update existing content. @davisagli [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+
+
+#### Feature
+
+- Use vocabularies for location and organisational unit search facets. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+
+
+#### Bugfix
+
+- Update to core 2a14 and vlt8a21 and Volto 19a29.
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a14
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a20
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a21
+  @sneridagh 
+- Upgrade to Volto 19a32 and VLT 8a24.
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.31
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.32
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a22
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a23
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a24 @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Use vocabularies for location and organisational unit search facets. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Show disclaimer in personalized Search blocks. @danalvrz 
+
+#### Bugfix
+
+- Fix errors loading the translation view. @davisagli [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Update to core 2a14 and vlt8a21 and Volto 19a29.
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a14
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a20
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a21
+  @sneridagh 
+- Upgrade to Volto 19a32 and VLT 8a24.
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.31
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.32
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a22
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a23
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a24 @sneridagh 
+
+#### Internal
+
+- Hide StickyFeedbackButton in edit mode.  @iRohitSingh 
+- Save Volto version in package.json for later consumption. @sneridagh 
+- Unhide change note field @iRohitSingh 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix solr-stop Makefile target to also stop the tika container. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/pull/286)
+
+
+#### Internal
+
+- Add VLT, Core, and Intranet docs to a unified documentation system in the Intranet with a new layout. @iFlameing 
+
+
+
 ## 2.0.0a10 (2026-03-14)
 
 ### Backend

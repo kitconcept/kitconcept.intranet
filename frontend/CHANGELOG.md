@@ -8,6 +8,35 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.11 (2026-04-30)
+
+### Feature
+
+- Use vocabularies for location and organisational unit search facets. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Show disclaimer in personalized Search blocks. @danalvrz 
+
+### Bugfix
+
+- Fix errors loading the translation view. @davisagli [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Update to core 2a14 and vlt8a21 and Volto 19a29.
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a14
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a20
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a21
+  @sneridagh 
+- Upgrade to Volto 19a32 and VLT 8a24.
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.31
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.32
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a22
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a23
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a24 @sneridagh 
+
+### Internal
+
+- Hide StickyFeedbackButton in edit mode.  @iRohitSingh 
+- Save Volto version in package.json for later consumption. @sneridagh 
+- Unhide change note field @iRohitSingh 
+
 ## 2.0.0-alpha.10 (2026-03-14)
 
 ### Feature

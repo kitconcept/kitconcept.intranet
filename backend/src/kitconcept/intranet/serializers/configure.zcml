@@ -8,6 +8,8 @@
       name="kitconcept.intranet.summary_serializer_metadata"
       />
 
+  <adapter factory=".vocab.SerializeTermWithUrlToJson" />
+  <adapter factory=".event.EventSerializer" />
   <adapter factory=".person.PersonSerializer" />
 
 </configure>

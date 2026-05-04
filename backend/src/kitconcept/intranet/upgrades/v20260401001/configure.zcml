@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260318001"
+      destination="20260401001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add content_review behaviour to a bunch of content types"
+        import_steps="typeinfo plone.app.registry catalog"
+        />
+    <genericsetup:upgradeStep
+        title="Update existing content objects"
+        handler=".upgrade.update_existing_content"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

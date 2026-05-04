@@ -18,4 +18,5 @@ blocks-config
 import-export
 search-settings
 iframe-domains
+content-review
 ```

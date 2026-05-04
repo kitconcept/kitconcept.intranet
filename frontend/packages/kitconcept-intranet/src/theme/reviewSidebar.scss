@@ -1,0 +1,63 @@
+#sidebar-review {
+  .delegate-review-buttons,
+  .postpone-review-buttons {
+    display: flex;
+    justify-content: right;
+    margin-top: 40px;
+    gap: 10px;
+
+    .postpone-button,
+    .cancel-button,
+    .delegate-button {
+      @include button-style;
+    }
+    .cancel-button {
+      border-color: red;
+      color: red;
+    }
+  }
+  .postpone-review-form .help {
+    @include marginal-description();
+    color: $grey;
+  }
+
+  .postpone-form-title,
+  .delegate-form-title {
+    padding: 12px 14px;
+    background: #f3f4f5;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .postpone-form-content,
+  .delegate-form-content {
+    padding: 1em;
+  }
+
+  #field-review-comment {
+    border: none;
+    border-bottom: 1px solid #c7d5d8;
+    outline: none;
+    resize: vertical;
+  }
+}
+
+.review-menu {
+  .review-info-row {
+    display: flex;
+    flex-direction: row;
+    background-color: $lightgrey;
+    color: $grey;
+    gap: 18px;
+
+    .review-info-value.due_date {
+      color: red;
+    }
+  }
+}
+
+.review_menu:disabled {
+  opacity: 0.5;
+}

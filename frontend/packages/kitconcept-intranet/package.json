@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/intranet",
-  "version": "2.0.0-alpha.10",
+  "version": "2.0.0-alpha.11",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -92,7 +92,8 @@
     "@plone-collective/volto-image-editor": "1.0.1",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
-    "react-aria-components": "1.13.0",
+    "react-aria-components": "catalog:",
     "volto-rss-block": "^3.0.1"
-  }
+  },
+  "volto_version": "19.0.0-alpha.32"
 }

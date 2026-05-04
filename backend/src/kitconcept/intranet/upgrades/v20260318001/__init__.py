@@ -1,4 +1,5 @@
 from BTrees.OIBTree import OIBTree
+from kitconcept.intranet import logger
 from kitconcept.intranet.behaviors.location import ILocationBehavior
 from kitconcept.intranet.behaviors.organisational_unit import (
     IOrganisationalUnitBehavior,
@@ -6,8 +7,6 @@ from kitconcept.intranet.behaviors.organisational_unit import (
 from plone import api
 from zc.relation.interfaces import ICatalog
 from zope.component import getUtility
-
-from kitconcept.intranet import logger
 
 
 def init_vocabulary_cache(context):

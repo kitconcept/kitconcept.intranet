@@ -3,8 +3,8 @@ from plone.app.multilingual.dx.directives import languageindependent
 from plone.autoform.directives import order_after
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
-from zope.interface import provider
 from zope import schema
+from zope.interface import provider
 
 
 @provider(IFormFieldProvider)

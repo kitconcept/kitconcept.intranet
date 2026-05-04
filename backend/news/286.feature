@@ -1,1 +1,0 @@
-Use vocabularies for location and organisational unit search facets. @reebalazs

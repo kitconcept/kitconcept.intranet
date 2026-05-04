@@ -61,6 +61,8 @@ import { compose } from 'redux';
 import config from '@plone/volto/registry';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
+const noop = () => {};
+
 /**
  * Form container class.
  * @class Form
@@ -119,6 +121,9 @@ class Form extends Component {
     allowedBlocks: PropTypes.arrayOf(PropTypes.string),
     showRestricted: PropTypes.bool,
     global: PropTypes.bool,
+    checkSavedDraft: PropTypes.func,
+    onSaveDraft: PropTypes.func,
+    onCancelDraft: PropTypes.func,
   };
 
   /**
@@ -155,6 +160,9 @@ class Form extends Component {
     requestError: null,
     allowedBlocks: null,
     global: false,
+    checkSavedDraft: noop,
+    onSaveDraft: noop,
+    onCancelDraft: noop,
   };
 
   /**
@@ -428,7 +436,6 @@ class Form extends Component {
       return;
     }
   }
-
   /* START CUSTOMIZATION */
   /**
    * Get fields to render, filtering content review fields based on review_timeless
@@ -484,12 +491,11 @@ class Form extends Component {
   onChangeField(id, value) {
     this.setState((prevState) => {
       const { errors, formData } = prevState;
-      let newFormData = {
+      const newFormData = {
         ...formData,
         // We need to catch also when the value equals false this fixes #888
         [id]: value || (value !== undefined && isBoolean(value)) ? value : null,
       };
-
       // START CUSTOMIZATION: Handle content review field changes
       if (id === 'review_interval') {
         // Update review_due_date when review_interval changes
@@ -1050,7 +1056,9 @@ class Form extends Component {
                           </Message>
                         ),
                         ...map(
+                          /* START CUSTOMIZATION*/
                           this.getFieldsToRender(item.fields, formData),
+                          /* END CUSTOMIZATION */
                           (field, index) => (
                             <Field
                               widgets={this.props.widgets}

@@ -27,10 +27,6 @@ The ContactList block displays a curated list of persons from your intranet dire
 
 ### Selecting Contacts
 
-You can populate the list in two ways:
-
-#### Option A: Manual selection
-
 1. In the block sidebar, click **Add item** or the object browser icon.
 2. Use the content browser to navigate to the Person items you want to include.
 3. Select each person and confirm. Repeat for additional entries.

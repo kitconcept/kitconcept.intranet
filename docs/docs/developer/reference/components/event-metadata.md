@@ -16,7 +16,7 @@ Renders event-specific metadata below the page title: start/end times, location,
 
 ## Overview
 
-The kitconcept-intranet distribution extends the upstream VLT implementation to support both a plain-text `location` field and a relational `location_reference` field provided by the `kitconcept.intranet` Location behavior.
+The kitconcept-intranet distribution extends the upstream VLT implementation to support both a plain-text `location` field and a serialized `locations` array provided by a custom backend serializer in `kitconcept.intranet`.
 
 ## Props
 
@@ -28,7 +28,7 @@ The kitconcept-intranet distribution extends the upstream VLT implementation to 
 | `properties.whole_day` | `boolean` | No | If true, shows only the date (no time) |
 | `properties.open_end` | `boolean` | No | If true, the end section is not rendered |
 | `properties.location` | `string` | No | Plain-text location string |
-| `properties.location_reference` | `Array<string>` (vocabulary tokens) | No | Location vocabulary tokens from `kitconcept.intranet.vocabularies.location` — provided by the [Location behavior](/developer/reference/behaviors/location).
+| `properties.locations` | `Array<{token: string, title: string, url: string}>` | No | Location terms serialized by the custom `EventSerializer`; each item includes a resolved URL — provided by the [Location behavior](/developer/reference/behaviors/location) |
 | `properties.event_url` | `string` | No | External URL for the event |
 | `properties.contact_name` | `string` | No | Contact person name |
 | `properties.contact_email` | `string` | No | Rendered as a `mailto:` link |
@@ -36,21 +36,7 @@ The kitconcept-intranet distribution extends the upstream VLT implementation to 
 
 ## Location rendering
 
-`location_reference` takes priority over `location`. The check is a plain truthiness test — not a length check:
-
-```jsx
-{content?.location_reference ? (
-  content.location_reference.map((ref) => (
-    <UniversalLink className="event-location" item={ref['@id']}>
-      {ref.title}
-    </UniversalLink>
-  ))
-) : (
-  <span>{content.location}</span>
-)}
-```
-
-The surrounding `EventLocation` component only renders when `content?.location || content?.location_reference` is truthy, so neither branch renders if both fields are absent.
+When `locations` is present, each item is rendered as a clickable link using the resolved `url` and the vocabulary term's `title`. When `locations` is absent, the plain-text `location` field is shown instead. If both fields are absent, the location section is not rendered at all.
 
 ## Date formatting
 
@@ -69,7 +55,7 @@ A download link is rendered pointing to `{expandToBackendURL(content['@id'])}/ic
 ## Notes
 
 - `isOpenEnd` is evaluated as `!content.end || !!content.open_end` — a missing `end` value also suppresses the end section, not just an explicit `open_end: true`.
-- `location_reference` is a field added by `kitconcept.intranet` — see [Location behavior](/developer/reference/behaviors/location).
+- `locations` is a field added by `kitconcept.intranet` — see [Location behavior](/developer/reference/behaviors/location).
 
 ## See also
 

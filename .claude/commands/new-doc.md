@@ -469,6 +469,14 @@ Do NOT include code blocks showing how a component or utility is registered (e.g
 
 Instead: state the registration file path in one line and link to the relevant docs (VLT, Plone, or internal) that explain the mechanism. Only include a registration code block if the pattern is non-obvious and not documented anywhere else.
 
+### No internal implementation code rule
+
+Do NOT include code snippets that reproduce or paraphrase code from inside the software itself (e.g. component internals, serializer logic, hook implementations). These snippets go stale every time the implementation changes and mislead readers who assume they are authoritative.
+
+The only code snippets that belong in documentation are those that show **how to use, configure, or integrate with** the software — for example, how to call an API, how to pass props to a component, or how to register a custom adapter.
+
+If you are tempted to include an internal snippet to explain behavior, write prose instead. Describe what the code does, not what it looks like.
+
 ### Cross-referencing external documentation
 
 When linking to documentation from an external project (such as Volto Light Theme, Plone, or Python), **always use an intersphinx cross-reference** instead of a plain URL. Intersphinx references are verified at build time and automatically use the correct title from the target docs.

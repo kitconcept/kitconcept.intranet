@@ -62,4 +62,3 @@ Slides animate by sliding horizontally. This variation works well for featured a
 ## See Also
 
 - [Blocks configuration](/how-to-guides/settings/blocks-config)
-- [Event Calendar Block](/how-to-guides/blocks/event-calendar)

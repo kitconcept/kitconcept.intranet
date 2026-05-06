@@ -8,6 +8,15 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.12 (2026-05-06)
+
+### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
 ## 2.0.0-alpha.11 (2026-04-30)
 
 ### Feature

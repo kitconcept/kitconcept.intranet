@@ -24,7 +24,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "kitconcept.core==2.0.0a14",
+    "kitconcept.core==2.0.0a16",
     "plone.api",
     "plone.app.discussion",
     "plone.app.querystring>=3.0.0a2",
@@ -355,7 +355,7 @@ constraint-dependencies = [
     "jsonschema==4.24.1",
     "keyring==25.6.0",
     "kitconcept.contactblock==1.0.0a5",
-    "kitconcept.core==2.0.0a14",
+    "kitconcept.core==2.0.0a16",
     "kitconcept.solr==2.0.0a13",
     "kitconcept.voltolighttheme>=8.0.0a9",
     "legacy-cgi==2.6.2",

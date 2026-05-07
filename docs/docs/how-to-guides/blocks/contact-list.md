@@ -8,16 +8,16 @@ audience: editor
 last_updated: 2026-04-27
 ---
 
-# Use the ContactList block
+# Use the Contact list block
 
-The ContactList block displays a curated list of persons from your intranet directory on any page. It is ideal for team pages, department overviews, and contact directories.
+The Contact list block displays a curated list of persons from your intranet directory on any page. It is ideal for team pages, department overviews, and contact directories.
 
 ## Prerequisites
 
 - You have Editor or Manager access to the page.
 - The persons you want to list have been created as [Person content items](/how-to-guides/content/create-person) on the site.
 
-## Adding the ContactList Block
+## Adding the Contact list Block
 
 1. Open the page in **edit mode**.
 2. Click the **+** button to open the block chooser.
@@ -34,8 +34,8 @@ The ContactList block displays a curated list of persons from your intranet dire
 
 ## Example: Adding a Team Section
 
-1. On your team page, add a **Text** block with the heading "Our Team".
-2. Add a **ContactList** block below it.
+1. On your team page, add a **Contact list** block.
+2. In the block sidebar, set the **Headline** field to "Our Team".
 3. Manually select the persons in your team using the object browser.
 5. Click **Save**.
 

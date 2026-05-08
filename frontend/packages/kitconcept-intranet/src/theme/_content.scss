@@ -6,3 +6,35 @@
 .field-wrapper-changeNote {
   display: block !important;
 }
+
+// #### slate width override ###
+#page-document .blocks-group-wrapper {
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > ul,
+  & > ol,
+  & > li,
+  & > p,
+  & > span,
+  & > .block.image.align.left.medium,
+  & > .block.image.align.left.small,
+  & > .block.image.align.right.small,
+  & > .block.image.align.right.medium {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+  }
+}
+#page-add,
+#page-edit {
+  .block.slate .slate-editor,
+  .block-editor-image.left.medium,
+  .block-editor-image.left.small,
+  .block-editor-image.right.medium,
+  .block-editor-image.right.small {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+  }
+}

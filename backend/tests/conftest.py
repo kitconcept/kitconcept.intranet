@@ -171,6 +171,7 @@ def docker_compose_file(pytestconfig):
 @pytest.fixture(scope="class")
 def solr_service(docker_ip, docker_services):
     """Ensure that Solr service is up and responsive."""
+    # This will fail if the service is not up within the timeout
     port = docker_services.port_for("solr-acceptance", 8983)
     url = f"http://{docker_ip}:{port}/solr/plone/admin/ping?wt=xml"
     docker_services.wait_until_responsive(

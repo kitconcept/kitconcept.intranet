@@ -1,6 +1,34 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b34 (2026-05-11)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to latest VLT 7.8.5.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/7.8.5 @sneridagh [#vlt7.8.5](https://github.com/kitconcept/kitconcept.intranet/issue/vlt7.8.5)
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to latest VLT 7.8.5.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/7.8.5 @sneridagh [#vlt7.8.5](https://github.com/kitconcept/kitconcept.intranet/issue/vlt7.8.5)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b33 (2026-04-02)
 
 ### Backend

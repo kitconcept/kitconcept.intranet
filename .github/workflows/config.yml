@@ -118,9 +118,11 @@ jobs:
               - '.github/workflows/*'
               - 'backend/**'
               - 'frontend/**'
+              - 'docker-compose-*.yml'
             backend:
               - 'backend/**'
               - '.github/workflows/backend*'
+              - 'docker-compose-*.yml'
             devops:
               - 'devops/**'
             docs:

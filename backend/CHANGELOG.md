@@ -2,6 +2,14 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a15 (2026-05-12)
+
+
+### Bugfix
+
+- Update to kitconcept.voltolighttheme 8.0.0a27 (fix for redirect regression).
+  @davisagli 
+
 ## 2.0.0a14 (2026-05-12)
 
 

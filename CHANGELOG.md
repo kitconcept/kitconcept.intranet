@@ -1,6 +1,38 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a14 (2026-05-12)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to VLT 8a26.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to VLT 8a26 and Volto 19a36.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+#### Internal
+
+- Change default slate width to default width @iRohitSingh [#369](https://github.com/kitconcept/kitconcept.intranet/issue/369)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 2.0.0a13 (2026-05-06)
 
 ### Backend

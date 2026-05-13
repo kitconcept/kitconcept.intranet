@@ -29,7 +29,7 @@ The RSS block fetches and displays items from an external RSS or Atom feed direc
 ### Entering the Feed URL
 
 1. In the sidebar, paste the full URL of the RSS or Atom feed (e.g. `https://feeds.feedburner.com/ConservationInternationalBlog/ClimateChange`).
-2. The block will fetch and preview the feed items.
+2. The block will fetch and preview the feed items. Save the page to see the rendered feed as visitors will.
 
 ## See Also
 

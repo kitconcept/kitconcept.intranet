@@ -31,8 +31,8 @@ For security reasons, only domains explicitly allowed by an administrator can be
 
 ### Setting the URL
 
-1. In the block or the sidebar, paste the full URL of the page you want to embed (including `https://`).
-2. Press **Enter** or click outside the field. The block will attempt to load a preview.
+1. When you add the IFrame block, an input field appears inline asking for a URL. Paste the full URL of the page you want to embed (including `https://`). The block will attempt to load a preview as soon as the URL is valid.
+2. To change the URL later, edit the URL field on the sidebar. The preview reloads automatically as you type.
 
 ### Adjusting the Size
 
@@ -54,8 +54,7 @@ For dashboards and interactive tools, a height of 700–900 px usually works wel
 ## Saving and Previewing
 
 1. After entering the URL and adjusting settings, click **Save** on the page.
-2. The iframe will render the external content in view mode.
-3. In edit mode, a placeholder is shown instead of the live content to avoid accidental clicks.
+2. The iframe will render the external content in both edit mode and view mode.
 
 ## Troubleshooting
 

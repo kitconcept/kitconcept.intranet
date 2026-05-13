@@ -21,7 +21,7 @@ The Slider block displays a series of content itemsâ€”images, teasers, or textâ€
 
 1. Open the page in **edit mode**.
 2. Click the **+** button to open the block chooser.
-3. Search for **Slider** (or **Carousel**) and click it to insert.
+3. Search for **Slider**  and click it to insert.
 
 ## Choosing a Variation
 
@@ -29,20 +29,20 @@ After inserting the block, open the **Variation** tab (or the dropdown at the to
 
 | Variation | Description |
 |-----------|-------------|
-| **Default (Full Slider)** | Full-width slides with large images and overlaid text |
-| **Simple Side Slider** | Image on one side, text content on the other; each slide scrolls horizontally |
+| **Default** | Full-width image with text overlaid on top |
+| **Simple** | Split layout with the image beside the text content |
 
-### Full Slider
+Both variations share the same slider behavior, the difference is in how the slides are laid out.
 
-The full slider occupies the entire content width and cycles through large hero-style slides. Suitable for homepage banners or section intros.
+### Default
 
-### Simple Side Slider
+Each slide image fills the full block width, with the title, description, and call-to-action rendered on top of the image. Suitable for homepage banners or section intros.
 
-The Simple Side Slider uses a split layout:
-- Left side: image
-- Right side: title, description, and optional call-to-action link
+### Simple slider
 
-Slides animate by sliding horizontally. This variation works well for featured articles, news highlights, or product showcases within a page.
+Each slide uses a split layout:
+- One side: image
+- Other side: title, description, and optional call-to-action
 
 ## Adding Slides
 
@@ -51,6 +51,7 @@ Slides animate by sliding horizontally. This variation works well for featured a
 
 | Field | Description |
 |-------|-------------|
+| **Target** | Content item the slide references and links to|
 | **Title** | Headline text for the slide |
 | **Description** | Supporting text or summary (optional) |
 | **Link text** | Button label (e.g. "Read more") |

@@ -52,13 +52,6 @@ You can select and drag multiple files simultaneously:
 2. Drag the entire selection to the contents view.
 3. All selected files will upload in parallel.
 
-## After Uploading
-
-After upload, each file appears as a new content item in the folder. The item is in **Private** state by default. To make it accessible to other users:
-
-1. Select the file(s) in the contents view.
-2. Use the **State** toolbar option to publish or submit for review.
-
 ## Troubleshooting
 
 **Nothing happens when I drop files.**

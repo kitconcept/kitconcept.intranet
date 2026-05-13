@@ -27,10 +27,10 @@ The Contact list block displays a curated list of persons from your intranet dir
 
 ### Selecting Contacts
 
-1. In the block sidebar, click **Add item** or the object browser icon.
-2. Use the content browser to navigate to the Person items you want to include.
-3. Select each person and confirm. Repeat for additional entries.
-4. Drag the handles in the list to reorder contacts.
+1. In the block sidebar, click the object browser icon on the first item to assign a Person.
+2. Use the content browser to navigate to and select the Person item you want to use.
+3. To add more contacts, click **Add contact** at the top of the list and repeat the selection process for each new entry.
+4. Drag the handles on the left of each item to reorder the contacts as needed.
 
 ## Example: Adding a Team Section
 

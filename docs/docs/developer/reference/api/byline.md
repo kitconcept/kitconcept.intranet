@@ -1,16 +1,91 @@
 ---
 myst:
   html_meta:
-    description: "REST API reference for the @byline endpoint."
-    keywords: "API, byline, REST, @byline"
+    description: "Reference for the byline expander and DocumentByLine slot component."
+    keywords: "byline, documentByLine, slot, belowContentTitle, author, expander, developer"
 doc_type: reference
 audience: developer
-status: draft
-last_updated: 2026-03-18
+last_updated: 2026-04-27
 ---
 
-# @byline Endpoint
+# Byline / DocumentByLine
 
-:::{note}
-This page is a stub. Content is pending and will be added in a future update.
-:::
+## Overview
+
+The byline feature shows the author's name, publication date, and last-modified date below the page title. It is implemented as a slot component (`DocumentByLine`) registered in the `belowContentTitle` slot. The backend provides author metadata through the `byline` content expander.
+
+---
+
+## Backend: byline expander
+
+The backend expander is requested by including `byline` in the `expand` query parameter:
+
+```
+GET /path/to/content?expand=byline
+```
+
+**Response shape** (inside `@components`):
+
+```json
+{
+  "@components": {
+    "byline": {
+      "users": {
+        "<userid>": {
+          "fullname": "Jane Smith",
+          "homepage": "/en/persons/jane-smith"
+        }
+      }
+    }
+  }
+}
+```
+
+`users` is a mapping from user ID to display data. If a user ID has no entry, the component falls back to rendering the raw user ID.
+
+---
+
+## Frontend: DocumentByLine slot component
+
+**File:** `frontend/packages/kitconcept-intranet/src/slots/DocumentByLine/DocumentByLine.tsx`
+
+**Registration:**
+```typescript
+config.registerSlotComponent({
+  slot: 'belowContentTitle',
+  name: 'documentByLine',
+  component: DocumentByLine,
+});
+```
+
+### Props
+
+| Prop | Type | Description |
+|------|------|-------------|
+| `content` | `Content` | Full content object including `@components.byline.users` |
+| `content.creators` | `string[]` | Array of user IDs |
+| `content.modified` | `string` | ISO 8601 last-modified date |
+| `content.review_state` | `string` | If `'published'`, the creation date is shown as "published" |
+| `location.pathname` | `string` | Used to detect add mode |
+
+### Behaviour
+
+- **Author names:** Reads `creators` from Redux form state (`form.global.creators`) first, falls back to `content.creators`. Resolves each user ID against `@components.byline.users` to get the display name; links to `homepage` if present.
+- **Dates:** Shows "published" date when `review_state === 'published'`; always shows "last modified" date.
+- **Add mode:** Component does not render when `location.pathname` includes `/add`.
+- **Memoisation:** `creators` array is memoised to prevent re-renders caused by reference changes.
+
+### Rendered output (example)
+
+```
+By Jane Smith · published 8 Apr 2026 · last modified 9 Apr 2026
+```
+
+---
+
+The `byline` expander is implemented in `kitconcept.intranet` at `backend/src/kitconcept/intranet/services/byline.py`. It is registered as a `plone.restapi` `IExpandableElement` adapter and resolves each user ID in `content.creators` via `plone.api.user.get()`.
+
+## See Also
+
+- [Slot system](../../../developer/concepts/slots.md)
+- [Person content type](../../../reference/content-types.md)

@@ -271,6 +271,7 @@ myst_substitutions = {}
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
     "plone": ("https://6.docs.plone.org/", None),
+    "vlt": ("https://volto-light-theme.readthedocs.io/", None),
 }
 
 

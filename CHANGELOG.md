@@ -1,6 +1,35 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a15 (2026-05-12)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to kitconcept.voltolighttheme 8.0.0a27 (fix for redirect regression).
+  @davisagli 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to volto-light-theme 8.0.0a27 (no significant changes). @davisagli 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix version of solr image. @davisagli 
+
+
+
 ## 2.0.0a14 (2026-05-12)
 
 ### Backend

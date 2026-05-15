@@ -112,7 +112,7 @@ services:
           - ${STACK_NAME}-tika
 
   solr:
-    image: ghcr.io/kitconcept/solr:latest
+    image: ghcr.io/kitconcept/solr:sha-db2c24c
     command:
       - solr-precreate
       - plone

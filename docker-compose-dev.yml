@@ -52,7 +52,7 @@ x-tika: &tika
     - 9998:9998
 
 x-solr: &solr
-  image: ghcr.io/kitconcept/solr:sha-bde077d
+  image: ghcr.io/kitconcept/solr:sha-db2c24c
   platform: linux/amd64
   ports:
     - 8983:8983

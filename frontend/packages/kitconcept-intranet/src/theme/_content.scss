@@ -19,10 +19,8 @@
   & > li,
   & > p,
   & > span,
-  & > .block.image.align.left.medium,
-  & > .block.image.align.left.small,
-  & > .block.image.align.right.small,
-  & > .block.image.align.right.medium {
+  & > .block.image.medium,
+  & > .block.image.small {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
@@ -30,10 +28,8 @@
 #page-add,
 #page-edit {
   .block.slate .slate-editor,
-  .block-editor-image.left.medium,
-  .block-editor-image.left.small,
-  .block-editor-image.right.medium,
-  .block-editor-image.right.small {
+  .block-editor-image .inner .block.image:has(figure.medium),
+  .block-editor-image .inner .block.image:has(figure.small) {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }

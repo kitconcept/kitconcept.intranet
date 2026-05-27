@@ -13,10 +13,10 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
-    "start:prod": "pnpm --filter @plone/volto start:prod",
-    "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
-    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
+    "start": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter {./core/packages/volto} start",
+    "start:prod": "pnpm --filter {./core/packages/volto} start:prod",
+    "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter {./core/packages/volto} build",
+    "build:deps": "pnpm --filter @plone/registry --filter @plone/components --filter @plone/helpers build",
     "i18n": "pnpm --filter @kitconcept/intranet i18n",
     "test": "pnpm --filter @kitconcept/intranet exec vitest --passWithNoTests",
     "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
@@ -29,8 +29,8 @@
     "release": "pnpm --filter volto-intranet release",
     "release-major-alpha": "pnpm --filter volto-intranet release-major-alpha",
     "release-alpha": "pnpm --filter volto-intranet release-alpha",
-    "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
-    "build-storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
+    "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter {./core/packages/volto} storybook dev -p 6006 -c $(pwd)/.storybook",
+    "build-storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter {./core/packages/volto} build-storybook -c $(pwd)/.storybook"
   },
   "dependencies": {
     "@kitconcept/intranet": "workspace:*",
@@ -57,6 +57,9 @@
       "@kitconcept/volto-carousel-block": "workspace:*",
       "@kitconcept/volto-iframe-block": "workspace:*",
       "@kitconcept/volto-bm3-compat": "workspace:*",
+      "@kitconcept/volto-plate": "workspace:*",
+      "@plone/helpers": "workspace:*",
+      "@plone/plate": "workspace:*",
       "react-aria-components": "catalog:"
     },
     "ignoredBuiltDependencies": [

@@ -144,5 +144,22 @@
     "url": "git@github.com:kitconcept/volto-contact-block.git",
     "https": "https://github.com/kitconcept/volto-contact-block.git",
     "tag": "1.0.0a5"
+  },
+  "volto-plate": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-plate",
+    "url": "git@github.com:kitconcept/volto-plate.git",
+    "branch": "unwanted-navigation-path"
+  },
+  "plone-plate": {
+    "develop": true,
+    "output": "packages",
+    "package": "@plone/plate",
+    "url": "git@github.com:plone/volto.git",
+    "https": "https://github.com/plone/volto.git",
+    "branch": "plone-plate-1.0.0-alpha.5",
+    "filterBlobs": true,
+    "path": "packages/plate"
   }
 }

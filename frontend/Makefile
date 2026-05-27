@@ -105,7 +105,7 @@ test: ## Run unit tests
 .PHONY: test-ci
 ci-test: ## Run unit tests in CI
 	# Unit Tests need the i18n to be built
-	pnpm --filter @kitconcept/intranet i18n && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto i18n
+	pnpm --filter @kitconcept/intranet i18n && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter {./core/packages/volto} i18n
 	CI=1 pnpm --filter @kitconcept/intranet exec vitest --passWithNoTests
 
 ## Storybook

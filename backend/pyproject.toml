@@ -38,6 +38,7 @@ dependencies = [
     "collective-solr==10.1.1",
     "kitconcept.solr==2.0.0a13",
     "kitconcept.contactblock==1.0.0a5",
+    "kitconcept.plate",
 ]
 
 [dependency-groups]
@@ -207,6 +208,7 @@ preview = true
 [tool.uv]
 prerelease = "allow"
 default-groups = ["build", "test"]
+
 constraint-dependencies = [
     "AccessControl==7.2",
     "Acquisition==6.1",
@@ -661,3 +663,6 @@ constraint-dependencies = [
     "zope.traversing==5.0",
     "zope.viewlet==5.0",
 ]
+
+[tool.uv.sources]
+"kitconcept-plate" = { git = "git+ssh://git@github.com/kitconcept/volto-plate.git", branch = "unwanted-navigation-path", subdirectory = "backend" }

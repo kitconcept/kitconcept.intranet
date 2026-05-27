@@ -1359,6 +1359,7 @@ dependencies = [
     { name = "collective-solr" },
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
+    { name = "kitconcept-plate" },
     { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
     { name = "pas-plugins-keycloakgroups" },
@@ -1401,6 +1402,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a5" },
     { name = "kitconcept-core", specifier = "==2.0.0a18" },
+    { name = "kitconcept-plate", git = "ssh://git@github.com/kitconcept/volto-plate.git?subdirectory=backend&branch=unwanted-navigation-path" },
     { name = "kitconcept-solr", specifier = "==2.0.0a13" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1436,6 +1438,17 @@ test = [
     { name = "pytest-cov" },
     { name = "pytest-docker", specifier = ">=3.2.0" },
     { name = "pytest-plone", specifier = ">=1.0.0a1" },
+]
+
+[[package]]
+name = "kitconcept-plate"
+version = "1.0.0a8"
+source = { git = "ssh://git@github.com/kitconcept/volto-plate.git?subdirectory=backend&branch=unwanted-navigation-path#da5fd33d8bef88f712721760ac4335948f5db2b7" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
 ]
 
 [[package]]

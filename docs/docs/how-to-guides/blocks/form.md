@@ -67,7 +67,51 @@ Use a shared mailbox (e.g. `helpdesk@example.com`) rather than a personal addres
 
 4. Drag field rows to reorder them.
 
-### Configuring Options (Select / Radio)
+### Organize fields into tabs (fieldsets)
+
+By default, all fields belong to a single tab called **Default**. You can group fields into multiple tabs — called fieldsets — to split a long form into logical sections. Visitors see the tabs when they fill in the form.
+
+#### Add a tab
+
+1. Look at the tab bar at the top of the form block in the page editor. It shows the existing tabs (for example, **Default**) and a **+** button at the right end of the tab bar.
+2. Click the **+** button in the tab bar.
+3. In the dialog that opens, fill in:
+   - **Title** — the label shown on the tab (for example, "Personal details").
+   - **Short name** — a unique identifier used internally (for example, `personal_details`). No spaces or special characters.
+4. Click **Save**. The new tab appears in the tab bar.
+
+#### Add fields to a specific tab
+
+1. Click the tab you want to add fields to. It becomes the active (highlighted) tab.
+2. Click **Add field** below the field list. The new field is added to the active tab.
+
+#### Rename or edit a tab
+
+1. Click the pencil icon next to the tab title.
+2. Update the **Title** or **Short name** in the dialog.
+3. Click **Save**.
+
+#### Move a field to a different tab
+
+1. Click the pencil icon next to the field you want to move.
+2. In the field settings dialog, locate the **Parent fieldset** dropdown.
+3. Select the target tab.
+4. Click **Save**. The field moves to the selected tab.
+
+#### Reorder tabs
+
+Drag a tab by its handle (the six-dot icon on the left of the tab label) to a new position in the tab bar.
+
+#### Delete a tab
+
+1. Click the **×** button next to the tab you want to remove.
+2. Confirm the deletion.
+
+:::{warning}
+Deleting a tab also permanently deletes all fields inside it. Move any fields you want to keep to another tab before deleting.
+:::
+
+### Configuring options (Select / Radio)
 
 For **Select** and **Radio** fields, add the list of options:
 

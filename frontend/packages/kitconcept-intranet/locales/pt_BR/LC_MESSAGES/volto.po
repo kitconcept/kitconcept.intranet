@@ -36,6 +36,11 @@ msgstr "Edifício"
 msgid "By"
 msgstr "Por"
 
+#. Default: "Cancel"
+#: components/FeedBackForm/FeedBackForm
+msgid "Cancel"
+msgstr "Cancelar"
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 #: components/theme/PersonView
@@ -236,11 +241,6 @@ msgstr "Site"
 #: components/FeedBackForm/FeedBackForm
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr "Seu feedback foi enviado com sucesso. Você receberá um e-mail de confirmação em breve."
-
-#. Default: "cancel"
-#: components/FeedBackForm/FeedBackForm
-msgid "cancel"
-msgstr "cancelar"
 
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine

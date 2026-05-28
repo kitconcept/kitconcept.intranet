@@ -39,8 +39,8 @@ const messages = defineMessages({
     defaultMessage: 'Send feedback',
   },
   cancel: {
-    id: 'cancel',
-    defaultMessage: 'cancel',
+    id: 'Cancel',
+    defaultMessage: 'Cancel',
   },
   email: {
     id: 'Email',
@@ -184,19 +184,19 @@ const FeedBackForm = () => {
   return (
     <Container>
       <div className="feedback-form">
-        <h2>
+        <h1>
           {intl.formatMessage(messages.feedbackOn)} {content?.title}
-        </h2>
+        </h1>
         <Form onSubmit={onSubmit}>
           <TextField>
             <Label className="feedback-label" htmlFor="url">
-              {intl.formatMessage(messages.url)}:
+              {intl.formatMessage(messages.url)}
             </Label>
             <Input id="url" name="url" value={PageURl} readOnly={true} />
           </TextField>
           <TextField isInvalid={feedbackError}>
             <Label htmlFor="feedback" className="feedback-label">
-              {intl.formatMessage(messages.feedback)}: *
+              {intl.formatMessage(messages.feedback)}*
             </Label>
             <TextArea
               id="feedback"
@@ -215,12 +215,12 @@ const FeedBackForm = () => {
               {intl.formatMessage(messages.feedbackError)}
             </FieldError>
           </TextField>
-          <h3 className="feedback-to">
+          <h2 className="feedback-to">
             {intl.formatMessage(messages.feedbackTo)}
-          </h3>
+          </h2>
           <TextField>
             <Label className="feedback-label" htmlFor="name">
-              {intl.formatMessage(messages.name)}:
+              {intl.formatMessage(messages.name)}
             </Label>
             <Input
               id="name"
@@ -231,7 +231,7 @@ const FeedBackForm = () => {
           </TextField>
           <TextField isInvalid={emailErrorSubmit}>
             <Label className="feedback-label" htmlFor="email">
-              {intl.formatMessage(messages.email)}: *
+              {intl.formatMessage(messages.email)}*
             </Label>
             <Input
               id="email"
@@ -262,11 +262,11 @@ const FeedBackForm = () => {
             )}
           </p>
           <div className="feedback-form-buttons">
-            <Button type="button" className="reset-button" onClick={onCancel}>
-              {intl.formatMessage(messages.cancel)}
-            </Button>
             <Button type="submit" className="send-button" onClick={onSubmit}>
               {intl.formatMessage(messages.send)}
+            </Button>
+            <Button type="button" className="reset-button" onClick={onCancel}>
+              {intl.formatMessage(messages.cancel)}
             </Button>
           </div>
         </Form>

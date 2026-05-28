@@ -1,20 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": "Project Title concepts"
-    "property=og:description": "Project Title concepts"
-    "property=og:title": "Project Title concepts"
-    "keywords": "Plone, Project Title, concepts"
+    description: "Conceptual guides for understanding how the kitconcept intranet works."
+    keywords: "concepts, content ownership, organisational structure, personalization"
+last_updated: 2026-03-18
 ---
 
 # Concepts
 
-This part of the documentation contains conceptual guides, including design defense and explanation of concepts for deeper study.
-The Diátaxis framework also calls this class of documentation _explanation_.
+Background reading for understanding how the intranet works.
 
-> Explanation is a discursive treatment of a subject, that permits reflection.
-> Explanation is understanding-oriented.
+```{toctree}
+:maxdepth: 1
 
-```{seealso}
-https://diataxis.fr/explanation/
+content-ownership
+organisational-structure
+personalization
 ```

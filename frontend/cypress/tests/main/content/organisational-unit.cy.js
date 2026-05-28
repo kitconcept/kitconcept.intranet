@@ -34,7 +34,7 @@ describe('Add Content Tests', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept(
       'GET',
-      '/**/@vocabularies/kitconcept.intranet.vocabularies.organisational_unit_objects*',
+      '/**/@vocabularies/kitconcept.intranet.vocabularies.organisational_unit*',
     ).as('vocab');
     cy.createContent({
       contentType: 'Organisational Unit',

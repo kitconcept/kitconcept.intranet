@@ -55,8 +55,20 @@ class TestSiteCreation:
             "location",
             "image_scales",
             "image_field",
-            "organisational_unit_reference",
-            "location_reference",
+            {
+                "name": "organisational_unit_reference",
+                "vocabulary": {
+                    "name": "kitconcept.intranet.vocabularies.organisational_unit",
+                    "isMultilingual": True,
+                },
+            },
+            {
+                "name": "location_reference",
+                "vocabulary": {
+                    "name": "kitconcept.intranet.vocabularies.location",
+                    "isMultilingual": True,
+                },
+            },
         ],
     )
     def test_solr_config_fieldlist(self, item):

@@ -1,29 +1,21 @@
 ---
 myst:
   html_meta:
-    "description": "Project Title how-to guides"
-    "property=og:description": "Project Title how-to guides"
-    "property=og:title": "Project Title how-to guides"
-    "keywords": "Plone, Project Title, how-to, guides"
+    description: "Goal-oriented guides for admins and editors using the kitconcept Intranet."
+    keywords: "how-to, guides, admin, editor, intranet"
+last_updated: 2026-03-18
 ---
 
-# How-to guides
+# How-to Guides
 
-This part of the documentation contains how-to guides, including installation and usage.
-
-> How-to guides are directions that guide the reader through a problem or towards a result.
-> How-to guides are goal-oriented.
-
-```{seealso}
-https://diataxis.fr/how-to-guides/
-```
+Goal-oriented guides for accomplishing specific tasks in the intranet.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 
-passive-targeting
-person-responsibilities
-squared-person-image-support
-content-interactions
-content-feedback-form
+content/index
+feedback/index
+engagement/index
+settings/index
+authentication/index
 ```

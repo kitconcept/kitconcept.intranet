@@ -71,7 +71,7 @@ const ContentInteractions = (props) => {
   const loggedIn = useSelector((state) => state.userSession.token, shallowEqual)
     ? true
     : false;
-  const link = content['@id'];
+  const link = content?.['@id'];
   const user = useUser();
   const intl = useIntl();
   const flattenPathname = flattenToAppURL(pathname);

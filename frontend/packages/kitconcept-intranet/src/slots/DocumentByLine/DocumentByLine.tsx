@@ -56,11 +56,11 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   //  on every render, even if the values are the same.
   // This makes React think the dependency has changed and re-run
   const creators = useMemo(() => {
-    return form.global?.creators ?? content.creators ?? [];
-  }, [form.global?.creators, content.creators]);
+    return form.global?.creators ?? content?.creators ?? [];
+  }, [form.global?.creators, content?.creators]);
 
   const creatorsWithData = useMemo(() => {
-    const usersFromExpander = content['@components'].byline.users;
+    const usersFromExpander = content?.['@components'].byline.users;
 
     return creators.map((userid: string) => {
       const userData = usersFromExpander?.[userid];

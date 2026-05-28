@@ -1,6 +1,250 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a15 (2026-05-12)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to kitconcept.voltolighttheme 8.0.0a27 (fix for redirect regression).
+  @davisagli 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to volto-light-theme 8.0.0a27 (no significant changes). @davisagli 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix version of solr image. @davisagli 
+
+
+
+## 2.0.0a14 (2026-05-12)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to VLT 8a26.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to VLT 8a26 and Volto 19a36.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+#### Internal
+
+- Change default slate width to default width @iRohitSingh [#369](https://github.com/kitconcept/kitconcept.intranet/issue/369)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a13 (2026-05-06)
+
+### Backend
+
+
+#### Bugfix
+
+- Fix the version of plone.app.querystring. @davisagli 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update kitconcept.core (no significant frontend change). @davisagli 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a12 (2026-05-06)
+
+### Backend
+
+
+#### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a11 (2026-04-30)
+
+### Backend
+
+
+#### Breaking
+
+- Migrate storage of location_reference and organisational_unit_reference fields to make them language-independent.
+  There is an upgrade step which must be run to update existing content. @davisagli [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+
+
+#### Feature
+
+- Use vocabularies for location and organisational unit search facets. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+
+
+#### Bugfix
+
+- Update to core 2a14 and vlt8a21 and Volto 19a29.
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a14
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a20
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a21
+  @sneridagh 
+- Upgrade to Volto 19a32 and VLT 8a24.
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.31
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.32
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a22
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a23
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a24 @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Use vocabularies for location and organisational unit search facets. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Show disclaimer in personalized Search blocks. @danalvrz 
+
+#### Bugfix
+
+- Fix errors loading the translation view. @davisagli [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Update to core 2a14 and vlt8a21 and Volto 19a29.
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a14
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a20
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a21
+  @sneridagh 
+- Upgrade to Volto 19a32 and VLT 8a24.
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.31
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.32
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a22
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a23
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a24 @sneridagh 
+
+#### Internal
+
+- Hide StickyFeedbackButton in edit mode.  @iRohitSingh 
+- Save Volto version in package.json for later consumption. @sneridagh 
+- Unhide change note field @iRohitSingh 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix solr-stop Makefile target to also stop the tika container. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/pull/286)
+
+
+#### Internal
+
+- Add VLT, Core, and Intranet docs to a unified documentation system in the Intranet with a new layout. @iFlameing 
+
+
+
+## 2.0.0a10 (2026-03-14)
+
+### Backend
+
+
+#### Feature
+
+- Add kitconcept.contactblock. @iFlameing 
+
+
+#### Bugfix
+
+- Add missing upgrade file(v20260217001) in upgrades/configure.zcml. @iFlameing 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+- Update to collective.solr 10.1.1 (fixes edge case with pagination). @davisagli 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add ContactList block. @iFlameing [#contactlist](https://github.com/kitconcept/kitconcept.intranet/issue/contactlist)
+- Added add-on @plone-collective/volto-image-editor. @sneridagh 
+
+#### Bugfix
+
+- Fix colors in Person profile view. @danalvrz 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix basic authentication not being set on backend deployments. @ericof [#331](https://github.com/kitconcept/kitconcept.intranet/pull/331)
+
+
+
 ## 2.0.0a9 (2026-03-05)
 
 ### Backend

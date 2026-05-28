@@ -2,6 +2,85 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a15 (2026-05-12)
+
+
+### Bugfix
+
+- Update to kitconcept.voltolighttheme 8.0.0a27 (fix for redirect regression).
+  @davisagli 
+
+## 2.0.0a14 (2026-05-12)
+
+
+### Bugfix
+
+- Update to VLT 8a26.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+## 2.0.0a13 (2026-05-06)
+
+
+### Bugfix
+
+- Fix the version of plone.app.querystring. @davisagli 
+
+## 2.0.0a12 (2026-05-06)
+
+
+### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
+## 2.0.0a11 (2026-04-30)
+
+
+### Breaking
+
+- Migrate storage of location_reference and organisational_unit_reference fields to make them language-independent.
+  There is an upgrade step which must be run to update existing content. @davisagli [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+
+
+### Feature
+
+- Use vocabularies for location and organisational unit search facets. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+
+
+### Bugfix
+
+- Update to core 2a14 and vlt8a21 and Volto 19a29.
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a14
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a20
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a21
+  @sneridagh 
+- Upgrade to Volto 19a32 and VLT 8a24.
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.31
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.32
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a22
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a23
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a24 @sneridagh 
+
+## 2.0.0a10 (2026-03-14)
+
+
+### Feature
+
+- Add kitconcept.contactblock. @iFlameing 
+
+
+### Bugfix
+
+- Add missing upgrade file(v20260217001) in upgrades/configure.zcml. @iFlameing 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+- Update to collective.solr 10.1.1 (fixes edge case with pagination). @davisagli 
+
 ## 2.0.0a9 (2026-03-05)
 
 

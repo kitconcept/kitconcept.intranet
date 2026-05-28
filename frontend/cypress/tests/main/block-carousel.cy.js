@@ -108,10 +108,10 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.block.teaser .image-wrapper img')
       .should('have.attr', 'src')
       .and('include', '/my-page/my-image/@@images/image-');
-    cy.get('.block.teaser .card-summary h2')
+    cy.get('.block.teaser .card-summary .title')
       .contains('Blue Orchids')
       .should('be.visible');
-    cy.get('.block.teaser .card-summary p')
+    cy.get('.block.teaser .card-summary .description')
       .contains('are growing on the mountain tops')
       .should('be.visible');
     cy.get('.carousel-dots button').click({ multiple: true });
@@ -124,7 +124,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@content');
     cy.wait('@save');
-    cy.get('.block.teaser:first .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser:first .card-summary .title').contains('Blue Orchids');
     cy.get('.block.teaser:first .card-inner .card-summary')
       .should('be.visible')
       .should('not.contain', 'are growing on the mountain tops');

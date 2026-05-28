@@ -1,23 +1,20 @@
 ---
 myst:
   html_meta:
-    "description": "Project Title Reference"
-    "property=og:description": "Project Title Reference"
-    "property=og:title": "Project Title Reference"
-    "keywords": "Plone, _Project Title,_ reference"
+    description: "Reference documentation for intranet settings, content types, and workflows."
+    keywords: "reference, control panel, content types, workflows, settings"
+last_updated: 2026-03-18
 ---
 
 # Reference
 
-This part of the documentation contains reference material, including APIs, configuration values, and environment variables.
+Technical descriptions of settings, content types, and system behavior.
 
-> Reference guides are technical descriptions of the machinery and how to operate it.
-> Reference material is information-oriented.
+```{toctree}
+:maxdepth: 1
 
-```{seealso}
-https://diataxis.fr/reference/
+control-panel
+content-types
+workflows
+site-customization
 ```
-
-## Configuration
-
--   {doc}`plone:contributing/documentation/themes-and-extensions`

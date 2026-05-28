@@ -30,15 +30,6 @@ def user_with_person(portal, request_api_factory):
                 )
                 IPloneUser(self.person).username = username
 
-        def add_relation(self, target, relationship):
-            with api.env.adopt_user(SITE_OWNER_NAME):
-                api.relation.create(
-                    source=self.person,
-                    target=target,
-                    relationship=relationship,
-                )
-                self.person.reindexObject()
-
         @property
         def api_session(self):
             session = request_api_factory()
@@ -52,15 +43,11 @@ def user_with_person(portal, request_api_factory):
 def create_content(portal):
     """Create a Document with optional relations."""
 
-    def factory(id, title, relations=None):
+    def factory(id, title, **kw):
         with api.env.adopt_user(SITE_OWNER_NAME):
             doc = api.content.create(portal, "Document", id=id, title=title)
-            for target, relationship in relations or []:
-                api.relation.create(
-                    source=doc,
-                    target=target,
-                    relationship=relationship,
-                )
+            for k, v in kw.items():
+                setattr(doc, k, v)
             doc.reindexObject()
         return doc
 
@@ -80,17 +67,18 @@ class TestCurrentUserFilter:
             )
 
         user = user_with_person("timo", "barcelona", "Timo")
-        user.add_relation(org_unit, "organisational_unit_reference")
+        user.person.organisational_unit_reference = [org_unit.UID()]
+        user.person.reindexObject()
 
         matching_doc = create_content(
             "doc_matching",
             "Matching Document",
-            [(org_unit, "organisational_unit_reference")],
+            organisational_unit_reference=[org_unit.UID()],
         )
         other_doc = create_content(
             "doc_other",
             "Other Document",
-            [(other_org_unit, "organisational_unit_reference")],
+            organisational_unit_reference=[other_org_unit.UID()],
         )
         unrelated_doc = create_content("doc_unrelated", "Unrelated Document")
         transaction.commit()
@@ -123,13 +111,14 @@ class TestCurrentUserFilter:
             )
 
         user = user_with_person("victor", "madrid", "Victor")
-        user.add_relation(location, "location_reference")
+        user.person.location_reference = [location.UID()]
+        user.person.reindexObject()
 
         matching_doc = create_content(
-            "doc_bonn", "Bonn Document", [(location, "location_reference")]
+            "doc_bonn", "Bonn Document", location_reference=[location.UID()]
         )
         other_doc = create_content(
-            "doc_berlin", "Berlin Document", [(other_location, "location_reference")]
+            "doc_berlin", "Berlin Document", location_reference=[other_location.UID()]
         )
         transaction.commit()
 

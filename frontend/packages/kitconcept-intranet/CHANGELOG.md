@@ -8,6 +8,82 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.15 (2026-05-12)
+
+### Internal
+
+- Update to volto-light-theme 8.0.0a27 (no significant changes). @davisagli 
+
+## 2.0.0-alpha.14 (2026-05-12)
+
+### Bugfix
+
+- Update to VLT 8a26 and Volto 19a36.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+### Internal
+
+- Change default slate width to default width @iRohitSingh [#369](https://github.com/kitconcept/kitconcept.intranet/issue/369)
+
+## 2.0.0-alpha.13 (2026-05-06)
+
+### Internal
+
+- Update kitconcept.core (no significant frontend change). @davisagli 
+
+## 2.0.0-alpha.12 (2026-05-06)
+
+### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
+## 2.0.0-alpha.11 (2026-04-30)
+
+### Feature
+
+- Use vocabularies for location and organisational unit search facets. @reebalazs [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Show disclaimer in personalized Search blocks. @danalvrz 
+
+### Bugfix
+
+- Fix errors loading the translation view. @davisagli [#286](https://github.com/kitconcept/kitconcept.intranet/issue/286)
+- Update to core 2a14 and vlt8a21 and Volto 19a29.
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a14
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a20
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a21
+  @sneridagh 
+- Upgrade to Volto 19a32 and VLT 8a24.
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.31
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.32
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a22
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a23
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a24 @sneridagh 
+
+### Internal
+
+- Hide StickyFeedbackButton in edit mode.  @iRohitSingh 
+- Save Volto version in package.json for later consumption. @sneridagh 
+- Unhide change note field @iRohitSingh 
+
+## 2.0.0-alpha.10 (2026-03-14)
+
+### Feature
+
+- Add ContactList block. @iFlameing [#contactlist](https://github.com/kitconcept/kitconcept.intranet/issue/contactlist)
+- Added add-on @plone-collective/volto-image-editor. @sneridagh 
+
+### Bugfix
+
+- Fix colors in Person profile view. @danalvrz 
+- Update core 2a13 and vlt2a18. @sneridagh
+  See:
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a13
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a18 
+
 ## 2.0.0-alpha.9 (2026-03-05)
 
 ### Feature

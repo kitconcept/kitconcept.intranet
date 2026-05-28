@@ -6,7 +6,7 @@ import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Container } from '@plone/components';
 
 const EventLocation = ({ content }) => {
-  const hasLocationInfo = content?.location || content?.location_reference;
+  const hasLocationInfo = content?.location || content?.locations;
   return (
     hasLocationInfo && (
       <div className="event-title">
@@ -14,10 +14,10 @@ const EventLocation = ({ content }) => {
           <FormattedMessage id="Location" defaultMessage="Location" />
         </span>
         <div className="event-detail">
-          {content?.location_reference ? (
-            content.location_reference.map((ref) => (
-              <React.Fragment key={ref['@id']}>
-                <UniversalLink className="event-location" item={ref['@id']}>
+          {content?.locations ? (
+            content.locations.map((ref) => (
+              <React.Fragment key={ref.token}>
+                <UniversalLink className="event-location" href={ref.url}>
                   {ref.title}
                 </UniversalLink>
                 <br />

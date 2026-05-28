@@ -37,14 +37,8 @@ class TestUserRelevanceBoost:
                 username=username,
             )
             IPloneUser(person).username = "timo"
-            api.relation.create(
-                source=person,
-                target=org_unit,
-                relationship="organisational_unit_reference",
-            )
-            api.relation.create(
-                source=person, target=location, relationship="location_reference"
-            )
+            person.organisational_unit_reference = [org_unit.UID()]
+            person.location_reference = [location.UID()]
             person.reindexObject()
 
             # Create some content
@@ -55,32 +49,18 @@ class TestUserRelevanceBoost:
             kitconcept_doc = api.content.create(
                 portal, "Document", id="doc_kitconcept", title="Document"
             )
-            api.relation.create(
-                source=kitconcept_doc,
-                target=org_unit,
-                relationship="organisational_unit_reference",
-            )
+            kitconcept_doc.organisational_unit_reference = [org_unit.UID()]
             kitconcept_doc.reindexObject()
             bonn_doc = api.content.create(
                 portal, "Document", id="doc_bonn", title="Document"
             )
-            api.relation.create(
-                source=bonn_doc, target=location, relationship="location_reference"
-            )
+            bonn_doc.location_reference = [location.UID()]
             bonn_doc.reindexObject()
             kitconcept_bonn_doc = api.content.create(
                 portal, "Document", id="doc_kitconcept_bonn", title="Document"
             )
-            api.relation.create(
-                source=kitconcept_bonn_doc,
-                target=org_unit,
-                relationship="organisational_unit_reference",
-            )
-            api.relation.create(
-                source=kitconcept_bonn_doc,
-                target=location,
-                relationship="location_reference",
-            )
+            kitconcept_bonn_doc.organisational_unit_reference = [org_unit.UID()]
+            kitconcept_bonn_doc.location_reference = [location.UID()]
             kitconcept_bonn_doc.reindexObject()
             transaction.commit()
 

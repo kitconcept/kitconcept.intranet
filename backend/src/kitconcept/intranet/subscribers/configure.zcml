@@ -1,0 +1,36 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!-- Vocabulary cache buster -->
+  <subscriber
+      for="kitconcept.intranet.content.organisational_unit.IOrganisationalUnit
+           zope.lifecycleevent.IObjectAddedEvent"
+      handler=".vocabulary.cache_buster"
+      />
+  <subscriber
+      for="kitconcept.intranet.content.organisational_unit.IOrganisationalUnit
+           zope.lifecycleevent.IObjectModifiedEvent"
+      handler=".vocabulary.cache_buster"
+      />
+  <subscriber
+      for="kitconcept.intranet.content.organisational_unit.IOrganisationalUnit
+           Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+      handler=".vocabulary.cache_buster"
+      />
+
+  <subscriber
+      for="kitconcept.intranet.content.location.ILocation
+           zope.lifecycleevent.IObjectAddedEvent"
+      handler=".vocabulary.cache_buster"
+      />
+  <subscriber
+      for="kitconcept.intranet.content.location.ILocation
+           zope.lifecycleevent.IObjectModifiedEvent"
+      handler=".vocabulary.cache_buster"
+      />
+  <subscriber
+      for="kitconcept.intranet.content.location.ILocation
+           Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+      handler=".vocabulary.cache_buster"
+      />
+
+</configure>

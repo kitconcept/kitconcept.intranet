@@ -69,7 +69,7 @@ context('Blocks Acceptance Tests', () => {
         expect($img[0].naturalHeight).to.be.greaterThan(0);
       })
       .should('have.attr', 'src');
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary .title').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
     );
@@ -115,7 +115,7 @@ context('Blocks Acceptance Tests', () => {
     //     expect($img[0].naturalHeight).to.be.greaterThan(0);
     //   })
     //   .should('have.attr', 'src');
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary .title').contains('Blue Orchids');
     cy.get('.headline .day').should('exist');
     // cy.get('.block.teaser .card-summary p').contains(
     //   'are growing on the mountain tops',
@@ -163,7 +163,7 @@ context('Blocks Acceptance Tests', () => {
         expect($img[0].naturalHeight).to.be.greaterThan(0);
       })
       .should('have.attr', 'src');
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary .title').contains('Blue Orchids');
     cy.get('.headline .day').should('exist');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
@@ -212,7 +212,7 @@ context('Blocks Acceptance Tests', () => {
       })
       .should('have.attr', 'src');
     cy.get('.headline').should('exist');
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary .title').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
     );

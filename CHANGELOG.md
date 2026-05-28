@@ -1,6 +1,125 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 2.0.0a15 (2026-05-12)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to kitconcept.voltolighttheme 8.0.0a27 (fix for redirect regression).
+  @davisagli 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to volto-light-theme 8.0.0a27 (no significant changes). @davisagli 
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Fix version of solr image. @davisagli 
+
+
+
+## 2.0.0a14 (2026-05-12)
+
+### Backend
+
+
+#### Bugfix
+
+- Update to VLT 8a26.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Update to VLT 8a26 and Volto 19a36.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+#### Internal
+
+- Change default slate width to default width @iRohitSingh [#369](https://github.com/kitconcept/kitconcept.intranet/issue/369)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a13 (2026-05-06)
+
+### Backend
+
+
+#### Bugfix
+
+- Fix the version of plone.app.querystring. @davisagli 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update kitconcept.core (no significant frontend change). @davisagli 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 2.0.0a12 (2026-05-06)
+
+### Backend
+
+
+#### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 2.0.0a11 (2026-04-30)
 
 ### Backend

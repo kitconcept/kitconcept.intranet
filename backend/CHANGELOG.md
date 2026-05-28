@@ -2,6 +2,39 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a15 (2026-05-12)
+
+
+### Bugfix
+
+- Update to kitconcept.voltolighttheme 8.0.0a27 (fix for redirect regression).
+  @davisagli 
+
+## 2.0.0a14 (2026-05-12)
+
+
+### Bugfix
+
+- Update to VLT 8a26.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+## 2.0.0a13 (2026-05-06)
+
+
+### Bugfix
+
+- Fix the version of plone.app.querystring. @davisagli 
+
+## 2.0.0a12 (2026-05-06)
+
+
+### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
 ## 2.0.0a11 (2026-04-30)
 
 

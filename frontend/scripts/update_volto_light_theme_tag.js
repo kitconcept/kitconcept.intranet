@@ -62,9 +62,9 @@ function updateMrsDeveloper(tag) {
 function main() {
   try {
     const latestVersion = latestPublishedVersion(PACKAGE_NAME);
-    installFrontendDependencies();
     const tag = toPythonStyleTag(latestVersion);
     updateMrsDeveloper(tag);
+    installFrontendDependencies();
   } catch (error) {
     console.error(error.message || String(error));
     process.exitCode = 1;

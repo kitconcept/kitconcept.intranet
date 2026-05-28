@@ -1,0 +1,46 @@
+---
+myst:
+  html_meta:
+    description: "How to add and configure the ContactList block to display persons on a page."
+    keywords: "contact list, contacts, persons, block, how-to, editor"
+doc_type: how-to
+audience: editor
+last_updated: 2026-04-27
+---
+
+# Use the Contact list block
+
+The Contact list block displays a curated list of persons from your intranet directory on any page. It is ideal for team pages, department overviews, and contact directories.
+
+## Prerequisites
+
+- You have Editor or Manager access to the page.
+- The persons you want to list have been created as [Person content items](/how-to-guides/content/create-person) on the site.
+
+## Adding the Contact list Block
+
+1. Open the page in **edit mode**.
+2. Click the **+** button to open the block chooser.
+3. Search for **ContactList** (or **Contact List**) and click it to insert the block.
+
+## Configuring the Block
+
+### Selecting Contacts
+
+1. In the block sidebar, click the object browser icon on the first item to assign a Person.
+2. Use the content browser to navigate to and select the Person item you want to use.
+3. To add more contacts, click **Add contact** at the top of the list and repeat the selection process for each new entry.
+4. Drag the handles on the left of each item to reorder the contacts as needed.
+
+## Example: Adding a Team Section
+
+1. On your team page, add a **Contact list** block.
+2. In the block sidebar, set the **Headline** field to "Our Team".
+3. Manually select the persons in your team using the object browser.
+5. Click **Save**.
+
+## See Also
+
+- [How to Create a Person](/how-to-guides/content/create-person)
+- [Person content type reference](/reference/content-types)
+- [Control Panel Settings](/reference/control-panel)

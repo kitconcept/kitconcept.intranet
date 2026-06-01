@@ -17,4 +17,6 @@ create-person
 create-location
 create-organisational-unit
 set-content-owner
+drag-drop-files
+image-editor
 ```

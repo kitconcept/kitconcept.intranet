@@ -5,7 +5,7 @@ myst:
     keywords: "content types, Person, Location, Organisational Unit, reference, intranet"
 doc_type: reference
 audience: editor
-last_updated: 2026-03-18
+last_updated: 2026-04-27
 ---
 
 # Content Types
@@ -24,20 +24,7 @@ A Person content item represents a staff member. It appears in people directorie
 |-------|----------|-------------|
 | **Name** | Default | Full name of the person |
 | **Portrait** | Default | Profile photo |
-| **Responsibilities** | Responsibilities & Expertise | Topics, tasks, or questions the person is responsible for |
 
-### Responsibilities field
-
-The **responsibilities** field is located in the **Responsibilities & Expertise** fieldset on the Person edit form. It allows users to describe what topics, tasks, or questions they are responsible for, helping colleagues find the right contact person.
-
-Enter free-form tags describing responsibilities. Examples:
-- "Budget planning"
-- "IT-Support"
-- "Onboarding"
-
-The field supports autocomplete suggestions based on existing responsibilities in the system, making it easier to use consistent terminology across the organisation.
-
-Responsibilities are indexed in the catalog, so users can search for persons by their responsibilities.
 
 ### See Also
 

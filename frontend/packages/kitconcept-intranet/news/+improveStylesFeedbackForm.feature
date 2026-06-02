@@ -1,0 +1,1 @@
+Improve look and feel of the feedback form to match VLT. @danalvrz

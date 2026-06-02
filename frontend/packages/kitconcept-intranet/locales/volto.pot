@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-04-28T13:58:22.131Z\n"
+"POT-Creation-Date: 2026-06-02T11:13:51.551Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -19,7 +19,7 @@ msgid "Address"
 msgstr ""
 
 #. Default: "Assignee: *"
-#: components/Sidebar/DelegateReview
+#: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
 msgstr ""
 
@@ -39,14 +39,15 @@ msgid "By"
 msgstr ""
 
 #. Default: "Cancel"
-#: components/Sidebar/DelegateReview
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/DelegateReview
+#: components/ContentReviewSidebar/PostponeReview
+#: components/FeedBackForm/FeedBackForm
 msgid "Cancel"
 msgstr ""
 
 #. Default: "Comment:"
-#: components/Sidebar/DelegateReview
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/DelegateReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "Comment"
 msgstr ""
 
@@ -72,7 +73,7 @@ msgid "Delegate Review Update"
 msgstr ""
 
 #. Default: "Delegate"
-#: components/Sidebar/DelegateReview
+#: components/ContentReviewSidebar/DelegateReview
 msgid "DelegateButton"
 msgstr ""
 
@@ -99,13 +100,13 @@ msgstr ""
 
 #. Default: "Error"
 #: components/Blocks/IFrame/isValidUrl
+#: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
-#: components/Sidebar/DelegateReview
 msgid "Error"
 msgstr ""
 
 #. Default: "Expand sidebar"
-#: components/Sidebar/ReviewSidebar
+#: components/ContentReviewSidebar/ReviewSidebar
 msgid "Expand sidebar"
 msgstr ""
 
@@ -217,7 +218,7 @@ msgid "Please fill in the Feedback field"
 msgstr ""
 
 #. Default: "Postpone"
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "Postpone"
 msgstr ""
 
@@ -227,7 +228,7 @@ msgid "Postpone Review"
 msgstr ""
 
 #. Default: "Postpone Review"
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "PostponeTitle"
 msgstr ""
 
@@ -237,7 +238,7 @@ msgid "Responsibilities"
 msgstr ""
 
 #. Default: "Review"
-#: components/Sidebar/ReviewSidebar
+#: components/ContentReviewSidebar/ReviewSidebar
 msgid "Review"
 msgstr ""
 
@@ -248,7 +249,7 @@ msgid "Room"
 msgstr ""
 
 #. Default: "Please Select ..."
-#: components/Sidebar/DelegateReview
+#: components/ContentReviewSidebar/DelegateReview
 msgid "SelectAssigneePlaceholder"
 msgstr ""
 
@@ -268,7 +269,7 @@ msgid "Share this page via email"
 msgstr ""
 
 #. Default: "Shrink sidebar"
-#: components/Sidebar/ReviewSidebar
+#: components/ContentReviewSidebar/ReviewSidebar
 msgid "Shrink sidebar"
 msgstr ""
 
@@ -303,9 +304,9 @@ msgid "Subject page/URL"
 msgstr ""
 
 #. Default: "Success"
+#: components/ContentReviewSidebar/DelegateReview
+#: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
-#: components/Sidebar/DelegateReview
-#: components/Sidebar/PostponeReview
 #: components/Toolbar/DocumentReview
 msgid "Success"
 msgstr ""
@@ -321,7 +322,7 @@ msgid "To submit a Like you must be logged in"
 msgstr ""
 
 #. Default: "Use preset review interval"
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "Use preset review interval"
 msgstr ""
 
@@ -335,38 +336,33 @@ msgstr ""
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr ""
 
-#. Default: "cancel"
-#: components/FeedBackForm/FeedBackForm
-msgid "cancel"
-msgstr ""
-
 #. Default: "If you wish, you can leave a comment for the person incharge here"
-#: components/Sidebar/DelegateReview
+#: components/ContentReviewSidebar/DelegateReview
 msgid "delegateComment"
 msgstr ""
 
 #. Default: "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task."
-#: components/Sidebar/DelegateReview
+#: components/ContentReviewSidebar/DelegateReview
 msgid "delegateReview"
 msgstr ""
 
 #. Default: "Review has been successfully delegated"
-#: components/Sidebar/DelegateReview
+#: components/ContentReviewSidebar/DelegateReview
 msgid "delegateSuccessful"
 msgstr ""
 
 #. Default: "Delegate Review or Update"
-#: components/Sidebar/DelegateReview
+#: components/ContentReviewSidebar/DelegateReview
 msgid "delegateTitle"
 msgstr ""
 
 #. Default: "The check interval is set to {interval}. To change it, you must edit the content."
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "help"
 msgstr ""
 
 #. Default: "Review has been successfully postponed"
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr ""
 
@@ -376,17 +372,17 @@ msgid "modified"
 msgstr ""
 
 #. Default: "Next Review on:"
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "nextReview"
 msgstr ""
 
 #. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "postponeComment"
 msgstr ""
 
 #. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
-#: components/Sidebar/PostponeReview
+#: components/ContentReviewSidebar/PostponeReview
 msgid "postponeReview"
 msgstr ""
 

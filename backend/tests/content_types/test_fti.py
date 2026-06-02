@@ -269,6 +269,7 @@ class TestContentTypeFTI:
                     "kitconcept.sticky_menu",
                     "plonegovbr.socialmedia.settings",
                     "plone.basic",
+                    "plone.categorization",
                     "plone.relateditems",
                     "plone.locking",
                     "volto.blocks",

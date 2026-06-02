@@ -8,6 +8,38 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.15 (2026-05-12)
+
+### Internal
+
+- Update to volto-light-theme 8.0.0a27 (no significant changes). @davisagli 
+
+## 2.0.0-alpha.14 (2026-05-12)
+
+### Bugfix
+
+- Update to VLT 8a26 and Volto 19a36.
+  https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a26 @sneridagh 
+
+### Internal
+
+- Change default slate width to default width @iRohitSingh [#369](https://github.com/kitconcept/kitconcept.intranet/issue/369)
+
+## 2.0.0-alpha.13 (2026-05-06)
+
+### Internal
+
+- Update kitconcept.core (no significant frontend change). @davisagli 
+
+## 2.0.0-alpha.12 (2026-05-06)
+
+### Bugfix
+
+- Fix link to location from Event view. @davisagli 
+- Update to Volto 19a33 and core2a16.
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a15
+  https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0a16 @sneridagh 
+
 ## 2.0.0-alpha.11 (2026-04-30)
 
 ### Feature

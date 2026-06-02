@@ -6,7 +6,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [blocks, configuration, site-settings]
-last_updated: 2026-03-18
+last_updated: 2026-04-27
 ---
 
 # Configure blocks through the web
@@ -26,7 +26,7 @@ You can configure:
 
 ### 1. Open the Blocks Configuration field
 
-Go to **Site Setup → Plone Site** tab and look for the **Blocks configuration** field.
+Go to **Plone Site** tab and look for the **Blocks configuration** field.
 
 ```{image} /_static/images/ttwblocksconfig.png
 :alt: Blocks configuration TTW screenshot

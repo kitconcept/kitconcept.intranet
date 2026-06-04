@@ -46,9 +46,19 @@ const applyConfig = (config: ConfigType) => {
     component: PersonSummary,
     dependencies: ['Person'],
   });
-  config.settings.solrSearchOptions.contentTypeSearchResultViews.Person =
-    PersonResultItem;
+  (
+    config.settings.solrSearchOptions as {
+      contentTypeSearchResultViews: Record<string, unknown>;
+    }
+  ).contentTypeSearchResultViews.Person = PersonResultItem;
   config.settings.contentIcons.Person = personSVG;
+
+  // Empty search should show all results,
+  // see https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/342
+  (
+    config.settings.solrSearchOptions as { doEmptySearch?: boolean }
+  ).doEmptySearch = true;
+
   return config;
 };
 

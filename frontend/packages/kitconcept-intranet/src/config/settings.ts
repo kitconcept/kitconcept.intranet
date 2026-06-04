@@ -21,7 +21,7 @@ export default function install(config: ConfigType) {
     ...config.addonReducers,
     feedbackContactForm,
   };
-  
+
   config.settings.appExtras = [
     ...config.settings.appExtras,
     { match: '/', component: DocumentReviewPlug, props: {} },

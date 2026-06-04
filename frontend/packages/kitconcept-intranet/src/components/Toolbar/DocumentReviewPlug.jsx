@@ -50,12 +50,7 @@ const DocumentReviewPlug = () => {
                 className="document-review-dialog"
                 aria-label={intl.formatMessage(messages.documentReview)}
               >
-                {({ close }) => (
-                  <DocumentReview
-                    onClose={close}
-                    openReviewSidebar={setReviewType}
-                  />
-                )}
+                <DocumentReview openReviewSidebar={setReviewType} />
               </Dialog>
             </Popover>
           </DialogTrigger>

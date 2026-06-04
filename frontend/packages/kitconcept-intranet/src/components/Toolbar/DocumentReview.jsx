@@ -50,7 +50,6 @@ const DocumentReview = (props) => {
   const intl = useIntl();
   const handleMarkAsReviewed = () => {
     dispatch(approveReview(flattenToAppURL(content['@id']))).then(() => {
-      props.onClose();
       toast.success(
         <Toast
           success
@@ -84,7 +83,6 @@ const DocumentReview = (props) => {
           <button
             onClick={() => {
               props.openReviewSidebar('DelegateReview');
-              props.onClose();
             }}
           >
             {intl.formatMessage(messages.delegateReviewUpdate)}
@@ -95,7 +93,6 @@ const DocumentReview = (props) => {
           <button
             onClick={() => {
               props.openReviewSidebar('PostponeReview');
-              props.onClose();
             }}
           >
             {intl.formatMessage(messages.postponeReview)}

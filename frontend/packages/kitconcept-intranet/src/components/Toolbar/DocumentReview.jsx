@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import { toast } from 'react-toastify';
-
-import { approveReview } from '../../actions';
+import { approveReview } from '@kitconcept/intranet/actions/review/review';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 
@@ -51,7 +50,7 @@ const DocumentReview = (props) => {
   const intl = useIntl();
   const handleMarkAsReviewed = () => {
     dispatch(approveReview(flattenToAppURL(content['@id']))).then(() => {
-      props.closeMenu();
+      props.onClose();
       toast.success(
         <Toast
           success
@@ -62,8 +61,11 @@ const DocumentReview = (props) => {
     });
   };
   return (
-    <div className="pastanaga-menu-list review-menu">
+    <div className="review-menu">
       <ul>
+        <li className="review-menu-header">
+          {intl.formatMessage(messages.documentReview)}
+        </li>
         <li>
           <button
             onClick={() => {
@@ -82,7 +84,7 @@ const DocumentReview = (props) => {
           <button
             onClick={() => {
               props.openReviewSidebar('DelegateReview');
-              props.closeMenu();
+              props.onClose();
             }}
           >
             {intl.formatMessage(messages.delegateReviewUpdate)}
@@ -93,7 +95,7 @@ const DocumentReview = (props) => {
           <button
             onClick={() => {
               props.openReviewSidebar('PostponeReview');
-              props.closeMenu();
+              props.onClose();
             }}
           >
             {intl.formatMessage(messages.postponeReview)}

@@ -45,12 +45,30 @@
 }
 
 .review-menu {
-  .review-info-row {
-    display: flex;
-    flex-direction: row;
-    background-color: $lightgrey;
+  .review-menu-header {
+    padding: 15px;
     color: $grey;
-    gap: 18px;
+    font-weight: 500;
+    background-color: $lightgrey;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+  .review-info-item {
+    padding: 15px;
+    background-color: $lightgrey;
+  }
+
+  .review-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    color: $grey;
+
+    .review-info-label,
+    .review-info-value {
+      margin: 0;
+      font-size: 12px;
+    }
 
     .review-info-value.due_date {
       color: red;
@@ -58,6 +76,45 @@
   }
 }
 
-.review_menu:disabled {
+.review-popover {
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+  border-radius: 0%;
+  .document-review-dialog {
+    width: 100%;
+    outline: none;
+  }
+
+  .review-menu {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      button {
+        display: flex;
+        align-self: stretch;
+        padding: 15px;
+        border: none;
+        background-color: transparent;
+        color: $black;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #b8c6c8;
+      }
+    }
+  }
+}
+
+.document-review-option:disabled,
+.document-review-option[data-disabled] {
   opacity: 0.5;
 }

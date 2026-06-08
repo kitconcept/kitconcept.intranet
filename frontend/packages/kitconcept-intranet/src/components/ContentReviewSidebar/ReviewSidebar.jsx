@@ -87,6 +87,9 @@ const ReviewSidebar = (props) => {
     setshowFull(!showFull);
   }, [showFull, toolbarExpanded]);
 
+  const reviewComponents = { DelegateReview, PostponeReview };
+  const ReviewComponent = reviewComponents[review];
+
   return (
     <Fragment>
       <BodyClass
@@ -154,15 +157,9 @@ const ReviewSidebar = (props) => {
         />
       </div>
       {isClient &&
-        review === 'DelegateReview' &&
+        ReviewComponent &&
         createPortal(
-          <DelegateReview onClose={props.onClose} />,
-          document.getElementById('sidebar-review'),
-        )}
-      {isClient &&
-        review === 'PostponeReview' &&
-        createPortal(
-          <PostponeReview onClose={props.onClose} />,
+          <ReviewComponent onClose={props.onClose} />,
           document.getElementById('sidebar-review'),
         )}
 

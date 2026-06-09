@@ -38,3 +38,10 @@
     @include adjustMarginsToContainer($default-container-width);
   }
 }
+
+// Hide setting for "Intranet Header" in root sidebar, might not be needed after refactoring the feature
+#sidebar {
+  .field-wrapper-has_intranet_header {
+    display: none;
+  }
+}

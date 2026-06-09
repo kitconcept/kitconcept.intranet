@@ -2,6 +2,17 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a16 (2026-06-09)
+
+
+### Bugfix
+
+- Add missing translation for Responsibilities tab in Person profile. @danalvrz 
+- Update to VLT and Volto 19.1.2. @sneridagh
+
+  See https://github.com/plone/volto/releases/tag/19.1.2
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a29 
+
 ## 2.0.0a15 (2026-05-12)
 
 

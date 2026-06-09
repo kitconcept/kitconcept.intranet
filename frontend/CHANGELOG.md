@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.16 (2026-06-09)
+
+### Feature
+
+- Improve look and feel of the feedback form to match VLT. @danalvrz 
+
+### Bugfix
+
+- Enable `doEmptySearch` so the search page returns all results for an empty search term, instead of an empty page. @reebalazs 
+- Fixed accordion does not work with the "Order" tab. Use `@eea/volto-accordion-block` 12.0.0. @Tishasoumya-02 
+- Hide the empty search tabs container on an empty search term, so it no longer renders as a stray grey rectangle. @reebalazs 
+- Update to VLT and Volto 19.1.2. @sneridagh
+
+  See https://github.com/plone/volto/releases/tag/19.1.2
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a29 
+
 ## 2.0.0-alpha.15 (2026-05-12)
 
 ### Internal

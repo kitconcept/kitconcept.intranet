@@ -5,6 +5,16 @@
   margin: 0 auto !important;
 }
 
+// Hide the empty search tabs container (e.g. on an empty search term, when
+// there are no facet groups). Semantic UI's `.ui.menu` enforces a `min-height`,
+// so an empty `.searchTabs` would otherwise render as a stray grey rectangle.
+// NOTE: This is a temporary fix that belongs in volto-solr's solrsearch.less.
+// Remove this rule once volto-solr 2.0.0-alpha.14 (the next release) ships it upstream.
+// See https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/342
+.searchTabs.ui.tabular.menu:empty {
+  display: none;
+}
+
 // Highlight searchbox on hover and focus
 .header-wrapper.intranet-header
   .header

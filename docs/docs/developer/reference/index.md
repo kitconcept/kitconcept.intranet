@@ -14,6 +14,7 @@ last_updated: 2026-03-18
 api/index
 behaviors/index
 components/index
+helpers/index
 frontend-styleguide
 registry
 vocabularies
@@ -22,4 +23,5 @@ compatibility
 image-aspect-ratio
 recommended-addons
 storybook
+style-definitions
 ```

@@ -2,7 +2,7 @@
   "@id": "/features/comments",
   "@type": "Document",
   "UID": "ab9fa349a4704ae9bc83fef1f51fe08a",
-  "allow_discussion": false,
+  "allow_discussion": true,
   "authors": null,
   "blocks": {
     "771341aa-39a3-41c5-9032-6dfd36013d86": {
@@ -41,7 +41,248 @@
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
-  "exportimport.conversation": [],
+  "exportimport.conversation": [
+    {
+      "@id": "/features/comments/@comments/1781081155897086",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "admin",
+      "author_username": "admin",
+      "can_reply": false,
+      "comment_id": "1781081155897086",
+      "creation_date": "2026-06-10T08:45:55+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T08:45:55+00:00",
+      "text": {
+        "data": "@ja: F\u00fcr mich hei\u00dft \u201eernst genommen\u201d vor allem: Industriepartner, Investitionen, Zeitplan. Forschung alleine reicht nicht.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781085230931623",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Anna Becker",
+      "author_username": "a.becker",
+      "can_reply": false,
+      "comment_id": "1781085230931623",
+      "creation_date": "2026-06-10T09:53:50+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T09:53:50+00:00",
+      "text": {
+        "data": "@Thomas: Genau \u2013 aber worauf willst Du eigentlich hinaus mit \u201eernst genommen\u201c? Meinst Du politisch oder wirtschaftlich?",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781085711826566",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Ben Yilmaz",
+      "author_username": "b.yilmaz",
+      "can_reply": false,
+      "comment_id": "1781085711826566",
+      "creation_date": "2026-06-10T10:01:51+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:01:51+00:00",
+      "text": {
+        "data": "Super, dass das Projekt jetzt gr\u00fcnes Licht bekommen hat \u2013 eine F\u00f6rderung von mehreren Millionen Euro zeigt, dass Wasserstoff ernst genommen wird.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781085820803322",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Clara Nguyen",
+      "author_username": "c.nguyen",
+      "can_reply": false,
+      "comment_id": "1781085820803322",
+      "creation_date": "2026-06-10T10:03:40+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:03:40+00:00",
+      "text": {
+        "data": "Ich sehe da auch ein Risiko: \u201eForschung hei\u00dft nicht automatisch Markteinf\u00fchrung\u201c. Wie sieht es mit der Umsetzung aus \u2013 bleibt es bei dem Prototyp oder geht\u2019s zur Produktionsreife?",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781085894165104",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "David Schmidt",
+      "author_username": "d.schmidt",
+      "can_reply": false,
+      "comment_id": "1781085894165104",
+      "creation_date": "2026-06-10T10:04:54+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:04:54+00:00",
+      "text": {
+        "data": "Wenn ZTS mit lokalen Partnern arbeitet, kann echtes Know-how aufgebaut werden\u201c \u2013 genau das ist f\u00fcr mich der Schl\u00fcssel bei solchen Projekten.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781086013696884",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Eva Roth",
+      "author_username": "e.roth",
+      "can_reply": false,
+      "comment_id": "1781086013696884",
+      "creation_date": "2026-06-10T10:06:53+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:06:53+00:00",
+      "text": {
+        "data": "Sehr beeindruckend! Wenn ZTS die F\u00f6rdermittel gut nutzt, k\u00f6nnte \u201egr\u00fcner Wasserstoff\u201c einen echten Sprung machen",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781086472135098",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Florian Meier",
+      "author_username": "f.meier",
+      "can_reply": false,
+      "comment_id": "1781086472135098",
+      "creation_date": "2026-06-10T10:14:32+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:14:32+00:00",
+      "text": {
+        "data": "Super, dass das Projekt jetzt gr\u00fcnes Licht bekommen hat \u2013 eine F\u00f6rderung von mehreren Millionen Euro zeigt, dass Wasserstoff ernst genommen wird.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781086548304113",
+      "@parent": "/features/comments/@comments/1781086472135098",
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Anna Becker",
+      "author_username": "a.becker",
+      "can_reply": false,
+      "comment_id": "1781086548304113",
+      "creation_date": "2026-06-10T10:15:48+00:00",
+      "in_reply_to": "1781086472135098",
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:15:48+00:00",
+      "text": {
+        "data": "Ja, aber man darf nicht vergessen: \u201eForschung\u201c hei\u00dft nicht automatisch Markteinf\u00fchrung. Ich frage mich, wie gro\u00df der Anteil an Umsetzung sein wird.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781086625942148",
+      "@parent": "/features/comments/@comments/1781086548304113",
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Florian Meier",
+      "author_username": "f.meier",
+      "can_reply": false,
+      "comment_id": "1781086625942148",
+      "creation_date": "2026-06-10T10:17:05+00:00",
+      "in_reply_to": "1781086548304113",
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:17:05+00:00",
+      "text": {
+        "data": "Guter Punkt, Ralf. Im Artikel steht, dass der Fokus auf industrielle Anwendung gelegt wird \u2013 das klingt schon nach mehr als nur \u201eLabor\u201c.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781086709119282",
+      "@parent": null,
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "David Schmidt",
+      "author_username": "d.schmidt",
+      "can_reply": false,
+      "comment_id": "1781086709119282",
+      "creation_date": "2026-06-10T10:18:29+00:00",
+      "in_reply_to": null,
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:18:29+00:00",
+      "text": {
+        "data": "Spannend finde ich die regionale Verankerung \u2013 wenn ZTS mit lokalen Partnern arbeitet, kann echtes Know-how auch hier aufgebaut werden.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781086842621890",
+      "@parent": "/features/comments/@comments/1781086709119282",
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "Anna Becker",
+      "author_username": "a.becker",
+      "can_reply": false,
+      "comment_id": "1781086842621890",
+      "creation_date": "2026-06-10T10:20:42+00:00",
+      "in_reply_to": "1781086709119282",
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:20:42+00:00",
+      "text": {
+        "data": "@David Schmidt, genau \u2013 und zugleich stellt sich die Frage: Wie wird das mit der Skalierung aussehen? Ein F\u00f6rderprojekt f\u00fcr einen Prototyp reicht nicht f\u00fcr die Industrie.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    },
+    {
+      "@id": "/features/comments/@comments/1781086973248193",
+      "@parent": "/features/comments/@comments/1781086842621890",
+      "@type": "Discussion Item",
+      "author_image": null,
+      "author_name": "David Schmidt",
+      "author_username": "d.schmidt",
+      "can_reply": false,
+      "comment_id": "1781086973248193",
+      "creation_date": "2026-06-10T10:22:53+00:00",
+      "in_reply_to": "1781086842621890",
+      "is_deletable": true,
+      "is_editable": false,
+      "modification_date": "2026-06-10T10:22:53+00:00",
+      "text": {
+        "data": "Anna Becker, Vielleicht wird in einer n\u00e4chsten Phase dann der Roll-out beschrieben. W\u00e4re gut, mehr Transparenz beim Zeitplan zu haben.",
+        "mime-type": "text/plain"
+      },
+      "user_notification": null
+    }
+  ],
   "feedback_person": null,
   "head_title": null,
   "id": "comments",
@@ -53,7 +294,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-06-24T17:09:41+00:00",
+  "modified": "2026-06-10T08:43:13+00:00",
   "nav_title": null,
   "organisational_unit_reference": null,
   "preview_caption_link": null,

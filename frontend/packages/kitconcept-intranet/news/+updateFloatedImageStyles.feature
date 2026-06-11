@@ -1,0 +1,1 @@
+Update floated image styles. @danlavrz

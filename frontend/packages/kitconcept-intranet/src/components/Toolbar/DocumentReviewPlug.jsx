@@ -21,8 +21,12 @@ const messages = defineMessages({
 
 const DocumentReviewPlug = () => {
   const intl = useIntl();
+  const site = useSelector((state) => state.site.data);
+  const enableContentReview = site['kitconcept.intranet.enable_content_review'];
   const content = useSelector((state) => state.content?.data);
   const [reviewType, setReviewType] = useState(null);
+
+  if (!enableContentReview) return null;
 
   return (
     <>

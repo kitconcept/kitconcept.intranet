@@ -92,7 +92,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.24.1" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.6.0" },
-    { name = "kitconcept-contactblock", specifier = "==1.0.0a5" },
+    { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0a18" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a9" },
@@ -1318,7 +1318,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-contactblock"
-version = "1.0.0a5"
+version = "1.0.0a6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-person" },
@@ -1327,9 +1327,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/55/6c/8dc0eb6af1e18f84ab41da89972b9851dcd496e8b4c3afb11a3a09904f03/kitconcept_contactblock-1.0.0a5.tar.gz", hash = "sha256:46328e05dee08bfbd1a8b603afa441a884fc5765e13bd6b4ae374dcf5d541dac", size = 78234, upload-time = "2026-02-16T09:56:53.272Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/63/ec/19ea6327870fe485be5d6cd840542eda4065b331c75e51545d7008ce1506/kitconcept_contactblock-1.0.0a6.tar.gz", hash = "sha256:962146eb8465b253698abb1ee29282aefe233109c18bab338a67d13a148b8f2d", size = 78230, upload-time = "2026-06-11T10:37:57.7Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9f/0d/c022ae66ac4d2dd9f28d5da97236932b52c786a1ae8f0e7f1d5649903af9/kitconcept_contactblock-1.0.0a5-py3-none-any.whl", hash = "sha256:1fb4d2c9d29dc6680f51f2fbc5863c9f7210ba52bb940b9a10b509cd1eddafa6", size = 84589, upload-time = "2026-02-16T09:56:52.297Z" },
+    { url = "https://files.pythonhosted.org/packages/99/e1/1302d9c2b2dd5af87e00485fea716254d8ed6e90cf82acb09ba489f06e64/kitconcept_contactblock-1.0.0a6-py3-none-any.whl", hash = "sha256:6aca6cfd5dd7a6d6ac57fa0feb50988f81cc6672b09364ae1e0926794ed5d32a", size = 84594, upload-time = "2026-06-11T10:37:58.888Z" },
 ]
 
 [[package]]
@@ -1399,7 +1399,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
-    { name = "kitconcept-contactblock", specifier = "==1.0.0a5" },
+    { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0a18" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
@@ -1450,9 +1450,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/54/7f/6fd1d080f1ab3abc73d3985895b3e52ce998db58fe3b33b31720af14b1bf/kitconcept_solr-2.0.0a14.tar.gz", hash = "sha256:101ea897174079ee2e504fb14b50ba9a290451900b4ed46e3d37a64ddc5920c0", size = 52314, upload-time = "2026-06-10T14:44:41.164090Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/54/7f/6fd1d080f1ab3abc73d3985895b3e52ce998db58fe3b33b31720af14b1bf/kitconcept_solr-2.0.0a14.tar.gz", hash = "sha256:101ea897174079ee2e504fb14b50ba9a290451900b4ed46e3d37a64ddc5920c0", size = 52314, upload-time = "2026-06-10T14:44:41.164Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6e/28/2b595cbf09bc45e2b5d2fb46b7b0a83c00b4959190a530f472e0d3335d36/kitconcept_solr-2.0.0a14-py3-none-any.whl", hash = "sha256:014c2ccefd935d6ff9d5cb7c137e4e2534d6e9c9c951879775c54956133b792f", size = 40365, upload-time = "2026-06-10T14:44:39.892486Z" },
+    { url = "https://files.pythonhosted.org/packages/6e/28/2b595cbf09bc45e2b5d2fb46b7b0a83c00b4959190a530f472e0d3335d36/kitconcept_solr-2.0.0a14-py3-none-any.whl", hash = "sha256:014c2ccefd935d6ff9d5cb7c137e4e2534d6e9c9c951879775c54956133b792f", size = 40365, upload-time = "2026-06-10T14:44:39.892Z" },
 ]
 
 [[package]]

@@ -8,6 +8,24 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.17 (2026-06-12)
+
+### Feature
+
+- Update floated image styles. @danlavrz 
+- Update post-footer component to follow improved implementation in VLT. @danalvrz 
+
+### Bugfix
+
+- Update kitconcept.solr to 2.0.0a14 @iRohitSingh 
+- VLT 8a30 and Volto 19.1.4
+  See https://github.com/plone/volto/releases/tag/19.1.4
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a30 @sneridagh 
+
+### Internal
+
+- Hide Intranet header setting from root sidebar. @danalvrz 
+
 ## 2.0.0-alpha.16 (2026-06-09)
 
 ### Feature

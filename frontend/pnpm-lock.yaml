@@ -1765,6 +1765,74 @@ importers:
         specifier: ^3.2.4
         version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
 
+  packages/volto-dsgvo-banner/packages/volto-dsgvo-banner:
+    dependencies:
+      '@datapunt/matomo-tracker-js':
+        specifier: 0.5.1
+        version: 0.5.1
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-ga4:
+        specifier: ^2.1.0
+        version: 2.1.0
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.6
+      release-it:
+        specifier: ^17.1.1
+        version: 17.11.0(typescript@5.9.3)
+
+  packages/volto-form-block/frontend/packages/volto-form-block:
+    dependencies:
+      '@hcaptcha/react-hcaptcha':
+        specifier: ^0.3.6
+        version: 0.3.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      file-saver:
+        specifier: ^2.0.5
+        version: 2.0.5
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-google-recaptcha-v3:
+        specifier: ^1.8.0
+        version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.6
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/types
+      '@types/lodash':
+        specifier: ^4.14.201
+        version: 4.17.24
+      '@types/react':
+        specifier: ^18.3.1
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.31)
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
+      release-it:
+        specifier: ^19.0.5
+        version: 19.2.4(@types/node@24.13.1)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.1.2
+        version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
+
   packages/volto-heading-block/packages/volto-heading-block:
     dependencies:
       react:
@@ -2998,6 +3066,9 @@ packages:
 
   '@cypress/xvfb@1.2.4':
     resolution: {integrity: sha512-skbBzPggOVYCbnGgV+0dmBdW/s77ZkAOXIC1knS8NagwDjBrNC1LuXtQJeiN6l+m7lzmHtaoUw/ctJKdqkG57Q==}
+
+  '@datapunt/matomo-tracker-js@0.5.1':
+    resolution: {integrity: sha512-9/MW9vt/BA5Db7tO6LqCeQKtuvBNjyq51faF3AzUmPMlYsJCnASIxcut3VqJKiribhUoey7aYbPIYuj9x4DLPA==}
 
   '@discoveryjs/json-ext@0.5.7':
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -10280,6 +10351,9 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
+  react-ga4@2.1.0:
+    resolution: {integrity: sha512-ZKS7PGNFqqMd3PJ6+C2Jtz/o1iU9ggiy8Y8nUeksgVuvNISbmrQtJiZNvC/TjDsqD0QlU5Wkgs7i+w9+OjHhhQ==}
+
   react-google-recaptcha-v3@1.11.0:
     resolution: {integrity: sha512-kLQqpz/77m8+trpBwzqcxNtvWZYoZ/YO6Vm2cVTHW8hs80BWUfDpC7RDwuAvpswwtSYApWfaSpIDFWAIBNIYxQ==}
     peerDependencies:
@@ -13412,6 +13486,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@datapunt/matomo-tracker-js@0.5.1': {}
+
   '@discoveryjs/json-ext@0.5.7': {}
 
   '@dnd-kit/accessibility@3.1.1(react@18.2.0)':
@@ -15536,7 +15612,7 @@ snapshots:
       chalk: 3.0.0
       css.escape: 1.5.1
       dom-accessibility-api: 0.6.3
-      lodash: 4.18.1
+      lodash: 4.17.21
       redent: 3.0.0
 
   '@testing-library/jest-dom@6.9.1':
@@ -18187,7 +18263,7 @@ snapshots:
       '@babel/plugin-syntax-flow': 7.29.7(@babel/core@7.29.7)
       '@babel/plugin-transform-react-jsx': 7.29.7(@babel/core@7.29.7)
       eslint: 8.57.1
-      lodash: 4.18.1
+      lodash: 4.17.21
       string-natural-compare: 3.0.1
 
   eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1):
@@ -20720,7 +20796,7 @@ snapshots:
       ky: 1.14.3
       registry-auth-token: 5.1.1
       registry-url: 6.0.1
-      semver: 7.6.3
+      semver: 7.8.4
 
   param-case@3.0.4:
     dependencies:
@@ -21131,7 +21207,7 @@ snapshots:
 
   pretty-error@4.0.0:
     dependencies:
-      lodash: 4.18.1
+      lodash: 4.17.21
       renderkid: 3.0.0
 
   pretty-format@26.6.2:
@@ -21593,6 +21669,8 @@ snapshots:
   react-fast-compare@2.0.4: {}
 
   react-fast-compare@3.2.2: {}
+
+  react-ga4@2.1.0: {}
 
   react-google-recaptcha-v3@1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
@@ -22151,7 +22229,7 @@ snapshots:
       css-select: 4.3.0
       dom-converter: 0.2.0
       htmlparser2: 6.1.0
-      lodash: 4.18.1
+      lodash: 4.17.21
       strip-ansi: 6.0.1
 
   request-progress@3.0.0:
@@ -23469,7 +23547,7 @@ snapshots:
       is-npm: 6.1.0
       latest-version: 9.0.0
       pupa: 3.3.0
-      semver: 7.6.3
+      semver: 7.8.4
       xdg-basedir: 5.1.0
 
   uri-js@4.4.1:

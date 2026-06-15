@@ -8,6 +8,8 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-beta.35 (2026-06-15)
+
 ## 1.0.0-beta.34 (2026-05-11)
 
 ### Bugfix

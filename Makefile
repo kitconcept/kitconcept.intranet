@@ -21,8 +21,17 @@ STACK_HOSTNAME=kitconcept-intranet.localhost
 STACK_PROFILE := $(if $(filter undefined,$(origin COMPOSE_PROFILES)),dev,$(COMPOSE_PROFILES))
 COMPOSE_DEV := docker compose -f $(STACK_FILE) --profile dev
 COMPOSE_ACCEPTANCE := docker compose -f $(STACK_FILE) --profile acceptance
+COMPOSE_SOLR := docker compose -f $(STACK_FILE) --profile solr
 COMPOSE_A11y := docker compose -f $(STACK_FILE) --profile a11y
 COMPOSE_CI := docker compose -f $(STACK_FILE) -f $(STACK_FILE_CI) --profile $(STACK_PROFILE)
+
+# Run the given command in a new session (detached from the controlling
+# terminal) so it cannot be interrupted by the Ctrl-C that stops a foreground
+# process. Used to make container teardown survive an impatient/repeated Ctrl-C.
+# `docker compose` traps SIGINT itself, so without this a second Ctrl-C aborts
+# the teardown mid-way and orphans containers. python3 is always present (the
+# backend toolchain depends on it) and os.setsid is portable across Linux/macOS.
+DETACH := python3 -c "import os,sys,subprocess as s; os.setsid(); sys.exit(s.call(sys.argv[1:]))"
 
 # CI Test Command
 CI_TEST_COMMAND := $(if $(filter a11y,$(STACK_PROFILE)),ci-acceptance-a11y-test,ci-acceptance-test)
@@ -243,10 +252,25 @@ solr-activate-and-reindex: ## Activate solr and reindex
 ####################################################
 ## Acceptance
 ####################################################
+.PHONY: acceptance-solr-start
+acceptance-solr-start: ## Start solr (and tika) for the acceptance backend
+	@echo "Start solr for acceptance"
+	$(COMPOSE_SOLR) up -d solr-acceptance tika-acceptance
+
+.PHONY: acceptance-solr-stop
+acceptance-solr-stop: ## Stop the acceptance solr (and tika)
+	@echo "Stop solr for acceptance"
+	$(COMPOSE_SOLR) stop solr-acceptance tika-acceptance
+
 .PHONY: acceptance-backend-dev-start
 acceptance-backend-dev-start: ## Build Acceptance Servers
 	@echo "Build acceptance backend"
-	$(MAKE) -C "./backend/" acceptance-backend-start
+	@# Stop solr/tika when the backend exits. The teardown runs detached (new
+	@# session) so a repeated Ctrl-C aimed at the foreground backend cannot
+	@# interrupt it mid-way and orphan the tika container.
+	@trap '$(DETACH) $(COMPOSE_SOLR) stop solr-acceptance tika-acceptance' EXIT; \
+		$(MAKE) acceptance-solr-start && \
+		$(MAKE) -C "./backend/" acceptance-backend-start
 
 .PHONY: acceptance-frontend-dev-start
 acceptance-frontend-dev-start: ## Build Acceptance Servers

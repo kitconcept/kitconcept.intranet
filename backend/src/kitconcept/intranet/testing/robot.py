@@ -22,6 +22,10 @@ ANSWERS_CONTENT = {
     "portal_timezone": "Europe/Berlin",
     "workflow": "public",
     "setup_content": False,
+    # Install the solr profiles so that the solr registry records exist.
+    # Solr stays inactive (collective.solr.active=False), the solr
+    # acceptance tests activate it themselves.
+    "setup_solr": True,
     "authentication": {"provider": "internal"},
 }
 

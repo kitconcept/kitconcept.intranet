@@ -2,6 +2,16 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0a17 (2026-06-12)
+
+
+### Bugfix
+
+- Update kitconcept.solr to 2.0.0a14 @iRohitSingh 
+- VLT 8a30 and Volto 19.1.4
+  See https://github.com/plone/volto/releases/tag/19.1.4
+  See https://github.com/kitconcept/volto-light-theme/releases/tag/8.0.0a30 @sneridagh 
+
 ## 2.0.0a16 (2026-06-09)
 
 

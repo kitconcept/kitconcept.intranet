@@ -4,6 +4,8 @@
         name="News Item"
         i18n:domain="plone"
 >
+  <property name="allow_discussion">True</property>
+
   <property name="behaviors"
             purge="false"
   >

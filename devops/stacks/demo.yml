@@ -2,6 +2,19 @@
 version: "3.9"
 
 services:
+  swarm-cronjob:
+    image: crazymax/swarm-cronjob:1.16
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - "TZ=Europe/Berlin"
+      - "LOG_LEVEL=info"
+      - "LOG_JSON=false"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
   frontend:
     image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
     environment:
@@ -79,6 +92,23 @@ services:
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.tls=true
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.service=svc-${STACK_PREFIX}-back
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.middlewares=gzip,mw-${STACK_PREFIX}-back-auth,mw-${STACK_PREFIX}-back-vhm-classic
+
+  backend-cron-worker:
+    image: ${IMAGE_NAME_PREFIX}-beispiele:${IMAGE_TAG:-latest}
+    command: ./docker-entrypoint.sh run scripts/review_reminder.py
+    environment:
+      RELSTORAGE_DSN: true
+    deploy:
+      mode: replicated
+      replicas: 0
+      labels:
+        - "swarm.cronjob.enable=true"
+        - "swarm.cronjob.schedule=0 0 * * *"
+        - "swarm.cronjob.skip-running=false"
+      restart_policy:
+        condition: none
+    networks:
+      - nw-internal
 
   tika:
     image: apache/tika:3.2.3.0-full

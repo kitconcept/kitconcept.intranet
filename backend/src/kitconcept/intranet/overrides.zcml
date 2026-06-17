@@ -2,7 +2,6 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="kitconcept.internet"
     >
 
@@ -12,19 +11,6 @@
       class=".search.QueryBuilder"
       permission="zope2.View"
       layer=".interfaces.IBrowserLayer"
-      />
-
-  <!-- @site serves public bootstrap data only and must stay reachable for
-       anonymous users even when the restricted workflow removes View from
-       the site root (e.g. so volto-solr can detect collective.solr.active
-       before login). Overrides the zope2.View registration in plone.restapi. -->
-  <plone:service
-      method="GET"
-      factory="plone.restapi.services.site.get.SiteGet"
-      for="plone.restapi.bbb.IPloneSiteRoot"
-      permission="zope.Public"
-      layer=".interfaces.IBrowserLayer"
-      name="@site"
       />
 
 </configure>

@@ -14,6 +14,20 @@
       name="@types"
       />
 
+  <!-- @site serves public bootstrap data only and must stay reachable for
+       anonymous users even when the restricted workflow removes View from
+       the site root (e.g. so volto-solr can detect collective.solr.active
+       before login). Re-registers the service from plone.restapi (which uses
+       zope2.View) on our browser layer with a public permission. -->
+  <plone:service
+      method="GET"
+      factory="plone.restapi.services.site.get.SiteGet"
+      for="plone.restapi.bbb.IPloneSiteRoot"
+      permission="zope.Public"
+      layer="kitconcept.intranet.interfaces.IBrowserLayer"
+      name="@site"
+      />
+
   <adapter
       factory=".byline.BylineExpander"
       name="byline"

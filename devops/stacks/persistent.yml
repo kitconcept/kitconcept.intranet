@@ -2,19 +2,6 @@
 version: "3.9"
 
 services:
-  swarm-cronjob:
-    image: crazymax/swarm-cronjob:1.16
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - "TZ=Europe/Berlin"
-      - "LOG_LEVEL=info"
-      - "LOG_JSON=false"
-    deploy:
-      placement:
-        constraints:
-          - node.role == manager
-
   frontend:
     image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
     environment:
@@ -98,7 +85,7 @@ services:
     image: ${IMAGE_NAME_PREFIX}-backend:${IMAGE_TAG:-latest}
     command: ./docker-entrypoint.sh run scripts/review_reminder.py
     environment:
-      RELSTORAGE_DSN: true
+      ZEO_ADDRESS: "${STACK_NAME}_zeo:8100"
     deploy:
       mode: replicated
       replicas: 0

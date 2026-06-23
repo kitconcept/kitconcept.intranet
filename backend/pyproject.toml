@@ -80,12 +80,55 @@ path = "src/kitconcept/intranet/__init__.py"
 strict-naming = true
 
 [tool.hatch.build.targets.sdist]
+include = [
+  "src/kitconcept/**",
+  "docs/**",
+  "news/**",
+  "tests/**",
+  "scripts/**",
+  ".coveragerc",
+  ".dockerignore",
+  ".editorconfig",
+  "*.txt",
+  "*.yml",
+  "*.md",
+]
 exclude = [
-  "/.github",
+  "*-mxdev.txt",
+  "Dockerfile*",
+  "mx.ini",
+  "Makefile",
+  "instance.yaml",
+  "src/kitconcept/intranet/distributions/intranet/content/content/**",
+  "*.pyc",
+  ".DS_Store",
 ]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/kitconcept"]
+include = [
+  "src/kitconcept/**",
+  "docs/**",
+  "news/**",
+  "tests/**",
+  "scripts/**",
+  ".coveragerc",
+  ".dockerignore",
+  ".editorconfig",
+  "*.txt",
+  "*.yml",
+  "*.md",
+]
+exclude = [
+  "*-mxdev.txt",
+  "Dockerfile*",
+  "mx.ini",
+  "Makefile",
+  "instance.yaml",
+  "src/kitconcept/intranet/distributions/intranet/content/content/**",
+  "*.pyc",
+  ".DS_Store",
+]
 
 [tool.coverage.run]
 source_pkgs = ["kitconcept.intranet", "tests"]

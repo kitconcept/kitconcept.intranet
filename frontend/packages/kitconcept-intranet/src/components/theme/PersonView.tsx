@@ -11,7 +11,6 @@ import mailSVG from '@plone/volto/icons/email.svg';
 import worldSVG from '@plone/volto/icons/world.svg';
 import faxSVG from '@plone/volto/icons/printer.svg';
 import phone2SVG from '../../icons/phone.svg';
-import profilePlaceholder from './profile-placeholder.svg';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 
@@ -94,7 +93,7 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
           ) : (
             <img
               className="profile-image profile-image--placeholder"
-              src={profilePlaceholder}
+              src={config.settings.placeholderImages?.Person}
               alt={profile.fullName}
             />
           )}

@@ -23,6 +23,12 @@ class TypesGet(BaseService):
                 )
                 if not rating_enabled:
                     continue
+            if fieldset["id"] == "Content Review & Reminders":
+                review_enabled = registry.get(
+                    "kitconcept.intranet.enable_content_review", False
+                )
+                if not review_enabled:
+                    continue
             fieldsets.append(fieldset)
 
         response["fieldsets"] = fieldsets

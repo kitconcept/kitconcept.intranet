@@ -87,6 +87,20 @@ class IIntranetSettings(Interface):
         defaultFactory=list,
     )
 
+    enable_content_review = schema.Bool(
+        title=_("Enable Content Review"),
+        description=_("Enable content review reminders globally for the Intranet."),
+        required=False,
+        default=False,
+    )
+
+    content_review_default_interval = schema.Choice(
+        title=_("Default review interval"),
+        vocabulary="kitconcept.intranet.vocabularies.content_review_intervals",
+        required=True,
+        default="6m",
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
@@ -139,4 +153,7 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.enable_content_rating"] = (
             settings.enable_content_rating
+        )
+        data["kitconcept.intranet.enable_content_review"] = (
+            settings.enable_content_review
         )

@@ -24,6 +24,9 @@ IMAGE_NAME=ghcr.io/kitconcept/kitconcept-intranet-frontend
 IMAGE_TAG=latest
 VOLTO_VERSION = $(shell cat ./mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 
+# DeepL API key for the DeepL acceptance tests; override via environment.
+DEEPL_API_KEY ?=
+
 .PHONY: help
 help: ## Show this help
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
@@ -131,11 +134,20 @@ acceptance-frontend-prod-start: ## Start acceptance frontend in production mode
 
 .PHONY: acceptance-test
 acceptance-test: ## Start Cypress in interactive mode
-	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx},excludeSpecPattern='$(CURRENT_DIR)'/cypress/tests/{a11y,visual}*/**/*.{js,jsx,ts,tsx}'
+	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx},excludeSpecPattern='$(CURRENT_DIR)'/cypress/tests/{a11y,visual,deepl}*/**/*.{js,jsx,ts,tsx}'
 
 .PHONY: ci-acceptance-test
 ci-acceptance-test: ## Run cypress tests in headless mode for CI
-	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx},excludeSpecPattern='$(CURRENT_DIR)'/cypress/tests/{a11y,visual}*/**/*.{js,jsx,ts,tsx}'
+	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx},excludeSpecPattern='$(CURRENT_DIR)'/cypress/tests/{a11y,visual,deepl}*/**/*.{js,jsx,ts,tsx}'
+
+## DeepL acceptance tests (require DEEPL_API_KEY)
+.PHONY: acceptance-deepl-test
+acceptance-deepl-test: ## Start DeepL Cypress in interactive mode
+	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/deepl/**/*.{js,jsx,ts,tsx}' --env DEEPL_API_KEY=$(DEEPL_API_KEY)
+
+.PHONY: ci-acceptance-deepl-test
+ci-acceptance-deepl-test: ## Run DeepL cypress tests in headless mode for CI
+	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/deepl/**/*.{js,jsx,ts,tsx}' --env DEEPL_API_KEY=$(DEEPL_API_KEY)
 
 ## A11y tests
 .PHONY: acceptance-a11y-frontend-dev-start

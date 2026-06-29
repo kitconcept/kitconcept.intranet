@@ -1339,12 +1339,38 @@ wheels = [
 ]
 
 [[package]]
+name = "kitconcept-deepl"
+source = { directory = "../frontend/packages/volto-kitconcept-deepl/backend" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "horse-with-no-namespace", marker = "extra == 'test'" },
+    { name = "plone-api" },
+    { name = "plone-app-testing", marker = "extra == 'test'" },
+    { name = "plone-restapi" },
+    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+    { name = "pytest", marker = "extra == 'test'" },
+    { name = "pytest-cov", marker = "extra == 'test'" },
+    { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.0.0a2" },
+]
+provides-extras = ["test"]
+
+[[package]]
 name = "kitconcept-intranet"
 source = { editable = "." }
 dependencies = [
     { name = "collective-solr" },
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
+    { name = "kitconcept-deepl" },
     { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
     { name = "pas-plugins-keycloakgroups" },
@@ -1387,6 +1413,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0a20" },
+    { name = "kitconcept-deepl", directory = "../frontend/packages/volto-kitconcept-deepl/backend" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

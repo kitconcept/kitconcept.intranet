@@ -170,6 +170,10 @@ solr-activate-and-reindex: $(VENV_FOLDER) instance/etc/zope.conf ## Activate sol
 acceptance-backend-start: ## Start backend acceptance server
 	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.ROBOT_TESTING
 
+.PHONY: acceptance-deepl-backend-start
+acceptance-deepl-backend-start: ## Start backend acceptance server for the DeepL tests (multilingual)
+	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.DEEPL_ROBOT_TESTING
+
 .PHONY: acceptance-backend-start
 acceptance-a11y-backend-start: ## Start backend a11y acceptance server
 	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.A11Y_TESTING

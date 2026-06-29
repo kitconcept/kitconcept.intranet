@@ -2,9 +2,7 @@ context('Table Block', () => {
   beforeEach(() => {
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '/**/Document').as('schema');
-
-    // The slate table re-render during translation can throw a benign React
-    // "removeChild" NotFoundError; ignore it so the test can continue.
+    
     cy.on('uncaught:exception', (err) => {
       if (err.message.includes("Failed to execute 'removeChild'")) {
         return false;

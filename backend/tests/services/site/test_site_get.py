@@ -19,7 +19,10 @@ class TestSiteGet:
 
     @pytest.mark.parametrize(
         "key,type_",
-        (("kitconcept.person_picture_aspect_ratio", str),),
+        (
+            ("kitconcept.person_picture_aspect_ratio", str),
+            ("kitconcept.intranet.enable_content_review", bool),
+        ),
     )
     def test_keys(self, key, type_):
         response = self.api_session.get("/@site")
@@ -29,7 +32,10 @@ class TestSiteGet:
 
     @pytest.mark.parametrize(
         "key,expected",
-        (("kitconcept.person_picture_aspect_ratio", "rounded1to1"),),
+        (
+            ("kitconcept.person_picture_aspect_ratio", "rounded1to1"),
+            ("kitconcept.intranet.enable_content_review", False),
+        ),
     )
     def test_values(self, key, expected):
         response = self.api_session.get("/@site")

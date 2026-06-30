@@ -8,8 +8,8 @@ def portal(portal_class):
 
 class TestSiteGet:
     @pytest.fixture(autouse=True)
-    def _setup(self, api_manager_request, current_versions):
-        self.api_session = api_manager_request
+    def _setup(self, manager_request, current_versions):
+        self.api_session = manager_request
         self.profile_version = current_versions.base
 
     def test_response_type(self):

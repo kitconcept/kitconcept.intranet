@@ -11,8 +11,8 @@ def portal(portal_class):
 
 class TestSystemGet:
     @pytest.fixture(autouse=True)
-    def _setup(self, api_manager_request, current_versions):
-        self.api_session = api_manager_request
+    def _setup(self, manager_request, current_versions):
+        self.api_session = manager_request
         self.profile_version = current_versions.base
 
     def test_response_type(self):
@@ -45,10 +45,10 @@ class TestSystemGet:
     @pytest.mark.parametrize(
         "key,expected",
         (
-            ("cmf_version", "3.7"),
+            ("cmf_version", "3.8"),
             ("debug_mode", "No"),
-            ("plone_restapi_version", "9.15.4"),
-            ("plone_version", "6.1.4"),
+            ("plone_restapi_version", "10.0.0"),
+            ("plone_version", "6.2.0"),
             ("upgrade", False),
         ),
     )

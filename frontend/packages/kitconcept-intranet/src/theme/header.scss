@@ -1,0 +1,26 @@
+:root {
+  --topbar-height: 56px;
+}
+
+.header-intranet-compact-wrapper .pusher {
+  margin-top: var(--topbar-height);
+}
+
+.has-toolbar .header-intranet-compact-wrapper .pusher {
+  height: initial;
+}
+
+.header-intranet-compact {
+  position: fixed;
+  z-index: 160;
+  top: 0;
+  min-width: 100%;
+  min-height: var(--topbar-height);
+  background-color: aqua;
+}
+
+//
+.sidebar-container {
+  top: var(--topbar-height);
+  height: calc(100vh - var(--topbar-height));
+}

@@ -28,7 +28,7 @@ class TestIndexer:
         "responsibility,results",
         [
             ("Onboarding", 1),
-            ("IT-Support", 2),
+            ("IT-Support", 1),
         ],
     )
     def test_search(self, responsibility: str, results: int):

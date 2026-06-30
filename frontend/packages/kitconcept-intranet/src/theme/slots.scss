@@ -1,7 +1,18 @@
-#page-document .blocks-group-wrapper > .documentByLine {
+#page-document .blocks-group-wrapper > .documentByLine,
+#page-edit .q.container .documentByLine {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
+  display: flex;
+  align-items: center;
   margin-bottom: $spacing-medium;
+  gap: $spacing-small;
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+  }
   .author-name {
     text-decoration: none;
   }

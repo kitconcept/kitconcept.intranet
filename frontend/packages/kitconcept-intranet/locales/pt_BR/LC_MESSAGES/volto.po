@@ -21,6 +21,11 @@ msgstr ""
 msgid "Address"
 msgstr "Endereço"
 
+#. Default: "Assignee: *"
+#: components/ContentReviewSidebar/DelegateReview
+msgid "Assignee"
+msgstr ""
+
 #. Default: "Bio"
 #: components/theme/PersonView
 msgid "Bio"
@@ -37,9 +42,17 @@ msgid "By"
 msgstr "Por"
 
 #. Default: "Cancel"
+#: components/ContentReviewSidebar/DelegateReview
+#: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr ""
+
+#. Default: "Comment:"
+#: components/ContentReviewSidebar/DelegateReview
+#: components/ContentReviewSidebar/PostponeReview
+msgid "Comment"
+msgstr ""
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -47,10 +60,31 @@ msgstr "Cancelar"
 msgid "Contact"
 msgstr "Contato"
 
+#. Default: "Content marked as reviewed"
+#: components/Toolbar/DocumentReview
+msgid "Content marked as reviewed"
+msgstr ""
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
 msgstr "Criado em"
+
+#. Default: "Delegate Review Update"
+#: components/Toolbar/DocumentReview
+msgid "Delegate Review Update"
+msgstr ""
+
+#. Default: "Delegate"
+#: components/ContentReviewSidebar/DelegateReview
+msgid "DelegateButton"
+msgstr ""
+
+#. Default: "Document Review"
+#: components/Toolbar/DocumentReview
+#: components/Toolbar/DocumentReviewPlug
+msgid "Document Review"
+msgstr ""
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
@@ -70,9 +104,15 @@ msgstr "Término"
 
 #. Default: "Error"
 #: components/Blocks/IFrame/isValidUrl
+#: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
 msgid "Error"
 msgstr "Erro"
+
+#. Default: "Expand sidebar"
+#: components/ContentReviewSidebar/ReviewSidebar
+msgid "Expand sidebar"
+msgstr ""
 
 #. Default: "Feedback"
 #: components/FeedBackForm/FeedBackForm
@@ -119,6 +159,11 @@ msgstr "URL inválida"
 msgid "Last Modified On"
 msgstr "Última modificação em"
 
+#. Default: "Last updated"
+#: components/Toolbar/DocumentReview
+msgid "Last updated"
+msgstr ""
+
 #. Default: "List with date"
 #: index
 msgid "List with date"
@@ -129,10 +174,25 @@ msgstr "Lista com data"
 msgid "Location"
 msgstr "Local"
 
+#. Default: "Mark Changes Required"
+#: components/Toolbar/DocumentReview
+msgid "Mark Changes Required"
+msgstr ""
+
+#. Default: "Mark as Reviewed"
+#: components/Toolbar/DocumentReview
+msgid "Mark as Reviewed"
+msgstr ""
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
 msgstr "Nome"
+
+#. Default: "Next review"
+#: components/Toolbar/DocumentReview
+msgid "Next review"
+msgstr ""
 
 #. Default: "Only internal e-mail addresses are permitted."
 #: components/FeedBackForm/FeedBackForm
@@ -161,16 +221,42 @@ msgstr "Por favor, insira seu endereço de e-mail organizacional."
 msgid "Please fill in the Feedback field"
 msgstr "Por favor, preencha o campo de Feedback"
 
+#. Default: "Postpone"
+#: components/ContentReviewSidebar/PostponeReview
+msgid "Postpone"
+msgstr ""
+
+#. Default: "Postpone Review"
+#: components/Toolbar/DocumentReview
+msgid "Postpone Review"
+msgstr ""
+
+#. Default: "Postpone Review"
+#: components/ContentReviewSidebar/PostponeReview
+msgid "PostponeTitle"
+msgstr ""
+
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
 msgstr "Responsabilidades"
+
+#. Default: "Review"
+#: components/ContentReviewSidebar/ReviewSidebar
+#: components/Toolbar/DocumentReviewPlug
+msgid "Review"
+msgstr ""
 
 #. Default: "Room"
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "Room"
 msgstr "Sala"
+
+#. Default: "Please Select ..."
+#: components/ContentReviewSidebar/DelegateReview
+msgid "SelectAssigneePlaceholder"
+msgstr ""
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
@@ -186,6 +272,11 @@ msgstr "Gostaria de compartilhar este conteúdo da intranet com você:"
 #: components/ContentInteractions/ContentInteractions
 msgid "Share this page via email"
 msgstr "Compartilhe esta página por e-mail"
+
+#. Default: "Shrink sidebar"
+#: components/ContentReviewSidebar/ReviewSidebar
+msgid "Shrink sidebar"
+msgstr ""
 
 #. Default: "Site"
 #: components/theme/PersonView
@@ -218,7 +309,10 @@ msgid "Subject page/URL"
 msgstr "Página/URL do assunto"
 
 #. Default: "Success"
+#: components/ContentReviewSidebar/DelegateReview
+#: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
+#: components/Toolbar/DocumentReview
 msgid "Success"
 msgstr "Sucesso"
 
@@ -232,6 +326,11 @@ msgstr "O conteúdo exibido é personalizado para sua área organizacional e loc
 msgid "To submit a Like you must be logged in"
 msgstr "Para curtir, você precisa estar logado"
 
+#. Default: "Use preset review interval"
+#: components/ContentReviewSidebar/PostponeReview
+msgid "Use preset review interval"
+msgstr ""
+
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
@@ -242,10 +341,55 @@ msgstr "Site"
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr "Seu feedback foi enviado com sucesso. Você receberá um e-mail de confirmação em breve."
 
+#. Default: "If you wish, you can leave a comment for the person incharge here"
+#: components/ContentReviewSidebar/DelegateReview
+msgid "delegateComment"
+msgstr ""
+
+#. Default: "Assign the view or update of this content to another person. Select the responsible person and provide a short description of the task."
+#: components/ContentReviewSidebar/DelegateReview
+msgid "delegateReview"
+msgstr ""
+
+#. Default: "Review has been successfully delegated"
+#: components/ContentReviewSidebar/DelegateReview
+msgid "delegateSuccessful"
+msgstr ""
+
+#. Default: "Delegate Review or Update"
+#: components/ContentReviewSidebar/DelegateReview
+msgid "delegateTitle"
+msgstr ""
+
+#. Default: "The check interval is set to {interval}. To change it, you must edit the content."
+#: components/ContentReviewSidebar/PostponeReview
+msgid "help"
+msgstr ""
+
+#. Default: "Review has been successfully postponed"
+#: components/ContentReviewSidebar/PostponeReview
+msgid "messagePostpone"
+msgstr ""
+
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
 msgstr "última modificação"
+
+#. Default: "Next Review on:"
+#: components/ContentReviewSidebar/PostponeReview
+msgid "nextReview"
+msgstr ""
+
+#. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."
+#: components/ContentReviewSidebar/PostponeReview
+msgid "postponeComment"
+msgstr ""
+
+#. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
+#: components/ContentReviewSidebar/PostponeReview
+msgid "postponeReview"
+msgstr ""
 
 #. Default: "published"
 #: slots/DocumentByLine/DocumentByLine

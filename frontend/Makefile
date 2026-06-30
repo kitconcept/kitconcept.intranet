@@ -145,10 +145,6 @@ ci-acceptance-test: ## Run cypress tests in headless mode for CI
 acceptance-deepl-test: ## Start DeepL Cypress in interactive mode
 	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/deepl/**/*.{js,jsx,ts,tsx}' --env DEEPL_API_KEY=$(DEEPL_API_KEY)
 
-.PHONY: ci-acceptance-deepl-test
-ci-acceptance-deepl-test: ## Run DeepL cypress tests in headless mode for CI
-	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/deepl/**/*.{js,jsx,ts,tsx}' --env DEEPL_API_KEY=$(DEEPL_API_KEY)
-
 ## A11y tests
 .PHONY: acceptance-a11y-frontend-dev-start
 acceptance-a11y-backend-dev-start: ## Start a11y acceptance frontend in prod mode

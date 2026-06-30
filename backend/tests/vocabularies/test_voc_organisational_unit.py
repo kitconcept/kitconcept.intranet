@@ -24,7 +24,7 @@ class TestVocab:
         [
             (
                 "1a22eddf0e7941a0962cbfaa785e4b4d",
-                "Institute of Robotics and Mechatronics(Organisational unit)",
+                "Organisational unit",
             )
         ],
     )

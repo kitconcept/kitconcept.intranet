@@ -1,0 +1,120 @@
+#sidebar-review {
+  .delegate-review-buttons,
+  .postpone-review-buttons {
+    display: flex;
+    justify-content: right;
+    margin-top: 40px;
+    gap: 10px;
+
+    .postpone-button,
+    .cancel-button,
+    .delegate-button {
+      @include button-style;
+    }
+    .cancel-button {
+      border-color: red;
+      color: red;
+    }
+  }
+  .postpone-review-form .help {
+    @include marginal-description();
+    color: $grey;
+  }
+
+  .postpone-form-title,
+  .delegate-form-title {
+    padding: 12px 14px;
+    background: #f3f4f5;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .postpone-form-content,
+  .delegate-form-content {
+    padding: 1em;
+  }
+
+  #field-review-comment {
+    border: none;
+    border-bottom: 1px solid #c7d5d8;
+    outline: none;
+    resize: vertical;
+  }
+}
+
+.review-menu {
+  .review-menu-header {
+    padding: 15px;
+    background-color: $lightgrey;
+    color: $grey;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .review-info-item {
+    padding: 15px;
+    background-color: $lightgrey;
+  }
+
+  .review-info-row {
+    display: grid;
+    color: $grey;
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+
+    .review-info-label,
+    .review-info-value {
+      margin: 0;
+      font-size: 12px;
+    }
+
+    .review-info-value.due_date {
+      color: red;
+    }
+  }
+}
+
+.review-popover {
+  width: 320px;
+  border-radius: 0%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+  .document-review-dialog {
+    width: 100%;
+    outline: none;
+  }
+
+  .review-menu {
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    li {
+      button {
+        display: flex;
+        align-self: stretch;
+        padding: 15px;
+        border: none;
+        background-color: transparent;
+        color: $black;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #b8c6c8;
+      }
+    }
+  }
+}
+
+.document-review-option:disabled,
+.document-review-option[data-disabled] {
+  opacity: 0.5;
+}

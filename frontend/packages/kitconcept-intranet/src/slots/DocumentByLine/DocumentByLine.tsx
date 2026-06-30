@@ -76,8 +76,11 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
       };
     });
   }, [creators, content]);
-
   const primaryCreator = creatorsWithData[0];
+
+  if (!content) {
+    return null;
+  }
 
   return (
     <>

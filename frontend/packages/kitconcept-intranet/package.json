@@ -65,7 +65,8 @@
     "@kitconcept/core",
     "@plone-collective/volto-authomatic",
     "@kitconcept/volto-solr",
-    "@kitconcept/volto-contact-block"
+    "@kitconcept/volto-contact-block",
+    "@kitconcept/volto-kitconcept-deepl"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
@@ -90,6 +91,7 @@
     "@plone/volto-form-block": "^1.0.0-alpha.0",
     "@plone-collective/volto-authomatic": "3.0.0-alpha.6",
     "@plone-collective/volto-image-editor": "1.0.1",
+    "@kitconcept/volto-kitconcept-deepl": "workspace:*",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
     "react-aria-components": "catalog:",

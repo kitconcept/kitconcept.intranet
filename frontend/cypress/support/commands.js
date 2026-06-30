@@ -1,5 +1,41 @@
 import '@plone/volto/cypress/add-commands';
 
+// --- DEEPL -------------------------------------------------------------------
+// Configure the DeepL control panel with the API key and log in.
+// Common setup for all block translation acceptance tests.
+Cypress.Commands.add('setupDeepL', () => {
+  const apiKey = Cypress.env('DEEPL_API_KEY');
+  if (!apiKey) {
+    throw new Error('DEEPL_API_KEY environment variable is not set');
+  }
+
+  cy.request({
+    url: '/++api++/@controlpanels/DeepLSettings',
+    method: 'PATCH',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: 'Basic YWRtaW46c2VjcmV0',
+    },
+    body: {
+      deepl_api_auth_token: apiKey,
+      deepl_api_timeout: 10,
+    },
+  }).then((response) => {
+    expect(response.status).to.eq(204);
+  });
+
+  cy.autologin();
+});
+
+// Open "Manage Translations" and trigger the automatic translation,
+// landing on the German (/de) add form. Common to all block tests.
+Cypress.Commands.add('createTranslation', () => {
+  cy.get('#toolbar-more').click();
+  cy.findByText('Manage Translations').should('be.visible').click();
+  cy.get('.manage-multilingual-tools .buttons a').eq(1).click();
+});
+
 // --- SOLR --------------------------------------------------------------------
 Cypress.Commands.add('reindexSolr', () => {
   const log = Cypress.log({

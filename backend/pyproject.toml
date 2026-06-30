@@ -38,6 +38,7 @@ dependencies = [
     "collective-solr==10.1.1",
     "kitconcept.solr==2.0.0a14",
     "kitconcept.contactblock==1.0.0a6",
+    "kitconcept.deepl",
 ]
 
 [dependency-groups]
@@ -647,3 +648,6 @@ constraint-dependencies = [
     "zope.traversing==5.0",
     "zope.viewlet==5.0",
 ]
+
+[tool.uv.sources]
+kitconcept-deepl = { path = "../frontend/packages/volto-kitconcept-deepl/backend" }

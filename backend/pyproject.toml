@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "A Plone distribution for Intranets with Plone. Created by kitconcept."
 readme = "README.md"
 license = "MIT"
-requires-python = "==3.12.*"
+requires-python = ">=3.13"
 authors = [
     { name = "kitconcept GmbH", email = "info@kitconcept.com" },
 ]
@@ -21,7 +21,7 @@ classifiers = [
     "Framework :: Plone :: Distribution",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
     "kitconcept.core==2.0.0b1",
@@ -38,6 +38,7 @@ dependencies = [
     "collective-solr==10.1.1",
     "kitconcept.solr==2.0.0a14",
     "kitconcept.contactblock==1.0.0a6",
+    "kitconcept-plate",
 ]
 
 [dependency-groups]
@@ -63,6 +64,9 @@ container = [
     "relstorage==4.1.1",
     "zeo==6.0.0",
 ]
+
+[tool.uv.sources]
+kitconcept-plate = { path = "container/kitconcept-plate.tar.gz" }
 
 [tool.hatch.metadata]
 allow-direct-references = true

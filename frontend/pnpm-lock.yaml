@@ -1450,7 +1450,7 @@ importers:
         version: link:../volto-logos-block/packages/volto-logos-block
       '@kitconcept/volto-plate':
         specifier: file:../../artifacts/kitconcept-volto-plate.tgz
-        version: file:artifacts/kitconcept-volto-plate.tgz(37f172e0ce6ec5832dd3c3ccb29aedc2)
+        version: file:artifacts/kitconcept-volto-plate.tgz(154dba1a0accf4f4388fbffe2c2f4fb9)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -4152,8 +4152,8 @@ packages:
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
   '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz':
-    resolution: {integrity: sha512-idWe1As4F6DQS9o+mVDax4ErPohvshx7vjOf3H3vge1QHcElQX2a/ZrPEHlrAwEGBnqK3YZusd/ZjpXCO6XIcQ==, tarball: file:artifacts/kitconcept-volto-plate.tgz}
-    version: 1.0.0-alpha.10
+    resolution: {integrity: sha512-Z/FVL40a2Vn3ZvIGqXY8oV6vg6rb5l3GF1uYcEaMJBPkNv0mIj4CFoaWR8R5aD0VNsoyt9e7MQAoKpEMbf0K6A==, tarball: file:artifacts/kitconcept-volto-plate.tgz}
+    version: 1.0.0-alpha.11
     peerDependencies:
       '@platejs/ai': ^50.3.7
       '@plone/registry': 3.0.1
@@ -16270,7 +16270,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz(37f172e0ce6ec5832dd3c3ccb29aedc2)':
+  '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz(154dba1a0accf4f4388fbffe2c2f4fb9)':
     dependencies:
       '@platejs/ai': 50.3.7(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)
       '@platejs/caption': 49.0.0(@types/react@18.3.31)(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -16278,7 +16278,7 @@ snapshots:
       '@platejs/link': 49.1.1(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/helpers': 2.0.0-alpha.6(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@4.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/plate': 1.0.0-alpha.8(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.60.0)(@svgr/core@8.1.0(typescript@5.9.3))(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.61.1)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))
+      '@plone/plate': 1.0.0-alpha.8(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.60.0)(@svgr/core@8.1.0(typescript@5.9.3))(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))
       '@plone/registry': 4.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/types': link:core/packages/types
       '@tailwindcss/postcss': 4.3.2
@@ -16991,7 +16991,7 @@ snapshots:
     optionalDependencies:
       react-dom: 18.2.0(react@18.2.0)
 
-  '@plone/components@5.0.0-alpha.0(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.61.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))':
+  '@plone/components@5.0.0-alpha.0(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))':
     dependencies:
       '@internationalized/date': 3.12.2
       '@react-aria/utils': 3.34.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -17031,7 +17031,7 @@ snapshots:
       - '@babel/template'
       - '@types/react'
 
-  '@plone/plate@1.0.0-alpha.8(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.60.0)(@svgr/core@8.1.0(typescript@5.9.3))(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.61.1)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))':
+  '@plone/plate@1.0.0-alpha.8(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.60.0)(@svgr/core@8.1.0(typescript@5.9.3))(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))':
     dependencies:
       '@ai-sdk/google': 2.0.11(zod@4.4.3)
       '@ai-sdk/openai': 2.0.23(zod@4.4.3)
@@ -17066,7 +17066,7 @@ snapshots:
       '@platejs/table': 49.1.13(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/toc': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/toggle': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/components': 5.0.0-alpha.0(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.61.1)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))
+      '@plone/components': 5.0.0-alpha.0(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0))
       '@plone/helpers': 2.0.0-alpha.6(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@4.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/registry': 4.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-alert-dialog': 1.1.18(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -19572,16 +19572,6 @@ snapshots:
   axe-core@4.4.2: {}
 
   axe-core@4.7.2: {}
-
-  axios@1.17.0:
-    dependencies:
-      follow-redirects: 1.16.0(debug@4.4.3)
-      form-data: 4.0.5
-      https-proxy-agent: 5.0.1
-      proxy-from-env: 2.1.0
-    transitivePeerDependencies:
-      - debug
-      - supports-color
 
   axios@1.17.0(debug@4.3.4):
     dependencies:
@@ -27688,7 +27678,7 @@ snapshots:
 
   wait-on@9.0.10:
     dependencies:
-      axios: 1.17.0
+      axios: 1.17.0(debug@4.4.3)
       joi: 18.2.1
       lodash: 4.18.1
       minimist: 1.2.8

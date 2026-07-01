@@ -20,7 +20,7 @@ This page is a stub. Full installation instructions are pending.
 ## Prerequisites
 
 - Docker and Docker Compose
-- Python 3.13
+- Python 3.12
 - Node.js 22 and pnpm
 - `uvx` (see [uvx documentation](https://uvx.readthedocs.io/en/latest/installation.html))
 

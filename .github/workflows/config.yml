@@ -26,7 +26,7 @@ on:
       python-version:
         required: false
         type: string
-        default: "3.13"
+        default: "3.12"
     outputs:
       acceptance:
         description: "Flag reporting if we should run the acceptance jobs"

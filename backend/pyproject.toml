@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "A Plone distribution for Intranets with Plone. Created by kitconcept."
 readme = "README.md"
 license = "MIT"
-requires-python = "==3.13.*"
+requires-python = "==3.12.*"
 authors = [
     { name = "kitconcept GmbH", email = "info@kitconcept.com" },
 ]
@@ -21,7 +21,7 @@ classifiers = [
     "Framework :: Plone :: Distribution",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
     "kitconcept.core==2.0.0b1",

@@ -118,7 +118,7 @@ def is_responsive(url):
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
             return b"""<str name="status">OK</str>""" in response.content
-    except (exc.ConnectionError, exc.Timeout):
+    except exc.ConnectionError, exc.Timeout:
         return False
 
 

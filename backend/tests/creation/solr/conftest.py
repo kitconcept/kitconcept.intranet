@@ -21,9 +21,7 @@ def answers():
 
 
 @pytest.fixture(scope="class")
-def portal(
-    portal_class, create_site, answers, solr_service
-) -> Generator[PloneSite, None, None]:
+def portal(portal_class, create_site, answers, solr_service) -> Generator[PloneSite]:
     app = aq_parent(portal_class)
     site = create_site(app=app, answers=answers)
     yield site

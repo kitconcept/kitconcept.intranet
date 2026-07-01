@@ -25,7 +25,7 @@ A Plone distribution for Intranets with Plone. Created by kitconcept.
 
 Ensure you have the following installed:
 
-- Python 3.12 🐍
+- Python 3.13 🐍
 - Node 22 🟩
 - pnpm 🧶
 - Docker 🐳

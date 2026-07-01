@@ -8,6 +8,7 @@ COPY --chown=node pnpm-workspace.yaml /app/
 COPY --chown=node package.json /app/package.json
 COPY --chown=node mrs.developer.json /app/mrs.developer.json
 COPY --chown=node pnpm-lock.yaml /app/pnpm-lock.yaml
+COPY --chown=node artifacts /app/artifacts
 
 RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
     set -e

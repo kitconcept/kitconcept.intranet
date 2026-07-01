@@ -24,9 +24,7 @@ def create_content():
     """Fixture to create content in the portal for testing."""
 
     @contextmanager
-    def _create_content(
-        container, type_, id_, title
-    ) -> Generator[DexterityContent, None, None]:
+    def _create_content(container, type_, id_, title) -> Generator[DexterityContent]:
         with api.env.adopt_roles(["Manager"]):
             content = api.content.create(
                 container=container,

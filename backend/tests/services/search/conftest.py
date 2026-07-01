@@ -26,7 +26,7 @@ def answers():
 @pytest.fixture(scope="class")
 def functional_portal(
     functional_portal_class, create_site, answers, solr_settings
-) -> Generator[PloneSite, None, None]:
+) -> Generator[PloneSite]:
     app = aq_parent(functional_portal_class)
     site = create_site(app=app, answers=answers)
     for key, value in solr_settings.items():

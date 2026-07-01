@@ -4,16 +4,17 @@ import pytest
 @pytest.fixture(scope="class")
 def answers():
     return {
-        "site_id": "intranet",
-        "title": "Intranet",
-        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
-        "workflow": "public",
+        "site_id": "site",
+        "title": "Site",
+        "description": "Site created with A CMS solution for public websites. Created by kitconcept.",  # noQA: E501
         "available_languages": ["en"],
+        "default_language": "en",
         "portal_timezone": "Europe/Berlin",
         "setup_content": False,
+        "setup_solr": False,
         "authentication": {
             "provider": "oidc",
-            "oidc-issuer": "http://localhost:8180/realms/intranet",
+            "oidc-issuer": "http://localhost:8180/realms/site",
             "oidc-client_id": "plone",
             "oidc-client_secret": "12345678",
             "oidc-site-url": "http://localhost:3000",

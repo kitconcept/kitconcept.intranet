@@ -1,3 +1,4 @@
+from kitconcept.intranet.testing.logo import TEST_LOGO
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
 from typing import Any
@@ -8,26 +9,28 @@ import pytest
 @pytest.fixture(scope="class")
 def answers():
     return {
-        "site_id": "intranet",
+        "site_id": "public",
         "title": "Intranet",
         "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
-        "workflow": "restricted",
-        "available_languages": ["en"],
+        "workflow": "public",
+        "available_languages": ["de", "en"],
         "portal_timezone": "Europe/Berlin",
-        "setup_content": True,
+        "site_logo": TEST_LOGO,
+        "setup_content": False,
         "authentication": {"provider": "internal"},
     }
 
 
+@pytest.mark.slow
 class TestSiteCreation:
     @pytest.fixture(autouse=True)
-    def _setup(self, site):
-        self.site = site
+    def _setup(self, portal):
+        self.site = portal
 
     @pytest.mark.parametrize(
         "attr,expected",
         [
-            ["id", "intranet"],
+            ["id", "public"],
         ],
     )
     def test_properties(self, attr, expected):
@@ -37,9 +40,9 @@ class TestSiteCreation:
         "record,oper,expected",
         [
             ("plone.site_title", "eq", "Intranet"),
-            ("plone.default_language", "eq", "en"),
-            ("plone.available_languages", "eq", ["en"]),
-            ("plone.site_logo", "is", None),
+            ("plone.default_language", "eq", "de"),
+            ("plone.available_languages", "eq", ["de", "en"]),
+            ("plone.site_logo", "starts", b"filenameb64"),
         ],
     )
     def test_registry_portal_settings(
@@ -64,7 +67,7 @@ class TestSiteCreation:
     @pytest.mark.parametrize(
         "path,permission,role,expected",
         [
-            ("/", "View", "Authenticated", True),
+            ("/", "View", "Anonymous", True),
         ],
     )
     def test_content_permission_role(

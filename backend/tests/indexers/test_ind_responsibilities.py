@@ -3,10 +3,26 @@ from plone import api
 import pytest
 
 
+CONTENTS = [
+    {
+        "type": "Person",
+        "id": "john-doe",
+        "first_name": "John",
+        "last_name": "Doe",
+        "academic_title": "",
+        "responsibilities": ["Onboarding", "IT-Support"],
+    },
+]
+
+
+@pytest.mark.portal(
+    content=CONTENTS,
+    roles=["Manager"],
+)
 class TestIndexer:
     @pytest.fixture(autouse=True)
-    def _setup(self, portal):
-        self.portal = portal
+    def _setup(self, portal_class):
+        self.portal = portal_class
 
     @pytest.mark.parametrize(
         "responsibility,results",

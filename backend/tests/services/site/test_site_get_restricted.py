@@ -1,3 +1,7 @@
+from Acquisition import aq_parent
+from collections.abc import Generator
+from Products.CMFPlone.Portal import PloneSite
+
 import pytest
 
 
@@ -16,7 +20,11 @@ def answers():
 
 
 @pytest.fixture(scope="class")
-def portal(site):
+def functional_portal(
+    functional_portal_class, create_site, answers
+) -> Generator[PloneSite, None, None]:
+    app = aq_parent(functional_portal_class)
+    site = create_site(app=app, answers=answers)
     yield site
 
 
@@ -25,8 +33,9 @@ class TestSiteGetRestricted:
     even when the restricted workflow removes View from the site root."""
 
     @pytest.fixture(autouse=True)
-    def _setup(self, api_anon_request):
-        self.api_session = api_anon_request
+    def _setup(self, functional_portal, anon_request):
+        self.portal = functional_portal
+        self.api_session = anon_request
 
     def test_site_get_anonymous(self):
         response = self.api_session.get("/@site")

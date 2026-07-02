@@ -6,7 +6,6 @@ from plone.app.testing import PloneSandboxLayer
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 
 
-
 DEFAULT_ANSWERS = {
     "site_id": "plone",
     "title": "Intranet",

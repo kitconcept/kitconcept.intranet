@@ -1,17 +1,15 @@
 from dataclasses import dataclass
+from kitconcept.core.factory import add_site
 from kitconcept.intranet.testing import FUNCTIONAL_TESTING
 from kitconcept.intranet.testing import INTEGRATION_TESTING
+from kitconcept.intranet.testing.logo import TEST_LOGO
 from pathlib import Path
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
-from plone.distribution.api import distribution as dist_api
-from plone.distribution.api import site as site_api
 from Products.CMFPlone.Portal import PloneSite
 from pytest_plone import fixtures_factory
 from requests import exceptions as exc
 from typing import Any
-from zope.component.hooks import setSite
-from zope.component.hooks import site as site_wrapper
 
 import pytest
 import requests
@@ -30,24 +28,6 @@ globals().update(
 def distribution_name() -> str:
     """Distribution name."""
     return "kitconcept-intranet"
-
-
-@pytest.fixture(scope="class")
-def example_content_folder(distribution_name) -> Path:
-    """Return the path to the example content folder."""
-    distribution = dist_api.get(distribution_name)
-    return distribution.contents["json"]
-
-
-@pytest.fixture(scope="class")
-def portal_class(integration_class):
-    if hasattr(integration_class, "testSetUp"):
-        integration_class.testSetUp()
-    portal = integration_class["portal"]
-    with site_wrapper(portal):
-        yield portal
-    if hasattr(integration_class, "testTearDown"):
-        integration_class.testTearDown()
 
 
 @pytest.fixture(scope="session")
@@ -95,7 +75,7 @@ def current_versions() -> CurrentVersions:
     from kitconcept.core import __version__
 
     return CurrentVersions(
-        base="20260505001",
+        base="20260701001",
         dependencies="1000",
         package=__version__,
     )
@@ -107,33 +87,29 @@ def base_profile_id() -> str:
     return "kitconcept.core:base"
 
 
-@pytest.fixture(scope="class")
-def app_functional_class(functional_class):
-    if hasattr(functional_class, "testSetUp"):
-        functional_class.testSetUp()
-    yield functional_class["app"]
-    if hasattr(functional_class, "testTearDown"):
-        functional_class.testTearDown()
+@pytest.fixture(scope="session")
+def answers() -> dict:
+    return {
+        "site_id": "plone2",
+        "title": "Intranet",
+        "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
+        "available_languages": ["en"],
+        "portal_timezone": "Europe/Berlin",
+        "site_logo": TEST_LOGO,
+        "workflow": "public",
+        "setup_content": False,
+        "authentication": {"provider": "internal"},
+    }
 
 
-@pytest.fixture(scope="class")
-def create_site(app_functional_class, base_profile_id, distribution_name):
-    def func(answers: dict) -> PloneSite:
+@pytest.fixture(scope="session")
+def create_site(distribution_name):
+    def func(app, answers: dict) -> PloneSite:
         with api.env.adopt_user(SITE_OWNER_NAME):
-            site = site_api.create(
-                app_functional_class, distribution_name, answers, base_profile_id
-            )
-            setSite(site)
+            site = add_site(app, distribution=distribution_name, **answers)
         return site
 
     return func
-
-
-@pytest.fixture(scope="class")
-def site(create_site, answers):
-    site = create_site(answers)
-    setSite(site)
-    return site
 
 
 def is_responsive(url):
@@ -142,7 +118,7 @@ def is_responsive(url):
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
             return b"""<str name="status">OK</str>""" in response.content
-    except (exc.ConnectionError, exc.Timeout):
+    except exc.ConnectionError, exc.Timeout:
         return False
 
 
@@ -188,19 +164,6 @@ def solr_settings(docker_ip, docker_services, solr_service) -> dict:
         "collective.solr.port": port,
         "collective.solr.base": "/solr/plone",
     }
-
-
-@pytest.fixture(scope="class")
-def example_content_factory(example_content_folder):
-    """Fixture to return a factory to handle example content."""
-    from plone.exportimport import importers
-
-    def factory(portal) -> None:
-        """Import example content into an existing site."""
-        importer = importers.get_importer(portal)
-        _ = importer.import_site(example_content_folder)
-
-    return factory
 
 
 @pytest.fixture(scope="module")

@@ -8,8 +8,8 @@ def portal(portal_class):
 
 class TestSiteGet:
     @pytest.fixture(autouse=True)
-    def _setup(self, api_manager_request, current_versions):
-        self.api_session = api_manager_request
+    def _setup(self, manager_request, current_versions):
+        self.api_session = manager_request
         self.profile_version = current_versions.base
 
     def test_response_type(self):
@@ -19,7 +19,10 @@ class TestSiteGet:
 
     @pytest.mark.parametrize(
         "key,type_",
-        (("kitconcept.person_picture_aspect_ratio", str),),
+        (
+            ("kitconcept.person_picture_aspect_ratio", str),
+            ("kitconcept.intranet.enable_content_review", bool),
+        ),
     )
     def test_keys(self, key, type_):
         response = self.api_session.get("/@site")
@@ -29,7 +32,10 @@ class TestSiteGet:
 
     @pytest.mark.parametrize(
         "key,expected",
-        (("kitconcept.person_picture_aspect_ratio", "rounded1to1"),),
+        (
+            ("kitconcept.person_picture_aspect_ratio", "rounded1to1"),
+            ("kitconcept.intranet.enable_content_review", False),
+        ),
     )
     def test_values(self, key, expected):
         response = self.api_session.get("/@site")

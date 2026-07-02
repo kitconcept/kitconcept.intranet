@@ -1,6 +1,7 @@
 import type { ConfigType } from '@plone/registry';
 import type { apiExpandersType } from '@plone/types';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
+import DocumentReviewPlug from '@kitconcept/intranet/components/Toolbar/DocumentReviewPlug';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
 import profilePlaceholder from '../assets/profile-placeholder.svg';
 
@@ -21,6 +22,12 @@ export default function install(config: ConfigType) {
     ...config.addonReducers,
     feedbackContactForm,
   };
+
+  config.settings.appExtras = [
+    ...config.settings.appExtras,
+    { match: '/', component: DocumentReviewPlug, props: {} },
+  ];
+
   config.settings.isMultilingual = false;
   config.settings.nonContentRoutes = nonContentRoutes;
   config.settings.defaultLanguage = process.env.SITE_DEFAULT_LANGUAGE || 'de';

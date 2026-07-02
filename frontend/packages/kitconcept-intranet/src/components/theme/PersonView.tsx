@@ -11,6 +11,7 @@ import mailSVG from '@plone/volto/icons/email.svg';
 import worldSVG from '@plone/volto/icons/world.svg';
 import faxSVG from '@plone/volto/icons/printer.svg';
 import phone2SVG from '../../icons/phone.svg';
+import profilePlaceholder from './profile-placeholder.svg';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 
@@ -59,7 +60,6 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
 
   const profile = {
-    imageUrl: content.image ?? null,
     fullName: content.academic_title?.title
       ? content.last_name
         ? `${content.academic_title.title} ${content.first_name} ${content.last_name}`
@@ -84,11 +84,17 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
     <Container id="page-document" className="view-wrapper person-view">
       <div className="person-profile">
         <header className="profile-header">
-          {profile.imageUrl && (
+          {content.image?.download ? (
             <Image
               className="profile-image"
               item={content}
               imageField="image"
+              alt={profile.fullName}
+            />
+          ) : (
+            <img
+              className="profile-image profile-image--placeholder"
+              src={profilePlaceholder}
               alt={profile.fullName}
             />
           )}

@@ -2,6 +2,19 @@
 name: kitconcept-intranet
 
 services:
+  swarm-cronjob:
+    image: crazymax/swarm-cronjob:1.16
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - "TZ=Europe/Berlin"
+      - "LOG_LEVEL=info"
+      - "LOG_JSON=false"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
   traefik:
     image: traefik:v2.11
 
@@ -33,7 +46,7 @@ services:
       - --api
 
   frontend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${RELEASE:-2.0.0a16}
+    image: ghcr.io/kitconcept/kitconcept-intranet-frontend:${RELEASE:-2.0.0a17}
     platform: linux/amd64
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
@@ -52,7 +65,7 @@ services:
       - traefik.http.routers.rt-frontend.middlewares=gzip
 
   backend:
-    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${RELEASE:-2.0.0a16}
+    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${RELEASE:-2.0.0a17}
     platform: linux/amd64
     environment:
       ZOPE_FORM_MEMORY_LIMIT: 250MB
@@ -93,3 +106,16 @@ services:
       - traefik.http.routers.rt-backend-admin.entrypoints=http
       - traefik.http.routers.rt-backend-admin.service=svc-backend
       - traefik.http.routers.rt-backend-admin.middlewares=gzip,mw-backend-auth
+
+  backend-cron-worker:
+    image: ghcr.io/kitconcept/kitconcept-intranet-beispiele:${RELEASE:-2.0.0a16}
+    command: ./docker-entrypoint.sh run scripts/review_reminder.py
+    deploy:
+      mode: replicated
+      replicas: 0
+      labels:
+        - "swarm.cronjob.enable=true"
+        - "swarm.cronjob.schedule=0 0 * * *"
+        - "swarm.cronjob.skip-running=false"
+      restart_policy:
+        condition: none

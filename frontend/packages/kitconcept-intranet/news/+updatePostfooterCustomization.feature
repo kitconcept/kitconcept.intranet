@@ -1,1 +1,0 @@
-Update post-footer component to follow improved implementation in VLT. @danalvrz

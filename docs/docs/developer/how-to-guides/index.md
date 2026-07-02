@@ -26,4 +26,5 @@ add-api-endpoint
 customize-email-templates
 add-vocabulary
 override-components
+configure-reminders-for-content
 ```

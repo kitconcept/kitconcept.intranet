@@ -2,11 +2,6 @@
 ARG KC_VERSION
 FROM ghcr.io/kitconcept/core-builder:${KC_VERSION:-latest} AS builder
 
-# Move skeleton folder
-RUN <<EOT
-    mv /app /app_base
-EOT
-
 # Install dependencies
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=bind,source=uv.lock,target=uv.lock \
@@ -32,8 +27,7 @@ RUN --mount=type=cache,target=/root/.cache \
 
 # Move skeleton files to /app
 RUN <<EOT
-    mv /app_base/* /app
-    rm -Rf /app_base
+    mv /app_skeleton/* /app
     mv scripts/* /app/scripts/
 EOT
 

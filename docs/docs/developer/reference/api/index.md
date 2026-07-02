@@ -17,4 +17,5 @@ votes
 feedback
 byline
 clm
+review
 ```

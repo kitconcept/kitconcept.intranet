@@ -11,6 +11,7 @@ import locationSVG from '@plone/volto/icons/map.svg';
 import phoneSVG from '@plone/volto/icons/mobile.svg';
 import { defineMessages, useIntl } from 'react-intl';
 import { smartTextRenderer } from '@kitconcept/volto-light-theme/helpers/smartText';
+import LinkIconButton from '@kitconcept/volto-light-theme/primitives/LinkIconButton';
 
 const messages = defineMessages({
   phone: {
@@ -33,6 +34,7 @@ const PersonSummary = (props) => {
 
   return (
     <>
+      <LinkIconButton item={item} />
       {item?.head_title && <div className="headline">{item.head_title}</div>}
       <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}

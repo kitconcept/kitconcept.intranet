@@ -1,31 +1,69 @@
+from kitconcept.core.utils import scripts
 from pathlib import Path
-
-import json
-
-
-truthy = frozenset(("t", "true", "y", "yes", "on", "1"))
+from typing import Any
 
 
-def asbool(s):
-    """Return the boolean value ``True`` if the case-lowered value of string
-    input ``s`` is a :term:`truthy string`. If ``s`` is already one of the
-    boolean values ``True`` or ``False``, return it."""
-    if s is None:
-        return False
-    if isinstance(s, bool):
-        return s
-    s = str(s).strip()
-    return s.lower() in truthy
+__all__ = [
+    "create_site",
+]
 
 
-def parse_answers(answers_file: Path, answers_env: dict) -> dict:
-    answers = json.loads(answers_file.read_text())
-    for key in answers:
-        env_value = answers_env.get(key, "")
-        if key == "setup_content" and env_value.strip():
-            env_value = asbool(env_value)
-        elif not env_value:
-            continue
-        # Override answers_file value
-        answers[key] = env_value
-    return answers
+OPTIONS: tuple[tuple[str, str, Any], ...] = (
+    ("site_id", "SITE_ID", None),
+    ("title", "SITE_TITLE", None),
+    ("description", "SITE_DESCRIPTION", None),
+    ("available_languages", "SITE_AVAILABLE_LANGUAGES", scripts.as_list),
+    ("default_language", "SITE_DEFAULT_LANGUAGE", None),
+    ("portal_timezone", "SITE_PORTAL_TIMEZONE", None),
+    ("setup_solr", "SITE_SETUP_SOLR", scripts.as_bool),
+    ("setup_content", "SITE_SETUP_CONTENT", scripts.as_bool),
+    ("demo_content", "SITE_DEMO_CONTENT", scripts.as_bool),
+    ("workflow", "SITE_WORKFLOW", None),
+    ("authentication.provider", "SITE_AUTHENTICATION_PROVIDER", None),
+    ("authentication.oidc-server_url", "SITE_AUTHENTICATION_OIDC-SERVER_URL", None),
+    ("authentication.oidc-realm_name", "SITE_AUTHENTICATION_OIDC-REALM_NAME", None),
+    ("authentication.oidc-client_id", "SITE_AUTHENTICATION_OIDC-CLIENT_ID", None),
+    (
+        "authentication.oidc-client_secret",
+        "SITE_AUTHENTICATION_OIDC-CLIENT_SECRET",
+        None,
+    ),
+    ("authentication.oidc-site-url", "SITE_AUTHENTICATION_OIDC-SITE-URL", None),
+    ("authentication.oidc-scope", "SITE_AUTHENTICATION_OIDC-SCOPE", scripts.as_list),
+    ("authentication.oidc-issuer", "SITE_AUTHENTICATION_OIDC-ISSUER", None),
+    (
+        "authentication.authomatic-github-consumer_key",
+        "SITE_AUTHENTICATION_AUTHOMATIC-GITHUB-CONSUMER_KEY",
+        None,
+    ),
+    (
+        "authentication.authomatic-github-consumer_secret",
+        "SITE_AUTHENTICATION_AUTHOMATIC-GITHUB-CONSUMER_SECRET",
+        None,
+    ),
+    (
+        "authentication.authomatic-github-scope",
+        "SITE_AUTHENTICATION_AUTHOMATIC-GITHUB-SCOPE",
+        scripts.as_list,
+    ),
+    (
+        "authentication.authomatic-google-consumer_key",
+        "SITE_AUTHENTICATION_AUTHOMATIC-GOOGLE-CONSUMER_KEY",
+        None,
+    ),
+    (
+        "authentication.authomatic-google-consumer_secret",
+        "SITE_AUTHENTICATION_AUTHOMATIC-GOOGLE-CONSUMER_SECRET",
+        None,
+    ),
+    (
+        "authentication.authomatic-google-scope",
+        "SITE_AUTHENTICATION_AUTHOMATIC-GOOGLE-SCOPE",
+        scripts.as_list,
+    ),
+)
+
+
+def create_site(app, env_vars: dict[str, Any], answers_file: Path, browser_layer):
+    """Create a site using the provided answers file and environmental variables."""
+    scripts.create_site(app, answers_file, env_vars, browser_layer, OPTIONS)

@@ -1,0 +1,1 @@
+Fixed an unsafe ZODB write during read-only requests by marking the vocabulary cache initialization as a safe write. @ericof

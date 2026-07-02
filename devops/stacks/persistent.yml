@@ -81,6 +81,23 @@ services:
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.service=svc-${STACK_PREFIX}-back
         - traefik.http.routers.rt-${STACK_PREFIX}-back-classic.middlewares=gzip,mw-${STACK_PREFIX}-back-auth,mw-${STACK_PREFIX}-back-vhm-classic
 
+  backend-cron-worker:
+    image: ${IMAGE_NAME_PREFIX}-backend:${IMAGE_TAG:-latest}
+    command: ./docker-entrypoint.sh run scripts/review_reminder.py
+    environment:
+      ZEO_ADDRESS: "${STACK_NAME}_zeo:8100"
+    deploy:
+      mode: replicated
+      replicas: 0
+      labels:
+        - "swarm.cronjob.enable=true"
+        - "swarm.cronjob.schedule=0 0 * * *"
+        - "swarm.cronjob.skip-running=false"
+      restart_policy:
+        condition: none
+    networks:
+      - nw-internal
+
   zeo:
     image: plone/plone-zeo:6.0.0
     deploy:

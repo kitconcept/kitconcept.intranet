@@ -1,0 +1,1 @@
+`make acceptance-backend-dev-start` now starts solr (and tika) for the acceptance backend and stops them again when the backend exits, so the acceptance Persons/solr cypress tests can run locally. The teardown is detached so a repeated Ctrl-C cannot orphan the containers. @reebalazs

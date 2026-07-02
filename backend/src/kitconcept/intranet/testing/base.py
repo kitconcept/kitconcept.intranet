@@ -5,7 +5,6 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 
-import transaction
 
 
 DEFAULT_ANSWERS = {
@@ -26,32 +25,6 @@ class BaseFixture(kitconceptDistributionFixture):
     PACKAGE_NAME = "kitconcept.intranet"
     sites = (("kitconcept-intranet", DEFAULT_ANSWERS),)
     internal_packages: tuple[str, ...] = ("kitconcept.intranet",)
-
-    def setUp(self):
-        from plone.volto import upgrades
-
-        self._orig_reindex_block_types = upgrades.reindex_block_types
-
-        def reindex_block_types_without_commit(context):
-            catalog = context.portal_catalog
-            brains = catalog(object_provides="plone.restapi.behaviors.IBlocks")
-            total = len(brains)
-            for index, brain in enumerate(brains):
-                obj = brain.getObject()
-                obj.reindexObject(idxs=["block_types"], update_metadata=1)
-                if index % 250 == 0:
-                    transaction.savepoint(optimistic=True)
-            transaction.savepoint(optimistic=True)
-
-        upgrades.reindex_block_types = reindex_block_types_without_commit
-        super().setUp()
-
-    def tearDown(self):
-        from plone.volto import upgrades
-
-        upgrades.reindex_block_types = self._orig_reindex_block_types
-        del self._orig_reindex_block_types
-        super().tearDown()
 
 
 BASE_FIXTURE = BaseFixture()

@@ -1559,7 +1559,7 @@ test = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a12"
+version = "1.0.0a14"
 source = { path = "container/kitconcept-plate.tar.gz" }
 dependencies = [
     { name = "plone-api" },
@@ -1567,15 +1567,23 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { hash = "sha256:3eb66f042f3c789a215a629fd4dbc214a0b8c2311cc67106fc7997060440b86f" }
+sdist = { hash = "sha256:2668c9ea930b22ac764705c0f3277c3b461395e220bd161161c89c4c95afbce5" }
 
 [package.metadata]
 requires-dist = [
+    { name = "horse-with-no-namespace", marker = "extra == 'test'", specifier = ">=20250408.0" },
     { name = "plone-api" },
+    { name = "plone-app-testing", marker = "extra == 'test'" },
     { name = "plone-restapi" },
+    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
     { name = "plone-volto" },
-    { name = "products-cmfplone", specifier = "==6.2.1" },
+    { name = "products-cmfplone" },
+    { name = "products-printingmailhost", marker = "extra == 'test'" },
+    { name = "pytest", marker = "extra == 'test'" },
+    { name = "pytest-cov", marker = "extra == 'test'" },
+    { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.0.0" },
 ]
+provides-extras = ["test"]
 
 [[package]]
 name = "kitconcept-solr"

@@ -107,7 +107,7 @@ class BatchProcess:
 
         logger.info(f"Starting batch process: {self.name}")
         results: list[BatchResult] = []
-        for batch in itertools.batched(self.collector(), batch_size):
+        for batch in itertools.batched(self.collector(), batch_size, strict=False):
             results += process_batch(tuple(batch), start=len(results) + 1)
             logger.info(f"Processed {len(results)} items.")
         logger.info(f"Finished batch process: {self.name}\n")

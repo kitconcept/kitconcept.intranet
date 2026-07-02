@@ -1,6 +1,5 @@
 from kitconcept.intranet.interfaces import IBrowserLayer
 from kitconcept.intranet.utils.scripts import create_site
-from kitconcept.intranet.utils.scripts import get_environmental_variables
 from pathlib import Path
 
 import os
@@ -14,8 +13,7 @@ def main():
     app = globals()["app"]
     filename = os.getenv("ANSWERS", "default.json")
     answers_file = SCRIPT_DIR / filename
-    env_vars = get_environmental_variables()
-    create_site(app, env_vars, answers_file, IBrowserLayer)
+    create_site(app, {}, answers_file, IBrowserLayer)
 
 
 if __name__ == "__main__":

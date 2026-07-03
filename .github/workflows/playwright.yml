@@ -1,0 +1,83 @@
+name: Acceptance Playwright Workflow
+
+on:
+  workflow_call:
+    inputs:
+      base-tag:
+        required: true
+        type: string
+      node-version:
+        required: true
+        type: string
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Load images needed for acceptance tests
+        env:
+          BASE_TAG: ${{ inputs.base-tag }}
+          COMPOSE_PROFILES: ${{ inputs.test-profile }}
+        run: |
+          make ci-images-load
+
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Enable corepack
+        run: npm i -g corepack@latest && corepack enable
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v6
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml', 'package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          make frontend-install
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+        working-directory: ./frontend
+
+      - uses: JarvusInnovations/background-action@v1
+        name: Start Servers
+        with:
+          run: |
+            make ci-acceptance-backend-start &
+            make acceptance-frontend-prod-start &
+          wait-on: |
+            http-get://localhost:55001/plone
+            http://localhost:3000
+          tail: true
+          wait-for: 10m
+          log-output: stderr,stdout
+          log-output-resume: stderr
+          working-directory: ${{ github.workspace }}
+
+      - name: Run acceptance tests
+        run: pnpm exec playwright test --reporter=list,html
+        working-directory: ./frontend
+
+      - name: Upload Playwright artifacts
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-report
+          path: ./frontend/playwright/results

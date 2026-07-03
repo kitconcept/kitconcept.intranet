@@ -1,4 +1,16 @@
-/* Customized to add conditional logic for content review fieldset */
+/**
+ * OVERRIDE: Form.jsx
+ * REASON: Add content review field behavior to the edit form.
+ * FILE: /Users/sneridagh/Development/kitconcept/kitconcept.intranet/frontend/core/packages/volto/src/components/manage/Form/Form.jsx
+ * FILE VERSION: Volto 19.1.4
+ * PULL REQUEST: https://github.com/kitconcept/kitconcept.intranet/pull/330
+ * DATE: 2026-07-03
+ * DEVELOPER: @jnptk
+ * CHANGELOG:
+ *  - Hide review fields when review is timeless. @jnptk
+ *  - Auto-calculate review due date from review interval. @jnptk
+ *  - Lock review-managed fields when their value is derived. @jnptk
+ */
 
 /**
  * Form component.
@@ -1043,7 +1055,12 @@ class Form extends Component {
                     onTabChange={this.onTabChange}
                     activeIndex={this.state.activeIndex}
                     panes={map(schema.fieldsets, (item) => ({
-                      menuItem: item.title,
+                      menuItem: {
+                        key: item.id,
+                        content: item.title,
+                        as: 'button',
+                        type: 'button',
+                      },
                       render: () => [
                         !settings.verticalFormTabs && this.props.title && (
                           <Segment secondary attached key={this.props.title}>

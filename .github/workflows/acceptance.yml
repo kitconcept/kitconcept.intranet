@@ -47,7 +47,7 @@ jobs:
     name: ${{ inputs.name }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Load images needed for acceptance tests
         env:
@@ -57,7 +57,7 @@ jobs:
           make ci-images-load
 
       - name: Use Node.js ${{ inputs.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ inputs.node-version }}
 
@@ -69,7 +69,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -79,7 +79,7 @@ jobs:
 
       - name: Cache Cypress Binary
         id: cache-cypress-binary
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/Cypress
           key: Cypress-binary-${{ env.NODE_VERSION }}-${{ hashFiles('pnpm-lock.yaml', 'package.json') }}
@@ -128,14 +128,14 @@ jobs:
           make ci-test
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: cypress-screenshots-acceptance-${{ inputs.name }}
           path: ${{ inputs.artifacts-folder }}/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: cypress-videos-acceptance-${{ inputs.name }}

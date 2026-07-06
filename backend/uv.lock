@@ -94,7 +94,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.26.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.7.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0b2" },
+    { name = "kitconcept-core", specifier = "==2.0.0b3" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a30" },
     { name = "legacy-cgi", specifier = "==2.6.4" },
     { name = "lockfile", specifier = "==0.12.2" },
@@ -1448,7 +1448,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0b2"
+version = "2.0.0b3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1464,9 +1464,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3d/5c/d6e1e890988ce9872cfb585a81e8ba6469f442a7d4ee49e9bdedbfc4f5da/kitconcept_core-2.0.0b2.tar.gz", hash = "sha256:32884906a4be99493fbbed985eadca47641be943293012c87c99738e67889a57", size = 371479, upload-time = "2026-07-01T15:39:45.219Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/58/e364ac1492ffadb8ae8d4d4426838ad1a4aeade7c861f675aec7e78dbb68/kitconcept_core-2.0.0b3.tar.gz", hash = "sha256:765a9aeae7373192e4945c4177e52b3892aa73107beefc278e297ce6e33180ad", size = 373385, upload-time = "2026-07-06T13:23:14.703Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/ad/1470ae2e1852f216a5428d283609b26fe3e55bc510a3adb6723d4e5d6cd5/kitconcept_core-2.0.0b2-py3-none-any.whl", hash = "sha256:60f3e79a277429ab40b68b5d7ffee6d1a992cc796683ac0e8cb884e2d037ef05", size = 258647, upload-time = "2026-07-01T15:39:43.417Z" },
+    { url = "https://files.pythonhosted.org/packages/13/b1/52b63c94dee5ba26b1bac1a8d2416e7dd1fdcd9000e525e8a0315a9ff321/kitconcept_core-2.0.0b3-py3-none-any.whl", hash = "sha256:5b81d1afce76c29699d86610297f59c4f24c8ae4555f4ba406e0a579e8246eb0", size = 260194, upload-time = "2026-07-06T13:23:12.826Z" },
 ]
 
 [[package]]
@@ -1517,7 +1517,7 @@ test = [
 requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
-    { name = "kitconcept-core", specifier = "==2.0.0b2" },
+    { name = "kitconcept-core", specifier = "==2.0.0b3" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

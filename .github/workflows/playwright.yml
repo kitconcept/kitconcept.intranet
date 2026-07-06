@@ -65,16 +65,24 @@ jobs:
         name: Start Servers
         with:
           run: |
-            make ci-acceptance-backend-start &
-            make acceptance-frontend-prod-start &
+            # Start only the services we need for acceptance tests
+            BASE_TAG=${{ inputs.base-tag }} COMPOSE_PROFILES=${{ inputs.test-profile }} make ci-containers-start &
+
           wait-on: |
             http-get://localhost:55001/plone
             http://localhost:3000
-          tail: true
-          wait-for: 10m
-          log-output: stderr,stdout
+
+          tail: true # true = stderr,stdout
+          # This will allow you to monitor the progress live
+
           log-output-resume: stderr
-          working-directory: ${{ github.workspace }}
+          # Eliminates previosuly output stderr log entries from post-run output
+
+          wait-for: 10m
+
+          log-output: stderr,stdout # same as true
+
+          log-output-if: failure
 
       - name: Run acceptance tests
         run: pnpm exec playwright test --reporter=list,html

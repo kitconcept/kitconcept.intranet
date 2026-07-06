@@ -93,7 +93,10 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
       />
 
       <div className="navigation-tree-nav-label">
-        <h2 id="navigation-tree-heading" className="navigation-tree-nav-heading">
+        <h2
+          id="navigation-tree-heading"
+          className="navigation-tree-nav-heading"
+        >
           {navigationLabel}
         </h2>
         <button

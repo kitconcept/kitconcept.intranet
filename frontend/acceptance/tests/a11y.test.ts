@@ -6,9 +6,10 @@ test.describe('Accessibility @a11y', () => {
   test('homepage has no automatic accessibility violations', async ({
     page,
   }) => {
-    await page.goto('/', { waitUntil: 'networkidle' });
+    const response = await page.goto('/', { waitUntil: 'networkidle' });
 
-    await expect(page.locator('main')).toBeVisible();
+    expect(response?.ok()).toBeTruthy();
+    await expect(page.getByRole('banner')).toBeVisible();
     await expectNoAccessibilityViolations(page, {
       // The fixture homepage intentionally omits an h1, matching the
       // longstanding Cypress a11y baseline for this repo.

@@ -34,11 +34,11 @@ All settings available in the **kitconcept Intranet Settings** control panel (`/
 | `disable_profile_links`(This is in kitconcept settings controlpanel) | Boolean | When enabled, person names in teasers and listings are not linked to the person's profile page | `False` |
 | `person_picture_aspect_ratio` | Choice | Controls the CSS aspect ratio applied to person profile images. Options: `rounded1to1` (circular, default) or `squared4to5` (portrait rectangle) | `rounded1to1` |
 
-### disable_profile_links
+### clickable_profile_links
 
-Registry key: `kitconcept.disable_profile_links`
+Registry key: `kitconcept.clickable_profile_links`
 
-When set to `True`, the `PersonResultItem` and teaser/listing components wrap person links in a no-op `MaybeWrap`, effectively removing the hyperlink. This is useful on intranets where person profiles should not be publicly discoverable through search results.
+When set to `False`, the `PersonResultItem` and teaser/listing components wrap person links in a no-op `MaybeWrap`, effectively removing the hyperlink. This is useful on intranets where person profiles should not be publicly discoverable through search results.
 
 ### person_picture_aspect_ratio
 

@@ -13,13 +13,13 @@ import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 
 const PersonResultItem = ({ item }) => {
   const site = useSelector((state) => state.site?.data);
-  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
+  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
 
   return (
     <article className="tileItem personResultItem">
       <div className="itemWrapper">
         <div className="itemImageWrapper">
-          <MaybeWrap condition={!hideProfileLinks} as={Link} to={item['@id']}>
+          <MaybeWrap condition={!showProfileLinks} as={Link} to={item['@id']}>
             <Icon
               size="64px"
               name={fallbackAvatarSVG}
@@ -38,7 +38,7 @@ const PersonResultItem = ({ item }) => {
           <p className="url">{item['@id']}</p>
           <h2 className="tileHeadline">
             <MaybeWrap
-              condition={!hideProfileLinks}
+              condition={!showProfileLinks}
               as={Link}
               to={item['@id']}
               className="summary url"

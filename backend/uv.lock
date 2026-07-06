@@ -94,7 +94,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.26.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.7.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0b2" },
+    { name = "kitconcept-core", editable = "../frontend/packages/kitconcept-core/backend" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a30" },
     { name = "legacy-cgi", specifier = "==2.6.4" },
     { name = "lockfile", specifier = "==0.12.2" },
@@ -1448,8 +1448,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0b2"
-source = { registry = "https://pypi.org/simple" }
+source = { editable = "../frontend/packages/kitconcept-core/backend" }
 dependencies = [
     { name = "collective-honeypot" },
     { name = "collective-person" },
@@ -1464,9 +1463,42 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3d/5c/d6e1e890988ce9872cfb585a81e8ba6469f442a7d4ee49e9bdedbfc4f5da/kitconcept_core-2.0.0b2.tar.gz", hash = "sha256:32884906a4be99493fbbed985eadca47641be943293012c87c99738e67889a57", size = 371479, upload-time = "2026-07-01T15:39:45.219Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/ad/1470ae2e1852f216a5428d283609b26fe3e55bc510a3adb6723d4e5d6cd5/kitconcept_core-2.0.0b2-py3-none-any.whl", hash = "sha256:60f3e79a277429ab40b68b5d7ffee6d1a992cc796683ac0e8cb884e2d037ef05", size = 258647, upload-time = "2026-07-01T15:39:43.417Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "collective-honeypot" },
+    { name = "collective-person", specifier = "==1.0.0b6" },
+    { name = "collective-volto-formsupport", specifier = "==3.2.3" },
+    { name = "horse-with-no-namespace", marker = "extra == 'test'" },
+    { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a30" },
+    { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
+    { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
+    { name = "pas-plugins-oidc", specifier = "==2.0.0" },
+    { name = "plone-api" },
+    { name = "plone-app-testing", marker = "extra == 'test'" },
+    { name = "plone-distribution" },
+    { name = "plone-formblock", specifier = ">=1.0.0a2" },
+    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone", specifier = "==6.2.1" },
+    { name = "pytest", marker = "extra == 'test'" },
+    { name = "pytest-cov", marker = "extra == 'test'" },
+    { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.0.0" },
+]
+provides-extras = ["test"]
+
+[package.metadata.requires-dev]
+build = [
+    { name = "hatchling" },
+    { name = "wheel" },
+]
+test = [
+    { name = "mypy", specifier = ">=1.15.0" },
+    { name = "plone-app-testing" },
+    { name = "plone-restapi", extras = ["test"] },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-plone", specifier = ">=1.0.0" },
 ]
 
 [[package]]
@@ -1517,7 +1549,7 @@ test = [
 requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
-    { name = "kitconcept-core", specifier = "==2.0.0b2" },
+    { name = "kitconcept-core", editable = "../frontend/packages/kitconcept-core/backend" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },

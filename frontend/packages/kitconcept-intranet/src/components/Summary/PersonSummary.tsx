@@ -2,9 +2,9 @@
 Based on the PersonSummary in volto-light-theme.
 Customizations:
 - Add the job_title
-- Set hideLink = true
 */
 
+import * as React from 'react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import mailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@plone/volto/icons/map.svg';
@@ -12,6 +12,7 @@ import phoneSVG from '@plone/volto/icons/mobile.svg';
 import { defineMessages, useIntl } from 'react-intl';
 import { smartTextRenderer } from '@kitconcept/volto-light-theme/helpers/smartText';
 import LinkIconButton from '@kitconcept/volto-light-theme/primitives/LinkIconButton';
+import type { DefaultSummaryProps } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 
 const messages = defineMessages({
   phone: {
@@ -28,8 +29,14 @@ const messages = defineMessages({
   },
 });
 
-const PersonSummary = (props) => {
-  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
+const PersonSummary = (props: DefaultSummaryProps) => {
+  const {
+    item,
+    LinkToItem = React.Fragment,
+    HeadingTag = 'div',
+    a11yLabelId,
+    hide_description,
+  } = props;
   const intl = useIntl();
 
   return (
@@ -37,14 +44,14 @@ const PersonSummary = (props) => {
       <LinkIconButton item={item} />
       {item?.head_title && <div className="headline">{item.head_title}</div>}
       <HeadingTag className="title" id={a11yLabelId}>
-        {item.title ? item.title : item.id}
+        <LinkToItem> {item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
 
       {item.job_title && (
         <div className="summary-extra-info job-title">{item.job_title}</div>
       )}
 
-      {!hide_description && (
+      {!hide_description && item?.description !== '' && (
         <p className="description">{smartTextRenderer(item.description)}</p>
       )}
 
@@ -60,7 +67,7 @@ const PersonSummary = (props) => {
       )}
 
       <div className="summary-room-phone">
-        {item.contact_room && (
+        {item?.contact_room && (
           <div className="summary-extra-info">
             <Icon
               title={intl.formatMessage(messages.room)}
@@ -70,20 +77,19 @@ const PersonSummary = (props) => {
             {item.contact_room}
           </div>
         )}
-        {item.contact_phone && (
+        {item?.contact_phone && (
           <div className="summary-extra-info">
             <Icon
               title={intl.formatMessage(messages.phone)}
               name={phoneSVG}
               size="24px"
             />
-            {item.contact_phone}
+            {item?.contact_phone}
           </div>
         )}
       </div>
     </>
   );
 };
-PersonSummary.hideLink = true;
 
 export default PersonSummary;

@@ -13,7 +13,7 @@ import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 
 const PersonResultItem = ({ item }) => {
   const site = useSelector((state) => state.site?.data);
-  const showProfileLinks = !site?.['kitconcept.clickable_profile_links'];
+  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
 
   return (
     <article className="tileItem personResultItem">

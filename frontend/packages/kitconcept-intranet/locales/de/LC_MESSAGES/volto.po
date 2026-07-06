@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "About this content"
+#: slots/AboutThisContent/AboutThisContent
+msgid "About this content"
+msgstr "Über diesen Inhalt"
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -20,6 +25,11 @@ msgstr "Adresse"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
 msgstr "Beauftragte Person: *"
+
+#. Default: "Author"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Author"
+msgstr "Autor/IN"
 
 #. Default: "Bio"
 #: components/theme/PersonView
@@ -60,9 +70,19 @@ msgstr "Kontakt"
 msgid "Content marked as reviewed"
 msgstr ""
 
+#. Default: "Content responsible"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Content responsible"
+msgstr "Inhaltsverantwortlich"
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
+msgstr "Erstellt am"
+
+#. Default: "Created on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Created on"
 msgstr "Erstellt am"
 
 #. Default: "Delegate Review Update"
@@ -134,11 +154,6 @@ msgstr "Feedback zu:"
 msgid "Feedback to:"
 msgstr "Feedback an:"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Folgen Sie uns:"
-
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
@@ -153,6 +168,11 @@ msgstr "Ungültige URL"
 #: components/ContentInteractions/ContentInteractions
 msgid "Last Modified On"
 msgstr "Zuletzt geändert am"
+
+#. Default: "Last modified on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Last modified on"
+msgstr "Zuletzt verändert am"
 
 #. Default: "Last updated"
 #: components/Toolbar/DocumentReview

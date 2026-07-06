@@ -31,6 +31,102 @@ h1.documentFirstHeading:has(+ .documentByLine) {
   margin-bottom: $spacing-small;
 }
 
+// ### About Content ###
+
+.about-content {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+  padding: 30px 0;
+  border-top: 1px solid #dde5e8;
+  border-bottom: 1px solid #dde5e8;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: left;
+
+  h2 {
+    margin-bottom: 20px;
+    color: #818a91;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin-bottom: 14px;
+    color: #a8b4b9;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .about-content-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-content-people {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-content-person,
+  .about-content-date,
+  a {
+    display: flex;
+    align-items: center;
+    color: #24282b;
+    font-size: 14px;
+    font-weight: 600;
+    gap: 10px;
+    line-height: 1.2;
+  }
+
+  .about-content-date {
+    font-weight: 400;
+
+    .icon {
+      color: #808a92;
+    }
+  }
+
+  .about-content-avatar {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: $largest-mobile-screen) {
+  .about-content {
+    padding: $spacing-medium 0;
+
+    h2 {
+      font-size: 14px;
+    }
+
+    h3 {
+      font-size: 11px;
+    }
+  }
+
+  .about-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content-person,
+  .about-content-date {
+    font-size: 14px;
+  }
+}
+
 // ### StickyFeedbackButton ###
 
 .sticky-feedback-button-container {

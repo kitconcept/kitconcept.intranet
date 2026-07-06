@@ -9,6 +9,14 @@ on:
       node-version:
         required: true
         type: string
+      test-profile:
+        required: false
+        type: string
+        default: acceptance
+      working-directory:
+        required: false
+        type: string
+        default: ./frontend
 
 jobs:
   playwright:
@@ -54,7 +62,7 @@ jobs:
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
-        working-directory: ./frontend
+        working-directory: ${{ inputs.working-directory }}
 
       - uses: JarvusInnovations/background-action@v1
         name: Start Servers
@@ -73,7 +81,7 @@ jobs:
 
       - name: Run acceptance tests
         run: pnpm exec playwright test --reporter=list,html
-        working-directory: ./frontend
+        working-directory: ${{ inputs.working-directory }}
 
       - name: Upload Playwright artifacts
         if: ${{ !cancelled() }}

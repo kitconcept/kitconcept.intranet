@@ -18,6 +18,8 @@ interface NavigationTreeProps {
 
 export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
   const intl = useIntl();
+  const navigationLabel = intl.formatMessage(messages.navigationLabel);
+  const siteNavigationLabel = intl.formatMessage(messages.siteNavigation);
   const {
     workspaces,
     activeWorkspace,
@@ -72,7 +74,11 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
   };
 
   return (
-    <div className="navigation-tree-wrapper" ref={wrapperRef}>
+    <aside
+      className="navigation-tree-wrapper"
+      ref={wrapperRef}
+      aria-label={siteNavigationLabel}
+    >
       <NavigationTreeHeader
         siteTitle={siteTitle}
         workspaces={workspaces}
@@ -87,7 +93,9 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
       />
 
       <div className="navigation-tree-nav-label">
-        <span>{intl.formatMessage(messages.navigationLabel)}</span>
+        <h2 id="navigation-tree-heading" className="navigation-tree-nav-heading">
+          {navigationLabel}
+        </h2>
         <button
           type="button"
           className="nav-tree-close"
@@ -100,7 +108,7 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
 
       <nav
         className="navigation-tree"
-        aria-label={intl.formatMessage(messages.siteNavigation)}
+        aria-label={`${siteTitle} ${navigationLabel}`}
       >
         {debouncedSearch ? (
           <>
@@ -173,7 +181,7 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
         aria-label={intl.formatMessage(messages.resizePanel)}
         type="button"
       />
-    </div>
+    </aside>
   );
 }
 

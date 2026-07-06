@@ -1559,7 +1559,7 @@ test = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a16"
+version = "1.0.0a18"
 source = { path = "container/kitconcept-plate.tar.gz" }
 dependencies = [
     { name = "plone-api" },
@@ -1567,7 +1567,7 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { hash = "sha256:6f0c845ef51380d3ddf06eac364585b945c77a9958f11daea10855a93e6891e7" }
+sdist = { hash = "sha256:24859c43925ec58815600e0bed4331ff3ce262b644f9dc3eeeb642686212913c" }
 
 [package.metadata]
 requires-dist = [

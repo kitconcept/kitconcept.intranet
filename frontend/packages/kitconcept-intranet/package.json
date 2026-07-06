@@ -21,6 +21,8 @@
   },
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "test:acceptance": "pnpm --dir ../.. exec playwright test -c playwright.config.ts",
+    "test:acceptance:a11y": "pnpm --dir ../.. exec playwright test -c playwright.config.ts -g @a11y",
     "dry-release": "release-it --dry-run",
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",
@@ -33,6 +35,8 @@
     "react-redux": "^8.1.2"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.60.0",
     "@plone/scripts": "^3.6.2",
     "@plone/types": "workspace:*",
     "@testing-library/react": "^16.2.0",

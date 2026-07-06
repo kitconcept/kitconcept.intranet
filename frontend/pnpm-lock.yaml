@@ -1451,7 +1451,7 @@ importers:
         version: link:../volto-logos-block/packages/volto-logos-block
       '@kitconcept/volto-plate':
         specifier: file:../../artifacts/kitconcept-volto-plate.tgz
-        version: file:artifacts/kitconcept-volto-plate.tgz(91db8a45d8be4ed8c80575703f094058)
+        version: file:artifacts/kitconcept-volto-plate.tgz(668a5b4091d1647ee08dbb34248f717f)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -1501,6 +1501,12 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(@plone/volto@core+packages+volto)
     devDependencies:
+      '@axe-core/playwright':
+        specifier: ^4.12.1
+        version: 4.12.1(playwright-core@1.61.1)
+      '@playwright/test':
+        specifier: ^1.61.0
+        version: 1.61.1
       '@plone/scripts':
         specifier: ^3.6.2
         version: 3.10.6
@@ -1991,9 +1997,6 @@ importers:
         specifier: ^11.0.0
         version: 11.1.1
     devDependencies:
-      '@axe-core/playwright':
-        specifier: ^4.12.1
-        version: 4.12.1(playwright-core@1.61.1)
       '@playwright/test':
         specifier: ^1.60.0
         version: 1.60.0
@@ -4658,6 +4661,11 @@ packages:
 
   '@playwright/test@1.60.0':
     resolution: {integrity: sha512-O71yZIbAh/PxDMNGns37GHBIfrVkEVyn+AXyIa5dOTfb4/xNvRWV+Vv/NMbNCtODB/pO7vLlF2OTmMVLhmr7Ag==}
+    engines: {node: '>=18'}
+    hasBin: true
+
+  '@playwright/test@1.61.1':
+    resolution: {integrity: sha512-8nKv6+0RJSL9FE4jYOEGXnPeM/Hg12qZpmqzZjRh3qM0Y7c3z1mrOTfFLids72RDQYVh9WpLEfR5WdpNX4fkig==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -16268,7 +16276,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz(91db8a45d8be4ed8c80575703f094058)':
+  '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz(668a5b4091d1647ee08dbb34248f717f)':
     dependencies:
       '@platejs/ai': 50.3.7(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)
       '@platejs/caption': 49.0.0(@types/react@18.3.31)(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -16276,7 +16284,7 @@ snapshots:
       '@platejs/link': 49.1.1(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/helpers': 2.0.0-alpha.7(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/plate': 1.0.0-alpha.10(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.60.0)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))
+      '@plone/plate': 1.0.0-alpha.10(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.61.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))
       '@plone/registry': link:core/packages/registry
       '@plone/types': link:core/packages/types
       '@tailwindcss/postcss': 4.3.2
@@ -16830,9 +16838,9 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@platejs/playwright@49.0.0(@playwright/test@1.60.0)(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@platejs/playwright@49.0.0(@playwright/test@1.61.1)(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@playwright/test': 1.60.0
+      '@playwright/test': 1.61.1
       platejs: 49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0))
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -16915,6 +16923,10 @@ snapshots:
   '@playwright/test@1.60.0':
     dependencies:
       playwright: 1.60.0
+
+  '@playwright/test@1.61.1':
+    dependencies:
+      playwright: 1.61.1
 
   '@plone-collective/volto-authomatic@3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
     dependencies:
@@ -16999,7 +17011,7 @@ snapshots:
       - '@babel/template'
       - '@types/react'
 
-  '@plone/plate@1.0.0-alpha.10(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.60.0)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))':
+  '@plone/plate@1.0.0-alpha.10(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.61.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))':
     dependencies:
       '@ai-sdk/google': 2.0.11(zod@4.4.3)
       '@ai-sdk/openai': 2.0.23(zod@4.4.3)
@@ -17026,7 +17038,7 @@ snapshots:
       '@platejs/markdown': 50.2.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)
       '@platejs/media': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/mention': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@platejs/playwright': 49.0.0(@playwright/test@1.60.0)(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@platejs/playwright': 49.0.0(@playwright/test@1.61.1)(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/resizable': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/selection': 50.3.4(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/slash-command': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

@@ -10,8 +10,8 @@ class TestVocabularyCounter:
     """Test VocabularyCounter cache invalidation mechanism."""
 
     @pytest.fixture(autouse=True)
-    def _setup(self, portal):
-        self.portal = portal
+    def _setup(self, portal_class):
+        self.portal = portal_class
         # Clean up any previous _vocab_cache
         if hasattr(self.portal, "_vocab_cache"):
             delattr(self.portal, "_vocab_cache")
@@ -57,76 +57,77 @@ class TestGetTranslatedVocabulary:
     """Test get_translated_vocabulary function."""
 
     @pytest.fixture(autouse=True)
-    def _setup(self, portal):
-        self.portal = portal
+    def _setup(self, portal_class):
+        self.portal = portal_class
 
-    def test_vocabulary_from_content(self):
+    def test_vocabulary_from_content(self, create_content):
         """Test that get_translated_vocabulary returns items from the catalog."""
         from kitconcept.intranet.vocabularies.base import get_translated_vocabulary
 
-        with api.env.adopt_roles(["Manager"]):
-            location = api.content.create(
-                self.portal,
-                "Location",
-                id="test-loc",
-                title="Test Location",
-            )
-            uid = api.content.get_uuid(location)
+        payload = {
+            "container": self.portal,
+            "type_": "Location",
+            "id_": "test-loc",
+            "title": "Test Location",
+        }
+        with create_content(**payload) as content:
+            uid = api.content.get_uuid(content)
+            params = (("portal_type", "Location"),)
+            vocab = get_translated_vocabulary(params, "de")
+            tokens = [term.token for term in vocab]
+            assert uid in tokens
 
-        params = (("portal_type", "Location"),)
-        vocab = get_translated_vocabulary(params, "de")
-        tokens = [term.token for term in vocab]
-        assert uid in tokens
-
-        # Clean up
-        with api.env.adopt_roles(["Manager"]):
-            api.content.delete(location)
-
-    def test_vocabulary_terms_use_uid_as_token_and_value(self):
+    def test_vocabulary_terms_use_uid_as_token_and_value(self, create_content):
         """Test that vocabulary terms use UID as both token and value."""
         from kitconcept.intranet.vocabularies.base import get_translated_vocabulary
 
-        with api.env.adopt_roles(["Manager"]):
-            location = api.content.create(
-                self.portal,
-                "Location",
-                id="test-uid-loc",
-                title="Test UID Location",
-            )
-            uid = api.content.get_uuid(location)
+        payload = {
+            "container": self.portal,
+            "type_": "Location",
+            "id_": "test-uid-loc",
+            "title": "Test UID Location",
+        }
+        with create_content(**payload) as content:
+            uid = api.content.get_uuid(content)
+            params = (("portal_type", "Location"),)
+            vocab = get_translated_vocabulary(params, "de")
+            term = vocab.getTermByToken(uid)
+            assert term.value == uid
+            assert term.token == uid
 
-        params = (("portal_type", "Location"),)
-        vocab = get_translated_vocabulary(params, "de")
-        term = vocab.getTermByToken(uid)
-        assert term.value == uid
-        assert term.token == uid
-
-        # Clean up
-        with api.env.adopt_roles(["Manager"]):
-            api.content.delete(location)
-
-    def test_vocabulary_sorted_by_title(self):
+    def test_vocabulary_sorted_by_title(self, create_content):
         """Test that vocabulary terms are sorted by title."""
         from kitconcept.intranet.vocabularies.base import get_translated_vocabulary
 
-        with api.env.adopt_roles(["Manager"]):
-            loc_c = api.content.create(
-                self.portal, "Location", id="loc-c", title="Charlie"
-            )
-            loc_a = api.content.create(
-                self.portal, "Location", id="loc-a", title="Alpha"
-            )
-            loc_b = api.content.create(
-                self.portal, "Location", id="loc-b", title="Bravo"
-            )
+        items = [
+            {
+                "container": self.portal,
+                "type_": "Location",
+                "id_": "loc-c",
+                "title": "Charlie",
+            },
+            {
+                "container": self.portal,
+                "type_": "Location",
+                "id_": "loc-a",
+                "title": "Alpha",
+            },
+            {
+                "container": self.portal,
+                "type_": "Location",
+                "id_": "loc-b",
+                "title": "Bravo",
+            },
+        ]
 
-        params = (("portal_type", "Location"),)
-        vocab = get_translated_vocabulary(params, "de")
-        titles = [term.title for term in vocab]
-        assert titles.index("Alpha") < titles.index("Bravo") < titles.index("Charlie")
-
-        # Clean up
-        with api.env.adopt_roles(["Manager"]):
-            api.content.delete(loc_a)
-            api.content.delete(loc_b)
-            api.content.delete(loc_c)
+        with (
+            create_content(**items[0]),
+            create_content(**items[1]),
+            create_content(**items[2]),
+        ):
+            params = (("portal_type", "Location"),)
+            vocab = get_translated_vocabulary(params, "de")
+            titles = [term.title for term in vocab]
+            assert (
+                titles.index("Alpha") < titles.index("Bravo") < titles.index("Charlie")
+            )

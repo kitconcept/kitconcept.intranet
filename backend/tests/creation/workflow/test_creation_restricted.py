@@ -1,4 +1,3 @@
-from kitconcept.intranet.testing.logo import TEST_LOGO
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
 from typing import Any
@@ -9,27 +8,27 @@ import pytest
 @pytest.fixture(scope="class")
 def answers():
     return {
-        "site_id": "public",
+        "site_id": "intranet",
         "title": "Intranet",
         "description": "Site created with A Plone distribution for Intranets with Plone. Created by kitconcept.",  # noQA: E501
-        "workflow": "public",
-        "available_languages": ["de", "en"],
+        "workflow": "restricted",
+        "available_languages": ["en"],
         "portal_timezone": "Europe/Berlin",
-        "site_logo": TEST_LOGO,
         "setup_content": True,
         "authentication": {"provider": "internal"},
     }
 
 
+@pytest.mark.slow
 class TestSiteCreation:
     @pytest.fixture(autouse=True)
-    def _setup(self, site):
-        self.site = site
+    def _setup(self, portal):
+        self.site = portal
 
     @pytest.mark.parametrize(
         "attr,expected",
         [
-            ["id", "public"],
+            ["id", "intranet"],
         ],
     )
     def test_properties(self, attr, expected):
@@ -39,9 +38,9 @@ class TestSiteCreation:
         "record,oper,expected",
         [
             ("plone.site_title", "eq", "Intranet"),
-            ("plone.default_language", "eq", "de"),
-            ("plone.available_languages", "eq", ["de", "en"]),
-            ("plone.site_logo", "starts", b"filenameb64"),
+            ("plone.default_language", "eq", "en"),
+            ("plone.available_languages", "eq", ["en"]),
+            ("plone.site_logo", "is", None),
         ],
     )
     def test_registry_portal_settings(
@@ -66,7 +65,8 @@ class TestSiteCreation:
     @pytest.mark.parametrize(
         "path,permission,role,expected",
         [
-            ("/", "View", "Anonymous", True),
+            ("/", "View", "Anonymous", False),
+            ("/", "View", "Authenticated", True),
         ],
     )
     def test_content_permission_role(

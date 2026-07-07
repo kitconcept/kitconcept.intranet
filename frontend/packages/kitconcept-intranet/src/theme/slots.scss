@@ -37,35 +37,35 @@ h1.documentFirstHeading:has(+ .documentByLine) {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
   padding: 30px 0;
-  border-top: 1px solid #dde5e8;
-  border-bottom: 1px solid #dde5e8;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  border-top: 1px solid $greySmoke;
+  border-bottom: 1px solid $greySmoke;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-medium;
   text-align: left;
 
   h2 {
-    margin-bottom: 20px;
-    color: #818a91;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0;
+    margin-bottom: $spacing-small;
+    color: $darkGrey;
+    font-size: $font-size;
+    font-weight: $bold;
+
     line-height: 1.2;
     text-transform: uppercase;
   }
 
   h3 {
     margin-bottom: 14px;
-    color: #a8b4b9;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0;
+    color: $grey;
+    font-size: 14px;
+    font-weight: $bold;
+
     line-height: 1.2;
     text-transform: uppercase;
   }
 
   .about-content-grid {
     display: grid;
-    gap: 20px;
+    gap: $spacing-small;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -80,18 +80,18 @@ h1.documentFirstHeading:has(+ .documentByLine) {
   a {
     display: flex;
     align-items: center;
-    color: #24282b;
+    color: $black;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: $semi-bold;
     gap: 10px;
     line-height: 1.2;
   }
 
   .about-content-date {
-    font-weight: 400;
+    font-weight: $regular;
 
     .icon {
-      color: #808a92;
+      color: $grey;
     }
   }
 
@@ -113,7 +113,7 @@ h1.documentFirstHeading:has(+ .documentByLine) {
     }
 
     h3 {
-      font-size: 11px;
+      font-size: 12px;
     }
   }
 

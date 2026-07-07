@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import type { Content } from '@plone/types';
-import { getContent } from '@plone/volto/actions';
+import { getContent } from '@plone/volto/actions/content/content';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import Icon from '@plone/volto/components/theme/Icon/Icon';

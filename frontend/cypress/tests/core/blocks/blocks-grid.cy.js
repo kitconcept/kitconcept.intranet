@@ -93,10 +93,21 @@ context('Blocks Acceptance Tests', () => {
       cy.wait(200);
       cy.get('.blocks-chooser .text .button.slate').click();
 
-      cy.getSlateEditorSelectorAndType(
-        '.block.gridBlock.selected .slate-editor [contenteditable=true]',
-        'Colorless green ideas sleep furiously.',
-      ).setSelection('furiously');
+      cy.get(
+        '.block.gridBlock .block-editor-slate .block.slate.selected .slate-editor',
+      )
+        .should('exist')
+        .click()
+        .type('Colorless green ideas sleep furiously.')
+        .setSelection('furiously');
+      cy.get(
+        '.slate-inline-toolbar .ui.buttons .button-wrapper a[title="Add link"]',
+      )
+        .should('be.visible')
+        .click();
+      cy.get('.link-form-container input')
+        .should('be.visible')
+        .type('https://google.com{enter}');
       cy.wait(1000);
       cy.get(
         '.slate-inline-toolbar .ui.buttons .button-wrapper a[title="Add link"]',

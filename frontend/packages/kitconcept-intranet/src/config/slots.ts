@@ -7,6 +7,7 @@ import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLink
 import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
+import NavigationTreePortal from '../components/NavigationTree/NavigationTreePortal';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -45,6 +46,11 @@ export default function install(config: ConfigType) {
     name: 'ListingDisclaimer',
     slot: 'aboveListingItems',
     component: ListingDisclaimer,
+  });
+  config.registerSlotComponent({
+    slot: 'aboveApp',
+    name: 'NavigationTree2',
+    component: NavigationTreePortal,
   });
 
   return config;

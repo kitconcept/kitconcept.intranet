@@ -94,7 +94,7 @@ constraints = [
     { name = "jsonschema", specifier = "==4.26.0" },
     { name = "jsonschema-specifications", specifier = "==2025.9.1" },
     { name = "keyring", specifier = "==25.7.0" },
-    { name = "kitconcept-core", specifier = "==2.0.0b3" },
+    { name = "kitconcept-core", specifier = "==2.0.0b4" },
     { name = "kitconcept-voltolighttheme", specifier = ">=8.0.0a30" },
     { name = "legacy-cgi", specifier = "==2.6.4" },
     { name = "lockfile", specifier = "==0.12.2" },
@@ -190,7 +190,7 @@ constraints = [
     { name = "plone-event", specifier = "==3.0.0" },
     { name = "plone-exportimport", specifier = "==2.0.1" },
     { name = "plone-folder", specifier = "==5.0.0" },
-    { name = "plone-formblock", specifier = ">=1.0.0a2" },
+    { name = "plone-formblock", specifier = ">=1.0.0a3" },
     { name = "plone-formwidget-autocomplete", specifier = "==2.0.0" },
     { name = "plone-formwidget-namedfile", specifier = "==4.0.0" },
     { name = "plone-formwidget-recurrence", specifier = "==4.0.0" },
@@ -1448,7 +1448,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-core"
-version = "2.0.0b3"
+version = "2.0.0b4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-honeypot" },
@@ -1464,9 +1464,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/95/58/e364ac1492ffadb8ae8d4d4426838ad1a4aeade7c861f675aec7e78dbb68/kitconcept_core-2.0.0b3.tar.gz", hash = "sha256:765a9aeae7373192e4945c4177e52b3892aa73107beefc278e297ce6e33180ad", size = 373385, upload-time = "2026-07-06T13:23:14.703Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/83/be/79bcb271ed2f7ee5376e083fe866039ffdb2b7543cef05f97da6874afd19/kitconcept_core-2.0.0b4.tar.gz", hash = "sha256:1f224106e10f1be3e7d192bed8116de5b12ba96dd79b1a19111a9852b1b79a85", size = 374270, upload-time = "2026-07-07T19:07:05.762Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/13/b1/52b63c94dee5ba26b1bac1a8d2416e7dd1fdcd9000e525e8a0315a9ff321/kitconcept_core-2.0.0b3-py3-none-any.whl", hash = "sha256:5b81d1afce76c29699d86610297f59c4f24c8ae4555f4ba406e0a579e8246eb0", size = 260194, upload-time = "2026-07-06T13:23:12.826Z" },
+    { url = "https://files.pythonhosted.org/packages/fb/df/018ee871bc052ec5b619f268a3433db07b60060929c4375ed76569c1cfe8/kitconcept_core-2.0.0b4-py3-none-any.whl", hash = "sha256:7ff109cb00b47ec54bc7fa0514c1a7ede5b3bf93b35288c06d5c8746bbf97718", size = 260942, upload-time = "2026-07-07T19:07:04.368Z" },
 ]
 
 [[package]]
@@ -1476,6 +1476,7 @@ dependencies = [
     { name = "collective-solr" },
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
+    { name = "kitconcept-plate" },
     { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
     { name = "pas-plugins-keycloakgroups" },
@@ -1517,7 +1518,8 @@ test = [
 requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
-    { name = "kitconcept-core", specifier = "==2.0.0b3" },
+    { name = "kitconcept-core", specifier = "==2.0.0b4" },
+    { name = "kitconcept-plate", path = "container/kitconcept-plate.tar.gz" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1554,6 +1556,34 @@ test = [
     { name = "pytest-docker", specifier = ">=3.2.0" },
     { name = "pytest-plone", specifier = ">=1.0.0" },
 ]
+
+[[package]]
+name = "kitconcept-plate"
+version = "1.0.0a18"
+source = { path = "container/kitconcept-plate.tar.gz" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+]
+sdist = { hash = "sha256:24859c43925ec58815600e0bed4331ff3ce262b644f9dc3eeeb642686212913c" }
+
+[package.metadata]
+requires-dist = [
+    { name = "horse-with-no-namespace", marker = "extra == 'test'", specifier = ">=20250408.0" },
+    { name = "plone-api" },
+    { name = "plone-app-testing", marker = "extra == 'test'" },
+    { name = "plone-restapi" },
+    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+    { name = "products-printingmailhost", marker = "extra == 'test'" },
+    { name = "pytest", marker = "extra == 'test'" },
+    { name = "pytest-cov", marker = "extra == 'test'" },
+    { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.0.0" },
+]
+provides-extras = ["test"]
 
 [[package]]
 name = "kitconcept-solr"
@@ -3423,7 +3453,7 @@ wheels = [
 
 [[package]]
 name = "plone-formblock"
-version = "1.0.0a2"
+version = "1.0.0a3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "beautifulsoup4" },
@@ -3435,9 +3465,9 @@ dependencies = [
     { name = "pyotp" },
     { name = "souper-plone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0c/2c/f184add43539b0b53ceb7857a70cd532af520b9eef28b8fa60b9da3d4e47/plone_formblock-1.0.0a2.tar.gz", hash = "sha256:059ff2452349d79a0e007c80527758d02d771baf9d22f8ab75c7bbff534a2612", size = 133651, upload-time = "2026-06-18T15:23:09.514Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/df/fc/890be2b7e96232a507345cf9caaefaf6495abb24411383ab469aa923bc94/plone_formblock-1.0.0a3.tar.gz", hash = "sha256:00efa055eb83bb424570e5c19c393941df548bb3f5894f2a5ead6783419f454f", size = 138494, upload-time = "2026-07-07T17:48:30.263Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/66/86/c310b2d0202affd415eceee62308fa3b4b3774df5a34b4b641d27d946d47/plone_formblock-1.0.0a2-py3-none-any.whl", hash = "sha256:c91288c9e1821bb556638bfb29630c2cdeb93aba309d0c3c2f59f6e2c6670c66", size = 89528, upload-time = "2026-06-18T15:23:07.894Z" },
+    { url = "https://files.pythonhosted.org/packages/73/32/c8b1d61849c77402b8ad427f292dd4a93e701c387d1f9c64ea3ef7b2704c/plone_formblock-1.0.0a3-py3-none-any.whl", hash = "sha256:74dbba615b221b80ea51dbfd3ba69706fea062a3b49e019fac4a6c68918f6ce9", size = 92976, upload-time = "2026-07-07T17:48:28.585Z" },
 ]
 
 [[package]]

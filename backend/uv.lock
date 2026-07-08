@@ -1476,6 +1476,7 @@ dependencies = [
     { name = "collective-solr" },
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
+    { name = "kitconcept-plate" },
     { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
     { name = "pas-plugins-keycloakgroups" },
@@ -1518,6 +1519,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
+    { name = "kitconcept-plate", path = "container/kitconcept-plate.tar.gz" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1554,6 +1556,34 @@ test = [
     { name = "pytest-docker", specifier = ">=3.2.0" },
     { name = "pytest-plone", specifier = ">=1.0.0" },
 ]
+
+[[package]]
+name = "kitconcept-plate"
+version = "1.0.0a18"
+source = { path = "container/kitconcept-plate.tar.gz" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+]
+sdist = { hash = "sha256:24859c43925ec58815600e0bed4331ff3ce262b644f9dc3eeeb642686212913c" }
+
+[package.metadata]
+requires-dist = [
+    { name = "horse-with-no-namespace", marker = "extra == 'test'", specifier = ">=20250408.0" },
+    { name = "plone-api" },
+    { name = "plone-app-testing", marker = "extra == 'test'" },
+    { name = "plone-restapi" },
+    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+    { name = "products-printingmailhost", marker = "extra == 'test'" },
+    { name = "pytest", marker = "extra == 'test'" },
+    { name = "pytest-cov", marker = "extra == 'test'" },
+    { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.0.0" },
+]
+provides-extras = ["test"]
 
 [[package]]
 name = "kitconcept-solr"

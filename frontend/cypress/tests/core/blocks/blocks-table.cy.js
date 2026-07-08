@@ -10,7 +10,11 @@ describe('Table Block Tests', () => {
       contentId: 'my-page',
       contentTitle: 'My Page',
     });
-    cy.visit('/my-page');
+    cy.visit('/my-page', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('navigation-tree-open', 'false');
+      },
+    });
     cy.wait('@content');
 
     cy.navigate('/my-page/edit');

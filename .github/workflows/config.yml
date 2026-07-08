@@ -22,7 +22,7 @@ on:
       node-version:
         required: false
         type: string
-        default: "22.x"
+        default: "24.x"
       python-version:
         required: false
         type: string
@@ -98,7 +98,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Compute several vars needed for the CI
         id: vars
@@ -110,7 +110,7 @@ jobs:
           echo "environment=${environment}" >> $GITHUB_OUTPUT
           echo "stack-name=${environment//./-}" >> $GITHUB_OUTPUT
 
-      - uses: dorny/paths-filter@v3.0.2
+      - uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |

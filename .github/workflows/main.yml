@@ -106,6 +106,17 @@ jobs:
         name: ${{ matrix.name }}
         spec-pattern: ${{ matrix.spec-pattern }}
 
+  playwright:
+    name: "Acceptance Playwright"
+    uses: ./.github/workflows/playwright.yml
+    if: ${{ needs.config.outputs.acceptance == 'true' }}
+    needs:
+        - config
+        - image-build
+    with:
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        node-version: ${{ needs.config.outputs.node-version }}
+
   a11y:
     name: "A11y: ${{ matrix.name }}"
     uses: ./.github/workflows/acceptance.yml

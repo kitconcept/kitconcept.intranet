@@ -38,6 +38,7 @@ dependencies = [
     "collective-solr==10.1.1",
     "kitconcept.solr==2.0.0a14",
     "kitconcept.contactblock==1.0.0a6",
+    "kitconcept-plate",
 ]
 
 [dependency-groups]
@@ -63,6 +64,9 @@ container = [
     "relstorage==4.1.1",
     "zeo==6.0.0",
 ]
+
+[tool.uv.sources]
+kitconcept-plate = { path = "container/kitconcept-plate.tar.gz" }
 
 [tool.hatch.metadata]
 allow-direct-references = true

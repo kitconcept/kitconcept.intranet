@@ -8,6 +8,32 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0-alpha.18 (2026-07-08)
+
+### Feature
+
+- Add review menu and sidebar. @Tishasoumya-02 [#reviewSidebar](https://github.com/kitconcept/kitconcept.intranet/issue/reviewSidebar)
+- Upgrade to kitconcept.core 2.0.0b1.
+  See https://github.com/kitconcept/kitconcept-core/releases/tag/2.0.0b1 @ericof [#417](https://github.com/kitconcept/kitconcept.intranet/issue/417)
+- Upgrade to @kitconcept/core 2.0.0-beta.3 @ericof [#446](https://github.com/kitconcept/kitconcept.intranet/issue/446)
+- Upgraded @plone/volto-form-block to 1.0.0-alpha.3. @ericof [#454](https://github.com/kitconcept/kitconcept.intranet/issue/454)
+- Toast implementation for proxy object links @Tishasoumya-02 
+
+### Bugfix
+
+- Update volto iframe block to 2.4.1 and volto contact block to 1.0.0a6 @iRohitSingh 
+
+### Internal
+
+- Update highlight block version from 4.5.1 to 5.0.0-alpha.0 @Tishasoumya-02 [#updateHighlightBlockVersion](https://github.com/kitconcept/kitconcept.intranet/issue/updateHighlightBlockVersion)
+- Udate volto version from 19.0.0-alpha.36 to 19.1.1 @Tishasoumya-02 [#updateVoltoVersion](https://github.com/kitconcept/kitconcept.intranet/issue/updateVoltoVersion)
+- Upgraded to @kitconcept/core 2.0.0-beta.4. @ericof [#454](https://github.com/kitconcept/kitconcept.intranet/issue/454)
+- Upgraded `@kitconcept/core` to 2.0.0b2. @ericof 
+
+### Test
+
+- Add acceptance tests for the Persons search tab and its condition facets. Functionally these tests belong to kitconcept.solr, but they need the Person content type and the condition facet configuration that kitconcept.intranet provides. @reebalazs 
+
 ## 2.0.0-alpha.17 (2026-06-12)
 
 ### Feature

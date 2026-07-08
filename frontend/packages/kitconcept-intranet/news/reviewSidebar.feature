@@ -1,1 +1,0 @@
-Add review menu and sidebar. @Tishasoumya-02

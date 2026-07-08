@@ -1,57 +1,26 @@
-from kitconcept.core.utils.scripts import create_site
+from kitconcept.core.utils import scripts
+from kitconcept.intranet.interfaces import IBrowserLayer
+from pathlib import Path
+from Products.CMFPlone.Portal import PloneSite
 from typing import Any
-
-import os
-
-
-__all__ = ["create_site", "get_environmental_variables"]
-
-marker = object()  # Unique marker object to indicate no value
+from zope.interface.interface import InterfaceClass
 
 
-truthy = frozenset(("t", "true", "y", "yes", "on", "1"))
-
-
-def as_bool(value: str) -> bool:
-    """Coerce a string into a boolean.
-
-    :param value: Value to be evaluated. A case-insensitive match against the
-        :data:`truthy` set yields ``True``; anything else yields ``False``.
-        ``None`` returns ``False`` and an existing :class:`bool` is returned
-        unchanged.
-    :returns: The boolean interpretation of ``value``.
-    """
-    if value is None:
-        return False
-    if isinstance(value, bool):
-        return value
-    value = str(value).strip()
-    return value.lower() in truthy
-
-
-def as_list(value: str) -> list[str]:
-    """Split a comma-separated string into a list of trimmed values.
-
-    :param value: Comma-separated string, e.g. ``"en, de, fr"``. An empty or
-        falsy value yields an empty list.
-    :returns: List of whitespace-stripped items.
-    """
-    if not value:
-        return []
-    items = value.split(",")
-    return [item.strip() for item in items]
+__all__ = [
+    "create_site",
+]
 
 
 OPTIONS: tuple[tuple[str, str, Any], ...] = (
     ("site_id", "SITE_ID", None),
     ("title", "SITE_TITLE", None),
     ("description", "SITE_DESCRIPTION", None),
-    ("available_languages", "SITE_AVAILABLE_LANGUAGES", as_list),
+    ("available_languages", "SITE_AVAILABLE_LANGUAGES", scripts.as_list),
     ("default_language", "SITE_DEFAULT_LANGUAGE", None),
     ("portal_timezone", "SITE_PORTAL_TIMEZONE", None),
-    ("setup_solr", "SITE_SETUP_SOLR", as_bool),
-    ("setup_content", "SITE_SETUP_CONTENT", as_bool),
-    ("demo_content", "SITE_DEMO_CONTENT", as_bool),
+    ("setup_solr", "SITE_SETUP_SOLR", scripts.as_bool),
+    ("setup_content", "SITE_SETUP_CONTENT", scripts.as_bool),
+    ("demo_content", "SITE_DEMO_CONTENT", scripts.as_bool),
     ("workflow", "SITE_WORKFLOW", None),
     ("authentication.provider", "SITE_AUTHENTICATION_PROVIDER", None),
     ("authentication.oidc-server_url", "SITE_AUTHENTICATION_OIDC-SERVER_URL", None),
@@ -63,7 +32,7 @@ OPTIONS: tuple[tuple[str, str, Any], ...] = (
         None,
     ),
     ("authentication.oidc-site-url", "SITE_AUTHENTICATION_OIDC-SITE-URL", None),
-    ("authentication.oidc-scope", "SITE_AUTHENTICATION_OIDC-SCOPE", as_list),
+    ("authentication.oidc-scope", "SITE_AUTHENTICATION_OIDC-SCOPE", scripts.as_list),
     ("authentication.oidc-issuer", "SITE_AUTHENTICATION_OIDC-ISSUER", None),
     (
         "authentication.authomatic-github-consumer_key",
@@ -78,7 +47,7 @@ OPTIONS: tuple[tuple[str, str, Any], ...] = (
     (
         "authentication.authomatic-github-scope",
         "SITE_AUTHENTICATION_AUTHOMATIC-GITHUB-SCOPE",
-        as_list,
+        scripts.as_list,
     ),
     (
         "authentication.authomatic-google-consumer_key",
@@ -93,37 +62,36 @@ OPTIONS: tuple[tuple[str, str, Any], ...] = (
     (
         "authentication.authomatic-google-scope",
         "SITE_AUTHENTICATION_AUTHOMATIC-GOOGLE-SCOPE",
-        as_list,
+        scripts.as_list,
     ),
 )
 
 
-def get_environmental_variables() -> dict[str, Any]:
-    """Collect site-creation answers from environment variables.
+def create_site(
+    app,
+    env_vars: dict[str, Any],
+    answers_file: Path,
+    browser_layer: type[InterfaceClass] | None = None,
+    additional_profiles: tuple[str, ...] = (),
+) -> PloneSite:
+    """Create a site using the provided answers file and environmental variables."""
+    # We hardcode the distribution name here as this script
+    # should not be used for other distributions.
 
-    Each entry in :data:`OPTIONS` maps an answer key to an environment variable
-    name and an optional transform callable (e.g. :func:`as_bool`,
-    :func:`as_list`). Variables that are not set are skipped, so the resulting
-    mapping only contains keys explicitly provided via the environment. Keys
-    containing a ``.`` (e.g. ``authentication.provider``) are expanded into a
-    nested dictionary.
+    distribution = "kitconcept-intranet"
+    package_iface: list[type[InterfaceClass]] = [IBrowserLayer]
 
-    :returns: Mapping of answer keys to their (optionally transformed) values,
-        ready to be merged into the site-creation answers.
-    """
-    env_vars: dict[str, Any] = {}
-    for key, env_var, transform in OPTIONS:
-        value = os.getenv(env_var, marker)
-        if value is marker:
-            continue
-        elif transform:
-            value = transform(value)
-        if "." in key:
-            # Handle nested keys for authentication settings
-            main_key, sub_key = key.split(".", 1)
-            if main_key not in env_vars:
-                env_vars[main_key] = {}
-            env_vars[main_key][sub_key] = value
-        else:
-            env_vars[key] = value
-    return env_vars
+    if browser_layer is not None:
+        # Add the provided browser layer to the package interface list,
+        # ensuring it is the first.
+        package_iface.insert(0, browser_layer)
+
+    return scripts.create_site(
+        app=app,
+        answers_file=answers_file,
+        env_answers=env_vars,
+        package_iface=package_iface,
+        env_options=OPTIONS,
+        additional_profiles=additional_profiles,
+        distribution=distribution,
+    )

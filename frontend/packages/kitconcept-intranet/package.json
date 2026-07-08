@@ -21,6 +21,8 @@
   },
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "test:acceptance": "pnpm --dir ../.. exec playwright test -c playwright.config.ts",
+    "test:acceptance:a11y": "pnpm --dir ../.. exec playwright test -c playwright.config.ts -g @a11y",
     "dry-release": "release-it --dry-run",
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",
@@ -33,12 +35,15 @@
     "react-redux": "^8.1.2"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.0",
     "@plone/scripts": "^3.6.2",
     "@plone/types": "workspace:*",
     "@testing-library/react": "^16.2.0",
     "@types/lodash": "^4.14.201",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
+    "playwright": "^1.61.0",
     "release-it": "^19.0.5",
     "typescript": "^5.7.3",
     "vitest": "^3.1.2"
@@ -65,7 +70,8 @@
     "@kitconcept/core",
     "@plone-collective/volto-authomatic",
     "@kitconcept/volto-solr",
-    "@kitconcept/volto-contact-block"
+    "@kitconcept/volto-contact-block",
+    "@kitconcept/volto-plate"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
@@ -87,13 +93,14 @@
     "@kitconcept/volto-light-theme": "workspace:*",
     "@kitconcept/volto-contact-block": "workspace:*",
     "@plone/components": "workspace:*",
-    "@plone/volto-form-block": "^1.0.0-alpha.0",
+    "@plone/volto-form-block": "^1.0.0-alpha.3",
     "@plone-collective/volto-authomatic": "3.0.0-alpha.6",
     "@plone-collective/volto-image-editor": "1.0.1",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
     "react-aria-components": "catalog:",
-    "volto-rss-block": "^3.0.1"
+    "volto-rss-block": "^3.0.1",
+    "@kitconcept/volto-plate": "file:../../artifacts/kitconcept-volto-plate.tgz"
   },
   "volto_version": "19.1.4"
 }

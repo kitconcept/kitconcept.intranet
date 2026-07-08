@@ -2,10 +2,9 @@
 ARG KC_VERSION
 FROM ghcr.io/kitconcept/core-builder:${KC_VERSION:-latest} AS builder
 
-# Move skeleton folder
-RUN <<EOT
-    mv /app /app_base
-EOT
+# Copy only the files needed for installing dependencies first to leverage Docker cache
+# In this case, kitconcept-plate
+COPY ./container /container
 
 # Install dependencies
 RUN --mount=type=cache,target=/root/.cache \
@@ -32,8 +31,7 @@ RUN --mount=type=cache,target=/root/.cache \
 
 # Move skeleton files to /app
 RUN <<EOT
-    mv /app_base/* /app
-    rm -Rf /app_base
+    mv /app_skeleton/* /app
     mv scripts/* /app/scripts/
 EOT
 

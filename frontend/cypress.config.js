@@ -4,7 +4,7 @@ const path = require('path');
 const currentDir = path.dirname(__filename);
 
 module.exports = defineConfig({
-  viewportWidth: 1280,
+  viewportWidth: 1440,
   viewportHeight: 1280,
   retries: {
     runMode: 3,

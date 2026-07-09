@@ -49,10 +49,12 @@ context('Blocks Acceptance Tests', () => {
       cy.get('.blocks-chooser [aria-label="Unfold Text blocks"]').click();
       cy.wait(200);
       cy.get('.blocks-chooser .text .button.slate').click();
-      cy.getSlateEditorSelectorAndType(
-        '.block.gridBlock.selected .slate-editor [contenteditable=true]',
-        'Colorless green ideas sleep furiously.',
-      );
+      cy.get(
+        '.block.gridBlock .block-editor-slate .block.slate.selected .slate-editor',
+      )
+        .should('exist')
+        .click()
+        .type('Colorless green ideas sleep furiously.');
 
       cy.get('#toolbar-save').click();
       cy.wait('@edit');

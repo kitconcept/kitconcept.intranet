@@ -1,4 +1,5 @@
 import type { ConfigType } from '@plone/registry';
+import config from '@plone/volto/registry';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
@@ -6,6 +7,14 @@ import ContentInteractions from '../components/ContentInteractions/ContentIntera
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
 import NavigationTreePortal from '../components/NavigationTree/NavigationTreePortal';
+
+const isNotSiteHome = ({ location }: { location?: { pathname?: string } }) => {
+  const homePaths = [
+    '/',
+    ...(config.settings?.supportedLanguages ?? []).map((lang) => `/${lang}`),
+  ];
+  return !homePaths.includes(location?.pathname ?? '');
+};
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -43,6 +52,7 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
+    predicates: [isNotSiteHome],
   });
 
   return config;

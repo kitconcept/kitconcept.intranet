@@ -9,6 +9,21 @@ export function getStateColor(reviewState: string): string {
   return 'grey';
 }
 
+export function getParentPath(path: string): string {
+  if (path === '/') return '/';
+  const parent = path.split('/').slice(0, -1).join('/');
+  return parent || '/';
+}
+
+/**
+ * Plone's short content id (last path segment), as used by the
+ * `@ordering` endpoint's `obj_id`. Works on both API and app-relative
+ * `@id` values, since they share the same trailing segment.
+ */
+export function getShortId(id: string): string {
+  return id.replace(/\/$/, '').split('/').pop() ?? '';
+}
+
 export function collectAncestorPaths(
   currentPath: string,
   rootPath: string = '/',

@@ -223,6 +223,7 @@ export function NavigationTreeItem({
             aria-hidden
           />
           {!isRenaming && !isAdding && (
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <span
               className={cx('nav-tree-row-actions', {
                 'is-menu-open': isMenuOpen,

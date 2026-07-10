@@ -1,6 +1,9 @@
 from kitconcept.core.utils import scripts
+from kitconcept.intranet.interfaces import IBrowserLayer
 from pathlib import Path
+from Products.CMFPlone.Portal import PloneSite
 from typing import Any
+from zope.interface.interface import InterfaceClass
 
 
 __all__ = [
@@ -64,6 +67,31 @@ OPTIONS: tuple[tuple[str, str, Any], ...] = (
 )
 
 
-def create_site(app, env_vars: dict[str, Any], answers_file: Path, browser_layer):
+def create_site(
+    app,
+    env_vars: dict[str, Any],
+    answers_file: Path,
+    browser_layer: type[InterfaceClass] | None = None,
+    additional_profiles: tuple[str, ...] = (),
+) -> PloneSite:
     """Create a site using the provided answers file and environmental variables."""
-    scripts.create_site(app, answers_file, env_vars, browser_layer, OPTIONS)
+    # We hardcode the distribution name here as this script
+    # should not be used for other distributions.
+
+    distribution = "kitconcept-intranet"
+    package_iface: list[type[InterfaceClass]] = [IBrowserLayer]
+
+    if browser_layer is not None:
+        # Add the provided browser layer to the package interface list,
+        # ensuring it is the first.
+        package_iface.insert(0, browser_layer)
+
+    return scripts.create_site(
+        app=app,
+        answers_file=answers_file,
+        env_answers=env_vars,
+        package_iface=package_iface,
+        env_options=OPTIONS,
+        additional_profiles=additional_profiles,
+        distribution=distribution,
+    )

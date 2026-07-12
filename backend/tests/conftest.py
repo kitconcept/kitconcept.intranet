@@ -106,6 +106,8 @@ def answers() -> dict:
 def create_site(distribution_name):
     def func(app, answers: dict) -> PloneSite:
         with api.env.adopt_user(SITE_OWNER_NAME):
+            if (site_id := answers.get("site_id")) and site_id in app.objectIds():
+                app.manage_delObjects([site_id])
             site = add_site(app, distribution=distribution_name, **answers)
         return site
 

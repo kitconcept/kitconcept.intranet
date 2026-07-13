@@ -38,6 +38,7 @@ const HeaderSearch = () => {
         onPress={() => setIsSearchOpen(true)}
       >
         <Icon name={zoomSVG} size="24px" />
+        <span className="header-search-button-label">Search the site...</span>
       </Button>
 
       <ModalOverlay

@@ -21,9 +21,11 @@
   min-height: var(--topbar-height);
   box-sizing: border-box;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 24px;
-  background-color: aqua;
+  border-bottom: 1px solid #eef1f3;
+  background-color: $white;
+  gap: 24px;
   transition: background-color 220ms ease;
 
   &::after {
@@ -74,27 +76,84 @@ body.has-toolbar:has(#navigation-tree .navigation-tree-panel.is-open)
   left: 380px;
 }
 
+body.contenttype-workspace,
+body.contenttype-wikipage,
+body:has(.header-intranet-compact) {
+  #main .breadcrumbs {
+    display: none;
+  }
+}
+
+.header-breadcrumbs {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  color: #878f93;
+  gap: 6px;
+  line-height: 1.2;
+}
+
+.header-breadcrumbs > .react-aria-Breadcrumb {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 6px;
+}
+
+.header-breadcrumbs .react-aria-Link {
+  color: inherit;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &[data-hovered],
+  &[data-focus-visible] {
+    color: #59636b;
+  }
+
+  &[data-current] {
+    color: #2f3438;
+  }
+}
+
+.header-breadcrumb-separator {
+  flex: 0 0 auto;
+  color: #b4bdc4;
+}
+
 .header-search-button {
   display: inline-flex;
-  width: 40px;
-  height: 40px;
+  width: 320px;
+  max-width: 32vw;
+  height: 44px;
   align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #000;
+  justify-content: flex-start;
+  padding: 0 16px;
+  border: 1px solid #eef1f3;
+  border-radius: 3px;
+  background: #f2f5f6;
+  color: #878f93;
   cursor: pointer;
+  gap: 12px;
 
   &:hover,
   &:focus {
-    color: #000;
+    color: #5f6970;
   }
 
   &:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
   }
+}
+
+.header-search-button-label {
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .header-search-modal-backdrop {
@@ -241,6 +300,37 @@ body.has-toolbar:has(#navigation-tree .navigation-tree-panel.is-open)
   to {
     opacity: 0;
     transform: translate3d(18%, 0, 0);
+  }
+}
+
+@media (max-width: $computer-width) {
+  .header-intranet-compact {
+    position: unset;
+  }
+  .header-breadcrumbs {
+    font-size: 16px;
+  }
+
+  .header-breadcrumb-item:not(:first-child):not(:last-child) {
+    display: none;
+  }
+
+  .header-breadcrumb-link,
+  .header-breadcrumb-current {
+    max-width: 20ch;
+  }
+
+  .header-search-button {
+    width: 44px;
+    max-width: none;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .header-search-button-label {
+    display: none;
   }
 }
 

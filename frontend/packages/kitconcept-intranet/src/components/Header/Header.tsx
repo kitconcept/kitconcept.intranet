@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import HeaderBreadcrumbs from './HeaderBreadcrumbs';
 import HeaderSearch from './HeaderSearch';
 import cx from 'classnames';
 
@@ -69,6 +70,7 @@ const Header = (props) => {
           'is-route-transition': isRouteTransition,
         })}
       >
+        <HeaderBreadcrumbs pathname={pathname} />
         <HeaderSearch />
       </div>
       <div className="pusher"></div>

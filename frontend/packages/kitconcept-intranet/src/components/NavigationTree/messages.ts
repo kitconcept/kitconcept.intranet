@@ -53,4 +53,32 @@ export const messages = defineMessages({
     id: 'navigation_tree_workspace_switcher_label',
     defaultMessage: 'Switch workspace',
   },
+  addNew: {
+    id: 'navigation_tree_add_new',
+    defaultMessage: 'Add new',
+  },
+  moreActions: {
+    id: 'navigation_tree_more_actions',
+    defaultMessage: 'More actions',
+  },
+  rename: {
+    id: 'navigation_tree_rename',
+    defaultMessage: 'Rename',
+  },
+  duplicate: {
+    id: 'navigation_tree_duplicate',
+    defaultMessage: 'Duplicate',
+  },
+  delete: {
+    id: 'navigation_tree_delete',
+    defaultMessage: 'Delete',
+  },
+  renameTitleLabel: {
+    id: 'navigation_tree_rename_title_label',
+    defaultMessage: 'Title',
+  },
+  actionError: {
+    id: 'navigation_tree_action_error',
+    defaultMessage: 'Something went wrong',
+  },
 });

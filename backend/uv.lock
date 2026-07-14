@@ -1554,7 +1554,7 @@ test = [
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "pytest-docker", specifier = ">=3.2.0" },
-    { name = "pytest-plone", specifier = ">=1.0.0" },
+    { name = "pytest-plone", specifier = ">=1.1.0" },
 ]
 
 [[package]]
@@ -4994,7 +4994,7 @@ wheels = [
 
 [[package]]
 name = "pytest-plone"
-version = "1.0.0"
+version = "1.1.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -5002,6 +5002,8 @@ dependencies = [
     { name = "plone-base" },
     { name = "plone-browserlayer" },
     { name = "plone-dexterity" },
+    { name = "plone-distribution" },
+    { name = "plone-exportimport" },
     { name = "products-cmfplone", extra = ["test"] },
     { name = "pytest" },
     { name = "requests" },
@@ -5009,9 +5011,9 @@ dependencies = [
     { name = "zope-pytestlayer" },
     { name = "zope-schema" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/44/57/3b6cac92b5554e1c7f124dcb2b8cf25bc3de63668d264fee2c43ab4240ca/pytest_plone-1.0.0.tar.gz", hash = "sha256:3c60b893edc9a1dadf2a21b090b1ca389a2787dc754105ee7b6b35721361a822", size = 28120, upload-time = "2026-05-18T22:12:42.902Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a1/9e/51694db94e142b545835d3070d213a631d29387a62a1f5fec5a00c5c237e/pytest_plone-1.1.0.tar.gz", hash = "sha256:9f3ac2e4f975dddf9c773f176de2114467d624016250bef01f8763a2d482dcf2", size = 67794, upload-time = "2026-07-13T22:17:11.462Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/eb/a8/01780c4ded556b57e617e88e0cd0c2eb11c6f41f0f27aec3d5b3e4c1885d/pytest_plone-1.0.0-py3-none-any.whl", hash = "sha256:51533c8df40947fcf7eae865483bae6e7ac4b94481c55724846cdd86868ef058", size = 23434, upload-time = "2026-05-18T22:12:41.303Z" },
+    { url = "https://files.pythonhosted.org/packages/7b/a3/c32e1cc815f32b5ecd4bc8c1329f7490f35f59bf390d6eeb2a8c27610bc4/pytest_plone-1.1.0-py3-none-any.whl", hash = "sha256:89f69669ecb45f77ae3517238922f2c8a7e6eccd14dac8acd831f52a4fb4caf0", size = 30432, upload-time = "2026-07-13T22:17:10.107Z" },
 ]
 
 [[package]]

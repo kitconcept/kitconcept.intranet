@@ -1,4 +1,3 @@
-from Acquisition import aq_parent
 from collections.abc import Generator
 from kitconcept.intranet.testing.logo import TEST_LOGO
 from plone.dexterity.fti import DexterityFTI
@@ -24,9 +23,8 @@ def answers() -> dict:
 
 
 @pytest.fixture(scope="class")
-def portal(portal_class, create_site, answers) -> Generator[PloneSite]:
-    app = aq_parent(portal_class)
-    site = create_site(app=app, answers=answers)
+def portal(app_class, create_site, answers) -> Generator[PloneSite]:
+    site = create_site(app=app_class, answers=answers)
     yield site
 
 

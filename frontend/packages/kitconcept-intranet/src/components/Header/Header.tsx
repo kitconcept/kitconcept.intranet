@@ -73,7 +73,6 @@ const Header = (props) => {
         <HeaderBreadcrumbs pathname={pathname} />
         <HeaderSearch />
       </div>
-      <div className="pusher"></div>
     </div>
   );
 };

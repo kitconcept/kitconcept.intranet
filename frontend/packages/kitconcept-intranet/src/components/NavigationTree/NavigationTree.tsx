@@ -42,6 +42,8 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
     getChildrenForPath,
     isLoadingForPath,
     fetchedPaths,
+    refetchPath,
+    expandPath,
   } = useNavigationTree(rootPath);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -139,6 +141,8 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
                     fetchedPaths={fetchedPaths}
                     getChildrenForPath={getChildrenForPath}
                     isLoadingForPath={isLoadingForPath}
+                    refetchPath={refetchPath}
+                    expandPath={expandPath}
                   />
                 ))}
               </Tree>
@@ -172,6 +176,8 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
                 fetchedPaths={fetchedPaths}
                 getChildrenForPath={getChildrenForPath}
                 isLoadingForPath={isLoadingForPath}
+                refetchPath={refetchPath}
+                expandPath={expandPath}
               />
             ))}
           </Tree>

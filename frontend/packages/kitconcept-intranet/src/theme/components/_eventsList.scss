@@ -1,4 +1,4 @@
-.event-calendar {
+.block.listing.listDate .event-calendar.items {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
 

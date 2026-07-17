@@ -1,4 +1,5 @@
 import type { ConfigType } from '@plone/registry';
+import { ContentTypeCondition } from '@plone/volto/helpers/Slots';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
@@ -43,6 +44,7 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
+    predicates: [ContentTypeCondition(['WikiPage', 'Workspace'])],
   });
 
   return config;

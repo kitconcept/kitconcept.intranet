@@ -1,0 +1,1 @@
+Fix the navigation tree not detecting the active Workspace for pages nested underneath it, since the workspace lookup was restricted to direct children of the site root. @iFlameing

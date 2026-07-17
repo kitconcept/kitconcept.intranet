@@ -14,7 +14,6 @@ export function useWorkspaceSwitcher() {
         '/',
         {
           portal_type: 'Workspace',
-          'path.depth': 1,
           sort_on: 'sortable_title',
           b_size: 100,
         },

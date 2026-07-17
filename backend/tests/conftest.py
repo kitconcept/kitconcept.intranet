@@ -1,12 +1,9 @@
 from dataclasses import dataclass
-from kitconcept.core.factory import add_site
 from kitconcept.intranet.testing import FUNCTIONAL_TESTING
 from kitconcept.intranet.testing import INTEGRATION_TESTING
 from kitconcept.intranet.testing.logo import TEST_LOGO
 from pathlib import Path
 from plone import api
-from plone.app.testing.interfaces import SITE_OWNER_NAME
-from Products.CMFPlone.Portal import PloneSite
 from pytest_plone import fixtures_factory
 from requests import exceptions as exc
 from typing import Any
@@ -100,16 +97,6 @@ def answers() -> dict:
         "setup_content": False,
         "authentication": {"provider": "internal"},
     }
-
-
-@pytest.fixture(scope="session")
-def create_site(distribution_name):
-    def func(app, answers: dict) -> PloneSite:
-        with api.env.adopt_user(SITE_OWNER_NAME):
-            site = add_site(app, distribution=distribution_name, **answers)
-        return site
-
-    return func
 
 
 def is_responsive(url):

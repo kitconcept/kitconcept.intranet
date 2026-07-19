@@ -122,6 +122,7 @@ jobs:
             backend:
               - 'backend/**'
               - '.github/workflows/backend*'
+              - '.github/workflows/main*'
               - 'docker-compose-*.yml'
             devops:
               - 'devops/**'
@@ -131,10 +132,12 @@ jobs:
               - '.github/workflows/docs.yaml'
             frontend:
               - 'frontend/**'
+              - '.github/workflows/main*'
               - '.github/workflows/frontend*'
             deploy:
               - 'backend/**'
               - 'frontend/**'
+              - '.github/workflows/main*'
               - '.github/workflows/backend*'
               - '.github/workflows/frontend*'
               - 'devops/**'

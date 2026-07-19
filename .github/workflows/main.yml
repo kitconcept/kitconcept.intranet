@@ -175,12 +175,12 @@ jobs:
       - frontend-release
     with:
       tag: ${{ needs.config.outputs.base-tag }}
-      environment: "plone-intranet.kitconcept.dev"
-      stack-name: "plone-intranet-kitconcept-dev"
+      environment: "v2-plone-intranet.kitconcept.dev"
+      stack-name: "v2-plone-intranet-kitconcept-dev"
       stack-file: "devops/stacks/demo.yml"
       registry: "ghcr.io"
       username: ${{ github.actor }}
-      scale-after: "plone-intranet-kitconcept-dev_solr-reindex=1"
+      scale-after: "v2-plone-intranet-kitconcept-dev_solr-reindex=1"
     secrets:
       password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN }}
       remote-host: ${{ secrets.DEPLOY_HOST }}

@@ -8,7 +8,7 @@ on:
 env:
   NODE_VERSION: 22.x
   ADDON_NAME: kitconcept-intranet
-  BASE_BRANCH: main
+  BASE_BRANCH: 2.x.x
 
 jobs:
   config:

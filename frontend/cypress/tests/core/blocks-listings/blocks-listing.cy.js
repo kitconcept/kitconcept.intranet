@@ -10,7 +10,11 @@ describe('Listing Block Tests', () => {
       contentTitle: 'My Page',
     });
 
-    cy.visit('/');
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('navigation-tree-open', 'false');
+      },
+    });
     cy.wait('@content');
   });
 

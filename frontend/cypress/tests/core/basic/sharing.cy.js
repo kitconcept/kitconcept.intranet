@@ -33,7 +33,7 @@ describe('Sharing Tests', () => {
 
   it('As editor, I can share a page to another user', function () {
     cy.intercept('/**/@logout').as('logout');
-    cy.intercept('/**/@sharing').as('sharing');
+    cy.intercept('/**/@sharing*').as('sharing');
 
     // Click on the Toolbar > More
     cy.findByRole('button', { name: /more/i }).click();
@@ -46,16 +46,13 @@ describe('Sharing Tests', () => {
       .type('test')
       .closest('form')
       .submit();
+    cy.wait('@sharing');
 
     // Give the test user view permissions
     cy.findByRole('cell', { name: 'test_user_1_ (test-user)' })
       .parents('tr')
       .within(() => {
-        // TODO: Manually pressing the label is needed because the label isn't associated with the input!
-        // See https://github.com/plone/volto/pull/1415 for a fix.
-        // The 'view' role is the 2nd row. Cypress isn't great with tables
-        cy.findAllByRole('checkbox', { value: 'test_user_1_:Reviewer' })
-          .eq(2)
+        cy.get('input[value="test_user_1_:Reader"]')
           .parents('.checkbox')
           .click();
       });

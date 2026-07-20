@@ -1,10 +1,12 @@
 import type { ConfigType } from '@plone/registry';
+import { ContentTypeCondition } from '@plone/volto/helpers/Slots';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
+import NavigationTreePortal from '../components/NavigationTree/NavigationTreePortal';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -37,6 +39,12 @@ export default function install(config: ConfigType) {
     name: 'ListingDisclaimer',
     slot: 'aboveListingItems',
     component: ListingDisclaimer,
+  });
+  config.registerSlotComponent({
+    slot: 'aboveApp',
+    name: 'NavigationTree2',
+    component: NavigationTreePortal,
+    predicates: [ContentTypeCondition(['WikiPage', 'Workspace'])],
   });
 
   return config;

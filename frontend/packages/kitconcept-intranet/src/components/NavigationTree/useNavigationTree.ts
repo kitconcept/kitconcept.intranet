@@ -17,7 +17,10 @@ export interface SearchItem {
 export const ROOT_ID = '/';
 const WORKSPACE_PORTAL_TYPE = 'Workspace';
 
-export function useNavigationTree(rootPath: string = ROOT_ID) {
+export function useNavigationTree(
+  rootPath: string = ROOT_ID,
+  isAddingWorkspace = false,
+) {
   const dispatch = useDispatch();
   const location = useLocation();
   const currentPath = flattenToAppURL(location.pathname);
@@ -63,6 +66,7 @@ export function useNavigationTree(rootPath: string = ROOT_ID) {
   );
 
   useEffect(() => {
+    if (isAddingWorkspace) return;
     const ancestors = collectAncestorPaths(currentPath, rootPath);
     for (const path of ancestors) {
       if (!fetchedPaths.current.has(path)) {
@@ -71,7 +75,7 @@ export function useNavigationTree(rootPath: string = ROOT_ID) {
       }
     }
     setExpandedKeys((prev) => new Set([...prev, ...ancestors]));
-  }, [currentPath, rootPath, dispatchFetch]);
+  }, [currentPath, rootPath, dispatchFetch, isAddingWorkspace]);
 
   useEffect(() => {
     if (searchTimerRef.current) clearTimeout(searchTimerRef.current);
@@ -130,8 +134,8 @@ export function useNavigationTree(rootPath: string = ROOT_ID) {
     subrequests['nav-tree-search']?.items ?? []
   ).filter((item: SearchItem) => item['@type'] !== WORKSPACE_PORTAL_TYPE);
   const isSearchLoading = !!subrequests['nav-tree-search']?.loading;
-  const rootChildren = getChildrenForPath(rootPath);
-  const isRootLoading = isLoadingForPath(rootPath);
+  const rootChildren = isAddingWorkspace ? [] : getChildrenForPath(rootPath);
+  const isRootLoading = isAddingWorkspace ? false : isLoadingForPath(rootPath);
 
   return {
     currentPath,

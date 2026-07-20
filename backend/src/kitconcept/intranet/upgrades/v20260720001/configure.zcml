@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <!-- Restricted profile -->
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:restricted"
+      source="1000"
+      destination="1001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update workflow and permissions"
+        import_steps="rolemap workflow"
+        />
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260611001"
+      destination="20260720001"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade Plone Site permissions"
+        handler=".upgrade_plone_site_permissions"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

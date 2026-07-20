@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useIntl } from 'react-intl';
+import { useLocation } from 'react-router-dom';
 import { TreeItem } from 'react-aria-components';
 import { Tree, TreeItemContent } from '@plone/components';
 import { ColumnbeforeIcon, WorldIcon } from '@plone/components/Icons';
@@ -18,6 +19,7 @@ interface NavigationTreeProps {
 
 export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
   const intl = useIntl();
+  const location = useLocation();
   const navigationLabel = intl.formatMessage(messages.navigationLabel);
   const siteNavigationLabel = intl.formatMessage(messages.siteNavigation);
   const {
@@ -25,6 +27,9 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
     activeWorkspace,
     isLoading: isWorkspacesLoading,
   } = useActiveWorkspace();
+  const isAddingWorkspace =
+    location.pathname.endsWith('/add') &&
+    new URLSearchParams(location.search).get('type') === 'Workspace';
   const rootPath = activeWorkspace
     ? flattenToAppURL(activeWorkspace['@id'])
     : ROOT_ID;
@@ -45,7 +50,7 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
     fetchedPaths,
     refetchPath,
     expandPath,
-  } = useNavigationTree(rootPath);
+  } = useNavigationTree(rootPath, isAddingWorkspace);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);

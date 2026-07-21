@@ -16,6 +16,11 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "About this content"
+#: slots/AboutThisContent/AboutThisContent
+msgid "About this content"
+msgstr ""
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -24,6 +29,11 @@ msgstr "Endereço"
 #. Default: "Assignee: *"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
+msgstr ""
+
+#. Default: "Author"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Author"
 msgstr ""
 
 #. Default: "Bio"
@@ -65,10 +75,20 @@ msgstr "Contato"
 msgid "Content marked as reviewed"
 msgstr ""
 
+#. Default: "Content responsible"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Content responsible"
+msgstr ""
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
 msgstr "Criado em"
+
+#. Default: "Created on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Created on"
+msgstr ""
 
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
@@ -139,11 +159,6 @@ msgstr "Feedback sobre:"
 msgid "Feedback to:"
 msgstr "Feedback para:"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Acompanhe-nos:"
-
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
@@ -158,6 +173,11 @@ msgstr "URL inválida"
 #: components/ContentInteractions/ContentInteractions
 msgid "Last Modified On"
 msgstr "Última modificação em"
+
+#. Default: "Last modified on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Last modified on"
+msgstr ""
 
 #. Default: "Last updated"
 #: components/Toolbar/DocumentReview

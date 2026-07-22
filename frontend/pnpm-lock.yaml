@@ -523,9 +523,6 @@ importers:
       jwt-decode:
         specifier: 2.2.0
         version: 2.2.0
-      linkify-it:
-        specifier: 3.0.2
-        version: 3.0.2
       locale:
         specifier: 0.1.0
         version: 0.1.0
@@ -613,9 +610,6 @@ importers:
       react-intl-redux:
         specifier: 2.3.0
         version: 2.3.0(@babel/runtime@7.29.7)(prop-types@15.7.2)(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react@18.2.0)
-      react-medium-image-zoom:
-        specifier: 3.0.15
-        version: 3.0.15(prop-types@15.7.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-popper:
         specifier: ^2.3.0
         version: 2.3.0(@popperjs/core@2.11.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -4167,8 +4161,8 @@ packages:
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
   '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz':
-    resolution: {integrity: sha512-BopWPBPQhPefVrekc1d2Hx8c1JeHuuihThowaWpEmFgcvLCd77pj0YVh8aD/E9Wu7hOmVuWQ1MEdKvoXXCamOw==, tarball: file:artifacts/kitconcept-volto-plate.tgz}
-    version: 1.0.0-alpha.20
+    resolution: {integrity: sha512-jG7Ua/Z5sBKqE96DGc618e8Me0KLffoI0hFom9QTuShU6rexBZV9lOqsgRbiGyuv/rJ6nreleBSFaQNYF7f/Rw==, tarball: file:artifacts/kitconcept-volto-plate.tgz}
+    version: 1.0.0-alpha.21
     peerDependencies:
       '@platejs/ai': ^50.3.7
       '@plone/registry': workspace:*
@@ -4727,8 +4721,8 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/plate@1.0.0-alpha.11':
-    resolution: {integrity: sha512-iu3Dy/lgSXULn8ejrNhR+1jqeMC5tPQcIJtbzcG3x58P5VKcTk8VOQXSF5Fhb6dWcHYxAF92HUdwO7jE74Ob7Q==}
+  '@plone/plate@1.0.0-alpha.12':
+    resolution: {integrity: sha512-E1iF4uQGJyO9vU4vUT96nhhdXZ9HQfzCNv9GJyNdR5Yvf6iWErpUBilMSGG0BKG/AGHqHGVwBPFcRkPbPpP9lg==}
     peerDependencies:
       '@plone/components': ^4.0.0 || ^5.0.0-alpha.0
       '@plone/registry': workspace:*
@@ -10113,9 +10107,6 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  linkify-it@3.0.2:
-    resolution: {integrity: sha512-gDBO4aHNZS6coiZCKVhSNh43F9ioIL4JwRjLZPkoLIY4yZFwg264Y5lu2x6rb1Js42Gh6Yqm2f6L2AJcnkzinQ==}
-
   listr2@9.0.5:
     resolution: {integrity: sha512-ME4Fb83LgEgwNw96RKNvKV4VTLuXfoKudAmm2lP8Kk87KaMK0/Xrx/aAkMWmT8mDb+3MlFDspfbCs7adjRxA2g==}
     engines: {node: '>=20.0.0'}
@@ -11851,13 +11842,6 @@ packages:
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
 
-  react-medium-image-zoom@3.0.15:
-    resolution: {integrity: sha512-OJc6XXmSFr0ApniFdCL1TliP6BG9eQabkcahWA9CbHha3y2IJXo1aAsQs7Irc2Wcek/N9QCeAY4wTitoMg5iLg==}
-    peerDependencies:
-      prop-types: ^15.5.8
-      react: ^16.0.0
-      react-dom: ^16.0.0
-
   react-moment-proptypes@1.8.1:
     resolution: {integrity: sha512-Er940DxWoObfIqPrZNfwXKugjxMIuk1LAuEzn23gytzV6hKS/sw108wibi9QubfMN4h+nrlje8eUCSbQRJo2fQ==}
     peerDependencies:
@@ -13370,9 +13354,6 @@ packages:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
-
-  uc.micro@1.0.6:
-    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
 
   ufo@1.6.4:
     resolution: {integrity: sha512-JFNbkD1Svwe0KvGi8GOeLcP4kAWQ609twvCdcHxq1oSL8svv39ZuSvajcD8B+5D0eL4+s1Is2D/O6KN3qcTeRA==}
@@ -16303,9 +16284,10 @@ snapshots:
       '@platejs/caption': 49.0.0(@types/react@18.3.31)(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/floating': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/link': 49.1.1(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@platejs/mention': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/helpers': 2.0.0-alpha.7(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/plate': 1.0.0-alpha.11(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.61.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))
+      '@plone/plate': 1.0.0-alpha.12(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.61.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))
       '@plone/registry': link:core/packages/registry
       '@plone/types': link:core/packages/types
       '@tailwindcss/postcss': 4.3.2
@@ -17032,7 +17014,7 @@ snapshots:
       - '@babel/template'
       - '@types/react'
 
-  '@plone/plate@1.0.0-alpha.11(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.61.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))':
+  '@plone/plate@1.0.0-alpha.12(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.61.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))':
     dependencies:
       '@ai-sdk/google': 2.0.11(zod@4.4.3)
       '@ai-sdk/openai': 2.0.23(zod@4.4.3)
@@ -23194,10 +23176,6 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  linkify-it@3.0.2:
-    dependencies:
-      uc.micro: 1.0.6
-
   listr2@9.0.5:
     dependencies:
       cli-truncate: 5.2.0
@@ -25354,12 +25332,6 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  react-medium-image-zoom@3.0.15(prop-types@15.7.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      prop-types: 15.7.2
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-
   react-moment-proptypes@1.8.1(moment@2.29.4):
     dependencies:
       moment: 2.29.4
@@ -27207,8 +27179,6 @@ snapshots:
   typescript@5.6.1-rc: {}
 
   typescript@5.9.3: {}
-
-  uc.micro@1.0.6: {}
 
   ufo@1.6.4: {}
 

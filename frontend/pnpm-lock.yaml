@@ -113,6 +113,7 @@ overrides:
   '@kitconcept/volto-carousel-block': workspace:*
   '@kitconcept/volto-iframe-block': workspace:*
   '@kitconcept/volto-bm3-compat': workspace:*
+  '@kitconcept/volto-keywordmanager': workspace:*
   '@plone/registry': workspace:*
   react-aria-components: ^1.17.0
 
@@ -1443,6 +1444,9 @@ importers:
       '@kitconcept/volto-introduction-block':
         specifier: workspace:*
         version: link:../volto-introduction-block/packages/volto-introduction-block
+      '@kitconcept/volto-keywordmanager':
+        specifier: workspace:*
+        version: link:../volto-keywordmanager/frontend/packages/volto-keywordmanager
       '@kitconcept/volto-light-theme':
         specifier: workspace:*
         version: link:../volto-light-theme/frontend/packages/volto-light-theme
@@ -1778,74 +1782,6 @@ importers:
         specifier: ^3.2.4
         version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
 
-  packages/volto-dsgvo-banner/packages/volto-dsgvo-banner:
-    dependencies:
-      '@datapunt/matomo-tracker-js':
-        specifier: 0.5.1
-        version: 0.5.1
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-ga4:
-        specifier: ^2.1.0
-        version: 2.1.0
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.6
-      release-it:
-        specifier: ^17.1.1
-        version: 17.11.0(typescript@5.9.3)
-
-  packages/volto-form-block/frontend/packages/volto-form-block:
-    dependencies:
-      '@hcaptcha/react-hcaptcha':
-        specifier: ^0.3.6
-        version: 0.3.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      file-saver:
-        specifier: ^2.0.5
-        version: 2.0.5
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-google-recaptcha-v3:
-        specifier: ^1.8.0
-        version: 1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.6
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.17.24
-      '@types/react':
-        specifier: ^18.3.1
-        version: 18.3.31
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.31)
-      lodash:
-        specifier: 4.17.21
-        version: 4.17.21
-      release-it:
-        specifier: ^19.0.5
-        version: 19.2.4(@types/node@24.13.1)(magicast@0.3.5)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-      vitest:
-        specifier: ^3.1.2
-        version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
-
   packages/volto-heading-block/packages/volto-heading-block:
     dependencies:
       react:
@@ -1938,6 +1874,64 @@ importers:
         version: 19.2.4(@types/node@24.13.1)(magicast@0.3.5)
       vitest:
         specifier: ^3.2.4
+        version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
+
+  packages/volto-keywordmanager/frontend/packages/volto-keywordmanager:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-aria-components:
+        specifier: ^1.17.0
+        version: 1.18.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/components':
+        specifier: ^4.2.1
+        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/registry':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/registry
+      '@plone/scripts':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/scripts
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/types
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@types/react':
+        specifier: ^18.3.1
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.31)
+      '@types/react-router-dom':
+        specifier: ^5.3.3
+        version: 5.3.3
+      react-intl:
+        specifier: 3.12.1
+        version: 3.12.1(@types/react@18.3.31)(react@18.2.0)
+      react-redux:
+        specifier: 8.1.2
+        version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-router-dom:
+        specifier: 5.2.0
+        version: 5.2.0(react@18.2.0)
+      react-toastify:
+        specifier: 5.5.0
+        version: 5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      release-it:
+        specifier: ^19.0.5
+        version: 19.2.4(@types/node@24.13.1)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.1.2
         version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
 
   packages/volto-light-theme/frontend/packages/volto-light-theme:
@@ -3157,9 +3151,6 @@ packages:
 
   '@cypress/xvfb@1.2.4':
     resolution: {integrity: sha512-skbBzPggOVYCbnGgV+0dmBdW/s77ZkAOXIC1knS8NagwDjBrNC1LuXtQJeiN6l+m7lzmHtaoUw/ctJKdqkG57Q==}
-
-  '@datapunt/matomo-tracker-js@0.5.1':
-    resolution: {integrity: sha512-9/MW9vt/BA5Db7tO6LqCeQKtuvBNjyq51faF3AzUmPMlYsJCnASIxcut3VqJKiribhUoey7aYbPIYuj9x4DLPA==}
 
   '@discoveryjs/json-ext@0.5.7':
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -11789,9 +11780,6 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
-  react-ga4@2.1.0:
-    resolution: {integrity: sha512-ZKS7PGNFqqMd3PJ6+C2Jtz/o1iU9ggiy8Y8nUeksgVuvNISbmrQtJiZNvC/TjDsqD0QlU5Wkgs7i+w9+OjHhhQ==}
-
   react-google-recaptcha-v3@1.11.0:
     resolution: {integrity: sha512-kLQqpz/77m8+trpBwzqcxNtvWZYoZ/YO6Vm2cVTHW8hs80BWUfDpC7RDwuAvpswwtSYApWfaSpIDFWAIBNIYxQ==}
     peerDependencies:
@@ -15286,8 +15274,6 @@ snapshots:
       lodash.once: 4.1.1
     transitivePeerDependencies:
       - supports-color
-
-  '@datapunt/matomo-tracker-js@0.5.1': {}
 
   '@discoveryjs/json-ext@0.5.7': {}
 
@@ -25280,8 +25266,6 @@ snapshots:
   react-fast-compare@2.0.4: {}
 
   react-fast-compare@3.2.2: {}
-
-  react-ga4@2.1.0: {}
 
   react-google-recaptcha-v3@1.11.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:

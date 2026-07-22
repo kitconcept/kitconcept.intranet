@@ -2,6 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import DocumentReviewPlug from '@kitconcept/intranet/components/Toolbar/DocumentReviewPlug';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
+import profilePlaceholder from '../assets/profile-placeholder.svg';
 
 export default function install(config: ConfigType) {
   const nonContentRoutes = [
@@ -35,6 +36,10 @@ export default function install(config: ConfigType) {
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';
   config.settings.displayLogout = false;
+  config.settings.placeholderImages = {
+    ...config.settings.placeholderImages,
+    Person: profilePlaceholder,
+  };
 
   config.settings.apiExpanders = [
     ...config.settings.apiExpanders,

@@ -1559,7 +1559,7 @@ test = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a20"
+version = "1.0.0a21"
 source = { path = "container/kitconcept-plate.tar.gz" }
 dependencies = [
     { name = "plone-api" },
@@ -1567,10 +1567,11 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { hash = "sha256:8d986c04a40be6367c92a281de4d7df0f126264f2ca67d413eb4bd8766838bcc" }
+sdist = { hash = "sha256:1e14b68715d443c3e3af9a56d320adc49849c37c091bb4b1db073b2b9d3ebad8" }
 
 [package.metadata]
 requires-dist = [
+    { name = "collective-mockmailhost", marker = "extra == 'test'" },
     { name = "horse-with-no-namespace", marker = "extra == 'test'", specifier = ">=20250408.0" },
     { name = "plone-api" },
     { name = "plone-app-testing", marker = "extra == 'test'" },

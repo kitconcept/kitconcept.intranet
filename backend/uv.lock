@@ -1476,6 +1476,7 @@ dependencies = [
     { name = "collective-solr" },
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
+    { name = "kitconcept-keywordmanager" },
     { name = "kitconcept-plate" },
     { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
@@ -1519,6 +1520,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
+    { name = "kitconcept-keywordmanager" },
     { name = "kitconcept-plate", path = "container/kitconcept-plate.tar.gz" },
     { name = "kitconcept-solr", specifier = "==2.0.0a14" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
@@ -1555,6 +1557,21 @@ test = [
     { name = "pytest-cov" },
     { name = "pytest-docker", specifier = ">=3.2.0" },
     { name = "pytest-plone", specifier = ">=1.1.0" },
+]
+
+[[package]]
+name = "kitconcept-keywordmanager"
+version = "1.0.0a1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fa/34/9d9f258d45b56510c6b8d7323f64e3790aeb859d601cb54ad291dae3d319/kitconcept_keywordmanager-1.0.0a1.tar.gz", hash = "sha256:92785a34752df0beadf46875ea335f6348f04e7244421782d2d6cbccd6ab3577", size = 79550, upload-time = "2026-07-21T14:32:15.462Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/98/14/4f1b069da99e958f3afda627e48b0255faa3054a4ecbfa9b4a94b0a0d8b0/kitconcept_keywordmanager-1.0.0a1-py3-none-any.whl", hash = "sha256:4e7e8b31429e66fd0fde480e740c8aaa859caa98fdd8b6dd2b45f72cc82a80cd", size = 88904, upload-time = "2026-07-21T14:32:13.798Z" },
 ]
 
 [[package]]

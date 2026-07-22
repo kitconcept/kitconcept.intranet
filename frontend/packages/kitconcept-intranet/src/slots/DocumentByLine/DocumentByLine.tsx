@@ -2,8 +2,10 @@ import React, { useMemo } from 'react';
 import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
+import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
 
 const messages = defineMessages({
   by: {
@@ -29,6 +31,7 @@ type FormData = {
 type UserData = {
   fullname: string;
   homepage: string | null;
+  portrait?: string | null;
 };
 
 type ContentWithBylineExpander = Content & {
@@ -60,7 +63,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   }, [form.global?.creators, content?.creators]);
 
   const creatorsWithData = useMemo(() => {
-    const usersFromExpander = content?.['@components'].byline.users;
+    const usersFromExpander = content?.['@components']?.byline?.users ?? {};
 
     return creators.map((userid: string) => {
       const userData = usersFromExpander?.[userid];
@@ -69,9 +72,11 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
       return {
         name: userData?.fullname || userid,
         homepage: userData?.homepage,
+        portrait: userData?.portrait,
       };
     });
   }, [creators, content]);
+  const primaryCreator = creatorsWithData[0];
 
   if (!content) {
     return null;
@@ -80,6 +85,20 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   return (
     <>
       <div className="documentByLine">
+        {primaryCreator && (
+          <img
+            className="author-avatar"
+            src={
+              primaryCreator.portrait
+                ? expandToBackendURL(primaryCreator.portrait)
+                : avatarPlaceholder
+            }
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+          />
+        )}
+
         {creatorsWithData.length > 0 && (
           <span>
             {intl.formatMessage(messages.by)}{' '}
@@ -98,6 +117,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             {' — '}
           </span>
         )}
+
         {content.effective && !isAddMode && (
           <span>
             {content.review_state === 'published' ? (
@@ -119,6 +139,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             )}
           </span>
         )}
+
         {content.modified && !isAddMode && (
           <span>
             {intl.formatMessage(messages.modified)}{' '}

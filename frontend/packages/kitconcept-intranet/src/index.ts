@@ -62,5 +62,4 @@ const applyConfig = (config: ConfigType) => {
   return config;
 };
 
-
 export default applyConfig;

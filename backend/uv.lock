@@ -1520,7 +1520,7 @@ requires-dist = [
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
     { name = "kitconcept-plate", path = "container/kitconcept-plate.tar.gz" },
-    { name = "kitconcept-solr", specifier = "==2.0.0a14" },
+    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1589,7 +1589,7 @@ provides-extras = ["test"]
 [[package]]
 name = "kitconcept-solr"
 version = "2.0.0a14"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag#7f5ba8c1c12ba60f3fdf40519e5ae0dc7363e9d5" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },
@@ -1597,10 +1597,7 @@ dependencies = [
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "products-cmfplone" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/54/7f/6fd1d080f1ab3abc73d3985895b3e52ce998db58fe3b33b31720af14b1bf/kitconcept_solr-2.0.0a14.tar.gz", hash = "sha256:101ea897174079ee2e504fb14b50ba9a290451900b4ed46e3d37a64ddc5920c0", size = 52314, upload-time = "2026-06-10T14:44:41.164Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/6e/28/2b595cbf09bc45e2b5d2fb46b7b0a83c00b4959190a530f472e0d3335d36/kitconcept_solr-2.0.0a14-py3-none-any.whl", hash = "sha256:014c2ccefd935d6ff9d5cb7c137e4e2534d6e9c9c951879775c54956133b792f", size = 40365, upload-time = "2026-06-10T14:44:39.892Z" },
+    { name = "requests" },
 ]
 
 [[package]]

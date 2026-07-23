@@ -1,0 +1,482 @@
+{
+  "@id": "/aktuelles/nachrichten/alle-nachrichten/neue-nachricht",
+  "@type": "News Item",
+  "UID": "a1ceff28b5014e47a96050a651b65aa2",
+  "allow_discussion": false,
+  "blocks": {
+    "176720fe-0451-443f-9da9-6c9a080bb4e3": {
+      "@type": "gridBlock",
+      "blocks": {
+        "275f92df-482a-42ae-bd65-dfafb021e0b4": {
+          "@type": "image",
+          "credit": {},
+          "description": "Person tippt auf Laptop-Tastatur w\u00e4hrend mobiler Arbeit",
+          "image_field": "image",
+          "size": "l",
+          "styles": {
+            "align:noprefix": "center",
+            "blockWidth:noprefix": "narrow"
+          },
+          "title": "Mobile Arbeit am Laptop",
+          "url": "../resolveuid/aee73316667a45ac8df73e967511c629"
+        },
+        "3a369922-94ee-4da8-99da-533db22a3b1c": {
+          "@type": "slate",
+          "plaintext": "Meine \u00dcberschrift\nHallo das ist ein Text",
+          "value": [
+            {
+              "children": [
+                {
+                  "text": "Meine \u00dcberschrift"
+                }
+              ],
+              "type": "h2"
+            },
+            {
+              "children": [
+                {
+                  "text": "Hallo das ist ein Text"
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        },
+        "758eb085-dfd0-417e-85ed-a1efdef86f26": {
+          "@type": "teaser",
+          "description": "",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../resolveuid/7fce8b9becbb43d091604ae5b3e84ac0",
+              "@type": "Document",
+              "Description": "",
+              "Subject": [],
+              "Title": "Nachrichten",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "",
+              "effective": "2025-06-13T09:28:00+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "job_title": null,
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Nachrichten",
+              "type_title": "Seite"
+            }
+          ],
+          "overwrite": false,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Nachrichten"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "758eb085-dfd0-417e-85ed-a1efdef86f26",
+          "275f92df-482a-42ae-bd65-dfafb021e0b4",
+          "3a369922-94ee-4da8-99da-533db22a3b1c"
+        ]
+      },
+      "headline": "Weiter Links",
+      "styles": {},
+      "theme": "grey"
+    },
+    "18db02d5-a9f6-45ac-b28b-8c1f1f7f50f2": {
+      "@type": "slate",
+      "plaintext": "## Auf einen Blick\n\n- Das Institut f\u00fcr Interdisziplin\u00e4re Systemforschung koordiniert das neu bewilligte EU-Projekt KLIMANET mit einem F\u00f6rdervolumen von 5,4 Mio. Euro.\n- Das Projekt modelliert die Wechselwirkungen zwischen Klimawandel, Infrastruktursystemen und gesellschaftlicher Resilienz.\n- Sechs europ\u00e4ische L\u00e4nder sind mit Forschungseinrichtungen an dem Verbundprojekt beteiligt.\n- KLIMANET l\u00e4uft \u00fcber vier Jahre und startet offiziell im Oktober 2026.\n- Erste Ergebnisse sollen in einen europ\u00e4ischen Policy-Brief f\u00fcr die EU-Kommission einm\u00fcnden.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Auf einen Blick"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Das Institut f\u00fcr Interdisziplin\u00e4re Systemforschung koordiniert das neu bewilligte EU-Projekt KLIMANET mit einem F\u00f6rdervolumen von 5,4 Mio. Euro."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Das Projekt modelliert die Wechselwirkungen zwischen Klimawandel, Infrastruktursystemen und gesellschaftlicher Resilienz."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sechs europ\u00e4ische L\u00e4nder sind mit Forschungseinrichtungen an dem Verbundprojekt beteiligt."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "KLIMANET l\u00e4uft \u00fcber vier Jahre und startet offiziell im Oktober 2026."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Erste Ergebnisse sollen in einen europ\u00e4ischen Policy-Brief f\u00fcr die EU-Kommission einm\u00fcnden."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "5622a92c-8ca3-470d-ba95-80985f8041e1": {
+      "@type": "title"
+    },
+    "61f97911-ac90-4d4c-b07e-9d2b798b381c": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "narrow",
+        "shortLine": false
+      }
+    },
+    "9f645eee-1bd3-49df-b806-2400d618420e": {
+      "@type": "image",
+      "alt": "Wissenschaftskonferenz zu Klimaresilienz und Infrastruktur",
+      "image_field": "image",
+      "size": "m",
+      "styles": {
+        "align:noprefix": "right",
+        "blockWidth:noprefix": "narrow"
+      },
+      "title": "Europ\u00e4ische Klimaforschungskonferenz",
+      "url": "../resolveuid/ca504072b25442a38e08d26bf2441cdb"
+    },
+    "a9c8f008-2538-4860-9b15-238c9c104c56": {
+      "@type": "slate",
+      "plaintext": "## Beteiligte Partnereinrichtungen\n\nAn KLIMANET beteiligen sich neben dem koordinierenden Institut f\u00fcr Interdisziplin\u00e4re Systemforschung (Berlin/K\u00f6ln) Einrichtungen aus den Niederlanden, Frankreich, Schweden, \u00d6sterreich und Polen. Jede Partnereinrichtung bringt regionale Datens\u00e4tze und Expertisen ein:\n\n- **Niederlande**: Expertise in Hochwasserschutz und Gew\u00e4ssermanagement\n- **Frankreich**: Hitzeresilienz in dicht besiedelten Stadtgebieten\n- **Schweden**: Infrastrukturrobustheit bei Extremwinter-Ereignissen\n- **\u00d6sterreich und Polen**: Gebirgs- und Transitionsregionen mit spezifischen Klimarisiken\n\nEin gemeinsames Datenportal erm\u00f6glicht den strukturierten Austausch und die harmonisierte Modellierung \u00fcber alle Standorte hinweg.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Beteiligte Partnereinrichtungen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "An KLIMANET beteiligen sich neben dem koordinierenden Institut f\u00fcr Interdisziplin\u00e4re Systemforschung (Berlin/K\u00f6ln) Einrichtungen aus den Niederlanden, Frankreich, Schweden, \u00d6sterreich und Polen. Jede Partnereinrichtung bringt regionale Datens\u00e4tze und Expertisen ein:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Niederlande"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Expertise in Hochwasserschutz und Gew\u00e4ssermanagement"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Frankreich"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Hitzeresilienz in dicht besiedelten Stadtgebieten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Schweden"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Infrastrukturrobustheit bei Extremwinter-Ereignissen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "\u00d6sterreich und Polen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Gebirgs- und Transitionsregionen mit spezifischen Klimarisiken"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Ein gemeinsames Datenportal erm\u00f6glicht den strukturierten Austausch und die harmonisierte Modellierung \u00fcber alle Standorte hinweg."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b98ca7a7-a1df-482d-b9bd-36fe0111f031": {
+      "@type": "image",
+      "align": "center",
+      "credit": {},
+      "description": "Hand h\u00e4lt aufgef\u00e4chertes Farbmusterheft mit Regenbogenfarben",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "align:noprefix": "center",
+        "blockWidth:noprefix": "default",
+        "size:noprefix": "large"
+      },
+      "theme": "default",
+      "title": "Farbpalette und Designauswahl",
+      "url": "../resolveuid/1cc8d667b6d5482eba8d25c69e764324"
+    },
+    "c5bb8a58-996f-468d-bec6-eb6237b131b1": {
+      "@type": "slate",
+      "plaintext": "## Das Projekt KLIMANET\n\nDer Klimawandel stellt Infrastruktursysteme \u2013 von Energienetzen \u00fcber Verkehrswege bis hin zu Wasserversorgungsnetzen \u2013 vor neue, komplexe Belastungen. Gleichzeitig h\u00e4ngt die gesellschaftliche Resilienz gegen\u00fcber Klimaextremen ma\u00dfgeblich davon ab, wie gut diese Systeme unter Stress funktionieren und wie schnell sie sich erholen k\u00f6nnen.\n\nKLIMANET hat sich zum Ziel gesetzt, diese Wechselwirkungen erstmals in einem integrierten Modellrahmen zu erfassen. Dazu werden Klimaprojektionen, Infrastrukturdaten und sozio\u00f6konomische Szenarien kombiniert, um kritische Schwachstellen und Resilienzpotenziale in europ\u00e4ischen Stadtregionen zu identifizieren.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das Projekt KLIMANET"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Der Klimawandel stellt Infrastruktursysteme \u2013 von Energienetzen \u00fcber Verkehrswege bis hin zu Wasserversorgungsnetzen \u2013 vor neue, komplexe Belastungen. Gleichzeitig h\u00e4ngt die gesellschaftliche Resilienz gegen\u00fcber Klimaextremen ma\u00dfgeblich davon ab, wie gut diese Systeme unter Stress funktionieren und wie schnell sie sich erholen k\u00f6nnen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "KLIMANET hat sich zum Ziel gesetzt, diese Wechselwirkungen erstmals in einem integrierten Modellrahmen zu erfassen. Dazu werden Klimaprojektionen, Infrastrukturdaten und sozio\u00f6konomische Szenarien kombiniert, um kritische Schwachstellen und Resilienzpotenziale in europ\u00e4ischen Stadtregionen zu identifizieren."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d788acee-d4d1-48e8-8644-9ed28d01122a": {
+      "@type": "separator",
+      "styles": {
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "narrow",
+        "shortLine": false
+      }
+    },
+    "d8732f7b-bfbd-4d23-8e4e-1197c7545b5f": {
+      "@type": "slate",
+      "plaintext": "## Transfer in die Praxis\n\nEin besonderes Merkmal von KLIMANET ist der enge Praxisbezug: Neben der wissenschaftlichen Ver\u00f6ffentlichung sind konkrete Policy-Briefs f\u00fcr europ\u00e4ische Entscheidungstr\u00e4ger geplant. Im Projektverlauf werden Stadtplanerinnen und -planer sowie Infrastrukturbetreiber aus den Partnerregionen aktiv in die Szenarienentwicklung einbezogen.\n\nDas Institut betrachtet KLIMANET als wichtigen Baustein seiner Langzeitstrategie, systemwissenschaftliche Grundlagenforschung mit gesellschaftsrelevanter Anwendung zu verbinden. Der Projektstart erfolgt im Oktober 2026 mit einem Kick-off-Meeting in Berlin.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Transfer in die Praxis"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Ein besonderes Merkmal von KLIMANET ist der enge Praxisbezug: Neben der wissenschaftlichen Ver\u00f6ffentlichung sind konkrete Policy-Briefs f\u00fcr europ\u00e4ische Entscheidungstr\u00e4ger geplant. Im Projektverlauf werden Stadtplanerinnen und -planer sowie Infrastrukturbetreiber aus den Partnerregionen aktiv in die Szenarienentwicklung einbezogen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Das Institut betrachtet KLIMANET als wichtigen Baustein seiner Langzeitstrategie, systemwissenschaftliche Grundlagenforschung mit gesellschaftsrelevanter Anwendung zu verbinden. Der Projektstart erfolgt im Oktober 2026 mit einem Kick-off-Meeting in Berlin."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5622a92c-8ca3-470d-ba95-80985f8041e1",
+      "b98ca7a7-a1df-482d-b9bd-36fe0111f031",
+      "61f97911-ac90-4d4c-b07e-9d2b798b381c",
+      "18db02d5-a9f6-45ac-b28b-8c1f1f7f50f2",
+      "d788acee-d4d1-48e8-8644-9ed28d01122a",
+      "c5bb8a58-996f-468d-bec6-eb6237b131b1",
+      "a9c8f008-2538-4860-9b15-238c9c104c56",
+      "9f645eee-1bd3-49df-b806-2400d618420e",
+      "d8732f7b-bfbd-4d23-8e4e-1197c7545b5f",
+      "176720fe-0451-443f-9da9-6c9a080bb4e3"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-06-10T08:20:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "neue-nachricht",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-06-10T08:22:56+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "private",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Neue Nachricht",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:33+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,306 @@
+{
+  "@id": "/services/facility-management/umwelt-nachhaltigkeit",
+  "@type": "Document",
+  "UID": "d9972e8b20bf4cdcadf08ce078116715",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "1995d7a5-6c63-42a8-b3ad-08c18691e0c7": {
+      "@type": "slate",
+      "plaintext": "## Geb\u00e4udereinigung\n\nZust\u00e4ndigkeiten, Reinigungsp\u00e4ne und Sonderw\u00fcnsche melden.\n\n**Reinigungsintervalle:**\n- B\u00fcros: 2x pro Woche\n- Labore: t\u00e4glich\n- Gemeinschaftsfl\u00e4chen: t\u00e4glich\n- Fenster: 4x pro Jahr\n\n**Standard-Services:**\n- B\u00f6den kehren und wischen\n- Oberfl\u00e4chen abwischen\n- M\u00fcll entsorgen\n- Toiletten und K\u00fcchenbereich\n\n**Sonderw\u00fcnsche:** Mindestens 48h vorher melden\n\n**Kontakt:** reinigung@dfnt.de\n\n**Notf\u00e4lle:** +49 221 470-2000",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Geb\u00e4udereinigung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Zust\u00e4ndigkeiten, Reinigungsp\u00e4ne und Sonderw\u00fcnsche melden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Reinigungsintervalle:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "B\u00fcros: 2x pro Woche"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Labore: t\u00e4glich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Gemeinschaftsfl\u00e4chen: t\u00e4glich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Fenster: 4x pro Jahr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Standard-Services:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "B\u00f6den kehren und wischen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Oberfl\u00e4chen abwischen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "M\u00fcll entsorgen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Toiletten und K\u00fcchenbereich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sonderw\u00fcnsche:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Mindestens 48h vorher melden"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "reinigung@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:reinigung@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Notf\u00e4lle:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " +49 221 470-2000"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "7053a180-7c94-4e0e-898f-f421a8eb074d": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7053a180-7c94-4e0e-898f-f421a8eb074d",
+      "1995d7a5-6c63-42a8-b3ad-08c18691e0c7"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:01+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "M\u00fclltrennung, Energiesparen und Nachhaltigkeitsinitiativen auf dem Campus: Tipps, Regelungen und aktuelle Projekte des Green Campus.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "umwelt-nachhaltigkeit",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:16:27+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Umwelt & Nachhaltigkeit",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

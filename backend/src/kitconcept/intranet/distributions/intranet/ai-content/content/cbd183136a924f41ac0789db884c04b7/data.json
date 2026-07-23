@@ -1,0 +1,111 @@
+{
+  "@id": "/services/bibliothek",
+  "@type": "Document",
+  "UID": "cbd183136a924f41ac0789db884c04b7",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "28ac93ad-eb6a-4598-89a6-a3ca701de525": {
+      "@type": "slate",
+      "plaintext": "Die DFNT-Bibliothek bietet umfassende Informationsdienstleistungen: OPAC-Katalog und Datenbankrecherche, Fernleihe und Dokumentlieferung, Schulungen zu Literaturrecherche und Zitierwerkzeugen, Open-Access-Beratung und Publikationsfonds, Zugang zu E-Books und E-Journals sowie aktuelle \u00d6ffnungszeiten aller Standorte.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Die DFNT-Bibliothek bietet umfassende Informationsdienstleistungen: OPAC-Katalog und Datenbankrecherche, Fernleihe und Dokumentlieferung, Schulungen zu Literaturrecherche und Zitierwerkzeugen, Open-Access-Beratung und Publikationsfonds, Zugang zu E-Books und E-Journals sowie aktuelle \u00d6ffnungszeiten aller Standorte."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b49f905a-84c7-4728-a3e6-c0d33889624e": {
+      "@type": "image",
+      "alt": "Ressourcen-Datenbank und Informationssystem f\u00fcr wissenschaftliche Publikationen",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/41efe55cb846456b9c4de24b25b472ad"
+    },
+    "d93412fd-99d8-45bb-bf1b-3011a30ea4d4": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d93412fd-99d8-45bb-bf1b-3011a30ea4d4",
+      "b49f905a-84c7-4728-a3e6-c0d33889624e",
+      "28ac93ad-eb6a-4598-89a6-a3ca701de525"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:04:41+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Die DFNT-Bibliothek bietet umfassende Informationsdienstleistungen: OPAC-Katalog und Datenbankrecherche, Fernleihe und Dokumentlieferung, Schulungen zu Literaturrecherche und Zitierwerkzeugen, Open-Access-Beratung und Publikationsfonds, Zugang zu E-Books und E-Journals sowie aktuelle \u00d6ffnungszeiten aller Standorte.",
+  "effective": "2026-03-05T16:04:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "bibliothek",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:29:14+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Bibliothek & Informationsdienste",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:46+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

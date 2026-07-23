@@ -119,6 +119,22 @@ cleanup-example-content: $(VENV_FOLDER) ## Remove invalid references to http://n
 	@echo "$(GREEN)==> Remove invalid references to http://nohost/Plone $(RESET)"
 	@find $(EXAMPLE_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i '' -e 's#http://nohost/Plone/#/#g' {} \;
 
+## AI test corpus (see the README in $(AI_CONTENT_FOLDER))
+AI_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/intranet/distributions/intranet/ai-content
+
+.PHONY: import-ai-content
+import-ai-content: $(VENV_FOLDER) instance/etc/zope.conf ## Import the AI search test corpus into a fresh site
+	@echo "$(GREEN)==> Import AI test corpus from $(AI_CONTENT_FOLDER) $(RESET)"
+	@uv run plone-importer instance/etc/zope.conf $(PLONE_SITE_ID) $(AI_CONTENT_FOLDER)
+	@uv run zconsole run instance/etc/zope.conf ./scripts/ai_content_demo_passwords.py
+
+.PHONY: update-ai-content
+update-ai-content: $(VENV_FOLDER) ## Export the AI search test corpus inside package
+	@echo "$(GREEN)==> Export AI test corpus into $(AI_CONTENT_FOLDER) $(RESET)"
+	if [ -d $(AI_CONTENT_FOLDER)/content ]; then rm -r $(AI_CONTENT_FOLDER)/content $(AI_CONTENT_FOLDER)/*.json ;fi
+	@uv run plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(AI_CONTENT_FOLDER)
+	@find $(AI_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i '' -e 's#http://nohost/Plone/#/#g' {} \;
+
 # QA
 .PHONY: lint
 lint: ## Check and fix code base according to Plone standards
@@ -164,6 +180,14 @@ build-image:  ## Build Docker Images
 .PHONY: solr-activate-and-reindex
 solr-activate-and-reindex: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and reindex
 	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
+
+.PHONY: solr-activate-and-reindex-with-rag
+solr-activate-and-reindex-with-rag: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and RAG (AI search) and reindex
+	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py --rag-enable
+
+.PHONY: solr-activate-and-reindex-with-rag-clear
+solr-activate-and-reindex-with-rag-clear: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and RAG (AI search) and reindex with clear
+	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py --rag-enable --clear
 
 # Acceptance tests
 .PHONY: acceptance-backend-start

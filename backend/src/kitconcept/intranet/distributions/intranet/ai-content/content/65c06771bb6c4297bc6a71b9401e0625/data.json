@@ -1,0 +1,110 @@
+{
+  "@id": "/forschung/institute/institut-fur-ki-und-datenwissenschaften/mitarbeitende",
+  "@type": "Document",
+  "UID": "65c06771bb6c4297bc6a71b9401e0625",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "bbc8c7b0-8dd6-4d97-a063-b93ea99fb88f": {
+      "@type": "title"
+    },
+    "c8eab7e6-416d-4247-a32f-71b4891f052a": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Person"
+            ]
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "2d76b858e012429cb4b36a004d66fca6"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "bbc8c7b0-8dd6-4d97-a063-b93ea99fb88f",
+      "c8eab7e6-416d-4247-a32f-71b4891f052a"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-05-18T07:49:37+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-05-18T07:53:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "mitarbeitende",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-22T10:01:39+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Mitarbeitende des Instituts",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

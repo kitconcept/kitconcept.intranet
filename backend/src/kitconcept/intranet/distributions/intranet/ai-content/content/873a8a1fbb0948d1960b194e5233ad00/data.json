@@ -1,0 +1,108 @@
+{
+  "@id": "/forschung/institute",
+  "@type": "Document",
+  "UID": "873a8a1fbb0948d1960b194e5233ad00",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2dfe2b4a-4ab7-457b-bd07-dea680e3a58c": {
+      "@type": "slate"
+    },
+    "597edbe2-cd6e-4b4f-a374-23eb1877f633": {
+      "@type": "title"
+    },
+    "ee03b0cb-e428-44d1-8e55-e109317fe9e2": {
+      "@type": "search",
+      "listingBodyTemplate": "grid",
+      "query": {
+        "depth": "1",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": ""
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "597edbe2-cd6e-4b4f-a374-23eb1877f633",
+      "ee03b0cb-e428-44d1-8e55-e109317fe9e2",
+      "2dfe2b4a-4ab7-457b-bd07-dea680e3a58c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T10:52:36+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\u00dcbersicht aller Forschungsinstitute und zentralen Einrichtungen des DFNT: von der Quantenphysik und Astrophysik \u00fcber Molekulare Biowissenschaften und Materialchemie bis zu KI & Datenwissenschaften und interdisziplin\u00e4rer Systemforschung. Entdecken Sie Forschungsschwerpunkte, Teams und Kontaktm\u00f6glichkeiten.",
+  "effective": "2026-03-05T16:02:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "institute",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-18T07:37:31+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Institute & Einrichtungen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

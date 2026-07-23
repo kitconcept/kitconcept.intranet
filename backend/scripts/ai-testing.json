@@ -1,0 +1,12 @@
+{
+    "site_id": "Plone",
+    "title": "Plone Intranet by kitconcept (AI search testing)",
+    "description": "Fresh site for the AI search test corpus - no standard example content",
+    "available_languages": ["de"],
+    "portal_timezone": "Europe/Berlin",
+    "workflow": "public",
+    "setup_solr": true,
+    "setup_content": false,
+    "authentication": {"provider": "internal"},
+    "distribution": "kitconcept-intranet"
+}

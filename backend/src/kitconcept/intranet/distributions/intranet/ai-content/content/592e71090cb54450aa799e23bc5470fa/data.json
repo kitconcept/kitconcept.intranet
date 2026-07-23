@@ -1,0 +1,133 @@
+{
+  "@id": "/forschung/institute/institut-fur-molekulare-biowissenschaften",
+  "@type": "Organisational Unit",
+  "UID": "592e71090cb54450aa799e23bc5470fa",
+  "allow_discussion": null,
+  "blocks": {
+    "316b9b93-24a5-4b44-9a58-954c230ed5da": {
+      "@type": "image",
+      "align": "center",
+      "alt": "Wissenschaftliche 3D-Visualisierung einer Nervenzelle mit Dendriten",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Nervenzelle \u2013 Neurowissenschaften",
+      "url": "../resolveuid/142b444b7b5a441f879c7b19c06a1fa8"
+    },
+    "a27e6756-300f-4d96-adcc-bee78e6bd931": {
+      "@type": "listing",
+      "headline": "Nachrichten aus dem Institut",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "592e71090cb54450aa799e23bc5470fa"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "e4bb3b2b-963c-42b3-a4ac-d9d726cd2a1e": {
+      "@type": "listing",
+      "headline": "Weiterf\u00fchrende Links",
+      "headlineTag": "h2",
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "e9ecb4f1-a3e4-403f-a3ae-1a1284c22c0c": {
+      "@type": "description"
+    },
+    "f3414845-6cc2-4396-aa07-b8f91e9b7852": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "f3414845-6cc2-4396-aa07-b8f91e9b7852",
+      "316b9b93-24a5-4b44-9a58-954c230ed5da",
+      "e9ecb4f1-a3e4-403f-a3ae-1a1284c22c0c",
+      "a27e6756-300f-4d96-adcc-bee78e6bd931",
+      "e4bb3b2b-963c-42b3-a4ac-d9d726cd2a1e"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T11:42:28+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Institut f\u00fcr Molekulare Biowissenschaften vereint Expertinnen und Experten aus Molekularbiologie, \u00d6kologie und Neurowissenschaften. Unser Ziel ist es, die molekularen Grundlagen biologischer Systeme zu verstehen \u2013 von neuronalen Netzwerken \u00fcber \u00d6kosystemdynamiken bis hin zu zellul\u00e4ren Signalwegen. Am Standort K\u00f6ln forschen rund 90 Mitarbeitende in modernsten Life-Science-Laboren und an hochmodernen Bildgebungsanlagen.",
+  "effective": "2026-03-05T11:42:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institut-fur-molekulare-biowissenschaften",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "location_reference": [
+    "2eb9c36b5d404e1abeedd9183f4b7413"
+  ],
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-22T09:55:30+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "subjects": [],
+  "title": "Institut f\u00fcr Molekulare Biowissenschaften",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
-import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { useSelector } from 'react-redux';
+import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -64,9 +64,8 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
 
     return creators.map((userid: string) => {
       const userData = usersFromExpander?.[userid];
-      // The user data may not be found if a new user was selected
-      // or if a creator was entered that is not a username.
       return {
+        id: userid,
         name: userData?.fullname || userid,
         homepage: userData?.homepage,
       };
@@ -83,15 +82,9 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
         {creatorsWithData.length > 0 && (
           <span>
             {intl.formatMessage(messages.by)}{' '}
-            {creatorsWithData.map(({ name, homepage }, index) => (
-              <React.Fragment key={name}>
-                {homepage ? (
-                  <UniversalLink className="author-name" href={homepage}>
-                    {name}
-                  </UniversalLink>
-                ) : (
-                  <span>{name}</span>
-                )}
+            {creatorsWithData.map(({ id, name }, index) => (
+              <React.Fragment key={id}>
+                <PersonPill id={id} fullname={name} />
                 {index < creatorsWithData.length - 1 && ', '}
               </React.Fragment>
             ))}

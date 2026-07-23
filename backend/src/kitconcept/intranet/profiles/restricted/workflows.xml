@@ -10,6 +10,8 @@
     <default>
       <bound-workflow workflow_id="simple_intranet_workflow" />
     </default>
-    <type type_id="Plone Site" />
+    <type type_id="Plone Site">
+      <bound-workflow workflow_id="simple_intranet_workflow" />
+    </type>
   </bindings>
 </object>

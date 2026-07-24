@@ -5,8 +5,8 @@ on:
     paths:
       - "backend/**"
       - "frontend/**"
-      - ".github/workflows/*.yml"
       - "devops/**"
+      - ".github/workflows/*.yml"
   workflow_dispatch:
 
 jobs:
@@ -105,6 +105,17 @@ jobs:
         node-version: ${{ needs.config.outputs.node-version }}
         name: ${{ matrix.name }}
         spec-pattern: ${{ matrix.spec-pattern }}
+
+  playwright:
+    name: "Acceptance Playwright"
+    uses: ./.github/workflows/playwright.yml
+    if: ${{ needs.config.outputs.acceptance == 'true' }}
+    needs:
+        - config
+        - image-build
+    with:
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        node-version: ${{ needs.config.outputs.node-version }}
 
   a11y:
     name: "A11y: ${{ matrix.name }}"

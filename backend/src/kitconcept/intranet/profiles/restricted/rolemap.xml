@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rolemap>
+  <permissions>
+    <permission acquire="False"
+                name="Access contents information"
+    >
+      <role name="Authenticated" />
+      <role name="Member" />
+    </permission>
+    <permission acquire="False"
+                name="Modify portal content"
+    >
+      <role name="Editor" />
+      <role name="Manager" />
+      <role name="Reviewer" />
+      <role name="Site Administrator" />
+    </permission>
+    <permission acquire="False"
+                name="View"
+    >
+      <role name="Authenticated" />
+      <role name="Member" />
+    </permission>
+  </permissions>
+</rolemap>

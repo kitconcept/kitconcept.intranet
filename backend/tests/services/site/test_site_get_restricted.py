@@ -1,4 +1,3 @@
-from Acquisition import aq_parent
 from collections.abc import Generator
 from Products.CMFPlone.Portal import PloneSite
 
@@ -21,10 +20,9 @@ def answers():
 
 @pytest.fixture(scope="class")
 def functional_portal(
-    functional_portal_class, create_site, answers
+    functional_app_class, create_site, answers
 ) -> Generator[PloneSite]:
-    app = aq_parent(functional_portal_class)
-    site = create_site(app=app, answers=answers)
+    site = create_site(app=functional_app_class, answers=answers)
     yield site
 
 

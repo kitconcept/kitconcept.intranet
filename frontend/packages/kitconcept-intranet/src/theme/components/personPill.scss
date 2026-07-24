@@ -1,0 +1,61 @@
+.person-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  vertical-align: middle;
+
+  .person-pill-link {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    gap: 10px;
+    text-decoration: none;
+
+    .person-pill-name {
+      text-decoration: none;
+    }
+  }
+
+  .person-pill-portrait,
+  .person-pill-avatar {
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .person-pill-avatar {
+    padding: 4px;
+    background: var(--accent-color, #e0e0e0);
+  }
+}
+
+.person-pill-compact {
+  gap: 6px;
+
+  .person-pill-link {
+    gap: 6px;
+  }
+
+  .person-pill-portrait,
+  .person-pill-avatar {
+    width: 22px;
+    height: 22px;
+  }
+
+  .person-pill-name {
+    font-size: 14px;
+  }
+}
+
+// Honor site aspect-ratio setting (squared 4:5 instead of circle)
+.person-squared-images .person-pill {
+  .person-pill-portrait,
+  .person-pill-avatar {
+    height: auto;
+    border-radius: 0px;
+    aspect-ratio: 4 / 5;
+  }
+}

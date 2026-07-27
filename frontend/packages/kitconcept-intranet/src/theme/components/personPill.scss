@@ -8,7 +8,6 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 18px;
-    text-decoration: none;
     text-transform: capitalize;
   }
 
@@ -17,13 +16,12 @@
     align-items: center;
     color: inherit;
     gap: 10px;
-    text-decoration: none;
+    text-decoration: none !important;
 
     .person-pill-name {
       font-size: 14px;
       font-weight: 700;
       line-height: 18px;
-      text-decoration: none;
       text-transform: capitalize;
     }
   }
@@ -70,7 +68,7 @@
 }
 // Portrait + name share one rounded background.
 .person-pill-background {
-  padding-right: 12px;
+  padding-right: 10px;
   border-radius: 100px;
   background: var(--person-pill-background, #eee);
 }

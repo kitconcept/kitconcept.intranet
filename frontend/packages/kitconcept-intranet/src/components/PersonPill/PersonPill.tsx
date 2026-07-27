@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { CSSProperties } from 'react';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
@@ -13,7 +14,7 @@ type PersonPillProps = {
   portrait?: string;
   url?: string;
   compact?: boolean;
-  background?: boolean;
+  background?: string;
   role?: string;
   subheading?: string;
 };
@@ -29,7 +30,7 @@ const PersonPill = ({
   portrait,
   url,
   compact = false,
-  background = false,
+  background,
   role,
   subheading,
 }: PersonPillProps) => {
@@ -88,6 +89,11 @@ const PersonPill = ({
         'person-pill-with-role': role,
         'person-pill-with-subheading': subheading,
       })}
+      style={
+        background
+          ? ({ '--person-pill-background': background } as CSSProperties)
+          : undefined
+      }
     >
       {showLink ? (
         <UniversalLink className="person-pill-link" href={url as string}>

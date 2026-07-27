@@ -57,7 +57,7 @@ const meta: Meta<typeof PersonPill> = {
     portrait: { control: 'text' },
     url: { control: 'text' },
     compact: { control: 'boolean' },
-    background: { control: 'boolean' },
+    background: { control: 'color' },
     role: { control: 'text' },
     subheading: { control: 'text' },
   },
@@ -112,7 +112,7 @@ export const WithBackground: Story = {
     fullname: 'Frida Lang',
     portrait: personImage,
     url: '/persons/frida',
-    background: true,
+    background: '#eee',
   },
 };
 
@@ -123,7 +123,7 @@ export const CompactWithBackground: Story = {
     fullname: 'Greta Vogel',
     portrait: personImage,
     compact: true,
-    background: true,
+    background: '#eee',
   },
 };
 

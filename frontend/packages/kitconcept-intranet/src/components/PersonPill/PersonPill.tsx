@@ -15,7 +15,7 @@ type PersonPillProps = {
   url?: string;
   compact?: boolean;
   background?: string;
-  role?: string;
+  kicker?: string;
   subheading?: string;
 };
 
@@ -31,7 +31,7 @@ const PersonPill = ({
   url,
   compact = false,
   background,
-  role,
+  kicker,
   subheading,
 }: PersonPillProps) => {
   const showProfileLinks = useSelector(
@@ -67,9 +67,9 @@ const PersonPill = ({
   );
 
   const label =
-    role || subheading ? (
+    kicker || subheading ? (
       <span className="person-pill-labels">
-        {role ? <span className="person-pill-role">{role}</span> : null}
+        {kicker ? <span className="person-pill-kicker">{kicker}</span> : null}
         <span className="person-pill-name">{fullname || name}</span>
         {subheading ? (
           <span className="person-pill-subheading">{subheading}</span>
@@ -86,7 +86,7 @@ const PersonPill = ({
       className={cx('person-pill', {
         'person-pill-compact': compact,
         'person-pill-background': background,
-        'person-pill-with-role': role,
+        'person-pill-with-kicker': kicker,
         'person-pill-with-subheading': subheading,
       })}
       style={

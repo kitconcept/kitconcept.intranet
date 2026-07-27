@@ -58,7 +58,7 @@ const meta: Meta<typeof PersonPill> = {
     url: { control: 'text' },
     compact: { control: 'boolean' },
     background: { control: 'color' },
-    role: { control: 'text' },
+    kicker: { control: 'text' },
     subheading: { control: 'text' },
   },
 };
@@ -127,14 +127,14 @@ export const CompactWithBackground: Story = {
   },
 };
 
-// Use case 6: role label above name (author / responsible bylines).
-export const WithRole: Story = {
+// Use case 6: kicker label above name (author / responsible bylines).
+export const WithKicker: Story = {
   args: {
     id: 'nils',
     fullname: 'Nils Vogl',
     portrait: personImage,
     url: '/persons/nils',
-    role: 'Autor/in',
+    kicker: 'Autor/in',
   },
 };
 

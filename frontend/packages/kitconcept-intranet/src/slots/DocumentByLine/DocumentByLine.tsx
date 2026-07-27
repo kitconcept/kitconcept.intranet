@@ -82,7 +82,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
         {creatorsWithData.length > 0 && (
           <span>
             {intl.formatMessage(messages.by)}{' '}
-            {creatorsWithData.map(({ id, name }, index) => (
+            {creatorsWithData.map(({ id, name, homepage }, index) => (
               <React.Fragment key={id}>
                 <PersonPill id={id} fullname={name} />
                 {index < creatorsWithData.length - 1 && ', '}

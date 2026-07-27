@@ -57,6 +57,9 @@ const meta: Meta<typeof PersonPill> = {
     portrait: { control: 'text' },
     url: { control: 'text' },
     compact: { control: 'boolean' },
+    background: { control: 'boolean' },
+    role: { control: 'text' },
+    subheading: { control: 'text' },
   },
 };
 
@@ -99,6 +102,50 @@ export const Byline: Story = {
     id: 'david',
     fullname: 'David Schmidt',
     url: '/persons/david',
+  },
+};
+
+// Use case 5: shared background — portrait + name in one rounded pill.
+export const WithBackground: Story = {
+  args: {
+    id: 'frida',
+    fullname: 'Frida Lang',
+    portrait: personImage,
+    url: '/persons/frida',
+    background: true,
+  },
+};
+
+// Compact + background together.
+export const CompactWithBackground: Story = {
+  args: {
+    id: 'greta',
+    fullname: 'Greta Vogel',
+    portrait: personImage,
+    compact: true,
+    background: true,
+  },
+};
+
+// Use case 6: role label above name (author / responsible bylines).
+export const WithRole: Story = {
+  args: {
+    id: 'nils',
+    fullname: 'Nils Vogl',
+    portrait: personImage,
+    url: '/persons/nils',
+    role: 'Autor/in',
+  },
+};
+
+// Use case 7: subheading below name (comment dates, activity headers, etc.).
+export const WithSubheading: Story = {
+  args: {
+    id: 'sarah',
+    fullname: 'Dr. Sarah Köhler',
+    portrait: personImage,
+    url: '/persons/sarah',
+    subheading: 'vor 2 Std.',
   },
 };
 

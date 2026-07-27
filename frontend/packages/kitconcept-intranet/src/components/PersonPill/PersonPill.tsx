@@ -13,6 +13,9 @@ type PersonPillProps = {
   portrait?: string;
   url?: string;
   compact?: boolean;
+  background?: boolean;
+  role?: string;
+  subheading?: string;
 };
 
 type SiteState = {
@@ -26,6 +29,9 @@ const PersonPill = ({
   portrait,
   url,
   compact = false,
+  background = false,
+  role,
+  subheading,
 }: PersonPillProps) => {
   const showProfileLinks = useSelector(
     (state: SiteState) =>
@@ -50,21 +56,39 @@ const PersonPill = ({
     <Icon
       className="person-pill-avatar"
       name={personSVG}
-      size={compact ? '22px' : '32px'}
+      size={compact ? '24px' : '40px'}
       style={{
-        width: compact ? '22px' : '32px',
-        height: compact ? '22px' : '32px',
+        width: compact ? '24px' : '40px',
+        height: compact ? '24px' : '40px',
       }}
       ariaHidden
     />
   );
 
-  const label = <span className="person-pill-name">{fullname || name}</span>;
+  const label =
+    role || subheading ? (
+      <span className="person-pill-labels">
+        {role ? <span className="person-pill-role">{role}</span> : null}
+        <span className="person-pill-name">{fullname || name}</span>
+        {subheading ? (
+          <span className="person-pill-subheading">{subheading}</span>
+        ) : null}
+      </span>
+    ) : (
+      <span className="person-pill-name">{fullname || name}</span>
+    );
 
   const showLink = Boolean(url) && showProfileLinks;
 
   return (
-    <span className={cx('person-pill', { 'person-pill-compact': compact })}>
+    <span
+      className={cx('person-pill', {
+        'person-pill-compact': compact,
+        'person-pill-background': background,
+        'person-pill-with-role': role,
+        'person-pill-with-subheading': subheading,
+      })}
+    >
       {showLink ? (
         <UniversalLink className="person-pill-link" href={url as string}>
           {avatar}

@@ -36,7 +36,7 @@ const PersonPill = ({
 }: PersonPillProps) => {
   const showProfileLinks = useSelector(
     (state: SiteState) =>
-      !state.site?.data?.['kitconcept.clickable_profile_links'],
+      state.site?.data?.['kitconcept.clickable_profile_links'],
   );
 
   const portraitSrc =

@@ -1,0 +1,1 @@
+Deployment workflows: forward the frontend and backend replica counts, the Solr image tag and the kitconcept.solr LLM endpoint settings to the deploy stacks, and add a manual deploy workflow targeting `*.kitconcept.io`. @ericof

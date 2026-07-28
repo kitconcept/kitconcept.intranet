@@ -48,28 +48,7 @@ body.has-sidebar .header-intranet-compact-wrapper {
       animation: workspace-header-sheen 280ms ease-out;
     }
   }
-  .react-aria-Breadcrumbs {
-    flex: 1 1 auto;
-    padding: 0;
-    margin: 0;
 
-    .react-aria-Breadcrumb {
-      display: flex;
-      flex: 0 1 auto;
-      align-items: center;
-    }
-
-    .react-aria-Link {
-      color: #878f93;
-      overflow-wrap: anywhere;
-    }
-
-    .header-breadcrumb-separator {
-      flex: 0 0 auto;
-      margin: 0 6px;
-      color: #878f93;
-    }
-  }
   .header-breadcrumbs {
     display: flex;
     flex-wrap: nowrap;
@@ -77,8 +56,26 @@ body.has-sidebar .header-intranet-compact-wrapper {
     margin-bottom: 0;
     color: #878f93;
 
+    .react-aria-Breadcrumb,
+    .react-aria-Link {
+      display: flex;
+      align-items: center;
+    }
+
     .react-aria-Link {
       color: #878f93;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .react-aria-Link[data-hovered]:has(.header-breadcrumb-home) {
+      color: $black;
+    }
+
+    .react-aria-Link[data-hovered] .header-breadcrumb-parent {
+      color: $black;
+      text-decoration: underline;
     }
 
     .react-aria-Breadcrumb:last-child .react-aria-Link {
@@ -91,7 +88,21 @@ body.has-sidebar .header-intranet-compact-wrapper {
     }
   }
   .header-breadcrumb-more-button {
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: #f2f5f6;
+    color: $black;
     cursor: pointer;
+
+    &[data-hovered],
+    &[data-focused] {
+      background: #eef1f3;
+    }
   }
 }
 
@@ -104,54 +115,58 @@ body:has(.header-intranet-compact) {
 }
 
 .react-aria-Popover:has(.header-breadcrumb-menu) {
-  width: min(465px, calc(100vw - 32px));
+  width: min(640px, calc(100vw - 16px));
   max-width: none;
-  border: 1px solid #cbd8df;
-  border-radius: 0;
+  border: 1px solid #e1e6e9;
+  border-radius: 8px;
   background: $white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 
   &[data-placement='bottom'] {
     margin-top: 8px;
-
-    &::before {
-      position: absolute;
-      z-index: 1;
-      top: -6px;
-      left: 18px;
-      width: 10px;
-      height: 10px;
-      border-top: 1px solid #cbd8df;
-      border-left: 1px solid #cbd8df;
-      background: $white;
-      content: '';
-      transform: rotate(45deg);
-    }
   }
 }
 
 .header-breadcrumb-menu {
   width: 100%;
+  padding: 10px;
 
   .react-aria-MenuItem {
     display: flex;
-    min-height: 42px;
+
+    min-height: 36px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 6px 12px;
-    border-radius: 0;
+
     margin: 0;
-    color: $black;
-    font-size: 1rem;
+    color: #878f93;
+    font-size: 14px;
+    font-weight: 400;
+    gap: 10px;
+    line-height: normal;
 
     &[data-hovered],
     &[data-focused] {
       background: #eef1f3;
     }
 
-    &::after {
-      margin-left: 24px;
-      content: '>' / '';
+    &:last-child {
+      color: $black;
+    }
+
+    svg {
+      flex: 0 0 auto;
+      color: #878f93;
+    }
+
+    span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    &:focus-visible {
+      box-shadow: none !important;
+      outline: none !important;
     }
   }
 }

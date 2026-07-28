@@ -4,6 +4,12 @@
   gap: 10px;
   vertical-align: middle;
 
+  .person-pill-labels {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .person-pill-name {
     font-size: 14px;
     font-weight: 700;
@@ -45,11 +51,8 @@
 .person-pill-with-kicker,
 .person-pill-with-subheading {
   .person-pill-labels {
-    display: inline-flex;
     flex: 1 0 0;
-    flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
     margin-right: 5px;
   }
 

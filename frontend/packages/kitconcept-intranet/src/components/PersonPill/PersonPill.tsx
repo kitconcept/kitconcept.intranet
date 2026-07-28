@@ -39,6 +39,8 @@ const PersonPill = ({
       state.site?.data?.['kitconcept.clickable_profile_links'],
   );
 
+  const displayName = fullname || name;
+
   const portraitSrc =
     portrait ?? (id ? expandToBackendURL(`@portrait/${id}`) : undefined);
 
@@ -49,7 +51,7 @@ const PersonPill = ({
     <img
       className="person-pill-portrait"
       src={portraitSrc}
-      alt={fullname || name}
+      alt={displayName}
       loading="lazy"
       onError={() => setImageFailed(true)}
     />
@@ -66,18 +68,22 @@ const PersonPill = ({
     />
   );
 
-  const label =
-    kicker || subheading ? (
-      <span className="person-pill-labels">
-        {kicker ? <span className="person-pill-kicker">{kicker}</span> : null}
-        <span className="person-pill-name">{fullname || name}</span>
-        {subheading ? (
-          <span className="person-pill-subheading">{subheading}</span>
-        ) : null}
-      </span>
-    ) : (
-      <span className="person-pill-name">{fullname || name}</span>
-    );
+  const label = (
+    <span className="person-pill-labels">
+      {kicker ? <span className="person-pill-kicker">{kicker}</span> : null}
+      <span className="person-pill-name">{displayName}</span>
+      {subheading ? (
+        <span className="person-pill-subheading">{subheading}</span>
+      ) : null}
+    </span>
+  );
+
+  const content = (
+    <>
+      {avatar}
+      {label}
+    </>
+  );
 
   const showLink = Boolean(url) && showProfileLinks;
 
@@ -97,14 +103,10 @@ const PersonPill = ({
     >
       {showLink ? (
         <UniversalLink className="person-pill-link" href={url as string}>
-          {avatar}
-          {label}
+          {content}
         </UniversalLink>
       ) : (
-        <>
-          {avatar}
-          {label}
-        </>
+        content
       )}
     </span>
   );

@@ -7,6 +7,7 @@ import ContentInteractions from '../components/ContentInteractions/ContentIntera
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
 import NavigationTreePortal from '../components/NavigationTree/NavigationTreePortal';
+import HideFooter from '../slots/HideFooter/HideFooter';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -44,6 +45,12 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
+    predicates: [ContentTypeCondition(['WikiPage', 'Workspace'])],
+  });
+  config.registerSlotComponent({
+    slot: 'aboveApp',
+    name: 'HideFooter',
+    component: HideFooter,
     predicates: [ContentTypeCondition(['WikiPage', 'Workspace'])],
   });
 

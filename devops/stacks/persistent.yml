@@ -11,7 +11,7 @@ services:
     healthcheck:
       disable: true
     deploy:
-      replicas: 2
+      replicas: ${FRONTEND_REPLICAS:-2}
       placement:
         constraints:
           - node.labels.type == app
@@ -39,11 +39,13 @@ services:
     environment:
       ZEO_ADDRESS: "${STACK_NAME}_zeo:8100"
       COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
+      KITCONCEPT_SOLR_LLM_URL: ${SOLR_LLM_URL:-http://localhost:8080}
+      KITCONCEPT_SOLR_LLM_TOKEN: ${SOLR_LLM_TOKEN:-}
     networks:
       - public
       - nw-internal
     deploy:
-      replicas: 1
+      replicas: ${BACKEND_REPLICAS:-2}
       placement:
         constraints:
           - node.labels.type == app
@@ -116,7 +118,7 @@ services:
       - nw-internal
 
   tika:
-    image: apache/tika:3.2.3.0-full
+    image: apache/tika:${TIKA_TAG:-3.2.3.0-full}
     deploy:
       replicas: 1
       placement:
@@ -129,7 +131,7 @@ services:
           - ${STACK_NAME}-tika
 
   solr:
-    image: ghcr.io/kitconcept/solr:sha-db2c24c
+    image: ghcr.io/kitconcept/solr:${SOLR_TAG:-feature-ai-rag}
     command:
       - solr-precreate
       - plone

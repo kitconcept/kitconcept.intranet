@@ -1,0 +1,1 @@
+Development and deployment stacks: parameterise the Solr and Tika image tags (`SOLR_TAG`, `TIKA_TAG`) and the frontend/backend replica counts, and pass the kitconcept.solr LLM endpoint settings (`KITCONCEPT_SOLR_LLM_URL`, `KITCONCEPT_SOLR_LLM_TOKEN`). @ericof

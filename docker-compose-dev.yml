@@ -46,13 +46,13 @@ x-backend-acceptance: &backend-acceptance
   pull_policy: build
 
 x-tika: &tika
-  image: apache/tika:3.2.3.0-full
+  image: apache/tika:${TIKA_TAG:-3.2.3.0-full}
   platform: linux/amd64
   ports:
     - 9998:9998
 
 x-solr: &solr
-  image: ghcr.io/kitconcept/solr:feature-ai-rag
+  image: ghcr.io/kitconcept/solr:${SOLR_TAG:-feature-ai-rag}
   platform: linux/amd64
   ports:
     - 8983:8983

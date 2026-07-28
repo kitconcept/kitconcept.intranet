@@ -1,0 +1,113 @@
+{
+  "@id": "/community/schwarzes-brett/gesucht-gefunden",
+  "@type": "Document",
+  "UID": "522be6eecd2145aaa821e60719b3ec38",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "cb3dcd1e-f946-4d4b-a170-e731563df1b0": {
+      "@type": "slate",
+      "plaintext": "Kleinanzeigen und Tauschb\u00f6rse unter Mitarbeitenden. Wie man Anzeigen aufgibt: Senden Sie Ihre Anzeige per E-Mail an intranet@dfnt.de mit dem Betreff \"Schwarzes Brett\". Kategorien: Elektronik, B\u00fccher, Haushalt, Sonstiges. Regeln: Keine gewerblichen Angebote, maximal 4 Wochen sichtbar. Beispielanzeigen: Gebrauchtes Elektrowerkzeug, Deutschsprachige Romane, Vintage-M\u00f6bel, Ski-Equipment.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Kleinanzeigen und Tauschb\u00f6rse unter Mitarbeitenden. Wie man Anzeigen aufgibt: Senden Sie Ihre Anzeige per E-Mail an "
+            },
+            {
+              "children": [
+                {
+                  "text": "intranet@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:intranet@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": " mit dem Betreff \"Schwarzes Brett\". Kategorien: Elektronik, B\u00fccher, Haushalt, Sonstiges. Regeln: Keine gewerblichen Angebote, maximal 4 Wochen sichtbar. Beispielanzeigen: Gebrauchtes Elektrowerkzeug, Deutschsprachige Romane, Vintage-M\u00f6bel, Ski-Equipment."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d414619b-05b7-4f9f-ae85-a2e825330508": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d414619b-05b7-4f9f-ae85-a2e825330508",
+      "cb3dcd1e-f946-4d4b-a170-e731563df1b0"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:47+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Kleinanzeigen und Tauschb\u00f6rse unter Mitarbeitenden: Gegenst\u00e4nde suchen, anbieten oder tauschen \u2013 von B\u00fcchern bis Elektronik.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "gesucht-gefunden",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:36:55+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Gesucht & Gefunden",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:41+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:41+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

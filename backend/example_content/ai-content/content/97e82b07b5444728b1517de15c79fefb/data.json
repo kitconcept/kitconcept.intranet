@@ -1,0 +1,213 @@
+{
+  "@id": "/ueber-uns/standorte/bonn",
+  "@type": "Location",
+  "UID": "97e82b07b5444728b1517de15c79fefb",
+  "allow_discussion": null,
+  "blocks": {
+    "0998dac8-0ed9-4d53-b014-cd7f61e06eb5": {
+      "@type": "slate"
+    },
+    "14d4dd01-8c6d-4875-b673-20865958dbbe": {
+      "@type": "slate",
+      "plaintext": "Rieststr. 21\n53113\nBonn",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Rieststr. 21\n53113\nBonn"
+            }
+          ],
+          "type": "blockquote"
+        }
+      ]
+    },
+    "5a367acb-faeb-43ac-85fe-bf91efd3f907": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "Bonn",
+      "url": "../resolveuid/6191654a057748b7aa5dea4c318deacb",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "63e14d6c-321c-408f-8e4e-24495cd3d8af": {
+      "@type": "listing",
+      "headline": "Anstehende Termine",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_on": "start",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "listDate"
+    },
+    "7e2e870c-ec6e-4b3b-89b9-93c9995d8fd8": {
+      "@type": "listing",
+      "headline": "Neues vom Standort",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "summary"
+    },
+    "d4a43aa9-dd78-4bdc-9d0c-7b55df00c6e6": {
+      "@type": "listing",
+      "headline": "Institute am Standort Bonn",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Organisational Unit"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "97e82b07b5444728b1517de15c79fefb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "d6da7272-2cde-4fcf-9933-073844719bec": {
+      "@type": "slate",
+      "plaintext": "So finden Sie uns:",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "So finden Sie uns:"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5a367acb-faeb-43ac-85fe-bf91efd3f907",
+      "63e14d6c-321c-408f-8e4e-24495cd3d8af",
+      "7e2e870c-ec6e-4b3b-89b9-93c9995d8fd8",
+      "d6da7272-2cde-4fcf-9933-073844719bec",
+      "14d4dd01-8c6d-4875-b673-20865958dbbe",
+      "d4a43aa9-dd78-4bdc-9d0c-7b55df00c6e6",
+      "0998dac8-0ed9-4d53-b014-cd7f61e06eb5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-07-29T13:39:53+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-07-29T13:39:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "bonn",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-22T09:52:59+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "private",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "subjects": [],
+  "title": "Bonn",
+  "type_title": "Location",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

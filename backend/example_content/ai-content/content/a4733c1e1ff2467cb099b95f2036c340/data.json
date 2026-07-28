@@ -1,0 +1,644 @@
+{
+  "@id": "/arbeitsthemen/forschungsdatenmanagement/datenspeicherung",
+  "@type": "Document",
+  "UID": "a4733c1e1ff2467cb099b95f2036c340",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "0d9359b9-0b7a-4aa2-874b-ce79dcce5363": {
+      "@type": "title"
+    },
+    "e9a38ef2-0e95-4cf0-9ebe-674db9f7a6b7": {
+      "@type": "slate",
+      "plaintext": "## Datenspeicherung\n\n### Speicherempfehlungen nach Datentyp\n\nDer DFNT bietet verschiedene Speicherl\u00f6sungen f\u00fcr unterschiedliche Datentypen und Anforderungen:\n\n**Aktive Forschungsdaten (laufende Projekte)**\n- **Speicherort**: Netzlaufwerk oder Nextcloud DFNT\n- **Sicherheit**: Verschl\u00fcsselung\n- **Backup**: T\u00e4gliche Sicherungen\n- **Zugriff**: Schneller Zugriff auf aktive Daten\n\n**Gro\u00dfe Datens\u00e4tze (> 1 TB)**\n- **Speicherort**: HPC-Speichersystem (High-Performance Computing)\n- **Beantragung**: \u00dcber die IT-Abteilung\n- **Vorteil**: Skalierbare Speicherkapazit\u00e4t\n\n**Archivdaten (nach Projektende)**\n- **Aufbewahrungspflicht**: Mind. 10 Jahre nach Projektende\n- **Speicherort**: Langzeitspeicher\n- **Format**: Archivierungsgerechte Dateiformate\n\n**Sensible Daten (personenbezogen, vertraulich)**\n- **Speicherort**: DFNT-interne Server\n- **Vorsicht**: Keine externen Cloud-Dienste verwenden!\n- **Datenschutz**: DSGVO-konform\n\n### Aufbewahrungsfristen\n\nEinrichtungs\u00fcbergreifende Aufbewahrungsfristen:\n\n- **Standard**: 10 Jahre (DFG-Regelung)\n- **Klinische Studien**: 25 Jahre\n- **Strahlenrelevante Daten**: 30 Jahre\n\n### Kontakt und Beratung\n\n**RDM-Team des DFNT:**\n- **E-Mail**: rdm@dfnt.de\n- **Beratung zu Speicherl\u00f6sungen** und Aufbewahrungsfristen\n- **IT-Abteilung** f\u00fcr HPC-Speicher-Anfragen",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Datenspeicherung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Speicherempfehlungen nach Datentyp"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Der DFNT bietet verschiedene Speicherl\u00f6sungen f\u00fcr unterschiedliche Datentypen und Anforderungen:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Aktive Forschungsdaten (laufende Projekte)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Speicherort"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Netzlaufwerk oder Nextcloud DFNT"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Sicherheit"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Verschl\u00fcsselung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Backup"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": T\u00e4gliche Sicherungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Zugriff"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Schneller Zugriff auf aktive Daten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Gro\u00dfe Datens\u00e4tze (> 1 TB)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Speicherort"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": HPC-Speichersystem (High-Performance Computing)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Beantragung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": \u00dcber die IT-Abteilung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vorteil"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Skalierbare Speicherkapazit\u00e4t"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Archivdaten (nach Projektende)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Aufbewahrungspflicht"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Mind. 10 Jahre nach Projektende"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Speicherort"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Langzeitspeicher"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Format"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Archivierungsgerechte Dateiformate"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sensible Daten (personenbezogen, vertraulich)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Speicherort"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": DFNT-interne Server"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vorsicht"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Keine externen Cloud-Dienste verwenden!"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Datenschutz"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": DSGVO-konform"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Aufbewahrungsfristen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Einrichtungs\u00fcbergreifende Aufbewahrungsfristen:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Standard"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 10 Jahre (DFG-Regelung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Klinische Studien"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 25 Jahre"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Strahlenrelevante Daten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 30 Jahre"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Kontakt und Beratung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "RDM-Team des DFNT:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "E-Mail"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "rdm@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:rdm@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Beratung zu Speicherl\u00f6sungen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " und Aufbewahrungsfristen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "IT-Abteilung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " f\u00fcr HPC-Speicher-Anfragen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "0d9359b9-0b7a-4aa2-874b-ce79dcce5363",
+      "e9a38ef2-0e95-4cf0-9ebe-674db9f7a6b7"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:39+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Wo und wie lange Forschungsdaten sicher gespeichert werden sollen: Speichertiers, Aufbewahrungsfristen und Empfehlungen f\u00fcr verschiedene Datentypen.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "datenspeicherung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:09:13+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Datenspeicherung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:37+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:37+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

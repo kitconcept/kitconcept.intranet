@@ -1,0 +1,242 @@
+{
+  "@id": "/services/it-services/hardware-bestellung",
+  "@type": "Document",
+  "UID": "f440d05d57bb42119de5e1c9146c4fcb",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "6b9f8fb9-03d4-4999-a3f9-c8bb59d46379": {
+      "@type": "slate",
+      "plaintext": "## Hardware-Bestellung\n\nLaptops, Bildschirme und Peripherie \u00fcber IT bestellen.\n\n**Standardkonfigurationen** (f\u00fcr schnellere Lieferung):\n- Dell Latitude 14 (Windows)\n- MacBook Pro 14\" (macOS)\n- 27\" Monitor (4K)\n\n**Bestellung:** Formular HW-01 mit Kostenstelle, Genehmigung Abteilungsleitung, Lieferzeit 2-4 Wochen\n\n**Eigenbestellungen** (privater Kauf mit DFNT-Erstattung): nur in begr\u00fcndeten Ausnahmef\u00e4llen\n\n**Garantie- und Reparaturf\u00e4lle:** it-geraete@dfnt.de\n\n**Ger\u00e4ter\u00fcckgabe bei Austritt:** innerhalb 5 Werktage",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Hardware-Bestellung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Laptops, Bildschirme und Peripherie \u00fcber IT bestellen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Standardkonfigurationen"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " (f\u00fcr schnellere Lieferung):"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Dell Latitude 14 (Windows)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "MacBook Pro 14\" (macOS)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "27\" Monitor (4K)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bestellung:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Formular HW-01 mit Kostenstelle, Genehmigung Abteilungsleitung, Lieferzeit 2-4 Wochen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Eigenbestellungen"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " (privater Kauf mit DFNT-Erstattung): nur in begr\u00fcndeten Ausnahmef\u00e4llen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Garantie- und Reparaturf\u00e4lle:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "it-geraete@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:it-geraete@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ger\u00e4ter\u00fcckgabe bei Austritt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " innerhalb 5 Werktage"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d281f43a-131c-41c7-9265-9bb1387303df": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d281f43a-131c-41c7-9265-9bb1387303df",
+      "6b9f8fb9-03d4-4999-a3f9-c8bb59d46379"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:14+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Laptops, Bildschirme und Peripherieger\u00e4te bestellen: Standardkonfigurationen, Bestellprozess und Lieferzeiten f\u00fcr IT-Ausstattung.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "hardware-bestellung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:13:23+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Hardware-Bestellung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

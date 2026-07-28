@@ -1,0 +1,320 @@
+{
+  "@id": "/forschung/forschungsinfrastruktur/werkstatten",
+  "@type": "Document",
+  "UID": "4321d134d02e43ce9bb9a22a9462f4f8",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "815cdf2b-ab09-4ba8-800a-cee5a04080df": {
+      "@type": "slate",
+      "plaintext": "## Werkst\u00e4tten f\u00fcr Prototyping und Entwicklung\n\nDas DFNT betreibt spezialisierte Werkst\u00e4tten an mehreren Standorten f\u00fcr Konstruktion, Elektronik und Rapid Prototyping.\n\n### Mechanikwerkstatt\n\n**Standorte**: Bonn, K\u00f6ln\n**M\u00f6glichkeiten**: Fr\u00e4sen, Drehen, 3D-Druck (Metall + Kunststoff), Schwei\u00dfen\n\n### Elektronikwerkstatt\n\n**Standort**: K\u00f6ln\n**Services**: Leiterplattendesign und -fertigung, Reparaturen, Elektronikentwicklung\n\n### Prototypenwerkstatt\n\n**Standort**: Berlin\n**M\u00f6glichkeiten**: Rapid Prototyping, CNC-Fr\u00e4se, Lasercutter f\u00fcr schnelle Iterationen\n\n### Auftragserteilung und Nutzung\n\n- **Auftragsformular**: verf\u00fcgbar unter intern.dfnt.de/werkstatt\n- **Lieferzeit**: 3-15 Werktage je nach Komplexit\u00e4t\n- **Eigennutzung**: Einweisung und Genehmigung erforderlich\n- **Kontakt**: werkstatt@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Werkst\u00e4tten f\u00fcr Prototyping und Entwicklung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Das DFNT betreibt spezialisierte Werkst\u00e4tten an mehreren Standorten f\u00fcr Konstruktion, Elektronik und Rapid Prototyping."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Mechanikwerkstatt"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Standorte"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Bonn, K\u00f6ln\n"
+            },
+            {
+              "children": [
+                {
+                  "text": "M\u00f6glichkeiten"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Fr\u00e4sen, Drehen, 3D-Druck (Metall + Kunststoff), Schwei\u00dfen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Elektronikwerkstatt"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Standort"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": K\u00f6ln\n"
+            },
+            {
+              "children": [
+                {
+                  "text": "Services"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Leiterplattendesign und -fertigung, Reparaturen, Elektronikentwicklung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Prototypenwerkstatt"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Standort"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Berlin\n"
+            },
+            {
+              "children": [
+                {
+                  "text": "M\u00f6glichkeiten"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Rapid Prototyping, CNC-Fr\u00e4se, Lasercutter f\u00fcr schnelle Iterationen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Auftragserteilung und Nutzung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Auftragsformular"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": verf\u00fcgbar unter intern.dfnt.de/werkstatt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Lieferzeit"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 3-15 Werktage je nach Komplexit\u00e4t"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Eigennutzung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Einweisung und Genehmigung erforderlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontakt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "werkstatt@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:werkstatt@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "9d2ddc8f-a2a9-4dff-bf11-85ecf89da546": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "9d2ddc8f-a2a9-4dff-bf11-85ecf89da546",
+      "815cdf2b-ab09-4ba8-800a-cee5a04080df"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:27+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Mechanik-, Elektronik- und Prototypenwerkstatt: Auftragserteilung, Eigennutzung, Sicherheitseinweisungen und Kontakte zu den Werkstattleitern.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "werkstatten",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:28+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Werkst\u00e4tten",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

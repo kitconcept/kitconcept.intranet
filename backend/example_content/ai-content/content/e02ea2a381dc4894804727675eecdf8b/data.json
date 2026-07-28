@@ -1,0 +1,126 @@
+{
+  "@id": "/aktuelles",
+  "@type": "Document",
+  "UID": "e02ea2a381dc4894804727675eecdf8b",
+  "allow_discussion": false,
+  "authors": [
+    "809499c7ddda4aef80d3ab61c0c365d5"
+  ],
+  "blocks": {
+    "490bb65b-eca0-492f-b539-c695d49abf17": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-1"
+      },
+      "title": "Aktuelles",
+      "url": "../resolveuid/faff8f4afd8542e58ee31bb9239a240f",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Bleiben Sie auf dem Laufenden: Hier finden Sie aktuelle Nachrichten aus Forschung und Institut, Pressemitteilungen, Veranstaltungshinweise und wichtige Meldungen aus dem DFNT."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "5981b7f6-92f9-48d2-b24b-6db71153a856": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "depth": "1",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "./"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "grid"
+    },
+    "6d67081c-eb5e-4e34-b15a-ddb9fd3940e5": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "490bb65b-eca0-492f-b539-c695d49abf17",
+      "5981b7f6-92f9-48d2-b24b-6db71153a856",
+      "6d67081c-eb5e-4e34-b15a-ddb9fd3940e5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T08:52:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-03-05T10:18:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "aktuelles",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T18:36:54+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": "809499c7ddda4aef80d3ab61c0c365d5",
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Aktuelles",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:32+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:32+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,334 @@
+{
+  "@id": "/forschung/services-forschende",
+  "@type": "Document",
+  "UID": "1aa2dc866b8e4a848b7e4b0c18df9cde",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "650c5ce8-86fa-4fd2-bd03-9fb3528f185d": {
+      "@type": "slate",
+      "plaintext": "**Datenschutzbeauftragte:** Dr. Sandra Keil\n\n**Kontakt:** dsb@dfnt.de, +49 221 470-1200\n\n**DSGVO:** Gilt f\u00fcr alle Datenverarbeitungen am DFNT\n\n## Rechte der Betroffenen\n\n- Auskunft\n- Berichtigung\n- L\u00f6schung\n- Einschr\u00e4nkung\n- Widerspruch\n\nAnfragen an: dsb@dfnt.de\n\n## Technische Ma\u00dfnahmen\n\n- Verschl\u00fcsselung\n- Zugriffskontrollen\n- Protokollierung\n\n**Meldepflicht Datenpanne:** Sofort intern melden, an Beh\u00f6rde innerhalb 72h\n\n**Privacy by Design:** Datenschutz von Anfang an in neue Systeme einbauen",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Datenschutzbeauftragte:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Dr. Sandra Keil"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "dsb@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:dsb@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": ", +49 221 470-1200"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "DSGVO:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Gilt f\u00fcr alle Datenverarbeitungen am DFNT"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Rechte der Betroffenen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Auskunft"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Berichtigung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "L\u00f6schung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einschr\u00e4nkung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Widerspruch"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Anfragen an: "
+            },
+            {
+              "children": [
+                {
+                  "text": "dsb@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:dsb@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Technische Ma\u00dfnahmen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Verschl\u00fcsselung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zugriffskontrollen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Protokollierung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Meldepflicht Datenpanne:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Sofort intern melden, an Beh\u00f6rde innerhalb 72h"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Privacy by Design:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Datenschutz von Anfang an in neue Systeme einbauen"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c82301a7-2eaa-4d19-9689-390b4d26539a": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "c82301a7-2eaa-4d19-9689-390b4d26539a",
+      "650c5ce8-86fa-4fd2-bd03-9fb3528f185d"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:03:47+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Spezialisierte Unterst\u00fctzungsleistungen f\u00fcr Wissenschaftlerinnen und Wissenschaftler am DFNT: Drittmittelberatung und Antragstellung, Technologietransfer und Patentverwertung, Forschungsethik und Ethikkommission, Leitlinien zur Guten Wissenschaftlichen Praxis, Publikationsunterst\u00fctzung sowie statistische Beratung und F\u00f6rderberatung.",
+  "effective": "2026-03-05T16:03:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "services-forschende",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:12:54+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Services f\u00fcr Forschende",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:44+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:44+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

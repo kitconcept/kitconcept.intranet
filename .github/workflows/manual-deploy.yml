@@ -41,6 +41,11 @@ jobs:
             CERTRESOLVER=${{ vars.CERTRESOLVER }}
             BASIC_AUTH_USER=${{ vars.BASIC_AUTH_USER }}
             BASIC_AUTH_PASSWORD=${{ vars.BASIC_AUTH_PASSWORD }}
+            BACKEND_REPLICAS=${{ vars.BACKEND_REPLICAS }}
+            FRONTEND_REPLICAS=${{ vars.FRONTEND_REPLICAS }}
+            SOLR_LLM_URL=${{ vars.SOLR_LLM_URL }}
+            SOLR_LLM_TOKEN=${{ vars.SOLR_LLM_TOKEN }}
+            SOLR_TAG=${{ vars.SOLR_TAG }}
     permissions:
         contents: read
         packages: write
@@ -72,6 +77,11 @@ jobs:
             CERTRESOLVER=${{ vars.CERTRESOLVER }}
             BASIC_AUTH_USER=${{ vars.BASIC_AUTH_USER }}
             BASIC_AUTH_PASSWORD=${{ vars.BASIC_AUTH_PASSWORD }}
+            BACKEND_REPLICAS=${{ vars.BACKEND_REPLICAS }}
+            FRONTEND_REPLICAS=${{ vars.FRONTEND_REPLICAS }}
+            SOLR_LLM_URL=${{ vars.SOLR_LLM_URL }}
+            SOLR_LLM_TOKEN=${{ vars.SOLR_LLM_TOKEN }}
+            SOLR_TAG=${{ vars.SOLR_TAG }}
     permissions:
         contents: read
         packages: write

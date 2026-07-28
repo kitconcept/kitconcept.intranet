@@ -1,0 +1,150 @@
+{
+  "@id": "/arbeitsthemen",
+  "@type": "Document",
+  "UID": "8a8650d2c0294e22b7f361986772a57a",
+  "allow_discussion": false,
+  "authors": [
+    "f9ea075459744a0d8739249566c2bfc5"
+  ],
+  "blocks": {
+    "66eb7019-2bb7-4845-a155-05593b57f740": {
+      "@type": "listing",
+      "headline": "Inhalte nach Themen",
+      "headlineTag": "h2",
+      "querystring": {
+        "depth": "1",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "./"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "grid"
+    },
+    "6c14c834-37a7-4763-9bf2-ca939cf4b954": {
+      "@type": "search",
+      "headline": "F\u00fcr Sie zusammengestellt",
+      "listingBodyTemplate": "summary",
+      "query": {
+        "b_size": "5",
+        "limit": "15",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document",
+              "Event",
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "userRelevance",
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    },
+    "b069391b-3a01-4b85-9ce2-fdf251935079": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "Arbeitsthemen",
+      "url": "../resolveuid/c3190d2a660744a2b6454e29fecbe12b",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Zentrale Informationen und Anleitungen zu wichtigen Arbeitsprozessen am DFNT \u2013 von Dienstreisen und Beschaffung \u00fcber Personal und IT bis hin zu Publikationen und Forschungsdatenmanagement."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "b069391b-3a01-4b85-9ce2-fdf251935079",
+      "6c14c834-37a7-4763-9bf2-ca939cf4b954",
+      "66eb7019-2bb7-4845-a155-05593b57f740"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T08:58:25+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-03-05T10:18:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "arbeitsthemen",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-27T16:08:21+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": "809499c7ddda4aef80d3ab61c0c365d5",
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Arbeitsthemen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -5,8 +5,8 @@ on:
     paths:
       - "backend/**"
       - "frontend/**"
-      - ".github/workflows/*.yml"
       - "devops/**"
+      - ".github/workflows/*.yml"
   workflow_dispatch:
 
 jobs:

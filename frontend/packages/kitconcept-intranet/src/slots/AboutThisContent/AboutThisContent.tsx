@@ -10,9 +10,8 @@ import {
 } from '@plone/volto/helpers/Url/Url';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
-import responsibleImage from '../../assets/avatar-placeholder.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
+import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 
 const messages = defineMessages({
   title: {
@@ -154,16 +153,11 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
           <div className="about-content-people">
             {creatorsWithData.map(({ name, portrait }) => (
               <div className="about-content-person" key={name}>
-                <img
-                  className="about-content-avatar"
-                  src={
-                    portrait ? expandToBackendURL(portrait) : avatarPlaceholder
-                  }
-                  alt=""
-                  aria-hidden="true"
-                  loading="lazy"
+                <PersonPill
+                  id={name}
+                  fullname={name}
+                  portrait={portrait ? expandToBackendURL(portrait) : undefined}
                 />
-                <span>{name}</span>
               </div>
             ))}
           </div>
@@ -172,23 +166,18 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
           <div className="about-content-item">
             <h3>{intl.formatMessage(messages.responsible)}</h3>
             <div className="about-content-person">
-              <img
-                className="about-content-avatar"
-                src={
-                  responsiblePersonContent.image &&
-                  responsiblePersonContent['@id']
-                    ? `${flattenToAppURL(
-                        responsiblePersonContent['@id'],
-                      )}/@@images/image/mini`
-                    : responsibleImage
+              <PersonPill
+                id={responsiblePersonContent.title}
+                fullname={responsiblePersonContent.title}
+                portrait={
+                  responsiblePersonContent.image
+                    ? expandToBackendURL(
+                        `${responsiblePersonContent['@id']}/@@images/image/mini`,
+                      )
+                    : undefined
                 }
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
+                url={responsiblePersonUrl}
               />
-              <UniversalLink href={responsiblePersonUrl}>
-                {responsiblePersonContent.title}
-              </UniversalLink>
             </div>
           </div>
         )}

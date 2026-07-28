@@ -120,7 +120,7 @@ cleanup-example-content: $(VENV_FOLDER) ## Remove invalid references to http://n
 	@find $(EXAMPLE_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i '' -e 's#http://nohost/Plone/#/#g' {} \;
 
 ## AI test corpus (see the README in $(AI_CONTENT_FOLDER))
-AI_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/intranet/distributions/intranet/ai-content
+AI_CONTENT_FOLDER=${BACKEND_FOLDER}/example_content/ai-content
 
 .PHONY: import-ai-content
 import-ai-content: $(VENV_FOLDER) instance/etc/zope.conf ## Import the AI search test corpus into a fresh site

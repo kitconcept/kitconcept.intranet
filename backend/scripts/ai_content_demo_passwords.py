@@ -6,8 +6,11 @@ passwords stay unknown. This script aligns them with the password
 documented for the AI corpus (permission-trimming tests log in as
 ``f.meier``).
 
-Usage:
+Usage in a terminal:
     zconsole run instance/etc/zope.conf ./scripts/ai_content_demo_passwords.py
+
+Usage in a Docker container:
+    ./docker-entrypoint run ./scripts/ai_content_demo_passwords.py
 """
 
 from zope.component import hooks

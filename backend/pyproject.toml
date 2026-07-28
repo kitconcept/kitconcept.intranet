@@ -90,6 +90,7 @@ strict-naming = true
 [tool.hatch.build.targets.sdist]
 exclude = [
   "/.github",
+  "/example_content",
 ]
 
 [tool.hatch.build.targets.wheel]

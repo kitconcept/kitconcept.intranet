@@ -86,7 +86,7 @@ For developing and testing the AI (RAG) search there is a second,
 optional content set — a German knowledge corpus with golden questions.
 It is not imported by default and requires a fresh site without the
 standard example content. See
-[backend/src/kitconcept/intranet/distributions/intranet/ai-content/README.md](./backend/src/kitconcept/intranet/distributions/intranet/ai-content/README.md)
+[backend/example_content/ai-content/README.md](./backend/example_content/ai-content/README.md)
 for setup instructions (Solr image, LLM credentials, import and
 indexing).
 

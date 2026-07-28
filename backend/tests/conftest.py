@@ -72,7 +72,7 @@ def current_versions() -> CurrentVersions:
     from kitconcept.core import __version__
 
     return CurrentVersions(
-        base="20260701001",
+        base="20260706001",
         dependencies="1000",
         package=__version__,
     )

@@ -122,6 +122,7 @@ jobs:
             backend:
               - 'backend/**'
               - '.github/workflows/backend*'
+              - '.github/workflows/main*'
               - 'docker-compose-*.yml'
             devops:
               - 'devops/**'
@@ -132,11 +133,13 @@ jobs:
             frontend:
               - 'frontend/**'
               - '.github/workflows/frontend*'
+              - '.github/workflows/main*'
             deploy:
               - 'backend/**'
               - 'frontend/**'
               - '.github/workflows/backend*'
               - '.github/workflows/frontend*'
+              - '.github/workflows/main*'
               - 'devops/**'
 
       - name: Test vars

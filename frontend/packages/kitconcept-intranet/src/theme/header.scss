@@ -48,21 +48,61 @@ body.has-sidebar .header-intranet-compact-wrapper {
       animation: workspace-header-sheen 280ms ease-out;
     }
   }
-  .react-aria-Breadcrumbs {
-    padding: 0;
-    margin: 0;
+
+  .header-breadcrumbs {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 0;
+    color: #878f93;
+
+    .react-aria-Breadcrumb,
+    .react-aria-Link {
+      display: flex;
+      align-items: center;
+    }
 
     .react-aria-Link {
       color: #878f93;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: normal;
     }
 
-    .header-breadcrumb-separator {
-      color: #878f93;
+    .react-aria-Link[data-hovered]:has(.header-breadcrumb-home) {
+      color: $black;
+    }
+
+    .react-aria-Link[data-hovered] .header-breadcrumb-parent {
+      color: $black;
+      text-decoration: underline;
+    }
+
+    .react-aria-Breadcrumb:last-child .react-aria-Link {
+      color: $black;
+      text-decoration: none;
+    }
+
+    svg {
+      margin: 0;
     }
   }
-  .react-aria-Breadcrumbs [data-current='true'] .react-aria-Link,
-  .react-aria-Breadcrumbs .react-aria-Link[data-current='true'] {
+  .header-breadcrumb-more-button {
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: #f2f5f6;
     color: $black;
+    cursor: pointer;
+
+    &[data-hovered],
+    &[data-focused] {
+      background: #eef1f3;
+    }
   }
 }
 
@@ -71,6 +111,63 @@ body.contenttype-wikipage,
 body:has(.header-intranet-compact) {
   #main .breadcrumbs {
     display: none;
+  }
+}
+
+.react-aria-Popover:has(.header-breadcrumb-menu) {
+  width: min(640px, calc(100vw - 16px));
+  max-width: none;
+  border: 1px solid #e1e6e9;
+  border-radius: 8px;
+  background: $white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  &[data-placement='bottom'] {
+    margin-top: 8px;
+  }
+}
+
+.header-breadcrumb-menu {
+  width: 100%;
+  padding: 10px;
+
+  .react-aria-MenuItem {
+    display: flex;
+
+    min-height: 36px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 12px;
+
+    margin: 0;
+    color: #878f93;
+    font-size: 14px;
+    font-weight: 400;
+    gap: 10px;
+    line-height: normal;
+
+    &[data-hovered],
+    &[data-focused] {
+      background: #eef1f3;
+    }
+
+    &:last-child {
+      color: $black;
+    }
+
+    svg {
+      flex: 0 0 auto;
+      color: #878f93;
+    }
+
+    span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    &:focus-visible {
+      box-shadow: none !important;
+      outline: none !important;
+    }
   }
 }
 

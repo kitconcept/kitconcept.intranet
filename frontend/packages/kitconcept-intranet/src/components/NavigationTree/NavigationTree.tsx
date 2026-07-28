@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useIntl } from 'react-intl';
 import { TreeItem } from 'react-aria-components';
 import { Tree, TreeItemContent } from '@plone/components';
-import { ColumnbeforeIcon } from '@plone/components/Icons';
+import { ColumnbeforeIcon, WorldIcon } from '@plone/components/Icons';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { messages } from './messages';
 import { useNavigationTree, ROOT_ID } from './useNavigationTree';
@@ -28,6 +28,7 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
   const rootPath = activeWorkspace
     ? flattenToAppURL(activeWorkspace['@id'])
     : ROOT_ID;
+  const rootTitle = activeWorkspace ? activeWorkspace.title : siteTitle;
   const {
     currentPath,
     expandedKeys,
@@ -42,6 +43,8 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
     getChildrenForPath,
     isLoadingForPath,
     fetchedPaths,
+    refetchPath,
+    expandPath,
   } = useNavigationTree(rootPath);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -139,6 +142,8 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
                     fetchedPaths={fetchedPaths}
                     getChildrenForPath={getChildrenForPath}
                     isLoadingForPath={isLoadingForPath}
+                    refetchPath={refetchPath}
+                    expandPath={expandPath}
                   />
                 ))}
               </Tree>
@@ -146,34 +151,56 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
           </>
         ) : (
           <Tree
+            key={rootPath}
             aria-label={siteTitle}
             expandedKeys={expandedKeys}
             onExpandedChange={handleExpandedChange}
           >
-            {isRootLoading && rootChildren.length === 0 && (
-              <TreeItem
-                id="root-loading"
-                textValue={intl.formatMessage(messages.loading)}
-                isDisabled
-              >
-                <TreeItemContent>
-                  <span className="nav-tree-loading-text">
-                    {intl.formatMessage(messages.loading)}
-                  </span>
-                </TreeItemContent>
-              </TreeItem>
-            )}
+            <TreeItem
+              id={rootPath}
+              textValue={rootTitle}
+              href={rootPath}
+              hasChildItems={rootChildren.length > 0 || isRootLoading}
+              className={({ defaultClassName }) =>
+                currentPath === rootPath
+                  ? `${defaultClassName ?? ''} is-current`.trim()
+                  : defaultClassName ?? ''
+              }
+            >
+              <TreeItemContent>
+                <WorldIcon aria-hidden className="nav-tree-icon" />
+                <span className="nav-tree-title" title={rootTitle}>
+                  {rootTitle}
+                </span>
+              </TreeItemContent>
 
-            {rootChildren.map((item) => (
-              <NavigationTreeItem
-                key={item['@id']}
-                item={item}
-                currentPath={currentPath}
-                fetchedPaths={fetchedPaths}
-                getChildrenForPath={getChildrenForPath}
-                isLoadingForPath={isLoadingForPath}
-              />
-            ))}
+              {isRootLoading && rootChildren.length === 0 && (
+                <TreeItem
+                  id="root-loading"
+                  textValue={intl.formatMessage(messages.loading)}
+                  isDisabled
+                >
+                  <TreeItemContent>
+                    <span className="nav-tree-loading-text">
+                      {intl.formatMessage(messages.loading)}
+                    </span>
+                  </TreeItemContent>
+                </TreeItem>
+              )}
+
+              {rootChildren.map((item) => (
+                <NavigationTreeItem
+                  key={item['@id']}
+                  item={item}
+                  currentPath={currentPath}
+                  fetchedPaths={fetchedPaths}
+                  getChildrenForPath={getChildrenForPath}
+                  isLoadingForPath={isLoadingForPath}
+                  refetchPath={refetchPath}
+                  expandPath={expandPath}
+                />
+              ))}
+            </TreeItem>
           </Tree>
         )}
       </nav>

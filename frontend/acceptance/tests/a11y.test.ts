@@ -1,6 +1,7 @@
 import { login } from './login';
 import { expect, test } from './test';
 import { expectNoAccessibilityViolations } from './accessibility';
+import { createContent } from './content';
 
 test.describe('Accessibility @a11y', () => {
   test('homepage has no automatic accessibility violations', async ({
@@ -21,9 +22,22 @@ test.describe('Accessibility @a11y', () => {
     page,
   }) => {
     await login(page);
-    await page.goto('/', { waitUntil: 'networkidle' });
+    const idSuffix = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const workspaceId = `a11y-nav-tree-workspace-${idSuffix}`;
 
-    const navigationTree = page.locator('#navigation-tree .navigation-tree-wrapper');
+    await createContent(page, {
+      contentType: 'Workspace',
+      contentId: workspaceId,
+      contentTitle: 'A11y Navigation Tree Workspace',
+      path: '',
+      transition: 'publish',
+    });
+
+    await page.goto(`/${workspaceId}`, { waitUntil: 'networkidle' });
+
+    const navigationTree = page.locator(
+      '#navigation-tree .navigation-tree-wrapper',
+    );
     await expect(navigationTree).toBeVisible();
 
     await expectNoAccessibilityViolations(page, {

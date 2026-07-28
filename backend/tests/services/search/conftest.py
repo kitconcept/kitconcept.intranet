@@ -1,4 +1,3 @@
-from Acquisition import aq_parent
 from collections.abc import Generator
 from kitconcept.solr.reindex_helpers import activate_and_reindex
 from plone import api
@@ -25,10 +24,9 @@ def answers():
 
 @pytest.fixture(scope="class")
 def functional_portal(
-    functional_portal_class, create_site, answers, solr_settings
+    functional_app_class, create_site, answers, solr_settings
 ) -> Generator[PloneSite]:
-    app = aq_parent(functional_portal_class)
-    site = create_site(app=app, answers=answers)
+    site = create_site(app=functional_app_class, answers=answers)
     for key, value in solr_settings.items():
         api.portal.set_registry_record(key, value)
     activate_and_reindex(site, clear=True)

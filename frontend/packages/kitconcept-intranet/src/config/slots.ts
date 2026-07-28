@@ -51,6 +51,7 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
+    predicates: [ContentTypeCondition(['WikiPage', 'Workspace'])],
   });
 
   return config;

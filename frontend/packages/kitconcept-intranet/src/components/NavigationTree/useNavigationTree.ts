@@ -46,7 +46,7 @@ export function useNavigationTree(rootPath: string = ROOT_ID) {
 
   const dispatchFetch = useCallback(
     (path: string) => {
-      dispatch(
+      return dispatch(
         searchContent(
           path,
           {
@@ -113,6 +113,19 @@ export function useNavigationTree(rootPath: string = ROOT_ID) {
     [dispatchFetch, rootPath],
   );
 
+  const expandPath = useCallback(
+    (path: string) => {
+      if (!fetchedPaths.current.has(path)) {
+        fetchedPaths.current.add(path);
+        dispatchFetch(path);
+      }
+      setExpandedKeys((prev) =>
+        prev.has(path) ? prev : new Set([...prev, path]),
+      );
+    },
+    [dispatchFetch],
+  );
+
   const searchResults: SearchItem[] = (
     subrequests['nav-tree-search']?.items ?? []
   ).filter((item: SearchItem) => item['@type'] !== WORKSPACE_PORTAL_TYPE);
@@ -134,5 +147,7 @@ export function useNavigationTree(rootPath: string = ROOT_ID) {
     getChildrenForPath,
     isLoadingForPath,
     fetchedPaths,
+    refetchPath: dispatchFetch,
+    expandPath,
   };
 }

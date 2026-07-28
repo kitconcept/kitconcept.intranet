@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import HeaderBreadcrumbs from './HeaderBreadcrumbs';
+import HeaderSearch from './HeaderSearch';
 import cx from 'classnames';
 
 import VLTHeader from 'altVLT/components/Header/Header';
@@ -67,8 +69,10 @@ const Header = (props) => {
         className={cx('header-intranet-compact', {
           'is-route-transition': isRouteTransition,
         })}
-      ></div>
-      <div className="pusher"></div>
+      >
+        <HeaderBreadcrumbs pathname={pathname} />
+        <HeaderSearch />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,1 @@
+Add Person Pill component and storybook test @Tishasoumya-02

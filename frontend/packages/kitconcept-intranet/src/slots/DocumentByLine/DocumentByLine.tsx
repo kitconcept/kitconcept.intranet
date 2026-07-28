@@ -4,7 +4,6 @@ import FormattedDate from '@plone/volto/components/theme/FormattedDate/Formatted
 import { useSelector } from 'react-redux';
 import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 import { defineMessages, useIntl } from 'react-intl';
-import avatarPlaceholder from '../../assets/avatar-placeholder.svg';
 
 const messages = defineMessages({
   by: {
@@ -30,7 +29,6 @@ type FormData = {
 type UserData = {
   fullname: string;
   homepage: string | null;
-  portrait?: string | null;
 };
 
 type ContentWithBylineExpander = Content & {
@@ -70,11 +68,9 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
         id: userid,
         name: userData?.fullname || userid,
         homepage: userData?.homepage,
-        portrait: userData?.portrait,
       };
     });
   }, [creators, content]);
-  const primaryCreator = creatorsWithData[0];
 
   if (!content) {
     return null;
@@ -83,20 +79,6 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   return (
     <>
       <div className="documentByLine">
-        {primaryCreator && (
-          <img
-            className="author-avatar"
-            src={
-              primaryCreator.portrait
-                ? expandToBackendURL(primaryCreator.portrait)
-                : avatarPlaceholder
-            }
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-          />
-        )}
-
         {creatorsWithData.length > 0 && (
           <span>
             {intl.formatMessage(messages.by)}{' '}
@@ -109,7 +91,6 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             {' — '}
           </span>
         )}
-
         {content.effective && !isAddMode && (
           <span>
             {content.review_state === 'published' ? (
@@ -131,7 +112,6 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             )}
           </span>
         )}
-
         {content.modified && !isAddMode && (
           <span>
             {intl.formatMessage(messages.modified)}{' '}

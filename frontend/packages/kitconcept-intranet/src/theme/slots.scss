@@ -1,3 +1,4 @@
+.contenttype-wikipage .documentByLine,
 #page-document .blocks-group-wrapper > .documentByLine {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
@@ -5,6 +6,9 @@
   .author-name {
     text-decoration: none;
   }
+}
+.contenttype-wikipage .documentByLine {
+  margin-top: 0;
 }
 
 #page-edit .q.container .documentByLine,

@@ -1,0 +1,17 @@
+// Disables Volto core's global focus-visible outline (see
+// frontend/core/packages/volto/theme/themes/pastanaga/extras/focus.less).
+:focus-visible:not([contenteditable]):not([data-slate-editor]) {
+  box-shadow: none !important;
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+
+.ui.checkbox input:focus-visible ~ label::before {
+  box-shadow: none !important;
+  outline: none !important;
+  outline-offset: 0 !important;
+}
+
+input:focus-visible {
+  border-color: inherit !important;
+}

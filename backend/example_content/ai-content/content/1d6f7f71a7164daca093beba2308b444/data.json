@@ -1,0 +1,111 @@
+{
+  "@id": "/services/it-services",
+  "@type": "Document",
+  "UID": "1d6f7f71a7164daca093beba2308b444",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "64db6c00-7d2e-44ba-9afa-8e242bba724e": {
+      "@type": "slate",
+      "plaintext": "Der zentrale IT-Service-Desk des DFNT bietet Unterst\u00fctzung bei allen IT-Anfragen: Ticket-System f\u00fcr St\u00f6rungsmeldungen, Software-Katalog mit verf\u00fcgbaren Lizenzen, Hardware-Bestellungen, Cloud-Services (Nextcloud, Sciebo), Systemstatus-\u00dcbersicht sowie Schulungsangebote zu Tools und IT-Sicherheit.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Der zentrale IT-Service-Desk des DFNT bietet Unterst\u00fctzung bei allen IT-Anfragen: Ticket-System f\u00fcr St\u00f6rungsmeldungen, Software-Katalog mit verf\u00fcgbaren Lizenzen, Hardware-Bestellungen, Cloud-Services (Nextcloud, Sciebo), Systemstatus-\u00dcbersicht sowie Schulungsangebote zu Tools und IT-Sicherheit."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "a0b81289-64d2-48f7-8d0f-2b20c292217f": {
+      "@type": "image",
+      "alt": "Stapel bunter Disketten auf gr\u00fcnem Hintergrund symbolisiert digitale Datenspeicherung",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/a0f83d54c53143e289aaff6b24478662"
+    },
+    "cb8f588b-6a8c-4b2b-80ad-7a7f2fbb2240": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "cb8f588b-6a8c-4b2b-80ad-7a7f2fbb2240",
+      "a0b81289-64d2-48f7-8d0f-2b20c292217f",
+      "64db6c00-7d2e-44ba-9afa-8e242bba724e"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:04:09+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Der zentrale IT-Service-Desk des DFNT bietet Unterst\u00fctzung bei allen IT-Anfragen: Ticket-System f\u00fcr St\u00f6rungsmeldungen, Software-Katalog mit verf\u00fcgbaren Lizenzen, Hardware-Bestellungen, Cloud-Services (Nextcloud, Sciebo), Systemstatus-\u00dcbersicht sowie Schulungsangebote zu Tools und IT-Sicherheit.",
+  "effective": "2026-03-05T16:04:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "it-services",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:28:18+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "IT-Services",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,1 @@
+Derive the backend Makefile settings (container image name, package name, Python and base package versions, example content path) from `uvx repoplone settings dump`, and fail early when `jq` is missing or the settings payload is empty. @ericof

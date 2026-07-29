@@ -1,0 +1,104 @@
+{
+  "@id": "/services/features/ticket-tools",
+  "@type": "Document",
+  "UID": "08eebacefc2849d6bbbb51f4224cb145",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "44049f9b-4f94-4f22-bfab-3f43aa3a5f92": {
+      "@type": "title"
+    },
+    "d73d4299-6f88-4f34-b7d0-93cabb5d55a6": {
+      "@type": "image",
+      "align": "center",
+      "credit": {},
+      "description": "",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Ticket-Tool",
+      "url": "../resolveuid/a101656dd1654d589ddcb64cf46bd177"
+    },
+    "f1f2e656-df9c-4d3f-82b9-1a5f56873b7d": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "44049f9b-4f94-4f22-bfab-3f43aa3a5f92",
+      "d73d4299-6f88-4f34-b7d0-93cabb5d55a6",
+      "f1f2e656-df9c-4d3f-82b9-1a5f56873b7d"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-13T08:51:36+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-08-13T14:17:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "ticket-tools",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-22T15:20:30+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Ticket-Tools",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

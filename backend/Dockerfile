@@ -53,6 +53,9 @@ ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
 # and change the ownership to user app and group app in one step.
 COPY --from=builder --chown=500:500 /app /app
 
+# Copy example content
+COPY --chown=500:500 ./example_content /import
+
 RUN <<EOT
     ln -s /data /app/var
     chown -R 500:500 /data

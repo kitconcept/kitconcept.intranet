@@ -1,0 +1,134 @@
+{
+  "@id": "/forschung/institute/institut-fur-interdisziplinare-systemforschung",
+  "@type": "Organisational Unit",
+  "UID": "2990b7ba5ef6450c8291984f742154fb",
+  "allow_discussion": null,
+  "blocks": {
+    "29cc82dc-890b-4f56-9410-ddc8fa06b15d": {
+      "@type": "image",
+      "align": "center",
+      "alt": "Team-Meeting mit Whiteboard-Pr\u00e4sentation und Projektplanung im modernen B\u00fcroraum",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Interdisziplin\u00e4re Zusammenarbeit im Team",
+      "url": "../resolveuid/cbe3f67a11ea474d9b6dae2ee81b5aa3"
+    },
+    "3d3fe09b-4a33-40ac-a16f-0c97e21ef8d5": {
+      "@type": "listing",
+      "headline": "Weiterf\u00fchrende Inhalte",
+      "headlineTag": "h2",
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "3e3b8289-a27d-4aea-ac24-bff711dba159": {
+      "@type": "title"
+    },
+    "806afc22-a386-424c-bd8b-d80026ebd301": {
+      "@type": "listing",
+      "headline": "Nachrichten aus dem Institut",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "2990b7ba5ef6450c8291984f742154fb"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "b805fd50-8644-4db5-81dc-a2ad69582688": {
+      "@type": "description"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "3e3b8289-a27d-4aea-ac24-bff711dba159",
+      "29cc82dc-890b-4f56-9410-ddc8fa06b15d",
+      "b805fd50-8644-4db5-81dc-a2ad69582688",
+      "806afc22-a386-424c-bd8b-d80026ebd301",
+      "3d3fe09b-4a33-40ac-a16f-0c97e21ef8d5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T11:43:52+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Institut f\u00fcr Interdisziplin\u00e4re Systemforschung bringt Wissenschaftlerinnen und Wissenschaftler aus verschiedenen Disziplinen zusammen, um komplexe gesellschaftliche und wissenschaftliche Herausforderungen zu l\u00f6sen. Mit Nachwuchsgruppen an den Standorten Berlin und K\u00f6ln f\u00f6rdern wir innovative Forschungsans\u00e4tze an den Schnittstellen von Physik, Biologie, Informatik und Sozialwissenschaften. Das Institut ist Heimat mehrerer interdisziplin\u00e4rer Exzellenzcluster und internationaler Kooperationsprojekte.",
+  "effective": "2026-03-05T11:43:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institut-fur-interdisziplinare-systemforschung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "location_reference": [
+    "027ccc49f4ac467d9d9fb3bdc4115d79",
+    "97e82b07b5444728b1517de15c79fefb"
+  ],
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-22T10:01:05+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "subjects": [],
+  "title": "Institut f\u00fcr Interdisziplin\u00e4re Systemforschung",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

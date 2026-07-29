@@ -1,0 +1,111 @@
+{
+  "@id": "/forschung/meine-projekte",
+  "@type": "Document",
+  "UID": "8bc2921fe7384e5086ea68034052ca74",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "3c417c34-e30b-4b3c-89d9-b94690809121": {
+      "@type": "image",
+      "alt": "Team-Meeting mit Whiteboard-Pr\u00e4sentation und Post-its im modernen B\u00fcroraum",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/cbe3f67a11ea474d9b6dae2ee81b5aa3"
+    },
+    "3f0f591c-153b-445b-b1f7-8cf03ead7835": {
+      "@type": "title"
+    },
+    "5b0e1b96-ac25-4e94-b904-4bdfd6d91725": {
+      "@type": "slate",
+      "plaintext": "Direktzugriff auf Ihre aktiven Projektreicheume und Kollaborationsbereiche: Erstellen Sie neue Projektworkspaces, greifen Sie auf AG-spezifische Bereiche zu, verwalten Sie geteilte Dokumente und verfolgen Sie Termine und Meilensteine in Projektkalendern. Alle Ihre aktuellen Projekte an einem Ort.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Direktzugriff auf Ihre aktiven Projektreicheume und Kollaborationsbereiche: Erstellen Sie neue Projektworkspaces, greifen Sie auf AG-spezifische Bereiche zu, verwalten Sie geteilte Dokumente und verfolgen Sie Termine und Meilensteine in Projektkalendern. Alle Ihre aktuellen Projekte an einem Ort."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "3f0f591c-153b-445b-b1f7-8cf03ead7835",
+      "3c417c34-e30b-4b3c-89d9-b94690809121",
+      "5b0e1b96-ac25-4e94-b904-4bdfd6d91725"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:03:25+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Direktzugriff auf Ihre aktiven Projekttr\u00e4ume und Kollaborationsbereiche: Erstellen Sie neue Projektworkspaces, greifen Sie auf AG-spezifische Bereiche zu, verwalten Sie geteilte Dokumente und verfolgen Sie Termine und Meilensteine in Projektkalendern. Alle Ihre aktuellen Projekte an einem Ort.",
+  "effective": "2026-03-05T16:03:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "meine-projekte",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:28:22+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Meine Projekte & Workspaces",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:44+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,153 @@
+{
+  "@id": "/forschung/institute/institut-fuer-quantenphysik-und-astrophysik",
+  "@type": "Organisational Unit",
+  "UID": "1a22eddf0e7941a0962cbfaa785e4b4d",
+  "allow_discussion": null,
+  "blocks": {
+    "1ff0fcdf-68a7-4e16-934d-1b409a23b27c": {
+      "@type": "image",
+      "align": "center",
+      "credit": {},
+      "description": "Kupfer-goldene Quantencomputer-Hardware mit Spiralspulen und gewundenen Leitungen, warme Beleuchtung.",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Quantencomputer-Technologie",
+      "url": "../resolveuid/851276fbaa934d62a298798e8ec74fa5"
+    },
+    "4c54f1d0-ec8e-4446-82db-9d3a6e764358": {
+      "@type": "listing",
+      "headline": "Nachrichten aus dem Institut",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "1a22eddf0e7941a0962cbfaa785e4b4d"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "8d98a183-9f01-4631-a9c4-227f447d3859": {
+      "@type": "title"
+    },
+    "9b6e78fb-f4cb-475b-a696-79aeea2c9199": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d4de2d2e-5855-48da-85f2-8612c8e6891a": {
+      "@type": "description"
+    },
+    "d91508ac-319c-46b3-bdaf-c7119b92105d": {
+      "@type": "listing",
+      "headline": "Weiterf\u00fchrende Inhalte",
+      "headlineTag": "h2",
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "8d98a183-9f01-4631-a9c4-227f447d3859",
+      "1ff0fcdf-68a7-4e16-934d-1b409a23b27c",
+      "d4de2d2e-5855-48da-85f2-8612c8e6891a",
+      "4c54f1d0-ec8e-4446-82db-9d3a6e764358",
+      "d91508ac-319c-46b3-bdaf-c7119b92105d",
+      "9b6e78fb-f4cb-475b-a696-79aeea2c9199"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-04T15:58:39+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Institut f\u00fcr Quantenphysik und Astrophysik erforscht die fundamentalen Bausteine und Gesetze des Universums \u2013 von subatomaren Quantenph\u00e4nomenen bis hin zu kosmischen Strukturen. An den Standorten K\u00f6ln und Bonn arbeiten \u00fcber 120 Wissenschaftlerinnen und Wissenschaftler an Projekten rund um Quantencomputing, Teilchenphysik und die Entstehung von Galaxien. Das Institut betreibt eigene Beschleuniger- und Spektrometeranlagen und ist in mehrere internationale Verbundprojekte eingebunden. ",
+  "effective": "2025-08-04T15:58:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institut-fuer-quantenphysik-und-astrophysik",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "location_reference": [
+    "97e82b07b5444728b1517de15c79fefb",
+    "027ccc49f4ac467d9d9fb3bdc4115d79"
+  ],
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-22T09:55:17+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "subjects": [],
+  "title": "Institut f\u00fcr Quantenphysik und Astrophysik",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

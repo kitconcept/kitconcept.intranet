@@ -1,0 +1,1 @@
+Move the AI search (RAG) test corpus out of the distributed package into `backend/example_content/ai-content` and exclude `example_content` from the sdist. The corpus is copied into `/import` in the backend container image. @ericof

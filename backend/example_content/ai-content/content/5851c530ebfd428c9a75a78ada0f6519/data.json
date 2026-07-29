@@ -1,0 +1,132 @@
+{
+  "@id": "/aktuelles/temine",
+  "@type": "Document",
+  "UID": "5851c530ebfd428c9a75a78ada0f6519",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "881aae6b-c81e-4f92-ab34-69a0caf6680b": {
+      "@type": "banner",
+      "additionalText": "am DFNT",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "text": "Aktuelle Veranstaltungen",
+      "theme": "default",
+      "url": "../resolveuid/3b50cfc6bd2a4a53a433feed4d0abef5"
+    },
+    "b6930a37-73cf-4f55-8238-d7c2e59b2252": {
+      "@type": "slate",
+      "plaintext": "Ein neuer Absatz",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Ein neuer Absatz"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f8eab83e-2a31-458f-9bfb-99d262a6801d": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          }
+        ],
+        "sort_on": "start",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "listDate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "881aae6b-c81e-4f92-ab34-69a0caf6680b",
+      "f8eab83e-2a31-458f-9bfb-99d262a6801d",
+      "b6930a37-73cf-4f55-8238-d7c2e59b2252"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T08:55:12+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-03-05T10:18:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "temine",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-06-30T09:25:18+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Veranstaltungen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:34+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:34+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

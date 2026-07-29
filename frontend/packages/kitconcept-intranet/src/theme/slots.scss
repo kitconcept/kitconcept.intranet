@@ -76,7 +76,6 @@ h1.documentFirstHeading:has(+ .documentByLine) {
     gap: 12px;
   }
 
-  .about-content-person,
   .about-content-date,
   a {
     display: flex;
@@ -94,14 +93,6 @@ h1.documentFirstHeading:has(+ .documentByLine) {
     .icon {
       color: $grey;
     }
-  }
-
-  .about-content-avatar {
-    width: 48px;
-    height: 48px;
-    flex: 0 0 48px;
-    border-radius: 50%;
-    object-fit: cover;
   }
 }
 
@@ -122,7 +113,6 @@ h1.documentFirstHeading:has(+ .documentByLine) {
     grid-template-columns: 1fr;
   }
 
-  .about-content-person,
   .about-content-date {
     font-size: 14px;
   }

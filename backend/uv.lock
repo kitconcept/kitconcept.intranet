@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = "==3.14.*"
 
 [options]
@@ -1589,7 +1589,7 @@ provides-extras = ["test"]
 [[package]]
 name = "kitconcept-solr"
 version = "2.0.0a14"
-source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag#7f5ba8c1c12ba60f3fdf40519e5ae0dc7363e9d5" }
+source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag#397e09bc498e8431850c7be8c221c000a89aadf9" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },

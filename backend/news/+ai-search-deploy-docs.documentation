@@ -1,0 +1,1 @@
+Document the cluster deployment of the AI search: run scripts/solr_activate_and_reindex.py through the image entrypoint, set the LLM credentials before reindexing, site upgrade cascades the kitconcept.solr profile upgrade. @reebalazs

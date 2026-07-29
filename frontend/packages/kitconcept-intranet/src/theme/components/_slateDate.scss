@@ -1,0 +1,16 @@
+.slate-date {
+  align-items: baseline;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  padding-block: 0;
+
+  > button {
+    align-items: baseline;
+    font: inherit;
+  }
+
+  svg {
+    align-self: center;
+  }
+}

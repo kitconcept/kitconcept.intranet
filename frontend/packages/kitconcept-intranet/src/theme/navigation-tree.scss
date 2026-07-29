@@ -206,6 +206,7 @@
       }
 
       .nav-tree-search-input {
+        height: 20px;
         flex: 1;
         border: none;
         background: transparent;
@@ -231,6 +232,7 @@
         color: #555;
         cursor: pointer;
         font-size: 10px;
+
 
         &:hover {
           background: #aaa;

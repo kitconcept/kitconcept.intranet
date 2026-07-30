@@ -1,0 +1,1 @@
+Workspace search dialog: the Workspace chip is the local/global scope switch — workspace scope (default) restricts livesearch and the Enter results page to the workspace subtree, "Intranet Portal" searches globally. Covered by a Cypress test and a backend @solr-suggest path_prefix test; requires the kitconcept.solr local-scoping support. @reebalazs

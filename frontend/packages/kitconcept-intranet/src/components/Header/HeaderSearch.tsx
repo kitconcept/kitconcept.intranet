@@ -271,7 +271,17 @@ const FilterChip = ({
   </MenuTrigger>
 );
 
-const FilterChips = ({ workspaceTitle }: { workspaceTitle: string }) => {
+type SearchScope = 'workspace' | 'global';
+
+const FilterChips = ({
+  workspaceTitle,
+  scope,
+  onScopeChange,
+}: {
+  workspaceTitle: string;
+  scope: SearchScope;
+  onScopeChange: (scope: SearchScope) => void;
+}) => {
   const intl = useIntl();
   const filters: Array<{
     id: string;
@@ -342,7 +352,14 @@ const FilterChips = ({ workspaceTitle }: { workspaceTitle: string }) => {
     <div className="header-search-filters">
       <div className="header-search-chips">
         {filters.map((filter) => {
-          const selected = selection[filter.id] || filter.options[0];
+          // The Workspace chip is the real scope switch (local/global);
+          // the other chips are inert demo data (facets deferred).
+          const isScopeChip = filter.id === 'workspace';
+          const selected = isScopeChip
+            ? scope === 'workspace'
+              ? workspaceTitle
+              : intl.formatMessage(messages.intranetPortal)
+            : selection[filter.id] || filter.options[0];
           return (
             <FilterChip
               key={filter.id}
@@ -350,11 +367,18 @@ const FilterChips = ({ workspaceTitle }: { workspaceTitle: string }) => {
               options={filter.options}
               selected={selected}
               onSelect={(value) =>
-                setSelection((current) => ({ ...current, [filter.id]: value }))
+                isScopeChip
+                  ? onScopeChange(
+                      value === workspaceTitle ? 'workspace' : 'global',
+                    )
+                  : setSelection((current) => ({
+                      ...current,
+                      [filter.id]: value,
+                    }))
               }
               isActive={
-                filter.id === 'workspace'
-                  ? selected === workspaceTitle
+                isScopeChip
+                  ? scope === 'workspace'
                   : selected !== filter.options[0]
               }
             />
@@ -589,12 +613,28 @@ const HeaderSearch = () => {
     (state: any) =>
       state?.site?.data?.['kitconcept.solr.rag_available'] === true,
   );
-  const workspaceTitle: string = useSelector(
-    (state: any) =>
-      state.content?.data?.['@components']?.inherit?.[
-        'kitconcept.plate.workspace'
-      ]?.from?.title || '…',
+  const workspace: { title: string; path: string | null } = useSelector(
+    (state: any) => {
+      const from =
+        state.content?.data?.['@components']?.inherit?.[
+          'kitconcept.plate.workspace'
+        ]?.from;
+      return {
+        title: from?.title || '…',
+        path: from?.['@id'] ? flattenToAppURL(from['@id']) : null,
+      };
+    },
+    // Value based comparison: the selector builds a fresh object on
+    // every run, so reference equality would re-render on every store
+    // change.
+    (a: any, b: any) => a.title === b.title && a.path === b.path,
   );
+  // The Workspace chip switches the scope: workspace (default, local
+  // to the current workspace) or global ("Intranet Portal"). All three
+  // searches - livesearch, Ask AI and the Enter results page - follow
+  // it (see ticket #426 / kitconcept.solr local scoping).
+  const [scope, setScope] = useState<SearchScope>('workspace');
+  const scopePath = scope === 'workspace' ? workspace.path : null;
 
   const term = searchText.trim();
   const showResults = term.length >= 2;
@@ -634,10 +674,10 @@ const HeaderSearch = () => {
       return;
     }
     const timeout = window.setTimeout(() => {
-      dispatch(solrSearchSuggestions(encodeURIComponent(term)));
+      dispatch(solrSearchSuggestions(encodeURIComponent(term), scopePath));
     }, 250);
     return () => window.clearTimeout(timeout);
-  }, [dispatch, isSearchOpen, term]);
+  }, [dispatch, isSearchOpen, term, scopePath]);
 
   const resetAi = useCallback(() => {
     setAiAsked(false);
@@ -647,6 +687,7 @@ const HeaderSearch = () => {
   const closeSearch = useCallback(() => {
     setIsSearchOpen(false);
     setSearchText('');
+    setScope('workspace');
     resetAi();
   }, [resetAi]);
 
@@ -655,6 +696,14 @@ const HeaderSearch = () => {
       setIsSearchOpen(true);
     } else {
       closeSearch();
+    }
+  };
+
+  const onScopeChange = (nextScope: SearchScope) => {
+    setScope(nextScope);
+    if (aiAsked) {
+      // The AI answer was grounded in the previous scope.
+      resetAi();
     }
   };
 
@@ -672,9 +721,25 @@ const HeaderSearch = () => {
 
   const submitSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigateTo(
-      term ? `/search?SearchableText=${encodeURIComponent(term)}` : '/search',
-    );
+    // Enter goes to the workspace-scoped search page: the nested
+    // @@search route plus local=true restricts the classic results
+    // (and, through the page's own wiring, the AI retrieval) to the
+    // workspace subtree. Without a workspace path, plain global search.
+    // is_multilingual=false: the intranet is monolingual, and the
+    // backend's multilingual path handling would neutralize the
+    // path_prefix filter on a site without plone.app.multilingual.
+    if (scopePath) {
+      const query = term
+        ? `?SearchableText=${encodeURIComponent(term)}&local=true` +
+          `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
+          `&is_multilingual=false`
+        : '';
+      navigateTo(`${scopePath}/@@search${query}`);
+    } else {
+      navigateTo(
+        term ? `/search?SearchableText=${encodeURIComponent(term)}` : '/search',
+      );
+    }
   };
 
   const onAskAI = () => {
@@ -686,7 +751,7 @@ const HeaderSearch = () => {
     // answer below the loading indicator.
     dispatch(resetRagSearch());
     setAiAsked(true);
-    dispatch(ragSearch('', term));
+    dispatch(ragSearch('', term, scopePath || undefined));
   };
 
   return (
@@ -740,7 +805,11 @@ const HeaderSearch = () => {
               </div>
             </form>
 
-            <FilterChips workspaceTitle={workspaceTitle} />
+            <FilterChips
+              workspaceTitle={workspace.title}
+              scope={scope}
+              onScopeChange={onScopeChange}
+            />
 
             {showResults ? (
               <div className="header-search-results">

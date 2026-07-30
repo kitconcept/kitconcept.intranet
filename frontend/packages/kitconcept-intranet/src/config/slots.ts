@@ -38,8 +38,7 @@ export default function install(config: ConfigType) {
     name: 'Content Interactions',
     component: ContentInteractions,
     predicates: [
-      ({ content }) =>
-        !['WikiPage', 'Workspace'].includes(content?.['@type']),
+      ({ content }) => !['WikiPage', 'Workspace'].includes(content?.['@type']),
     ],
   });
   config.registerSlotComponent({

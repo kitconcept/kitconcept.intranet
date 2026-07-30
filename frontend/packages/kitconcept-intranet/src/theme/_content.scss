@@ -41,3 +41,18 @@
     display: none;
   }
 }
+
+// Added to fix tailwind conflict, should be removed after refactoring layers
+#page-add,
+#page-edit,
+#page-document {
+  ol {
+    list-style: auto;
+    padding-left: 40px;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 40px;
+  }
+}

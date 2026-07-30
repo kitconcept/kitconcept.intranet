@@ -1,4 +1,6 @@
+from collective.person.behaviors.user import IPloneUser
 from kitconcept.intranet.behaviors.clm import ICLM
+from plone import api
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
 from zope.component import adapter
@@ -26,12 +28,20 @@ class CLMExpander:
                 continue
 
             if clm.responsible_person:
+                person = api.content.get(UID=clm.responsible_person)
+                responsible_person = {
+                    "value": clm.responsible_person,
+                    "url": f"{obj.absolute_url()}",
+                }
+
+                if person:
+                    responsible_person["person_url"] = person.absolute_url()
+                    responsible_person["username"] = IPloneUser(person).username
+                    responsible_person["title"] = person.title
+
                 return {
                     "clm": {
-                        "responsible_person": {
-                            "value": clm.responsible_person,
-                            "url": f"{obj.absolute_url()}",
-                        },
+                        "responsible_person": responsible_person,
                     }
                 }
 

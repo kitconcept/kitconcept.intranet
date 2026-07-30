@@ -40,6 +40,7 @@ services:
       COLLECTIVE_SOLR_HOST: ${STACK_NAME}_solr
       KITCONCEPT_SOLR_LLM_URL: ${SOLR_LLM_URL:-http://localhost:8080}
       KITCONCEPT_SOLR_LLM_TOKEN: ${SOLR_LLM_TOKEN:-}
+      KITCONCEPT_SOLR_LLM_CHAT_MODEL: ${SOLR_LLM_CHAT_MODEL:-}
     networks:
       - public
       - nw-internal

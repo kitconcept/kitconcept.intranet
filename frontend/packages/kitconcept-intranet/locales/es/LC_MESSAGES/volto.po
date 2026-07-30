@@ -28,6 +28,11 @@ msgstr ""
 msgid "AI-generated answer. It may contain errors."
 msgstr ""
 
+#. Default: "About this content"
+#: slots/AboutThisContent/AboutThisContent
+msgid "About this content"
+msgstr ""
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -66,6 +71,11 @@ msgstr ""
 #. Default: "Assignee: *"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
+msgstr ""
+
+#. Default: "Author"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Author"
 msgstr ""
 
 #. Default: "Beta"
@@ -112,6 +122,11 @@ msgstr ""
 msgid "Content marked as reviewed"
 msgstr ""
 
+#. Default: "Content responsible"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Content responsible"
+msgstr ""
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
@@ -120,6 +135,11 @@ msgstr ""
 #. Default: "Created by"
 #: components/Header/HeaderSearch
 msgid "Created by"
+msgstr ""
+
+#. Default: "Created on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Created on"
 msgstr ""
 
 #. Default: "Delegate Review Update"
@@ -241,6 +261,11 @@ msgstr ""
 msgid "Invalid url"
 msgstr ""
 
+#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
+#: slots/AboutThisContent/AboutThisContent
+msgid "Is something unclear or outdated? Let us know so we can improve the page."
+msgstr ""
+
 #. Default: "Last 3 months"
 #: components/Header/HeaderSearch
 msgid "Last 3 months"
@@ -259,6 +284,11 @@ msgstr ""
 #. Default: "Last Modified On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Last Modified On"
+msgstr ""
+
+#. Default: "Last modified on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Last modified on"
 msgstr ""
 
 #. Default: "Last updated"
@@ -422,6 +452,7 @@ msgstr ""
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Send feedback"
 msgstr ""
 
@@ -546,6 +577,11 @@ msgstr ""
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
+msgstr ""
+
+#. Default: "What is unclear, outdated or missing?"
+#: slots/AboutThisContent/AboutThisContent
+msgid "What is unclear, outdated or missing?"
 msgstr ""
 
 #. Default: "Workspace"

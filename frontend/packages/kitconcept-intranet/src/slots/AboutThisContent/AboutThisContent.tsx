@@ -3,8 +3,10 @@ import FormattedDate from '@plone/volto/components/theme/FormattedDate/Formatted
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { defineMessages, useIntl } from 'react-intl';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
+import sendSVG from '@plone/volto/icons/send.svg';
 import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 
 const messages = defineMessages({
@@ -27,6 +29,19 @@ const messages = defineMessages({
   modified: {
     id: 'Last modified on',
     defaultMessage: 'Last modified on',
+  },
+  feedbackPrompt: {
+    id: 'Is something unclear or outdated? Let us know so we can improve the page.',
+    defaultMessage:
+      'Is something unclear or outdated? Let us know so we can improve the page.',
+  },
+  feedbackPlaceholder: {
+    id: 'What is unclear, outdated or missing?',
+    defaultMessage: 'What is unclear, outdated or missing?',
+  },
+  sendFeedback: {
+    id: 'Send feedback',
+    defaultMessage: 'Send feedback',
   },
 });
 
@@ -98,6 +113,7 @@ const AboutContentDate = ({ label, date, locale }: AboutContentDateProps) => (
 
 const AboutThisContent = ({ content }: AboutThisContentProps) => {
   const intl = useIntl();
+  const [feedback, setFeedback] = useState('');
   const contentFromState = useSelector(
     (state: ReduxState) => state.content.data,
   );
@@ -171,6 +187,23 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
             locale={intl.locale}
           />
         )}
+      </div>
+      <div className="about-content-feedback">
+        <label htmlFor="about-content-feedback">
+          {intl.formatMessage(messages.feedbackPrompt)}
+        </label>
+        <textarea
+          id="about-content-feedback"
+          name="about-content-feedback"
+          placeholder={intl.formatMessage(messages.feedbackPlaceholder)}
+          rows={1}
+          value={feedback}
+          onChange={(event) => setFeedback(event.target.value)}
+        />
+        <button type="button" disabled={!feedback.trim()}>
+          <Icon name={sendSVG} size="28px" />
+          {intl.formatMessage(messages.sendFeedback)}
+        </button>
       </div>
     </section>
   );

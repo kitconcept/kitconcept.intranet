@@ -90,6 +90,87 @@ body.cms-ui .about-content {
       color: $grey;
     }
   }
+
+  .about-content-feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: $spacing-medium;
+    border-top: 1px solid $greySmoke;
+    margin-top: $spacing-medium;
+    gap: 0;
+
+    label {
+      margin-bottom: 26px;
+      color: $grey;
+      font-size: 20px;
+      font-weight: $regular;
+      line-height: 1.2;
+    }
+
+    textarea {
+      width: 720px;
+      height: 84px;
+      box-sizing: border-box;
+      padding: 20px 20px;
+      border: 1px solid $greySmoke;
+      border-radius: 0;
+      margin: 0 0 38px;
+      background: $white;
+      color: $darkGrey;
+      font-family: inherit;
+      font-size: 20px;
+      line-height: 1.2;
+      resize: both;
+
+      &::placeholder {
+        color: $grey;
+        opacity: 1;
+      }
+
+      &:focus {
+        border-color: #007eb1;
+        outline: 1px solid $grey;
+        outline-offset: -1px;
+      }
+    }
+
+    button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      padding: 10px 14px;
+      border: 1px solid #007eb1;
+      border-radius: 0;
+      background: #007eb1;
+      color: $white;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: $bold;
+      gap: 12px;
+      line-height: 1.2;
+
+      &:not(:disabled):hover,
+      &:not(:disabled):focus {
+        border-color: #007aa3;
+        background: #007aa3;
+      }
+
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+
+      &:disabled {
+        border-color: #c7d7dc;
+        background: #c7d7dc;
+        color: $white;
+        cursor: not-allowed;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: $largest-mobile-screen) {
@@ -111,6 +192,24 @@ body.cms-ui .about-content {
 
   .about-content-date {
     font-size: 14px;
+  }
+
+  .about-content-feedback {
+    label {
+      margin-bottom: $spacing-small;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      margin-bottom: $spacing-small;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    button {
+      font-size: 14px;
+    }
   }
 }
 

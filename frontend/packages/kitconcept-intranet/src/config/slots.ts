@@ -37,6 +37,9 @@ export default function install(config: ConfigType) {
     slot: 'belowContent',
     name: 'Content Interactions',
     component: ContentInteractions,
+    predicates: [
+      ({ content }) => !['WikiPage', 'Workspace'].includes(content?.['@type']),
+    ],
   });
   config.registerSlotComponent({
     name: 'PostFooterFollowUsLogoAndLinks',

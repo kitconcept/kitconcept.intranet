@@ -1,5 +1,5 @@
 body.has-no-footer {
-  #footer {
+  #footer > .pre-footer ~ * {
     display: none;
   }
 }

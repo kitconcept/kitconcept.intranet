@@ -21,6 +21,11 @@ msgstr "KI-Überblick"
 msgid "AI-generated answer. It may contain errors."
 msgstr "KI-generierte Antwort. Kann Fehler enthalten."
 
+#. Default: "About this content"
+#: slots/AboutThisContent/AboutThisContent
+msgid "About this content"
+msgstr "Über diesen Inhalt"
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -60,6 +65,11 @@ msgstr "Rückfrage stellen…"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
 msgstr "Beauftragte Person: *"
+
+#. Default: "Author"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Author"
+msgstr "Autor/in"
 
 #. Default: "Beta"
 #: components/Header/HeaderSearch
@@ -105,6 +115,11 @@ msgstr "Kontakt"
 msgid "Content marked as reviewed"
 msgstr ""
 
+#. Default: "Content responsible"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Content responsible"
+msgstr "Inhaltsverantwortlich"
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
@@ -114,6 +129,11 @@ msgstr "Erstellt am"
 #: components/Header/HeaderSearch
 msgid "Created by"
 msgstr "Erstellt von"
+
+#. Default: "Created on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Created on"
+msgstr "Erstellt am"
 
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
@@ -234,6 +254,11 @@ msgstr "Intranet Portal"
 msgid "Invalid url"
 msgstr "Ungültige URL"
 
+#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
+#: slots/AboutThisContent/AboutThisContent
+msgid "Is something unclear or outdated? Let us know so we can improve the page."
+msgstr "Etwas unklar oder veraltet? Lass es uns wissen, um die Seite zu verbessern."
+
 #. Default: "Last 3 months"
 #: components/Header/HeaderSearch
 msgid "Last 3 months"
@@ -253,6 +278,11 @@ msgstr "Letzte 7 Tage"
 #: components/ContentInteractions/ContentInteractions
 msgid "Last Modified On"
 msgstr "Zuletzt geändert am"
+
+#. Default: "Last modified on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Last modified on"
+msgstr "Zuletzt verändert am"
 
 #. Default: "Last updated"
 #: components/Toolbar/DocumentReview
@@ -415,6 +445,7 @@ msgstr "Bitte auswählen ..."
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Send feedback"
 msgstr "Feedback senden"
 
@@ -540,6 +571,11 @@ msgstr "Voreingestelltes Überprüfungsintervall verwenden."
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Website"
+
+#. Default: "What is unclear, outdated or missing?"
+#: slots/AboutThisContent/AboutThisContent
+msgid "What is unclear, outdated or missing?"
+msgstr "Was ist unklar, veraltet oder fehlt?"
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch

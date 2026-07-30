@@ -83,6 +83,36 @@ answer renders above the classic results. Without credentials the
 `@site` endpoint reports `kitconcept.solr.rag_available: false` and
 the classic search works unchanged.
 
+## Deployment (docker image / cluster)
+
+The `make` targets above are development conveniences and do not exist
+in the backend docker image. In a deployment, run the same script
+through the image entrypoint (it ships in the image under
+`/app/scripts/`):
+
+```sh
+./docker-entrypoint.sh run ./scripts/solr_activate_and_reindex.py --rag-enable --clear
+```
+
+Order matters:
+
+1. Set `KITCONCEPT_SOLR_LLM_URL` and `KITCONCEPT_SOLR_LLM_TOKEN` on the
+   backend container **before** reindexing. Chunk indexing embeds the
+   content through the LLM service; without credentials the RAG
+   processor silently skips every document — the reindex "succeeds"
+   but the AI search has nothing to answer from. (Classic search is
+   unaffected either way.)
+2. Run the site upgrade (`@@plone-upgrade` / portal_setup). The
+   kitconcept.intranet upgrade step `v20260729001` cascades the
+   kitconcept.solr profile upgrade (registry record + RAG indexing
+   queue processor) on sites that have Solr support installed.
+3. Run the command above to enable the feature and rebuild the index
+   (`--clear` drops the old index first; `--rag-disable` is the
+   rollback switch).
+
+The script targets the site id `Plone` (matching the devops stacks)
+and exits with a notice on sites created without Solr support.
+
 ## Example users
 
 All users share the password `intranet-demo-2026` (fictional accounts,

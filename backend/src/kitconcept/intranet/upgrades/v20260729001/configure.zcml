@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260728001"
+      destination="20260729001"
+      >
+    <genericsetup:upgradeStep
+        title="Upgrade kitconcept.solr (AI search support), if installed"
+        handler=".upgrade_kitconcept_solr"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

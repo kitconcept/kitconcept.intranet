@@ -1,0 +1,1 @@
+Update Highlight block to version 5.0.0-alpha.2. @danalvrz

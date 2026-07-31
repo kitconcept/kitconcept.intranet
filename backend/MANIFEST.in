@@ -15,6 +15,7 @@ exclude Dockerfile.*
 exclude mx.ini
 exclude Makefile
 recursive-exclude frontend *
+recursive-exclude src/kitconcept/intranet/distributions/intranet/content/content *
 exclude instance.yaml
 global-exclude *.pyc
 global-exclude .DS_Store

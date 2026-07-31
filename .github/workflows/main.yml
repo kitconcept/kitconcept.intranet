@@ -5,8 +5,8 @@ on:
     paths:
       - "backend/**"
       - "frontend/**"
-      - ".github/workflows/*.yml"
       - "devops/**"
+      - ".github/workflows/*.yml"
   workflow_dispatch:
 
 jobs:
@@ -106,6 +106,17 @@ jobs:
         name: ${{ matrix.name }}
         spec-pattern: ${{ matrix.spec-pattern }}
 
+  playwright:
+    name: "Acceptance Playwright"
+    uses: ./.github/workflows/playwright.yml
+    if: ${{ needs.config.outputs.acceptance == 'true' }}
+    needs:
+        - config
+        - image-build
+    with:
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        node-version: ${{ needs.config.outputs.node-version }}
+
   a11y:
     name: "A11y: ${{ matrix.name }}"
     uses: ./.github/workflows/acceptance.yml
@@ -196,7 +207,12 @@ jobs:
           CERTRESOLVER=${{ vars.CERTRESOLVER }}
           BASIC_AUTH_USER=${{ vars.BASIC_AUTH_USER }}
           BASIC_AUTH_PASSWORD=${{ vars.BASIC_AUTH_PASSWORD }}
-
+          BACKEND_REPLICAS=${{ vars.BACKEND_REPLICAS }}
+          FRONTEND_REPLICAS=${{ vars.FRONTEND_REPLICAS }}
+          SOLR_LLM_URL=${{ vars.SOLR_LLM_URL }}
+          SOLR_LLM_TOKEN=${{ vars.SOLR_LLM_TOKEN }}
+          SOLR_TAG=${{ vars.SOLR_TAG }}
+          SOLR_LLM_CHAT_MODEL=${{ vars.SOLR_LLM_CHAT_MODEL }}
     permissions:
         contents: read
         packages: write

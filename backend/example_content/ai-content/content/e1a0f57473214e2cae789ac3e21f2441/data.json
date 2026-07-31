@@ -1,0 +1,295 @@
+{
+  "@id": "/services/it-services/storungsmeldung",
+  "@type": "Document",
+  "UID": "e1a0f57473214e2cae789ac3e21f2441",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "a5581df9-049c-4335-918a-9bf130bda427": {
+      "@type": "title"
+    },
+    "b4ae0bbe-36f1-4222-95cb-9a5ebf675a86": {
+      "@type": "slate",
+      "plaintext": "## IT-Schulungen\n\nWorkshops zu Anwendungen, IT-Sicherheit und digitalen Tools.\n\n**Aktuelle Schulungen:**\n- Microsoft Teams: Grundlagen und erweiterte Funktionen\n- Datenschutz & IT-Sicherheit: Monatlich\n- SharePoint & OneDrive: Erste Schritte\n- VPN-Sicherheit: Nach Bedarf\n- Passwordmanagement: Regelm\u00e4\u00dfig\n\n**Zielgruppen:**\n- Neue Mitarbeitende (Pflichtschulung)\n- Interessierte (optionale Schulungen)\n- Spezialisten (vertiefende Kurse)\n\n**Anmeldung:** akademie.dfnt.de\n\n**N\u00e4chste Termine:** Siehe Schulungskalender\n\n**Kosten:** Kostenlos f\u00fcr DFNT-Mitarbeitende",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "IT-Schulungen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Workshops zu Anwendungen, IT-Sicherheit und digitalen Tools."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Aktuelle Schulungen:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Microsoft Teams: Grundlagen und erweiterte Funktionen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Datenschutz & IT-Sicherheit: Monatlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "SharePoint & OneDrive: Erste Schritte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "VPN-Sicherheit: Nach Bedarf"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Passwordmanagement: Regelm\u00e4\u00dfig"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zielgruppen:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Neue Mitarbeitende (Pflichtschulung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Interessierte (optionale Schulungen)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Spezialisten (vertiefende Kurse)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Anmeldung:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " akademie.dfnt.de"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "N\u00e4chste Termine:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Siehe Schulungskalender"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kosten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Kostenlos f\u00fcr DFNT-Mitarbeitende"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "a5581df9-049c-4335-918a-9bf130bda427",
+      "b4ae0bbe-36f1-4222-95cb-9a5ebf675a86"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:09+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Aktuelle IT-Probleme melden und Status laufender St\u00f6rungen abrufen: bekannte Probleme, Wartungsfenster und voraussichtliche L\u00f6sungszeiten.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "storungsmeldung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:17:14+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "St\u00f6rungsmeldung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

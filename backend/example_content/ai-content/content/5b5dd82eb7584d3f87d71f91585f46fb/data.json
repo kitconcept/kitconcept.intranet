@@ -1,0 +1,354 @@
+{
+  "@id": "/forschung/meine-projekte/geteilte-dokumente",
+  "@type": "Document",
+  "UID": "5b5dd82eb7584d3f87d71f91585f46fb",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "6917453c-32a8-4489-816b-27ca148c7360": {
+      "@type": "title"
+    },
+    "bd399363-6b5e-44c3-9566-864936997e07": {
+      "@type": "slate",
+      "plaintext": "## Projektdokumente teilen und gemeinsam bearbeiten\n\nProjektdokumente k\u00f6nnen zentral \u00fcber Microsoft Teams und SharePoint verwaltet und gemeinsam bearbeitet werden.\n\n### Empfohlene Ordnerstruktur\n\nFolgen Sie dieser Struktur f\u00fcr optimale Organisation:\n\n- **01_Antrag**: Originaler Projektantrag und Bewilligungsdokumente\n- **02_Projektmanagement**: Pl\u00e4ne, Meilensteine, Budgetierung\n- **03_Daten**: Rohdaten und Datenverwaltung\n- **04_Berichte**: Fortschrittsberichte, Zwischen- und Abschlussberichte\n- **05_Pr\u00e4sentationen**: Slides f\u00fcr Meetings und Konferenzen\n- **06_Ver\u00f6ffentlichungen**: Manuskripte und publizierte Artikel\n\n### Zugriffsrechte und Verwaltung\n\n- **Verwaltung**: Die Projektleitung verwaltet alle Zugriffsrechte\n- **Externe Nutzer**: IT-Anfrage f\u00fcr Zugr\u00e4nge erforderlich\n- **Versionierung**: SharePoint protokolliert alle \u00c4nderungen automatisch\n\n### WICHTIG: Datenschutz\n\n**Forschungsdaten NICHT in Teams/SharePoint speichern!** \nNutzen Sie stattdessen den Forschungsdatenspeicher des DFNT.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Projektdokumente teilen und gemeinsam bearbeiten"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Projektdokumente k\u00f6nnen zentral \u00fcber Microsoft Teams und SharePoint verwaltet und gemeinsam bearbeitet werden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Empfohlene Ordnerstruktur"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Folgen Sie dieser Struktur f\u00fcr optimale Organisation:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "01_Antrag"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Originaler Projektantrag und Bewilligungsdokumente"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "02_Projektmanagement"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Pl\u00e4ne, Meilensteine, Budgetierung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "03_Daten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Rohdaten und Datenverwaltung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "04_Berichte"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Fortschrittsberichte, Zwischen- und Abschlussberichte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "05_Pr\u00e4sentationen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Slides f\u00fcr Meetings und Konferenzen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "06_Ver\u00f6ffentlichungen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Manuskripte und publizierte Artikel"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Zugriffsrechte und Verwaltung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Verwaltung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Die Projektleitung verwaltet alle Zugriffsrechte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Externe Nutzer"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": IT-Anfrage f\u00fcr Zugr\u00e4nge erforderlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Versionierung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": SharePoint protokolliert alle \u00c4nderungen automatisch"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "WICHTIG: Datenschutz"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Forschungsdaten NICHT in Teams/SharePoint speichern!"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\nNutzen Sie stattdessen den Forschungsdatenspeicher des DFNT."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "6917453c-32a8-4489-816b-27ca148c7360",
+      "bd399363-6b5e-44c3-9566-864936997e07"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:12+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Projektbezogene Dateien und Dokumente gemeinsam bearbeiten und verwalten: Ablagestruktur, Versionierung und Zugriffsrechte in Projektr\u00e4umen.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "geteilte-dokumente",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:57+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Geteilte Dokumente",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:44+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:44+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

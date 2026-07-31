@@ -2,6 +2,10 @@
 ARG KC_VERSION
 FROM ghcr.io/kitconcept/core-builder:${KC_VERSION:-latest} AS builder
 
+# Copy only the files needed for installing dependencies first to leverage Docker cache
+# In this case, kitconcept-plate
+COPY ./container /container
+
 # Install dependencies
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=bind,source=uv.lock,target=uv.lock \
@@ -48,6 +52,9 @@ ENV ALLOWED_DISTRIBUTIONS=kitconcept-intranet
 # Copy the pre-built `/app` directory to the runtime container
 # and change the ownership to user app and group app in one step.
 COPY --from=builder --chown=500:500 /app /app
+
+# Copy example content
+COPY --chown=500:500 ./example_content /import
 
 RUN <<EOT
     ln -s /data /app/var

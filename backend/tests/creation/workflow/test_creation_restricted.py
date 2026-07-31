@@ -1,5 +1,6 @@
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
+from Products.CMFCore.WorkflowCore import WorkflowException
 from typing import Any
 
 import pytest
@@ -52,7 +53,7 @@ class TestSiteCreation:
     @pytest.mark.parametrize(
         "path,title,portal_type,review_state",
         [
-            ("/", "Intranet", "Plone Site", "published"),
+            ("/", "Intranet", "Plone Site", None),
         ],
     )
     def test_content_created(self, path, title, portal_type, review_state):
@@ -60,11 +61,18 @@ class TestSiteCreation:
             content = api.content.get(path=path)
         assert content.title == title
         assert content.portal_type == portal_type
-        assert api.content.get_state(content) == review_state
+        if review_state is not None:
+            assert api.content.get_state(content) == review_state
+        else:
+            with pytest.raises(WorkflowException) as exc:
+                api.content.get_state(content)
+            assert "No workflow provides" in str(exc.value)
 
     @pytest.mark.parametrize(
         "path,permission,role,expected",
         [
+            ("/", "Access contents information", "Anonymous", False),
+            ("/", "Access contents information", "Authenticated", True),
             ("/", "View", "Anonymous", False),
             ("/", "View", "Authenticated", True),
         ],

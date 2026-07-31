@@ -1,0 +1,235 @@
+{
+  "@id": "/services/it-services/software-katalog",
+  "@type": "Document",
+  "UID": "1b2f0c5700fa4540b949b57f2dac6cde",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "74b9beec-d8ba-490b-a861-29bb7092fbb6": {
+      "@type": "title"
+    },
+    "a73727d9-94ff-4098-b1f0-af4571c405cc": {
+      "@type": "slate",
+      "plaintext": "## Aktuelle Reiserichtlinie (Stand: Januar 2026)\n\n**Grundsatz:** Videokonferenzen vor Dienstreisen bevorzugen\n\n## Inland\n\n- Bahn 2. Klasse (1. Klasse ab 2h mit BC 100)\n- \u00dcbernachtung max. 120\u20ac/Nacht\n- Verpflegungsmehraufwand: ab 8h 14\u20ac, ab 24h 28\u20ac\n\n## Ausland\n\n- Flug Economy Class\n- \u00dcbernachtung max. 150\u20ac/Nacht (Abweichungen bei teuren St\u00e4dten genehmigungspflichtig)\n- Auslands-Tagegeld nach BRKG-Tabelle\n\n**Download:** intern.dfnt.de/reiserichtlinie-2026.pdf",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Aktuelle Reiserichtlinie (Stand: Januar 2026)"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Grundsatz:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Videokonferenzen vor Dienstreisen bevorzugen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Inland"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bahn 2. Klasse (1. Klasse ab 2h mit BC 100)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "\u00dcbernachtung max. 120\u20ac/Nacht"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Verpflegungsmehraufwand: ab 8h 14\u20ac, ab 24h 28\u20ac"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Ausland"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Flug Economy Class"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "\u00dcbernachtung max. 150\u20ac/Nacht (Abweichungen bei teuren St\u00e4dten genehmigungspflichtig)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Auslands-Tagegeld nach BRKG-Tabelle"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Download:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " intern.dfnt.de/reiserichtlinie-2026.pdf"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "74b9beec-d8ba-490b-a861-29bb7092fbb6",
+      "a73727d9-94ff-4098-b1f0-af4571c405cc"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:13+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Verf\u00fcgbare Softwarelizenzen und genehmigte Tools f\u00fcr Mitarbeitende: \u00dcbersicht nach Kategorien, Bestellprozess und Lizenzinformationen.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "software-katalog",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:13:16+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Software-Katalog",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

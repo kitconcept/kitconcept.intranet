@@ -64,6 +64,14 @@ help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 ###########################################
+# Volto Plate
+###########################################
+.PHONY: update-volto-plate
+update-volto-plate:  ## Update Volto Plate
+	@echo "Update Volto Plate"
+	@uv run scripts/update-volto-plate.py
+
+###########################################
 # Frontend
 ###########################################
 .PHONY: frontend-install

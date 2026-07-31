@@ -1,0 +1,463 @@
+{
+  "@id": "/arbeitsthemen/publikationen-open-access/doi-vergeben",
+  "@type": "Document",
+  "UID": "96c77bd1497e43b8abedf2b6ac33f808",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "83c6678e-2385-4999-a4dc-52aaed63f692": {
+      "@type": "title"
+    },
+    "a1346464-74b2-493b-9be0-16c4d030ed0a": {
+      "@type": "slate",
+      "plaintext": "## DOI-Service des DFNT\n\n### \u00dcber DOIs\n\nEine Digital Object Identifier (DOI) ist eine eindeutige, persistente Kennung f\u00fcr digitale Objekte. Der DFNT bietet einen DOI-Service \u00fcber die DataCite-Registrierungsagentur an.\n\n### Nutzungsm\u00f6glichkeiten\n\nDOIs k\u00f6nnen vergeben werden f\u00fcr:\n\n- Forschungsdatens\u00e4tze\n- Forschungsberichte\n- Pr\u00e4sentationen\n- Software\n- Sonstige digitale Forschungsergebnisse\n\n### Voraussetzungen\n\nFolgende Bedingungen m\u00fcssen erf\u00fcllt sein:\n\n- **Dauerhafte Zug\u00e4nglichkeit**: Der Inhalt muss langfristig verf\u00fcgbar sein\n- **Vollst\u00e4ndige Metadaten**: Alle erforderlichen Metadaten m\u00fcssen dokumentiert sein\n- **Eindeutige Identifikation**: Das Objekt muss klar identifizierbar sein\n\n### DOI-Format\n\nDOIs des DFNT folgen diesem Format:\n\n`10.12345/dfnt.[Jahr].[ID]`\n\nBeispiel: `10.12345/dfnt.2026.001234`\n\n### Beantragung\n\n**Verfahren:**\n\n1. Formular **DOI-01** ausf\u00fcllen\n2. Formular an **bibliothek@dfnt.de** senden\n3. Bearbeitungszeit: ca. 3 Werktage\n\n**Hinweis**: F\u00fcr Artikel in Zeitschriften vergibt der Verlag die DOI, nicht der DFNT.\n\n### Weitere Informationen\n\nBei Fragen kontaktieren Sie die DFNT-Bibliothek unter **bibliothek@dfnt.de**.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "DOI-Service des DFNT"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "\u00dcber DOIs"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Eine Digital Object Identifier (DOI) ist eine eindeutige, persistente Kennung f\u00fcr digitale Objekte. Der DFNT bietet einen DOI-Service \u00fcber die DataCite-Registrierungsagentur an."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Nutzungsm\u00f6glichkeiten"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "DOIs k\u00f6nnen vergeben werden f\u00fcr:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Forschungsdatens\u00e4tze"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Forschungsberichte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Pr\u00e4sentationen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Software"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sonstige digitale Forschungsergebnisse"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Voraussetzungen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Folgende Bedingungen m\u00fcssen erf\u00fcllt sein:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Dauerhafte Zug\u00e4nglichkeit"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Der Inhalt muss langfristig verf\u00fcgbar sein"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vollst\u00e4ndige Metadaten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Alle erforderlichen Metadaten m\u00fcssen dokumentiert sein"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Eindeutige Identifikation"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Das Objekt muss klar identifizierbar sein"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "DOI-Format"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "DOIs des DFNT folgen diesem Format:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Beispiel: "
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Beantragung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verfahren:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Formular "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "DOI-01"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " ausf\u00fcllen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Formular an "
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "text": "bibliothek@dfnt.de"
+                            }
+                          ],
+                          "data": {
+                            "url": "mailto:bibliothek@dfnt.de"
+                          },
+                          "type": "link"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " senden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bearbeitungszeit: ca. 3 Werktage"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Hinweis"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": F\u00fcr Artikel in Zeitschriften vergibt der Verlag die DOI, nicht der DFNT."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Weitere Informationen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Bei Fragen kontaktieren Sie die DFNT-Bibliothek unter "
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "bibliothek@dfnt.de"
+                    }
+                  ],
+                  "data": {
+                    "url": "mailto:bibliothek@dfnt.de"
+                  },
+                  "type": "link"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "83c6678e-2385-4999-a4dc-52aaed63f692",
+      "a1346464-74b2-493b-9be0-16c4d030ed0a"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:05+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Digital Object Identifier f\u00fcr Forschungsdaten und Dokumente beantragen: Voraussetzungen, Beantragungsprozess und Metadatenstandards.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "doi-vergeben",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:08:41+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "DOI vergeben",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:38+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:38+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

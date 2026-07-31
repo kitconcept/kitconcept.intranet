@@ -4,7 +4,7 @@
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
     "https": "https://github.com/plone/volto.git",
-    "tag": "19.1.4",
+    "tag": "19.3.0",
     "filterBlobs": true
   },
   "volto-light-theme": {
@@ -13,7 +13,7 @@
     "package": "@kitconcept/volto-light-theme",
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
-    "tag": "8.0.0a30",
+    "tag": "8.0.0a31",
     "filterBlobs": true
   },
   "kitconcept-core": {
@@ -22,7 +22,7 @@
     "package": "@kitconcept/core",
     "url": "git@github.com:kitconcept/kitconcept-core.git",
     "https": "https://github.com/kitconcept/kitconcept-core.git",
-    "tag": "2.0.0b2"
+    "tag": "2.0.0b4"
   },
   "volto-banner-block": {
     "develop": true,
@@ -78,7 +78,7 @@
     "package": "@kitconcept/volto-highlight-block",
     "url": "git@github.com:kitconcept/volto-highlight-block.git",
     "https": "https://github.com/kitconcept/volto-highlight-block.git",
-    "tag": "5.0.0-alpha.0"
+    "tag": "5.0.0-alpha.2"
   },
   "volto-introduction-block": {
     "develop": true,
@@ -126,16 +126,16 @@
     "package": "@plone/volto-form-block",
     "url": "git@github.com:plone/form-block.git",
     "https": "https://github.com/plone/form-block.git",
-    "tag": "1.0.0-alpha.0"
+    "tag": "1.0.0-alpha.3"
   },
   "volto-solr": {
-    "develop": false,
+    "develop": true,
     "output": "packages",
     "package": "@kitconcept/volto-solr",
     "url": "git@github.com:kitconcept/kitconcept.solr.git",
     "https": "https://github.com/kitconcept/kitconcept.solr.git",
-    "path": "frontend",
-    "tag": "2.0.0a14"
+    "path": "frontend/packages/volto-solr",
+    "branch": "feature-ai-rag"
   },
   "volto-contact-block": {
     "develop": true,

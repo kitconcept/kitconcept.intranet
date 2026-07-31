@@ -1,0 +1,1268 @@
+{
+  "@id": "/Plone",
+  "@type": "Plone Site",
+  "UID": "plone_site_root",
+  "accent_color": "#ececec",
+  "accent_foreground_color": "#000000",
+  "allow_discussion": null,
+  "blocks": {
+    "223fb3b3-95e7-4273-b116-4ce2dcb2dabc": {
+      "@type": "listing",
+      "headline": "Termine, die Sie interessieren k\u00f6nnten",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          }
+        ],
+        "sort_on": "userRelevance",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "listDate"
+    },
+    "2b7e4ef9-7010-4ce9-85c3-b91da57f16b4": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../resolveuid/48f89cfd95894eda8394ae0c2c754787",
+          "Description": "",
+          "Title": "Veranstaltungskalender",
+          "hasPreviewImage": null,
+          "title": "Veranstaltungskalender"
+        }
+      ],
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Weitere Termine "
+    },
+    "72d64f8a-cca6-444d-a497-482daba7e970": {
+      "@type": "listing",
+      "headline": "Aktuelle Nachrichten, f\u00fcr Sie zusammengestellt",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "4",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          }
+        ],
+        "sort_on": "userRelevance",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "grid"
+    },
+    "868556d1-15e1-4a30-83d8-46eeb3794bfe": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../resolveuid/7fce8b9becbb43d091604ae5b3e84ac0",
+          "Description": "",
+          "Title": "News",
+          "hasPreviewImage": null,
+          "title": "News"
+        }
+      ],
+      "styles": {
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "theme": "grey",
+      "title": "Weitere Nachrichten"
+    },
+    "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "134f93c7-bf46-40ff-8d9b-2132d47f0d6f",
+          "description": "Das Institut f\u00fcr KI und Datenwissenschaften hat gemeinsam mit der Berliner Charit\u00e9 ein Pilotprojekt abgeschlossen, in dem ein KI-Modell zur automatischen Auswertung radiologischer Aufnahmen erprobt wurde. Das System erkennt Anomalien mit einer Genauigkeit von 94,7 Prozent und reduziert die Befundungszeit signifikant.",
+          "flagAlign": "left",
+          "href": [
+            {
+              "@id": "../resolveuid/d2fd60d5d0ee4044a1984202bc7a6da0",
+              "Description": "Das Institut f\u00fcr KI und Datenwissenschaften hat gemeinsam mit der Berliner Charit\u00e9 ein Pilotprojekt abgeschlossen, in dem ein KI-Modell zur automatischen Auswertung radiologischer Aufnahmen erprobt wurde. Das System erkennt Anomalien mit einer Genauigkeit von 94,7 Prozent und reduziert die Befundungszeit signifikant.",
+              "Title": "KI-gest\u00fctzte Bildanalyse beschleunigt medizinische Diagnostik in Pilotprojekt",
+              "hasPreviewImage": null,
+              "image_field": "preview_image_link",
+              "title": "KI-gest\u00fctzte Bildanalyse beschleunigt medizinische Diagnostik in Pilotprojekt"
+            }
+          ],
+          "title": "KI-gest\u00fctzte Bildanalyse beschleunigt medizinische Diagnostik in Pilotprojekt"
+        },
+        {
+          "@id": "7c1a87d4-1f7c-4e93-98e3-b77abc42ebf5",
+          "description": "Endlich hat das Suchen ein Ende. Finden Sie hier alle Informationen zu wichtigen Themen und behalten den \u00dcberblick \u00fcber aktuelle \u00c4nderungen.",
+          "flagAlign": "left",
+          "href": [
+            {
+              "@id": "../resolveuid/327e9ff7b27e4b6795fca847a2732b85",
+              "@type": "News Item",
+              "Description": "Endlich hat das Suchen ein Ende. Finden Sie hier alle Informationen zu wichtigen Themen und behalten den \u00dcberblick \u00fcber aktuelle \u00c4nderungen.",
+              "Title": "Das neue Intranet",
+              "hasPreviewImage": true,
+              "head_title": "F\u00fcr eine bessere Zusammenarbeit",
+              "image_field": "preview_image_link",
+              "title": "Das neue Intranet"
+            }
+          ],
+          "title": "Das neue Intranet"
+        },
+        {
+          "@id": "045986d8-f7b1-4a37-940f-005f3fdab7ad",
+          "description": "Die Personalabteilung des IAZ informiert \u00fcber die aktualisierte Dienstvereinbarung zum mobilen Arbeiten. Ab 1. Juli gelten neue Regelungen zur Homeoffice-Nutzung und technischen Ausstattung.",
+          "flagAlign": "right",
+          "head_title": "PERSONAL & ORGANISATION",
+          "href": [
+            {
+              "@id": "../resolveuid/ed622e194da44a319d9caa501a5d4684",
+              "@type": "News Item",
+              "Description": "Die Personalabteilung des IAZ informiert \u00fcber die aktualisierte Dienstvereinbarung zum mobilen Arbeiten. Ab 1. Juli gelten neue Regelungen zur Homeoffice-Nutzung und technischen Ausstattung.",
+              "Title": "Neue Dienstvereinbarung zum mobilen Arbeiten",
+              "hasPreviewImage": null,
+              "head_title": "PERSONAL & ORGANISATION",
+              "image_field": "preview_image_link",
+              "title": "Neue Dienstvereinbarung zum mobilen Arbeiten"
+            }
+          ],
+          "title": "Neue Dienstvereinbarung zum mobilen Arbeiten"
+        },
+        {
+          "@id": "e6c148d7-f3f5-44b9-9850-121af714f742",
+          "description": "Am 18. Juni findet ein interner Workshop zur \u201eNationalen Forschungsdateninfrastruktur (NFDI)\u201c statt. Interessierte Kolleginnen und Kollegen aus dem Zentrum f\u00fcr Technologische Systeme (ZTS) k\u00f6nnen sich bis zum 14. Juni anmelden.",
+          "flagAlign": "left",
+          "head_title": "VERANSTALTUNGEN & WEITERBILDUNG",
+          "href": [
+            {
+              "@id": "../resolveuid/ad6b8c2a3bce424fbf017b5b42d2bfd3",
+              "@type": "News Item",
+              "Description": "Am 18. Juni findet ein interner Workshop zur \u201eNationalen Forschungsdateninfrastruktur (NFDI)\u201c statt. Interessierte Kolleginnen und Kollegen aus dem Zentrum f\u00fcr Technologische Systeme (ZTS) k\u00f6nnen sich bis zum 14. Juni anmelden.",
+              "Title": "Interner Workshop zur Forschungsdatenstrategie",
+              "hasPreviewImage": null,
+              "head_title": "VERANSTALTUNGEN & WEITERBILDUNG",
+              "image_field": "preview_image_link",
+              "title": "Interner Workshop zur Forschungsdatenstrategie"
+            }
+          ],
+          "title": "Interner Workshop zur Forschungsdatenstrategie"
+        }
+      ],
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "e67f8513-501b-4f56-91c9-5f512f3e1ac6": {
+      "@type": "gridBlock",
+      "blocks": {
+        "33643fa2-354a-485a-8500-fb511ab51fcb": {
+          "@type": "teaser",
+          "description": "",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../resolveuid/8a8650d2c0294e22b7f361986772a57a",
+              "@type": "Document",
+              "Description": "",
+              "Subject": [],
+              "Title": "Arbeitsthemen",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "",
+              "effective": "2026-03-05T10:18:24+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "job_title": null,
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Arbeitsthemen",
+              "type_title": "Seite"
+            }
+          ],
+          "overwrite": false,
+          "styles": {
+            "align": "left"
+          },
+          "title": "Arbeitsthemen"
+        },
+        "c63a4ad1-ae04-490c-b609-1508f373d886": {
+          "@type": "teaser",
+          "description": "",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../resolveuid/5851c530ebfd428c9a75a78ada0f6519",
+              "@type": "Document",
+              "Description": "",
+              "Subject": [],
+              "Title": "Veranstaltungen",
+              "contact_building": null,
+              "contact_email": null,
+              "contact_phone": null,
+              "contact_room": null,
+              "description": "",
+              "effective": "2026-03-05T10:18:29+00:00",
+              "end": null,
+              "getObjSize": "0 KB",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "preview_image_link",
+              "job_title": null,
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Veranstaltungen",
+              "type_title": "Seite"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../resolveuid/0863cbe5f3c64cdf8b6a88af48639591",
+              "image_field": "image",
+              "title": "Terminplanung und Projektfristen"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Termine"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "33643fa2-354a-485a-8500-fb511ab51fcb",
+          "c63a4ad1-ae04-490c-b609-1508f373d886"
+        ]
+      },
+      "headline": "Meine Arbeitsbereiche",
+      "styles": {},
+      "theme": "grey"
+    }
+  },
+  "blocks_config_mutator": {},
+  "blocks_layout": {
+    "items": [
+      "e5fb316f-f3af-4df1-b3d8-fb46ac07cc11",
+      "72d64f8a-cca6-444d-a497-482daba7e970",
+      "868556d1-15e1-4a30-83d8-46eeb3794bfe",
+      "223fb3b3-95e7-4273-b116-4ce2dcb2dabc",
+      "2b7e4ef9-7010-4ce9-85c3-b91da57f16b4",
+      "e67f8513-501b-4f56-91c9-5f512f3e1ac6"
+    ]
+  },
+  "complementary_logo": null,
+  "description": "Hier finden Sie alles, was Sie f\u00fcr Ihre t\u00e4gliche Arbeit ben\u00f6tigen: aktuelle Nachrichten, wichtige Termine, zentrale Dokumente und hilfreiche Werkzeuge. Das Intranet unterst\u00fctzt Sie dabei, den \u00dcberblick zu behalten, sich schnell zu orientieren und einfach mit Kolleginnen und Kollegen in Verbindung zu treten. Ob Neuigkeiten aus den Fachbereichen, \u00c4nderungen in Prozessen oder Zugriff auf wichtige Ressourcen \u2013 hier sind Sie immer auf dem neuesten Stand.",
+  "enable_mobile_sticky_menu": false,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "facebook_app_id": "",
+  "facebook_username": "",
+  "footer_address": "DFNT e.V.\nWerner-Heisenberg-Stra\u00dfe 125\n53227 Bonn",
+  "footer_colophon_text": [
+    {
+      "children": [
+        {
+          "text": ""
+        }
+      ],
+      "type": "p"
+    }
+  ],
+  "footer_column_left": [
+    {
+      "@id": "6ffa227c-965d-4eec-b76c-6cf34dc80739",
+      "href": [
+        {
+          "@id": "resolveuid/0eab0d751a0a49b8964e6b4741dce4d6",
+          "@type": "Person",
+          "Description": "Lorem ipsum is a dummy or placeholder text",
+          "Title": "Ralf L\u00f6ber",
+          "title": "Ralf L\u00f6ber"
+        }
+      ],
+      "title": "Link Eins"
+    },
+    {
+      "@id": "0b015842-63a5-42dd-81bc-9c50e75fe856",
+      "href": [
+        {
+          "@id": "resolveuid/6d119c6ea149486da6f90af351e49014",
+          "@type": "Person",
+          "Description": "Lorem ipsum is a dummy or placeholder text",
+          "Title": "Dr. Bernadette Biermann",
+          "title": "Dr. Bernadette Biermann"
+        }
+      ],
+      "title": "Link Zwei"
+    },
+    {
+      "@id": "99446de0-1179-40a3-b3af-9893b31662d8",
+      "href": [
+        {
+          "@id": "/services/features",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Features",
+          "image_scales": {
+            "preview_image_link": [
+              {
+                "base_path": "/services/features/anwendungen.png",
+                "content-type": "image/png",
+                "download": "@@images/image-1536-28b16cf44023c5c28c103aafee9eb8ec.png",
+                "filename": "Anwendungen.png",
+                "height": 1024,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7ad80b091e681b38aa46488e9b2e867d.png",
+                    "height": 800,
+                    "width": 1200
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-fec5f2156b770d1d3f77479bf94ee0a3.png",
+                    "height": 21,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-aa20063ea47259caac6857e3c68348fb.png",
+                    "height": 533,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-550a53e4e184969409bb16256a71562a.png",
+                    "height": 666,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-71a229157d56a254fd51d3631e15e3f4.png",
+                    "height": 133,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-c8bf4e1f0a58c98e93590ec5fc1fcab3.png",
+                    "height": 266,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-20dea26a95ec6465d7b343c4ad825ab9.png",
+                    "height": 400,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-cf559c1ef2515d2851334ad60b7237d8.png",
+                    "height": 85,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-c9b306b10e11a2bca23eb03bf1ba1ba7.png",
+                    "height": 42,
+                    "width": 64
+                  }
+                },
+                "size": 2168022,
+                "width": 1536
+              }
+            ]
+          },
+          "title": "Features"
+        }
+      ],
+      "title": "Link Drei"
+    }
+  ],
+  "footer_column_left_header": "Menu Eins",
+  "footer_column_middle": [
+    {
+      "@id": "c49ab957-cd5d-4888-8bd5-479a709fef5e",
+      "href": [
+        {
+          "@id": "/bilder",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "title": "Link Eins"
+    },
+    {
+      "@id": "56e1da4e-155b-45b9-9282-8b8404d81947",
+      "href": [
+        {
+          "@id": "/ueber-uns",
+          "@type": "Document",
+          "Description": "",
+          "Title": "About",
+          "image_scales": {
+            "preview_image_link": [
+              {
+                "base_path": "/bilder/zheng-xue-ur7_a4rdjem-unsplash.jpg",
+                "content-type": "image/jpeg",
+                "download": "@@images/image-5743-a2badba7d1911f25c74357a604ef8676.jpeg",
+                "filename": "zheng-xue-uR7_A4rDjeM-unsplash.jpg",
+                "height": 3589,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-d52d37649f924040b77e22d2fc239f58.jpeg",
+                    "height": 749,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-cf57aa2f1477f4b134f441e3c2af652e.jpeg",
+                    "height": 999,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-3cb94db3039adc55a373e6f354e50fd9.jpeg",
+                    "height": 19,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-ae19f58674f00732f6ee52d0e7d8218f.jpeg",
+                    "height": 499,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-30df0a9379c5b38ff9ca794383c666e1.jpeg",
+                    "height": 624,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-5e2062edef1573350536dad99e955d72.jpeg",
+                    "height": 124,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-dc5558907f4e8cfa1c9c3a20f68244a3.jpeg",
+                    "height": 249,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-5def43b60d91efff166cc6852f0bef8c.jpeg",
+                    "height": 374,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-52316465f91da01754b59023c9d7e9c1.jpeg",
+                    "height": 79,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-967fc90eea9b3a77c114edfd22e7c061.jpeg",
+                    "height": 39,
+                    "width": 64
+                  }
+                },
+                "size": 4379293,
+                "width": 5743
+              }
+            ]
+          },
+          "title": "About"
+        }
+      ],
+      "title": "Link Zwei"
+    },
+    {
+      "@id": "47403a90-4c92-479d-8c46-9a129ee9477f",
+      "href": [
+        {
+          "@id": "/services/features",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Features",
+          "image_scales": {
+            "preview_image_link": [
+              {
+                "base_path": "/services/features/anwendungen.png",
+                "content-type": "image/png",
+                "download": "@@images/image-1536-28b16cf44023c5c28c103aafee9eb8ec.png",
+                "filename": "Anwendungen.png",
+                "height": 1024,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7ad80b091e681b38aa46488e9b2e867d.png",
+                    "height": 800,
+                    "width": 1200
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-fec5f2156b770d1d3f77479bf94ee0a3.png",
+                    "height": 21,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-aa20063ea47259caac6857e3c68348fb.png",
+                    "height": 533,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-550a53e4e184969409bb16256a71562a.png",
+                    "height": 666,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-71a229157d56a254fd51d3631e15e3f4.png",
+                    "height": 133,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-c8bf4e1f0a58c98e93590ec5fc1fcab3.png",
+                    "height": 266,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-20dea26a95ec6465d7b343c4ad825ab9.png",
+                    "height": 400,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-cf559c1ef2515d2851334ad60b7237d8.png",
+                    "height": 85,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-c9b306b10e11a2bca23eb03bf1ba1ba7.png",
+                    "height": 42,
+                    "width": 64
+                  }
+                },
+                "size": 2168022,
+                "width": 1536
+              }
+            ]
+          },
+          "title": "Features"
+        }
+      ],
+      "title": "Link Drei"
+    },
+    {
+      "@id": "58e6894d-d949-4be1-9e81-4cfbcc8c7ba1",
+      "href": [
+        {
+          "@id": "resolveuid/6fb793fcdcaa47ba81c6226e1ea3267a",
+          "@type": "Person",
+          "Description": "Abteilungsleiter III",
+          "Title": "Bernhard Ehmann",
+          "title": "Bernhard Ehmann"
+        }
+      ],
+      "title": "Link Vier"
+    }
+  ],
+  "footer_column_middle_header": "Menu Zwei",
+  "footer_column_right": [
+    {
+      "@id": "38140612-deb6-49e4-ace6-0685c42447b8",
+      "href": [
+        {
+          "@id": "/bilder",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "title": "Link Eins"
+    },
+    {
+      "@id": "f5bc9491-4f47-4c25-a18c-a8130b4cd1ec",
+      "href": [
+        {
+          "@id": "/ueber-uns",
+          "@type": "Document",
+          "Description": "",
+          "Title": "About",
+          "image_scales": {
+            "preview_image_link": [
+              {
+                "base_path": "/bilder/zheng-xue-ur7_a4rdjem-unsplash.jpg",
+                "content-type": "image/jpeg",
+                "download": "@@images/image-5743-a2badba7d1911f25c74357a604ef8676.jpeg",
+                "filename": "zheng-xue-uR7_A4rDjeM-unsplash.jpg",
+                "height": 3589,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-d52d37649f924040b77e22d2fc239f58.jpeg",
+                    "height": 749,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-cf57aa2f1477f4b134f441e3c2af652e.jpeg",
+                    "height": 999,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-3cb94db3039adc55a373e6f354e50fd9.jpeg",
+                    "height": 19,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-ae19f58674f00732f6ee52d0e7d8218f.jpeg",
+                    "height": 499,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-30df0a9379c5b38ff9ca794383c666e1.jpeg",
+                    "height": 624,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-5e2062edef1573350536dad99e955d72.jpeg",
+                    "height": 124,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-dc5558907f4e8cfa1c9c3a20f68244a3.jpeg",
+                    "height": 249,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-5def43b60d91efff166cc6852f0bef8c.jpeg",
+                    "height": 374,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-52316465f91da01754b59023c9d7e9c1.jpeg",
+                    "height": 79,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-967fc90eea9b3a77c114edfd22e7c061.jpeg",
+                    "height": 39,
+                    "width": 64
+                  }
+                },
+                "size": 4379293,
+                "width": 5743
+              }
+            ]
+          },
+          "title": "About"
+        }
+      ],
+      "title": "Link Zwei"
+    },
+    {
+      "@id": "336bb576-7430-45b1-974e-13516935b78e",
+      "href": [
+        {
+          "@id": "/services/features",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Features",
+          "image_scales": {
+            "preview_image_link": [
+              {
+                "base_path": "/services/features/anwendungen.png",
+                "content-type": "image/png",
+                "download": "@@images/image-1536-28b16cf44023c5c28c103aafee9eb8ec.png",
+                "filename": "Anwendungen.png",
+                "height": 1024,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7ad80b091e681b38aa46488e9b2e867d.png",
+                    "height": 800,
+                    "width": 1200
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-fec5f2156b770d1d3f77479bf94ee0a3.png",
+                    "height": 21,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-aa20063ea47259caac6857e3c68348fb.png",
+                    "height": 533,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-550a53e4e184969409bb16256a71562a.png",
+                    "height": 666,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-71a229157d56a254fd51d3631e15e3f4.png",
+                    "height": 133,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-c8bf4e1f0a58c98e93590ec5fc1fcab3.png",
+                    "height": 266,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-20dea26a95ec6465d7b343c4ad825ab9.png",
+                    "height": 400,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-cf559c1ef2515d2851334ad60b7237d8.png",
+                    "height": 85,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-c9b306b10e11a2bca23eb03bf1ba1ba7.png",
+                    "height": 42,
+                    "width": 64
+                  }
+                },
+                "size": 2168022,
+                "width": 1536
+              }
+            ]
+          },
+          "title": "Features"
+        }
+      ],
+      "title": "Link Drei"
+    }
+  ],
+  "footer_column_right_header": "Menu Drei",
+  "footer_links": [
+    {
+      "@id": "67cadddf-24bf-429a-aa87-63b13c19aa9d",
+      "href": [
+        {
+          "@id": "/datenschutz",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Datenschutz",
+          "title": "Datenschutz"
+        }
+      ],
+      "title": "Datenschutz"
+    },
+    {
+      "@id": "f200359a-da42-438e-9297-e63e00e7c8c7",
+      "href": [
+        {
+          "@id": "/barrierefreiheit",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Barrierefreiheit",
+          "title": "Barrierefreiheit"
+        }
+      ],
+      "title": "Barrierefreiheit"
+    },
+    {
+      "@id": "a14c0d06-a170-489f-96b7-8bfbee3c3ee7",
+      "href": [
+        {
+          "@id": "/impressum",
+          "@type": "Document",
+          "Description": "",
+          "Title": "Impressum",
+          "title": "Impressum"
+        }
+      ],
+      "title": "Impressum"
+    }
+  ],
+  "footer_logo": {
+    "blob_path": "plone_site_root/footer_logo/logo_negative.svg",
+    "content-type": "image/svg+xml",
+    "filename": "logo_negative.svg",
+    "height": 75,
+    "size": 38183,
+    "width": 200
+  },
+  "footer_logos": [],
+  "footer_logos_container_width": "default",
+  "footer_logos_size": "s",
+  "has_fat_menu": true,
+  "has_intranet_header": true,
+  "header_actions": [],
+  "header_foreground": "#000000",
+  "id": "Plone",
+  "intranet_flag": "INTRANET",
+  "is_folderish": true,
+  "items_total": 13,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "logo": {
+    "blob_path": "plone_site_root/logo/logo_positive.svg",
+    "content-type": "image/svg+xml",
+    "filename": "logo_positive.svg",
+    "height": 75,
+    "size": 41439,
+    "width": 200
+  },
+  "post_footer_logo": null,
+  "post_footer_logo_link": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "secondary_color": "#306f7e",
+  "secondary_foreground_color": "#ffffff",
+  "share_social_data": true,
+  "social_links": [],
+  "sticky_menu": [
+    {
+      "@id": "439111a4-25d8-4a76-8ce8-cfecefaab71e",
+      "alt": "Kantine logo",
+      "href": [
+        {
+          "@id": "/test/schlagworte",
+          "Description": "",
+          "Title": "Schlagworte",
+          "title": "Schlagworte"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "/icons/icons_intranet_icn_kantine.svg",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Kantine icon",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/svg+xml",
+                "download": "@@images/image-125-c3dbb0bc60631a38e3709b6a71b41a4b.svg",
+                "filename": "icons_intranet_icn_kantine 1.svg",
+                "height": 125,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-f86be1da9c4943f9effc469fe3e751de.svg",
+                    "height": 32,
+                    "width": 32
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-b4879df390cb1dfad5b3482a0664cc73.svg",
+                    "height": 64,
+                    "width": 64
+                  }
+                },
+                "size": 3870,
+                "width": 125
+              }
+            ]
+          },
+          "title": "Kantine icon"
+        }
+      ],
+      "title": "Kantine"
+    },
+    {
+      "@id": "2bf05582-13f3-465c-b514-1f5c98886574",
+      "alt": " Arbeitszeit logo",
+      "href": [
+        {
+          "@id": "/bilder",
+          "Description": "Alle Bilder aus dem DFNT im \u00dcberblick.",
+          "Title": "Bilder",
+          "title": "Bilder"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "/icons/icons_intranet_icn_arbeitszeit.svg",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Arbeitszeit icon",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/svg+xml",
+                "download": "@@images/image-125-77b924cd734b832f892b16b37cc50aa1.svg",
+                "filename": "icons_intranet_icn_arbeitszeit 1.svg",
+                "height": 125,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-42a5067b4ff6fd346ec6adc3834047fa.svg",
+                    "height": 32,
+                    "width": 32
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-308480df20aa816c577e880212537ec5.svg",
+                    "height": 64,
+                    "width": 64
+                  }
+                },
+                "size": 4891,
+                "width": 125
+              }
+            ]
+          },
+          "title": "Arbeitszeit icon"
+        }
+      ],
+      "title": "Arbeitszeit"
+    },
+    {
+      "@id": "e6b5ea29-4b8e-4e68-8c4a-599eaa87bcf8",
+      "alt": " Telefonverzeichnis logo",
+      "href": [
+        {
+          "@id": "/services/features",
+          "Description": "",
+          "Title": "Features",
+          "image_scales": {
+            "preview_image_link": [
+              {
+                "base_path": "/services/features/anwendungen.png",
+                "content-type": "image/png",
+                "download": "@@images/image-1536-28b16cf44023c5c28c103aafee9eb8ec.png",
+                "filename": "Anwendungen.png",
+                "height": 1024,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7ad80b091e681b38aa46488e9b2e867d.png",
+                    "height": 800,
+                    "width": 1200
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-fec5f2156b770d1d3f77479bf94ee0a3.png",
+                    "height": 21,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-aa20063ea47259caac6857e3c68348fb.png",
+                    "height": 533,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-550a53e4e184969409bb16256a71562a.png",
+                    "height": 666,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-71a229157d56a254fd51d3631e15e3f4.png",
+                    "height": 133,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-c8bf4e1f0a58c98e93590ec5fc1fcab3.png",
+                    "height": 266,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-20dea26a95ec6465d7b343c4ad825ab9.png",
+                    "height": 400,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-cf559c1ef2515d2851334ad60b7237d8.png",
+                    "height": 85,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-c9b306b10e11a2bca23eb03bf1ba1ba7.png",
+                    "height": 42,
+                    "width": 64
+                  }
+                },
+                "size": 2168022,
+                "width": 1536
+              }
+            ]
+          },
+          "title": "Features"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "/icons/group.svg",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Telefonverzeichnis icon",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/svg+xml",
+                "download": "@@images/image-125-255110a8c7ef8407cd6719afd102ef30.svg",
+                "filename": "icons_intranet_icn_adressen 1.svg",
+                "height": 125,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-2dfb6d43cddba848b505efeb42587afa.svg",
+                    "height": 32,
+                    "width": 32
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-7d63d212da1dd6c5d90bb538fbef1289.svg",
+                    "height": 64,
+                    "width": 64
+                  }
+                },
+                "size": 4360,
+                "width": 125
+              }
+            ]
+          },
+          "title": "Telefonverzeichnis icon"
+        }
+      ],
+      "title": "Telefonverzeichnis"
+    },
+    {
+      "@id": "91eceabc-00c5-4dd7-ba1d-ebe9f0e98db0",
+      "alt": " Formulare logo",
+      "href": [
+        {
+          "@id": "/bilder",
+          "Description": "",
+          "Title": "Images",
+          "title": "Images"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "/icons/icons_intranet_icn_formulare.svg",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Formulare icon",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/svg+xml",
+                "download": "@@images/image-125-ba6d4ec68078a16da10d933dfcef5644.svg",
+                "filename": "icons_intranet_icn_formulare 1.svg",
+                "height": 125,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-b18400b2208d2a5a4b669b673f5d0f01.svg",
+                    "height": 32,
+                    "width": 32
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f5a29e2ef502f5edc2ad799b2735bb1c.svg",
+                    "height": 64,
+                    "width": 64
+                  }
+                },
+                "size": 7296,
+                "width": 125
+              }
+            ]
+          },
+          "title": "Formulare icon"
+        }
+      ],
+      "title": "Formulare"
+    },
+    {
+      "@id": "30b330ed-3310-4614-8551-4417d5a051d2",
+      "alt": " Service logo",
+      "href": [
+        {
+          "@id": "/ueber-uns",
+          "Description": "",
+          "Title": "About",
+          "image_scales": {
+            "preview_image_link": [
+              {
+                "base_path": "/bilder/zheng-xue-ur7_a4rdjem-unsplash.jpg",
+                "content-type": "image/jpeg",
+                "download": "@@images/image-5743-a2badba7d1911f25c74357a604ef8676.jpeg",
+                "filename": "zheng-xue-uR7_A4rDjeM-unsplash.jpg",
+                "height": 3589,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-d52d37649f924040b77e22d2fc239f58.jpeg",
+                    "height": 749,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-cf57aa2f1477f4b134f441e3c2af652e.jpeg",
+                    "height": 999,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-3cb94db3039adc55a373e6f354e50fd9.jpeg",
+                    "height": 19,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-ae19f58674f00732f6ee52d0e7d8218f.jpeg",
+                    "height": 499,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-30df0a9379c5b38ff9ca794383c666e1.jpeg",
+                    "height": 624,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-5e2062edef1573350536dad99e955d72.jpeg",
+                    "height": 124,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-dc5558907f4e8cfa1c9c3a20f68244a3.jpeg",
+                    "height": 249,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-5def43b60d91efff166cc6852f0bef8c.jpeg",
+                    "height": 374,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-52316465f91da01754b59023c9d7e9c1.jpeg",
+                    "height": 79,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-967fc90eea9b3a77c114edfd22e7c061.jpeg",
+                    "height": 39,
+                    "width": 64
+                  }
+                },
+                "size": 4379293,
+                "width": 5743
+              }
+            ]
+          },
+          "title": "About"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "/icons/icons_intranet_icn_raum.svg",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Service icon",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/svg+xml",
+                "download": "@@images/image-125-9bd5b57d67208200782e77bc91614c49.svg",
+                "filename": "icons_intranet_icn_service 1.svg",
+                "height": 125,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-7cc2b4a98e3c58e613dfe39c61b74e3b.svg",
+                    "height": 32,
+                    "width": 32
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-775122f3c54528681db28f27163b7e7b.svg",
+                    "height": 64,
+                    "width": 64
+                  }
+                },
+                "size": 3277,
+                "width": 125
+              }
+            ]
+          },
+          "title": "Service icon"
+        }
+      ],
+      "title": "Service"
+    },
+    {
+      "@id": "66ae2270-f438-4dfa-9adb-ea73783d04af",
+      "alt": " Ansprechpersonen logo",
+      "href": [
+        {
+          "@id": "/kontakte",
+          "Description": "",
+          "Title": "Kontakte",
+          "title": "Kontakte"
+        }
+      ],
+      "icon": [
+        {
+          "@id": "/icons/ebene_1.svg",
+          "@type": "Image",
+          "Description": "",
+          "Title": "Ansprechpersonen icon",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/svg+xml",
+                "download": "@@images/image-125-2878c904dbdc0901dbb192e13ed425f8.svg",
+                "filename": "icons_intranet_icn_ansprechperson 1.svg",
+                "height": 125,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-9e825cd6927d4b515a128a16f12c885d.svg",
+                    "height": 32,
+                    "width": 32
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-94b7d5780a6ac0d296b3b2d4c13c5a34.svg",
+                    "height": 64,
+                    "width": 64
+                  }
+                },
+                "size": 2061,
+                "width": 125
+              }
+            ]
+          },
+          "title": "Ansprechpersonen icon"
+        }
+      ],
+      "title": "Ansprechpersonen"
+    }
+  ],
+  "sticky_menu_color": "#306f7e",
+  "sticky_menu_foreground_color": "#ffffff",
+  "subjects": [],
+  "title": "Deutsches Forschungszentrum f\u00fcr Nachhaltige Technologien",
+  "type_title": "Plone Site",
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:11+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null,
+  "x_username": ""
+}

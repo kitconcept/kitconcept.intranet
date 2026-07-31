@@ -1,0 +1,305 @@
+{
+  "@id": "/services/kantine/mensacard",
+  "@type": "Document",
+  "UID": "f9062971fc0e4a2ca74515be0d3c5513",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "7ce7f80c-d55d-4737-856b-8f08bbb77234": {
+      "@type": "title"
+    },
+    "fc4705a8-1e10-481f-be9b-efac84731e41": {
+      "@type": "slate",
+      "plaintext": "## Mensacard\n\nGuthaben aufladen, Kontostand pr\u00fcfen und Karte sperren lassen.\n\n**Aufladung:**\n- Automaten in K\u00f6ln und Bonn (kontaktlos, Geldscheine)\n- Online-Aufladung: mensacard.dfnt.de\n- Maximales Guthaben: 100 Euro\n\n**Kontostand:**\n- Am Automat einsehen\n- Online auf mensacard.dfnt.de\n- Am Schalter erfragen\n\n**Karte verloren/defekt:**\n- Sofort sperren lassen (Tel +49 221 470-2000)\n- Ersatzkarte bestellen: catering@dfnt.de\n- Guthaben wird \u00fcbertragen\n\n**PIN:** Beim ersten Gebrauch einrichten",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Mensacard"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Guthaben aufladen, Kontostand pr\u00fcfen und Karte sperren lassen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Aufladung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Automaten in K\u00f6ln und Bonn (kontaktlos, Geldscheine)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Online-Aufladung: mensacard.dfnt.de"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Maximales Guthaben: 100 Euro"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontostand:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Am Automat einsehen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Online auf mensacard.dfnt.de"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Am Schalter erfragen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Karte verloren/defekt:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sofort sperren lassen (Tel +49 221 470-2000)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ersatzkarte bestellen: "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "catering@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:catering@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Guthaben wird \u00fcbertragen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "PIN:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Beim ersten Gebrauch einrichten"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7ce7f80c-d55d-4737-856b-8f08bbb77234",
+      "fc4705a8-1e10-481f-be9b-efac84731e41"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:30+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Guthaben aufladen, Kontostand pr\u00fcfen und Karte sperren lassen: Automaten, Online-Aufladung und Kontakt bei Verlust oder Defekt.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "mensacard",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:15:11+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Mensacard",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

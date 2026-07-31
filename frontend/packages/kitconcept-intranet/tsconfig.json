@@ -17,7 +17,8 @@
       "@kitconcept/intranet/*": ["./src/*"],
       "@kitconcept/volto-light-theme/*": [
         "./node_modules/@kitconcept/volto-light-theme/src/*"
-      ]
+      ],
+      "altVLT/*": ["./node_modules/@kitconcept/volto-light-theme/src/*"]
     }
   },
   "include": ["src"],

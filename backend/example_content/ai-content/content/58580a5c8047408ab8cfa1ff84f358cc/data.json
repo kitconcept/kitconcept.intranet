@@ -1,0 +1,387 @@
+{
+  "@id": "/forschung/meine-projekte/projektkalender",
+  "@type": "Document",
+  "UID": "58580a5c8047408ab8cfa1ff84f358cc",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "5ef5358b-84a4-4f46-9343-e990dca55b2b": {
+      "@type": "title"
+    },
+    "af7a1b73-c67f-49bc-9de5-5b2144c4fcc5": {
+      "@type": "slate",
+      "plaintext": "## Projekttermine und Meilensteine verwalten\n\nDer Projektkalender erm\u00f6glicht zentrale Verwaltung aller Projekttermine und integriert sich mit Microsoft Teams.\n\n### Integration und Verwaltung\n\n- **Microsoft Teams-Anbindung**: Termine synchronisieren sich automatisch\n- **Exportierbar**: Formate iCal (f\u00fcr Outlook, Google Calendar, etc.)\n- **Synchronisation**: Mit F\u00f6rdergeber-Portalen bei Aktivierung\n\n### Typische Projekttermine\n\n- **Kick-off Meeting**: Projektstart und Briefing aller Beteiligten\n- **Meilensteintreffen**: Regelm\u00e4\u00dfig (monatlich/quartalsweise)\n- **Berichtstermine**: Je nach F\u00f6rdergeber\n  - DFG: J\u00e4hrliche Berichte\n  - EU-Projekte: Halb- oder j\u00e4hrliche Berichte\n- **Treffen mit Kooperationspartnern**: Externe Zusammenarbeit\n- **Review Meetings**: Interne \u00dcbersicht und Planung\n\n### Automatische Synchronisationen\n\n- **elan-Portal** (DFG-Projekte): Bei Bedarf aktivierbar\n- **Funding & Tenders** (EU-Projekte): Automatische Termin\u00fcbernahme m\u00f6glich",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Projekttermine und Meilensteine verwalten"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Der Projektkalender erm\u00f6glicht zentrale Verwaltung aller Projekttermine und integriert sich mit Microsoft Teams."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Integration und Verwaltung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Microsoft Teams-Anbindung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Termine synchronisieren sich automatisch"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Exportierbar"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Formate iCal (f\u00fcr Outlook, Google Calendar, etc.)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Synchronisation"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Mit F\u00f6rdergeber-Portalen bei Aktivierung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Typische Projekttermine"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kick-off Meeting"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Projektstart und Briefing aller Beteiligten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Meilensteintreffen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Regelm\u00e4\u00dfig (monatlich/quartalsweise)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Berichtstermine"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Je nach F\u00f6rdergeber"
+                    }
+                  ],
+                  "type": "p"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "text": "DFG: J\u00e4hrliche Berichte"
+                            }
+                          ],
+                          "type": "p"
+                        }
+                      ],
+                      "type": "li"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "text": "EU-Projekte: Halb- oder j\u00e4hrliche Berichte"
+                            }
+                          ],
+                          "type": "p"
+                        }
+                      ],
+                      "type": "li"
+                    }
+                  ],
+                  "type": "ul"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Treffen mit Kooperationspartnern"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Externe Zusammenarbeit"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Review Meetings"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Interne \u00dcbersicht und Planung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Automatische Synchronisationen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "elan-Portal"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (DFG-Projekte): Bei Bedarf aktivierbar"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Funding & Tenders"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (EU-Projekte): Automatische Termin\u00fcbernahme m\u00f6glich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5ef5358b-84a4-4f46-9343-e990dca55b2b",
+      "af7a1b73-c67f-49bc-9de5-5b2144c4fcc5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:14+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Termine, Meilensteine und Deadlines f\u00fcr laufende Projekte im \u00dcberblick: synchronisierbarer Kalender f\u00fcr Projektmeetings, Reviews und Berichtstermine.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "projektkalender",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:11:03+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Projektkalender",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:44+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:44+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

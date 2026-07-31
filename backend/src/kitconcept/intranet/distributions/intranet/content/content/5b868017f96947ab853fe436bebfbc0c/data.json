@@ -1,0 +1,75 @@
+{
+  "@id": "/features/workspaces",
+  "@type": "Workspace",
+  "UID": "5b868017f96947ab853fe436bebfbc0c",
+  "allow_discussion": null,
+  "blocks": {
+    "07b3679b-aa9d-429e-9804-2b7a741a6027": {
+      "@type": "listing",
+      "headline": "workspaces",
+      "headlineTag": "h2",
+      "styles": {},
+      "theme": "default",
+      "variation": "default"
+    },
+    "7c4dd156-9d56-41ba-803b-f3e6bdcad3ea": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7c4dd156-9d56-41ba-803b-f3e6bdcad3ea",
+      "07b3679b-aa9d-429e-9804-2b7a741a6027"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-07-27T20:42:54+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-07-27T21:17:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "workspaces",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-07-27T21:24:00+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "workspaces",
+  "type_title": "Workspace",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-27T20:42:54+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-27T21:17:24+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

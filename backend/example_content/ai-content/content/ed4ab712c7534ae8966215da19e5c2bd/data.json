@@ -1,0 +1,348 @@
+{
+  "@id": "/services/facility-management/gebaudereinigung",
+  "@type": "Document",
+  "UID": "ed4ab712c7534ae8966215da19e5c2bd",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "ba84a403-719f-4fe4-a14c-469696e88a00": {
+      "@type": "title"
+    },
+    "c4b8adcc-beeb-47a1-8579-f124842e134e": {
+      "@type": "slate",
+      "plaintext": "## Geb\u00e4udereinigung und Hygienemanagement\n\nDie Geb\u00e4udereinigung wird durch den externen Dienstleister **ISS Facility Services** durchgef\u00fchrt. Wir sorgen f\u00fcr hohe Hygienestandards an allen DFNT-Standorten.\n\n### Reinigungst\u00fcrnus\n\n| Bereich | Reinigungsh\u00e4ufigkeit |\n|---------|----------------------|\n| B\u00fcros | T\u00e4glich |\n| Toiletten | 2x t\u00e4glich |\n| Treppenh\u00e4user | 2x w\u00f6chentlich |\n| Labore | Nach Absprache (Sonderreinigung erforderlich) |\n\n### Sonderw\u00fcnsche und zus\u00e4tzliche Reinigungen\n\n**Ankl\u00e4ndigung erforderlich**: Mindestens **48 Stunden vorher** per E-Mail\n\n**Kontakt**: reinigung@dfnt.de\n\n### Spezialreinigungen in Laboren\n\nF\u00fcr biologische und chemische Labore gelten erh\u00f6hte Anforderungen:\n\n- Nur **zertifiziertes Personal** darf Labore reinigen\n- **Terminabsprache erforderlich**: Mind. 1 Woche vorher\n- Besondere Desinfektions- und Entsorgungsrichtlinien beachten\n\n### Beschwerden und M\u00e4ngel\n\nBei Problemen oder nicht zufriedenstellender Reinigung kontaktieren Sie:\n\n**E-Mail**: facilitymanagement@dfnt.de\n\nWir k\u00fcmmern uns zeitnah um die Behebung von M\u00e4ngeln.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Geb\u00e4udereinigung und Hygienemanagement"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Geb\u00e4udereinigung wird durch den externen Dienstleister "
+            },
+            {
+              "children": [
+                {
+                  "text": "ISS Facility Services"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " durchgef\u00fchrt. Wir sorgen f\u00fcr hohe Hygienestandards an allen DFNT-Standorten."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Reinigungst\u00fcrnus"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "text": "Bereich"
+        },
+        {
+          "text": "Reinigungsh\u00e4ufigkeit"
+        },
+        {
+          "text": "B\u00fcros"
+        },
+        {
+          "text": "T\u00e4glich"
+        },
+        {
+          "text": "Toiletten"
+        },
+        {
+          "text": "2x t\u00e4glich"
+        },
+        {
+          "text": "Treppenh\u00e4user"
+        },
+        {
+          "text": "2x w\u00f6chentlich"
+        },
+        {
+          "text": "Labore"
+        },
+        {
+          "text": "Nach Absprache (Sonderreinigung erforderlich)"
+        },
+        {
+          "children": [
+            {
+              "text": "Sonderw\u00fcnsche und zus\u00e4tzliche Reinigungen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ankl\u00e4ndigung erforderlich"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Mindestens "
+            },
+            {
+              "children": [
+                {
+                  "text": "48 Stunden vorher"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " per E-Mail"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "reinigung@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:reinigung@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Spezialreinigungen in Laboren"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "F\u00fcr biologische und chemische Labore gelten erh\u00f6hte Anforderungen:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Nur "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "zertifiziertes Personal"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " darf Labore reinigen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Terminabsprache erforderlich"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Mind. 1 Woche vorher"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Besondere Desinfektions- und Entsorgungsrichtlinien beachten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Beschwerden und M\u00e4ngel"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Bei Problemen oder nicht zufriedenstellender Reinigung kontaktieren Sie:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "E-Mail"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "facilitymanagement@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:facilitymanagement@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Wir k\u00fcmmern uns zeitnah um die Behebung von M\u00e4ngeln."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "ba84a403-719f-4fe4-a14c-469696e88a00",
+      "c4b8adcc-beeb-47a1-8579-f124842e134e"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:01+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Zust\u00e4ndigkeiten, Reinigungspl\u00e4ne und Sonderw\u00fcnsche melden: Reinigungsintervalle f\u00fcr B\u00fcros, Labore und Gemeinschaftsfl\u00e4chen.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "gebaudereinigung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:09:46+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Geb\u00e4udereinigung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "description": "German golden questions for the RAG test corpus (#79). Retrieval smoke checks: at least one expected source should appear in the @rag-search sources; for answerable=false the answer must decline. Paths are portal-relative.",
+    "language": "de",
+    "user": "Questions are asked as a regular authenticated user unless notes say otherwise."
+  },
+  "questions": [
+    {
+      "question": "Wie viele Tage vorher muss ich eine Dienstreise beantragen?",
+      "expected_sources": [
+        "/arbeitsthemen/dienstreisen-mobilitaet/dienstreise-beantragen",
+        "/arbeitsthemen/dienstreisen-mobilitaet/dienstreise-faq"
+      ],
+      "answerable": true,
+      "notes": "Expected answer mentions 5 Werktage and the SAP Travel Management portal."
+    },
+    {
+      "question": "Wie beantrage ich Urlaub?",
+      "expected_sources": ["/arbeitsthemen/personal-hr/urlaub-beantragen"],
+      "answerable": true
+    },
+    {
+      "question": "Was muss ich tun, wenn ich krank bin?",
+      "expected_sources": ["/arbeitsthemen/personal-hr/krankmeldung"],
+      "answerable": true
+    },
+    {
+      "question": "Wie richte ich den VPN-Zugang ein?",
+      "expected_sources": ["/arbeitsthemen/it-prozesse/vpn-zugang-einrichten"],
+      "answerable": true
+    },
+    {
+      "question": "Ich habe mein Passwort vergessen, wie setze ich es zurück?",
+      "expected_sources": ["/arbeitsthemen/it-prozesse/passwort-zurucksetzen"],
+      "answerable": true
+    },
+    {
+      "question": "Ab welchem Bestellwert brauche ich eine zusätzliche Genehmigung bei Beschaffungen?",
+      "expected_sources": [
+        "/arbeitsthemen/beschaffung-einkauf/grenzwerte-genehmigungen",
+        "/arbeitsthemen/beschaffung-einkauf/beschaffungsprozess"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Wie bekomme ich eine Softwarelizenz für meinen Arbeitsplatz?",
+      "expected_sources": ["/arbeitsthemen/beschaffung-einkauf/software-lizenzen"],
+      "answerable": true
+    },
+    {
+      "question": "Wie publiziere ich einen Artikel Open Access und wer trägt die Kosten?",
+      "expected_sources": [
+        "/arbeitsthemen/publikationen-open-access/open-access-publizieren",
+        "/arbeitsthemen/publikationen-open-access/publikationsfonds"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Wie erstelle ich einen Datenmanagementplan für mein Forschungsprojekt?",
+      "expected_sources": [
+        "/arbeitsthemen/forschungsdatenmanagement/datenmanagementplan-erstellen"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Gibt es Fahrrad-Leasing für Mitarbeitende?",
+      "expected_sources": ["/arbeitsthemen/dienstreisen-mobilitaet/fahrrad-leasing"],
+      "answerable": true
+    },
+    {
+      "question": "Wie rechne ich meine Reisekosten ab?",
+      "expected_sources": [
+        "/arbeitsthemen/dienstreisen-mobilitaet/reisekostenabrechnung"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Ich bin neu am Institut, was muss ich in den ersten Wochen erledigen?",
+      "expected_sources": [
+        "/community/onboarding/onboarding-checkliste",
+        "/community/onboarding/willkommen-am-dfnt",
+        "/community/onboarding/buddy-programm"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Welche Sportangebote gibt es für Mitarbeitende?",
+      "expected_sources": [
+        "/community/gesundheit-wohlbefinden/betriebssport",
+        "/community/sport-freizeit/hochschulsport",
+        "/community/sport-freizeit/lauftreff"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "An wen kann ich mich bei Fragen zur Gleichstellung wenden?",
+      "expected_sources": [
+        "/community/gleichstellung/gleichstellungsbeauftragte",
+        "/community/gleichstellung"
+      ],
+      "answerable": true,
+      "notes": "A second, private page /services/ansprechpersonen/gleichstellungsbeauftragte exists; it may additionally appear for privileged users but must not for a plain Member."
+    },
+    {
+      "question": "Wie viel EU-Förderung hat das Projekt KlimaNet erhalten?",
+      "expected_sources": [
+        "/aktuelles/nachrichten/alle-nachrichten/systemforschungsprojekt-klimanet-erhalt-eu-forderung-von-5-4-mio-euro"
+      ],
+      "answerable": true,
+      "notes": "Expected answer: 5,4 Mio. Euro."
+    },
+    {
+      "question": "Wie kann ich Rechenzeit auf dem HPC-Cluster nutzen?",
+      "expected_sources": [
+        "/forschung/forschungsinfrastruktur/rechenzentrum-hpc"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Wie buche ich ein Großgerät für meine Messung?",
+      "expected_sources": [
+        "/forschung/forschungsinfrastruktur/geratebuchungssystem",
+        "/forschung/forschungsinfrastruktur/grossgerate"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Wann findet das KI-Symposium 2026 statt?",
+      "expected_sources": [
+        "/aktuelles/temine/alle-termine/ki-symposium-2026-vertrauenswurdige-ki-in-der-wissenschaft"
+      ],
+      "answerable": true
+    },
+    {
+      "question": "Wer ist im Betriebsrat und wie erreiche ich ihn?",
+      "expected_sources": [
+        "/ueber-uns/gremien-kommissionen/betriebsrat-personalrat"
+      ],
+      "answerable": true,
+      "notes": "Permission test: the private page /services/ansprechpersonen/betriebsrat must appear in the sources for admin but NOT for the plain member f.meier."
+    },
+    {
+      "question": "Wie hoch ist das Gehalt der Institutsleitung?",
+      "expected_sources": [],
+      "answerable": false,
+      "notes": "Not in the corpus; the answer must decline."
+    },
+    {
+      "question": "Wie lautet das WLAN-Passwort für Gäste?",
+      "expected_sources": [],
+      "answerable": false,
+      "notes": "Plausible intranet question that the corpus does not answer; the answer must decline rather than invent one."
+    }
+  ]
+}

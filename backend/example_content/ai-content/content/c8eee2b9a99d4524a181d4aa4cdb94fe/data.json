@@ -1,0 +1,322 @@
+{
+  "@id": "/arbeitsthemen/it-prozesse/software-installation",
+  "@type": "Document",
+  "UID": "c8eee2b9a99d4524a181d4aa4cdb94fe",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "20d60212-d2d5-4a9d-96a5-f671a37e9ddd": {
+      "@type": "title"
+    },
+    "d01cb3c9-e116-4fca-a4c5-6cc4dc0608d2": {
+      "@type": "slate",
+      "plaintext": "## Dateiablage und Cloud\n\n### Speichersysteme\n\n**Netzlaufwerk (Abteilungsdaten)**\n- \\\\\\\\dfnt-file01\\\\abteilung\n\n**Pers\u00f6nliches Netzlaufwerk**\n- \\\\\\\\dfnt-file01\\\\home\n\n**Microsoft Teams/SharePoint**\n- F\u00fcr Projektarbeit\n\n**Sciebo (Uni-Cloud)**\n- F\u00fcr externe Zusammenarbeit\n\n**Archiv**\n- F\u00fcr \u00e4ltere Daten\n\n### Wichtig\n- **KEIN privater Cloud-Speicher** (Dropbox, Google Drive) f\u00fcr Dienstdaten!\n\n### Backup\n- T\u00e4glich um 2:00 Uhr automatisch",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Dateiablage und Cloud"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Speichersysteme"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Netzlaufwerk (Abteilungsdaten)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "\\\\dfnt-file01\\abteilung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Pers\u00f6nliches Netzlaufwerk"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "\\\\dfnt-file01\\home"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Microsoft Teams/SharePoint"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr Projektarbeit"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sciebo (Uni-Cloud)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr externe Zusammenarbeit"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Archiv"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr \u00e4ltere Daten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Wichtig"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "KEIN privater Cloud-Speicher"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (Dropbox, Google Drive) f\u00fcr Dienstdaten!"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Backup"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "T\u00e4glich um 2:00 Uhr automatisch"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "20d60212-d2d5-4a9d-96a5-f671a37e9ddd",
+      "d01cb3c9-e116-4fca-a4c5-6cc4dc0608d2"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:42+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Anleitung zur Installation g\u00e4ngiger Programme auf dienstlichen Ger\u00e4ten: Vorgehen f\u00fcr Windows und macOS, Berechtigungen und Softwarekatalog.",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "software-installation",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:06:35+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Software-Installation",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:37+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:37+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

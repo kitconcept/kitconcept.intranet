@@ -1,0 +1,111 @@
+{
+  "@id": "/services/kantine",
+  "@type": "Document",
+  "UID": "d9d2310d40b6410b8c6aae5ee8599721",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "22175a4e-caa9-4a5e-9fa1-6b8562d00b19": {
+      "@type": "slate",
+      "plaintext": "Aktuelle Speisepl\u00e4ne und \u00d6ffnungszeiten aller Kantinen und Cafeterien an den DFNT-Standorten: t\u00e4gliche Mittagesm\u00fcnus mit Kennzeichnung von Ern\u00e4hrungsformen (vegetarisch, vegan, Allergene), Informationen zur Mensacard, Fr\u00fchst\u00fcks- und Mittagszeiten sowie M\u00f6glichkeiten zur Buchung des Catering-Service f\u00fcr Veranstaltungen.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Aktuelle Speisepl\u00e4ne und \u00d6ffnungszeiten aller Kantinen und Cafeterien an den DFNT-Standorten: t\u00e4gliche Mittagesm\u00fcnus mit Kennzeichnung von Ern\u00e4hrungsformen (vegetarisch, vegan, Allergene), Informationen zur Mensacard, Fr\u00fchst\u00fcks- und Mittagszeiten sowie M\u00f6glichkeiten zur Buchung des Catering-Service f\u00fcr Veranstaltungen."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "3afd2f32-8a19-4c16-96d3-ffe79ae30eaa": {
+      "@type": "image",
+      "alt": "Moderner Pausenbereich und Campus-Caf\u00e9 mit Panoramafenstern und Stadtblick",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/f8f7c2b78d714113b921a4f83743e43e"
+    },
+    "d32f453c-bd8b-47eb-9d37-7859655a6859": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d32f453c-bd8b-47eb-9d37-7859655a6859",
+      "3afd2f32-8a19-4c16-96d3-ffe79ae30eaa",
+      "22175a4e-caa9-4a5e-9fa1-6b8562d00b19"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:04:51+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Aktuelle Speisepl\u00e4ne und \u00d6ffnungszeiten aller Kantinen und Cafeterien an den DFNT-Standorten: t\u00e4gliche Mittagsmen\u00fcs mit Kennzeichnung von Ern\u00e4hrungsformen (vegetarisch, vegan, Allergene), Informationen zur Mensacard, Fr\u00fchst\u00fccks- und Mittagszeiten sowie M\u00f6glichkeiten zur Buchung des Catering-Service f\u00fcr Veranstaltungen.",
+  "effective": "2026-03-05T16:04:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "kantine",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:29:31+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Kantine & Verpflegung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

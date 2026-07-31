@@ -109,7 +109,7 @@ module.exports = {
     );
     const { AddonRegistry } = require('@plone/registry/addon-registry');
 
-    const { registry } = new AddonRegistry.init(projectRootPath);
+    const { registry } = AddonRegistry.init(projectRootPath);
 
     config = lessPlugin({ registry }).modifyWebpackConfig({
       env: { target: 'web', dev: 'dev' },

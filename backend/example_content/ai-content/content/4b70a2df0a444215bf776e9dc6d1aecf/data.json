@@ -1,0 +1,100 @@
+{
+  "@id": "/ueber-uns/zahlen-fakten",
+  "@type": "Document",
+  "UID": "4b70a2df0a444215bf776e9dc6d1aecf",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "abc123": {
+      "@type": "image",
+      "alt": "Wissenschaftliche Datenvisualisierung mit Wellenformen auf Computerbildschirm",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/344cc2f7a8c6443a8e785db6ef795d79"
+    },
+    "dd03d349-e631-4a94-a20f-91e384100479": {
+      "@type": "title"
+    },
+    "def456": {
+      "@type": "slate",
+      "text": "Aktuelle Kennzahlen und Statistiken des DFNT auf einen Blick: Anzahl der Mitarbeitenden und Verteilung nach Bereichen und Standorten, Haushalts- und Drittmittel\u00fcbersicht, Publikationsstatistiken und Impact-Daten, nationale und internationale Kooperationspartner sowie Preise und Rankings."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "dd03d349-e631-4a94-a20f-91e384100479",
+      "abc123",
+      "def456"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:08:17+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Aktuelle Kennzahlen und Statistiken des DFNT auf einen Blick: Anzahl der Mitarbeitenden und Verteilung nach Bereichen und Standorten, Haushalts- und Drittmittel\u00fcbersicht, Publikationsstatistiken und Impact-Daten, nationale und internationale Kooperationspartner sowie Preise und Rankings.",
+  "effective": "2026-03-05T16:08:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "zahlen-fakten",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:29:39+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Zahlen & Fakten",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:51+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:51+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

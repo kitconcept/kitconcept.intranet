@@ -60,7 +60,7 @@ body:not(.contenttype-wikipage) {
       list-style: auto;
     }
 
-    ul {
+    ul:not(.items) {
       padding-left: 40px;
       list-style: disc;
     }

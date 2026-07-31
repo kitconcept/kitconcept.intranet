@@ -24,6 +24,195 @@ h1.documentFirstHeading:has(+ .documentByLine) {
   margin-bottom: $spacing-small;
 }
 
+// ### About Content ###
+
+body.cms-ui .about-content {
+  display: none;
+}
+
+.about-content {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+  padding: 30px 0;
+  border-top: 1px solid $greySmoke;
+  border-bottom: 1px solid $greySmoke;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-medium;
+  text-align: left;
+
+  h2 {
+    margin-bottom: $spacing-small;
+    color: $darkGrey;
+    font-size: $font-size;
+    font-weight: $bold;
+
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin-bottom: 14px;
+    color: $grey;
+    font-size: 14px;
+    font-weight: $bold;
+
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .about-content-grid {
+    display: grid;
+    gap: $spacing-small;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-content-people {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-content-date,
+  a {
+    display: flex;
+    align-items: center;
+    color: $black;
+    font-size: 14px;
+    font-weight: $semi-bold;
+    gap: 10px;
+    line-height: 1.2;
+  }
+
+  .about-content-date {
+    font-weight: $regular;
+
+    .icon {
+      color: $grey;
+    }
+  }
+
+  .about-content-feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: $spacing-medium;
+    border-top: 1px solid $greySmoke;
+    margin-top: $spacing-medium;
+    gap: 0;
+
+    label {
+      margin-bottom: 26px;
+      color: $grey;
+      font-size: 20px;
+      font-weight: $regular;
+      line-height: 1.2;
+    }
+
+    textarea {
+      width: 720px;
+      height: 84px;
+      box-sizing: border-box;
+      padding: 20px 20px;
+      border: 1px solid $greySmoke;
+      border-radius: 0;
+      margin: 0 0 38px;
+      background: $white;
+      color: $darkGrey;
+      font-family: inherit;
+      font-size: 20px;
+      line-height: 1.2;
+      resize: both;
+
+      &::placeholder {
+        color: $grey;
+        opacity: 1;
+      }
+
+      &:focus {
+        border-color: #007eb1;
+        outline: 1px solid $grey;
+        outline-offset: -1px;
+      }
+    }
+
+    button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      padding: 10px 14px;
+      border: 1px solid #007eb1;
+      border-radius: 0;
+      background: #007eb1;
+      color: $white;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 20px;
+      font-weight: $bold;
+      gap: 12px;
+      line-height: 1.2;
+
+      &:not(:disabled):hover,
+      &:not(:disabled):focus {
+        border-color: #007aa3;
+        background: #007aa3;
+      }
+
+      &:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
+
+      &:disabled {
+        border-color: #c7d7dc;
+        background: #c7d7dc;
+        color: $white;
+        cursor: not-allowed;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $largest-mobile-screen) {
+  .about-content {
+    padding: $spacing-medium 0;
+
+    h2 {
+      font-size: 14px;
+    }
+
+    h3 {
+      font-size: 12px;
+    }
+  }
+
+  .about-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content-date {
+    font-size: 14px;
+  }
+
+  .about-content-feedback {
+    label {
+      margin-bottom: $spacing-small;
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 100%;
+      margin-bottom: $spacing-small;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    button {
+      font-size: 14px;
+    }
+  }
+}
+
 // ### StickyFeedbackButton ###
 
 .sticky-feedback-button-container {

@@ -26,6 +26,11 @@ msgstr ""
 msgid "AI-generated answer. It may contain errors."
 msgstr ""
 
+#. Default: "About this content"
+#: slots/AboutThisContent/AboutThisContent
+msgid "About this content"
+msgstr ""
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -64,6 +69,11 @@ msgstr ""
 #. Default: "Assignee: *"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
+msgstr ""
+
+#. Default: "Author"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Author"
 msgstr ""
 
 #. Default: "Beta"
@@ -110,6 +120,11 @@ msgstr "Contato"
 msgid "Content marked as reviewed"
 msgstr ""
 
+#. Default: "Content responsible"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Content responsible"
+msgstr ""
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
@@ -120,6 +135,16 @@ msgstr "Criado em"
 msgid "Created by"
 msgstr ""
 
+#. Default: "Created on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Created on"
+msgstr ""
+
+#. Default: "Criteria"
+#: components/widgets/QuerystringWidget
+msgid "Criteria"
+msgstr ""
+
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
 msgid "Delegate Review Update"
@@ -128,6 +153,11 @@ msgstr ""
 #. Default: "Delegate"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "DelegateButton"
+msgstr ""
+
+#. Default: "Depth"
+#: components/widgets/QuerystringWidget
+msgid "Depth"
 msgstr ""
 
 #. Default: "Document Review"
@@ -239,6 +269,16 @@ msgstr ""
 msgid "Invalid url"
 msgstr "URL inválida"
 
+#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
+#: slots/AboutThisContent/AboutThisContent
+msgid "Is something unclear or outdated? Let us know so we can improve the page."
+msgstr ""
+
+#. Default: "Item batch size"
+#: components/widgets/QuerystringWidget
+msgid "Item batch size"
+msgstr ""
+
 #. Default: "Last 3 months"
 #: components/Header/HeaderSearch
 msgid "Last 3 months"
@@ -258,6 +298,11 @@ msgstr ""
 #: components/ContentInteractions/ContentInteractions
 msgid "Last Modified On"
 msgstr "Última modificação em"
+
+#. Default: "Last modified on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Last modified on"
+msgstr ""
 
 #. Default: "Last updated"
 #: components/Toolbar/DocumentReview
@@ -312,6 +357,16 @@ msgstr ""
 #. Default: "No results for “{term}”."
 #: components/Header/HeaderSearch
 msgid "No results for “{term}”."
+msgstr ""
+
+#. Default: "No selection"
+#: components/widgets/QuerystringWidget
+msgid "No selection"
+msgstr ""
+
+#. Default: "Offset"
+#: components/widgets/QuerystringWidget
+msgid "Offset"
 msgstr ""
 
 #. Default: "Only internal e-mail addresses are permitted."
@@ -381,6 +436,16 @@ msgstr ""
 msgid "Responsibilities"
 msgstr "Responsabilidades"
 
+#. Default: "Results limit"
+#: components/widgets/QuerystringWidget
+msgid "Results limit"
+msgstr ""
+
+#. Default: "Reversed order"
+#: components/widgets/QuerystringWidget
+msgid "Reversed order"
+msgstr ""
+
 #. Default: "Review"
 #: components/ContentReviewSidebar/ReviewSidebar
 #: components/Toolbar/DocumentReviewPlug
@@ -420,6 +485,7 @@ msgstr ""
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Send feedback"
 msgstr "Enviar feedback"
 
@@ -467,6 +533,11 @@ msgstr "Algo deu errado ao curtir esta publicação."
 #: components/ContentInteractions/ContentInteractions
 msgid "Something went wrong while unliking this post."
 msgstr "Algo deu errado ao descurtir esta publicação."
+
+#. Default: "Sort on"
+#: components/widgets/QuerystringWidget
+msgid "Sort on"
+msgstr ""
 
 #. Default: "Sources"
 #: components/Header/HeaderSearch
@@ -545,6 +616,11 @@ msgstr ""
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Site"
+
+#. Default: "What is unclear, outdated or missing?"
+#: slots/AboutThisContent/AboutThisContent
+msgid "What is unclear, outdated or missing?"
+msgstr ""
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch

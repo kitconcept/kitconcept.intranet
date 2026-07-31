@@ -21,6 +21,11 @@ msgstr "KI-Überblick"
 msgid "AI-generated answer. It may contain errors."
 msgstr "KI-generierte Antwort. Kann Fehler enthalten."
 
+#. Default: "About this content"
+#: slots/AboutThisContent/AboutThisContent
+msgid "About this content"
+msgstr "Über diesen Inhalt"
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -60,6 +65,11 @@ msgstr "Rückfrage stellen…"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
 msgstr "Beauftragte Person: *"
+
+#. Default: "Author"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Author"
+msgstr "Autor/in"
 
 #. Default: "Beta"
 #: components/Header/HeaderSearch
@@ -105,6 +115,11 @@ msgstr "Kontakt"
 msgid "Content marked as reviewed"
 msgstr ""
 
+#. Default: "Content responsible"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Content responsible"
+msgstr "Inhaltsverantwortlich"
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
@@ -115,6 +130,16 @@ msgstr "Erstellt am"
 msgid "Created by"
 msgstr "Erstellt von"
 
+#. Default: "Created on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. Default: "Criteria"
+#: components/widgets/QuerystringWidget
+msgid "Criteria"
+msgstr ""
+
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
 msgid "Delegate Review Update"
@@ -124,6 +149,11 @@ msgstr "Prüfung/Anpassung delegieren"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "DelegateButton"
 msgstr "Delegieren"
+
+#. Default: "Depth"
+#: components/widgets/QuerystringWidget
+msgid "Depth"
+msgstr "Tiefe"
 
 #. Default: "Document Review"
 #: components/Toolbar/DocumentReview
@@ -234,6 +264,16 @@ msgstr "Intranet Portal"
 msgid "Invalid url"
 msgstr "Ungültige URL"
 
+#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
+#: slots/AboutThisContent/AboutThisContent
+msgid "Is something unclear or outdated? Let us know so we can improve the page."
+msgstr "Etwas unklar oder veraltet? Lass es uns wissen, um die Seite zu verbessern."
+
+#. Default: "Item batch size"
+#: components/widgets/QuerystringWidget
+msgid "Item batch size"
+msgstr "Batch-Anzahl"
+
 #. Default: "Last 3 months"
 #: components/Header/HeaderSearch
 msgid "Last 3 months"
@@ -253,6 +293,11 @@ msgstr "Letzte 7 Tage"
 #: components/ContentInteractions/ContentInteractions
 msgid "Last Modified On"
 msgstr "Zuletzt geändert am"
+
+#. Default: "Last modified on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Last modified on"
+msgstr "Zuletzt verändert am"
 
 #. Default: "Last updated"
 #: components/Toolbar/DocumentReview
@@ -308,6 +353,16 @@ msgstr "Keine Antwort — keine passenden Dokumente gefunden."
 #: components/Header/HeaderSearch
 msgid "No results for “{term}”."
 msgstr "Keine Ergebnisse für „{term}“."
+
+#. Default: "No selection"
+#: components/widgets/QuerystringWidget
+msgid "No selection"
+msgstr "Keine Auswahl"
+
+#. Default: "Offset"
+#: components/widgets/QuerystringWidget
+msgid "Offset"
+msgstr "Offset"
 
 #. Default: "Only internal e-mail addresses are permitted."
 #: components/FeedBackForm/FeedBackForm
@@ -376,6 +431,16 @@ msgstr "Veröffentlicht"
 msgid "Responsibilities"
 msgstr "Zuständigkeiten"
 
+#. Default: "Results limit"
+#: components/widgets/QuerystringWidget
+msgid "Results limit"
+msgstr "Anzahl der Ergebnisse einschränken"
+
+#. Default: "Reversed order"
+#: components/widgets/QuerystringWidget
+msgid "Reversed order"
+msgstr "Sortierreihenfolge umkehren"
+
 #. Default: "Review"
 #: components/ContentReviewSidebar/ReviewSidebar
 #: components/Toolbar/DocumentReviewPlug
@@ -415,6 +480,7 @@ msgstr "Bitte auswählen ..."
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Send feedback"
 msgstr "Feedback senden"
 
@@ -462,6 +528,11 @@ msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
 #: components/ContentInteractions/ContentInteractions
 msgid "Something went wrong while unliking this post."
 msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
+
+#. Default: "Sort on"
+#: components/widgets/QuerystringWidget
+msgid "Sort on"
+msgstr "Sortieren nach"
 
 #. Default: "Sources"
 #: components/Header/HeaderSearch
@@ -540,6 +611,11 @@ msgstr "Voreingestelltes Überprüfungsintervall verwenden."
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Website"
+
+#. Default: "What is unclear, outdated or missing?"
+#: slots/AboutThisContent/AboutThisContent
+msgid "What is unclear, outdated or missing?"
+msgstr "Was ist unklar, veraltet oder fehlt?"
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch

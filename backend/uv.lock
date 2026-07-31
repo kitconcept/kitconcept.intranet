@@ -1589,7 +1589,7 @@ provides-extras = ["test"]
 [[package]]
 name = "kitconcept-solr"
 version = "2.0.0a14"
-source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag#397e09bc498e8431850c7be8c221c000a89aadf9" }
+source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag#fcae6395075556a040c7b9972d1e4a8cbefdacc6" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },

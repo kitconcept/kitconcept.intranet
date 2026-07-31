@@ -11,7 +11,7 @@ import {
 import personSVG from '@plone/volto/icons/user.svg';
 
 type PersonPillProps = {
-  id: string;
+  id: string | undefined;
   fullname?: string;
   name?: string;
   portrait?: string;

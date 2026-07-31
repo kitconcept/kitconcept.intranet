@@ -62,6 +62,7 @@ class TestWikiPage:
             "plone.versioning",
             "plone.locking",
             "plone.translatable",
+            "kitconcept.intranet.clm",
         )
 
     def test_wikipage_requires_workspace_container(self):

@@ -1,0 +1,2 @@
+Workspace search dialog per the approved design (internal ticket #426): live search results while typing (kitconcept.solr @solr-suggest), "Ask AI" button with the AI Overview answer panel and sources (@rag-search), Cmd+K/Ctrl+K shortcut, filter chips (visual, deferred backend). @reebalazs
+AI errors surface as a friendly localized message instead of the raw backend error (raw messages like embed timeouts under concurrent LLM load are logged to the console only, see internal ticket #515).

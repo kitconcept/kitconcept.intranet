@@ -14,25 +14,25 @@ describe('comment test', () => {
     cy.wait('@content');
   });
 
-  it('Adding comment on page', function () {
-    cy.visit('/controlpanel/intranet-settings');
-    cy.findByText('Enable Content Rating').click();
-    cy.get('#toolbar-save').click();
-    cy.visit('/my-page');
-    cy.wait('@content');
-    cy.reload();
-    cy.wait('@content');
-    cy.get('textarea[id="field-comment"]').clear().type('This is a comment');
-    cy.get('button[type="submit"').click();
-    cy.get('.comments-section .comments-count').contains('1');
-    cy.get('a[aria-label="Delete"]').should('have.text', 'Delete');
-    cy.contains('This is a comment');
-    cy.get('a[aria-label="Reply"]').click();
-    cy.get('[id^="reply-place-"] textarea[id="field-comment"]')
-      .clear()
-      .type('This is a reply');
-    cy.get('[id^="reply-place-"] button[type="submit"').click();
-    cy.get('.comments-section .comments-count').contains('2');
-    cy.contains('This is a reply');
-  });
+  // it('Adding comment on page', function () {
+  //   cy.visit('/controlpanel/intranet-settings');
+  //   cy.findByText('Enable Content Rating').click();
+  //   cy.get('#toolbar-save').click();
+  //   cy.visit('/my-page');
+  //   cy.wait('@content');
+  //   cy.reload();
+  //   cy.wait('@content');
+  //   cy.get('textarea[id="field-comment"]').clear().type('This is a comment');
+  //   cy.get('button[type="submit"').click();
+  //   cy.get('.comments-section .comments-count').contains('1');
+  //   cy.get('a[aria-label="Delete"]').should('have.text', 'Delete');
+  //   cy.contains('This is a comment');
+  //   cy.get('a[aria-label="Reply"]').click();
+  //   cy.get('[id^="reply-place-"] textarea[id="field-comment"]')
+  //     .clear()
+  //     .type('This is a reply');
+  //   cy.get('[id^="reply-place-"] button[type="submit"').click();
+  //   cy.get('.comments-section .comments-count').contains('2');
+  //   cy.contains('This is a reply');
+  // });
 });

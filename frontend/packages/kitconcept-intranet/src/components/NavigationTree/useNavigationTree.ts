@@ -32,6 +32,7 @@ export function useNavigationTree(
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const fetchedPaths = useRef<Set<string>>(new Set());
+  const peekedPaths = useRef<Set<string>>(new Set());
 
   const subrequests = useSelector(
     (state: any) => state.search?.subrequests ?? {},
@@ -47,6 +48,15 @@ export function useNavigationTree(
     return subrequests[`nav-tree-${path}`]?.loading ?? false;
   }
 
+  function getChildCountForPath(path: string): number | null {
+    const total = subrequests[`nav-tree-peek-${path}`]?.total;
+    return typeof total === 'number' ? total : null;
+  }
+
+  function isPeekedForPath(path: string): boolean {
+    return subrequests[`nav-tree-peek-${path}`]?.loaded ?? false;
+  }
+
   const dispatchFetch = useCallback(
     (path: string) => {
       return dispatch(
@@ -59,6 +69,27 @@ export function useNavigationTree(
             b_size: 100,
           },
           `nav-tree-${path}`,
+        ),
+      );
+    },
+    [dispatch],
+  );
+
+  const peekChildren = useCallback(
+    (path: string) => {
+      if (fetchedPaths.current.has(path) || peekedPaths.current.has(path)) {
+        return;
+      }
+      peekedPaths.current.add(path);
+      dispatch(
+        searchContent(
+          path,
+          {
+            'path.depth': 1,
+            b_size: 1,
+            metadata_fields: [],
+          },
+          `nav-tree-peek-${path}`,
         ),
       );
     },
@@ -153,5 +184,8 @@ export function useNavigationTree(
     fetchedPaths,
     refetchPath: dispatchFetch,
     expandPath,
+    peekChildren,
+    getChildCountForPath,
+    isPeekedForPath,
   };
 }

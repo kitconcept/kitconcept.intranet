@@ -11,15 +11,70 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "AI Overview"
+#: components/Header/HeaderSearch
+msgid "AI Overview"
+msgstr "KI-Überblick"
+
+#. Default: "AI-generated answer. It may contain errors."
+#: components/Header/HeaderSearch
+msgid "AI-generated answer. It may contain errors."
+msgstr "KI-generierte Antwort. Kann Fehler enthalten."
+
+#. Default: "About this content"
+#: slots/AboutThisContent/AboutThisContent
+msgid "About this content"
+msgstr "Über diesen Inhalt"
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
 msgstr "Adresse"
 
+#. Default: "All"
+#: components/Header/HeaderSearch
+msgid "All"
+msgstr "Alle"
+
+#. Default: "All statuses"
+#: components/Header/HeaderSearch
+msgid "All statuses"
+msgstr "Alle Status"
+
+#. Default: "All types"
+#: components/Header/HeaderSearch
+msgid "All types"
+msgstr "Alle Typen"
+
+#. Default: "Any time"
+#: components/Header/HeaderSearch
+msgid "Any time"
+msgstr "Jederzeit"
+
+#. Default: "Ask AI"
+#: components/Header/HeaderSearch
+msgid "Ask AI"
+msgstr "KI fragen"
+
+#. Default: "Ask a follow-up…"
+#: components/Header/HeaderSearch
+msgid "Ask a follow-up…"
+msgstr "Rückfrage stellen…"
+
 #. Default: "Assignee: *"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "Assignee"
 msgstr "Beauftragte Person: *"
+
+#. Default: "Author"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Author"
+msgstr "Autor/in"
+
+#. Default: "Beta"
+#: components/Header/HeaderSearch
+msgid "Beta"
+msgstr "Beta"
 
 #. Default: "Bio"
 #: components/theme/PersonView
@@ -60,10 +115,30 @@ msgstr "Kontakt"
 msgid "Content marked as reviewed"
 msgstr ""
 
+#. Default: "Content responsible"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Content responsible"
+msgstr "Inhaltsverantwortlich"
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
 msgstr "Erstellt am"
+
+#. Default: "Created by"
+#: components/Header/HeaderSearch
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. Default: "Created on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. Default: "Criteria"
+#: components/widgets/QuerystringWidget
+msgid "Criteria"
+msgstr ""
 
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
@@ -74,6 +149,11 @@ msgstr "Prüfung/Anpassung delegieren"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "DelegateButton"
 msgstr "Delegieren"
+
+#. Default: "Depth"
+#: components/widgets/QuerystringWidget
+msgid "Depth"
+msgstr "Tiefe"
 
 #. Default: "Document Review"
 #: components/Toolbar/DocumentReview
@@ -103,6 +183,11 @@ msgstr "Ende"
 #: components/FeedBackForm/FeedBackForm
 msgid "Error"
 msgstr "Fehler"
+
+#. Default: "Event"
+#: components/Header/HeaderSearch
+msgid "Event"
+msgstr "Termin"
 
 #. Default: "Expand sidebar"
 #: components/ContentReviewSidebar/ReviewSidebar
@@ -134,30 +219,95 @@ msgstr "Feedback zu:"
 msgid "Feedback to:"
 msgstr "Feedback an:"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Folgen Sie uns:"
+#. Default: "File"
+#: components/Header/HeaderSearch
+msgid "File"
+msgstr "Datei"
+
+#. Default: "Folder"
+#: components/Header/HeaderSearch
+msgid "Folder"
+msgstr "Ordner"
+
+#. Default: "Generating answer…"
+#: components/Header/HeaderSearch
+msgid "Generating answer…"
+msgstr "Antwort wird erstellt …"
+
+#. Default: "Home"
+#: components/Header/HeaderBreadcrumbs
+msgid "Home"
+msgstr ""
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
 msgstr "Zum Kalendar hinzufügen"
 
+#. Default: "Image"
+#: components/Header/HeaderSearch
+msgid "Image"
+msgstr "Bild"
+
+#. Default: "In review"
+#: components/Header/HeaderSearch
+msgid "In review"
+msgstr "In Prüfung"
+
+#. Default: "Intranet Portal"
+#: components/Header/HeaderSearch
+msgid "Intranet Portal"
+msgstr "Intranet Portal"
+
 #. Default: "Invalid url"
 #: components/Blocks/IFrame/isValidUrl
 msgid "Invalid url"
 msgstr "Ungültige URL"
+
+#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
+#: slots/AboutThisContent/AboutThisContent
+msgid "Is something unclear or outdated? Let us know so we can improve the page."
+msgstr "Etwas unklar oder veraltet? Lass es uns wissen, um die Seite zu verbessern."
+
+#. Default: "Item batch size"
+#: components/widgets/QuerystringWidget
+msgid "Item batch size"
+msgstr "Batch-Anzahl"
+
+#. Default: "Last 3 months"
+#: components/Header/HeaderSearch
+msgid "Last 3 months"
+msgstr "Letzte 3 Monate"
+
+#. Default: "Last 30 days"
+#: components/Header/HeaderSearch
+msgid "Last 30 days"
+msgstr "Letzte 30 Tage"
+
+#. Default: "Last 7 days"
+#: components/Header/HeaderSearch
+msgid "Last 7 days"
+msgstr "Letzte 7 Tage"
 
 #. Default: "Last Modified On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Last Modified On"
 msgstr "Zuletzt geändert am"
 
+#. Default: "Last modified on"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Last modified on"
+msgstr "Zuletzt verändert am"
+
 #. Default: "Last updated"
 #: components/Toolbar/DocumentReview
 msgid "Last updated"
 msgstr ""
+
+#. Default: "Last year"
+#: components/Header/HeaderSearch
+msgid "Last year"
+msgstr "Letztes Jahr"
 
 #. Default: "List with date"
 #: index
@@ -184,10 +334,35 @@ msgstr "Als geprüft markieren"
 msgid "Name"
 msgstr "Name"
 
+#. Default: "News Item"
+#: components/Header/HeaderSearch
+msgid "News Item"
+msgstr "Nachricht"
+
 #. Default: "Next review"
 #: components/Toolbar/DocumentReview
 msgid "Next review"
 msgstr ""
+
+#. Default: "No answer — no matching documents found."
+#: components/Header/HeaderSearch
+msgid "No answer — no matching documents found."
+msgstr "Keine Antwort — keine passenden Dokumente gefunden."
+
+#. Default: "No results for “{term}”."
+#: components/Header/HeaderSearch
+msgid "No results for “{term}”."
+msgstr "Keine Ergebnisse für „{term}“."
+
+#. Default: "No selection"
+#: components/widgets/QuerystringWidget
+msgid "No selection"
+msgstr "Keine Auswahl"
+
+#. Default: "Offset"
+#: components/widgets/QuerystringWidget
+msgid "Offset"
+msgstr "Offset"
 
 #. Default: "Only internal e-mail addresses are permitted."
 #: components/FeedBackForm/FeedBackForm
@@ -198,6 +373,16 @@ msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 #: index
 msgid "Organisational Unit"
 msgstr "Organisationseinheit"
+
+#. Default: "Page"
+#: components/Header/HeaderSearch
+msgid "Page"
+msgstr "Seite"
+
+#. Default: "Person"
+#: components/Header/HeaderSearch
+msgid "Person"
+msgstr "Person"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
@@ -231,10 +416,30 @@ msgstr "Überprüfung verschieben"
 msgid "PostponeTitle"
 msgstr "Überprüfung verschieben"
 
+#. Default: "Private"
+#: components/Header/HeaderSearch
+msgid "Private"
+msgstr "Privat"
+
+#. Default: "Published"
+#: components/Header/HeaderSearch
+msgid "Published"
+msgstr "Veröffentlicht"
+
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
 msgstr "Zuständigkeiten"
+
+#. Default: "Results limit"
+#: components/widgets/QuerystringWidget
+msgid "Results limit"
+msgstr "Anzahl der Ergebnisse einschränken"
+
+#. Default: "Reversed order"
+#: components/widgets/QuerystringWidget
+msgid "Reversed order"
+msgstr "Sortierreihenfolge umkehren"
 
 #. Default: "Review"
 #: components/ContentReviewSidebar/ReviewSidebar
@@ -248,6 +453,26 @@ msgstr "Inhaltsprüfung"
 msgid "Room"
 msgstr "Raum"
 
+#. Default: "Search"
+#: components/Header/HeaderSearch
+msgid "Search"
+msgstr ""
+
+#. Default: "Search titles only"
+#: components/Header/HeaderSearch
+msgid "Search titles only"
+msgstr "Nur Titel durchsuchen"
+
+#. Default: "Search workspace"
+#: components/Header/HeaderSearch
+msgid "Search workspace"
+msgstr "Workspace durchsuchen"
+
+#. Default: "Search…"
+#: components/Header/HeaderSearch
+msgid "Search…"
+msgstr "Suchen…"
+
 #. Default: "Please Select ..."
 #: components/ContentReviewSidebar/DelegateReview
 msgid "SelectAssigneePlaceholder"
@@ -255,6 +480,7 @@ msgstr "Bitte auswählen ..."
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Send feedback"
 msgstr "Feedback senden"
 
@@ -268,6 +494,16 @@ msgstr "Ich möchte diesen Intranet-Inhalt mit Ihnen teilen:"
 msgid "Share this page via email"
 msgstr "Seite per E-Mail teilen"
 
+#. Default: "Show archived content"
+#: components/Header/HeaderSearch
+msgid "Show archived content"
+msgstr "Archivierte Inhalte anzeigen"
+
+#. Default: "Show more breadcrumb items"
+#: components/Header/HeaderBreadcrumbs
+msgid "Show more breadcrumb items"
+msgstr ""
+
 #. Default: "Shrink sidebar"
 #: components/ContentReviewSidebar/ReviewSidebar
 msgid "Shrink sidebar"
@@ -277,6 +513,11 @@ msgstr ""
 #: components/theme/PersonView
 msgid "Site"
 msgstr "Website"
+
+#. Default: "Site Setup"
+#: components/Header/useHeaderBreadcrumbs
+msgid "Site Setup"
+msgstr ""
 
 #. Default: "Something went wrong while liking this post."
 #: components/ContentInteractions/ContentInteractions
@@ -288,6 +529,16 @@ msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
 msgid "Something went wrong while unliking this post."
 msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
 
+#. Default: "Sort on"
+#: components/widgets/QuerystringWidget
+msgid "Sort on"
+msgstr "Sortieren nach"
+
+#. Default: "Sources"
+#: components/Header/HeaderSearch
+msgid "Sources"
+msgstr "Quellen"
+
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
@@ -297,6 +548,16 @@ msgstr "Gesponsert von:"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
 msgstr "Anfang"
+
+#. Default: "Start typing to search…"
+#: components/Header/HeaderSearch
+msgid "Start typing to search…"
+msgstr "Tippen Sie, um zu suchen…"
+
+#. Default: "Status"
+#: components/Header/HeaderSearch
+msgid "Status"
+msgstr "Status"
 
 #. Default: "Subject page/URL"
 #: components/FeedBackForm/FeedBackForm
@@ -311,6 +572,11 @@ msgstr "Betreff Seite/URL"
 msgid "Success"
 msgstr "Erfolg"
 
+#. Default: "The AI answer is currently unavailable. Please try again."
+#: components/Header/HeaderSearch
+msgid "The AI answer is currently unavailable. Please try again."
+msgstr "Die KI-Antwort ist momentan nicht verfügbar. Bitte versuchen Sie es erneut."
+
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
@@ -321,6 +587,21 @@ msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und De
 msgid "To submit a Like you must be logged in"
 msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 
+#. Default: "Today"
+#: components/Header/HeaderSearch
+msgid "Today"
+msgstr "Heute"
+
+#. Default: "Type"
+#: components/Header/HeaderSearch
+msgid "Type"
+msgstr "Typ"
+
+#. Default: "Updated"
+#: components/Header/HeaderSearch
+msgid "Updated"
+msgstr "Aktualisiert"
+
 #. Default: "Use preset review interval"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "Use preset review interval"
@@ -330,6 +611,16 @@ msgstr "Voreingestelltes Überprüfungsintervall verwenden."
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Website"
+
+#. Default: "What is unclear, outdated or missing?"
+#: slots/AboutThisContent/AboutThisContent
+msgid "What is unclear, outdated or missing?"
+msgstr "Was ist unklar, veraltet oder fehlt?"
+
+#. Default: "Workspace"
+#: components/Header/HeaderSearch
+msgid "Workspace"
+msgstr "Workspace"
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
@@ -370,6 +661,106 @@ msgstr "Die Überprüfung wurde erfolgreich verschoben."
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
 msgstr "zuletzt verändert"
+
+#. Default: "Something went wrong"
+#: components/NavigationTree/messages
+msgid "navigation_tree_action_error"
+msgstr ""
+
+#. Default: "Add new"
+#: components/NavigationTree/messages
+msgid "navigation_tree_add_new"
+msgstr ""
+
+#. Default: "Clear search"
+#: components/NavigationTree/messages
+msgid "navigation_tree_clear_search"
+msgstr ""
+
+#. Default: "Close navigation tree"
+#: components/NavigationTree/messages
+msgid "navigation_tree_close_panel"
+msgstr ""
+
+#. Default: "Delete"
+#: components/NavigationTree/messages
+msgid "navigation_tree_delete"
+msgstr ""
+
+#. Default: "Duplicate"
+#: components/NavigationTree/messages
+msgid "navigation_tree_duplicate"
+msgstr ""
+
+#. Default: "Loading…"
+#: components/NavigationTree/messages
+msgid "navigation_tree_loading"
+msgstr ""
+
+#. Default: "More actions"
+#: components/NavigationTree/messages
+msgid "navigation_tree_more_actions"
+msgstr ""
+
+#. Default: "NAVIGATION"
+#: components/NavigationTree/messages
+msgid "navigation_tree_navigation_label"
+msgstr ""
+
+#. Default: "No results found"
+#: components/NavigationTree/messages
+msgid "navigation_tree_no_results"
+msgstr ""
+
+#. Default: "Open navigation"
+#: components/NavigationTree/messages
+msgid "navigation_tree_open_navigation"
+msgstr ""
+
+#. Default: "Rename"
+#: components/NavigationTree/messages
+msgid "navigation_tree_rename"
+msgstr ""
+
+#. Default: "Title"
+#: components/NavigationTree/messages
+msgid "navigation_tree_rename_title_label"
+msgstr ""
+
+#. Default: "Resize navigation panel"
+#: components/NavigationTree/messages
+msgid "navigation_tree_resize_panel"
+msgstr ""
+
+#. Default: "Search navigation by title"
+#: components/NavigationTree/messages
+msgid "navigation_tree_search_aria_label"
+msgstr ""
+
+#. Default: "Search by title..."
+#: components/NavigationTree/messages
+msgid "navigation_tree_search_placeholder"
+msgstr ""
+
+#. Default: "Search results"
+#: components/NavigationTree/messages
+msgid "navigation_tree_search_results"
+msgstr ""
+
+#. Default: "SITE"
+#: components/NavigationTree/messages
+msgid "navigation_tree_site_label"
+msgstr ""
+
+#. Default: "Site navigation"
+#: components/NavigationTree/messages
+msgid "navigation_tree_site_navigation"
+msgstr ""
+
+#. Default: "Switch workspace"
+#: components/NavigationTree/messages
+msgid "navigation_tree_workspace_switcher_label"
+msgstr ""
 
 #. Default: "Next Review on:"
 #: components/ContentReviewSidebar/PostponeReview

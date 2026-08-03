@@ -1,11 +1,13 @@
 /**
  * OVERRIDE: SolrSearch.jsx
- * REASON: No "Use AI" toggle (team decision 2026-07-23): when the RAG
- * feature is available, the AI answer always renders above the classic
- * results. The final presentation (an "AI" tab and "AI on top" of the
- * All tab) will come from the kitconcept.solr tabs configuration; this
- * override is the interim behavior until that lands.
- * DATE: 2026-07-23
+ * REASON: No AI on the classic search page: the AI answer lives in the
+ * workspace search dialog only ("KI fragen" button, ticket #426). The
+ * page neither renders the AI area nor fires the @rag-search request -
+ * every AI request occupies a backend worker thread for the duration
+ * of the LLM call (see internal ticket #515), so pages outside the
+ * dialog must not trigger it. kitconcept.solr keeps its own "Use AI"
+ * toggle behavior; this override removes it for the intranet.
+ * DATE: 2026-07-29
  * DEVELOPER: @reebalazs
  *
  * Search component.
@@ -51,8 +53,6 @@ import {
   queryStateToParams,
 } from '@kitconcept/volto-solr/components/theme/SolrSearch/SearchQuery';
 import { VocabProvider } from '@kitconcept/volto-solr/components/theme/SolrSearch/vocabs/VocabContext';
-import { ragSearch, resetRagSearch } from '@kitconcept/volto-solr/actions';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 const messages = defineMessages({
   TypeSearchWords: {
@@ -215,8 +215,6 @@ class SolrSearch extends Component {
     batching: null,
     searchableText: null,
     path: null,
-    // RAG: TESTING
-    rag: {},
   };
 
   constructor(props) {
@@ -281,21 +279,24 @@ class SolrSearch extends Component {
    */
   doSearch = (params) => {
     this.setState({ searchwordInStatus: params.SearchableText || '' });
-    // When RAG is available (the @site endpoint reported the feature
-    // enabled and configured, known before the first render), the
-    // question additionally goes to the RAG endpoint: the AI answer
-    // always renders above the classic result list (no toggle).
-    if (this.props.ragAvailable && params.SearchableText) {
-      this.props.ragSearch('', params.SearchableText);
-    }
+    // No AI request from the search page: the AI answer is available
+    // in the workspace search dialog only (see OVERRIDE header).
     this.props.searchContent('', {
       ...params,
       sort_on: params.sort_on !== 'relevance' ? params.sort_on : '',
       b_start: (this.state.currentPage - 1) * config.settings.defaultPageSize,
-      path_prefix: getPathPrefix(window.location),
+      path_prefix: this.searchPathPrefix(params),
       doEmptySearch: this.props.doEmptySearch,
     });
   };
+
+  // An explicit path_prefix URL param wins over the URL heuristic:
+  // getPathPrefix treats every single-segment path as a language root
+  // (/de, /en), so a top-level subsite or workspace (/my-workspace)
+  // would silently lose its prefix. The workspace search dialog uses
+  // this for its workspace-scoped result pages.
+  searchPathPrefix = (params) =>
+    params.path_prefix || getPathPrefix(window.location);
 
   updateSearch = () => {
     this.props.history.replace({
@@ -355,179 +356,141 @@ class SolrSearch extends Component {
       this.props.contentTypeSearchResultViews[contentType] ||
       this.props.contentTypeSearchResultDefaultView;
     return (
-      <Segment basic id="page-search" className="header-wrapper">
-        <Helmet title="Search" />
-        <Container>
-          {this.props.showSearchInput ? (
-            <div className="search-input">
-              <form className="ui form" onSubmit={this.onSubmit}>
-                <div className="field searchbox">
-                  <TranslatedInput
-                    ref={this.inputRef}
-                    placeholder={messages.TypeSearchWords}
-                    className="searchinput"
-                    value={this.state.searchword}
-                    onChange={(e) =>
-                      this.setState({ searchword: e.target.value })
-                    }
-                    onSubmit={this.onSubmit}
-                  />
-                  <Button onClick={this.onSubmit}>
-                    <FormattedMessage id="Search" defaultMessage="Search" />{' '}
-                  </Button>
-                </div>
-              </form>
-            </div>
-          ) : null}
-          {/* AI answer area: always shown above the classic results
-              when the backend reports the feature available (no
-              toggle - team decision 2026-07-23). An unconfigured site
-              shows the classic search, untouched. Interim styling; the
-              final presentation comes from the kitconcept.solr tabs
-              configuration ("AI" tab / "AI on top"). */}
-          {this.props.ragAvailable &&
-          (this.props.rag.loading || this.props.rag.loaded) ? (
-            <div className="rag-answer" style={{ margin: '1em 0' }}>
-              <div
-                style={{
-                  border: '1px solid #ccc',
-                  background: '#f8f8f8',
-                  padding: '1em',
-                  marginTop: '0.5em',
-                }}
-              >
-                {this.props.rag.loading ? <p>Thinking…</p> : null}
-                {this.props.rag.error ? (
-                  <p style={{ color: 'red' }}>{this.props.rag.error}</p>
-                ) : null}
-                {this.props.rag.answer ? (
-                  <p style={{ whiteSpace: 'pre-wrap' }}>
-                    {this.props.rag.answer}
-                  </p>
-                ) : null}
-                {this.props.rag.loaded &&
-                !this.props.rag.answer &&
-                !this.props.rag.error ? (
-                  <p>No answer — no matching documents found.</p>
-                ) : null}
-                {(this.props.rag.sources || []).length > 0 ? (
-                  <ul>
-                    {this.props.rag.sources.map((source) => (
-                      <li key={source.UID}>
-                        <a href={flattenToAppURL(source['@id'])}>
-                          {source.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+      <>
+        <Segment basic id="page-search" className="header-wrapper">
+          <Helmet title="Search" />
+          <Container>
+            {this.props.showSearchInput ? (
+              <div className="search-input">
+                <form className="ui form" onSubmit={this.onSubmit}>
+                  <div className="field searchbox">
+                    <TranslatedInput
+                      ref={this.inputRef}
+                      placeholder={messages.TypeSearchWords}
+                      className="searchinput"
+                      value={this.state.searchword}
+                      onChange={(e) =>
+                        this.setState({ searchword: e.target.value })
+                      }
+                      onSubmit={this.onSubmit}
+                    />
+                    <Button onClick={this.onSubmit}>
+                      <FormattedMessage id="Search" defaultMessage="Search" />{' '}
+                    </Button>
+                  </div>
+                </form>
               </div>
-            </div>
-          ) : null}
-          {this.state.allowLocal &&
-          getPathPrefix(this.props.history.location) !== undefined ? (
-            <LocalCheckbox
-              onChange={(checked) => this.setLocal(checked)}
-              checked={this.state.local}
+            ) : null}
+            {this.state.allowLocal &&
+            getPathPrefix(this.props.history.location) !== undefined ? (
+              <LocalCheckbox
+                onChange={(checked) => this.setLocal(checked)}
+                checked={this.state.local}
+              />
+            ) : null}
+            <SearchResultInfo
+              searchableText={this.state.searchwordInStatus}
+              total={this.props.total}
             />
-          ) : null}
-          <SearchResultInfo
-            searchableText={this.state.searchwordInStatus}
-            total={this.props.total}
-          />
-          <SearchTabs
-            groupSelect={this.state.groupSelect}
-            setGroupSelect={(groupSelect) => this.setGroupSelect(groupSelect)}
-            facetGroups={this.props.facetGroups}
-          />
-          <VocabProvider>
-            <article id="content">
-              <header>
-                {this.props.total > 0 ? (
-                  <div className="sorting-bar">
-                    <SelectLayout
-                      layouts={this.props.layouts}
-                      value={this.state.layout}
-                      onChange={(value) => {
-                        this.setState({ layout: value });
-                      }}
-                    />
-                    <SelectSorting
-                      value={this.state.sortOn}
-                      onChange={(selectedOption, order) => {
-                        this.onSortChange(selectedOption, order);
-                      }}
-                    />
-                  </div>
-                ) : null}
-              </header>
-              <div className="searchContentWrapper">
-                <SearchConditions
-                  groupSelect={this.state.groupSelect}
-                  facetFields={this.props.facetFields}
-                  vocabularies={this.props.vocabularies}
-                  conditionTree={this.state.facetConditions}
-                  setConditionTree={this.setConditionTree}
-                />
-                <Dimmer active={this.props.loading} inverted>
-                  <Loader indeterminate size="small">
-                    <FormattedMessage id="loading" defaultMessage="Loading" />
-                  </Loader>
-                </Dimmer>
-                <section
-                  id="content-core"
-                  className={`layout-${this.state.layout}`}
-                >
-                  <div className="search-items">
-                    {this.props.items?.map((item, index) => (
-                      <div key={'' + index + '-' + item['@id']}>
-                        {createElement(resultTypeMapper(item['@type']), {
-                          key: item['@id'],
-                          item,
-                          layout: this.state.layout,
-                        })}
-                      </div>
-                    ))}
-                  </div>
-                  {this.props.batching &&
-                    this.props.total / settings.defaultPageSize > 1 && (
-                      <div className="search-footer">
-                        <Pagination
-                          activePage={this.state.currentPage}
-                          totalPages={Math.ceil(
-                            this.props.total / settings.defaultPageSize,
-                          )}
-                          onPageChange={this.handleQueryPaginationChange}
-                          firstItem={null}
-                          lastItem={null}
-                          prevItem={{
-                            content: (
-                              <Icon name={paginationLeftSVG} size="18px" />
-                            ),
-                            icon: true,
-                            'aria-disabled': !this.props.batching.prev,
-                            className: !this.props.batching.prev
-                              ? 'disabled'
-                              : null,
-                          }}
-                          nextItem={{
-                            content: (
-                              <Icon name={paginationRightSVG} size="18px" />
-                            ),
-                            icon: true,
-                            'aria-disabled': !this.props.batching.next,
-                            className: !this.props.batching.next
-                              ? 'disabled'
-                              : null,
-                          }}
-                        />
-                      </div>
-                    )}
-                </section>
-              </div>
-            </article>
-          </VocabProvider>
-        </Container>
+            <SearchTabs
+              groupSelect={this.state.groupSelect}
+              setGroupSelect={(groupSelect) => this.setGroupSelect(groupSelect)}
+              facetGroups={this.props.facetGroups}
+            />
+            <VocabProvider>
+              <article id="content">
+                <header>
+                  {this.props.total > 0 ? (
+                    <div className="sorting-bar">
+                      <SelectLayout
+                        layouts={this.props.layouts}
+                        value={this.state.layout}
+                        onChange={(value) => {
+                          this.setState({ layout: value });
+                        }}
+                      />
+                      <SelectSorting
+                        value={this.state.sortOn}
+                        onChange={(selectedOption, order) => {
+                          this.onSortChange(selectedOption, order);
+                        }}
+                      />
+                    </div>
+                  ) : null}
+                </header>
+                <div className="searchContentWrapper">
+                  <SearchConditions
+                    groupSelect={this.state.groupSelect}
+                    facetFields={this.props.facetFields}
+                    vocabularies={this.props.vocabularies}
+                    conditionTree={this.state.facetConditions}
+                    setConditionTree={this.setConditionTree}
+                  />
+                  <Dimmer active={this.props.loading} inverted>
+                    <Loader indeterminate size="small">
+                      <FormattedMessage id="loading" defaultMessage="Loading" />
+                    </Loader>
+                  </Dimmer>
+                  <section
+                    id="content-core"
+                    className={`layout-${this.state.layout}`}
+                  >
+                    <div className="search-items">
+                      {this.props.items?.map((item, index) => (
+                        <div key={'' + index + '-' + item['@id']}>
+                          {createElement(resultTypeMapper(item['@type']), {
+                            key: item['@id'],
+                            item,
+                            layout: this.state.layout,
+                          })}
+                        </div>
+                      ))}
+                    </div>
+                    {this.props.batching &&
+                      this.props.total / settings.defaultPageSize > 1 && (
+                        <div className="search-footer">
+                          <Pagination
+                            activePage={this.state.currentPage}
+                            totalPages={Math.ceil(
+                              this.props.total / settings.defaultPageSize,
+                            )}
+                            onPageChange={this.handleQueryPaginationChange}
+                            firstItem={null}
+                            lastItem={null}
+                            prevItem={{
+                              content: (
+                                <Icon name={paginationLeftSVG} size="18px" />
+                              ),
+                              icon: true,
+                              'aria-disabled': !this.props.batching.prev,
+                              className: !this.props.batching.prev
+                                ? 'disabled'
+                                : null,
+                            }}
+                            nextItem={{
+                              content: (
+                                <Icon name={paginationRightSVG} size="18px" />
+                              ),
+                              icon: true,
+                              'aria-disabled': !this.props.batching.next,
+                              className: !this.props.batching.next
+                                ? 'disabled'
+                                : null,
+                            }}
+                          />
+                        </div>
+                      )}
+                  </section>
+                </div>
+              </article>
+            </VocabProvider>
+          </Container>
+        </Segment>
+        {/* The Toolbar portal is a sibling of the Segment, not a child:
+            createPortal returns a ReactPortal, which renders fine but is
+            not recognized by the prop-types `node` checker, so Segment's
+            propTypes would warn about invalid children (kitconcept.solr
+            #97). */}
         {this.state.isClient &&
           createPortal(
             <Toolbar
@@ -537,7 +500,7 @@ class SolrSearch extends Component {
             />,
             document.getElementById('toolbar'),
           )}
-      </Segment>
+      </>
     );
   }
 }
@@ -612,10 +575,6 @@ export default compose(
         loaded,
         loading,
         batching,
-        // RAG: TESTING
-        rag: state.ragsearch || {},
-        ragAvailable:
-          state?.site?.data?.['kitconcept.solr.rag_available'] === true,
         intl: state.intl,
         pathname: props.history.location.pathname,
         contentTypeSearchResultViews: contentTypeSearchResultViewsWithDefault(
@@ -630,9 +589,6 @@ export default compose(
     (dispatch, { searchAction }) => ({
       searchContent: (...args) =>
         dispatch(searchActionWithDefault(searchAction)(...args)),
-      // RAG: TESTING
-      ragSearch: (...args) => dispatch(ragSearch(...args)),
-      resetRagSearch: () => dispatch(resetRagSearch()),
     }),
   ),
   asyncConnect([

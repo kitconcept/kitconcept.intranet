@@ -50,6 +50,9 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
     fetchedPaths,
     refetchPath,
     expandPath,
+    peekChildren,
+    getChildCountForPath,
+    isPeekedForPath,
   } = useNavigationTree(rootPath, isAddingWorkspace);
 
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -149,6 +152,9 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
                     isLoadingForPath={isLoadingForPath}
                     refetchPath={refetchPath}
                     expandPath={expandPath}
+                    peekChildren={peekChildren}
+                    getChildCountForPath={getChildCountForPath}
+                    isPeekedForPath={isPeekedForPath}
                   />
                 ))}
               </Tree>
@@ -203,6 +209,9 @@ export function NavigationTree({ siteTitle, onClose }: NavigationTreeProps) {
                   isLoadingForPath={isLoadingForPath}
                   refetchPath={refetchPath}
                   expandPath={expandPath}
+                  peekChildren={peekChildren}
+                  getChildCountForPath={getChildCountForPath}
+                  isPeekedForPath={isPeekedForPath}
                 />
               ))}
             </TreeItem>

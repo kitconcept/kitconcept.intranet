@@ -206,6 +206,7 @@
       }
 
       .nav-tree-search-input {
+        height: 20px;
         flex: 1;
         border: none;
         background: transparent;
@@ -271,6 +272,7 @@
 
       .react-aria-TreeItem {
         overflow: hidden;
+        border-left: 3px solid transparent;
         color: #333;
         font-size: 14px;
         font-weight: 400;
@@ -282,7 +284,7 @@
         }
 
         &.is-current {
-          border-left: 3px solid #1a1a1a;
+          border-left-color: #1a1a1a;
           background: #f0f0f0;
           font-weight: 600;
 

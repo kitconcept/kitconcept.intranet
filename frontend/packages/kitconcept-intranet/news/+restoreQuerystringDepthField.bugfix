@@ -1,0 +1,1 @@
+Restore the top-level `Depth` field in the querystring widget when a path criterion is present, by overriding Volto's `QuerystringWidget` and reverting https://github.com/plone/volto/pull/8350. @ericof

@@ -4,11 +4,14 @@ import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
+import {
+  expandToBackendURL,
+  flattenToAppURL,
+} from '@plone/volto/helpers/Url/Url';
 import personSVG from '@plone/volto/icons/user.svg';
 
 type PersonPillProps = {
-  id: string;
+  id: string | undefined;
   fullname?: string;
   name?: string;
   portrait?: string;
@@ -42,7 +45,8 @@ const PersonPill = ({
   const displayName = fullname || name;
 
   const portraitSrc =
-    portrait ?? (id ? expandToBackendURL(`@portrait/${id}`) : undefined);
+    portrait ??
+    (id ? flattenToAppURL(expandToBackendURL(`@portrait/${id}`)) : undefined);
 
   const [imageFailed, setImageFailed] = useState(false);
   const showImage = Boolean(portraitSrc) && !imageFailed;

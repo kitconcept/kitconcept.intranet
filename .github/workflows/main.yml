@@ -212,6 +212,7 @@ jobs:
           SOLR_LLM_URL=${{ vars.SOLR_LLM_URL }}
           SOLR_LLM_TOKEN=${{ vars.SOLR_LLM_TOKEN }}
           SOLR_TAG=${{ vars.SOLR_TAG }}
+          SOLR_LLM_CHAT_MODEL=${{ vars.SOLR_LLM_CHAT_MODEL }}
     permissions:
         contents: read
         packages: write

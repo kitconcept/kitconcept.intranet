@@ -2,6 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import { ContentTypeCondition } from '@plone/volto/helpers/Slots';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
+import AboutThisContent from '../slots/AboutThisContent/AboutThisContent';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
@@ -27,9 +28,21 @@ export default function install(config: ConfigType) {
     component: DocumentByLine,
   });
   config.registerSlotComponent({
+    slot: 'preFooter',
+    name: 'AboutThisContent',
+    component: AboutThisContent,
+    predicates: [ContentTypeCondition(['Document', 'WikiPage', 'Workspace'])],
+  });
+  config.registerSlotComponent({
     slot: 'belowContent',
     name: 'Content Interactions',
     component: ContentInteractions,
+    predicates: [
+      ({ content }) =>
+        !['Document', 'Event', 'News Item', 'WikiPage', 'Workspace'].includes(
+          content?.['@type'],
+        ),
+    ],
   });
   config.registerSlotComponent({
     name: 'PostFooterFollowUsLogoAndLinks',

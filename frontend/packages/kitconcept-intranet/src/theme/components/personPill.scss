@@ -98,3 +98,13 @@
     line-height: 24px;
   }
 }
+.slate-mention:has(.person-pill) {
+  padding: 0 8px 0 0;
+  outline: 1px solid var(--muted);
+
+  > .person-pill,
+  .person-pill-link,
+  .person-pill-name {
+    align-self: baseline;
+  }
+}

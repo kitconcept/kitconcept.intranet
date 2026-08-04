@@ -5,24 +5,65 @@
   "allow_discussion": null,
   "authors": null,
   "blocks": {
+    "02297aa5-fcbc-406e-a368-3a4dcc0d42ed": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": "layout"
+      },
+      "text": "Test line no. 1",
+      "theme": "default",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
     "619a853d-8f33-4c54-9059-e080aadba1d2": {
       "@type": "banner",
       "additionalText": "Test line no. 2 Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+      "styles": {
+        "blockWidth:noprefix": "layout"
+      },
       "text": "Test line no. 1",
-      "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+      "theme": "default",
+      "url": "../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+    },
+    "768df7f7-d4ee-41a3-b798-96304eb58ad2": {
+      "@type": "heading",
+      "heading": "Without Titel",
+      "theme": "default"
     },
     "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a": {
       "@type": "title"
     },
-    "9e02b7c4-c50b-40e0-99f4-65cea53ff2ac": {
-      "@type": "slate"
+    "a7e643a0-6aaa-47f5-8662-1c050f599dc7": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": "layout"
+      },
+      "theme": "default",
+      "url": "../../../resolveuid/da07e218ea5e4c6c8582be7936d4686d"
+    },
+    "b3d29c96-2d84-4ccc-b77c-5ded6bf6f2fd": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Both Titel",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "b818a9e1-835f-4b73-bf01-de0b07a72e99": {
+      "@type": "heading",
+      "heading": "With One Titel",
+      "styles": {},
+      "theme": "default"
     }
   },
   "blocks_layout": {
     "items": [
       "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a",
+      "b818a9e1-835f-4b73-bf01-de0b07a72e99",
+      "02297aa5-fcbc-406e-a368-3a4dcc0d42ed",
+      "b3d29c96-2d84-4ccc-b77c-5ded6bf6f2fd",
       "619a853d-8f33-4c54-9059-e080aadba1d2",
-      "9e02b7c4-c50b-40e0-99f4-65cea53ff2ac"
+      "768df7f7-d4ee-41a3-b798-96304eb58ad2",
+      "a7e643a0-6aaa-47f5-8662-1c050f599dc7"
     ]
   },
   "changeNote": "",
@@ -49,12 +90,19 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2026-08-04T12:31:08+00:00",
   "nav_title": null,
   "organisational_unit_reference": null,
   "preview_caption_link": null,
   "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-02-04",
+  "review_interval": "6m",
   "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
   "rights": "",
   "searchwords": [],
   "showinsearch": true,

@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260730001"
+      destination="20260803001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add CLM behavior to News Item and Event content types"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

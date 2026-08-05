@@ -9,6 +9,13 @@ body.siteroot {
     display: none;
   }
 }
+
+#discussion.ui.threaded.comments {
+  .comment .actions > [color='red'] {
+    color: #e40166;
+  }
+}
+
 .content-engagement {
   padding-top: 30px;
   padding-bottom: 80px;

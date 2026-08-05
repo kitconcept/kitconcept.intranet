@@ -31,7 +31,15 @@ export default function install(config: ConfigType) {
     slot: 'preFooter',
     name: 'AboutThisContent',
     component: AboutThisContent,
-    predicates: [ContentTypeCondition(['Document', 'WikiPage', 'Workspace'])],
+    predicates: [
+      ContentTypeCondition([
+        'Document',
+        'WikiPage',
+        'Workspace',
+        'Event',
+        'News Item',
+      ]),
+    ],
   });
   config.registerSlotComponent({
     slot: 'belowContent',

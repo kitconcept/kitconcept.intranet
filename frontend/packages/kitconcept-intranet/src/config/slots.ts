@@ -9,6 +9,7 @@ import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedb
 import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
 import NavigationTreePortal from '../components/NavigationTree/NavigationTreePortal';
 import HideFooter from '../slots/HideFooter/HideFooter';
+import CommentsSlot from '../slots/Comments/CommentsSlot';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -40,6 +41,12 @@ export default function install(config: ConfigType) {
         'News Item',
       ]),
     ],
+  });
+  config.registerSlotComponent({
+    slot: 'preFooter',
+    name: 'Comments',
+    component: CommentsSlot,
+    predicates: [({ content }) => Boolean(content?.allow_discussion)],
   });
   config.registerSlotComponent({
     slot: 'belowContent',

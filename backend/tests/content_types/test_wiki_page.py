@@ -1,7 +1,6 @@
 from collections.abc import Generator
 from plone import api
 from plone.api.exc import InvalidParameterError
-from plone.app.testing.interfaces import SITE_OWNER_NAME
 from plone.dexterity.fti import DexterityFTI
 from Products.CMFPlone.Portal import PloneSite
 
@@ -14,13 +13,36 @@ def portal(app_class, create_site, answers) -> Generator[PloneSite]:
     yield site
 
 
-class TestWikiPage:
-    portal_type: str = "WikiPage"
+@pytest.fixture(scope="class")
+def portal_type() -> str:
+    return "WikiPage"
 
+
+@pytest.fixture(scope="class")
+def container(portal, content_factory):
+    """Return the container used to create the content instance under test."""
+    payload = {
+        "type": "Workspace",
+        "id": "my-workspace",
+    }
+    return content_factory(portal, payload)
+
+
+@pytest.fixture(scope="class")
+def payload(portal_type) -> dict:
+    return {
+        "type": portal_type,
+        "id": "my-other-wiki-page",
+        "title": "My other wiki page",
+        "description": "Description of my other wiki page",
+    }
+
+
+class TestWikiPage:
     @pytest.fixture(autouse=True)
-    def _setup(self, portal, get_fti) -> None:
+    def _setup(self, portal, get_fti, portal_type) -> None:
         self.portal = portal
-        self.fti: DexterityFTI = get_fti(self.portal_type)
+        self.fti: DexterityFTI = get_fti(portal_type)
 
     @pytest.mark.parametrize(
         "attr,expected",
@@ -44,8 +66,9 @@ class TestWikiPage:
         assert isinstance(self.fti, DexterityFTI)
         assert getattr(self.fti, attr) == expected
 
-    def test_behaviors(self):
-        assert self.fti.behaviors == (
+    @pytest.mark.parametrize(
+        "idx,behavior",
+        enumerate((
             "plone.basic",
             "volto.preview_image_link",
             "plone.categorization",
@@ -63,27 +86,43 @@ class TestWikiPage:
             "plone.locking",
             "plone.translatable",
             "kitconcept.intranet.clm",
-        )
+        )),
+    )
+    def test_behaviors(self, idx, behavior):
+        assert self.fti.behaviors[idx] == behavior
 
-    def test_wikipage_requires_workspace_container(self):
-        with api.env.adopt_user(SITE_OWNER_NAME):
+    def test_wikipage_requires_workspace_container(
+        self, site_owner_name, content_factory, portal_type, payload
+    ):
+        with api.env.adopt_user(site_owner_name):
             with pytest.raises(InvalidParameterError):
-                api.content.create(
-                    container=self.portal,
-                    type=self.portal_type,
-                    title="Root Wiki Page",
-                )
+                content_factory(self.portal, payload)
 
-            workspace = api.content.create(
-                container=self.portal,
-                type="Workspace",
-                title="Team Workspace",
+            workspace = content_factory(
+                self.portal,
+                {"type": "Workspace", "title": "Team Workspace"},
             )
-            page = api.content.create(
-                container=workspace,
-                type=self.portal_type,
-                title="Workspace Wiki Page",
-            )
+            page = content_factory(workspace, payload)
 
-        assert page.portal_type == self.portal_type
+        assert page.portal_type == portal_type
         assert page.aq_parent == workspace
+
+    def test_versionable(self, portal_type, versionable_content_types):
+        assert portal_type in versionable_content_types
+
+    def test_create_initial_version_after_adding(self, last_version, content_instance):
+        version = last_version(content_instance)
+        assert version.comment.default == "Initial version"
+        assert version.version_id == 0
+
+    def test_create_version_on_save(
+        self, notify_modified, history, last_version, content_instance
+    ):
+        with api.env.adopt_roles(["Manager"]):
+            content_instance.title = "Wiki Redux"
+            notify_modified(content_instance)
+        history_data = history(content_instance)
+        assert len(history_data) == 2  # Initial + modified version
+        version = last_version(content_instance)
+        assert version.comment is None
+        assert version.version_id == 1

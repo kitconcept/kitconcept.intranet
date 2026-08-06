@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20260803001"
+      destination="20260804001"
+      >
+    <genericsetup:upgradeDepends
+        title="Enable edit-time versioning for WikiPage and Workspace content types"
+        import_steps="repositorytool"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

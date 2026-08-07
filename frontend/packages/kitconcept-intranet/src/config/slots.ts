@@ -1,5 +1,6 @@
 import type { ConfigType } from '@plone/registry';
 import { ContentTypeCondition } from '@plone/volto/helpers/Slots';
+import { getBaseUrl, isCmsUi } from '@plone/volto/helpers/Url/Url';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import AboutThisContent from '../slots/AboutThisContent/AboutThisContent';
@@ -46,7 +47,18 @@ export default function install(config: ConfigType) {
     slot: 'preFooter',
     name: 'Comments',
     component: CommentsSlot,
-    predicates: [({ content }) => Boolean(content?.allow_discussion)],
+    predicates: [
+      ({ content, location }) => {
+        const pathname = location.pathname;
+        const contentPath = pathname === '/' ? '' : pathname;
+
+        return (
+          Boolean(content?.allow_discussion) &&
+          !isCmsUi(pathname) &&
+          getBaseUrl(pathname) === contentPath
+        );
+      },
+    ],
   });
   config.registerSlotComponent({
     slot: 'belowContent',

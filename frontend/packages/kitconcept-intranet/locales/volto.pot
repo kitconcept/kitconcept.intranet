@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-07-30T17:17:45.797Z\n"
+"POT-Creation-Date: 2026-08-05T08:47:30.317Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -26,6 +26,11 @@ msgstr ""
 #. Default: "About this content"
 #: slots/AboutThisContent/AboutThisContent
 msgid "About this content"
+msgstr ""
+
+#. Default: "Add comment... (@ mention a person)"
+#: components/Comments/messages
+msgid "Add comment... (@ mention a person)"
 msgstr ""
 
 #. Default: "Address"
@@ -106,6 +111,11 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
+#. Default: "Comments"
+#: components/Comments/messages
+msgid "Comments"
+msgstr ""
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 #: components/theme/PersonView
@@ -152,6 +162,11 @@ msgstr ""
 msgid "DelegateButton"
 msgstr ""
 
+#. Default: "Delete"
+#: components/Comments/messages
+msgid "Delete"
+msgstr ""
+
 #. Default: "Depth"
 #: components/widgets/QuerystringWidget
 msgid "Depth"
@@ -167,6 +182,11 @@ msgstr ""
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
 msgid "E-mail"
+msgstr ""
+
+#. Default: "Edit"
+#: components/Comments/messages
+msgid "Edit"
 msgstr ""
 
 #. Default: "Email"
@@ -428,6 +448,11 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
+#. Default: "Reply"
+#: components/Comments/messages
+msgid "Reply"
+msgstr ""
+
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
@@ -478,6 +503,11 @@ msgstr ""
 #. Default: "Please Select ..."
 #: components/ContentReviewSidebar/DelegateReview
 msgid "SelectAssigneePlaceholder"
+msgstr ""
+
+#. Default: "Send comment"
+#: components/Comments/messages
+msgid "Send comment"
 msgstr ""
 
 #. Default: "Send feedback"
@@ -607,6 +637,11 @@ msgstr ""
 #. Default: "Use preset review interval"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "Use preset review interval"
+msgstr ""
+
+#. Default: "Visible to everyone who can see this page."
+#: components/Comments/messages
+msgid "Visible to everyone who can see this page."
 msgstr ""
 
 #. Default: "Website"

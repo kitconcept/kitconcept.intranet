@@ -1,0 +1,250 @@
+.intranet-comments {
+  padding-top: 50px;
+  border-top: 1px solid var(--theme-low-contrast-foreground-color, #edf1f2);
+  margin-top: 0;
+  text-align: left;
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px;
+    color: var(--theme-foreground-color, #252525);
+    font-size: 14px;
+    font-weight: 600;
+    gap: 10px;
+    letter-spacing: 0.03em;
+    line-height: 21px;
+    text-transform: uppercase;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      color: #878f93;
+    }
+  }
+
+  &.container.comments {
+    width: auto;
+  }
+
+  .threaded.comments {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .comment {
+    position: relative;
+    min-height: 30px;
+    padding: 0 0 15px 45px;
+    margin: 0;
+
+    .avatar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+
+      svg,
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      svg text {
+        fill: #8a6724;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+
+    .content {
+      margin: 0;
+      text-align: left;
+    }
+
+    .author {
+      margin-bottom: 6px;
+      color: var(--theme-foreground-color, #252525);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 21px;
+    }
+
+    .metadata {
+      display: block;
+      margin: 0;
+      color: #878f93;
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 18px;
+    }
+
+    .text {
+      margin: 8px 0 7px;
+      color: var(--theme-foreground-color, #252525);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 21px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-start;
+      gap: 16px;
+
+      .action {
+        padding: 0;
+        border: 0;
+        margin: 0;
+        background: transparent;
+        color: #007eb1;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 21px;
+
+        &.delete-action {
+          color: #c4193f;
+        }
+
+        .icon {
+          display: none;
+        }
+      }
+    }
+
+    .comments {
+      padding-top: 20px;
+      margin: 0;
+
+      .comment:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__composer {
+    display: grid;
+    align-items: start;
+    margin-top: 2px;
+    column-gap: 16px;
+    grid-template-columns: 30px minmax(0, 1fr);
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+
+      svg,
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      svg text {
+        fill: #8a6724;
+      }
+    }
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    padding: 10px 55px 10px 20px;
+    border: 2px solid #edf1f2;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--theme-foreground-color, #252525);
+    font-size: 14px;
+    line-height: 21px;
+
+    &::placeholder {
+      color: #777;
+      opacity: 1;
+    }
+
+    &:focus {
+      border-color: #b8c6c8;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #8ca9ad;
+    cursor: pointer;
+
+    &:disabled,
+    &[data-disabled] {
+      color: #8ca9ad;
+      cursor: default;
+      opacity: 0.65;
+
+      .icon {
+        fill: #8ca9ad;
+      }
+    }
+
+    &:not(:disabled):not([data-disabled]) {
+      color: #007eb1;
+
+      .icon {
+        fill: #007eb1;
+      }
+    }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      margin: 0;
+    }
+  }
+
+  &__visibility {
+    margin: 20px 0 0;
+    color: #878f93;
+    font-size: 14px;
+    grid-column: 2;
+    line-height: 21px;
+  }
+
+  &__reply-form {
+    margin: 28px 0 0;
+
+    .intranet-comments__composer {
+      grid-template-columns: 30px minmax(0, 1fr);
+    }
+
+    .avatar,
+    .avatar svg,
+    .avatar img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__load-more {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #007eb1;
+    margin-bottom: 32px;
+    background: transparent;
+    color: #007eb1;
+  }
+}

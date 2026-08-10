@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-07-30T17:17:45.797Z\n"
+"POT-Creation-Date: 2026-08-05T11:38:01.716Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -191,6 +191,11 @@ msgstr ""
 msgid "Event"
 msgstr ""
 
+#. Default: "Everywhere"
+#: components/Header/HeaderSearch
+msgid "Everywhere"
+msgstr ""
+
 #. Default: "Expand sidebar"
 #: components/ContentReviewSidebar/ReviewSidebar
 msgid "Expand sidebar"
@@ -356,6 +361,11 @@ msgstr ""
 msgid "No results for “{term}”."
 msgstr ""
 
+#. Default: "No results in “{scope}”."
+#: components/Header/HeaderSearch
+msgid "No results in “{scope}”."
+msgstr ""
+
 #. Default: "No selection"
 #: components/widgets/QuerystringWidget
 msgid "No selection"
@@ -458,6 +468,16 @@ msgstr ""
 #. Default: "Search"
 #: components/Header/HeaderSearch
 msgid "Search"
+msgstr ""
+
+#. Default: "Search everywhere"
+#: components/Header/HeaderSearch
+msgid "Search everywhere"
+msgstr ""
+
+#. Default: "Search in all areas"
+#: components/Header/HeaderSearch
+msgid "Search in all areas"
 msgstr ""
 
 #. Default: "Search titles only"

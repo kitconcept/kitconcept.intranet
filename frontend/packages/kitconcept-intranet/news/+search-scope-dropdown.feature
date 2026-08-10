@@ -1,0 +1,1 @@
+Workspace search dialog: the Workspace chip opens a scope dropdown - search everywhere or in any workspace you can access; result rows show their location and an empty scoped search offers "Search everywhere". @reebalazs

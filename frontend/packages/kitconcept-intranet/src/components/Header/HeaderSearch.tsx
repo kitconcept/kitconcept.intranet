@@ -16,8 +16,10 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
+import checkSVG from '@plone/volto/icons/check.svg';
 import fileSVG from '@plone/volto/icons/file.svg';
 import folderSVG from '@plone/volto/icons/folder.svg';
+import globeSVG from '@plone/volto/icons/globe.svg';
 import imageSVG from '@plone/volto/icons/image.svg';
 import linkSVG from '@plone/volto/icons/link.svg';
 import newsSVG from '@plone/volto/icons/news.svg';
@@ -28,6 +30,8 @@ import {
   resetRagSearch,
   solrSearchSuggestions,
 } from '@kitconcept/volto-solr/actions';
+import { useWorkspaceSwitcher } from '../NavigationTree/useWorkspaceSwitcher';
+import type { SearchItem } from '../NavigationTree/useNavigationTree';
 
 const messages = defineMessages({
   searchWorkspace: {
@@ -49,6 +53,14 @@ const messages = defineMessages({
   noResultsFor: {
     id: 'No results for “{term}”.',
     defaultMessage: 'No results for “{term}”.',
+  },
+  noResultsInScope: {
+    id: 'No results in “{scope}”.',
+    defaultMessage: 'No results in “{scope}”.',
+  },
+  searchEverywhere: {
+    id: 'Search everywhere',
+    defaultMessage: 'Search everywhere',
   },
   askAI: {
     id: 'Ask AI',
@@ -109,6 +121,14 @@ const messages = defineMessages({
   intranetPortal: {
     id: 'Intranet Portal',
     defaultMessage: 'Intranet Portal',
+  },
+  everywhere: {
+    id: 'Everywhere',
+    defaultMessage: 'Everywhere',
+  },
+  everywhereHint: {
+    id: 'Search in all areas',
+    defaultMessage: 'Search in all areas',
   },
   allTypes: {
     id: 'All types',
@@ -271,15 +291,150 @@ const FilterChip = ({
   </MenuTrigger>
 );
 
-type SearchScope = 'workspace' | 'global';
+// Search scope selection (ticket #570). 'current' is the workspace
+// the dialog was opened in (resolved from content context, so it
+// follows navigation); a picked entry carries its own path/title;
+// 'everywhere' searches without a path filter. The "Intranet Portal"
+// (portal-without-workspaces) option needs backend exclusion support
+// and was descoped to a later ticket.
+type SearchScope =
+  | { kind: 'everywhere' }
+  | { kind: 'current' }
+  | { kind: 'workspace'; path: string; title: string };
 
-const FilterChips = ({
-  workspaceTitle,
+// Letter avatar for a workspace, tinted deterministically by title so
+// a workspace keeps its color across renders and sessions (the design
+// shows colored initials, there is no image avatar on Workspace).
+const AVATAR_TONES = 6;
+
+const avatarTone = (title: string) => {
+  let hash = 0;
+  for (let i = 0; i < title.length; i += 1) {
+    hash = (hash * 31 + title.charCodeAt(i)) % AVATAR_TONES;
+  }
+  return hash;
+};
+
+const WorkspaceAvatar = ({ title }: { title: string }) => (
+  <span
+    className={`header-search-scope-avatar tone-${avatarTone(title)}`}
+    aria-hidden="true"
+  >
+    {title.charAt(0).toUpperCase()}
+  </span>
+);
+
+// The Workspace chip: unlike the demo FilterChips this is a real
+// control - it selects the search scope from "everywhere" plus the
+// list of workspaces the user can access (same data as the navigation
+// tree's workspace switcher, security-trimmed by the backend).
+const ScopeChip = ({
   scope,
+  scopeTitle,
+  currentWorkspacePath,
+  workspaces,
   onScopeChange,
 }: {
-  workspaceTitle: string;
   scope: SearchScope;
+  scopeTitle: string;
+  currentWorkspacePath: string | null;
+  workspaces: SearchItem[];
+  onScopeChange: (scope: SearchScope) => void;
+}) => {
+  const intl = useIntl();
+  const selectedPath =
+    scope.kind === 'current'
+      ? currentWorkspacePath
+      : scope.kind === 'workspace'
+        ? scope.path
+        : null;
+  return (
+    <MenuTrigger>
+      <Button
+        className={`header-search-chip${
+          scope.kind !== 'everywhere' ? ' is-active' : ''
+        }`}
+        type="button"
+      >
+        {intl.formatMessage(messages.filterWorkspace)}: {scopeTitle}
+        <ChevrondownIcon aria-hidden="true" size="xs" />
+      </Button>
+      <Menu
+        className="header-search-chip-menu header-search-scope-menu"
+        aria-label={intl.formatMessage(messages.filterWorkspace)}
+        onAction={(key) => {
+          if (key === 'everywhere') {
+            onScopeChange({ kind: 'everywhere' });
+            return;
+          }
+          const path = String(key);
+          if (path === currentWorkspacePath) {
+            onScopeChange({ kind: 'current' });
+            return;
+          }
+          const workspace = workspaces.find(
+            (item) => flattenToAppURL(item['@id']) === path,
+          );
+          if (workspace) {
+            onScopeChange({ kind: 'workspace', path, title: workspace.title });
+          }
+        }}
+      >
+        <MenuItem
+          id="everywhere"
+          className="react-aria-MenuItem header-search-scope-item is-everywhere"
+        >
+          <Icon name={globeSVG} size="18px" />
+          <span className="header-search-scope-text">
+            {intl.formatMessage(messages.everywhere)}
+            <span className="header-search-scope-hint">
+              {intl.formatMessage(messages.everywhereHint)}
+            </span>
+          </span>
+          {scope.kind === 'everywhere' ? (
+            <Icon
+              name={checkSVG}
+              size="16px"
+              className="header-search-scope-check"
+            />
+          ) : null}
+        </MenuItem>
+        {workspaces.map((item) => {
+          const path = flattenToAppURL(item['@id']);
+          return (
+            <MenuItem
+              key={path}
+              id={path}
+              className="react-aria-MenuItem header-search-scope-item"
+            >
+              <WorkspaceAvatar title={item.title} />
+              <span className="header-search-scope-text">{item.title}</span>
+              {selectedPath === path ? (
+                <Icon
+                  name={checkSVG}
+                  size="16px"
+                  className="header-search-scope-check"
+                />
+              ) : null}
+            </MenuItem>
+          );
+        })}
+      </Menu>
+    </MenuTrigger>
+  );
+};
+
+const FilterChips = ({
+  scope,
+  scopeTitle,
+  currentWorkspacePath,
+  workspaces,
+  onScopeChange,
+}: {
+  scope: SearchScope;
+  scopeTitle: string;
+  currentWorkspacePath: string | null;
+  workspaces: SearchItem[];
   onScopeChange: (scope: SearchScope) => void;
 }) => {
   const intl = useIntl();
@@ -288,11 +443,6 @@ const FilterChips = ({
     label: string;
     options: string[];
   }> = [
-    {
-      id: 'workspace',
-      label: intl.formatMessage(messages.filterWorkspace),
-      options: [workspaceTitle, intl.formatMessage(messages.intranetPortal)],
-    },
     {
       id: 'type',
       label: intl.formatMessage(messages.filterType),
@@ -351,15 +501,17 @@ const FilterChips = ({
   return (
     <div className="header-search-filters">
       <div className="header-search-chips">
+        {/* The Workspace chip is the real scope switch; the other
+            chips are inert demo data (facets deferred). */}
+        <ScopeChip
+          scope={scope}
+          scopeTitle={scopeTitle}
+          currentWorkspacePath={currentWorkspacePath}
+          workspaces={workspaces}
+          onScopeChange={onScopeChange}
+        />
         {filters.map((filter) => {
-          // The Workspace chip is the real scope switch (local/global);
-          // the other chips are inert demo data (facets deferred).
-          const isScopeChip = filter.id === 'workspace';
-          const selected = isScopeChip
-            ? scope === 'workspace'
-              ? workspaceTitle
-              : intl.formatMessage(messages.intranetPortal)
-            : selection[filter.id] || filter.options[0];
+          const selected = selection[filter.id] || filter.options[0];
           return (
             <FilterChip
               key={filter.id}
@@ -367,20 +519,12 @@ const FilterChips = ({
               options={filter.options}
               selected={selected}
               onSelect={(value) =>
-                isScopeChip
-                  ? onScopeChange(
-                      value === workspaceTitle ? 'workspace' : 'global',
-                    )
-                  : setSelection((current) => ({
-                      ...current,
-                      [filter.id]: value,
-                    }))
+                setSelection((current) => ({
+                  ...current,
+                  [filter.id]: value,
+                }))
               }
-              isActive={
-                isScopeChip
-                  ? scope === 'workspace'
-                  : selected !== filter.options[0]
-              }
+              isActive={selected !== filter.options[0]}
             />
           );
         })}
@@ -411,9 +555,11 @@ const FilterChips = ({
 
 const SuggestionRow = ({
   item,
+  location,
   onSelect,
 }: {
   item: SuggestionItem;
+  location: string | null;
   onSelect: (item: SuggestionItem) => void;
 }) => {
   const intl = useIntl();
@@ -435,6 +581,9 @@ const SuggestionRow = ({
       <span className="header-search-result-title">{item.title}</span>
       {effectiveDate ? (
         <span className="header-search-result-date">{effectiveDate}</span>
+      ) : null}
+      {location ? (
+        <span className="header-search-result-location">{location}</span>
       ) : null}
     </button>
   );
@@ -629,12 +778,26 @@ const HeaderSearch = () => {
     // change.
     (a: any, b: any) => a.title === b.title && a.path === b.path,
   );
-  // The Workspace chip switches the scope: workspace (default, local
-  // to the current workspace) or global ("Intranet Portal"). All three
-  // searches - livesearch, Ask AI and the Enter results page - follow
-  // it (see ticket #426 / kitconcept.solr local scoping).
-  const [scope, setScope] = useState<SearchScope>('workspace');
-  const scopePath = scope === 'workspace' ? workspace.path : null;
+  // The Workspace chip switches the scope: the current workspace
+  // (default), any other workspace from the list, or everywhere. All
+  // three searches - livesearch, Ask AI and the Enter results page -
+  // follow it (see tickets #426/#570, kitconcept.solr local scoping).
+  const [scope, setScope] = useState<SearchScope>({ kind: 'current' });
+  // Workspace list for the scope dropdown; fetched once the dialog
+  // opens (the header itself is on every page, the list is not).
+  const { workspaces } = useWorkspaceSwitcher({ enabled: isSearchOpen });
+  const scopePath =
+    scope.kind === 'current'
+      ? workspace.path
+      : scope.kind === 'workspace'
+        ? scope.path
+        : null;
+  const scopeTitle =
+    scope.kind === 'current'
+      ? workspace.title
+      : scope.kind === 'workspace'
+        ? scope.title
+        : intl.formatMessage(messages.everywhere);
 
   const term = searchText.trim();
   const showResults = term.length >= 2;
@@ -687,7 +850,7 @@ const HeaderSearch = () => {
   const closeSearch = useCallback(() => {
     setIsSearchOpen(false);
     setSearchText('');
-    setScope('workspace');
+    setScope({ kind: 'current' });
     resetAi();
   }, [resetAi]);
 
@@ -717,6 +880,18 @@ const HeaderSearch = () => {
   const navigateTo = (url: string) => {
     closeSearch();
     history.push(url);
+  };
+
+  // Location label per result row (design #570): the workspace the
+  // item lives in, or "Intranet Portal" for anything outside the
+  // workspaces. Resolved against the same list the dropdown shows.
+  const locationForItem = (item: SuggestionItem): string => {
+    const path = flattenToAppURL(item['@id']);
+    const home = workspaces.find((candidate) => {
+      const workspacePath = flattenToAppURL(candidate['@id']);
+      return path === workspacePath || path.startsWith(`${workspacePath}/`);
+    });
+    return home ? home.title : intl.formatMessage(messages.intranetPortal);
   };
 
   const submitSearch = (event: FormEvent<HTMLFormElement>) => {
@@ -806,8 +981,10 @@ const HeaderSearch = () => {
             </form>
 
             <FilterChips
-              workspaceTitle={workspace.title}
               scope={scope}
+              scopeTitle={scopeTitle}
+              currentWorkspacePath={workspace.path}
+              workspaces={workspaces}
               onScopeChange={onScopeChange}
             />
 
@@ -821,11 +998,29 @@ const HeaderSearch = () => {
                     <SuggestionRow
                       key={item['@id']}
                       item={item}
+                      location={locationForItem(item)}
                       onSelect={(selected) =>
                         navigateTo(flattenToAppURL(selected['@id']))
                       }
                     />
                   ))
+                ) : scopePath ? (
+                  // Scoped search came up empty: name the scope and
+                  // offer the one-click escape to search everywhere
+                  // (the most common miss is content living outside
+                  // the current workspace, design #570).
+                  <div className="header-search-no-results">
+                    {intl.formatMessage(messages.noResultsInScope, {
+                      scope: scopeTitle,
+                    })}
+                    <button
+                      type="button"
+                      className="header-search-widen"
+                      onClick={() => onScopeChange({ kind: 'everywhere' })}
+                    >
+                      {intl.formatMessage(messages.searchEverywhere)}
+                    </button>
+                  </div>
                 ) : (
                   <div className="header-search-no-results">
                     {intl.formatMessage(messages.noResultsFor, { term })}

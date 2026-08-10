@@ -189,6 +189,11 @@ msgstr "Fehler"
 msgid "Event"
 msgstr "Termin"
 
+#. Default: "Everywhere"
+#: components/Header/HeaderSearch
+msgid "Everywhere"
+msgstr "Überall"
+
 #. Default: "Expand sidebar"
 #: components/ContentReviewSidebar/ReviewSidebar
 msgid "Expand sidebar"
@@ -354,6 +359,11 @@ msgstr "Keine Antwort — keine passenden Dokumente gefunden."
 msgid "No results for “{term}”."
 msgstr "Keine Ergebnisse für „{term}“."
 
+#. Default: "No results in “{scope}”."
+#: components/Header/HeaderSearch
+msgid "No results in “{scope}”."
+msgstr "Keine Ergebnisse in „{scope}“."
+
 #. Default: "No selection"
 #: components/widgets/QuerystringWidget
 msgid "No selection"
@@ -457,6 +467,16 @@ msgstr "Raum"
 #: components/Header/HeaderSearch
 msgid "Search"
 msgstr ""
+
+#. Default: "Search everywhere"
+#: components/Header/HeaderSearch
+msgid "Search everywhere"
+msgstr "Überall suchen"
+
+#. Default: "Search in all areas"
+#: components/Header/HeaderSearch
+msgid "Search in all areas"
+msgstr "In allen Bereichen suchen"
 
 #. Default: "Search titles only"
 #: components/Header/HeaderSearch

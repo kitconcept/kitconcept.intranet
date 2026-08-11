@@ -214,6 +214,11 @@ msgstr "Erro"
 msgid "Event"
 msgstr ""
 
+#. Default: "Everywhere"
+#: components/Header/HeaderSearch
+msgid "Everywhere"
+msgstr ""
+
 #. Default: "Expand sidebar"
 #: components/ContentReviewSidebar/ReviewSidebar
 msgid "Expand sidebar"
@@ -379,6 +384,11 @@ msgstr ""
 msgid "No results for “{term}”."
 msgstr ""
 
+#. Default: "No results in “{scope}”."
+#: components/Header/HeaderSearch
+msgid "No results in “{scope}”."
+msgstr ""
+
 #. Default: "No selection"
 #: components/widgets/QuerystringWidget
 msgid "No selection"
@@ -486,6 +496,16 @@ msgstr "Sala"
 #. Default: "Search"
 #: components/Header/HeaderSearch
 msgid "Search"
+msgstr ""
+
+#. Default: "Search everywhere"
+#: components/Header/HeaderSearch
+msgid "Search everywhere"
+msgstr ""
+
+#. Default: "Search in all areas"
+#: components/Header/HeaderSearch
+msgid "Search in all areas"
 msgstr ""
 
 #. Default: "Search titles only"

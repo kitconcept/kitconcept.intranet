@@ -52,7 +52,7 @@ x-tika: &tika
     - 9998:9998
 
 x-solr: &solr
-  image: ghcr.io/kitconcept/solr:${SOLR_TAG:-feature-ai-rag}
+  image: ghcr.io/kitconcept/solr:${SOLR_TAG:-sha-826383b}
   platform: linux/amd64
   ports:
     - 8983:8983

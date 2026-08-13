@@ -21,6 +21,22 @@ globals().update(
 )
 
 
+@pytest.fixture(scope="session", autouse=True)
+def keep_zope_layers(functional_session, integration_session):
+    """Keep the expensive Plone test layers alive for the whole session.
+
+    zope.pytestlayer only preserves layers across test classes for
+    zope.testrunner style tests (with a ``layer`` class attribute);
+    for pytest style tests its class-scoped layer fixture tears the
+    whole layer stack down after every test class, so the Plone site
+    gets rebuilt many times per run. Depending on the session-scoped
+    layer fixtures marks the layers as keep-for-whole-session: they
+    are set up once and torn down at the end of the session. Per-test
+    isolation (testSetUp/testTearDown) is unaffected. (Ported from
+    kitconcept.solr, see kitconcept.solr#81.)
+    """
+
+
 @pytest.fixture(scope="session")
 def distribution_name() -> str:
     """Distribution name."""

@@ -99,9 +99,7 @@ services:
   solr:
     image: ghcr.io/kitconcept/solr:${SOLR_TAG:-sha-826383b}
     command:
-      - solr-precreate
-      - plone
-      - /plone-config
+      - solr-update-core-and-start
     environment:
       SOLR_MODULES: extraction
       SOLR_OPTS: "-Dsolr.tika.url=http://${STACK_NAME}-tika:9998"

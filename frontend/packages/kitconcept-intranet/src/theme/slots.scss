@@ -33,9 +33,8 @@ body.cms-ui .about-content {
 .about-content {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
-  padding: 30px 0;
-  border-top: 1px solid $greySmoke;
-  border-bottom: 1px solid $greySmoke;
+  padding: 25px;
+  border: 1px solid $greySmoke;
   margin-top: $spacing-medium;
   margin-bottom: $spacing-medium;
   text-align: left;
@@ -51,7 +50,7 @@ body.cms-ui .about-content {
   }
 
   h3 {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     color: $grey;
     font-size: 14px;
     font-weight: $bold;
@@ -62,7 +61,7 @@ body.cms-ui .about-content {
 
   .about-content-grid {
     display: grid;
-    gap: $spacing-small;
+    gap: 30px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -91,35 +90,112 @@ body.cms-ui .about-content {
     }
   }
 
+  .about-content-feedback-area {
+    padding: 16px 25px 0;
+    border-top: 1px dashed #c7d7dc;
+    margin: 24px -25px 0;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .about-content-feedback-header,
+  .about-content-feedback-heading,
+  .about-content-feedback-recipient {
+    display: flex;
+    align-items: center;
+  }
+
+  .about-content-feedback-header {
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .about-content-feedback-heading {
+    gap: 10px;
+  }
+
+  .about-content-feedback-private {
+    display: inline-flex;
+    min-height: 24px;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #eef1f2;
+    color: #705c5e;
+    font-size: 12px;
+    font-weight: 700;
+    gap: 5px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .about-content-feedback-title {
+    color: $darkGrey;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1.2;
+  }
+
+  .about-content-feedback-recipient {
+    color: $grey;
+    font-size: inherit;
+    gap: 8px;
+
+    .person-pill-name {
+      color: $darkGrey;
+      font-size: inherit;
+      font-weight: inherit;
+    }
+  }
+
+  .about-content-feedback-toggle {
+    button {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      padding: 8px 16px;
+      border: 1px solid #c7d7dc;
+      border-radius: 2px;
+      background: $white;
+      color: $darkGrey;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: 1.2;
+
+      &:hover,
+      &:focus {
+        border-color: $grey;
+        background: #f7f9fa;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #007eb1;
+        outline-offset: 2px;
+      }
+    }
+  }
+
   .about-content-feedback {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: $spacing-medium;
-    border-top: 1px solid $greySmoke;
-    margin-top: $spacing-medium;
     gap: 0;
 
-    label {
-      margin-bottom: 26px;
-      color: $grey;
-      font-size: 20px;
-      font-weight: $regular;
-      line-height: 1.2;
-    }
-
     textarea {
-      width: 720px;
+      width: 100%;
       height: 84px;
       box-sizing: border-box;
-      padding: 20px 20px;
+      padding: 10px 15px;
       border: 1px solid $greySmoke;
       border-radius: 0;
-      margin: 0 0 38px;
+      margin: 0 0 10px;
       background: $white;
       color: $darkGrey;
       font-family: inherit;
-      font-size: 20px;
+      font-size: 14px;
+      font-weight: 400;
       line-height: 1.2;
       resize: both;
 
@@ -139,15 +215,15 @@ body.cms-ui .about-content {
       display: inline-flex;
       min-height: 52px;
       align-items: center;
-      padding: 10px 14px;
+      padding: 8px 16px;
       border: 1px solid #007eb1;
       border-radius: 0;
       background: #007eb1;
       color: $white;
       cursor: pointer;
       font-family: inherit;
-      font-size: 20px;
-      font-weight: $bold;
+      font-size: inherit;
+      font-weight: inherit;
       gap: 12px;
       line-height: 1.2;
 
@@ -175,7 +251,9 @@ body.cms-ui .about-content {
 
 @media only screen and (max-width: $largest-mobile-screen) {
   .about-content {
-    padding: $spacing-medium 0;
+    padding: 20px 0;
+    border-right: none;
+    border-left: none;
 
     h2 {
       font-size: 14px;
@@ -184,31 +262,77 @@ body.cms-ui .about-content {
     h3 {
       font-size: 12px;
     }
-  }
 
-  .about-content-grid {
-    grid-template-columns: 1fr;
-  }
+    .about-content-grid {
+      grid-template-columns: 1fr;
 
-  .about-content-date {
-    font-size: 14px;
-  }
+      .about-content-author {
+        order: 1;
+      }
 
-  .about-content-feedback {
-    label {
-      margin-bottom: $spacing-small;
+      .about-content-created {
+        order: 2;
+      }
+
+      .about-content-responsible {
+        order: 3;
+      }
+
+      .about-content-modified {
+        order: 4;
+      }
+    }
+
+    .about-content-date {
       font-size: 14px;
     }
 
-    textarea {
+    .about-content-feedback-area {
+      padding: 16px 0 0;
+      margin: 24px 0 0;
+    }
+
+    .about-content-feedback {
       width: 100%;
-      margin-bottom: $spacing-small;
-      font-size: 14px;
-      resize: vertical;
+
+      textarea {
+        width: 100%;
+        margin-bottom: $spacing-small;
+        font-size: 14px;
+        resize: vertical;
+      }
+
+      button {
+        font-size: 14px;
+      }
     }
 
-    button {
+    .about-content-feedback-toggle {
+      button {
+        width: 100%;
+        justify-content: flex-start;
+        font-size: 14px;
+      }
+    }
+
+    .about-content-feedback-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .about-content-feedback-heading,
+    .about-content-feedback-recipient {
+      justify-content: flex-start;
+    }
+
+    .about-content-feedback-title,
+    .about-content-feedback-recipient {
       font-size: 14px;
+    }
+
+    .about-content-feedback-recipient {
+      align-self: flex-start;
     }
   }
 }

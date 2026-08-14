@@ -6,6 +6,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
+import lockSVG from '@plone/volto/icons/lock.svg';
 import sendSVG from '@plone/volto/icons/send.svg';
 import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 
@@ -30,11 +31,6 @@ const messages = defineMessages({
     id: 'Last modified on',
     defaultMessage: 'Last modified on',
   },
-  feedbackPrompt: {
-    id: 'Is something unclear or outdated? Let us know so we can improve the page.',
-    defaultMessage:
-      'Is something unclear or outdated? Let us know so we can improve the page.',
-  },
   feedbackPlaceholder: {
     id: 'What is unclear, outdated or missing?',
     defaultMessage: 'What is unclear, outdated or missing?',
@@ -42,6 +38,22 @@ const messages = defineMessages({
   sendFeedback: {
     id: 'Send feedback',
     defaultMessage: 'Send feedback',
+  },
+  showFeedbackForm: {
+    id: 'Give feedback on this page',
+    defaultMessage: 'Give feedback on this page',
+  },
+  feedbackTitle: {
+    id: 'Feedback about this page',
+    defaultMessage: 'Feedback about this page',
+  },
+  private: {
+    id: 'Private',
+    defaultMessage: 'Private',
+  },
+  goesTo: {
+    id: 'goes to',
+    defaultMessage: 'goes to',
   },
 });
 
@@ -89,10 +101,16 @@ type AboutContentDateProps = {
   label: string;
   date: string;
   locale: string;
+  className: string;
 };
 
-const AboutContentDate = ({ label, date, locale }: AboutContentDateProps) => (
-  <div className="about-content-item">
+const AboutContentDate = ({
+  label,
+  date,
+  locale,
+  className,
+}: AboutContentDateProps) => (
+  <div className={`about-content-item ${className}`}>
     <h3>{label}</h3>
     <div className="about-content-date">
       <Icon name={calendarSVG} size="28px" />
@@ -114,6 +132,7 @@ const AboutContentDate = ({ label, date, locale }: AboutContentDateProps) => (
 const AboutThisContent = ({ content }: AboutThisContentProps) => {
   const intl = useIntl();
   const [feedback, setFeedback] = useState('');
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   const contentFromState = useSelector(
     (state: ReduxState) => state.content.data,
   );
@@ -148,7 +167,7 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
     <section className="about-content" aria-labelledby="about-content-title">
       <h2 id="about-content-title">{intl.formatMessage(messages.title)}</h2>
       <div className="about-content-grid">
-        <div className="about-content-item">
+        <div className="about-content-item about-content-author">
           <h3>{intl.formatMessage(messages.author)}</h3>
           <div className="about-content-people">
             {creatorsWithData.map(({ name, portrait }) => (
@@ -163,7 +182,7 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
           </div>
         </div>
         {responsiblePersonUrl && responsiblePersonTitle && (
-          <div className="about-content-item">
+          <div className="about-content-item about-content-responsible">
             <h3>{intl.formatMessage(messages.responsible)}</h3>
             <div className="about-content-person">
               <PersonPill
@@ -178,6 +197,7 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
             label={intl.formatMessage(messages.created)}
             date={contentData.created}
             locale={intl.locale}
+            className="about-content-created"
           />
         )}
         {contentData.modified && (
@@ -185,25 +205,63 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
             label={intl.formatMessage(messages.modified)}
             date={contentData.modified}
             locale={intl.locale}
+            className="about-content-modified"
           />
         )}
       </div>
-      <div className="about-content-feedback">
-        <label htmlFor="about-content-feedback">
-          {intl.formatMessage(messages.feedbackPrompt)}
-        </label>
-        <textarea
-          id="about-content-feedback"
-          name="about-content-feedback"
-          placeholder={intl.formatMessage(messages.feedbackPlaceholder)}
-          rows={1}
-          value={feedback}
-          onChange={(event) => setFeedback(event.target.value)}
-        />
-        <button type="button" disabled={!feedback.trim()}>
-          <Icon name={sendSVG} size="28px" />
-          {intl.formatMessage(messages.sendFeedback)}
-        </button>
+      <div className="about-content-feedback-area">
+        <div className="about-content-feedback-header">
+          <div className="about-content-feedback-heading">
+            <span className="about-content-feedback-private">
+              <Icon name={lockSVG} size="16px" />
+              {intl.formatMessage(messages.private)}
+            </span>
+            <span className="about-content-feedback-title">
+              {intl.formatMessage(messages.feedbackTitle)}
+            </span>
+          </div>
+          {responsiblePersonTitle && (
+            <div className="about-content-feedback-recipient">
+              <span>{intl.formatMessage(messages.goesTo)}</span>
+              <PersonPill
+                id={responsiblePersonUsername}
+                fullname={responsiblePersonTitle}
+                compact
+              />
+            </div>
+          )}
+        </div>
+        {!isFeedbackOpen ? (
+          <div className="about-content-feedback-toggle">
+            <button
+              type="button"
+              aria-controls="about-content-feedback-form"
+              aria-expanded={false}
+              onClick={() => setIsFeedbackOpen(true)}
+            >
+              {intl.formatMessage(messages.showFeedbackForm)}
+            </button>
+          </div>
+        ) : (
+          <div
+            className="about-content-feedback"
+            id="about-content-feedback-form"
+          >
+            <textarea
+              id="about-content-feedback"
+              name="about-content-feedback"
+              aria-label={intl.formatMessage(messages.feedbackPlaceholder)}
+              placeholder={intl.formatMessage(messages.feedbackPlaceholder)}
+              rows={1}
+              value={feedback}
+              onChange={(event) => setFeedback(event.target.value)}
+            />
+            <button type="button" disabled={!feedback.trim()}>
+              <Icon name={sendSVG} size="28px" />
+              {intl.formatMessage(messages.sendFeedback)}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

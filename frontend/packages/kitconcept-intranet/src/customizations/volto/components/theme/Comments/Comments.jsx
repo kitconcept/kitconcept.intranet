@@ -22,7 +22,6 @@ import {
   listComments,
   listMoreComments,
 } from '@plone/volto/actions/comments/comments';
-import Avatar from '@plone/volto/components/theme/Avatar/Avatar';
 import { CommentEditModal } from '@plone/volto/components/theme/Comments';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
@@ -31,6 +30,7 @@ import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
 import useUser from '@plone/volto/hooks/user/useUser';
 import commentSVG from '@plone/volto/icons/comment.svg';
 import sendSVG from '@plone/volto/icons/send.svg';
+import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 
 const messages = defineMessages({
   addComment: {
@@ -99,12 +99,14 @@ const CommentComposer = ({ onSubmit, user, compact = false }) => {
       onSubmit={submit}
     >
       <div className="intranet-comments__composer">
-        <Avatar
-          size={30}
-          src={flattenToAppURL(user?.portrait)}
-          title={user?.username || user?.id || user?.fullname || 'User'}
-          color="#f3e4c2"
-        />
+        <span className="intranet-comments__composer-person">
+          <PersonPill
+            compact
+            id={user?.username || user?.id}
+            fullname={user?.fullname || user?.username || user?.id || 'User'}
+            portrait={flattenToAppURL(user?.portrait)}
+          />
+        </span>
         <div className="intranet-comments__field">
           <textarea
             aria-label={intl.formatMessage(messages.addComment)}
@@ -216,19 +218,13 @@ const CommentsView = ({ pathname, moment }) => {
         key={comment.comment_id}
         id={comment.comment_id}
       >
-        <Avatar
-          size={30}
-          src={flattenToAppURL(comment.author_image)}
-          title={comment.author_name || 'Anonymous'}
-          color="#f3e4c2"
+        <PersonPill
+          id={comment.author_username}
+          fullname={comment.author_name || 'Anonymous'}
+          portrait={flattenToAppURL(comment.author_image)}
+          subheading={relativeDate(comment.creation_date).fromNow()}
         />
         <div className="content">
-          <h3 className="author">{comment.author_name}</h3>
-          <div className="metadata">
-            <span title={relativeDate(comment.creation_date).format('LLLL')}>
-              {relativeDate(comment.creation_date).fromNow()}
-            </span>
-          </div>
           <div className="text">
             {comment.text['mime-type'] === 'text/html' ? (
               <div dangerouslySetInnerHTML={{ __html: comment.text.data }} />

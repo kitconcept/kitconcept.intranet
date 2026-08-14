@@ -1,6 +1,5 @@
 .intranet-comments {
   padding-top: 50px;
-  border-top: 1px solid var(--theme-low-contrast-foreground-color, #edf1f2);
   margin-top: 0;
   text-align: left;
   @include default-container-width();
@@ -38,52 +37,26 @@
   .comment {
     position: relative;
     min-height: 30px;
-    padding: 0 0 15px 45px;
+    padding: 0 0 15px;
     margin: 0;
 
-    .avatar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 30px;
-      height: 30px;
-
-      svg,
-      img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        object-fit: cover;
+    > .person-pill {
+      .person-pill-portrait,
+      .person-pill-avatar {
+        width: 30px !important;
+        height: 30px !important;
       }
 
-      svg text {
-        fill: #8a6724;
-        font-family: inherit;
+      .person-pill-subheading {
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 300;
+        line-height: 18px;
       }
     }
 
     .content {
-      margin: 0;
+      margin-left: 40px;
       text-align: left;
-    }
-
-    .author {
-      margin-bottom: 6px;
-      color: var(--theme-foreground-color, #252525);
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 21px;
-    }
-
-    .metadata {
-      display: block;
-      margin: 0;
-      color: #878f93;
-      font-size: 12px;
-      font-weight: 300;
-      line-height: 18px;
     }
 
     .text {
@@ -122,6 +95,7 @@
 
     .comments {
       padding-top: 20px;
+      padding-left: 45px;
       margin: 0;
 
       .comment:last-child {
@@ -137,19 +111,19 @@
     column-gap: 16px;
     grid-template-columns: 30px minmax(0, 1fr);
 
-    .avatar {
+    .intranet-comments__composer-person {
       width: 30px;
       height: 30px;
 
-      svg,
-      img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
+      .person-pill-labels,
+      .person-pill-name {
+        display: none;
       }
 
-      svg text {
-        fill: #8a6724;
+      .person-pill-portrait,
+      .person-pill-avatar {
+        width: 30px !important;
+        height: 30px !important;
       }
     }
   }
@@ -161,14 +135,16 @@
   &__input {
     display: block;
     width: 100%;
+    height: 50px;
     min-height: 50px;
-    padding: 10px 55px 10px 20px;
-    border: 2px solid #edf1f2;
+    box-sizing: border-box;
+    padding: 12px 55px 12px 20px;
+    border: 1px solid #edf1f2;
     border-radius: 9px;
     background: transparent;
     color: var(--theme-foreground-color, #252525);
     font-size: 14px;
-    line-height: 21px;
+    line-height: 22px;
 
     &::placeholder {
       color: #777;
@@ -182,7 +158,7 @@
 
   &__submit {
     position: absolute;
-    top: 6px;
+    top: 7px;
     right: 15px;
     padding: 0;
     border: 0;
@@ -231,9 +207,9 @@
       grid-template-columns: 30px minmax(0, 1fr);
     }
 
-    .avatar,
-    .avatar svg,
-    .avatar img {
+    .intranet-comments__composer-person,
+    .person-pill-portrait,
+    .person-pill-avatar {
       width: 30px;
       height: 30px;
     }

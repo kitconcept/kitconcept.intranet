@@ -1520,7 +1520,7 @@ requires-dist = [
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
     { name = "kitconcept-plate", path = "container/kitconcept-plate.tar.gz" },
-    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag" },
+    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&rev=a8953cefb2d250bb83213bef0099ffceda87dc78" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1589,7 +1589,7 @@ provides-extras = ["test"]
 [[package]]
 name = "kitconcept-solr"
 version = "2.0.0a14"
-source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag#fcae6395075556a040c7b9972d1e4a8cbefdacc6" }
+source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&rev=a8953cefb2d250bb83213bef0099ffceda87dc78#a8953cefb2d250bb83213bef0099ffceda87dc78" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },

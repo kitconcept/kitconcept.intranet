@@ -38,7 +38,7 @@ dependencies = [
     "collective-solr==10.1.1",
     "kitconcept.solr",
     "kitconcept.contactblock==1.0.0a6",
-    "kitconcept-plate",
+    "kitconcept.plate==1.0.0a23",
 ]
 
 [dependency-groups]
@@ -66,7 +66,6 @@ container = [
 ]
 
 [tool.uv.sources]
-kitconcept-plate = { path = "container/kitconcept-plate.tar.gz" }
 kitconcept-solr = { git = "https://github.com/kitconcept/kitconcept.solr.git", subdirectory = "backend", rev = "a8953cefb2d250bb83213bef0099ffceda87dc78" }
 
 [tool.hatch.metadata]

@@ -1445,8 +1445,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-logos-block/packages/volto-logos-block
       '@kitconcept/volto-plate':
-        specifier: file:../../artifacts/kitconcept-volto-plate.tgz
-        version: file:artifacts/kitconcept-volto-plate.tgz(668a5b4091d1647ee08dbb34248f717f)
+        specifier: ^1.0.0-alpha.23
+        version: 1.0.0-alpha.23(668a5b4091d1647ee08dbb34248f717f)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -1917,43 +1917,6 @@ importers:
         specifier: ^3.2.4
         version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
 
-  packages/volto-kitconcept-deepl/frontend/packages/volto-kitconcept-deepl:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/registry':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/registry
-      '@plone/scripts':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/scripts
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@testing-library/react':
-        specifier: ^16.2.0
-        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@types/react':
-        specifier: ^18.3.1
-        version: 18.3.31
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.31)
-      release-it:
-        specifier: ^19.0.5
-        version: 19.2.4(@types/node@24.13.1)(magicast@0.3.5)
-      typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
-      vitest:
-        specifier: ^3.1.2
-        version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
-
   packages/volto-light-theme/frontend/packages/volto-light-theme:
     dependencies:
       '@dnd-kit/core':
@@ -2245,6 +2208,43 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
+
+  packages/volto-social-media/frontend/packages/volto-social-media:
+    dependencies:
+      '@plone/components':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/components
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.2
+        version: 3.10.6
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/types
+      '@types/jest':
+        specifier: ^29.5.8
+        version: 29.5.14
+      '@types/lodash':
+        specifier: ^4.14.201
+        version: 4.17.24
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.31)
+      react-intl:
+        specifier: ^3.12.1
+        version: 3.12.1(@types/react@18.3.31)(react@18.2.0)
+      release-it:
+        specifier: ^17.7.0
+        version: 17.11.0(typescript@5.9.3)
 
   packages/volto-solr/frontend/packages/volto-solr:
     dependencies:
@@ -4208,9 +4208,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz':
-    resolution: {integrity: sha512-znG++JldVTAIbqmL1tw9S7QLeZE8AwydRl4MLDJ+SfUfZ/km8yNS3MBcrXY8YuTK+94CKO4MQmcyizPPrRrD0A==, tarball: file:artifacts/kitconcept-volto-plate.tgz}
-    version: 1.0.0-alpha.22
+  '@kitconcept/volto-plate@1.0.0-alpha.23':
+    resolution: {integrity: sha512-OH5ac9Qc+gr3U4r5VqQiQPcAeHSrNk5umiF5EscBR+sOyA/NgIsXKcUOUXfIWv1Fsb56a5CU/wZrJ3UyE2dEOg==}
     peerDependencies:
       '@platejs/ai': ^50.3.7
       '@plone/registry': workspace:*
@@ -16396,7 +16395,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@file:artifacts/kitconcept-volto-plate.tgz(668a5b4091d1647ee08dbb34248f717f)':
+  '@kitconcept/volto-plate@1.0.0-alpha.23(668a5b4091d1647ee08dbb34248f717f)':
     dependencies:
       '@internationalized/date': 3.12.2
       '@platejs/ai': 50.3.7(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)

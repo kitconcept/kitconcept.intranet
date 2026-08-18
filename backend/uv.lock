@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = "==3.14.*"
 
 [options]
@@ -1519,7 +1519,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
-    { name = "kitconcept-plate", path = "container/kitconcept-plate.tar.gz" },
+    { name = "kitconcept-plate", specifier = "==1.0.0a23" },
     { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&rev=a8953cefb2d250bb83213bef0099ffceda87dc78" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1559,32 +1559,18 @@ test = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a22"
-source = { path = "container/kitconcept-plate.tar.gz" }
+version = "1.0.0a23"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { hash = "sha256:91dcee93361c85aae4ab7ae841df0a2aabe5bfa648bb184da8944738854b3b49" }
-
-[package.metadata]
-requires-dist = [
-    { name = "collective-mockmailhost", marker = "extra == 'test'" },
-    { name = "horse-with-no-namespace", marker = "extra == 'test'", specifier = ">=20250408.0" },
-    { name = "plone-api" },
-    { name = "plone-app-testing", marker = "extra == 'test'" },
-    { name = "plone-restapi" },
-    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
-    { name = "plone-volto" },
-    { name = "products-cmfplone" },
-    { name = "products-printingmailhost", marker = "extra == 'test'" },
-    { name = "pytest", marker = "extra == 'test'" },
-    { name = "pytest-cov", marker = "extra == 'test'" },
-    { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.0.0" },
+sdist = { url = "https://files.pythonhosted.org/packages/95/cb/a7c09221a0a4b6811b08ad25b0f55d1020872ca4dea8fbaa8208c59ac775/kitconcept_plate-1.0.0a23.tar.gz", hash = "sha256:977021867d23a6e3f497d74f3bfd3ed5b605161b4614e1b23b8f88dfe3fe1b2b", size = 4550216, upload-time = "2026-08-18T18:02:51.029Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/53/bd/58e9825575cfa61042cb47a569910adbb7d9a409fc7b48af3bc9242297e9/kitconcept_plate-1.0.0a23-py3-none-any.whl", hash = "sha256:c3bb1c74647977ff9d2b6968f84ad83851107497e963c6b3ce8e8f1144769ef0", size = 4583368, upload-time = "2026-08-18T18:02:48.592Z" },
 ]
-provides-extras = ["test"]
 
 [[package]]
 name = "kitconcept-solr"

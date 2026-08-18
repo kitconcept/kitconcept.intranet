@@ -157,8 +157,8 @@ name = "Documentation"
 showcontent = true
 
 [[tool.towncrier.type]]
-directory = "test"
-name = "Test"
+directory = "tests"
+name = "Tests"
 showcontent = true
 
 [tool.ruff]

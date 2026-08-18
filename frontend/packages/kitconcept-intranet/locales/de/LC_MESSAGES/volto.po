@@ -26,6 +26,11 @@ msgstr "KI-generierte Antwort. Kann Fehler enthalten."
 msgid "About this content"
 msgstr "Über diesen Inhalt"
 
+#. Default: "Add comment... (@ mention a person)"
+#: components/Comments/messages
+msgid "Add comment... (@ mention a person)"
+msgstr "Kommentar hinzufügen... (@ erwähnt eine Person)"
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -104,6 +109,11 @@ msgstr "Abbrechen"
 msgid "Comment"
 msgstr "Kommentar:"
 
+#. Default: "Comments"
+#: components/Comments/messages
+msgid "Comments"
+msgstr "Kommentare"
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 #: components/theme/PersonView
@@ -150,6 +160,11 @@ msgstr "Prüfung/Anpassung delegieren"
 msgid "DelegateButton"
 msgstr "Delegieren"
 
+#. Default: "Delete"
+#: components/Comments/messages
+msgid "Delete"
+msgstr "Löschen"
+
 #. Default: "Depth"
 #: components/widgets/QuerystringWidget
 msgid "Depth"
@@ -166,6 +181,11 @@ msgstr "Review dokumentieren"
 #: components/theme/PersonView
 msgid "E-mail"
 msgstr "E-mail"
+
+#. Default: "Edit"
+#: components/Comments/messages
+msgid "Edit"
+msgstr "Bearbeiten"
 
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
@@ -189,6 +209,11 @@ msgstr "Fehler"
 msgid "Event"
 msgstr "Termin"
 
+#. Default: "Everywhere"
+#: components/Header/HeaderSearch
+msgid "Everywhere"
+msgstr "Überall"
+
 #. Default: "Expand sidebar"
 #: components/ContentReviewSidebar/ReviewSidebar
 msgid "Expand sidebar"
@@ -201,6 +226,7 @@ msgstr "Rückmeldung"
 
 #. Default: "Feedback about this page"
 #: components/Footer/slots/FollowUsLogoAndLinks
+#: slots/AboutThisContent/AboutThisContent
 msgid "Feedback about this page"
 msgstr "Feedback zu dieser Seite"
 
@@ -234,6 +260,11 @@ msgstr "Ordner"
 msgid "Generating answer…"
 msgstr "Antwort wird erstellt …"
 
+#. Default: "Give feedback on this page"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Give feedback on this page"
+msgstr "Feedback zu dieser Seite geben"
+
 #. Default: "Home"
 #: components/Header/HeaderBreadcrumbs
 msgid "Home"
@@ -263,11 +294,6 @@ msgstr "Intranet Portal"
 #: components/Blocks/IFrame/isValidUrl
 msgid "Invalid url"
 msgstr "Ungültige URL"
-
-#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
-#: slots/AboutThisContent/AboutThisContent
-msgid "Is something unclear or outdated? Let us know so we can improve the page."
-msgstr "Etwas unklar oder veraltet? Lass es uns wissen, um die Seite zu verbessern."
 
 #. Default: "Item batch size"
 #: components/widgets/QuerystringWidget
@@ -354,6 +380,11 @@ msgstr "Keine Antwort — keine passenden Dokumente gefunden."
 msgid "No results for “{term}”."
 msgstr "Keine Ergebnisse für „{term}“."
 
+#. Default: "No results in “{scope}”."
+#: components/Header/HeaderSearch
+msgid "No results in “{scope}”."
+msgstr "Keine Ergebnisse in „{scope}“."
+
 #. Default: "No selection"
 #: components/widgets/QuerystringWidget
 msgid "No selection"
@@ -418,6 +449,7 @@ msgstr "Überprüfung verschieben"
 
 #. Default: "Private"
 #: components/Header/HeaderSearch
+#: slots/AboutThisContent/AboutThisContent
 msgid "Private"
 msgstr "Privat"
 
@@ -425,6 +457,11 @@ msgstr "Privat"
 #: components/Header/HeaderSearch
 msgid "Published"
 msgstr "Veröffentlicht"
+
+#. Default: "Reply"
+#: components/Comments/messages
+msgid "Reply"
+msgstr "Antworten"
 
 #. Default: "Responsibilities"
 #: index
@@ -458,6 +495,16 @@ msgstr "Raum"
 msgid "Search"
 msgstr ""
 
+#. Default: "Search everywhere"
+#: components/Header/HeaderSearch
+msgid "Search everywhere"
+msgstr "Überall suchen"
+
+#. Default: "Search in all areas"
+#: components/Header/HeaderSearch
+msgid "Search in all areas"
+msgstr "In allen Bereichen suchen"
+
 #. Default: "Search titles only"
 #: components/Header/HeaderSearch
 msgid "Search titles only"
@@ -477,6 +524,11 @@ msgstr "Suchen…"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "SelectAssigneePlaceholder"
 msgstr "Bitte auswählen ..."
+
+#. Default: "Send comment"
+#: components/Comments/messages
+msgid "Send comment"
+msgstr "Kommentar senden"
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
@@ -607,6 +659,11 @@ msgstr "Aktualisiert"
 msgid "Use preset review interval"
 msgstr "Voreingestelltes Überprüfungsintervall verwenden."
 
+#. Default: "Visible to everyone who can see this page."
+#: components/Comments/messages
+msgid "Visible to everyone who can see this page."
+msgstr "Für alle sichtbar, die diese Seite sehen können."
+
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
@@ -646,6 +703,11 @@ msgstr "Die Überprüfung wurde erfolgreich delegiert."
 #: components/ContentReviewSidebar/DelegateReview
 msgid "delegateTitle"
 msgstr "Prüfung oder Anpassung delegieren"
+
+#. Default: "goes to"
+#: slots/AboutThisContent/AboutThisContent
+msgid "goes to"
+msgstr "geht an"
 
 #. Default: "The check interval is set to {interval}. To change it, you must edit the content."
 #: components/ContentReviewSidebar/PostponeReview

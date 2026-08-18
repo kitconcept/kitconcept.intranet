@@ -67,7 +67,7 @@ container = [
 
 [tool.uv.sources]
 kitconcept-plate = { path = "container/kitconcept-plate.tar.gz" }
-kitconcept-solr = { git = "https://github.com/kitconcept/kitconcept.solr.git", subdirectory = "backend", branch = "feature-ai-rag" }
+kitconcept-solr = { git = "https://github.com/kitconcept/kitconcept.solr.git", subdirectory = "backend", rev = "a8953cefb2d250bb83213bef0099ffceda87dc78" }
 
 [tool.hatch.metadata]
 allow-direct-references = true

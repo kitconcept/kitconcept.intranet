@@ -9,7 +9,11 @@ import { defineMessages, useIntl } from 'react-intl';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { toggleLike } from '../../actions/likes/likes';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import {
+  flattenToAppURL,
+  getBaseUrl,
+  isCmsUi,
+} from '@plone/volto/helpers/Url/Url';
 import thumbsSVG from '../../icons/icon-thumbs.svg';
 import thumbsFilledSVG from '../../icons/icon-thumbs-filled.svg';
 import commentSVG from '../../icons/comment.svg';
@@ -76,10 +80,19 @@ const ContentInteractions = (props) => {
   const intl = useIntl();
   const flattenPathname = flattenToAppURL(pathname);
   const dispatch = useDispatch();
-  const comment_count = useSelector(
+  const storedCommentCount = useSelector(
     (state) => state.comments.items_total,
     shallowEqual,
   );
+  const commentsLoading = useSelector(
+    (state) => state.comments.list.loading,
+    shallowEqual,
+  );
+  const contentPath = flattenToAppURL(content?.['@id']);
+  const isCurrentContent =
+    !isCmsUi(pathname) && contentPath === getBaseUrl(pathname);
+  const comment_count =
+    isCurrentContent && !commentsLoading ? storedCommentCount : 0;
   const [amount, setAmount] = useState(votes ? parseInt(votes.length) : 0);
   const [liked, setLiked] = useState(false);
 

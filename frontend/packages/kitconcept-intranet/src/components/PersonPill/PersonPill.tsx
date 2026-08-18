@@ -8,7 +8,7 @@ import {
   expandToBackendURL,
   flattenToAppURL,
 } from '@plone/volto/helpers/Url/Url';
-import personSVG from '@plone/volto/icons/user.svg';
+import AvatarFallback from '../../icons/avatar-fallback-silhouette.svg';
 
 type PersonPillProps = {
   id: string | undefined;
@@ -60,7 +60,7 @@ const PersonPill = ({
   ) : (
     <Icon
       className="person-pill-avatar"
-      name={personSVG}
+      name={AvatarFallback}
       size={compact ? '24px' : '40px'}
       style={{
         width: compact ? '24px' : '40px',

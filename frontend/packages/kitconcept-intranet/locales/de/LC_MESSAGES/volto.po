@@ -26,6 +26,11 @@ msgstr "KI-generierte Antwort. Kann Fehler enthalten."
 msgid "About this content"
 msgstr "Über diesen Inhalt"
 
+#. Default: "Add comment... (@ mention a person)"
+#: components/Comments/messages
+msgid "Add comment... (@ mention a person)"
+msgstr "Kommentar hinzufügen... (@ erwähnt eine Person)"
+
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -104,6 +109,11 @@ msgstr "Abbrechen"
 msgid "Comment"
 msgstr "Kommentar:"
 
+#. Default: "Comments"
+#: components/Comments/messages
+msgid "Comments"
+msgstr "Kommentare"
+
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 #: components/theme/PersonView
@@ -150,6 +160,11 @@ msgstr "Prüfung/Anpassung delegieren"
 msgid "DelegateButton"
 msgstr "Delegieren"
 
+#. Default: "Delete"
+#: components/Comments/messages
+msgid "Delete"
+msgstr "Löschen"
+
 #. Default: "Depth"
 #: components/widgets/QuerystringWidget
 msgid "Depth"
@@ -166,6 +181,11 @@ msgstr "Review dokumentieren"
 #: components/theme/PersonView
 msgid "E-mail"
 msgstr "E-mail"
+
+#. Default: "Edit"
+#: components/Comments/messages
+msgid "Edit"
+msgstr "Bearbeiten"
 
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
@@ -438,6 +458,11 @@ msgstr "Privat"
 msgid "Published"
 msgstr "Veröffentlicht"
 
+#. Default: "Reply"
+#: components/Comments/messages
+msgid "Reply"
+msgstr "Antworten"
+
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
@@ -499,6 +524,11 @@ msgstr "Suchen…"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "SelectAssigneePlaceholder"
 msgstr "Bitte auswählen ..."
+
+#. Default: "Send comment"
+#: components/Comments/messages
+msgid "Send comment"
+msgstr "Kommentar senden"
 
 #. Default: "Send feedback"
 #: components/FeedBackForm/FeedBackForm
@@ -628,6 +658,11 @@ msgstr "Aktualisiert"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "Use preset review interval"
 msgstr "Voreingestelltes Überprüfungsintervall verwenden."
+
+#. Default: "Visible to everyone who can see this page."
+#: components/Comments/messages
+msgid "Visible to everyone who can see this page."
+msgstr "Für alle sichtbar, die diese Seite sehen können."
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

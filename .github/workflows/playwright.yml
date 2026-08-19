@@ -61,7 +61,7 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
         working-directory: ${{ inputs.working-directory }}
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v2
         name: Start Servers
         with:
           run: |

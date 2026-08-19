@@ -51,7 +51,7 @@ on:
         value: ${{ jobs.config.outputs.base-tag }}
       image-name-prefix:
         description: "Image name prefix for container images"
-        value: ${{ inputs.image-name-prefix }}
+        value: ${{ jobs.config.outputs.image-name-prefix }}
       node-version:
         description: "Node version to be used"
         value: ${{ inputs.node-version }}
@@ -79,6 +79,24 @@ on:
       stack-prefix:
         description: "Deploy: Short name to be used to create Traefik labels"
         value: ${{ inputs.stack-prefix }}
+      changelog-backend:
+        description: "Flag reporting if we should run changelog jobs for the backend"
+        value: ${{ jobs.config.outputs.changelog-backend }}
+      changelog-frontend:
+        description: "Flag reporting if we should run changelog jobs for the frontend"
+        value: ${{ jobs.config.outputs.changelog-frontend }}
+      changelog-repository:
+        description: "Flag reporting if we should run changelog jobs for the repository"
+        value: ${{ jobs.config.outputs.changelog-repository }}
+      path-backend:
+        description: "Path to the backend package, relative to the repository root"
+        value: ${{ jobs.config.outputs.path-backend }}
+      path-frontend:
+        description: "Path to the frontend package, relative to the repository root"
+        value: ${{ jobs.config.outputs.path-frontend }}
+      path-root:
+        description: "Path to the repository root"
+        value: ${{ jobs.config.outputs.path-root }}
 
 jobs:
   config:
@@ -90,27 +108,48 @@ jobs:
       docs: ${{ steps.filter.outputs.docs }}
       frontend: ${{ steps.filter.outputs.frontend }}
       deploy: ${{ steps.filter.outputs.deploy }}
-      base-tag: ${{ steps.vars.outputs.BASE_TAG }}
+      base-tag: ${{ steps.vars.outputs.base-tag }}
       kc-version: ${{ steps.vars.outputs.kc-version }}
       volto-version: ${{ steps.vars.outputs.volto-version }}
       environment: ${{ steps.vars.outputs.environment }}
       stack-name: ${{ steps.vars.outputs.stack-name }}
+      image-name-prefix: ${{ steps.vars.outputs.image-name-prefix }}
+      changelog-backend: ${{ steps.filter.outputs.changelog-backend }}
+      changelog-frontend: ${{ steps.filter.outputs.changelog-frontend }}
+      changelog-repository: ${{ steps.filter.outputs.changelog-repository }}
+      path-backend: ${{ steps.vars.outputs.path-backend }}
+      path-frontend: ${{ steps.vars.outputs.path-frontend }}
+      path-root: ${{ steps.vars.outputs.path-root }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Setup uv
+        uses: plone/meta/.github/actions/setup_uv@2.x
+        with:
+          python-version: ${{ inputs.python-version }}
+          working-directory: '.'
+
       - name: Compute several vars needed for the CI
         id: vars
         run: |
-          echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          echo "kc-version=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
-          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("volto-version=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
+          REPOSITORY_SETTINGS="$(uvx repoplone settings dump)"
+          # `repoplone` reports absolute paths, but the checks need them
+          # relative to the repository root.
+          ROOT="$(jq -r '.root_path' <<< "$REPOSITORY_SETTINGS")"
+          echo "base-tag=sha-$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          echo "image-name-prefix=$(jq -r '.container_images_prefix' <<< "$REPOSITORY_SETTINGS")" >> "$GITHUB_OUTPUT"
+          echo "kc-version=$(jq -r '.backend.base_package_version' <<< "$REPOSITORY_SETTINGS")" >> "$GITHUB_OUTPUT"
+          echo "volto-version=$(jq -r '.frontend.volto_version' <<< "$REPOSITORY_SETTINGS")" >> "$GITHUB_OUTPUT"
+          echo "path-backend=$(jq -r '.backend.path' <<< "$REPOSITORY_SETTINGS" | sed "s|^${ROOT}/||")" >> "$GITHUB_OUTPUT"
+          echo "path-frontend=$(jq -r '.frontend.path' <<< "$REPOSITORY_SETTINGS" | sed "s|^${ROOT}/||")" >> "$GITHUB_OUTPUT"
+          echo "path-root=." >> "$GITHUB_OUTPUT"
           environment=${{ inputs.hostname }}
           echo "environment=${environment}" >> $GITHUB_OUTPUT
           echo "stack-name=${environment//./-}" >> $GITHUB_OUTPUT
 
-      - uses: dorny/paths-filter@v4
+      - uses: dorny/paths-filter@v4.0.3
         id: filter
         with:
           filters: |
@@ -141,12 +180,26 @@ jobs:
               - '.github/workflows/frontend*'
               - '.github/workflows/main*'
               - 'devops/**'
+            changelog-backend:
+              - 'backend/**'
+            changelog-frontend:
+              - 'frontend/**'
+            changelog-repository:
+              - '.github/**'
+              - '.vscode/**'
+              - 'devops/**'
+              - 'docs/**'
+              - 'docker-compose.yml'
+              - 'README.md'
 
       - name: Test vars
         run: |
-          echo "BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}"
+          echo "BASE_TAG: ${{ steps.vars.outputs.base-tag }}"
           echo 'kc-version: ${{ steps.vars.outputs.kc-version }}'
           echo 'volto-version: ${{ steps.vars.outputs.volto-version }}'
+          echo 'path-backend: ${{ steps.vars.outputs.path-backend }}'
+          echo 'path-frontend: ${{ steps.vars.outputs.path-frontend }}'
+          echo 'path-root: ${{ steps.vars.outputs.path-root }}'
           echo 'environment: ${{ steps.vars.outputs.environment }}'
           echo 'stack-name: ${{ steps.vars.outputs.stack-name }}'
           echo 'event-name: ${{ github.event_name }}'
@@ -156,3 +209,6 @@ jobs:
           echo 'Paths - devops: ${{ steps.filter.outputs.devops }}'
           echo 'Paths - docs: ${{ steps.filter.outputs.docs }}'
           echo 'Paths - frontend: ${{ steps.filter.outputs.frontend }}'
+          echo 'Paths - changelog-backend: ${{ steps.filter.outputs.changelog-backend }}'
+          echo 'Paths - changelog-frontend: ${{ steps.filter.outputs.changelog-frontend }}'
+          echo 'Paths - changelog-repository: ${{ steps.filter.outputs.changelog-repository }}'

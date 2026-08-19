@@ -1,0 +1,1 @@
+Reworked the changelog CI workflow: the backend, frontend and repository checks now run as steps of a single job, derive their paths from `uvx repoplone settings dump`, and report their outcome in the workflow summary. @ericof

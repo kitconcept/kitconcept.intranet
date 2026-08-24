@@ -1,1 +1,0 @@
-Update comments layout, styling, and footer placement @iRohitSingh

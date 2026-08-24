@@ -1,1 +1,0 @@
-Switch kitconcept.solr to the released 3.0.0a0, with AI (RAG) search support: kitconcept.solr==3.0.0a0 from PyPI (replacing the pinned git revision), @kitconcept/volto-solr ^3.0.0-alpha.0 from npm (replacing the mrs.developer checkout), and the 3.0.0a0 Solr image in the dev compose and stack files. @reebalazs

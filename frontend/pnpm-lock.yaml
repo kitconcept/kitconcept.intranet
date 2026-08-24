@@ -113,7 +113,6 @@ overrides:
   '@kitconcept/volto-carousel-block': workspace:*
   '@kitconcept/volto-iframe-block': workspace:*
   '@kitconcept/volto-bm3-compat': workspace:*
-  '@kitconcept/volto-solr': workspace:*
   '@plone/registry': workspace:*
   react-aria-components: ^1.17.0
 
@@ -1454,8 +1453,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-slider-block/packages/volto-slider-block
       '@kitconcept/volto-solr':
-        specifier: workspace:*
-        version: link:../volto-solr/frontend/packages/volto-solr
+        specifier: ^3.0.0-alpha.0
+        version: 3.0.0-alpha.0(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone-collective/volto-authomatic':
         specifier: 3.0.0-alpha.6
         version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -2208,71 +2207,6 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.6(@types/debug@4.1.13)(@types/node@24.13.1)(@vitest/ui@3.2.6)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.32.0)(sass@1.58.0)(terser@5.48.0)(yaml@2.9.0)
-
-  packages/volto-social-media/frontend/packages/volto-social-media:
-    dependencies:
-      '@plone/components':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/components
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.2
-        version: 3.10.6
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@types/jest':
-        specifier: ^29.5.8
-        version: 29.5.14
-      '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.17.24
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.31
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.7(@types/react@18.3.31)
-      react-intl:
-        specifier: ^3.12.1
-        version: 3.12.1(@types/react@18.3.31)(react@18.2.0)
-      release-it:
-        specifier: ^17.7.0
-        version: 17.11.0(typescript@5.9.3)
-
-  packages/volto-solr/frontend/packages/volto-solr:
-    dependencies:
-      buffer:
-        specifier: ^5.5.0
-        version: 5.7.1
-      lodash.debounce:
-        specifier: ^4.0.8
-        version: 4.0.8
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-portal:
-        specifier: 4.2.1
-        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.10.6
-      react-autosuggest:
-        specifier: 10.1.0
-        version: 10.1.0(react@18.2.0)
-      release-it:
-        specifier: ^17.1.1
-        version: 17.11.0(typescript@5.9.3)
 
 packages:
 
@@ -4221,6 +4155,13 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
       semantic-ui-react: ^2.1.5
+
+  '@kitconcept/volto-solr@3.0.0-alpha.0':
+    resolution: {integrity: sha512-Niv4gQ3WxycvKil4oGoxlnp1Cpx0ONOLjh13qKY3djzDXpZK1o0whQF8S0O9IyFvmMMV6Peq0waKAsmNpyNINQ==}
+    peerDependencies:
+      react: 18.2.0
+      react-autosuggest: 10.1.0
+      react-dom: 18.2.0
 
   '@kwsites/file-exists@1.1.1':
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
@@ -16439,6 +16380,15 @@ snapshots:
       - supports-color
       - typescript
       - use-sync-external-store
+
+  '@kitconcept/volto-solr@3.0.0-alpha.0(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      buffer: 5.7.1
+      lodash.debounce: 4.0.8
+      react: 18.2.0
+      react-autosuggest: 10.1.0(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+      react-portal: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   '@kwsites/file-exists@1.1.1':
     dependencies:

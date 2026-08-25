@@ -8,6 +8,76 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.1 (2026-08-24)
+
+
+### Breaking
+
+- Intranet v3 first iteration. @sneridagh [#399](https://github.com/kitconcept/kitconcept.intranet/issue/399)
+
+
+### Feature
+
+- Upgrade to use @kitconcept/volto-plate 1a20, with the new suggestions/comments. @sneridagh [#421](https://github.com/kitconcept/kitconcept.intranet/issue/421)
+- Add Content Lifecycle Management at the end of the page @iRohitSingh [#431](https://github.com/kitconcept/kitconcept.intranet/issue/431)
+- Add feedback form to AboutThisContent @iRohitSingh [#458](https://github.com/kitconcept/kitconcept.intranet/issue/458)
+- Update comments layout, styling, and footer placement @iRohitSingh [#469](https://github.com/kitconcept/kitconcept.intranet/issue/469)
+- Add new style for Content Lifecycle Management @iRohitSingh [#473](https://github.com/kitconcept/kitconcept.intranet/issue/473)
+- Use the released @kitconcept/volto-solr ^3.0.0-alpha.0 from npm instead of the mrs.developer checkout. @reebalazs [#595](https://github.com/kitconcept/kitconcept.intranet/issue/595)
+- Add Person Pill component and storybook test @Tishasoumya-02 
+- Add new search and Breadcrumbs overlay for intranet v3 @iRohitSingh 
+- Add rename, duplicate, and delete actions for items in the navigation tree. @iFlameing 
+- Added Event and News Item to the AboutThisContent slot. @iFlameing 
+- Added the CLM (lifecycle management) fields to Workspace and Wiki Page, and installed plone.app.iterate for working copy support. @iFlameing 
+- Hide the site footer on Workspace and Wiki Page content types. @iFlameing 
+- Integrate the AI search (RAG) feature branch: @kitconcept/volto-solr from the feature-ai-rag branch; no "Use AI" toggle — when the backend reports the feature available, the AI answer renders above the classic search results. @reebalazs 
+- Show the current root (Workspace or site) as the top-level item in the navigation tree, so users can quickly jump back to it. @iFlameing 
+- Update to Volto 19.3.0, VLT 8a31 and volto-plate 1a21. @sneridagh 
+- Workspace search dialog per the approved design (internal ticket #426): live search results while typing (kitconcept.solr @solr-suggest), "Ask AI" button with the AI Overview answer panel and sources (@rag-search), Cmd+K/Ctrl+K shortcut, filter chips (visual, deferred backend). @reebalazs
+  AI errors surface as a friendly localized message instead of the raw backend error (raw messages like embed timeouts under concurrent LLM load are logged to the console only, see internal ticket #515). 
+- Workspace search dialog: the Workspace chip is the local/global scope switch — workspace scope (default) restricts livesearch and the Enter results page to the workspace subtree, "Intranet Portal" searches globally. Covered by a Cypress test and a backend @solr-suggest path_prefix test; requires the kitconcept.solr local-scoping support. @reebalazs 
+- Workspace search dialog: the Workspace chip opens a scope dropdown - search everywhere or in any workspace you can access; result rows show their location and an empty scoped search offers "Search everywhere". @reebalazs 
+
+
+### Bugfix
+
+- Fix alignment of List with Dates listing variation @iRohitSingh [#419](https://github.com/kitconcept/kitconcept.intranet/issue/419)
+- Fix missing save button in users controlpanel @iRohitSingh [#423](https://github.com/kitconcept/kitconcept.intranet/issue/423)
+- Use site title in workspace switcher @iRohitSingh [#429](https://github.com/kitconcept/kitconcept.intranet/issue/429)
+- Fix Breadcrumb navigation styling @iRohitSingh [#431](https://github.com/kitconcept/kitconcept.intranet/issue/431)
+- Fix new Breadcrumb navigation styling @iRohitSingh [#432](https://github.com/kitconcept/kitconcept.intranet/issue/432)
+- Fix search results page container width @iRohitSingh [#433](https://github.com/kitconcept/kitconcept.intranet/issue/433)
+- Fix align WikiPage document byline to default container width @iRohitSingh [#439](https://github.com/kitconcept/kitconcept.intranet/issue/439)
+- Fix Navigation Tree Content type icon is moved to the right @iRohitSingh [#442](https://github.com/kitconcept/kitconcept.intranet/issue/442)
+- Remove banner shadow when banner has no text @iRohitSingh [#445](https://github.com/kitconcept/kitconcept.intranet/issue/445)
+- Remove Old CLM section @iRohitSingh [#460](https://github.com/kitconcept/kitconcept.intranet/issue/460)
+- Add temporary fix for tailwind grid class conflict with listing grid variation. @danalvrz 
+- Disabled the global focus-visible outline/box-shadow from core. @iFlameing 
+- Exclude `ul.items` from the list padding/bullet fix so they don't get unwanted indentation. @iFlameing 
+- Fix jumping of navigation tree filter @Tishasoumya-02 
+- Fix selector to apply correct styles to Search block with dates variation. @danalvrz 
+- Fix styles for slate date and slate mentions. @danlavrz 
+- Fix tailwind conflict with content-upload img. @tishasoumya-02 
+- Fix tailwind conflict with list styling. @danlavrz 
+- Fix the navigation tree not detecting the active Workspace for pages nested underneath it, since the workspace lookup was restricted to direct children of the site root. @iFlameing 
+- Fixed person portrait images resolving to the internal backend URL instead of the public site URL in server-side rendered pages. @iFlameing 
+- Hide the navigation tree sidebar on the site home page. @iFlameing 
+- Hide the navigation tree's existing children while adding a new Workspace, instead of showing the parent's unrelated content. @iFlameing 
+- Navigation tree no longer shows an expand caret for folders that don't actually have any children. @iFlameing 
+- Pin kitconcept.solr to a revision instead of the branch: backend, frontend and the solr image. Includes the Plate RAG chunking fix (kitconcept.solr#112). @reebalazs 
+- Restore the top-level `Depth` field in the querystring widget when a path criterion is present, by overriding Volto's `QuerystringWidget` and reverting https://github.com/plone/volto/pull/8350. @ericof 
+- Update to @kitconcept/core 2.0.0.alpha-6 (no significant changes). @davisagli 
+- Updated to latest @kitconcept/volto-plate. @sneridagh
+
+  See https://github.com/kitconcept/volto-plate/releases/tag/1.0.0a19 
+
+
+### Internal
+
+- Depend on the released `@kitconcept/volto-plate` 1.0.0-alpha.23 from npm instead of the tarball vendored in `frontend/artifacts/`. @ericof [#593](https://github.com/kitconcept/kitconcept.intranet/issue/593)
+- Avatar Fallback for personPill @Tishasoumya-02 
+- Update volto-plate to latest one. @iFlameing 
+
 ## 2.0.0-alpha.17 (2026-06-12)
 
 ### Feature

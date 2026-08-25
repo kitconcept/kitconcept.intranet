@@ -132,7 +132,7 @@ services:
           - ${STACK_NAME}-tika
 
   solr:
-    image: ghcr.io/kitconcept/solr:${SOLR_TAG:-sha-826383b}
+    image: ghcr.io/kitconcept/solr:${SOLR_TAG:-3.0.0a0}
     command:
       - solr-precreate
       - plone

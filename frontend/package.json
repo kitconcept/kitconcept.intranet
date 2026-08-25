@@ -1,6 +1,6 @@
 {
   "name": "intranet-dev",
-  "version": "2.0.0-alpha.17",
+  "version": "3.0.0-alpha.1",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "author": "kitconcept GmbH",
   "homepage": "https://github.com/kitconcept/intranet",
@@ -57,7 +57,6 @@
       "@kitconcept/volto-carousel-block": "workspace:*",
       "@kitconcept/volto-iframe-block": "workspace:*",
       "@kitconcept/volto-bm3-compat": "workspace:*",
-      "@kitconcept/volto-solr": "workspace:*",
       "@plone/registry": "workspace:*",
       "react-aria-components": "catalog:"
     },

@@ -1,0 +1,139 @@
+{
+  "@id": "/bilder",
+  "@type": "Document",
+  "UID": "6b1c57b5651546eab14fd5e0e1e32aeb",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2747ff88-6d35-497a-8d6f-e19cb4818c46": {
+      "@type": "search",
+      "facets": [
+        {
+          "@id": "94aa7403-0ad8-41de-b574-7d35ca848b2d",
+          "advanced": false,
+          "field": {
+            "label": "Organisational Unit",
+            "value": "organisational_unit_reference"
+          },
+          "hidden": false,
+          "multiple": false
+        },
+        {
+          "@id": "f1e3e35c-c250-4e93-a689-48e3cdce30d6",
+          "advanced": false,
+          "field": {
+            "label": "Tag",
+            "value": "Subject"
+          },
+          "hidden": false,
+          "multiple": false
+        }
+      ],
+      "listingBodyTemplate": "grid",
+      "query": {
+        "b_size": "24",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "./"
+          },
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Image"
+            ]
+          }
+        ],
+        "sort_on": "created",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    },
+    "855ad765-09ad-46fb-8e22-a30064ae93e8": {
+      "@type": "slate"
+    },
+    "c1eb4997-9777-429e-bf37-514a309c89b8": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "c1eb4997-9777-429e-bf37-514a309c89b8",
+      "2747ff88-6d35-497a-8d6f-e19cb4818c46",
+      "855ad765-09ad-46fb-8e22-a30064ae93e8"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2024-05-16T20:17:44+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Alle Bilder aus dem DFNT im \u00dcberblick.",
+  "effective": "2024-05-16T22:21:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": true,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "bilder",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T13:57:28+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Bilder",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:38+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:38+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

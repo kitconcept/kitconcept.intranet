@@ -1,0 +1,305 @@
+{
+  "@id": "/services/facility-management/sicherheit-notfalle",
+  "@type": "Document",
+  "UID": "db70b5cd5109496f83ef7ab032df331d",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "25cfa1ed-1413-4d74-a758-0bb87bc802a4": {
+      "@type": "slate",
+      "plaintext": "## Sicherheit & Notf\u00e4lle\n\nBrandschutz, Erste Hilfe, Notfallnummern und Evakuierungsp\u00e4ne.\n\n**Notfallnummern:**\n- Feuerwehr/Polizei: 110 / 112\n- Erste Hilfe: Intranet -> Erste Hilfe\n- Sicherheit (DFNT): +49 221 470-2000\n- Arbeitsmedizin: +49 221 470-2200\n\n**Brandschutz:**\n- Evakuierungsp\u00e4ne in allen Geb\u00e4uden\n- Feuerwehrsprechtag: Jedes Semester\n- Brandmelder und Feuerl\u00f6scher gekennzeichnet\n\n**Erste Hilfe:**\n- Ausbildungskurse: Siehe Intranet\n- Adressen von Ersthelfer*innen: Aushang vor Ort\n\n**Kontakt:** sicherheit@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Sicherheit & Notf\u00e4lle"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Brandschutz, Erste Hilfe, Notfallnummern und Evakuierungsp\u00e4ne."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Notfallnummern:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Feuerwehr/Polizei: 110 / 112"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Erste Hilfe: Intranet -> Erste Hilfe"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sicherheit (DFNT): +49 221 470-2000"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Arbeitsmedizin: +49 221 470-2200"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Brandschutz:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Evakuierungsp\u00e4ne in allen Geb\u00e4uden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Feuerwehrsprechtag: Jedes Semester"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Brandmelder und Feuerl\u00f6scher gekennzeichnet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Erste Hilfe:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ausbildungskurse: Siehe Intranet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Adressen von Ersthelfer*innen: Aushang vor Ort"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "sicherheit@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:sicherheit@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "48066ad2-e64a-42ca-9bfd-2e93cb790c8e": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "48066ad2-e64a-42ca-9bfd-2e93cb790c8e",
+      "25cfa1ed-1413-4d74-a758-0bb87bc802a4"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:44+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Brandschutz, Erste Hilfe, Notfallnummern und Evakuierungspl\u00e4ne: wichtige Informationen f\u00fcr alle Mitarbeitenden zur Sicherheit auf dem Campus.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "sicherheit-notfalle",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:16:11+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Sicherheit & Notf\u00e4lle",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

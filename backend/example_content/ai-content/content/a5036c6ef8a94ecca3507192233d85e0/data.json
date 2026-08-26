@@ -1,0 +1,100 @@
+{
+  "@id": "/ueber-uns/organisation-struktur",
+  "@type": "Document",
+  "UID": "a5036c6ef8a94ecca3507192233d85e0",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "1c5f6e18-4052-4b56-adc1-69ab79603954": {
+      "@type": "title"
+    },
+    "abc123": {
+      "@type": "image",
+      "alt": "Team-Meeting mit Whiteboard-Pr\u00e4sentation und Projektplanung im modernen B\u00fcroraum",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/cbe3f67a11ea474d9b6dae2ee81b5aa3"
+    },
+    "def456": {
+      "@type": "slate",
+      "text": "Einblick in den organisatorischen Aufbau des DFNT: visualisiertes Organigramm der Aufbauorganisation, Informationen zu Direktorium und Vorstand, Zusammensetzung und Aufgaben des Wissenschaftlichen Beirats, Kuratoriumsmitglieder sowie \u00dcbersicht der zentralen Verwaltungsabteilungen."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "1c5f6e18-4052-4b56-adc1-69ab79603954",
+      "abc123",
+      "def456"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:08:14+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Einblick in den organisatorischen Aufbau des DFNT: visualisiertes Organigramm der Aufbauorganisation, Informationen zu Direktorium und Vorstand, Zusammensetzung und Aufgaben des Wissenschaftlichen Beirats, Kuratoriumsmitglieder sowie \u00dcbersicht der zentralen Verwaltungsabteilungen.",
+  "effective": "2026-03-05T16:08:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "organisation-struktur",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:29:08+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Organisation & Struktur",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:50+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

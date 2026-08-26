@@ -1,0 +1,296 @@
+{
+  "@id": "/arbeitsthemen/personal-hr/zeiterfassung",
+  "@type": "Document",
+  "UID": "12b0fc6e6156497ba7467bc6f56d09f0",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "6a830b0f-67d4-468f-bb28-a297bdaa4f20": {
+      "@type": "slate",
+      "plaintext": "## Krankmeldung\n\n### Am ersten Krankheitstag\n- Vorgesetzten **telefonisch informieren** (vor Arbeitsbeginn)\n\n### Ab dem 4. Krankheitstag\n- **Arbeitsunf\u00e4higkeitsbescheinigung (AU)** vorlegen\n- Original an HR schicken oder im Portal hochladen\n\n### Sonderregelung\n- Erste 3 Tage ohne AU m\u00f6glich\n- Maximal 3x pro Jahr ohne AU-Bescheinigung\n\n### Lohnzahlung\n- **6 Wochen** Lohnfortzahlung durch DFNT\n- Danach Krankengeld von der Krankenkasse\n\n**Kontakt:** hr-krankmeldung@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Krankmeldung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Am ersten Krankheitstag"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vorgesetzten "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "telefonisch informieren"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (vor Arbeitsbeginn)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Ab dem 4. Krankheitstag"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Arbeitsunf\u00e4higkeitsbescheinigung (AU)"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " vorlegen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Original an HR schicken oder im Portal hochladen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Sonderregelung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Erste 3 Tage ohne AU m\u00f6glich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Maximal 3x pro Jahr ohne AU-Bescheinigung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Lohnzahlung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "6 Wochen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Lohnfortzahlung durch DFNT"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Danach Krankengeld von der Krankenkasse"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "hr-krankmeldung@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:hr-krankmeldung@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "e17603a0-311b-4b5f-9fc7-b15a1671256c": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "e17603a0-311b-4b5f-9fc7-b15a1671256c",
+      "6a830b0f-67d4-468f-bb28-a297bdaa4f20"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:34+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Systeme und Regelungen zur Arbeitszeiterfassung am DFNT: Nutzung der Zeiterfassungssoftware, Korrektionen und Ansprechpartner.",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "zeiterfassung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:05:54+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Zeiterfassung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:38+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:38+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

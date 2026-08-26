@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -9,6 +9,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { getContentIcon } from '@plone/volto/helpers/Content/Content';
+import config from '@plone/volto/registry';
 import {
   createContent,
   updateContent,
@@ -35,6 +36,9 @@ interface NavigationTreeItemProps {
   isLoadingForPath: (path: string) => boolean;
   refetchPath: (path: string) => Promise<{ items: SearchItem[] }>;
   expandPath: (path: string) => void;
+  peekChildren: (path: string) => void;
+  getChildCountForPath: (path: string) => number | null;
+  isPeekedForPath: (path: string) => boolean;
 }
 
 export function NavigationTreeItem({
@@ -45,6 +49,9 @@ export function NavigationTreeItem({
   isLoadingForPath,
   refetchPath,
   expandPath,
+  peekChildren,
+  getChildCountForPath,
+  isPeekedForPath,
 }: NavigationTreeItemProps) {
   const intl = useIntl();
   const dispatch = useDispatch() as any;
@@ -54,6 +61,8 @@ export function NavigationTreeItem({
   const children = getChildrenForPath(itemPath);
   const isLoading = isLoadingForPath(itemPath);
   const isFetched = fetchedPaths.current.has(itemPath);
+  const childCount = getChildCountForPath(itemPath);
+  const isPeeked = isPeekedForPath(itemPath);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRenaming, setIsRenaming] = useState(false);
@@ -67,9 +76,25 @@ export function NavigationTreeItem({
   const addInputRef = useRef<HTMLInputElement>(null);
   useStickyFocus(isAdding, addInputRef);
 
+  useEffect(() => {
+    if (item.is_folderish && !isFetched && !isPeeked) {
+      peekChildren(itemPath);
+    }
+  }, [item.is_folderish, isFetched, isPeeked, itemPath, peekChildren]);
+
+  const hasChildren = isFetched
+    ? children.length > 0
+    : isPeeked
+      ? (childCount ?? 0) > 0
+      : false;
+
+  const iconName =
+    item['@type'] === 'WikiPage' && !hasChildren
+      ? config.settings.contentIcons.Document
+      : getContentIcon(item['@type'], hasChildren);
+
   const showChevron =
-    item.is_folderish &&
-    (!isFetched || children.length > 0 || isLoading || isAdding);
+    item.is_folderish && (hasChildren || isLoading || isAdding);
 
   function showActionError(error?: unknown) {
     const message = (
@@ -196,11 +221,7 @@ export function NavigationTreeItem({
       }
     >
       <TreeItemContent>
-        <Icon
-          name={getContentIcon(item['@type'], item.is_folderish)}
-          size="16px"
-          className="nav-tree-icon"
-        />
+        <Icon name={iconName} size="16px" className="nav-tree-icon" />
         {isRenaming ? (
           <input
             ref={renameInputRef}
@@ -323,6 +344,9 @@ export function NavigationTreeItem({
           isLoadingForPath={isLoadingForPath}
           refetchPath={refetchPath}
           expandPath={expandPath}
+          peekChildren={peekChildren}
+          getChildCountForPath={getChildCountForPath}
+          isPeekedForPath={isPeekedForPath}
         />
       ))}
     </TreeItem>

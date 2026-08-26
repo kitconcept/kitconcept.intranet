@@ -1,0 +1,307 @@
+{
+  "@id": "/services/zentrale-verwaltung/revision-compliance",
+  "@type": "Document",
+  "UID": "3c58c3c95cc144f2a6679ffb011bc310",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2c59e857-8f38-48e1-8b37-3dea3e4554d4": {
+      "@type": "title"
+    },
+    "e35ab719-45b6-4857-8033-37276f48c547": {
+      "@type": "slate",
+      "plaintext": "## Revision & Compliance\n\nInterne Revision, Compliance-Anforderungen und Meldestellen.\n\n**Aufgaben der internen Revision:**\n- Finanzielle Kontrollen\n- Einhaltung von Richtlinien und Gesetzen\n- Risikoanalysen\n- Audits und Inspektionen\n\n**Compliance-Standards:**\n- DFG-Kodex\n- DFNT-Richtlinien\n- Gesetze und Verordnungen\n\n**Meldestelle:** compliance@dfnt.de (vertraulich)\n\n**Hinweisgeber-System:** Anonym m\u00f6glich\n\n**Kontakt:** revision@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Revision & Compliance"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Interne Revision, Compliance-Anforderungen und Meldestellen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Aufgaben der internen Revision:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Finanzielle Kontrollen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einhaltung von Richtlinien und Gesetzen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Risikoanalysen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Audits und Inspektionen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Compliance-Standards:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFG-Kodex"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFNT-Richtlinien"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Gesetze und Verordnungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Meldestelle:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "compliance@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:compliance@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": " (vertraulich)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Hinweisgeber-System:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Anonym m\u00f6glich"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "revision@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:revision@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "2c59e857-8f38-48e1-8b37-3dea3e4554d4",
+      "e35ab719-45b6-4857-8033-37276f48c547"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:30:00+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Interne Revision, Compliance-Anforderungen und Meldestellen: Aufgaben, Verfahren und Kontakt zur internen Revision.",
+  "effective": "2026-03-05T16:30:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "revision-compliance",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:15:53+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Revision & Compliance",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:49+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

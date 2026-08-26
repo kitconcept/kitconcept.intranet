@@ -55,16 +55,14 @@ module.exports = {
             './packages/volto-light-theme/frontend/packages/volto-light-theme/src',
           ],
           [
-            'altVLT',
-            './packages/volto-light-theme/frontend/packages/volto-light-theme/src',
-          ],
-          [
             '@kitconcept/volto-iframe-block',
             './packages/volto-iframe-block/packages/volto-iframe-block/src',
           ],
           [
             '@kitconcept/volto-solr',
-            './packages/volto-solr/frontend/packages/volto-solr/src',
+            // installed from npm; pnpm links it into the consuming
+            // package's node_modules
+            './packages/kitconcept-intranet/node_modules/@kitconcept/volto-solr/src',
           ],
           ...addonAliases,
         ],

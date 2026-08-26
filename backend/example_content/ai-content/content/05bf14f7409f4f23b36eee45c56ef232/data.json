@@ -1,0 +1,350 @@
+{
+  "@id": "/forschung/forschungsinfrastruktur/geratebuchungssystem",
+  "@type": "Document",
+  "UID": "05bf14f7409f4f23b36eee45c56ef232",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "94136f06-f3b4-4525-b6d4-8da5f37dcc4d": {
+      "@type": "title"
+    },
+    "b444a4b2-994c-40da-8ef4-b6ee19c35c55": {
+      "@type": "slate",
+      "plaintext": "## Buchungsportal f\u00fcr Forschungsger\u00e4te\n\nDas zentrale Buchungssystem verwaltet alle Ger\u00e4te des DFNT und erm\u00f6glicht eine effiziente Ressourcenplanung.\n\n### Zugang zum Portal\n\n**Website**: geraete.dfnt.de\n**Login**: Mit DFNT-Konto\n\n### Buchungsregeln\n\n- **Vorlauf**: Mind. 24 Stunden voraus (Gro\u00dfger\u00e4te: 48 Stunden)\n- **Stornierung**: Bis 4 Stunden vor Buchungsbeginn kostenlos\n- **Geb\u00fchren bei Stornierung**: Nach der 4-Stunden-Frist 50%\n- **No-Show-Geb\u00fchr**: 100% der Buchungsgeb\u00fchr\n\n### Features des Portals\n\n- **Echtzeitverf\u00fcgbarkeit**: Aktuelle Verf\u00fcgbarkeit aller Ger\u00e4te\n- **Wartungszeiten**: Vorab angek\u00fcndigt und in der Planung ber\u00fccksichtigt\n- **Fremdnutzung**: Externe Einrichtungen buchen \u00fcber die Vertragsabteilung\n\n### Technischer Support\n\n**Probleme mit dem Buchungssystem**: it-geraete@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Buchungsportal f\u00fcr Forschungsger\u00e4te"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Das zentrale Buchungssystem verwaltet alle Ger\u00e4te des DFNT und erm\u00f6glicht eine effiziente Ressourcenplanung."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Zugang zum Portal"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Website"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": geraete.dfnt.de\n"
+            },
+            {
+              "children": [
+                {
+                  "text": "Login"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Mit DFNT-Konto"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Buchungsregeln"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vorlauf"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Mind. 24 Stunden voraus (Gro\u00dfger\u00e4te: 48 Stunden)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Stornierung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Bis 4 Stunden vor Buchungsbeginn kostenlos"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Geb\u00fchren bei Stornierung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Nach der 4-Stunden-Frist 50%"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "No-Show-Geb\u00fchr"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 100% der Buchungsgeb\u00fchr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Features des Portals"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Echtzeitverf\u00fcgbarkeit"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Aktuelle Verf\u00fcgbarkeit aller Ger\u00e4te"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Wartungszeiten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Vorab angek\u00fcndigt und in der Planung ber\u00fccksichtigt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Fremdnutzung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Externe Einrichtungen buchen \u00fcber die Vertragsabteilung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Technischer Support"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Probleme mit dem Buchungssystem"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "it-geraete@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:it-geraete@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "94136f06-f3b4-4525-b6d4-8da5f37dcc4d",
+      "b444a4b2-994c-40da-8ef4-b6ee19c35c55"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:38+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Zentrales Buchungsportal f\u00fcr geteilte Forschungsger\u00e4te und Infrastruktur: Verf\u00fcgbarkeits\u00fcbersicht, Reservierungsprozess und Stornierungsregeln.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "geratebuchungssystem",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:41+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Ger\u00e4tebuchungssystem",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

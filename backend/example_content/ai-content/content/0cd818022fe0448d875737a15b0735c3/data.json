@@ -1,0 +1,100 @@
+{
+  "@id": "/ueber-uns/leitlinien-richtlinien",
+  "@type": "Document",
+  "UID": "0cd818022fe0448d875737a15b0735c3",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "abc123": {
+      "@type": "image",
+      "alt": "Person im Anzug unterzeichnet Dokument auf Klemmbrett mit Kugelschreiber",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/a2d622fc5c0f48cb9ff0acf5bc45a968"
+    },
+    "b7145244-d283-4ab7-8ff1-7e644b44caa2": {
+      "@type": "title"
+    },
+    "def456": {
+      "@type": "slate",
+      "text": "Verbindliche Verhaltens- und Arbeitsleitlinien des DFNT: Code of Conduct, Grunds\u00e4tze Guter Wissenschaftlicher Praxis, DSGVO-konforme Datenschutzrichtlinie, IT-Nutzungsrichtlinie, Reiserichtlinie f\u00fcr Dienstreisen, Nachhaltigkeitsleitlinie zum Umwelt- und Klimaschutz sowie Diversit\u00e4ts- und Inklusionsstrategie."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "b7145244-d283-4ab7-8ff1-7e644b44caa2",
+      "abc123",
+      "def456"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:08:18+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Verbindliche Verhaltens- und Arbeitsleitlinien des DFNT: Code of Conduct, Grunds\u00e4tze Guter Wissenschaftlicher Praxis, DSGVO-konforme Datenschutzrichtlinie, IT-Nutzungsrichtlinie, Reiserichtlinie f\u00fcr Dienstreisen, Nachhaltigkeitsleitlinie zum Umwelt- und Klimaschutz sowie Diversit\u00e4ts- und Inklusionsstrategie.",
+  "effective": "2026-03-05T16:08:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "leitlinien-richtlinien",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:30:05+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Leitlinien & Richtlinien",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:49+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

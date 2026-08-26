@@ -1,0 +1,175 @@
+{
+  "@id": "/ueber-uns/standorte/berlin",
+  "@type": "Location",
+  "UID": "027ccc49f4ac467d9d9fb3bdc4115d79",
+  "allow_discussion": null,
+  "blocks": {
+    "440a6c11-9151-44dc-b291-00c8e7e72637": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "Berlin",
+      "url": "../resolveuid/667787f2a23945f2833bbe62208526b1",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "658a53c9-ac1c-432e-b4c1-9a1336547e07": {
+      "@type": "listing",
+      "headline": "Neues vom Standort",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "027ccc49f4ac467d9d9fb3bdc4115d79"
+            ]
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "summary"
+    },
+    "e4e6c0fa-e3d6-4d7d-b64b-2ce8b6b109d9": {
+      "@type": "listing",
+      "headline": "Institute am Standort Berlin",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Organisational Unit"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "027ccc49f4ac467d9d9fb3bdc4115d79"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "f98678c0-5912-4af7-be61-8d39edcfaaea": {
+      "@type": "listing",
+      "headline": "Anstehende Termine",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "027ccc49f4ac467d9d9fb3bdc4115d79"
+            ]
+          }
+        ],
+        "sort_on": "start",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "listDate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "440a6c11-9151-44dc-b291-00c8e7e72637",
+      "f98678c0-5912-4af7-be61-8d39edcfaaea",
+      "658a53c9-ac1c-432e-b4c1-9a1336547e07",
+      "e4e6c0fa-e3d6-4d7d-b64b-2ce8b6b109d9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T11:41:47+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "berlin",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-22T09:53:40+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "private",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "subjects": [],
+  "title": "Berlin",
+  "type_title": "Location",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

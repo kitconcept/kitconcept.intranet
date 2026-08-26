@@ -1,0 +1,1050 @@
+{
+  "@id": "/community/gleichstellung/dual-career-service",
+  "@type": "Document",
+  "UID": "7794f061cb48480fb0e5bd381fdda1cc",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "758678d7-e919-42d3-be94-69e9e06b1000": {
+      "@type": "title"
+    },
+    "ae0f8cd2-5403-436d-9df6-cf417551ec88": {
+      "@type": "slate",
+      "plaintext": "## Projektdokumentation\n\n### Verf\u00fcgbare Templates\n\nDie DFNT stellt umfangreiche Templates f\u00fcr die Projektdokumentation zur Verf\u00fcgung:\n\n**Zugang**: https://intern.dfnt.de/vorlagen/projektdokumentation\n\n### Dokumenttypes\n\n**Projektantrag (PA-01)**\n- **Einsatz**: F\u00fcr F\u00f6rdermittelantr\u00e4ge\n- **Inhalt**: Projektbeschreibung, Ziele, Ressourcenplan, Budget\n- **Richtungen**: F\u00fcr DFG, BMBF, EU-Projekte\n\n**Projektplan (MS Project Template)**\n- **Format**: Microsoft Project (.mpp)\n- **Inhalt**: Meilensteine, Aufgaben, Termine, Abh\u00e4ngigkeiten\n- **Einsatz**: Projektplanung und -steuerung\n- **Aktualisierung**: Regelm\u00e4\u00dfige Aktualisierung notwendig\n\n**Statusbericht**\n- **Frequenz**: Monatlich oder quartalsweise\n- **Inhalt**: Fortschritt, Meilensteine erreicht, Abweichungen, Risiken\n- **Adressat**: Stakeholder, Auftraggeber, Lenkungsausschuss\n- **Template**: Standardisierte Struktur\n\n**Risikoregister**\n- **Zweck**: Identifikation und Verwaltung von Projektrisiken\n- **Inhalt**: Risikoidentifikation, Bewertung, Ma\u00dfnahmen\n- **Aktualisierung**: Regelm\u00e4\u00dfige \u00dcberpr\u00fcfung\n\n**Projektabschlussbericht**\n- **Einsatz**: Nach Projektende\n- **Inhalt**: Zusammenfassung, Ergebnisse, Lessons Learned\n- **Archivierung**: Wichtig f\u00fcr Wissenssicherung\n\n### EU-Projekte: Besondere Anforderungen\n\n**Dokumentationspflichten**\n- **Verwendungsnachweise**: Detaillierte Nachweise \u00fcber Mittelverwendung\n- **Stundenzettel**: Dokumentation von Arbeitszeiten nach Aktivit\u00e4ten\n- **Berichte**: Regelm\u00e4\u00dfige Fortschrittsberichte an die EU\n- **Compliance**: Alle Anforderungen einhalten\n\n### Projektmanagement-Tools\n\n**MS Project**\n- **Einsatz**: F\u00fcr gr\u00f6\u00dfere und komplexe Projekte\n- **Vorteile**: Detaillierte Planung und Ressourcenverwaltung\n\n**MS Planner**\n- **Einsatz**: F\u00fcr kleinere und agile Projekte\n- **Vorteile**: Einfache Bedienung, Integration mit Teams\n\n**Auswahl**: Je nach Projektgr\u00f6\u00dfe und Komplexit\u00e4t\n\n### Schulungsangebot\n\n**Projektmanagement-Grundkurs**\n- **Anbieter**: DFNT-Akademie\n- **H\u00e4ufigkeit**: 2x pro Jahr\n- **Inhalte**: Grundlagen, Tools, Best Practices\n- **Zielgruppe**: Projektmanager und Projektteams\n\n### Weitere Unterst\u00fctzung\n\n**Projektb\u00fcro des DFNT**\n- **Unterst\u00fctzung**: Beratung zu Projektmanagement\n- **Schulung**: Weitere Trainingsangebote\n- **Kontakt**: Siehe Intranet oder HR-Portal",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Projektdokumentation"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Verf\u00fcgbare Templates"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Die DFNT stellt umfangreiche Templates f\u00fcr die Projektdokumentation zur Verf\u00fcgung:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zugang"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "https://intern.dfnt.de/vorlagen/projektdokumentation"
+                }
+              ],
+              "data": {
+                "url": "https://intern.dfnt.de/vorlagen/projektdokumentation"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Dokumenttypes"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Projektantrag (PA-01)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einsatz"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": F\u00fcr F\u00f6rdermittelantr\u00e4ge"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Inhalt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Projektbeschreibung, Ziele, Ressourcenplan, Budget"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Richtungen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": F\u00fcr DFG, BMBF, EU-Projekte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Projektplan (MS Project Template)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Format"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Microsoft Project (.mpp)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Inhalt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Meilensteine, Aufgaben, Termine, Abh\u00e4ngigkeiten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einsatz"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Projektplanung und -steuerung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Aktualisierung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Regelm\u00e4\u00dfige Aktualisierung notwendig"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Statusbericht"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Frequenz"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Monatlich oder quartalsweise"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Inhalt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Fortschritt, Meilensteine erreicht, Abweichungen, Risiken"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Adressat"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Stakeholder, Auftraggeber, Lenkungsausschuss"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Template"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Standardisierte Struktur"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Risikoregister"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Zweck"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Identifikation und Verwaltung von Projektrisiken"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Inhalt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Risikoidentifikation, Bewertung, Ma\u00dfnahmen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Aktualisierung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Regelm\u00e4\u00dfige \u00dcberpr\u00fcfung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Projektabschlussbericht"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einsatz"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Nach Projektende"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Inhalt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Zusammenfassung, Ergebnisse, Lessons Learned"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Archivierung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Wichtig f\u00fcr Wissenssicherung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "EU-Projekte: Besondere Anforderungen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Dokumentationspflichten"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Verwendungsnachweise"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Detaillierte Nachweise \u00fcber Mittelverwendung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Stundenzettel"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Dokumentation von Arbeitszeiten nach Aktivit\u00e4ten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Berichte"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Regelm\u00e4\u00dfige Fortschrittsberichte an die EU"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Compliance"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Alle Anforderungen einhalten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Projektmanagement-Tools"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "MS Project"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einsatz"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": F\u00fcr gr\u00f6\u00dfere und komplexe Projekte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vorteile"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Detaillierte Planung und Ressourcenverwaltung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "MS Planner"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einsatz"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": F\u00fcr kleinere und agile Projekte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vorteile"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Einfache Bedienung, Integration mit Teams"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Auswahl"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Je nach Projektgr\u00f6\u00dfe und Komplexit\u00e4t"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Schulungsangebot"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Projektmanagement-Grundkurs"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Anbieter"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": DFNT-Akademie"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "H\u00e4ufigkeit"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 2x pro Jahr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Inhalte"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Grundlagen, Tools, Best Practices"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Zielgruppe"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Projektmanager und Projektteams"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Weitere Unterst\u00fctzung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Projektb\u00fcro des DFNT"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Unterst\u00fctzung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Beratung zu Projektmanagement"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Schulung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Weitere Trainingsangebote"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontakt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Siehe Intranet oder HR-Portal"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "758678d7-e919-42d3-be94-69e9e06b1000",
+      "ae0f8cd2-5403-436d-9df6-cf417551ec88"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:31:28+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Unterst\u00fctzungsangebote f\u00fcr Partnerinnen und Partner neu berufener Mitarbeitender: Karriereberatung, Netzwerke und Kinderbetreuung.",
+  "effective": "2026-03-05T16:31:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "dual-career-service",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:11:07+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Dual Career Service",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:41+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:41+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

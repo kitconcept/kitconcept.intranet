@@ -1,0 +1,374 @@
+{
+  "@id": "/arbeitsthemen/dienstreisen-mobilitaet/reisekostenabrechnung",
+  "@type": "Document",
+  "UID": "ded08aca36b1433f92aee5322ba238be",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "41431f82-ecd9-404f-8ace-6e389555236d": {
+      "@type": "title"
+    },
+    "88995cd0-2fc5-4456-993c-6858e2b1da0d": {
+      "@type": "slate",
+      "plaintext": "## Reisekosten abrechnen - Formulare und Prozess\n\nDie Abrechnung von Reisekosten erfolgt \u00fcber das SAP-Reisekostenmodul. Reichen Sie alle erforderlichen Belege innerhalb von **4 Wochen nach Ihrer R\u00fcckkehr** ein, damit Ihre Erstattung bez\u00fcgig verk\u00fcrzt wird.\n\n### Ablauf der Reisekostenabrechnung\n\n#### 1. Belege vorbereiten\nSammeln Sie alle Original-Belege oder eingescannte Kopien:\n- Bahntickets und Fahrkarten\n- Flugtickets oder Bordkarten\n- Hotelanrechnungen\n- Quittungen f\u00fcr Verpflegung und Nebenkosten\n- M\u00f6glichst digitale Belege durch Fotos/Scans\n\n#### 2. SAP-Reisekostenmodul nutzen\nMelden Sie sich im SAP-Portal an und navigieren Sie zum Reisekostenmodul. Erstellen Sie einen neuen Abrechnungsantrag mit Verweisen auf Ihren urspr\u00fcnglichen Reiseantrag.\n\n#### 3. Belege hochladen\nL\u00e4den Sie alle Belege als PDF oder Bilder hoch. Es gen\u00fcgt eine Kopie, wenn die Original-Belege archiviert wurden. Die Dateigr\u00f6\u00dfe sollte 50 MB pro Datei nicht \u00fcberschreiten.\n\n### Pauschals\u00e4tze und Erstattungsbetr\u00e4ge\n\n**Verpflegungspauschalen (Inland):**\n- Ab 8 Stunden Abwesenheit: 14 EUR\n- Ab 24 Stunden Abwesenheit: 28 EUR\n\n**Verpflegungspauschalen (Ausland):**\nDie S\u00e4tze sind land- und tagesabh\u00e4ngig. Pr\u00fcfen Sie die aktuellen BRKG-Pauschals\u00e4tze im SAP-System f\u00fcr Ihr Zielland.\n\n### Erstattungsdauer\n\nNach der Genehmigung Ihres Abrechnungsantrags durch die Reisestelle erfolgt die Erstattung der Kosten innerhalb von **2-3 Wochen** auf das hinterlegte Bankkontos. Bei R\u00fcckfragen zu fehlenden Belegen kann sich die Bearbeitung verz\u00f6gern.\n\n### Support und Kontakt\n\nBei Fragen zur Reisekostenabrechnung oder technischen Problemen im SAP-System kontaktieren Sie: **dienstreisen@dfnt.de** oder +49 221 470-5400",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Reisekosten abrechnen - Formulare und Prozess"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Abrechnung von Reisekosten erfolgt \u00fcber das SAP-Reisekostenmodul. Reichen Sie alle erforderlichen Belege innerhalb von "
+            },
+            {
+              "children": [
+                {
+                  "text": "4 Wochen nach Ihrer R\u00fcckkehr"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " ein, damit Ihre Erstattung bez\u00fcgig verk\u00fcrzt wird."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Ablauf der Reisekostenabrechnung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "1. Belege vorbereiten"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "text": "Sammeln Sie alle Original-Belege oder eingescannte Kopien:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bahntickets und Fahrkarten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Flugtickets oder Bordkarten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Hotelanrechnungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Quittungen f\u00fcr Verpflegung und Nebenkosten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "M\u00f6glichst digitale Belege durch Fotos/Scans"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "2. SAP-Reisekostenmodul nutzen"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "text": "Melden Sie sich im SAP-Portal an und navigieren Sie zum Reisekostenmodul. Erstellen Sie einen neuen Abrechnungsantrag mit Verweisen auf Ihren urspr\u00fcnglichen Reiseantrag."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "3. Belege hochladen"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "text": "L\u00e4den Sie alle Belege als PDF oder Bilder hoch. Es gen\u00fcgt eine Kopie, wenn die Original-Belege archiviert wurden. Die Dateigr\u00f6\u00dfe sollte 50 MB pro Datei nicht \u00fcberschreiten."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Pauschals\u00e4tze und Erstattungsbetr\u00e4ge"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verpflegungspauschalen (Inland):"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ab 8 Stunden Abwesenheit: 14 EUR"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ab 24 Stunden Abwesenheit: 28 EUR"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verpflegungspauschalen (Ausland):"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\nDie S\u00e4tze sind land- und tagesabh\u00e4ngig. Pr\u00fcfen Sie die aktuellen BRKG-Pauschals\u00e4tze im SAP-System f\u00fcr Ihr Zielland."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Erstattungsdauer"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Nach der Genehmigung Ihres Abrechnungsantrags durch die Reisestelle erfolgt die Erstattung der Kosten innerhalb von "
+            },
+            {
+              "children": [
+                {
+                  "text": "2-3 Wochen"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " auf das hinterlegte Bankkontos. Bei R\u00fcckfragen zu fehlenden Belegen kann sich die Bearbeitung verz\u00f6gern."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Support und Kontakt"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Bei Fragen zur Reisekostenabrechnung oder technischen Problemen im SAP-System kontaktieren Sie: "
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "dienstreisen@dfnt.de"
+                    }
+                  ],
+                  "data": {
+                    "url": "mailto:dienstreisen@dfnt.de"
+                  },
+                  "type": "link"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " oder +49 221 470-5400"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "41431f82-ecd9-404f-8ace-6e389555236d",
+      "88995cd0-2fc5-4456-993c-6858e2b1da0d"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:05+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Formulare und Prozessbeschreibung zur Abrechnung von Reisekosten",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "reisekostenabrechnung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:05:10+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Reisekostenabrechnung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:37+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:37+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

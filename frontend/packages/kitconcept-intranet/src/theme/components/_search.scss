@@ -1,6 +1,6 @@
-#page-search > .ui.container {
+.section-search #page-search > .ui.container {
   width: 100% !important;
-  max-width: 1440px !important;
+  max-width: var(--layout-container-width) !important;
   padding: 0 10px !important;
   margin: 0 auto !important;
 }

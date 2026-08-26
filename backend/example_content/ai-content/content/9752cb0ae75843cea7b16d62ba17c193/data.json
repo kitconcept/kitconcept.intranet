@@ -1,0 +1,198 @@
+{
+  "@id": "/services/hr-services/arbeitszeitkonten",
+  "@type": "Document",
+  "UID": "9752cb0ae75843cea7b16d62ba17c193",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "77edc932-8fbf-429a-8ada-1a3ac9e7adbb": {
+      "@type": "title"
+    },
+    "b78ba754-4dd2-41fc-be2e-2f894758328d": {
+      "@type": "slate",
+      "plaintext": "## Arbeitszeitkonten\n\nArbeitszeitkonten \u00fcber ATOSS-System einsehbar (hr.dfnt.de/zeitkonto).\n\n**\u00dcberstunden-Ausgleich:** bis Ende des Quartals (sonst Verfallsregelung nach Betriebsvereinbarung)\n\n**Gleitzeitkonto:** max. +60h / -20h Saldo (Schwellwerte)\n\n**Auszahlung von \u00dcberstunden:** nur in Ausnahmef\u00e4llen nach Genehmigung\n\n**Zeitkonten f\u00fcr befristet Besch\u00e4ftigte:** gelten nur innerhalb der Vertragslaufzeit\n\n**Fragen:** hr-zeitwirtschaft@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Arbeitszeitkonten"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Arbeitszeitkonten \u00fcber ATOSS-System einsehbar (hr.dfnt.de/zeitkonto)."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "\u00dcberstunden-Ausgleich:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " bis Ende des Quartals (sonst Verfallsregelung nach Betriebsvereinbarung)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Gleitzeitkonto:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " max. +60h / -20h Saldo (Schwellwerte)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Auszahlung von \u00dcberstunden:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " nur in Ausnahmef\u00e4llen nach Genehmigung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zeitkonten f\u00fcr befristet Besch\u00e4ftigte:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " gelten nur innerhalb der Vertragslaufzeit"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Fragen:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "hr-zeitwirtschaft@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:hr-zeitwirtschaft@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "77edc932-8fbf-429a-8ada-1a3ac9e7adbb",
+      "b78ba754-4dd2-41fc-be2e-2f894758328d"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:29+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\u00dcberstunden, Gleitzeitguthaben und Arbeitszeitnachweise einsehen: Zugang zum Zeiterfassungssystem und Kl\u00e4rung von Differenzen.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "arbeitszeitkonten",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:12:19+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Arbeitszeitkonten",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

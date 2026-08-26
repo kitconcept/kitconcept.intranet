@@ -1,0 +1,326 @@
+{
+  "@id": "/forschung/forschungsinfrastruktur/labore-reinraume",
+  "@type": "Document",
+  "UID": "946f5a5d28c74835be4c1e10df5fd731",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "0b92ee4c-5ad3-4030-9f99-4941f0194ad4": {
+      "@type": "title"
+    },
+    "5bbb5e38-7d09-4793-9757-a35e063de943": {
+      "@type": "slate",
+      "plaintext": "## Labore und Reinr\u00e4ume\n\nDas DFNT betreibt hochmoderne Laboreinrichtungen mit strengen Sicherheits- und Hygienestandards f\u00fcr alle Forschungsbereiche.\n\n### Buchung und Zugang\n\n**Buchungssystem**: geraete.dfnt.de\n**Einweisung**: Vor der ersten Nutzung ist eine Sicherheitseinweisung Pflicht. Termine k\u00f6nnen unter labor@dfnt.de vereinbart werden.\n\n### Laborbereiche\n\n- **Nasschemie-Labore**: Schutzklasse S1/S2 f\u00fcr sichere chemische Experimente\n- **Elektronenmikroskopie-Suite**: Hochaufl\u00f6sungsmikroskopie f\u00fcr strukturelle Analysen\n- **Zellkultur-Reinr\u00e4ume**: GMP-konform f\u00fcr biologische Forschung\n- **Physiklabore**: Schwingungsisoliert f\u00fcr pr\u00e4zise Messungen\n\n### Sicherheitsregeln\n\n- Laborkittel und Schutzbrille sind Pflicht\n- Essen und Trinken sind verboten\n- Arbeiten nach 18 Uhr nur in Gruppen gestattet\n- **Notfall**: 112 oder intern 333",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Labore und Reinr\u00e4ume"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Das DFNT betreibt hochmoderne Laboreinrichtungen mit strengen Sicherheits- und Hygienestandards f\u00fcr alle Forschungsbereiche."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Buchung und Zugang"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Buchungssystem"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": geraete.dfnt.de\n"
+            },
+            {
+              "children": [
+                {
+                  "text": "Einweisung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Vor der ersten Nutzung ist eine Sicherheitseinweisung Pflicht. Termine k\u00f6nnen unter "
+            },
+            {
+              "children": [
+                {
+                  "text": "labor@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:labor@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": " vereinbart werden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Laborbereiche"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Nasschemie-Labore"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Schutzklasse S1/S2 f\u00fcr sichere chemische Experimente"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Elektronenmikroskopie-Suite"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Hochaufl\u00f6sungsmikroskopie f\u00fcr strukturelle Analysen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Zellkultur-Reinr\u00e4ume"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": GMP-konform f\u00fcr biologische Forschung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Physiklabore"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Schwingungsisoliert f\u00fcr pr\u00e4zise Messungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Sicherheitsregeln"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Laborkittel und Schutzbrille sind Pflicht"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Essen und Trinken sind verboten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Arbeiten nach 18 Uhr nur in Gruppen gestattet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Notfall"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 112 oder intern 333"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "0b92ee4c-5ad3-4030-9f99-4941f0194ad4",
+      "5bbb5e38-7d09-4793-9757-a35e063de943"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:25+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Buchungssystem, Nutzungsordnungen und Ansprechpartner f\u00fcr Laborr\u00e4ume und Reinraumbereiche: Einweisungspflichten, Sicherheitsregeln und Kapazit\u00e4ts\u00fcbersicht.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "labore-reinraume",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:13+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Labore & Reinr\u00e4ume",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

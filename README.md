@@ -80,6 +80,16 @@ After selecting **kitconcept Intranet** you will see a form:
 
 <img alt="first step" src="./docs/docs/_static/02-auth-internal.png" width="640" />
 
+### AI Search Test Corpus (optional)
+
+For developing and testing the AI (RAG) search there is a second,
+optional content set — a German knowledge corpus with golden questions.
+It is not imported by default and requires a fresh site without the
+standard example content. See
+[backend/example_content/ai-content/README.md](./backend/example_content/ai-content/README.md)
+for setup instructions (Solr image, LLM credentials, import and
+indexing).
+
 ### Amend Example Content
 
 First, make sure that you do not have the backend process running.

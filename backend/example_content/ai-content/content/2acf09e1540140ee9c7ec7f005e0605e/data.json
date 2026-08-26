@@ -1,0 +1,133 @@
+{
+  "@id": "/forschung/institute/institut-fur-materialchemie-und-katalyse",
+  "@type": "Organisational Unit",
+  "UID": "2acf09e1540140ee9c7ec7f005e0605e",
+  "allow_discussion": null,
+  "blocks": {
+    "17413bc8-75d7-458d-9304-9c993e0df942": {
+      "@type": "image",
+      "align": "center",
+      "alt": "Handgeschriebene chemische Prozessdiagramme auf Laborfenster mit Glasgef\u00e4\u00dfen",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "theme": "default",
+      "title": "Chemische Prozessdiagramme im Labor",
+      "url": "../resolveuid/bdb0ea6c936d49f187beb568a0f0fe67"
+    },
+    "216352a2-6fa5-4490-8409-8b28c08e89d9": {
+      "@type": "title"
+    },
+    "5b42bb01-f283-4388-a83c-e9e3b019a835": {
+      "@type": "listing",
+      "headline": "Weiterf\u00fchrende Inhalte",
+      "headlineTag": "h2",
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "c436271b-83f8-4a0c-899a-4ed956d255a9": {
+      "@type": "description"
+    },
+    "cc3f1bff-5b8f-4497-9444-6bb12acb9706": {
+      "@type": "listing",
+      "headline": "Nachrichten aus dem Institut",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "2acf09e1540140ee9c7ec7f005e0605e"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "216352a2-6fa5-4490-8409-8b28c08e89d9",
+      "17413bc8-75d7-458d-9304-9c993e0df942",
+      "c436271b-83f8-4a0c-899a-4ed956d255a9",
+      "cc3f1bff-5b8f-4497-9444-6bb12acb9706",
+      "5b42bb01-f283-4388-a83c-e9e3b019a835"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T11:43:02+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Institut f\u00fcr Materialchemie und Katalyse entwickelt innovative Materialien und katalytische Prozesse f\u00fcr Grundlagenforschung und industrielle Anwendungen. Schwerpunkte sind organische Funktionsmaterialien, nachhaltige Katalysatorsysteme und neue Synthesewege. Am Standort Bonn verbinden rund 80 Forschende chemische Expertise mit modernster Analysetechnik \u2013 von der NMR-Spektroskopie bis zur Hochleistungs-R\u00f6ntgendiffraktometrie.",
+  "effective": "2026-03-05T11:43:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "institut-fur-materialchemie-und-katalyse",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "location_reference": [
+    "97e82b07b5444728b1517de15c79fefb"
+  ],
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-18T08:38:28+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "subjects": [],
+  "title": "Institut f\u00fcr Materialchemie und Katalyse",
+  "type_title": "Organisational Unit",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

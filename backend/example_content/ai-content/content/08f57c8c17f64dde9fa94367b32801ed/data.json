@@ -1,0 +1,140 @@
+{
+  "@id": "/aktuelles/nachrichten/alle-nachrichten/erstes-large-language-model-fur-deutschsprachige-wissenschaftskommunikation-vorgestellt",
+  "@type": "News Item",
+  "UID": "08f57c8c17f64dde9fa94367b32801ed",
+  "allow_discussion": false,
+  "blocks": {
+    "026bbf75-9560-457a-94f9-fe7ccefead99": {
+      "@type": "title"
+    },
+    "03e4591e-daf2-4e0d-be40-61a6dae4b7d9": {
+      "@type": "slate",
+      "plaintext": "Das Institut f\u00fcr K\u00dcnstliche Intelligenz und Datenwissenschaften des DFNT hat ein Meilenstein in der deutschsprachigen KI-Forschung erreicht: Die Ver\u00f6ffentlichung von \"WissKI-1\", dem ersten Large Language Model (LLM) speziell f\u00fcr deutsche Wissenschaftskommunikation. Das Modell wurde auf umfangreichen Datens\u00e4tzen aus wissenschaftlichen Ver\u00f6ffentlichungen, Lehrtexten und fachspezifischen Dokumenten trainiert.\n\nWissKI-1 versteht nicht nur deutsche Sprache auf hohem Niveau, sondern ist auch speziell optimiert f\u00fcr wissenschaftliche Kontexte. Es kann dabei helfen, komplexe Forschungsergebnisse verst\u00e4ndlich zu kommunizieren, wissenschaftliche Texte zu generieren und sogar bei der Analyse von Forschungsdaten unterst\u00fctzen. Das Modell beherrscht auch technisches Vokabular aus verschiedenen Disziplinen deutlich besser als allgemeine LLMs.\n\nEin besonderes Highlight: Das Modell wird unter der Creative-Commons-By-Lizenz (CC-BY) ver\u00f6ffentlicht und steht damit der gesamten wissenschaftlichen Gemeinschaft zur Verf\u00fcgung, auch f\u00fcr kommerzielle Anwendungen. Dies unterst\u00fctzt das DFNT-Ziel der Open Science. Das Modell und umfangreiche Dokumentation sind ab sofort unter https://wisski.dfnt.de verf\u00fcgbar.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das Institut f\u00fcr K\u00dcnstliche Intelligenz und Datenwissenschaften des DFNT hat ein Meilenstein in der deutschsprachigen KI-Forschung erreicht: Die Ver\u00f6ffentlichung von \"WissKI-1\", dem ersten Large Language Model (LLM) speziell f\u00fcr deutsche Wissenschaftskommunikation. Das Modell wurde auf umfangreichen Datens\u00e4tzen aus wissenschaftlichen Ver\u00f6ffentlichungen, Lehrtexten und fachspezifischen Dokumenten trainiert."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "WissKI-1 versteht nicht nur deutsche Sprache auf hohem Niveau, sondern ist auch speziell optimiert f\u00fcr wissenschaftliche Kontexte. Es kann dabei helfen, komplexe Forschungsergebnisse verst\u00e4ndlich zu kommunizieren, wissenschaftliche Texte zu generieren und sogar bei der Analyse von Forschungsdaten unterst\u00fctzen. Das Modell beherrscht auch technisches Vokabular aus verschiedenen Disziplinen deutlich besser als allgemeine LLMs."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Ein besonderes Highlight: Das Modell wird unter der Creative-Commons-By-Lizenz (CC-BY) ver\u00f6ffentlicht und steht damit der gesamten wissenschaftlichen Gemeinschaft zur Verf\u00fcgung, auch f\u00fcr kommerzielle Anwendungen. Dies unterst\u00fctzt das DFNT-Ziel der Open Science. Das Modell und umfangreiche Dokumentation sind ab sofort unter "
+            },
+            {
+              "children": [
+                {
+                  "text": "https://wisski.dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "https://wisski.dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": " verf\u00fcgbar."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "img-news-16": {
+      "@type": "image",
+      "align": "center",
+      "alt": "",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "url": "../resolveuid/4fd7dcfe675c455490e0b6da4103e3c8"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "026bbf75-9560-457a-94f9-fe7ccefead99",
+      "img-news-16",
+      "03e4591e-daf2-4e0d-be40-61a6dae4b7d9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T12:22:20+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Institut f\u00fcr KI & Datenwissenschaften pr\u00e4sentiert \u201eSciLingua-DE\", ein Large Language Model, das speziell f\u00fcr die deutschsprachige Wissenschaftskommunikation trainiert wurde. Das Modell erm\u00f6glicht die automatische Erzeugung verst\u00e4ndlicher Zusammenfassungen komplexer Forschungsergebnisse und soll den Transfer wissenschaftlicher Erkenntnisse in die \u00d6ffentlichkeit erleichtern.",
+  "effective": "2024-07-15T10:00:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": "KI-FORSCHUNG",
+  "id": "erstes-large-language-model-fur-deutschsprachige-wissenschaftskommunikation-vorgestellt",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T13:50:55+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Erstes Large Language Model f\u00fcr deutschsprachige Wissenschaftskommunikation vorgestellt",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:33+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:33+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

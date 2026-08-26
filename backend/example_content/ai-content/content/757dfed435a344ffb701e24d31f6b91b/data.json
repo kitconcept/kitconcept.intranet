@@ -1,0 +1,255 @@
+{
+  "@id": "/services/hr-services/gehaltsabrechnung",
+  "@type": "Document",
+  "UID": "757dfed435a344ffb701e24d31f6b91b",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "44277bd0-af6f-4316-95fa-52ede43971f6": {
+      "@type": "slate",
+      "plaintext": "Der Wissenschaftliche Rat (WR) ist das oberste Beratungsgremium der Forschung am DFNT.\n\n**Mitglieder:** Alle Gruppenleiter*innen und Professor*innen (ca. 45 Personen)\n\n**Aufgaben:**\n- Wissenschaftspolitische Empfehlungen\n- Beurteilung von Forschungsantr\u00e4gen\n- Vorschlagsrecht bei Berufungen\n- Jahresbericht\n\n**Wahl:** Alle 3 Jahre, Vorstand w\u00e4hlt aus Vorschl\u00e4gen\n\n**Sitzungen:** Quartalsweise, Protokolle auf intern.dfnt.de/wr\n\n**Kontakt:** wissenschaftlicher-rat@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Der Wissenschaftliche Rat (WR) ist das oberste Beratungsgremium der Forschung am DFNT."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Mitglieder:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Alle Gruppenleiter"
+            },
+            {
+              "children": [
+                {
+                  "text": "innen und Professor"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "innen (ca. 45 Personen)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Aufgaben:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Wissenschaftspolitische Empfehlungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Beurteilung von Forschungsantr\u00e4gen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vorschlagsrecht bei Berufungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Jahresbericht"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Wahl:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Alle 3 Jahre, Vorstand w\u00e4hlt aus Vorschl\u00e4gen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sitzungen:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Quartalsweise, Protokolle auf intern.dfnt.de/wr"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "wissenschaftlicher-rat@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:wissenschaftlicher-rat@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "5f5f98c7-2337-4a5c-99b0-33f9f925c7f0": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5f5f98c7-2337-4a5c-99b0-33f9f925c7f0",
+      "44277bd0-af6f-4316-95fa-52ede43971f6"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:28+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Termine, Ansprechpartner und Informationen zur monatlichen Abrechnung: Abrechnungszeitraum, Lohnsteuerunterlagen und Kontakt zur Lohnbuchhaltung.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "gehaltsabrechnung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:12:14+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Gehaltsabrechnung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

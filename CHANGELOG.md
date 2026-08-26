@@ -1,6 +1,36 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.0a2 (2026-08-26)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Fixed released-package builds by replacing the workspace-only VLT Header alias with component utility registration. @sneridagh 
+
+
+#### Internal
+
+- Removed the stale `altVLT` alias from the ESLint import resolver, left over after the VLT Header alias was replaced by component utility registration. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.0.0a1 (2026-08-24)
 
 ### Backend

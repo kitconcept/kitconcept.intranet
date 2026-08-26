@@ -12,6 +12,13 @@ import NavigationTreePortal from '../components/NavigationTree/NavigationTreePor
 import HideFooter from '../slots/HideFooter/HideFooter';
 import CommentsSlot from '../slots/Comments/CommentsSlot';
 
+const isWorkspaceDescendant = ({ content }: { content: any }) =>
+  Boolean(
+    content?.['@components']?.inherit?.['kitconcept.plate.workspace']?.from?.[
+      '@id'
+    ],
+  );
+
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
     slot: 'aboveHeader',
@@ -65,10 +72,10 @@ export default function install(config: ConfigType) {
     name: 'Content Interactions',
     component: ContentInteractions,
     predicates: [
-      ({ content }) =>
+      (args) =>
         !['Document', 'Event', 'News Item', 'WikiPage', 'Workspace'].includes(
-          content?.['@type'],
-        ),
+          args.content?.['@type'],
+        ) && !isWorkspaceDescendant(args),
     ],
   });
   config.registerSlotComponent({
@@ -85,13 +92,21 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
-    predicates: [ContentTypeCondition(['WikiPage', 'Workspace'])],
+    predicates: [
+      (args) =>
+        ContentTypeCondition(['WikiPage', 'Workspace'])(args) ||
+        isWorkspaceDescendant(args),
+    ],
   });
   config.registerSlotComponent({
     slot: 'aboveApp',
     name: 'HideFooter',
     component: HideFooter,
-    predicates: [ContentTypeCondition(['WikiPage', 'Workspace'])],
+    predicates: [
+      (args) =>
+        ContentTypeCondition(['WikiPage', 'Workspace'])(args) ||
+        isWorkspaceDescendant(args),
+    ],
   });
 
   return config;

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import config from '@plone/volto/registry';
 import HeaderBreadcrumbs from './HeaderBreadcrumbs';
 import HeaderSearch from './HeaderSearch';
 import cx from 'classnames';
-
-import VLTHeader from 'altVLT/components/Header/Header';
 
 type HeaderState = {
   content: {
@@ -24,6 +23,7 @@ type HeaderState = {
 };
 
 const Header = (props) => {
+  const VLTHeader = config.getUtility({ name: 'vlt', type: 'header' }).method;
   const { pathname } = props;
   const isWorkspace = useSelector((state: HeaderState) =>
     Boolean(

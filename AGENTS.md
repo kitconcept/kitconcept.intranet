@@ -108,3 +108,16 @@ Use the Cypress path mainly to maintain or debug existing legacy specs under `fr
 - Be careful with `mrs.developer.json`, local workspace overrides, and the vendored/frontend core relationship.
 - When changing frontend behavior, consider whether the change belongs in `frontend/packages/kitconcept-intranet` or in the vendored Volto core area.
 - When changing exported backend content or distribution setup, verify whether the change affects demo data, installation defaults, or test fixtures.
+
+## Changelog Fragments
+
+This repo checks for towncrier fragments in CI.
+
+- Backend changes need a fragment under `backend/news/`
+- Frontend add-on changes need a fragment under `frontend/packages/kitconcept-intranet/news/`
+- Repo-level (not related to `backend` or `frontend`) changes may need a fragment under the root `news/`
+
+## PR Guidance
+
+- Create a PR only when you are told to
+- After creating a PR, make sure that a Towncrier fragment is present for the change, and that it is in the correct location. Create it/them if needed following the Changelog Fragments guidance section.

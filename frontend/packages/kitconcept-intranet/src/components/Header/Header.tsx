@@ -4,6 +4,7 @@ import config from '@plone/volto/registry';
 import HeaderBreadcrumbs from './HeaderBreadcrumbs';
 import HeaderSearch from './HeaderSearch';
 import cx from 'classnames';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 
 type HeaderState = {
   content: {
@@ -64,16 +65,19 @@ const Header = (props) => {
   }
 
   return (
-    <div className="header-intranet-compact-wrapper">
-      <div
-        className={cx('header-intranet-compact', {
-          'is-route-transition': isRouteTransition,
-        })}
-      >
-        <HeaderBreadcrumbs pathname={pathname} />
-        <HeaderSearch />
+    <>
+      <BodyClass className="has-header-intranet-compact" />
+      <div className="header-intranet-compact-wrapper">
+        <div
+          className={cx('header-intranet-compact', {
+            'is-route-transition': isRouteTransition,
+          })}
+        >
+          <HeaderBreadcrumbs pathname={pathname} />
+          <HeaderSearch />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

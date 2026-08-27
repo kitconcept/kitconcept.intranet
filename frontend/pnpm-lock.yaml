@@ -74,7 +74,7 @@ catalogs:
       version: 3.2.2
     tailwindcss:
       specifier: ^4.1.12
-      version: 4.3.0
+      version: 4.3.2
     tsup:
       specifier: ^8.5.0
       version: 8.5.1
@@ -170,13 +170,13 @@ importers:
         version: 3.6.0
       tailwind-variants:
         specifier: 'catalog:'
-        version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.0)
+        version: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.2)
       tailwindcss:
         specifier: 'catalog:'
-        version: 4.3.0
+        version: 4.3.2
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.3.0)
+        version: 1.0.7(tailwindcss@4.3.2)
     devDependencies:
       '@arethetypeswrong/cli':
         specifier: ^0.16.4
@@ -234,7 +234,7 @@ importers:
         version: 20.2.0(@types/node@24.13.1)(magicast@0.3.5)
       tailwindcss-react-aria-components:
         specifier: ^2.0.1
-        version: 2.1.1(tailwindcss@4.3.0)
+        version: 2.1.1(tailwindcss@4.3.2)
       tsup:
         specifier: 'catalog:'
         version: 8.5.1(jiti@2.7.0)(postcss@8.5.15)(typescript@5.9.3)(yaml@2.9.0)
@@ -1444,8 +1444,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-logos-block/packages/volto-logos-block
       '@kitconcept/volto-plate':
-        specifier: ^1.0.0-alpha.23
-        version: 1.0.0-alpha.23(668a5b4091d1647ee08dbb34248f717f)
+        specifier: ^1.0.0-alpha.24
+        version: 1.0.0-alpha.24(668a5b4091d1647ee08dbb34248f717f)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -4092,8 +4092,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.23':
-    resolution: {integrity: sha512-OH5ac9Qc+gr3U4r5VqQiQPcAeHSrNk5umiF5EscBR+sOyA/NgIsXKcUOUXfIWv1Fsb56a5CU/wZrJ3UyE2dEOg==}
+  '@kitconcept/volto-plate@1.0.0-alpha.24':
+    resolution: {integrity: sha512-4RZv5ocVTPeNG0h6VQrhhiCQI5a9CX2G6LcQNg+pm7G0M5Ri+4GTBGqtlCzfp8S+2zFPGgwzc9qfie7WYDmprA==}
     peerDependencies:
       '@platejs/ai': ^50.3.7
       '@plone/registry': workspace:*
@@ -12975,6 +12975,11 @@ packages:
       uglify-js:
         optional: true
 
+  terser@5.46.0:
+    resolution: {integrity: sha512-jTwoImyr/QbOWFFso3YoU3ik0jBBDJ6JTOQiy/J2YxVJdZCc+5u7skhNwiOR3FQIygFqVUPHl7qbbxtjW2K3Qg==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   terser@5.48.0:
     resolution: {integrity: sha512-J/9An6vs9Us6wKRriSFXBWdRZapREHqFzdNUKk0pmu804EMR6dr6winwo7e5JDxN4xahxQsuysyYFwlwj4XN/Q==}
     engines: {node: '>=10'}
@@ -16210,7 +16215,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.23(668a5b4091d1647ee08dbb34248f717f)':
+  '@kitconcept/volto-plate@1.0.0-alpha.24(668a5b4091d1647ee08dbb34248f717f)':
     dependencies:
       '@internationalized/date': 3.12.2
       '@platejs/ai': 50.3.7(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)
@@ -16917,9 +16922,9 @@ snapshots:
       react-aria-components: 1.18.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-stately: 3.47.0(react@18.2.0)
       tailwind-merge: 3.6.0
-      tailwind-variants: 1.0.0(tailwindcss@4.3.0)
-      tailwindcss: 4.3.0
-      tailwindcss-animate: 1.0.7(tailwindcss@4.3.0)
+      tailwind-variants: 1.0.0(tailwindcss@4.3.2)
+      tailwindcss: 4.3.2
+      tailwindcss-animate: 1.0.7(tailwindcss@4.3.2)
     optionalDependencies:
       react-dom: 18.2.0(react@18.2.0)
 
@@ -22133,7 +22138,7 @@ snapshots:
       he: 1.2.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.48.0
+      terser: 5.46.0
 
   html-tags@3.3.1: {}
 
@@ -26764,16 +26769,10 @@ snapshots:
     dependencies:
       tailwindcss: 4.3.2
 
-  tailwind-variants@1.0.0(tailwindcss@4.3.0):
+  tailwind-variants@1.0.0(tailwindcss@4.3.2):
     dependencies:
       tailwind-merge: 3.0.2
-      tailwindcss: 4.3.0
-
-  tailwind-variants@3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.0):
-    dependencies:
-      tailwindcss: 4.3.0
-    optionalDependencies:
-      tailwind-merge: 3.6.0
+      tailwindcss: 4.3.2
 
   tailwind-variants@3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.2):
     dependencies:
@@ -26781,17 +26780,13 @@ snapshots:
     optionalDependencies:
       tailwind-merge: 3.6.0
 
-  tailwindcss-animate@1.0.7(tailwindcss@4.3.0):
-    dependencies:
-      tailwindcss: 4.3.0
-
   tailwindcss-animate@1.0.7(tailwindcss@4.3.2):
     dependencies:
       tailwindcss: 4.3.2
 
-  tailwindcss-react-aria-components@2.1.1(tailwindcss@4.3.0):
+  tailwindcss-react-aria-components@2.1.1(tailwindcss@4.3.2):
     dependencies:
-      tailwindcss: 4.3.0
+      tailwindcss: 4.3.2
 
   tailwindcss@4.3.0: {}
 
@@ -26830,7 +26825,7 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.3
-      terser: 5.48.0
+      terser: 5.46.0
       webpack: 5.107.2(esbuild@0.25.12)(lightningcss@1.32.0)(postcss@8.5.15)
     optionalDependencies:
       esbuild: 0.25.12
@@ -26842,8 +26837,15 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
       schema-utils: 4.3.3
-      terser: 5.48.0
+      terser: 5.46.0
       webpack: 5.107.2
+
+  terser@5.46.0:
+    dependencies:
+      '@jridgewell/source-map': 0.3.11
+      acorn: 8.16.0
+      commander: 2.20.3
+      source-map-support: 0.5.21
 
   terser@5.48.0:
     dependencies:

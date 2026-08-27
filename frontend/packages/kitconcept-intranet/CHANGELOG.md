@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.3 (2026-08-27)
+
+
+### Bugfix
+
+- Scope the sidebar top offset to the compact intranet header via a body class, so the sidebar is only pushed down when that header is present. @sneridagh 
+
+
+### Internal
+
+- Update the frontend development source to Volto 19.3.1 and @kitconcept/volto-plate to 1.0.0-alpha.24. @sneridagh 
+
 ## 3.0.0-alpha.2 (2026-08-26)
 
 

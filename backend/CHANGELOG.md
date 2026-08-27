@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0a3 (2026-08-27)
+
+
+### Internal
+
+- Update the backend to kitconcept.plate 1.0.0a24. @sneridagh 
+
 ## 3.0.0a2 (2026-08-26)
 
 No significant changes.

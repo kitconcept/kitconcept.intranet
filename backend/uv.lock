@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = "==3.14.*"
 
 [options]
@@ -1519,8 +1519,8 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
-    { name = "kitconcept-plate", path = "container/kitconcept-plate.tar.gz" },
-    { name = "kitconcept-solr", git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag" },
+    { name = "kitconcept-plate", specifier = "==1.0.0a24" },
+    { name = "kitconcept-solr", specifier = "==3.0.0a0" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1559,37 +1559,23 @@ test = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a22"
-source = { path = "container/kitconcept-plate.tar.gz" }
+version = "1.0.0a24"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { hash = "sha256:91dcee93361c85aae4ab7ae841df0a2aabe5bfa648bb184da8944738854b3b49" }
-
-[package.metadata]
-requires-dist = [
-    { name = "collective-mockmailhost", marker = "extra == 'test'" },
-    { name = "horse-with-no-namespace", marker = "extra == 'test'", specifier = ">=20250408.0" },
-    { name = "plone-api" },
-    { name = "plone-app-testing", marker = "extra == 'test'" },
-    { name = "plone-restapi" },
-    { name = "plone-restapi", extras = ["test"], marker = "extra == 'test'" },
-    { name = "plone-volto" },
-    { name = "products-cmfplone" },
-    { name = "products-printingmailhost", marker = "extra == 'test'" },
-    { name = "pytest", marker = "extra == 'test'" },
-    { name = "pytest-cov", marker = "extra == 'test'" },
-    { name = "pytest-plone", marker = "extra == 'test'", specifier = ">=1.0.0" },
+sdist = { url = "https://files.pythonhosted.org/packages/75/6b/e486fdccb7748d7423bc54e84dc969a6d37d187b579d03604eb55002172f/kitconcept_plate-1.0.0a24.tar.gz", hash = "sha256:a372def9f117d5e4404ee0bd8bbc41fee0cb55c4aa9deee9f69c194dda5699b6", size = 4550370, upload-time = "2026-08-27T12:07:01.939Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/76/62/32ddd8686115227bb860ee96098f672e13f547a38766630a22289a73149d/kitconcept_plate-1.0.0a24-py3-none-any.whl", hash = "sha256:8f80ac14b51cd67220c706359636798ceba239625fd604451c50b3744482b855", size = 4583369, upload-time = "2026-08-27T12:06:59.697Z" },
 ]
-provides-extras = ["test"]
 
 [[package]]
 name = "kitconcept-solr"
-version = "2.0.0a14"
-source = { git = "https://github.com/kitconcept/kitconcept.solr.git?subdirectory=backend&branch=feature-ai-rag#fcae6395075556a040c7b9972d1e4a8cbefdacc6" }
+version = "3.0.0a0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-solr" },
     { name = "plone-api" },
@@ -1598,6 +1584,10 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
     { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ca/fb/6639b19d581f8e639b2229c155428566f556b0554d505896fb3453deddde/kitconcept_solr-3.0.0a0.tar.gz", hash = "sha256:900ec73e5248e2603b1a8ed871736ed30ba8aad7131a099c44eb040109ccb3aa", size = 18745940, upload-time = "2026-08-24T07:17:11.38Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d6/3e/53448dd411645cee1b61ffdf3dc285d8c971201649fc43c8c0ecfae29c4e/kitconcept_solr-3.0.0a0-py3-none-any.whl", hash = "sha256:f01337d5b081e954f23ba1e5f8a7a9d8ee16b4c405aea6eb1238f654e7deb667", size = 18987698, upload-time = "2026-08-24T07:17:06.844Z" },
 ]
 
 [[package]]

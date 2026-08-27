@@ -5,24 +5,178 @@
   "allow_discussion": null,
   "authors": null,
   "blocks": {
-    "619a853d-8f33-4c54-9059-e080aadba1d2": {
+    "02297aa5-fcbc-406e-a368-3a4dcc0d42ed": {
       "@type": "banner",
-      "additionalText": "Test line no. 2 Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
-      "text": "Test line no. 1",
-      "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "100%"
+        }
+      },
+      "theme": "default",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "087e3df4-9969-4d28-8f27-e936af49a706": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner mit Text, 100% Breite, grauer Hintergrund",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
+    },
+    "1bfe6103-1b85-4d5b-9840-c139109de8b0": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": "full"
+      },
+      "theme": "default",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "2fbbba14-6a01-4924-859b-0e55a17c14e5": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner ohne Text, Containerbreite, wei\u00dfer Hintergrund",
+      "styles": {},
+      "theme": "default"
+    },
+    "519eae41-e30c-4992-a06b-bdf92631b78d": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "100%"
+        }
+      },
+      "text": "Text auf dem Banner",
+      "theme": "grey",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "57c19e50-c32a-4f33-89d5-69655308b28a": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner ohne Text, Containerbreite, grauer Hintergrund",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
+    },
+    "583b2adb-a8c8-4dec-ab6d-732451e4c0c9": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "text": "Text auf dem Banner",
+      "theme": "grey",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "5f4bd951-7bee-454f-8629-456564166ccd": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "100%"
+        }
+      },
+      "text": "Text auf dem Banner",
+      "theme": "default",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "63193131-12df-48f7-bea5-c6b68ad6b94c": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "text": "Text auf dem Banner",
+      "theme": "default",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "678f7f8f-22df-4ae3-9eb4-a61b786dba79": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": "layout"
+      },
+      "theme": "grey",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "70fcee4c-6c0e-4ba4-9ab5-df85a175080b": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner ohne Text, 100% Breite, wei\u00dfer Hintergrund",
+      "styles": {},
+      "theme": "default"
+    },
+    "73fca46c-4c92-44b1-8ce6-f54a071bdb09": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner mit Text, Containerbreite, wei\u00dfer Hintergrund",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "768df7f7-d4ee-41a3-b798-96304eb58ad2": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner mit Text, 100% Breite, wei\u00dfer Hintergrund",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
+    "769b4563-95b5-444f-9b1f-5e19130855c9": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": "layout"
+      },
+      "theme": "default",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
     },
     "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a": {
       "@type": "title"
     },
-    "9e02b7c4-c50b-40e0-99f4-65cea53ff2ac": {
-      "@type": "slate"
+    "9ca47092-4690-48d4-93fa-2dfc4bd3c261": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner mit Text, Containerbreite, grauer Hintergrund",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
+    },
+    "d8d9fcfc-39b4-45dd-a060-7ec6f46875d0": {
+      "@type": "banner",
+      "styles": {
+        "blockWidth:noprefix": "full"
+      },
+      "theme": "grey",
+      "url": "../../../resolveuid/895d71d4500b41ecb85e9f4855556325"
+    },
+    "fe0c67cc-10b1-45d3-9512-3738503c3ec0": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Banner ohne Text, 100% Breite, grauer Hintergrund",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
     }
   },
   "blocks_layout": {
     "items": [
+      "02297aa5-fcbc-406e-a368-3a4dcc0d42ed",
       "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a",
-      "619a853d-8f33-4c54-9059-e080aadba1d2",
-      "9e02b7c4-c50b-40e0-99f4-65cea53ff2ac"
+      "768df7f7-d4ee-41a3-b798-96304eb58ad2",
+      "5f4bd951-7bee-454f-8629-456564166ccd",
+      "73fca46c-4c92-44b1-8ce6-f54a071bdb09",
+      "63193131-12df-48f7-bea5-c6b68ad6b94c",
+      "70fcee4c-6c0e-4ba4-9ab5-df85a175080b",
+      "1bfe6103-1b85-4d5b-9840-c139109de8b0",
+      "2fbbba14-6a01-4924-859b-0e55a17c14e5",
+      "769b4563-95b5-444f-9b1f-5e19130855c9",
+      "087e3df4-9969-4d28-8f27-e936af49a706",
+      "519eae41-e30c-4992-a06b-bdf92631b78d",
+      "9ca47092-4690-48d4-93fa-2dfc4bd3c261",
+      "583b2adb-a8c8-4dec-ab6d-732451e4c0c9",
+      "fe0c67cc-10b1-45d3-9512-3738503c3ec0",
+      "d8d9fcfc-39b4-45dd-a060-7ec6f46875d0",
+      "57c19e50-c32a-4f33-89d5-69655308b28a",
+      "678f7f8f-22df-4ae3-9eb4-a61b786dba79"
     ]
   },
   "changeNote": "",
@@ -49,12 +203,19 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-07-09T10:54:29+00:00",
+  "modified": "2026-08-10T09:35:16+00:00",
   "nav_title": null,
   "organisational_unit_reference": null,
   "preview_caption_link": null,
   "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-02-04",
+  "review_interval": "6m",
   "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
   "rights": "",
   "searchwords": [],
   "showinsearch": true,

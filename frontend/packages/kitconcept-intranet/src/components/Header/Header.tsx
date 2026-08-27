@@ -66,7 +66,7 @@ const Header = (props) => {
 
   return (
     <>
-      <BodyClass className="header-intranet-compact" />
+      <BodyClass className="has-header-intranet-compact" />
       <div className="header-intranet-compact-wrapper">
         <div
           className={cx('header-intranet-compact', {

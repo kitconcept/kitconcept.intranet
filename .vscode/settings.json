@@ -2,8 +2,6 @@
   "eslint.workingDirectories": ["./frontend"],
   "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
   "python-envs.workspaceSearchPaths": [
-      ".venv",
-      "*/.venv",
       "backend/.venv"
   ],
   "ruff.organizeImports": true,

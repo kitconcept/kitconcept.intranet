@@ -55,10 +55,6 @@ module.exports = {
             './packages/volto-light-theme/frontend/packages/volto-light-theme/src',
           ],
           [
-            'altVLT',
-            './packages/volto-light-theme/frontend/packages/volto-light-theme/src',
-          ],
-          [
             '@kitconcept/volto-iframe-block',
             './packages/volto-iframe-block/packages/volto-iframe-block/src',
           ],

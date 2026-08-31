@@ -1,6 +1,70 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.0a3 (2026-08-27)
+
+### Backend
+
+
+#### Internal
+
+- Update the backend to kitconcept.plate 1.0.0a24. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Scope the sidebar top offset to the compact intranet header via a body class, so the sidebar is only pushed down when that header is present. @sneridagh 
+
+
+#### Internal
+
+- Update the frontend development source to Volto 19.3.1 and @kitconcept/volto-plate to 1.0.0-alpha.24. @sneridagh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Document changelog fragment locations and PR guidance for agents in AGENTS.md. @sneridagh 
+
+
+
+## 3.0.0a2 (2026-08-26)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Fixed released-package builds by replacing the workspace-only VLT Header alias with component utility registration. @sneridagh 
+
+
+#### Internal
+
+- Removed the stale `altVLT` alias from the ESLint import resolver, left over after the VLT Header alias was replaced by component utility registration. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.0.0a1 (2026-08-24)
 
 ### Backend

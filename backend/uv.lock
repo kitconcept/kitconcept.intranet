@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = "==3.14.*"
 
 [options]
@@ -1519,7 +1519,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
-    { name = "kitconcept-plate", specifier = "==1.0.0a23" },
+    { name = "kitconcept-plate", specifier = "==1.0.0a24" },
     { name = "kitconcept-solr", specifier = "==3.0.0a0" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1559,7 +1559,7 @@ test = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a23"
+version = "1.0.0a24"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1567,9 +1567,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/95/cb/a7c09221a0a4b6811b08ad25b0f55d1020872ca4dea8fbaa8208c59ac775/kitconcept_plate-1.0.0a23.tar.gz", hash = "sha256:977021867d23a6e3f497d74f3bfd3ed5b605161b4614e1b23b8f88dfe3fe1b2b", size = 4550216, upload-time = "2026-08-18T18:02:51.029Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/75/6b/e486fdccb7748d7423bc54e84dc969a6d37d187b579d03604eb55002172f/kitconcept_plate-1.0.0a24.tar.gz", hash = "sha256:a372def9f117d5e4404ee0bd8bbc41fee0cb55c4aa9deee9f69c194dda5699b6", size = 4550370, upload-time = "2026-08-27T12:07:01.939Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/53/bd/58e9825575cfa61042cb47a569910adbb7d9a409fc7b48af3bc9242297e9/kitconcept_plate-1.0.0a23-py3-none-any.whl", hash = "sha256:c3bb1c74647977ff9d2b6968f84ad83851107497e963c6b3ce8e8f1144769ef0", size = 4583368, upload-time = "2026-08-18T18:02:48.592Z" },
+    { url = "https://files.pythonhosted.org/packages/76/62/32ddd8686115227bb860ee96098f672e13f547a38766630a22289a73149d/kitconcept_plate-1.0.0a24-py3-none-any.whl", hash = "sha256:8f80ac14b51cd67220c706359636798ceba239625fd604451c50b3744482b855", size = 4583369, upload-time = "2026-08-27T12:06:59.697Z" },
 ]
 
 [[package]]

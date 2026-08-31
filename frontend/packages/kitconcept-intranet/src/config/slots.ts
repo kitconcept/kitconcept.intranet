@@ -1,4 +1,5 @@
 import type { ConfigType } from '@plone/registry';
+import type { Content, GetSlotArgs, SlotPredicate } from '@plone/types';
 import { ContentTypeCondition } from '@plone/volto/helpers/Slots';
 import { getBaseUrl, isCmsUi } from '@plone/volto/helpers/Url/Url';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
@@ -12,12 +13,28 @@ import NavigationTreePortal from '../components/NavigationTree/NavigationTreePor
 import HideFooter from '../slots/HideFooter/HideFooter';
 import CommentsSlot from '../slots/Comments/CommentsSlot';
 
-const isWorkspaceDescendant = ({ content }: { content: any }) =>
+const isWorkspaceDescendant = ({ content }: { content: Content }) =>
   Boolean(
     content?.['@components']?.inherit?.['kitconcept.plate.workspace']?.from?.[
       '@id'
     ],
   );
+
+function isWorkspaceOrDescendant(contentTypes: string[]): SlotPredicate {
+  const contentTypeCondition = ContentTypeCondition(contentTypes);
+  return (args: GetSlotArgs) =>
+    contentTypeCondition(args) || isWorkspaceDescendant(args);
+}
+
+function shouldShowContentInteractions(args: GetSlotArgs): boolean {
+  return !isWorkspaceOrDescendant([
+    'Document',
+    'Event',
+    'News Item',
+    'WikiPage',
+    'Workspace',
+  ])(args);
+}
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -71,12 +88,7 @@ export default function install(config: ConfigType) {
     slot: 'belowContent',
     name: 'Content Interactions',
     component: ContentInteractions,
-    predicates: [
-      (args) =>
-        !['Document', 'Event', 'News Item', 'WikiPage', 'Workspace'].includes(
-          args.content?.['@type'],
-        ) && !isWorkspaceDescendant(args),
-    ],
+    predicates: [shouldShowContentInteractions],
   });
   config.registerSlotComponent({
     name: 'PostFooterFollowUsLogoAndLinks',
@@ -92,21 +104,13 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
-    predicates: [
-      (args) =>
-        ContentTypeCondition(['WikiPage', 'Workspace'])(args) ||
-        isWorkspaceDescendant(args),
-    ],
+    predicates: [isWorkspaceOrDescendant(['WikiPage', 'Workspace'])],
   });
   config.registerSlotComponent({
     slot: 'aboveApp',
     name: 'HideFooter',
     component: HideFooter,
-    predicates: [
-      (args) =>
-        ContentTypeCondition(['WikiPage', 'Workspace'])(args) ||
-        isWorkspaceDescendant(args),
-    ],
+    predicates: [isWorkspaceOrDescendant(['WikiPage', 'Workspace'])],
   });
 
   return config;

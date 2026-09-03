@@ -13,8 +13,13 @@ on:
         required: false
         type: string
         default: backend
+      content-folders:
+        required: false
+        type: string
+        default: "backend/src/kitconcept/intranet/distributions/intranet/content"
 
 jobs:
+
   lint:
     name: "Backend: Lint"
     uses: plone/meta/.github/workflows/backend-lint.yml@2.x
@@ -30,6 +35,23 @@ jobs:
       python-version: ${{ inputs.python-version }}
       plone-version: ${{ inputs.kc-version }}
       working-directory: ${{ inputs.working-directory }}
+
+  content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch all history
+          fetch-depth: '0'
+
+      - name: 'Example Content QA: Evaluate Image Sizes'
+        uses: kitconcept/image-checker@v1.1.0
+        with:
+          paths: '${{ inputs.content-folders }}'
+          max-size: '1048576'   # 1 MB
+          max-width: '1920'
+          max-height: '1080'
+          fail-on-error: false
 
 # Removed for now since coverage takes forever and
 # nobody really looks at the results or try to improve them.

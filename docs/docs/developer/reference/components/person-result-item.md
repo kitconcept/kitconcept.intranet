@@ -18,7 +18,7 @@ config.settings.solrSearchOptions.contentTypeSearchResultViews.Person = PersonRe
 config.settings.contentIcons.Person = personSVG;
 ```
 
-Renders a compact card for a `Person` item in SOLR search results. Displays a 64×64 profile image (falls back to an avatar SVG), name, job title, and contact details. Profile links are wrapped in `MaybeWrap` and suppressed when `kitconcept.disable_profile_links` is enabled in the control panel.
+Renders a compact card for a `Person` item in SOLR search results. Displays a 64×64 profile image (falls back to an avatar SVG), name, job title, and contact details. Profile links are wrapped in `MaybeWrap` and suppressed when `kitconcept.clickable_profile_links` is disabled in the control panel.
 
 ## Props
 

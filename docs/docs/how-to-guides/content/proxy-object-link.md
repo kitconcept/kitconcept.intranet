@@ -18,9 +18,9 @@ This is useful when a person appears on many listings, teasers, or organisationa
 
 ## Prerequisites
 
-- The link icon button is controlled by the `kitconcept.disable_profile_links` site setting.
-  The button is only rendered when this setting is enabled.
-  If you do not see the icon, ask your administrator to enable it.
+- The link icon button is controlled by the `kitconcept.clickable_profile_links` site setting.
+  The button is only rendered when this setting is disabled.
+  If you do not see the icon, ask your administrator to disable it.
 
 ## Opening a person profile
 
@@ -49,7 +49,7 @@ The toast:
 ## Troubleshooting
 
 **I do not see the link icon on person summaries.**
-The icon is only shown when the `kitconcept.disable_profile_links` site setting is enabled.
+The icon is only shown when the `kitconcept.clickable_profile_links` site setting is disabled.
 Ask your administrator to check the setting.
 
 **No toast appears on the profile page.**

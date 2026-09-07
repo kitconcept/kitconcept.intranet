@@ -1,0 +1,628 @@
+{
+  "@id": "/arbeitsthemen/dienstreisen-mobilitaet/buchungsportale",
+  "@type": "Document",
+  "UID": "9f7aaa7ca4f04c2a95a31d24632b3594",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "4c6cfb70-0314-4c8e-984d-88ce6eb5fa79": {
+      "@type": "slate",
+      "plaintext": "Reisekostenerstattung nach Buchung\n\nNach Ihrer Reise m\u00fcssen Sie die Quittungen innerhalb von 4 Wochen eingereichen. Buchen Sie \u00fcber die offiziellen Portale, um automatische Kostenerfassung zu erm\u00f6glichen. Abweichungen von den Vorgaben erfordern eine separate Genehmigung und f\u00fchren zu Bearbeitungsverz\u00f6gerungen.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Reisekostenerstattung nach Buchung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Nach Ihrer Reise m\u00fcssen Sie die Quittungen innerhalb von 4 Wochen eingereichen. Buchen Sie \u00fcber die offiziellen Portale, um automatische Kostenerfassung zu erm\u00f6glichen. Abweichungen von den Vorgaben erfordern eine separate Genehmigung und f\u00fchren zu Bearbeitungsverz\u00f6gerungen."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "690782d8-36c6-44ea-b7c4-377c868c0637": {
+      "@type": "slate",
+      "plaintext": "Das DFNT arbeitet mit zertifizierten Reisepartnern zusammen, um sichere und kosteneffiziente Buchungen zu erm\u00f6glichen. Alle Portale sind \u00fcber Single Sign-On (SSO) mit Ihren DFNT-Zugangsdaten erreichbar.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das DFNT arbeitet mit zertifizierten Reisepartnern zusammen, um sichere und kosteneffiziente Buchungen zu erm\u00f6glichen. Alle Portale sind \u00fcber Single Sign-On (SSO) mit Ihren DFNT-Zugangsdaten erreichbar."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c83b6b67-d774-40c8-b37f-45d29ef6751d": {
+      "@type": "title"
+    },
+    "d2bafa3e-cac3-419a-8db0-ca240a8382ca": {
+      "@type": "slate",
+      "plaintext": "Single Sign-On (SSO) Anmeldung\n\n1. Navigieren Sie zum jeweiligen Portal (HRS / Lufthansa / Bahn)\n2. Klicken Sie auf 'DFNT Login' oder 'Single Sign-On'\n3. Verwenden Sie Ihre DFNT-Zugangsdaten (E-Mail: vorname.nachname@dfnt.de)\n4. Bei Problemen: IT-Support unter support@dfnt.de oder 0221-470-5700",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Single Sign-On (SSO) Anmeldung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Navigieren Sie zum jeweiligen Portal (HRS / Lufthansa / Bahn)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Klicken Sie auf 'DFNT Login' oder 'Single Sign-On'"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Verwenden Sie Ihre DFNT-Zugangsdaten (E-Mail: "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "vorname.nachname@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:vorname.nachname@dfnt.de"
+                      },
+                      "type": "link"
+                    },
+                    {
+                      "text": ")"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bei Problemen: IT-Support unter "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "support@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:support@dfnt.de"
+                      },
+                      "type": "link"
+                    },
+                    {
+                      "text": " oder 0221-470-5700"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        }
+      ]
+    },
+    "da2e1ced-7dfa-4078-a9ba-ae1f4fb5d992": {
+      "@type": "slate",
+      "plaintext": "Verf\u00fcgbare Buchungsportale\n\n1. HRS (Hotels & Unterkunft)\nURL: https://hrs.dfnt.de\n- Weltweite Hotelsuche\n- Spezielle DFNT-Konditionen\n- Kostenloses Upgrade bei vielen Partnern\n\n2. Lufthansa Group (Fl\u00fcge)\nURL: https://lufthansa.dfnt.de\n- Flugbuchungen weltweit\n- Bevorzugte DFNT-Tarife\n- Flexible Umbuchungsregeln\n\n3. Deutsche Bahn (Bahnreisen)\nURL: https://bahn.dfnt.de\n- Bahntickets Deutschland & Europa\n- Rabatte f\u00fcr DFNT-Mitarbeiter\n- Automatische Kostenerfassung",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Verf\u00fcgbare Buchungsportale"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "HRS (Hotels & Unterkunft)\nURL: "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "https://hrs.dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "https://hrs.dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Weltweite Hotelsuche"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Spezielle DFNT-Konditionen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kostenloses Upgrade bei vielen Partnern"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Lufthansa Group (Fl\u00fcge)\nURL: "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "https://lufthansa.dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "https://lufthansa.dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Flugbuchungen weltweit"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bevorzugte DFNT-Tarife"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Flexible Umbuchungsregeln"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Deutsche Bahn (Bahnreisen)\nURL: "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "https://bahn.dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "https://bahn.dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bahntickets Deutschland & Europa"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Rabatte f\u00fcr DFNT-Mitarbeiter"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Automatische Kostenerfassung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "e7cfe823-0e9d-4334-ab81-07d878a0f2a3": {
+      "@type": "slate",
+      "plaintext": "Buchungsvorgaben und Kostenlimits\n\nHotels:\n- Maximale \u00dcbernachtungsrate (ohne Special Events): 250 EUR\n- Business-Hotels bevorzugt\n- Genehmigung erforderlich f\u00fcr Premium-Hotels (\u00fcber 250 EUR)\n\nFl\u00fcge:\n- Economy-Klasse Standardtarif\n- Business-Klasse nur mit Vorgesetzten-Genehmigung f\u00fcr Fl\u00fcge \u00fcber 6 Stunden\n- Mindestens 14 Tage vor Abreise buchen f\u00fcr Rabatte\n\nBahn:\n- 1. Klasse nur f\u00fcr F\u00fchrungskr\u00e4fte\n- Bahncard 100 wird automatisch mit DFNT-Mitarbeiterstatus angeboten",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Buchungsvorgaben und Kostenlimits"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Hotels:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Maximale \u00dcbernachtungsrate (ohne Special Events): 250 EUR"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Business-Hotels bevorzugt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Genehmigung erforderlich f\u00fcr Premium-Hotels (\u00fcber 250 EUR)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Fl\u00fcge:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Economy-Klasse Standardtarif"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Business-Klasse nur mit Vorgesetzten-Genehmigung f\u00fcr Fl\u00fcge \u00fcber 6 Stunden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mindestens 14 Tage vor Abreise buchen f\u00fcr Rabatte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Bahn:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "text": "Klasse nur f\u00fcr F\u00fchrungskr\u00e4fte"
+                            }
+                          ],
+                          "type": "p"
+                        }
+                      ],
+                      "type": "li"
+                    }
+                  ],
+                  "type": "ol"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bahncard 100 wird automatisch mit DFNT-Mitarbeiterstatus angeboten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "c83b6b67-d774-40c8-b37f-45d29ef6751d",
+      "690782d8-36c6-44ea-b7c4-377c868c0637",
+      "da2e1ced-7dfa-4078-a9ba-ae1f4fb5d992",
+      "e7cfe823-0e9d-4334-ab81-07d878a0f2a3",
+      "d2bafa3e-cac3-419a-8db0-ca240a8382ca",
+      "4c6cfb70-0314-4c8e-984d-88ce6eb5fa79"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:15+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Zugelassene Buchungsportale des DFNT mit Zugangsinformationen und Kostenerstattungsgrenzen",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "buchungsportale",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:46:59+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Buchungsportale",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

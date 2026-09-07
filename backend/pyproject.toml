@@ -36,10 +36,10 @@ dependencies = [
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
     "collective-solr==10.1.1",
-    "kitconcept.solr==2.0.0a14",
+    "kitconcept.solr==3.0.0a0",
     "kitconcept.contactblock==1.0.0a6",
-    "kitconcept-plate",
-    "kitconcept.keywordmanager"
+    "kitconcept.plate==1.0.0a24",
+    "kitconcept.keywordmanager",
 ]
 
 [dependency-groups]
@@ -67,7 +67,6 @@ container = [
 ]
 
 [tool.uv.sources]
-kitconcept-plate = { path = "container/kitconcept-plate.tar.gz" }
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -90,6 +89,7 @@ strict-naming = true
 [tool.hatch.build.targets.sdist]
 exclude = [
   "/.github",
+  "/example_content",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -156,8 +156,8 @@ name = "Documentation"
 showcontent = true
 
 [[tool.towncrier.type]]
-directory = "test"
-name = "Test"
+directory = "tests"
+name = "Tests"
 showcontent = true
 
 [tool.ruff]

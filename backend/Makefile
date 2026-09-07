@@ -15,25 +15,47 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PACKAGE_NAME=kitconcept.intranet
-
-IMAGE_NAME_PREFIX=ghcr.io/kitconcept/kitconcept-intranet
-IMAGE_TAG=latest
-
 # Python checks
 UV?=uv
+JQ?=jq
 
 # installed?
 ifeq (, $(shell which $(UV) ))
   $(error "UV=$(UV) not found in $(PATH)")
 endif
 
+ifeq (, $(shell which $(JQ) ))
+  $(error "JQ=$(JQ) not found in $(PATH)")
+endif
+
+REPOSITORY_SETTINGS := $(shell uvx repoplone settings dump)
+
+# Every setting below is derived from this payload, so an empty result
+# would silently expand to empty image names and paths.
+ifeq (, $(REPOSITORY_SETTINGS))
+  $(error "'uvx repoplone settings dump' returned no settings")
+endif
+
+IMAGE_NAME_PREFIX := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.container_images_prefix')
+IMAGE_NAME_SEPARATOR := -
+IMAGE_NAME_PREFIX_WITH_SEPARATOR := $(IMAGE_NAME_PREFIX)$(IMAGE_NAME_SEPARATOR)
+
+IMAGE_TAG=latest
+IMAGE_NAME=$(IMAGE_NAME_PREFIX_WITH_SEPARATOR)backend:$(IMAGE_TAG)
+
+PACKAGE_NAME := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.backend.name')
+
 PLONE_SITE_ID=Plone
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-KC_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
-EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/intranet/distributions/intranet/content
+PYTHON_VERSION := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.backend.python_version')
+KC_VERSION := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.backend.base_package_version')
+EXAMPLE_CONTENT_FOLDER := $(shell echo '$(REPOSITORY_SETTINGS)' | jq -r '.backend.code_path')/distributions/intranet/content
+
+## AI test corpus (see the README in $(AI_CONTENT_FOLDER))
+AI_CONTENT_FOLDER=${BACKEND_FOLDER}/example_content/ai-content
 
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
+export VIRTUAL_ENV=$(VENV_FOLDER)
 BIN_FOLDER=$(VENV_FOLDER)/bin
 
 SEED=$(shell date +'%Y%m%d-%H%M%S')
@@ -53,6 +75,15 @@ all: build
 .PHONY: help
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+.PHONY: debug-settings
+debug-settings:  ## Debug settings
+	@echo "Virtual Environment: $(VENV_FOLDER)"
+	@echo "PYTHON_VERSION: $(PYTHON_VERSION)"
+	@echo "KC_VERSION: $(KC_VERSION)"
+	@echo "PACKAGE_NAME: $(PACKAGE_NAME)"
+	@echo "EXAMPLE_CONTENT_FOLDER: $(EXAMPLE_CONTENT_FOLDER)"
+	@echo "IMAGE_NAME: $(IMAGE_NAME)"
 
 instance/etc/zope.ini instance/etc/zope.conf: instance.yaml ## Create instance configuration
 	@echo "$(GREEN)==> Create instance configuration$(RESET)"
@@ -119,6 +150,20 @@ cleanup-example-content: $(VENV_FOLDER) ## Remove invalid references to http://n
 	@echo "$(GREEN)==> Remove invalid references to http://nohost/Plone $(RESET)"
 	@find $(EXAMPLE_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i '' -e 's#http://nohost/Plone/#/#g' {} \;
 
+
+.PHONY: import-ai-content
+import-ai-content: $(VENV_FOLDER) instance/etc/zope.conf ## Import the AI search test corpus into a fresh site
+	@echo "$(GREEN)==> Import AI test corpus from $(AI_CONTENT_FOLDER) $(RESET)"
+	@uv run plone-importer instance/etc/zope.conf $(PLONE_SITE_ID) $(AI_CONTENT_FOLDER)
+	@uv run zconsole run instance/etc/zope.conf ./scripts/ai_content_demo_passwords.py
+
+.PHONY: update-ai-content
+update-ai-content: $(VENV_FOLDER) ## Export the AI search test corpus inside package
+	@echo "$(GREEN)==> Export AI test corpus into $(AI_CONTENT_FOLDER) $(RESET)"
+	if [ -d $(AI_CONTENT_FOLDER)/content ]; then rm -r $(AI_CONTENT_FOLDER)/content $(AI_CONTENT_FOLDER)/*.json ;fi
+	@uv run plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(AI_CONTENT_FOLDER)
+	@find $(AI_CONTENT_FOLDER)/content -type f -name 'data.json' -exec sed -i '' -e 's#http://nohost/Plone/#/#g' {} \;
+
 # QA
 .PHONY: lint
 lint: ## Check and fix code base according to Plone standards
@@ -154,7 +199,7 @@ test-coverage: $(VENV_FOLDER) ## run tests with coverage
 .PHONY: build-image
 build-image:  ## Build Docker Images
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) $(RESET)"
-	@docker build . --platform linux/amd64 -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) --progress plain -f Dockerfile --build-arg KC_VERSION=$(KC_VERSION)
+	@docker build . --platform linux/amd64 -t $(IMAGE_NAME) --progress plain -f Dockerfile --build-arg KC_VERSION=$(KC_VERSION)
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) $(RESET)"
 	@docker build .  --pull=false --platform linux/amd64 -t $(IMAGE_NAME_PREFIX)-beispiele:$(IMAGE_TAG) -f Dockerfile.beispiele --build-arg IMAGE_TAG=$(IMAGE_TAG) --build-arg SEED=$(SEED)
 	@echo "$(GREEN)==> Building $(IMAGE_NAME_PREFIX)-acceptance:$(IMAGE_TAG) $(RESET)"
@@ -164,6 +209,14 @@ build-image:  ## Build Docker Images
 .PHONY: solr-activate-and-reindex
 solr-activate-and-reindex: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and reindex
 	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py
+
+.PHONY: solr-activate-and-reindex-with-rag
+solr-activate-and-reindex-with-rag: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and RAG (AI search) and reindex
+	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py --rag-enable
+
+.PHONY: solr-activate-and-reindex-with-rag-clear
+solr-activate-and-reindex-with-rag-clear: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and RAG (AI search) and reindex with clear
+	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py --rag-enable --clear
 
 # Acceptance tests
 .PHONY: acceptance-backend-start

@@ -1,0 +1,335 @@
+{
+  "@id": "/services/hr-services/urlaubsantrage",
+  "@type": "Document",
+  "UID": "db6ad6d4371e479ab80a6be2ebbe376d",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "19013c08-4b7c-40f1-bb5f-0b75de1816d7": {
+      "@type": "title"
+    },
+    "673289db-04fe-46dd-bfe2-d37b752cbfcd": {
+      "@type": "slate",
+      "plaintext": "## Versicherungen\n\nUnfall-, Haftpflicht- und weitere Dienstversicherungen f\u00fcr Mitarbeitende.\n\n**Versicherungsarten:**\n- Unfallversicherung: Automatisch f\u00fcr alle Besch\u00e4ftigten\n- Haftpflicht: F\u00fcr Dienste und Forschung\n- Berufsunf\u00e4higkeitsversicherung: (optional)\n- Reiseversicherung: Bei Dienstreisen\n\n**Versicherungsschutz gilt f\u00fcr:**\n- Arbeits- und Wegeunfalle\n- Berufskrankheiten\n- Dienstreisen\n\n**Schadensfall melden:**\n- Vorgesetztem mitteilen\n- An hr@dfnt.de berichten\n- Falls n\u00f6tig: \u00c4rztliche Dokumentation\n\n**Kontakt:** hr@dfnt.de, +49 221 470-3000",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Versicherungen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Unfall-, Haftpflicht- und weitere Dienstversicherungen f\u00fcr Mitarbeitende."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Versicherungsarten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Unfallversicherung: Automatisch f\u00fcr alle Besch\u00e4ftigten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Haftpflicht: F\u00fcr Dienste und Forschung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Berufsunf\u00e4higkeitsversicherung: (optional)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Reiseversicherung: Bei Dienstreisen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Versicherungsschutz gilt f\u00fcr:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Arbeits- und Wegeunfalle"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Berufskrankheiten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Dienstreisen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Schadensfall melden:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vorgesetztem mitteilen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "An "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "hr@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:hr@dfnt.de"
+                      },
+                      "type": "link"
+                    },
+                    {
+                      "text": " berichten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Falls n\u00f6tig: \u00c4rztliche Dokumentation"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "hr@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:hr@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": ", +49 221 470-3000"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "19013c08-4b7c-40f1-bb5f-0b75de1816d7",
+      "673289db-04fe-46dd-bfe2-d37b752cbfcd"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:29+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Digitaler Workflow f\u00fcr Urlaubsantr\u00e4ge und -genehmigungen: Antragstellung, Genehmigungsfristen und Einsicht in den Urlaubsstand.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "urlaubsantrage",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:16:51+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Urlaubsantr\u00e4ge",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

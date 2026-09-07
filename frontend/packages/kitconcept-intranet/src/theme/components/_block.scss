@@ -1,0 +1,8 @@
+.banner.container {
+  width: 100%;
+  max-width: none;
+
+  .banner-inner-container:not(:has(.text p)) {
+    background: none;
+  }
+}

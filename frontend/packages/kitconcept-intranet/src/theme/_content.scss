@@ -33,11 +33,36 @@
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
+  // Added to fix tailwind conflict with svg display in power user menu, should be removed after css layer refactor
+  .power-user-menu {
+    .item {
+      > svg {
+        display: inline;
+      }
+    }
+  }
 }
 
 // Hide setting for "Intranet Header" in root sidebar, might not be needed after refactoring the feature
 #sidebar {
   .field-wrapper-has_intranet_header {
     display: none;
+  }
+}
+
+// Added to fix tailwind conflict, should be removed after refactoring layers
+body:not(.contenttype-wikipage) {
+  #page-add,
+  #page-edit,
+  #page-document {
+    ol {
+      padding-left: 40px;
+      list-style: auto;
+    }
+
+    ul:not(.items) {
+      padding-left: 40px;
+      list-style: disc;
+    }
   }
 }

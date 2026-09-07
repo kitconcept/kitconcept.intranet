@@ -1,0 +1,410 @@
+{
+  "@id": "/services/bibliothek/literaturbestellung",
+  "@type": "Document",
+  "UID": "a9c7505894504faf816ee87ef2aabd1a",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "50eca0e8-dd12-4bae-82f8-2abcd163536f": {
+      "@type": "slate",
+      "plaintext": "## Fernleihe und Dokumentenlieferung\n\nUnsere Bibliothek bietet umfassende M\u00f6glichkeiten zur Beschaffung von Literatur, die in unserem Bestand nicht verf\u00fcgbar ist.\n\n### Fernleihe innerhalb Deutschlands\n\n- **Kosten**: Kostenlos\n- **Lieferzeit**: 5\u201310 Werktage\n\n### Internationale Fernleihe\n\n- **Kosten**: 5,00\u20ac pro Bestellung\n- **Lieferzeit**: 2\u20134 Wochen\n\n### Express-Dokumentenlieferung (Subito)\n\nF\u00fcr schnelle Lieferung von Artikeln und Buchkopien:\n\n- **Standardartikel**: 12,00\u20ac, Lieferung 12\u201324 Stunden\n- **Buchkopien**: 25,00\u20ac, Lieferung 12\u201324 Stunden\n\n### Bestellverfahren\n\n**Option 1**: Im OPAC-Katalog auf \"Bestellen\" klicken\n\n**Option 2**: Formular FL-01 ausf\u00fcllen und einreichen an bibliothek@dfnt.de\n\n### Benachrichtigung und Abholung\n\n- Sie erhalten eine **E-Mail-Benachrichtigung**, sobald das Dokument vorliegt\n- **Abholung**: An allen Bibliotheksstandorten m\u00f6glich\n- **Alternative**: Scan-Zustellung direkt per E-Mail verf\u00fcgbar",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Fernleihe und Dokumentenlieferung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Unsere Bibliothek bietet umfassende M\u00f6glichkeiten zur Beschaffung von Literatur, die in unserem Bestand nicht verf\u00fcgbar ist."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Fernleihe innerhalb Deutschlands"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kosten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Kostenlos"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Lieferzeit"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 5\u201310 Werktage"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Internationale Fernleihe"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kosten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 5,00\u20ac pro Bestellung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Lieferzeit"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 2\u20134 Wochen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Express-Dokumentenlieferung (Subito)"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "F\u00fcr schnelle Lieferung von Artikeln und Buchkopien:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Standardartikel"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 12,00\u20ac, Lieferung 12\u201324 Stunden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Buchkopien"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 25,00\u20ac, Lieferung 12\u201324 Stunden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Bestellverfahren"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Option 1"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Im OPAC-Katalog auf \"Bestellen\" klicken"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Option 2"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Formular FL-01 ausf\u00fcllen und einreichen an "
+            },
+            {
+              "children": [
+                {
+                  "text": "bibliothek@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:bibliothek@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Benachrichtigung und Abholung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sie erhalten eine "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "E-Mail-Benachrichtigung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ", sobald das Dokument vorliegt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Abholung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": An allen Bibliotheksstandorten m\u00f6glich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Alternative"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Scan-Zustellung direkt per E-Mail verf\u00fcgbar"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "a286b057-8b7d-4fbb-841f-3ae6f9d960b4": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "a286b057-8b7d-4fbb-841f-3ae6f9d960b4",
+      "50eca0e8-dd12-4bae-82f8-2abcd163536f"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:09+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Fernleihe und Dokumentenlieferung: B\u00fccher und Artikel bestellen, die nicht im Bestand sind \u2013 Fristen, Kosten und Lieferzeiten.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "literaturbestellung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:08:52+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Literaturbestellung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:46+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

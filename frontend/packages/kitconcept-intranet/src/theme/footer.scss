@@ -1,0 +1,15 @@
+body.has-no-footer {
+  #footer > .pre-footer ~ * {
+    display: none;
+  }
+}
+/* Remove footer padding for wikipage and workspace content types */
+body.contenttype-wikipage #footer > :first-child:not(:empty),
+body.contenttype-workspace #footer > :first-child:not(:empty) {
+  padding-top: 0 !important;
+}
+
+body.contenttype-wikipage #footer > .container:not(:empty),
+body.contenttype-workspace #footer > .container:not(:empty) {
+  padding: 0 !important;
+}

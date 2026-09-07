@@ -1,0 +1,579 @@
+{
+  "@id": "/services/bibliothek/schulungen-workshops",
+  "@type": "Document",
+  "UID": "7e30975f569649a595193968c77b3d99",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2d29754c-95ab-41d1-8ea4-9365f7a08034": {
+      "@type": "title"
+    },
+    "5df63642-4dfd-4c32-9e83-c9268517b921": {
+      "@type": "slate",
+      "plaintext": "## Datenmanagementplan erstellen\n\n### DMP-Anforderungen\n\nEin Datenmanagementplan (DMP) ist bei folgenden F\u00f6rderern verpflichtend:\n\n- **DFG**: Deutsche Forschungsgemeinschaft\n- **EU Horizon Europe**: Europ\u00e4ische Forschungsf\u00f6rderung\n- **BMBF**: Bundesministerium f\u00fcr Bildung und Forschung\n\nDMPs m\u00fcssen bereits bei der Antragstellung eingereicht werden.\n\n### Inhalte eines Datenmanagementplans\n\nEin umfassender DMP sollte folgende Aspekte abdecken:\n\n- **Datenbeschreibung**: Art, Umfang und Format der Forschungsdaten\n- **Verantwortlichkeiten**: Wer ist f\u00fcr Datenverwaltung zust\u00e4ndig?\n- **Standards und Metadaten**: Welche Standards werden verwendet?\n- **Zugang und Nachnutzung**: Wie werden Daten zug\u00e4nglich gemacht?\n- **Speicherung und Sicherung**: Wie werden Daten gespeichert und gesichert?\n- **Kosten**: Welche Kosten entstehen f\u00fcr Datenverwaltung?\n\n### RDMO - Research Data Management Organiser\n\nDer DFNT bietet das Tool **RDMO** zur strukturierten Erstellung von DMPs an:\n\n- **Zugang**: https://rdmo.dfnt.de\n- **Vorlagen**: Vorgefertigte Templates f\u00fcr DFG, Horizon Europe und andere F\u00f6rderer\n- **Download**: DMPs k\u00f6nnen als PDF oder Word exportiert werden\n\n### Unterst\u00fctzung und Beratung\n\n**RDM-Team des DFNT:**\n- **Kontakt**: rdm@dfnt.de\n- **Sprechstunde**: Dienstag, 14:00-16:00 Uhr\n- **Beratung**: Kostenlose Unterst\u00fctzung bei der DMP-Erstellung\n\n### Weitere Informationen\n\nF\u00fcr Fragen zum Datenmanagement kontaktieren Sie das RDM-Team unter **rdm@dfnt.de**.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Datenmanagementplan erstellen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "DMP-Anforderungen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Ein Datenmanagementplan (DMP) ist bei folgenden F\u00f6rderern verpflichtend:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "DFG"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Deutsche Forschungsgemeinschaft"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "EU Horizon Europe"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Europ\u00e4ische Forschungsf\u00f6rderung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "BMBF"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Bundesministerium f\u00fcr Bildung und Forschung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "DMPs m\u00fcssen bereits bei der Antragstellung eingereicht werden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Inhalte eines Datenmanagementplans"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Ein umfassender DMP sollte folgende Aspekte abdecken:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Datenbeschreibung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Art, Umfang und Format der Forschungsdaten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Verantwortlichkeiten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Wer ist f\u00fcr Datenverwaltung zust\u00e4ndig?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Standards und Metadaten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Welche Standards werden verwendet?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Zugang und Nachnutzung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Wie werden Daten zug\u00e4nglich gemacht?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Speicherung und Sicherung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Wie werden Daten gespeichert und gesichert?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kosten"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Welche Kosten entstehen f\u00fcr Datenverwaltung?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "RDMO - Research Data Management Organiser"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Der DFNT bietet das Tool "
+            },
+            {
+              "children": [
+                {
+                  "text": "RDMO"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " zur strukturierten Erstellung von DMPs an:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Zugang"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "https://rdmo.dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "https://rdmo.dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vorlagen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Vorgefertigte Templates f\u00fcr DFG, Horizon Europe und andere F\u00f6rderer"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Download"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": DMPs k\u00f6nnen als PDF oder Word exportiert werden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Unterst\u00fctzung und Beratung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "RDM-Team des DFNT:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontakt"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "rdm@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:rdm@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Sprechstunde"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Dienstag, 14:00-16:00 Uhr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Beratung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Kostenlose Unterst\u00fctzung bei der DMP-Erstellung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Weitere Informationen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "F\u00fcr Fragen zum Datenmanagement kontaktieren Sie das RDM-Team unter "
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "rdm@dfnt.de"
+                    }
+                  ],
+                  "data": {
+                    "url": "mailto:rdm@dfnt.de"
+                  },
+                  "type": "link"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "2d29754c-95ab-41d1-8ea4-9365f7a08034",
+      "5df63642-4dfd-4c32-9e83-c9268517b921"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:10+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Angebote zu Literaturrecherche, Zitiertools (Citavi, Zotero) und wissenschaftlichem Arbeiten: aktuelles Schulungsprogramm und Anmeldung.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "schulungen-workshops",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:09:00+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Schulungen und Workshops",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:46+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

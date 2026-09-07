@@ -1,0 +1,113 @@
+{
+  "@id": "/services/features",
+  "@type": "Document",
+  "UID": "f29a0a79ff974cbab0ea9b016944336a",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "781e509b-134e-4551-83c4-a0b3830b2c70": {
+      "@type": "title"
+    },
+    "cad1409e-182b-48c5-8865-d5c3dc622e1e": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": ".::1"
+          },
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "efe05471-2a99-4733-94a3-03d1617f4687": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "781e509b-134e-4551-83c4-a0b3830b2c70",
+      "cad1409e-182b-48c5-8865-d5c3dc622e1e",
+      "efe05471-2a99-4733-94a3-03d1617f4687"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2024-05-16T20:18:37+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2024-05-17T11:39:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "features",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-22T15:21:59+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Anwendungen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,111 @@
+{
+  "@id": "/ueber-uns",
+  "@type": "Document",
+  "UID": "1e7262f173a54700a5ca2578506b1bc1",
+  "allow_discussion": false,
+  "authors": [
+    "809499c7ddda4aef80d3ab61c0c365d5"
+  ],
+  "blocks": {
+    "90958526-c60b-4d36-b134-a96603db5280": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "\u00dcber uns",
+      "url": "../resolveuid/dc1387847bc1485a836cfe3446cf3458",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lernen Sie das DFNT kennen: Mission und Vision, Organisationsstruktur, Gremien, Standorte sowie verbindliche Leitlinien \u2013 alles Wichtige \u00fcber unser Forschungszentrum auf einen Blick."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "a5e8265f-157b-4652-83e5-fdef0262dbf7": {
+      "@type": "listing",
+      "headline": "Das macht uns aus",
+      "headlineTag": "h2",
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "90958526-c60b-4d36-b134-a96603db5280",
+      "a5e8265f-157b-4652-83e5-fdef0262dbf7"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2024-05-16T20:19:27+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "ueber-uns",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:42:39+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": "809499c7ddda4aef80d3ab61c0c365d5",
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "\u00dcber uns",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:49+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

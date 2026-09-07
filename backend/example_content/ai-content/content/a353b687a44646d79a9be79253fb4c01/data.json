@@ -1,0 +1,127 @@
+{
+  "@id": "/services/ansprechpersonen",
+  "@type": "Document",
+  "UID": "a353b687a44646d79a9be79253fb4c01",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "a810c42b-4702-4e28-95fb-967d063ef754": {
+      "@type": "introduction",
+      "plaintext": "Dieser Bereich bietet Ihnen einen schnellen \u00dcberblick, wer im Unternehmen f\u00fcr welche Themen zust\u00e4ndig ist. Von der Gesch\u00e4ftsleitung \u00fcber Stabsstellen und Fachbereiche bis zu Betriebsr\u00e4ten, Kompetenzzentren und Projekten \u2013 hier finden Sie die richtigen Kontakte f\u00fcr Ihre Anliegen.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Dieser Bereich bietet Ihnen einen schnellen \u00dcberblick, wer im Unternehmen f\u00fcr welche Themen zust\u00e4ndig ist. Von der Gesch\u00e4ftsleitung \u00fcber Stabsstellen und Fachbereiche bis zu Betriebsr\u00e4ten, Kompetenzzentren und Projekten \u2013 hier finden Sie die richtigen Kontakte f\u00fcr Ihre Anliegen."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b366838f-c3fe-4c64-8255-f0ec1d74131b": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "depth": "1",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": ""
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "bcd48021-4649-4cfd-bdbf-7d400fa6dc5e": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "bcd48021-4649-4cfd-bdbf-7d400fa6dc5e",
+      "a810c42b-4702-4e28-95fb-967d063ef754",
+      "b366838f-c3fe-4c64-8255-f0ec1d74131b"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-13T08:33:56+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Ansprechpersonen bietet Ihnen einen schnellen \u00dcberblick, wer im Unternehmen f\u00fcr welche Themen zust\u00e4ndig ist. Von der Gesch\u00e4ftsleitung \u00fcber Stabsstellen und Fachbereiche bis zu Betriebsr\u00e4ten, Kompetenzzentren und Projekten \u2013 hier finden Sie die richtigen Kontakte f\u00fcr Ihre Anliegen.",
+  "effective": "2025-08-13T08:40:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "ansprechpersonen",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:44:11+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Ansprechpersonen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:46+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

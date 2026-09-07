@@ -1,0 +1,110 @@
+{
+  "@id": "/forschung/institute/institut-fuer-quantenphysik-und-astrophysik/mitarbeitende",
+  "@type": "Document",
+  "UID": "fdeeb5d030604950a18b3f3ae15aea39",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "36a2749e-065e-416a-a747-e067c75486e3": {
+      "@type": "title"
+    },
+    "4b98147e-651e-41d0-a4f0-caea09eb6cf6": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Person"
+            ]
+          },
+          {
+            "i": "organisational_unit_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "1a22eddf0e7941a0962cbfaa785e4b4d"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "36a2749e-065e-416a-a747-e067c75486e3",
+      "4b98147e-651e-41d0-a4f0-caea09eb6cf6"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-05-18T07:47:33+00:00",
+  "creators": [
+    "a.becker"
+  ],
+  "description": "",
+  "effective": "2026-05-18T07:47:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "mitarbeitende",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-18T08:35:14+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Mitarbeitende des Instituts",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

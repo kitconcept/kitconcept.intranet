@@ -1,0 +1,308 @@
+{
+  "@id": "/services/facility-management/parkplatzverwaltung",
+  "@type": "Document",
+  "UID": "53183ed109a9410d8acbc3345c1ccd32",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "5dfe0100-6dc1-4f16-94ee-7a18bb5ffbdb": {
+      "@type": "title"
+    },
+    "abea455a-883f-4120-97f2-53f76966ff05": {
+      "@type": "slate",
+      "plaintext": "## Parkplatzverwaltung\n\nParkberechtigungen beantragen und Parkpl\u00e4tze verwalten.\n\n**Verf\u00fcgbare Parkfl\u00e4chen:**\n- K\u00f6ln: ca. 500 Pl\u00e4tze\n- Bonn: ca. 150 Pl\u00e4tze\n- Besucherparkpl\u00e4tze\n\n**Beantragung:** \u00dcber online.dfnt.de/parking\n\n**Regelungen:**\n- Max. 1 Parkplatz pro Person\n- Monatliche Verrechnung mit Gehalt\n- K\u00fcndigung mit 1 Monat Frist\n\n**E-Fahrzeuge:**\n- Ladestationen vorhanden\n- Kostenlos f\u00fcr Arbeitgeber-Laden\n\n**Kontakt:** parking@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Parkplatzverwaltung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Parkberechtigungen beantragen und Parkpl\u00e4tze verwalten."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verf\u00fcgbare Parkfl\u00e4chen:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "K\u00f6ln: ca. 500 Pl\u00e4tze"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bonn: ca. 150 Pl\u00e4tze"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Besucherparkpl\u00e4tze"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Beantragung:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " \u00dcber online.dfnt.de/parking"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Regelungen:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Max. 1 Parkplatz pro Person"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Monatliche Verrechnung mit Gehalt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "K\u00fcndigung mit 1 Monat Frist"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "E-Fahrzeuge:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ladestationen vorhanden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kostenlos f\u00fcr Arbeitgeber-Laden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "parking@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:parking@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5dfe0100-6dc1-4f16-94ee-7a18bb5ffbdb",
+      "abea455a-883f-4120-97f2-53f76966ff05"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:59+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Parkberechtigungen beantragen und Parkpl\u00e4tze verwalten: verf\u00fcgbare Parkfl\u00e4chen, Beantragungsprozess und Regelungen f\u00fcr E-Fahrzeuge.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "parkplatzverwaltung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:16:16+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Parkplatzverwaltung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

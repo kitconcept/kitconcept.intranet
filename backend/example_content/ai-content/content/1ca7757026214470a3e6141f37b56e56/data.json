@@ -1,0 +1,111 @@
+{
+  "@id": "/services/facility-management",
+  "@type": "Document",
+  "UID": "1ca7757026214470a3e6141f37b56e56",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "48c05eb6-ea00-492d-9033-768d6174c4e5": {
+      "@type": "slate",
+      "plaintext": "Das Facility Management des DFNT k\u00fcmmert sich um eine funktionierende Arbeitsumgebung: Online-Raumbuchungssystem f\u00fcr Meeting- und Seminarr\u00e4ume, Hausmeisterdienste f\u00fcr Reparaturen und Umz\u00fcge, Sicherheits- und Notfallmanagement, Parkplatzverwaltung sowie Informationen zu Nachhaltigkeit und Geb\u00e4udereinigung.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das Facility Management des DFNT k\u00fcmmert sich um eine funktionierende Arbeitsumgebung: Online-Raumbuchungssystem f\u00fcr Meeting- und Seminarr\u00e4ume, Hausmeisterdienste f\u00fcr Reparaturen und Umz\u00fcge, Sicherheits- und Notfallmanagement, Parkplatzverwaltung sowie Informationen zu Nachhaltigkeit und Geb\u00e4udereinigung."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "666cf9a2-2662-477a-9cb2-9566c9abb2d7": {
+      "@type": "image",
+      "alt": "Luftaufnahme eines gro\u00dfl\u00e4chigen Forschungscampus mit zentralem Turm und Institutsgeb\u00e4uden",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/2b1942c4359041229c9cf85c0677d890"
+    },
+    "bc497229-c82e-477f-a1e1-43114bbb1f9c": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "bc497229-c82e-477f-a1e1-43114bbb1f9c",
+      "666cf9a2-2662-477a-9cb2-9566c9abb2d7",
+      "48c05eb6-ea00-492d-9033-768d6174c4e5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:04:30+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Facility Management des DFNT k\u00fcmmert sich um eine funktionierende Arbeitsumgebung: Online-Raumbuchungssystem f\u00fcr Meeting- und Seminarr\u00e4ume, Hausmeisterdienste f\u00fcr Reparaturen und Umz\u00fcge, Sicherheits- und Notfallmanagement, Parkplatzverwaltung sowie Informationen zu Nachhaltigkeit und Geb\u00e4udereinigung.",
+  "effective": "2026-03-05T16:04:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "facility-management",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:29:02+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Facility Management",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

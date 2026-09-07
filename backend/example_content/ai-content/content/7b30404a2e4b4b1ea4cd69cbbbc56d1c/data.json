@@ -1,0 +1,111 @@
+{
+  "@id": "/arbeitsthemen/it-prozesse",
+  "@type": "Document",
+  "UID": "7b30404a2e4b4b1ea4cd69cbbbc56d1c",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "04061c89-c0c4-410e-99c4-e59fa57fc33c": {
+      "@type": "title"
+    },
+    "050b391b-0bc7-46af-adac-c2ff8a79df31": {
+      "@type": "slate",
+      "plaintext": "Schritt-f\u00fcr-Schritt-Anleitungen f\u00fcr h\u00e4ufige IT-Aufgaben: Software-Installation, VPN-Zugang einrichten, E-Mail-Konfiguration f\u00fcr verschiedene Clients, Dateiablage und Cloud-Speicher, Drucken und Scannen sowie Videokonferenz-Tools. Hier finden Sie auch den Self-Service zur Passwortr\u00fcksetzung.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Schritt-f\u00fcr-Schritt-Anleitungen f\u00fcr h\u00e4ufige IT-Aufgaben: Software-Installation, VPN-Zugang einrichten, E-Mail-Konfiguration f\u00fcr verschiedene Clients, Dateiablage und Cloud-Speicher, Drucken und Scannen sowie Videokonferenz-Tools. Hier finden Sie auch den Self-Service zur Passwortr\u00fcksetzung."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "53499d21-1a2e-4fec-a5ec-d33780ed82a7": {
+      "@type": "image",
+      "alt": "Techniker arbeitet an Netzwerkkabeln in blau-gelb beleuchteter Server-Infrastruktur",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/825a131aefea4bb6a3e3792f3a51f6e3"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "04061c89-c0c4-410e-99c4-e59fa57fc33c",
+      "53499d21-1a2e-4fec-a5ec-d33780ed82a7",
+      "050b391b-0bc7-46af-adac-c2ff8a79df31"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:00:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Schritt-f\u00fcr-Schritt-Anleitungen f\u00fcr h\u00e4ufige IT-Aufgaben: Software-Installation, VPN-Zugang einrichten, E-Mail-Konfiguration f\u00fcr verschiedene Clients, Dateiablage und Cloud-Speicher, Drucken und Scannen sowie Videokonferenz-Tools. Hier finden Sie auch den Self-Service zur Passwortr\u00fccksetzung.",
+  "effective": "2026-03-05T16:00:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "it-prozesse",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-07T10:55:14+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "IT-Prozesse & Anleitungen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:37+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:37+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,51 @@
+name: 'kitconcept Intranet - Manual Deploy to *.kitconcept.io'
+
+on:
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/kitconcept-intranet
+  NODE_VERSION: 24.x
+
+jobs:
+
+  config:
+    name: "Config: Compute values used in workflow"
+    uses: ./.github/workflows/config.yml
+
+  deploy-io:
+    name: "Deploy: *.kitconcept.io"
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    needs:
+      - config
+    with:
+        tag: ${{ github.ref_name }}
+        environment: ${{ github.ref == 'refs/heads/2.x.x' && 'v2-plone-intranet.kitconcept.io' || 'plone-intranet.kitconcept.io' }}
+        stack-name: ${{ github.ref == 'refs/heads/2.x.x' && 'v2-plone-intranet-kitconcept-io' || 'plone-intranet-kitconcept-io' }}
+        stack-file: "devops/stacks/persistent.yml"
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+        password: ${{ secrets.DEPLOY_GHCR_READ_TOKEN }}
+        remote-host: ${{ secrets.DEPLOY_HOST }}
+        remote-port: ${{ secrets.DEPLOY_PORT }}
+        remote-user: ${{ secrets.DEPLOY_USER }}
+        remote-private-key: ${{ secrets.DEPLOY_SSH }}
+        env-file: |
+            IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+            IMAGE_TAG=${{ github.ref_name }}
+            STACK_NAME=${{ vars.STACK_NAME }}
+            STACK_PREFIX=${{ vars.STACK_PREFIX }}
+            HOSTNAME=${{ vars.HOSTNAME }}
+            CERTRESOLVER=${{ vars.CERTRESOLVER }}
+            BASIC_AUTH_USER=${{ vars.BASIC_AUTH_USER }}
+            BASIC_AUTH_PASSWORD=${{ vars.BASIC_AUTH_PASSWORD }}
+            BACKEND_REPLICAS=${{ vars.BACKEND_REPLICAS }}
+            FRONTEND_REPLICAS=${{ vars.FRONTEND_REPLICAS }}
+            SOLR_LLM_URL=${{ vars.SOLR_LLM_URL }}
+            SOLR_LLM_TOKEN=${{ vars.SOLR_LLM_TOKEN }}
+            SOLR_TAG=${{ vars.SOLR_TAG }}
+            SOLR_LLM_CHAT_MODEL=${{ vars.SOLR_LLM_CHAT_MODEL }}
+    permissions:
+        contents: read
+        packages: write

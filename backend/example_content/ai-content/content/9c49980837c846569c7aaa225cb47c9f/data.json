@@ -1,0 +1,306 @@
+{
+  "@id": "/aktuelles/nachrichten/alle-nachrichten/ki-modell-zur-vorhersage-von-extremwetterereignissen-erhalt-internationalen-preis",
+  "@type": "News Item",
+  "UID": "9c49980837c846569c7aaa225cb47c9f",
+  "allow_discussion": false,
+  "blocks": {
+    "0d52fa80-5b8c-449b-ab5d-256ffe1c2b8d": {
+      "@type": "separator"
+    },
+    "5c5b0f04-37fb-40da-b1cf-c83bb26be32b": {
+      "@type": "image",
+      "align": "right",
+      "alt": "Forschungsteam pr\u00e4sentiert KI-Ergebnisse bei internationaler Konferenz",
+      "image_field": "image",
+      "size": "m",
+      "title": "Preisvergabe EuroAI-Konferenz Amsterdam",
+      "url": "../resolveuid/cbe3f67a11ea474d9b6dae2ee81b5aa3"
+    },
+    "61203ef0-25f2-4ad2-965d-38273fb9b4f3": {
+      "@type": "title"
+    },
+    "8bdeb8cd-9d58-468d-8345-3e73623b4d00": {
+      "@type": "image",
+      "align": "center",
+      "alt": "KI-Visualisierung: neuronale Netze f\u00fcr Wettervorhersage",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "title": "KI-Modell f\u00fcr Extremwettervorhersage",
+      "url": "../resolveuid/4fd7dcfe675c455490e0b6da4103e3c8"
+    },
+    "b10cef14-5bf3-4cd9-b3ca-d5bd941db95f": {
+      "@type": "slate",
+      "plaintext": "## Leistung und Validierung\n\nIn einem unabh\u00e4ngigen Vergleichstest des Deutschen Wetterdienstes (DWD) erzielte das Modell bei der 72-Stunden-Vorhersage von Starkregenereignissen (> 50 mm/24h) einen Critical Success Index (CSI) von 0,74 \u2013 verglichen mit 0,59 f\u00fcr das bislang beste operationelle Modell. Dieser Fortschritt entspricht einer signifikanten Verbesserung der Vorwarnzeiten und kann im Katastrophenschutz Leben retten.\n\nDas Modell wurde auf einem Datensatz von 35 Jahren europ\u00e4ischer Wetterdaten trainiert und auf unabh\u00e4ngigen Zeitreihen getestet. Die zugeh\u00f6rige Publikation ist bei *Nature Climate Change* eingereicht.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Leistung und Validierung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "In einem unabh\u00e4ngigen Vergleichstest des Deutschen Wetterdienstes (DWD) erzielte das Modell bei der 72-Stunden-Vorhersage von Starkregenereignissen (> 50 mm/24h) einen Critical Success Index (CSI) von 0,74 \u2013 verglichen mit 0,59 f\u00fcr das bislang beste operationelle Modell. Dieser Fortschritt entspricht einer signifikanten Verbesserung der Vorwarnzeiten und kann im Katastrophenschutz Leben retten."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Das Modell wurde auf einem Datensatz von 35 Jahren europ\u00e4ischer Wetterdaten trainiert und auf unabh\u00e4ngigen Zeitreihen getestet. Die zugeh\u00f6rige Publikation ist bei "
+            },
+            {
+              "children": [
+                {
+                  "text": "Nature Climate Change"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": " eingereicht."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b95e9c8c-d843-4290-8821-2afd21855e84": {
+      "@type": "slate",
+      "plaintext": "## Das pr\u00e4mierte Modell\n\nExtremwetterereignisse wie Starkregenereignisse, Sturmfluten und Hitzewellen geh\u00f6ren zu den folgenreichsten Auswirkungen des Klimawandels. Ihre pr\u00e4zise Vorhersage \u00fcber Zeitr\u00e4ume von 48 bis 72 Stunden ist technisch anspruchsvoll, da konventionelle Wettermodelle an physikalische Aufl\u00f6sungsgrenzen sto\u00dfen.\n\nDas Team um Dr. Fatima Al-Rashid hat ein hybrides Vorhersagemodell entwickelt, das Numerical Weather Prediction (NWP) mit einem tief neuronalen Netz (Transformer-Architektur) kombiniert. W\u00e4hrend das NWP-Modell die gro\u00dfr\u00e4umige atmosph\u00e4rische Dynamik erfasst, lernt das neuronale Netz aus historischen Extremereignissen, lokale Verst\u00e4rkungseffekte zu erkennen und zu antizipieren.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das pr\u00e4mierte Modell"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Extremwetterereignisse wie Starkregenereignisse, Sturmfluten und Hitzewellen geh\u00f6ren zu den folgenreichsten Auswirkungen des Klimawandels. Ihre pr\u00e4zise Vorhersage \u00fcber Zeitr\u00e4ume von 48 bis 72 Stunden ist technisch anspruchsvoll, da konventionelle Wettermodelle an physikalische Aufl\u00f6sungsgrenzen sto\u00dfen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Das Team um Dr. Fatima Al-Rashid hat ein hybrides Vorhersagemodell entwickelt, das Numerical Weather Prediction (NWP) mit einem tief neuronalen Netz (Transformer-Architektur) kombiniert. W\u00e4hrend das NWP-Modell die gro\u00dfr\u00e4umige atmosph\u00e4rische Dynamik erfasst, lernt das neuronale Netz aus historischen Extremereignissen, lokale Verst\u00e4rkungseffekte zu erkennen und zu antizipieren."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c917800f-f95f-4724-b375-1c757d7607dd": {
+      "@type": "separator"
+    },
+    "ced9bc08-dba1-4f78-82ad-53d8177f7e81": {
+      "@type": "slate",
+      "plaintext": "## Auf einen Blick\n\n- Das Institut f\u00fcr KI und Datenwissenschaften erh\u00e4lt den European AI Excellence Award f\u00fcr sein KI-Modell zur Vorhersage von Extremwetterereignissen.\n- Das Modell kombiniert tiefe neuronale Netze mit physikalischen Klimasimulationen.\n- Bei der 72-Stunden-Vorhersage von Starkregenereignissen erreicht es eine bisher unerreichte Pr\u00e4zision.\n- Der Preis wurde im Rahmen der EuroAI-Konferenz in Amsterdam vergeben.\n- Das Modell wird bereits von zwei deutschen Wetterdiensten in der operativen Nutzung erprobt.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Auf einen Blick"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Das Institut f\u00fcr KI und Datenwissenschaften erh\u00e4lt den European AI Excellence Award f\u00fcr sein KI-Modell zur Vorhersage von Extremwetterereignissen."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Das Modell kombiniert tiefe neuronale Netze mit physikalischen Klimasimulationen."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bei der 72-Stunden-Vorhersage von Starkregenereignissen erreicht es eine bisher unerreichte Pr\u00e4zision."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Der Preis wurde im Rahmen der EuroAI-Konferenz in Amsterdam vergeben."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Das Modell wird bereits von zwei deutschen Wetterdiensten in der operativen Nutzung erprobt."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "f04eec36-9bb5-4aba-98e7-8690b902ba99": {
+      "@type": "slate",
+      "plaintext": "## Ausblick und operative Nutzung\n\nZwei deutsche Landesbeh\u00f6rden f\u00fcr Katastrophenschutz und der Deutsche Wetterdienst erproben das Modell bereits im operativen Parallelbetrieb. Ein Pilotprojekt in Zusammenarbeit mit der Stadt K\u00f6ln zielt darauf ab, das Modell in das st\u00e4dtische Hochwasserwarnsystem zu integrieren.\n\nF\u00fcr die weitere Entwicklung plant das Team die Erweiterung auf andere Extremwettertypen (Hitzewellen, Sturmsysteme) sowie die Anpassung f\u00fcr Regionen au\u00dferhalb Europas \u2013 insbesondere f\u00fcr vulnerablere L\u00e4nder im globalen S\u00fcden.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Ausblick und operative Nutzung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Zwei deutsche Landesbeh\u00f6rden f\u00fcr Katastrophenschutz und der Deutsche Wetterdienst erproben das Modell bereits im operativen Parallelbetrieb. Ein Pilotprojekt in Zusammenarbeit mit der Stadt K\u00f6ln zielt darauf ab, das Modell in das st\u00e4dtische Hochwasserwarnsystem zu integrieren."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "F\u00fcr die weitere Entwicklung plant das Team die Erweiterung auf andere Extremwettertypen (Hitzewellen, Sturmsysteme) sowie die Anpassung f\u00fcr Regionen au\u00dferhalb Europas \u2013 insbesondere f\u00fcr vulnerablere L\u00e4nder im globalen S\u00fcden."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "61203ef0-25f2-4ad2-965d-38273fb9b4f3",
+      "8bdeb8cd-9d58-468d-8345-3e73623b4d00",
+      "0d52fa80-5b8c-449b-ab5d-256ffe1c2b8d",
+      "ced9bc08-dba1-4f78-82ad-53d8177f7e81",
+      "c917800f-f95f-4724-b375-1c757d7607dd",
+      "b95e9c8c-d843-4290-8821-2afd21855e84",
+      "b10cef14-5bf3-4cd9-b3ca-d5bd941db95f",
+      "5c5b0f04-37fb-40da-b1cf-c83bb26be32b",
+      "f04eec36-9bb5-4aba-98e7-8690b902ba99"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T12:12:57+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das Institut f\u00fcr KI und Datenwissenschaften wurde mit dem European AI Excellence Award ausgezeichnet. Das pr\u00e4mierte Modell kombiniert tiefe neuronale Netze mit physikalischen Klimasimulationen und erreicht bei der 72-Stunden-Vorhersage von Starkregenereignissen eine bisher unerreichte Pr\u00e4zision.",
+  "effective": "2026-03-05T12:13:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": "AUSZEICHNUNGEN & PREISE",
+  "id": "ki-modell-zur-vorhersage-von-extremwetterereignissen-erhalt-internationalen-preis",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T15:59:42+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "KI-Modell zur Vorhersage von Extremwetterereignissen erh\u00e4lt internationalen Preis",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:33+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:33+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

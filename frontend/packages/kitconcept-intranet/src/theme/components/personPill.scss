@@ -1,0 +1,107 @@
+.person-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  vertical-align: middle;
+
+  .person-pill-name {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: capitalize;
+  }
+
+  .person-pill-link {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    gap: 10px;
+    text-decoration: none !important;
+
+    .person-pill-name {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+      text-transform: capitalize;
+    }
+  }
+
+  .person-pill-portrait,
+  .person-pill-avatar {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 100px;
+    object-fit: cover;
+  }
+
+  .person-pill-avatar {
+    background: var(--accent-color, #e0e0e0);
+  }
+}
+
+// Stacked labels: kicker above name, and/or subheading below name.
+.person-pill-with-kicker,
+.person-pill-with-subheading {
+  .person-pill-labels {
+    display: inline-flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 5px;
+  }
+
+  .person-pill-kicker,
+  .person-pill-subheading {
+    color: var(--person-pill-kicker-color, #808080);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}
+.person-pill-with-kicker {
+  .person-pill-name {
+    color: var(--person-pill-kicker-color, #808080);
+  }
+}
+// Portrait + name share one rounded background.
+.person-pill-background {
+  padding-right: 10px;
+  border-radius: 100px;
+  background: var(--person-pill-background, #eee);
+}
+
+.person-pill-compact {
+  gap: 5px;
+
+  .person-pill-link {
+    gap: 5px;
+    .person-pill-name {
+      font-weight: 500;
+    }
+  }
+
+  .person-pill-portrait,
+  .person-pill-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .person-pill-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}
+.slate-mention:has(.person-pill) {
+  padding: 0 8px 0 0;
+  outline: 1px solid var(--muted);
+
+  > .person-pill,
+  .person-pill-link,
+  .person-pill-name {
+    align-self: baseline;
+  }
+}

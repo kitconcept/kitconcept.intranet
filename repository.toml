@@ -2,6 +2,8 @@
 name = "kitconcept.intranet"
 changelog = "CHANGELOG.md"
 version = "version.txt"
+version_format = "semver"
+container_images_prefix = "ghcr.io/kitconcept/kitconcept-intranet"
 compose = ["docker-compose.yml"]
 
 [repository.towncrier]
@@ -11,6 +13,7 @@ settings = "towncrier.toml"
 [backend.package]
 name = "kitconcept.intranet"
 path = "backend"
+code_path = "src/kitconcept/intranet"
 changelog = "backend/CHANGELOG.md"
 towncrier_settings = "backend/pyproject.toml"
 base_package = "kitconcept.core"
@@ -19,6 +22,7 @@ publish = true
 [frontend.package]
 name = "@kitconcept/intranet"
 path = "frontend/packages/kitconcept-intranet"
+code_path = "src"
 changelog = "frontend/packages/kitconcept-intranet/CHANGELOG.md"
 towncrier_settings = "frontend/packages/kitconcept-intranet/towncrier.toml"
 base_package = "@kitconcept/core"

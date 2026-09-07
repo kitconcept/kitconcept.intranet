@@ -1,0 +1,268 @@
+{
+  "@id": "/services/zentrale-verwaltung/finanzabteilung",
+  "@type": "Document",
+  "UID": "be44d02f89f84fe2b17d0683e5ea5b57",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "197be18a-d5cc-4a56-bc10-c75023b7ce02": {
+      "@type": "slate",
+      "plaintext": "## Finanzabteilung\n\nAnsprechpartner f\u00fcr Budgetfragen, Mittelverwendung und Abrechnung.\n\n**Zust\u00e4ndigkeiten:**\n- Haushalt und Budgetplanung\n- Mittelverwendung und Abrechnungen\n- Reisekostenverrechnung\n- Gr\u00f6\u00dfere Beschaffungen\n- Vertragsmanagement\n\n**Kontakt:** finanzen@dfnt.de, +49 221 470-3020\n\n**Sprechzeiten:** Mo-Fr 9:00-12:00 Uhr, 14:00-16:00 Uhr\n\n**Ort:** K\u00f6ln, Geb\u00e4ude B, Raum 301-310\n\n**Termine:** Nach Vereinbarung",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Finanzabteilung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Ansprechpartner f\u00fcr Budgetfragen, Mittelverwendung und Abrechnung."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zust\u00e4ndigkeiten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Haushalt und Budgetplanung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mittelverwendung und Abrechnungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Reisekostenverrechnung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Gr\u00f6\u00dfere Beschaffungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vertragsmanagement"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "finanzen@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:finanzen@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": ", +49 221 470-3020"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sprechzeiten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Mo-Fr 9:00-12:00 Uhr, 14:00-16:00 Uhr"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ort:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " K\u00f6ln, Geb\u00e4ude B, Raum 301-310"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Termine:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Nach Vereinbarung"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "2b10c378-81c6-4491-9fea-9ebdee199881": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "2b10c378-81c6-4491-9fea-9ebdee199881",
+      "197be18a-d5cc-4a56-bc10-c75023b7ce02"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:57+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Ansprechpartner f\u00fcr Budgetfragen, Mittelverwendung und Abrechnung: Zust\u00e4ndigkeiten nach Bereichen und Kontaktdaten der Sachbearbeitung.",
+  "effective": "2026-03-05T16:30:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "finanzabteilung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:15:33+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Finanzabteilung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

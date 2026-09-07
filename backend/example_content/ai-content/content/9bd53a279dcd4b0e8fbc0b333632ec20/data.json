@@ -1,0 +1,132 @@
+{
+  "@id": "/aktuelles/nachrichten/alle-nachrichten",
+  "@type": "Document",
+  "UID": "9bd53a279dcd4b0e8fbc0b333632ec20",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "0a0f22af-821a-48d2-b0f7-007ffdfcbb4b": {
+      "@type": "search",
+      "facets": [
+        {
+          "@id": "1edbb7e5-c139-49f9-a03b-234853f3fb54",
+          "advanced": false,
+          "field": {
+            "label": "Organisational Unit",
+            "value": "organisational_unit_reference"
+          },
+          "hidden": false,
+          "multiple": false,
+          "title": "Organisationseinheit"
+        },
+        {
+          "@id": "c87e7230-3493-431d-8449-8c729b22633e",
+          "advanced": false,
+          "field": {
+            "label": "Tag",
+            "value": "Subject"
+          },
+          "hidden": false,
+          "multiple": false,
+          "title": "Schlagwort"
+        }
+      ],
+      "listingBodyTemplate": "summary",
+      "query": {
+        "b_size": "15",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": ""
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      }
+    },
+    "81d77a50-ab78-4390-a335-c776fab3204d": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "81d77a50-ab78-4390-a335-c776fab3204d",
+      "0a0f22af-821a-48d2-b0f7-007ffdfcbb4b"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T10:29:44+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-03-05T16:32:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "alle-nachrichten",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-06-10T08:20:08+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Alle Nachrichten",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:32+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:32+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

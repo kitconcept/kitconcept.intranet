@@ -36,9 +36,9 @@ dependencies = [
     "pas.plugins.keycloakgroups==1.0.0b1",
     "pas.plugins.oidc==2.0.0",
     "collective-solr==10.1.1",
-    "kitconcept.solr",
+    "kitconcept.solr==3.0.0a0",
     "kitconcept.contactblock==1.0.0a6",
-    "kitconcept.plate==1.0.0a23",
+    "kitconcept.plate==1.0.0a24",
 ]
 
 [dependency-groups]
@@ -66,7 +66,6 @@ container = [
 ]
 
 [tool.uv.sources]
-kitconcept-solr = { git = "https://github.com/kitconcept/kitconcept.solr.git", subdirectory = "backend", rev = "a8953cefb2d250bb83213bef0099ffceda87dc78" }
 
 [tool.hatch.metadata]
 allow-direct-references = true

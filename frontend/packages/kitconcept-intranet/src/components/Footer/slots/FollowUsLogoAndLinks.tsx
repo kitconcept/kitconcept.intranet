@@ -1,6 +1,6 @@
 /**
  * OVERRIDE: FollowUsLogoAndLinks
- * REASON: Footer links should contains Feedback form link
+ * REASON: Render configured footer links and the intranet sponsor logo
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/issues/124#note_21478
  * ORIGINAL: @kitconcept/volto-light-theme
  * FILE VERSION: 7.0.0a23
@@ -8,8 +8,7 @@
  * DEVELOPER: @iFlameing
  */
 
-import { FormattedMessage, useIntl, defineMessages } from 'react-intl';
-import { useLocation } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { Container } from '@plone/components';
@@ -22,51 +21,16 @@ import type {
 import type { Content } from '@plone/types';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
-const messages = defineMessages({
-  feedback: {
-    id: 'Feedback about this page',
-    defaultMessage: 'Feedback about this page',
-  },
-});
-
 const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
   const social_links = useLiveData<
     PloneGobrSocialMediaSettings['social_links']
   >(content, 'plonegovbr.socialmedia.settings', 'social_links');
 
-  const intl = useIntl();
-  const location = useLocation();
-  const showFeedbackFormLink =
-    content?.authors ||
-    content?.responsible_person ||
-    content?.feedback_person ||
-    content?.['@components']?.clm?.responsible_person?.url;
-
-  let footer_links = useLiveData<SiteFooterSettings['footer_links']>(
+  const footer_links = useLiveData<SiteFooterSettings['footer_links']>(
     content,
     'voltolighttheme.footer',
     'footer_links',
   );
-  /* START CUSTOMIZATION */
-  footer_links = [
-    ...(footer_links || []),
-    ...(showFeedbackFormLink
-      ? [
-          {
-            '@id': '8b42f8f4-3d6e-4c97-9b8c-27c51e8b29a1',
-            href: [
-              {
-                '@id': `${location.pathname === '/' ? '' : location.pathname}/feedback-form`,
-                Title: intl.formatMessage(messages.feedback),
-                title: intl.formatMessage(messages.feedback),
-              },
-            ],
-            title: intl.formatMessage(messages.feedback),
-          },
-        ]
-      : []),
-  ];
-  /* END CUSTOMIZATION */
   const post_footer_logo = useLiveData<SiteFooterSettings['post_footer_logo']>(
     content,
     'kitconcept.footer',

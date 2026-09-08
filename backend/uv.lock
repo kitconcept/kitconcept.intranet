@@ -1520,7 +1520,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.0.0b4" },
-    { name = "kitconcept-keywordmanager" },
+    { name = "kitconcept-keywordmanager", specifier = "==1.0.0a2" },
     { name = "kitconcept-plate", specifier = "==1.0.0a24" },
     { name = "kitconcept-solr", specifier = "==3.0.0a0" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
@@ -1561,7 +1561,7 @@ test = [
 
 [[package]]
 name = "kitconcept-keywordmanager"
-version = "1.0.0a1"
+version = "1.0.0a2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1569,9 +1569,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/fa/34/9d9f258d45b56510c6b8d7323f64e3790aeb859d601cb54ad291dae3d319/kitconcept_keywordmanager-1.0.0a1.tar.gz", hash = "sha256:92785a34752df0beadf46875ea335f6348f04e7244421782d2d6cbccd6ab3577", size = 79550, upload-time = "2026-07-21T14:32:15.462Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/45/e7/e269a90a13270a99503c89470086f2d7b229567c81385bbf71f98d99efc5/kitconcept_keywordmanager-1.0.0a2.tar.gz", hash = "sha256:67581361f0fe7a3c52ebaff5b43e480bc84043f1811318f628f566da629634f1", size = 80902, upload-time = "2026-07-25T21:42:10.143Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/98/14/4f1b069da99e958f3afda627e48b0255faa3054a4ecbfa9b4a94b0a0d8b0/kitconcept_keywordmanager-1.0.0a1-py3-none-any.whl", hash = "sha256:4e7e8b31429e66fd0fde480e740c8aaa859caa98fdd8b6dd2b45f72cc82a80cd", size = 88904, upload-time = "2026-07-21T14:32:13.798Z" },
+    { url = "https://files.pythonhosted.org/packages/8c/3b/01910fc48d121eb7a46020d5a9cc031fb26950440eb818c45166a4b68158/kitconcept_keywordmanager-1.0.0a2-py3-none-any.whl", hash = "sha256:181fc60b60c98bf1169ea475fc499b259eed7fa21d6cf9ee8e02f53dd408b4c5", size = 90154, upload-time = "2026-07-25T21:42:08.425Z" },
 ]
 
 [[package]]

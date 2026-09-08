@@ -20,6 +20,29 @@
         }
       ]
     },
+    "346024f1-3635-4a53-8cc1-66c8ae346c26": {
+      "@type": "slate",
+      "plaintext": "The maps block also supports OpenStreetMap embeds. Paste the embed code from openstreetmap.org and the block extracts the map URL.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The maps block also supports OpenStreetMap embeds. Paste the embed code from openstreetmap.org and the block extracts the map URL."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "40e5058f-ee59-4bb6-8663-ed23d121fa95": {
+      "@type": "maps",
+      "align": "wide",
+      "styles": {},
+      "title": "kitconcept GmbH, Bonn (OpenStreetMap)",
+      "url": "https://www.openstreetmap.org/export/embed.html?bbox=7.09846%2C50.72757%2C7.10692%2C50.73096&layer=mapnik&marker=50.72926%2C7.10274"
+    },
     "43a4b392-f0c3-4b8d-a17d-9b4ddea3f0f0": {
       "@type": "slate",
       "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore\nblandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore\nblandit praesent luptatum zzril qui.",
@@ -34,6 +57,14 @@
           "type": "p"
         }
       ]
+    },
+    "4fab3417-da8e-4fdf-8616-472b6d811015": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "OpenStreetMap",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
     },
     "642c75ac-0c4a-4138-8ad7-954a3fa561e6": {
       "@type": "maps",
@@ -67,6 +98,14 @@
         }
       ]
     },
+    "7d406a9c-696d-4cf0-a698-ccf2a253113a": {
+      "@type": "maps",
+      "align": "wide",
+      "styles": {},
+      "theme": "grey",
+      "title": "kitconcept GmbH, Bonn (OpenStreetMap)",
+      "url": "https://www.openstreetmap.org/export/embed.html?bbox=7.09846%2C50.72757%2C7.10692%2C50.73096&layer=mapnik&marker=50.72926%2C7.10274"
+    },
     "96789bf6-953b-4777-a022-0f4cd852be64": {
       "@type": "separator",
       "styles": {
@@ -78,6 +117,30 @@
         },
         "shortLine": false
       }
+    },
+    "9bc3f402-d74c-48b9-b37c-d44b0fe2506c": {
+      "@type": "slate",
+      "plaintext": "An OpenStreetMap embed displayed on a grey background.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "An OpenStreetMap embed displayed on a grey background."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b14fc45b-1db3-4680-ad23-c4a320b7ef74": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Grey Background",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
     },
     "b94908e2-0600-493a-8a92-0b8a23e2938b": {
       "@type": "slate",
@@ -180,7 +243,13 @@
       "bb99a8d2-11b9-46b2-8bb0-9169c0c42e3a",
       "43a4b392-f0c3-4b8d-a17d-9b4ddea3f0f0",
       "ceee1cfa-80ff-44f1-b3af-3cfd4be3f4ba",
-      "f9dec030-b72d-4940-af4c-6dc123cea7a6"
+      "f9dec030-b72d-4940-af4c-6dc123cea7a6",
+      "4fab3417-da8e-4fdf-8616-472b6d811015",
+      "346024f1-3635-4a53-8cc1-66c8ae346c26",
+      "40e5058f-ee59-4bb6-8663-ed23d121fa95",
+      "b14fc45b-1db3-4680-ad23-c4a320b7ef74",
+      "9bc3f402-d74c-48b9-b37c-d44b0fe2506c",
+      "7d406a9c-696d-4cf0-a698-ccf2a253113a"
     ]
   },
   "changeNote": "",

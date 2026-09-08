@@ -66,3 +66,6 @@ body:not(.contenttype-wikipage) {
     }
   }
 }
+.ui.selectable.single.line.attached.compact.table svg {
+  display: inline-block;
+}

@@ -18,6 +18,13 @@ It is structured following the [Diátaxis](https://diataxis.fr/) documentation f
 :maxdepth: 2
 :hidden: true
 
+features/index
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden: true
+
 how-to-guides/index
 ```
 

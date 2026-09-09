@@ -1,4 +1,5 @@
 import {
+  Fragment,
   useCallback,
   useEffect,
   useRef,
@@ -8,12 +9,22 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
-import { Button, Dialog, Modal, ModalOverlay } from 'react-aria-components';
+import {
+  Button,
+  Dialog,
+  DialogTrigger,
+  Modal,
+  ModalOverlay,
+  Popover,
+} from 'react-aria-components';
 import { Menu, MenuItem, MenuTrigger } from '@plone/components';
 import { ChevrondownIcon } from '@plone/components/Icons';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import {
+  expandToBackendURL,
+  flattenToAppURL,
+} from '@plone/volto/helpers/Url/Url';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import checkSVG from '@plone/volto/icons/check.svg';
@@ -26,10 +37,12 @@ import newsSVG from '@plone/volto/icons/news.svg';
 import pageSVG from '@plone/volto/icons/page.svg';
 import userSVG from '@plone/volto/icons/user.svg';
 import {
+  encodeExtraConditions,
   ragSearch,
   resetRagSearch,
   solrSearchSuggestions,
 } from '@kitconcept/volto-solr/actions';
+import { getVocabulary } from '@plone/volto/actions/vocabularies/vocabularies';
 import { useWorkspaceSwitcher } from '../NavigationTree/useWorkspaceSwitcher';
 import type { SearchItem } from '../NavigationTree/useNavigationTree';
 
@@ -79,8 +92,8 @@ const messages = defineMessages({
     defaultMessage: 'Generating answer…',
   },
   aiNoAnswer: {
-    id: 'No answer — no matching documents found.',
-    defaultMessage: 'No answer — no matching documents found.',
+    id: 'No document found with the selected criteria.',
+    defaultMessage: 'No document found with the selected criteria.',
   },
   aiError: {
     id: 'The AI answer is currently unavailable. Please try again.',
@@ -251,45 +264,219 @@ const SparkleIcon = () => (
   </svg>
 );
 
-// The filter chips mirror the approved design (ticket #426). The
-// dropdowns open and remember a selection so they look and feel real,
-// but they do not filter the results: the backing facets are not
-// available on the backend yet, deferring them was accepted for the
-// demo scope. The option lists are static demo data from the design.
+// A filter chip (ticket 585): a dropdown of {value, label} options
+// where value null means "no filter" ("Alle ..."). The selection is
+// owned by the dialog, which turns it into filter conditions for the
+// livesearch and the results page.
+type FilterOption = { value: string | null; label: string };
+
+// Circular user portrait with a pure CSS fallback: the initial is
+// rendered underneath and the portrait image on top - a missing
+// portrait (404, alt="") renders invisible, letting the initial show
+// through. Same layering idea as the person pill avatar, inlined
+// because the menu rows need no state.
+const CreatorAvatar = ({
+  userid,
+  label,
+}: {
+  userid: string;
+  label: string;
+}) => (
+  <span
+    className={`header-search-creator-avatar tone-${avatarTone(label)}`}
+    aria-hidden="true"
+  >
+    {label.charAt(0).toUpperCase()}
+    <img
+      src={flattenToAppURL(expandToBackendURL(`@portrait/${userid}`))}
+      alt=""
+      loading="lazy"
+    />
+  </span>
+);
+
 const FilterChip = ({
   label,
   options,
-  selected,
+  value,
   onSelect,
-  isActive,
 }: {
   label: string;
-  options: string[];
-  selected: string;
-  onSelect: (value: string) => void;
-  isActive: boolean;
-}) => (
-  <MenuTrigger>
-    <Button
-      className={`header-search-chip${isActive ? ' is-active' : ''}`}
-      type="button"
+  options: FilterOption[];
+  value: string | null;
+  onSelect: (value: string | null) => void;
+}) => {
+  const selected = options.find((option) => option.value === value);
+  return (
+    <MenuTrigger>
+      <Button
+        className={`header-search-chip${value !== null ? ' is-active' : ''}`}
+        type="button"
+      >
+        {label}: {(selected || options[0]).label}
+        <ChevrondownIcon aria-hidden="true" size="xs" />
+      </Button>
+      <Menu
+        className="header-search-chip-menu"
+        aria-label={label}
+        onAction={(key) => onSelect(key === '' ? null : String(key))}
+      >
+        {options.map((option) => (
+          <MenuItem key={option.value ?? ''} id={option.value ?? ''}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </Menu>
+    </MenuTrigger>
+  );
+};
+
+// The Created by chip is multi-select (checkbox rows, per the
+// design): a custom popover instead of a Menu, because toggling must
+// not close the dropdown and the rows carry real checkboxes.
+const CreatorChip = ({
+  label,
+  emptyLabel,
+  searchPlaceholder,
+  options,
+  values,
+  onChange,
+}: {
+  label: string;
+  emptyLabel: string;
+  searchPlaceholder: string;
+  options: FilterOption[];
+  values: string[];
+  onChange: (values: string[]) => void;
+}) => {
+  // Livesearch inside the dropdown: a case-insensitive prefix match
+  // on the full name, filtered client side (the dialog holds the full
+  // creators list anyway; batching for very large sites is a later
+  // step). The query resets when the popover closes.
+  const [query, setQuery] = useState('');
+  const selected = options.filter(
+    (option) => option.value !== null && values.includes(option.value),
+  );
+  const display =
+    selected.length === 0
+      ? emptyLabel
+      : selected.map((option) => option.label).join(', ');
+  const toggle = (value: string) =>
+    onChange(
+      values.includes(value)
+        ? values.filter((existing) => existing !== value)
+        : [...values, value],
+    );
+  // Selected entries always stay visible, regardless of the query:
+  // a search that hides a checked user would otherwise make the
+  // active filter invisible. Unselecting under a non-matching query
+  // makes the entry disappear.
+  const visible = options.filter(
+    (option) =>
+      option.value !== null &&
+      (values.includes(option.value) ||
+        option.label.toLowerCase().startsWith(query.trim().toLowerCase())),
+  );
+  return (
+    <DialogTrigger
+      onOpenChange={(isOpen) => {
+        if (!isOpen) {
+          setQuery('');
+        }
+      }}
     >
-      {label}: {selected}
-      <ChevrondownIcon aria-hidden="true" size="xs" />
-    </Button>
-    <Menu
-      className="header-search-chip-menu"
-      aria-label={label}
-      onAction={(key) => onSelect(String(key))}
-    >
-      {options.map((option) => (
-        <MenuItem key={option} id={option}>
-          {option}
-        </MenuItem>
-      ))}
-    </Menu>
-  </MenuTrigger>
-);
+      <Button
+        className={`header-search-chip${values.length ? ' is-active' : ''}`}
+        type="button"
+      >
+        <span className="header-search-chip-value">
+          {label}: {display}
+        </span>
+        <ChevrondownIcon aria-hidden="true" size="xs" />
+      </Button>
+      <Popover
+        className="react-aria-Popover header-search-creator-popover"
+        placement="bottom start"
+      >
+        <Dialog aria-label={label} className="header-search-creator-list">
+          <input
+            type="search"
+            className="header-search-creator-search"
+            placeholder={searchPlaceholder}
+            aria-label={searchPlaceholder}
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            /* eslint-disable-next-line jsx-a11y/no-autofocus */
+            autoFocus
+          />
+          {visible.map((option) => (
+            <label
+              key={option.value as string}
+              className="header-search-creator-row"
+            >
+              <input
+                type="checkbox"
+                checked={values.includes(option.value as string)}
+                onChange={() => toggle(option.value as string)}
+              />
+              <span
+                className={`header-search-chip-checkbox${
+                  values.includes(option.value as string) ? ' is-checked' : ''
+                }`}
+              />
+              <CreatorAvatar
+                userid={option.value as string}
+                label={option.label}
+              />
+              {option.label}
+            </label>
+          ))}
+        </Dialog>
+      </Popover>
+    </DialogTrigger>
+  );
+};
+
+// The filter selections of the dialog. null / empty = no filter. The
+// values are what the condition rows carry: portal_type ids, user
+// ids (multi-select), Solr date math lower bounds, review states.
+type SearchFilters = {
+  type: string | null;
+  creator: string[];
+  updated: string | null;
+  status: string | null;
+};
+
+const EMPTY_FILTERS: SearchFilters = {
+  type: null,
+  creator: [],
+  updated: null,
+  status: null,
+};
+
+// One condition row per active filter, in the generic extra_conditions
+// format both the suggest and the search endpoints consume.
+const filterConditionRows = (filters: SearchFilters) => {
+  const rows: Array<[string, string, object]> = [];
+  if (filters.type) {
+    rows.push(['portal_type', 'string', { in: [filters.type] }]);
+  }
+  if (filters.creator.length > 0) {
+    rows.push(['Creator', 'string', { in: filters.creator }]);
+  }
+  if (filters.updated) {
+    rows.push(['modified', 'date-range', { ge: filters.updated }]);
+  }
+  if (filters.status) {
+    rows.push(['review_state', 'string', { in: [filters.status] }]);
+  }
+  return rows;
+};
+
+// The generic users vocabulary deliberately returns nothing without a
+// search term (no user enumeration), so the chip uses the site's own
+// creators vocabulary: exactly the users who created content.
+const USERS_VOCABULARY = 'kitconcept.intranet.vocabularies.creators';
 
 // Search scope selection (ticket #570). 'current' is the workspace
 // the dialog was opened in (resolved from content context, so it
@@ -429,70 +616,82 @@ const FilterChips = ({
   scopeTitle,
   currentWorkspacePath,
   workspaces,
+  creatorOptions,
+  filters,
   onScopeChange,
+  onFilterChange,
+  onCreatorChange,
 }: {
   scope: SearchScope;
   scopeTitle: string;
   currentWorkspacePath: string | null;
   workspaces: SearchItem[];
+  creatorOptions: FilterOption[];
+  filters: SearchFilters;
   onScopeChange: (scope: SearchScope) => void;
+  onFilterChange: (
+    id: 'type' | 'updated' | 'status',
+    value: string | null,
+  ) => void;
+  onCreatorChange: (values: string[]) => void;
 }) => {
   const intl = useIntl();
-  const filters: Array<{
-    id: string;
+  const chips: Array<{
+    id: 'type' | 'updated' | 'status';
     label: string;
-    options: string[];
+    options: FilterOption[];
   }> = [
     {
       id: 'type',
       label: intl.formatMessage(messages.filterType),
       options: [
-        intl.formatMessage(messages.allTypes),
-        intl.formatMessage(messages.typePage),
-        intl.formatMessage(messages.typeNews),
-        intl.formatMessage(messages.typeFolder),
-        intl.formatMessage(messages.typeFile),
-        intl.formatMessage(messages.typeImage),
-        intl.formatMessage(messages.typeEvent),
-        intl.formatMessage(messages.typePerson),
-      ],
-    },
-    {
-      id: 'creator',
-      label: intl.formatMessage(messages.filterCreator),
-      options: [
-        intl.formatMessage(messages.creatorAll),
-        'Dr. Sascha Köhler',
-        'Markus Thaler',
-        'Eva Lemke',
-        'Lukas Brandt',
-        'Julia Wagner',
+        { value: null, label: intl.formatMessage(messages.allTypes) },
+        { value: 'Document', label: intl.formatMessage(messages.typePage) },
+        { value: 'News Item', label: intl.formatMessage(messages.typeNews) },
+        { value: 'Folder', label: intl.formatMessage(messages.typeFolder) },
+        { value: 'File', label: intl.formatMessage(messages.typeFile) },
+        { value: 'Image', label: intl.formatMessage(messages.typeImage) },
+        { value: 'Event', label: intl.formatMessage(messages.typeEvent) },
+        { value: 'Person', label: intl.formatMessage(messages.typePerson) },
       ],
     },
     {
       id: 'updated',
       label: intl.formatMessage(messages.filterUpdated),
+      // Values are Solr date math lower bounds for the modified field.
       options: [
-        intl.formatMessage(messages.anyTime),
-        intl.formatMessage(messages.today),
-        intl.formatMessage(messages.last7Days),
-        intl.formatMessage(messages.last30Days),
-        intl.formatMessage(messages.last3Months),
-        intl.formatMessage(messages.lastYear),
+        { value: null, label: intl.formatMessage(messages.anyTime) },
+        { value: 'NOW/DAY', label: intl.formatMessage(messages.today) },
+        { value: 'NOW-7DAYS', label: intl.formatMessage(messages.last7Days) },
+        { value: 'NOW-30DAYS', label: intl.formatMessage(messages.last30Days) },
+        {
+          value: 'NOW-3MONTHS',
+          label: intl.formatMessage(messages.last3Months),
+        },
+        { value: 'NOW-1YEAR', label: intl.formatMessage(messages.lastYear) },
       ],
     },
     {
       id: 'status',
       label: intl.formatMessage(messages.filterStatus),
       options: [
-        intl.formatMessage(messages.allStatuses),
-        intl.formatMessage(messages.statusPublished),
-        intl.formatMessage(messages.statusInReview),
-        intl.formatMessage(messages.statusPrivate),
+        { value: null, label: intl.formatMessage(messages.allStatuses) },
+        {
+          value: 'published',
+          label: intl.formatMessage(messages.statusPublished),
+        },
+        {
+          value: 'pending',
+          label: intl.formatMessage(messages.statusInReview),
+        },
+        { value: 'private', label: intl.formatMessage(messages.statusPrivate) },
       ],
     },
   ];
-  const [selection, setSelection] = useState<Record<string, string>>({});
+  // The two toggles below the chips stay non-functional demo elements:
+  // "titles only" is meaningless for the livesearch (it matches titles
+  // by design, results page semantics undecided) and "archived" has no
+  // definition in this distribution yet (see ticket 585).
   const [toggles, setToggles] = useState<Record<string, boolean>>({});
   const toggleLabels: Array<{ id: string; label: string }> = [
     { id: 'titleOnly', label: intl.formatMessage(messages.chipTitleOnly) },
@@ -501,8 +700,6 @@ const FilterChips = ({
   return (
     <div className="header-search-filters">
       <div className="header-search-chips">
-        {/* The Workspace chip is the real scope switch; the other
-            chips are inert demo data (facets deferred). */}
         <ScopeChip
           scope={scope}
           scopeTitle={scopeTitle}
@@ -510,24 +707,29 @@ const FilterChips = ({
           workspaces={workspaces}
           onScopeChange={onScopeChange}
         />
-        {filters.map((filter) => {
-          const selected = selection[filter.id] || filter.options[0];
-          return (
+        {chips.map((chip, index) => (
+          <Fragment key={chip.id}>
             <FilterChip
-              key={filter.id}
-              label={filter.label}
-              options={filter.options}
-              selected={selected}
-              onSelect={(value) =>
-                setSelection((current) => ({
-                  ...current,
-                  [filter.id]: value,
-                }))
-              }
-              isActive={selected !== filter.options[0]}
+              label={chip.label}
+              options={chip.options}
+              value={filters[chip.id]}
+              onSelect={(value) => onFilterChange(chip.id, value)}
             />
-          );
-        })}
+            {index === 0 ? (
+              // Created by sits between Type and Updated, as designed
+              <CreatorChip
+                label={intl.formatMessage(messages.filterCreator)}
+                emptyLabel={intl.formatMessage(messages.creatorAll)}
+                searchPlaceholder={intl.formatMessage(
+                  messages.searchPlaceholder,
+                )}
+                options={creatorOptions}
+                values={filters.creator}
+                onChange={onCreatorChange}
+              />
+            ) : null}
+          </Fragment>
+        ))}
       </div>
       <div className="header-search-chip-toggles">
         {toggleLabels.map(({ id, label }) => (
@@ -786,6 +988,26 @@ const HeaderSearch = () => {
   // Workspace list for the scope dropdown; fetched once the dialog
   // opens (the header itself is on every page, the list is not).
   const { workspaces } = useWorkspaceSwitcher({ enabled: isSearchOpen });
+
+  // Filter chips (ticket 585). The selections become extra_conditions
+  // rows for the livesearch and, on Enter, for the results page URL.
+  const [filters, setFilters] = useState<SearchFilters>(EMPTY_FILTERS);
+  const extraConditions = encodeExtraConditions(filterConditionRows(filters));
+
+  // Real user list for the "Created by" chip; fetched once the dialog
+  // opens, same reasoning as the workspace list.
+  useEffect(() => {
+    if (isSearchOpen) {
+      // The shipped type declaration of getVocabulary lags behind its
+      // implementation (which takes an options object).
+      dispatch(
+        (getVocabulary as any)({ vocabNameOrURL: USERS_VOCABULARY, size: -1 }),
+      );
+    }
+  }, [dispatch, isSearchOpen]);
+  const creatorOptions: FilterOption[] = useSelector(
+    (state: any) => state.vocabularies?.[USERS_VOCABULARY]?.items ?? [],
+  );
   const scopePath =
     scope.kind === 'current'
       ? workspace.path
@@ -831,16 +1053,23 @@ const HeaderSearch = () => {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
 
-  // Live search: debounced suggestions for the current term.
+  // Live search: debounced suggestions for the current term, scope
+  // and filters.
   useEffect(() => {
     if (!isSearchOpen || term.length < 2) {
       return;
     }
     const timeout = window.setTimeout(() => {
-      dispatch(solrSearchSuggestions(encodeURIComponent(term), scopePath));
+      dispatch(
+        solrSearchSuggestions(
+          encodeURIComponent(term),
+          scopePath,
+          extraConditions,
+        ),
+      );
     }, 250);
     return () => window.clearTimeout(timeout);
-  }, [dispatch, isSearchOpen, term, scopePath]);
+  }, [dispatch, isSearchOpen, term, scopePath, extraConditions]);
 
   const resetAi = useCallback(() => {
     setAiAsked(false);
@@ -851,6 +1080,7 @@ const HeaderSearch = () => {
     setIsSearchOpen(false);
     setSearchText('');
     setScope({ kind: 'current' });
+    setFilters(EMPTY_FILTERS);
     resetAi();
   }, [resetAi]);
 
@@ -866,6 +1096,26 @@ const HeaderSearch = () => {
     setScope(nextScope);
     if (aiAsked) {
       // The AI answer was grounded in the previous scope.
+      resetAi();
+    }
+  };
+
+  // A filter change clears a stale AI answer, same as the scope
+  // switch: the previous answer was grounded under the previous
+  // criteria (the retrieval consumes the filters, like the scope).
+  const onFilterChange = (
+    id: 'type' | 'updated' | 'status',
+    value: string | null,
+  ) => {
+    setFilters((current) => ({ ...current, [id]: value }));
+    if (aiAsked) {
+      resetAi();
+    }
+  };
+
+  const onCreatorChange = (values: string[]) => {
+    setFilters((current) => ({ ...current, creator: values }));
+    if (aiAsked) {
       resetAi();
     }
   };
@@ -903,16 +1153,27 @@ const HeaderSearch = () => {
     // is_multilingual=false: the intranet is monolingual, and the
     // backend's multilingual path handling would neutralize the
     // path_prefix filter on a site without plone.app.multilingual.
+    // Active filters travel as the extra_conditions URL parameter:
+    // the results page forwards it to the backend and keeps it across
+    // in-page interactions, so reloading the URL reproduces the
+    // filtered results (ticket 585).
+    const conditionsQuery = extraConditions
+      ? `&extra_conditions=${encodeURIComponent(extraConditions)}`
+      : '';
     if (scopePath) {
       const query = term
         ? `?SearchableText=${encodeURIComponent(term)}&local=true` +
           `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
-          `&is_multilingual=false`
+          `&is_multilingual=false` +
+          conditionsQuery
         : '';
       navigateTo(`${scopePath}/@@search${query}`);
     } else {
       navigateTo(
-        term ? `/search?SearchableText=${encodeURIComponent(term)}` : '/search',
+        term
+          ? `/search?SearchableText=${encodeURIComponent(term)}` +
+              conditionsQuery
+          : '/search',
       );
     }
   };
@@ -926,7 +1187,11 @@ const HeaderSearch = () => {
     // answer below the loading indicator.
     dispatch(resetRagSearch());
     setAiAsked(true);
-    dispatch(ragSearch('', term, scopePath || undefined));
+    // The active filters restrict the grounding: the answer comes
+    // from exactly the documents matching the selected criteria.
+    dispatch(
+      ragSearch('', term, scopePath || undefined, extraConditions || undefined),
+    );
   };
 
   return (
@@ -985,7 +1250,11 @@ const HeaderSearch = () => {
               scopeTitle={scopeTitle}
               currentWorkspacePath={workspace.path}
               workspaces={workspaces}
+              creatorOptions={creatorOptions}
+              filters={filters}
               onScopeChange={onScopeChange}
+              onFilterChange={onFilterChange}
+              onCreatorChange={onCreatorChange}
             />
 
             {showResults ? (

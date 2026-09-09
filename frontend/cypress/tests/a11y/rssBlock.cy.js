@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // RSS-block
-  it('RSS block (/features/block/rss-block)', () => {
-    cy.navigate('/features/block/rss-block');
+  it('RSS block (/qa/block/rss-block)', () => {
+    cy.navigate('/qa/block/rss-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.checkAccessibility();

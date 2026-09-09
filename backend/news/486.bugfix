@@ -1,0 +1,1 @@
+Fix the content review reminder email body: render the last-updated value as a date instead of the object repr, and add proper line and paragraph breaks (English and German) so the message is no longer a single run-on block.

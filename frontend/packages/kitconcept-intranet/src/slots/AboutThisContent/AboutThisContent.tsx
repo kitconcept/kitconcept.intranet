@@ -14,6 +14,7 @@ import sendSVG from '@plone/volto/icons/send.svg';
 import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 import { submitFeedbackContactForm } from '../../actions';
 import { getDisplayedAuthors } from './authors';
+import { getFeedbackRecipient, type CLMPersonData } from './feedbackRecipient';
 
 const messages = defineMessages({
   title: {
@@ -95,12 +96,8 @@ type ContentWithBylineExpander = Content & {
         title?: string;
         username?: string;
       }[];
-      responsible_person?: {
-        person_url?: string;
-        url?: string;
-        username: string;
-        title?: string;
-      };
+      feedback_person?: CLMPersonData;
+      responsible_person?: CLMPersonData & { url?: string };
     };
   };
 };
@@ -177,12 +174,13 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
   );
   const displayedAuthors = contentData ? getDisplayedAuthors(contentData) : [];
   const hasAuthors = displayedAuthors.length > 0;
-  const responsiblePersonUrl =
-    contentData?.['@components']?.clm?.responsible_person?.person_url;
-  const responsiblePersonUsername =
-    contentData?.['@components']?.clm?.responsible_person?.username;
-  const responsiblePersonTitle =
-    contentData?.['@components']?.clm?.responsible_person?.title;
+  const clm = contentData?.['@components']?.clm;
+  const responsiblePersonUrl = clm?.responsible_person?.person_url;
+  const responsiblePersonUsername = clm?.responsible_person?.username;
+  const responsiblePersonTitle = clm?.responsible_person?.title;
+  const feedbackRecipient = getFeedbackRecipient(clm);
+  const feedbackRecipientUsername = feedbackRecipient?.username;
+  const feedbackRecipientTitle = feedbackRecipient?.title;
 
   const submitFeedback = () => {
     const message = feedback.trim();
@@ -288,12 +286,12 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
                 {intl.formatMessage(messages.feedbackTitle)}
               </span>
             </div>
-            {responsiblePersonTitle && (
+            {feedbackRecipientTitle && (
               <div className="about-content-feedback-recipient">
                 <span>{intl.formatMessage(messages.goesTo)}</span>
                 <PersonPill
-                  id={responsiblePersonUsername}
-                  fullname={responsiblePersonTitle}
+                  id={feedbackRecipientUsername}
+                  fullname={feedbackRecipientTitle}
                   compact
                 />
               </div>

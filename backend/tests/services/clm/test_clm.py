@@ -70,6 +70,51 @@ class TestCLMService:
             "responsible_person": {},
         }
 
+    def test_get_clm_info_with_feedback_person(self):
+        with api.env.adopt_roles(["Manager"]):
+            self.portal.acl_users.userFolderAddUser("feedback", "secret", [], [])
+            self.portal.acl_users.userFolderAddUser("responsible", "secret", [], [])
+            feedback_person = api.content.create(
+                self.portal,
+                "Person",
+                id="feedback-person",
+                first_name="Feedback",
+                last_name="Person",
+                username="feedback",
+            )
+            IPloneUser(feedback_person).username = "feedback"
+            responsible_person = api.content.create(
+                self.portal,
+                "Person",
+                id="responsible-person",
+                first_name="Responsible",
+                last_name="Person",
+                username="responsible",
+            )
+            IPloneUser(responsible_person).username = "responsible"
+            self.portal.document.feedback_person = feedback_person.UID()
+            self.portal.document.responsible_person = responsible_person.UID()
+        transaction.commit()
+
+        response = self.api_session.get("/document/@clm")
+
+        assert response.status_code == 200
+        assert response.json() == {
+            "feedback_person": {
+                "person_url": f"{self.portal_url}/feedback-person",
+                "title": "Feedback Person",
+                "username": "feedback",
+                "value": feedback_person.UID(),
+            },
+            "responsible_person": {
+                "person_url": f"{self.portal_url}/responsible-person",
+                "title": "Responsible Person",
+                "url": f"{self.portal_url}/document",
+                "username": "responsible",
+                "value": responsible_person.UID(),
+            },
+        }
+
     def test_get_clm_info_current(self):
         self.portal.document.responsible_person = "John Doe"
         transaction.commit()

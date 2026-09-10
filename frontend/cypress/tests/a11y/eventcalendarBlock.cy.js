@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Event calendar block
-  it('Event calendar (/features/block/event-calendar)', () => {
-    cy.navigate('/features/block/event-calendar');
+  it('Event calendar (/qa/block/event-calendar)', () => {
+    cy.navigate('/qa/block/event-calendar');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({

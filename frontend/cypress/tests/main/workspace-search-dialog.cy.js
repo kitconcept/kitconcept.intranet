@@ -161,3 +161,136 @@ context('Workspace search dialog (scope dropdown)', () => {
     cy.contains('Vacation request form');
   });
 });
+
+// Filter chips (ticket 585): the Type / Created by / Updated / Status
+// chips filter the livesearch, and on Enter the active filters travel
+// as the extra_conditions URL parameter to the results page, where a
+// reload reproduces them.
+context('Search dialog filter chips', () => {
+  const openDialogEverywhere = (term) => {
+    cy.visit('/greencat');
+    cy.get('.header-search-button').click();
+    cy.get('.header-search-input-row input').type(term);
+    cy.get('.header-search-chip').contains('Workspace:').click();
+    cy.get('.header-search-scope-menu .react-aria-MenuItem')
+      .contains('Everywhere')
+      .click();
+  };
+
+  const pickFilter = (chipLabel, optionLabel) => {
+    cy.get('.header-search-chip').contains(`${chipLabel}:`).click();
+    cy.get('.header-search-chip-menu .react-aria-MenuItem')
+      .contains(optionLabel)
+      .click();
+  };
+
+  beforeEach(() => {
+    cy.setRegistry('collective.solr.active', true);
+    cy.reindexSolr();
+
+    cy.createContent({
+      contentType: 'Workspace',
+      contentId: 'greencat',
+      contentTitle: 'GreenCat Workspace',
+    });
+    // two matching items of different type and review state
+    cy.createContent({
+      contentType: 'Document',
+      contentId: 'vacation-guide',
+      contentTitle: 'Vacation guide',
+      transition: 'publish',
+    });
+    cy.createContent({
+      contentType: 'News Item',
+      contentId: 'vacation-news',
+      contentTitle: 'Vacation news',
+    });
+
+    cy.autologin();
+  });
+  afterEach(() => {
+    cy.clearSolr();
+  });
+
+  it('filters the livesearch by type', () => {
+    openDialogEverywhere('vacation');
+    cy.get('.header-search-result-title').should('have.length', 2);
+
+    pickFilter('Type', 'News Item');
+    cy.get('.header-search-result-title').should('have.length', 1);
+    cy.get('.header-search-result-title').contains('Vacation news');
+    cy.get('.header-search-chip.is-active').contains('Type: News Item');
+
+    pickFilter('Type', 'Page');
+    cy.get('.header-search-result-title').should('have.length', 1);
+    cy.get('.header-search-result-title').contains('Vacation guide');
+  });
+
+  it('filters the livesearch by status', () => {
+    openDialogEverywhere('vacation');
+    cy.get('.header-search-result-title').should('have.length', 2);
+
+    pickFilter('Status', 'Published');
+    cy.get('.header-search-result-title').should('have.length', 1);
+    cy.get('.header-search-result-title').contains('Vacation guide');
+
+    pickFilter('Status', 'Private');
+    cy.get('.header-search-result-title').should('have.length', 1);
+    cy.get('.header-search-result-title').contains('Vacation news');
+  });
+
+  it('keeps fresh content with the Today filter', () => {
+    openDialogEverywhere('vacation');
+    cy.get('.header-search-result-title').should('have.length', 2);
+
+    pickFilter('Updated', 'Today');
+    // everything was just created, so nothing is filtered out
+    cy.get('.header-search-result-title').should('have.length', 2);
+    cy.get('.header-search-chip.is-active').contains('Updated: Today');
+  });
+
+  it('filters by creator with the multi-select checkbox rows', () => {
+    openDialogEverywhere('vacation');
+    cy.get('.header-search-result-title').should('have.length', 2);
+
+    // the test content is created by admin; checking admin keeps it
+    cy.get('.header-search-chip').contains('Created by:').click();
+    // the popover's livesearch prefix-filters the user list
+    cy.get('.header-search-creator-search').type('adm');
+    cy.get('.header-search-creator-row').should('have.length', 1);
+    cy.get('.header-search-creator-search').clear();
+    cy.get('.header-search-creator-row').contains('admin').click();
+    // a selected entry stays visible even when the query hides it
+    cy.get('.header-search-creator-search').type('zzz');
+    cy.get('.header-search-creator-row').should('have.length', 1);
+    cy.get('.header-search-creator-row input:checked').should('have.length', 1);
+    cy.get('.header-search-creator-search').clear();
+    // multi-select: the popover stays open after toggling
+    cy.get('.header-search-creator-popover').should('exist');
+    cy.get('.header-search-creator-row input:checked').should('have.length', 1);
+    cy.get('body').type('{esc}');
+
+    cy.get('.header-search-result-title').should('have.length', 2);
+    cy.get('.header-search-chip.is-active').contains('Created by: admin');
+  });
+
+  it('Enter carries the filters to the results page and reload keeps them', () => {
+    openDialogEverywhere('vacation');
+    pickFilter('Type', 'News Item');
+    cy.get('.header-search-result-title').should('have.length', 1);
+    cy.get('.header-search-input-row input').type('{enter}');
+
+    cy.url().should('include', '/search?SearchableText=vacation');
+    cy.url().should('include', 'extra_conditions=');
+    // scope to the result list: the logged-in toolbar's navigation
+    // tree also lists all content titles, so a bare cy.contains would
+    // match the filtered-out document there
+    cy.get('.search-items').should('contain', 'Vacation news');
+    cy.get('.search-items').should('not.contain', 'Vacation guide');
+
+    // reloading the URL reproduces the filtered results
+    cy.reload();
+    cy.get('.search-items').should('contain', 'Vacation news');
+    cy.get('.search-items').should('not.contain', 'Vacation guide');
+  });
+});

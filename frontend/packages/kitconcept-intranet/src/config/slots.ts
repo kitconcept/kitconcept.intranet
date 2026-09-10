@@ -4,7 +4,6 @@ import { getBaseUrl, isCmsUi } from '@plone/volto/helpers/Url/Url';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import AboutThisContent from '../slots/AboutThisContent/AboutThisContent';
-import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import ContentInteractions from '../components/ContentInteractions/ContentInteractions';
 import StickyFeedbackButton from '../components/StickyFeedbackButton/StickyFeedbackButton';
 import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
@@ -70,11 +69,6 @@ export default function install(config: ConfigType) {
           content?.['@type'],
         ),
     ],
-  });
-  config.registerSlotComponent({
-    name: 'PostFooterFollowUsLogoAndLinks',
-    slot: 'postFooter',
-    component: FollowUsLogoAndLinks,
   });
   config.registerSlotComponent({
     name: 'ListingDisclaimer',

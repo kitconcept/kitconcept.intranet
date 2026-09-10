@@ -1,7 +1,7 @@
 from copy import deepcopy
-from kitconcept.core.utils import creation as utils
 from kitconcept.core.utils.distributions import handler as _handler
 from kitconcept.core.utils.distributions import post_handler as _post_handler
+from kitconcept.solr.reindex_helpers import activate_and_reindex
 from plone import api
 from plone.distribution.core import Distribution
 from Products.CMFPlone.Portal import PloneSite
@@ -34,9 +34,9 @@ def post_handler(
 ) -> PloneSite:
     """Run after site creation."""
     _post_handler(distribution, site, answers)
-    if os.environ.get("SOLR_ACTIVATE"):
-        registry_data = {"collective.solr.active": True}
-        utils.update_registry(registry_data)
+    if answers.get("setup_solr", False) and os.environ.get("SOLR_ACTIVATE"):
+        solr_rag = bool(os.environ.get("SOLR_RAG"))
+        activate_and_reindex(site, clear=True, rag=solr_rag)
 
     # Make sure intranet header is used even if we didn't import content
     site.has_intranet_header = True

@@ -29,7 +29,7 @@ The behavior dotted name is: `kitconcept.intranet.behaviors.clm.ICLM`
 - All person fields use the `kitconcept.intranet.vocabularies.person` vocabulary.
 - `authors` is **multi-select**.
 - `responsible_person` and `feedback_person` are **single-select autocomplete** fields.
-- The fields are grouped under the **CLM** fieldset.
+- The fields are grouped under the **Content Lifecycle Management** fieldset.
 
 ## See Also
 

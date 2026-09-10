@@ -13,8 +13,21 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
     const vocabBaseUrl = props.widgetOptions.vocabulary?.['@id'];
     const subrequest = `widget-${props.id}-${props.intl.locale}`;
 
+    // The backend expander walks the acquisition chain starting from the object
+    // being edited, so `inheritedField` describes either this content's own
+    // value (its `url` points to the current content) or a value truly
+    // inherited from an ancestor. It is only inherited when it comes from a
+    // different object than the one being edited.
+    const currentUrl = content?.['@id']
+      ? flattenToAppURL(content['@id'])
+      : undefined;
+    const isInherited =
+      !!inheritedField?.value &&
+      !!inheritedField?.url &&
+      flattenToAppURL(inheritedField.url) !== currentUrl;
+
     React.useEffect(() => {
-      if (inheritedField && !props.value && vocabBaseUrl) {
+      if (isInherited && !props.value && vocabBaseUrl) {
         const tokensQuery = convertValueToVocabQuery([inheritedField.value]);
         dispatch(
           getVocabularyTokenTitle({
@@ -24,14 +37,42 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
           }),
         );
       }
-    }, [dispatch, inheritedField, vocabBaseUrl, props.value, subrequest]);
+    }, [
+      dispatch,
+      isInherited,
+      inheritedField,
+      vocabBaseUrl,
+      props.value,
+      subrequest,
+    ]);
 
     const displayNameInheritedField = useSelector(
       (state) =>
         state.vocabularies?.[vocabBaseUrl]?.subrequests?.[subrequest]?.items,
     )?.[0]?.label;
 
-    if (props.inheritedField && inheritedField?.value && !props.value) {
+    // When the content has its own value, the wrapped select resolves the label
+    // from the vocabulary subrequest cache. That cache persists across
+    // client-side navigation and can still hold the previously saved user's
+    // token/title, which makes the widget fall back to rendering the raw UUID
+    // after the value was changed and saved. The expander already returns the
+    // resolved `{ value, title }` for the current value, so hand the widget an
+    // already-resolved option to render instead of relying on the stale cache.
+    const widgetProps =
+      props.value &&
+      typeof props.value === 'string' &&
+      inheritedField?.value === props.value &&
+      inheritedField?.title
+        ? {
+            ...props,
+            value: {
+              value: inheritedField.value,
+              label: inheritedField.title,
+            },
+          }
+        : props;
+
+    if (props.inheritedField && isInherited && !props.value) {
       const description = (
         <>
           {`Inherited ${props.title}:`}
@@ -52,11 +93,11 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
       );
       return (
         <>
-          <WrappedComponent {...props} description={description} />
+          <WrappedComponent {...widgetProps} description={description} />
         </>
       );
     }
-    return <WrappedComponent {...props} />;
+    return <WrappedComponent {...widgetProps} />;
   };
 };
 

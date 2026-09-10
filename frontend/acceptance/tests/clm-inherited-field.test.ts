@@ -8,11 +8,10 @@ import { createContent } from './content';
  * person-vocabulary widgets, guarding two regressions:
  *
  *  1. A person widget must show the person's *name* after its value was
- *     changed and saved, not the raw UUID (issue #623). The `responsible_person`
- *     case is covered by the `InheritedFieldWrapper` label resolution; the plain
- *     `feedback_person` autocomplete depends on the core Volto fix
- *     (https://github.com/plone/volto/pull/8423) and stays `fixme` until the
- *     volto pin includes it.
+ *     changed and saved, not the raw UUID (issue #623). Covered for the wrapped
+ *     `responsible_person` field and the plain `feedback_person` autocomplete,
+ *     the latter relying on the core Volto fix (plone/volto#8423, released in
+ *     19.4.1).
  *  2. The `responsible_person` inheritance hint must only appear when the value
  *     is genuinely inherited from an ancestor — never for a content's own
  *     value, including right after the value is cleared.
@@ -154,40 +153,37 @@ test.describe('CLM person widgets', () => {
     await expect(value).not.toHaveText(UUID_RE);
   });
 
-  // `feedback_person` is a plain (unwrapped) autocomplete, so it depends on the
-  // core Volto fix in https://github.com/plone/volto/pull/8423. Enable this
-  // once the volto pin in mrs.developer.json includes that fix; until then it
-  // fails against the pinned 19.3.1.
-  test.fixme(
-    'feedback_person keeps showing the name after the value is changed and saved',
-    async ({ page }) => {
-      const maxUID = await createPerson(page, MAX);
-      await createPerson(page, ANNA);
-      await createContent(page, {
-        contentType: 'Document',
-        contentId: 'clm-feedback-doc',
-        contentTitle: 'CLM feedback document',
-        bodyModifier: (body) => ({ ...body, feedback_person: maxUID }),
-      });
+  // `feedback_person` is a plain (unwrapped) autocomplete: it exercises the core
+  // Volto fix (plone/volto#8423, released in 19.4.1) directly.
+  test('feedback_person keeps showing the name after the value is changed and saved', async ({
+    page,
+  }) => {
+    const maxUID = await createPerson(page, MAX);
+    await createPerson(page, ANNA);
+    await createContent(page, {
+      contentType: 'Document',
+      contentId: 'clm-feedback-doc',
+      contentTitle: 'CLM feedback document',
+      bodyModifier: (body) => ({ ...body, feedback_person: maxUID }),
+    });
 
-      await page.goto('/clm-feedback-doc/edit', { waitUntil: 'networkidle' });
+    await page.goto('/clm-feedback-doc/edit', { waitUntil: 'networkidle' });
 
-      let field = await revealField(page, 'feedback_person');
-      await expect(field.locator('.react-select__single-value')).toHaveText(
-        MAX.name,
-      );
+    let field = await revealField(page, 'feedback_person');
+    await expect(field.locator('.react-select__single-value')).toHaveText(
+      MAX.name,
+    );
 
-      await pickPerson(page, field, ANNA.first, ANNA.name);
-      await saveEditForm(page);
+    await pickPerson(page, field, ANNA.first, ANNA.name);
+    await saveEditForm(page);
 
-      await page.getByRole('link', { name: 'Edit' }).click();
+    await page.getByRole('link', { name: 'Edit' }).click();
 
-      field = await revealField(page, 'feedback_person');
-      const value = field.locator('.react-select__single-value');
-      await expect(value).toHaveText(ANNA.name);
-      await expect(value).not.toHaveText(UUID_RE);
-    },
-  );
+    field = await revealField(page, 'feedback_person');
+    const value = field.locator('.react-select__single-value');
+    await expect(value).toHaveText(ANNA.name);
+    await expect(value).not.toHaveText(UUID_RE);
+  });
 
   test('responsible_person shows the name for a content own value and no inheritance hint', async ({
     page,

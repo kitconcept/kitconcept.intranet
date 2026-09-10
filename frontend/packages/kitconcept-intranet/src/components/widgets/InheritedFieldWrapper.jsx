@@ -51,27 +51,6 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
         state.vocabularies?.[vocabBaseUrl]?.subrequests?.[subrequest]?.items,
     )?.[0]?.label;
 
-    // When the content has its own value, the wrapped select resolves the label
-    // from the vocabulary subrequest cache. That cache persists across
-    // client-side navigation and can still hold the previously saved user's
-    // token/title, which makes the widget fall back to rendering the raw UUID
-    // after the value was changed and saved. The expander already returns the
-    // resolved `{ value, title }` for the current value, so hand the widget an
-    // already-resolved option to render instead of relying on the stale cache.
-    const widgetProps =
-      props.value &&
-      typeof props.value === 'string' &&
-      inheritedField?.value === props.value &&
-      inheritedField?.title
-        ? {
-            ...props,
-            value: {
-              value: inheritedField.value,
-              label: inheritedField.title,
-            },
-          }
-        : props;
-
     if (props.inheritedField && isInherited && !props.value) {
       const description = (
         <>
@@ -93,11 +72,11 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
       );
       return (
         <>
-          <WrappedComponent {...widgetProps} description={description} />
+          <WrappedComponent {...props} description={description} />
         </>
       );
     }
-    return <WrappedComponent {...widgetProps} />;
+    return <WrappedComponent {...props} />;
   };
 };
 

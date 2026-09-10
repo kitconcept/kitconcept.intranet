@@ -26,8 +26,8 @@ const messages = defineMessages({
     defaultMessage: 'Author',
   },
   responsible: {
-    id: 'Content responsible',
-    defaultMessage: 'Content responsible',
+    id: 'Responsible Person',
+    defaultMessage: 'Responsible Person',
   },
   created: {
     id: 'Created on',
@@ -50,8 +50,8 @@ const messages = defineMessages({
     defaultMessage: 'Give feedback on this page',
   },
   feedbackTitle: {
-    id: 'Feedback about this page',
-    defaultMessage: 'Feedback about this page',
+    id: 'Feedback on this page',
+    defaultMessage: 'Feedback on this page',
   },
   private: {
     id: 'Private',

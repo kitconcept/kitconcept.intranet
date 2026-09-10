@@ -77,7 +77,7 @@ jobs:
   deploy:
     name: "Deploy to GitHub Pages"
     runs-on: ubuntu-latest
-    if: ${{ inputs.publish }}
+    if: ${{ inputs.publish && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
     needs:
       - build
     # Pages allows one deployment at a time; queue rather than cancel so a

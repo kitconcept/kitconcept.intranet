@@ -12,7 +12,7 @@ last_updated: 2026-04-09
 
 ## Overview
 
-`FeedbackForm` renders a standalone feedback page accessible at `/feedback-form` and `/**/feedback-form`. It collects free-text feedback, name, and email from the user, then submits to the backend `/@contact-form-feedback` endpoint. It does not appear as an embedded component — it is a full route-mounted page.
+`FeedbackForm` renders a standalone feedback page accessible at `/feedback-form` and `/**/feedback-form`. It collects free-text feedback, name, and email from the user, then submits to the backend `/@contact-form-feedback` endpoint. It doesn't appear as an embedded component—it is a full route-mounted page.
 
 **File:** `frontend/packages/kitconcept-intranet/src/components/FeedBackForm/FeedBackForm.tsx`
 
@@ -52,12 +52,12 @@ config.addonReducers = { feedbackContactForm };
 
 `user_agent`, `window_width`, and `window_height` are collected automatically on mount via `useEffect`.
 
-**Redux reducer:** `feedbackContactForm` — tracks loading, success, and error state.
+**Redux reducer:** `feedbackContactForm`—tracks loading, success, and error state.
 
 ## Behaviour
 
 - On success: shows a success toast and navigates back to the referring page.
-- On error: shows an error toast. An email validation error from the backend displays as "Only internal e-mail addresses are permitted".
+- On error: shows an error toast. An email validation error from the backend displays as `Only internal e-mail addresses are permitted`.
 - Cancel button navigates back without submitting.
 - Data protection disclosure links differ by locale: `/en/data-protection` (English) or `/de/datenschutz` (German).
 - Placeholder text in the feedback field is also locale-specific.

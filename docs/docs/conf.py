@@ -341,7 +341,7 @@ latex_logo = "_static/images/logo.svg"
 
 # --  Configuration for source_replacements extension -----------------------
 # An extension that allows replacements for code blocks that
-# are not supported in `rst_epilog` or other substitutions.
+# aren't supported in `rst_epilog` or other substitutions.
 # https://stackoverflow.com/a/56328457/2214933
 def source_replace(app, docname, source):
     result = source[0]

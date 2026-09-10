@@ -17,7 +17,7 @@ All settings available in the **kitconcept Intranet Settings** control panel (`/
 | Setting | Type | Description | Default |
 |---------|------|-------------|---------|
 | `enable_sticky_feedback_button` | Boolean | Show a floating feedback button on all content pages | `False` |
-| `default_feedback_email` | Text | Fallback email address for feedback submissions when no CLM fields are set on the content | *(empty)* |
+| `default_feedback_email` | Text | Fallback email address for feedback submissions when no {term}`CLM` fields are set on the content | *(empty)* |
 | `feedback_cc_email` | Text | CC address added to all feedback submission emails | *(empty)* |
 | `allowed_email_domains` | List | If set, only email addresses from these domains may submit feedback | *(empty)* |
 
@@ -31,7 +31,7 @@ All settings available in the **kitconcept Intranet Settings** control panel (`/
 
 | Setting | Type | Description | Default |
 |---------|------|-------------|---------|
-| `disable_profile_links`(This is in kitconcept settings controlpanel) | Boolean | When enabled, person names in teasers and listings are not linked to the person's profile page | `False` |
+| `disable_profile_links`(This is in kitconcept settings controlpanel) | Boolean | When enabled, person names in teasers and listings aren't linked to the person's profile page | `False` |
 | `person_picture_aspect_ratio` | Choice | Controls the CSS aspect ratio applied to person profile images. Options: `rounded1to1` (circular, default) or `squared4to5` (portrait rectangle) | `rounded1to1` |
 
 ### disable_profile_links

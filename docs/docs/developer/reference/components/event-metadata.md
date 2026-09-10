@@ -16,7 +16,7 @@ Renders event-specific metadata below the page title: start/end times, location,
 
 ## Overview
 
-The kitconcept-intranet distribution extends the upstream VLT implementation to support both a plain-text `location` field and a serialized `locations` array provided by a custom backend serializer in `kitconcept.intranet`.
+The kitconcept-intranet distribution extends the upstream {term}`VLT` implementation to support both a plain-text `location` field and a serialized `locations` array provided by a custom backend serializer in `kitconcept.intranet`.
 
 ## Props
 
@@ -28,7 +28,7 @@ The kitconcept-intranet distribution extends the upstream VLT implementation to 
 | `properties.whole_day` | `boolean` | No | If true, shows only the date (no time) |
 | `properties.open_end` | `boolean` | No | If true, the end section is not rendered |
 | `properties.location` | `string` | No | Plain-text location string |
-| `properties.locations` | `Array<{token: string, title: string, url: string}>` | No | Location terms serialized by the custom `EventSerializer`; each item includes a resolved URL — provided by the [Location behavior](/developer/reference/behaviors/location) |
+| `properties.locations` | `Array<{token: string, title: string, url: string}>` | No | Location terms serialized by the custom `EventSerializer`; each item includes a resolved URL—provided by the [Location behavior](/developer/reference/behaviors/location) |
 | `properties.event_url` | `string` | No | External URL for the event |
 | `properties.contact_name` | `string` | No | Contact person name |
 | `properties.contact_email` | `string` | No | Rendered as a `mailto:` link |
@@ -42,7 +42,7 @@ When `locations` is present, each item is rendered as a clickable link using the
 
 | Condition | Output |
 |-----------|--------|
-| `whole_day === true` | Date only (year, month, day — no time) |
+| `whole_day === true` | Date only (year, month, day—no time) |
 | `open_end === true` or `end` is falsy | Start date/time only; end section not rendered |
 | Default | Start and end date/time |
 
@@ -54,8 +54,8 @@ A download link is rendered pointing to `{expandToBackendURL(content['@id'])}/ic
 
 ## Notes
 
-- `isOpenEnd` is evaluated as `!content.end || !!content.open_end` — a missing `end` value also suppresses the end section, not just an explicit `open_end: true`.
-- `locations` is a field added by `kitconcept.intranet` — see [Location behavior](/developer/reference/behaviors/location).
+- `isOpenEnd` is evaluated as `!content.end || !!content.open_end`—a missing `end` value also suppresses the end section, not just an explicit `open_end: true`.
+- `locations` is a field added by `kitconcept.intranet`—see [Location behavior](/developer/reference/behaviors/location).
 
 ## See also
 

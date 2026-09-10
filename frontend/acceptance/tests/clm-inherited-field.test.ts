@@ -78,15 +78,25 @@ async function revealField(page: Page, fieldName: string): Promise<Locator> {
   return page.locator(`.field-wrapper-${fieldName}`);
 }
 
+async function clearSelect(field: Locator) {
+  const clear = field.locator('.react-select__clear-indicator');
+  // The clear (✕) indicator only renders once the value itself has rendered.
+  // Wait for it so the click cannot race the value still resolving, then
+  // confirm the value is actually gone before continuing.
+  await expect(clear).toBeVisible();
+  await clear.click();
+  await expect(field.locator('.react-select__single-value')).toHaveCount(0);
+  await expect(field.locator('.react-select__placeholder')).toBeVisible();
+}
+
 async function pickPerson(
   page: Page,
   field: Locator,
   search: string,
   optionLabel: string,
 ) {
-  const clear = field.locator('.react-select__clear-indicator');
-  if (await clear.count()) {
-    await clear.click();
+  if (await field.locator('.react-select__single-value').count()) {
+    await clearSelect(field);
   }
   // Click the control to focus the (otherwise zero-width) input, then type via
   // the keyboard — clicking the input directly is intercepted by the react-select
@@ -202,8 +212,7 @@ test.describe('CLM person widgets', () => {
 
     // Clearing the value must not surface a bogus inheritance hint either
     // (there is no ancestor providing a value).
-    await field.locator('.react-select__clear-indicator').click();
-    await expect(field.locator('.react-select__single-value')).toHaveCount(0);
+    await clearSelect(field);
     await expect(page.getByText('from the parent content:')).toHaveCount(0);
   });
 

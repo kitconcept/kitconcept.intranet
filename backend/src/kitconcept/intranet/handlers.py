@@ -2,6 +2,7 @@ from copy import deepcopy
 from kitconcept.core.utils import creation as utils
 from kitconcept.core.utils.distributions import handler as _handler
 from kitconcept.core.utils.distributions import post_handler as _post_handler
+from kitconcept.intranet.utils.person_portraits import sync_person_portraits
 from plone import api
 from plone.distribution.core import Distribution
 from Products.CMFPlone.Portal import PloneSite
@@ -34,6 +35,8 @@ def post_handler(
 ) -> PloneSite:
     """Run after site creation."""
     _post_handler(distribution, site, answers)
+    if answers.get("setup_content", False):
+        sync_person_portraits(site)
     if os.environ.get("SOLR_ACTIVATE"):
         registry_data = {"collective.solr.active": True}
         utils.update_registry(registry_data)

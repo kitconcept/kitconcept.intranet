@@ -2,7 +2,6 @@ import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
-import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useUser } from '@plone/volto/hooks';
 import { defineMessages, useIntl } from 'react-intl';
@@ -14,6 +13,7 @@ import lockSVG from '@plone/volto/icons/lock.svg';
 import sendSVG from '@plone/volto/icons/send.svg';
 import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 import { submitFeedbackContactForm } from '../../actions';
+import { getDisplayedAuthors } from './authors';
 
 const messages = defineMessages({
   title: {
@@ -78,10 +78,10 @@ const messages = defineMessages({
 type UserData = {
   fullname?: string;
   homepage?: string | null;
-  portrait?: string | null;
 };
 
 type ContentWithBylineExpander = Content & {
+  authors?: string[] | null;
   created?: string;
   modified?: string;
   '@components'?: {
@@ -89,6 +89,12 @@ type ContentWithBylineExpander = Content & {
       users?: Record<string, UserData>;
     };
     clm?: {
+      authors?: {
+        value: string;
+        person_url?: string;
+        title?: string;
+        username?: string;
+      }[];
       responsible_person?: {
         person_url?: string;
         url?: string;
@@ -169,17 +175,8 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
   const isSubmitting = useSelector((state: ReduxState) =>
     Boolean(state.feedbackContactForm.loading),
   );
-  const creators = contentData?.creators ?? [];
-  const usersFromExpander = contentData?.['@components']?.byline?.users ?? {};
-  const creatorsWithData = creators.map((userid: string) => {
-    const userData = usersFromExpander[userid];
-
-    return {
-      name: userData?.fullname || userid,
-      portrait: userData?.portrait,
-    };
-  });
-  const hasAuthors = creatorsWithData.length > 0;
+  const displayedAuthors = contentData ? getDisplayedAuthors(contentData) : [];
+  const hasAuthors = displayedAuthors.length > 0;
   const responsiblePersonUrl =
     contentData?.['@components']?.clm?.responsible_person?.person_url;
   const responsiblePersonUsername =
@@ -233,7 +230,6 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
   if (!hasAuthors) {
     return null;
   }
-
   return (
     <section className="about-content" aria-labelledby="about-content-title">
       <h2 id="about-content-title">{intl.formatMessage(messages.title)}</h2>
@@ -241,12 +237,12 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
         <div className="about-content-item about-content-author">
           <h3>{intl.formatMessage(messages.author)}</h3>
           <div className="about-content-people">
-            {creatorsWithData.map(({ name, portrait }) => (
-              <div className="about-content-person" key={name}>
+            {displayedAuthors.map(({ id, name, url }) => (
+              <div className="about-content-person" key={id}>
                 <PersonPill
-                  id={name}
+                  id={id}
                   fullname={name}
-                  portrait={portrait ? expandToBackendURL(portrait) : undefined}
+                  url={url ? flattenToAppURL(url) : undefined}
                 />
               </div>
             ))}

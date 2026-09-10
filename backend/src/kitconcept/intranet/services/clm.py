@@ -17,9 +17,41 @@ class CLMExpander:
         self.context = context
         self.request = request
 
+    @staticmethod
+    def _author_data(uid):
+        author = {"value": uid}
+        person = api.content.get(UID=uid)
+
+        if not person:
+            return author
+
+        person_url = person.absolute_url()
+        username = IPloneUser(person).username
+        author.update({
+            "person_url": person_url,
+            "title": person.title,
+        })
+        if username:
+            author["username"] = username
+
+        return author
+
+    def _authors(self):
+        clm = ICLM(self.context, None)
+        return (
+            [self._author_data(uid) for uid in clm.authors]
+            if clm is not None and clm.authors
+            else []
+        )
+
     def __call__(self, expand=False):
         if not expand:
             return {"clm": {"@id": f"{self.context.absolute_url()}/@clm"}}
+
+        result = {"clm": {}}
+        authors = self._authors()
+        if authors:
+            result["clm"]["authors"] = authors
 
         for obj in self.context.aq_chain:
             clm = ICLM(obj, None)
@@ -39,13 +71,11 @@ class CLMExpander:
                     responsible_person["username"] = IPloneUser(person).username
                     responsible_person["title"] = person.title
 
-                return {
-                    "clm": {
-                        "responsible_person": responsible_person,
-                    }
-                }
+                result["clm"]["responsible_person"] = responsible_person
+                return result
 
-        return {"clm": {"responsible_person": {}}}
+        result["clm"]["responsible_person"] = {}
+        return result
 
 
 class CLMGet(Service):

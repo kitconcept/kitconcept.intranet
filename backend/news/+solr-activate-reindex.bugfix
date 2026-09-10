@@ -1,0 +1,1 @@
+Activate Solr during site creation only when the site was created with Solr support, and reindex the site in the same pass -- including the RAG chunks when AI search is enabled -- so search works without a manual reindex. @ericof

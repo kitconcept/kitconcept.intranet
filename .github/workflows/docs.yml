@@ -1,0 +1,109 @@
+name: Docs
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: false
+        type: string
+        default: "3.14"
+      artifacts-name-prefix:
+        required: false
+        type: string
+        default: 'docs-artifacts'
+      publish:
+        required: false
+        type: boolean
+        default: false
+    outputs:
+      artifacts-name:
+        description: "Name of the uploaded docs artifact"
+        value: ${{ jobs.build.outputs.artifacts-name }}
+
+jobs:
+  build:
+    name: "Docs: Build"
+    runs-on: ubuntu-latest
+    outputs:
+      artifacts-name: ${{ steps.artifact-name.outputs.name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          cache-dependency-glob: docs/uv.lock
+
+      - name: Setup Python
+        run: uv python install ${{ inputs.python-version }}
+        working-directory: docs
+
+      - name: Install
+        run: uv sync
+        working-directory: docs
+
+      # Runs from the repo root: the root docs-build target delegates to
+      # docs/ with SPHINXOPTS="-W", so a warning is an error and a dead cross
+      # reference or malformed directive fails here rather than shipping.
+      # Output lands in docs/_build/html (BUILDDIR is relative to docs/).
+      - name: Build
+        run: make docs-build
+
+      # Named after the ref so the artifact is identifiable in the run.
+      # Slashes are illegal in artifact names, so they are flattened; the ref
+      # goes through the environment rather than being interpolated into the
+      # script, since branch names are attacker-controlled on forks.
+      - name: Compute artifact name
+        id: artifact-name
+        shell: bash
+        env:
+          PREFIX: ${{ inputs.artifacts-name-prefix }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          echo "name=${PREFIX}-${REF_NAME//\//-}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ steps.artifact-name.outputs.name }}
+          path: docs/_build/html
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    name: "Deploy to GitHub Pages"
+    runs-on: ubuntu-latest
+    if: ${{ inputs.publish }}
+    needs:
+      - build
+    # Pages allows one deployment at a time; queue rather than cancel so a
+    # merge train does not drop the newest build.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download docs artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: ${{ needs.build.outputs.artifacts-name }}
+          path: site
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

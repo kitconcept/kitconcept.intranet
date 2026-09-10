@@ -9,6 +9,7 @@ PAPER           ?=
 # Internal variables.
 GREEN=`tput setaf 2`
 RESET=`tput sgr0`
+SPHINXBUILD     = "$(realpath .venv/bin/sphinx-build)"
 DOCS_DIR        = ./docs/
 BUILDDIR        = ./_build
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -16,7 +17,6 @@ PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) $(DOCS_DIR)
 VALEFILES       := $(shell find $(DOCS_DIR) -type f -name "*.md" -print)
 VALEOPTS        ?=
-PYTHONVERSION   = >=3.11,<3.14
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -38,7 +38,10 @@ init: clean clean-python .venv/bin/python  ## Clean docs build directory and Pyt
 
 .PHONY: clean
 clean:  ## Clean docs build directory
-	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
+	# Not `cd $(DOCS_DIR) &&` first: BUILDDIR is relative to this Makefile, so
+	# that removed docs/docs/_build, which never exists, and left the real
+	# build in place -- including pages whose source has since been renamed.
+	rm -rf $(BUILDDIR)/
 
 .PHONY: clean-python
 clean-python: clean
@@ -85,15 +88,9 @@ changes: .venv/bin/python
 	@echo
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
-.PHONY: rtd-prepare
-rtd-prepare:  ## Prepare environment on Read the Docs
-	asdf plugin add uv
-	asdf install uv latest
-	asdf global uv latest
+.PHONY: build
+build: html  ## Build documentation in HTML format
 
-.PHONY: rtd-pr-preview  ## Build pull request previews on Read the Docs
-rtd-pr-preview: rtd-prepare .venv/bin/python ## Build pull request preview on Read the Docs
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
 # /documentation builders
 
 
@@ -131,8 +128,3 @@ test: clean vale linkcheckbroken doctest  ## Clean docs build, then run vale, li
 .PHONY: all
 all: clean vale linkcheckbroken html  ## Clean docs build, then run linkcheckbroken, and build html
 # /test
-
-.PHONY: rtd-build
-rtd-build: ## Build Volto Light Theme docs on RTD
-	@uv sync
-	@uv run sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/

@@ -97,6 +97,9 @@ on:
       path-root:
         description: "Path to the repository root"
         value: ${{ jobs.config.outputs.path-root }}
+      deploy-docs:
+        description: "Whether this repository publishes its documentation site"
+        value: ${{ jobs.config.outputs.deploy-docs }}
 
 jobs:
   config:
@@ -108,6 +111,7 @@ jobs:
       docs: ${{ steps.filter.outputs.docs }}
       frontend: ${{ steps.filter.outputs.frontend }}
       deploy: ${{ steps.filter.outputs.deploy }}
+      deploy-docs: ${{ steps.vars.outputs.deploy-docs }}
       base-tag: ${{ steps.vars.outputs.base-tag }}
       kc-version: ${{ steps.vars.outputs.kc-version }}
       volto-version: ${{ steps.vars.outputs.volto-version }}
@@ -145,6 +149,10 @@ jobs:
           echo "path-backend=$(jq -r '.backend.path' <<< "$REPOSITORY_SETTINGS" | sed "s|^${ROOT}/||")" >> "$GITHUB_OUTPUT"
           echo "path-frontend=$(jq -r '.frontend.path' <<< "$REPOSITORY_SETTINGS" | sed "s|^${ROOT}/||")" >> "$GITHUB_OUTPUT"
           echo "path-root=." >> "$GITHUB_OUTPUT"
+          # Compared against 'public' rather than `private == false`: GitHub
+          # casts both null and false to 0, so an event payload without a
+          # repository object would make `private == false` true and publish.
+          echo "deploy-docs=${{ github.event.repository.visibility == 'public' }}" >> "$GITHUB_OUTPUT"
           environment=${{ inputs.hostname }}
           echo "environment=${environment}" >> $GITHUB_OUTPUT
           echo "stack-name=${environment//./-}" >> $GITHUB_OUTPUT
@@ -166,9 +174,8 @@ jobs:
             devops:
               - 'devops/**'
             docs:
-              - '.readthedocs.yaml'
               - 'docs/**'
-              - '.github/workflows/docs.yaml'
+              - '.github/workflows/docs.yml'
             frontend:
               - 'frontend/**'
               - '.github/workflows/frontend*'
@@ -204,6 +211,7 @@ jobs:
           echo 'stack-name: ${{ steps.vars.outputs.stack-name }}'
           echo 'event-name: ${{ github.event_name }}'
           echo "ref-name: ${{ github.ref_name }}"
+          echo 'deploy-docs: ${{ steps.vars.outputs.deploy-docs }}'
           echo 'Paths - acceptance: ${{ steps.filter.outputs.acceptance }}'
           echo 'Paths - backend: ${{ steps.filter.outputs.backend }}'
           echo 'Paths - devops: ${{ steps.filter.outputs.devops }}'

@@ -64,6 +64,22 @@ help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 ###########################################
+# Docs
+###########################################
+.PHONY: docs-install
+docs-install:  ## Install the documentation toolchain
+	@echo "$(GREEN)==> Install documentation requirements$(RESET)"
+	$(MAKE) -C "./docs/" install
+
+.PHONY: docs-build
+docs-build:  ## Build the documentation, warnings as errors
+	$(MAKE) -C "./docs/" html SPHINXOPTS="-W"
+
+.PHONY: docs-clean
+docs-clean:  ## Remove the documentation build
+	$(MAKE) -C "./docs/" clean
+
+###########################################
 # Frontend
 ###########################################
 .PHONY: frontend-install

@@ -95,7 +95,7 @@ jobs:
         shell: bash
         run: make cypress-install
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v2
         name: Start Servers
         with:
           run: |

@@ -14,6 +14,21 @@ on:
         type: string
         default: "./frontend"
 jobs:
+  shadow-headers:
+    name: "Frontend: Shadow customization headers"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Check OVERRIDE headers on shadowed components
+        run: node .github/scripts/check-shadow-headers.mjs ${{ inputs.working-directory }}/packages
+
   code-analysis:
     name: "Frontend: Codeanalysis"
     uses: plone/meta/.github/workflows/frontend-code.yml@2.x

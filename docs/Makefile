@@ -91,6 +91,14 @@ changes: .venv/bin/python
 .PHONY: build
 build: html  ## Build documentation in HTML format
 
+# Read the Docs invokes this from .readthedocs.yaml. It writes into
+# $READTHEDOCS_OUTPUT rather than $(BUILDDIR), which is why it cannot just
+# depend on the `html` target.
+.PHONY: rtd-build
+rtd-build:  ## Build the documentation on Read the Docs
+	@uv sync
+	@uv run sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
+
 # /documentation builders
 
 

@@ -2,9 +2,11 @@
 Based on the PersonSummary in volto-light-theme.
 Customizations:
 - Add the job_title
-- Set hideLink = true
+- Set hideLink = true, so the link icon is the fallback affordance when the
+  site has no kitconcept.clickable_profile_links setting
 */
 
+import * as React from 'react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import mailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@plone/volto/icons/map.svg';
@@ -29,7 +31,13 @@ const messages = defineMessages({
 });
 
 const PersonSummary = (props) => {
-  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
+  const {
+    item,
+    LinkToItem = React.Fragment,
+    HeadingTag = 'h3',
+    a11yLabelId,
+    hide_description,
+  } = props;
   const intl = useIntl();
 
   return (
@@ -37,7 +45,7 @@ const PersonSummary = (props) => {
       <LinkIconButton item={item} />
       {item?.head_title && <div className="headline">{item.head_title}</div>}
       <HeadingTag className="title" id={a11yLabelId}>
-        {item.title ? item.title : item.id}
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
 
       {item.job_title && (

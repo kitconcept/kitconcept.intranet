@@ -11,16 +11,16 @@ last_updated: 2026-04-27
 
 # Configure blocks through the web
 
-This guide shows you how to control which blocks are available to editors, and configure their themes and variations, using the Blocks Configuration field in Site Setup — no code deployment required.
+This guide shows you how to control which blocks are available to editors, and configure their themes and variations, using the Blocks Configuration field in Site Setup—no code deployment required.
 
 ## About this feature
 
 This feature relies on the `kitconcept.blocks.config` behavior. It is enabled by default on the Plone Site for the kitconcept intranet distribution, but can also be enabled on a subsite.
 
 You can configure:
-- **Enabled blocks** — disable blocks you don't want editors to use
-- **Themes of a block** — restrict or define available themes
-- **Enabled variations of a block** — limit which block variations are available
+- **Enabled blocks**—disable blocks you don't want editors to use
+- **Themes of a block**—restrict or define available themes
+- **Enabled variations of a block**—limit which block variations are available
 
 ## Steps
 
@@ -48,7 +48,7 @@ Click the field to open the JSON editor modal.
 
 The field accepts a JSON object. Use double quotes and no trailing commas (standard JSON).
 
-**Example — disable a block and restrict variations:**
+**Example—disable a block and restrict variations:**
 
 ```json
 {

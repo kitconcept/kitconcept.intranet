@@ -1,1 +1,0 @@
-Search dialog filter chips: filter livesearch suggestions, search results, and the AI answer by content type, creator (multi-select with avatars and livesearch), last updated, and review state. @reebalazs

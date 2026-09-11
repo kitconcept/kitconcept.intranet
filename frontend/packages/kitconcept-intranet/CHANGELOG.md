@@ -8,6 +8,34 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.4 (2026-09-10)
+
+
+### Feature
+
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.2. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Search dialog: the Type / Created by / Updated / Status filter chips are functional - they filter the livesearch, list real users, and travel to the results page URL so a reload reproduces the filtered results. @reebalazs 
+
+
+### Bugfix
+
+- Show CLM box in edit mode and hide it on the login page @iRohitSingh [#clm-edit-mode](https://github.com/kitconcept/kitconcept.intranet/issue/clm-edit-mode)
+- Fix CLM feedback form @iRohitSingh [#feedback-form](https://github.com/kitconcept/kitconcept.intranet/issue/feedback-form)
+- Remove the Feedback about this page link from the footer @iRohitSingh [#remove-footer-feedback](https://github.com/kitconcept/kitconcept.intranet/issue/remove-footer-feedback)
+- Fix the CLM Content Owner (`responsible_person`) field showing a raw user id instead of the person's name after the value was changed and saved, and stop the inheritance hint from appearing for a content's own value (e.g. after clearing the field). @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.1. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+
+
+### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+### Tests
+
+- Add acceptance tests for the CLM `responsible_person` widget: the name is shown after a change+save, no inheritance hint for a content's own value, and the inheritance hint appears with the ancestor's name when the value is genuinely inherited. @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Run block accessibility checks against the retained ``/qa/block`` fixtures and remove checks for fixtures that no longer exist. @sneridagh 
+
 ## 3.0.0-alpha.3 (2026-08-27)
 
 

@@ -1,1 +1,0 @@
-New vocabulary kitconcept.intranet.vocabularies.creators: users who created content on the site (unique catalog Creator values with resolved full names), the data source for the search dialog's "Created by" filter. @reebalazs

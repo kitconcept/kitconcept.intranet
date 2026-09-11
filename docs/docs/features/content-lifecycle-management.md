@@ -15,12 +15,12 @@ last_updated: 2026-09-07
 :class: note
 
 **Status:** GA · **Since:** 2.0.0 · **Audience:** editors, admins ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
 
-Content Lifecycle Management (CLM) tracks **who is accountable for a piece of
+Content Lifecycle Management ({term}`CLM`) tracks **who is accountable for a piece of
 content** and uses that to **route feedback and review reminders to the right
 people**. It answers three questions for any page: who owns it, who wrote it,
 and who should hear about problems with it.
@@ -39,8 +39,8 @@ content below it, so editors don't have to configure it on every page.
 
 ## Capabilities
 
-- Three ownership fields on content — **Authors**, **Content Owner**, and
-  **Feedback to** — provided by the `ICLM` behavior.
+- Three ownership fields on content—**Authors**, **Content Owner**, and
+  **Feedback to**—provided by the `ICLM` behavior.
 - Applied to **Document**, **Event**, **Workspace**, **Wiki Page**, and
   **News Item**.
 - **Tree-inherited** Content Owner: set it on an ancestor and all descendants
@@ -73,7 +73,7 @@ These look similar but do different jobs:
   publicly, and is the default feedback recipient.
 - **Feedback to** is a *narrow, local override*. It redirects feedback for one
   specific page to a different person than the owner, without changing who is
-  shown as accountable. It applies only to the exact page it is set on — it is
+  shown as accountable. It applies only to the exact page it is set on—it is
   **not** inherited.
 
 If you never set **Feedback to**, feedback simply goes to the Content Owner.
@@ -91,7 +91,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 - When resolving the Content Owner for a page, the system walks **up the content
   tree** and returns the **nearest ancestor** that has a Content Owner set.
-- The walk **stops at the first match** — a closer ancestor's owner wins over a
+- The walk **stops at the first match**—a closer ancestor's owner wins over a
   more distant one.
 - If no ancestor has an owner, the resolved Content Owner is empty.
 
@@ -101,9 +101,9 @@ When feedback is submitted for a page, the recipient email is resolved in this
 strict priority order:
 
 1. **Feedback to** on *that page* → the person's contact email.
-   _(Not inherited — only the exact page counts.)_
+   _(Not inherited—only the exact page counts.)_
 2. Otherwise the **inherited Content Owner** → the person's contact email.
-   _(Inherited — walks up the tree as above.)_
+   _(Inherited—walks up the tree as above.)_
 3. Otherwise the **site-wide default feedback email**
    (`kitconcept.intranet.default_feedback_email` in the control panel).
 4. If none of the above yields an email, the submission is **rejected** with an
@@ -113,7 +113,7 @@ Additional rules:
 
 - The fallback is **per field, not per person**: if **Feedback to** is set but
   that person has no contact email, resolution silently falls through to the
-  Content Owner, then the default — it does not error at that step.
+  Content Owner, then the default—it doesn't error at that step.
 - The person who submits feedback always receives a **confirmation email** at the
   address they provided.
 - A **Cc** is sent to `kitconcept.intranet.feedback_cc_email` when configured.
@@ -129,7 +129,7 @@ Additional rules:
 - A **"Feedback about this page"** link is added to the footer, but **only when
   the page has at least one CLM field set or inherited** (Authors, Content Owner,
   Feedback to, or an inherited Content Owner). On a page with no CLM data
-  anywhere up the tree, the link does not appear.
+  anywhere up the tree, the link doesn't appear.
 
 ## Configuration
 
@@ -137,14 +137,14 @@ Additional rules:
   These fields are admin-only.
 - Set the site-wide fallback recipient and Cc in the control panel — see
   {doc}`/how-to-guides/feedback/configure-feedback`.
-- Assign people via the **Person** content type — see
+- Assign people via the **Person** content type—see
   {doc}`people-and-organisation`.
 
 ## Learn more
 
-- **Concept** — {doc}`/concepts/content-ownership` (how ownership and inheritance
+- **Concept**—{doc}`/concepts/content-ownership` (how ownership and inheritance
   work)
-- **How-to** — {doc}`/how-to-guides/feedback/configure-feedback`
-- **Reference (behavior)** — {doc}`/developer/reference/behaviors/clm`
-- **Reference (API)** — {doc}`/developer/reference/api/clm` (`@clm` endpoint)
-- **Related feature** — {doc}`feedback`, {doc}`content-review-reminders`
+- **How-to**—{doc}`/how-to-guides/feedback/configure-feedback`
+- **Reference (behavior)**—{doc}`/developer/reference/behaviors/clm`
+- **Reference (API)**—{doc}`/developer/reference/api/clm` (`@clm` endpoint)
+- **Related feature**—{doc}`feedback`, {doc}`content-review-reminders`

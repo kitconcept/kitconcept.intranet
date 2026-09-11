@@ -11,14 +11,14 @@ last_updated: 2026-03-18
 
 # Content Ownership
 
-The intranet uses the **CLM (Content Lifecycle Management)** behavior to track content ownership. Understanding how ownership is assigned and inherited is important for both editors and administrators.
+The intranet uses the **{term}`CLM` (Content Lifecycle Management)** behavior to track content ownership. Understanding how ownership is assigned and inherited is important for both editors and administrators.
 
 ## How ownership works
 
 Each content item can have:
-- **Content Owner** (`responsible_person`) — the accountable person for the content
-- **Feedback to** (`feedback_person`) — who receives feedback for this specific item
-- **Authors** (`authors`) — people involved in creating or editing the content
+- **Content Owner** (`responsible_person`)—the accountable person for the content
+- **Feedback to** (`feedback_person`)—who receives feedback for this specific item
+- **Authors** (`authors`)—people involved in creating or editing the content
 
 ## Inheritance
 

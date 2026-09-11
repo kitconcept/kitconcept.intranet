@@ -1,13 +1,13 @@
 # Configuration file for the Sphinx documentation builder.
-# Project Title build configuration file
+# kitconcept.intranet build configuration file
 
 
 # -- Path setup --------------------------------------------------------------
 
-from datetime import datetime
+from datetime import UTC, datetime
 
+from kitconcept.intranet import __version__
 from packaging.version import Version
-from plone_sphinx_theme import __version__
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -22,7 +22,7 @@ from plone_sphinx_theme import __version__
 project = "kitconcept.intranet"
 author = "kitconcept, GmbH"
 trademark_name = "kitconcept.intranet"
-now = datetime.now()
+now = datetime.now(UTC)
 year = str(now.year)
 copyright = year
 
@@ -75,8 +75,6 @@ extensions = [
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
     "sphinxcontrib.mermaid",
-    "sphinxcontrib.video",
-    "sphinxcontrib.youtube",
     "sphinxext.opengraph",
 ]
 
@@ -95,14 +93,12 @@ linkcheck_ignore = [
     # Ignore file downloads
     r"^/_static/",
     # Ignore pages that require authentication
-    r"https://github.com/collective/projecttitle/issues/new",  # requires auth
+    r"https://github.com/kitconcept/kitconcept.intranet/issues/new",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore other specific anchors
 ]
-linkcheck_allowed_redirects = {  # TODO: Confirm usage of linkcheck_allowed_redirects
-    # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
-}
+linkcheck_allowed_redirects = {}
 linkcheck_anchors = True
 linkcheck_timeout = 5
 linkcheck_retries = 1
@@ -192,12 +188,12 @@ html_theme_options = {
 # suggest edit link
 # remark:  is mandatory in "edit_page_url_template"
 # html_context = {
-#     "edit_page_url_template": "https://github.com/collective/projecttitle/edit/main/docs/",
+#     "edit_page_url_template": "https://github.com/kitconcept/kitconcept.intranet/edit/main/docs/",
 # }
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://kitconceptintranet.readthedocs.io/"
+html_use_opensearch = "https://kitconcept.github.io/kitconcept.intranet/"
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -235,8 +231,7 @@ autodoc_class_signature = "separated"
 # -- Options for sphinx_sitemap to html -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://MY_READTHEDOCS_PROJECT_SLUG.readthedocs.io/"
-# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
+html_baseurl = "https://kitconcept.github.io/kitconcept.intranet/"
 sitemap_url_scheme = "{link}"
 sitemap_filename = "sitemap-custom.xml"
 
@@ -284,10 +279,10 @@ mermaid_version = "11.2.0"
 
 
 # -- OpenGraph configuration ----------------------------------
-ogp_site_url = "https://kitconceptintranet.readthedocs.io/"
+ogp_site_url = "https://kitconcept.github.io/kitconcept.intranet/"
 ogp_description_length = 200
-ogp_image = "https://kitconceptintranet.readthedocs.io/_static/images/logo.svg"
-ogp_site_name = "Project Title Documentation"
+ogp_image = "https://kitconcept.github.io/kitconcept.intranet/_static/images/logo.svg"
+ogp_site_name = "kitconcept.intranet Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
     '<meta property="og:locale" content="en_US" />',
@@ -332,9 +327,9 @@ htmlhelp_basename = "kitconcept.intranet"
 latex_documents = [
     (
         "index",
-        "Project TitleDocumentation.tex",
-        "Project Title Documentation",
-        "collective community",
+        "kitconcept.intranet-Documentation.tex",
+        "kitconcept.intranet Documentation",
+        author,
         "manual",
     ),
 ]
@@ -346,7 +341,7 @@ latex_logo = "_static/images/logo.svg"
 
 # --  Configuration for source_replacements extension -----------------------
 # An extension that allows replacements for code blocks that
-# are not supported in `rst_epilog` or other substitutions.
+# aren't supported in `rst_epilog` or other substitutions.
 # https://stackoverflow.com/a/56328457/2214933
 def source_replace(app, docname, source):
     result = source[0]

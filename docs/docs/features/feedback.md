@@ -15,13 +15,12 @@ last_updated: 2026-09-07
 :class: note
 
 **Status:** GA · **Audience:** all users ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
 
-The feedback feature lets readers send **private feedback on any page** —
-what's unclear, outdated, or missing — directly to the person accountable for
+The feedback feature lets readers send **private feedback on any page**—what's unclear, outdated, or missing—directly to the person accountable for
 that content. The submitter gets an automatic confirmation, and the recipient is
 resolved automatically from {doc}`content-lifecycle-management` ownership.
 
@@ -63,7 +62,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 ### Recipient resolution
 
 The recipient is decided **on the backend from the target page**, not from
-anything in the form. It follows the CLM priority chain:
+anything in the form. It follows the {term}`CLM` priority chain:
 
 1. **Feedback to** (`feedback_person`) on the page → their contact email.
 2. Otherwise the **inherited Content Owner** (`responsible_person`) → their
@@ -94,15 +93,15 @@ rules.
 
 ## Configuration
 
-- Set the default recipient, Cc, and allowed domains — see
+- Set the default recipient, Cc, and allowed domains—see
   {doc}`/how-to-guides/feedback/configure-feedback`.
 - Ownership that drives routing is configured via
   {doc}`content-lifecycle-management`.
 
 ## Learn more
 
-- **Tutorial** — {doc}`/tutorials/using-feedback`
-- **How-to** — {doc}`/how-to-guides/feedback/configure-feedback`,
+- **Tutorial**—{doc}`/tutorials/using-feedback`
+- **How-to**—{doc}`/how-to-guides/feedback/configure-feedback`,
   {doc}`/how-to-guides/feedback/submit-feedback`
-- **Reference (API)** — {doc}`/developer/reference/api/feedback`
-- **Related feature** — {doc}`content-lifecycle-management`
+- **Reference (API)**—{doc}`/developer/reference/api/feedback`
+- **Related feature**—{doc}`content-lifecycle-management`

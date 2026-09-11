@@ -16,7 +16,7 @@ This guide shows you how to configure who receives feedback submissions for your
 ## Prerequisites
 
 - Admin access to the Intranet Settings control panel.
-- The CLM behavior must be applied to your content types (contact your developer if unsure).
+- The {term}`CLM` behavior must be applied to your content types (contact your developer if unsure).
 - The **Site 'From' address** must be set in the Mail control panel.
 
 ## How feedback routing works

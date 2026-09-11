@@ -17,7 +17,7 @@ It is intended to be followed in all kitconcept projects and add-ons.
 ## Use TypeScript
 
 We use TypeScript for all new frontend code.
-Typings does not have to be perfect and crystal correct, but this alone, should be better than using plain JavaScript.
+Typings doesn't have to be perfect and crystal correct, but this alone, should be better than using plain JavaScript.
 This helps to catch errors early and improves code quality.
 
 ## Add-on configuration
@@ -86,7 +86,7 @@ export default installBlocks;
 
 ### Do not use spread operator for configuration
 
-It is not needed, we are not in Redux world in here.
+It is not needed, we aren't in Redux world in here.
 
 ```ts
 // ❌ Avoid this
@@ -106,7 +106,7 @@ config.blocks.blocksConfig.myBlock = {
 };
 ```
 
-Same for any other configuration, e.g. `config.widgets`, `config.settings`, etc.
+Same for any other configuration, for example `config.widgets`, `config.settings`, etc.
 
 ## No CSS imports as a side effect
 
@@ -114,7 +114,7 @@ Same for any other configuration, e.g. `config.widgets`, `config.settings`, etc.
 import './MyComponent.css'; // ❌ Avoid this
 ```
 
-Instead, use VLT theme integration by adding `src/theme/_main.scss` and `src/theme/_variables.scss` files to your add-on.
+Instead, use {term}`VLT` theme integration by adding `src/theme/_main.scss` and `src/theme/_variables.scss` files to your add-on.
 
 ## Using Semantic UI theming or `less` as preprocessor is not permitted
 
@@ -126,7 +126,7 @@ Period.
 
 As a rule of thumb, add-ons should not depend on Volto or VLT.
 
-Only in case that our add-on depends directly in code on VLT (eg. it imports widgets or components from it), it should be a peer dependency with a broader version range, e.g. `^7`.
+Only in case that our add-on depends directly in code on VLT (for example, it imports widgets or components from it), it should be a peer dependency with a broader version range, for example `^7`.
 
 ### Add-ons will assume always VLT is present
 
@@ -174,7 +174,7 @@ Also add these overrides to the root `package.json`:
 }
 ```
 
-After that in the `volto.config.js` add @kitconcept/volto-light-theme to the addons and the thee like this:
+After that in the `volto.config.js` add `@kitconcept/volto-light-theme` to the addons and the thee like this:
 
 ```js
 const addons = ['volto-vlt-test-styleguide', '@kitconcept/volto-light-theme'];
@@ -374,7 +374,7 @@ We should always use it with the injection of custom CSS properties that we want
 If we want to inject a single property (and it seems that won't change in the foreseeable future), we will use the property directly. See example in: https://6.docs.plone.org/volto/blocks/block-style-wrapper.html#custom-css-properties-recommended
 
 If we want to inject multiple properties, we should use the `:noprefix` suffix for the styles properties that we want to be applied directly to the block, without any prefix.
-This is useful for properties that are not specific to any namespace, but are more general, e.g. `blockWidth`, `alignment`, etc. See below and in https://6.docs.plone.org/volto/blocks/block-style-wrapper.html#avoid-injecting-nested-prefixes for more details.
+This is useful for properties that aren't specific to any namespace, but are more general, for example `blockWidth`, `alignment`, etc. See below and in https://6.docs.plone.org/volto/blocks/block-style-wrapper.html#avoid-injecting-nested-prefixes for more details.
 
 There are some handlers that we would like always to use and define them the same way:
 

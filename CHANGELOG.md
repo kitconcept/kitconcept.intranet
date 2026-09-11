@@ -1,6 +1,89 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.0a4 (2026-09-10)
+
+### Backend
+
+
+#### Feature
+
+- Update kitconcept.solr to 3.0.0a2 (suggestions include images by default). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- New vocabulary kitconcept.intranet.vocabularies.creators: users who created content on the site (unique catalog Creator values with resolved full names), the data source for the search dialog's "Created by" filter. @reebalazs 
+
+
+#### Bugfix
+
+- Fix the content review reminder email body: render the last-updated value as a date instead of the object repr, and add proper line and paragraph breaks (English and German) so the message is no longer a single run-on block. [#486](https://github.com/kitconcept/kitconcept.intranet/issue/486)
+- Update kitconcept.solr to 3.0.0a1 (AI answers no longer cite context-less documents such as Images as sources). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Activate Solr during site creation only when the site was created with Solr support, and reindex the site in the same pass -- including the RAG chunks when AI search is enabled -- so search works without a manual reindex. @ericof 
+- Give the two OpenStreetMap maps blocks on the QA maps page unique titles, so their iframes have unique title attributes (a11y frame-title-unique). 
+- Remove the obsolete ``/features/block`` example branch while retaining the QA block fixtures. @sneridagh 
+
+
+#### Internal
+
+- Adjust QA example content: rename QA section to "Quality Assurance", add missing block descriptions (banner, carousel, form, logos, rss), fix broken logo image references, add banner variations, add grey background variants (carousel, form, event calendar, maps) and an OpenStreetMap example to the maps block. 
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.2. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Search dialog: the Type / Created by / Updated / Status filter chips are functional - they filter the livesearch, list real users, and travel to the results page URL so a reload reproduces the filtered results. @reebalazs 
+
+
+#### Bugfix
+
+- Show CLM box in edit mode and hide it on the login page @iRohitSingh [#clm-edit-mode](https://github.com/kitconcept/kitconcept.intranet/issue/clm-edit-mode)
+- Fix CLM feedback form @iRohitSingh [#feedback-form](https://github.com/kitconcept/kitconcept.intranet/issue/feedback-form)
+- Remove the Feedback about this page link from the footer @iRohitSingh [#remove-footer-feedback](https://github.com/kitconcept/kitconcept.intranet/issue/remove-footer-feedback)
+- Fix the CLM Content Owner (`responsible_person`) field showing a raw user id instead of the person's name after the value was changed and saved, and stop the inheritance hint from appearing for a content's own value (e.g. after clearing the field). @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.1. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+
+
+#### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+#### Tests
+
+- Add acceptance tests for the CLM `responsible_person` widget: the name is shown after a change+save, no inheritance hint for a content's own value, and the inheritance hint appears with the ancestor's name when the value is genuinely inherited. @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Run block accessibility checks against the retained ``/qa/block`` fixtures and remove checks for fixtures that no longer exist. @sneridagh 
+
+
+
+### Project
+
+
+#### Feature
+
+- Update kitconcept.solr to 3.0.0a2: images appear in the livesearch suggestions by default, like on the results page (team decision from the ticket 570 review). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/pull/570)
+- Search dialog filter chips: filter livesearch suggestions, search results, and the AI answer by content type, creator (multi-select with avatars and livesearch), last updated, and review state. @reebalazs [#585](https://github.com/kitconcept/kitconcept.intranet/pull/585)
+
+
+#### Bugfix
+
+- Update kitconcept.solr to 3.0.0a1: the AI answer no longer cites documents that contributed no context (e.g. Images) as sources. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/pull/570)
+
+
+#### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+#### Documentation
+
+- Add a Features documentation section: a product/feature catalog (outside the Diátaxis quadrants) that serves as an interim source of truth for users, QA, and product owners, with a hub page per feature (CLM, feedback, people & organisation, personalization, content review & reminders, likes, workspaces & wiki, wiki editor, search, and AI-assisted answers). [#486](https://github.com/kitconcept/kitconcept.intranet/pull/486)
+- Build and publish the documentation to GitHub Pages at https://kitconcept.github.io/kitconcept.intranet/, replacing the Read the Docs setup. The docs build now runs in CI with warnings treated as errors. @ericof 
+- Cleared every Vale style error in the documentation, linked the first use of VLT and CLM on each page to the glossary, and fixed the remaining Sphinx cross-reference and syntax-highlighting warnings so the documentation builds cleanly with warnings treated as errors. @ericof 
+
+
+
 ## 3.0.0a3 (2026-08-27)
 
 ### Backend

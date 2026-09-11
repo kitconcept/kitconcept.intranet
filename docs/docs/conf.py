@@ -90,6 +90,7 @@ linkcheck_ignore = [
     r"http://0.0.0.0",
     r"http://127.0.0.1",
     r"http://localhost",
+    r"http://[\w.-]+\.localhost",
     # Ignore file downloads
     r"^/_static/",
     # Ignore pages that require authentication

@@ -38,9 +38,6 @@ def post_handler(
 
     if answers.get("setup_content", False):
         sync_person_portraits(site)
-    if os.environ.get("SOLR_ACTIVATE"):
-        registry_data = {"collective.solr.active": True}
-        utils.update_registry(registry_data)
     if answers.get("setup_solr", False) and os.environ.get("SOLR_ACTIVATE"):
         solr_rag = bool(os.environ.get("SOLR_RAG"))
         activate_and_reindex(site, clear=True, rag=solr_rag)

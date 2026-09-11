@@ -1,6 +1,58 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.0a5 (2026-09-11)
+
+### Backend
+
+
+#### Feature
+
+- Populate Plone user portraits from the images of associated Person profiles when installing the example content. @sneridagh 
+
+
+#### Bugfix
+
+- Standardize German Content Lifecycle Management labels and show the behavior's full name in the edit form. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- Expose configured feedback-person metadata through the CLM expansion. @sneridagh 
+- Show every configured CLM author in the content information and expose the person metadata required by the frontend. @sneridagh 
+
+
+#### Internal
+
+- Upgrade kitconcept.core to 2.0.0b7 and Volto Light Theme to 8.0.0a32. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Fix broken Avatar pictures @iRohitSingh [#480](https://github.com/kitconcept/kitconcept.intranet/issue/480)
+- Use the specified English and German labels for authors, the responsible person, and page feedback. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- @kitconcept/volto-plate to 1.0.0-alpha.26. @sneridagh 
+- Fix the Status icons in content folder @Tishasoumya-02 
+- Show all configured CLM authors in the About This Content panel, fall back to content creators when no authors are set, and load user portraits through Volto's portrait middleware. @sneridagh 
+- Show the configured feedback person as the effective feedback recipient, falling back to the responsible person. @sneridagh 
+- Show the workspace navigation portal and hide the like/comment/share footer for content nested inside a workspace (not just the workspace and wiki pages themselves). @iFlameing 
+
+
+#### Internal
+
+- Upgrade kitconcept-core to 2.0.0b7, Volto Light Theme to 8.0.0a32, and Volto Banner Block to 1.2.1. @sneridagh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Refer to the CLM edit fieldset by its full Content Lifecycle Management name in the user and developer documentation. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/pull/622)
+
+
+
 ## 3.0.0a4 (2026-09-10)
 
 ### Backend

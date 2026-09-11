@@ -21,10 +21,7 @@ import { Menu, MenuItem, MenuTrigger } from '@plone/components';
 import { ChevrondownIcon } from '@plone/components/Icons';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import {
-  expandToBackendURL,
-  flattenToAppURL,
-} from '@plone/volto/helpers/Url/Url';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import checkSVG from '@plone/volto/icons/check.svg';
@@ -287,11 +284,7 @@ const CreatorAvatar = ({
     aria-hidden="true"
   >
     {label.charAt(0).toUpperCase()}
-    <img
-      src={flattenToAppURL(expandToBackendURL(`@portrait/${userid}`))}
-      alt=""
-      loading="lazy"
-    />
+    <img src={`/@portrait/${userid}`} alt="" loading="lazy" />
   </span>
 );
 

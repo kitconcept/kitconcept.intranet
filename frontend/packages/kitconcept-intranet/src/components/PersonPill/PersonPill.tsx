@@ -4,10 +4,6 @@ import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import {
-  expandToBackendURL,
-  flattenToAppURL,
-} from '@plone/volto/helpers/Url/Url';
 import AvatarFallback from '../../icons/avatar-fallback-silhouette.svg';
 
 type PersonPillProps = {
@@ -42,9 +38,7 @@ const PersonPill = ({
       state.site?.data?.['kitconcept.clickable_profile_links'],
   );
 
-  const portraitSrc =
-    portrait ??
-    (id ? flattenToAppURL(expandToBackendURL(`@portrait/${id}`)) : undefined);
+  const portraitSrc = portrait ?? (id ? `/@portrait/${id}` : undefined);
 
   const [imageFailed, setImageFailed] = useState(false);
   const showImage = Boolean(portraitSrc) && !imageFailed;

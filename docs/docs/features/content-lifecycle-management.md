@@ -133,9 +133,9 @@ Additional rules:
 
 ## Configuration
 
-- Set **Authors**, **Content Owner**, and **Feedback to** on a content item's
-  edit form (CLM fieldset). These are admin-only fields.
-- Set the site-wide fallback recipient and Cc in the control panel—see
+- Set **Authors**, **Content Owner**, and **Feedback to** on a content item's edit form (the **Content Lifecycle Management** fieldset).
+  These fields are admin-only.
+- Set the site-wide fallback recipient and Cc in the control panel — see
   {doc}`/how-to-guides/feedback/configure-feedback`.
 - Assign people via the **Person** content type—see
   {doc}`people-and-organisation`.

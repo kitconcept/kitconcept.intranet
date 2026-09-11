@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-08-19T14:24:58.280Z\n"
+"POT-Creation-Date: 2026-09-10T17:35:23.565Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -26,11 +26,6 @@ msgstr ""
 #. Default: "About this content"
 #: slots/AboutThisContent/AboutThisContent
 msgid "About this content"
-msgstr ""
-
-#. Default: "Add comment... (@ mention a person)"
-#: components/Comments/messages
-msgid "Add comment... (@ mention a person)"
 msgstr ""
 
 #. Default: "Address"
@@ -111,11 +106,6 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#. Default: "Comments"
-#: components/Comments/messages
-msgid "Comments"
-msgstr ""
-
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 #: components/theme/PersonView
@@ -125,11 +115,6 @@ msgstr ""
 #. Default: "Content marked as reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
-msgstr ""
-
-#. Default: "Content responsible"
-#: slots/AboutThisContent/AboutThisContent
-msgid "Content responsible"
 msgstr ""
 
 #. Default: "Created On"
@@ -162,11 +147,6 @@ msgstr ""
 msgid "DelegateButton"
 msgstr ""
 
-#. Default: "Delete"
-#: components/Comments/messages
-msgid "Delete"
-msgstr ""
-
 #. Default: "Depth"
 #: components/widgets/QuerystringWidget
 msgid "Depth"
@@ -184,11 +164,6 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
-#. Default: "Edit"
-#: components/Comments/messages
-msgid "Edit"
-msgstr ""
-
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
 msgid "Email"
@@ -203,6 +178,7 @@ msgstr ""
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr ""
 
@@ -226,14 +202,9 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#. Default: "Feedback about this page"
-#: components/Footer/slots/FollowUsLogoAndLinks
-#: slots/AboutThisContent/AboutThisContent
-msgid "Feedback about this page"
-msgstr ""
-
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
+#: slots/AboutThisContent/AboutThisContent
 msgid "Feedback on this page"
 msgstr ""
 
@@ -460,14 +431,14 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#. Default: "Reply"
-#: components/Comments/messages
-msgid "Reply"
-msgstr ""
-
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
+msgstr ""
+
+#. Default: "Responsible Person"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Responsible Person"
 msgstr ""
 
 #. Default: "Results limit"
@@ -525,11 +496,6 @@ msgstr ""
 #. Default: "Please Select ..."
 #: components/ContentReviewSidebar/DelegateReview
 msgid "SelectAssigneePlaceholder"
-msgstr ""
-
-#. Default: "Send comment"
-#: components/Comments/messages
-msgid "Send comment"
 msgstr ""
 
 #. Default: "Send feedback"
@@ -593,11 +559,6 @@ msgstr ""
 msgid "Sources"
 msgstr ""
 
-#. Default: "Sponsored by:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Sponsored by:"
-msgstr ""
-
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
@@ -623,6 +584,7 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 #: components/Toolbar/DocumentReview
+#: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr ""
 
@@ -661,11 +623,6 @@ msgstr ""
 msgid "Use preset review interval"
 msgstr ""
 
-#. Default: "Visible to everyone who can see this page."
-#: components/Comments/messages
-msgid "Visible to everyone who can see this page."
-msgstr ""
-
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
@@ -683,6 +640,7 @@ msgstr ""
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr ""
 

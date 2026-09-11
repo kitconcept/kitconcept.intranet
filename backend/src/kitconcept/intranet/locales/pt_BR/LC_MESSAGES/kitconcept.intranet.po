@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-06-11 08:48+0000\n"
+"POT-Creation-Date: 2026-09-10 15:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,7 @@ msgstr "Uma distribuição Plone para Intranets com Plone. Criada pela kitconcep
 msgid "Academic Title"
 msgstr "Título acadêmico"
 
-#: kitconcept/intranet/behaviors/person.py:66
+#: kitconcept/intranet/behaviors/person.py:73
 msgid "Academic Title, First and Last Name"
 msgstr "Título acadêmico, nome e sobrenome"
 
@@ -185,7 +185,7 @@ msgstr "Workflow restrito para Intranet"
 msgid "Intranet Settings"
 msgstr "Configurações da Intranet"
 
-#: kitconcept/intranet/services/feedback_contact_form.py:231
+#: kitconcept/intranet/services/feedback_contact_form.py:253
 msgid "Intranet feedback form: {title}"
 msgstr "Formulário de feedback da intranet: {title}"
 
@@ -229,7 +229,7 @@ msgstr "Membro retira a submissão"
 msgid "Member submits content for publication"
 msgstr "Membro envia conteúdo para publicação"
 
-#: kitconcept/intranet/services/feedback_contact_form.py:182
+#: kitconcept/intranet/services/feedback_contact_form.py:204
 msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
 msgstr "Nenhuma pessoa responsável ou e-mail de feedback padrão está configurado. Por favor, entre em contato com o administrador do site."
 
@@ -252,11 +252,11 @@ msgstr "Proporção da foto da pessoa"
 msgid "Placeholder text for the search field."
 msgstr "Texto de exemplo para o campo de busca."
 
-#: kitconcept/intranet/services/feedback_contact_form.py:190
+#: kitconcept/intranet/services/feedback_contact_form.py:212
 msgid "Please enter your feedback."
 msgstr "Por favor, insira seu feedback."
 
-#: kitconcept/intranet/services/feedback_contact_form.py:200
+#: kitconcept/intranet/services/feedback_contact_form.py:222
 msgid "Please enter your organisational email address."
 msgstr "Por favor, insira seu endereço de e-mail organizacional."
 
@@ -347,6 +347,10 @@ msgstr "Configura a integração da intranet com Solr."
 msgid "Submit for publication"
 msgstr "Enviar para publicação"
 
+#: kitconcept/intranet/profiles/default/types/Subsite.xml
+msgid "Subsite"
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "Taxonomy"
 msgstr "Taxonomia"
@@ -377,14 +381,19 @@ msgstr "Votos"
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr "Aguardando revisão, não editável pelo proprietário."
 
-#: kitconcept/intranet/services/feedback_contact_form.py:253
+#: kitconcept/intranet/services/feedback_contact_form.py:275
 msgid "Your feedback on our intranet content: {title}"
 msgstr "Seu feedback sobre nosso conteúdo da intranet: {title}"
 
 #. Default: "Sorry, your feedback could not be delivered."
-#: kitconcept/intranet/services/feedback_contact_form.py:275
+#: kitconcept/intranet/services/feedback_contact_form.py:297
 msgid "error_email"
 msgstr "Desculpe, não foi possível enviar seu feedback."
+
+#. Default: "Content Lifecycle Management"
+#: kitconcept/intranet/behaviors/clm.py:16
+msgid "fieldset_clm"
+msgstr ""
 
 #. Default: "Matches the value(s) assigned to the currently logged-in user"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
@@ -443,7 +452,7 @@ msgid "kitconcept.intranet: Solr Support"
 msgstr "kitconcept.intranet: Suporte a buscas com Solr"
 
 #. Default: "Authors"
-#: kitconcept/intranet/behaviors/clm.py:58
+#: kitconcept/intranet/behaviors/clm.py:62
 msgid "label_authors"
 msgstr "Autores"
 
@@ -453,7 +462,7 @@ msgid "label_current_user_filter"
 msgstr "Usuário logado atualmente"
 
 #. Default: "Feedback to"
-#: kitconcept/intranet/behaviors/clm.py:45
+#: kitconcept/intranet/behaviors/clm.py:49
 msgid "label_feedback_person"
 msgstr "Feedback para"
 
@@ -474,7 +483,7 @@ msgid "label_responsibilities"
 msgstr "Responsabilidades"
 
 #. Default: "Content Owner:"
-#: kitconcept/intranet/behaviors/clm.py:32
+#: kitconcept/intranet/behaviors/clm.py:36
 msgid "label_responsible"
 msgstr "Responsável pelo conteúdo:"
 
@@ -484,17 +493,17 @@ msgid "label_review_assignee"
 msgstr ""
 
 #. Default: "Comment"
-#: kitconcept/intranet/behaviors/content_review.py:84
+#: kitconcept/intranet/behaviors/content_review.py:87
 msgid "label_review_comment"
 msgstr ""
 
 #. Default: "Last review on"
-#: kitconcept/intranet/behaviors/content_review.py:78
+#: kitconcept/intranet/behaviors/content_review.py:81
 msgid "label_review_completed_date"
 msgstr ""
 
 #. Default: "Next review on"
-#: kitconcept/intranet/behaviors/content_review.py:72
+#: kitconcept/intranet/behaviors/content_review.py:75
 msgid "label_review_due_date"
 msgstr ""
 

@@ -1,0 +1,1 @@
+Made the host port published by Traefik in `docker-compose.yml` configurable through the `STACK_PORT` environment variable, which still defaults to 80, so the demo stack can run behind a web server that terminates TLS. @ericof

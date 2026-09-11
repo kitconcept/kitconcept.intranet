@@ -58,11 +58,6 @@ context('Person profile links in listings', () => {
     variations.forEach((variation) => createListingPage(variation));
   });
 
-  afterEach(() => {
-    // the setting is site wide, do not leak it into the other specs
-    cy.setRegistry('kitconcept.core.settings.clickable_profile_links', true);
-  });
-
   it('links the whole card to the profile when profiles are clickable', () => {
     variations.forEach((variation) => {
       cy.visit(`/people-${variation}`);
@@ -91,8 +86,13 @@ context('Person profile links in listings', () => {
   it('offers the link icon instead when profiles are not clickable', () => {
     cy.setRegistry('kitconcept.core.settings.clickable_profile_links', false);
 
+    // load the site once so that the changed setting is picked up
+    cy.visit('/');
+
     variations.forEach((variation) => {
-      cy.visit(`/people-${variation}`);
+      // the icon navigates through the router, so reach the listing through a
+      // client side navigation, where the cards are rendered by the running app
+      cy.navigate(`/people-${variation}`);
 
       cy.get('.listing-item.person-listing')
         .contains('.card', 'Ayla Demir')
@@ -100,8 +100,6 @@ context('Person profile links in listings', () => {
 
       cy.get('@card').find('a.card-primary-link').should('not.exist');
 
-      // the icon navigates through the router, so wait for the app to hydrate
-      cy.window().its('appHistory').should('exist');
       cy.get('@card').find('.card-link-icon button').click({ force: true });
       cy.url().should('include', '/ayla-demir');
     });

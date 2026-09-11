@@ -44,7 +44,7 @@ The third argument is the index of the registered entry to remove. Pass `0` to r
 
 ## Component: `ListingBlockDisclaimer`
 
-Located at `frontend/packages/kitconcept-intranet/src/slots/ListingDisclaimer/ListingDisclaimer.tsx`. Not part of the public package API — referenced internally via the slot registration.
+Located at `frontend/packages/kitconcept-intranet/src/slots/ListingDisclaimer/ListingDisclaimer.tsx`. Not part of the public package API—referenced internally via the slot registration.
 
 ### Props
 

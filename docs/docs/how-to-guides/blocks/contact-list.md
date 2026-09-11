@@ -35,7 +35,7 @@ The Contact list block displays a curated list of persons from your intranet dir
 ## Example: Adding a Team Section
 
 1. On your team page, add a **Contact list** block.
-2. In the block sidebar, set the **Headline** field to "Our Team".
+2. In the block sidebar, set the **Headline** field to `Our Team`.
 3. Manually select the persons in your team using the object browser.
 5. Click **Save**.
 

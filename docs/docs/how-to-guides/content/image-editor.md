@@ -32,7 +32,7 @@ The kitconcept Intranet includes a built-in image editor (provided by the `@plon
 ### Crop
 
 1. Drag the corner or edge handles on the image to define the crop area.
-2. Optionally, select a preset aspect ratio (e.g. **16:9**, **4:3**, **1:1 square**) from the settings buttons.
+2. Optionally, select a preset aspect ratio (for example **16:9**, **4:3**, **1:1 square**) from the settings buttons.
 
 :::{tip}
 Use the **1:1** ratio preset for person profile photos to ensure consistent square thumbnails across the intranet directory.

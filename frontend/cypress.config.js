@@ -1,5 +1,6 @@
 const { defineConfig } = require('cypress');
 const path = require('path');
+const fs = require('fs');
 
 const currentDir = path.dirname(__filename);
 
@@ -9,6 +10,10 @@ module.exports = defineConfig({
   retries: {
     runMode: 3,
   },
+  // Prevent the browser renderer from accumulating memory across a long run of
+  // specs (which crashed the process partway through the a11y suite in CI).
+  experimentalMemoryManagement: true,
+  numTestsKeptInMemory: 0,
   screenshotsFolder: `${currentDir}/cypress/screenshots`,
   videosFolder: `${currentDir}/cypress/videos`,
   video: true,
@@ -23,6 +28,17 @@ module.exports = defineConfig({
           console.table(message);
           return null;
         },
+      });
+      // Keep the recorded video only when the spec has failing tests.
+      on('after:spec', (spec, results) => {
+        if (results && results.video) {
+          const failures = results.tests.some((test) =>
+            test.attempts.some((attempt) => attempt.state === 'failed'),
+          );
+          if (!failures) {
+            fs.unlinkSync(results.video);
+          }
+        }
       });
     },
   },

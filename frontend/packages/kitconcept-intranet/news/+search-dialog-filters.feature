@@ -1,1 +1,0 @@
-Search dialog: the Type / Created by / Updated / Status filter chips are functional - they filter the livesearch, list real users, and travel to the results page URL so a reload reproduces the filtered results. @reebalazs

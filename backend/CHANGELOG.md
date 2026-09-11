@@ -2,6 +2,28 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0a4 (2026-09-10)
+
+
+### Feature
+
+- Update kitconcept.solr to 3.0.0a2 (suggestions include images by default). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- New vocabulary kitconcept.intranet.vocabularies.creators: users who created content on the site (unique catalog Creator values with resolved full names), the data source for the search dialog's "Created by" filter. @reebalazs 
+
+
+### Bugfix
+
+- Fix the content review reminder email body: render the last-updated value as a date instead of the object repr, and add proper line and paragraph breaks (English and German) so the message is no longer a single run-on block. [#486](https://github.com/kitconcept/kitconcept.intranet/issue/486)
+- Update kitconcept.solr to 3.0.0a1 (AI answers no longer cite context-less documents such as Images as sources). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Activate Solr during site creation only when the site was created with Solr support, and reindex the site in the same pass -- including the RAG chunks when AI search is enabled -- so search works without a manual reindex. @ericof 
+- Give the two OpenStreetMap maps blocks on the QA maps page unique titles, so their iframes have unique title attributes (a11y frame-title-unique). 
+- Remove the obsolete ``/features/block`` example branch while retaining the QA block fixtures. @sneridagh 
+
+
+### Internal
+
+- Adjust QA example content: rename QA section to "Quality Assurance", add missing block descriptions (banner, carousel, form, logos, rss), fix broken logo image references, add banner variations, add grey background variants (carousel, form, event calendar, maps) and an OpenStreetMap example to the maps block. 
+
 ## 3.0.0a3 (2026-08-27)
 
 

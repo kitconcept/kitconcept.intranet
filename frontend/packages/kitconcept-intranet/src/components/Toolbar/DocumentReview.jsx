@@ -67,6 +67,8 @@ const DocumentReview = (props) => {
         </li>
         <li>
           <button
+            type="button"
+            role="menuitem"
             onClick={() => {
               handleMarkAsReviewed();
             }}
@@ -75,12 +77,14 @@ const DocumentReview = (props) => {
           </button>
         </li>
         <li>
-          <button onClick={() => {}}>
+          <button type="button" role="menuitem" onClick={() => {}}>
             {intl.formatMessage(messages.markChangesRequired)}
           </button>
         </li>
         <li>
           <button
+            type="button"
+            role="menuitem"
             onClick={() => {
               props.openReviewSidebar('DelegateReview');
             }}
@@ -91,6 +95,8 @@ const DocumentReview = (props) => {
 
         <li>
           <button
+            type="button"
+            role="menuitem"
             onClick={() => {
               props.openReviewSidebar('PostponeReview');
             }}

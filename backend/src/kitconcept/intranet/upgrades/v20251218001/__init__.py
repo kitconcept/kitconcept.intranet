@@ -16,7 +16,7 @@ def make_relation_catalog_collector(attr):
         for relation in relations:
             try:
                 yield relation.from_object
-            except Exception:  # noqa
+            except Exception:  # noqa: S112
                 continue
 
     return collector

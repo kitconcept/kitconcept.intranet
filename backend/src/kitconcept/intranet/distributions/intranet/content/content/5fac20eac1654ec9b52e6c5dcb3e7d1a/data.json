@@ -1,0 +1,470 @@
+{
+  "@id": "/features/workspaces/wiki-page",
+  "@type": "WikiPage",
+  "UID": "5fac20eac1654ec9b52e6c5dcb3e7d1a",
+  "allow_discussion": null,
+  "blocks": {
+    "99765188-c9d1-4ad6-9a31-a91f293becea": {
+      "@type": "title"
+    },
+    "__somersault__": {
+      "@type": "__somersault__",
+      "discussions": {
+        "o6Yj1Kg09bGG-HQBS82Kj": {
+          "comments": [
+            {
+              "contentRich": [
+                {
+                  "children": [
+                    {
+                      "text": "Bitte die Frist auf zehn Arbeitstage anheben \u2014 die Reisestelle braucht bei Auslandsbuchungen deutlich mehr Vorlauf."
+                    }
+                  ],
+                  "id": "5AqQD8U5UY",
+                  "type": "p"
+                }
+              ],
+              "createdAt": "2026-07-29T13:37:45.233Z",
+              "discussionId": "o6Yj1Kg09bGG-HQBS82Kj",
+              "id": "hkIHYyu5fFMfZwKlz_gbP",
+              "isEdited": false,
+              "userId": "m.engelhardt"
+            },
+            {
+              "contentRich": [
+                {
+                  "children": [
+                    {
+                      "text": "Guter Punkt, ich passe den Absatz bis heute Abend an."
+                    }
+                  ],
+                  "id": "BHT-EtEYwE",
+                  "type": "p"
+                }
+              ],
+              "createdAt": "2026-07-29T13:54:53.754Z",
+              "discussionId": "o6Yj1Kg09bGG-HQBS82Kj",
+              "id": "DsXGklRRPGbDLfrNmMlZY",
+              "isEdited": false,
+              "userId": "c.beck"
+            }
+          ],
+          "createdAt": "2026-07-29T13:37:45.233Z",
+          "documentContent": "Finanzierung.",
+          "id": "o6Yj1Kg09bGG-HQBS82Kj",
+          "isResolved": false,
+          "userId": "m.engelhardt"
+        }
+      },
+      "value": [
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": "Dienstreise beantragen"
+            }
+          ],
+          "id": "1bPaEl3Og8",
+          "type": "title"
+        },
+        {
+          "@type": "plateimage",
+          "align": "center",
+          "alt": "images (1).jpg",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "id": "RyPHxvTgZH",
+          "size": "l",
+          "type": "ploneBlock",
+          "url": "../../../resolveuid/5d399fcd089649ff8a19bf8f4b718ba0"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Besch\u00e4ftigte, die im dienstlichen Auftrag reisen, m\u00fcssen ihre Reise vorab genehmigen lassen. Diese Seite f\u00fchrt Sie durch die Antragstellung \u2014 von der Vorabgenehmigung bis zur Weiterleitung an die Reisestelle."
+            }
+          ],
+          "id": "WxZxniz7A9",
+          "type": "p"
+        },
+        {
+          "align": "start",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": "Wer muss eine Dienstreise beantragen?"
+            }
+          ],
+          "id": "OxvqY0Ahu2",
+          "lineHeight": "1.25",
+          "type": "h2"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Eine Dienstreise liegt vor, wenn Sie Ihren regelm\u00e4\u00dfigen Arbeitsort aus dienstlichem Anlass verlassen \u2014 etwa f\u00fcr Konferenzen, Projekttreffen, Feldforschung oder Gremiensitzungen. Antragsberechtigt sind alle Besch\u00e4ftigten sowie Gastwissenschaftlerinnen und Gastwissenschaftler mit g\u00fcltigem Vertragsverh\u00e4ltnis."
+            }
+          ],
+          "id": "TKTd5ZW8DU",
+          "type": "p"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(89, 99, 110)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Reichen Sie Ihren Antrag "
+            },
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "bold": true,
+              "color": "rgb(89, 99, 110)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "sp\u00e4testens f\u00fcnf Arbeitstage vor Reisebeginn"
+            },
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(89, 99, 110)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": " ein. Bei Auslandsreisen gilt eine Frist von zehn Arbeitstagen."
+            }
+          ],
+          "id": "zJXHnBK78t",
+          "type": "p"
+        },
+        {
+          "align": "start",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": "So stellen Sie den Antrag"
+            }
+          ],
+          "id": "u_b16sAr-q",
+          "lineHeight": "1.25",
+          "type": "h2"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "\u00d6ffnen Sie das Antragsformular im Reisemanagement-Portal (Profi)."
+            }
+          ],
+          "id": "rFOy97WL3Q",
+          "indent": 1,
+          "listStyleType": "decimal",
+          "type": "p"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Erfassen Sie Reiseziel, Zeitraum und den dienstlichen Anlass."
+            }
+          ],
+          "id": "9fo7IF_6mw",
+          "indent": 1,
+          "listStart": 2,
+          "listStyleType": "decimal",
+          "type": "p"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Hinterlegen Sie die Kostenstelle bzw. das Drittmittelprojekt zur "
+            },
+            {
+              "color": "rgb(31, 35, 40)",
+              "comment": true,
+              "comment_o6Yj1Kg09bGG-HQBS82Kj": true,
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Finanzierung."
+            }
+          ],
+          "id": "hup1D4IjrP",
+          "indent": 1,
+          "listStart": 3,
+          "listStyleType": "decimal",
+          "type": "p"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "F\u00fcgen Sie Belege wie Einladung, Programm oder Tagungsanmeldung bei."
+            }
+          ],
+          "id": "CX4CIOKFHD",
+          "indent": 1,
+          "listStart": 4,
+          "listStyleType": "decimal",
+          "type": "p"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Senden Sie den Antrag zur Genehmigung an Ihre vorgesetzte Person."
+            }
+          ],
+          "id": "7j9k-4S4JT",
+          "indent": 1,
+          "listStart": 5,
+          "listStyleType": "decimal",
+          "type": "p"
+        },
+        {
+          "align": "start",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": "Genehmigung und Bearbeitung"
+            }
+          ],
+          "id": "iewYw5YpG_",
+          "lineHeight": "1.25",
+          "type": "h2"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": "Nach dem Absenden wird Ihr Antrag "
+            },
+            {
+              "suggestion": true,
+              "suggestion_lPB5u4ApIBSUG_ghjCPcB": {
+                "createdAt": 1785331979259,
+                "id": "lPB5u4ApIBSUG_ghjCPcB",
+                "type": "insert",
+                "userId": "m.engelhardt"
+              },
+              "text": "in der Regel"
+            },
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": " innerhalb von drei Arbeitstagen von Ihrer vorgesetzten Person gepr\u00fcft und genehmigt "
+            },
+            {
+              "suggestion": true,
+              "suggestion_hZMVun4xS9eRvDqKRRVgO": {
+                "createdAt": 1785333461077,
+                "id": "hZMVun4xS9eRvDqKRRVgO",
+                "type": "remove",
+                "userId": "c.beck"
+              },
+              "text": "per Hauspost"
+            },
+            {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "color": "rgb(31, 35, 40)",
+              "fontFamily": "-apple-system, \"system-ui\", \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+              "fontSize": "16px",
+              "text": ". Anschlie\u00dfend \u00fcbernimmt die Reisestelle die Buchung von Bahn, Flug und Unterkunft, sofern Sie dies im Antrag angefordert haben."
+            }
+          ],
+          "id": "CvfsNSzxQL",
+          "type": "p"
+        },
+        {
+          "align": "start",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": "Nach der Reise"
+            }
+          ],
+          "id": "QMD3RVCuLC",
+          "lineHeight": "1.25",
+          "type": "h2"
+        },
+        {
+          "@type": "plateimage",
+          "align": "center",
+          "alt": "images.jpg",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "description": "Bordkarten und Tickets bitte f\u00fcr die Abrechnung aufbewahren.\n",
+          "id": "6h2rmgESRd",
+          "size": "l",
+          "type": "ploneBlock",
+          "url": "../../../resolveuid/7dd6ec02a2ac415b912fd79746789aaa"
+        },
+        {
+          "align": "start",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": "Reichen Sie innerhalb von zwei Wochen nach Ihrer R\u00fcckkehr die Reisekostenabrechnung ein. Bewahren Sie alle Originalbelege auf \u2014 Tickets, Hotelrechnungen und Bewirtungsbelege werden f\u00fcr die Erstattung ben\u00f6tigt."
+            }
+          ],
+          "id": "jdBySN5W1b",
+          "type": "p"
+        },
+        {
+          "align": "start",
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": "Fragen zur Antragstellung? \nDie Reisestelle hilft weiter \u2014 "
+            },
+            {
+              "children": [
+                {
+                  "text": "reisestelle@einrichtung.de"
+                }
+              ],
+              "id": "kY-cFUnAQD",
+              "target": "_blank",
+              "type": "a",
+              "url": "mailto:reisestelle@einrichtung.de"
+            },
+            {
+              "text": " \u00b7 Tel. -2480."
+            }
+          ],
+          "id": "YtIas4kGQH",
+          "type": "blockquote"
+        },
+        {
+          "blockWidth": "default",
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "id": "MdGC9AKwjU",
+          "type": "p"
+        }
+      ]
+    },
+    "b3005c09-f6b9-4d3e-b782-1f4b1905ea42": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "99765188-c9d1-4ad6-9a31-a91f293becea",
+      "b3005c09-f6b9-4d3e-b782-1f4b1905ea42"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-07-27T20:48:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Besch\u00e4ftigte, die im dienstlichen Auftrag reisen, m\u00fcssen ihre Reise vorab genehmigen lassen. Diese Seite f\u00fchrt Sie durch die Antragstellung \u2014 von der Vorabgenehmigung bis zur Weiterleitung an die Reisestelle.",
+  "effective": "2026-07-27T21:17:00+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "wiki-page",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-07-29T15:00:39+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Dienstreise beantragen",
+  "type_title": "Wiki Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-27T20:48:08+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-27T21:17:16+00:00"
+      },
+      {
+        "action": "retract",
+        "actor": "m.engelhardt",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-29T12:03:50+00:00"
+      },
+      {
+        "action": "submit",
+        "actor": "m.engelhardt",
+        "comments": "",
+        "review_state": "pending",
+        "time": "2026-07-29T12:03:52+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "m.engelhardt",
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-29T12:13:18+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

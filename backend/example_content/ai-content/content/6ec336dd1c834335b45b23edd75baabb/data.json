@@ -1,0 +1,100 @@
+{
+  "@id": "/ueber-uns/presse-kommunikation",
+  "@type": "Document",
+  "UID": "6ec336dd1c834335b45b23edd75baabb",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "6ca1630c-4b8e-4299-971e-f21e3212049a": {
+      "@type": "title"
+    },
+    "abc123": {
+      "@type": "image",
+      "alt": "Gr\u00fcne Sprechblase aus Papier mit drei zerkn\u00fcllten gelben Papierkugeln auf gelbem Hintergrund aus Notizzetteln",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/bb15c75075db4967b8ca2b74c3388d84"
+    },
+    "def456": {
+      "@type": "slate",
+      "text": "Pressemitteilungen und Kommunikationsmaterialien des DFNT: durchsuchbares Archiv aller Verlautbarungen, Kontaktdaten der Pressesprecherinnen und -sprecher, Logo- und Corporate-Design-Downloads, Links zu offiziellen Social-Media-Kan\u00e4len, Jahresberichte der vergangenen Jahre sowie freigegebenes Bildmaterial f\u00fcr die Presse."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "6ca1630c-4b8e-4299-971e-f21e3212049a",
+      "abc123",
+      "def456"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:08:20+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Pressemitteilungen und Kommunikationsmaterialien des DFNT: durchsuchbares Archiv aller Verlautbarungen, Kontaktdaten der Pressesprecherinnen und -sprecher, Logo- und Corporate-Design-Downloads, Links zu offiziellen Social-Media-Kan\u00e4len, Jahresberichte der vergangenen Jahre sowie freigegebenes Bildmaterial f\u00fcr die Presse.",
+  "effective": "2026-03-05T16:08:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "presse-kommunikation",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:30:19+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Presse & Kommunikation",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:50+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

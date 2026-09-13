@@ -1,0 +1,268 @@
+{
+  "@id": "/services/kantine/catering-service",
+  "@type": "Document",
+  "UID": "9b7728ab14fe46029e27f1256d1aba41",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "7f172deb-fb74-4888-83c5-cd325f83ff73": {
+      "@type": "title"
+    },
+    "b420dd28-fead-4aa7-b7c4-c4b881c89288": {
+      "@type": "slate",
+      "plaintext": "## Finanzabteilung\n\nAnsprechpartner f\u00fcr Budgetfragen, Mittelverwendung und Abrechnung.\n\n**Zust\u00e4ndigkeiten:**\n- Haushalt und Budgetplanung\n- Mittelverwendung und Abrechnungen\n- Reisekostenverrechnung\n- Gr\u00f6\u00dfere Beschaffungen\n- Vertragsmanagement\n\n**Kontakt:** finanzen@dfnt.de, +49 221 470-3020\n\n**Sprechzeiten:** Mo-Fr 9:00-12:00 Uhr, 14:00-16:00 Uhr\n\n**Ort:** K\u00f6ln, Geb\u00e4ude B, Raum 301-310\n\n**Termine:** Nach Vereinbarung",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Finanzabteilung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Ansprechpartner f\u00fcr Budgetfragen, Mittelverwendung und Abrechnung."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zust\u00e4ndigkeiten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Haushalt und Budgetplanung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mittelverwendung und Abrechnungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Reisekostenverrechnung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Gr\u00f6\u00dfere Beschaffungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vertragsmanagement"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "finanzen@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:finanzen@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": ", +49 221 470-3020"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sprechzeiten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Mo-Fr 9:00-12:00 Uhr, 14:00-16:00 Uhr"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ort:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " K\u00f6ln, Geb\u00e4ude B, Raum 301-310"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Termine:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Nach Vereinbarung"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7f172deb-fb74-4888-83c5-cd325f83ff73",
+      "b420dd28-fead-4aa7-b7c4-c4b881c89288"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:31+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Verpflegung f\u00fcr Veranstaltungen und Meetings buchen: Angebote, Preislisten, Buchungsprozess und Ansprechpartner f\u00fcr Catering-Anfragen.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "catering-service",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:15:21+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Catering-Service",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,8 +1,9 @@
 import type { ConfigType } from '@plone/registry';
-import type { apiExpandersType } from '@plone/types';
+import type { VLTSettings } from '@kitconcept/volto-light-theme/types';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import DocumentReviewPlug from '@kitconcept/intranet/components/Toolbar/DocumentReviewPlug';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
+import Header from '../components/Header/Header';
 
 export default function install(config: ConfigType) {
   const nonContentRoutes = [
@@ -33,32 +34,19 @@ export default function install(config: ConfigType) {
   config.settings.supportedLanguages = ['de', 'en'];
 
   // Volto Light Theme Configuration
+  config.registerUtility({
+    name: 'workspaces',
+    type: 'header',
+    method: Header,
+  });
+  (config.settings.vlt as VLTSettings).components.header = 'workspaces';
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';
   config.settings.displayLogout = false;
 
-  const EXPANDERS_INHERIT_BEHAVIORS = 'kitconcept.blocks.config';
-
   config.settings.apiExpanders = [
     ...config.settings.apiExpanders,
     { match: '', GET_CONTENT: ['byline', 'clm'] },
-    {
-      match: '',
-      GET_CONTENT: ['inherit'],
-      querystring: (config, querystring) => {
-        if (querystring['expand.inherit.behaviors']) {
-          return {
-            'expand.inherit.behaviors': querystring[
-              'expand.inherit.behaviors'
-            ].concat(',', EXPANDERS_INHERIT_BEHAVIORS),
-          };
-        } else {
-          return {
-            'expand.inherit.behaviors': EXPANDERS_INHERIT_BEHAVIORS,
-          };
-        }
-      },
-    } as apiExpandersType,
   ];
 
   return config;

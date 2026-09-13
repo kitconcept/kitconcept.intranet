@@ -6,10 +6,10 @@ import pytest
 
 
 class TestRegistration:
-    distribution: Distribution = None
+    distribution: Distribution
 
     @pytest.fixture(autouse=True)
-    def _dist_intranet(self, integration, distribution_name) -> Distribution:
+    def _setup(self, integration, distribution_name):
         self.distribution = dist_api.get(name=distribution_name)
 
     def test_distribution_class(self):
@@ -41,7 +41,7 @@ class TestRegistration:
 
     @pytest.mark.parametrize(
         "profile",
-        [],
+        ["kitconcept.intranet:default"],
     )
     def test_distribution_profiles(self, profile):
         distribution = self.distribution

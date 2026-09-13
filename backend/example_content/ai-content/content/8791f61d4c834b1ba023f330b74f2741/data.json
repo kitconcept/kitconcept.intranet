@@ -1,0 +1,521 @@
+{
+  "@id": "/services/arbeitssicherheit/gefahrstoffmanagement",
+  "@type": "Document",
+  "UID": "8791f61d4c834b1ba023f330b74f2741",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "5b894544-8ae4-4926-91e9-e98e64509638": {
+      "@type": "title"
+    },
+    "8588c95b-c232-428f-9ad0-6cab87c49827": {
+      "@type": "slate",
+      "plaintext": "## Gefahrstoffmanagement und -entsorgung\n\nDie sichere Handhabung und Lagerung von Gefahrstoffen ist essentiell f\u00fcr die Sicherheit an der DFNT. Alle Vorschriften der Gefahrstoffverordnung m\u00fcssen eingehalten werden.\n\n### Gefahrstoffverzeichnis\n\nEin digitales Verzeichnis aller Gefahrstoffe ist verf\u00fcgbar unter:\n\n**DFNT-Gefahrstoffsystem**: ghs.dfnt.de\n\nHier k\u00f6nnen Sie:\n- Alle im Bestand befindlichen Gefahrstoffe einsehen\n- Sicherheitsdatenbl\u00e4tter abrufen\n- Lagernde Mengen verfolgen\n\n### Sicherheitsdatenbl\u00e4tter (SDB)\n\n**Wichtig**: Vor der Erstverwendung jeder Substanz ist das Sicherheitsdatenblatt zu priifen. Dies ist **Pflicht**!\n\n### Fachgerechte Lagerung\n\nGefahrstoffe m\u00fcssen korrekt gelagert werden:\n\n- **Trennung nach Gefahrklassen** einhalten\n- **Mengengrenzwerte** nicht \u00fcberschreiten\n- **L\u00fchtung und K\u00fchlung** sicherstellen\n- Zug\u00e4ngigkeit nur f\u00fcr autorisiertes Personal\n\n### Entsorgung von Gefahrstoffen\n\n**Verfahren**:\n1. Gefahrstoffe nach ihrer Klasse sortieren\n2. Entsorgungsservice kontaktieren\n3. Abholung erfolgt monatlich\n\n**Anmeldung**: entsorgung@dfnt.de\n\n### Neue Substanzen\n\nF\u00fcr neue Gefahrstoffe gilt:\n\n- **Genehmigungsantrag** erforderlich\n- **Frist**: Mindestens 2 Wochen vorher einreichen\n- **Kontrolle**: Genehmigung durch Gefahrstoffbeauftragte erforderlich\n\nKontakt: sicherheit@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Gefahrstoffmanagement und -entsorgung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Die sichere Handhabung und Lagerung von Gefahrstoffen ist essentiell f\u00fcr die Sicherheit an der DFNT. Alle Vorschriften der Gefahrstoffverordnung m\u00fcssen eingehalten werden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Gefahrstoffverzeichnis"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Ein digitales Verzeichnis aller Gefahrstoffe ist verf\u00fcgbar unter:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "DFNT-Gefahrstoffsystem"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": ghs.dfnt.de"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Hier k\u00f6nnen Sie:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Alle im Bestand befindlichen Gefahrstoffe einsehen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sicherheitsdatenbl\u00e4tter abrufen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Lagernde Mengen verfolgen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Sicherheitsdatenbl\u00e4tter (SDB)"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Wichtig"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Vor der Erstverwendung jeder Substanz ist das Sicherheitsdatenblatt zu priifen. Dies ist "
+            },
+            {
+              "children": [
+                {
+                  "text": "Pflicht"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "!"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Fachgerechte Lagerung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Gefahrstoffe m\u00fcssen korrekt gelagert werden:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Trennung nach Gefahrklassen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " einhalten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Mengengrenzwerte"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " nicht \u00fcberschreiten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "L\u00fchtung und K\u00fchlung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " sicherstellen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zug\u00e4ngigkeit nur f\u00fcr autorisiertes Personal"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Entsorgung von Gefahrstoffen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verfahren"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ":"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Gefahrstoffe nach ihrer Klasse sortieren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Entsorgungsservice kontaktieren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Abholung erfolgt monatlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Anmeldung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "entsorgung@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:entsorgung@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Neue Substanzen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "F\u00fcr neue Gefahrstoffe gilt:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Genehmigungsantrag"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " erforderlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Frist"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Mindestens 2 Wochen vorher einreichen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontrolle"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Genehmigung durch Gefahrstoffbeauftragte erforderlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Kontakt: "
+            },
+            {
+              "children": [
+                {
+                  "text": "sicherheit@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:sicherheit@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5b894544-8ae4-4926-91e9-e98e64509638",
+      "8588c95b-c232-428f-9ad0-6cab87c49827"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:43+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Sichere Lagerung, Entsorgung und Dokumentation von Gefahrstoffen: Gefahrstoffverzeichnis, Sicherheitsdatenbl\u00e4tter und Entsorgungswege.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "gefahrstoffmanagement",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:21+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Gefahrstoffmanagement",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:46+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,1285 @@
+{
+  "@id": "/arbeitsthemen/beschaffung-einkauf/bestellformulare",
+  "@type": "Document",
+  "UID": "12e72b615b81408dbff6415fa8755912",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "7d8f107f-4b30-4ec6-abc2-c58c39b56379": {
+      "@type": "title"
+    },
+    "9bacb550-39a6-4608-bac9-3162e009a162": {
+      "@type": "slate",
+      "plaintext": "## Bestellformulare und Vorlagen\n\nAlle erforderlichen Formulare f\u00fcr Beschaffungen sind hier aufgelistet. Die PDFs k\u00f6nnen von der SharePoint-Seite heruntergeladen oder direkt im SAP-System verwendet werden.\n\n### 1. Bestellanforderung (BANF) - im SAP-Portal\n\n**Zweck:** Formale Anforderung einer Beschaffung mit Genehmigungsprozess\n\n**Verwendung:**\n- F\u00fcr alle Besch\u00e4ffungen ab **500 EUR**\n- Direkter Eintrag im SAP-System (keine zus\u00e4tzliche PDF n\u00f6tig)\n- Automatische Routing zu Genehmigungsverantwortlichen\n\n**Inhalte:**\n- Lieferant und Lieferantennummer\n- Produktbeschreibung und Menge\n- Preis und Gesamtkosten\n- Gewerbliche Bedingungen (Lieferzeit, Zahlungsziel)\n- Kostenstelle und Projekt\n\n**Anleitung:** Direkter Zugang im SAP unter Men\u00fc: Beschaffung > Bestellung > Bestellanforderung erstellen\n\n### 2. Direktkauf bis 500 EUR - Formular BK-01 (PDF)\n\n**Zweck:** Vereinfachte Beschaffung f\u00fcr kleine Summen ohne Genehmigungsprozess\n\n**Verwendung:**\n- F\u00fcr Direktk\u00e4ufe bis **500 EUR** Gesamtpreis\n- Mit Kassenbon oder Rechnung\n- Dient der internen Dokumentation\n\n**Inhalte:**\n- Artikel und Menge\n- Kaufdatum und Preis\n- Kassenbon-Nummer oder Rechnungsnummer\n- Unterschrift der kaufenden Person\n\n**Download:** intern.dfnt.de/beschaffung/formulare/BK-01.pdf\n\n### 3. Lieferantenanlage - Formular LA-01 (PDF)\n\n**Zweck:** Registrierung neuer Lieferanten im SAP-System\n\n**Verwendung:**\n- Nur erforderlich, wenn ein **neuer Lieferant** verwendet wird\n- Muss vor erster Bestellung ausgef\u00fcllt werden\n- Wird vom Einkaufsteam bearbeitet\n\n**Inhalte:**\n- Firma und Ansprechpartner\n- Bankverbindung und Steuernummer\n- Lieferbedingungen und Zahlungsziel\n- Versicherungen und Qualifizierungen\n\n**Download:** intern.dfnt.de/beschaffung/formulare/LA-01.pdf\n\n**Hinweis:** Stellen Sie sicher, dass der Lieferant alle erforderlichen Zertifizierungen hat (z.B. ISO 9001 f\u00fcr kritische Komponenten).\n\n### 4. Mietvertrag Ger\u00e4t - Formular MG-01 (PDF)\n\n**Zweck:** Dokumentation von Ger\u00e4temietvertr\u00e4gen (kurzfristig oder mittelfristig)\n\n**Verwendung:**\n- F\u00fcr die Anmietung von Ger\u00e4ten (Kopier, Drucker, Messger\u00e4te, etc.)\n- Leasingh\u00f6chstdauer regeln\n- Wartungs- und Versicherungsverantwortung kl\u00e4ren\n\n**Inhalte:**\n- Mietgegenstand und Betriebsnummer\n- Mietdauer und Monatspreis\n- Wartungs- und Reparaturverantwortung\n- Versicherung und Kaution\n- R\u00fcckg\u00e4betermin\n\n**Download:** intern.dfnt.de/beschaffung/formulare/MG-01.pdf\n\n### 5. Fremddienstleistung - Formular FD-01 (PDF)\n\n**Zweck:** Beauftragung externer Dienstleister (Reparaturen, Beratung, Installation, etc.)\n\n**Verwendung:**\n- F\u00fcr alle Fremddienstleistungen ab **500 EUR**\n- Regelt Haftung, Versicherung und Zahlungsbedingungen\n- Muss unterzeichnet sein, bevor Arbeit beginnt\n\n**Inhalte:**\n- Dienstleistungsbeschreibung und Leistungsumfang\n- Preis und Zahlungsbedingungen\n- Zeitplan und Meilensteine\n- Haftung und Versicherung\n- Liefergew\u00e4hrleistung und Warrantie\n\n**Download:** intern.dfnt.de/beschaffung/formulare/FD-01.pdf\n\n**Wichtig:** Rahmenvertr\u00e4ge m\u00fcssen vor Beauftr\u00e4gung durch Einkauf und Rechtsabteilung gepr\u00fcft werden.\n\n### SharePoint Download-Bereich\n\n**Adresse:** intern.dfnt.de/beschaffung/formulare\n\nAlle Formulare finden Sie auch im zentralen SharePoint-Ordner:\n- Auf Deutsch und Englisch verf\u00fcgbar\n- Regul\u00e4r aktualisiert (letzte \u00c4nderung: Januar 2026)\n- Schablonen f\u00fcr Ihre Angebots-Anfragen\n\n### Zust\u00e4ndigkeiten und Fragen\n\n**Einkaufsabteilung:**\n- **Email:** einkauf@dfnt.de\n- **Telefon:** +49 221 470-4321\n- **Sprechstunde:** Mo-Fr, 08:00 - 17:00 Uhr\n\n**F\u00fcr formale Fragen und Vertr\u00e4ge:**\n- **Rechtsabteilung:** jura@dfnt.de\n\nStellen Sie sicher, dass Sie das korrekte Formular nutzen und alle erforderlichen Unterschriften einholen, bevor Sie eine Bestellung aufgeben.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Bestellformulare und Vorlagen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Alle erforderlichen Formulare f\u00fcr Beschaffungen sind hier aufgelistet. Die PDFs k\u00f6nnen von der SharePoint-Seite heruntergeladen oder direkt im SAP-System verwendet werden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "1. Bestellanforderung (BANF) - im SAP-Portal"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zweck:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Formale Anforderung einer Beschaffung mit Genehmigungsprozess"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verwendung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr alle Besch\u00e4ffungen ab "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "500 EUR"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Direkter Eintrag im SAP-System (keine zus\u00e4tzliche PDF n\u00f6tig)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Automatische Routing zu Genehmigungsverantwortlichen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Inhalte:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Lieferant und Lieferantennummer"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Produktbeschreibung und Menge"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Preis und Gesamtkosten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Gewerbliche Bedingungen (Lieferzeit, Zahlungsziel)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kostenstelle und Projekt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Anleitung:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Direkter Zugang im SAP unter Men\u00fc: Beschaffung > Bestellung > Bestellanforderung erstellen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "2. Direktkauf bis 500 EUR - Formular BK-01 (PDF)"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zweck:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Vereinfachte Beschaffung f\u00fcr kleine Summen ohne Genehmigungsprozess"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verwendung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr Direktk\u00e4ufe bis "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "500 EUR"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Gesamtpreis"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mit Kassenbon oder Rechnung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Dient der internen Dokumentation"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Inhalte:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Artikel und Menge"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kaufdatum und Preis"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kassenbon-Nummer oder Rechnungsnummer"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Unterschrift der kaufenden Person"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Download:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " intern.dfnt.de/beschaffung/formulare/BK-01.pdf"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "3. Lieferantenanlage - Formular LA-01 (PDF)"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zweck:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Registrierung neuer Lieferanten im SAP-System"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verwendung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Nur erforderlich, wenn ein "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "neuer Lieferant"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " verwendet wird"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Muss vor erster Bestellung ausgef\u00fcllt werden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Wird vom Einkaufsteam bearbeitet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Inhalte:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Firma und Ansprechpartner"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bankverbindung und Steuernummer"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Lieferbedingungen und Zahlungsziel"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Versicherungen und Qualifizierungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Download:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " intern.dfnt.de/beschaffung/formulare/LA-01.pdf"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Hinweis:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Stellen Sie sicher, dass der Lieferant alle erforderlichen Zertifizierungen hat (z.B. ISO 9001 f\u00fcr kritische Komponenten)."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "4. Mietvertrag Ger\u00e4t - Formular MG-01 (PDF)"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zweck:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Dokumentation von Ger\u00e4temietvertr\u00e4gen (kurzfristig oder mittelfristig)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verwendung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr die Anmietung von Ger\u00e4ten (Kopier, Drucker, Messger\u00e4te, etc.)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Leasingh\u00f6chstdauer regeln"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Wartungs- und Versicherungsverantwortung kl\u00e4ren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Inhalte:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mietgegenstand und Betriebsnummer"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mietdauer und Monatspreis"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Wartungs- und Reparaturverantwortung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Versicherung und Kaution"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "R\u00fcckg\u00e4betermin"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Download:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " intern.dfnt.de/beschaffung/formulare/MG-01.pdf"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "5. Fremddienstleistung - Formular FD-01 (PDF)"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zweck:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Beauftragung externer Dienstleister (Reparaturen, Beratung, Installation, etc.)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verwendung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr alle Fremddienstleistungen ab "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "500 EUR"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Regelt Haftung, Versicherung und Zahlungsbedingungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Muss unterzeichnet sein, bevor Arbeit beginnt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Inhalte:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Dienstleistungsbeschreibung und Leistungsumfang"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Preis und Zahlungsbedingungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zeitplan und Meilensteine"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Haftung und Versicherung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Liefergew\u00e4hrleistung und Warrantie"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Download:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " intern.dfnt.de/beschaffung/formulare/FD-01.pdf"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Wichtig:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Rahmenvertr\u00e4ge m\u00fcssen vor Beauftr\u00e4gung durch Einkauf und Rechtsabteilung gepr\u00fcft werden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "SharePoint Download-Bereich"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Adresse:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " intern.dfnt.de/beschaffung/formulare"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Alle Formulare finden Sie auch im zentralen SharePoint-Ordner:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Auf Deutsch und Englisch verf\u00fcgbar"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Regul\u00e4r aktualisiert (letzte \u00c4nderung: Januar 2026)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Schablonen f\u00fcr Ihre Angebots-Anfragen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Zust\u00e4ndigkeiten und Fragen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Einkaufsabteilung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Email:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "einkauf@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:einkauf@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Telefon:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " +49 221 470-4321"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Sprechstunde:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Mo-Fr, 08:00 - 17:00 Uhr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "F\u00fcr formale Fragen und Vertr\u00e4ge:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Rechtsabteilung:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "jura@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:jura@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Stellen Sie sicher, dass Sie das korrekte Formular nutzen und alle erforderlichen Unterschriften einholen, bevor Sie eine Bestellung aufgeben."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7d8f107f-4b30-4ec6-abc2-c58c39b56379",
+      "9bacb550-39a6-4608-bac9-3162e009a162"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:20+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Alle erforderlichen Formulare f\u00fcr Bestellungen",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "bestellformulare",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:06:48+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Bestellformulare",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

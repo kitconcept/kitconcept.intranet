@@ -1,0 +1,131 @@
+{
+  "@id": "/aktuelles/temine/alle-termine",
+  "@type": "Document",
+  "UID": "48f89cfd95894eda8394ae0c2c754787",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "3ffb70b3-51f1-4d9f-bbe6-a23e8bb1ca1a": {
+      "@type": "eventCalendar",
+      "facets": [
+        {
+          "@id": "ec2aa825-fd52-4b45-98f8-c2b6f2862a59",
+          "advanced": false,
+          "field": {
+            "label": "Organisational Unit",
+            "value": "organisational_unit_reference"
+          },
+          "hidden": false,
+          "multiple": false,
+          "title": "Organisationseinheit"
+        },
+        {
+          "@id": "bfe8fac9-5f7b-43a4-ac45-4b04d4a2ca18",
+          "advanced": false,
+          "field": {
+            "label": "Place",
+            "value": "location_reference"
+          },
+          "hidden": false,
+          "multiple": false,
+          "title": "Standort"
+        }
+      ],
+      "query": {
+        "b_size": "15",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          }
+        ],
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "showSearchInput": true,
+      "showTotalResults": true
+    },
+    "c3a8a0f0-9121-45e3-b63f-09071e97b2cd": {
+      "@type": "slate"
+    },
+    "c820a7ae-e653-48c3-baab-07df18440dd3": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "c820a7ae-e653-48c3-baab-07df18440dd3",
+      "3ffb70b3-51f1-4d9f-bbe6-a23e8bb1ca1a",
+      "c3a8a0f0-9121-45e3-b63f-09071e97b2cd"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-13T13:54:00+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-08-13T16:04:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "alle-termine",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:19:25+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Veranstaltungskalender",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:34+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:34+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

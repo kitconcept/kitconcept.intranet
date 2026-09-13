@@ -62,7 +62,10 @@ class IContentReview(model.Schema):
         title=_("label_review_assignee", default="Reviewer"),
         description=_(
             "help_review_assignee",
-            default="... will be notified as soon as the review is due. Unless otherwise specified, the content owner is considered the responsible person.",
+            default=(
+                "... will be notified as soon as the review is due. Unless otherwise "
+                "specified, the content owner is considered the responsible person.",
+            ),
         ),
         vocabulary="plone.app.vocabularies.Users",
         required=False,

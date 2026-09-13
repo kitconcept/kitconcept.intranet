@@ -1,0 +1,124 @@
+{
+  "@id": "/services/features/profi",
+  "@type": "Document",
+  "UID": "7ee21d376c824ce9963345883fd44c74",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "343f16a2-f2f7-4546-a1d9-6f7f7efe589d": {
+      "@type": "introduction",
+      "plaintext": "Profi (Projektf\u00f6rder\u2011Informationssystem) wurde im Rahmen eines \u201eEiner-f\u00fcr-Alle\u201c-Projekts (EfA) des BMBF entwickelt. Ziel ist es, Prozesse der Projektf\u00f6rderung \u2013 speziell das Management und Controlling von F\u00f6rderverfahren \u2013 effizient und einheitlich zwischen BMBF, Projekttr\u00e4gern (darunter DLR/IP) und anderen Beh\u00f6rden abzuwickeln",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Profi (Projektf\u00f6rder\u2011Informationssystem) wurde im Rahmen eines \u201eEiner-f\u00fcr-Alle\u201c-Projekts (EfA) des BMBF entwickelt. Ziel ist es, Prozesse der Projektf\u00f6rderung \u2013 speziell das Management und Controlling von F\u00f6rderverfahren \u2013 effizient und einheitlich zwischen BMBF, Projekttr\u00e4gern (darunter DLR/IP) und anderen Beh\u00f6rden abzuwickeln"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "5a836b1a-4a47-4da6-b67f-e8a503cc5bb2": {
+      "@type": "slate"
+    },
+    "5b0e8b4b-c0b9-4dc9-9dcb-c38d387f3b81": {
+      "@type": "title"
+    },
+    "969f8c21-ccbc-4ca7-ac78-5d5bb7f41cc0": {
+      "@type": "listing",
+      "headline": "Ansprechpersonen",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Person"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5b0e8b4b-c0b9-4dc9-9dcb-c38d387f3b81",
+      "343f16a2-f2f7-4546-a1d9-6f7f7efe589d",
+      "969f8c21-ccbc-4ca7-ac78-5d5bb7f41cc0",
+      "5a836b1a-4a47-4da6-b67f-e8a503cc5bb2"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-13T08:31:26+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-08-13T14:17:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "profi",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T10:45:34+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Profi",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:47+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -35,7 +35,6 @@ def migrate_values(context):
                 relation_catalog.unindex(rel)
             obj.location_reference = new_value
             logger.info(f"Updated location_reference for {brain.getPath()}")
-            updated = True
 
         old_value = getattr(obj, "organisational_unit_reference", None)
         if old_value is not None:

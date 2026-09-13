@@ -5,7 +5,11 @@ context('Navigation Acceptance Tests', () => {
 
     // given a logged in editor and a page in edit mode
     cy.autologin();
-    cy.visit('/');
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('navigation-tree-open', 'false');
+      },
+    });
     cy.viewport('macbook-16');
 
     cy.createContent({

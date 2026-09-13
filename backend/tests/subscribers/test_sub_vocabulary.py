@@ -52,7 +52,7 @@ class TestCacheBuster:
             api.content.delete(location)
 
     def test_cache_buster_organisational_unit(self):
-        """Test that modifying an Organisational Unit invalidates its vocabulary cache."""
+        """Test that modifying an Organisational Unit invalidates its cache."""
         key = "kitconcept.intranet.vocabularies.organisational_unit"
         with api.env.adopt_roles(["Manager"]):
             ou = api.content.create(

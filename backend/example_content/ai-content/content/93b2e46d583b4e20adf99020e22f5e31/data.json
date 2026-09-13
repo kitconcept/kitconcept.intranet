@@ -1,0 +1,127 @@
+{
+  "@id": "/community/schwarzes-brett/wohnungsmarkt",
+  "@type": "Document",
+  "UID": "93b2e46d583b4e20adf99020e22f5e31",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "35b92cea-6fdc-480f-aa83-d31e307053f2": {
+      "@type": "slate",
+      "plaintext": "WG-Zimmer und Wohnungsangebote f\u00fcr Mitarbeitende. Wie inserieren: Senden Sie Angebote an zimmer@dfnt.de. Tipps f\u00fcr Neuzug\u00e4nge: Das DFNT bietet auch ein \u00dcbergangswohnheim f\u00fcr die ersten 3 Monate. Kontakt Wohnraumberatung: zimmer@dfnt.de.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "WG-Zimmer und Wohnungsangebote f\u00fcr Mitarbeitende. Wie inserieren: Senden Sie Angebote an "
+            },
+            {
+              "children": [
+                {
+                  "text": "zimmer@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:zimmer@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": ". Tipps f\u00fcr Neuzug\u00e4nge: Das DFNT bietet auch ein \u00dcbergangswohnheim f\u00fcr die ersten 3 Monate. Kontakt Wohnraumberatung: "
+            },
+            {
+              "children": [
+                {
+                  "text": "zimmer@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:zimmer@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "3c0719ac-db98-4138-a146-29d0e7b5d333": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "3c0719ac-db98-4138-a146-29d0e7b5d333",
+      "35b92cea-6fdc-480f-aa83-d31e307053f2"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:58+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Interne Wohnungsangebote f\u00fcr Mitarbeitende und Gastforschende: WG-Zimmer, Wohnungen und tempor\u00e4re Unterkunftsm\u00f6glichkeiten.",
+  "effective": "2026-03-05T16:30:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "wohnungsmarkt",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:37:07+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Wohnungsmarkt",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:42+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:42+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

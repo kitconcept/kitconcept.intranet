@@ -1,0 +1,161 @@
+{
+  "groups": [
+    {
+      "description": "",
+      "email": "",
+      "groupid": "Administrators",
+      "groups": [],
+      "principals": [
+        "a.becker",
+        "b.yilmaz",
+        "c.nguyen",
+        "d.schmidt",
+        "e.roth",
+        "j.halmbach"
+      ],
+      "roles": [
+        "Manager"
+      ],
+      "title": "Administrators"
+    },
+    {
+      "description": "",
+      "email": "",
+      "groupid": "Reviewers",
+      "groups": [],
+      "principals": [],
+      "roles": [
+        "Reviewer"
+      ],
+      "title": "Reviewers"
+    },
+    {
+      "description": "",
+      "email": "",
+      "groupid": "Site Administrators",
+      "groups": [],
+      "principals": [
+        "j.halmbach"
+      ],
+      "roles": [
+        "Site Administrator"
+      ],
+      "title": "Site Administrators"
+    }
+  ],
+  "members": [
+    {
+      "description": "",
+      "email": "anna.becker@example.org",
+      "fullname": "Anna Becker",
+      "groups": [
+        "Administrators"
+      ],
+      "home_page": "",
+      "location": "Bonn",
+      "login_name": "a.becker",
+      "password": "{SSHA}g3fE7h0q7vAcBjZIuSOi0E5RG6VJi2AbGXLL",
+      "roles": [
+        "Editor"
+      ],
+      "username": "a.becker"
+    },
+    {
+      "description": "",
+      "email": "ben.yilmaz@example.org",
+      "fullname": "Ben Yilmaz",
+      "groups": [
+        "Administrators"
+      ],
+      "home_page": "",
+      "location": "K\u00f6ln",
+      "login_name": "b.yilmaz",
+      "password": "{SSHA}yLHXz6nKi9jUvzuH9CC8p4AeIUmbjd3s2O2T",
+      "roles": [
+        "Editor"
+      ],
+      "username": "b.yilmaz"
+    },
+    {
+      "description": "",
+      "email": "clara.nguyen@example.org",
+      "fullname": "Clara Nguyen",
+      "groups": [
+        "Administrators"
+      ],
+      "home_page": "",
+      "location": "",
+      "login_name": "c.nguyen",
+      "password": "{SSHA}OSl22HWgTYwTr++xoqaVmpU08Ksqyj0eeSlJ",
+      "roles": [
+        "Contributor",
+        "Editor"
+      ],
+      "username": "c.nguyen"
+    },
+    {
+      "description": "",
+      "email": "david.schmidt@example.org",
+      "fullname": "David Schmidt",
+      "groups": [
+        "Administrators"
+      ],
+      "home_page": "",
+      "location": "",
+      "login_name": "d.schmidt",
+      "password": "{SSHA}6L+sYzsfLKCzWWhx+qjwmLU5pIgOEC4PIMKY",
+      "roles": [
+        "Editor"
+      ],
+      "username": "d.schmidt"
+    },
+    {
+      "description": "",
+      "email": "eva.roth@example.org",
+      "fullname": "Eva Roth",
+      "groups": [
+        "Administrators"
+      ],
+      "home_page": "",
+      "location": "",
+      "login_name": "e.roth",
+      "password": "{SSHA}0cxnZYMgFscXo9SmVyWs3Gop1xv7NzY28B6B",
+      "roles": [
+        "Editor"
+      ],
+      "username": "e.roth"
+    },
+    {
+      "description": "",
+      "email": "florian.meier@example.org",
+      "fullname": "Florian Meier",
+      "groups": [],
+      "home_page": "",
+      "location": "",
+      "login_name": "f.meier",
+      "password": "{SSHA}jK1ikQQntD/H9EdDUuQ3YBFjn/96GC36ledU",
+      "roles": [],
+      "username": "f.meier"
+    },
+    {
+      "description": "",
+      "email": "jutta.halmbach@example.org",
+      "fullname": "Jutta Halmbach",
+      "groups": [
+        "Administrators",
+        "Site Administrators"
+      ],
+      "home_page": "",
+      "location": "",
+      "login_name": "j.halmbach",
+      "password": "{SSHA}wvfWsvAT7x4SrJrymbK7kLtzQya68/MU1DSp",
+      "roles": [
+        "Contributor",
+        "Editor",
+        "Reader",
+        "Reviewer"
+      ],
+      "username": "j.halmbach"
+    }
+  ]
+}

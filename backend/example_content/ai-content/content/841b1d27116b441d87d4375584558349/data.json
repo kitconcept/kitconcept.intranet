@@ -1,0 +1,136 @@
+{
+  "@id": "/forschung",
+  "@type": "Document",
+  "UID": "841b1d27116b441d87d4375584558349",
+  "allow_discussion": false,
+  "authors": [
+    "f9ea075459744a0d8739249566c2bfc5"
+  ],
+  "blocks": {
+    "22b00994-9433-4e66-bec2-da1fcf63ab05": {
+      "@type": "listing",
+      "headline": "Institute & Einrichtungen",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Organisational Unit"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "grid"
+    },
+    "b0ed31ec-4a0a-4f2d-8b3c-b60508d04ced": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-5"
+      },
+      "title": "Forschung",
+      "url": "../resolveuid/9a8c6af6c28749ed84cc4225af63984a",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Entdecken Sie die Forschungsschwerpunkte, laufenden Projekte und wissenschaftlichen Gruppen des DFNT \u2013 von Energiesystemen und Materialwissenschaften bis hin zu Life Sciences und Systemforschung."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c204fa01-540b-4a93-963c-894c335af010": {
+      "@type": "listing",
+      "headline": "Themenschwerpunkte",
+      "headlineTag": "h2",
+      "styles": {},
+      "theme": "default",
+      "variation": "summary"
+    },
+    "fc064d7d-5ea0-4eaa-a170-c753f5a07f62": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "b0ed31ec-4a0a-4f2d-8b3c-b60508d04ced",
+      "c204fa01-540b-4a93-963c-894c335af010",
+      "22b00994-9433-4e66-bec2-da1fcf63ab05",
+      "fc064d7d-5ea0-4eaa-a170-c753f5a07f62"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T08:57:44+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-03-05T10:18:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "forschung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:41:25+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": "809499c7ddda4aef80d3ab61c0c365d5",
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Forschung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:42+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:42+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

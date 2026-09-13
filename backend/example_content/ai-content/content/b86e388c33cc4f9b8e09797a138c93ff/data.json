@@ -1,0 +1,357 @@
+{
+  "@id": "/forschung/forschungsinfrastruktur/rechenzentrum-hpc",
+  "@type": "Document",
+  "UID": "b86e388c33cc4f9b8e09797a138c93ff",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "9fca06df-5f02-4206-ad80-51fc2e31a96f": {
+      "@type": "slate",
+      "plaintext": "## HPC-Cluster DFNT-HPC1\n\nDas Rechenzentrum des DFNT betreibt eine leistungsstarke High-Performance-Computing-Infrastruktur f\u00fcr rechenintensive Forschung.\n\n### Hardwareausstattung\n\n- **Prozessoren**: 50.000 CPU-Kerne (Intel Xeon, AMD EPYC)\n- **GPUs**: 200 NVIDIA A100 Systeme f\u00fcr KI und Simulation\n- **Speicher**: 10 PB Gesamtspeicherkapazit\u00e4t\n- **Netzwerk**: Infiniband HDR mit 200 Gb/s Bandbreite\n- **Betriebssystem**: Linux CentOS 8\n\n### Zugang und Nutzung\n\n- **SSH-Zugang**: Mit Schl\u00fcsseln, zu beantragen bei der IT\n- **Batch-System**: Slurm Workload Manager\n- **Standard-Kontingent**: 50.000 CPU-Stunden pro Monat je Arbeitsgruppe\n- **Software**: Python, R, MATLAB, Julia, CUDA, MPI vorinstalliert\n\n### Support und Schulungen\n\n**Kontakt**: hpc-support@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "HPC-Cluster DFNT-HPC1"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Das Rechenzentrum des DFNT betreibt eine leistungsstarke High-Performance-Computing-Infrastruktur f\u00fcr rechenintensive Forschung."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Hardwareausstattung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Prozessoren"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 50.000 CPU-Kerne (Intel Xeon, AMD EPYC)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "GPUs"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 200 NVIDIA A100 Systeme f\u00fcr KI und Simulation"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Speicher"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 10 PB Gesamtspeicherkapazit\u00e4t"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Netzwerk"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Infiniband HDR mit 200 Gb/s Bandbreite"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Betriebssystem"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Linux CentOS 8"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Zugang und Nutzung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "SSH-Zugang"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Mit Schl\u00fcsseln, zu beantragen bei der IT"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Batch-System"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Slurm Workload Manager"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Standard-Kontingent"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": 50.000 CPU-Stunden pro Monat je Arbeitsgruppe"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Software"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Python, R, MATLAB, Julia, CUDA, MPI vorinstalliert"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Support und Schulungen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "hpc-support@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:hpc-support@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "a72ef508-5aa7-48b3-84ac-db64a80b73d4": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "a72ef508-5aa7-48b3-84ac-db64a80b73d4",
+      "9fca06df-5f02-4206-ad80-51fc2e31a96f"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:26+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "HPC-Cluster und Speicherkapazit\u00e4ten: Antragstellung f\u00fcr Rechenzeit, Nutzungsbedingungen, Softwareumgebungen und technischer Support.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "rechenzentrum-hpc",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:23+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Rechenzentrum & HPC",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:43+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:43+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

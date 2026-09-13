@@ -3,6 +3,7 @@ from plone import api
 from zope.component.hooks import setSite
 
 
+app = globals()["app"]
 portal = app.Plone
 setSite(portal)
 

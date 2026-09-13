@@ -1,6 +1,6 @@
 {
   "name": "intranet-dev",
-  "version": "2.0.0-alpha.17",
+  "version": "3.0.0-alpha.5",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "author": "kitconcept GmbH",
   "homepage": "https://github.com/kitconcept/intranet",
@@ -21,6 +21,7 @@
     "test": "pnpm --filter @kitconcept/intranet exec vitest --passWithNoTests",
     "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "check:shadow": "node ../.github/scripts/check-shadow-headers.mjs packages",
     "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
     "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
@@ -58,6 +59,7 @@
       "@kitconcept/volto-iframe-block": "workspace:*",
       "@kitconcept/volto-bm3-compat": "workspace:*",
       "@kitconcept/volto-kitconcept-deepl": "workspace:*",
+      "@plone/registry": "workspace:*",
       "react-aria-components": "catalog:"
     },
     "ignoredBuiltDependencies": [

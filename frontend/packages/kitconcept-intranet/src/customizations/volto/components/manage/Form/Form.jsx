@@ -1,4 +1,18 @@
-/* Customized to add conditional logic for content review fieldset */
+/**
+ * OVERRIDE: Form.jsx
+ * REASON: Add content review field behavior and Plate editor support.
+ * FILE: /Users/sneridagh/Development/kitconcept/kitconcept.intranet/frontend/core/packages/volto/src/components/manage/Form/Form.jsx
+ * FILE VERSION: Volto 19.1.4
+ * DATE: 2026-06-29
+ * DEVELOPER: @jnptk
+ * DATE: 2026-07-03
+ * DEVELOPER: @sneridagh
+ * CHANGELOG:
+ *  - 2026-06-29 @jnptk: Hide review fields when review is timeless.
+ *  - 2026-06-29 @jnptk: Auto-calculate review due date from review interval.
+ *  - 2026-06-29 @jnptk: Lock review-managed fields when their value is derived.
+ *  - 2026-07-03 @sneridagh: Use Plate editor rendering for configured Plate content types.
+ */
 
 /**
  * Form component.
@@ -60,6 +74,7 @@ import { setFormData, setUIState } from '@plone/volto/actions/form/form';
 import { compose } from 'redux';
 import config from '@plone/volto/registry';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
+import PlateEditorForm from '@kitconcept/volto-plate/components/PlateEditorForm/PlateEditorForm';
 
 const noop = () => {};
 
@@ -824,6 +839,7 @@ class Form extends Component {
       onSubmit,
       navRoot,
       type,
+      isEditForm,
       metadataFieldsets,
       component,
       buttonComponent,
@@ -848,74 +864,100 @@ class Form extends Component {
 
           <Container>
             <>
-              <BlocksToolbar
-                formData={formData}
-                selectedBlock={this.props.uiState.selected}
-                selectedBlocks={this.props.uiState.multiSelected}
-                onChangeBlocks={(newBlockData) => {
-                  const newFormData = {
-                    ...formData,
-                    ...newBlockData,
-                  };
-                  this.setState({
-                    formData: newFormData,
-                  });
-                  if (this.props.global) {
-                    this.props.setFormData(newFormData);
-                  }
-                }}
-                onSetSelectedBlocks={(blockIds) =>
-                  this.props.setUIState({ multiSelected: blockIds })
-                }
-                onSelectBlock={this.onSelectBlock}
-              />
-              <UndoToolbar
-                state={{
-                  formData,
-                  selected: this.props.uiState.selected,
-                  multiSelected: this.props.uiState.multiSelected,
-                }}
-                enableHotKeys
-                onUndoRedo={({ state }) => {
-                  if (this.props.global) {
-                    this.props.setFormData(state.formData);
-                  }
-                  return this.setState(state);
-                }}
-              />
-              <BlocksForm
-                onChangeFormData={(newData) => {
-                  const newFormData = {
-                    ...formData,
-                    ...newData,
-                  };
-                  this.setState({
-                    formData: newFormData,
-                  });
-                  if (this.props.global) {
-                    this.props.setFormData(newFormData);
-                  }
-                }}
-                onChangeField={this.onChangeField}
-                onSelectBlock={this.onSelectBlock}
-                properties={formData}
-                navRoot={navRoot}
-                type={type}
-                pathname={this.props.pathname}
-                selectedBlock={this.props.uiState.selected}
-                multiSelected={this.props.uiState.multiSelected}
-                manage={this.props.isAdminForm}
-                allowedBlocks={this.props.allowedBlocks}
-                showRestricted={this.props.showRestricted}
-                editable={this.props.editable}
-                isMainForm={this.props.editable}
-                // Properties to pass to the BlocksForm to match the View ones
-                history={this.props.history}
-                location={this.props.location}
-                token={this.props.token}
-                errors={this.state.errors}
-                blocksErrors={this.state.errors.blocks}
-              />
+              {(!isEditForm &&
+                config.settings.PlateEditorContentTypes?.includes(type)) ||
+              (isEditForm &&
+                config.settings.PlateEditorContentTypes?.includes(
+                  this.props.content?.['@type'],
+                )) ? (
+                <PlateEditorForm
+                  content={formData}
+                  intl={this.props.intl}
+                  onChangeFormData={(newData) => {
+                    const newFormData = {
+                      ...formData,
+                      ...newData,
+                    };
+                    this.setState({
+                      formData: newFormData,
+                    });
+                    if (this.props.global) {
+                      this.props.setFormData(newFormData);
+                    }
+                  }}
+                />
+              ) : (
+                <>
+                  <BlocksToolbar
+                    formData={formData}
+                    selectedBlock={this.props.uiState.selected}
+                    selectedBlocks={this.props.uiState.multiSelected}
+                    onChangeBlocks={(newBlockData) => {
+                      const newFormData = {
+                        ...formData,
+                        ...newBlockData,
+                      };
+                      this.setState({
+                        formData: newFormData,
+                      });
+                      if (this.props.global) {
+                        this.props.setFormData(newFormData);
+                      }
+                    }}
+                    onSetSelectedBlocks={(blockIds) =>
+                      this.props.setUIState({ multiSelected: blockIds })
+                    }
+                    onSelectBlock={this.onSelectBlock}
+                  />
+                  <UndoToolbar
+                    state={{
+                      formData,
+                      selected: this.props.uiState.selected,
+                      multiSelected: this.props.uiState.multiSelected,
+                    }}
+                    enableHotKeys
+                    onUndoRedo={({ state }) => {
+                      if (this.props.global) {
+                        this.props.setFormData(state.formData);
+                      }
+                      return this.setState(state);
+                    }}
+                  />
+                  <BlocksForm
+                    onChangeFormData={(newData) => {
+                      const newFormData = {
+                        ...formData,
+                        ...newData,
+                      };
+                      this.setState({
+                        formData: newFormData,
+                      });
+                      if (this.props.global) {
+                        this.props.setFormData(newFormData);
+                      }
+                    }}
+                    onChangeField={this.onChangeField}
+                    onSelectBlock={this.onSelectBlock}
+                    properties={formData}
+                    navRoot={navRoot}
+                    type={type}
+                    pathname={this.props.pathname}
+                    selectedBlock={this.props.uiState.selected}
+                    multiSelected={this.props.uiState.multiSelected}
+                    manage={this.props.isAdminForm}
+                    allowedBlocks={this.props.allowedBlocks}
+                    showRestricted={this.props.showRestricted}
+                    editable={this.props.editable}
+                    isMainForm={this.props.editable}
+                    // Properties to pass to the BlocksForm to match the View ones
+                    history={this.props.history}
+                    location={this.props.location}
+                    token={this.props.token}
+                    errors={this.state.errors}
+                    blocksErrors={this.state.errors.blocks}
+                  />
+                </>
+              )}
               {this.state.isClient &&
                 this.state.sidebarMetadataIsAvailable &&
                 this.props.editable &&
@@ -1043,7 +1085,12 @@ class Form extends Component {
                     onTabChange={this.onTabChange}
                     activeIndex={this.state.activeIndex}
                     panes={map(schema.fieldsets, (item) => ({
-                      menuItem: item.title,
+                      menuItem: {
+                        key: item.id,
+                        content: item.title,
+                        as: 'button',
+                        type: 'button',
+                      },
                       render: () => [
                         !settings.verticalFormTabs && this.props.title && (
                           <Segment secondary attached key={this.props.title}>

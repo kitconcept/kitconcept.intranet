@@ -1,0 +1,110 @@
+{
+  "@id": "/aktuelles/nachrichten/alle-nachrichten/das-neue-intranet",
+  "@type": "News Item",
+  "UID": "327e9ff7b27e4b6795fca847a2732b85",
+  "allow_discussion": false,
+  "blocks": {
+    "31c34955-5d7c-48af-aee2-7c57879823f9": {
+      "@type": "slate",
+      "plaintext": "Dieser Bereich ist noch in Arbeit und wird in K\u00fcrze mit Inhalten gef\u00fcllt.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Dieser Bereich ist noch in Arbeit und wird in K\u00fcrze mit Inhalten gef\u00fcllt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "bfc2b608-635f-4277-953b-f7e4bd376e23": {
+      "@type": "title"
+    },
+    "img-news-2": {
+      "@type": "image",
+      "align": "center",
+      "alt": "",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
+      "url": "../resolveuid/58fb0c07c2e14897bcab4685dc0d5a41"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "bfc2b608-635f-4277-953b-f7e4bd376e23",
+      "img-news-2",
+      "31c34955-5d7c-48af-aee2-7c57879823f9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-08-12T12:26:54+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Endlich hat das Suchen ein Ende. Finden Sie hier alle Informationen zu wichtigen Themen und behalten den \u00dcberblick \u00fcber aktuelle \u00c4nderungen.",
+  "effective": "2025-08-12T12:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": "F\u00fcr eine bessere Zusammenarbeit",
+  "id": "das-neue-intranet",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "newsitem_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T13:50:15+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Das neue Intranet",
+  "type_title": "News Item",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:32+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:32+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

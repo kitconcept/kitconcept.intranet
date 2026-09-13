@@ -1,6 +1,9 @@
 from BTrees.OIBTree import OIBTree
 from plone import api
 from plone.dexterity.content import DexterityContent
+from plone.protect.utils import safeWrite
+from zope.globalrequest import getRequest
+from zope.publisher.http import HTTPRequest
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -62,14 +65,21 @@ def get_translated_vocabulary(params: tuple, language: str) -> SimpleVocabulary:
 class VocabularyCounter:
     """Helps invalidate vocabulary caches across instances."""
 
+    request: HTTPRequest
+
     def __init__(self):
         self.portal = api.portal.get()
+        self.request = getRequest()
         self._init_cache()
 
     def _init_cache(self):
         # Initialize a BTree in the portal's _vocab_cache attribute.
         # This is used to increment a counter when a vocab is updated.
         if not hasattr(self.portal, "_vocab_cache"):
+            if self.request is not None:
+                # Mark the ZODB write as a safe write,
+                # so that we can modify the portal object during a read-only request.
+                safeWrite(self.portal, self.request)
             self.portal._vocab_cache = OIBTree()
         self.cache = self.portal._vocab_cache
 

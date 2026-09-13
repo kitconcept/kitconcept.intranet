@@ -1,6 +1,360 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.0a5 (2026-09-11)
+
+### Backend
+
+
+#### Feature
+
+- Populate Plone user portraits from the images of associated Person profiles when installing the example content. @sneridagh 
+
+
+#### Bugfix
+
+- Standardize German Content Lifecycle Management labels and show the behavior's full name in the edit form. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- Expose configured feedback-person metadata through the CLM expansion. @sneridagh 
+- Show every configured CLM author in the content information and expose the person metadata required by the frontend. @sneridagh 
+
+
+#### Internal
+
+- Upgrade kitconcept.core to 2.0.0b7 and Volto Light Theme to 8.0.0a32. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Fix broken Avatar pictures @iRohitSingh [#480](https://github.com/kitconcept/kitconcept.intranet/issue/480)
+- Use the specified English and German labels for authors, the responsible person, and page feedback. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- @kitconcept/volto-plate to 1.0.0-alpha.26. @sneridagh 
+- Fix the Status icons in content folder @Tishasoumya-02 
+- Show all configured CLM authors in the About This Content panel, fall back to content creators when no authors are set, and load user portraits through Volto's portrait middleware. @sneridagh 
+- Show the configured feedback person as the effective feedback recipient, falling back to the responsible person. @sneridagh 
+- Show the workspace navigation portal and hide the like/comment/share footer for content nested inside a workspace (not just the workspace and wiki pages themselves). @iFlameing 
+
+
+#### Internal
+
+- Upgrade kitconcept-core to 2.0.0b7, Volto Light Theme to 8.0.0a32, and Volto Banner Block to 1.2.1. @sneridagh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Refer to the CLM edit fieldset by its full Content Lifecycle Management name in the user and developer documentation. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/pull/622)
+
+
+
+## 3.0.0a4 (2026-09-10)
+
+### Backend
+
+
+#### Feature
+
+- Update kitconcept.solr to 3.0.0a2 (suggestions include images by default). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- New vocabulary kitconcept.intranet.vocabularies.creators: users who created content on the site (unique catalog Creator values with resolved full names), the data source for the search dialog's "Created by" filter. @reebalazs 
+
+
+#### Bugfix
+
+- Fix the content review reminder email body: render the last-updated value as a date instead of the object repr, and add proper line and paragraph breaks (English and German) so the message is no longer a single run-on block. [#486](https://github.com/kitconcept/kitconcept.intranet/issue/486)
+- Update kitconcept.solr to 3.0.0a1 (AI answers no longer cite context-less documents such as Images as sources). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Activate Solr during site creation only when the site was created with Solr support, and reindex the site in the same pass -- including the RAG chunks when AI search is enabled -- so search works without a manual reindex. @ericof 
+- Give the two OpenStreetMap maps blocks on the QA maps page unique titles, so their iframes have unique title attributes (a11y frame-title-unique). 
+- Remove the obsolete ``/features/block`` example branch while retaining the QA block fixtures. @sneridagh 
+
+
+#### Internal
+
+- Adjust QA example content: rename QA section to "Quality Assurance", add missing block descriptions (banner, carousel, form, logos, rss), fix broken logo image references, add banner variations, add grey background variants (carousel, form, event calendar, maps) and an OpenStreetMap example to the maps block. 
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.2. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Search dialog: the Type / Created by / Updated / Status filter chips are functional - they filter the livesearch, list real users, and travel to the results page URL so a reload reproduces the filtered results. @reebalazs 
+
+
+#### Bugfix
+
+- Show CLM box in edit mode and hide it on the login page @iRohitSingh [#clm-edit-mode](https://github.com/kitconcept/kitconcept.intranet/issue/clm-edit-mode)
+- Fix CLM feedback form @iRohitSingh [#feedback-form](https://github.com/kitconcept/kitconcept.intranet/issue/feedback-form)
+- Remove the Feedback about this page link from the footer @iRohitSingh [#remove-footer-feedback](https://github.com/kitconcept/kitconcept.intranet/issue/remove-footer-feedback)
+- Fix the CLM Content Owner (`responsible_person`) field showing a raw user id instead of the person's name after the value was changed and saved, and stop the inheritance hint from appearing for a content's own value (e.g. after clearing the field). @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.1. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+
+
+#### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+#### Tests
+
+- Add acceptance tests for the CLM `responsible_person` widget: the name is shown after a change+save, no inheritance hint for a content's own value, and the inheritance hint appears with the ancestor's name when the value is genuinely inherited. @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Run block accessibility checks against the retained ``/qa/block`` fixtures and remove checks for fixtures that no longer exist. @sneridagh 
+
+
+
+### Project
+
+
+#### Feature
+
+- Update kitconcept.solr to 3.0.0a2: images appear in the livesearch suggestions by default, like on the results page (team decision from the ticket 570 review). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/pull/570)
+- Search dialog filter chips: filter livesearch suggestions, search results, and the AI answer by content type, creator (multi-select with avatars and livesearch), last updated, and review state. @reebalazs [#585](https://github.com/kitconcept/kitconcept.intranet/pull/585)
+
+
+#### Bugfix
+
+- Update kitconcept.solr to 3.0.0a1: the AI answer no longer cites documents that contributed no context (e.g. Images) as sources. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/pull/570)
+
+
+#### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+#### Documentation
+
+- Add a Features documentation section: a product/feature catalog (outside the Diátaxis quadrants) that serves as an interim source of truth for users, QA, and product owners, with a hub page per feature (CLM, feedback, people & organisation, personalization, content review & reminders, likes, workspaces & wiki, wiki editor, search, and AI-assisted answers). [#486](https://github.com/kitconcept/kitconcept.intranet/pull/486)
+- Build and publish the documentation to GitHub Pages at https://kitconcept.github.io/kitconcept.intranet/, replacing the Read the Docs setup. The docs build now runs in CI with warnings treated as errors. @ericof 
+- Cleared every Vale style error in the documentation, linked the first use of VLT and CLM on each page to the glossary, and fixed the remaining Sphinx cross-reference and syntax-highlighting warnings so the documentation builds cleanly with warnings treated as errors. @ericof 
+
+
+
+## 3.0.0a3 (2026-08-27)
+
+### Backend
+
+
+#### Internal
+
+- Update the backend to kitconcept.plate 1.0.0a24. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Scope the sidebar top offset to the compact intranet header via a body class, so the sidebar is only pushed down when that header is present. @sneridagh 
+
+
+#### Internal
+
+- Update the frontend development source to Volto 19.3.1 and @kitconcept/volto-plate to 1.0.0-alpha.24. @sneridagh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Document changelog fragment locations and PR guidance for agents in AGENTS.md. @sneridagh 
+
+
+
+## 3.0.0a2 (2026-08-26)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Fixed released-package builds by replacing the workspace-only VLT Header alias with component utility registration. @sneridagh 
+
+
+#### Internal
+
+- Removed the stale `altVLT` alias from the ESLint import resolver, left over after the VLT Header alias was replaced by component utility registration. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 3.0.0a1 (2026-08-24)
+
+### Backend
+
+
+#### Breaking
+
+- Intranet v3 first iteration. @sneridagh [#399](https://github.com/kitconcept/kitconcept.intranet/issue/399)
+
+
+#### Feature
+
+- Upgrade to use @kitconcept/volto-plate 1a20, with the new suggestions/comments. @sneridagh [#421](https://github.com/kitconcept/kitconcept.intranet/issue/421)
+- Add Content Lifecycle Management at the end of the page @iRohitSingh [#431](https://github.com/kitconcept/kitconcept.intranet/issue/431)
+- Restrict access to the intranet through permissions declared in `rolemap.xml` instead of binding a workflow to the Plone Site content type. An upgrade step updates existing sites. @ericof [#479](https://github.com/kitconcept/kitconcept.intranet/issue/479)
+- Added a new `Subsite` content type, a folderish container acting as a navigation root, with its own header, footer, navigation and breadcrumbs. @ericof [#494](https://github.com/kitconcept/kitconcept.intranet/issue/494)
+- Use the released kitconcept.solr==3.0.0a0 from PyPI (with AI/RAG search support) instead of the pinned git revision. @reebalazs [#595](https://github.com/kitconcept/kitconcept.intranet/issue/595)
+- Add the AI search (RAG) test corpus as an optional second content set (backend/src/kitconcept/intranet/distributions/intranet/ai-content): a curated German knowledge corpus from the intranet demo site with golden questions, import-ai-content/update-ai-content make targets and demo-password alignment. Not imported by default; requires a fresh site without the standard example content. @reebalazs 
+- Added the CLM (lifecycle management) fields to News Item and Event. @iFlameing 
+- Added the CLM (lifecycle management) fields to Workspace and Wiki Page, and installed plone.app.iterate for working copy support. @iFlameing 
+- Update to Volto 19.3.0, VLT 8a31 and volto-plate 1a21. @sneridagh 
+
+
+#### Bugfix
+
+- Fixed the Person serializer to show the back button and able to add Image and file content type. @iFlameing [#467](https://github.com/kitconcept/kitconcept.intranet/issue/467)
+- Enable edit-time versioning (`at_edit_autoversion` policy) for the `WikiPage` and `Workspace` content types so their history view records an entry for every edit. @iFlameing [#550](https://github.com/kitconcept/kitconcept.intranet/issue/550)
+- Pin kitconcept.solr to a revision instead of the branch: backend, frontend and the solr image. Includes the Plate RAG chunking fix (kitconcept.solr#112). @reebalazs 
+- Updated to latest @kitconcept/volto-plate. @sneridagh
+
+  See https://github.com/kitconcept/volto-plate/releases/tag/1.0.0a19 
+
+
+#### Internal
+
+- Add Example content for Workspaces @iRohitSingh [#418](https://github.com/kitconcept/kitconcept.intranet/issue/418)
+- Add example content of Wiki Page Meeting Notes @iRohitSingh [#435](https://github.com/kitconcept/kitconcept.intranet/issue/435)
+- Add example content of Meeting Notes and Wiki Page @iRohitSingh [#447](https://github.com/kitconcept/kitconcept.intranet/issue/447)
+- Update example content of Meeting Notes Wiki Page @iRohitSingh [#454](https://github.com/kitconcept/kitconcept.intranet/issue/454)
+- Add example content of wikipage in workspaces @iRohitSingh [#465](https://github.com/kitconcept/kitconcept.intranet/issue/465)
+- Fix broken footer link and update banner block example content @iRohitSingh [#470](https://github.com/kitconcept/kitconcept.intranet/issue/470)
+- Depend on the released `kitconcept.plate` 1.0.0a23 from PyPI instead of the source distribution vendored in `container/`. @ericof [#593](https://github.com/kitconcept/kitconcept.intranet/issue/593)
+- Derive the backend Makefile settings (container image name, package name, Python and base package versions, example content path) from `uvx repoplone settings dump`, and fail early when `jq` is missing or the settings payload is empty. @ericof 
+- Move the AI search (RAG) test corpus out of the distributed package into `backend/example_content/ai-content` and exclude `example_content` from the sdist. The corpus is copied into `/import` in the backend container image. @ericof 
+- Update the kitconcept-solr pin to the current feature-ai-rag tip (hybrid retrieval and latest fixes included in CI and deployments). @reebalazs 
+- Update the kitconcept-solr pin to the feature-ai-rag tip with the local-scoping support (@solr-suggest path_prefix), required by the workspace-scope tests and the deployment. @reebalazs 
+- Update volto-plate to latest one. @iFlameing 
+
+
+#### Tests
+
+- Upgrade pytest-plone to version 1.1.0 and drop the now-redundant local test fixtures. @ericof [#463](https://github.com/kitconcept/kitconcept.intranet/issue/463)
+
+
+
+### Frontend
+
+
+#### Breaking
+
+- Intranet v3 first iteration. @sneridagh [#399](https://github.com/kitconcept/kitconcept.intranet/issue/399)
+
+
+#### Feature
+
+- Upgrade to use @kitconcept/volto-plate 1a20, with the new suggestions/comments. @sneridagh [#421](https://github.com/kitconcept/kitconcept.intranet/issue/421)
+- Add Content Lifecycle Management at the end of the page @iRohitSingh [#431](https://github.com/kitconcept/kitconcept.intranet/issue/431)
+- Add feedback form to AboutThisContent @iRohitSingh [#458](https://github.com/kitconcept/kitconcept.intranet/issue/458)
+- Update comments layout, styling, and footer placement @iRohitSingh [#469](https://github.com/kitconcept/kitconcept.intranet/issue/469)
+- Add new style for Content Lifecycle Management @iRohitSingh [#473](https://github.com/kitconcept/kitconcept.intranet/issue/473)
+- Use the released @kitconcept/volto-solr ^3.0.0-alpha.0 from npm instead of the mrs.developer checkout. @reebalazs [#595](https://github.com/kitconcept/kitconcept.intranet/issue/595)
+- Add Person Pill component and storybook test @Tishasoumya-02 
+- Add new search and Breadcrumbs overlay for intranet v3 @iRohitSingh 
+- Add rename, duplicate, and delete actions for items in the navigation tree. @iFlameing 
+- Added Event and News Item to the AboutThisContent slot. @iFlameing 
+- Added the CLM (lifecycle management) fields to Workspace and Wiki Page, and installed plone.app.iterate for working copy support. @iFlameing 
+- Hide the site footer on Workspace and Wiki Page content types. @iFlameing 
+- Integrate the AI search (RAG) feature branch: @kitconcept/volto-solr from the feature-ai-rag branch; no "Use AI" toggle — when the backend reports the feature available, the AI answer renders above the classic search results. @reebalazs 
+- Show the current root (Workspace or site) as the top-level item in the navigation tree, so users can quickly jump back to it. @iFlameing 
+- Update to Volto 19.3.0, VLT 8a31 and volto-plate 1a21. @sneridagh 
+- Workspace search dialog per the approved design (internal ticket #426): live search results while typing (kitconcept.solr @solr-suggest), "Ask AI" button with the AI Overview answer panel and sources (@rag-search), Cmd+K/Ctrl+K shortcut, filter chips (visual, deferred backend). @reebalazs
+  AI errors surface as a friendly localized message instead of the raw backend error (raw messages like embed timeouts under concurrent LLM load are logged to the console only, see internal ticket #515). 
+- Workspace search dialog: the Workspace chip is the local/global scope switch — workspace scope (default) restricts livesearch and the Enter results page to the workspace subtree, "Intranet Portal" searches globally. Covered by a Cypress test and a backend @solr-suggest path_prefix test; requires the kitconcept.solr local-scoping support. @reebalazs 
+- Workspace search dialog: the Workspace chip opens a scope dropdown - search everywhere or in any workspace you can access; result rows show their location and an empty scoped search offers "Search everywhere". @reebalazs 
+
+
+#### Bugfix
+
+- Fix alignment of List with Dates listing variation @iRohitSingh [#419](https://github.com/kitconcept/kitconcept.intranet/issue/419)
+- Fix missing save button in users controlpanel @iRohitSingh [#423](https://github.com/kitconcept/kitconcept.intranet/issue/423)
+- Use site title in workspace switcher @iRohitSingh [#429](https://github.com/kitconcept/kitconcept.intranet/issue/429)
+- Fix Breadcrumb navigation styling @iRohitSingh [#431](https://github.com/kitconcept/kitconcept.intranet/issue/431)
+- Fix new Breadcrumb navigation styling @iRohitSingh [#432](https://github.com/kitconcept/kitconcept.intranet/issue/432)
+- Fix search results page container width @iRohitSingh [#433](https://github.com/kitconcept/kitconcept.intranet/issue/433)
+- Fix align WikiPage document byline to default container width @iRohitSingh [#439](https://github.com/kitconcept/kitconcept.intranet/issue/439)
+- Fix Navigation Tree Content type icon is moved to the right @iRohitSingh [#442](https://github.com/kitconcept/kitconcept.intranet/issue/442)
+- Remove banner shadow when banner has no text @iRohitSingh [#445](https://github.com/kitconcept/kitconcept.intranet/issue/445)
+- Remove Old CLM section @iRohitSingh [#460](https://github.com/kitconcept/kitconcept.intranet/issue/460)
+- Add temporary fix for tailwind grid class conflict with listing grid variation. @danalvrz 
+- Disabled the global focus-visible outline/box-shadow from core. @iFlameing 
+- Exclude `ul.items` from the list padding/bullet fix so they don't get unwanted indentation. @iFlameing 
+- Fix jumping of navigation tree filter @Tishasoumya-02 
+- Fix selector to apply correct styles to Search block with dates variation. @danalvrz 
+- Fix styles for slate date and slate mentions. @danlavrz 
+- Fix tailwind conflict with content-upload img. @tishasoumya-02 
+- Fix tailwind conflict with list styling. @danlavrz 
+- Fix the navigation tree not detecting the active Workspace for pages nested underneath it, since the workspace lookup was restricted to direct children of the site root. @iFlameing 
+- Fixed person portrait images resolving to the internal backend URL instead of the public site URL in server-side rendered pages. @iFlameing 
+- Hide the navigation tree sidebar on the site home page. @iFlameing 
+- Hide the navigation tree's existing children while adding a new Workspace, instead of showing the parent's unrelated content. @iFlameing 
+- Navigation tree no longer shows an expand caret for folders that don't actually have any children. @iFlameing 
+- Pin kitconcept.solr to a revision instead of the branch: backend, frontend and the solr image. Includes the Plate RAG chunking fix (kitconcept.solr#112). @reebalazs 
+- Restore the top-level `Depth` field in the querystring widget when a path criterion is present, by overriding Volto's `QuerystringWidget` and reverting https://github.com/plone/volto/pull/8350. @ericof 
+- Update to @kitconcept/core 2.0.0.alpha-6 (no significant changes). @davisagli 
+- Updated to latest @kitconcept/volto-plate. @sneridagh
+
+  See https://github.com/kitconcept/volto-plate/releases/tag/1.0.0a19 
+
+
+#### Internal
+
+- Depend on the released `@kitconcept/volto-plate` 1.0.0-alpha.23 from npm instead of the tarball vendored in `frontend/artifacts/`. @ericof [#593](https://github.com/kitconcept/kitconcept.intranet/issue/593)
+- Avatar Fallback for personPill @Tishasoumya-02 
+- Update volto-plate to latest one. @iFlameing 
+
+
+
+### Project
+
+
+#### Feature
+
+- Switch kitconcept.solr to the released 3.0.0a0, with AI (RAG) search support: kitconcept.solr==3.0.0a0 from PyPI (replacing the pinned git revision), @kitconcept/volto-solr ^3.0.0-alpha.0 from npm (replacing the mrs.developer checkout), and the 3.0.0a0 Solr image in the dev compose and stack files. @reebalazs [#595](https://github.com/kitconcept/kitconcept.intranet/pull/595)
+
+
+#### Bugfix
+
+- Pin kitconcept.solr to a revision instead of the branch: backend, frontend and the solr image. Includes the Plate RAG chunking fix (kitconcept.solr#112). @reebalazs 
+
+
+#### Internal
+
+- Upgrade pytest-plone to version 1.1.0 and drop the now-redundant local test fixtures. @ericof [#463](https://github.com/kitconcept/kitconcept.intranet/pull/463)
+- Added a manual deploy workflow and switched the tag-triggered deploy to 3.* releases. @ericof [#466](https://github.com/kitconcept/kitconcept.intranet/pull/466)
+- Deployment workflows: forward the frontend and backend replica counts, the Solr image tag and the kitconcept.solr LLM endpoint settings to the deploy stacks, and add a manual deploy workflow targeting `*.kitconcept.io`. @ericof 
+- Development and deployment stacks: parameterise the Solr and Tika image tags (`SOLR_TAG`, `TIKA_TAG`) and the frontend/backend replica counts, and pass the kitconcept.solr LLM endpoint settings (`KITCONCEPT_SOLR_LLM_URL`, `KITCONCEPT_SOLR_LLM_TOKEN`). @ericof 
+- Development and deployment stacks: pass the kitconcept.solr LLM chat model setting (`KITCONCEPT_SOLR_LLM_CHAT_MODEL`) and forward it from the deploy workflows. @ericof 
+- Development stack: use the feature-ai-rag Solr image (RAG chunk schema) and add solr-activate-and-reindex-with-rag[-clear] targets. @reebalazs 
+- Dropped the `update-volto-plate` script and its `Makefile` target, no longer needed now that `volto-plate` is consumed from its public releases. @ericof 
+- Moved `dependabot.yml` to `.github/`, where GitHub actually reads it, and labelled its pull requests with `skip changelog` so they are exempt from the changelog check. @ericof 
+- Renamed the towncrier `test` fragment type to `tests`, and added it to the repository-level configuration. @ericof 
+- Reworked the changelog CI workflow: the backend, frontend and repository checks now run as steps of a single job, derive their paths from `uvx repoplone settings dump`, and report their outcome in the workflow summary. @ericof 
+
+
+
 ## 2.0.0a17 (2026-06-12)
 
 ### Backend

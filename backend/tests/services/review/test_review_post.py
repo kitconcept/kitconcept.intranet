@@ -6,25 +6,12 @@ import pytest
 import transaction
 
 
-@pytest.fixture(scope="class")
-def portal(portal_class):
-    yield portal_class
-
-
-@pytest.fixture(scope="class")
-def contents(portal):
-    with api.env.adopt_roles(["Manager"]):
-        doc = api.content.create(portal, type="Document", id="doc1")
-        api.content.transition(obj=doc, transition="publish")
-        api.user.create(email="jdoe@example.org", username="jdoe")
-        transaction.commit()
-
-
 class TestReviewPost:
     @pytest.fixture(autouse=True)
-    def _setup(self, contents, api_manager_request, api_anon_request):
-        self.api_session = api_manager_request
-        self.anon_api_session = api_anon_request
+    def _setup(self, functional_portal, manager_request, anon_request):
+        self.portal = functional_portal
+        self.api_session = manager_request
+        self.anon_api_session = anon_request
         self.default_review_interval = api.portal.get_registry_record(
             "kitconcept.intranet.content_review_default_interval"
         )

@@ -4,48 +4,50 @@
   "UID": "1a22eddf0e7941a0962cbfaa785e4b4d",
   "allow_discussion": null,
   "blocks": {
-    "1ff0fcdf-68a7-4e16-934d-1b409a23b27c": {
-      "@type": "slate"
-    },
-    "8d98a183-9f01-4631-a9c4-227f447d3859": {
+    "0240d62c-1843-4f55-b6f4-dcc3a99b6a2e": {
       "@type": "title"
+    },
+    "0d09fcc5-81f2-42ee-9d14-8b40007f9227": {
+      "@type": "slate"
     }
   },
   "blocks_layout": {
     "items": [
-      "8d98a183-9f01-4631-a9c4-227f447d3859",
-      "1ff0fcdf-68a7-4e16-934d-1b409a23b27c"
+      "0240d62c-1843-4f55-b6f4-dcc3a99b6a2e",
+      "0d09fcc5-81f2-42ee-9d14-8b40007f9227"
     ]
   },
   "changeNote": "",
   "contributors": [],
-  "created": "2025-08-04T15:58:39+00:00",
+  "created": "2026-06-24T14:34:21+00:00",
   "creators": [
     "admin"
   ],
-  "description": "",
-  "effective": "2025-08-04T15:58:00+00:00",
+  "description": "An organizational unit representing a department, institute, laboratory, or research group within the organization",
+  "effective": "2026-06-24T14:34:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "head_title": null,
+  "head_title": "HEAD TITLE",
   "id": "institute-of-robotics-and-mechatronics-organisational-unit",
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "view",
-  "location_reference": null,
+  "location_reference": [
+    "d57508303a8b4adb99d90b1f93c8db64"
+  ],
   "lock": {
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-08-04T15:58:44+00:00",
+  "modified": "2026-06-24T14:53:00+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],
-  "title": "Institute of Robotics and Mechatronics(Organisational unit)",
+  "title": "Organisational unit",
   "type_title": "Organisational Unit",
   "version": "current",
   "versioning_enabled": true,
@@ -56,14 +58,14 @@
         "actor": "admin",
         "comments": "",
         "review_state": "private",
-        "time": "2025-08-04T15:58:39+00:00"
+        "time": "2026-06-24T14:34:21+00:00"
       },
       {
         "action": "publish",
         "actor": "admin",
         "comments": "",
         "review_state": "published",
-        "time": "2025-08-04T15:58:44+00:00"
+        "time": "2026-06-24T14:34:52+00:00"
       }
     ]
   },

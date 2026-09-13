@@ -1,6 +1,5 @@
 from kitconcept.intranet.vocabularies.base import invalidate_vocabulary_cache
 from plone.dexterity.content import DexterityContent
-from typing import Union
 from zope.lifecycleevent import ObjectAddedEvent
 from zope.lifecycleevent import ObjectModifiedEvent
 
@@ -10,7 +9,7 @@ import logging
 logger = logging.getLogger("kitconcept.intranet")
 
 
-EVENTS = Union[ObjectAddedEvent, ObjectModifiedEvent]
+EVENTS = ObjectAddedEvent | ObjectModifiedEvent
 KEYS = {
     "Organisational Unit": "kitconcept.intranet.vocabularies.organisational_unit",
     "Location": "kitconcept.intranet.vocabularies.location",

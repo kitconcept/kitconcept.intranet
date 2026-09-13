@@ -1,0 +1,252 @@
+{
+  "@id": "/services/it-services/service-desk",
+  "@type": "Document",
+  "UID": "1067e843929c42a6b33601aa9248159c",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "92e192dd-dbc0-4d3f-b4c6-c44f8c6fe335": {
+      "@type": "title"
+    },
+    "ff9e3853-974c-47f5-8ee5-9d33900a68a9": {
+      "@type": "slate",
+      "plaintext": "## IT-Servicedesk\n\nIT-Servicedesk \u2013 erste Anlaufstelle f\u00fcr alle IT-Anfragen.\n\n**Erreichbarkeit:**\n- E-Mail: servicedesk@dfnt.de\n- Telefon: +49 221 470-4500\n- Ticket-Portal: tickets.dfnt.de\n- Walk-in K\u00f6ln Geb\u00e4ude A EG (Mo-Fr 9-16 Uhr)\n\n**Servicezeiten:** Mo-Fr 8-17 Uhr (Telefon), 24/7 (Ticket-Portal)\n\n**Notfallnummer (Systemausfall):** +49 221 470-4999 (24h)\n\n**Antwortzeiten:** Kritisch 1h, Hoch 4h, Normal 2 Werktage\n\n**Bei Anruf bereithalten:** Name, Standort und Fehlerbeschreibung",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "IT-Servicedesk"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "IT-Servicedesk \u2013 erste Anlaufstelle f\u00fcr alle IT-Anfragen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Erreichbarkeit:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "E-Mail: "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "servicedesk@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:servicedesk@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Telefon: +49 221 470-4500"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ticket-Portal: tickets.dfnt.de"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Walk-in K\u00f6ln Geb\u00e4ude A EG (Mo-Fr 9-16 Uhr)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Servicezeiten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Mo-Fr 8-17 Uhr (Telefon), 24/7 (Ticket-Portal)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Notfallnummer (Systemausfall):"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " +49 221 470-4999 (24h)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Antwortzeiten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Kritisch 1h, Hoch 4h, Normal 2 Werktage"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bei Anruf bereithalten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Name, Standort und Fehlerbeschreibung"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "92e192dd-dbc0-4d3f-b4c6-c44f8c6fe335",
+      "ff9e3853-974c-47f5-8ee5-9d33900a68a9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Ticket-System f\u00fcr IT-Anfragen: St\u00f6rungsmeldungen einreichen, Status verfolgen und IT-Support kontaktieren \u2013 \u00d6ffnungszeiten und Erreichbarkeit im \u00dcberblick.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "service-desk",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:12:30+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Service Desk",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

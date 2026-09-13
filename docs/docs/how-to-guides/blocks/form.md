@@ -38,7 +38,7 @@ Submissions are sent by email. Configure the recipient in the **Email** tab of t
 | **Message template** | Optional template text added before the submitted values |
 
 :::{tip}
-Use a shared mailbox (e.g. `helpdesk@example.com`) rather than a personal address so submissions are not lost if someone leaves the organisation.
+Use a shared mailbox (for example `helpdesk@example.com`) rather than a personal address so submissions aren't lost if someone leaves the organisation.
 :::
 
 ### Adding Fields
@@ -60,24 +60,24 @@ Use a shared mailbox (e.g. `helpdesk@example.com`) rather than a personal addres
 | **Static text** | Non-interactive text or instructions within the form |
 
 3. For each field, set:
-   - **Label** – the visible field name
-   - **Required** – whether the field must be filled in before submission
-   - **Placeholder** – optional hint text inside the input
-   - **Description** – optional help text below the field
+   - **Label**–the visible field name
+   - **Required**–whether the field must be filled in before submission
+   - **Placeholder**–optional hint text inside the input
+   - **Description**–optional help text below the field
 
 4. Drag field rows to reorder them.
 
 ### Organize fields into tabs (fieldsets)
 
-By default, all fields belong to a single tab called **Default**. You can group fields into multiple tabs — called fieldsets — to split a long form into logical sections. Visitors see the tabs when they fill in the form.
+By default, all fields belong to a single tab called **Default**. You can group fields into multiple tabs—called fieldsets—to split a long form into logical sections. Visitors see the tabs when they fill in the form.
 
 #### Add a tab
 
 1. Look at the tab bar at the top of the form block in the page editor. It shows the existing tabs (for example, **Default**) and a **+** button at the right end of the tab bar.
 2. Click the **+** button in the tab bar.
 3. In the dialog that opens, fill in:
-   - **Title** — the label shown on the tab (for example, "Personal details").
-   - **Short name** — a unique identifier used internally (for example, `personal_details`). No spaces or special characters.
+   - **Title**—the label shown on the tab (for example, "Personal details").
+   - **Short name**—a unique identifier used internally (for example, `personal_details`). No spaces or special characters.
 4. Click **Save**. The new tab appears in the tab bar.
 
 #### Add fields to a specific tab
@@ -153,13 +153,13 @@ Depending on your site configuration, form submissions may also be stored in the
 ## Example: Simple Contact Form
 
 1. Add a **Form** block.
-2. Add a **Text** field: Label = "Your name", Required = Yes.
-3. Add an **Email** field: Label = "Your email address", Required = Yes.
-4. Add a **Select** field: Label = "Topic", options = "General enquiry", "Technical issue", "Feedback".
-5. Add a **Textarea** field: Label = "Message", Required = Yes.
+2. Add a **Text** field: Label = `Your name`, Required = Yes.
+3. Add an **Email** field: Label = `Your email address`, Required = Yes.
+4. Add a **Select** field: Label = `Topic`, options = `General enquiry`, `Technical issue`, `Feedback`.
+5. Add a **Textarea** field: Label = `Message`, Required = Yes.
 6. In the **Email** tab: Send to = `helpdesk@example.com`, Subject = `Intranet enquiry from {name}`.
 7. Set **Reply-to field** to the Email field.
-8. Set **Button label** to "Send message".
+8. Set **Button label** to `Send message`.
 9. Set **Success message** to "Thank you. We will get back to you within two working days."
 10. Click **Save** and test.
 

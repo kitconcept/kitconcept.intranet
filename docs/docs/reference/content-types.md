@@ -10,7 +10,7 @@ last_updated: 2026-04-27
 
 # Content Types
 
-The kitconcept Intranet Distribution provides three custom content types: **Person**, **Location**, and **Organisational Unit**. These form the structural backbone of the intranet's people directory and organisational hierarchy.
+The kitconcept Intranet Distribution provides three custom content types: **Person**, **Location**, and **Organisational Unit**. These form the structural foundation of the intranet's people directory and organisational hierarchy.
 
 ---
 

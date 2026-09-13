@@ -1,17 +1,18 @@
 from plone import api
-from zope.component.hooks import setSite
+from typing import Any
 
 import pytest
 
 
+@pytest.mark.slow
+@pytest.mark.solr
 class TestSiteCreation:
     """Test the creation of a Plone site with Solr support."""
 
     @pytest.fixture(autouse=True)
-    def _setup(self, site):
+    def _setup(self, portal):
         """Set up the site for testing."""
-        setSite(site)
-        self.portal = api.portal.get()
+        self.portal = portal
 
     @pytest.mark.parametrize(
         "profile_id",
@@ -34,7 +35,7 @@ class TestSiteCreation:
             ["collective.solr.use_tika", True],
         ],
     )
-    def test_registry_keys(self, key, expected):
+    def test_registry_keys(self, key: str, expected: Any):
         """Test if registry keys are set."""
         value: str = api.portal.get_registry_record(key)
         assert value == expected
@@ -71,12 +72,12 @@ class TestSiteCreation:
             },
         ],
     )
-    def test_solr_config_fieldlist(self, item):
+    def test_solr_config_fieldlist(self, item: dict[str, Any]):
         key = "kitconcept.solr.config"
         values: list[str] = api.portal.get_registry_record(key)["fieldList"]
         assert item in values
 
-    def test_solr_config_search_tabs(self):
+    def test_solr_config_search_tabs(self) -> None:
         key = "kitconcept.solr.config"
         config: dict = api.portal.get_registry_record(key)
         values = config["searchTabs"]

@@ -1,4 +1,5 @@
-from zope.component.hooks import site as site_wrapper
+from collections.abc import Generator
+from Products.CMFPlone.Portal import PloneSite
 
 import pytest
 
@@ -19,7 +20,6 @@ def answers():
 
 
 @pytest.fixture(scope="class")
-def site(create_site, answers, solr_service):
-    site = create_site(answers)
-    with site_wrapper(site):
-        yield site
+def portal(app_class, create_site, answers) -> Generator[PloneSite]:
+    site = create_site(app=app_class, answers=answers)
+    yield site

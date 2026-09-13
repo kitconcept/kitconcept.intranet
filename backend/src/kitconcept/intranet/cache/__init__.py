@@ -2,7 +2,7 @@
 
 from kitconcept.intranet.vocabularies.base import get_vocabulary_counter
 from plone import api
-from plone.memoize.ram import cache as ram  # noQA
+from plone.memoize.ram import cache as ram  # noqa: F401
 from time import time
 
 

@@ -9,7 +9,7 @@ class TestCPIntranet:
     action: PloneConfiglet
 
     @pytest.fixture(autouse=True)
-    def _setup(self, portal):
+    def _setup(self, portal) -> None:
         self.portal = portal
         tool: PloneControlPanel = portal.portal_controlpanel
         actions = {a.getAction(portal)["id"]: a for a in tool.listActions()}

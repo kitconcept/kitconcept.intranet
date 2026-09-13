@@ -20,7 +20,7 @@ kitconcept.core.additional_contact_info
 
 ## Fields
 
-All fields are optional. `contact_building` and `contact_room` carry a custom read permission (see [Permissions](#permissions) below).
+All fields are optional. `contact_building` and `contact_room` carry a custom read permission (see {ref}`Permissions <additional-contact-info-permissions>` below).
 
 | Field name | Type | Required | Label | Description |
 |---|---|---|---|---|
@@ -30,6 +30,7 @@ All fields are optional. `contact_building` and `contact_room` carry a custom re
 
 All three fields are grouped in the `contact_location` fieldset, labelled **Location**.
 
+(additional-contact-info-permissions)=
 ## Permissions
 
 `contact_building` and `contact_room` are protected by the read permission:

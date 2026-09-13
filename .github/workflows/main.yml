@@ -5,8 +5,9 @@ on:
     paths:
       - "backend/**"
       - "frontend/**"
-      - ".github/workflows/*.yml"
       - "devops/**"
+      - "docs/**"
+      - ".github/workflows/*.yml"
   workflow_dispatch:
 
 jobs:
@@ -78,6 +79,28 @@ jobs:
       contents: read
       packages: write
 
+  # Built whenever the docs changed, and unconditionally on the branch that
+  # publishes. The build job assembles this run's artifact, and
+  # `download-artifact` only ever looks in this run -- so a push that changes
+  # no docs path would leave the deploy with nothing to fetch, and the
+  # published site would have to be stale or the deploy red. Building it is
+  # cheaper than either.
+  #
+  # Serialising Pages deployments is handled by a concurrency group on the
+  # deploy job inside docs.yml, so builds here still run in parallel.
+  docs:
+    uses: ./.github/workflows/docs.yml
+    needs:
+      - config
+    with:
+      python-version: ${{ needs.config.outputs.python-version }}
+      publish: ${{ needs.config.outputs.deploy-docs == 'true' }}
+    if: ${{ needs.config.outputs.docs == 'true' || (needs.config.outputs.deploy-docs == 'true' && github.ref == 'refs/heads/main') }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
   acceptance:
     name: "Acceptance: ${{ matrix.name }}"
     uses: ./.github/workflows/acceptance.yml
@@ -105,6 +128,17 @@ jobs:
         node-version: ${{ needs.config.outputs.node-version }}
         name: ${{ matrix.name }}
         spec-pattern: ${{ matrix.spec-pattern }}
+
+  playwright:
+    name: "Acceptance Playwright"
+    uses: ./.github/workflows/playwright.yml
+    if: ${{ needs.config.outputs.acceptance == 'true' }}
+    needs:
+        - config
+        - image-build
+    with:
+        base-tag: ${{ needs.config.outputs.base-tag }}
+        node-version: ${{ needs.config.outputs.node-version }}
 
   a11y:
     name: "A11y: ${{ matrix.name }}"
@@ -196,7 +230,12 @@ jobs:
           CERTRESOLVER=${{ vars.CERTRESOLVER }}
           BASIC_AUTH_USER=${{ vars.BASIC_AUTH_USER }}
           BASIC_AUTH_PASSWORD=${{ vars.BASIC_AUTH_PASSWORD }}
-
+          BACKEND_REPLICAS=${{ vars.BACKEND_REPLICAS }}
+          FRONTEND_REPLICAS=${{ vars.FRONTEND_REPLICAS }}
+          SOLR_LLM_URL=${{ vars.SOLR_LLM_URL }}
+          SOLR_LLM_TOKEN=${{ vars.SOLR_LLM_TOKEN }}
+          SOLR_TAG=${{ vars.SOLR_TAG }}
+          SOLR_LLM_CHAT_MODEL=${{ vars.SOLR_LLM_CHAT_MODEL }}
     permissions:
         contents: read
         packages: write

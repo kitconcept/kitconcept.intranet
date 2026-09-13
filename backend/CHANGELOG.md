@@ -2,6 +2,110 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0a5 (2026-09-11)
+
+
+### Feature
+
+- Populate Plone user portraits from the images of associated Person profiles when installing the example content. @sneridagh 
+
+
+### Bugfix
+
+- Standardize German Content Lifecycle Management labels and show the behavior's full name in the edit form. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- Expose configured feedback-person metadata through the CLM expansion. @sneridagh 
+- Show every configured CLM author in the content information and expose the person metadata required by the frontend. @sneridagh 
+
+
+### Internal
+
+- Upgrade kitconcept.core to 2.0.0b7 and Volto Light Theme to 8.0.0a32. @sneridagh 
+
+## 3.0.0a4 (2026-09-10)
+
+
+### Feature
+
+- Update kitconcept.solr to 3.0.0a2 (suggestions include images by default). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- New vocabulary kitconcept.intranet.vocabularies.creators: users who created content on the site (unique catalog Creator values with resolved full names), the data source for the search dialog's "Created by" filter. @reebalazs 
+
+
+### Bugfix
+
+- Fix the content review reminder email body: render the last-updated value as a date instead of the object repr, and add proper line and paragraph breaks (English and German) so the message is no longer a single run-on block. [#486](https://github.com/kitconcept/kitconcept.intranet/issue/486)
+- Update kitconcept.solr to 3.0.0a1 (AI answers no longer cite context-less documents such as Images as sources). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Activate Solr during site creation only when the site was created with Solr support, and reindex the site in the same pass -- including the RAG chunks when AI search is enabled -- so search works without a manual reindex. @ericof 
+- Give the two OpenStreetMap maps blocks on the QA maps page unique titles, so their iframes have unique title attributes (a11y frame-title-unique). 
+- Remove the obsolete ``/features/block`` example branch while retaining the QA block fixtures. @sneridagh 
+
+
+### Internal
+
+- Adjust QA example content: rename QA section to "Quality Assurance", add missing block descriptions (banner, carousel, form, logos, rss), fix broken logo image references, add banner variations, add grey background variants (carousel, form, event calendar, maps) and an OpenStreetMap example to the maps block. 
+
+## 3.0.0a3 (2026-08-27)
+
+
+### Internal
+
+- Update the backend to kitconcept.plate 1.0.0a24. @sneridagh 
+
+## 3.0.0a2 (2026-08-26)
+
+No significant changes.
+
+
+## 3.0.0a1 (2026-08-24)
+
+
+### Breaking
+
+- Intranet v3 first iteration. @sneridagh [#399](https://github.com/kitconcept/kitconcept.intranet/issue/399)
+
+
+### Feature
+
+- Upgrade to use @kitconcept/volto-plate 1a20, with the new suggestions/comments. @sneridagh [#421](https://github.com/kitconcept/kitconcept.intranet/issue/421)
+- Add Content Lifecycle Management at the end of the page @iRohitSingh [#431](https://github.com/kitconcept/kitconcept.intranet/issue/431)
+- Restrict access to the intranet through permissions declared in `rolemap.xml` instead of binding a workflow to the Plone Site content type. An upgrade step updates existing sites. @ericof [#479](https://github.com/kitconcept/kitconcept.intranet/issue/479)
+- Added a new `Subsite` content type, a folderish container acting as a navigation root, with its own header, footer, navigation and breadcrumbs. @ericof [#494](https://github.com/kitconcept/kitconcept.intranet/issue/494)
+- Use the released kitconcept.solr==3.0.0a0 from PyPI (with AI/RAG search support) instead of the pinned git revision. @reebalazs [#595](https://github.com/kitconcept/kitconcept.intranet/issue/595)
+- Add the AI search (RAG) test corpus as an optional second content set (backend/src/kitconcept/intranet/distributions/intranet/ai-content): a curated German knowledge corpus from the intranet demo site with golden questions, import-ai-content/update-ai-content make targets and demo-password alignment. Not imported by default; requires a fresh site without the standard example content. @reebalazs 
+- Added the CLM (lifecycle management) fields to News Item and Event. @iFlameing 
+- Added the CLM (lifecycle management) fields to Workspace and Wiki Page, and installed plone.app.iterate for working copy support. @iFlameing 
+- Update to Volto 19.3.0, VLT 8a31 and volto-plate 1a21. @sneridagh 
+
+
+### Bugfix
+
+- Fixed the Person serializer to show the back button and able to add Image and file content type. @iFlameing [#467](https://github.com/kitconcept/kitconcept.intranet/issue/467)
+- Enable edit-time versioning (`at_edit_autoversion` policy) for the `WikiPage` and `Workspace` content types so their history view records an entry for every edit. @iFlameing [#550](https://github.com/kitconcept/kitconcept.intranet/issue/550)
+- Pin kitconcept.solr to a revision instead of the branch: backend, frontend and the solr image. Includes the Plate RAG chunking fix (kitconcept.solr#112). @reebalazs 
+- Updated to latest @kitconcept/volto-plate. @sneridagh
+
+  See https://github.com/kitconcept/volto-plate/releases/tag/1.0.0a19 
+
+
+### Internal
+
+- Add Example content for Workspaces @iRohitSingh [#418](https://github.com/kitconcept/kitconcept.intranet/issue/418)
+- Add example content of Wiki Page Meeting Notes @iRohitSingh [#435](https://github.com/kitconcept/kitconcept.intranet/issue/435)
+- Add example content of Meeting Notes and Wiki Page @iRohitSingh [#447](https://github.com/kitconcept/kitconcept.intranet/issue/447)
+- Update example content of Meeting Notes Wiki Page @iRohitSingh [#454](https://github.com/kitconcept/kitconcept.intranet/issue/454)
+- Add example content of wikipage in workspaces @iRohitSingh [#465](https://github.com/kitconcept/kitconcept.intranet/issue/465)
+- Fix broken footer link and update banner block example content @iRohitSingh [#470](https://github.com/kitconcept/kitconcept.intranet/issue/470)
+- Depend on the released `kitconcept.plate` 1.0.0a23 from PyPI instead of the source distribution vendored in `container/`. @ericof [#593](https://github.com/kitconcept/kitconcept.intranet/issue/593)
+- Derive the backend Makefile settings (container image name, package name, Python and base package versions, example content path) from `uvx repoplone settings dump`, and fail early when `jq` is missing or the settings payload is empty. @ericof 
+- Move the AI search (RAG) test corpus out of the distributed package into `backend/example_content/ai-content` and exclude `example_content` from the sdist. The corpus is copied into `/import` in the backend container image. @ericof 
+- Update the kitconcept-solr pin to the current feature-ai-rag tip (hybrid retrieval and latest fixes included in CI and deployments). @reebalazs 
+- Update the kitconcept-solr pin to the feature-ai-rag tip with the local-scoping support (@solr-suggest path_prefix), required by the workspace-scope tests and the deployment. @reebalazs 
+- Update volto-plate to latest one. @iFlameing 
+
+
+### Tests
+
+- Upgrade pytest-plone to version 1.1.0 and drop the now-redundant local test fixtures. @ericof [#463](https://github.com/kitconcept/kitconcept.intranet/issue/463)
+
 ## 2.0.0a17 (2026-06-12)
 
 

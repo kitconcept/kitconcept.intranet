@@ -1,0 +1,111 @@
+{
+  "@id": "/services/zentrale-verwaltung",
+  "@type": "Document",
+  "UID": "5eb2bef70b184c5b8b3d2d404bd39f3c",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "1384136d-bd5d-4c68-9e93-516859217384": {
+      "@type": "image",
+      "alt": "Typografie und Corporate Design Elemente auf Karton",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/82c76d5ec5fb444987e02640a54190d9"
+    },
+    "5a611fbb-afa6-4851-a538-22b07f5ae5f2": {
+      "@type": "slate",
+      "plaintext": "Kontakte und Informationen zu den zentralen Verwaltungsabteilungen des DFNT: Sekretariate, Poststelle und Paketdienste, Finanaabteilung f\u00fcr Budgetfragen und Abrechnungen, zentrale Besch affung, Rechtsabteilung f\u00fcr Vertragsangelegenheiten sowie Revision und Compliance f\u00fcr interne Kontrollfragen.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Kontakte und Informationen zu den zentralen Verwaltungsabteilungen des DFNT: Sekretariate, Poststelle und Paketdienste, Finanaabteilung f\u00fcr Budgetfragen und Abrechnungen, zentrale Besch affung, Rechtsabteilung f\u00fcr Vertragsangelegenheiten sowie Revision und Compliance f\u00fcr interne Kontrollfragen."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b8ff0956-99f6-4bcc-8c2f-40744f734122": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "b8ff0956-99f6-4bcc-8c2f-40744f734122",
+      "1384136d-bd5d-4c68-9e93-516859217384",
+      "5a611fbb-afa6-4851-a538-22b07f5ae5f2"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:05:11+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Kontakte und Informationen zu den zentralen Verwaltungsabteilungen des DFNT: Sekretariate, Poststelle und Paketdienste, Finanzabteilung f\u00fcr Budgetfragen und Abrechnungen, zentrale Beschaffung, Rechtsabteilung f\u00fcr Vertragsangelegenheiten sowie Revision und Compliance f\u00fcr interne Kontrollfragen.",
+  "effective": "2026-03-05T16:05:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "zentrale-verwaltung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:30:00+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Zentrale Verwaltung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

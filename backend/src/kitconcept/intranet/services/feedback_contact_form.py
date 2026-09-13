@@ -15,102 +15,123 @@ from zope.interface import alsoProvides
 import logging
 
 
-FEEDBACK_EMAIL_EN = """Dear Intranet Editors and Page Owners,
+FEEDBACK_EMAIL_EN = (
+    "Dear Intranet Editors and Page Owners,\n"
+    "\n"
+    "We have received new feedback on the intranet that requires your "
+    "attention and, where appropriate, action. The person who submitted "
+    "the feedback has already received an automatic confirmation of receipt "
+    "via email. The following data were sent to us:\n"
+    "\n"
+    "**************************************************************************\n"
+    "\n"
+    "Date: {date}\n"
+    "Content title: {title}\n"
+    "URL: {url}\n"
+    "\n"
+    "**Feedback:**\n"
+    "{feedback}\n"
+    "\n"
+    "**Metadata:**\n"
+    "User-Agent: {user_agent}\n"
+    "Window size: {window_width}px * {window_height}px\n"
+    "\n"
+    "**Contact details:**\n"
+    "Name: {name}\n"
+    "Email: {reporter_email}\n"
+    "\n"
+    "************************************************************"
+    "***********************\n"
+    "\n"
+    "Thank you for your attention.\n"
+    "\n"
+    "Kind regards,\n"
+    "The intranet team\n"
+)
 
-We have received new feedback on the intranet that requires your attention and, where appropriate, action. The person who submitted the feedback has already received an automatic confirmation of receipt via email. The following data were sent to us:
+FEEDBACK_EMAIL_DE = (
+    "Liebe Redakteur:innen,\n"
+    "liebe Seitenverantwortliche,\n"
+    "\n"
+    "ein neues Feedback zum Intranet ist eingegangen und erfordert Ihre "
+    "Prüfung sowie gegebenenfalls eine Bearbeitung. Der/die Einreicher:in "
+    "hat bereits eine  automatische Eingangsbestätigung via E-Mail erhalten. "
+    "Folgende Daten wurden uns übermittelt:\n"
+    "\n"
+    "**************************************************************************\n"
+    "\n"
+    "Datum: {date}\n"
+    "Titel des Inhalts: {title}\n"
+    "URL: {url}\n"
+    "\n"
+    "**Feedback:**\n"
+    "{feedback}\n"
+    "\n"
+    "**Metadaten:**\n"
+    "User-Agent: {user_agent}\n"
+    "Window size: {window_width}px * {window_height}px\n"
+    "\n"
+    "**Kontaktdaten:**\n"
+    "Name (optional): {name}\n"
+    "E-Mail: {reporter_email}\n"
+    "\n"
+    "************************************************************"
+    "***********************\n"
+    "\n"
+    "Vielen Dank für Ihre Unterstützung!\n"
+    "\n"
+    "Viele Grüße\n"
+    "Ihr Intranet-Team\n"
+)
 
-**************************************************************************
+CONFIRMATION_EMAIL_EN = (
+    "Hello {name},\n"
+    "\n"
+    "Thank you for your feedback on {title} on the intranet. We value your "
+    "feedback as it helps us to further improve the intranet.\n"
+    "\n"
+    "What happens next?\n"
+    "\n"
+    "Your feedback has been successfully recorded in our system. It will be "
+    "carefully reviewed by the intranet editors responsible and processed as "
+    "quickly as possible. If we have any questions about your feedback, we "
+    "will email you directly.\n"
+    "\n"
+    "If you have any technical questions, please contact {system_email}.\n"
+    "\n"
+    "Kind regards,\n"
+    "The intranet team\n"
+    "\n"
+    "*****************************************************\n"
+    "\n"
+    "You provided us with the following feedback:\n"
+    "{feedback}\n"
+)
 
-Date: {date}
-Content title: {title}
-URL: {url}
-
-**Feedback:**
-{feedback}
-
-**Metadata:**
-User-Agent: {user_agent}
-Window size: {window_width}px * {window_height}px
-
-**Contact details:**
-Name: {name}
-Email: {reporter_email}
-
-***********************************************************************************
-
-Thank you for your attention.
-
-Kind regards,
-The intranet team
-"""
-
-FEEDBACK_EMAIL_DE = """Liebe Redakteur:innen,
-liebe Seitenverantwortliche,
-
-ein neues Feedback zum Intranet ist eingegangen und erfordert Ihre Prüfung sowie gegebenenfalls eine Bearbeitung. Der/die Einreicher:in hat bereits eine  automatische Eingangsbestätigung via E-Mail erhalten. Folgende Daten wurden uns übermittelt:
-
-**************************************************************************
-
-Datum: {date}
-Titel des Inhalts: {title}
-URL: {url}
-
-**Feedback:**
-{feedback}
-
-**Metadaten:**
-User-Agent: {user_agent}
-Window size: {window_width}px * {window_height}px
-
-**Kontaktdaten:**
-Name (optional): {name}
-E-Mail: {reporter_email}
-
-***********************************************************************************
-
-Vielen Dank für Ihre Unterstützung!
-
-Viele Grüße
-Ihr Intranet-Team
-"""
-
-CONFIRMATION_EMAIL_EN = """Hello {name},
-
-Thank you for your feedback on {title} on the intranet. We value your feedback as it helps us to further improve the intranet.
-
-What happens next?
-
-Your feedback has been successfully recorded in our system. It will be carefully reviewed by the intranet editors responsible and processed as quickly as possible. If we have any questions about your feedback, we will email you directly.
-
-If you have any technical questions, please contact {system_email}.
-
-Kind regards,
-The intranet team
-
-*****************************************************
-
-You provided us with the following feedback:
-{feedback}
-"""
-
-CONFIRMATION_EMAIL_DE = """Hallo {name},
-
-vielen Dank für Ihr Feedback zu {title} in unserem Intranet. Ihre Rückmeldung ist für uns wertvoll, da sie uns dabei unterstützt, das Intranet weiter zu verbessern.
-
-Wie geht es jetzt weiter?
-
-Ihr Feedback wurde erfolgreich in unser System aufgenommen. Es wird von den zuständigen Intranet-Redakteur:innen sorgfältig geprüft und möglichst schnell bearbeitet. Sollten wir Rückfragen zu Ihrem Feedback haben, setzen wir uns direkt per E-Mail mit Ihnen in Verbindung.
-
-Für technische Fragen wenden Sie sich gerne an {system_email}.
-
-Mit freundlichen Grüßen
-Ihr Intranet-Team
-
-*****************************************************
-
-Das haben Sie uns als Feedback eingereicht:
-{feedback}
-"""
+CONFIRMATION_EMAIL_DE = (
+    "Hallo {name},\n"
+    "\n"
+    "vielen Dank für Ihr Feedback zu {title} in unserem Intranet. Ihre "
+    "Rückmeldung ist für uns wertvoll, da sie uns dabei unterstützt, das "
+    "Intranet weiter zu verbessern.\n"
+    "\n"
+    "Wie geht es jetzt weiter?\n"
+    "\n"
+    "Ihr Feedback wurde erfolgreich in unser System aufgenommen. Es wird von "
+    "den zuständigen Intranet-Redakteur:innen sorgfältig geprüft und möglichst "
+    "schnell bearbeitet. Sollten wir Rückfragen zu Ihrem Feedback haben, "
+    "setzen wir uns direkt per E-Mail mit Ihnen in Verbindung.\n"
+    "\n"
+    "Für technische Fragen wenden Sie sich gerne an {system_email}.\n"
+    "\n"
+    "Mit freundlichen Grüßen\n"
+    "Ihr Intranet-Team\n"
+    "\n"
+    "*****************************************************\n"
+    "\n"
+    "Das haben Sie uns als Feedback eingereicht:\n"
+    "{feedback}\n"
+)
 
 logger = logging.getLogger("kitconcept.intranet")
 
@@ -119,7 +140,8 @@ class FeedbackPostContactForm(Service):
     """Submit the contact form and send an email depending of the category."""
 
     def reply(self):
-        """Send an email to the responsible person and the person who submitted the feedback."""
+        """Send an email to the responsible person and the person who
+        submitted the feedback."""
         alsoProvides(self.request, IDisableCSRFProtection)
         parent_object = self.context
         cc_email = api.portal.get_registry_record(
@@ -180,8 +202,8 @@ class FeedbackPostContactForm(Service):
             raise BadRequest(
                 self._translate(
                     _(
-                        "No responsible person or default feedback email is configured. "
-                        "Please contact the site administrator."
+                        "No responsible person or default feedback email is "
+                        "configured. Please contact the site administrator."
                     )
                 )
             )

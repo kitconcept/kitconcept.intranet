@@ -1,14 +1,19 @@
 import pytest
 
 
+@pytest.mark.slow
 class TestSiteCreation:
+    @pytest.fixture(autouse=True)
+    def _setup(self, portal):
+        self.portal = portal
+
     @pytest.mark.parametrize(
         "profile_id",
         [
             "profile-pas.plugins.oidc:default",
         ],
     )
-    def test_profile_installed(self, site, profile_last_version, profile_id):
+    def test_profile_installed(self, profile_last_version, profile_id):
         result = profile_last_version(profile_id)
         assert isinstance(result, str)
         assert result != ""
@@ -16,7 +21,7 @@ class TestSiteCreation:
     @pytest.mark.parametrize(
         "attr,expected",
         [
-            ("issuer", "http://localhost:8180/realms/intranet"),
+            ("issuer", "http://localhost:8180/realms/site"),
             ("client_id", "plone"),
             ("client_secret", "12345678"),
             ("scope", ["openid", "profile", "email"]),
@@ -24,7 +29,7 @@ class TestSiteCreation:
             ["create_restapi_ticket", True],
         ],
     )
-    def test_oidc_settings(self, site, attr, expected):
-        plugin = site.acl_users.oidc
+    def test_oidc_settings(self, attr, expected):
+        plugin = self.portal.acl_users.oidc
         value = getattr(plugin, attr, None)
         assert value == expected

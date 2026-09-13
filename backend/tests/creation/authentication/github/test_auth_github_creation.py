@@ -1,14 +1,19 @@
 import pytest
 
 
+@pytest.mark.slow
 class TestSiteCreation:
+    @pytest.fixture(autouse=True)
+    def _setup(self, portal):
+        self.portal = portal
+
     @pytest.mark.parametrize(
         "profile_id",
         [
             "profile-pas.plugins.authomatic:default",
         ],
     )
-    def test_profile_installed(self, site, profile_last_version, profile_id):
+    def test_profile_installed(self, profile_last_version, profile_id):
         result = profile_last_version(profile_id)
         assert isinstance(result, str)
         assert result != ""
@@ -25,11 +30,9 @@ class TestSiteCreation:
             ["github/consumer_key", "gh-32510011"],
             ["github/consumer_secret", "12345678"],
             ["github/scope", ["read:user", "user:email"]],
-            ["github/access_headers/User-Agent", "Plone (kitconcept.intranet)"],
+            ["github/access_headers/User-Agent", "Plone (kitconcept.core)"],
         ],
     )
-    def test_authomatic_settings(
-        self, site, traverse, authomatic_config, path, expected
-    ):
-        config = authomatic_config(site)
+    def test_authomatic_settings(self, traverse, authomatic_config, path, expected):
+        config = authomatic_config()
         assert traverse(config, path) == expected

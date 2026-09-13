@@ -8,9 +8,9 @@ class TestVocab:
     vocab_type = SimpleVocabulary
 
     @pytest.fixture(autouse=True)
-    def _setup(self, portal, get_vocabulary):
-        self.portal = portal
-        self.vocab = get_vocabulary(self.name, portal)
+    def _setup(self, portal_class, get_vocabulary):
+        self.portal = portal_class
+        self.vocab = get_vocabulary(self.name, self.portal)
 
     def test_vocabulary_type(self):
         assert isinstance(self.vocab, self.vocab_type)

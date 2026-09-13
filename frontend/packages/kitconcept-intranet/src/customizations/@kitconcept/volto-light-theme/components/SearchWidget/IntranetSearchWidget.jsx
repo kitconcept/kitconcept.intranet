@@ -1,4 +1,13 @@
 /**
+ * OVERRIDE IntranetSearchWidget.jsx
+ * REASON: Intranet search widget that uses the kitconcept.solr
+ * SolrSearchAutosuggest input when installed and falls back to a plain Input
+ * otherwise, submitting the query to the `/search` route.
+ * FILE: https://github.com/kitconcept/volto-light-theme/blob/8.0.0a31/packages/volto-light-theme/src/components/SearchWidget/SearchWidget.jsx
+ * FILE VERSION: VLT 8.0.0a31
+ * DATE: 2025-08-07
+ * DEVELOPER: @ericof
+ *
  * Intranet Search Widget component.
  * @module components/SearchWidget
  */

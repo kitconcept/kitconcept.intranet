@@ -1,0 +1,111 @@
+{
+  "@id": "/forschung/projekte",
+  "@type": "Document",
+  "UID": "e1e8e2131ffa493483f9c2f6ddde48d4",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "1fc4cb7c-9aaf-47ff-a792-7dadcf0cb114": {
+      "@type": "image",
+      "alt": "Internationale Raumstation ISS mit Solarpanelen in Umlaufbahn \u00fcber Planet Erde",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/a634c3938fff4f1b9ac2d40ea5c9609f"
+    },
+    "29c87cf7-4cca-4d3a-ab0f-bf27f92b3a3d": {
+      "@type": "title"
+    },
+    "6b609242-87e5-434a-b484-229b0e8e3d7d": {
+      "@type": "slate",
+      "plaintext": "\u00dcberblick \u00fcber das Forschungsprojektportfolio des DFNT: laufende Drittmittelprojekte aus EU-, DFG- und BMBF-Programmen, nationale und internationale Kooperationsprojekte sowie ein Archiv abgeschlossener Projekte mit Ergebnissen. Hier finden Sie detaillierte Informationen zu Zielen, Laufzeiten und beteiligten Partnern.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "\u00dcberblick \u00fcber das Forschungsprojektportfolio des DFNT: laufende Drittmittelprojekte aus EU-, DFG- und BMBF-Programmen, nationale und internationale Kooperationsprojekte sowie ein Archiv abgeschlossener Projekte mit Ergebnissen. Hier finden Sie detaillierte Informationen zu Zielen, Laufzeiten und beteiligten Partnern."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "29c87cf7-4cca-4d3a-ab0f-bf27f92b3a3d",
+      "1fc4cb7c-9aaf-47ff-a792-7dadcf0cb114",
+      "6b609242-87e5-434a-b484-229b0e8e3d7d"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:03:06+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\u00dcberblick \u00fcber das Forschungsprojektportfolio des DFNT: laufende Drittmittelprojekte aus EU-, DFG- und BMBF-Programmen, nationale und internationale Kooperationsprojekte sowie ein Archiv abgeschlossener Projekte mit Ergebnissen. Hier finden Sie detaillierte Informationen zu Zielen, Laufzeiten und beteiligten Partnern.",
+  "effective": "2026-03-05T16:03:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "projekte",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:28:09+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Aktuelle Projekte",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:44+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:44+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

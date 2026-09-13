@@ -1,0 +1,1064 @@
+{
+  "@id": "/arbeitsthemen/beschaffung-einkauf/beschaffungsprozess",
+  "@type": "Document",
+  "UID": "5d596abd36d143a3ad823938eba1f504",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "d96b5ff1-48ed-42ab-93c6-cbe09504d8a9": {
+      "@type": "slate",
+      "plaintext": "## Beschaffungsprozess - Schrittweise Anleitung\n\nDer Beschaffungsprozess bei der DFNT folgt einem standardisierten Ablauf mit klaren Genehmigungsstufen. Dies gew\u00e4hrleistet Wirtschaftlichkeit, Transparenz und Einhaltung aller gesetzlichen Vorschriften.\n\n### Schritt 1: Bedarfsermittlung und Leistungsbeschreibung\n\nZun\u00e4chst kl\u00e4ren Sie:\n- Was ist der fachliche Bedarf? (Material, Dienstleistung, Ausr\u00fcstung)\n- Welche technischen Anforderungen m\u00fcssen erf\u00fcllt sein?\n- Welcher Zeitrahmen ist erforderlich?\n\nErstellen Sie eine detaillierte **Leistungsbeschreibung** mit den wichtigsten Spezifikationen. Dies ist Grundlage f\u00fcr Angebote und Vertragsabschluss.\n\n### Schritt 2: Marktrecherche und Angebote einholen\n\n**Bei Kosten ab 500 EUR:**\nHolen Sie mindestens **3 Vergleichsangebote** von verschiedenen Lieferanten ein. Dies kostet Sie Zeit, spart aber den DFNT oft erhebliche Kosten.\n\n**Bei Kosten unter 500 EUR:**\nEin einfacher Direktkauf ist m\u00f6glich (siehe Grenzwerte & Genehmigungen).\n\n**Angebotsinhalte sollten enthalten:**\n- Detaillierte Produktbeschreibung\n- Einzelpreise und Gesamtpreis\n- Lieferzeit und -bedingungen\n- Zahlungsbedingungen\n- G\u00fcltigkeitsdauer des Angebots (mind. 2 Wochen)\n\n### Schritt 3: Bestellanforderung (BANF) im SAP anlegen\n\nNach Auswahl des g\u00fcnstigsten Angebots erstellen Sie im **SAP-System**:\n- Eine neue **Bestellanforderung (BANF)**\n- Mit Angaben: Lieferant, Produkt, Menge, Preis, Kostenstelle, Liefertermin\n- Anh\u00e4ngen des gew\u00e4hlten Angebots (als Scan/PDF)\n\nDie BANF wird automatisch an die jeweils zust\u00e4ndige Genehmigungsinstanz weitergeleitet (siehe Wertgrenzen).\n\n### Schritt 4: Genehmigung durch Vorgesetzten und Einkauf\n\nDie Genehmigung erfolgt **stufenweise nach Wertgrenze**:\n- **Bis 500 EUR:** Abteilungsleitung genehmigt direkt im SAP\n- **500-2.500 EUR:** Abteilungsleitung + Freigabe durch Einkauf\n- **\u00dcber 2.500 EUR:** Weitere Genehmigungsketten (siehe \"Grenzwerte & Genehmigungen\")\n\nVerlauf regelm\u00e4\u00dfig im SAP, ob die Genehmigung erfolgt ist.\n\n### Schritt 5: Bestellung durch Einkaufsteam\n\nNach erfolgter Genehmigung:\n- Das **Einkaufsteam** sendet die verbindliche Bestellung an den Lieferanten\n- Sie erhalten eine Bestellbest\u00e4tigung (Nummer und Lieferzeit)\n- Ab jetzt ist die Bestellung rechtlich bindend\n\n**Kontakt:** einkauf@dfnt.de oder +49 221 470-4321\n\n### Schritt 6: Wareneingang kontrollieren und best\u00e4tigen\n\nBei Ankunft der Ware:\n- **Z\u00e4hlen und Pr\u00fcfen:** Menge und Beschaffenheit \u00fcberpr\u00fcfen\n- **Besch\u00e4digungen dokumentieren:** Falls vorhanden, sofort dem Lieferanten melden\n- **Rechnungsfreigabe:** Pr\u00fcfen, ob Rechnung mit Bestellung und Wareneingangsprotokolle \u00fcbereinstimmt\n- **Im SAP best\u00e4tigen:** Wareneingang \"Eingegangen\" markieren\n\n### Schritt 7: Rechnung pr\u00fcfen und freigeben\n\nVor Bezahlung:\n- **3-Wege-Pr\u00fcfung:** Vergleich von Rechnung, Bestellung und Wareneingangsprotokoll\n- **Rechnungssumme \u00fcberpr\u00fcfen:** Stimmt Gesamtpreis \u00fcberein?\n- **Kontodaten \u00fcberpr\u00fcfen:** Ist das Zahlungsziel korrekt?\n- **Im SAP best\u00e4tigen:** Rechnung zum Bezahlen freigeben\n\nNach Freigabe erfolgt die **automatische Zahlung** nach Zahlungsbedingung.\n\n### Wichtige Hinweise zu EU-Vergaberecht\n\n**EU-Vergaberichtlinien greifen ab folgenden Schwellwerten:**\n\n**Lieferungen:** Ab **221.000 EUR** ist eine **europaweite \u00f6ffentliche Ausschreibung** erforderlich\n\n**Bauleistungen/Dienstleistungen:** Ab **5.382.000 EUR** ist eine europaweite Ausschreibung erforderlich\n\nBei Erreichen dieser Grenzen ist ein formales Ausschreibungsverfahren mit Ver\u00f6ffentlichung im EU-Amtsblatt zwingend erforderlich. Das Einkaufsteam unterst\u00fctzt Sie in diesen F\u00e4llen vollst\u00e4ndig.\n\n### Checkliste f\u00fcr Beschaffungen\n\n- [ ] Fachlicher Bedarf definiert\n- [ ] Leistungsbeschreibung erstellt\n- [ ] Marktrecherche durchgef\u00fchrt (bei >500 EUR: 3 Angebote)\n- [ ] Bestes Angebot ausgew\u00e4hlt\n- [ ] BANF im SAP angelegt\n- [ ] Genehmigungen erhalten\n- [ ] Bestellung verschickt\n- [ ] Wareneingang kontrolliert\n- [ ] Rechnung gepr\u00fcft und freigegeben",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Beschaffungsprozess - Schrittweise Anleitung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Der Beschaffungsprozess bei der DFNT folgt einem standardisierten Ablauf mit klaren Genehmigungsstufen. Dies gew\u00e4hrleistet Wirtschaftlichkeit, Transparenz und Einhaltung aller gesetzlichen Vorschriften."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 1: Bedarfsermittlung und Leistungsbeschreibung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Zun\u00e4chst kl\u00e4ren Sie:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Was ist der fachliche Bedarf? (Material, Dienstleistung, Ausr\u00fcstung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Welche technischen Anforderungen m\u00fcssen erf\u00fcllt sein?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Welcher Zeitrahmen ist erforderlich?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Erstellen Sie eine detaillierte "
+            },
+            {
+              "children": [
+                {
+                  "text": "Leistungsbeschreibung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " mit den wichtigsten Spezifikationen. Dies ist Grundlage f\u00fcr Angebote und Vertragsabschluss."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 2: Marktrecherche und Angebote einholen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bei Kosten ab 500 EUR:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\nHolen Sie mindestens "
+            },
+            {
+              "children": [
+                {
+                  "text": "3 Vergleichsangebote"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " von verschiedenen Lieferanten ein. Dies kostet Sie Zeit, spart aber den DFNT oft erhebliche Kosten."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bei Kosten unter 500 EUR:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\nEin einfacher Direktkauf ist m\u00f6glich (siehe Grenzwerte & Genehmigungen)."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Angebotsinhalte sollten enthalten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Detaillierte Produktbeschreibung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einzelpreise und Gesamtpreis"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Lieferzeit und -bedingungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zahlungsbedingungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "G\u00fcltigkeitsdauer des Angebots (mind. 2 Wochen)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 3: Bestellanforderung (BANF) im SAP anlegen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Nach Auswahl des g\u00fcnstigsten Angebots erstellen Sie im "
+            },
+            {
+              "children": [
+                {
+                  "text": "SAP-System"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ":"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Eine neue "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "Bestellanforderung (BANF)"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mit Angaben: Lieferant, Produkt, Menge, Preis, Kostenstelle, Liefertermin"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Anh\u00e4ngen des gew\u00e4hlten Angebots (als Scan/PDF)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Die BANF wird automatisch an die jeweils zust\u00e4ndige Genehmigungsinstanz weitergeleitet (siehe Wertgrenzen)."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 4: Genehmigung durch Vorgesetzten und Einkauf"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Genehmigung erfolgt "
+            },
+            {
+              "children": [
+                {
+                  "text": "stufenweise nach Wertgrenze"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ":"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Bis 500 EUR:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Abteilungsleitung genehmigt direkt im SAP"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "500-2.500 EUR:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Abteilungsleitung + Freigabe durch Einkauf"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "\u00dcber 2.500 EUR:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Weitere Genehmigungsketten (siehe \"Grenzwerte & Genehmigungen\")"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Verlauf regelm\u00e4\u00dfig im SAP, ob die Genehmigung erfolgt ist."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 5: Bestellung durch Einkaufsteam"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Nach erfolgter Genehmigung:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Das "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "Einkaufsteam"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " sendet die verbindliche Bestellung an den Lieferanten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sie erhalten eine Bestellbest\u00e4tigung (Nummer und Lieferzeit)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ab jetzt ist die Bestellung rechtlich bindend"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "einkauf@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:einkauf@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": " oder +49 221 470-4321"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 6: Wareneingang kontrollieren und best\u00e4tigen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Bei Ankunft der Ware:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Z\u00e4hlen und Pr\u00fcfen:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Menge und Beschaffenheit \u00fcberpr\u00fcfen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Besch\u00e4digungen dokumentieren:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Falls vorhanden, sofort dem Lieferanten melden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Rechnungsfreigabe:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Pr\u00fcfen, ob Rechnung mit Bestellung und Wareneingangsprotokolle \u00fcbereinstimmt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Im SAP best\u00e4tigen:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Wareneingang \"Eingegangen\" markieren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 7: Rechnung pr\u00fcfen und freigeben"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Vor Bezahlung:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "3-Wege-Pr\u00fcfung:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Vergleich von Rechnung, Bestellung und Wareneingangsprotokoll"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Rechnungssumme \u00fcberpr\u00fcfen:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Stimmt Gesamtpreis \u00fcberein?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontodaten \u00fcberpr\u00fcfen:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Ist das Zahlungsziel korrekt?"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Im SAP best\u00e4tigen:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Rechnung zum Bezahlen freigeben"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Nach Freigabe erfolgt die "
+            },
+            {
+              "children": [
+                {
+                  "text": "automatische Zahlung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " nach Zahlungsbedingung."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Wichtige Hinweise zu EU-Vergaberecht"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "EU-Vergaberichtlinien greifen ab folgenden Schwellwerten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Lieferungen:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Ab "
+            },
+            {
+              "children": [
+                {
+                  "text": "221.000 EUR"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " ist eine "
+            },
+            {
+              "children": [
+                {
+                  "text": "europaweite \u00f6ffentliche Ausschreibung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " erforderlich"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bauleistungen/Dienstleistungen:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Ab "
+            },
+            {
+              "children": [
+                {
+                  "text": "5.382.000 EUR"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " ist eine europaweite Ausschreibung erforderlich"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Bei Erreichen dieser Grenzen ist ein formales Ausschreibungsverfahren mit Ver\u00f6ffentlichung im EU-Amtsblatt zwingend erforderlich. Das Einkaufsteam unterst\u00fctzt Sie in diesen F\u00e4llen vollst\u00e4ndig."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Checkliste f\u00fcr Beschaffungen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Fachlicher Bedarf definiert"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Leistungsbeschreibung erstellt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Marktrecherche durchgef\u00fchrt (bei >500 EUR: 3 Angebote)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bestes Angebot ausgew\u00e4hlt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "BANF im SAP angelegt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Genehmigungen erhalten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bestellung verschickt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Wareneingang kontrolliert"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Rechnung gepr\u00fcft und freigegeben"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "e052ee37-6eb6-4781-98ba-26ab97ae5c40": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "e052ee37-6eb6-4781-98ba-26ab97ae5c40",
+      "d96b5ff1-48ed-42ab-93c6-cbe09504d8a9"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:19+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Schrittweise Anleitung durch den Beschaffungsprozess",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "beschaffungsprozess",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:06:31+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Beschaffungsprozess",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

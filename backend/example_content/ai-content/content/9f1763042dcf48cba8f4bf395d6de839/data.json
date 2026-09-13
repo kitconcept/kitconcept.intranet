@@ -1,0 +1,272 @@
+{
+  "@id": "/services/it-services/cloud-services",
+  "@type": "Document",
+  "UID": "9f1763042dcf48cba8f4bf395d6de839",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "4dcc5a3c-3cb3-46c4-bc97-bcf900a29215": {
+      "@type": "title"
+    },
+    "5917b66d-3b2f-4e22-9ac2-daa8de8c5c52": {
+      "@type": "slate",
+      "plaintext": "## Cloud-Services\n\n**Zugelassene Cloud-Dienste:**\n- Microsoft 365 (SharePoint, Teams, OneDrive for Business \u2013 max. 1 TB)\n- Sciebo (Hochschul-Cloud, DSGVO-konform, f\u00fcr externe Zusammenarbeit)\n- DFNT-Nextcloud (f\u00fcr sensible Forschungsdaten)\n\n**NICHT zugelassen f\u00fcr Dienstdaten:** Google Drive, Dropbox, iCloud, WeTransfer\n\n**F\u00fcr Datei\u00fcbertragung nutzen:** intern.dfnt.de/filetransfer\n\n**Speicherquoten:**\n- OneDrive: 1 TB\n- Sciebo: 30 GB\n- Nextcloud: nach Bedarf\n\n**Kontakt:** cloud@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Cloud-Services"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zugelassene Cloud-Dienste:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Microsoft 365 (SharePoint, Teams, OneDrive for Business \u2013 max. 1 TB)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sciebo (Hochschul-Cloud, DSGVO-konform, f\u00fcr externe Zusammenarbeit)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFNT-Nextcloud (f\u00fcr sensible Forschungsdaten)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "NICHT zugelassen f\u00fcr Dienstdaten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Google Drive, Dropbox, iCloud, WeTransfer"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "F\u00fcr Datei\u00fcbertragung nutzen:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " intern.dfnt.de/filetransfer"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Speicherquoten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "OneDrive: 1 TB"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Sciebo: 30 GB"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Nextcloud: nach Bedarf"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "cloud@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:cloud@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "4dcc5a3c-3cb3-46c4-bc97-bcf900a29215",
+      "5917b66d-3b2f-4e22-9ac2-daa8de8c5c52"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:15+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Nextcloud, Sciebo und weitere institutseigene Cloud-L\u00f6sungen: Zugang, Speicherkapazit\u00e4ten, Synchronisierung und Sicherheitshinweise.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "cloud-services",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:13:28+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Cloud-Services",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

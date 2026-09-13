@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="Subsite"
+        i18n:domain="kitconcept.intranet"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Subsite</property>
+  <property name="description"
+            i18n:translate=""
+  />
+
+  <property name="allow_discussion">False</property>
+  <property name="factory">Subsite</property>
+  <property name="link_target" />
+
+
+  <!-- Hierarchy control -->
+  <property name="allowed_content_types">
+    <element value="Document" />
+    <element value="File" />
+    <element value="Image" />
+    <element value="Link" />
+  </property>
+  <property name="filter_content_types">True</property>
+  <property name="global_allow">True</property>
+
+
+  <!-- Schema, class and security -->
+  <property name="add_permission">kitconcept.intranet.siteadminsonly</property>
+  <property name="klass">kitconcept.intranet.content.subsite.Subsite</property>
+  <property name="model_file" />
+  <property name="model_source" />
+  <property name="schema">kitconcept.intranet.content.subsite.ISubsite</property>
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors"
+            purge="true"
+  >
+    <element value="plone.basic" />
+    <element value="volto.preview_image_link" />
+    <element value="volto.kicker" />
+    <element value="kitconcept.intranet.location" />
+    <element value="plone.categorization" />
+    <element value="plone.publication" />
+    <element value="plone.ownership" />
+    <element value="plone.shortname" />
+    <element value="volto.navtitle" />
+    <element value="plone.excludefromnavigation" />
+    <element value="volto.blocks" />
+    <element value="voltolighttheme.header" />
+    <element value="voltolighttheme.theme" />
+    <element value="voltolighttheme.footer" />
+    <element value="kitconcept.footer" />
+    <element value="plone.constraintypes" />
+    <element value="plone.namefromtitle" />
+    <element value="plone.versioning" />
+    <element value="plone.locking" />
+    <element value="plone.translatable" />
+    <element value="plone.navigationroot" />
+  </property>
+
+</object>

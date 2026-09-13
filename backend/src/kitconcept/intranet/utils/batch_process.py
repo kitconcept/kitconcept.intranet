@@ -18,7 +18,8 @@ logger = logging.getLogger(__name__)
 def run_in_transaction(retries=5, retry_callback=None):
     """Decorator to run a function in a transaction.
 
-    If a ConflictError occurs when committing, it will retry up to the specified number of times.
+    If a ConflictError occurs when committing, it will retry up to the
+    specified number of times.
     """
 
     def wrapper[T, **P](func: Callable[P, T]) -> Callable[P, T]:
@@ -88,7 +89,7 @@ class BatchProcess:
             for brain in api.content.find(unrestricted=True, **kw):
                 try:
                     yield brain._unrestrictedGetObject()
-                except Exception:  # noqa
+                except Exception:  # noqa: S112
                     continue
 
         return collector
@@ -106,7 +107,7 @@ class BatchProcess:
 
         logger.info(f"Starting batch process: {self.name}")
         results: list[BatchResult] = []
-        for batch in itertools.batched(self.collector(), batch_size):
+        for batch in itertools.batched(self.collector(), batch_size, strict=False):
             results += process_batch(tuple(batch), start=len(results) + 1)
             logger.info(f"Processed {len(results)} items.")
         logger.info(f"Finished batch process: {self.name}\n")

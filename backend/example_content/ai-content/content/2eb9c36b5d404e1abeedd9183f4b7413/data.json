@@ -1,0 +1,179 @@
+{
+  "@id": "/ueber-uns/standorte/koln",
+  "@type": "Location",
+  "UID": "2eb9c36b5d404e1abeedd9183f4b7413",
+  "allow_discussion": null,
+  "blocks": {
+    "43e5efec-4cea-4ba4-82d0-9e0074da1614": {
+      "@type": "listing",
+      "headline": "Anstehende Termine",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Event"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "2eb9c36b5d404e1abeedd9183f4b7413"
+            ]
+          }
+        ],
+        "sort_on": "start",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "listDate"
+    },
+    "80acd509-f4ee-4f08-9141-f719d7d65eaa": {
+      "@type": "listing",
+      "headline": "Neues vom Standort",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "2eb9c36b5d404e1abeedd9183f4b7413"
+            ]
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "styles": {},
+      "theme": "grey",
+      "variation": "summary"
+    },
+    "94745807-6ab2-4068-b4c6-e28185d0c029": {
+      "@type": "listing",
+      "headline": "Institute am Standort K\u00f6ln",
+      "headlineTag": "h2",
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Organisational Unit"
+            ]
+          },
+          {
+            "i": "location_reference",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "2eb9c36b5d404e1abeedd9183f4b7413"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    },
+    "ef7299b9-0e81-43f2-ae57-12b8b13519a9": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "K\u00f6ln",
+      "url": "../resolveuid/bb6cee1f16364098936abdbd0b8b7f55",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f9f4014d-9efe-4f82-846e-87695fe5e9d6": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "ef7299b9-0e81-43f2-ae57-12b8b13519a9",
+      "43e5efec-4cea-4ba4-82d0-9e0074da1614",
+      "80acd509-f4ee-4f08-9141-f719d7d65eaa",
+      "94745807-6ab2-4068-b4c6-e28185d0c029",
+      "f9f4014d-9efe-4f82-846e-87695fe5e9d6"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T11:41:57+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "head_title": null,
+  "id": "koln",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-05-22T09:54:50+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "private",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "subjects": [],
+  "title": "K\u00f6ln",
+  "type_title": "Location",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:50+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

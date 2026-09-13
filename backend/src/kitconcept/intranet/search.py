@@ -40,7 +40,7 @@ class QueryBuilder(BaseQueryBuilder):
 
 # At the moment collective.solr discards the bq param,
 # so we need to patch it back in here.
-from collective.solr.search import Search
+from collective.solr.search import Search  # noqa: E402
 
 
 orig_buildQueryAndParameters = Search.buildQueryAndParameters

@@ -13,7 +13,9 @@ from zope.component.hooks import setSite
 import transaction
 
 
-portal = app.Plone  # noqa: F821
+app = globals()["app"]
+
+portal = app.Plone
 setSite(portal)
 
 
@@ -53,4 +55,4 @@ def main(app):
 
 
 if "app" in locals():
-    main(app)  # noqa: F821
+    main(app)

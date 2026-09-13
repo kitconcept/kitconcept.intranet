@@ -1,0 +1,733 @@
+{
+  "@id": "/services/bibliothek/offnungszeiten-kontakt",
+  "@type": "Document",
+  "UID": "cab9cd7e74f442e2b91d00bbceefc573",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "1f2ee221-0013-4d74-b0b3-5a7bb21a8ab5": {
+      "@type": "slate",
+      "plaintext": "## Daten publizieren\n\n### Empfohlene Repositorien\n\nDie DFNT empfiehlt folgende vertrauenw\u00fcrdige Repositorien zur Ver\u00f6ffentlichung von Forschungsdaten:\n\n**PANGAEA**\n- Spezialisiert auf: Erd- und Umweltwissenschaften\n- Ideal f\u00fcr: Klimadaten, Ozeanographische Daten, Geowissenschaften\n- Zitierbar: Ja (DOI)\n\n**Zenodo**\n- Allgemeines Repositorium\n- Besonders geeignet f\u00fcr: EU-Horizon-Projekte (Anforderung)\n- Zitierbar: Ja (DOI)\n- Zugang: Kostenlos\n\n**figshare**\n- Allgemeines Repositorium\n- Dateitypen: Datens\u00e4tze, Pr\u00e4sentationen, Artikel, Software\n- Zitierbar: Ja (DOI)\n- Speicherlimit: Kostenlos bis 20 GB pro Benutzer\n\n**RADAR**\n- Deutsche F\u00f6rderung\n- Generisches Repositorium\n- Langzeitarchivierung gew\u00e4hrleistet\n- Zitierbar: Ja (DOI)\n\n**DFNT-Repositorium**\n- F\u00fcr interne Datens\u00e4tze\n- DFNT-Affiliation erforderlich\n- Vollst\u00e4ndige Kontrolle \u00fcber Metadaten\n\n### Lizenzempfehlung\n\n**Creative Commons Attribution 4.0 (CC BY 4.0)**\n- Erm\u00f6glicht freie Nachnutzung mit Namensnennung\n- International anerkannt\n- Empfohlen f\u00fcr: Die meisten Forschungsdatens\u00e4tze\n\n### Metadaten\n\n**Mindeststandard: Dublin Core**\n- Titel\n- Autor*in(nen)\n- Datum\n- Beschreibung\n- Stichwort\n\n**Empfohlen: Dom\u00e4nenspezifische Standards**\n- MIAPPE (Pflanzenforschung)\n- MIAME (Genexpressionsanalyse)\n- MIMS (Mikrobielle Sequenzierung)\n\n### Unterst\u00fctzung\n\n**Bibliothek des DFNT**\n- E-Mail: **bibliothek@dfnt.de**\n- Unterst\u00fctzung bei: Repositoriumsauswahl, Metadaten, Lizenzberatung\n- Beratung: Kostenlos",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Daten publizieren"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Empfohlene Repositorien"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Die DFNT empfiehlt folgende vertrauenw\u00fcrdige Repositorien zur Ver\u00f6ffentlichung von Forschungsdaten:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "PANGAEA"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Spezialisiert auf: Erd- und Umweltwissenschaften"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ideal f\u00fcr: Klimadaten, Ozeanographische Daten, Geowissenschaften"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zitierbar: Ja (DOI)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zenodo"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Allgemeines Repositorium"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Besonders geeignet f\u00fcr: EU-Horizon-Projekte (Anforderung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zitierbar: Ja (DOI)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zugang: Kostenlos"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "figshare"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Allgemeines Repositorium"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Dateitypen: Datens\u00e4tze, Pr\u00e4sentationen, Artikel, Software"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zitierbar: Ja (DOI)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Speicherlimit: Kostenlos bis 20 GB pro Benutzer"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "RADAR"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Deutsche F\u00f6rderung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Generisches Repositorium"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Langzeitarchivierung gew\u00e4hrleistet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zitierbar: Ja (DOI)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "DFNT-Repositorium"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcr interne Datens\u00e4tze"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFNT-Affiliation erforderlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vollst\u00e4ndige Kontrolle \u00fcber Metadaten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Lizenzempfehlung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Creative Commons Attribution 4.0 (CC BY 4.0)"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Erm\u00f6glicht freie Nachnutzung mit Namensnennung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "International anerkannt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Empfohlen f\u00fcr: Die meisten Forschungsdatens\u00e4tze"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Metadaten"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Mindeststandard: Dublin Core"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Titel"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Autor*in(nen)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Datum"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Beschreibung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Stichwort"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Empfohlen: Dom\u00e4nenspezifische Standards"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "MIAPPE (Pflanzenforschung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "MIAME (Genexpressionsanalyse)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "MIMS (Mikrobielle Sequenzierung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Unterst\u00fctzung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bibliothek des DFNT"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "E-Mail: "
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "text": "bibliothek@dfnt.de"
+                            }
+                          ],
+                          "data": {
+                            "url": "mailto:bibliothek@dfnt.de"
+                          },
+                          "type": "link"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Unterst\u00fctzung bei: Repositoriumsauswahl, Metadaten, Lizenzberatung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Beratung: Kostenlos"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "45576219-5985-480a-af62-969aa965c5c8": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "45576219-5985-480a-af62-969aa965c5c8",
+      "1f2ee221-0013-4d74-b0b3-5a7bb21a8ab5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:13+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Standorte, Ansprechpartner und Kontaktdaten aller Bibliotheksstandorte: regul\u00e4re \u00d6ffnungszeiten, Sonder\u00f6ffnungszeiten und Erreichbarkeit.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "offnungszeiten-kontakt",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:09:23+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "\u00d6ffnungszeiten und Kontakt",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:46+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

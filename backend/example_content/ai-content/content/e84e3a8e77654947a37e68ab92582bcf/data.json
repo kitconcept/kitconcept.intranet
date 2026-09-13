@@ -1,0 +1,100 @@
+{
+  "@id": "/ueber-uns/gremien-kommissionen",
+  "@type": "Document",
+  "UID": "e84e3a8e77654947a37e68ab92582bcf",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "205ad5d5-a765-45ec-b6f3-d4655db08f6d": {
+      "@type": "title"
+    },
+    "abc123": {
+      "@type": "image",
+      "alt": "Vier Personen in einem Besprechungsraum mit Glaswand, Laptops und gro\u00dfem Bildschirm",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/1a55e87a73f64ad38f79545949b8b845"
+    },
+    "def456": {
+      "@type": "slate",
+      "text": "\u00dcbersicht aller Gremien und Kommissionen des DFNT: Wissenschaftlicher Rat, Gleichstellungskommission mit Zielen und Ma\u00dfnahmen, Ethikkommission und deren Verfahren, Betriebs- und Personalrat als Besch\u00e4ftigtenvertretung, Doktorandenvertretung sowie die Ombudsperson f\u00fcr Konfliktvermittlung."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "205ad5d5-a765-45ec-b6f3-d4655db08f6d",
+      "abc123",
+      "def456"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:08:16+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\u00dcbersicht aller Gremien und Kommissionen des DFNT: Wissenschaftlicher Rat, Gleichstellungskommission mit Zielen und Ma\u00dfnahmen, Ethikkommission und deren Verfahren, Betriebs- und Personalrat als Besch\u00e4ftigtenvertretung, Doktorandenvertretung sowie die Ombudsperson f\u00fcr Konfliktvermittlung.",
+  "effective": "2026-03-05T16:08:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "gremien-kommissionen",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T16:29:25+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Gremien & Kommissionen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:49+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

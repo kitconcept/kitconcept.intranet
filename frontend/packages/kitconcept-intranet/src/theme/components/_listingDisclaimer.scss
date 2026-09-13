@@ -20,6 +20,11 @@
       font-style: italic;
     }
   }
+
+  &.grid {
+    // Needed to fix conflict with tailwind classes, should be removed when layers are improved.
+    display: block !important;
+  }
 }
 #page-document {
   .block.listing .results-disclaimer-container {

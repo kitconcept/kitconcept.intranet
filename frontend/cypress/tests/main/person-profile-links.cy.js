@@ -86,12 +86,9 @@ context('Person profile links in listings', () => {
   it('offers the link icon instead when profiles are not clickable', () => {
     cy.setRegistry('kitconcept.core.settings.clickable_profile_links', false);
 
-    // load the site once so that the changed setting is picked up
     cy.visit('/');
 
     variations.forEach((variation) => {
-      // the icon navigates through the router, so reach the listing through a
-      // client side navigation, where the cards are rendered by the running app
       cy.navigate(`/people-${variation}`);
 
       cy.get('.listing-item.person-listing')

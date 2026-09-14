@@ -1458,6 +1458,9 @@ importers:
       '@kitconcept/volto-solr':
         specifier: ^3.0.0-alpha.2
         version: 3.0.0-alpha.2(react-autosuggest@10.1.0(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@platejs/diff':
+        specifier: ^50.2.0
+        version: 50.2.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone-collective/volto-authomatic':
         specifier: 3.0.0-alpha.6
         version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -1479,6 +1482,9 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
+      platejs:
+        specifier: ^49.2.21
+        version: 49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0))
       react:
         specifier: ^18.2.0
         version: 18.2.0

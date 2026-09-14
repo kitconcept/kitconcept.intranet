@@ -13,8 +13,21 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
     const vocabBaseUrl = props.widgetOptions.vocabulary?.['@id'];
     const subrequest = `widget-${props.id}-${props.intl.locale}`;
 
+    // The backend expander walks the acquisition chain starting from the object
+    // being edited, so `inheritedField` describes either this content's own
+    // value (its `url` points to the current content) or a value truly
+    // inherited from an ancestor. It is only inherited when it comes from a
+    // different object than the one being edited.
+    const currentUrl = content?.['@id']
+      ? flattenToAppURL(content['@id'])
+      : undefined;
+    const isInherited =
+      !!inheritedField?.value &&
+      !!inheritedField?.url &&
+      flattenToAppURL(inheritedField.url) !== currentUrl;
+
     React.useEffect(() => {
-      if (inheritedField && !props.value && vocabBaseUrl) {
+      if (isInherited && !props.value && vocabBaseUrl) {
         const tokensQuery = convertValueToVocabQuery([inheritedField.value]);
         dispatch(
           getVocabularyTokenTitle({
@@ -24,14 +37,21 @@ const InheritedFieldWrapper = (WrappedComponent, inheritedFieldFunction) => {
           }),
         );
       }
-    }, [dispatch, inheritedField, vocabBaseUrl, props.value, subrequest]);
+    }, [
+      dispatch,
+      isInherited,
+      inheritedField,
+      vocabBaseUrl,
+      props.value,
+      subrequest,
+    ]);
 
     const displayNameInheritedField = useSelector(
       (state) =>
         state.vocabularies?.[vocabBaseUrl]?.subrequests?.[subrequest]?.items,
     )?.[0]?.label;
 
-    if (props.inheritedField && inheritedField?.value && !props.value) {
+    if (props.inheritedField && isInherited && !props.value) {
       const description = (
         <>
           {`Inherited ${props.title}:`}

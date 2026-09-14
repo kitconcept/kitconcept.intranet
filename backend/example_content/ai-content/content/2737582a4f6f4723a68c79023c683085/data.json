@@ -1,0 +1,812 @@
+{
+  "@id": "/forschung/forschungsbereiche/chemie",
+  "@type": "Document",
+  "UID": "2737582a4f6f4723a68c79023c683085",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "155868d6-584b-4828-8014-32b7c5a2e765": {
+      "@type": "slate",
+      "plaintext": "Infrastruktur und Ausstattung\n\nAnalytische und spektroskopische Methoden\n- Hochaufl\u00f6sungs-Massenspektrometrie (HR-MS: Orbitrap, Q-TOF)\n- NMR-Spektrometer (400 MHz und 600 MHz-Ger\u00e4te f\u00fcr Struktur-Aufkl\u00e4rung)\n- IR-, UV-Vis und Raman-Spektroskopie\n- Chromatographie-Systeme (GC, HPLC, LC-MS)\n- R\u00f6ntgenkristallographie-Messplatz\n\nSynthese- und Proze\u00dflabore\n- 12 moderne Chemiebench-L\u00e4bor mit Abzuganlagen\n- Hochdurchsatz-Screening-Anlage (Parallel-Synthesizer f\u00fcr Wirkstoff-Bibliotheken)\n- Durchflusschemie-Reaktoren f\u00fcr kontinuierliche Produktion\n- Mikrowellen- und Ultraschallreaktoren\n- Glovebox-Systeme f\u00fcr luftempfindliche Synthesen\n\nDatenverarbeitung\n- Chemoinformatik-Cluster f\u00fcr molekulare Modellierung\n- Quantenchemische Rechnungen (DFT, ab initio)\n- Datenbank mit >500.000 synthetisierten Verbindungen",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Infrastruktur und Ausstattung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Analytische und spektroskopische Methoden"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Hochaufl\u00f6sungs-Massenspektrometrie (HR-MS: Orbitrap, Q-TOF)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "NMR-Spektrometer (400 MHz und 600 MHz-Ger\u00e4te f\u00fcr Struktur-Aufkl\u00e4rung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "IR-, UV-Vis und Raman-Spektroskopie"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Chromatographie-Systeme (GC, HPLC, LC-MS)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "R\u00f6ntgenkristallographie-Messplatz"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Synthese- und Proze\u00dflabore"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "12 moderne Chemiebench-L\u00e4bor mit Abzuganlagen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Hochdurchsatz-Screening-Anlage (Parallel-Synthesizer f\u00fcr Wirkstoff-Bibliotheken)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Durchflusschemie-Reaktoren f\u00fcr kontinuierliche Produktion"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mikrowellen- und Ultraschallreaktoren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Glovebox-Systeme f\u00fcr luftempfindliche Synthesen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Datenverarbeitung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Chemoinformatik-Cluster f\u00fcr molekulare Modellierung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Quantenchemische Rechnungen (DFT, ab initio)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Datenbank mit >500.000 synthetisierten Verbindungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "1cb6e275-3eaf-4a97-b9fc-d5df9670bd10": {
+      "@type": "slate",
+      "plaintext": "Arbeitsgruppen und Personal\n\nDie Chemische Abteilung besteht aus 7 spezialisierten Arbeitsgruppen mit insgesamt ca. 110 Mitarbeiter*innen:\n- 7 Gruppen-Leiter*innen\n- 40 Postdoktora und Doktorandinnen/Doktoranden\n- 35 Technische Mitarbeiter*innen (Chemielaboranten*innen, Techniker*innen)\n- 28 Studentische Hilfskr\u00e4fte und Praktikanten/innen\n\nAusbildungsprogramm\nWir bieten umfassende Ausbildung in modernen Synthesetechniken, analytischen Methoden und nachhaltiger Chemie. Viele Absolventen*innen arbeiten heute in der Pharma- und Chemieindustrie.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Arbeitsgruppen und Personal"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Chemische Abteilung besteht aus 7 spezialisierten Arbeitsgruppen mit insgesamt ca. 110 Mitarbeiter*innen:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "7 Gruppen-Leiter*innen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "40 Postdoktora und Doktorandinnen/Doktoranden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "35 Technische Mitarbeiter"
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "innen (Chemielaboranten"
+                        }
+                      ],
+                      "type": "em"
+                    },
+                    {
+                      "text": "innen, Techniker*innen)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "28 Studentische Hilfskr\u00e4fte und Praktikanten/innen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Ausbildungsprogramm\nWir bieten umfassende Ausbildung in modernen Synthesetechniken, analytischen Methoden und nachhaltiger Chemie. Viele Absolventen*innen arbeiten heute in der Pharma- und Chemieindustrie."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "93bfd4a5-884e-4af9-9dab-6c91fa56161b": {
+      "@type": "slate",
+      "plaintext": "Forschungsschwerpunkte\n\nOrganische Chemie und Naturstoffsynthese\n\nWir entwickeln innovative Syntheserouten f\u00fcr komplexe Naturprodukte und pharmazeutische Wirkstoffe:\n- Totalsynthese biologisch aktiver Naturprodukte\n- Katalytische asymmetrische Synthesen (Enantioselektivit\u00e4t >99%)\n- Kombinatorische Chemie f\u00fcr schnelle Wirkstoff-Screening\n- Naturstoff-inspirierte Leitstruktur-Optimierung\n\nMaterialchemie und Funktionsmaterialien\n\nWir erforschen neue Materialien f\u00fcr zuk\u00fcnftige Technologien:\n- Batteriematerialien: Hochenergie-Dichte-Kathoden und Festelektrolyte\n- Perowskit-Solarzellen: Effizienzsteigerung und Stabilit\u00e4t\u00e4t\n- Funktionsmaterialien: Luminophore, Leiter und Halbleiter f\u00fcr Elektronik\n- Nano-Materialien mit ma\u00dfgeschneiderten Eigenschaften\n\nKatalyse und Gr\u00fcne Chemie\n\nUnser Spezialgebiet ist die Entwicklung effizienter und nachhaltiger katalytischer Prozesse:\n- Homogene Katalyse: Komplexe-katalysierte Transformationen mit minimalen Abf\u00e4llen\n- Heterogene Katalyse: Festkatalysen f\u00fcr Industrie-skalierbare Prozesse\n- Biokatalyse: Einsatz von Enzymen f\u00fcr selektive Umwandlungen\n- CO\u2082-Fixierung und Biobasierte Chemie: Umwandlung von Treibhausgasen in wertvolle Chemikalien",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Forschungsschwerpunkte"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Organische Chemie und Naturstoffsynthese"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Wir entwickeln innovative Syntheserouten f\u00fcr komplexe Naturprodukte und pharmazeutische Wirkstoffe:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Totalsynthese biologisch aktiver Naturprodukte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Katalytische asymmetrische Synthesen (Enantioselektivit\u00e4t >99%)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kombinatorische Chemie f\u00fcr schnelle Wirkstoff-Screening"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Naturstoff-inspirierte Leitstruktur-Optimierung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Materialchemie und Funktionsmaterialien"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Wir erforschen neue Materialien f\u00fcr zuk\u00fcnftige Technologien:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Batteriematerialien: Hochenergie-Dichte-Kathoden und Festelektrolyte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Perowskit-Solarzellen: Effizienzsteigerung und Stabilit\u00e4t\u00e4t"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Funktionsmaterialien: Luminophore, Leiter und Halbleiter f\u00fcr Elektronik"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Nano-Materialien mit ma\u00dfgeschneiderten Eigenschaften"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Katalyse und Gr\u00fcne Chemie"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Unser Spezialgebiet ist die Entwicklung effizienter und nachhaltiger katalytischer Prozesse:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Homogene Katalyse: Komplexe-katalysierte Transformationen mit minimalen Abf\u00e4llen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Heterogene Katalyse: Festkatalysen f\u00fcr Industrie-skalierbare Prozesse"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Biokatalyse: Einsatz von Enzymen f\u00fcr selektive Umwandlungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "CO\u2082-Fixierung und Biobasierte Chemie: Umwandlung von Treibhausgasen in wertvolle Chemikalien"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "a96b01be-fc7c-48aa-a8cc-6a3c9ff6210a": {
+      "@type": "slate",
+      "plaintext": "Kooperationen und Netzwerk\n\nInnerhalb des DFNT\n- Intensive Zusammenarbeit mit der Materialchemie und Biologie bei Wirkstoffentwicklung\n- Projekte mit der KI-Gruppe f\u00fcr Struktur-Vorhersage und Optimierung\n- Kooperationen mit Physik bei Quantenmaterialien\n\nNationale und internationale Partnerschaften\n- Universit\u00e4ten: Heidelberg, M\u00fcnchen, Berlin, Frankfurt\n- Max-Planck-Institute f\u00fcr Chemie und Kohleforschung\n- Industriepartner: BASF, Merck, Bayer, Sanofi (Pharma)\n- Internationale Netzwerke: EuCheMS, IUPAC\n- Forschungsf\u00f6rderung: DFG, BMBF, Eurostat-Programme",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Kooperationen und Netzwerk"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Innerhalb des DFNT"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Intensive Zusammenarbeit mit der Materialchemie und Biologie bei Wirkstoffentwicklung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Projekte mit der KI-Gruppe f\u00fcr Struktur-Vorhersage und Optimierung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kooperationen mit Physik bei Quantenmaterialien"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Nationale und internationale Partnerschaften"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Universit\u00e4ten: Heidelberg, M\u00fcnchen, Berlin, Frankfurt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Max-Planck-Institute f\u00fcr Chemie und Kohleforschung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Industriepartner: BASF, Merck, Bayer, Sanofi (Pharma)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Internationale Netzwerke: EuCheMS, IUPAC"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Forschungsf\u00f6rderung: DFG, BMBF, Eurostat-Programme"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "e4481562-bfac-4469-a47f-194411207319": {
+      "@type": "slate",
+      "plaintext": "Chemische Forschung am DFNT\n\nDie Chemische Abteilung des DFNT konzentriert sich auf Forschung und Entwicklung nachhaltiger chemischer Prozesse und neuer Materialien. Unser Leitmotiv ist \"Gr\u00fcne Chemie\" \u2013 die Entwicklung von Synthesen, die umweltfreundlich, effizient und wirtschaftlich sind.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Chemische Forschung am DFNT"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Chemische Abteilung des DFNT konzentriert sich auf Forschung und Entwicklung nachhaltiger chemischer Prozesse und neuer Materialien. Unser Leitmotiv ist \"Gr\u00fcne Chemie\" \u2013 die Entwicklung von Synthesen, die umweltfreundlich, effizient und wirtschaftlich sind."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "ec6f9838-bb73-4bf5-bc9d-9a0fd2ed7a32": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "ec6f9838-bb73-4bf5-bc9d-9a0fd2ed7a32",
+      "e4481562-bfac-4469-a47f-194411207319",
+      "93bfd4a5-884e-4af9-9dab-6c91fa56161b",
+      "155868d6-584b-4828-8014-32b7c5a2e765",
+      "1cb6e275-3eaf-4a97-b9fc-d5df9670bd10",
+      "a96b01be-fc7c-48aa-a8cc-6a3c9ff6210a"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:40+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Chemische Forschung am DFNT: Organische Chemie, Materialchemie und Katalyse mit Fokus auf Gr\u00fcne Chemie und nachhaltige Synthesewege",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "chemie",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:31:26+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Chemie",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:42+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:42+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

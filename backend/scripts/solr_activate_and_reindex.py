@@ -22,7 +22,15 @@ if __name__ == "__main__":
         if version == "unknown":
             print("Solr is not configured for this Plone site.")
         else:
+            # RAG (AI search) toggle: --rag-enable / --rag-disable switch
+            # the feature and (re)index the chunk documents; without a
+            # flag the current state is kept.
+            rag = None
+            if "--rag-enable" in sys.argv:
+                rag = True
+            elif "--rag-disable" in sys.argv:
+                rag = False
             with transaction.manager as tm:
-                activate_and_reindex(portal, clear="--clear" in sys.argv)
+                activate_and_reindex(portal, clear="--clear" in sys.argv, rag=rag)
                 tm.note("Activated and reindexed Solr.")
     app._p_jar.sync()

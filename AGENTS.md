@@ -108,3 +108,37 @@ Use the Cypress path mainly to maintain or debug existing legacy specs under `fr
 - Be careful with `mrs.developer.json`, local workspace overrides, and the vendored/frontend core relationship.
 - When changing frontend behavior, consider whether the change belongs in `frontend/packages/kitconcept-intranet` or in the vendored Volto core area.
 - When changing exported backend content or distribution setup, verify whether the change affects demo data, installation defaults, or test fixtures.
+
+## Component Shadowing
+
+Every shadowed Volto/add-on component committed under `frontend/packages/*/src/customizations/` MUST start with the mandatory OVERRIDE documentation header. This is enforced in CI by the `shadow-headers` job in `.github/workflows/frontend.yml` (script: `.github/scripts/check-shadow-headers.mjs`), which fails the build if the header or any required label is missing.
+
+Required labels in the leading block comment: `OVERRIDE`, `REASON`, `FILE`, `FILE VERSION`, `DATE`. Optional: `PULL REQUEST`, `TICKET`, `CHANGELOG`, `DEVELOPER`.
+
+Template:
+
+```jsx
+/**
+ * OVERRIDE ComponentName.jsx
+ * REASON: Short explanation of why this component is shadowed.
+ * FILE: https://github.com/plone/volto/blob/<version>/packages/volto/src/.../ComponentName.jsx
+ * FILE VERSION: Volto 19.3.1
+ * DATE: 2026-09-10
+ * DEVELOPER: @your-handle
+ */
+```
+
+Run the check locally from `frontend/`: `pnpm check:shadow` (or `node ../.github/scripts/check-shadow-headers.mjs packages`). Asset files (`.svg`, images) cannot carry the header and are skipped automatically.
+
+## Changelog Fragments
+
+This repo checks for towncrier fragments in CI.
+
+- Backend changes need a fragment under `backend/news/`
+- Frontend add-on changes need a fragment under `frontend/packages/kitconcept-intranet/news/`
+- Repo-level (not related to `backend` or `frontend`) changes may need a fragment under the root `news/`
+
+## PR Guidance
+
+- Create a PR only when you are told to
+- After creating a PR, make sure that a Towncrier fragment is present for the change, and that it is in the correct location. Create it/them if needed following the Changelog Fragments guidance section.

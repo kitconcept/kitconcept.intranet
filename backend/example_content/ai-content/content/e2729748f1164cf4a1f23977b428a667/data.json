@@ -1,0 +1,1660 @@
+{
+  "@id": "/arbeitsthemen/beschaffung-einkauf/grenzwerte-genehmigungen",
+  "@type": "Document",
+  "UID": "e2729748f1164cf4a1f23977b428a667",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "4d5b9b77-2748-4379-91a4-010b1f406b77": {
+      "@type": "slate",
+      "plaintext": "## Wertgrenzen und Genehmigungsprozesse\n\nDie Genehmigung von Beschaffungen erfolgt gestaffelt nach Wertgrenzen. Dies gew\u00e4hrleistet Effizienz bei kleinen Ausgaben und Kontrolle bei gr\u00f6\u00dferen Investitionen.\n\n### Genehmigungstabelle nach Betrag\n\n#### 1. Bis 500 EUR - Direktkauf\n\n**Genehmigung durch:** Mitarbeitende selbst\n\n**Verfahren:**\n- Kassenbon oder einfache Rechnung erforderlich\n- Ausf\u00fcllung Formular BK-01 (optional)\n- Keine zus\u00e4tzliche Genehmigung n\u00f6tig\n- Einfach archivieren und abrechnen\n\n**Hinweis:** Nutzen Sie diese Grenze f\u00fcr h\u00e4ufige Kleinbestellungen (B\u00fcromaterial, Ersatzteile bis 500 EUR)\n\n#### 2. 500 EUR bis 2.500 EUR - Abteilungsleitung + Einkauf\n\n**Genehmigung durch:**\n1. **Abteilungsleitung** (Direkte Vorgesetzte/r)\n2. **Einkaufsabteilung** (formale freigabe)\n\n**Verfahren:**\n- BANF im SAP anlegen\n- Mind. 3 Vergleichsangebote einholen\n- Abteilungsleiter genehmigt im SAP\n- Einkauf pr\u00fcft und gibt frei\n- Bestellung wird versendet\n\n**Bearbeitungsdauer:** 3-5 Arbeitstage\n\n#### 3. 2.500 EUR bis 25.000 EUR - Bereichsleitung + Einkauf\n\n**Genehmigung durch:**\n1. **Bereichsleitung** (oberste Abteilungsebene)\n2. **Einkaufsabteilung** (formale Freigabe)\n\n**Verfahren:**\n- BANF im SAP anlegen\n- **Mindestens 3 schriftliche Angebote** einholen\n- Angebotsvergleichstabelle erstellen\n- Bereichsleiter genehmigt im SAP\n- Einkauf pr\u00fcft und versendet Bestellung\n\n**Zusatz:** Ab dieser Grenze k\u00f6nnen Rabatten und Zahlungsbedingungen verhandelt werden\n\n**Bearbeitungsdauer:** 5-7 Arbeitstage\n\n#### 4. 25.000 EUR bis 221.000 EUR - Verwaltungsleitung + Vergabeverfahren\n\n**Genehmigung durch:**\n1. **Verwaltungsleitung** (Gesch\u00e4ftf\u00fchrer/in oder Direktor/in)\n2. **Einkauf** mit **Vergabevermerkes** (EU-Richtlinien-Vorbereitung)\n\n**Verfahren:**\n- BANF im SAP mit Gesch\u00e4ftsantrag\n- **5-10 Lieferanten-Anfragen** (nicht unter 5)\n- Angebotspr\u00fcfung mit Fachbereich\n- Verwaltungsleiter genehmigt\n- **Vergabevermerk** wird ausgef\u00fcllt (Dokumentation der Entscheidung)\n- Einkauf verhandelt Finaltermine\n\n**Besonderheiten:**\n- Preisverhandlung zwingend\n- Vertragswerk wird mitvergeben\n- Versicherungen und Qualifizierungen pr\u00fcfen\n\n**Bearbeitungsdauer:** 10-14 Arbeitstage\n\n#### 5. Ab 221.000 EUR - Europaweite Ausschreibung\n\n**Genehmigung durch:**\n1. **Gesch\u00e4ftsf\u00fchrerische Entscheidung**\n2. **Formales Ausschreibungsverfahren** nach EU-Vergaberichtlinien\n\n**Verfahren:**\n- **EU-weit \u00f6ffentliche Ausschreibung** (Ver\u00f6ffentlichung im Amtsblatt)\n- Ausschreibungsunterlagen vorbereiten (Einkauf + Rechtsabteilung)\n- Mindestvergabefrist: 30 Tage (oft 45-60 Tage)\n- Angebote \u00f6ffentlich erhalten und ge\u00f6ffnet\n- Zuschlag nach Bestpreis- oder Bestbieter-Ansatz\n- **Vergabevermerk** dokumentiert gesamtes Verfahren\n\n**Besonderheiten:**\n- Transparenz ist Pflicht\n- Dokumentation ist extrem wichtig\n- Rechtsabteilung und Einkauf arbeiten eng zusammen\n- Einspruchsrecht der nicht ber\u00fccksichtigten Bieter (mind. 10 Tage)\n\n**Bearbeitungsdauer:** 8-12 Wochen\n\n**Fachliche Unterst\u00fctzer:** einkauf@dfnt.de und jura@dfnt.de\n\n### Sonderregelungen\n\n#### IT-Hardware und Software\n\n**Wichtig:** Alle IT-Beschaffungen gehen **immer \u00fcber die IT-Abteilung**, unabh\u00e4ngig vom Wertbetrag.\n- IT ist **zust\u00e4ndig f\u00fcr Kompatibilit\u00e4t und Support**\n- Direkte Eigenk\u00e4ufe von Hardware sind nicht zugelassen\n- **Kontakt:** it-service@dfnt.de\n\n#### Gef\u00f6rderte Projekte\n\nBei Projekten mit **externen F\u00f6rdermitteln** (DFG, Bund, EU):\n- **Geltende Vorgaben des F\u00f6rderers beachten**\n- Oft strengere Anforderungen als DFNT-Richtlinien\n- R\u00fcckkopplung mit Projektmanagement zwingend\n- **Kontakt:** pm@dfnt.de\n\n#### Notfall- und Eilbeschaffungen\n\nBei zwingender Notwendigkeit (Maschinenausfall, Sicherheitsrisiko):\n- Direktkauf m\u00f6glich auch **\u00fcber sonst geltenden Grenzen**\n- **Begr\u00fcndung schriftlich** dokumentieren\n- Nachbeschaffung mit Genehmigungsprozess durchf\u00fchren\n- **Kontakt:** einkauf@dfnt.de\n\n### Kontakt und Beratung\n\n**Einkaufsabteilung:**\n- **Email:** einkauf@dfnt.de\n- **Telefon:** +49 221 470-4321\n- **Beratung:** Montag-Freitag, 08:00 - 17:00 Uhr\n\n**Rechtsabteilung (f\u00fcr Vertragswerk ab 25.000 EUR):**\n- **Email:** jura@dfnt.de\n- **Telefon:** +49 221 470-4500\n\nWenden Sie sich fr\u00fch um Unterst\u00fctzung, um Verz\u00f6gerungen zu vermeiden!",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Wertgrenzen und Genehmigungsprozesse"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Genehmigung von Beschaffungen erfolgt gestaffelt nach Wertgrenzen. Dies gew\u00e4hrleistet Effizienz bei kleinen Ausgaben und Kontrolle bei gr\u00f6\u00dferen Investitionen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Genehmigungstabelle nach Betrag"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "1. Bis 500 EUR - Direktkauf"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Genehmigung durch:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Mitarbeitende selbst"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verfahren:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kassenbon oder einfache Rechnung erforderlich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ausf\u00fcllung Formular BK-01 (optional)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Keine zus\u00e4tzliche Genehmigung n\u00f6tig"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einfach archivieren und abrechnen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Hinweis:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Nutzen Sie diese Grenze f\u00fcr h\u00e4ufige Kleinbestellungen (B\u00fcromaterial, Ersatzteile bis 500 EUR)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "2. 500 EUR bis 2.500 EUR - Abteilungsleitung + Einkauf"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Genehmigung durch:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Abteilungsleitung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (Direkte Vorgesetzte/r)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einkaufsabteilung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (formale freigabe)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verfahren:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "BANF im SAP anlegen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mind. 3 Vergleichsangebote einholen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Abteilungsleiter genehmigt im SAP"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einkauf pr\u00fcft und gibt frei"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bestellung wird versendet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bearbeitungsdauer:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " 3-5 Arbeitstage"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "3. 2.500 EUR bis 25.000 EUR - Bereichsleitung + Einkauf"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Genehmigung durch:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Bereichsleitung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (oberste Abteilungsebene)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einkaufsabteilung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (formale Freigabe)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verfahren:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "BANF im SAP anlegen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Mindestens 3 schriftliche Angebote"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " einholen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Angebotsvergleichstabelle erstellen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bereichsleiter genehmigt im SAP"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einkauf pr\u00fcft und versendet Bestellung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Zusatz:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Ab dieser Grenze k\u00f6nnen Rabatten und Zahlungsbedingungen verhandelt werden"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bearbeitungsdauer:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " 5-7 Arbeitstage"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "4. 25.000 EUR bis 221.000 EUR - Verwaltungsleitung + Vergabeverfahren"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Genehmigung durch:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Verwaltungsleitung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (Gesch\u00e4ftf\u00fchrer/in oder Direktor/in)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Einkauf"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " mit "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "Vergabevermerkes"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (EU-Richtlinien-Vorbereitung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verfahren:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "BANF im SAP mit Gesch\u00e4ftsantrag"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "5-10 Lieferanten-Anfragen"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (nicht unter 5)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Angebotspr\u00fcfung mit Fachbereich"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Verwaltungsleiter genehmigt"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vergabevermerk"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " wird ausgef\u00fcllt (Dokumentation der Entscheidung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einkauf verhandelt Finaltermine"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Besonderheiten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Preisverhandlung zwingend"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vertragswerk wird mitvergeben"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Versicherungen und Qualifizierungen pr\u00fcfen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bearbeitungsdauer:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " 10-14 Arbeitstage"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "5. Ab 221.000 EUR - Europaweite Ausschreibung"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Genehmigung durch:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Gesch\u00e4ftsf\u00fchrerische Entscheidung"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Formales Ausschreibungsverfahren"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " nach EU-Vergaberichtlinien"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Verfahren:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "EU-weit \u00f6ffentliche Ausschreibung"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " (Ver\u00f6ffentlichung im Amtsblatt)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ausschreibungsunterlagen vorbereiten (Einkauf + Rechtsabteilung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Mindestvergabefrist: 30 Tage (oft 45-60 Tage)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Angebote \u00f6ffentlich erhalten und ge\u00f6ffnet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zuschlag nach Bestpreis- oder Bestbieter-Ansatz"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Vergabevermerk"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " dokumentiert gesamtes Verfahren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Besonderheiten:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Transparenz ist Pflicht"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Dokumentation ist extrem wichtig"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Rechtsabteilung und Einkauf arbeiten eng zusammen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Einspruchsrecht der nicht ber\u00fccksichtigten Bieter (mind. 10 Tage)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bearbeitungsdauer:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " 8-12 Wochen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Fachliche Unterst\u00fctzer:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "einkauf@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:einkauf@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": " und "
+            },
+            {
+              "children": [
+                {
+                  "text": "jura@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:jura@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Sonderregelungen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "IT-Hardware und Software"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Wichtig:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Alle IT-Beschaffungen gehen "
+            },
+            {
+              "children": [
+                {
+                  "text": "immer \u00fcber die IT-Abteilung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ", unabh\u00e4ngig vom Wertbetrag."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "IT ist "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "zust\u00e4ndig f\u00fcr Kompatibilit\u00e4t und Support"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Direkte Eigenk\u00e4ufe von Hardware sind nicht zugelassen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontakt:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "it-service@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:it-service@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Gef\u00f6rderte Projekte"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "text": "Bei Projekten mit "
+            },
+            {
+              "children": [
+                {
+                  "text": "externen F\u00f6rdermitteln"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " (DFG, Bund, EU):"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Geltende Vorgaben des F\u00f6rderers beachten"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Oft strengere Anforderungen als DFNT-Richtlinien"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "R\u00fcckkopplung mit Projektmanagement zwingend"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontakt:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "pm@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:pm@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Notfall- und Eilbeschaffungen"
+            }
+          ],
+          "type": "h4"
+        },
+        {
+          "children": [
+            {
+              "text": "Bei zwingender Notwendigkeit (Maschinenausfall, Sicherheitsrisiko):"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Direktkauf m\u00f6glich auch "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "\u00fcber sonst geltenden Grenzen"
+                        }
+                      ],
+                      "type": "strong"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Begr\u00fcndung schriftlich"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " dokumentieren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Nachbeschaffung mit Genehmigungsprozess durchf\u00fchren"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Kontakt:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "einkauf@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:einkauf@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Kontakt und Beratung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Einkaufsabteilung:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Email:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "einkauf@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:einkauf@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Telefon:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " +49 221 470-4321"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Beratung:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " Montag-Freitag, 08:00 - 17:00 Uhr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Rechtsabteilung (f\u00fcr Vertragswerk ab 25.000 EUR):"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Email:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "jura@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:jura@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Telefon:"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " +49 221 470-4500"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Wenden Sie sich fr\u00fch um Unterst\u00fctzung, um Verz\u00f6gerungen zu vermeiden!"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d29ba9b3-b10f-43c2-a6ee-84f918dd1f98": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d29ba9b3-b10f-43c2-a6ee-84f918dd1f98",
+      "4d5b9b77-2748-4379-91a4-010b1f406b77"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Wertgrenzen und Genehmigungsprozesse f\u00fcr Beschaffungen",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "grenzwerte-genehmigungen",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:07:07+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Grenzwerte & Genehmigungen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

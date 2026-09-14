@@ -1,0 +1,277 @@
+{
+  "@id": "/ueber-uns/gremien-kommissionen/betriebsrat-personalrat",
+  "@type": "Document",
+  "UID": "1eeb4476b0fe4c3082dfdc05bbbcaf91",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2d6d2c27-db55-488b-add8-6c41d005e121": {
+      "@type": "slate",
+      "plaintext": "## Systemstatus\n\nAktuellen Systemstatus einsehen unter status.dfnt.de (\u00f6ffentlich, kein Login n\u00f6tig).\n\n**\u00dcberwacht werden:**\n- E-Mail\n- VPN\n- HPC-Cluster\n- Netzlaufwerke\n- SharePoint/Teams\n- Ticket-System\n- Ger\u00e4te-Management\n- Backup-Systeme\n\n**Geplante Wartungszeiten:** werden 48h vorher bekannt gegeben (E-Mail an alle Mitarbeitende)\n\n**Bei ungeplantem Ausfall:** sofort Ticket oder Anruf +49 221 470-4999\n\n**Status-Abonnement:** status.dfnt.de/subscribe f\u00fcr Benachrichtigungen per E-Mail/SMS",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Systemstatus"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Aktuellen Systemstatus einsehen unter status.dfnt.de (\u00f6ffentlich, kein Login n\u00f6tig)."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "\u00dcberwacht werden:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "E-Mail"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "VPN"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "HPC-Cluster"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Netzlaufwerke"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "SharePoint/Teams"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ticket-System"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ger\u00e4te-Management"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Backup-Systeme"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Geplante Wartungszeiten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " werden 48h vorher bekannt gegeben (E-Mail an alle Mitarbeitende)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bei ungeplantem Ausfall:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " sofort Ticket oder Anruf +49 221 470-4999"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Status-Abonnement:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " status.dfnt.de/subscribe f\u00fcr Benachrichtigungen per E-Mail/SMS"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "ff89ffdf-75da-47c9-9014-77a6d3096db7": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "ff89ffdf-75da-47c9-9014-77a6d3096db7",
+      "2d6d2c27-db55-488b-add8-6c41d005e121"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:24+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Interessenvertretung der Besch\u00e4ftigten: Mitglieder, Sprechzeiten, aktuelle Themen und Kontaktm\u00f6glichkeiten zum Betriebs- bzw. Personalrat.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "betriebsrat-personalrat",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:12:42+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Betriebsrat & Personalrat",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:49+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

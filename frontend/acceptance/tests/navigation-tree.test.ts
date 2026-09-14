@@ -129,17 +129,18 @@ test.describe('NavigationTree', () => {
     });
     */
 
-    test('panel shows the active workspace title in the header', async ({
-      page,
-    }) => {
-      await login(page);
-      const { workspacePath } = await createNavTreeWikiContent(page);
-      await page.goto(workspacePath, { waitUntil: 'networkidle' });
+    // Now we are getting this from controlpanel
+    // test('panel shows the active workspace title in the header', async ({
+    //   page,
+    // }) => {
+    //   await login(page);
+    //   const { workspacePath } = await createNavTreeWikiContent(page);
+    //   await page.goto(workspacePath, { waitUntil: 'networkidle' });
 
-      const siteTitle = page.locator('.nav-tree-site-title');
-      await expect(siteTitle).toBeVisible();
-      await expect(siteTitle).toHaveText('Nav Tree Test Workspace');
-    });
+    //   const siteTitle = page.locator('.nav-tree-site-title');
+    //   await expect(siteTitle).toBeVisible();
+    //   await expect(siteTitle).toHaveText('Nav Tree Test Workspace');
+    // });
 
     /*
     test('navigation tree panel is visible on edit pages', async ({ page }) => {

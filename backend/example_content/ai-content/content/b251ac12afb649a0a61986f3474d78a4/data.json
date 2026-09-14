@@ -1,0 +1,277 @@
+{
+  "@id": "/services/it-services/systemstatus",
+  "@type": "Document",
+  "UID": "b251ac12afb649a0a61986f3474d78a4",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2dfca537-c383-4e2f-a90e-51f60d888852": {
+      "@type": "title"
+    },
+    "55879994-542a-435a-9af2-ce0d0e143c09": {
+      "@type": "slate",
+      "plaintext": "## Systemstatus\n\nAktuellen Systemstatus einsehen unter status.dfnt.de (\u00f6ffentlich, kein Login n\u00f6tig).\n\n**\u00dcberwacht werden:**\n- E-Mail\n- VPN\n- HPC-Cluster\n- Netzlaufwerke\n- SharePoint/Teams\n- Ticket-System\n- Ger\u00e4te-Management\n- Backup-Systeme\n\n**Geplante Wartungszeiten:** werden 48h vorher bekannt gegeben (E-Mail an alle Mitarbeitende)\n\n**Bei ungeplantem Ausfall:** sofort Ticket oder Anruf +49 221 470-4999\n\n**Status-Abonnement:** status.dfnt.de/subscribe f\u00fcr Benachrichtigungen per E-Mail/SMS",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Systemstatus"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Aktuellen Systemstatus einsehen unter status.dfnt.de (\u00f6ffentlich, kein Login n\u00f6tig)."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "\u00dcberwacht werden:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "E-Mail"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "VPN"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "HPC-Cluster"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Netzlaufwerke"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "SharePoint/Teams"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ticket-System"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ger\u00e4te-Management"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Backup-Systeme"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Geplante Wartungszeiten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " werden 48h vorher bekannt gegeben (E-Mail an alle Mitarbeitende)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Bei ungeplantem Ausfall:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " sofort Ticket oder Anruf +49 221 470-4999"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Status-Abonnement:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " status.dfnt.de/subscribe f\u00fcr Benachrichtigungen per E-Mail/SMS"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "2dfca537-c383-4e2f-a90e-51f60d888852",
+      "55879994-542a-435a-9af2-ce0d0e143c09"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:17+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Aktuelle Verf\u00fcgbarkeit der IT-Systeme und geplante Wartungsfenster: Echtzeit-Statusanzeige f\u00fcr alle wichtigen Dienste des DFNT.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "systemstatus",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:13:34+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Systemstatus",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

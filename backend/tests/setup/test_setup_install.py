@@ -18,6 +18,11 @@ class TestSetupInstall:
 
         assert IBrowserLayer in browser_layers
 
+    def test_no_dangling_upgrade_steps(self, installer):
+        """Test that there are no dangling upgrade steps."""
+        upgrade_info = installer.upgrade_info(PACKAGE_NAME)
+        assert upgrade_info["available"] is False
+
 
 class TestRegistrySettings:
     @pytest.fixture(autouse=True)

@@ -1,0 +1,157 @@
+{
+  "@id": "/aktuelles/newsletter-abonnements/abonnementverwaltung",
+  "@type": "Document",
+  "UID": "5b0205c07d6447029d9bd97c2382782d",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2f0a9963-5090-4229-9a38-b101dcfca220": {
+      "@type": "title"
+    },
+    "9bd3d3ab-dc3b-48dd-824d-ab21d46b03df": {
+      "@type": "slate",
+      "plaintext": "Verwalten Sie Ihre Newsletter-Abonnements ganz einfach:",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Verwalten Sie Ihre Newsletter-Abonnements ganz einfach:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "An- und Abmeldung per E-Mail: Senden Sie eine E-Mail an "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "newsletter@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:newsletter@dfnt.de"
+                      },
+                      "type": "link"
+                    },
+                    {
+                      "text": " mit dem Betreff \"An-\" oder \"Abmeldung\" zusammen mit Ihrer Mitarbeitendennummer oder E-Mail-Adresse."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Verwaltung im Mitarbeiterportal: Melden Sie sich im Mitarbeiterportal an und gehen Sie zu \"Mein Profil\" \u2192 \"Newsletter\", um Ihre Abonnementpr\u00e4ferenzen anzupassen."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DSGVO-konform: Alle Ihre Daten werden nach den Datenschutzbestimmungen der DSGVO verarbeitet. Sie k\u00f6nnen jederzeit Ihre Abonnements \u00e4ndern oder l\u00f6schen."
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "2f0a9963-5090-4229-9a38-b101dcfca220",
+      "9bd3d3ab-dc3b-48dd-824d-ab21d46b03df"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:02+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Verwaltung von Newsletter-Abonnements, An- und Abmeldung, Pr\u00e4ferenzen, DSGVO-konforme Verwaltung",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "abonnementverwaltung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:40:21+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Abonnementverwaltung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:34+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:34+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

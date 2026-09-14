@@ -27,7 +27,7 @@ function NavigationTreePortal() {
   const panelRef = useRef<HTMLDivElement>(null);
 
   const siteData = useSelector((state: any) => state.site?.data);
-  const siteTitle: string = siteData?.title ?? 'Site';
+  const siteTitle = siteData?.['plone.site_title'];
 
   useEffect(() => {
     const toolbar = document.getElementById('toolbar');

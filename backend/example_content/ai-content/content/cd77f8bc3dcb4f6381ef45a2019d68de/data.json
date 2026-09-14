@@ -1,0 +1,111 @@
+{
+  "@id": "/arbeitsthemen/beschaffung-einkauf",
+  "@type": "Document",
+  "UID": "cd77f8bc3dcb4f6381ef45a2019d68de",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2d393c74-ab3e-41d7-b54f-af5d269bad16": {
+      "@type": "image",
+      "alt": "Kreative Projektplanung mit Moodboard und Post-its auf Pinnwand",
+      "image_field": "image",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
+      "url": "../resolveuid/ee701f00b70245d88b037d38c8af3e98"
+    },
+    "83a38df7-3e3b-4294-91d4-d41c7a276e8c": {
+      "@type": "slate",
+      "plaintext": "\u00dcberblick \u00fcber den gesamten Beschaffungsprozess am DFNT: von der Bedarfsanforderung bis zur Rechnungsfreigabe. Hier finden Sie Bestellformulare, Rahmenvertr\u00e4ge mit bevorzugten Lieferanten, Grenzwerte f\u00fcr Genehmigungen sowie Informationen zu Software-Lizenzen und Inventarverwaltung.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "\u00dcberblick \u00fcber den gesamten Beschaffungsprozess am DFNT: von der Bedarfsanforderung bis zur Rechnungsfreigabe. Hier finden Sie Bestellformulare, Rahmenvertr\u00e4ge mit bevorzugten Lieferanten, Grenzwerte f\u00fcr Genehmigungen sowie Informationen zu Software-Lizenzen und Inventarverwaltung."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "88a5f0d9-7899-4be1-9422-17cf76292fe7": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "88a5f0d9-7899-4be1-9422-17cf76292fe7",
+      "2d393c74-ab3e-41d7-b54f-af5d269bad16",
+      "83a38df7-3e3b-4294-91d4-d41c7a276e8c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T15:59:53+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\u00dcberblick \u00fcber den gesamten Beschaffungsprozess am DFNT: von der Bedarfsanforderung bis zur Rechnungsfreigabe. Hier finden Sie Bestellformulare, Rahmenvertr\u00e4ge mit bevorzugten Lieferanten, Grenzwerte f\u00fcr Genehmigungen sowie Informationen zu Software-Lizenzen und Inventarverwaltung.",
+  "effective": "2026-03-05T15:59:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "beschaffung-einkauf",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-07T10:55:17+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Beschaffung & Einkauf",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

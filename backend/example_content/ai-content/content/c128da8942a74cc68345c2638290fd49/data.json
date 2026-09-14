@@ -1,0 +1,794 @@
+{
+  "@id": "/forschung/forschungsbereiche/informatik-ki",
+  "@type": "Document",
+  "UID": "c128da8942a74cc68345c2638290fd49",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "12235bef-b173-4a00-b685-4324dceb5096": {
+      "@type": "slate",
+      "plaintext": "Forschungsschwerpunkte\n\nMachine Learning und Deep Learning\n\nWir entwickeln und trainieren tiefe neuronale Netze f\u00fcr komplexe Aufgaben:\n- Computer Vision: Bildverstehen, Objekterkennung, semantische Segmentierung\n- Natural Language Processing (NLP): Textanalyse, Frage-Antwort-Systeme, maschinelle \u00dcbersetzung\n- Generative Modelle: Transformers und Large Language Models (LLMs)\n- Reinforcement Learning: Agententraining f\u00fcr autonome Systeme\n\nUnser Flagship-Projekt ist das WissKI-1 Large Language Model, ein spezialisiertes LLM f\u00fcr wissenschaftliche Texte und Datenanalyse.\n\nDatenwissenschaft und Big Data\n\nWir verarbeiten und analysieren massive Datenmengen aus wissenschaftlichen Experimenten:\n- Big Data Pipelines: Datenerfassung, -bereinigung, -transformation\n- Statistische Analyse und Hypothesenpr\u00fcfung\n- Bioinformatik-Methoden: Genomik-Datenanalyse, Proteom-Analyse\n- Zeitreihenanalyse und Vorhersagemodelle\n\nHochleistungsrechnen (HPC)\n\nUnser HPC-Cluster ist das Rechnenzentrum des DFNT mit einer Leistung von 500 Teraflops:\n- Parallelverarbeitung mit 10.000+ CPU-Kernen\n- GPU-Cluster mit 1.000+ NVIDIA A100-GPUs f\u00fcr Deep Learning\n- Speichersystem: 10 Petabyte verteilter Speicher\n- Simulation und numerische Modellierung f\u00fcr Physik, Chemie und Materialwissenschaften",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Forschungsschwerpunkte"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Machine Learning und Deep Learning"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Wir entwickeln und trainieren tiefe neuronale Netze f\u00fcr komplexe Aufgaben:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Computer Vision: Bildverstehen, Objekterkennung, semantische Segmentierung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Natural Language Processing (NLP): Textanalyse, Frage-Antwort-Systeme, maschinelle \u00dcbersetzung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Generative Modelle: Transformers und Large Language Models (LLMs)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Reinforcement Learning: Agententraining f\u00fcr autonome Systeme"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Unser Flagship-Projekt ist das WissKI-1 Large Language Model, ein spezialisiertes LLM f\u00fcr wissenschaftliche Texte und Datenanalyse."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Datenwissenschaft und Big Data"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Wir verarbeiten und analysieren massive Datenmengen aus wissenschaftlichen Experimenten:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Big Data Pipelines: Datenerfassung, -bereinigung, -transformation"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Statistische Analyse und Hypothesenpr\u00fcfung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Bioinformatik-Methoden: Genomik-Datenanalyse, Proteom-Analyse"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zeitreihenanalyse und Vorhersagemodelle"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Hochleistungsrechnen (HPC)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Unser HPC-Cluster ist das Rechnenzentrum des DFNT mit einer Leistung von 500 Teraflops:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Parallelverarbeitung mit 10.000+ CPU-Kernen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "GPU-Cluster mit 1.000+ NVIDIA A100-GPUs f\u00fcr Deep Learning"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Speichersystem: 10 Petabyte verteilter Speicher"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Simulation und numerische Modellierung f\u00fcr Physik, Chemie und Materialwissenschaften"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "539e174f-b88c-4fd4-a891-bfe60ccee8ba": {
+      "@type": "slate",
+      "plaintext": "Informatik und K\u00dcnstliche Intelligenz am DFNT\n\nDie Abteilung Informatik & K\u00dcnstliche Intelligenz ist das digitale Herz des DFNT. Wir entwickeln KI-Systeme und Datenanalyseverfahren, um wissenschaftliche Durchbr\u00fcche in allen Disziplinen zu erm\u00f6glichen. Gleichzeitig betreiben wir Hochleistungsrechnen f\u00fcr die gesamte Institution.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Informatik und K\u00dcnstliche Intelligenz am DFNT"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Abteilung Informatik & K\u00dcnstliche Intelligenz ist das digitale Herz des DFNT. Wir entwickeln KI-Systeme und Datenanalyseverfahren, um wissenschaftliche Durchbr\u00fcche in allen Disziplinen zu erm\u00f6glichen. Gleichzeitig betreiben wir Hochleistungsrechnen f\u00fcr die gesamte Institution."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "7234ba75-f08e-4a4b-9d48-5bd22c04552c": {
+      "@type": "slate",
+      "plaintext": "Kooperationen und Netzwerk\n\nInnerhalb des DFNT\n- Zentrale Datenverarbeitung f\u00fcr alle Forschungsbereiche\n- Collaborative AI-Projekte mit Physik, Chemie und Biologie\n- Gemeinsame Labore f\u00fcr anwendungsnahe KI-Forschung\n\nNationale und internationale Partnerschaften\n- Universit\u00e4ten: TU M\u00fcnchen, Universit\u00e4t Heidelberg, TU Berlin, Universit\u00e4t Hamburg\n- Forschungsinstitute: Fraunhofer IPA, Fraunhofer IAIS, DKFZ Heidelberg\n- Industrie: Google DeepMind, Meta AI Research, IBM Quantum\n- Internationale Programme: EU Horizon Europe, NFDI (Nationale Forschungsdateninfrastruktur)\n- Standardisierung: ISO und W3C f\u00fcr KI-Ethik und Datenstandards",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Kooperationen und Netzwerk"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Innerhalb des DFNT"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zentrale Datenverarbeitung f\u00fcr alle Forschungsbereiche"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Collaborative AI-Projekte mit Physik, Chemie und Biologie"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Gemeinsame Labore f\u00fcr anwendungsnahe KI-Forschung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Nationale und internationale Partnerschaften"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Universit\u00e4ten: TU M\u00fcnchen, Universit\u00e4t Heidelberg, TU Berlin, Universit\u00e4t Hamburg"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Forschungsinstitute: Fraunhofer IPA, Fraunhofer IAIS, DKFZ Heidelberg"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Industrie: Google DeepMind, Meta AI Research, IBM Quantum"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Internationale Programme: EU Horizon Europe, NFDI (Nationale Forschungsdateninfrastruktur)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Standardisierung: ISO und W3C f\u00fcr KI-Ethik und Datenstandards"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "7cc34d30-03d2-4cad-8d2c-e6e09383b2d1": {
+      "@type": "slate",
+      "plaintext": "Arbeitsgruppen und Personal\n\nDie Abteilung Informatik & KI besteht aus 6 Arbeitsgruppen mit ca. 130 Mitarbeiter*innen:\n- 6 Gruppen-Leiter*innen (Universit\u00e4tsprofessoren und leitende Forschende)\n- 55 Postdoktora und Doktorandinnen/Doktoranden\n- 40 Systemadministratoren, Softwareingenieur*innen, Datenmanager*innen\n- 29 Studentische Hilfskr\u00e4fte, Praktikanten/innen und IT-Support\n\nInterdisziplin\u00e4re Zusammenarbeit\nUnsere Teams arbeiten eng mit Wissenschaftler*innen aus allen anderen Bereichen zusammen. Viele Stellen sind shared zwischen Informatik und Fachdisziplinen (z.B. Bioinformatik, Computational Chemistry).",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Arbeitsgruppen und Personal"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Abteilung Informatik & KI besteht aus 6 Arbeitsgruppen mit ca. 130 Mitarbeiter*innen:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "6 Gruppen-Leiter*innen (Universit\u00e4tsprofessoren und leitende Forschende)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "55 Postdoktora und Doktorandinnen/Doktoranden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "40 Systemadministratoren, Softwareingenieur"
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "innen, Datenmanager"
+                        }
+                      ],
+                      "type": "em"
+                    },
+                    {
+                      "text": "innen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "29 Studentische Hilfskr\u00e4fte, Praktikanten/innen und IT-Support"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Interdisziplin\u00e4re Zusammenarbeit\nUnsere Teams arbeiten eng mit Wissenschaftler*innen aus allen anderen Bereichen zusammen. Viele Stellen sind shared zwischen Informatik und Fachdisziplinen (z.B. Bioinformatik, Computational Chemistry)."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "bf10752d-b0f7-46bc-9877-bd2b8d78cddf": {
+      "@type": "slate",
+      "plaintext": "Infrastruktur und Ausstattung\n\nHochleistungsrechnen\n- HPC-Cluster: 500 Teraflops (Petaflop-Cluster in Planung)\n- GPU-Cluster: 1.000 NVIDIA A100 (80GB Memory) GPUs\n- Speichersystem: 10 Petabyte mit Backup und Redundanz\n- Netzwerk: 400 Gbit/s InfiniBand f\u00fcr Inter-Node-Kommunikation\n\nSoftware und Frameworks\n- Standard HPC-Software: SLURM Job-Scheduler, MPI/OpenMP\n- Deep Learning Frameworks: PyTorch, TensorFlow, JAX\n- Wissenschaftliches Computing: NumPy, SciPy, Scikit-learn\n- Container-Technologie: Docker und Singularity\n\nDatenmanagement\n- Datenbank-Cluster mit SQL- und NoSQL-Systemen\n- Data Lake f\u00fcr Rohdaten und Artefakte\n- Versionskontrolle und Reproduzierbarkeit f\u00fcr Modelle",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Infrastruktur und Ausstattung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Hochleistungsrechnen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "HPC-Cluster: 500 Teraflops (Petaflop-Cluster in Planung)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "GPU-Cluster: 1.000 NVIDIA A100 (80GB Memory) GPUs"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Speichersystem: 10 Petabyte mit Backup und Redundanz"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Netzwerk: 400 Gbit/s InfiniBand f\u00fcr Inter-Node-Kommunikation"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Software und Frameworks"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Standard HPC-Software: SLURM Job-Scheduler, MPI/OpenMP"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Deep Learning Frameworks: PyTorch, TensorFlow, JAX"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Wissenschaftliches Computing: NumPy, SciPy, Scikit-learn"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Container-Technologie: Docker und Singularity"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Datenmanagement"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Datenbank-Cluster mit SQL- und NoSQL-Systemen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Data Lake f\u00fcr Rohdaten und Artefakte"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Versionskontrolle und Reproduzierbarkeit f\u00fcr Modelle"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "d5c8640f-cd3f-418c-bd22-387855b8cea8": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d5c8640f-cd3f-418c-bd22-387855b8cea8",
+      "539e174f-b88c-4fd4-a891-bfe60ccee8ba",
+      "12235bef-b173-4a00-b685-4324dceb5096",
+      "bf10752d-b0f7-46bc-9877-bd2b8d78cddf",
+      "7cc34d30-03d2-4cad-8d2c-e6e09383b2d1",
+      "7234ba75-f08e-4a4b-9d48-5bd22c04552c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:45+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Informatik und KI-Forschung am DFNT: Machine Learning, Datenwissenschaft, Hochleistungsrechnen mit 500 Teraflops und WissKI-1 Large Language Model",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "informatik-ki",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:31:45+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Informatik & KI",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:42+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:42+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

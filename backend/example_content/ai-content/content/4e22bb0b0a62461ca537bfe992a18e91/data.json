@@ -1,0 +1,436 @@
+{
+  "@id": "/services/bibliothek/katalog-recherche",
+  "@type": "Document",
+  "UID": "4e22bb0b0a62461ca537bfe992a18e91",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "643811e9-2de5-4754-8413-f0716c8d814c": {
+      "@type": "slate",
+      "plaintext": "## OPAC und Datenbankenzugang\n\nDas Online Public Access Catalog (OPAC) unserer Bibliothek ist erreichbar unter **katalog.dfnt.de**. Hier k\u00f6nnen Sie alle verf\u00fcgbaren Ressourcen recherchieren.\n\n### Verf\u00fcgbare Datenbanken\n\nUnsere Einrichtung bietet Zugang zu f\u00fchrenden wissenschaftlichen Datenbanken:\n\n- Web of Science\n- Scopus\n- PubMed\n- SciFinder\n- IEEE Xplore\n- Elsevier ScienceDirect\n- SpringerLink\n- Wiley Online\n- JSTOR\n\n### Zugangsmodalit\u00e4ten\n\n**On-Campus**: Automatischer Zugang mit Ihrem DFNT-Konto\n\n**Heimzugang**: VPN erforderlich f\u00fcr externe Zugriffe\n\n### Unterst\u00fctzung und Beratung\n\n**Rechercheberatung**:\n- Zeiten: Montag bis Freitag, 10:00\u201312:00 Uhr\n- Walk-in m\u00f6glich oder Termin unter bibliothek@dfnt.de\n\n### Recherche-Tipps\n\n- Nutzen Sie die **Thesaurus-Suche** f\u00fcr pr\u00e4zisere Ergebnisse\n- Kombinieren Sie Suchbegriffe mit **Boolean-Operatoren**: AND, OR, NOT\n- Begrenzen Sie Suchergebnisse auf Zeitraum und Dokumenttyp",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "OPAC und Datenbankenzugang"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Das Online Public Access Catalog (OPAC) unserer Bibliothek ist erreichbar unter "
+            },
+            {
+              "children": [
+                {
+                  "text": "katalog.dfnt.de"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ". Hier k\u00f6nnen Sie alle verf\u00fcgbaren Ressourcen recherchieren."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Verf\u00fcgbare Datenbanken"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Unsere Einrichtung bietet Zugang zu f\u00fchrenden wissenschaftlichen Datenbanken:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Web of Science"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Scopus"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "PubMed"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "SciFinder"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "IEEE Xplore"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Elsevier ScienceDirect"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "SpringerLink"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Wiley Online"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "JSTOR"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Zugangsmodalit\u00e4ten"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "On-Campus"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Automatischer Zugang mit Ihrem DFNT-Konto"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Heimzugang"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": VPN erforderlich f\u00fcr externe Zugriffe"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Unterst\u00fctzung und Beratung"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Rechercheberatung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ":"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Zeiten: Montag bis Freitag, 10:00\u201312:00 Uhr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Walk-in m\u00f6glich oder Termin unter "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "bibliothek@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:bibliothek@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Recherche-Tipps"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Nutzen Sie die "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "Thesaurus-Suche"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": " f\u00fcr pr\u00e4zisere Ergebnisse"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Kombinieren Sie Suchbegriffe mit "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "Boolean-Operatoren"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": AND, OR, NOT"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Begrenzen Sie Suchergebnisse auf Zeitraum und Dokumenttyp"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "f3cbbbf1-1227-47ba-bb72-a8677460ea6d": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "f3cbbbf1-1227-47ba-bb72-a8677460ea6d",
+      "643811e9-2de5-4754-8413-f0716c8d814c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:09+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Bibliothekskatalog (OPAC), Datenbanken und Recherchetools nutzen: Zugang zu Literatur, Zeitschriften und Fachdatenbanken des DFNT.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "katalog-recherche",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:08:45+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Katalog-Recherche",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:46+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:46+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

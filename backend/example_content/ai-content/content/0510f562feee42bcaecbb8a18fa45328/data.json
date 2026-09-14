@@ -1,0 +1,135 @@
+{
+  "@id": "/bilder/abstracts",
+  "@type": "Document",
+  "UID": "0510f562feee42bcaecbb8a18fa45328",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "84d425b5-f57e-40e3-816f-d8e34e9dd6e4": {
+      "@type": "search",
+      "facets": [
+        {
+          "@id": "94aa7403-0ad8-41de-b574-7d35ca848b2d",
+          "advanced": false,
+          "field": {
+            "label": "Organisational Unit",
+            "value": "organisational_unit_reference"
+          },
+          "hidden": false,
+          "multiple": false
+        },
+        {
+          "@id": "f1e3e35c-c250-4e93-a689-48e3cdce30d6",
+          "advanced": false,
+          "field": {
+            "label": "Tag",
+            "value": "Subject"
+          },
+          "hidden": false,
+          "multiple": false
+        }
+      ],
+      "listingBodyTemplate": "grid",
+      "query": {
+        "b_size": "9",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "./"
+          },
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Image"
+            ]
+          }
+        ],
+        "sort_on": "created",
+        "sort_order": "descending",
+        "sort_order_boolean": true
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
+    },
+    "f4064a9c-85cf-4734-9142-984108175a77": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "f4064a9c-85cf-4734-9142-984108175a77",
+      "84d425b5-f57e-40e3-816f-d8e34e9dd6e4"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-02-20T14:55:17+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2026-02-20T15:00:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "abstracts",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-05T11:17:51+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Abstracts",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:38+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:38+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

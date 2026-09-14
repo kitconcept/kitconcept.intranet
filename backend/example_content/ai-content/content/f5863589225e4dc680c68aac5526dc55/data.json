@@ -1,0 +1,365 @@
+{
+  "@id": "/arbeitsthemen/forschungsdatenmanagement/langzeitarchivierung",
+  "@type": "Document",
+  "UID": "f5863589225e4dc680c68aac5526dc55",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "2ca938f9-9b44-40eb-85d2-39286960d804": {
+      "@type": "title"
+    },
+    "d8d94674-ff40-41a3-ade0-46c4ca0edf11": {
+      "@type": "slate",
+      "plaintext": "## Betriebs\u00e4rztlicher Dienst\n\nUnser Betriebs\u00e4rztliches Team unterst\u00fctzt die Gesundheit und Arbeitsf\u00e4higkeit aller DFNT-Mitarbeitenden.\n\n### Standort und Sprechstunden\n\n**Praxis-Standort**: Geb\u00e4ude A, K\u00f6ln (Hauptstandort)\n\n**Sprechstunden** (ohne Anmeldung):\n- Dienstag: 14:00\u201316:00 Uhr\n- Donnerstag: 9:00\u201311:00 Uhr\n\n**Termine nach Vereinbarung**: betriebsarzt@dfnt.de\n\n### Pflichtvorsorge\n\nFolgende Vorsorgeuntersuchungen sind je nach T\u00e4tigkeit Pflicht:\n\n| T\u00e4tigkeit | H\u00e4ufigkeit |\n|----------|----------|\n| Bildschirmarbeitsplatz | Alle 3 Jahre |\n| Gefahrstoffexposition | Je nach Substanz |\n| Nachtarbeit | J\u00e4hrlich |\n| Auslandsentsendung | Vor Entsendung |\n\n### Angebotsvorsorge\n\nWir bieten zus\u00e4tzlich an:\n\n- Impfberatung\n- Allgemeine Gesundheitsberatung\n\n### Vertraulichkeit\n\n**Wichtig**: Alle Unterlagen und Informationen werden streng vertraulich behandelt gem\u00e4\u00df der \u00e4rztlichen Schweigepflicht.\n\n### Kontakt\n\n**E-Mail**: betriebsarzt@dfnt.de\n\nWir beraten Sie gerne zu allen arbeitsmedizinischen Fragen und Vorsorgeangeboten.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Betriebs\u00e4rztlicher Dienst"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Unser Betriebs\u00e4rztliches Team unterst\u00fctzt die Gesundheit und Arbeitsf\u00e4higkeit aller DFNT-Mitarbeitenden."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Standort und Sprechstunden"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Praxis-Standort"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Geb\u00e4ude A, K\u00f6ln (Hauptstandort)"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sprechstunden"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " (ohne Anmeldung):"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Dienstag: 14:00\u201316:00 Uhr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Donnerstag: 9:00\u201311:00 Uhr"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Termine nach Vereinbarung"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "betriebsarzt@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:betriebsarzt@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Pflichtvorsorge"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Folgende Vorsorgeuntersuchungen sind je nach T\u00e4tigkeit Pflicht:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "text": "T\u00e4tigkeit"
+        },
+        {
+          "text": "H\u00e4ufigkeit"
+        },
+        {
+          "text": "Bildschirmarbeitsplatz"
+        },
+        {
+          "text": "Alle 3 Jahre"
+        },
+        {
+          "text": "Gefahrstoffexposition"
+        },
+        {
+          "text": "Je nach Substanz"
+        },
+        {
+          "text": "Nachtarbeit"
+        },
+        {
+          "text": "J\u00e4hrlich"
+        },
+        {
+          "text": "Auslandsentsendung"
+        },
+        {
+          "text": "Vor Entsendung"
+        },
+        {
+          "children": [
+            {
+              "text": "Angebotsvorsorge"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Wir bieten zus\u00e4tzlich an:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Impfberatung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Allgemeine Gesundheitsberatung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Vertraulichkeit"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Wichtig"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": Alle Unterlagen und Informationen werden streng vertraulich behandelt gem\u00e4\u00df der \u00e4rztlichen Schweigepflicht."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Kontakt"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "E-Mail"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "betriebsarzt@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:betriebsarzt@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Wir beraten Sie gerne zu allen arbeitsmedizinischen Fragen und Vorsorgeangeboten."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "2ca938f9-9b44-40eb-85d2-39286960d804",
+      "d8d94674-ff40-41a3-ade0-46c4ca0edf11"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:47+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Strategien, Formate und Services f\u00fcr die langfristige Sicherung von Forschungsdaten: Empfehlungen zu Dateiformaten, Repositorien und Archivierungsfristen.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "langzeitarchivierung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:04+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Langzeitarchivierung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:37+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:37+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

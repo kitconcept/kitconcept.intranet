@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Banner Block
-  it('Banner-block (/features/block/banner-block)', () => {
-    cy.navigate('/features/block/banner-block');
+  it('Banner-block (/qa/block/banner-block)', () => {
+    cy.navigate('/qa/block/banner-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

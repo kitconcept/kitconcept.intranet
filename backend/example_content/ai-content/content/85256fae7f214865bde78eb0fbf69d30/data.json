@@ -1,0 +1,268 @@
+{
+  "@id": "/services/zentrale-verwaltung/rechtsabteilung",
+  "@type": "Document",
+  "UID": "85256fae7f214865bde78eb0fbf69d30",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "13c0a9cc-d9fb-4f2a-ba00-f1837340857f": {
+      "@type": "title"
+    },
+    "f0b1fdb1-00a2-4769-8264-87a7e0a9d0ba": {
+      "@type": "slate",
+      "plaintext": "## Rechtsabteilung\n\nBeratung zu Vertragsrecht, Datenschutz und weiteren rechtlichen Fragestellungen.\n\n**Beratungsgebiete:**\n- Vertragsrecht und Vertragsabschluss\n- Arbeitsrecht\n- Datenschutz (DSGVO)\n- Urheberrecht und Lizenzen\n- Haftung und Versicherung\n\n**Kontakt:** recht@dfnt.de, +49 221 470-3040\n\n**Sprechzeiten:** Mi 14:00-17:00 Uhr oder nach Vereinbarung\n\n**Ort:** K\u00f6ln, Geb\u00e4ude B, Raum 215\n\n**Kostenlos:** F\u00fcr alle Mitarbeitende des DFNT",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Rechtsabteilung"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Beratung zu Vertragsrecht, Datenschutz und weiteren rechtlichen Fragestellungen."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Beratungsgebiete:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Vertragsrecht und Vertragsabschluss"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Arbeitsrecht"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Datenschutz (DSGVO)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Urheberrecht und Lizenzen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Haftung und Versicherung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "recht@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:recht@dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": ", +49 221 470-3040"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Sprechzeiten:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Mi 14:00-17:00 Uhr oder nach Vereinbarung"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ort:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " K\u00f6ln, Geb\u00e4ude B, Raum 215"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kostenlos:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " F\u00fcr alle Mitarbeitende des DFNT"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "13c0a9cc-d9fb-4f2a-ba00-f1837340857f",
+      "f0b1fdb1-00a2-4769-8264-87a7e0a9d0ba"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:59+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Beratung zu Vertragsrecht, Datenschutz und weiteren rechtlichen Fragestellungen: Zust\u00e4ndigkeiten, Sprechzeiten und Kontakt.",
+  "effective": "2026-03-05T16:30:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "rechtsabteilung",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:15:48+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Rechtsabteilung",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

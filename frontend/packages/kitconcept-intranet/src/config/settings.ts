@@ -1,8 +1,10 @@
 import type { ConfigType } from '@plone/registry';
+import type { VLTSettings } from '@kitconcept/volto-light-theme/types';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import DocumentReviewPlug from '@kitconcept/intranet/components/Toolbar/DocumentReviewPlug';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
 import profilePlaceholder from '../assets/profile-placeholder.svg';
+import Header from '../components/Header/Header';
 
 export default function install(config: ConfigType) {
   const nonContentRoutes = [
@@ -33,6 +35,12 @@ export default function install(config: ConfigType) {
   config.settings.supportedLanguages = ['de', 'en'];
 
   // Volto Light Theme Configuration
+  config.registerUtility({
+    name: 'workspaces',
+    type: 'header',
+    method: Header,
+  });
+  (config.settings.vlt as VLTSettings).components.header = 'workspaces';
   config.settings.intranetHeader = true;
   config.settings.siteLabel = 'Intranet';
   config.settings.displayLogout = false;

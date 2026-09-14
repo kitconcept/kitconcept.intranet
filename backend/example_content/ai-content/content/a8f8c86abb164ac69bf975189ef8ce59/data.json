@@ -1,0 +1,466 @@
+{
+  "@id": "/arbeitsthemen/dienstreisen-mobilitaet/dienst-pkw-buchen",
+  "@type": "Document",
+  "UID": "a8f8c86abb164ac69bf975189ef8ce59",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "0e525289-00a2-4dc0-af19-ceeb6111b19e": {
+      "@type": "slate",
+      "plaintext": "Verf\u00fcgbare Fahrzeugklassen\n\nKompaktklasse (z.B. VW Golf): F\u00fcr Einzelfahrten und 2-3 Personen, sparsamster Verbrauch\nMittelklasse (z.B. VW Passat): F\u00fcr Gruppen bis 5 Personen, Komfort und Platz\nTransporter/Vans (z.B. VW Caddy): F\u00fcr Materialien und bis zu 8 Personen\n\nE-Fahrzeuge (Elektro): Alle modernen Fahrzeuge sind optional auch als E-Varianten buchbar. Die Reichweite ist ausreichend f\u00fcr alle lokalen DFNT-Fahrten und inter-Standort-Transfers.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Verf\u00fcgbare Fahrzeugklassen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Kompaktklasse (z.B. VW Golf): F\u00fcr Einzelfahrten und 2-3 Personen, sparsamster Verbrauch\nMittelklasse (z.B. VW Passat): F\u00fcr Gruppen bis 5 Personen, Komfort und Platz\nTransporter/Vans (z.B. VW Caddy): F\u00fcr Materialien und bis zu 8 Personen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "E-Fahrzeuge (Elektro): Alle modernen Fahrzeuge sind optional auch als E-Varianten buchbar. Die Reichweite ist ausreichend f\u00fcr alle lokalen DFNT-Fahrten und inter-Standort-Transfers."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "5906253c-cf29-4d9e-9557-bcfc073b882e": {
+      "@type": "slate",
+      "plaintext": "E-Auto-Flotte und Ladeinfrastruktur\n\nDas DFNT investiert in eine nachhaltige Flotte. Alle E-Fahrzeuge sind moderne Modelle mit Reichweite von 300-500 km (je nach Modell). Die gesamte Ladeinfrastruktur ist an allen vier DFNT-Standorten verf\u00fcgbar.\n\nLadezeiten:\n- Schnellladestation (DC-Schnelllader): 20-30 Min. f\u00fcr 80% Ladung\n- Normalladestation (AC): 6-8 Stunden f\u00fcr volle Ladung\n\nStationen sind rund um die Uhr zug\u00e4nglich und kostenfrei f\u00fcr DFNT-Mitarbeiter. Bei Fahrten mit E-Autos erh\u00e4lten Sie automatisch Zugang zu den \u00f6ffentlichen DFNT-Partnerstrom-Stationen (z.B. EnBW, Ionity).\n\nRechnung: Ladekosten werden automatisch erfasst und \u00fcber die Kostenstelle abgerechnet (keine separaten Belege n\u00f6tig).",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "E-Auto-Flotte und Ladeinfrastruktur"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Das DFNT investiert in eine nachhaltige Flotte. Alle E-Fahrzeuge sind moderne Modelle mit Reichweite von 300-500 km (je nach Modell). Die gesamte Ladeinfrastruktur ist an allen vier DFNT-Standorten verf\u00fcgbar."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Ladezeiten:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Schnellladestation (DC-Schnelllader): 20-30 Min. f\u00fcr 80% Ladung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Normalladestation (AC): 6-8 Stunden f\u00fcr volle Ladung"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Stationen sind rund um die Uhr zug\u00e4nglich und kostenfrei f\u00fcr DFNT-Mitarbeiter. Bei Fahrten mit E-Autos erh\u00e4lten Sie automatisch Zugang zu den \u00f6ffentlichen DFNT-Partnerstrom-Stationen (z.B. EnBW, Ionity)."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Rechnung: Ladekosten werden automatisch erfasst und \u00fcber die Kostenstelle abgerechnet (keine separaten Belege n\u00f6tig)."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "74af2e1e-c1ff-40ec-982d-f6cb09b5988f": {
+      "@type": "title"
+    },
+    "78ae806f-b165-4fd1-9723-ee66b68df230": {
+      "@type": "slate",
+      "plaintext": "Online-Buchung \u00fcber Fleet-Portal\n\nSchritt 1: Melden Sie sich im DFNT-Fleet-Portal an (https://fleet.dfnt.de)\nSchritt 2: W\u00e4hlen Sie Ihre gew\u00fcnschte Fahrzeugklasse und das Datum aus\nSchritt 3: Bestimmen Sie den Pick-up-Standort und die geplante R\u00fcckgabezeit\nSchritt 4: Rechnung und Kostenstelle eingeben (wird automatisch erfasst)\nSchritt 5: Buchung abschlie\u00dfen\n\nSie erhalten sofort eine Best\u00e4tigung per E-Mail mit der Reservierungsnummer und den Fahrzeuginformationen.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Online-Buchung \u00fcber Fleet-Portal"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Schritt 1: Melden Sie sich im DFNT-Fleet-Portal an ("
+            },
+            {
+              "children": [
+                {
+                  "text": "https://fleet.dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "https://fleet.dfnt.de"
+              },
+              "type": "link"
+            },
+            {
+              "text": ")\nSchritt 2: W\u00e4hlen Sie Ihre gew\u00fcnschte Fahrzeugklasse und das Datum aus\nSchritt 3: Bestimmen Sie den Pick-up-Standort und die geplante R\u00fcckgabezeit\nSchritt 4: Rechnung und Kostenstelle eingeben (wird automatisch erfasst)\nSchritt 5: Buchung abschlie\u00dfen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Sie erhalten sofort eine Best\u00e4tigung per E-Mail mit der Reservierungsnummer und den Fahrzeuginformationen."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "85e5f37f-d3a4-4a8f-9c3d-97ddf6412ead": {
+      "@type": "slate",
+      "plaintext": "Pick-up und R\u00fcckgabe\n\nDFNT-Standorte mit Fahrzeugflotten:\n- DFNT Bonn Hauptsitz (Parkpl\u00e4tze B1-B5)\n- DFNT Berlin Forschungsstandort (Parkhaus West)\n- DFNT Heidelberg (Besucherparkplatz)\n- DFNT M\u00fcnchen (Tiefgarage EG)\n\nPick-up: 30 Minuten vor Buchungszeit im B\u00fcro der Fahrzeugverwaltung\nR\u00fcckgabe: Im selben Parkbereich oder am gew\u00e4hlten R\u00fcckgabepunkt\nFahrzeug ist \u00dcberschreitung des zeitlichen Rahmens mit EUR 25/Stunde berechnet\n\nBr\u00fcssel-Fahrten: Kann auch am Brusseler DFNT-Partner-Standort zur\u00fcckgegeben werden (Kosten tr\u00e4gt DFNT)",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Pick-up und R\u00fcckgabe"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "DFNT-Standorte mit Fahrzeugflotten:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFNT Bonn Hauptsitz (Parkpl\u00e4tze B1-B5)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFNT Berlin Forschungsstandort (Parkhaus West)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFNT Heidelberg (Besucherparkplatz)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "DFNT M\u00fcnchen (Tiefgarage EG)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Pick-up: 30 Minuten vor Buchungszeit im B\u00fcro der Fahrzeugverwaltung\nR\u00fcckgabe: Im selben Parkbereich oder am gew\u00e4hlten R\u00fcckgabepunkt\nFahrzeug ist \u00dcberschreitung des zeitlichen Rahmens mit EUR 25/Stunde berechnet"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Br\u00fcssel-Fahrten: Kann auch am Brusseler DFNT-Partner-Standort zur\u00fcckgegeben werden (Kosten tr\u00e4gt DFNT)"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "998536e2-4754-4b04-bda3-ea9a72580603": {
+      "@type": "slate",
+      "plaintext": "Sch\u00e4den melden\n\nFalls Sie einen Schaden feststellen:\n1. Machen Sie sofort Photos von Kratzer, Dellen oder anderen Besch\u00e4digungen\n2. Rufen Sie die Fahrzeugverwaltung an: +49 (0)228 123-456 oder schreiben Sie an fahrzeuge@dfnt.de\n3. F\u00fcllen Sie das Schadenformular aus (im Portal verf\u00fcgbar)\n4. Erkl\u00e4ren Sie den Unfallhergang und beteiligter Personen\n5. Der Versicherungsfall wird unmittelbar eingeleitet\n\nHaftung: Das DFNT versichert alle Fahrzeuge mit Vollkasko. F\u00fcr Fremdverschulden \u00fcbernimmt der Unfallverursacher die Kosten.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Sch\u00e4den melden"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Falls Sie einen Schaden feststellen:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Machen Sie sofort Photos von Kratzer, Dellen oder anderen Besch\u00e4digungen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Rufen Sie die Fahrzeugverwaltung an: +49 (0)228 123-456 oder schreiben Sie an "
+                    },
+                    {
+                      "children": [
+                        {
+                          "text": "fahrzeuge@dfnt.de"
+                        }
+                      ],
+                      "data": {
+                        "url": "mailto:fahrzeuge@dfnt.de"
+                      },
+                      "type": "link"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "F\u00fcllen Sie das Schadenformular aus (im Portal verf\u00fcgbar)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Erkl\u00e4ren Sie den Unfallhergang und beteiligter Personen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Der Versicherungsfall wird unmittelbar eingeleitet"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        },
+        {
+          "children": [
+            {
+              "text": "Haftung: Das DFNT versichert alle Fahrzeuge mit Vollkasko. F\u00fcr Fremdverschulden \u00fcbernimmt der Unfallverursacher die Kosten."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "bdd37c59-a676-4e19-8b3f-c3a92de1c43d": {
+      "@type": "slate",
+      "plaintext": "Das DFNT verf\u00fcgt \u00fcber eine moderne Flotte von Dienstfahrzeugen, die f\u00fcr gesch\u00e4ftliche Fahrten bereitstehen. Die Buchung erfolgt einfach und digital \u00fcber unser Fleet-Management-Portal.",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das DFNT verf\u00fcgt \u00fcber eine moderne Flotte von Dienstfahrzeugen, die f\u00fcr gesch\u00e4ftliche Fahrten bereitstehen. Die Buchung erfolgt einfach und digital \u00fcber unser Fleet-Management-Portal."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "74af2e1e-c1ff-40ec-982d-f6cb09b5988f",
+      "bdd37c59-a676-4e19-8b3f-c3a92de1c43d",
+      "78ae806f-b165-4fd1-9723-ee66b68df230",
+      "0e525289-00a2-4dc0-af19-ceeb6111b19e",
+      "85e5f37f-d3a4-4a8f-9c3d-97ddf6412ead",
+      "998536e2-4754-4b04-bda3-ea9a72580603",
+      "5906253c-cf29-4d9e-9557-bcfc073b882e"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:27:17+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Buchung von Dienstfahrzeugen \u00fcber Fleet-Portal mit Informationen zu Fahrzeugklassen, Ladeinfrastruktur und Schadenmeldung",
+  "effective": "2026-03-05T16:27:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "dienst-pkw-buchen",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:30:15+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Dienst-PKW buchen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:36+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:36+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

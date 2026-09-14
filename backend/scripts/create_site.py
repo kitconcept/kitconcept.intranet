@@ -1,4 +1,3 @@
-from kitconcept.intranet.interfaces import IBrowserLayer
 from kitconcept.intranet.utils.scripts import create_site
 from pathlib import Path
 
@@ -18,7 +17,6 @@ def main():
         app=app,
         env_vars={},
         answers_file=answers_file,
-        browser_layer=IBrowserLayer,
         additional_profiles=ADDITIONAL_PROFILES,
     )
 

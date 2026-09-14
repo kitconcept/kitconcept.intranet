@@ -1,3 +1,11 @@
+/**
+ * OVERRIDE RssSidebar.jsx
+ * REASON: Customize the RSS block sidebar schema and labels for the intranet.
+ * FILE: https://www.npmjs.com/package/volto-rss-block/v/3.0.1
+ * FILE VERSION: volto-rss-block 3.0.1
+ * DATE: 2025-08-20
+ */
+
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';

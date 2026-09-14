@@ -1,0 +1,300 @@
+{
+  "@id": "/services/kantine/ernahrungsformen",
+  "@type": "Document",
+  "UID": "6965d774e92e4e72875f98e846adc51f",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "0c012415-e934-4159-8547-da4aa47f076a": {
+      "@type": "title"
+    },
+    "d79200c9-d48c-4a16-b986-0613cf115f7e": {
+      "@type": "slate",
+      "plaintext": "## Ern\u00e4hrungsformen\n\nVegetarische, vegane und allergenfreie Optionen im \u00dcberblick.\n\n**Kennzeichnung auf den Speisepl\u00e4nen:**\n- V = Vegetarisch\n- VG = Vegan\n- GF = Glutenfrei\n- * = Enth\u00e4lt Nussangabe\n- R = Rohe Zutaten\n\n**Allergene Informationen:**\n- Ausk\u00fcnfte beim Personal\n- Detaillierte Liste auf kantine.dfnt.de\n- Ank\u00fcndigung von Allergenen\n\n**Spezialw\u00fcnsche:** Mindestens 48h vorher mitteilen\n\n**Kontakt:** catering@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Ern\u00e4hrungsformen"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Vegetarische, vegane und allergenfreie Optionen im \u00dcberblick."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kennzeichnung auf den Speisepl\u00e4nen:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "V = Vegetarisch"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "VG = Vegan"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "GF = Glutenfrei"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "text": "= Enth\u00e4lt Nussangabe"
+                            }
+                          ],
+                          "type": "p"
+                        }
+                      ],
+                      "type": "li"
+                    }
+                  ],
+                  "type": "ul"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "R = Rohe Zutaten"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Allergene Informationen:"
+                }
+              ],
+              "type": "strong"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ausk\u00fcnfte beim Personal"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Detaillierte Liste auf kantine.dfnt.de"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "text": "Ank\u00fcndigung von Allergenen"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Spezialw\u00fcnsche:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " Mindestens 48h vorher mitteilen"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Kontakt:"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "catering@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:catering@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "0c012415-e934-4159-8547-da4aa47f076a",
+      "d79200c9-d48c-4a16-b986-0613cf115f7e"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:29:29+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Vegetarische, vegane und allergenfreie Optionen im \u00dcberblick: Kennzeichnung von Allergenen, Zusatzstoffen und Ern\u00e4hrungshinweisen.",
+  "effective": "2026-03-05T16:29:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "ernahrungsformen",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:15:04+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Ern\u00e4hrungsformen",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:48+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:48+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

@@ -1,0 +1,122 @@
+{
+  "@id": "/community",
+  "@type": "Document",
+  "UID": "e5ead7fe1fce4522996a67649f95b3f7",
+  "allow_discussion": false,
+  "authors": [
+    "809499c7ddda4aef80d3ab61c0c365d5"
+  ],
+  "blocks": {
+    "262e6fcf-5da2-46bb-972f-b91561ac72ca": {
+      "@type": "highlight",
+      "image_field": "image",
+      "plaintext": "",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-4"
+      },
+      "title": "Community",
+      "url": "../resolveuid/c46f1a5c1bfa42acbac0e03dff4fb79b",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Das DFNT-Intranet als Gemeinschaftsraum: Netzwerke, Sport & Freizeit, Gleichstellung, Gesundheitsangebote und das digitale Schwarze Brett \u2013 hier ist der Treffpunkt f\u00fcr alles rund um das Leben am DFNT."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "84d697a5-9568-4c1b-9997-a2480ed1826c": {
+      "@type": "listing",
+      "headline": "Themen im \u00dcberblick",
+      "headlineTag": "h2",
+      "querystring": {
+        "depth": "1",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.relativePath",
+            "v": "./"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "theme": "default",
+      "variation": "grid"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "262e6fcf-5da2-46bb-972f-b91561ac72ca",
+      "84d697a5-9568-4c1b-9997-a2480ed1826c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:08:37+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Das DFNT-Intranet als Gemeinschaftsraum: Hier finden Sie alles f\u00fcr das Leben abseits des Schreibtisches \u2013 von Initiativen und Netzwerken \u00fcber Sport und Freizeit bis hin zu Gleichstellungsangeboten, Gesundheitsservices und dem digitalen Schwarzen Brett. Willkommen in der DFNT-Community.",
+  "effective": "2026-03-05T16:08:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "community",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-20T10:42:06+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": "809499c7ddda4aef80d3ab61c0c365d5",
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Community",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:40+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:40+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

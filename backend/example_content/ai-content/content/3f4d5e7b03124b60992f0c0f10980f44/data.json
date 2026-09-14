@@ -1,0 +1,290 @@
+{
+  "@id": "/forschung/meine-projekte/meine-aktiven-projekte",
+  "@type": "Document",
+  "UID": "3f4d5e7b03124b60992f0c0f10980f44",
+  "allow_discussion": false,
+  "authors": null,
+  "blocks": {
+    "158f4c84-f299-4bae-8687-6c7f8b0b3caf": {
+      "@type": "title"
+    },
+    "ad1a34b6-bf81-4278-9f56-58d8151a11a5": {
+      "@type": "slate",
+      "plaintext": "## Meine laufenden Forschungsprojekte\n\nDieser Bereich zeigt eine personalisierte \u00dcbersicht \u00fcber Ihre aktiven Projekte mit allen wichtigen Informationen und Status.\n\n### Projektstatus-Dashboard\n\nDas Dashboard bietet einen \u00dcberblick mit folgenden Elementen:\n\n- **Ampelstatus**: Schnelle Visualisierung des Projektstatus (gr\u00fcn/gelb/rot)\n- **N\u00e4chste Meilensteine**: Kommende Ziele und Deadlines\n- **Offene Aufgaben**: Was muss noch getan werden\n- **Budgetstatus**: \u00dcbersicht \u00fcber Mittelverbrauch und Kontin\u00fcbersicht\n\n### Datenabgleich\n\nDie Projektdaten werden automatisch aus dem DFNT-Projektmanagementsystem synchronisiert und sind immer aktuell.\n\n### Neues Projekt anlegen\n\nEin neues Forschungsprojekt wird \u00fcber das Formular **PA-01** (Projektantrag) beantragt. Nach Genehmigung wird automatisch ein Projektraum erstellt.\n\n### Support\n\n**Fragen zu Ihren Projekten**: projekte@dfnt.de",
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Meine laufenden Forschungsprojekte"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Dieser Bereich zeigt eine personalisierte \u00dcbersicht \u00fcber Ihre aktiven Projekte mit allen wichtigen Informationen und Status."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Projektstatus-Dashboard"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Das Dashboard bietet einen \u00dcberblick mit folgenden Elementen:"
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Ampelstatus"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Schnelle Visualisierung des Projektstatus (gr\u00fcn/gelb/rot)"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "N\u00e4chste Meilensteine"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Kommende Ziele und Deadlines"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Offene Aufgaben"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": Was muss noch getan werden"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "text": "Budgetstatus"
+                        }
+                      ],
+                      "type": "strong"
+                    },
+                    {
+                      "text": ": \u00dcbersicht \u00fcber Mittelverbrauch und Kontin\u00fcbersicht"
+                    }
+                  ],
+                  "type": "p"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        },
+        {
+          "children": [
+            {
+              "text": "Datenabgleich"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Die Projektdaten werden automatisch aus dem DFNT-Projektmanagementsystem synchronisiert und sind immer aktuell."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Neues Projekt anlegen"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "text": "Ein neues Forschungsprojekt wird \u00fcber das Formular "
+            },
+            {
+              "children": [
+                {
+                  "text": "PA-01"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " (Projektantrag) beantragt. Nach Genehmigung wird automatisch ein Projektraum erstellt."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "text": "Support"
+            }
+          ],
+          "type": "h3"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Fragen zu Ihren Projekten"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ": "
+            },
+            {
+              "children": [
+                {
+                  "text": "projekte@dfnt.de"
+                }
+              ],
+              "data": {
+                "url": "mailto:projekte@dfnt.de"
+              },
+              "type": "link"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "158f4c84-f299-4bae-8687-6c7f8b0b3caf",
+      "ad1a34b6-bf81-4278-9f56-58d8151a11a5"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-03-05T16:28:10+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "Direktzugriff auf pers\u00f6nliche Projektr\u00e4ume und aktuell laufende Forschungsvorhaben: \u00dcbersicht der eigenen Projekte mit Links zu Dokumenten und Kommunikationskan\u00e4len.",
+  "effective": "2026-03-05T16:28:00+00:00",
+  "enable_likes": false,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "feedback_person": null,
+  "head_title": null,
+  "id": "meine-aktiven-projekte",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "location_reference": null,
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-03-06T10:10:46+00:00",
+  "nav_title": null,
+  "organisational_unit_reference": null,
+  "preview_caption_link": null,
+  "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-01-23",
+  "review_interval": "6m",
+  "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
+  "rights": "",
+  "searchwords": [],
+  "showinsearch": true,
+  "subjects": [],
+  "title": "Meine aktiven Projekte",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "votes": null,
+  "workflow_history": {
+    "simple_intranet_workflow": [
+      {
+        "action": null,
+        "actor": null,
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-07-23T15:09:44+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": null,
+        "comments": "",
+        "review_state": "published",
+        "time": "2026-07-23T15:09:44+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

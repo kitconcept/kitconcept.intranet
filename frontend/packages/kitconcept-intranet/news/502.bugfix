@@ -1,0 +1,1 @@
+Fix person portraits leaking the internal backend URL in SSR: PersonPill now flattens the given portrait and falls back to the public `/@portrait/<id>` endpoint when it is still an absolute (internal) URL. @sneridagh

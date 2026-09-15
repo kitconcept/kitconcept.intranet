@@ -16,9 +16,9 @@ This feature relies on the `kitconcept.blocks.config` behavior. It is enabled by
 
 ## What can be configured
 
-- **Enabled blocks** — disable blocks from appearing in the blocks chooser
-- **Themes of a block** — define available StyleWrapper themes
-- **Enabled variations of a block** — limit which variations editors can choose
+- **Enabled blocks**—disable blocks from appearing in the blocks chooser
+- **Themes of a block**—define available StyleWrapper themes
+- **Enabled variations of a block**—limit which variations editors can choose
 
 These configurations are modeled through a **mutator field** in JSON format. The mutator definition is applied to the hardcoded blocks configuration, modifying default values with the instructions in the field.
 
@@ -60,9 +60,9 @@ export type MutatorDSL = Record<
 ```
 
 Where:
-- `disable` — If `true`, the block is disabled and not available in the blocks chooser.
-- `variations` — Array of variation IDs to enable. If omitted, all variations are enabled.
-- `themes` — Array of style definitions for the block's themes. If omitted, default themes are used.
+- `disable`—If `true`, the block is disabled and not available in the blocks chooser.
+- `variations`—Array of variation IDs to enable. If omitted, all variations are enabled.
+- `themes`—Array of style definitions for the block's themes. If omitted, default themes are used.
 
 ### Full example
 

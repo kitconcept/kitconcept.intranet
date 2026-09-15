@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Slider Block
-  it('Slider (/features/block/slider)', () => {
-    cy.navigate('/features/block/slider');
+  it('Slider (/qa/block/slider)', () => {
+    cy.navigate('/qa/block/slider');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

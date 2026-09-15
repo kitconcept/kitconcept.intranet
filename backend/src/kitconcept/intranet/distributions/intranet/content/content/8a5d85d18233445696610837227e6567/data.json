@@ -29,17 +29,58 @@
       "showSearchInput": true,
       "showTotalResults": true
     },
-    "undefined": {
+    "81bd35ae-bf51-4ac3-8b3d-7cd35cd75cdf": {
       "@type": "eventCalendar",
+      "facets": [
+        {
+          "@id": "12b9e363-bd7a-44a4-8ff6-43b77d84861b",
+          "advanced": false,
+          "field": {
+            "label": "Review state",
+            "value": "review_state"
+          },
+          "hidden": false,
+          "multiple": false,
+          "type": "selectFacet"
+        }
+      ],
       "showSearchInput": true,
-      "showTotalResults": true
+      "showTotalResults": true,
+      "theme": "grey"
+    },
+    "8be9fdd4-0eff-4d58-962f-c5f00ec5c00e": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Grey Background",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
+    },
+    "f59170ee-4b45-4f03-9505-4772ae50a392": {
+      "@type": "slate",
+      "plaintext": "The event calendar block displayed on a grey background.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The event calendar block displayed on a grey background."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     }
   },
   "blocks_layout": {
     "items": [
       "0a4d6119-8af5-42dd-8a7f-43db3849693d",
       "5175502b-8c90-4864-8bb1-ab9a974bebf1",
-      "18bde631-0220-45c8-9783-9f788845d2ac"
+      "18bde631-0220-45c8-9783-9f788845d2ac",
+      "8be9fdd4-0eff-4d58-962f-c5f00ec5c00e",
+      "f59170ee-4b45-4f03-9505-4772ae50a392",
+      "81bd35ae-bf51-4ac3-8b3d-7cd35cd75cdf"
     ]
   },
   "changeNote": "",

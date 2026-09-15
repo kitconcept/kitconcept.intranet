@@ -46,7 +46,7 @@ For more information about configuring this agent, please refer to the official 
 
 ### The backend-cron-worker Service
 
-This service should live inside your application's stack. It must use the same base image as your main `backend` and share the identical environment configuration (e.g., database connections) to keep states synchronized.
+This service should live inside your application's stack. It must use the same base image as your main `backend` and share the identical environment configuration (for example database connections) to keep states synchronized.
 
 ```yaml
 services:

@@ -16,7 +16,7 @@ The RSS block fetches and displays items from an external RSS or Atom feed direc
 
 - You have Editor or Manager access to the page.
 - You have the URL of the RSS feed you want to display.
-- The feed URL's domain may need to be reachable from the Plone backend server (ask your administrator if you are unsure).
+- The domain of the feed URL may need to be reachable from the Plone backend server (ask your administrator if you are unsure).
 
 ## Adding the RSS Block
 
@@ -28,7 +28,7 @@ The RSS block fetches and displays items from an external RSS or Atom feed direc
 
 ### Entering the Feed URL
 
-1. In the sidebar, paste the full URL of the RSS or Atom feed (e.g. `https://feeds.feedburner.com/ConservationInternationalBlog/ClimateChange`).
+1. In the sidebar, paste the full URL of the RSS or Atom feed (for example `https://feeds.feedburner.com/ConservationInternationalBlog/ClimateChange`).
 2. The block will fetch and preview the feed items. Save the page to see the rendered feed as visitors will.
 
 ## See Also

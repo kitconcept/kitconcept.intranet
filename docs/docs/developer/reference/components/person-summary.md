@@ -14,7 +14,7 @@ Content-type-specific summary card rendered when a `Person` item appears inside 
 
 **File:** `frontend/packages/kitconcept-intranet/src/components/Summary/PersonSummary.tsx`
 
-**Registration:** `frontend/packages/volto-light-theme/frontend/packages/volto-light-theme/src/config/summary.ts` — registered as the `Summary` component for the `Person` content type. See {doc}`vlt:how-to-guides/summary` for how the Summary registry works.
+**Registration:** `frontend/packages/volto-light-theme/frontend/packages/volto-light-theme/src/config/summary.ts`—registered as the `Summary` component for the `Person` content type. See {doc}`vlt:how-to-guides/summary` for how the Summary registry works.
 
 ---
 
@@ -34,7 +34,7 @@ Content-type-specific summary card rendered when a `Person` item appears inside 
 | `head_title` | Optional label displayed above the name |
 | `title` | Person's full name rendered in `HeadingTag`; falls back to `item.id` |
 | `job_title` | Job title displayed below the name |
-| `description` | Short bio — processed through [`smartTextRenderer`](../helpers/smart-text.md) to support markdown links |
+| `description` | Short bio—processed through [`smartTextRenderer`](../helpers/smart-text.md) to support markdown links |
 | `contact_email` | Rendered as a `mailto:` link with a mail icon |
 | `contact_room` | Rendered with a location icon |
 | `contact_phone` | Rendered with a mobile/phone icon |
@@ -65,9 +65,9 @@ The `.summary-extra-info` class handles icon + text rows. Icon size is 24px.
 
 ## Notes
 
-- The intranet version extends the upstream VLT `PersonSummary` with two changes: it adds `job_title` rendering and sets `hideLink = true`.
-- `hide_description` suppresses the description paragraph unconditionally — unlike the VLT base which additionally skips the paragraph when `item.description === ''`.
-- `description` is passed through `smartTextRenderer` — markdown-style links (`[text](href)`) in the description field are rendered as `<UniversalLink>` elements.
+- The intranet version extends the upstream {term}`VLT` `PersonSummary` with two changes: it adds `job_title` rendering and sets `hideLink = true`.
+- `hide_description` suppresses the description paragraph unconditionally—unlike the VLT base which additionally skips the paragraph when `item.description === ''`.
+- `description` is passed through `smartTextRenderer`—markdown-style links (`[text](href)`) in the description field are rendered as `<UniversalLink>` elements.
 
 ## See also
 

@@ -1,14 +1,20 @@
 import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
+import Toast from '@plone/volto/components/manage/Toast/Toast';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { useUser } from '@plone/volto/hooks';
 import { defineMessages, useIntl } from 'react-intl';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import lockSVG from '@plone/volto/icons/lock.svg';
 import sendSVG from '@plone/volto/icons/send.svg';
 import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
+import { submitFeedbackContactForm } from '../../actions';
+import { getDisplayedAuthors } from './authors';
+import { getFeedbackRecipient, type CLMPersonData } from './feedbackRecipient';
 
 const messages = defineMessages({
   title: {
@@ -20,8 +26,8 @@ const messages = defineMessages({
     defaultMessage: 'Author',
   },
   responsible: {
-    id: 'Content responsible',
-    defaultMessage: 'Content responsible',
+    id: 'Responsible Person',
+    defaultMessage: 'Responsible Person',
   },
   created: {
     id: 'Created on',
@@ -44,8 +50,8 @@ const messages = defineMessages({
     defaultMessage: 'Give feedback on this page',
   },
   feedbackTitle: {
-    id: 'Feedback about this page',
-    defaultMessage: 'Feedback about this page',
+    id: 'Feedback on this page',
+    defaultMessage: 'Feedback on this page',
   },
   private: {
     id: 'Private',
@@ -55,15 +61,28 @@ const messages = defineMessages({
     id: 'goes to',
     defaultMessage: 'goes to',
   },
+  success: {
+    id: 'Success',
+    defaultMessage: 'Success',
+  },
+  successContent: {
+    id: 'Your feedback has been submitted successfully. You will receive a confirmation email shortly.',
+    defaultMessage:
+      'Your feedback has been submitted successfully. You will receive a confirmation email shortly.',
+  },
+  error: {
+    id: 'Error',
+    defaultMessage: 'Error',
+  },
 });
 
 type UserData = {
   fullname?: string;
   homepage?: string | null;
-  portrait?: string | null;
 };
 
 type ContentWithBylineExpander = Content & {
+  authors?: string[] | null;
   created?: string;
   modified?: string;
   '@components'?: {
@@ -71,12 +90,14 @@ type ContentWithBylineExpander = Content & {
       users?: Record<string, UserData>;
     };
     clm?: {
-      responsible_person?: {
+      authors?: {
+        value: string;
         person_url?: string;
-        url?: string;
-        username: string;
         title?: string;
-      };
+        username?: string;
+      }[];
+      feedback_person?: CLMPersonData;
+      responsible_person?: CLMPersonData & { url?: string };
     };
   };
 };
@@ -88,6 +109,12 @@ type AboutThisContentProps = {
 type ReduxState = {
   content: {
     data?: ContentWithBylineExpander;
+  };
+  userSession: {
+    token?: string | null;
+  };
+  feedbackContactForm: {
+    loading?: boolean;
   };
 };
 
@@ -131,29 +158,68 @@ const AboutContentDate = ({
 
 const AboutThisContent = ({ content }: AboutThisContentProps) => {
   const intl = useIntl();
+  const dispatch = useDispatch();
+  const user = useUser();
   const [feedback, setFeedback] = useState('');
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   const contentFromState = useSelector(
     (state: ReduxState) => state.content.data,
   );
   const contentData = contentFromState ?? content;
-  const creators = contentData?.creators ?? [];
-  const usersFromExpander = contentData?.['@components']?.byline?.users ?? {};
-  const creatorsWithData = creators.map((userid: string) => {
-    const userData = usersFromExpander[userid];
+  const isAuthenticated = useSelector((state: ReduxState) =>
+    Boolean(state.userSession.token),
+  );
+  const isSubmitting = useSelector((state: ReduxState) =>
+    Boolean(state.feedbackContactForm.loading),
+  );
+  const displayedAuthors = contentData ? getDisplayedAuthors(contentData) : [];
+  const hasAuthors = displayedAuthors.length > 0;
+  const clm = contentData?.['@components']?.clm;
+  const responsiblePersonUrl = clm?.responsible_person?.person_url;
+  const responsiblePersonUsername = clm?.responsible_person?.username;
+  const responsiblePersonTitle = clm?.responsible_person?.title;
+  const feedbackRecipient = getFeedbackRecipient(clm);
+  const feedbackRecipientUsername = feedbackRecipient?.username;
+  const feedbackRecipientTitle = feedbackRecipient?.title;
 
-    return {
-      name: userData?.fullname || userid,
-      portrait: userData?.portrait,
-    };
-  });
-  const hasAuthors = creatorsWithData.length > 0;
-  const responsiblePersonUrl =
-    contentData?.['@components']?.clm?.responsible_person?.person_url;
-  const responsiblePersonUsername =
-    contentData?.['@components']?.clm?.responsible_person?.username;
-  const responsiblePersonTitle =
-    contentData?.['@components']?.clm?.responsible_person?.title;
+  const submitFeedback = () => {
+    const message = feedback.trim();
+
+    if (!message || !contentData?.['@id'] || !user?.email) {
+      return;
+    }
+
+    dispatch(
+      submitFeedbackContactForm(flattenToAppURL(contentData['@id']), {
+        feedback: message,
+        email: user.email,
+        name: user.fullname || user.id,
+        user_agent: navigator.userAgent,
+        window_width: window.innerWidth,
+        window_height: window.innerHeight,
+      }),
+    )
+      .then(() => {
+        setFeedback('');
+        setIsFeedbackOpen(false);
+        toast.success(
+          <Toast
+            success
+            title={intl.formatMessage(messages.success)}
+            content={intl.formatMessage(messages.successContent)}
+          />,
+        );
+      })
+      .catch((error) => {
+        toast.error(
+          <Toast
+            error
+            title={intl.formatMessage(messages.error)}
+            content={error?.response?.body?.message}
+          />,
+        );
+      });
+  };
 
   if (!contentData) {
     return null;
@@ -162,7 +228,6 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
   if (!hasAuthors) {
     return null;
   }
-
   return (
     <section className="about-content" aria-labelledby="about-content-title">
       <h2 id="about-content-title">{intl.formatMessage(messages.title)}</h2>
@@ -170,12 +235,12 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
         <div className="about-content-item about-content-author">
           <h3>{intl.formatMessage(messages.author)}</h3>
           <div className="about-content-people">
-            {creatorsWithData.map(({ name, portrait }) => (
-              <div className="about-content-person" key={name}>
+            {displayedAuthors.map(({ id, name, url }) => (
+              <div className="about-content-person" key={id}>
                 <PersonPill
-                  id={name}
+                  id={id}
                   fullname={name}
-                  portrait={portrait ? expandToBackendURL(portrait) : undefined}
+                  url={url ? flattenToAppURL(url) : undefined}
                 />
               </div>
             ))}
@@ -209,60 +274,66 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
           />
         )}
       </div>
-      <div className="about-content-feedback-area">
-        <div className="about-content-feedback-header">
-          <div className="about-content-feedback-heading">
-            <span className="about-content-feedback-private">
-              <Icon name={lockSVG} size="16px" />
-              {intl.formatMessage(messages.private)}
-            </span>
-            <span className="about-content-feedback-title">
-              {intl.formatMessage(messages.feedbackTitle)}
-            </span>
+      {isAuthenticated && (
+        <div className="about-content-feedback-area">
+          <div className="about-content-feedback-header">
+            <div className="about-content-feedback-heading">
+              <span className="about-content-feedback-private">
+                <Icon name={lockSVG} size="16px" />
+                {intl.formatMessage(messages.private)}
+              </span>
+              <span className="about-content-feedback-title">
+                {intl.formatMessage(messages.feedbackTitle)}
+              </span>
+            </div>
+            {feedbackRecipientTitle && (
+              <div className="about-content-feedback-recipient">
+                <span>{intl.formatMessage(messages.goesTo)}</span>
+                <PersonPill
+                  id={feedbackRecipientUsername}
+                  fullname={feedbackRecipientTitle}
+                  compact
+                />
+              </div>
+            )}
           </div>
-          {responsiblePersonTitle && (
-            <div className="about-content-feedback-recipient">
-              <span>{intl.formatMessage(messages.goesTo)}</span>
-              <PersonPill
-                id={responsiblePersonUsername}
-                fullname={responsiblePersonTitle}
-                compact
+          {!isFeedbackOpen ? (
+            <div className="about-content-feedback-toggle">
+              <button
+                type="button"
+                aria-controls="about-content-feedback-form"
+                aria-expanded={false}
+                onClick={() => setIsFeedbackOpen(true)}
+              >
+                {intl.formatMessage(messages.showFeedbackForm)}
+              </button>
+            </div>
+          ) : (
+            <div
+              className="about-content-feedback"
+              id="about-content-feedback-form"
+            >
+              <textarea
+                id="about-content-feedback"
+                name="about-content-feedback"
+                aria-label={intl.formatMessage(messages.feedbackPlaceholder)}
+                placeholder={intl.formatMessage(messages.feedbackPlaceholder)}
+                rows={1}
+                value={feedback}
+                onChange={(event) => setFeedback(event.target.value)}
               />
+              <button
+                type="button"
+                disabled={!feedback.trim() || !user?.email || isSubmitting}
+                onClick={submitFeedback}
+              >
+                <Icon name={sendSVG} size="28px" />
+                {intl.formatMessage(messages.sendFeedback)}
+              </button>
             </div>
           )}
         </div>
-        {!isFeedbackOpen ? (
-          <div className="about-content-feedback-toggle">
-            <button
-              type="button"
-              aria-controls="about-content-feedback-form"
-              aria-expanded={false}
-              onClick={() => setIsFeedbackOpen(true)}
-            >
-              {intl.formatMessage(messages.showFeedbackForm)}
-            </button>
-          </div>
-        ) : (
-          <div
-            className="about-content-feedback"
-            id="about-content-feedback-form"
-          >
-            <textarea
-              id="about-content-feedback"
-              name="about-content-feedback"
-              aria-label={intl.formatMessage(messages.feedbackPlaceholder)}
-              placeholder={intl.formatMessage(messages.feedbackPlaceholder)}
-              rows={1}
-              value={feedback}
-              onChange={(event) => setFeedback(event.target.value)}
-            />
-            <button type="button" disabled={!feedback.trim()}>
-              <Icon name={sendSVG} size="28px" />
-              {intl.formatMessage(messages.sendFeedback)}
-            </button>
-          </div>
-        )}
-      </div>
+      )}
     </section>
   );
 };

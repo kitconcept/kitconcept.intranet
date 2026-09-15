@@ -26,7 +26,8 @@ h1.documentFirstHeading:has(+ .documentByLine) {
 
 // ### About Content ###
 
-body.cms-ui .about-content {
+body.cms-ui:not(.view-editview) .about-content,
+body.section-login .about-content {
   display: none;
 }
 

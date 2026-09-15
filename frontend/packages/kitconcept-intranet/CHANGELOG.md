@@ -8,6 +8,52 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.5 (2026-09-11)
+
+
+### Bugfix
+
+- Fix broken Avatar pictures @iRohitSingh [#480](https://github.com/kitconcept/kitconcept.intranet/issue/480)
+- Use the specified English and German labels for authors, the responsible person, and page feedback. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- @kitconcept/volto-plate to 1.0.0-alpha.26. @sneridagh 
+- Fix the Status icons in content folder @Tishasoumya-02 
+- Show all configured CLM authors in the About This Content panel, fall back to content creators when no authors are set, and load user portraits through Volto's portrait middleware. @sneridagh 
+- Show the configured feedback person as the effective feedback recipient, falling back to the responsible person. @sneridagh 
+- Show the workspace navigation portal and hide the like/comment/share footer for content nested inside a workspace (not just the workspace and wiki pages themselves). @iFlameing 
+
+
+### Internal
+
+- Upgrade kitconcept-core to 2.0.0b7, Volto Light Theme to 8.0.0a32, and Volto Banner Block to 1.2.1. @sneridagh 
+
+## 3.0.0-alpha.4 (2026-09-10)
+
+
+### Feature
+
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.2. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Search dialog: the Type / Created by / Updated / Status filter chips are functional - they filter the livesearch, list real users, and travel to the results page URL so a reload reproduces the filtered results. @reebalazs 
+
+
+### Bugfix
+
+- Show CLM box in edit mode and hide it on the login page @iRohitSingh [#clm-edit-mode](https://github.com/kitconcept/kitconcept.intranet/issue/clm-edit-mode)
+- Fix CLM feedback form @iRohitSingh [#feedback-form](https://github.com/kitconcept/kitconcept.intranet/issue/feedback-form)
+- Remove the Feedback about this page link from the footer @iRohitSingh [#remove-footer-feedback](https://github.com/kitconcept/kitconcept.intranet/issue/remove-footer-feedback)
+- Fix the CLM Content Owner (`responsible_person`) field showing a raw user id instead of the person's name after the value was changed and saved, and stop the inheritance hint from appearing for a content's own value (e.g. after clearing the field). @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.1. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+
+
+### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+### Tests
+
+- Add acceptance tests for the CLM `responsible_person` widget: the name is shown after a change+save, no inheritance hint for a content's own value, and the inheritance hint appears with the ancestor's name when the value is genuinely inherited. @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Run block accessibility checks against the retained ``/qa/block`` fixtures and remove checks for fixtures that no longer exist. @sneridagh 
+
 ## 3.0.0-alpha.3 (2026-08-27)
 
 

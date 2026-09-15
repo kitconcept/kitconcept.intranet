@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import AvatarFallback from '../../icons/avatar-fallback-silhouette.svg';
 
@@ -38,7 +39,22 @@ const PersonPill = ({
       state.site?.data?.['kitconcept.clickable_profile_links'],
   );
 
-  const portraitSrc = portrait ?? (id ? `/@portrait/${id}` : undefined);
+  // Portrait URLs handed to us (e.g. `comment.author_image`, `user.portrait`)
+  // arrive from the backend as absolute URLs built with the *internal* API
+  // host. `flattenToAppURL` only strips `settings.internalApiPath`, which is
+  // set on the SSR server but never shipped to the browser - so on the client
+  // the internal host survives and the image request fails
+  // (ERR_NAME_NOT_RESOLVED). Guard against that: flatten the explicit portrait,
+  // and if it is still absolute, drop it and fall back to the canonical
+  // `/@portrait/<id>` endpoint, which the Volto portrait middleware proxies
+  // through the public origin.
+  const explicitPortrait = portrait ? flattenToAppURL(portrait) : undefined;
+  const safeExplicitPortrait =
+    explicitPortrait && !/^https?:\/\//i.test(explicitPortrait)
+      ? explicitPortrait
+      : undefined;
+  const portraitSrc =
+    safeExplicitPortrait ?? (id ? `/@portrait/${id}` : undefined);
 
   const [loadedPortraitSrc, setLoadedPortraitSrc] = useState<string>();
   const showImage = Boolean(portraitSrc) && portraitSrc === loadedPortraitSrc;

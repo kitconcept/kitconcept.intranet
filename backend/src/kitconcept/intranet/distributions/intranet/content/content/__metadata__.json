@@ -60,7 +60,8 @@
     "0231e377bff44d4a89d4508378f073d9/image/black-starry-night.jpg",
     "ac94c9f5bc894fe0813ed8446eb426b5/image/image-light.jpg",
     "b391c580c3ef40d99a56b7d87f561889/image/Link image.jpeg",
-    "3f86e910ec474fc48a7f9b107d0b0be9/image/plone.svg"
+    "3f86e910ec474fc48a7f9b107d0b0be9/image/plone.svg",
+    "809499c7ddda4aef80d3ab61c0c365d5/image/Jana-Halmbach.jpg"
   ],
   "_data_files_": [
     "plone_site_root/data.json",
@@ -286,7 +287,8 @@
     "51c09b4113f04867ab8c06e5de532eb5/data.json",
     "7126c2f7612c4ac18d69dc2528008465/data.json",
     "7495129cf25841db86a9f6f1e5ecd42c/data.json",
-    "fe1a53ace27d4943b164b73c2ae23fcb/data.json"
+    "fe1a53ace27d4943b164b73c2ae23fcb/data.json",
+    "809499c7ddda4aef80d3ab61c0c365d5/data.json"
   ],
   "default_page": {},
   "local_permissions": {
@@ -628,7 +630,8 @@
           "Site Administrator"
         ]
       }
-    }
+    },
+    "809499c7ddda4aef80d3ab61c0c365d5": {}
   },
   "local_roles": {
     "01adf6c29d8d4fbda102aabf7f9391de": {
@@ -2207,6 +2210,13 @@
           "Owner"
         ]
       }
+    },
+    "809499c7ddda4aef80d3ab61c0c365d5": {
+      "local_roles": {
+        "admin": [
+          "Owner"
+        ]
+      }
     }
   },
   "ordering": {
@@ -2432,7 +2442,8 @@
     "f99dbd34d15946068969e7090ced0c14": 4,
     "fd3adf71c6784f2aa6e520a8b6fae602": 14,
     "fe1a53ace27d4943b164b73c2ae23fcb": 2,
-    "fed5de9c3a9d44d38f2034bae767a75a": 23
+    "fed5de9c3a9d44d38f2034bae767a75a": 23,
+    "809499c7ddda4aef80d3ab61c0c365d5": 16
   },
   "relations": []
 }

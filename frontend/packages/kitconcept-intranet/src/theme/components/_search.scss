@@ -34,17 +34,17 @@
   padding: 20px 0 40px 0;
   margin-bottom: 0px;
   p.url {
+    margin-bottom: 10px;
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 10px;
   }
   h2.tileHeadline {
     .summary.url {
-      text-decoration: none;
       font-size: 18px;
+      font-style: normal;
       font-weight: 700;
       line-height: 24px;
-      font-style: normal;
+      text-decoration: none;
     }
   }
 

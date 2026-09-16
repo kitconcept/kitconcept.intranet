@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0b36 (2026-09-16)
+
+
+### Internal
+
+- Upgrade to latest plone.restapi. @jackahl 
+
 ## 1.0.0b35 (2026-06-15)
 
 No significant changes.

@@ -1,6 +1,29 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0b36 (2026-09-16)
+
+### Backend
+
+
+#### Internal
+
+- Upgrade to latest plone.restapi. @jackahl 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 1.0.0b35 (2026-06-15)
 
 ### Backend

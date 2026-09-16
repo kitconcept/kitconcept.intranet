@@ -11,7 +11,12 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { asyncConnect } from '@plone/volto/helpers/AsyncConnect';
 import { FormattedMessage } from 'react-intl';
 import { createPortal } from 'react-dom';
-import { Container, Pagination, Button, Header } from 'semantic-ui-react';
+import {
+  Container as SemanticContainer,
+  Pagination,
+  Button,
+  Header,
+} from 'semantic-ui-react';
 import qs from 'query-string';
 import classNames from 'classnames';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -157,6 +162,8 @@ class Search extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
+    const Container =
+      config.getComponent({ name: 'Container' }).component || SemanticContainer;
     const options = qs.parse(this.props.history.location.search);
     return (
       <Container id="page-search">

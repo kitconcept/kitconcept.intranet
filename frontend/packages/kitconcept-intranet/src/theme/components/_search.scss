@@ -29,3 +29,30 @@
     margin-left: 1em;
   }
 }
+
+#page-search #content-core .search-items .tileItem {
+  padding: 20px 0 40px 0;
+  margin-bottom: 0px;
+  p.url {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
+  h2.tileHeadline {
+    .summary.url {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      font-style: normal;
+    }
+  }
+
+  .tileBody {
+    margin: 15px 0px;
+  }
+  .tileFooter {
+    display: flex;
+    align-items: center;
+  }
+}

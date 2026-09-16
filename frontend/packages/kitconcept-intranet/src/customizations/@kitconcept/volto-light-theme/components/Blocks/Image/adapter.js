@@ -3,6 +3,10 @@
  * REASON: Adjust floating images to use default width
  * DATE: 2026-09-16
  * DEVELOPER: @TimoBroeskamp
+ * FILE: https://github.com/kitconcept/volto-light-theme/blob/8.0.0a32/packages/volto-light-theme/src/components/Blocks/Image/adapter.js
+ * FILE VERSION: VLT 8.0.0a32
+ * PULL REQUEST: https://github.com/kitconcept/kitconcept.intranet/pull/504
+ * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/351
  */
 
 export const ImageBlockDataAdapter = ({

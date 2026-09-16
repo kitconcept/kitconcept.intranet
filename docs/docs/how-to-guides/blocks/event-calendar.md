@@ -33,9 +33,9 @@ The Event Calendar block uses the same query engine as the Listing block. You ca
 
 1. Click **Add criterion** in the sidebar.
 2. Select a filter type:
-   - **Location** – restrict events to a specific folder path.
-   - **Subject (Tags)** – show only events with certain tags.
-   - **Start date** – show events starting from a given date.
+   - **Location**–restrict events to a specific folder path.
+   - **Subject (Tags)**–show only events with certain tags.
+   - **Start date**–show events starting from a given date.
 3. Set the value for the criterion and confirm.
 
 :::{tip}

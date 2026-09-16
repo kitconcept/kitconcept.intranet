@@ -14,16 +14,16 @@ last_updated: 2026-09-07
 :::{admonition} Feature summary
 :class: note
 
-**Status:** GA (off by default — see enablement) · **Audience:** editors, admins ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Status:** GA (off by default—see enablement) · **Audience:** editors, admins ·
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
 
 Content Review & Reminders keeps intranet content current. Each item can carry a
 **next review date** and a **review interval**; when a review falls due, the
-assigned reviewer is emailed. Reviewers act on content from a toolbar review menu
-— marking it reviewed, delegating it, or postponing it — and the next review date
+assigned reviewer is emailed. Reviewers act on content from a toolbar review
+menu—marking it reviewed, delegating it, or postponing it—and the next review date
 is recalculated automatically.
 
 ## Who it's for
@@ -35,7 +35,7 @@ is recalculated automatically.
 
 ## Capabilities
 
-- Per-item **review scheduling** — interval, next-review date, assignee, status.
+- Per-item **review scheduling**—interval, next-review date, assignee, status.
 - A **review action menu** in the toolbar: Mark as Reviewed, Delegate, Postpone.
 - **Automatic recalculation** of the next review date on approval.
 - **Daily email reminders** to the assignee (or the content's creator as
@@ -69,7 +69,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 ### Scheduling & validation
 
 - The next review date defaults to **today + the review interval**. Interval
-  tokens are `<number><unit>` where unit is `d/w/m/y` (e.g. `6m`, `1y`).
+  tokens are `<number><unit>` where unit is `d/w/m/y` (for example `6m`, `1y`).
 - If `review_interval` is unset, the **site default interval** (control panel,
   default `6m`) is used.
 - **Invariant:** non-timeless content **must** have a due date; timeless content
@@ -80,13 +80,13 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 Reviewers act via a toolbar menu backed by a `@review` endpoint. All actions
 require the `Modify portal content` permission.
 
-- **Mark as Reviewed (approve)** — sets status to `Up-to-date`, sets
+- **Mark as Reviewed (approve)**—sets status to `Up-to-date`, sets
   `review_completed_date` to today, and **recalculates** `review_due_date` from
   the item's interval (or the site default).
-- **Delegate** — reassigns `review_assignee` to a chosen user (validated against
+- **Delegate**—reassigns `review_assignee` to a chosen user (validated against
   the Users vocabulary) and optionally records a comment. Invalid assignee is
   rejected.
-- **Postpone** — sets status back to `Up-to-date`, optionally records a comment,
+- **Postpone**—sets status back to `Up-to-date`, optionally records a comment,
   and optionally sets a new due date; if no date is given, the existing due date
   is unchanged. Does **not** set the completed date.
 - Any other action is rejected with an error.
@@ -97,12 +97,12 @@ require the `Modify portal content` permission.
   **exactly today** (not overdue / not `<=` today).
 - The reminder is emailed to the **`review_assignee`** if set, otherwise the
   item's **creator**.
-- If no user can be resolved for an item, it is **skipped and logged** — no email
+- If no user can be resolved for an item, it is **skipped and logged**—no email
   is sent.
 - Emails are sent in the **content's language**, falling back to the site default
   language; only German and English templates exist (other languages fall back to
   English).
-- The job only sends email — it does **not** change `review_status` or any field
+- The job only sends email—it does **not** change `review_status` or any field
   after sending.
 
 ### Visibility
@@ -117,19 +117,18 @@ require the `Modify portal content` permission.
 
 Observed in the current implementation and worth flagging to product/QA:
 
-- **"Mark Changes Required"** exists as a toolbar button but is **not wired** —
-  it has no handler and no API action. The `Changes requested` status value is
+- **"Mark Changes Required"** exists as a toolbar button but is **not wired**—it has no handler and no API action. The `Changes requested` status value is
   defined but nothing sets it.
 - A **`Reviewers` group vocabulary** exists but is unused; assignee selection uses
   the full Users vocabulary instead.
-- The reminder matches the due date **exactly on the day** — content that becomes
-  overdue (e.g. missed because the job didn't run) is not re-notified.
+- The reminder matches the due date **exactly on the day**—content that becomes
+  overdue (for example missed because the job didn't run) is not re-notified.
 - There is **no catalog index for `review_assignee`**.
 :::
 
 :::{note}
 This feature is part of the broader content lifecycle but is driven by the
-separate `content_review` behavior, **not** the CLM ownership fields. Ownership
+separate `content_review` behavior, **not** the {term}`CLM` ownership fields. Ownership
 and feedback routing are covered in {doc}`content-lifecycle-management`.
 :::
 
@@ -142,13 +141,12 @@ and feedback routing are covered in {doc}`content-lifecycle-management`.
 - Set per-item interval, assignee, due date, and the timeless flag on the content
   edit form.
 - The reminder job runs as a scheduled task in the deployment (a Docker Swarm
-  cron job at daily midnight) — see the developer how-to.
+  cron job at daily midnight)—see the developer how-to.
 
 ## Learn more
 
-- **How-to (editor)** — {doc}`/how-to-guides/settings/content-review`
-- **How-to (developer)** —
-  {doc}`/developer/how-to-guides/configure-reminders-for-content`
-- **Reference (API)** — {doc}`/developer/reference/api/review` (`@review`
+- **How-to (editor)**—{doc}`/how-to-guides/settings/content-review`
+- **How-to (developer)**—{doc}`/developer/how-to-guides/configure-reminders-for-content`
+- **Reference (API)**—{doc}`/developer/reference/api/review` (`@review`
   endpoint)
-- **Related feature** — {doc}`content-lifecycle-management`
+- **Related feature**—{doc}`content-lifecycle-management`

@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Table-block
-  it('Table-block (/features/block/table-block)', () => {
-    cy.navigate('/features/block/table-block');
+  it('Table-block (/qa/block/table-block)', () => {
+    cy.navigate('/qa/block/table-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.checkAccessibility();

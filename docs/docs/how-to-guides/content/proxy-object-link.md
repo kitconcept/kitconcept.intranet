@@ -18,9 +18,9 @@ This is useful when a person appears on many listings, teasers, or organisationa
 
 ## Prerequisites
 
-- The link icon button is controlled by the `kitconcept.disable_profile_links` site setting.
-  The button is only rendered when this setting is enabled.
-  If you do not see the icon, ask your administrator to enable it.
+- The link icon button is controlled by the `kitconcept.clickable_profile_links` site setting.
+  The button is only rendered when this setting is disabled.
+  If you do not see the icon, ask your administrator to disable it.
 
 ## Opening a person profile
 
@@ -36,20 +36,20 @@ This is useful when a person appears on many listings, teasers, or organisationa
 
 ## Returning to the original page
 
-1. After opening the profile, a toast notification appears in the corner with the title **"Back to the original page"**.
+1. After opening the profile, a toast notification appears in the corner with the title **`Back to the original page`**.
 2. Read the message: *"You opened this item from another page. Use the link to return."*
 3. Click the **return button** (the circled back arrow) in the toast.
 4. You are taken back to the page you originally came from.
 
 The toast:
 
-- Stays open until you act on it or navigate away (it does not auto-close).
+- Stays open until you act on it or navigate away (it doesn't auto close).
 - Is dismissed automatically if you navigate to a different page yourself.
 
 ## Troubleshooting
 
 **I do not see the link icon on person summaries.**
-The icon is only shown when the `kitconcept.disable_profile_links` site setting is enabled.
+The icon is only shown when the `kitconcept.clickable_profile_links` site setting is disabled.
 Ask your administrator to check the setting.
 
 **No toast appears on the profile page.**

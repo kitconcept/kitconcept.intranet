@@ -463,6 +463,115 @@ $search-text: #252525;
   }
 }
 
+// Created by: multi-select popover with checkbox rows (ticket 585).
+.header-search-creator-popover {
+  min-width: 260px;
+  border: 1px solid #e1e6e9;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  &[data-placement='bottom'] {
+    margin-top: 6px;
+  }
+}
+
+.header-search-creator-list {
+  padding: 6px;
+  outline: none;
+}
+
+.header-search-creator-search {
+  width: calc(100% - 8px);
+  box-sizing: border-box;
+  padding: 7px 10px;
+  border: 1px solid #d3dadd;
+  border-radius: 6px;
+  margin: 4px 4px 8px;
+  font-size: 14px;
+
+  &:focus-visible {
+    border-color: $search-blue;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+.header-search-creator-row {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: $search-text;
+  cursor: pointer;
+  font-size: 14px;
+  gap: 10px;
+
+  &:hover {
+    background: #eef1f3;
+  }
+
+  // the native checkbox does the interaction and a11y; the styled
+  // span next to it is the visual (same look as the chip toggles)
+  input[type='checkbox'] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    opacity: 0;
+  }
+
+  input[type='checkbox']:focus-visible + .header-search-chip-checkbox {
+    outline: 2px solid $search-blue;
+    outline-offset: 1px;
+  }
+
+  .header-search-chip-checkbox {
+    flex-shrink: 0;
+  }
+}
+
+.header-search-chip-value {
+  overflow: hidden;
+  max-width: 260px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header-search-avatar-menu .react-aria-MenuItem {
+  gap: 10px;
+}
+
+// Circular user portrait with the initial underneath: a missing
+// portrait image (404) renders invisible and the initial shows.
+.header-search-creator-avatar {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+
+  img {
+    // 1px larger than the circle on every side: the span's own
+    // rounded overflow clipping cuts it back to the circle, so the
+    // tinted fallback background can never peek through the image's
+    // antialiased edge.
+    position: absolute;
+    width: calc(100% + 2px);
+    max-width: none; // the theme's global img max-width would cap it
+    height: calc(100% + 2px);
+    inset: -1px;
+    object-fit: cover;
+  }
+}
+
 .header-search-scope-avatar {
   display: inline-flex;
   width: 22px;
@@ -473,7 +582,10 @@ $search-text: #252525;
   border-radius: 5px;
   font-size: 12px;
   font-weight: 600;
+}
 
+.header-search-scope-avatar,
+.header-search-creator-avatar {
   &.tone-0 {
     background: #d9ecdb;
     color: #256b32;

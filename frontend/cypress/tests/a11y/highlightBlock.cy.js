@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Highlight Block
-  it('Highlight-Block (/features/block/highlight-block)', () => {
-    cy.navigate('/features/block/highlight-block');
+  it('Highlight-Block (/qa/block/highlight-block)', () => {
+    cy.navigate('/qa/block/highlight-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

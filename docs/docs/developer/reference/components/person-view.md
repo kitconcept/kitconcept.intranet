@@ -26,7 +26,7 @@ Renders the full detail page for a `Person` content item.
 | `content.first_name` | `string` | Yes | First name |
 | `content.last_name` | `string` | No | Last name |
 | `content.academic_title` | `{ title: string }` | No | Displayed before the name |
-| `content.image` | `object` | No | Profile image — uses `scales.preview.download`, falls back to `download` |
+| `content.image` | `object` | No | Profile image—uses `scales.preview.download`, falls back to `download` |
 | `content.description` | `string` | No | Short bio or tagline |
 | `content.text` | `{ data: string }` | No | Full bio, rendered as HTML |
 | `content.organisational_units` | `string[]` | No | Organisational units |

@@ -16,14 +16,14 @@ last_updated: 2026-09-07
 
 **Status:** GA (global on by default; per-item off by default) ·
 **Audience:** all logged-in users, editors, admins ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
 
 Content rating lets logged-in users **"like"** a piece of content with a single
-thumbs-up, and shows a running **like count**. It is a binary like — not a
-star-scale rating — surfaced in the **content interactions bar** below the
+thumbs-up, and shows a running **like count**. It is a binary like—not a
+star-scale rating—surfaced in the **content interactions bar** below the
 content, alongside a comment count and an email share button.
 
 The feature is known by three overlapping names in the system: **Content
@@ -54,8 +54,8 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 The like control appears only when **both** are true:
 
-1. **Global** — `enable_content_rating` in the control panel. **Default: on.**
-2. **Per item** — the item's `enable_likes` field. **Default: off.**
+1. **Global**—`enable_content_rating` in the control panel. **Default: on.**
+2. **Per item**—the item's `enable_likes` field. **Default: off.**
 
 So out of the box the capability is globally enabled but shows on no content
 until an editor enables likes on a specific item.
@@ -63,11 +63,11 @@ until an editor enables likes on a specific item.
 ### Liking
 
 - A like is recorded via a `@vote` POST that **toggles** the current user's id in
-  the item's `votes` list — first call adds a like, a second call by the same
+  the item's `votes` list—first call adds a like, a second call by the same
   user removes it.
 - The **count** is simply the number of user ids in `votes`.
 - Each user counts **at most once** per item (their id is either present or not).
-- The `votes` list is **read-only** through normal editing — it is only ever
+- The `votes` list is **read-only** through normal editing—it is only ever
   changed by the `@vote` service.
 
 ### Authentication
@@ -102,8 +102,7 @@ These two are part of the same bar rather than separate features.
 
 ## Learn more
 
-- **How-to** — {doc}`/how-to-guides/engagement/enable-likes`
-- **Reference (behavior)** — {doc}`/developer/reference/behaviors/votes`
-- **Reference (API)** — {doc}`/developer/reference/api/votes` (`@vote` endpoint)
-- **Reference (component)** —
-  {doc}`/developer/reference/components/content-interactions`
+- **How-to**—{doc}`/how-to-guides/engagement/enable-likes`
+- **Reference (behavior)**—{doc}`/developer/reference/behaviors/votes`
+- **Reference (API)**—{doc}`/developer/reference/api/votes` (`@vote` endpoint)
+- **Reference (component)**—{doc}`/developer/reference/components/content-interactions`

@@ -28,10 +28,9 @@ sync with the shipped behaviour.
 
 ## How this section is organised
 
-Unlike the four Diátaxis quadrants — {doc}`Tutorials </tutorials/index>`,
+Unlike the four Diátaxis quadrants—{doc}`Tutorials </tutorials/index>`,
 {doc}`How-to Guides </how-to-guides/index>`,
-{doc}`Reference </reference/index>`, and {doc}`Concepts </concepts/index>` —
-which are organised around what a reader is *trying to do*, this section is
+{doc}`Reference </reference/index>`, and {doc}`Concepts </concepts/index>`—which are organised around what a reader is *trying to do*, this section is
 organised around *what the product offers*.
 
 Each feature page is a **hub**: it gives a self-contained summary and behaviour
@@ -45,7 +44,7 @@ follow its links when you need to do, configure, or extend it.
 |---------|--------------|-----|--------|
 | {doc}`content-lifecycle-management` | Track content ownership and authorship; route feedback and review reminders to the accountable people. | Editors, admins | GA |
 | {doc}`feedback` | Let readers send private feedback on any page, routed to the right owner. | All users | GA |
-| {doc}`people-and-organisation` | Model staff, teams, and locations as first-class content — the people directory and org hierarchy. | Editors, admins | GA |
+| {doc}`people-and-organisation` | Model staff, teams, and locations as first-class content—the people directory and org hierarchy. | Editors, admins | GA |
 | {doc}`personalization` | Boost or filter listings by relevance to the current user's team or location (passive targeting). | All users | Boost needs Solr |
 | {doc}`content-review-reminders` | Schedule content reviews, act on them (approve/delegate/postpone), and remind reviewers by email. | Editors, admins | Off by default |
 | {doc}`likes-and-content-rating` | Let logged-in users like content and see a like count in the interactions bar. | All users | Per-item opt-in |

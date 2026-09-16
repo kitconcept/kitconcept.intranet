@@ -25,7 +25,7 @@ InheritedFieldWrapper(
 
 | Argument | Type | Description |
 |----------|------|-------------|
-| `WrappedComponent` | `React.ComponentType` | The Volto widget to wrap (e.g. autocomplete widget) |
+| `WrappedComponent` | `React.ComponentType` | The Volto widget to wrap (for example autocomplete widget) |
 | `inheritedFieldFunction` | `(content, props) => { value: string; url: string } \| undefined` | Extracts the inherited value and parent URL from the content object. Return `undefined` or `null` when there is nothing to inherit |
 
 The returned component accepts the same props as any Volto widget, plus:
@@ -68,7 +68,7 @@ The `inheritedFieldFunction` receives the current `content` object and the widge
 - Currently applied only to `responsible_person` (autocomplete widget).
 - The `responsibilities` field uses `config.widgets.widget.token` directly, without this wrapper.
 - If the vocabulary display name cannot be resolved, the raw `inheritedField.value` token is shown as fallback.
-- The CLM expander (`@components.clm`) must be present in the content response for the inherited value to be available.
+- The {term}`CLM` expander (`@components.clm`) must be present in the content response for the inherited value to be available.
 
 ## See also
 

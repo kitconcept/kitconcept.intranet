@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0 (2026-09-17)
+
+### Internal
+
+- Update logos and carousel to final versions. @sneridagh 
+
 ## 1.0.0-beta.36 (2026-09-16)
 
 ## 1.0.0-beta.35 (2026-06-15)

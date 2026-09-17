@@ -1,6 +1,32 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 1.0.0 (2026-09-17)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Update logos and carousel to final versions. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Release 1.0.0 final. @sneridagh 
+
+
+
 ## 1.0.0b36 (2026-09-16)
 
 ### Backend

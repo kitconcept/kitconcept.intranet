@@ -1447,8 +1447,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-logos-block/packages/volto-logos-block
       '@kitconcept/volto-plate':
-        specifier: ^1.0.0-alpha.27
-        version: 1.0.0-alpha.27(ee680a04007e976cb479ed3984a0245d)
+        specifier: ^1.0.0-alpha.28
+        version: 1.0.0-alpha.28(ee680a04007e976cb479ed3984a0245d)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -2200,6 +2200,34 @@ importers:
       vitest:
         specifier: ^3.2.4
         version: 3.2.7(@types/debug@4.1.13)(@types/node@24.13.3)(@vitest/ui@3.2.7)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.0)
+
+  packages/volto-solr/frontend/packages/volto-solr:
+    dependencies:
+      buffer:
+        specifier: ^5.5.0
+        version: 5.7.1
+      lodash.debounce:
+        specifier: ^4.0.8
+        version: 4.0.8
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      react-portal:
+        specifier: 4.2.1
+        version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    devDependencies:
+      '@plone/scripts':
+        specifier: ^3.6.1
+        version: 3.10.7
+      react-autosuggest:
+        specifier: 10.1.0
+        version: 10.1.0(react@18.2.0)
+      release-it:
+        specifier: ^17.1.1
+        version: 17.11.0(typescript@5.9.3)
 
 packages:
 
@@ -4132,8 +4160,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.27':
-    resolution: {integrity: sha512-rw4LZrEW5/h2bfWRZwC6eIXK9CFKn6EuWu4/l0Wo6hy2EnXmNnA5CEIy7taBWeNsqJWY0z6nxsn44f580I+cmA==}
+  '@kitconcept/volto-plate@1.0.0-alpha.28':
+    resolution: {integrity: sha512-oPpkBeKjCP/BSnmBb9CWGLjN+QWxPxc/E4ygiKAFs/LbwjQtKOZboP0ZNSpafyi3IZ7+LCRKk7kbGPetNPVNiw==}
     peerDependencies:
       '@platejs/ai': ^50.3.7
       '@plone/registry': workspace:*
@@ -16260,7 +16288,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.27(ee680a04007e976cb479ed3984a0245d)':
+  '@kitconcept/volto-plate@1.0.0-alpha.28(ee680a04007e976cb479ed3984a0245d)':
     dependencies:
       '@internationalized/date': 3.12.3
       '@platejs/ai': 50.3.7(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)
@@ -16272,6 +16300,7 @@ snapshots:
       '@platejs/mention': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/slash-command': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/suggestion': 50.3.3(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@platejs/toggle': 49.0.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/helpers': 2.0.0-alpha.7(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/plate': 1.0.0-alpha.15(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.62.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.3)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))

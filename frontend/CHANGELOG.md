@@ -8,6 +8,23 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0 (2026-09-17)
+
+
+### Bugfix
+
+- Update use of clickable_profile_link and PersonSummary @Tishasoumya-02 [#update-use-of-clickable-profileLinkandPersonSummary](https://github.com/kitconcept/kitconcept.intranet/issue/update-use-of-clickable-profileLinkandPersonSummary)
+- Add missing placeholder image for Person content types @iRohitSingh [#395](https://github.com/kitconcept/kitconcept.intranet/issue/395)
+- Fix person portraits leaking the internal backend URL in SSR: PersonPill now flattens the given portrait and falls back to the public `/@portrait/<id>` endpoint when it is still an absolute (internal) URL. @sneridagh [#502](https://github.com/kitconcept/kitconcept.intranet/issue/502)
+
+
+### Internal
+
+- Adjusted the container-width for the floating images to be default width. @TimoBroeskamp 
+- Stamp the distribution's `volto_version` during release with `uvx repoplone deps stamp-volto-version` instead of an inline Node one-liner in `.release-it.json`. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.28. @iFlameing 
+- Update VLT final. @sneridagh 
+
 ## 3.0.0-alpha.5 (2026-09-11)
 
 

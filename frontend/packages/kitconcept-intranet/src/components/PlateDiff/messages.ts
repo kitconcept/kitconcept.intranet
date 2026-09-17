@@ -40,10 +40,16 @@ const propertyMessages = defineMessages({
     defaultMessage: 'Line height',
   },
   width: { id: 'plateDiff.prop.width', defaultMessage: 'Size' },
+  size: { id: 'plateDiff.prop.width', defaultMessage: 'Size' },
   caption: { id: 'plateDiff.prop.caption', defaultMessage: 'Caption' },
+  description: { id: 'plateDiff.prop.caption', defaultMessage: 'Caption' },
+  alt: { id: 'plateDiff.prop.alt', defaultMessage: 'Alternative text' },
   url: { id: 'plateDiff.prop.url', defaultMessage: 'Source' },
+  href: { id: 'plateDiff.prop.href', defaultMessage: 'Link' },
   checked: { id: 'plateDiff.prop.checked', defaultMessage: 'Checked' },
   variant: { id: 'plateDiff.prop.variant', defaultMessage: 'Variant' },
+  icon: { id: 'plateDiff.prop.icon', defaultMessage: 'Icon' },
+  lang: { id: 'plateDiff.prop.lang', defaultMessage: 'Language' },
   backgroundColor: {
     id: 'plateDiff.prop.backgroundColor',
     defaultMessage: 'Background colour',
@@ -109,6 +115,31 @@ const valueMessages = defineMessages({
   'type.img': { id: 'plateDiff.value.type.img', defaultMessage: 'Image' },
   'type.table': { id: 'plateDiff.value.type.table', defaultMessage: 'Table' },
   'type.hr': { id: 'plateDiff.value.type.hr', defaultMessage: 'Divider' },
+  // size (image block: l / m / s)
+  'size.l': { id: 'plateDiff.value.size.l', defaultMessage: 'Large' },
+  'size.m': { id: 'plateDiff.value.size.m', defaultMessage: 'Medium' },
+  'size.s': { id: 'plateDiff.value.size.s', defaultMessage: 'Small' },
+  // callout variant
+  'variant.info': {
+    id: 'plateDiff.value.variant.info',
+    defaultMessage: 'Info',
+  },
+  'variant.note': {
+    id: 'plateDiff.value.variant.note',
+    defaultMessage: 'Note',
+  },
+  'variant.warning': {
+    id: 'plateDiff.value.variant.warning',
+    defaultMessage: 'Warning',
+  },
+  'variant.success': {
+    id: 'plateDiff.value.variant.success',
+    defaultMessage: 'Success',
+  },
+  'variant.error': {
+    id: 'plateDiff.value.variant.error',
+    defaultMessage: 'Error',
+  },
   // listStyleType
   'listStyleType.disc': {
     id: 'plateDiff.value.list.bulleted',

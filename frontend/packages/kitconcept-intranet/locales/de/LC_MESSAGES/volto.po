@@ -807,6 +807,11 @@ msgstr "Nicht in dieser Version"
 msgid "plateDiff.prop.align"
 msgstr "Ausrichtung"
 
+#. Default: "Alternative text"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.alt"
+msgstr "Alternativtext"
+
 #. Default: "Background colour"
 #: components/PlateDiff/messages
 msgid "plateDiff.prop.backgroundColor"
@@ -832,10 +837,25 @@ msgstr "Abgehakt"
 msgid "plateDiff.prop.color"
 msgstr "Textfarbe"
 
+#. Default: "Link"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.href"
+msgstr "Link"
+
+#. Default: "Icon"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.icon"
+msgstr "Symbol"
+
 #. Default: "Indentation"
 #: components/PlateDiff/messages
 msgid "plateDiff.prop.indent"
 msgstr "Einrückung"
+
+#. Default: "Language"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lang"
+msgstr "Sprache"
 
 #. Default: "Line height"
 #: components/PlateDiff/messages
@@ -947,6 +967,21 @@ msgstr "nein"
 msgid "plateDiff.value.notSet"
 msgstr "nicht gesetzt"
 
+#. Default: "Large"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.l"
+msgstr "Groß"
+
+#. Default: "Medium"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.m"
+msgstr "Mittel"
+
+#. Default: "Small"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.s"
+msgstr "Klein"
+
 #. Default: "Quote"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.type.blockquote"
@@ -1016,6 +1051,31 @@ msgstr "Tabelle"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.type.toggle"
 msgstr "Aufklappbereich"
+
+#. Default: "Error"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.error"
+msgstr "Fehler"
+
+#. Default: "Info"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.info"
+msgstr "Info"
+
+#. Default: "Note"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.note"
+msgstr "Notiz"
+
+#. Default: "Success"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.success"
+msgstr "Erfolg"
+
+#. Default: "Warning"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.warning"
+msgstr "Warnung"
 
 #. Default: "yes"
 #: components/PlateDiff/messages

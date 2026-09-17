@@ -812,6 +812,11 @@ msgstr ""
 msgid "plateDiff.prop.align"
 msgstr ""
 
+#. Default: "Alternative text"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.alt"
+msgstr ""
+
 #. Default: "Background colour"
 #: components/PlateDiff/messages
 msgid "plateDiff.prop.backgroundColor"
@@ -837,9 +842,24 @@ msgstr ""
 msgid "plateDiff.prop.color"
 msgstr ""
 
+#. Default: "Link"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.href"
+msgstr ""
+
+#. Default: "Icon"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.icon"
+msgstr ""
+
 #. Default: "Indentation"
 #: components/PlateDiff/messages
 msgid "plateDiff.prop.indent"
+msgstr ""
+
+#. Default: "Language"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lang"
 msgstr ""
 
 #. Default: "Line height"
@@ -952,6 +972,21 @@ msgstr ""
 msgid "plateDiff.value.notSet"
 msgstr ""
 
+#. Default: "Large"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.l"
+msgstr ""
+
+#. Default: "Medium"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.m"
+msgstr ""
+
+#. Default: "Small"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.s"
+msgstr ""
+
 #. Default: "Quote"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.type.blockquote"
@@ -1020,6 +1055,31 @@ msgstr ""
 #. Default: "Toggle"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.type.toggle"
+msgstr ""
+
+#. Default: "Error"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.error"
+msgstr ""
+
+#. Default: "Info"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.info"
+msgstr ""
+
+#. Default: "Note"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.note"
+msgstr ""
+
+#. Default: "Success"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.success"
+msgstr ""
+
+#. Default: "Warning"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.warning"
 msgstr ""
 
 #. Default: "yes"

@@ -5,9 +5,9 @@
  *         instead of Volto's HTML string diff, which shows nothing for Plate
  *         content. Spike for the HISTORY DIFF epic; all other fields and
  *         content types keep the original behaviour.
- * FILE: https://github.com/plone/volto/blob/19.3.1/packages/volto/src/components/manage/Diff/DiffField.jsx
- * FILE VERSION: Volto 19.3.1
- * DATE: 2026-09-14
+ * FILE: https://github.com/plone/volto/blob/19.4.1/packages/volto/src/components/manage/Diff/DiffField.jsx
+ * FILE VERSION: Volto 19.4.1 (unchanged since 19.3.1)
+ * DATE: 2026-09-18
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/639
  * DEVELOPER: @reekitconcept
  */
@@ -33,9 +33,11 @@ import configureStore from '@plone/volto/store';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { useIntl } from 'react-intl';
 import WikiPageDiff, {
   hasPlateContent,
 } from '../../../../../components/PlateDiff/WikiPageDiff';
+import { messages as diffMessages } from '../../../../../components/PlateDiff/messages';
 
 const isHtmlTag = (str) => {
   // Match complete HTML tags, including:
@@ -172,6 +174,7 @@ const DefaultDiffField = ({
   diffLib,
 }) => {
   const language = useSelector((state) => state.intl.locale);
+  const intl = useIntl();
   const readable_date_format = {
     dateStyle: 'full',
     timeStyle: 'short',
@@ -189,16 +192,17 @@ const DefaultDiffField = ({
       case 'richtext':
         parts = diffWords(one?.data, two?.data);
         break;
-      case 'datetime':
-        parts = diffWords(
-          new Intl.DateTimeFormat(language, readable_date_format)
-            .format(new Date(one))
-            .replace(' ', ' '),
-          new Intl.DateTimeFormat(language, readable_date_format)
-            .format(new Date(two))
-            .replace(' ', ' '),
-        );
+      case 'datetime': {
+        // An unset date must not be rendered as 1 January 1970.
+        const formatDate = (value) =>
+          value
+            ? new Intl.DateTimeFormat(language, readable_date_format)
+                .format(new Date(value))
+                .replace(' ', ' ')
+            : intl.formatMessage(diffMessages.notSet);
+        parts = diffWords(formatDate(one), formatDate(two));
         break;
+      }
       case 'json': {
         const api = new Api();
         const history = createBrowserHistory();

@@ -108,6 +108,42 @@
   padding-bottom: 0 !important;
 }
 
+/* --- structural nodes: marked on the element instead of wrapped ---------- */
+/* table rows/cells, columns, code lines: a wrapper would break the parent */
+
+.plate-diff tr.plate-diff-node-insert > td,
+.plate-diff tr.plate-diff-node-insert > th,
+.plate-diff td.plate-diff-node-insert,
+.plate-diff th.plate-diff-node-insert,
+.plate-diff .plate-diff-node-insert:is(div, span) {
+  background: rgba(34, 134, 58, 0.07);
+  box-shadow: inset 3px 0 0 #22863a;
+}
+
+.plate-diff tr.plate-diff-node-delete > td,
+.plate-diff tr.plate-diff-node-delete > th,
+.plate-diff td.plate-diff-node-delete,
+.plate-diff th.plate-diff-node-delete,
+.plate-diff .plate-diff-node-delete:is(div, span) {
+  background: rgba(196, 24, 60, 0.06);
+  box-shadow: inset 3px 0 0 #c4183c;
+}
+.plate-diff-unified tr.plate-diff-node-delete,
+.plate-diff-unified td.plate-diff-node-delete,
+.plate-diff-unified th.plate-diff-node-delete {
+  text-decoration: line-through;
+  text-decoration-color: rgba(196, 24, 60, 0.6);
+}
+
+.plate-diff tr.plate-diff-node-update > td,
+.plate-diff tr.plate-diff-node-update > th,
+.plate-diff td.plate-diff-node-update,
+.plate-diff th.plate-diff-node-update,
+.plate-diff .plate-diff-node-update:is(div, span) {
+  background: rgba(212, 160, 23, 0.08);
+  box-shadow: inset 3px 0 0 #d4a017;
+}
+
 /* --- page furniture that makes no sense inside a diff ------------------- */
 
 /* byline under the title node (author, modification date) */
@@ -125,12 +161,14 @@
 }
 
 .plate-diff-left ins.plate-diff-insert,
-.plate-diff-left .plate-diff-inline-insert {
+.plate-diff-left .plate-diff-inline-insert,
+.plate-diff-left .plate-diff-node-insert {
   display: none;
 }
 
 .plate-diff-right del.plate-diff-delete,
-.plate-diff-right .plate-diff-inline-delete {
+.plate-diff-right .plate-diff-inline-delete,
+.plate-diff-right .plate-diff-node-delete {
   display: none;
 }
 

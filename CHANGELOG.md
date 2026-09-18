@@ -1,6 +1,31 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.1 (2026-09-18)
+
+### Backend
+
+
+#### Internal
+
+- Update to core 2.1.0 @sneridagh 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.0.0 (2026-09-17)
 
 ### Backend

@@ -1,6 +1,7 @@
 from copy import deepcopy
 from kitconcept.core.utils.distributions import handler as _handler
 from kitconcept.core.utils.distributions import post_handler as _post_handler
+from kitconcept.intranet.utils.diff_demo import create_demo_page
 from kitconcept.intranet.utils.person_portraits import sync_person_portraits
 from kitconcept.solr.reindex_helpers import activate_and_reindex
 from plone import api
@@ -38,6 +39,9 @@ def post_handler(
 
     if answers.get("setup_content", False):
         sync_person_portraits(site)
+        # Exported content has no version history: the history-diff demo
+        # page and its versions are created here instead.
+        create_demo_page(site)
     if answers.get("setup_solr", False) and os.environ.get("SOLR_ACTIVATE"):
         solr_rag = bool(os.environ.get("SOLR_RAG"))
         activate_and_reindex(site, clear=True, rag=solr_rag)

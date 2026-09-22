@@ -37,7 +37,7 @@ def create_demo_page(site: PloneSite) -> int:
             id=content.PAGE_ID,
             title=content.PAGE_TITLE,
             blocks=content.blocks(content.version_0()),
-            blocks_layout={"items": []},
+            blocks_layout=content.blocks_layout(),
         )
         repository = api.portal.get_tool("portal_repository")
         if not repository.isVersionable(page):

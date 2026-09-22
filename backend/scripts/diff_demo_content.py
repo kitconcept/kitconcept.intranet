@@ -22,13 +22,13 @@ Ticket: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet
 
 from __future__ import annotations
 
+from kitconcept.intranet.utils import diff_demo_content as content
+
 import argparse
 import json
 import sys
 import urllib.error
 import urllib.request
-
-from kitconcept.intranet.utils import diff_demo_content as content
 
 
 class Client:
@@ -93,7 +93,7 @@ def main() -> None:
             "id": content.PAGE_ID,
             "title": content.PAGE_TITLE,
             "blocks": content.blocks(content.version_0()),
-            "blocks_layout": {"items": []},
+            "blocks_layout": content.blocks_layout(),
         },
     )
     page_url = created["@id"]

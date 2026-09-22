@@ -1461,6 +1461,15 @@ importers:
       '@platejs/diff':
         specifier: ^50.2.0
         version: 50.2.0(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@platejs/dnd':
+        specifier: ^50.3.1
+        version: 50.3.1(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dnd-html5-backend@16.0.1)(react-dnd@16.0.1(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.3)(@types/react@18.3.31)(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@platejs/selection':
+        specifier: ^50.3.4
+        version: 50.3.4(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@platejs/table':
+        specifier: ^49.1.13
+        version: 49.1.13(platejs@49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone-collective/volto-authomatic':
         specifier: 3.0.0-alpha.6
         version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -1470,18 +1479,33 @@ importers:
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
+      '@plone/helpers':
+        specifier: ^2.0.0-alpha.7
+        version: 2.0.0-alpha.7(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/volto-form-block':
         specifier: ^1.0.0-alpha.3
         version: 1.0.0-alpha.3(@internationalized/date@3.12.3)(@loadable/component@5.16.7(react@18.2.0))(classnames@2.5.1)(promise-file-reader@1.0.2)(query-string@9.5.0)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react-toastify@5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plonegovbr/volto-social-media':
         specifier: ^2.0.0-alpha.10
         version: 2.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.18(prettier@3.2.5))
+      '@radix-ui/react-dropdown-menu':
+        specifier: ^2.1.16
+        version: 2.1.24(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@radix-ui/react-popover':
+        specifier: ^1.1.15
+        version: 1.1.23(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      class-variance-authority:
+        specifier: ^0.7.1
+        version: 0.7.1
       classnames:
         specifier: 2.5.1
         version: 2.5.1
       lodash:
         specifier: 4.17.21
         version: 4.17.21
+      lucide-react:
+        specifier: ^0.544.0
+        version: 0.544.0(react@18.2.0)
       platejs:
         specifier: ^49.2.21
         version: 49.2.21(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0))

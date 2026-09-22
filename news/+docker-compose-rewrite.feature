@@ -1,0 +1,1 @@
+Rewrote `docker-compose.yml` as a self-contained stack: the backend now runs against PostgreSQL/RelStorage with Solr and Tika services defined alongside it, Traefik moved to v3, and the Swarm cron job was replaced by an Ofelia scheduler driven by container labels. @ericof

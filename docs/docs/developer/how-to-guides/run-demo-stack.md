@@ -52,7 +52,7 @@ Delete the lines you do not want to change.
 
 ```shell
 # Image tag used for both the frontend and the backend
-RELEASE=3.0.2
+RELEASE={INTRANET_VERSION}
 
 # Host name and protocol the stack answers on
 STACK_HOSTNAME=kitconcept-intranet.localhost
@@ -62,14 +62,14 @@ STACK_PROTOCOL=http
 STACK_PORT=80
 
 # PostgreSQL
-DB_VERSION=18
+DB_VERSION={POSTGRES_VERSION}
 DB_NAME=plone
 DB_USER=plone
 DB_PASSWORD=plone
 
 # Supporting service image tags
-SOLR_TAG=3.0.0a2
-TIKA_TAG=3.2.3.0-full
+SOLR_TAG={SOLR_VERSION}
+TIKA_TAG={TIKA_VERSION}
 
 # Content review reminders
 BACKEND_CLM_ENABLED=false
@@ -80,16 +80,16 @@ BACKEND_CLM_CRONTAB=0 1 * * *
 
 | Variable | Default | Description |
 |---|---|---|
-| `RELEASE` | `3.0.2` | Tag of the `kitconcept-intranet-frontend` and `kitconcept-intranet-backend` images. Both services always use the same tag. |
+| `RELEASE` | `{INTRANET_VERSION}` | Tag of the `kitconcept-intranet-frontend` and `kitconcept-intranet-backend` images. Both services always use the same tag. |
 | `STACK_HOSTNAME` | `kitconcept-intranet.localhost` | Host name Traefik routes on, and the host name the backend writes into generated URLs. Traefik serves the Zope management interface on the `admin.` subdomain of this name. |
 | `STACK_PROTOCOL` | `http` | Protocol the backend writes into generated URLs. Set it to `https` only when a separate reverse proxy in front of the stack terminates TLS. |
 | `STACK_PORT` | `80` | Host port Traefik publishes. Change it when port 80 is already taken, or to keep Traefik on a port that only your own web server reaches. Browsing the stack directly on a port other than 80 makes Plone generate links without the port, so use a non-default value only behind a reverse proxy that publishes `STACK_HOSTNAME` on the standard port. |
-| `DB_VERSION` | `18` | Tag of the `postgres` image. Use 18 or later. Earlier major versions keep their data in a different path inside the container, and the stack's volume mount does not match it. |
+| `DB_VERSION` | `{POSTGRES_VERSION}` | Tag of the `postgres` image. Use 18 or later. Earlier major versions keep their data in a different path inside the container, and the stack's volume mount does not match it. |
 | `DB_NAME` | `plone` | Name of the database RelStorage connects to. |
 | `DB_USER` | `plone` | Database user. |
 | `DB_PASSWORD` | `plone` | Database password. |
-| `SOLR_TAG` | `3.0.0a2` | Tag of the `kitconcept/solr` image. |
-| `TIKA_TAG` | `3.2.3.0-full` | Tag of the `apache/tika` image. Use a `-full` tag, because text extraction needs the complete set of parsers. |
+| `SOLR_TAG` | `{SOLR_VERSION}` | Tag of the `kitconcept/solr` image. |
+| `TIKA_TAG` | `{TIKA_VERSION}` | Tag of the `apache/tika` image. Use a `-full` tag, because text extraction needs the complete set of parsers. |
 | `BACKEND_CLM_ENABLED` | `false` | Set to `true` to let the scheduler run the {term}`CLM` review reminder job. |
 | `BACKEND_CLM_CRONTAB` | `0 1 * * *` | Schedule for that job, as a cron expression. |
 

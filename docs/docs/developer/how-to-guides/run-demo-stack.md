@@ -52,7 +52,7 @@ Delete the lines you do not want to change.
 
 ```shell
 # Image tag used for both the frontend and the backend
-RELEASE=3.0.1
+RELEASE=3.0.2
 
 # Host name and protocol the stack answers on
 STACK_HOSTNAME=kitconcept-intranet.localhost
@@ -80,7 +80,7 @@ BACKEND_CLM_CRONTAB=0 1 * * *
 
 | Variable | Default | Description |
 |---|---|---|
-| `RELEASE` | `3.0.1` | Tag of the `kitconcept-intranet-frontend` and `kitconcept-intranet-backend` images. Both services always use the same tag. |
+| `RELEASE` | `3.0.2` | Tag of the `kitconcept-intranet-frontend` and `kitconcept-intranet-backend` images. Both services always use the same tag. |
 | `STACK_HOSTNAME` | `kitconcept-intranet.localhost` | Host name Traefik routes on, and the host name the backend writes into generated URLs. Traefik serves the Zope management interface on the `admin.` subdomain of this name. |
 | `STACK_PROTOCOL` | `http` | Protocol the backend writes into generated URLs. Set it to `https` only when a separate reverse proxy in front of the stack terminates TLS. |
 | `STACK_PORT` | `80` | Host port Traefik publishes. Change it when port 80 is already taken, or to keep Traefik on a port that only your own web server reaches. Browsing the stack directly on a port other than 80 makes Plone generate links without the port, so use a non-default value only behind a reverse proxy that publishes `STACK_HOSTNAME` on the standard port. |

@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.2 (2026-09-22)
+
+
+### Feature
+
+- History-diff demo page "Jour fixe KW 38": created with four versions and change notes by the distribution post handler on new sites, and by `scripts/diff_demo_content.py` (REST) on existing sites. @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
 ## 3.0.1 (2026-09-18)
 
 

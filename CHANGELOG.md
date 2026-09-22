@@ -1,6 +1,52 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.2 (2026-09-22)
+
+### Backend
+
+
+#### Feature
+
+- History-diff demo page "Jour fixe KW 38": created with four versions and change notes by the distribution post handler on new sites, and by `scripts/diff_demo_content.py` (REST) on existing sites. @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Render Wiki Page diffs with Plate's diff plugin instead of Volto's HTML string diff, which showed nothing for Plate content: word-level text changes, added and removed blocks, changed block settings ("Alignment: Left → Centred"), split and unified view, German labels. @reekitconcept [#639](https://github.com/kitconcept/kitconcept.intranet/issue/639)
+
+
+#### Bugfix
+
+- Wiki Page diff: table rows, cells and columns are marked without breaking the table; image and callout settings get readable names; unset dates no longer show as 1 January 1970; added/removed rows are hidden on the other side of the split view; the diff renders with volto-plate 1.0.0-alpha.28 (toggle visibility provider). @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
+
+
+### Project
+
+
+#### Feature
+
+- Render Wiki Page diffs with Plate's diff plugin instead of Volto's HTML string diff, which showed nothing for Plate content: word-level text changes, added and removed blocks, changed block settings ("Alignment: Left → Centred"), split and unified view, German labels. @reekitconcept [#639](https://github.com/kitconcept/kitconcept.intranet/pull/639)
+- Made the host port published by Traefik in `docker-compose.yml` configurable through the `STACK_PORT` environment variable, which still defaults to 80, so the demo stack can run behind a web server that terminates TLS. @ericof 
+- Rewrote `docker-compose.yml` as a self-contained stack: the backend now runs against PostgreSQL/RelStorage with Solr and Tika services defined alongside it, Traefik moved to v3, and the Swarm cron job was replaced by an Ofelia scheduler driven by container labels. @ericof 
+
+
+#### Bugfix
+
+- Wiki Page diff for the pitch demo: structural nodes (table rows, columns) diff correctly, readable names for image and callout settings, unset dates shown as "not set". @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/pull/642)
+
+
+#### Documentation
+
+- Added a how-to guide for running the demo `docker-compose.yml` stack: downloading the file, a complete `.env` example with every supported environment variable, what the stack starts, the site created on the first start, how to serve it behind a web server that terminates TLS, and the limits of the demo (no production readiness, no AI features). @ericof 
+
+
+
 ## 3.0.1 (2026-09-18)
 
 ### Backend

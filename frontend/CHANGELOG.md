@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.2 (2026-09-22)
+
+
+### Feature
+
+- Render Wiki Page diffs with Plate's diff plugin instead of Volto's HTML string diff, which showed nothing for Plate content: word-level text changes, added and removed blocks, changed block settings ("Alignment: Left → Centred"), split and unified view, German labels. @reekitconcept [#639](https://github.com/kitconcept/kitconcept.intranet/issue/639)
+
+
+### Bugfix
+
+- Wiki Page diff: table rows, cells and columns are marked without breaking the table; image and callout settings get readable names; unset dates no longer show as 1 January 1970; added/removed rows are hidden on the other side of the split view; the diff renders with volto-plate 1.0.0-alpha.28 (toggle visibility provider). @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
 ## 3.0.1 (2026-09-18)
 
 No significant changes.

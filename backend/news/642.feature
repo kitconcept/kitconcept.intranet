@@ -1,1 +1,0 @@
-History-diff demo page "Jour fixe KW 38": created with four versions and change notes by the distribution post handler on new sites, and by `scripts/diff_demo_content.py` (REST) on existing sites. @reekitconcept

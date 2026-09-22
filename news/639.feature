@@ -1,1 +1,0 @@
-Render Wiki Page diffs with Plate's diff plugin instead of Volto's HTML string diff, which showed nothing for Plate content: word-level text changes, added and removed blocks, changed block settings ("Alignment: Left → Centred"), split and unified view, German labels. @reekitconcept

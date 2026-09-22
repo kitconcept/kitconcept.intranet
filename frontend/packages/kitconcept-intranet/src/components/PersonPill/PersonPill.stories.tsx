@@ -134,7 +134,7 @@ export const WithKicker: Story = {
     fullname: 'Nils Vogl',
     portrait: personImage,
     url: '/persons/nils',
-    kicker: 'Autor/in',
+    kicker: 'Autor:innen',
   },
 };
 

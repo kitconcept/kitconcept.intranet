@@ -2,6 +2,46 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.1 (2026-09-18)
+
+
+### Internal
+
+- Update to core 2.1.0 @sneridagh 
+
+## 3.0.0 (2026-09-17)
+
+
+### Feature
+
+- Sync the `/personen` persons with Plone users in the example content: add the missing Jutta Halmbach person (with portrait), assign usernames to the persons that had none, and seed the matching member accounts in `principals.json` so every person profile has a user (Max Berger included) and a portrait via `sync_person_portraits`. Also reassign the example content authored by `admin` randomly among `a.becker`, `m.berger` and `c.nguyen`. @sneridagh [#502](https://github.com/kitconcept/kitconcept.intranet/issue/502)
+
+
+### Internal
+
+- Update VLT final and core (Plone 6.2.2). @sneridagh 
+- Update k.core @Tishasoumya-02 
+- Update the backend to kitconcept.plate 1.0.0a28. @iFlameing 
+
+## 3.0.0a5 (2026-09-11)
+
+
+### Feature
+
+- Populate Plone user portraits from the images of associated Person profiles when installing the example content. @sneridagh 
+
+
+### Bugfix
+
+- Standardize German Content Lifecycle Management labels and show the behavior's full name in the edit form. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- Expose configured feedback-person metadata through the CLM expansion. @sneridagh 
+- Show every configured CLM author in the content information and expose the person metadata required by the frontend. @sneridagh 
+
+
+### Internal
+
+- Upgrade kitconcept.core to 2.0.0b7 and Volto Light Theme to 8.0.0a32. @sneridagh 
+
 ## 3.0.0a4 (2026-09-10)
 
 

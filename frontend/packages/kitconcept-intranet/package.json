@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/intranet",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.1",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -100,7 +100,9 @@
     "lodash": "4.17.21",
     "react-aria-components": "catalog:",
     "volto-rss-block": "^3.0.1",
-    "@kitconcept/volto-plate": "^1.0.0-alpha.24"
+    "@kitconcept/volto-plate": "^1.0.0-alpha.28",
+    "@platejs/diff": "^50.2.0",
+    "platejs": "^49.2.21"
   },
   "volto_version": "19.4.1"
 }

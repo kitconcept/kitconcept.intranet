@@ -26,11 +26,6 @@ msgstr ""
 msgid "About this content"
 msgstr ""
 
-#. Default: "Add comment... (@ mention a person)"
-#: components/Comments/messages
-msgid "Add comment... (@ mention a person)"
-msgstr ""
-
 #. Default: "Address"
 #: components/theme/PersonView
 msgid "Address"
@@ -109,11 +104,6 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#. Default: "Comments"
-#: components/Comments/messages
-msgid "Comments"
-msgstr ""
-
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 #: components/theme/PersonView
@@ -123,11 +113,6 @@ msgstr "Kontakt"
 #. Default: "Content marked as reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
-msgstr ""
-
-#. Default: "Content responsible"
-#: slots/AboutThisContent/AboutThisContent
-msgid "Content responsible"
 msgstr ""
 
 #. Default: "Created On"
@@ -160,11 +145,6 @@ msgstr ""
 msgid "DelegateButton"
 msgstr ""
 
-#. Default: "Delete"
-#: components/Comments/messages
-msgid "Delete"
-msgstr ""
-
 #. Default: "Depth"
 #: components/widgets/QuerystringWidget
 msgid "Depth"
@@ -182,11 +162,6 @@ msgstr ""
 msgid "E-mail"
 msgstr "E-mail"
 
-#. Default: "Edit"
-#: components/Comments/messages
-msgid "Edit"
-msgstr ""
-
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
 msgid "Email"
@@ -201,6 +176,7 @@ msgstr ""
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr ""
 
@@ -224,14 +200,9 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#. Default: "Feedback about this page"
-#: components/Footer/slots/FollowUsLogoAndLinks
-#: slots/AboutThisContent/AboutThisContent
-msgid "Feedback about this page"
-msgstr ""
-
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
+#: slots/AboutThisContent/AboutThisContent
 msgid "Feedback on this page"
 msgstr ""
 
@@ -458,14 +429,14 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#. Default: "Reply"
-#: components/Comments/messages
-msgid "Reply"
-msgstr ""
-
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
+msgstr ""
+
+#. Default: "Responsible Person"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Responsible Person"
 msgstr ""
 
 #. Default: "Results limit"
@@ -523,11 +494,6 @@ msgstr ""
 #. Default: "Please Select ..."
 #: components/ContentReviewSidebar/DelegateReview
 msgid "SelectAssigneePlaceholder"
-msgstr ""
-
-#. Default: "Send comment"
-#: components/Comments/messages
-msgid "Send comment"
 msgstr ""
 
 #. Default: "Send feedback"
@@ -591,11 +557,6 @@ msgstr ""
 msgid "Sources"
 msgstr ""
 
-#. Default: "Sponsored by:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Sponsored by:"
-msgstr ""
-
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
@@ -621,6 +582,7 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 #: components/Toolbar/DocumentReview
+#: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr ""
 
@@ -659,11 +621,6 @@ msgstr ""
 msgid "Use preset review interval"
 msgstr ""
 
-#. Default: "Visible to everyone who can see this page."
-#: components/Comments/messages
-msgid "Visible to everyone who can see this page."
-msgstr ""
-
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
@@ -681,6 +638,7 @@ msgstr ""
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr ""
 
@@ -827,6 +785,301 @@ msgstr ""
 #. Default: "Next Review on:"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "nextReview"
+msgstr ""
+
+#. Default: "Added"
+#: components/PlateDiff/messages
+msgid "plateDiff.added"
+msgstr ""
+
+#. Default: "Changed"
+#: components/PlateDiff/messages
+msgid "plateDiff.changed"
+msgstr ""
+
+#. Default: "Not in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.notInThisVersion"
+msgstr ""
+
+#. Default: "Alignment"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.align"
+msgstr ""
+
+#. Default: "Alternative text"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.alt"
+msgstr ""
+
+#. Default: "Background colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.backgroundColor"
+msgstr ""
+
+#. Default: "Width"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.blockWidth"
+msgstr ""
+
+#. Default: "Caption"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.caption"
+msgstr ""
+
+#. Default: "Checked"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.checked"
+msgstr ""
+
+#. Default: "Text colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.color"
+msgstr ""
+
+#. Default: "Link"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.href"
+msgstr ""
+
+#. Default: "Icon"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.icon"
+msgstr ""
+
+#. Default: "Indentation"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.indent"
+msgstr ""
+
+#. Default: "Language"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lang"
+msgstr ""
+
+#. Default: "Line height"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lineHeight"
+msgstr ""
+
+#. Default: "List start"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStart"
+msgstr ""
+
+#. Default: "List type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStyleType"
+msgstr ""
+
+#. Default: "Block type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.type"
+msgstr ""
+
+#. Default: "Source"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.url"
+msgstr ""
+
+#. Default: "Variant"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.variant"
+msgstr ""
+
+#. Default: "Size"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.width"
+msgstr ""
+
+#. Default: "Removed"
+#: components/PlateDiff/messages
+msgid "plateDiff.removed"
+msgstr ""
+
+#. Default: "Removed in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.removedInThisVersion"
+msgstr ""
+
+#. Default: "Centred"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.center"
+msgstr ""
+
+#. Default: "Justified"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.justify"
+msgstr ""
+
+#. Default: "Left"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.left"
+msgstr ""
+
+#. Default: "Right"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.right"
+msgstr ""
+
+#. Default: "Standard"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.default"
+msgstr ""
+
+#. Default: "Full width"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.full"
+msgstr ""
+
+#. Default: "Narrow"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.narrow"
+msgstr ""
+
+#. Default: "Wide"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.wide"
+msgstr ""
+
+#. Default: "Bulleted list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.bulleted"
+msgstr ""
+
+#. Default: "Numbered list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.numbered"
+msgstr ""
+
+#. Default: "To-do list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.todo"
+msgstr ""
+
+#. Default: "no"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.no"
+msgstr ""
+
+#. Default: "not set"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.notSet"
+msgstr ""
+
+#. Default: "Large"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.l"
+msgstr ""
+
+#. Default: "Medium"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.m"
+msgstr ""
+
+#. Default: "Small"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.s"
+msgstr ""
+
+#. Default: "Quote"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.blockquote"
+msgstr ""
+
+#. Default: "Callout"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.callout"
+msgstr ""
+
+#. Default: "Code"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.code_block"
+msgstr ""
+
+#. Default: "Heading 1"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h1"
+msgstr ""
+
+#. Default: "Heading 2"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h2"
+msgstr ""
+
+#. Default: "Heading 3"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h3"
+msgstr ""
+
+#. Default: "Heading 4"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h4"
+msgstr ""
+
+#. Default: "Heading 5"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h5"
+msgstr ""
+
+#. Default: "Heading 6"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h6"
+msgstr ""
+
+#. Default: "Divider"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.hr"
+msgstr ""
+
+#. Default: "Image"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.img"
+msgstr ""
+
+#. Default: "Paragraph"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.p"
+msgstr ""
+
+#. Default: "Table"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.table"
+msgstr ""
+
+#. Default: "Toggle"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.toggle"
+msgstr ""
+
+#. Default: "Error"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.error"
+msgstr ""
+
+#. Default: "Info"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.info"
+msgstr ""
+
+#. Default: "Note"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.note"
+msgstr ""
+
+#. Default: "Success"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.success"
+msgstr ""
+
+#. Default: "Warning"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.warning"
+msgstr ""
+
+#. Default: "yes"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.yes"
 msgstr ""
 
 #. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."

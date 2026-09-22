@@ -251,7 +251,15 @@ myst_enable_extensions = [
     "substitution",  # Use Jinja2 for substitutions. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
 ]
 
-myst_substitutions = {}
+REPLACEMENTS = {
+    "INTRANET_VERSION": __version__,
+    "TRAEFIK_VERSION": "v3.7",
+    "POSTGRES_VERSION": "18",
+    "SOLR_VERSION": "3.0.0a2",
+    "TIKA_VERSION": "3.2.3.0-full",
+}
+
+myst_substitutions: dict[str, str] = {**REPLACEMENTS}
 
 # -- Intersphinx configuration ----------------------------------
 
@@ -352,9 +360,7 @@ def source_replace(app, docname, source):
 
 
 # Dict of replacements.
-source_replacements = {
-    "{SUPPORTED_PYTHON_VERSIONS}": "3.10, 3.11, 3.12, or 3.13",
-}
+source_replacements = {f"{{{key}}}": value for key, value in REPLACEMENTS.items()}
 
 
 # Finally, configure app attributes.

@@ -23,6 +23,19 @@ defineMessages({
     id: 'Responsibilities',
     defaultMessage: 'Responsibilities',
   },
+  // Wiki table shadows (#655). The i18n extraction does not scan shadowed
+  // files, so the messages of
+  //   customizations/@kitconcept/volto-plate/plate/wiki/floating-toolbar-buttons.tsx
+  //   customizations/@plone/plate/components/ui/table-node.tsx
+  // are repeated here. Remove them once the shadows move to volto-plate.
+  insertTable: {
+    id: 'Insert table',
+    defaultMessage: 'Insert table',
+  },
+  headerRow: {
+    id: 'Header row',
+    defaultMessage: 'Header row',
+  },
 });
 
 declare module '@plone/types' {

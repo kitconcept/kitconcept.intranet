@@ -787,6 +787,301 @@ msgstr ""
 msgid "nextReview"
 msgstr "Nächste Kontrolle am: "
 
+#. Default: "Added"
+#: components/PlateDiff/messages
+msgid "plateDiff.added"
+msgstr "Hinzugefügt"
+
+#. Default: "Changed"
+#: components/PlateDiff/messages
+msgid "plateDiff.changed"
+msgstr "Geändert"
+
+#. Default: "Not in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.notInThisVersion"
+msgstr "Nicht in dieser Version"
+
+#. Default: "Alignment"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.align"
+msgstr "Ausrichtung"
+
+#. Default: "Alternative text"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.alt"
+msgstr "Alternativtext"
+
+#. Default: "Background colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.backgroundColor"
+msgstr "Hintergrundfarbe"
+
+#. Default: "Width"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.blockWidth"
+msgstr "Breite"
+
+#. Default: "Caption"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.caption"
+msgstr "Bildunterschrift"
+
+#. Default: "Checked"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.checked"
+msgstr "Abgehakt"
+
+#. Default: "Text colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.color"
+msgstr "Textfarbe"
+
+#. Default: "Link"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.href"
+msgstr "Link"
+
+#. Default: "Icon"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.icon"
+msgstr "Symbol"
+
+#. Default: "Indentation"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.indent"
+msgstr "Einrückung"
+
+#. Default: "Language"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lang"
+msgstr "Sprache"
+
+#. Default: "Line height"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lineHeight"
+msgstr "Zeilenhöhe"
+
+#. Default: "List start"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStart"
+msgstr "Listenbeginn"
+
+#. Default: "List type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStyleType"
+msgstr "Listentyp"
+
+#. Default: "Block type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.type"
+msgstr "Blocktyp"
+
+#. Default: "Source"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.url"
+msgstr "Quelle"
+
+#. Default: "Variant"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.variant"
+msgstr "Variante"
+
+#. Default: "Size"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.width"
+msgstr "Größe"
+
+#. Default: "Removed"
+#: components/PlateDiff/messages
+msgid "plateDiff.removed"
+msgstr "Entfernt"
+
+#. Default: "Removed in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.removedInThisVersion"
+msgstr "In dieser Version entfernt"
+
+#. Default: "Centred"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.center"
+msgstr "Zentriert"
+
+#. Default: "Justified"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.justify"
+msgstr "Blocksatz"
+
+#. Default: "Left"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.left"
+msgstr "Links"
+
+#. Default: "Right"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.right"
+msgstr "Rechts"
+
+#. Default: "Standard"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.default"
+msgstr "Standard"
+
+#. Default: "Full width"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.full"
+msgstr "Volle Breite"
+
+#. Default: "Narrow"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.narrow"
+msgstr "Schmal"
+
+#. Default: "Wide"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.wide"
+msgstr "Breit"
+
+#. Default: "Bulleted list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.bulleted"
+msgstr "Aufzählung"
+
+#. Default: "Numbered list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.numbered"
+msgstr "Nummerierte Liste"
+
+#. Default: "To-do list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.todo"
+msgstr "Aufgabenliste"
+
+#. Default: "no"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.no"
+msgstr "nein"
+
+#. Default: "not set"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.notSet"
+msgstr "nicht gesetzt"
+
+#. Default: "Large"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.l"
+msgstr "Groß"
+
+#. Default: "Medium"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.m"
+msgstr "Mittel"
+
+#. Default: "Small"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.s"
+msgstr "Klein"
+
+#. Default: "Quote"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.blockquote"
+msgstr "Zitat"
+
+#. Default: "Callout"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.callout"
+msgstr "Hinweisbox"
+
+#. Default: "Code"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.code_block"
+msgstr "Code"
+
+#. Default: "Heading 1"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h1"
+msgstr "Überschrift 1"
+
+#. Default: "Heading 2"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h2"
+msgstr "Überschrift 2"
+
+#. Default: "Heading 3"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h3"
+msgstr "Überschrift 3"
+
+#. Default: "Heading 4"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h4"
+msgstr "Überschrift 4"
+
+#. Default: "Heading 5"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h5"
+msgstr "Überschrift 5"
+
+#. Default: "Heading 6"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h6"
+msgstr "Überschrift 6"
+
+#. Default: "Divider"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.hr"
+msgstr "Trennlinie"
+
+#. Default: "Image"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.img"
+msgstr "Bild"
+
+#. Default: "Paragraph"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.p"
+msgstr "Absatz"
+
+#. Default: "Table"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.table"
+msgstr "Tabelle"
+
+#. Default: "Toggle"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.toggle"
+msgstr "Aufklappbereich"
+
+#. Default: "Error"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.error"
+msgstr "Fehler"
+
+#. Default: "Info"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.info"
+msgstr "Info"
+
+#. Default: "Note"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.note"
+msgstr "Notiz"
+
+#. Default: "Success"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.success"
+msgstr "Erfolg"
+
+#. Default: "Warning"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.warning"
+msgstr "Warnung"
+
+#. Default: "yes"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.yes"
+msgstr "ja"
+
 #. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeComment"

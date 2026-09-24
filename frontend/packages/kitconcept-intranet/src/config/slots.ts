@@ -98,14 +98,7 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
-    predicates: [
-      isWorkspaceOrDescendant(['WikiPage', 'Workspace']),
-      ({ location }) =>
-        !(
-          location.pathname.endsWith('/add') &&
-          new URLSearchParams(location.search).get('type') === 'Workspace'
-        ),
-    ],
+    predicates: [isWorkspaceOrDescendant(['WikiPage', 'Workspace'])],
   });
   config.registerSlotComponent({
     slot: 'aboveApp',

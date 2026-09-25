@@ -22,6 +22,7 @@ import wikiEditorRenderer from '@kitconcept/volto-plate/plate/presets/wiki-rende
 import { PlatePluginsProvider } from '@kitconcept/volto-plate/plate/context/PlatePluginsProvider';
 import { ToggleVisibilityProvider } from '@kitconcept/volto-plate/plate/context/ToggleVisibilityContext';
 import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
+import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 import { DiffPlugin } from './DiffPlugin';
 import { messages } from './messages';
 import './plate-diff.css';
@@ -39,8 +40,11 @@ type Content = {
   blocks?: Record<string, { value?: Value }>;
 };
 
+// Rows hold cells only, like the view renderer (see wikiTableNormalizePlugin).
 const getValue = (content?: Content): Value =>
-  (content?.blocks?.[SOMERSAULT_KEY]?.value as Value | undefined) ?? [];
+  cleanTableRows(
+    (content?.blocks?.[SOMERSAULT_KEY]?.value as Value | undefined) ?? [],
+  );
 
 export const hasPlateContent = (content?: Content): boolean =>
   Boolean(content?.blocks && SOMERSAULT_KEY in content.blocks);

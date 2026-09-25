@@ -1,8 +1,9 @@
 /**
  * OVERRIDE wiki-editor-kit.tsx
  * REASON: Register `WikiTableKeysPlugin` (Tab / Shift+Tab between cells,
- *         no cell merging on Backspace / Delete at the cell edge) next to
- *         the table kit. Relative imports are made absolute (shadowed files
+ *         no cell merging on Backspace / Delete at the cell edge) and
+ *         `WikiTableNormalizePlugin` (rows hold cells only) next to the
+ *         table kit. Relative imports are made absolute (shadowed files
  *         resolve relative imports against this package). Everything else
  *         is unchanged.
  * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0-alpha.28/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
@@ -45,6 +46,7 @@ import { TocKit } from '@plone/plate/components/editor/plugins/toc-kit';
 import { ToggleKit } from '@plone/plate/components/editor/plugins/toggle-kit';
 import { SplitHotkeyPlugin } from '@plone/plate/components/editor/plugins/split-hotkey';
 import { WikiTableKeysPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableKeysPlugin';
+import { WikiTableNormalizePlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 
 import { VoltoFloatingToolbarKit } from '@kitconcept/volto-plate/plate/plugins/volto-floating-toolbar-kit';
 import { VoltoClipboardImagePastePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-clipboard-image-paste';
@@ -76,6 +78,7 @@ export const WikiEditorKit = [
   ...TableKit,
   // OVERRIDE
   WikiTableKeysPlugin,
+  WikiTableNormalizePlugin,
   ...ToggleKit,
   ...TocKit,
   ...CalloutKit,

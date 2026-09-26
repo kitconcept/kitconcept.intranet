@@ -1,0 +1,86 @@
+// Wiki Page (Plate) tables: Confluence-style grid.
+//
+// volto-plate's `typeset.scss` styles tables as bare document tables
+// (separated borders, a bottom rule, padding on the cells, no padding on the
+// first column). Plate's table cells carry no borders of their own: they draw
+// them with an absolutely positioned `::before` pseudo-element that spans the
+// cell box. The typeset padding and cell borders push that pseudo-element out
+// of the cell box, which is the shifted-borders bug (#546).
+//
+// This sheet resets the typeset table rules for Plate tables and styles them
+// like Confluence: full width, light grey cell grid, grey bold header row,
+// compact padding, subtle row hover. It applies to the editor and to the view
+// (both render inside `.typeset`). Everything the cell toolbar controls
+// (cell borders, cell background) keeps working: only the grid colour is set
+// here, and cells with their own background are left alone.
+//
+// Specificity: typeset's table rules live under
+// `.contenttype-wikipage .typeset *:not(…):where(table)` (0,2,0). The `:is()`
+// prefix lifts these rules to (0,2,1) on every page without repeating the
+// content-type classes in every selector.
+
+:is(.contenttype-workspace, .contenttype-wikipage, body) .typeset {
+  --wiki-table-border: #dfe1e6;
+  --wiki-table-header-bg: #f4f5f7;
+  --wiki-table-hover-bg: #f8f9fa;
+
+  // Plate wraps the table in an overflow container and a `w-fit` wrapper.
+  // Let both span the column so the table can be full width.
+  div:has(> table) {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    max-width: none;
+    border: 0;
+    margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    table-layout: fixed;
+  }
+
+  td,
+  th {
+    position: relative;
+    padding: 0;
+    border: 0;
+    text-align: start;
+    vertical-align: top;
+
+    // Plate's cell grid: colour only, the toolbar still toggles the sides.
+    &::before {
+      border-color: var(--wiki-table-border);
+    }
+
+    // The content box inside the cell (Plate: `px-3 py-2` / `px-4 py-2`).
+    // Typeset breaks long words anywhere; in narrow columns that splits
+    // ordinary words ("Verantwortlic|h"), so hyphenate first.
+    > div:first-child {
+      padding: 0.4em 0.65em;
+      hyphens: auto;
+    }
+
+    // Every Plate paragraph is a `.block` with a `.block-inner-container`.
+    // VLT pads the last block of a container with 80px `!important`
+    // (`:not(.blocks-group-wrapper) > .block:last-child .block-inner-container`),
+    // which made every row ~120px tall. Cells own their spacing.
+    .block .block-inner-container {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  th:not([style*='--cellBackground']) {
+    background-color: var(--wiki-table-header-bg);
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  tbody tr:hover > td:not([style*='--cellBackground']) {
+    background-color: var(--wiki-table-hover-bg);
+  }
+}

@@ -23,6 +23,7 @@ import { PlatePluginsProvider } from '@kitconcept/volto-plate/plate/context/Plat
 import { ToggleVisibilityProvider } from '@kitconcept/volto-plate/plate/context/ToggleVisibilityContext';
 import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
 import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
+import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import { DiffPlugin } from './DiffPlugin';
 import { messages } from './messages';
 import './plate-diff.css';
@@ -110,42 +111,49 @@ const WikiPageDiff = ({ one, two, view }: Props) => {
 
   return (
     <PlateController>
-      <PlatePluginsProvider initialDiscussions={[]} initialUsers={{}} readOnly>
-        {view === 'unified' ? (
-          <div className="plate-diff plate-diff-unified">
-            <Renderer id="plate-diff-unified" value={diffValue} />
-          </div>
-        ) : (
-          <div className="plate-diff plate-diff-split">
-            {diffValue.map((node, i) => {
-              const type = opType(node);
-              const key = (node as TElement).id ?? i;
-              return (
-                <React.Fragment key={String(key)}>
-                  <div className="plate-diff-cell plate-diff-left">
-                    {type === 'insert' ? (
-                      <div className="plate-diff-empty">
-                        {intl.formatMessage(messages.notInThisVersion)}
-                      </div>
-                    ) : (
-                      <Renderer id={`plate-diff-left-${i}`} value={[node]} />
-                    )}
-                  </div>
-                  <div className="plate-diff-cell plate-diff-right">
-                    {type === 'delete' ? (
-                      <div className="plate-diff-empty">
-                        {intl.formatMessage(messages.removedInThisVersion)}
-                      </div>
-                    ) : (
-                      <Renderer id={`plate-diff-right-${i}`} value={[node]} />
-                    )}
-                  </div>
-                </React.Fragment>
-              );
-            })}
-          </div>
-        )}
-      </PlatePluginsProvider>
+      {/* No sorting or filtering: a diff shows the stored order. */}
+      <WikiTableViewProvider interactive={false}>
+        <PlatePluginsProvider
+          initialDiscussions={[]}
+          initialUsers={{}}
+          readOnly
+        >
+          {view === 'unified' ? (
+            <div className="plate-diff plate-diff-unified">
+              <Renderer id="plate-diff-unified" value={diffValue} />
+            </div>
+          ) : (
+            <div className="plate-diff plate-diff-split">
+              {diffValue.map((node, i) => {
+                const type = opType(node);
+                const key = (node as TElement).id ?? i;
+                return (
+                  <React.Fragment key={String(key)}>
+                    <div className="plate-diff-cell plate-diff-left">
+                      {type === 'insert' ? (
+                        <div className="plate-diff-empty">
+                          {intl.formatMessage(messages.notInThisVersion)}
+                        </div>
+                      ) : (
+                        <Renderer id={`plate-diff-left-${i}`} value={[node]} />
+                      )}
+                    </div>
+                    <div className="plate-diff-cell plate-diff-right">
+                      {type === 'delete' ? (
+                        <div className="plate-diff-empty">
+                          {intl.formatMessage(messages.removedInThisVersion)}
+                        </div>
+                      ) : (
+                        <Renderer id={`plate-diff-right-${i}`} value={[node]} />
+                      )}
+                    </div>
+                  </React.Fragment>
+                );
+              })}
+            </div>
+          )}
+        </PlatePluginsProvider>
+      </WikiTableViewProvider>
     </PlateController>
   );
 };

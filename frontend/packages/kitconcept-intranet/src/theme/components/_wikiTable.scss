@@ -98,6 +98,8 @@
 
 // 24px gutter left of the table for the row drag handle (Plate: 8px).
 .wiki-table-controls {
+  // 12px on top for the column grips: the container clips vertical overflow.
+  padding-top: 12px;
   margin-left: -1.5rem;
 
   > [data-slot='block-selection'] {
@@ -111,4 +113,158 @@
 
 .wiki-table-row-grip {
   left: 0.25rem;
+
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
+// Column drag handle on the top edge of the first row's cells.
+.wiki-table-col-grip {
+  position: absolute;
+  z-index: 40;
+  top: -12px;
+  left: 50%;
+  width: 24px;
+  height: 12px;
+  min-height: 0;
+  cursor: grab;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.1s;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  :is(td, th):hover &,
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
+// Column drop position: left or right edge of the target cell.
+.wiki-table-col-drop-line {
+  position: absolute;
+  z-index: 40;
+  top: 0;
+  width: 2px;
+  height: 100%;
+
+  &.is-before {
+    left: -1px;
+  }
+
+  &.is-after {
+    right: -1px;
+  }
+}
+
+// View: sorting and filtering controls (components/WikiTable/TableViewControls.tsx).
+
+// Room for the sort button: under the same prefix as the cell padding above,
+// which would win otherwise and let the header text run under the button.
+:is(.contenttype-workspace, .contenttype-wikipage, body)
+  .typeset
+  th.wiki-table-sortable
+  > div:first-child {
+  padding-right: 2rem;
+}
+
+.wiki-table-sort {
+  position: absolute;
+  z-index: 30;
+  top: 50%;
+  right: 0.3rem;
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--typeset-muted, #878f93);
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &[data-hovered],
+  &[data-active] {
+    color: var(--typeset-foreground, #252525);
+  }
+
+  &[data-hovered] {
+    background: rgb(0 0 0 / 6%);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid #007eb1;
+    outline-offset: 1px;
+  }
+}
+
+.wiki-table-filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+  gap: 0.75rem;
+
+  .react-aria-SearchField {
+    position: relative;
+    display: flex;
+    flex: 0 1 18rem;
+    align-items: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.35em 2em 0.35em 0.6em;
+    border: 1px solid var(--wiki-table-border, #dfe1e6);
+    border-radius: 4px;
+    font: inherit;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  .react-aria-SearchField[data-empty] button {
+    display: none;
+  }
+
+  button {
+    position: absolute;
+    right: 0.25rem;
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--typeset-muted, #878f93);
+    cursor: pointer;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.wiki-table-filter-count {
+  color: var(--typeset-muted, #878f93);
 }

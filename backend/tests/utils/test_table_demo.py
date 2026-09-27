@@ -29,8 +29,16 @@ def workspace(portal):
         )
 
 
+# Tables per demo page.
+TABLES = {"projektbudget-2026": 2, "teilnehmende-konsortialtreffen": 4}
+
+
 def tables(value: list[dict]) -> list[dict]:
     return [n for n in value if n["type"] == "table"]
+
+
+def cell_text(cell: dict) -> str:
+    return "".join(run["text"] for run in cell["children"][0]["children"])
 
 
 class TestWikiContent:
@@ -66,21 +74,45 @@ class TestWikiContent:
         collect(node)
         assert len(ids) == len(set(ids))
 
+    def test_span_merges_cells(self):
+        node = wiki_content.table(
+            "t", ["A", "B", "C"], [["1", wiki_content.Span("2", cols=2)]]
+        )
+        _header, merged = node["children"]
+        assert [c.get("colSpan") for c in merged["children"]] == [None, 2]
+        assert cell_text(merged["children"][1]) == "2"
+
 
 class TestTableDemoContent:
     def test_two_pages_with_tables(self):
         pages = content.pages()
         assert [p[0] for p in pages] == [p[0] for p in content.PAGES]
-        for _page_id, page_title, blocks, layout in pages:
+        for page_id, page_title, blocks, layout in pages:
             value = blocks["__somersault__"]["value"]
             assert value[0] == wiki_content.title(page_title)
-            assert len(tables(value)) == 2
+            assert len(tables(value)) == TABLES[page_id]
             assert layout == wiki_content.blocks_layout()
 
     def test_wide_table_has_nine_columns(self):
         value = content.participants_page()
         wide = tables(value)[1]
         assert len(wide["children"][0]["children"]) == 9
+
+    def test_open_items_can_be_sorted_and_filtered(self):
+        """More than five rows (filter), dates out of order, empty cells."""
+        open_items = tables(content.participants_page())[2]
+        _header, *rows = open_items["children"]
+        assert len(rows) > 5
+        due = [cell_text(r["children"][2]) for r in rows]
+        dated = [d for d in due if d]
+        assert "" in due
+        assert dated != sorted(dated, key=lambda d: d.split(".")[::-1])
+        assert not any(c.get("colSpan") for r in rows for c in r["children"])
+
+    def test_agenda_has_a_merged_cell(self):
+        agenda = tables(content.participants_page())[3]
+        spans = [c.get("colSpan", 1) for r in agenda["children"] for c in r["children"]]
+        assert 2 in spans
 
 
 class TestCreateTableDemoPages:
@@ -98,7 +130,9 @@ class TestCreateTableDemoPages:
             assert page.portal_type == "WikiPage"
             assert page.title == page_title
             assert page.blocks_layout["items"] == [wiki_content.TITLE_BLOCK_ID]
-            assert len(tables(page.blocks["__somersault__"]["value"])) == 2
+            assert (
+                len(tables(page.blocks["__somersault__"]["value"])) == TABLES[page_id]
+            )
 
     def test_is_idempotent(self, workspace):
         assert table_demo.create_table_demo_pages(self.portal) == 0

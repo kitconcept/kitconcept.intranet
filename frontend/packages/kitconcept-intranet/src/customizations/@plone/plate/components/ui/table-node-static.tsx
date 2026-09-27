@@ -11,6 +11,11 @@
  *           row/column once and passes it down via context; the cell
  *           derives width, height and borders from that (same rules as
  *           Plate's getTableCellSize / getTableCellBorders).
+ *         - Sorting and filtering in the view (client-side, never stored):
+ *           sort buttons in the header row, a filter field above tables
+ *           with more than a few rows. Off in the history diff
+ *           (WikiTableViewContext) and for tables with merged cells. The
+ *           server render is unsorted and unfiltered, so hydration matches.
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Everything else is
  *         unchanged.
@@ -25,16 +30,31 @@ import * as React from 'react';
 
 import type {
   SlateElementProps,
+  TElement,
   TTableCellElement,
   TTableElement,
   TTableRowElement,
 } from 'platejs';
 
 import { BaseTablePlugin } from '@platejs/table';
-import { SlateElement } from 'platejs';
+import { NodeApi, SlateElement } from 'platejs';
 
 import { BlockInnerContainer } from '@plone/plate/components/ui/block-inner-container';
 import { cn } from '@plone/plate/lib/utils';
+import {
+  hasMergedCells,
+  isHeaderRow,
+} from '@kitconcept/intranet/components/WikiTable/tableMoves';
+import {
+  filterRowIndices,
+  sortRowIndices,
+  type SortDirection,
+} from '@kitconcept/intranet/components/WikiTable/tableSort';
+import { WikiTableViewContext } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
+import {
+  SortButton,
+  TableFilterField,
+} from '@kitconcept/intranet/components/WikiTable/TableViewControls';
 
 // OVERRIDE: per-table cell geometry, computed once (see REASON above).
 type CellIndices = { row: number; col: number };
@@ -45,6 +65,17 @@ type TableGeometry = {
   rowCount: number;
 };
 const TableGeometryContext = React.createContext<TableGeometry | null>(null);
+
+// OVERRIDE: sorting state of a table, for its header cells.
+type TableSort = {
+  sort: { col: number; dir: SortDirection } | null;
+  toggle: (col: number) => void;
+  columns: string[];
+};
+const TableSortContext = React.createContext<TableSort | null>(null);
+
+/** Tables with more body rows than this get a filter field. */
+const FILTER_MIN_ROWS = 5;
 
 function computeTableGeometry(
   table: TTableElement,
@@ -95,22 +126,115 @@ export function TableElementStatic({
     [props.element, api],
   );
 
+  // OVERRIDE: sorting and filtering (see REASON).
+  const { interactive } = React.useContext(WikiTableViewContext);
+  const rows = props.element.children as TTableRowElement[];
+  const header = isHeaderRow(rows[0]);
+  const bodyStart = header ? 1 : 0;
+  const texts = React.useMemo(
+    () =>
+      rows
+        .slice(bodyStart)
+        .map((row) =>
+          (row.children as TElement[]).map((cell) => NodeApi.string(cell)),
+        ),
+    [rows, bodyStart],
+  );
+  // The rows arrive as Plate's <Children> element holding the row nodes
+  // (next to what plugins render below the content); that element is
+  // re-rendered with the rows in display order.
+  const childList: React.ReactNode[] = Array.isArray(children)
+    ? children
+    : [children];
+  const rowsAt = childList.findIndex((child) => {
+    if (!React.isValidElement(child)) return false;
+    const nodes = (child.props as { children?: unknown }).children;
+    return (
+      Array.isArray(nodes) &&
+      nodes.length === rows.length &&
+      nodes[0] === rows[0]
+    );
+  });
+  const rowNodes =
+    rowsAt >= 0 ? (childList[rowsAt] as React.ReactElement) : null;
+  const canReorder =
+    interactive && !!rowNodes && !hasMergedCells(props.element);
+  const sortable = canReorder && header && texts.length >= 2;
+  const filterable = canReorder && texts.length > FILTER_MIN_ROWS;
+  const [sort, setSort] = React.useState<TableSort['sort']>(null);
+  const [query, setQuery] = React.useState('');
+  const order = React.useMemo(() => {
+    let indices = sort
+      ? sortRowIndices(texts, sort.col, sort.dir)
+      : texts.map((_row, index) => index);
+    if (query) {
+      const keep = new Set(filterRowIndices(texts, query));
+      indices = indices.filter((index) => keep.has(index));
+    }
+    return indices;
+  }, [texts, sort, query]);
+  const sortValue = React.useMemo<TableSort | null>(
+    () =>
+      sortable
+        ? {
+            sort,
+            toggle: (col) =>
+              setSort((current) =>
+                current?.col !== col
+                  ? { col, dir: 'ascending' }
+                  : current.dir === 'ascending'
+                    ? { col, dir: 'descending' }
+                    : null,
+              ),
+            columns: (rows[0].children as TElement[]).map((cell) =>
+              NodeApi.string(cell),
+            ),
+          }
+        : null,
+    [sortable, sort, rows],
+  );
+  // React.Children.map keeps the children keyed like the original list.
+  // Plate's <Children> element takes the row nodes (not React nodes) as its
+  // children, hence the cast.
+  const displayed =
+    rowNodes && (sort || query)
+      ? React.Children.map(children, (child, index) =>
+          index === rowsAt
+            ? React.cloneElement(rowNodes, undefined, [
+                ...rows.slice(0, bodyStart),
+                ...order.map((row) => rows[bodyStart + row]),
+              ] as unknown as React.ReactNode)
+            : child,
+        )
+      : children;
+
   return (
     <TableGeometryContext.Provider value={geometry}>
-      <SlateElement {...props} className="py-5">
-        <BlockInnerContainer>
-          <div
-            className="overflow-x-auto overflow-y-hidden"
-            style={{ paddingLeft: marginLeft }}
-          >
-            <div className="group/table relative w-fit">
-              <table className="mr-0 ml-px table h-px table-fixed border-collapse">
-                <tbody className="min-w-full">{children}</tbody>
-              </table>
+      <TableSortContext.Provider value={sortValue}>
+        <SlateElement {...props} className="py-5">
+          <BlockInnerContainer>
+            {/* OVERRIDE: filter field */}
+            {filterable && (
+              <TableFilterField
+                value={query}
+                onChange={setQuery}
+                shown={order.length}
+                total={texts.length}
+              />
+            )}
+            <div
+              className="overflow-x-auto overflow-y-hidden"
+              style={{ paddingLeft: marginLeft }}
+            >
+              <div className="group/table relative w-fit">
+                <table className="mr-0 ml-px table h-px table-fixed border-collapse">
+                  <tbody className="min-w-full">{displayed}</tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        </BlockInnerContainer>
-      </SlateElement>
+          </BlockInnerContainer>
+        </SlateElement>
+      </TableSortContext.Provider>
     </TableGeometryContext.Provider>
   );
 }
@@ -138,6 +262,14 @@ export function TableCellElementStatic({
   const geometry = React.useContext(TableGeometryContext);
   const colSpan = api.table.getColSpan(element);
   const cellIndices = geometry?.indices.get(element.id as string);
+  // OVERRIDE: sort button in the header row.
+  const tableSort = React.useContext(TableSortContext);
+  const sortColumn =
+    tableSort && isHeader && cellIndices?.row === 0 ? cellIndices.col : null;
+  const sortDirection =
+    sortColumn !== null && tableSort?.sort?.col === sortColumn
+      ? tableSort.sort.dir
+      : null;
   let width: number;
   let minHeight: number | undefined;
   let borders: ReturnType<typeof api.table.getCellBorders>;
@@ -168,6 +300,8 @@ export function TableCellElementStatic({
       {...props}
       as={isHeader ? 'th' : 'td'}
       className={cn(
+        // OVERRIDE
+        sortColumn !== null && 'wiki-table-sortable',
         'h-full overflow-visible border-none bg-background p-0',
         element.background ? 'bg-(--cellBackground)' : 'bg-background',
         isHeader &&
@@ -200,6 +334,10 @@ export function TableCellElementStatic({
         ...props.attributes,
         colSpan,
         rowSpan: api.table.getRowSpan(element),
+        // OVERRIDE
+        ...(sortColumn !== null
+          ? { 'aria-sort': sortDirection ?? 'none' }
+          : {}),
       }}
     >
       <div
@@ -208,6 +346,14 @@ export function TableCellElementStatic({
       >
         {props.children}
       </div>
+      {/* OVERRIDE */}
+      {sortColumn !== null && tableSort && (
+        <SortButton
+          column={tableSort.columns[sortColumn] ?? ''}
+          direction={sortDirection}
+          onPress={() => tableSort.toggle(sortColumn)}
+        />
+      )}
     </SlateElement>
   );
 }

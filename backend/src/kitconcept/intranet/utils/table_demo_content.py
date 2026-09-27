@@ -7,15 +7,22 @@ sites) and by ``scripts/table_demo_content.py`` (REST, for existing sites).
 Both pages live in the GreenCat workspace next to the history-diff demo
 page. "Projektbudget 2026" has a budget table and a milestone table with
 marks and links in the cells; "Teilnehmende Konsortialtreffen" has a
-contact table and a wide attendance table (nine columns) that scrolls
-inside the page.
+contact table, a wide attendance table (nine columns) that scrolls inside
+the page, a list of open items and the agenda of the next meeting.
 
-Ticket: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
+The open items show sorting and filtering in the view: more than five rows
+(the filter field appears), due dates out of order, a German decimal
+column and empty cells (sorted last). The agenda has a merged cell, so its
+columns cannot be moved and it has no sort buttons or filter.
+
+Tickets: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655,
+https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/666
 """
 
 # ruff: noqa: RUF001  (typographic dashes in the German content)
 from __future__ import annotations
 
+from kitconcept.intranet.utils.wiki_content import Span
 from kitconcept.intranet.utils.wiki_content import blocks
 from kitconcept.intranet.utils.wiki_content import blocks_layout
 from kitconcept.intranet.utils.wiki_content import heading
@@ -151,7 +158,7 @@ def budget_page() -> list[dict]:
                     "Teilnehmerliste, Folien",
                 ],
             ],
-            col_sizes=[250, 100, 170, 260],
+            col_sizes=[230, 125, 165, 260],
         ),
     ]
 
@@ -225,6 +232,92 @@ def participants_page() -> list[dict]:
             "t-anwesenheit",
             ["Name", *sessions],
             [[name, *attendance.split(" ")] for name, _, _, _, attendance in people],
+        ),
+        heading("t-h-offene-punkte", "Offene Punkte"),
+        paragraph(
+            "t-offene-punkte-note",
+            "Aus den Treffen KW 35 und KW 38. Aufwand in Personenstunden; "
+            "ohne Termin = nächstes Treffen.",
+        ),
+        table(
+            "t-offene-punkte",
+            ["Aufgabe", "Zuständig", "Fällig", "Aufwand (h)", "Status"],
+            [
+                [
+                    "Lieferverzug Reaktormodul klären",
+                    "Dr. Clara Beck",
+                    "15.10.2026",
+                    "6",
+                    "offen",
+                ],
+                [
+                    "Protokoll KW 38 freigeben",
+                    "Florian Meier",
+                    "02.10.2026",
+                    "0,5",
+                    "erledigt",
+                ],
+                [
+                    "Datenmanagementplan aktualisieren",
+                    "Jonas Keller",
+                    "30.11.2026",
+                    "12",
+                    "in Arbeit",
+                ],
+                [
+                    "Termin für die Beiratssitzung finden",
+                    "Prof. Anna Vogt",
+                    "",
+                    "1",
+                    "offen",
+                ],
+                [
+                    "Katalysator-Proben nach Mailand senden",
+                    "Dr. Sophie Lehner",
+                    "09.10.2026",
+                    "3,5",
+                    "in Arbeit",
+                ],
+                [
+                    "Einladungen zum Workshop versenden",
+                    "Florian Meier",
+                    "16.11.2026",
+                    "2",
+                    "offen",
+                ],
+                [
+                    "Kostenabweichung WP3 begründen",
+                    "Dr. Miriam Engelhardt",
+                    "20.10.2026",
+                    "",
+                    "offen",
+                ],
+                [
+                    "Vereinbarung mit dem Industriepartner prüfen",
+                    "Dr. Luca Moretti",
+                    "31.10.2026",
+                    "8",
+                    "in Arbeit",
+                ],
+            ],
+            col_sizes=[255, 170, 125, 120, 110],
+        ),
+        heading("t-h-agenda", "Agenda Konsortialtreffen KW 44"),
+        table(
+            "t-agenda",
+            ["Zeit", "Thema", "Leitung"],
+            [
+                ["09:30", "Begrüßung, Stand des Projekts", "Dr. Miriam Engelhardt"],
+                [
+                    "10:00",
+                    "Ergebnisse Katalysator-Screening und Pilotanlage",
+                    "Dr. Sophie Lehner, Dr. Clara Beck",
+                ],
+                ["11:30", "Datenmanagementplan", "Jonas Keller"],
+                ["12:30", Span(text("Mittagspause", italic=True), cols=2)],
+                ["13:30", "Offene Punkte, nächste Schritte", "Florian Meier"],
+            ],
+            col_sizes=[90, 430, 260],
         ),
     ]
 

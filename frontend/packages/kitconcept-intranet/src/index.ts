@@ -36,6 +36,22 @@ defineMessages({
     id: 'Header row',
     defaultMessage: 'Header row',
   },
+  moveRowUp: {
+    id: 'Move row up',
+    defaultMessage: 'Move row up',
+  },
+  moveRowDown: {
+    id: 'Move row down',
+    defaultMessage: 'Move row down',
+  },
+  moveColumnLeft: {
+    id: 'Move column left',
+    defaultMessage: 'Move column left',
+  },
+  moveColumnRight: {
+    id: 'Move column right',
+    defaultMessage: 'Move column right',
+  },
 });
 
 declare module '@plone/types' {

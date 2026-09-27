@@ -103,6 +103,11 @@ msgstr "Por"
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Clear filter"
+#: components/WikiTable/TableViewControls
+msgid "Clear filter"
+msgstr ""
+
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -159,6 +164,16 @@ msgstr ""
 #: components/Toolbar/DocumentReview
 #: components/Toolbar/DocumentReviewPlug
 msgid "Document Review"
+msgstr ""
+
+#. Default: "Drag to move the column"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the column"
+msgstr ""
+
+#. Default: "Drag to move the row"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the row"
 msgstr ""
 
 #. Default: "E-mail"
@@ -224,6 +239,16 @@ msgstr "Feedback para:"
 #. Default: "File"
 #: components/Header/HeaderSearch
 msgid "File"
+msgstr ""
+
+#. Default: "Filter rows…"
+#: components/WikiTable/TableViewControls
+msgid "Filter rows…"
+msgstr ""
+
+#. Default: "Filter table"
+#: components/WikiTable/TableViewControls
+msgid "Filter table"
 msgstr ""
 
 #. Default: "Folder"
@@ -339,6 +364,26 @@ msgstr ""
 #. Default: "Mark as Reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Mark as Reviewed"
+msgstr ""
+
+#. Default: "Move column left"
+#: index
+msgid "Move column left"
+msgstr ""
+
+#. Default: "Move column right"
+#: index
+msgid "Move column right"
+msgstr ""
+
+#. Default: "Move row down"
+#: index
+msgid "Move row down"
+msgstr ""
+
+#. Default: "Move row up"
+#: index
+msgid "Move row up"
 msgstr ""
 
 #. Default: "Name"
@@ -561,6 +606,11 @@ msgstr "Algo deu errado ao curtir esta publicação."
 #: components/ContentInteractions/ContentInteractions
 msgid "Something went wrong while unliking this post."
 msgstr "Algo deu errado ao descurtir esta publicação."
+
+#. Default: "Sort by {column}"
+#: components/WikiTable/TableViewControls
+msgid "Sort by {column}"
+msgstr ""
 
 #. Default: "Sort on"
 #: components/widgets/QuerystringWidget
@@ -1130,3 +1180,8 @@ msgstr "Leia mais"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
 msgstr "Recomendação da Intranet"
+
+#. Default: "{shown} of {total} rows"
+#: components/WikiTable/TableViewControls
+msgid "{shown} of {total} rows"
+msgstr ""

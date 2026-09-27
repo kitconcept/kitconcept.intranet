@@ -98,6 +98,11 @@ msgstr "Von"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#. Default: "Clear filter"
+#: components/WikiTable/TableViewControls
+msgid "Clear filter"
+msgstr "Filter löschen"
+
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -155,6 +160,16 @@ msgstr "Tiefe"
 #: components/Toolbar/DocumentReviewPlug
 msgid "Document Review"
 msgstr "Review dokumentieren"
+
+#. Default: "Drag to move the column"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the column"
+msgstr "Ziehen, um die Spalte zu verschieben"
+
+#. Default: "Drag to move the row"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the row"
+msgstr "Ziehen, um die Zeile zu verschieben"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
@@ -220,6 +235,16 @@ msgstr "Feedback an:"
 #: components/Header/HeaderSearch
 msgid "File"
 msgstr "Datei"
+
+#. Default: "Filter rows…"
+#: components/WikiTable/TableViewControls
+msgid "Filter rows…"
+msgstr "Zeilen filtern …"
+
+#. Default: "Filter table"
+#: components/WikiTable/TableViewControls
+msgid "Filter table"
+msgstr "Tabelle filtern"
 
 #. Default: "Folder"
 #: components/Header/HeaderSearch
@@ -335,6 +360,26 @@ msgstr "Überarbeitung erforderlich"
 #: components/Toolbar/DocumentReview
 msgid "Mark as Reviewed"
 msgstr "Als geprüft markieren"
+
+#. Default: "Move column left"
+#: index
+msgid "Move column left"
+msgstr "Spalte nach links verschieben"
+
+#. Default: "Move column right"
+#: index
+msgid "Move column right"
+msgstr "Spalte nach rechts verschieben"
+
+#. Default: "Move row down"
+#: index
+msgid "Move row down"
+msgstr "Zeile nach unten verschieben"
+
+#. Default: "Move row up"
+#: index
+msgid "Move row up"
+msgstr "Zeile nach oben verschieben"
 
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
@@ -556,6 +601,11 @@ msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
 #: components/ContentInteractions/ContentInteractions
 msgid "Something went wrong while unliking this post."
 msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
+
+#. Default: "Sort by {column}"
+#: components/WikiTable/TableViewControls
+msgid "Sort by {column}"
+msgstr "Nach {column} sortieren"
 
 #. Default: "Sort on"
 #: components/widgets/QuerystringWidget
@@ -1125,3 +1175,8 @@ msgstr "Weiterlesen"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
 msgstr "Empfehlung aus dem Intranet"
+
+#. Default: "{shown} of {total} rows"
+#: components/WikiTable/TableViewControls
+msgid "{shown} of {total} rows"
+msgstr "{shown} von {total} Zeilen"

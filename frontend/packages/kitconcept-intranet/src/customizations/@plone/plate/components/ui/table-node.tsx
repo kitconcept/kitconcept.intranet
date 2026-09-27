@@ -2,7 +2,11 @@
  * OVERRIDE table-node.tsx
  * REASON: Confluence-style table editing:
  *         - "Header row" toggle in the table cell toolbar (turns the first
- *           row into `th` cells and back);
+ *           row into `th` cells and back) and move buttons for the row and
+ *           the column;
+ *         - row and column drag and drop with react-aria instead of
+ *           @platejs/dnd (react-dnd), see
+ *           components/WikiTable/useTableDragAndDrop.ts;
  *         - the row drag handle gets a 24px gutter cell instead of 8px so it
  *           no longer overlaps the first cell of a full-width table;
  *         - only the table holding the selection shows its cell toolbar;
@@ -29,12 +33,11 @@ import * as React from 'react';
 
 import type * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
-import { useDraggable, useDropLine } from '@platejs/dnd';
 import {
   BlockSelectionPlugin,
   useBlockSelected,
 } from '@platejs/selection/react';
-import { setCellBackground } from '@platejs/table';
+import { getTableEntries, setCellBackground } from '@platejs/table';
 import {
   TablePlugin,
   TableProvider,
@@ -54,7 +57,12 @@ import {
   CombineIcon,
   EraserIcon,
   Grid2X2Icon,
+  GripHorizontal,
   GripVertical,
+  MoveDown,
+  MoveLeft,
+  MoveRight,
+  MoveUp,
   PaintBucketIcon,
   PanelTopIcon,
   SquareSplitHorizontalIcon,
@@ -67,7 +75,6 @@ import {
   type TTableElement,
   type TTableRowElement,
   KEYS,
-  PathApi,
 } from 'platejs';
 import {
   type PlateElementProps,
@@ -86,6 +93,17 @@ import {
 } from 'platejs/react';
 import { useElementSelector } from 'platejs/react';
 import { defineMessages, useIntl } from 'react-intl';
+import {
+  messages as dndMessages,
+  useColumnDragAndDrop,
+  useRowDragAndDrop,
+} from '@kitconcept/intranet/components/WikiTable/useTableDragAndDrop';
+import {
+  hasMergedCells,
+  isHeaderRow,
+  moveColumn,
+  moveRow,
+} from '@kitconcept/intranet/components/WikiTable/tableMoves';
 
 import { Button } from '@plone/plate/components/ui/button';
 import { BlockInnerContainer } from '@plone/plate/components/ui/block-inner-container';
@@ -128,6 +146,22 @@ const messages = defineMessages({
     id: 'Header row',
     defaultMessage: 'Header row',
   },
+  moveRowUp: {
+    id: 'Move row up',
+    defaultMessage: 'Move row up',
+  },
+  moveRowDown: {
+    id: 'Move row down',
+    defaultMessage: 'Move row down',
+  },
+  moveColumnLeft: {
+    id: 'Move column left',
+    defaultMessage: 'Move column left',
+  },
+  moveColumnRight: {
+    id: 'Move column right',
+    defaultMessage: 'Move column right',
+  },
 });
 
 export const TableElement = withHOC(
@@ -162,9 +196,11 @@ export const TableElement = withHOC(
                 // Tailwind version, kept for a move upstream (volto-plate's
                 // Tailwind build scans only its own sources, so these classes
                 // are not generated for intranet files; same for the other
-                // "Tailwind version" comments in this file):
+                // "Tailwind version" comments in this file). pt-3: 12px on
+                // top for the column drag handles (the container clips
+                // vertical overflow).
                 // `
-                //   -ml-6
+                //   -ml-6 pt-3
                 //   *:data-[slot=block-selection]:left-6
                 // `,
                 'wiki-table-controls',
@@ -218,6 +254,38 @@ function TableFloatingToolbar({
   const isFocusedLast = useFocusedLast();
 
   const { canMerge, canSplit } = useTableMergeState();
+
+  // OVERRIDE: where the caret is, for the move buttons (row / column index,
+  // table size, header row, merged cells).
+  const position = useEditorSelector(
+    (editor) => {
+      const entries = getTableEntries(editor);
+      if (!entries) return null;
+      const table = entries.table[0] as TElement;
+      return {
+        tablePath: (entries.table[1] as number[]).join('.'),
+        row: (entries.row[1] as number[]).at(-1) as number,
+        col: (entries.cell[1] as number[]).at(-1) as number,
+        rows: table.children.length,
+        cols: (table.children[0] as TElement | undefined)?.children.length ?? 0,
+        header: isHeaderRow(table.children[0] as TElement | undefined),
+        merged: hasMergedCells(table),
+      };
+    },
+    [],
+    { equalityFn: (a, b) => JSON.stringify(a) === JSON.stringify(b) },
+  );
+  const firstBodyRow = position?.header ? 1 : 0;
+  const canMoveRowUp = !!position && position.row > firstBodyRow;
+  const canMoveRowDown =
+    !!position &&
+    position.row >= firstBodyRow &&
+    position.row < position.rows - 1;
+  const canMoveColumnLeft = !!position && !position.merged && position.col > 0;
+  const canMoveColumnRight =
+    !!position && !position.merged && position.col < position.cols - 1;
+  const tablePathOf = () =>
+    position ? position.tablePath.split('.').map(Number) : [];
 
   // OVERRIDE: header row toggle. The first row is a header row when all of
   // its cells are `th` cells. `element` is the table this toolbar belongs to.
@@ -351,6 +419,29 @@ function TableFloatingToolbar({
               >
                 <XIcon />
               </ToolbarButton>
+              {/* OVERRIDE: move the row (the caret moves along) */}
+              <ToolbarButton
+                disabled={!canMoveRowUp}
+                onClick={() =>
+                  position &&
+                  moveRow(editor, tablePathOf(), position.row, position.row - 1)
+                }
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip={intl.formatMessage(messages.moveRowUp)}
+              >
+                <MoveUp />
+              </ToolbarButton>
+              <ToolbarButton
+                disabled={!canMoveRowDown}
+                onClick={() =>
+                  position &&
+                  moveRow(editor, tablePathOf(), position.row, position.row + 1)
+                }
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip={intl.formatMessage(messages.moveRowDown)}
+              >
+                <MoveDown />
+              </ToolbarButton>
             </ToolbarGroup>
           )}
 
@@ -382,6 +473,39 @@ function TableFloatingToolbar({
                 tooltip="Delete column"
               >
                 <XIcon />
+              </ToolbarButton>
+              {/* OVERRIDE: move the column (the caret moves along) */}
+              <ToolbarButton
+                disabled={!canMoveColumnLeft}
+                onClick={() =>
+                  position &&
+                  moveColumn(
+                    editor,
+                    tablePathOf(),
+                    position.col,
+                    position.col - 1,
+                  )
+                }
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip={intl.formatMessage(messages.moveColumnLeft)}
+              >
+                <MoveLeft />
+              </ToolbarButton>
+              <ToolbarButton
+                disabled={!canMoveColumnRight}
+                onClick={() =>
+                  position &&
+                  moveColumn(
+                    editor,
+                    tablePathOf(),
+                    position.col,
+                    position.col + 1,
+                  )
+                }
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip={intl.formatMessage(messages.moveColumnRight)}
+              >
+                <MoveRight />
               </ToolbarButton>
             </ToolbarGroup>
           )}
@@ -532,31 +656,24 @@ export function TableRowElement(props: PlateElementProps<TTableRowElement>) {
   );
   const hasControls = !readOnly && !isSelectionAreaVisible;
 
-  const { isDragging, previewRef, handleRef } = useDraggable({
+  // OVERRIDE: row drag and drop with react-aria (was @platejs/dnd, react-dnd).
+  const rowRef = React.useRef<HTMLTableRowElement>(null);
+  const { dragProps, dropProps, isDragging, dropLine } = useRowDragAndDrop(
+    editor,
     element,
-    type: element.type,
-    canDropNode: ({ dragEntry, dropEntry }) =>
-      PathApi.equals(
-        PathApi.parent(dragEntry[1]),
-        PathApi.parent(dropEntry[1]),
-      ),
-    onDropHandler: (_, { dragItem }) => {
-      const dragElement = (dragItem as { element: TElement }).element;
-
-      if (dragElement) {
-        editor.tf.select(dragElement);
-      }
-    },
-  });
+    rowRef,
+  );
 
   return (
     <PlateElement
       {...props}
-      ref={useComposedRef(props.ref, previewRef)}
+      ref={useComposedRef(props.ref, rowRef)}
       as="tr"
       className={cn('group/row', isDragging && 'opacity-50')}
       attributes={{
         ...props.attributes,
+        // OVERRIDE: drop target (react-aria)
+        ...dropProps,
         'data-selected': selected ? 'true' : undefined,
       }}
     >
@@ -564,8 +681,9 @@ export function TableRowElement(props: PlateElementProps<TTableRowElement>) {
           Tailwind version (see TableElement): className="w-6 select-none" */}
       {hasControls && (
         <td className="wiki-table-gutter select-none" contentEditable={false}>
-          <RowDragHandle dragRef={handleRef} />
-          <RowDropLine />
+          {/* OVERRIDE: no handle on the header row, it stays on top */}
+          {!isHeaderRow(element) && <RowDragHandle dragProps={dragProps} />}
+          <RowDropLine position={dropLine} />
         </td>
       )}
 
@@ -574,18 +692,20 @@ export function TableRowElement(props: PlateElementProps<TTableRowElement>) {
   );
 }
 
-function RowDragHandle({ dragRef }: { dragRef: React.Ref<any> }) {
-  const editor = useEditorRef();
-  const element = useElement();
+// OVERRIDE: react-aria drag handle (was a react-dnd drag source that also
+// selected the row on click).
+function RowDragHandle({ dragProps }: { dragProps: Record<string, unknown> }) {
+  const intl = useIntl();
 
   return (
     <Button
-      ref={dragRef}
+      {...dragProps}
+      type="button"
       variant="outline"
+      aria-label={intl.formatMessage(dndMessages.dragRow)}
       className={cn(
-        // OVERRIDE: position in the 24px gutter, styled in
-        // theme/components/_wikiTable.scss. Tailwind version of
-        // wiki-table-row-grip (see TableElement): left-1
+        // Tailwind version of wiki-table-row-grip (see TableElement):
+        // left-1 focus-visible:opacity-100
         'wiki-table-row-grip',
         `
           absolute top-1/2 z-51 h-6 w-4 -translate-y-1/2 p-0
@@ -601,25 +721,76 @@ function RowDragHandle({ dragRef }: { dragRef: React.Ref<any> }) {
           group-has-data-[resizing="true"]/row:opacity-0
         `,
       )}
-      onClick={() => {
-        editor.tf.select(element);
-      }}
     >
       <GripVertical className="text-muted-foreground" />
     </Button>
   );
 }
 
-function RowDropLine() {
-  const { dropLine } = useDropLine();
+// OVERRIDE: react-aria column drag handle, top edge of the first row's cells.
+function ColumnDragHandle({
+  dragProps,
+}: {
+  dragProps: Record<string, unknown>;
+}) {
+  const intl = useIntl();
 
-  if (!dropLine) return null;
+  return (
+    <Button
+      {...dragProps}
+      type="button"
+      variant="outline"
+      aria-label={intl.formatMessage(dndMessages.dragColumn)}
+      // Styled in theme/components/_wikiTable.scss (see there).
+      // Tailwind version (see TableElement):
+      // className={cn(
+      //   `
+      //     absolute -top-3 left-1/2 z-40 h-3 w-6 -translate-x-1/2 p-0
+      //     focus-visible:ring-0 focus-visible:ring-offset-0
+      //   `,
+      //   `
+      //     cursor-grab
+      //     active:cursor-grabbing
+      //   `,
+      //   `
+      //     opacity-0 transition-opacity duration-100
+      //     group-hover:opacity-100
+      //     focus-visible:opacity-100
+      //   `,
+      // )}
+      className="wiki-table-col-grip p-0"
+    >
+      <GripHorizontal className="text-muted-foreground" />
+    </Button>
+  );
+}
+
+// OVERRIDE: column drop position (left / right edge of the target cell).
+function ColumnDropLine({ position }: { position: 'before' | 'after' | null }) {
+  if (!position) return null;
+
+  return (
+    <div
+      className={cn(
+        // Tailwind version (see TableElement):
+        // 'absolute top-0 z-40 h-full w-0.5 bg-brand/50',
+        // position === 'before' ? '-left-px' : '-right-px',
+        'wiki-table-col-drop-line bg-brand/50',
+        position === 'before' ? 'is-before' : 'is-after',
+      )}
+    />
+  );
+}
+
+// OVERRIDE: drop position comes from the react-aria drop target.
+function RowDropLine({ position }: { position: 'before' | 'after' | null }) {
+  if (!position) return null;
 
   return (
     <div
       className={cn(
         'absolute inset-x-0 left-2 z-50 h-0.5 bg-brand/50',
-        dropLine === 'top' ? '-top-px' : '-bottom-px',
+        position === 'before' ? '-top-px' : '-bottom-px',
       )}
     />
   );
@@ -658,9 +829,29 @@ export function TableCellElement({
       rowIndex,
     });
 
+  // OVERRIDE: column drag and drop with react-aria, on the first row's
+  // cells; not for tables with merged cells.
+  const editor = useEditorRef();
+  const cellRef = React.useRef<HTMLTableCellElement>(null);
+  const tableMerged = useElementSelector(
+    ([node]) => hasMergedCells(node as TElement),
+    [],
+    { key: KEYS.table },
+  );
+  const columnDnd = useColumnDragAndDrop(
+    editor,
+    element,
+    colIndex,
+    rowIndex === 0 && !tableMerged && !readOnly,
+    cellRef,
+  );
+  const hasColumnHandle = rowIndex === 0 && !tableMerged && !readOnly;
+
   return (
     <PlateElement
       {...props}
+      // OVERRIDE
+      ref={useComposedRef(props.ref, cellRef)}
       as={isHeader ? 'th' : 'td'}
       className={cn(
         'h-full overflow-visible border-none bg-background p-0',
@@ -691,6 +882,8 @@ export function TableCellElement({
       }
       attributes={{
         ...props.attributes,
+        // OVERRIDE: column drop target (react-aria)
+        ...(hasColumnHandle ? columnDnd.dropProps : {}),
         colSpan: api.table.getColSpan(element),
         rowSpan: api.table.getRowSpan(element),
       }}
@@ -710,6 +903,11 @@ export function TableCellElement({
         >
           {!readOnly && (
             <>
+              {/* OVERRIDE: column drag handle and drop line */}
+              {hasColumnHandle && (
+                <ColumnDragHandle dragProps={columnDnd.dragProps} />
+              )}
+              <ColumnDropLine position={columnDnd.dropLine} />
               <ResizeHandle
                 {...rightProps}
                 className="-top-2 -right-1 h-[calc(100%_+_8px)] w-2"

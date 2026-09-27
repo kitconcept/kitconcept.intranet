@@ -15,6 +15,8 @@ skeleton.
 
 from __future__ import annotations
 
+from dataclasses import dataclass
+
 
 SOMERSAULT_KEY = "__somersault__"
 TITLE_BLOCK_ID = "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c"
@@ -56,15 +58,29 @@ def row(node_id: str, *cells: dict) -> dict:
     return node("tr", node_id, list(cells))
 
 
+@dataclass(frozen=True)
+class Span:
+    """Cell content merged across ``cols`` columns (Plate's ``colSpan``)."""
+
+    content: str | dict | tuple
+    cols: int
+
+
 def table(node_id: str, header: list, rows: list[list], col_sizes=None) -> dict:
     """A table with a header row.
 
     ``header`` and every entry of ``rows`` are lists of cell contents: a
-    string, or a tuple of runs (strings and ``text(...)`` dicts with marks).
+    string, a tuple of runs (strings and ``text(...)`` dicts with marks), or
+    a ``Span`` for a merged cell (the row then lists fewer cells).
     """
 
     def runs(content):
+        if isinstance(content, Span):
+            content = content.content
         return content if isinstance(content, tuple) else (content,)
+
+    def span(content):
+        return {"colSpan": content.cols} if isinstance(content, Span) else {}
 
     children = [
         row(
@@ -80,7 +96,7 @@ def table(node_id: str, header: list, rows: list[list], col_sizes=None) -> dict:
             row(
                 f"{node_id}-r{r}",
                 *(
-                    cell(f"{node_id}-r{r}c{c}", *runs(content))
+                    cell(f"{node_id}-r{r}c{c}", *runs(content), **span(content))
                     for c, content in enumerate(values)
                 ),
             )

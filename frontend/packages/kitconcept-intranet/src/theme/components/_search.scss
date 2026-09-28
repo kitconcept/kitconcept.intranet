@@ -36,3 +36,29 @@
     margin-left: 1em;
   }
 }
+// ### Solr search results ###
+.section-search #content-core .search-items article.tileItem {
+  margin-bottom: 40px;
+  p.url {
+    margin-bottom: 10px;
+  }
+  h2.tileHeadline {
+    padding-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    .summary.url {
+      text-decoration: none;
+    }
+  }
+  .tileBody {
+    padding-bottom: 15px;
+    margin: 0;
+  }
+  .tileFooter {
+    display: flex;
+    .tileFooterDate {
+      display: flex;
+    }
+  }
+}

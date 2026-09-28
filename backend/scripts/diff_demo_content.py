@@ -8,8 +8,11 @@ edits are applied by the distribution's post handler when a site is
 created with the example content, so this script is only needed on sites
 that already exist (for example plone-intranet.kitconcept.io).
 
-Uses only the REST API. The page is deleted first if it exists, so the
-script can be run again. Run it from ``backend/`` inside the project
+Uses only the REST API, via ``kitconcept.intranet.utils.plone_client``
+(it sends a browser User-Agent, which sites behind Cloudflare like the
+kitconcept cluster require; override with ``--user-agent`` or
+``$PLONE_CLIENT_USER_AGENT``). The page is deleted first if it exists, so
+the script can be run again. Run it from ``backend/`` inside the project
 environment:
 
     uv run python scripts/diff_demo_content.py \\
@@ -22,59 +25,16 @@ Ticket: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet
 
 from __future__ import annotations
 
-import argparse
-import json
-import sys
-import urllib.error
-import urllib.request
-
 from kitconcept.intranet.utils import diff_demo_content as content
+from kitconcept.intranet.utils import plone_client
 
-
-class Client:
-    def __init__(self, base_url: str, user: str, password: str):
-        self.api = base_url.rstrip("/") + "/++api++"
-        self.token = self._request(
-            "POST", "/@login", {"login": user, "password": password}
-        )["token"]
-
-    def _request(self, method: str, path: str, payload: dict | None = None) -> dict:
-        url = path if path.startswith("http") else self.api + path
-        if not url.startswith(("http://", "https://")):
-            sys.exit(f"unsupported URL scheme: {url}")
-        data = json.dumps(payload).encode() if payload is not None else None
-        request = urllib.request.Request(url, data=data, method=method)  # noqa: S310
-        request.add_header("Accept", "application/json")
-        request.add_header("Content-Type", "application/json")
-        if hasattr(self, "token"):
-            request.add_header("Authorization", f"Bearer {self.token}")
-        try:
-            with urllib.request.urlopen(request) as response:  # noqa: S310
-                body = response.read()
-                return json.loads(body) if body else {}
-        except urllib.error.HTTPError as error:
-            if error.code == 404 and method == "DELETE":
-                return {}
-            sys.exit(f"{method} {url} failed: {error.code} {error.read()[:300]!r}")
-
-    def get(self, path: str) -> dict:
-        return self._request("GET", path)
-
-    def post(self, path: str, payload: dict) -> dict:
-        return self._request("POST", path, payload)
-
-    def patch(self, path: str, payload: dict) -> dict:
-        return self._request("PATCH", path, payload)
-
-    def delete(self, path: str) -> dict:
-        return self._request("DELETE", path)
+import argparse
+import sys
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    parser.add_argument("--url", default="http://localhost:8080/Plone", help="Site URL")
-    parser.add_argument("--user", default="admin")
-    parser.add_argument("--password", default="admin")
+    plone_client.add_arguments(parser)
     parser.add_argument(
         "--container",
         default=content.CONTAINER_PATH,
@@ -82,10 +42,10 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    client = Client(args.url, args.user, args.password)
+    client = plone_client.from_args(args)
     page_path = f"{args.container.rstrip('/')}/{content.PAGE_ID}"
 
-    client.delete(page_path)
+    client.delete(page_path, missing_ok=True)
     created = client.post(
         args.container,
         {
@@ -93,7 +53,7 @@ def main() -> None:
             "id": content.PAGE_ID,
             "title": content.PAGE_TITLE,
             "blocks": content.blocks(content.version_0()),
-            "blocks_layout": {"items": []},
+            "blocks_layout": content.blocks_layout(),
         },
     )
     page_url = created["@id"]
@@ -115,4 +75,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except plone_client.PloneClientError as error:
+        sys.exit(str(error))

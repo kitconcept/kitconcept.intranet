@@ -105,6 +105,11 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Clear filter"
+#: components/WikiTable/TableViewControls
+msgid "Clear filter"
+msgstr ""
+
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -161,6 +166,16 @@ msgstr ""
 #: components/Toolbar/DocumentReview
 #: components/Toolbar/DocumentReviewPlug
 msgid "Document Review"
+msgstr ""
+
+#. Default: "Drag to move the column"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the column"
+msgstr ""
+
+#. Default: "Drag to move the row"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the row"
 msgstr ""
 
 #. Default: "E-mail"
@@ -228,6 +243,16 @@ msgstr ""
 msgid "File"
 msgstr ""
 
+#. Default: "Filter rows…"
+#: components/WikiTable/TableViewControls
+msgid "Filter rows…"
+msgstr ""
+
+#. Default: "Filter table"
+#: components/WikiTable/TableViewControls
+msgid "Filter table"
+msgstr ""
+
 #. Default: "Folder"
 #: components/Header/HeaderSearch
 msgid "Folder"
@@ -241,6 +266,11 @@ msgstr ""
 #. Default: "Give feedback on this page"
 #: slots/AboutThisContent/AboutThisContent
 msgid "Give feedback on this page"
+msgstr ""
+
+#. Default: "Header row"
+#: index
+msgid "Header row"
 msgstr ""
 
 #. Default: "Home"
@@ -261,6 +291,11 @@ msgstr ""
 #. Default: "In review"
 #: components/Header/HeaderSearch
 msgid "In review"
+msgstr ""
+
+#. Default: "Insert table"
+#: index
+msgid "Insert table"
 msgstr ""
 
 #. Default: "Intranet Portal"
@@ -331,6 +366,26 @@ msgstr ""
 #. Default: "Mark as Reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Mark as Reviewed"
+msgstr ""
+
+#. Default: "Move column left"
+#: index
+msgid "Move column left"
+msgstr ""
+
+#. Default: "Move column right"
+#: index
+msgid "Move column right"
+msgstr ""
+
+#. Default: "Move row down"
+#: index
+msgid "Move row down"
+msgstr ""
+
+#. Default: "Move row up"
+#: index
+msgid "Move row up"
 msgstr ""
 
 #. Default: "Name"
@@ -552,6 +607,11 @@ msgstr ""
 #. Default: "Something went wrong while unliking this post."
 #: components/ContentInteractions/ContentInteractions
 msgid "Something went wrong while unliking this post."
+msgstr ""
+
+#. Default: "Sort by {column}"
+#: components/WikiTable/TableViewControls
+msgid "Sort by {column}"
 msgstr ""
 
 #. Default: "Sort on"
@@ -1121,4 +1181,9 @@ msgstr "Leer más"
 #. Default: "Recommendation from the Intranet"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
+msgstr ""
+
+#. Default: "{shown} of {total} rows"
+#: components/WikiTable/TableViewControls
+msgid "{shown} of {total} rows"
 msgstr ""

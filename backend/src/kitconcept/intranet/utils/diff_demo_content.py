@@ -17,32 +17,19 @@ Ticket: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet
 
 from __future__ import annotations
 
+from kitconcept.intranet.utils.wiki_content import blocks  # noqa: F401
+from kitconcept.intranet.utils.wiki_content import blocks_layout  # noqa: F401
+from kitconcept.intranet.utils.wiki_content import heading
+from kitconcept.intranet.utils.wiki_content import node
+from kitconcept.intranet.utils.wiki_content import paragraph
+from kitconcept.intranet.utils.wiki_content import text
+
 import copy
+
 
 PAGE_ID = "jour-fixe-kw-38"
 PAGE_TITLE = "Jour fixe KW 38"
 CONTAINER_PATH = "/workspaces/eu-projekt-greencat"
-
-# The editor writes these on every block; without them a later change would
-# read "not set → Centred" instead of "Left → Centred" in the diff.
-BLOCK_DEFAULTS = {"align": "start", "blockWidth": "default"}
-
-
-def text(value: str, **marks) -> dict:
-    return {"text": value, **marks}
-
-
-def node(kind: str, node_id: str, children: list, **props) -> dict:
-    return {"type": kind, "id": node_id, "children": children, **props}
-
-
-def paragraph(node_id: str, *runs, **props) -> dict:
-    children = [text(run) if isinstance(run, str) else run for run in runs]
-    return node("p", node_id, children, **{**BLOCK_DEFAULTS, **props})
-
-
-def heading(node_id: str, value: str) -> dict:
-    return node("h2", node_id, [text(value)], **BLOCK_DEFAULTS)
 
 
 def list_item(node_id: str, value: str, number: int) -> dict:
@@ -159,11 +146,6 @@ VERSIONS: list[tuple] = [
     (version_2, "Aufgabe für Clara ergänzt, Abgabefrist der Proben vorgezogen"),
     (version_3, "Layout angepasst: Überschrift zentriert, Termin in voller Breite"),
 ]
-
-
-def blocks(value: list[dict]) -> dict:
-    """The ``blocks`` field of a Wiki Page holding ``value`` as Plate content."""
-    return {"__somersault__": {"@type": "__somersault__", "value": value}}
 
 
 def edits() -> list[tuple[list[dict], str]]:

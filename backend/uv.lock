@@ -1492,6 +1492,7 @@ dependencies = [
     { name = "plone-volto" },
     { name = "python-dateutil" },
     { name = "redturtle-rssservice" },
+    { name = "requests" },
 ]
 
 [package.dev-dependencies]
@@ -1535,6 +1536,7 @@ requires-dist = [
     { name = "plone-volto" },
     { name = "python-dateutil" },
     { name = "redturtle-rssservice", specifier = "==2.2.0" },
+    { name = "requests" },
 ]
 
 [package.metadata.requires-dev]

@@ -165,6 +165,21 @@
   }
 }
 
+// Cell toolbar: delete row, column and table in red, the colour of Timo's
+// design (#674; Plate's `--destructive` is lighter). Tailwind version:
+// `text-[#b42318]`.
+svg.wiki-table-delete-icon {
+  color: #b42318;
+}
+
+// Thin divider before the delete button of the row and column group. Plate's
+// ToolbarSeparator has no height outside its own group layout. Tailwind
+// version: `self-stretch my-1.5`.
+.wiki-table-delete-divider {
+  align-self: stretch;
+  margin-block: 0.375rem;
+}
+
 // View: sorting and filtering controls (components/WikiTable/TableViewControls.tsx).
 
 // Room for the sort button: under the same prefix as the cell padding above,

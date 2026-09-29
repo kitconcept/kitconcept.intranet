@@ -14,7 +14,14 @@
  *           type of the row above when inserting before it);
  *         - the stored column width is applied as `width` on the cells
  *           (Plate only sets min/max width, which the fixed table layout
- *           ignores), so column resizing is visible and persists.
+ *           ignores), so column resizing is visible and persists;
+ *         - toolbar after Timo's design, proposal 1d (#674): insert and
+ *           delete icons that show the row or column added or removed
+ *           (Tabler icons in Lucide style, see
+ *           components/WikiTable/tableToolbarIcons.tsx; Plate used plain
+ *           arrows for insert next to the move arrows, and ✕ for delete);
+ *           delete actions red and at the end of their group, behind a
+ *           divider.
  *         The shadow's own classes are styled in
  *         theme/components/_wikiTable.scss (Tailwind classes that occur only
  *         in intranet files are not generated). The Tailwind version of each
@@ -26,6 +33,7 @@
  * FILE VERSION: @plone/plate 1.0.0-alpha.15
  * DATE: 2026-09-22
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
+ *         https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/674 (toolbar)
  * DEVELOPER: @reekitconcept
  */
 
@@ -50,10 +58,6 @@ import {
 import { PopoverAnchor } from '@radix-ui/react-popover';
 import { cva } from 'class-variance-authority';
 import {
-  ArrowDown,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
   CombineIcon,
   EraserIcon,
   Grid2X2Icon,
@@ -67,7 +71,6 @@ import {
   PanelTopIcon,
   SquareSplitHorizontalIcon,
   Trash2Icon,
-  XIcon,
 } from 'lucide-react';
 import {
   type TElement,
@@ -104,6 +107,14 @@ import {
   moveColumn,
   moveRow,
 } from '@kitconcept/intranet/components/WikiTable/tableMoves';
+import {
+  ColumnInsertLeftIcon,
+  ColumnInsertRightIcon,
+  ColumnRemoveIcon,
+  RowInsertBottomIcon,
+  RowInsertTopIcon,
+  RowRemoveIcon,
+} from '@kitconcept/intranet/components/WikiTable/tableToolbarIcons';
 
 import { Button } from '@plone/plate/components/ui/button';
 import { BlockInnerContainer } from '@plone/plate/components/ui/block-inner-container';
@@ -138,6 +149,7 @@ import {
   ToolbarButton,
   ToolbarGroup,
   ToolbarMenuGroup,
+  ToolbarSeparator,
 } from '@plone/plate/components/ui/toolbar';
 // OVERRIDE: messages are duplicated in @kitconcept/intranet's src/index.ts so
 // the i18n extraction picks them up (shadowed files are not scanned).
@@ -379,7 +391,8 @@ function TableFloatingToolbar({
             {collapsedInside && (
               <ToolbarGroup>
                 <ToolbarButton tooltip="Delete table" {...buttonProps}>
-                  <Trash2Icon />
+                  {/* OVERRIDE: red, like the other delete actions (#674) */}
+                  <Trash2Icon className="wiki-table-delete-icon" />
                 </ToolbarButton>
               </ToolbarGroup>
             )}
@@ -398,7 +411,8 @@ function TableFloatingToolbar({
                 onMouseDown={(e) => e.preventDefault()}
                 tooltip="Insert row before"
               >
-                <ArrowUp />
+                {/* OVERRIDE: icons, see tableToolbarIcons.tsx (#674; was ArrowUp) */}
+                <RowInsertTopIcon />
               </ToolbarButton>
               <ToolbarButton
                 onClick={() => {
@@ -408,16 +422,8 @@ function TableFloatingToolbar({
                 onMouseDown={(e) => e.preventDefault()}
                 tooltip="Insert row after"
               >
-                <ArrowDown />
-              </ToolbarButton>
-              <ToolbarButton
-                onClick={() => {
-                  tf.remove.tableRow();
-                }}
-                onMouseDown={(e) => e.preventDefault()}
-                tooltip="Delete row"
-              >
-                <XIcon />
+                {/* OVERRIDE (was ArrowDown) */}
+                <RowInsertBottomIcon />
               </ToolbarButton>
               {/* OVERRIDE: move the row (the caret moves along) */}
               <ToolbarButton
@@ -442,6 +448,18 @@ function TableFloatingToolbar({
               >
                 <MoveDown />
               </ToolbarButton>
+              {/* OVERRIDE: delete last in the group, behind a divider (#674) */}
+              <ToolbarSeparator className="wiki-table-delete-divider" />
+              <ToolbarButton
+                onClick={() => {
+                  tf.remove.tableRow();
+                }}
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip="Delete row"
+              >
+                {/* OVERRIDE (was XIcon) */}
+                <RowRemoveIcon className="wiki-table-delete-icon" />
+              </ToolbarButton>
             </ToolbarGroup>
           )}
 
@@ -454,7 +472,8 @@ function TableFloatingToolbar({
                 onMouseDown={(e) => e.preventDefault()}
                 tooltip="Insert column before"
               >
-                <ArrowLeft />
+                {/* OVERRIDE (was ArrowLeft) */}
+                <ColumnInsertLeftIcon />
               </ToolbarButton>
               <ToolbarButton
                 onClick={() => {
@@ -463,16 +482,8 @@ function TableFloatingToolbar({
                 onMouseDown={(e) => e.preventDefault()}
                 tooltip="Insert column after"
               >
-                <ArrowRight />
-              </ToolbarButton>
-              <ToolbarButton
-                onClick={() => {
-                  tf.remove.tableColumn();
-                }}
-                onMouseDown={(e) => e.preventDefault()}
-                tooltip="Delete column"
-              >
-                <XIcon />
+                {/* OVERRIDE (was ArrowRight) */}
+                <ColumnInsertRightIcon />
               </ToolbarButton>
               {/* OVERRIDE: move the column (the caret moves along) */}
               <ToolbarButton
@@ -506,6 +517,18 @@ function TableFloatingToolbar({
                 tooltip={intl.formatMessage(messages.moveColumnRight)}
               >
                 <MoveRight />
+              </ToolbarButton>
+              {/* OVERRIDE: delete last in the group, behind a divider (#674) */}
+              <ToolbarSeparator className="wiki-table-delete-divider" />
+              <ToolbarButton
+                onClick={() => {
+                  tf.remove.tableColumn();
+                }}
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip="Delete column"
+              >
+                {/* OVERRIDE (was XIcon) */}
+                <ColumnRemoveIcon className="wiki-table-delete-icon" />
               </ToolbarButton>
             </ToolbarGroup>
           )}

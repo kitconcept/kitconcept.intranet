@@ -21,8 +21,13 @@ const isWorkspaceDescendant = ({ content }: { content: Content }) =>
 
 function isWorkspaceOrDescendant(contentTypes: string[]): SlotPredicate {
   const contentTypeCondition = ContentTypeCondition(contentTypes);
-  return (args: GetSlotArgs) =>
-    contentTypeCondition(args) || isWorkspaceDescendant(args);
+  return (args: GetSlotArgs) => {
+    const isAddView = args.location.pathname.endsWith('/add');
+
+    return (
+      !isAddView && (contentTypeCondition(args) || isWorkspaceDescendant(args))
+    );
+  };
 }
 
 function shouldShowContentInteractions(args: GetSlotArgs): boolean {

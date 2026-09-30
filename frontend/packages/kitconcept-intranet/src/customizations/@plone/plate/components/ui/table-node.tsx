@@ -20,8 +20,7 @@
  *           (Tabler icons in Lucide style, see
  *           components/WikiTable/tableToolbarIcons.tsx; Plate used plain
  *           arrows for insert next to the move arrows, and ✕ for delete);
- *           delete actions red and at the end of their group, behind a
- *           divider.
+ *           delete actions red and at the end of their group.
  *         The shadow's own classes are styled in
  *         theme/components/_wikiTable.scss (Tailwind classes that occur only
  *         in intranet files are not generated). The Tailwind version of each
@@ -149,7 +148,6 @@ import {
   ToolbarButton,
   ToolbarGroup,
   ToolbarMenuGroup,
-  ToolbarSeparator,
 } from '@plone/plate/components/ui/toolbar';
 // OVERRIDE: messages are duplicated in @kitconcept/intranet's src/index.ts so
 // the i18n extraction picks them up (shadowed files are not scanned).
@@ -448,8 +446,7 @@ function TableFloatingToolbar({
               >
                 <MoveDown />
               </ToolbarButton>
-              {/* OVERRIDE: delete last in the group, behind a divider (#674) */}
-              <ToolbarSeparator className="wiki-table-delete-divider" />
+              {/* OVERRIDE: delete last in the group (#674) */}
               <ToolbarButton
                 onClick={() => {
                   tf.remove.tableRow();
@@ -518,8 +515,7 @@ function TableFloatingToolbar({
               >
                 <MoveRight />
               </ToolbarButton>
-              {/* OVERRIDE: delete last in the group, behind a divider (#674) */}
-              <ToolbarSeparator className="wiki-table-delete-divider" />
+              {/* OVERRIDE: delete last in the group (#674) */}
               <ToolbarButton
                 onClick={() => {
                   tf.remove.tableColumn();

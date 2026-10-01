@@ -12,6 +12,8 @@
  *
  * Search component.
  * @module components/theme/Search/Search
+ * FILE: https://github.com/kitconcept/kitconcept.solr/blob/2.0.0a8/frontend/packages/volto-solr/src/components/theme/SolrSearch/SolrSearch.jsx
+ * FILE VERSION: volto-solr 2.0.0a8
  */
 
 import React, { Component, createElement, createRef, forwardRef } from 'react';

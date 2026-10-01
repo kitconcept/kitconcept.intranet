@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Search-block
-  it('Search-block (/features/block/search-block)', () => {
-    cy.navigate('/features/block/search-block');
+  it('Search-block (/qa/block/search-block)', () => {
+    cy.navigate('/qa/block/search-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({

@@ -15,7 +15,7 @@ last_updated: 2026-03-18
 ```{versionadded} 6.0.0-alpha.22
 ```
 
-VLT integrates with the add-on `@plonegovbr/volto-social-media` to provide behaviors for adding social media links and main configuration to your site.
+{term}`VLT` integrates with the add-on `@plonegovbr/volto-social-media` to provide behaviors for adding social media links and main configuration to your site.
 You can use it to customize your site, as well as the behaviors in `kitconcept.voltolighttheme`, if they fit your needs.
 
 It has two behaviors:

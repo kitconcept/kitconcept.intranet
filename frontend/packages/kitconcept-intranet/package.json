@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/intranet",
-  "version": "2.0.0-alpha.17",
+  "version": "3.0.2",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -88,11 +88,12 @@
     "@kitconcept/volto-separator-block": "workspace:*",
     "@kitconcept/volto-slider-block": "workspace:*",
     "@plonegovbr/volto-social-media": "^2.0.0-alpha.10",
-    "@kitconcept/volto-solr": "workspace:*",
+    "@kitconcept/volto-solr": "^3.0.0-alpha.3",
     "@kitconcept/volto-iframe-block": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
     "@kitconcept/volto-contact-block": "workspace:*",
     "@plone/components": "workspace:*",
+    "@plone/helpers": "^2.0.0-alpha.8",
     "@plone/volto-form-block": "^1.0.0-alpha.3",
     "@plone-collective/volto-authomatic": "3.0.0-alpha.6",
     "@plone-collective/volto-image-editor": "1.0.1",
@@ -100,7 +101,15 @@
     "lodash": "4.17.21",
     "react-aria-components": "catalog:",
     "volto-rss-block": "^3.0.1",
-    "@kitconcept/volto-plate": "file:../../artifacts/kitconcept-volto-plate.tgz"
+    "@kitconcept/volto-plate": "^1.0.0-alpha.30",
+    "@platejs/diff": "^53.0.0",
+    "@platejs/selection": "^53.1.6",
+    "@platejs/table": "^53.0.9",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-popover": "^1.1.15",
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.544.0",
+    "platejs": "^53.3.14"
   },
-  "volto_version": "19.1.4"
+  "volto_version": "19.4.1"
 }

@@ -1,0 +1,281 @@
+// Wiki Page (Plate) tables: Confluence-style grid.
+//
+// volto-plate's `typeset.scss` styles tables as bare document tables
+// (separated borders, a bottom rule, padding on the cells, no padding on the
+// first column). Plate's table cells carry no borders of their own: they draw
+// them with an absolutely positioned `::before` pseudo-element that spans the
+// cell box. The typeset padding and cell borders push that pseudo-element out
+// of the cell box, which is the shifted-borders bug (#546).
+//
+// This sheet resets the typeset table rules for Plate tables and styles them
+// like Confluence: full width, light grey cell grid, grey bold header row,
+// compact padding, subtle row hover. It applies to the editor and to the view
+// (both render inside `.typeset`). Everything the cell toolbar controls
+// (cell borders, cell background) keeps working: only the grid colour is set
+// here, and cells with their own background are left alone.
+//
+// Specificity: typeset's table rules live under
+// `.contenttype-wikipage .typeset *:not(…):where(table)` (0,2,0). The `:is()`
+// prefix lifts these rules to (0,2,1) on every page without repeating the
+// content-type classes in every selector.
+
+:is(.contenttype-workspace, .contenttype-wikipage, body) .typeset {
+  --wiki-table-border: #dfe1e6;
+  --wiki-table-header-bg: #f4f5f7;
+  --wiki-table-hover-bg: #f8f9fa;
+
+  // Plate wraps the table in an overflow container and a `w-fit` wrapper.
+  // Let both span the column so the table can be full width.
+  div:has(> table) {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+    max-width: none;
+    border: 0;
+    margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    table-layout: fixed;
+  }
+
+  td,
+  th {
+    position: relative;
+    padding: 0;
+    border: 0;
+    text-align: start;
+    vertical-align: top;
+
+    // Plate's cell grid: colour only, the toolbar still toggles the sides.
+    &::before {
+      border-color: var(--wiki-table-border);
+    }
+
+    // The content box inside the cell (Plate: `px-3 py-2` / `px-4 py-2`).
+    // Typeset breaks long words anywhere; in narrow columns that splits
+    // ordinary words ("Verantwortlic|h"), so hyphenate first.
+    > div:first-child {
+      padding: 0.4em 0.65em;
+      hyphens: auto;
+    }
+
+    // Every Plate paragraph is a `.block` with a `.block-inner-container`.
+    // VLT pads the last block of a container with 80px `!important`
+    // (`:not(.blocks-group-wrapper) > .block:last-child .block-inner-container`),
+    // which made every row ~120px tall. Cells own their spacing.
+    .block .block-inner-container {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  th:not([style*='--cellBackground']) {
+    background-color: var(--wiki-table-header-bg);
+  }
+
+  th {
+    font-weight: 600;
+  }
+
+  tbody tr:hover > td:not([style*='--cellBackground']) {
+    background-color: var(--wiki-table-hover-bg);
+  }
+}
+
+// Editor controls added by the intranet's table shadow
+// (customizations/@plone/plate/components/ui/table-node.tsx).
+//
+// The shadow's own additions are styled here, not with Tailwind: the
+// Tailwind build (volto-plate's tailwind.css) scans only volto-plate's
+// sources, so utility classes that occur only in intranet files are never
+// generated. The Tailwind classes that came with the copied Plate code stay
+// untouched. When the shadow moves to volto-plate, these rules can become
+// Tailwind classes again: the Tailwind version of each class is kept in a
+// "Tailwind version" comment next to it in the shadow.
+
+// Volto's own slate table block styles `.block.slate-table .block-inner-container`
+// with `overflow-x: auto` (volto-slate, Table/less/public.less). Since
+// volto-plate 1.0.0-alpha.30 registers the native `table` block, the Plate
+// table wrapper carries `.block` too and that rule clips the gutter with the
+// row grips. The scroll container below does the horizontal scrolling.
+// Scoped to Plate's `.typeset`: Volto's legacy table block on classic pages
+// keeps its scrolling.
+.typeset .block.slate-table .block-inner-container {
+  overflow: visible;
+}
+
+// 24px gutter left of the table for the row drag handle (Plate: 8px).
+.wiki-table-controls {
+  // 12px on top for the column grips: the container clips vertical overflow.
+  padding-top: 12px;
+  margin-left: -1.5rem;
+
+  > [data-slot='block-selection'] {
+    left: 1.5rem;
+  }
+}
+
+.wiki-table-gutter {
+  width: 1.5rem;
+}
+
+.wiki-table-row-grip {
+  left: 0.25rem;
+
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
+// Column drag handle on the top edge of the first row's cells.
+.wiki-table-col-grip {
+  position: absolute;
+  z-index: 40;
+  top: -12px;
+  left: 50%;
+  width: 24px;
+  height: 12px;
+  min-height: 0;
+  cursor: grab;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.1s;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  :is(td, th):hover &,
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
+// Column drop position: left or right edge of the target cell.
+.wiki-table-col-drop-line {
+  position: absolute;
+  z-index: 40;
+  top: 0;
+  width: 2px;
+  height: 100%;
+
+  &.is-before {
+    left: -1px;
+  }
+
+  &.is-after {
+    right: -1px;
+  }
+}
+
+// View: sorting and filtering controls (components/WikiTable/TableViewControls.tsx).
+
+// Room for the sort button: under the same prefix as the cell padding above,
+// which would win otherwise and let the header text run under the button.
+:is(.contenttype-workspace, .contenttype-wikipage, body)
+  .typeset
+  th.wiki-table-sortable
+  > div:first-child {
+  padding-right: 2rem;
+}
+
+.wiki-table-sort {
+  position: absolute;
+  z-index: 30;
+  top: 50%;
+  right: 0.3rem;
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--typeset-muted, #878f93);
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &[data-hovered],
+  &[data-active] {
+    color: var(--typeset-foreground, #252525);
+  }
+
+  &[data-hovered] {
+    background: rgb(0 0 0 / 6%);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid #007eb1;
+    outline-offset: 1px;
+  }
+}
+
+.wiki-table-filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+  gap: 0.75rem;
+
+  .react-aria-SearchField {
+    position: relative;
+    display: flex;
+    flex: 0 1 18rem;
+    align-items: center;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.35em 2em 0.35em 0.6em;
+    border: 1px solid var(--wiki-table-border, #dfe1e6);
+    border-radius: 4px;
+    font: inherit;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  .react-aria-SearchField[data-empty] button {
+    display: none;
+  }
+
+  button {
+    position: absolute;
+    right: 0.25rem;
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--typeset-muted, #878f93);
+    cursor: pointer;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.wiki-table-filter-count {
+  color: var(--typeset-muted, #878f93);
+}

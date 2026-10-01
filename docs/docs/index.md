@@ -8,11 +8,18 @@ last_updated: 2026-03-18
 
 # kitconcept Intranet Distribution
 
-Welcome to the documentation for the kitconcept Intranet Distribution — a Plone 6 distribution for building intranets, created by kitconcept. Built on Plone 6, kitconcept.core, and Volto Light Theme.
+Welcome to the documentation for the kitconcept Intranet Distribution—a Plone 6 distribution for building intranets, created by kitconcept. Built on Plone 6, kitconcept.core, and Volto Light Theme.
 
 This site provides usage guidance for administrators and editors, along with technical reference for developers.
 
 It is structured following the [Diátaxis](https://diataxis.fr/) documentation framework.
+
+```{toctree}
+:maxdepth: 2
+:hidden: true
+
+features/index
+```
 
 ```{toctree}
 :maxdepth: 2

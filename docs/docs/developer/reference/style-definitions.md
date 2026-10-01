@@ -12,7 +12,7 @@ last_updated: 2026-04-27
 
 ## Overview
 
-The `styleDefinitions` registry is a Volto utility system that maps block style field values to CSS custom property objects. Two utility enhancers are registered — `blockThemesEnhancer` and `styleDefinitionsEnhancer` — both of type `styleWrapperStyleObjectEnhancer`. They are called by the style wrapper mechanism to compute the inline `style` object applied to each block's container.
+The `styleDefinitions` registry is a Volto utility system that maps block style field values to CSS custom property objects. Two utility enhancers are registered—`blockThemesEnhancer` and `styleDefinitionsEnhancer`—both of type `styleWrapperStyleObjectEnhancer`. They are called by the style wrapper mechanism to compute the inline `style` object applied to each block's container.
 
 **Implementation:** `frontend/packages/volto-light-theme/frontend/packages/volto-light-theme/src/helpers/styleDefinitions.ts`
 
@@ -90,11 +90,11 @@ Block widths follow the same pattern on `config.blocks.widths`.
 
 ## Notes
 
-- `blockThemesEnhancer` returns `{}` when the block type is unknown or has no registered config — this is intentional to allow such blocks to render without inline styles.
+- `blockThemesEnhancer` returns `{}` when the block type is unknown or has no registered config—this is intentional to allow such blocks to render without inline styles.
 - The `ColorSwatch` `colors` and `themes` props are mutually exclusive by TypeScript union type (`ColorsOnly | ThemesOnly`).
 
 ## See also
 
 - [Colors reference](colors.md)
 - [Frontend styleguide](frontend-styleguide.md)
-- [Widgets reference](components/widgets.md) — includes the `ColorSwatch` widget used to select themes in the block sidebar
+- [Widgets reference](components/widgets.md)—includes the `ColorSwatch` widget used to select themes in the block sidebar

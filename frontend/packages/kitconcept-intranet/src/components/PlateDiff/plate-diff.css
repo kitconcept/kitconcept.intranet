@@ -1,0 +1,190 @@
+/* Plate-based Wiki Page diff — spike for #639 (epic #636). */
+
+/* --- inline text changes ------------------------------------------------ */
+
+.plate-diff ins.plate-diff-insert {
+  border-radius: 2px;
+  background: rgba(34, 134, 58, 0.13);
+  text-decoration: none;
+}
+
+.plate-diff del.plate-diff-delete {
+  border-radius: 2px;
+  background: rgba(196, 24, 60, 0.11);
+  text-decoration: line-through;
+  text-decoration-color: rgba(196, 24, 60, 0.6);
+}
+
+.plate-diff span.plate-diff-update {
+  border-bottom: 2px dotted #d4a017;
+  background: rgba(212, 160, 23, 0.18);
+}
+
+/* inline elements (links, mentions, dates) that were added / removed / changed */
+.plate-diff .plate-diff-inline-insert {
+  border-radius: 4px;
+  outline: 2px solid rgba(34, 134, 58, 0.5);
+}
+.plate-diff .plate-diff-inline-delete {
+  border-radius: 4px;
+  opacity: 0.7;
+  outline: 2px solid rgba(196, 24, 60, 0.45);
+}
+.plate-diff .plate-diff-inline-update {
+  border-radius: 4px;
+  outline: 2px dotted #d4a017;
+}
+
+/* --- block changes ------------------------------------------------------ */
+
+.plate-diff .plate-diff-block {
+  position: relative;
+  padding: 8px 12px 10px;
+  border-radius: 2px;
+  border-left: 3px solid transparent;
+  margin: 6px 0;
+}
+
+/* "Changed · Alignment: Left → Centred" — only the leading word is emphasised */
+.plate-diff .plate-diff-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #52606f;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  user-select: none;
+}
+.plate-diff .plate-diff-label strong {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.plate-diff .plate-diff-summary {
+  color: #52606f;
+}
+
+.plate-diff .plate-diff-block-insert {
+  border-left-color: #22863a;
+  background: rgba(34, 134, 58, 0.07);
+}
+.plate-diff .plate-diff-block-insert .plate-diff-label strong {
+  color: #22863a;
+}
+
+.plate-diff .plate-diff-block-delete {
+  border-left-color: #c4183c;
+  background: rgba(196, 24, 60, 0.06);
+}
+.plate-diff .plate-diff-block-delete .plate-diff-label strong {
+  color: #c4183c;
+}
+.plate-diff-unified .plate-diff-block-delete > :not(.plate-diff-label) {
+  text-decoration: line-through;
+  text-decoration-color: rgba(196, 24, 60, 0.6);
+}
+
+.plate-diff .plate-diff-block-update {
+  border-left-color: #d4a017;
+  background: rgba(212, 160, 23, 0.08);
+}
+.plate-diff .plate-diff-block-update .plate-diff-label strong {
+  color: #9a7412;
+}
+
+/* the wrapped element brings its own vertical spacing (margins, and the
+   block gap as padding on its inner container); the wrapper has padding */
+.plate-diff .plate-diff-block > [data-slate-node='element'] {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* !important because the theme sets the page's last-block gap with !important
+   (`:not(.blocks-group-wrapper) > .block:last-child .block-inner-container`),
+   and the wrapped element is the last child of the wrapper */
+.plate-diff
+  .plate-diff-block
+  > [data-slate-node='element']
+  > .block-inner-container {
+  padding-bottom: 0 !important;
+}
+
+/* --- structural nodes: marked on the element instead of wrapped ---------- */
+/* table rows/cells, columns, code lines: a wrapper would break the parent */
+
+.plate-diff tr.plate-diff-node-insert > td,
+.plate-diff tr.plate-diff-node-insert > th,
+.plate-diff td.plate-diff-node-insert,
+.plate-diff th.plate-diff-node-insert,
+.plate-diff .plate-diff-node-insert:is(div, span) {
+  background: rgba(34, 134, 58, 0.07);
+  box-shadow: inset 3px 0 0 #22863a;
+}
+
+.plate-diff tr.plate-diff-node-delete > td,
+.plate-diff tr.plate-diff-node-delete > th,
+.plate-diff td.plate-diff-node-delete,
+.plate-diff th.plate-diff-node-delete,
+.plate-diff .plate-diff-node-delete:is(div, span) {
+  background: rgba(196, 24, 60, 0.06);
+  box-shadow: inset 3px 0 0 #c4183c;
+}
+.plate-diff-unified tr.plate-diff-node-delete,
+.plate-diff-unified td.plate-diff-node-delete,
+.plate-diff-unified th.plate-diff-node-delete {
+  text-decoration: line-through;
+  text-decoration-color: rgba(196, 24, 60, 0.6);
+}
+
+.plate-diff tr.plate-diff-node-update > td,
+.plate-diff tr.plate-diff-node-update > th,
+.plate-diff td.plate-diff-node-update,
+.plate-diff th.plate-diff-node-update,
+.plate-diff .plate-diff-node-update:is(div, span) {
+  background: rgba(212, 160, 23, 0.08);
+  box-shadow: inset 3px 0 0 #d4a017;
+}
+
+/* --- page furniture that makes no sense inside a diff ------------------- */
+
+/* byline under the title node (author, modification date) */
+.plate-diff .documentByLine {
+  display: none;
+}
+
+/* --- split view: one grid row per top-level node ------------------------ */
+
+.plate-diff-split {
+  display: grid;
+  align-items: stretch;
+  column-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.plate-diff-left ins.plate-diff-insert,
+.plate-diff-left .plate-diff-inline-insert,
+.plate-diff-left .plate-diff-node-insert {
+  display: none;
+}
+
+.plate-diff-right del.plate-diff-delete,
+.plate-diff-right .plate-diff-inline-delete,
+.plate-diff-right .plate-diff-node-delete {
+  display: none;
+}
+
+.plate-diff-left del.plate-diff-delete {
+  text-decoration: none;
+}
+
+.plate-diff-empty {
+  display: flex;
+  height: 100%;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed #d5dbe3;
+  border-radius: 8px;
+  margin: 6px 0;
+  color: #9aa4b2;
+  font-size: 0.8rem;
+}

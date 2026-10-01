@@ -2,14 +2,14 @@ from collective.person.content.person import IPerson
 from kitconcept.intranet.interfaces import IBrowserLayer
 from plone import api
 from plone.restapi.interfaces import ISerializeToJson
-from plone.restapi.serializer.dxcontent import SerializeToJson
+from plone.restapi.serializer.dxcontent import SerializeFolderToJson
 from zope.component import adapter
 from zope.interface import implementer
 
 
 @implementer(ISerializeToJson)
 @adapter(IPerson, IBrowserLayer)
-class PersonSerializer(SerializeToJson):
+class PersonSerializer(SerializeFolderToJson):
     """Custom serializer for Person content type."""
 
     def __call__(self, **kwargs):

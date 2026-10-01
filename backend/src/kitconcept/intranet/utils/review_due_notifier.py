@@ -24,6 +24,7 @@ def nofity_reviewer(portal):
             continue
 
         owner_name = reviewer.getProperty("fullname") or reviewer.getUserName()
+        last_updated = obj.modified().strftime("%Y-%m-%d")
 
         mail_subject = {
             "de": f"🔔 Erinnerung: Inhaltsprüfung fällig für „{obj.Title()}“",
@@ -31,37 +32,41 @@ def nofity_reviewer(portal):
         }
         mail_body = {
             "de": (
-                f"Hallo {owner_name},"
-                f"der Inhalt „{obj.Title()}“ ist zur Überprüfung fällig."
-                "Bitte prüfen Sie, ob die Informationen noch aktuell und korrekt sind."
-                f"Letzte Aktualisierung: {obj}"
-                "Nächste Kontrolle (nach Prüfung): wird automatisch neu berechnet"
-                f"Sie können den Inhalt hier aufrufen:"
-                f"👉 {obj.absolute_url()}"
-                "Ihre Optionen:"
-                "- ✅ Inhalt prüfen und als „geprüft“ markieren"
-                "- 🕓 Nächste Kontrolle verschieben (z. B. in 3 oder 6 Monaten)"
+                f"Hallo {owner_name},\n\n"
+                f"der Inhalt „{obj.Title()}“ ist zur Überprüfung fällig.\n"
+                "Bitte prüfen Sie, ob die Informationen noch aktuell und "
+                "korrekt sind.\n\n"
+                f"Letzte Aktualisierung: {last_updated}\n"
+                "Nächste Kontrolle (nach Prüfung): wird automatisch neu "
+                "berechnet\n\n"
+                "Sie können den Inhalt hier aufrufen:\n"
+                f"👉 {obj.absolute_url()}\n\n"
+                "Ihre Optionen:\n"
+                "- ✅ Inhalt prüfen und als „geprüft“ markieren\n"
+                "- 🕓 Nächste Kontrolle verschieben (z. B. in 3 oder 6 Monaten)\n"
                 "- 📝 Inhalt als „Überarbeitung erforderlich“ markieren, falls "
-                "Änderungen notwendig sind"
+                "Änderungen notwendig sind\n\n"
                 "Vielen Dank, dass Sie dafür sorgen, dass unsere "
-                "Inhalte aktuell bleiben."
-                "Mit freundlichen Grüßen,"
+                "Inhalte aktuell bleiben.\n\n"
+                "Mit freundlichen Grüßen,\n"
                 "Ihr Intranet-Team"
             ),
             "en": (
-                f"Hello {owner_name},"
-                f"The content item “{obj.Title()}” is due for review."
-                "Please check whether the information is still accurate and up to date."
-                f"Last updated: {obj}"
+                f"Hello {owner_name},\n\n"
+                f"The content item “{obj.Title()}” is due for review.\n"
+                "Please check whether the information is still accurate and "
+                "up to date.\n\n"
+                f"Last updated: {last_updated}\n"
                 "Next review date (after completion): will be recalculated "
-                "automatically. You can open the content here:"
-                f"👉 {obj.absolute_url()}"
-                "Available actions:"
-                "- ✅ Review the content and mark as reviewed"
-                "- 🕓 Postpone next review (e.g., by 3 or 6 months)"
-                "- 📝 Mark as “changes required” if updates are needed"
-                "Thank you for keeping our content accurate and relevant."
-                "Kind regards,"
+                "automatically.\n\n"
+                "You can open the content here:\n"
+                f"👉 {obj.absolute_url()}\n\n"
+                "Available actions:\n"
+                "- ✅ Review the content and mark as reviewed\n"
+                "- 🕓 Postpone next review (e.g., by 3 or 6 months)\n"
+                "- 📝 Mark as “changes required” if updates are needed\n\n"
+                "Thank you for keeping our content accurate and relevant.\n\n"
+                "Kind regards,\n"
                 "Your intranet team"
             ),
         }

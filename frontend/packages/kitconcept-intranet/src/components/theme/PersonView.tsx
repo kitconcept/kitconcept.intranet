@@ -59,7 +59,6 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
 
   const profile = {
-    imageUrl: content.image ?? null,
     fullName: content.academic_title?.title
       ? content.last_name
         ? `${content.academic_title.title} ${content.first_name} ${content.last_name}`
@@ -84,11 +83,17 @@ const PersonView: React.FC<PersonViewProps> = ({ content }) => {
     <Container id="page-document" className="view-wrapper person-view">
       <div className="person-profile">
         <header className="profile-header">
-          {profile.imageUrl && (
+          {content.image?.download ? (
             <Image
               className="profile-image"
               item={content}
               imageField="image"
+              alt={profile.fullName}
+            />
+          ) : (
+            <img
+              className="profile-image profile-image--placeholder"
+              src={config.settings.placeholderImages?.Person}
               alt={profile.fullName}
             />
           )}

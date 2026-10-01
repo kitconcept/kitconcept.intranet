@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Carousel Block
-  it('Carousel-block (/features/block/carousel-block)', () => {
-    cy.navigate('/features/block/carousel-block');
+  it('Carousel-block (/qa/block/carousel-block)', () => {
+    cy.navigate('/qa/block/carousel-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

@@ -1,0 +1,1 @@
+Replaced the hardcoded version numbers in the documentation with substitutions: `conf.py` now declares the intranet, Traefik, PostgreSQL, Solr and Tika versions in one place and feeds them to both the MyST substitutions and the source-replacement extension, so pages such as the demo stack guide no longer need a manual bump after every release. @ericof

@@ -105,6 +105,11 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Clear filter"
+#: components/WikiTable/TableViewControls
+msgid "Clear filter"
+msgstr ""
+
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -120,11 +125,6 @@ msgstr ""
 #. Default: "Content marked as reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
-msgstr ""
-
-#. Default: "Content responsible"
-#: slots/AboutThisContent/AboutThisContent
-msgid "Content responsible"
 msgstr ""
 
 #. Default: "Created On"
@@ -168,6 +168,16 @@ msgstr ""
 msgid "Document Review"
 msgstr ""
 
+#. Default: "Drag to move the column"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the column"
+msgstr ""
+
+#. Default: "Drag to move the row"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the row"
+msgstr ""
+
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
@@ -188,12 +198,18 @@ msgstr ""
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr ""
 
 #. Default: "Event"
 #: components/Header/HeaderSearch
 msgid "Event"
+msgstr ""
+
+#. Default: "Everywhere"
+#: components/Header/HeaderSearch
+msgid "Everywhere"
 msgstr ""
 
 #. Default: "Expand sidebar"
@@ -206,13 +222,9 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#. Default: "Feedback about this page"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Feedback about this page"
-msgstr ""
-
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
+#: slots/AboutThisContent/AboutThisContent
 msgid "Feedback on this page"
 msgstr ""
 
@@ -231,6 +243,16 @@ msgstr ""
 msgid "File"
 msgstr ""
 
+#. Default: "Filter rows…"
+#: components/WikiTable/TableViewControls
+msgid "Filter rows…"
+msgstr ""
+
+#. Default: "Filter table"
+#: components/WikiTable/TableViewControls
+msgid "Filter table"
+msgstr ""
+
 #. Default: "Folder"
 #: components/Header/HeaderSearch
 msgid "Folder"
@@ -239,6 +261,16 @@ msgstr ""
 #. Default: "Generating answer…"
 #: components/Header/HeaderSearch
 msgid "Generating answer…"
+msgstr ""
+
+#. Default: "Give feedback on this page"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Give feedback on this page"
+msgstr ""
+
+#. Default: "Header row"
+#: index
+msgid "Header row"
 msgstr ""
 
 #. Default: "Home"
@@ -261,6 +293,11 @@ msgstr ""
 msgid "In review"
 msgstr ""
 
+#. Default: "Insert table"
+#: index
+msgid "Insert table"
+msgstr ""
+
 #. Default: "Intranet Portal"
 #: components/Header/HeaderSearch
 msgid "Intranet Portal"
@@ -269,11 +306,6 @@ msgstr ""
 #. Default: "Invalid url"
 #: components/Blocks/IFrame/isValidUrl
 msgid "Invalid url"
-msgstr ""
-
-#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
-#: slots/AboutThisContent/AboutThisContent
-msgid "Is something unclear or outdated? Let us know so we can improve the page."
 msgstr ""
 
 #. Default: "Item batch size"
@@ -336,6 +368,26 @@ msgstr ""
 msgid "Mark as Reviewed"
 msgstr ""
 
+#. Default: "Move column left"
+#: index
+msgid "Move column left"
+msgstr ""
+
+#. Default: "Move column right"
+#: index
+msgid "Move column right"
+msgstr ""
+
+#. Default: "Move row down"
+#: index
+msgid "Move row down"
+msgstr ""
+
+#. Default: "Move row up"
+#: index
+msgid "Move row up"
+msgstr ""
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
@@ -351,14 +403,19 @@ msgstr ""
 msgid "Next review"
 msgstr ""
 
-#. Default: "No answer — no matching documents found."
+#. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
-msgid "No answer — no matching documents found."
+msgid "No document found with the selected criteria."
 msgstr ""
 
 #. Default: "No results for “{term}”."
 #: components/Header/HeaderSearch
 msgid "No results for “{term}”."
+msgstr ""
+
+#. Default: "No results in “{scope}”."
+#: components/Header/HeaderSearch
+msgid "No results in “{scope}”."
 msgstr ""
 
 #. Default: "No selection"
@@ -425,6 +482,7 @@ msgstr ""
 
 #. Default: "Private"
 #: components/Header/HeaderSearch
+#: slots/AboutThisContent/AboutThisContent
 msgid "Private"
 msgstr ""
 
@@ -436,6 +494,11 @@ msgstr ""
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
+msgstr ""
+
+#. Default: "Responsible Person"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Responsible Person"
 msgstr ""
 
 #. Default: "Results limit"
@@ -463,6 +526,16 @@ msgstr ""
 #. Default: "Search"
 #: components/Header/HeaderSearch
 msgid "Search"
+msgstr ""
+
+#. Default: "Search everywhere"
+#: components/Header/HeaderSearch
+msgid "Search everywhere"
+msgstr ""
+
+#. Default: "Search in all areas"
+#: components/Header/HeaderSearch
+msgid "Search in all areas"
 msgstr ""
 
 #. Default: "Search titles only"
@@ -536,6 +609,11 @@ msgstr ""
 msgid "Something went wrong while unliking this post."
 msgstr ""
 
+#. Default: "Sort by {column}"
+#: components/WikiTable/TableViewControls
+msgid "Sort by {column}"
+msgstr ""
+
 #. Default: "Sort on"
 #: components/widgets/QuerystringWidget
 msgid "Sort on"
@@ -544,11 +622,6 @@ msgstr ""
 #. Default: "Sources"
 #: components/Header/HeaderSearch
 msgid "Sources"
-msgstr ""
-
-#. Default: "Sponsored by:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Sponsored by:"
 msgstr ""
 
 #. Default: "Start"
@@ -576,6 +649,7 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 #: components/Toolbar/DocumentReview
+#: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr ""
 
@@ -631,6 +705,7 @@ msgstr ""
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr ""
 
@@ -652,6 +727,11 @@ msgstr ""
 #. Default: "Delegate Review or Update"
 #: components/ContentReviewSidebar/DelegateReview
 msgid "delegateTitle"
+msgstr ""
+
+#. Default: "goes to"
+#: slots/AboutThisContent/AboutThisContent
+msgid "goes to"
 msgstr ""
 
 #. Default: "The check interval is set to {interval}. To change it, you must edit the content."
@@ -774,6 +854,301 @@ msgstr ""
 msgid "nextReview"
 msgstr ""
 
+#. Default: "Added"
+#: components/PlateDiff/messages
+msgid "plateDiff.added"
+msgstr ""
+
+#. Default: "Changed"
+#: components/PlateDiff/messages
+msgid "plateDiff.changed"
+msgstr ""
+
+#. Default: "Not in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.notInThisVersion"
+msgstr ""
+
+#. Default: "Alignment"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.align"
+msgstr ""
+
+#. Default: "Alternative text"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.alt"
+msgstr ""
+
+#. Default: "Background colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.backgroundColor"
+msgstr ""
+
+#. Default: "Width"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.blockWidth"
+msgstr ""
+
+#. Default: "Caption"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.caption"
+msgstr ""
+
+#. Default: "Checked"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.checked"
+msgstr ""
+
+#. Default: "Text colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.color"
+msgstr ""
+
+#. Default: "Link"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.href"
+msgstr ""
+
+#. Default: "Icon"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.icon"
+msgstr ""
+
+#. Default: "Indentation"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.indent"
+msgstr ""
+
+#. Default: "Language"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lang"
+msgstr ""
+
+#. Default: "Line height"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lineHeight"
+msgstr ""
+
+#. Default: "List start"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStart"
+msgstr ""
+
+#. Default: "List type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStyleType"
+msgstr ""
+
+#. Default: "Block type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.type"
+msgstr ""
+
+#. Default: "Source"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.url"
+msgstr ""
+
+#. Default: "Variant"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.variant"
+msgstr ""
+
+#. Default: "Size"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.width"
+msgstr ""
+
+#. Default: "Removed"
+#: components/PlateDiff/messages
+msgid "plateDiff.removed"
+msgstr ""
+
+#. Default: "Removed in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.removedInThisVersion"
+msgstr ""
+
+#. Default: "Centred"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.center"
+msgstr ""
+
+#. Default: "Justified"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.justify"
+msgstr ""
+
+#. Default: "Left"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.left"
+msgstr ""
+
+#. Default: "Right"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.right"
+msgstr ""
+
+#. Default: "Standard"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.default"
+msgstr ""
+
+#. Default: "Full width"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.full"
+msgstr ""
+
+#. Default: "Narrow"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.narrow"
+msgstr ""
+
+#. Default: "Wide"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.wide"
+msgstr ""
+
+#. Default: "Bulleted list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.bulleted"
+msgstr ""
+
+#. Default: "Numbered list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.numbered"
+msgstr ""
+
+#. Default: "To-do list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.todo"
+msgstr ""
+
+#. Default: "no"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.no"
+msgstr ""
+
+#. Default: "not set"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.notSet"
+msgstr ""
+
+#. Default: "Large"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.l"
+msgstr ""
+
+#. Default: "Medium"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.m"
+msgstr ""
+
+#. Default: "Small"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.s"
+msgstr ""
+
+#. Default: "Quote"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.blockquote"
+msgstr ""
+
+#. Default: "Callout"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.callout"
+msgstr ""
+
+#. Default: "Code"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.code_block"
+msgstr ""
+
+#. Default: "Heading 1"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h1"
+msgstr ""
+
+#. Default: "Heading 2"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h2"
+msgstr ""
+
+#. Default: "Heading 3"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h3"
+msgstr ""
+
+#. Default: "Heading 4"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h4"
+msgstr ""
+
+#. Default: "Heading 5"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h5"
+msgstr ""
+
+#. Default: "Heading 6"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h6"
+msgstr ""
+
+#. Default: "Divider"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.hr"
+msgstr ""
+
+#. Default: "Image"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.img"
+msgstr ""
+
+#. Default: "Paragraph"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.p"
+msgstr ""
+
+#. Default: "Table"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.table"
+msgstr ""
+
+#. Default: "Toggle"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.toggle"
+msgstr ""
+
+#. Default: "Error"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.error"
+msgstr ""
+
+#. Default: "Info"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.info"
+msgstr ""
+
+#. Default: "Note"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.note"
+msgstr ""
+
+#. Default: "Success"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.success"
+msgstr ""
+
+#. Default: "Warning"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.warning"
+msgstr ""
+
+#. Default: "yes"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.yes"
+msgstr ""
+
 #. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeComment"
@@ -806,4 +1181,9 @@ msgstr "Leer más"
 #. Default: "Recommendation from the Intranet"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
+msgstr ""
+
+#. Default: "{shown} of {total} rows"
+#: components/WikiTable/TableViewControls
+msgid "{shown} of {total} rows"
 msgstr ""

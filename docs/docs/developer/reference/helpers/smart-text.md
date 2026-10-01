@@ -40,7 +40,7 @@ smartTextRenderer(smartText)
 | Text before/after a link | Mixed text nodes and link elements |
 | Multiple links in one string | All links and surrounding text nodes |
 | `\n`, `\r\n`, `\r` | `<br />` element |
-| `[text]` without `(href)` | Rendered as literal text — not treated as a link |
+| `[text]` without `(href)` | Rendered as literal text—not treated as a link |
 
 Whitespace around link text and href is trimmed automatically.
 
@@ -79,7 +79,7 @@ Output: "[not a link] some text"  (no href — rendered as plain text)
 
 ## Notes
 
-- The Markdown link regex uses the `/g` flag, which is stateful. `linkPattern.lastIndex` is reset to `0` on every call — without this, repeated calls on different strings would produce incorrect results.
+- The Markdown link regex uses the `/g` flag, which is stateful. `linkPattern.lastIndex` is reset to `0` on every call—without this, repeated calls on different strings would produce incorrect results.
 - Links are rendered using Volto's `UniversalLink` component, which handles both internal and external URLs correctly.
 - The function is stateless and safe to call on every render.
 - Test coverage is in `src/helpers/smartText.test.tsx`.

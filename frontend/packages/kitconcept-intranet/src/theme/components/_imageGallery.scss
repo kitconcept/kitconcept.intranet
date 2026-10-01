@@ -1,0 +1,6 @@
+// Needed to fix conflict with tailwind css
+// Should be removed when layers are improved.
+
+.contents-upload-modal .content .table .upload-row .image {
+  max-width: 100%;
+}

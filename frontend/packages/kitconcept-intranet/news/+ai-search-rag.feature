@@ -1,1 +1,0 @@
-Integrate the AI search (RAG) feature branch: @kitconcept/volto-solr from the feature-ai-rag branch; no "Use AI" toggle — when the backend reports the feature available, the AI answer renders above the classic search results. @reebalazs

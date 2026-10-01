@@ -96,6 +96,17 @@
 // Tailwind classes again: the Tailwind version of each class is kept in a
 // "Tailwind version" comment next to it in the shadow.
 
+// Volto's own slate table block styles `.block.slate-table .block-inner-container`
+// with `overflow-x: auto` (volto-slate, Table/less/public.less). Since
+// volto-plate 1.0.0-alpha.30 registers the native `table` block, the Plate
+// table wrapper carries `.block` too and that rule clips the gutter with the
+// row grips. The scroll container below does the horizontal scrolling.
+// Scoped to Plate's `.typeset`: Volto's legacy table block on classic pages
+// keeps its scrolling.
+.typeset .block.slate-table .block-inner-container {
+  overflow: visible;
+}
+
 // 24px gutter left of the table for the row drag handle (Plate: 8px).
 .wiki-table-controls {
   // 12px on top for the column grips: the container clips vertical overflow.

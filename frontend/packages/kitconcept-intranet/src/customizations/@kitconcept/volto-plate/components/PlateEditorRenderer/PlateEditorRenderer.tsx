@@ -9,9 +9,9 @@
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Everything else is
  *         unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a29/frontend/packages/volto-plate/src/components/PlateEditorRenderer/PlateEditorRenderer.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.29
- * DATE: 2026-09-30
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/components/PlateEditorRenderer/PlateEditorRenderer.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
+ * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  */

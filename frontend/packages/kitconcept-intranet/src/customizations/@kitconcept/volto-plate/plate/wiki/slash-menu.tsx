@@ -3,9 +3,9 @@
  * REASON: The "Table" entry inserts a 3 × 3 table with a header row
  *         (Confluence default) instead of Plate's 2 × 2 without header.
  *         Everything else is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a29/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.29
- * DATE: 2026-09-30
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
+ * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  */

@@ -19,9 +19,9 @@
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Everything else is
  *         unchanged.
- * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.18/packages/plate/components/ui/table-node-static.tsx
- * FILE VERSION: @plone/plate 1.0.0-alpha.18
- * DATE: 2026-09-30
+ * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.20/packages/plate/components/ui/table-node-static.tsx
+ * FILE VERSION: @plone/plate 1.0.0-alpha.20
+ * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  */

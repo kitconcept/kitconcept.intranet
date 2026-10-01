@@ -1525,7 +1525,7 @@ requires-dist = [
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.1.0" },
     { name = "kitconcept-plate", specifier = "==1.0.0a28" },
-    { name = "kitconcept-solr", specifier = "==3.0.0a2" },
+    { name = "kitconcept-solr", specifier = "==3.0.0a3" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
@@ -1580,7 +1580,7 @@ wheels = [
 
 [[package]]
 name = "kitconcept-solr"
-version = "3.0.0a2"
+version = "3.0.0a3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-solr" },
@@ -1591,9 +1591,9 @@ dependencies = [
     { name = "products-cmfplone" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f7/2c/3af7f86f318b4e7fbef30ab5cb9a6402a1705af23c6b00f88a9c010186be/kitconcept_solr-3.0.0a2.tar.gz", hash = "sha256:aa6a88d435e8236aa005886a264c6b6bee43291d9cd79d19301b24a51736b013", size = 18746938, upload-time = "2026-09-09T14:10:25.356Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/2e/ef88c08607dde9ba521476ff61ae24491cffeb0159675192907eebd14063/kitconcept_solr-3.0.0a3.tar.gz", hash = "sha256:816eb082880fe6759101455500e8c7e30eeac8f1aa84b1d3276cc4fc8d637d69", size = 18747137, upload-time = "2026-09-30T11:36:12.062Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e7/b5/ca697555e6e805a66b3d115f71a005ea3894db74e7d0c62ab24841948346/kitconcept_solr-3.0.0a2-py3-none-any.whl", hash = "sha256:9c4ececbc42688642113924e2abe66e9f627e450273edd55aa763e4d0faa015f", size = 18988139, upload-time = "2026-09-09T14:10:20.785Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/12/a6b0bc6ce4d8930da3a283186281c10e42685fea1989d94ddf32515eb1b8/kitconcept_solr-3.0.0a3-py3-none-any.whl", hash = "sha256:6acaf722293418786cbb8e99bf00046118f76dccae4c207226e5c04960a6ca2f", size = 18988152, upload-time = "2026-09-30T11:36:07.464Z" },
 ]
 
 [[package]]

@@ -3,9 +3,9 @@
  * REASON: The "Table" entry inserts a 3 × 3 table with a header row
  *         (Confluence default) instead of Plate's 2 × 2 without header.
  *         Everything else is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0-alpha.28/packages/volto-plate/src/plate/wiki/slash-menu.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.28
- * DATE: 2026-09-22
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
+ * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  */
@@ -13,11 +13,9 @@
 import type {
   SlashMenuConfig,
   SlashMenuGroup,
-  SlashMenuItem,
 } from '@plone/plate/components/editor/plugins/slash-menu';
-import { insertBlock } from '@plone/plate/components/editor/transforms';
 import { PLONE_BLOCK_TYPE } from '@plone/helpers';
-import { Heading5Icon, Heading6Icon, ImageIcon } from 'lucide-react';
+import { ImageIcon } from 'lucide-react';
 import { KEYS, PathApi } from 'platejs';
 import type { PlateEditor } from 'platejs/react';
 import { insertWikiTable } from '@kitconcept/intranet/components/WikiTable/insertWikiTable';
@@ -54,27 +52,8 @@ const IMAGE_SLASH_ITEM = {
   },
 };
 
-const HEADING_SLASH_ITEMS: SlashMenuItem[] = [
-  {
-    icon: <Heading5Icon />,
-    keywords: ['subtitle', 'h5'],
-    label: 'Heading 5',
-    value: KEYS.h5,
-  },
-  {
-    icon: <Heading6Icon />,
-    keywords: ['subtitle', 'h6'],
-    label: 'Heading 6',
-    value: KEYS.h6,
-  },
-].map((item) => ({
-  ...item,
-  onSelect: (editor: PlateEditor, value: string) => {
-    insertBlock(editor, value);
-  },
-}));
-
-export const slashMenu: SlashMenuConfig = {
+// OVERRIDE: not exported, wrapped below.
+const baseSlashMenu: SlashMenuConfig = {
   extendGroups: (groups) =>
     groups
       .map((group) => {
@@ -100,35 +79,34 @@ export const slashMenu: SlashMenuConfig = {
             (item) => item.value === 'p',
           );
 
-          const items =
-            paragraphIndex === -1
-              ? [...group.items, IMAGE_SLASH_ITEM]
-              : [
-                  ...group.items.slice(0, paragraphIndex + 1),
-                  IMAGE_SLASH_ITEM,
-                  ...group.items.slice(paragraphIndex + 1),
-                ];
-
-          const lastHeadingIndex = items.findIndex(
-            (item) => item.value === KEYS.h4,
-          );
-
           return {
             ...group,
-            items: [
-              ...items.slice(0, lastHeadingIndex + 1),
-              ...HEADING_SLASH_ITEMS,
-              ...items.slice(lastHeadingIndex + 1),
-            ].map((item) =>
-              // OVERRIDE: 3 × 3 table with a header row.
-              item.value === KEYS.table
-                ? { ...item, onSelect: (editor) => insertWikiTable(editor) }
-                : item,
-            ),
+            items:
+              paragraphIndex === -1
+                ? [...group.items, IMAGE_SLASH_ITEM]
+                : [
+                    ...group.items.slice(0, paragraphIndex + 1),
+                    IMAGE_SLASH_ITEM,
+                    ...group.items.slice(paragraphIndex + 1),
+                  ],
           };
         }
 
         return group;
       })
       .filter((group) => group && group.items.length > 0) as SlashMenuGroup[],
+};
+
+// OVERRIDE: the "Table" entry inserts a 3 × 3 table with a header row.
+export const slashMenu: SlashMenuConfig = {
+  ...baseSlashMenu,
+  extendGroups: (groups) =>
+    (baseSlashMenu.extendGroups?.(groups) ?? groups).map((group) => ({
+      ...group,
+      items: group.items.map((item) =>
+        item.value === KEYS.table
+          ? { ...item, onSelect: (editor) => insertWikiTable(editor) }
+          : item,
+      ),
+    })),
 };

@@ -22,9 +22,9 @@
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Changes are marked with
  *         OVERRIDE comments; everything else is unchanged.
- * FILE: https://github.com/plone/plate/blob/1.0.0-alpha.15/packages/plate/components/ui/table-node.tsx
- * FILE VERSION: @plone/plate 1.0.0-alpha.15
- * DATE: 2026-09-22
+ * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.20/packages/plate/components/ui/table-node.tsx
+ * FILE VERSION: @plone/plate 1.0.0-alpha.20
+ * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  */
@@ -176,11 +176,8 @@ export const TableElement = withHOC(
       'isSelectionAreaVisible',
     );
     const hasControls = !readOnly && !isSelectionAreaVisible;
-    const {
-      isSelectingCell,
-      marginLeft,
-      props: tableProps,
-    } = useTableElement();
+    const isSelectingCell = usePluginOption(TablePlugin, 'isSelectingCell');
+    const { marginLeft, props: tableProps } = useTableElement();
 
     const isSelectingTable = useBlockSelected(props.element.id as string);
 

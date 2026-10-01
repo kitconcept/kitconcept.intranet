@@ -19,9 +19,9 @@
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Everything else is
  *         unchanged.
- * FILE: https://github.com/plone/plate/blob/1.0.0-alpha.15/packages/plate/components/ui/table-node-static.tsx
- * FILE VERSION: @plone/plate 1.0.0-alpha.15
- * DATE: 2026-09-22
+ * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.20/packages/plate/components/ui/table-node-static.tsx
+ * FILE VERSION: @plone/plate 1.0.0-alpha.20
+ * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  */
@@ -29,15 +29,16 @@
 import * as React from 'react';
 
 import type {
-  SlateElementProps,
   TElement,
   TTableCellElement,
   TTableElement,
   TTableRowElement,
 } from 'platejs';
+import type { SlateElementProps } from 'platejs/static';
 
 import { BaseTablePlugin } from '@platejs/table';
-import { NodeApi, SlateElement } from 'platejs';
+import { NodeApi } from 'platejs';
+import { SlateElement } from 'platejs/static';
 
 import { BlockInnerContainer } from '@plone/plate/components/ui/block-inner-container';
 import { cn } from '@plone/plate/lib/utils';

@@ -5,9 +5,9 @@
  *         toolbar as well as with the `/table` slash command. The relative
  *         import of the clear-formatting button is made absolute (shadowed
  *         files resolve relative imports against this package).
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0-alpha.28/packages/volto-plate/src/plate/wiki/floating-toolbar-buttons.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.28
- * DATE: 2026-09-22
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/plate/wiki/floating-toolbar-buttons.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
+ * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  */

@@ -1,1 +1,0 @@
-The wiki-table demo page "Teilnehmende Konsortialtreffen" gets a list of open items for sorting and filtering and a meeting agenda with a merged cell; `scripts/table_demo_content.py` recreates both demo pages on existing sites. @reekitconcept

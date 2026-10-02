@@ -62,3 +62,46 @@
     }
   }
 }
+
+// The site header searches through the same overlay the workspace
+// header opens, so its "input" is a button (SiteSearchButton). These
+// rules make it read as the input it replaced.
+.header-wrapper.intranet-header .header .search-wrapper .search {
+  .site-search-button {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 1.7em;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: transparent;
+    color: #808080;
+    cursor: pointer;
+    gap: 8px;
+    text-align: left;
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+      transition:
+        box-shadow 0.2s,
+        border-color 0.2s;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+
+  .site-search-button-label {
+    overflow: hidden;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @media only screen and (max-width: 1065px) {
+      font-size: 16px;
+    }
+  }
+}

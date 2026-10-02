@@ -1,8 +1,11 @@
 /**
  * OVERRIDE IntranetSearchWidget.jsx
- * REASON: Intranet search widget that uses the kitconcept.solr
- * SolrSearchAutosuggest input when installed and falls back to a plain Input
- * otherwise, submitting the query to the `/search` route.
+ * REASON: Intranet search widget that opens the intranet search overlay
+ * (the same dialog the workspace header's search button opens) instead of
+ * searching from an inline input. Where the overlay cannot serve the
+ * configuration - an external search URL, or no Solr - it keeps the
+ * kitconcept.solr SolrSearchAutosuggest input (or a plain Input) and
+ * submits the query to the `/search` route.
  * FILE: https://github.com/kitconcept/volto-light-theme/blob/8.0.0a31/packages/volto-light-theme/src/components/SearchWidget/SearchWidget.jsx
  * FILE VERSION: VLT 8.0.0a31
  * DATE: 2025-08-07
@@ -24,6 +27,7 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 
 import config from '@plone/volto/registry';
+import SiteSearchButton from '@kitconcept/intranet/components/Header/SiteSearchButton';
 
 const messages = defineMessages({
   search: {
@@ -163,15 +167,29 @@ class IntranetSearchWidget extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
+    const solrActive = this.props.site?.['collective.solr.active'] === true;
     // Get the SolrSearchAutosuggest widget from the registry,
     // with a fallback in case kitconcept.solr is not installed
     const SolrSearchAutosuggest =
-      (this.props.site?.['collective.solr.active'] === true &&
-        config.widgets.SolrSearchAutosuggest) ||
-      FallbackInput;
+      (solrActive && config.widgets.SolrSearchAutosuggest) || FallbackInput;
     const { intl } = this.props;
     const searchFieldPlaceholder =
       this.props.site['kitconcept.intranet.search_field_placeholder'];
+    const placeholder = searchFieldPlaceholder
+      ? intl.formatMessage({
+          id: searchFieldPlaceholder,
+          defaultMessage: searchFieldPlaceholder,
+        })
+      : intl.formatMessage(messages.placeholder);
+
+    /* START CUSTOMIZATION */
+    const searchURL =
+      this.props.site['kitconcept.intranet.external_search_url'];
+    if (solrActive && !searchURL) {
+      return <SiteSearchButton label={placeholder} />;
+    }
+    /* END CUSTOMIZATION */
+
     return (
       <Form action="/search" onSubmit={this.onSubmit}>
         <Form.Field className="searchbox">
@@ -183,14 +201,7 @@ class IntranetSearchWidget extends Component {
             value={this.state.text}
             transparent
             autoComplete="off"
-            placeholder={
-              searchFieldPlaceholder
-                ? intl.formatMessage({
-                    id: searchFieldPlaceholder,
-                    defaultMessage: searchFieldPlaceholder,
-                  })
-                : intl.formatMessage(messages.placeholder)
-            }
+            placeholder={placeholder}
             title={intl.formatMessage(messages.search)}
           />
           <button aria-label={intl.formatMessage(messages.search)}>

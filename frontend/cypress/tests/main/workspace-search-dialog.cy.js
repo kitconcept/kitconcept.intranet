@@ -1,6 +1,6 @@
 // Tests for the workspace search dialog scope switch (tickets #426 and
 // #570): inside a workspace the Workspace chip scopes the livesearch
-// and the Enter results page to the workspace subtree by default; the
+// and the "Show all results" page to the workspace subtree by default; the
 // chip's dropdown offers "Everywhere" plus every workspace the user
 // can access. Result rows carry a location label, and an empty scoped
 // search offers a one-click "Search everywhere" escape.
@@ -109,8 +109,8 @@ context('Workspace search dialog (scope dropdown)', () => {
       'Workspace: Quantum Workspace',
     );
 
-    // Enter goes to the picked workspace's scoped results page
-    cy.get('.header-search-input-row input').type('{enter}');
+    // "Show all results" goes to the picked workspace's scoped results page
+    cy.get('.header-search-show-all').click();
     cy.url().should('include', '/quantum/@@search');
     cy.url().should('include', 'local=true');
     cy.contains('Vacation policy of the Quantum group');
@@ -132,10 +132,24 @@ context('Workspace search dialog (scope dropdown)', () => {
     cy.get('.header-search-chip').contains('Workspace: Everywhere');
   });
 
-  it('Enter opens the workspace-scoped results page without a local toggle', () => {
+  it('Enter stays in the dialog, the footer link opens the scoped results page', () => {
     cy.visit('/greencat');
     cy.get('.header-search-button').click();
-    cy.get('.header-search-input-row input').type('vacation{enter}');
+    // no footer link before there is something to search for
+    cy.get('.header-search-show-all').should('not.exist');
+    // the link is there from the first character
+    cy.get('.header-search-input-row input').type('v');
+    cy.get('.header-search-show-all').should('exist');
+    cy.get('.header-search-input-row input').type('acation');
+    cy.get('.header-search-result-title').should('have.length', 1);
+
+    // Enter does not leave the dialog
+    cy.get('.header-search-input-row input').type('{enter}');
+    cy.get('.header-search-dialog').should('be.visible');
+    cy.location('pathname').should('eq', '/greencat');
+
+    cy.get('.header-search-show-all').contains('Show all results').click();
+    cy.get('.header-search-dialog').should('not.exist');
 
     cy.url().should('include', '/greencat/@@search');
     cy.url().should('include', 'local=true');
@@ -147,7 +161,27 @@ context('Workspace search dialog (scope dropdown)', () => {
     cy.get('.search-localized').should('not.exist');
   });
 
-  it('Enter searches globally when Everywhere is selected', () => {
+  it('arrow keys move between the input, the results and "Show all results"', () => {
+    cy.visit('/greencat');
+    cy.get('.header-search-button').click();
+    cy.get('.header-search-input-row input').type('vacation');
+    cy.get('.header-search-result-title').should('have.length', 1);
+
+    cy.get('.header-search-input-row input').type('{downArrow}');
+    cy.focused().should('have.class', 'header-search-result');
+    cy.focused().type('{downArrow}');
+    cy.focused().should('have.class', 'header-search-show-all');
+    // the last entry: Down stays there
+    cy.focused().type('{downArrow}');
+    cy.focused().should('have.class', 'header-search-show-all');
+
+    cy.focused().type('{upArrow}');
+    cy.focused().should('have.class', 'header-search-result');
+    cy.focused().type('{upArrow}');
+    cy.focused().should('have.value', 'vacation');
+  });
+
+  it('"Show all results" searches globally when Everywhere is selected', () => {
     cy.visit('/greencat');
     cy.get('.header-search-button').click();
     cy.get('.header-search-input-row input').type('vacation');
@@ -155,16 +189,30 @@ context('Workspace search dialog (scope dropdown)', () => {
     cy.get('.header-search-scope-menu .react-aria-MenuItem')
       .contains('Everywhere')
       .click();
-    cy.get('.header-search-input-row input').type('{enter}');
+    cy.get('.header-search-show-all').click();
 
+    cy.url().should('include', '/search?SearchableText=vacation');
+    cy.contains('Vacation request form');
+  });
+
+  it('opens the same dialog from the site header, scoped everywhere', () => {
+    cy.visit('/');
+    cy.get('.site-search-button').click();
+    cy.get('.header-search-input-row input').type('vacation');
+
+    // outside a workspace the scope defaults to Everywhere
+    cy.get('.header-search-chip').contains('Workspace: Everywhere');
+    cy.get('.header-search-result-title').should('have.length.at.least', 3);
+
+    cy.get('.header-search-show-all').click();
     cy.url().should('include', '/search?SearchableText=vacation');
     cy.contains('Vacation request form');
   });
 });
 
 // Filter chips (ticket 585): the Type / Created by / Updated / Status
-// chips filter the livesearch, and on Enter the active filters travel
-// as the extra_conditions URL parameter to the results page, where a
+// chips filter the livesearch, and through "Show all results" the active
+// filters travel as the extra_conditions URL parameter to the results page, where a
 // reload reproduces them.
 context('Search dialog filter chips', () => {
   const openDialogEverywhere = (term) => {
@@ -274,11 +322,11 @@ context('Search dialog filter chips', () => {
     cy.get('.header-search-chip.is-active').contains('Created by: admin');
   });
 
-  it('Enter carries the filters to the results page and reload keeps them', () => {
+  it('"Show all results" carries the filters to the results page and reload keeps them', () => {
     openDialogEverywhere('vacation');
     pickFilter('Type', 'News Item');
     cy.get('.header-search-result-title').should('have.length', 1);
-    cy.get('.header-search-input-row input').type('{enter}');
+    cy.get('.header-search-show-all').click();
 
     cy.url().should('include', '/search?SearchableText=vacation');
     cy.url().should('include', 'extra_conditions=');

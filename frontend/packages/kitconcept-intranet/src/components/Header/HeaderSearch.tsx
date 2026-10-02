@@ -4,10 +4,10 @@ import {
   useEffect,
   useRef,
   useState,
-  type FormEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   Button,
@@ -71,6 +71,10 @@ const messages = defineMessages({
   searchEverywhere: {
     id: 'Search everywhere',
     defaultMessage: 'Search everywhere',
+  },
+  showAllResults: {
+    id: 'Show all results',
+    defaultMessage: 'Show all results',
   },
   askAI: {
     id: 'Ask AI',
@@ -482,6 +486,26 @@ type SearchScope =
   | { kind: 'current' }
   | { kind: 'workspace'; path: string; title: string };
 
+const searchResultsURL = (
+  term: string,
+  scopePath: string | null,
+  extraConditions: string,
+) => {
+  const conditionsQuery = extraConditions
+    ? `&extra_conditions=${encodeURIComponent(extraConditions)}`
+    : '';
+  const searchableText = `SearchableText=${encodeURIComponent(term)}`;
+  if (scopePath) {
+    return (
+      `${scopePath}/@@search?${searchableText}&local=true` +
+      `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
+      `&is_multilingual=false` +
+      conditionsQuery
+    );
+  }
+  return `/search?${searchableText}${conditionsQuery}`;
+};
+
 // Letter avatar for a workspace, tinted deterministically by title so
 // a workspace keeps its color across renders and sessions (the design
 // shows colored initials, there is no image avatar on Workspace).
@@ -748,6 +772,31 @@ const FilterChips = ({
   );
 };
 
+// Arrow key navigation: Down / Up move the focus through the search
+// input, the result rows and "Show all results", in document order.
+const ARROW_NAVIGATION_TARGETS = [
+  '.header-search-input-row input',
+  '.header-search-result',
+  '.header-search-widen',
+  '.header-search-show-all',
+].join(', ');
+
+const onArrowNavigation = (event: ReactKeyboardEvent<HTMLElement>) => {
+  if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') {
+    return;
+  }
+  const dialog = event.currentTarget.closest('.header-search-dialog');
+  const targets = Array.from(
+    dialog?.querySelectorAll<HTMLElement>(ARROW_NAVIGATION_TARGETS) ?? [],
+  );
+  const index = targets.indexOf(event.currentTarget);
+  const next = targets[index + (event.key === 'ArrowDown' ? 1 : -1)];
+  if (next) {
+    event.preventDefault();
+    next.focus();
+  }
+};
+
 const SuggestionRow = ({
   item,
   location,
@@ -771,6 +820,7 @@ const SuggestionRow = ({
       type="button"
       className="header-search-result"
       onClick={() => onSelect(item)}
+      onKeyDown={onArrowNavigation}
     >
       <Icon name={typeIcons[item['@type']] || pageSVG} size="21px" />
       <span className="header-search-result-title">{item.title}</span>
@@ -940,8 +990,13 @@ const AiOverview = ({
   );
 };
 
-const HeaderSearch = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+export const HeaderSearchDialog = ({
+  isOpen,
+  onOpenChange,
+}: {
+  isOpen: boolean;
+  onOpenChange: (isOpen: boolean) => void;
+}) => {
   const [searchText, setSearchText] = useState('');
   const [aiAsked, setAiAsked] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -975,29 +1030,37 @@ const HeaderSearch = () => {
   );
   // The Workspace chip switches the scope: the current workspace
   // (default), any other workspace from the list, or everywhere. All
-  // three searches - livesearch, Ask AI and the Enter results page -
-  // follow it (see tickets #426/#570, kitconcept.solr local scoping).
-  const [scope, setScope] = useState<SearchScope>({ kind: 'current' });
+  // three searches (livesearch, Ask AI and the "Show all results"
+  // page) follow it.
+  const [scopeSelection, setScopeSelection] = useState<SearchScope>({
+    kind: 'current',
+  });
+  // Outside a workspace there is no "current" workspace so the default selection
+  // resolves to "everywhere".
+  const scope: SearchScope =
+    scopeSelection.kind === 'current' && !workspace.path
+      ? { kind: 'everywhere' }
+      : scopeSelection;
   // Workspace list for the scope dropdown; fetched once the dialog
   // opens (the header itself is on every page, the list is not).
-  const { workspaces } = useWorkspaceSwitcher({ enabled: isSearchOpen });
+  const { workspaces } = useWorkspaceSwitcher({ enabled: isOpen });
 
   // Filter chips (ticket 585). The selections become extra_conditions
-  // rows for the livesearch and, on Enter, for the results page URL.
+  // rows for the livesearch and for the "Show all results" page URL.
   const [filters, setFilters] = useState<SearchFilters>(EMPTY_FILTERS);
   const extraConditions = encodeExtraConditions(filterConditionRows(filters));
 
   // Real user list for the "Created by" chip; fetched once the dialog
   // opens, same reasoning as the workspace list.
   useEffect(() => {
-    if (isSearchOpen) {
+    if (isOpen) {
       // The shipped type declaration of getVocabulary lags behind its
       // implementation (which takes an options object).
       dispatch(
         (getVocabulary as any)({ vocabNameOrURL: USERS_VOCABULARY, size: -1 }),
       );
     }
-  }, [dispatch, isSearchOpen]);
+  }, [dispatch, isOpen]);
   const creatorOptions: FilterOption[] = useSelector(
     (state: any) => state.vocabularies?.[USERS_VOCABULARY]?.items ?? [],
   );
@@ -1018,10 +1081,10 @@ const HeaderSearch = () => {
   const showResults = term.length >= 2;
 
   useEffect(() => {
-    if (isSearchOpen) {
+    if (isOpen) {
       searchInputRef.current?.focus();
     }
-  }, [isSearchOpen]);
+  }, [isOpen]);
 
   // Cmd+K / Ctrl+K opens the search dialog - but not from editable
   // contexts: in editors the same shortcut means "insert link" (e.g.
@@ -1039,17 +1102,17 @@ const HeaderSearch = () => {
           return;
         }
         event.preventDefault();
-        setIsSearchOpen(true);
+        onOpenChange(true);
       }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, []);
+  }, [onOpenChange]);
 
   // Live search: debounced suggestions for the current term, scope
   // and filters.
   useEffect(() => {
-    if (!isSearchOpen || term.length < 2) {
+    if (!isOpen || term.length < 2) {
       return;
     }
     const timeout = window.setTimeout(() => {
@@ -1062,7 +1125,7 @@ const HeaderSearch = () => {
       );
     }, 250);
     return () => window.clearTimeout(timeout);
-  }, [dispatch, isSearchOpen, term, scopePath, extraConditions]);
+  }, [dispatch, isOpen, term, scopePath, extraConditions]);
 
   const resetAi = useCallback(() => {
     setAiAsked(false);
@@ -1070,23 +1133,23 @@ const HeaderSearch = () => {
   }, [dispatch]);
 
   const closeSearch = useCallback(() => {
-    setIsSearchOpen(false);
+    onOpenChange(false);
     setSearchText('');
-    setScope({ kind: 'current' });
+    setScopeSelection({ kind: 'current' });
     setFilters(EMPTY_FILTERS);
     resetAi();
-  }, [resetAi]);
+  }, [onOpenChange, resetAi]);
 
-  const onOpenChange = (isOpen: boolean) => {
-    if (isOpen) {
-      setIsSearchOpen(true);
+  const handleOpenChange = (nextOpen: boolean) => {
+    if (nextOpen) {
+      onOpenChange(true);
     } else {
       closeSearch();
     }
   };
 
   const onScopeChange = (nextScope: SearchScope) => {
-    setScope(nextScope);
+    setScopeSelection(nextScope);
     if (aiAsked) {
       // The AI answer was grounded in the previous scope.
       resetAi();
@@ -1137,39 +1200,7 @@ const HeaderSearch = () => {
     return home ? home.title : intl.formatMessage(messages.intranetPortal);
   };
 
-  const submitSearch = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Enter goes to the workspace-scoped search page: the nested
-    // @@search route plus local=true restricts the classic results
-    // (and, through the page's own wiring, the AI retrieval) to the
-    // workspace subtree. Without a workspace path, plain global search.
-    // is_multilingual=false: the intranet is monolingual, and the
-    // backend's multilingual path handling would neutralize the
-    // path_prefix filter on a site without plone.app.multilingual.
-    // Active filters travel as the extra_conditions URL parameter:
-    // the results page forwards it to the backend and keeps it across
-    // in-page interactions, so reloading the URL reproduces the
-    // filtered results (ticket 585).
-    const conditionsQuery = extraConditions
-      ? `&extra_conditions=${encodeURIComponent(extraConditions)}`
-      : '';
-    if (scopePath) {
-      const query = term
-        ? `?SearchableText=${encodeURIComponent(term)}&local=true` +
-          `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
-          `&is_multilingual=false` +
-          conditionsQuery
-        : '';
-      navigateTo(`${scopePath}/@@search${query}`);
-    } else {
-      navigateTo(
-        term
-          ? `/search?SearchableText=${encodeURIComponent(term)}` +
-              conditionsQuery
-          : '/search',
-      );
-    }
-  };
+  const resultsURL = searchResultsURL(term, scopePath, extraConditions);
 
   const onAskAI = () => {
     if (!term || rag.loading) {
@@ -1188,12 +1219,140 @@ const HeaderSearch = () => {
   };
 
   return (
+    <ModalOverlay
+      className="header-search-modal-backdrop"
+      isDismissable
+      isOpen={isOpen}
+      onOpenChange={handleOpenChange}
+    >
+      <Modal className="header-search-modal">
+        <Dialog
+          className="header-search-dialog"
+          role="dialog"
+          aria-label={intl.formatMessage(messages.search)}
+        >
+          {/* No form: Enter does not leave the dialog, the full results
+              page is reached through the "Show all results" footer. */}
+          <div className="header-search-input-row">
+            <Icon name={zoomSVG} size="24px" />
+            <input
+              ref={searchInputRef}
+              type="search"
+              enterKeyHint="done"
+              onKeyDown={onArrowNavigation}
+              value={searchText}
+              aria-label={intl.formatMessage(messages.search)}
+              placeholder={intl.formatMessage(messages.searchPlaceholder)}
+              onChange={(event) => onChangeText(event.target.value)}
+            />
+            {ragAvailable && term ? (
+              <Button
+                className="header-search-ask-ai"
+                type="button"
+                onPress={onAskAI}
+              >
+                <SparkleIcon />
+                {intl.formatMessage(messages.askAI)}
+              </Button>
+            ) : null}
+          </div>
+
+          <FilterChips
+            scope={scope}
+            scopeTitle={scopeTitle}
+            currentWorkspacePath={workspace.path}
+            workspaces={workspaces}
+            creatorOptions={creatorOptions}
+            filters={filters}
+            onScopeChange={onScopeChange}
+            onFilterChange={onFilterChange}
+            onCreatorChange={onCreatorChange}
+          />
+
+          {showResults ? (
+            <div className="header-search-results">
+              {aiAsked ? (
+                <AiOverview rag={rag} onSelectSource={navigateTo} />
+              ) : null}
+              {suggestions.length > 0 ? (
+                suggestions.map((item) => (
+                  <SuggestionRow
+                    key={item['@id']}
+                    item={item}
+                    location={locationForItem(item)}
+                    onSelect={(selected) =>
+                      navigateTo(flattenToAppURL(selected['@id']))
+                    }
+                  />
+                ))
+              ) : scopePath ? (
+                <div className="header-search-no-results">
+                  {intl.formatMessage(messages.noResultsInScope, {
+                    scope: scopeTitle,
+                  })}
+                  <button
+                    type="button"
+                    className="header-search-widen"
+                    onClick={() => onScopeChange({ kind: 'everywhere' })}
+                    onKeyDown={onArrowNavigation}
+                  >
+                    {intl.formatMessage(messages.searchEverywhere)}
+                  </button>
+                </div>
+              ) : (
+                <div className="header-search-no-results">
+                  {intl.formatMessage(messages.noResultsFor, { term })}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="header-search-empty">
+              {intl.formatMessage(messages.typeToSearch)}
+            </div>
+          )}
+
+          {/* From the first character: the livesearch needs two */}
+          {term ? (
+            <div className="header-search-footer">
+              <Link
+                className="header-search-show-all"
+                to={resultsURL}
+                onKeyDown={onArrowNavigation}
+                onClick={(event) => {
+                  // A modified click opens the results in a new tab or
+                  // window: keep the dialog and its search open here.
+                  if (
+                    !event.metaKey &&
+                    !event.ctrlKey &&
+                    !event.shiftKey &&
+                    !event.altKey
+                  ) {
+                    closeSearch();
+                  }
+                }}
+              >
+                {intl.formatMessage(messages.showAllResults)}
+              </Link>
+            </div>
+          ) : null}
+        </Dialog>
+      </Modal>
+    </ModalOverlay>
+  );
+};
+
+// The compact workspace header's trigger
+const HeaderSearch = () => {
+  const intl = useIntl();
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
     <>
       <Button
         className="header-search-button"
         type="button"
         aria-label={intl.formatMessage(messages.searchWorkspace)}
-        onPress={() => setIsSearchOpen(true)}
+        onPress={() => setIsOpen(true)}
       >
         <Icon name={zoomSVG} size="24px" />
         <span className="header-search-button-label">
@@ -1202,101 +1361,7 @@ const HeaderSearch = () => {
         <span className="header-search-button-kbd">⌘K</span>
       </Button>
 
-      <ModalOverlay
-        className="header-search-modal-backdrop"
-        isDismissable
-        isOpen={isSearchOpen}
-        onOpenChange={onOpenChange}
-      >
-        <Modal className="header-search-modal">
-          <Dialog
-            className="header-search-dialog"
-            role="dialog"
-            aria-label={intl.formatMessage(messages.search)}
-          >
-            <form onSubmit={submitSearch}>
-              <div className="header-search-input-row">
-                <Icon name={zoomSVG} size="24px" />
-                <input
-                  ref={searchInputRef}
-                  type="search"
-                  value={searchText}
-                  aria-label={intl.formatMessage(messages.search)}
-                  placeholder={intl.formatMessage(messages.searchPlaceholder)}
-                  onChange={(event) => onChangeText(event.target.value)}
-                />
-                {ragAvailable && term ? (
-                  <Button
-                    className="header-search-ask-ai"
-                    type="button"
-                    onPress={onAskAI}
-                  >
-                    <SparkleIcon />
-                    {intl.formatMessage(messages.askAI)}
-                  </Button>
-                ) : null}
-              </div>
-            </form>
-
-            <FilterChips
-              scope={scope}
-              scopeTitle={scopeTitle}
-              currentWorkspacePath={workspace.path}
-              workspaces={workspaces}
-              creatorOptions={creatorOptions}
-              filters={filters}
-              onScopeChange={onScopeChange}
-              onFilterChange={onFilterChange}
-              onCreatorChange={onCreatorChange}
-            />
-
-            {showResults ? (
-              <div className="header-search-results">
-                {aiAsked ? (
-                  <AiOverview rag={rag} onSelectSource={navigateTo} />
-                ) : null}
-                {suggestions.length > 0 ? (
-                  suggestions.map((item) => (
-                    <SuggestionRow
-                      key={item['@id']}
-                      item={item}
-                      location={locationForItem(item)}
-                      onSelect={(selected) =>
-                        navigateTo(flattenToAppURL(selected['@id']))
-                      }
-                    />
-                  ))
-                ) : scopePath ? (
-                  // Scoped search came up empty: name the scope and
-                  // offer the one-click escape to search everywhere
-                  // (the most common miss is content living outside
-                  // the current workspace, design #570).
-                  <div className="header-search-no-results">
-                    {intl.formatMessage(messages.noResultsInScope, {
-                      scope: scopeTitle,
-                    })}
-                    <button
-                      type="button"
-                      className="header-search-widen"
-                      onClick={() => onScopeChange({ kind: 'everywhere' })}
-                    >
-                      {intl.formatMessage(messages.searchEverywhere)}
-                    </button>
-                  </div>
-                ) : (
-                  <div className="header-search-no-results">
-                    {intl.formatMessage(messages.noResultsFor, { term })}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="header-search-empty">
-                {intl.formatMessage(messages.typeToSearch)}
-              </div>
-            )}
-          </Dialog>
-        </Modal>
-      </ModalOverlay>
+      <HeaderSearchDialog isOpen={isOpen} onOpenChange={setIsOpen} />
     </>
   );
 };

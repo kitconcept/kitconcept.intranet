@@ -6,7 +6,7 @@ myst:
 doc_type: feature
 audience: user
 status: draft
-last_updated: 2026-09-07
+last_updated: 2026-10-02
 ---
 
 # Search
@@ -24,8 +24,9 @@ intranet.
 Search offers a **live, workspace-aware search dialog** opened from anywhere with
 a keyboard shortcut or the header search button. As the user types, results
 appear instantly, scoped to the Workspace they're working in, another accessible
-Workspace, or the whole intranet. Pressing Enter opens a **classic results page**
-with content-type tabs, facets, and sorting. The same dialog hosts the optional
+Workspace, or the whole intranet. A **Show all results** link at the bottom of
+the dialog opens a **classic results page** with content-type tabs, facets, and
+sorting. The same dialog hosts the optional
 {doc}`AI-assisted answers <ai-assisted-answers>`.
 
 ## Who it's for
@@ -50,27 +51,32 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 ### The dialog
 
-- Opens via a header button or a global **Cmd/Ctrl+K** shortcut. The shortcut is
+- Opens via the search button in the Workspace header, the search field in the
+  site header, or the **Cmd/Ctrl+K** shortcut on every page. The shortcut is
   suppressed while focus is in an editable field (so the Wiki Editor's own
   shortcuts keep working).
 - Suggestions appear once the query is **2+ characters**, debounced (~250 ms),
   from a Solr suggest endpoint.
-- Clicking a suggestion navigates to that item; pressing **Enter** opens the
-  classic results page.
+- Clicking a suggestion navigates to that item.
+- A **Show all results** link at the bottom of the dialog appears from the
+  **first character** and opens the classic results page for the current query
+  and scope. Pressing **Enter** does not leave the dialog.
+- The **Down / Up** arrow keys move the focus from the search field through the
+  suggestions to **Show all results** and back.
 
 ### Search scopes
 
 Three scopes, selected via the scope chip:
 
 - **Current Workspace** (default)—resolved from the Workspace the current
-  content belongs to.
+  content belongs to. Outside a Workspace, the default is **Everywhere**.
 - **Another accessible Workspace**—chosen from a list that is itself
   **security-trimmed** (inaccessible Workspaces never appear).
 - **Everywhere**—no path restriction.
 
 Scope is translated into a **path filter** applied to suggestions, the results
-page, and AI answers. On Enter, a scoped search opens the Workspace's own results
-page filtered to that path; an "everywhere" search opens the site results page.
+page, and AI answers. Through **Show all results**, a scoped search opens the
+Workspace's own results page filtered to that path; an "everywhere" search opens the site results page.
 
 :::{note}
 A deferred **"Intranet Portal"** scope (portal content outside any Workspace) is
@@ -114,9 +120,12 @@ implemented before they can be part of the release contract.
 
 - Requires **Solr** to be set up and active (server-level; no control-panel
   setting).
-- Two legacy control-panel settings—`external_search_url` and
-  `search_field_placeholder`—drive the **older** light-theme search widget, not
-  this dialog. The dialog uses its own placeholder and routing.
+- The site header's search field opens this dialog when Solr is active and no
+  `external_search_url` is set. It shows `search_field_placeholder` as its label;
+  the dialog itself uses its own placeholder and routing.
+- With an `external_search_url` set, or without an active Solr, the site header
+  keeps the **older** light-theme search field: pressing Enter there opens the
+  external URL (in a new tab) or the built-in results page.
 
 ## Learn more
 

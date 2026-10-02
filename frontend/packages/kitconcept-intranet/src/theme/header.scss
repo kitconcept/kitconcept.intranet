@@ -246,13 +246,10 @@ body:has(.header-intranet-compact) {
   }
 }
 
-.header-search-modal form {
-  padding: 20px 20px 15px;
-}
-
 .header-search-input-row {
   display: flex;
   align-items: center;
+  padding: 20px 20px 15px;
   color: #63717a;
   gap: 16px;
 
@@ -741,6 +738,28 @@ $search-text: #252525;
   padding: 40px 20px;
   color: $search-grey;
   text-align: center;
+}
+
+// "Show all results": pinned below the scrolling results, the way to
+// the full results page (Enter stays in the dialog).
+.header-search-footer {
+  flex: 0 0 auto;
+  padding: 14px 20px;
+  border-top: 1px solid #edf0f2;
+  background: #f3f6f7;
+  text-align: center;
+}
+
+.header-search-show-all {
+  color: $search-blue;
+  font-size: 15px;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    color: $search-blue;
+    text-decoration: underline;
+  }
 }
 
 .header-search-ai {

@@ -5,7 +5,7 @@ myst:
     keywords: "search, search settings, how-to, admin"
 doc_type: how-to
 audience: admin
-last_updated: 2026-04-14
+last_updated: 2026-10-02
 ---
 
 # Configure search settings
@@ -20,12 +20,12 @@ Go to **Site Setup → Intranet Settings**.
 
 ### 2. Set an external search URL (optional)
 
-By default, the header search bar takes users to the intranet's built-in search page. To redirect it to a different URL instead:
+By default, the header search bar opens the intranet's search dialog. To send searches to a different URL instead:
 
 1. Enter the full URL in the **External Search URL** field.
 2. Click **Save**.
 
-Leave the field empty to keep using the built-in search.
+With a URL set, the header shows a plain search field instead of opening the dialog. Leave the field empty to keep using the built-in search.
 
 ### 3. Set the search bar placeholder text (optional)
 
@@ -40,7 +40,7 @@ To confirm your changes worked:
 
 1. Go to any page on the intranet.
 2. Check the header search bar—it should show the placeholder text you set.
-3. Type a search term and press Enter—you should land on the URL you configured, or the built-in search page if no URL was set.
+3. If you set a URL, type a search term and press Enter—the URL you configured should open in a new tab. If no URL was set, click the search bar—the search dialog should open.
 
 ## Notes
 

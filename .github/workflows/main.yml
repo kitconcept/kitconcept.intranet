@@ -117,8 +117,11 @@ jobs:
             spec-pattern: 'core/blocks-listings/*.cy.{js,jsx,ts,tsx}'
           - name: "Core Tests - Content"
             spec-pattern: 'core/content/*.cy.{js,jsx,ts,tsx}'
-          - name: "Main Tests"
-            spec-pattern: 'main/**/*.cy.{js,jsx,ts,tsx}'
+          # Split by spec file name into two balanced jobs.
+          - name: "Main Tests (a-c)"
+            spec-pattern: 'main/**/[a-cA-C0-9]*.cy.{js,jsx,ts,tsx}'
+          - name: "Main Tests (d-z)"
+            spec-pattern: 'main/**/[d-zD-Z]*.cy.{js,jsx,ts,tsx}'
 
     needs:
         - config

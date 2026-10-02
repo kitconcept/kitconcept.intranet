@@ -1468,8 +1468,8 @@ importers:
         specifier: ^53.0.9
         version: 53.0.9(platejs@53.3.14(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone-collective/volto-authomatic':
-        specifier: 3.0.0-alpha.6
-        version: 3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+        specifier: 3.0.0
+        version: 3.0.0(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plone-collective/volto-image-editor':
         specifier: 1.0.1
         version: 1.0.1(@plone/registry@core+packages+registry)(@plone/types@core+packages+types)(advanced-cropper@0.17.1)(classnames@2.5.1)(react-aria-components@1.20.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -4635,8 +4635,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  '@plone-collective/volto-authomatic@3.0.0-alpha.6':
-    resolution: {integrity: sha512-vodFd9Ncj/EoMS9H4DkU6gKB6iNg2XEMd2BzZ62jfVgYLBfdU+xmzNQNJDEpyG0ytB9KZX5LvG+GCbvnvDa2qw==}
+  '@plone-collective/volto-authomatic@3.0.0':
+    resolution: {integrity: sha512-X20buDaelbJQoozy7uWbxsBuoSvwgvf5ugHIVvfp5H3sn9u3I7CD12ZyY86CPTQBnvDeLvuSXm/tNnUpW1h20A==}
     peerDependencies:
       '@plone/components': 3.0.2
       '@plone/registry': workspace:*
@@ -16998,7 +16998,7 @@ snapshots:
     dependencies:
       playwright: 1.62.1
 
-  '@plone-collective/volto-authomatic@3.0.0-alpha.6(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+  '@plone-collective/volto-authomatic@3.0.0(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
     dependencies:
       '@plone/components': link:core/packages/components
       '@plone/registry': link:core/packages/registry

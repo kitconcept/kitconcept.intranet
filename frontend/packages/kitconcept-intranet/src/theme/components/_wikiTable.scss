@@ -176,6 +176,13 @@
   }
 }
 
+// Cell toolbar: delete row, column and table in red, the colour of Timo's
+// design (#674; Plate's `--destructive` is lighter). Tailwind version:
+// `text-[#b42318]`.
+svg.wiki-table-delete-icon {
+  color: #b42318;
+}
+
 // View: sorting and filtering controls (components/WikiTable/TableViewControls.tsx).
 
 // Room for the sort button: under the same prefix as the cell padding above,

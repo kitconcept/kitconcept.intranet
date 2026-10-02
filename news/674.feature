@@ -1,0 +1,1 @@
+Wiki Page tables: the cell toolbar has icons that show the row or column being inserted or deleted (Tabler icons in the style of the Lucide set) instead of plain arrows next to the move arrows and a generic ✕; delete actions are red and come last in their group. @reekitconcept

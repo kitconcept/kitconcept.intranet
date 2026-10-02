@@ -7,7 +7,7 @@ import {
   type FormEvent,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   Button,
@@ -71,6 +71,10 @@ const messages = defineMessages({
   searchEverywhere: {
     id: 'Search everywhere',
     defaultMessage: 'Search everywhere',
+  },
+  showAllResults: {
+    id: 'Show all results',
+    defaultMessage: 'Show all results',
   },
   askAI: {
     id: 'Ask AI',
@@ -1137,38 +1141,39 @@ const HeaderSearch = () => {
     return home ? home.title : intl.formatMessage(messages.intranetPortal);
   };
 
+  // Enter and the "Show all results" link go to the workspace-scoped
+  // search page: the nested @@search route plus local=true restricts
+  // the classic results (and, through the page's own wiring, the AI
+  // retrieval) to the workspace subtree. Without a workspace path,
+  // plain global search.
+  // is_multilingual=false: the intranet is monolingual, and the
+  // backend's multilingual path handling would neutralize the
+  // path_prefix filter on a site without plone.app.multilingual.
+  // Active filters travel as the extra_conditions URL parameter:
+  // the results page forwards it to the backend and keeps it across
+  // in-page interactions, so reloading the URL reproduces the
+  // filtered results (ticket 585).
+  const conditionsQuery = extraConditions
+    ? `&extra_conditions=${encodeURIComponent(extraConditions)}`
+    : '';
+  let resultsURL: string;
+  if (scopePath) {
+    const query = term
+      ? `?SearchableText=${encodeURIComponent(term)}&local=true` +
+        `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
+        `&is_multilingual=false` +
+        conditionsQuery
+      : '';
+    resultsURL = `${scopePath}/@@search${query}`;
+  } else {
+    resultsURL = term
+      ? `/search?SearchableText=${encodeURIComponent(term)}` + conditionsQuery
+      : '/search';
+  }
+
   const submitSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Enter goes to the workspace-scoped search page: the nested
-    // @@search route plus local=true restricts the classic results
-    // (and, through the page's own wiring, the AI retrieval) to the
-    // workspace subtree. Without a workspace path, plain global search.
-    // is_multilingual=false: the intranet is monolingual, and the
-    // backend's multilingual path handling would neutralize the
-    // path_prefix filter on a site without plone.app.multilingual.
-    // Active filters travel as the extra_conditions URL parameter:
-    // the results page forwards it to the backend and keeps it across
-    // in-page interactions, so reloading the URL reproduces the
-    // filtered results (ticket 585).
-    const conditionsQuery = extraConditions
-      ? `&extra_conditions=${encodeURIComponent(extraConditions)}`
-      : '';
-    if (scopePath) {
-      const query = term
-        ? `?SearchableText=${encodeURIComponent(term)}&local=true` +
-          `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
-          `&is_multilingual=false` +
-          conditionsQuery
-        : '';
-      navigateTo(`${scopePath}/@@search${query}`);
-    } else {
-      navigateTo(
-        term
-          ? `/search?SearchableText=${encodeURIComponent(term)}` +
-              conditionsQuery
-          : '/search',
-      );
-    }
+    navigateTo(resultsURL);
   };
 
   const onAskAI = () => {
@@ -1294,6 +1299,29 @@ const HeaderSearch = () => {
                 {intl.formatMessage(messages.typeToSearch)}
               </div>
             )}
+
+            {term ? (
+              <div className="header-search-footer">
+                <Link
+                  className="header-search-show-all"
+                  to={resultsURL}
+                  onClick={(event) => {
+                    // A modified click opens the results in a new tab
+                    // or window: keep the dialog and its search open.
+                    if (
+                      !event.metaKey &&
+                      !event.ctrlKey &&
+                      !event.shiftKey &&
+                      !event.altKey
+                    ) {
+                      closeSearch();
+                    }
+                  }}
+                >
+                  {intl.formatMessage(messages.showAllResults)}
+                </Link>
+              </div>
+            ) : null}
           </Dialog>
         </Modal>
       </ModalOverlay>

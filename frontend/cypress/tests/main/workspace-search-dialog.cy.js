@@ -160,6 +160,20 @@ context('Workspace search dialog (scope dropdown)', () => {
     cy.url().should('include', '/search?SearchableText=vacation');
     cy.contains('Vacation request form');
   });
+
+  it('"Show all results" opens the workspace-scoped results page', () => {
+    cy.visit('/greencat');
+    cy.get('.header-search-button').click();
+    // no link before there is something to search for
+    cy.get('.header-search-show-all').should('not.exist');
+    cy.get('.header-search-input-row input').type('vacation');
+
+    cy.get('.header-search-show-all').contains('Show all results').click();
+
+    cy.url().should('include', '/greencat/@@search');
+    cy.url().should('include', 'local=true');
+    cy.contains('Vacation rules of the GreenCat team');
+  });
 });
 
 // Filter chips (ticket 585): the Type / Created by / Updated / Status

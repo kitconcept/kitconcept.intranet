@@ -1447,8 +1447,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-logos-block/packages/volto-logos-block
       '@kitconcept/volto-plate':
-        specifier: ^1.0.0-alpha.30
-        version: 1.0.0-alpha.30(3fe8f7f75772bbb7483f10b4503bf1bc)
+        specifier: ^1.0.0-alpha.32
+        version: 1.0.0-alpha.32(3fe8f7f75772bbb7483f10b4503bf1bc)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -4112,8 +4112,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.30':
-    resolution: {integrity: sha512-GukWQy/M4Yxq4rBNSviv5VcWxhYfiweyfE78s9cpGSu5VRaAm/u8+MidZLSvAUHtc57KPhgv6Ce2YPlO2/0Lpg==}
+  '@kitconcept/volto-plate@1.0.0-alpha.32':
+    resolution: {integrity: sha512-Mv688BxxiHuGKVEEoOwJ/KAsEub0dWi3BayFLAI6mDPklXx1H0Lo2JGxTBFeKKZb4K//7jIhH4HI51a+RMSYXQ==}
     peerDependencies:
       '@platejs/ai': ^53.3.12
       '@plone/registry': workspace:*
@@ -16290,7 +16290,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.30(3fe8f7f75772bbb7483f10b4503bf1bc)':
+  '@kitconcept/volto-plate@1.0.0-alpha.32(3fe8f7f75772bbb7483f10b4503bf1bc)':
     dependencies:
       '@internationalized/date': 3.12.3
       '@platejs/ai': 53.3.12(@ai-sdk/react@4.0.119(react@18.2.0)(zod@4.4.3))(ai@7.0.116(zod@4.4.3))(platejs@53.3.14(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)

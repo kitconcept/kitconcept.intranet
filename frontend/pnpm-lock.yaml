@@ -1485,6 +1485,9 @@ importers:
       '@plone/volto-form-block':
         specifier: ^1.0.0-alpha.3
         version: 1.0.0-alpha.3(@internationalized/date@3.12.3)(@loadable/component@5.16.7(react@18.2.0))(classnames@2.5.1)(promise-file-reader@1.0.2)(query-string@9.5.0)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react-toastify@5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
+      '@plone/volto-recyclebin':
+        specifier: ^1.0.0-alpha.1
+        version: 1.0.0-alpha.1(@plone/volto@core+packages+volto)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plonegovbr/volto-social-media':
         specifier: ^2.0.0-alpha.10
         version: 2.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.18(prettier@3.2.5))
@@ -4793,6 +4796,17 @@ packages:
       react-router-dom: 5.2.0
       react-toastify: 5.5.0
       semantic-ui-react: 2.1.5
+
+  '@plone/volto-recyclebin@1.0.0-alpha.1':
+    resolution: {integrity: sha512-FCschj1y7sDjTtwEEqG7L+PLziuGl/6q+OBGUoi0BmWtJeX2AKM2Tkr2eKwqIk9WIkQLMtyB/4+xZucDqlVpvg==}
+    peerDependencies:
+      '@plone/volto': '>=19.0.0'
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      react-intl: ^3.12.1
+      react-redux: ^8.1.2
+      react-router-dom: ^5.2.0
+      semantic-ui-react: ^2.1.5
 
   '@plonegovbr/volto-social-media@2.0.0':
     resolution: {integrity: sha512-sfpst/EQJaxIE0YH3HYT4sfnqIVTJNwtWModMqJwqJTLmyc3C/gAdLEmsWH6aExrpnJ/ne3Vutpa0dYJU36KaQ==}
@@ -17808,6 +17822,16 @@ snapshots:
       react-redux: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       react-router-dom: 5.2.0(react@18.2.0)
       react-toastify: 5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      semantic-ui-react: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+
+  '@plone/volto-recyclebin@1.0.0-alpha.1(@plone/volto@core+packages+volto)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))':
+    dependencies:
+      '@plone/volto': link:core/packages/volto
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-intl: 3.12.1(@types/react@18.3.31)(react@18.2.0)
+      react-redux: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      react-router-dom: 5.2.0(react@18.2.0)
       semantic-ui-react: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   '@plonegovbr/volto-social-media@2.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.18(prettier@3.2.5))':

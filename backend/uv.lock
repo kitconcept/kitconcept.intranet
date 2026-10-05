@@ -1488,6 +1488,7 @@ dependencies = [
     { name = "plone-api" },
     { name = "plone-app-discussion" },
     { name = "plone-distribution" },
+    { name = "plone-recyclebin" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "python-dateutil" },
@@ -1532,6 +1533,7 @@ requires-dist = [
     { name = "plone-api" },
     { name = "plone-app-discussion" },
     { name = "plone-distribution" },
+    { name = "plone-recyclebin", specifier = "==1.0.0a1" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "python-dateutil" },
@@ -3722,6 +3724,26 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6e/d0/12d483fa2b511fa2444920b08a0fa17f9faf6df1b84c3e66cd5dda74d2a8/plone_protect-6.0.0.tar.gz", hash = "sha256:362d85f6bb3f2b6ffd3103a8552ea4c994f116a05eff722ddd77b23dd26d9e8f", size = 35970, upload-time = "2026-05-16T21:32:59.914Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fa/f2/6dfd1f5a601bfcae39627af2e2810b666316f4624245e959f3e95cf601f0/plone_protect-6.0.0-py3-none-any.whl", hash = "sha256:221c865ec6ba0e5c1ea66b6e9a33b8d1e5e7893c9a922eaec56b95e34207cca9", size = 31495, upload-time = "2026-05-16T21:32:58.161Z" },
+]
+
+[[package]]
+name = "plone-recyclebin"
+version = "1.0.0a1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-base" },
+    { name = "plone-protect" },
+    { name = "plone-registry" },
+    { name = "products-cmfcore" },
+    { name = "products-cmfplone" },
+    { name = "products-statusmessages" },
+    { name = "z3c-form" },
+    { name = "zope" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5b/0c/5e2715d08c8b14f2fe556089aa91ba146431ae89286e2d5b3fa1c4197f4f/plone_recyclebin-1.0.0a1.tar.gz", hash = "sha256:2b028d031784ebc0b1df0595c7732269afb02130c3c4d62abdbc2d64992b273c", size = 71618, upload-time = "2026-09-22T21:29:03.689Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a4/7f/fa89db35169d2d08521429ac9b1bf632f61938c8e39796edc57750cd625f/plone_recyclebin-1.0.0a1-py3-none-any.whl", hash = "sha256:af248d70ab1ad50f704a83514e6c053f16378476cde785de8e45977f3991875a", size = 73598, upload-time = "2026-09-22T21:29:02.185Z" },
 ]
 
 [[package]]

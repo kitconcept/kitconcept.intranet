@@ -1524,7 +1524,7 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.1.0" },
-    { name = "kitconcept-plate", specifier = "==1.0.0a32" },
+    { name = "kitconcept-plate", specifier = "==1.0.0a33" },
     { name = "kitconcept-solr", specifier = "==3.0.0a3" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
@@ -1565,7 +1565,7 @@ test = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a32"
+version = "1.0.0a33"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1573,9 +1573,9 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e4/32/40a684be4a9b6edbf5ebef88b24e12e789d804db94c613c978e2fa2a3204/kitconcept_plate-1.0.0a32.tar.gz", hash = "sha256:b62a8587b65806b15b153ded789f3ec31647f371a417aed70b11faf8896bb148", size = 4550453, upload-time = "2026-10-05T13:22:03.358Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a6/b1/6f411a6fab4b794b95d4ae6e6b00f12b79853bf67f780b2945f2172e9f5d/kitconcept_plate-1.0.0a33.tar.gz", hash = "sha256:9670599f2f8d43c693f824d73efd66352bafb31a680df44669b071ddb1006cc2", size = 4550452, upload-time = "2026-10-05T15:02:39.074Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/de/32/6d4a0a3e352e29fc6ffc56243f49bf4d20073572a2d911c0624d0bb96d5f/kitconcept_plate-1.0.0a32-py3-none-any.whl", hash = "sha256:a780de85c1dcd074ee7c9e60a7c0eab366c08f3e9203a6f79d21b4e8d37e5bb4", size = 4583369, upload-time = "2026-10-05T13:22:00.38Z" },
+    { url = "https://files.pythonhosted.org/packages/3d/49/28bb87364d32174655c0ce3d78e2f9f36e50feda51a773b9aaf394bdef1a/kitconcept_plate-1.0.0a33-py3-none-any.whl", hash = "sha256:fc123086f94f98e8df9874b621eeafb5f3454532355a74b18fcd75f4b5e8cfcd", size = 4583369, upload-time = "2026-10-05T15:02:36.816Z" },
 ]
 
 [[package]]

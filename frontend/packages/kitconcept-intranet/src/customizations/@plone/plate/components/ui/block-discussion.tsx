@@ -10,7 +10,9 @@
  *         Since @radix-ui/react-popover ^1.1.17 a click outside closes the
  *         popover on `click`; the comment plugin's `onClick` closes it first,
  *         so the draft was not removed. The draft is now removed whenever
- *         commenting ends. Changes are
+ *         commenting ends. The close button of the popover did not close it
+ *         while a suggestion was active; it now clears the active
+ *         ids as well. Changes are
  *         marked with START/END CUSTOMIZATION comments; everything else is
  *         unchanged.
  * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.20/packages/plate/components/ui/block-discussion.tsx
@@ -452,7 +454,12 @@ const BlockCommentContent = ({
     }
 
     setOpen(false);
-  }, [draftCommentNode, editor.tf, isCommenting]);
+    // START CUSTOMIZATION
+    // The popover stays open while a suggestion is active, so the
+    // close button has to clear the active ids as well.
+    editor.setOption(suggestionPlugin, 'activeId', null);
+  }, [draftCommentNode, editor, isCommenting]);
+  // END CUSTOMIZATION
 
   // START CUSTOMIZATION
   // Since @radix-ui/react-popover 1.1.17 a click outside closes the popover

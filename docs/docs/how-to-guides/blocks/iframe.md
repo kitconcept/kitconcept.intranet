@@ -38,7 +38,7 @@ For security reasons, only domains explicitly allowed by an administrator can be
 
 | Option | Description |
 |--------|-------------|
-| **Height** | Fixed pixel height of the iframe (e.g. `600`). Defaults to `400px`. |
+| **Height** | Fixed pixel height of the iframe (for example `600`). Defaults to `400px`. |
 | **Width** | Set to `100%` (default) to fill the available column width, or enter a fixed pixel value. |
 
 :::{tip}
@@ -61,7 +61,7 @@ For dashboards and interactive tools, a height of 700–900 px usually works wel
 **The iframe shows a blank page or an error.**
 The embedded site may be sending an `X-Frame-Options: DENY` or `Content-Security-Policy: frame-ancestors 'none'` header, which prevents it from being displayed inside an iframe. This is a restriction set by the external site and cannot be bypassed.
 
-**My URL is not loading and I see "Domain not allowed".**
+**My URL is not loading and I see `Domain not allowed`.**
 The domain is not on the allow-list. Ask your site administrator to add it under [iFrame domain settings](/how-to-guides/settings/iframe-domains).
 
 **The content is cut off at the bottom.**

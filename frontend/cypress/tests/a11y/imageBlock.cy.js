@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Image-Block
-  it('Image-Block (/features/block/image-block)', () => {
-    cy.navigate('/features/block/image-block');
+  it('Image-Block (/qa/block/image-block)', () => {
+    cy.navigate('/qa/block/image-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

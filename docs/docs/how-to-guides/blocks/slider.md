@@ -54,7 +54,7 @@ Each slide uses a split layout:
 | **Target** | Content item the slide references and links to|
 | **Title** | Headline text for the slide |
 | **Description** | Supporting text or summary (optional) |
-| **Link text** | Button label (e.g. "Read more") |
+| **Link text** | Button label (for example "Read more") |
 
 3. Repeat for each additional slide.
 4. Drag the slide entries to reorder them.

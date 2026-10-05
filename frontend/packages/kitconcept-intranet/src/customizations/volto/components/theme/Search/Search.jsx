@@ -1,4 +1,11 @@
 /**
+ * OVERRIDE Search.jsx
+ * REASON: Shadowed to adapt the search results page for the intranet.
+ * FILE: https://github.com/plone/volto/blob/19.3.1/packages/volto/src/components/theme/Search/Search.jsx
+ * FILE VERSION: Volto 19.3.1
+ * DATE: 2025-08-07
+ * DEVELOPER: @ericof
+ *
  * Search component.
  * @module components/theme/Search/Search
  */

@@ -16,7 +16,7 @@ The byline feature shows the author's name, publication date, and last-modified 
 
 ---
 
-## Backend: byline expander
+## Backend: Byline expander
 
 The backend expander is requested by including `byline` in the `expand` query parameter:
 
@@ -72,7 +72,7 @@ config.registerSlotComponent({
 
 - **Author names:** Reads `creators` from Redux form state (`form.global.creators`) first, falls back to `content.creators`. Resolves each user ID against `@components.byline.users` to get the display name; links to `homepage` if present.
 - **Dates:** Shows "published" date when `review_state === 'published'`; always shows "last modified" date.
-- **Add mode:** Component does not render when `location.pathname` includes `/add`.
+- **Add mode:** Component doesn't render when `location.pathname` includes `/add`.
 - **Memoisation:** `creators` array is memoised to prevent re-renders caused by reference changes.
 
 ### Rendered output (example)
@@ -87,5 +87,5 @@ The `byline` expander is implemented in `kitconcept.intranet` at `backend/src/ki
 
 ## See Also
 
-- [Slot system](../../../developer/concepts/slots.md)
+- [Slot system](../components/slots.md)
 - [Person content type](../../../reference/content-types.md)

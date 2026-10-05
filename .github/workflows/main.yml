@@ -6,6 +6,7 @@ on:
       - "backend/**"
       - "frontend/**"
       - "devops/**"
+      - "docs/**"
       - ".github/workflows/*.yml"
   workflow_dispatch:
 
@@ -78,6 +79,28 @@ jobs:
       contents: read
       packages: write
 
+  # Built whenever the docs changed, and unconditionally on the branch that
+  # publishes. The build job assembles this run's artifact, and
+  # `download-artifact` only ever looks in this run -- so a push that changes
+  # no docs path would leave the deploy with nothing to fetch, and the
+  # published site would have to be stale or the deploy red. Building it is
+  # cheaper than either.
+  #
+  # Serialising Pages deployments is handled by a concurrency group on the
+  # deploy job inside docs.yml, so builds here still run in parallel.
+  docs:
+    uses: ./.github/workflows/docs.yml
+    needs:
+      - config
+    with:
+      python-version: ${{ needs.config.outputs.python-version }}
+      publish: ${{ needs.config.outputs.deploy-docs == 'true' }}
+    if: ${{ needs.config.outputs.docs == 'true' || (needs.config.outputs.deploy-docs == 'true' && github.ref == 'refs/heads/main') }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
   acceptance:
     name: "Acceptance: ${{ matrix.name }}"
     uses: ./.github/workflows/acceptance.yml
@@ -94,8 +117,11 @@ jobs:
             spec-pattern: 'core/blocks-listings/*.cy.{js,jsx,ts,tsx}'
           - name: "Core Tests - Content"
             spec-pattern: 'core/content/*.cy.{js,jsx,ts,tsx}'
-          - name: "Main Tests"
-            spec-pattern: 'main/**/*.cy.{js,jsx,ts,tsx}'
+          # Split by spec file name into two balanced jobs.
+          - name: "Main Tests (a-c)"
+            spec-pattern: 'main/**/[a-cA-C0-9]*.cy.{js,jsx,ts,tsx}'
+          - name: "Main Tests (d-z)"
+            spec-pattern: 'main/**/[d-zD-Z]*.cy.{js,jsx,ts,tsx}'
 
     needs:
         - config
@@ -125,9 +151,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Tests"
+          # Split by spec file name into two balanced jobs.
+          # gridListingBlock alone takes 1-2 minutes, so it goes in the smaller group.
+          - name: "Tests (a-g)"
             api-url: 'localhost:8080/plone'
-            spec-pattern: 'a11y/**/*.cy.{js,jsx,ts,tsx}'
+            spec-pattern: 'a11y/**/[a-gA-G0-9]*.cy.{js,jsx,ts,tsx}'
+          - name: "Tests (h-z)"
+            api-url: 'localhost:8080/plone'
+            spec-pattern: 'a11y/**/[h-zH-Z]*.cy.{js,jsx,ts,tsx}'
 
     needs:
         - config

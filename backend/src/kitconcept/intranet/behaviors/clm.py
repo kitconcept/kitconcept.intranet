@@ -11,7 +11,11 @@ from zope.schema import TextLine
 class ICLM(model.Schema):
     """CLM behavior"""
 
-    model.fieldset("CLM", fields=["authors", "responsible_person", "feedback_person"])
+    model.fieldset(
+        "CLM",
+        label=_("fieldset_clm", default="Content Lifecycle Management"),
+        fields=["authors", "responsible_person", "feedback_person"],
+    )
     directives.write_permission(
         authors="kitconcept.intranet.siteadminsonly",
         responsible_person="kitconcept.intranet.siteadminsonly",

@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   //Button
-  it('Button-Block (/features/block/button-block)', () => {
-    cy.navigate('/features/block/button-block');
+  it('Button-Block (/qa/block/button-block)', () => {
+    cy.navigate('/qa/block/button-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

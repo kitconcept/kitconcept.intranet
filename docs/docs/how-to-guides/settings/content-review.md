@@ -13,8 +13,6 @@ myst:
 
 ## Screenshot
 
----
-
 ## Overview
 
 ...

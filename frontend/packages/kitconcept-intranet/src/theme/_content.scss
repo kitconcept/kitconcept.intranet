@@ -43,6 +43,14 @@
   }
 }
 
+// VLT animates the block padding in edit mode (for background colour blocks).
+// Every Plate paragraph is a `.block`, so pressing Enter on the last one
+// animated VLT's 80px last-block padding from the old last paragraph to the
+// new one, and the caret slid into place. Keep the padding, drop the animation.
+#page-edit .slate-editor .block .block-inner-container {
+  transition: none;
+}
+
 // Hide setting for "Intranet Header" in root sidebar, might not be needed after refactoring the feature
 #sidebar {
   .field-wrapper-has_intranet_header {
@@ -65,4 +73,7 @@ body:not(.contenttype-wikipage) {
       list-style: disc;
     }
   }
+}
+.contents-table-wrapper .table svg {
+  display: inline-block;
 }

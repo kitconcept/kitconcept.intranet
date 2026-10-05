@@ -31,7 +31,7 @@ Leave the field empty to keep using the built-in search.
 
 To change the hint text shown inside the search bar:
 
-1. Enter the text in the **Search Field Placeholder** field (e.g. *Search the intranet…*).
+1. Enter the text in the **Search Field Placeholder** field (for example *Search the intranet…*).
 2. Click **Save**.
 
 ## Verification
@@ -39,12 +39,12 @@ To change the hint text shown inside the search bar:
 To confirm your changes worked:
 
 1. Go to any page on the intranet.
-2. Check the header search bar — it should show the placeholder text you set.
-3. Type a search term and press Enter — you should land on the URL you configured, or the built-in search page if no URL was set.
+2. Check the header search bar—it should show the placeholder text you set.
+3. Type a search term and press Enter—you should land on the URL you configured, or the built-in search page if no URL was set.
 
 ## Notes
 
-SOLR-powered search is set up at the server level by a system administrator and does not have settings in this control panel.
+SOLR-powered search is set up at the server level by a system administrator and doesn't have settings in this control panel.
 
 ## See also
 

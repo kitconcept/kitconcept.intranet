@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // grid Teaser block
-  it('Grid-Block Teaser (/features/block/grid-block/teaser)', () => {
-    cy.navigate('/features/block/grid-block/teaser');
+  it('Grid-Block Teaser (/qa/block/grid-block/teaser)', () => {
+    cy.navigate('/qa/block/grid-block/teaser');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

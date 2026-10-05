@@ -3,11 +3,8 @@ import type { CSSProperties } from 'react';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import {
-  expandToBackendURL,
-  flattenToAppURL,
-} from '@plone/volto/helpers/Url/Url';
 import AvatarFallback from '../../icons/avatar-fallback-silhouette.svg';
 
 type PersonPillProps = {
@@ -42,32 +39,51 @@ const PersonPill = ({
       state.site?.data?.['kitconcept.clickable_profile_links'],
   );
 
+  // Portrait URLs handed to us (e.g. `comment.author_image`, `user.portrait`)
+  // arrive from the backend as absolute URLs built with the *internal* API
+  // host. `flattenToAppURL` only strips `settings.internalApiPath`, which is
+  // set on the SSR server but never shipped to the browser - so on the client
+  // the internal host survives and the image request fails
+  // (ERR_NAME_NOT_RESOLVED). Guard against that: flatten the explicit portrait,
+  // and if it is still absolute, drop it and fall back to the canonical
+  // `/@portrait/<id>` endpoint, which the Volto portrait middleware proxies
+  // through the public origin.
+  const explicitPortrait = portrait ? flattenToAppURL(portrait) : undefined;
+  const safeExplicitPortrait =
+    explicitPortrait && !/^https?:\/\//i.test(explicitPortrait)
+      ? explicitPortrait
+      : undefined;
   const portraitSrc =
-    portrait ??
-    (id ? flattenToAppURL(expandToBackendURL(`@portrait/${id}`)) : undefined);
+    safeExplicitPortrait ?? (id ? `/@portrait/${id}` : undefined);
 
-  const [imageFailed, setImageFailed] = useState(false);
-  const showImage = Boolean(portraitSrc) && !imageFailed;
+  const [loadedPortraitSrc, setLoadedPortraitSrc] = useState<string>();
+  const showImage = Boolean(portraitSrc) && portraitSrc === loadedPortraitSrc;
 
-  const avatar = showImage ? (
-    <img
-      className="person-pill-portrait"
-      src={portraitSrc}
-      alt={fullname || name}
-      loading="lazy"
-      onError={() => setImageFailed(true)}
-    />
-  ) : (
-    <Icon
-      className="person-pill-avatar"
-      name={AvatarFallback}
-      size={compact ? '24px' : '40px'}
-      style={{
-        width: compact ? '24px' : '40px',
-        height: compact ? '24px' : '40px',
-      }}
-      ariaHidden
-    />
+  const avatar = (
+    <>
+      {!showImage && (
+        <Icon
+          className="person-pill-avatar"
+          name={AvatarFallback}
+          size={compact ? '24px' : '40px'}
+          style={{
+            width: compact ? '24px' : '40px',
+            height: compact ? '24px' : '40px',
+          }}
+          ariaHidden
+        />
+      )}
+      {portraitSrc && (
+        <img
+          className="person-pill-portrait"
+          src={portraitSrc}
+          alt={fullname || name}
+          onLoad={() => setLoadedPortraitSrc(portraitSrc)}
+          onError={() => setLoadedPortraitSrc(undefined)}
+          hidden={!showImage}
+        />
+      )}
+    </>
   );
 
   const label =

@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Listing-block
-  it('Listing-block (/features/block/listing-block)', () => {
-    cy.navigate('/features/block/listing-block');
+  it('Listing-block (/qa/block/listing-block)', () => {
+    cy.navigate('/qa/block/listing-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({

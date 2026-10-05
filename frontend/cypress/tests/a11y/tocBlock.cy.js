@@ -10,8 +10,8 @@ describe('a11y tests', () => {
   });
 
   // Table of Contents
-  it('Table of Contents (/features/block/toc-block)', () => {
-    cy.navigate('/features/block/toc-block');
+  it('Table of Contents (/qa/block/toc-block)', () => {
+    cy.navigate('/qa/block/toc-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();

@@ -69,7 +69,7 @@ msgstr "Beauftragte Person: *"
 #. Default: "Author"
 #: slots/AboutThisContent/AboutThisContent
 msgid "Author"
-msgstr "Autor/in"
+msgstr "Autor:innen"
 
 #. Default: "Beta"
 #: components/Header/HeaderSearch
@@ -98,6 +98,11 @@ msgstr "Von"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#. Default: "Clear filter"
+#: components/WikiTable/TableViewControls
+msgid "Clear filter"
+msgstr "Filter löschen"
+
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -114,11 +119,6 @@ msgstr "Kontakt"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
 msgstr ""
-
-#. Default: "Content responsible"
-#: slots/AboutThisContent/AboutThisContent
-msgid "Content responsible"
-msgstr "Inhaltsverantwortlich"
 
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
@@ -161,6 +161,16 @@ msgstr "Tiefe"
 msgid "Document Review"
 msgstr "Review dokumentieren"
 
+#. Default: "Drag to move the column"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the column"
+msgstr "Ziehen, um die Spalte zu verschieben"
+
+#. Default: "Drag to move the row"
+#: components/WikiTable/useTableDragAndDrop
+msgid "Drag to move the row"
+msgstr "Ziehen, um die Zeile zu verschieben"
+
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
@@ -181,6 +191,7 @@ msgstr "Ende"
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr "Fehler"
 
@@ -204,13 +215,9 @@ msgstr ""
 msgid "Feedback"
 msgstr "Rückmeldung"
 
-#. Default: "Feedback about this page"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Feedback about this page"
-msgstr "Feedback zu dieser Seite"
-
 #. Default: "Feedback on this page"
 #: components/StickyFeedbackButton/StickyFeedbackButton
+#: slots/AboutThisContent/AboutThisContent
 msgid "Feedback on this page"
 msgstr "Feedback zu dieser Seite"
 
@@ -229,6 +236,16 @@ msgstr "Feedback an:"
 msgid "File"
 msgstr "Datei"
 
+#. Default: "Filter rows…"
+#: components/WikiTable/TableViewControls
+msgid "Filter rows…"
+msgstr "Zeilen filtern …"
+
+#. Default: "Filter table"
+#: components/WikiTable/TableViewControls
+msgid "Filter table"
+msgstr "Tabelle filtern"
+
 #. Default: "Folder"
 #: components/Header/HeaderSearch
 msgid "Folder"
@@ -238,6 +255,16 @@ msgstr "Ordner"
 #: components/Header/HeaderSearch
 msgid "Generating answer…"
 msgstr "Antwort wird erstellt …"
+
+#. Default: "Give feedback on this page"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Give feedback on this page"
+msgstr "Feedback zu dieser Seite geben"
+
+#. Default: "Header row"
+#: index
+msgid "Header row"
+msgstr "Kopfzeile"
 
 #. Default: "Home"
 #: components/Header/HeaderBreadcrumbs
@@ -259,6 +286,11 @@ msgstr "Bild"
 msgid "In review"
 msgstr "In Prüfung"
 
+#. Default: "Insert table"
+#: index
+msgid "Insert table"
+msgstr "Tabelle einfügen"
+
 #. Default: "Intranet Portal"
 #: components/Header/HeaderSearch
 msgid "Intranet Portal"
@@ -268,11 +300,6 @@ msgstr "Intranet Portal"
 #: components/Blocks/IFrame/isValidUrl
 msgid "Invalid url"
 msgstr "Ungültige URL"
-
-#. Default: "Is something unclear or outdated? Let us know so we can improve the page."
-#: slots/AboutThisContent/AboutThisContent
-msgid "Is something unclear or outdated? Let us know so we can improve the page."
-msgstr "Etwas unklar oder veraltet? Lass es uns wissen, um die Seite zu verbessern."
 
 #. Default: "Item batch size"
 #: components/widgets/QuerystringWidget
@@ -334,6 +361,26 @@ msgstr "Überarbeitung erforderlich"
 msgid "Mark as Reviewed"
 msgstr "Als geprüft markieren"
 
+#. Default: "Move column left"
+#: index
+msgid "Move column left"
+msgstr "Spalte nach links verschieben"
+
+#. Default: "Move column right"
+#: index
+msgid "Move column right"
+msgstr "Spalte nach rechts verschieben"
+
+#. Default: "Move row down"
+#: index
+msgid "Move row down"
+msgstr "Zeile nach unten verschieben"
+
+#. Default: "Move row up"
+#: index
+msgid "Move row up"
+msgstr "Zeile nach oben verschieben"
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
@@ -349,10 +396,10 @@ msgstr "Nachricht"
 msgid "Next review"
 msgstr ""
 
-#. Default: "No answer — no matching documents found."
+#. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
-msgid "No answer — no matching documents found."
-msgstr "Keine Antwort — keine passenden Dokumente gefunden."
+msgid "No document found with the selected criteria."
+msgstr "Kein Dokument mit den gewählten Kriterien gefunden."
 
 #. Default: "No results for “{term}”."
 #: components/Header/HeaderSearch
@@ -428,6 +475,7 @@ msgstr "Überprüfung verschieben"
 
 #. Default: "Private"
 #: components/Header/HeaderSearch
+#: slots/AboutThisContent/AboutThisContent
 msgid "Private"
 msgstr "Privat"
 
@@ -440,6 +488,11 @@ msgstr "Veröffentlicht"
 #: index
 msgid "Responsibilities"
 msgstr "Zuständigkeiten"
+
+#. Default: "Responsible Person"
+#: slots/AboutThisContent/AboutThisContent
+msgid "Responsible Person"
+msgstr "Inhaltsverantwortliche Person"
 
 #. Default: "Results limit"
 #: components/widgets/QuerystringWidget
@@ -514,6 +567,11 @@ msgstr "Ich möchte diesen Intranet-Inhalt mit Ihnen teilen:"
 msgid "Share this page via email"
 msgstr "Seite per E-Mail teilen"
 
+#. Default: "Show all results"
+#: components/Header/HeaderSearch
+msgid "Show all results"
+msgstr "Alle Suchergebnisse anzeigen"
+
 #. Default: "Show archived content"
 #: components/Header/HeaderSearch
 msgid "Show archived content"
@@ -549,6 +607,11 @@ msgstr "Beim Liken dieses Beitrags ist ein Fehler aufgetreten."
 msgid "Something went wrong while unliking this post."
 msgstr "Beim Entliken dieses Beitrags ist ein Fehler aufgetreten."
 
+#. Default: "Sort by {column}"
+#: components/WikiTable/TableViewControls
+msgid "Sort by {column}"
+msgstr "Nach {column} sortieren"
+
 #. Default: "Sort on"
 #: components/widgets/QuerystringWidget
 msgid "Sort on"
@@ -558,11 +621,6 @@ msgstr "Sortieren nach"
 #: components/Header/HeaderSearch
 msgid "Sources"
 msgstr "Quellen"
-
-#. Default: "Sponsored by:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Sponsored by:"
-msgstr "Gesponsert von:"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
@@ -589,6 +647,7 @@ msgstr "Betreff Seite/URL"
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 #: components/Toolbar/DocumentReview
+#: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr "Erfolg"
 
@@ -644,6 +703,7 @@ msgstr "Workspace"
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
+#: slots/AboutThisContent/AboutThisContent
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr "Ihr Feedback wurde erfolgreich übermittelt. Sie erhalten in Kürze eine Bestätigungs-E-Mail."
 
@@ -666,6 +726,11 @@ msgstr "Die Überprüfung wurde erfolgreich delegiert."
 #: components/ContentReviewSidebar/DelegateReview
 msgid "delegateTitle"
 msgstr "Prüfung oder Anpassung delegieren"
+
+#. Default: "goes to"
+#: slots/AboutThisContent/AboutThisContent
+msgid "goes to"
+msgstr "geht an"
 
 #. Default: "The check interval is set to {interval}. To change it, you must edit the content."
 #: components/ContentReviewSidebar/PostponeReview
@@ -787,6 +852,301 @@ msgstr ""
 msgid "nextReview"
 msgstr "Nächste Kontrolle am: "
 
+#. Default: "Added"
+#: components/PlateDiff/messages
+msgid "plateDiff.added"
+msgstr "Hinzugefügt"
+
+#. Default: "Changed"
+#: components/PlateDiff/messages
+msgid "plateDiff.changed"
+msgstr "Geändert"
+
+#. Default: "Not in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.notInThisVersion"
+msgstr "Nicht in dieser Version"
+
+#. Default: "Alignment"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.align"
+msgstr "Ausrichtung"
+
+#. Default: "Alternative text"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.alt"
+msgstr "Alternativtext"
+
+#. Default: "Background colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.backgroundColor"
+msgstr "Hintergrundfarbe"
+
+#. Default: "Width"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.blockWidth"
+msgstr "Breite"
+
+#. Default: "Caption"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.caption"
+msgstr "Bildunterschrift"
+
+#. Default: "Checked"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.checked"
+msgstr "Abgehakt"
+
+#. Default: "Text colour"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.color"
+msgstr "Textfarbe"
+
+#. Default: "Link"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.href"
+msgstr "Link"
+
+#. Default: "Icon"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.icon"
+msgstr "Symbol"
+
+#. Default: "Indentation"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.indent"
+msgstr "Einrückung"
+
+#. Default: "Language"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lang"
+msgstr "Sprache"
+
+#. Default: "Line height"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.lineHeight"
+msgstr "Zeilenhöhe"
+
+#. Default: "List start"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStart"
+msgstr "Listenbeginn"
+
+#. Default: "List type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.listStyleType"
+msgstr "Listentyp"
+
+#. Default: "Block type"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.type"
+msgstr "Blocktyp"
+
+#. Default: "Source"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.url"
+msgstr "Quelle"
+
+#. Default: "Variant"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.variant"
+msgstr "Variante"
+
+#. Default: "Size"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.width"
+msgstr "Größe"
+
+#. Default: "Removed"
+#: components/PlateDiff/messages
+msgid "plateDiff.removed"
+msgstr "Entfernt"
+
+#. Default: "Removed in this version"
+#: components/PlateDiff/messages
+msgid "plateDiff.removedInThisVersion"
+msgstr "In dieser Version entfernt"
+
+#. Default: "Centred"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.center"
+msgstr "Zentriert"
+
+#. Default: "Justified"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.justify"
+msgstr "Blocksatz"
+
+#. Default: "Left"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.left"
+msgstr "Links"
+
+#. Default: "Right"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.align.right"
+msgstr "Rechts"
+
+#. Default: "Standard"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.default"
+msgstr "Standard"
+
+#. Default: "Full width"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.full"
+msgstr "Volle Breite"
+
+#. Default: "Narrow"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.narrow"
+msgstr "Schmal"
+
+#. Default: "Wide"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.wide"
+msgstr "Breit"
+
+#. Default: "Bulleted list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.bulleted"
+msgstr "Aufzählung"
+
+#. Default: "Numbered list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.numbered"
+msgstr "Nummerierte Liste"
+
+#. Default: "To-do list"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.list.todo"
+msgstr "Aufgabenliste"
+
+#. Default: "no"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.no"
+msgstr "nein"
+
+#. Default: "not set"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.notSet"
+msgstr "nicht gesetzt"
+
+#. Default: "Large"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.l"
+msgstr "Groß"
+
+#. Default: "Medium"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.m"
+msgstr "Mittel"
+
+#. Default: "Small"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.size.s"
+msgstr "Klein"
+
+#. Default: "Quote"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.blockquote"
+msgstr "Zitat"
+
+#. Default: "Callout"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.callout"
+msgstr "Hinweisbox"
+
+#. Default: "Code"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.code_block"
+msgstr "Code"
+
+#. Default: "Heading 1"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h1"
+msgstr "Überschrift 1"
+
+#. Default: "Heading 2"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h2"
+msgstr "Überschrift 2"
+
+#. Default: "Heading 3"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h3"
+msgstr "Überschrift 3"
+
+#. Default: "Heading 4"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h4"
+msgstr "Überschrift 4"
+
+#. Default: "Heading 5"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h5"
+msgstr "Überschrift 5"
+
+#. Default: "Heading 6"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.h6"
+msgstr "Überschrift 6"
+
+#. Default: "Divider"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.hr"
+msgstr "Trennlinie"
+
+#. Default: "Image"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.img"
+msgstr "Bild"
+
+#. Default: "Paragraph"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.p"
+msgstr "Absatz"
+
+#. Default: "Table"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.table"
+msgstr "Tabelle"
+
+#. Default: "Toggle"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.type.toggle"
+msgstr "Aufklappbereich"
+
+#. Default: "Error"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.error"
+msgstr "Fehler"
+
+#. Default: "Info"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.info"
+msgstr "Info"
+
+#. Default: "Note"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.note"
+msgstr "Notiz"
+
+#. Default: "Success"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.success"
+msgstr "Erfolg"
+
+#. Default: "Warning"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.variant.warning"
+msgstr "Warnung"
+
+#. Default: "yes"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.yes"
+msgstr "ja"
+
 #. Default: "If you wish, you can leave a comment here, for example, the reason for the postponement."
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeComment"
@@ -820,3 +1180,8 @@ msgstr "Weiterlesen"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
 msgstr "Empfehlung aus dem Intranet"
+
+#. Default: "{shown} of {total} rows"
+#: components/WikiTable/TableViewControls
+msgid "{shown} of {total} rows"
+msgstr "{shown} von {total} Zeilen"

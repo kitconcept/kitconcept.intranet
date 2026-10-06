@@ -3,19 +3,23 @@
  * REASON: The "Table" entry inserts a 3 × 3 table with a header row
  *         (Confluence default) instead of Plate's 2 × 2 without header.
  *         Everything else is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
- * DATE: 2026-10-01
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a33/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.33
+ * DATE: 2026-10-05
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
+ * CHANGELOG:
+ *  - Merge volto-plate 1.0.0-alpha.33: add the "Diagram" entry to the
+ *    "Advanced blocks" group. @sneridagh
  */
 
 import type {
   SlashMenuConfig,
   SlashMenuGroup,
 } from '@plone/plate/components/editor/plugins/slash-menu';
+import { CODE_DRAWING_KEY, insertCodeDrawing } from '@platejs/code-drawing';
 import { PLONE_BLOCK_TYPE } from '@plone/helpers';
-import { ImageIcon } from 'lucide-react';
+import { ImageIcon, WorkflowIcon } from 'lucide-react';
 import { KEYS, PathApi } from 'platejs';
 import type { PlateEditor } from 'platejs/react';
 import { insertWikiTable } from '@kitconcept/intranet/components/WikiTable/insertWikiTable';
@@ -50,6 +54,31 @@ const IMAGE_SLASH_ITEM = {
   onSelect: (editor: PlateEditor) => {
     insertPloneBlock(editor, 'plateimage');
   },
+};
+
+const insertDiagram = (editor: PlateEditor) => {
+  editor.tf.withoutNormalizing(() => {
+    const block = editor.api.block();
+    if (!block) return;
+
+    insertCodeDrawing(
+      editor,
+      {},
+      { at: PathApi.next(block[1]), nextBlock: false, select: true },
+    );
+
+    if (block[0].type !== CODE_DRAWING_KEY) {
+      editor.tf.removeNodes({ previousEmptyBlock: true });
+    }
+  });
+};
+
+const DIAGRAM_SLASH_ITEM = {
+  icon: <WorkflowIcon />,
+  keywords: ['diagram', 'drawing', 'mermaid', 'plantuml', 'graphviz', 'chart'],
+  label: 'Diagram',
+  value: CODE_DRAWING_KEY,
+  onSelect: insertDiagram,
 };
 
 // OVERRIDE: not exported, wrapped below.
@@ -90,6 +119,13 @@ const baseSlashMenu: SlashMenuConfig = {
                     ...group.items.slice(paragraphIndex + 1),
                   ],
           };
+        }
+
+        if (
+          group.group === 'Advanced blocks' &&
+          !group.items.some((item) => item.value === DIAGRAM_SLASH_ITEM.value)
+        ) {
+          return { ...group, items: [...group.items, DIAGRAM_SLASH_ITEM] };
         }
 
         return group;

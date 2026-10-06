@@ -6,11 +6,18 @@
  *         table kit. Relative imports are made absolute (shadowed files
  *         resolve relative imports against this package). Everything else
  *         is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
- * DATE: 2026-10-01
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a33/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.33
+ * DATE: 2026-10-05
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
+ * CHANGELOG:
+ *  - Merge volto-plate 1.0.0-alpha.32: register the paste plugins for
+ *    images (`VoltoHtmlImagePastePlugin`), styling
+ *    (`VoltoPasteFormattingPlugin`) and the title
+ *    (`VoltoPasteTitlePlugin`). @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.33: register `CodeDrawingKit` (the
+ *    Diagram element). @sneridagh
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -48,9 +55,13 @@ import { SplitHotkeyPlugin } from '@plone/plate/components/editor/plugins/split-
 import { WikiTableKeysPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableKeysPlugin';
 import { WikiTableNormalizePlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 
+import { CodeDrawingKit } from '@kitconcept/volto-plate/plate/plugins/code-drawing-kit';
 import { VoltoFloatingToolbarKit } from '@kitconcept/volto-plate/plate/plugins/volto-floating-toolbar-kit';
 import { VoltoClipboardImagePastePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-clipboard-image-paste';
+import { VoltoHtmlImagePastePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-html-image-paste';
 import { VoltoImageDropPlugin } from '@kitconcept/volto-plate/plate/plugins/volto-image-drop';
+import { VoltoPasteFormattingPlugin } from '@kitconcept/volto-plate/plate/plugins/volto-paste-formatting';
+import { VoltoPasteTitlePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-paste-title';
 import { VoltoLinkKit } from '@kitconcept/volto-plate/plate/plugins/volto-link-kit';
 import { VoltoMentionKit } from '@kitconcept/volto-plate/plate/plugins/volto-mention-kit';
 import { SidebarPlugin } from '@kitconcept/volto-plate/plate/plugins/volto-sidebar';
@@ -75,6 +86,7 @@ export const WikiEditorKit = [
   // Elements
   ...BasicBlocksKit,
   ...CodeBlockKit,
+  ...CodeDrawingKit,
   ...TableKit,
   // OVERRIDE
   WikiTableKeysPlugin,
@@ -111,6 +123,7 @@ export const WikiEditorKit = [
   // ...DndKit,
   ...ExitBreakKit,
   VoltoClipboardImagePastePlugin,
+  VoltoHtmlImagePastePlugin,
   VoltoImageDropPlugin,
   SidebarPlugin,
   SplitHotkeyPlugin,
@@ -119,6 +132,8 @@ export const WikiEditorKit = [
   // Parsers
   ...DocxKit,
   ...MarkdownKit,
+  VoltoPasteFormattingPlugin,
+  VoltoPasteTitlePlugin,
 
   // UI
   ...BlockPlaceholderKit,

@@ -71,7 +71,8 @@
     "@plone-collective/volto-authomatic",
     "@kitconcept/volto-solr",
     "@kitconcept/volto-contact-block",
-    "@kitconcept/volto-plate"
+    "@kitconcept/volto-plate",
+    "@plone/volto-recyclebin"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
@@ -95,13 +96,15 @@
     "@plone/components": "workspace:*",
     "@plone/helpers": "^2.0.0-alpha.8",
     "@plone/volto-form-block": "^1.0.0-alpha.3",
+    "@plone/volto-recyclebin": "^1.0.0-alpha.1",
     "@plone-collective/volto-authomatic": "3.0.0",
     "@plone-collective/volto-image-editor": "1.0.1",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
     "react-aria-components": "catalog:",
     "volto-rss-block": "^3.0.1",
-    "@kitconcept/volto-plate": "^1.0.0-alpha.30",
+    "@kitconcept/volto-plate": "^1.0.0-alpha.33",
+    "@platejs/code-drawing": "^53.0.0",
     "@platejs/diff": "^53.0.0",
     "@platejs/selection": "^53.1.6",
     "@platejs/table": "^53.0.9",

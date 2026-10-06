@@ -6,9 +6,9 @@
  *         table kit. Relative imports are made absolute (shadowed files
  *         resolve relative imports against this package). Everything else
  *         is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a33/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.33
- * DATE: 2026-10-05
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a34/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.34
+ * DATE: 2026-10-06
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  * CHANGELOG:
@@ -18,6 +18,8 @@
  *    (`VoltoPasteTitlePlugin`). @sneridagh
  *  - Merge volto-plate 1.0.0-alpha.33: register `CodeDrawingKit` (the
  *    Diagram element). @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.34 (@plone/plate 1.0.0-alpha.24): drop
+ *    `SplitHotkeyPlugin`, removed upstream. @sneridagh
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -51,7 +53,6 @@ import { SuggestionKit } from '@plone/plate/components/editor/plugins/suggestion
 import { TableKit } from '@plone/plate/components/editor/plugins/table-kit';
 import { TocKit } from '@plone/plate/components/editor/plugins/toc-kit';
 import { ToggleKit } from '@plone/plate/components/editor/plugins/toggle-kit';
-import { SplitHotkeyPlugin } from '@plone/plate/components/editor/plugins/split-hotkey';
 import { WikiTableKeysPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableKeysPlugin';
 import { WikiTableNormalizePlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 
@@ -126,7 +127,6 @@ export const WikiEditorKit = [
   VoltoHtmlImagePastePlugin,
   VoltoImageDropPlugin,
   SidebarPlugin,
-  SplitHotkeyPlugin,
   TrailingBlockPlugin,
 
   // Parsers

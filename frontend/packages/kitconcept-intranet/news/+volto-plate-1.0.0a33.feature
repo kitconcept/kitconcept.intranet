@@ -1,0 +1,1 @@
+Update @kitconcept/volto-plate to 1.0.0-alpha.33: add a Diagram element to the wiki editor (slash menu "Diagram"), to write Mermaid, Graphviz or Flowchart code and see the rendered diagram. @sneridagh

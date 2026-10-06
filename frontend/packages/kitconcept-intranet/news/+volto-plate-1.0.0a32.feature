@@ -1,0 +1,1 @@
+Update @kitconcept/volto-plate to 1.0.0-alpha.32: content pasted from Word, LibreOffice or a web page keeps its images as image blocks, takes the styles of the wiki page, and its title becomes the title of the wiki page. @sneridagh

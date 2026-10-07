@@ -1,0 +1,779 @@
+{
+  "id": "jour-fixe-kw-38",
+  "title": "Jour fixe KW 38",
+  "blocks": {
+    "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c": {
+      "@type": "title"
+    },
+    "__somersault__": {
+      "@type": "__somersault__",
+      "value": [
+        {
+          "type": "title",
+          "id": "title",
+          "children": [
+            {
+              "text": "Jour fixe KW 38"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "id": "h-teilnehmer",
+          "children": [
+            {
+              "text": "Teilnehmer"
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        },
+        {
+          "type": "p",
+          "id": "p-teilnehmer",
+          "children": [
+            {
+              "text": "Dr. Miriam Engelhardt, Dr. Sophie Lehner, Dr. Clara Beck, Florian Meier (Protokoll)."
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        },
+        {
+          "type": "h2",
+          "id": "h-agenda",
+          "children": [
+            {
+              "text": "Agenda"
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        },
+        {
+          "type": "p",
+          "id": "a1",
+          "children": [
+            {
+              "text": "Statusbericht Arbeitspaket 2: Katalysator-Synthese"
+            }
+          ],
+          "indent": 1,
+          "listStyleType": "decimal",
+          "listStart": 1
+        },
+        {
+          "type": "p",
+          "id": "a2",
+          "children": [
+            {
+              "text": "Ergebnisse der XPS-Messreihe"
+            }
+          ],
+          "indent": 1,
+          "listStyleType": "decimal",
+          "listStart": 2
+        },
+        {
+          "type": "p",
+          "id": "a3",
+          "children": [
+            {
+              "text": "Vorbereitung Zwischenbericht an den Fördergeber"
+            }
+          ],
+          "indent": 1,
+          "listStyleType": "decimal",
+          "listStart": 3
+        },
+        {
+          "type": "h2",
+          "id": "h-diskussion",
+          "children": [
+            {
+              "text": "Diskussion"
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        },
+        {
+          "type": "p",
+          "id": "p-ap2",
+          "children": [
+            {
+              "text": "AP2 liegt im Zeitplan. Die Ausbeute der Charge 47 liegt bei 68 %, die Optimierung der Kalzinierungstemperatur läuft."
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        },
+        {
+          "type": "p",
+          "id": "p-xps",
+          "children": [
+            {
+              "text": "Die XPS-Messreihe zeigt ein unerwartetes Signal bei 285 eV, vermutlich eine Kohlenstoff-Kontamination."
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        },
+        {
+          "type": "callout",
+          "id": "co-hinweis",
+          "children": [
+            {
+              "text": "Referenzproben bitte bis Freitag im Labor 1.14 abgeben."
+            }
+          ],
+          "variant": "info",
+          "icon": "💡"
+        },
+        {
+          "type": "h2",
+          "id": "h-aufgaben",
+          "children": [
+            {
+              "text": "Aufgaben"
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        },
+        {
+          "type": "p",
+          "id": "t-miriam",
+          "children": [
+            {
+              "text": "Miriam: Syntheseprotokoll v3 dokumentieren (bis 25.09.)"
+            }
+          ],
+          "indent": 1,
+          "listStyleType": "disc"
+        },
+        {
+          "type": "p",
+          "id": "t-sophie",
+          "children": [
+            {
+              "text": "Sophie: XPS-Messung mit Referenzprobe wiederholen (bis 25.09.)"
+            }
+          ],
+          "indent": 1,
+          "listStyleType": "disc"
+        },
+        {
+          "type": "p",
+          "id": "p-naechstes",
+          "children": [
+            {
+              "text": "Nächstes Treffen: 1. Oktober 2026, Raum B2.104."
+            }
+          ],
+          "align": "start",
+          "blockWidth": "default"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c"
+    ]
+  },
+  "edits": [
+    {
+      "blocks": {
+        "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c": {
+          "@type": "title"
+        },
+        "__somersault__": {
+          "@type": "__somersault__",
+          "value": [
+            {
+              "type": "title",
+              "id": "title",
+              "children": [
+                {
+                  "text": "Jour fixe KW 38"
+                }
+              ]
+            },
+            {
+              "type": "h2",
+              "id": "h-teilnehmer",
+              "children": [
+                {
+                  "text": "Teilnehmer"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-teilnehmer",
+              "children": [
+                {
+                  "text": "Dr. Miriam Engelhardt, Dr. Sophie Lehner, Dr. Clara Beck, Florian Meier (Protokoll)."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "h2",
+              "id": "h-agenda",
+              "children": [
+                {
+                  "text": "Agenda"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "a1",
+              "children": [
+                {
+                  "text": "Statusbericht Arbeitspaket 2: Katalysator-Synthese"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 1
+            },
+            {
+              "type": "p",
+              "id": "a2",
+              "children": [
+                {
+                  "text": "Ergebnisse der XPS-Messreihe"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 2
+            },
+            {
+              "type": "p",
+              "id": "a3",
+              "children": [
+                {
+                  "text": "Vorbereitung Zwischenbericht an den Fördergeber"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 3
+            },
+            {
+              "type": "h2",
+              "id": "h-diskussion",
+              "children": [
+                {
+                  "text": "Diskussion"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-ap2",
+              "children": [
+                {
+                  "text": "AP2 liegt im Zeitplan. Die Ausbeute der Charge 47 liegt bei 71 %, die Optimierung der Kalzinierungstemperatur ist abgeschlossen."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-xps",
+              "children": [
+                {
+                  "text": "Die XPS-Messreihe zeigt ein unerwartetes Signal bei 285 eV, vermutlich eine Kohlenstoff-Kontamination."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-beschluss",
+              "children": [
+                {
+                  "text": "Beschluss: Die Messung wird mit einer gereinigten Probe wiederholt; Sophie koordiniert die Terminvergabe am Spektrometer."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "callout",
+              "id": "co-hinweis",
+              "children": [
+                {
+                  "text": "Referenzproben bitte bis Freitag im Labor 1.14 abgeben."
+                }
+              ],
+              "variant": "info",
+              "icon": "💡"
+            },
+            {
+              "type": "h2",
+              "id": "h-aufgaben",
+              "children": [
+                {
+                  "text": "Aufgaben"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "t-miriam",
+              "children": [
+                {
+                  "text": "Miriam: Syntheseprotokoll v3 dokumentieren (bis 25.09.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "t-sophie",
+              "children": [
+                {
+                  "text": "Sophie: XPS-Messung mit Referenzprobe wiederholen (bis 25.09.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "p-naechstes",
+              "children": [
+                {
+                  "text": "Nächstes Treffen: 1. Oktober 2026, Raum B2.104."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            }
+          ]
+        }
+      },
+      "changeNote": "Ausbeute aktualisiert, Beschluss zur Wiederholung der Messung ergänzt"
+    },
+    {
+      "blocks": {
+        "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c": {
+          "@type": "title"
+        },
+        "__somersault__": {
+          "@type": "__somersault__",
+          "value": [
+            {
+              "type": "title",
+              "id": "title",
+              "children": [
+                {
+                  "text": "Jour fixe KW 38"
+                }
+              ]
+            },
+            {
+              "type": "h2",
+              "id": "h-teilnehmer",
+              "children": [
+                {
+                  "text": "Teilnehmer"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-teilnehmer",
+              "children": [
+                {
+                  "text": "Dr. Miriam Engelhardt, Dr. Sophie Lehner, Dr. Clara Beck, Florian Meier (Protokoll)."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "h2",
+              "id": "h-agenda",
+              "children": [
+                {
+                  "text": "Agenda"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "a1",
+              "children": [
+                {
+                  "text": "Statusbericht Arbeitspaket 2: Katalysator-Synthese"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 1
+            },
+            {
+              "type": "p",
+              "id": "a2",
+              "children": [
+                {
+                  "text": "Ergebnisse der XPS-Messreihe"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 2
+            },
+            {
+              "type": "p",
+              "id": "a3",
+              "children": [
+                {
+                  "text": "Vorbereitung Zwischenbericht an den Fördergeber"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 3
+            },
+            {
+              "type": "h2",
+              "id": "h-diskussion",
+              "children": [
+                {
+                  "text": "Diskussion"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-ap2",
+              "children": [
+                {
+                  "text": "AP2 liegt im Zeitplan. Die Ausbeute der Charge 47 liegt bei 71 %, die Optimierung der Kalzinierungstemperatur ist abgeschlossen."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-xps",
+              "children": [
+                {
+                  "text": "Die XPS-Messreihe zeigt ein unerwartetes Signal bei 285 eV, vermutlich eine Kohlenstoff-Kontamination."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-beschluss",
+              "children": [
+                {
+                  "text": "Beschluss: Die Messung wird mit einer gereinigten Probe wiederholt; Sophie koordiniert die Terminvergabe am Spektrometer."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "callout",
+              "id": "co-hinweis",
+              "children": [
+                {
+                  "text": "Referenzproben bitte bis Donnerstag im Labor 1.14 abgeben."
+                }
+              ],
+              "variant": "warning",
+              "icon": "💡"
+            },
+            {
+              "type": "h2",
+              "id": "h-aufgaben",
+              "children": [
+                {
+                  "text": "Aufgaben"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "t-miriam",
+              "children": [
+                {
+                  "text": "Miriam: Syntheseprotokoll v3 dokumentieren (bis 25.09.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "t-sophie",
+              "children": [
+                {
+                  "text": "Sophie: XPS-Messung mit Referenzprobe wiederholen (bis 25.09.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "t-clara",
+              "children": [
+                {
+                  "text": "Clara: Entwurf Zwischenbericht Kapitel 1 und 2 (bis 10.10.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "p-naechstes",
+              "children": [
+                {
+                  "text": "Nächstes Treffen: 1. Oktober 2026, Raum B2.104."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            }
+          ]
+        }
+      },
+      "changeNote": "Aufgabe für Clara ergänzt, Abgabefrist der Proben vorgezogen"
+    },
+    {
+      "blocks": {
+        "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c": {
+          "@type": "title"
+        },
+        "__somersault__": {
+          "@type": "__somersault__",
+          "value": [
+            {
+              "type": "title",
+              "id": "title",
+              "children": [
+                {
+                  "text": "Jour fixe KW 38"
+                }
+              ]
+            },
+            {
+              "type": "h2",
+              "id": "h-teilnehmer",
+              "children": [
+                {
+                  "text": "Teilnehmer"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-teilnehmer",
+              "children": [
+                {
+                  "text": "Dr. Miriam Engelhardt, Dr. Sophie Lehner, Dr. Clara Beck, Florian Meier (Protokoll)."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "h2",
+              "id": "h-agenda",
+              "children": [
+                {
+                  "text": "Agenda"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "a1",
+              "children": [
+                {
+                  "text": "Statusbericht Arbeitspaket 2: Katalysator-Synthese"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 1
+            },
+            {
+              "type": "p",
+              "id": "a2",
+              "children": [
+                {
+                  "text": "Ergebnisse der XPS-Messreihe"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 2
+            },
+            {
+              "type": "p",
+              "id": "a3",
+              "children": [
+                {
+                  "text": "Vorbereitung Zwischenbericht an den Fördergeber"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "decimal",
+              "listStart": 3
+            },
+            {
+              "type": "h2",
+              "id": "h-diskussion",
+              "children": [
+                {
+                  "text": "Diskussion"
+                }
+              ],
+              "align": "center",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-ap2",
+              "children": [
+                {
+                  "text": "AP2 liegt im Zeitplan. Die Ausbeute der Charge 47 liegt bei 71 %, die Optimierung der Kalzinierungstemperatur ist abgeschlossen."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-xps",
+              "children": [
+                {
+                  "text": "Die XPS-Messreihe zeigt ein unerwartetes Signal bei 285 eV, vermutlich eine Kohlenstoff-Kontamination."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "p-beschluss",
+              "children": [
+                {
+                  "text": "Beschluss: Die Messung wird mit einer gereinigten Probe wiederholt; Sophie koordiniert die Terminvergabe am Spektrometer."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "callout",
+              "id": "co-hinweis",
+              "children": [
+                {
+                  "text": "Referenzproben bitte bis Donnerstag im Labor 1.14 abgeben."
+                }
+              ],
+              "variant": "warning",
+              "icon": "💡"
+            },
+            {
+              "type": "h2",
+              "id": "h-aufgaben",
+              "children": [
+                {
+                  "text": "Aufgaben"
+                }
+              ],
+              "align": "start",
+              "blockWidth": "default"
+            },
+            {
+              "type": "p",
+              "id": "t-miriam",
+              "children": [
+                {
+                  "text": "Miriam: Syntheseprotokoll v3 dokumentieren (bis 25.09.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "t-sophie",
+              "children": [
+                {
+                  "text": "Sophie: XPS-Messung mit Referenzprobe wiederholen (bis 25.09.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "t-clara",
+              "children": [
+                {
+                  "text": "Clara: Entwurf Zwischenbericht Kapitel 1 und 2 (bis 10.10.)"
+                }
+              ],
+              "indent": 1,
+              "listStyleType": "disc"
+            },
+            {
+              "type": "p",
+              "id": "p-naechstes",
+              "children": [
+                {
+                  "text": "Nächstes Treffen: 1. Oktober 2026, Raum B2.104."
+                }
+              ],
+              "align": "start",
+              "blockWidth": "wide"
+            }
+          ]
+        }
+      },
+      "changeNote": "Layout angepasst: Überschrift zentriert, Termin in voller Breite"
+    }
+  ]
+}

@@ -29,30 +29,29 @@
     margin-left: 1em;
   }
 }
-
-// #page-search #content-core .search-items .tileItem {
-//   padding: 20px 0 40px 0;
-//   margin-bottom: 0px;
-//   p.url {
-//     margin-bottom: 10px;
-//     font-size: 14px;
-//     line-height: 18px;
-//   }
-//   h2.tileHeadline {
-//     .summary.url {
-//       font-size: 18px;
-//       font-style: normal;
-//       font-weight: 700;
-//       line-height: 24px;
-//       text-decoration: none;
-//     }
-//   }
-
-//   .tileBody {
-//     margin: 15px 0px;
-//   }
-//   .tileFooter {
-//     display: flex;
-//     align-items: center;
-//   }
-// }
+// ### Solr search results ###
+.section-search #content-core .search-items article.tileItem {
+  margin-bottom: 40px;
+  p.url {
+    margin-bottom: 10px;
+  }
+  h2.tileHeadline {
+    padding-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    .summary.url {
+      text-decoration: none;
+    }
+  }
+  .tileBody {
+    padding-bottom: 15px;
+    margin: 0;
+  }
+  .tileFooter {
+    display: flex;
+    .tileFooterDate {
+      display: flex;
+    }
+  }
+}

@@ -117,8 +117,11 @@ jobs:
             spec-pattern: 'core/blocks-listings/*.cy.{js,jsx,ts,tsx}'
           - name: "Core Tests - Content"
             spec-pattern: 'core/content/*.cy.{js,jsx,ts,tsx}'
-          - name: "Main Tests"
-            spec-pattern: 'main/**/*.cy.{js,jsx,ts,tsx}'
+          # Split by spec file name into two balanced jobs.
+          - name: "Main Tests (a-c)"
+            spec-pattern: 'main/**/[a-cA-C0-9]*.cy.{js,jsx,ts,tsx}'
+          - name: "Main Tests (d-z)"
+            spec-pattern: 'main/**/[d-zD-Z]*.cy.{js,jsx,ts,tsx}'
 
     needs:
         - config
@@ -148,9 +151,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: "Tests"
+          # Split by spec file name into two balanced jobs.
+          # gridListingBlock alone takes 1-2 minutes, so it goes in the smaller group.
+          - name: "Tests (a-g)"
             api-url: 'localhost:8080/plone'
-            spec-pattern: 'a11y/**/*.cy.{js,jsx,ts,tsx}'
+            spec-pattern: 'a11y/**/[a-gA-G0-9]*.cy.{js,jsx,ts,tsx}'
+          - name: "Tests (h-z)"
+            api-url: 'localhost:8080/plone'
+            spec-pattern: 'a11y/**/[h-zH-Z]*.cy.{js,jsx,ts,tsx}'
 
     needs:
         - config

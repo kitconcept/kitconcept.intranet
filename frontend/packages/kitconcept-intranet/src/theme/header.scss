@@ -743,6 +743,28 @@ $search-text: #252525;
   text-align: center;
 }
 
+// "Show all results": pinned below the scrolling results, the way to
+// the full results page.
+.header-search-footer {
+  flex: 0 0 auto;
+  padding: 14px 20px;
+  border-top: 1px solid #edf0f2;
+  background: #f3f6f7;
+  text-align: center;
+}
+
+.header-search-show-all {
+  color: $search-blue;
+  font-size: 15px;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    color: $search-blue;
+    text-decoration: underline;
+  }
+}
+
 .header-search-ai {
   padding: 18px 20px;
   border: 1px solid $search-border;

@@ -2,6 +2,54 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.3 (2026-10-02)
+
+
+### Feature
+
+- Two wiki-table demo pages ("Projektbudget 2026", "Teilnehmende Konsortialtreffen") in the GreenCat workspace, created by the distribution post handler on new sites and by `scripts/table_demo_content.py` (REST) on existing sites. Wiki Pages created by the demo-content code now carry the title block the editor expects; the history-diff demo page could not be saved in the editor before. @reekitconcept [#655](https://github.com/kitconcept/kitconcept.intranet/issue/655)
+- The wiki-table demo page "Teilnehmende Konsortialtreffen" gets a list of open items for sorting and filtering and a meeting agenda with a merged cell; `scripts/table_demo_content.py` recreates both demo pages on existing sites. @reekitconcept [#666](https://github.com/kitconcept/kitconcept.intranet/issue/666)
+
+
+### Internal
+
+- Update @kitconcept-volto-solr to 3.0.0-alpha.3. @iRohitSingh [#solr-3.0.0a3](https://github.com/kitconcept/kitconcept.intranet/issue/solr-3.0.0a3)
+- Update the backend to kitconcept.plate 1.0.0a30. @reekitconcept [#360](https://github.com/kitconcept/kitconcept.intranet/issue/360)
+- The REST scripts `scripts/table_demo_content.py` and `scripts/diff_demo_content.py` use `requests` through a shared client, `kitconcept.intranet.utils.plone_client`, and send a browser User-Agent, because sites behind Cloudflare (the kitconcept cluster) block bot-like ones; override it with `--user-agent` or `$PLONE_CLIENT_USER_AGENT`. @reekitconcept 
+
+
+### Tests
+
+- Add `scripts/export_acceptance_fixtures.py`, which exports the wiki table and history diff demo content as JSON fixtures for the Playwright acceptance tests. @reekitconcept [#667](https://github.com/kitconcept/kitconcept.intranet/issue/667)
+
+## 3.0.2 (2026-09-22)
+
+
+### Feature
+
+- History-diff demo page "Jour fixe KW 38": created with four versions and change notes by the distribution post handler on new sites, and by `scripts/diff_demo_content.py` (REST) on existing sites. @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
+## 3.0.1 (2026-09-18)
+
+
+### Internal
+
+- Update to core 2.1.0 @sneridagh 
+
+## 3.0.0 (2026-09-17)
+
+
+### Feature
+
+- Sync the `/personen` persons with Plone users in the example content: add the missing Jutta Halmbach person (with portrait), assign usernames to the persons that had none, and seed the matching member accounts in `principals.json` so every person profile has a user (Max Berger included) and a portrait via `sync_person_portraits`. Also reassign the example content authored by `admin` randomly among `a.becker`, `m.berger` and `c.nguyen`. @sneridagh [#502](https://github.com/kitconcept/kitconcept.intranet/issue/502)
+
+
+### Internal
+
+- Update VLT final and core (Plone 6.2.2). @sneridagh 
+- Update k.core @Tishasoumya-02 
+- Update the backend to kitconcept.plate 1.0.0a28. @iFlameing 
+
 ## 3.0.0a5 (2026-09-11)
 
 

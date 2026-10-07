@@ -1,10 +1,3 @@
-.section-search #page-search > .ui.container {
-  width: 100% !important;
-  max-width: var(--layout-container-width) !important;
-  padding: 0 10px !important;
-  margin: 0 auto !important;
-}
-
 // Hide the empty search tabs container (e.g. on an empty search term, when
 // there are no facet groups). Semantic UI's `.ui.menu` enforces a `min-height`,
 // so an empty `.searchTabs` would otherwise render as a stray grey rectangle.

@@ -26,6 +26,7 @@ import { expectSelectionIn } from '../fixtures/table-editor';
 import {
   createDiffPage,
   createTablePage,
+  createWikiPageWithValue,
   getContent,
   getWikiValue,
   patchContent,
@@ -268,6 +269,63 @@ test.describe('Wiki Page history diff', () => {
     await expect(changed).toHaveCount(1);
     await expect(changed.locator('.plate-diff-label')).toContainText(
       'Width: Standard → Narrow',
+    );
+  });
+
+  // Whole-word marks:
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/714
+  test('5c. a changed word is marked as a whole, not only its changed characters', async ({
+    page,
+  }) => {
+    const paragraph = (text: string) => ({
+      id: 'p-plan',
+      type: 'p',
+      align: 'start',
+      blockWidth: 'default',
+      children: [{ text }],
+    });
+    const { contentPath } = await createWikiPageWithValue(page, {
+      contentId: 'whole-words',
+      title: 'Whole words',
+      value: [
+        paragraph(
+          'Der Projektplan liegt im Projektportal, Abgabe bis 25.09.2026.',
+        ),
+      ],
+    });
+    const value = await getWikiValue(page, contentPath);
+    value[value.length - 1] = paragraph(
+      'Der Projektplan steht im GreenCat-Portal, Abgabe bis 26.09.2026.',
+    );
+    const content = await getContent(page, contentPath);
+    await patchContent(page, contentPath, {
+      blocks: {
+        ...content.blocks,
+        [SOMERSAULT_KEY]: { '@type': SOMERSAULT_KEY, value },
+      },
+      changeNote: 'Drei Wörter geändert',
+    });
+
+    // Character by character this would be "lieg"/"steh", "Projektp"/
+    // "GreenCat-P" and "5"/"6".
+    const removed = ['liegt', 'Projektportal', '25.09.2026'];
+    const added = ['steht', 'GreenCat-Portal', '26.09.2026'];
+
+    await openDiff(page, contentPath, 0, 1, 'split');
+    await expect(page.locator('.plate-diff-left del')).toHaveText(removed);
+    await expect(page.locator('.plate-diff-right ins')).toHaveText(added);
+
+    await openDiff(page, contentPath, 0, 1, 'unified');
+    const unified = page.locator('.plate-diff-unified');
+    await expect(unified.locator('del')).toHaveText(removed);
+    await expect(unified.locator('ins')).toHaveText(added);
+    // Old word first, then the new one; the rest of the paragraph is unmarked.
+    await expect(
+      unified.locator('[data-slate-node="element"]', {
+        hasText: 'Der Projektplan',
+      }),
+    ).toHaveText(
+      'Der Projektplan liegtsteht im ProjektportalGreenCat-Portal, Abgabe bis 25.09.202626.09.2026.',
     );
   });
 

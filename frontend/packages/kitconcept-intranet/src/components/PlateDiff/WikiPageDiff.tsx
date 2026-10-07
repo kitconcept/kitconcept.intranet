@@ -4,7 +4,8 @@
  *
  * `computeDiff` (from `@platejs/diff`) returns the *new* document with the
  * changed nodes annotated (`diff`, `diffOperation`); deleted nodes are kept
- * in place and marked. `DiffPlugin` turns those annotations into markup.
+ * in place and marked. `expandDiffToWords` extends its character-precise
+ * text marks to whole words, `DiffPlugin` turns the annotations into markup.
  *
  * - unified: one renderer showing insertions and deletions inline.
  * - split: one row per top-level node, the left cell shows the node without
@@ -26,6 +27,7 @@ import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTa
 import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import { DiffPlugin } from './DiffPlugin';
 import { messages } from './messages';
+import { expandDiffToWords } from './wholeWords';
 import './plate-diff.css';
 
 // Inline element types of the wiki kit. The spike hardcodes them; the real
@@ -103,9 +105,12 @@ const WikiPageDiff = ({ one, two, view }: Props) => {
   const intl = useIntl();
   const diffValue = useMemo(
     () =>
-      computeDiff(getValue(one), getValue(two), {
-        isInline: (node) => INLINE_TYPES.has((node as TElement).type),
-      }).filter((node) => !isEmptyChange(node)),
+      // computeDiff marks single characters; show whole words instead.
+      expandDiffToWords(
+        computeDiff(getValue(one), getValue(two), {
+          isInline: (node) => INLINE_TYPES.has((node as TElement).type),
+        }),
+      ).filter((node) => !isEmptyChange(node)),
     [one, two],
   );
 

@@ -52,6 +52,7 @@
     "@kitconcept/volto-iframe-block",
     "volto-rss-block",
     "@eeacms/volto-accordion-block",
+    "@eeacms/volto-pdf-block",
     "@kitconcept/volto-banner-block",
     "@kitconcept/volto-bm3-compat",
     "@kitconcept/volto-button-block",
@@ -76,6 +77,7 @@
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
+    "@eeacms/volto-pdf-block": "^1.0.12",
     "@kitconcept/core": "workspace:*",
     "@kitconcept/volto-banner-block": "workspace:*",
     "@kitconcept/volto-bm3-compat": "workspace:*",

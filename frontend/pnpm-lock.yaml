@@ -1407,6 +1407,9 @@ importers:
       '@eeacms/volto-accordion-block':
         specifier: ^12.0.0
         version: 12.0.0
+      '@eeacms/volto-pdf-block':
+        specifier: ^1.0.12
+        version: 1.0.12(react@18.2.0)(webpack@5.110.0(lightningcss@1.33.0))
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
@@ -3196,6 +3199,9 @@ packages:
   '@eeacms/volto-accordion-block@12.0.0':
     resolution: {integrity: sha512-YaYyIt7ejz/1fOK7kLUUXXSWaU4viNRn58xE3qjpZOPBV8F3cxo2vbo+SdgC5hRuVr1bzq2V/u3km+HaHb80jA==}
 
+  '@eeacms/volto-pdf-block@1.0.12':
+    resolution: {integrity: sha512-06laYl6WTQn7QBI/kaK/TXXQ6cayhgg8gBAYKtSeL0Ir4rus4kJucLqD+oZ9E+rYtnj1OjHzr8tH8lAEBukdHg==}
+
   '@eeacms/volto-widget-theme-picker@3.0.1':
     resolution: {integrity: sha512-f6JHJwWtCXYnrvPfrAjWKT96OHPOyU8izjqjvtTP1w4liez1qZcSkVVhKsPOcGDAXHCAKko4rxTQ0Rm4pvE2wQ==}
 
@@ -4235,6 +4241,11 @@ packages:
 
   '@mermaid-js/parser@1.2.1':
     resolution: {integrity: sha512-n12NohV3mrUyUL2o93IgG/ifeW9FTyeJn3zDxkhwa8MJ9Fxg3HQMlA3RiGmD/3UnJvheztkjjQAjA2T4LmUcpw==}
+
+  '@mikecousins/react-pdf@5.5.0':
+    resolution: {integrity: sha512-SLRu5l0ZazZL9ShKcTaRvEcmw7Ar9k5XVRFGa8mZmPXGiKYxh2x4unctebdDo9Vrhg9VVzzU6XE8q4vTALWUqw==}
+    peerDependencies:
+      react: '>=16'
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     resolution: {integrity: sha512-oTXEIha4SsuXdTA4Iyskj0kpdx2yVXdhd75c2v3xGrHFfVMsbhTPZU/nMPL4sWKo4pBHm3aucLaqGlF696dTyQ==}
@@ -10528,6 +10539,10 @@ packages:
     resolution: {integrity: sha512-DFEqQ3ihfS9blba08cLfYf1NRAIEm+dDjic073DRDc3/JspI/8wYmtDsHwd3+4hwvdxSK7PGaElfTmm0awWJ4w==}
     engines: {node: '>=6.11.5'}
 
+  loader-utils@1.4.2:
+    resolution: {integrity: sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==}
+    engines: {node: '>=4.0.0'}
+
   loader-utils@2.0.4:
     resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
     engines: {node: '>=8.9.0'}
@@ -11167,6 +11182,9 @@ packages:
     resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
     engines: {node: '>=18'}
 
+  node-ensure@0.0.0:
+    resolution: {integrity: sha512-DRI60hzo2oKN1ma0ckc6nQWlHU69RH6xN0sjQTjMpChPfTYvKZdcQFfdYK2RWbJcKyUizSIy/l8OTGxMAM1QDw==}
+
   node-exports-info@1.6.2:
     resolution: {integrity: sha512-kXs9Go0cah0qHVV2v389IXQLdLCeE1xfFtjOAF+iobu0OIoG1pje8At2vMHyaPMiPMnG/LWP50twML21eMcAag==}
     engines: {node: '>= 0.4'}
@@ -11536,6 +11554,11 @@ packages:
 
   pdf-lib@1.17.1:
     resolution: {integrity: sha512-V/mpyJAoTsN4cnP31vc0wfNA1+p20evqqnap0KLoRUN0Yk/p3wN52DOEsL4oBFcLdb76hlpKPtzJIgo67j/XLw==}
+
+  pdfjs-dist@2.2.228:
+    resolution: {integrity: sha512-W5LhYPMS2UKX0ELIa4u+CFCMoox5qQNQElt0bAK2mwz1V8jZL0rvLao+0tBujce84PK6PvWG36Nwr7agCCWFGQ==}
+    peerDependencies:
+      webpack: ^3.0.0 || ^4.0.0-alpha.0 || ^4.0.0
 
   pend@1.2.0:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
@@ -12850,6 +12873,10 @@ packages:
 
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+
+  schema-utils@0.4.7:
+    resolution: {integrity: sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==}
+    engines: {node: '>= 4'}
 
   schema-utils@2.7.0:
     resolution: {integrity: sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==}
@@ -14459,6 +14486,12 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
+  worker-loader@2.0.0:
+    resolution: {integrity: sha512-tnvNp4K3KQOpfRnD20m8xltE3eWh89Ye+5oj7wXEEHKac1P4oZ6p9oTj8/8ExqoSBnk9nu5Pr4nKfQ1hn2APJw==}
+    engines: {node: '>= 6.9.0 || >= 8.9.0'}
+    peerDependencies:
+      webpack: ^3.0.0 || ^4.0.0-alpha.0 || ^4.0.0
+
   wrap-ansi@6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
     engines: {node: '>=8'}
@@ -15901,6 +15934,13 @@ snapshots:
     dependencies:
       '@eeacms/volto-widget-theme-picker': 3.0.1
 
+  '@eeacms/volto-pdf-block@1.0.12(react@18.2.0)(webpack@5.110.0(lightningcss@1.33.0))':
+    dependencies:
+      '@mikecousins/react-pdf': 5.5.0(react@18.2.0)(webpack@5.110.0(lightningcss@1.33.0))
+    transitivePeerDependencies:
+      - react
+      - webpack
+
   '@eeacms/volto-widget-theme-picker@3.0.1': {}
 
   '@emnapi/core@1.10.0':
@@ -16988,6 +17028,13 @@ snapshots:
   '@mermaid-js/parser@1.2.1':
     dependencies:
       '@chevrotain/types': 11.1.2
+
+  '@mikecousins/react-pdf@5.5.0(react@18.2.0)(webpack@5.110.0(lightningcss@1.33.0))':
+    dependencies:
+      pdfjs-dist: 2.2.228(webpack@5.110.0(lightningcss@1.33.0))
+      react: 18.2.0
+    transitivePeerDependencies:
+      - webpack
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -24355,6 +24402,12 @@ snapshots:
 
   loader-runner@4.3.2: {}
 
+  loader-utils@1.4.2:
+    dependencies:
+      big.js: 5.2.2
+      emojis-list: 3.0.0
+      json5: 1.0.2
+
   loader-utils@2.0.4:
     dependencies:
       big.js: 5.2.2
@@ -25106,6 +25159,16 @@ snapshots:
       lightningcss: 1.33.0
       postcss: 8.5.26
 
+  minimizer-webpack-plugin@5.8.0(lightningcss@1.33.0)(webpack@5.110.0(lightningcss@1.33.0)):
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.31
+      jest-worker: 27.5.1
+      schema-utils: 4.3.3
+      terser: 5.51.2
+      webpack: 5.110.0(lightningcss@1.33.0)
+    optionalDependencies:
+      lightningcss: 1.33.0
+
   minimizer-webpack-plugin@5.8.0(webpack@5.110.0):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
@@ -25206,6 +25269,8 @@ snapshots:
       char-regex: 1.0.2
       emojilib: 2.4.0
       skin-tone: 2.0.0
+
+  node-ensure@0.0.0: {}
 
   node-exports-info@1.6.2:
     dependencies:
@@ -25649,6 +25714,12 @@ snapshots:
       '@pdf-lib/upng': 1.0.1
       pako: 1.0.11
       tslib: 1.14.1
+
+  pdfjs-dist@2.2.228(webpack@5.110.0(lightningcss@1.33.0)):
+    dependencies:
+      node-ensure: 0.0.0
+      webpack: 5.110.0(lightningcss@1.33.0)
+      worker-loader: 2.0.0(webpack@5.110.0(lightningcss@1.33.0))
 
   pend@1.2.0: {}
 
@@ -27320,6 +27391,11 @@ snapshots:
   scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
+
+  schema-utils@0.4.7:
+    dependencies:
+      ajv: 6.15.0
+      ajv-keywords: 3.5.2(ajv@6.15.0)
 
   schema-utils@2.7.0:
     dependencies:
@@ -29394,6 +29470,41 @@ snapshots:
       - postcss
       - uglify-js
 
+  webpack@5.110.0(lightningcss@1.33.0):
+    dependencies:
+      '@types/estree': 1.0.9
+      '@types/json-schema': 7.0.15
+      '@webassemblyjs/ast': 1.14.1
+      '@webassemblyjs/wasm-edit': 1.14.1
+      '@webassemblyjs/wasm-parser': 1.14.1
+      acorn: 8.18.0
+      browserslist: 4.28.8
+      chrome-trace-event: 1.0.4
+      enhanced-resolve: 5.24.5
+      es-module-lexer: 2.3.2
+      events: 3.3.0
+      graceful-fs: 4.2.11
+      mime-db: 1.54.0
+      minimizer-webpack-plugin: 5.8.0(lightningcss@1.33.0)(webpack@5.110.0(lightningcss@1.33.0))
+      neo-async: 2.6.2
+      schema-utils: 4.3.3
+      tapable: 2.3.3
+      watchpack: 2.5.2
+      webpack-sources: 3.5.1
+    transitivePeerDependencies:
+      - '@minify-html/node'
+      - '@swc/core'
+      - '@swc/css'
+      - '@swc/html'
+      - clean-css
+      - cssnano
+      - csso
+      - esbuild
+      - html-minifier-terser
+      - lightningcss
+      - postcss
+      - uglify-js
+
   webpackbar@7.0.0(webpack@5.105.4(esbuild@0.25.12)):
     dependencies:
       ansis: 3.17.0
@@ -29502,6 +29613,12 @@ snapshots:
       powershell-utils: 0.2.0
 
   word-wrap@1.2.5: {}
+
+  worker-loader@2.0.0(webpack@5.110.0(lightningcss@1.33.0)):
+    dependencies:
+      loader-utils: 1.4.2
+      schema-utils: 0.4.7
+      webpack: 5.110.0(lightningcss@1.33.0)
 
   wrap-ansi@6.2.0:
     dependencies:

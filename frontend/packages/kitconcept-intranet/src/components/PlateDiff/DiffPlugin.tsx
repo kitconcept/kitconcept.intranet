@@ -20,7 +20,13 @@ import {
   PlateLeaf,
   type PlateLeafProps,
 } from 'platejs/react';
-import { changeSummary, describeOperation, operationLabel } from './messages';
+import { LINK_TYPES } from './linkChanges';
+import {
+  changeSummary,
+  describeOperation,
+  messages,
+  operationLabel,
+} from './messages';
 
 export const DIFF_KEY = 'diff';
 
@@ -59,20 +65,50 @@ function DiffLeaf(props: PlateLeafProps) {
   );
 }
 
+/** Old and new target of a changed link, if the target changed. */
+const linkTargetChange = (op: DiffOperation) => {
+  if (op.type !== 'update') return undefined;
+  const key = ['url', 'href'].find((name) => name in op.newProperties);
+  if (!key) return undefined;
+  return {
+    from: String(op.properties[key] ?? ''),
+    to: String(op.newProperties[key] ?? ''),
+  };
+};
+
 function DiffBlock({
   op,
   inline,
+  link,
   children,
-}: React.PropsWithChildren<{ op: DiffOperation; inline: boolean }>) {
+}: React.PropsWithChildren<{
+  op: DiffOperation;
+  inline: boolean;
+  link: boolean;
+}>) {
   const intl = useIntl();
   const summary = changeSummary(op, intl);
   if (inline) {
+    const target = link ? linkTargetChange(op) : undefined;
+    const label = intl.formatMessage(messages.linkTarget);
     return (
       <span
         className={`plate-diff-inline plate-diff-inline-${op.type}`}
-        title={describeOperation(op, intl)}
+        title={
+          target
+            ? `${label}: ${target.from} → ${target.to}`
+            : describeOperation(op, intl)
+        }
       >
         {children}
+        {target ? (
+          // The old target shows on the left / as removed, the new one on
+          // the right / as added, through the classes of the text marks.
+          <span className="plate-diff-inline-label" contentEditable={false}>
+            {label}: <del className="plate-diff-delete">{target.from}</del>
+            <ins className="plate-diff-insert">{target.to}</ins>
+          </span>
+        ) : null}
       </span>
     );
   }
@@ -111,7 +147,11 @@ export const DiffPlugin = createPlatePlugin({
         const op = (element as DiffElement).diffOperation;
         if (!op || UNWRAPPABLE_TYPES.includes(element.type)) return children;
         return (
-          <DiffBlock op={op} inline={editor.api.isInline(element)}>
+          <DiffBlock
+            op={op}
+            inline={editor.api.isInline(element)}
+            link={LINK_TYPES.has(element.type)}
+          >
             {children}
           </DiffBlock>
         );

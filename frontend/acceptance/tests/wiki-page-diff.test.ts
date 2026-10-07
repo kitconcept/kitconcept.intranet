@@ -329,6 +329,73 @@ test.describe('Wiki Page history diff', () => {
     );
   });
 
+  // Changed link target:
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/714
+  test('5d. a link whose target changed shows the old and the new URL', async ({
+    page,
+  }) => {
+    const OLD_URL = 'https://example.org/portal';
+    const NEW_URL = 'https://example.org/portal-neu';
+    const paragraph = (url: string) => ({
+      id: 'p-plan',
+      type: 'p',
+      align: 'start',
+      blockWidth: 'default',
+      children: [
+        { text: 'Der Projektplan liegt im ' },
+        {
+          id: 'l-portal',
+          type: 'a',
+          url,
+          target: '_blank',
+          children: [{ text: 'Projektportal' }],
+        },
+        { text: '.' },
+      ],
+    });
+    const { contentPath } = await createWikiPageWithValue(page, {
+      contentId: 'link-target',
+      title: 'Link target',
+      value: [paragraph(OLD_URL)],
+    });
+    const value = await getWikiValue(page, contentPath);
+    value[value.length - 1] = paragraph(NEW_URL);
+    const content = await getContent(page, contentPath);
+    await patchContent(page, contentPath, {
+      blocks: {
+        ...content.blocks,
+        [SOMERSAULT_KEY]: { '@type': SOMERSAULT_KEY, value },
+      },
+      changeNote: 'Link-Ziel geändert',
+    });
+
+    await openDiff(page, contentPath, 0, 1, 'split');
+    for (const [side, url, mark] of [
+      ['.plate-diff-left', OLD_URL, 'del'],
+      ['.plate-diff-right', NEW_URL, 'ins'],
+    ] as const) {
+      const cell = page.locator(side);
+      // One link, marked as changed, not a removed and an added one.
+      await expect(cell.locator('a', { hasText: 'Projektportal' })).toHaveCount(
+        1,
+      );
+      await expect(cell.locator('.plate-diff-inline-update')).toHaveCount(1);
+      const label = cell.locator('.plate-diff-inline-label');
+      await expect(label).toContainText('Link:');
+      await expect(label.locator(mark)).toHaveText(url);
+      await expect(label.locator(mark)).toBeVisible();
+      // The other version's target stays hidden on this side.
+      await expect(label.locator(mark === 'del' ? 'ins' : 'del')).toBeHidden();
+    }
+
+    await openDiff(page, contentPath, 0, 1, 'unified');
+    const label = page.locator('.plate-diff-unified .plate-diff-inline-label');
+    await expect(label.locator('del')).toHaveText(OLD_URL);
+    await expect(label.locator('ins')).toHaveText(NEW_URL);
+    await expect(label.locator('del')).toBeVisible();
+    await expect(label.locator('ins')).toBeVisible();
+  });
+
   test('6. metadata changes show as fields, the content is not repeated', async ({
     page,
   }) => {

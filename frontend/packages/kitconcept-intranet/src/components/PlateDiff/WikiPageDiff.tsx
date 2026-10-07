@@ -19,6 +19,7 @@ import { useIntl } from 'react-intl';
 import { computeDiff } from '@platejs/diff';
 import type { Descendant, TElement, TText, Value } from 'platejs';
 import { PlateController, PlateRenderer } from '@plone/plate/components/editor';
+import { applyBlockWidthDefaultsInValue } from '@plone/plate/components/editor/plugins/block-width-plugin';
 import wikiEditorRenderer from '@kitconcept/volto-plate/plate/presets/wiki-renderer';
 import { PlatePluginsProvider } from '@kitconcept/volto-plate/plate/context/PlatePluginsProvider';
 import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
@@ -27,6 +28,7 @@ import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable
 import { DiffPlugin } from './DiffPlugin';
 import { mergeLinkChanges, splitLinkPairs } from './linkChanges';
 import { messages } from './messages';
+import { withStoredDefaults } from './storedDefaults';
 import { expandDiffToWords } from './wholeWords';
 import './plate-diff.css';
 
@@ -45,10 +47,16 @@ type Content = {
   blocks?: Record<string, { value?: Value }>;
 };
 
-// Rows hold cells only, like the view renderer (see wikiTableNormalizePlugin).
+// Rows hold cells only, like the view renderer (see wikiTableNormalizePlugin),
+// and every top-level block carries what the editor writes on load (block
+// width, no list start of 1), so content stored by code diffs like content
+// saved in the editor.
 const getValue = (content?: Content): Value =>
-  cleanTableRows(
-    (content?.blocks?.[SOMERSAULT_KEY]?.value as Value | undefined) ?? [],
+  withStoredDefaults(
+    cleanTableRows(
+      (content?.blocks?.[SOMERSAULT_KEY]?.value as Value | undefined) ?? [],
+    ),
+    applyBlockWidthDefaultsInValue,
   );
 
 export const hasPlateContent = (content?: Content): boolean =>
@@ -105,7 +113,12 @@ const WikiPageDiff = ({ one, two, view }: Props) => {
       splitLinkPairs(
         expandDiffToWords(
           mergeLinkChanges(
-            computeDiff(getValue(one), getValue(two), { isInline }),
+            computeDiff(getValue(one), getValue(two), {
+              isInline,
+              // The editor gives a node without an id one on save; an id is
+              // not content and must not read as a change.
+              ignoreProps: ['id'],
+            }),
             { isInline },
           ),
         ),

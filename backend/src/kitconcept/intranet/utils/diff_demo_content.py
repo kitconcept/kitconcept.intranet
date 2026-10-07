@@ -23,6 +23,7 @@ from kitconcept.intranet.utils.wiki_content import heading
 from kitconcept.intranet.utils.wiki_content import node
 from kitconcept.intranet.utils.wiki_content import paragraph
 from kitconcept.intranet.utils.wiki_content import text
+from kitconcept.intranet.utils.wiki_content import title
 
 import copy
 
@@ -33,27 +34,45 @@ CONTAINER_PATH = "/workspaces/eu-projekt-greencat"
 
 
 def list_item(node_id: str, value: str, number: int) -> dict:
+    """A numbered list item, stored as the editor stores it: the first item
+    carries no ``listStart``, every block its ``blockWidth``."""
+    props = {"listStart": number} if number > 1 else {}
     return node(
         "p",
         node_id,
         [text(value)],
+        blockWidth="default",
         indent=1,
         listStyleType="decimal",
-        listStart=number,
+        **props,
     )
 
 
 def bullet_item(node_id: str, value: str) -> dict:
-    return node("p", node_id, [text(value)], indent=1, listStyleType="disc")
+    return node(
+        "p",
+        node_id,
+        [text(value)],
+        blockWidth="default",
+        indent=1,
+        listStyleType="disc",
+    )
 
 
 def callout(node_id: str, value: str, variant: str = "info") -> dict:
-    return node("callout", node_id, [text(value)], variant=variant, icon="💡")
+    return node(
+        "callout",
+        node_id,
+        [text(value)],
+        blockWidth="default",
+        variant=variant,
+        icon="💡",
+    )
 
 
 def version_0() -> list[dict]:
     return [
-        node("title", "title", [text(PAGE_TITLE)]),
+        title(PAGE_TITLE),
         heading("h-teilnehmer", "Teilnehmer"),
         paragraph(
             "p-teilnehmer",
@@ -128,11 +147,15 @@ def version_2(previous: list[dict]) -> list[dict]:
 
 
 def version_3(previous: list[dict]) -> list[dict]:
-    """Changed block settings only: alignment and width."""
+    """Changed block settings only: alignment and block type.
+
+    Both are values the editor can produce (paragraphs have no width other
+    than the default in the wiki editor, so a width change would be undone
+    by the next save)."""
     value = copy.deepcopy(previous)
     by_id = {n.get("id"): n for n in value}
     by_id["h-diskussion"]["align"] = "center"
-    by_id["p-naechstes"]["blockWidth"] = "wide"
+    by_id["p-naechstes"]["type"] = "blockquote"
     return value
 
 
@@ -144,7 +167,7 @@ VERSIONS: list[tuple] = [
         "Ausbeute aktualisiert, Beschluss zur Wiederholung der Messung ergänzt",
     ),
     (version_2, "Aufgabe für Clara ergänzt, Abgabefrist der Proben vorgezogen"),
-    (version_3, "Layout angepasst: Überschrift zentriert, Termin in voller Breite"),
+    (version_3, "Layout angepasst: Überschrift zentriert, Termin als Zitat"),
 ]
 
 

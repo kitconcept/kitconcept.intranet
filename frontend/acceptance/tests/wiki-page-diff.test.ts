@@ -170,15 +170,13 @@ test.describe('Wiki Page history diff', () => {
       changed
         .filter({ hasText: 'Nächstes Treffen' })
         .locator('.plate-diff-label'),
-    ).toContainText('Width: Standard → Wide');
+    ).toContainText('Block type: Paragraph → Quote');
   });
 
   test('5. an edit made in the editor shows in the diff', async ({ page }) => {
     const { contentPath } = await createDiffPage(page);
     const handle = await openInEditor(page, contentPath);
     const value = await getValue(page, handle);
-    // A paragraph whose settings stay as they are (the demo's "wide" width
-    // of "Nächstes Treffen" is not an editor value and is reset on save).
     const index = value.findIndex((node) =>
       nodeText(node).startsWith('Die XPS-Messreihe'),
     );
@@ -400,6 +398,77 @@ test.describe('Wiki Page history diff', () => {
     await expect(label.locator('ins')).toHaveText(NEW_URL);
     await expect(label.locator('del')).toBeVisible();
     await expect(label.locator('ins')).toBeVisible();
+  });
+
+  // Content stored without the editor's defaults:
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/714
+  test('5e. the first editor save of a page created by code shows only the real change', async ({
+    page,
+  }) => {
+    // No blockWidth anywhere, a listStart of 1: what code, imports and
+    // migrations store. The editor adds the defaults on its first save.
+    const { contentPath } = await createWikiPageWithValue(page, {
+      contentId: 'stored-by-code',
+      title: 'Stored by code',
+      value: [
+        { id: 'h-1', type: 'h2', children: [{ text: 'Agenda' }] },
+        {
+          id: 'a-1',
+          type: 'p',
+          indent: 1,
+          listStyleType: 'decimal',
+          listStart: 1,
+          children: [{ text: 'Erster Punkt' }],
+        },
+        {
+          id: 'a-2',
+          type: 'p',
+          indent: 1,
+          listStyleType: 'decimal',
+          listStart: 2,
+          children: [{ text: 'Zweiter Punkt' }],
+        },
+        {
+          id: 'c-1',
+          type: 'callout',
+          variant: 'info',
+          icon: '💡',
+          children: [{ text: 'Bitte pünktlich kommen.' }],
+        },
+        {
+          id: 'p-1',
+          type: 'p',
+          align: 'start',
+          children: [{ text: 'Nächstes Treffen am Dienstag.' }],
+        },
+      ],
+    });
+    const handle = await openInEditor(page, contentPath);
+    const value = await getValue(page, handle);
+    const index = value.findIndex((node) =>
+      nodeText(node).startsWith('Nächstes Treffen'),
+    );
+    await setSelection(page, handle, {
+      path: [index, 0],
+      offset: nodeText(value[index]).length,
+    });
+    await expectSelectionIn(page, [index]);
+    await page.keyboard.type(' Raum B2.104.');
+    await savePage(page, contentPath);
+
+    for (const view of ['unified', 'split'] as const) {
+      await openDiff(page, contentPath, 0, 1, view);
+      const diff = page.locator(`.plate-diff-${view}`);
+      // Insertions show in the unified view and on the right of the split view.
+      const newSide =
+        view === 'split' ? diff.locator('.plate-diff-right') : diff;
+      await expect(
+        newSide.locator('ins', { hasText: 'Raum B2.104.' }).first(),
+      ).toBeVisible();
+      // No "Width: not set → Standard" boxes, no removed + added paragraph.
+      await expect(diff.locator('.plate-diff-block')).toHaveCount(0);
+      await expect(diff.locator('.plate-diff-label')).toHaveCount(0);
+    }
   });
 
   test('6. metadata changes show as fields, the content is not repeated', async ({

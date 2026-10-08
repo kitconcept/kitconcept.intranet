@@ -57,9 +57,7 @@ x-solr: &solr
   ports:
     - 8983:8983
   command:
-    - solr-precreate
-    - plone
-    - /plone-config
+    - solr-update-core-and-start
   environment:
     SOLR_MODULES: extraction
 

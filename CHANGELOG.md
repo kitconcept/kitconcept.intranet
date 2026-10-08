@@ -1,6 +1,73 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.1.0 (2026-10-08)
+
+### Backend
+
+
+#### Feature
+
+- Add `plone.recyclebin` to the distribution and install its default profile on new and upgraded sites. [#691](https://github.com/kitconcept/kitconcept.intranet/issue/691)
+- History diff demo page: blocks are stored the way the editor stores them (width on every block, no list start of 1, a quote instead of a wide paragraph), so an edit in the editor shows only the real change in the diff. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Add `kitconcept.keywordmanager` package. @jnptk 
+
+
+#### Internal
+
+- Update kitconcept.plate to 1.0.0a32. @sneridagh 
+- Update kitconcept.plate to 1.0.0a33. @sneridagh 
+- Update kitconcept.plate to 1.0.0a34. @sneridagh 
+- Update kitconcept.plate to 1.0.0a35. @sneridagh 
+- Update kitconcept.plate to 1.0.0a36. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Add `@plone/volto-recyclebin` to the distribution and cover the basic delete and restore flow with Playwright. [#691](https://github.com/kitconcept/kitconcept.intranet/issue/691)
+- Wiki Page diff: a changed word is marked as a whole ("liegt" → "steht") instead of only the characters that differ. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Wiki Page diff: a link whose target changed is shown as one changed link with the old and the new URL, instead of the same link text removed and added. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Wiki Page diff: a page that was created by code or imported no longer shows "Width: not set → Standard" on every block in the diff of its first save in the editor; the demo page stores the values the editor stores. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Add `@eeacms/volto-pdf-block`. @davisagli 
+- Add `@kitconcept/volto-keywordmanager` package. @jnptk 
+- The search overlay renders a "Show all results" link at the bottom that opens the full results page. @danalvrz 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.32: content pasted from Word, LibreOffice or a web page keeps its images as image blocks, takes the styles of the wiki page, and its title becomes the title of the wiki page. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.33: add a Diagram element to the wiki editor (slash menu "Diagram"), to write Mermaid, Graphviz or Flowchart code and see the rendered diagram. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.35: resolved comment threads stay in the text and can be reopened, the toggle element is no longer offered in the wiki editor, comment and suggestion popovers behave correctly, and invalid Mermaid diagrams no longer leak error graphics onto the page. @sneridagh 
+- Update @plone-collective/volto-image-editor to 1.1.0. @danalvrz 
+
+
+#### Bugfix
+
+- Add 100px bottom padding to comments inside workspaces @iRohitSingh 
+- Hide site footer when adding images or files in workspace content @iRohitSingh 
+- Removed the misleading "@ mention a person" hint from the comment form placeholder. @iFlameing 
+- Update @kitconcept/volto-light-theme to 8.0.2: the tags no longer overlap the last block of a page when that block has a background color. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.34 (@plone/plate 1.0.0-alpha.24): the wiki editor sidebar follows the selected block (Block tab for images, Document tab for everything else) and no longer shows the unused Order tab, and the Plate editor strings are translatable. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.36: pasted plain text keeps the style of where it lands, and the "Image" and "Diagram" slash menu items are translated. @sneridagh 
+
+
+#### Internal
+
+- Added the quanta container to the shadowed search to take the correct styles. @TimoBroeskamp 
+- Update @kitconcept/volto-logos-block to 4.0.1 @iRohitSingh 
+- Updated Volto to 19.5.0. @iFlameing 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Document the recycle bin feature and how managers can restore deleted content. [#691](https://github.com/kitconcept/kitconcept.intranet/pull/691)
+
+
+
 ## 3.0.3 (2026-10-02)
 
 ### Backend

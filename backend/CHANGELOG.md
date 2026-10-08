@@ -2,6 +2,24 @@
 
 <!-- towncrier release notes start -->
 
+## 3.1.0 (2026-10-08)
+
+
+### Feature
+
+- Add `plone.recyclebin` to the distribution and install its default profile on new and upgraded sites. [#691](https://github.com/kitconcept/kitconcept.intranet/issue/691)
+- History diff demo page: blocks are stored the way the editor stores them (width on every block, no list start of 1, a quote instead of a wide paragraph), so an edit in the editor shows only the real change in the diff. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Add `kitconcept.keywordmanager` package. @jnptk 
+
+
+### Internal
+
+- Update kitconcept.plate to 1.0.0a32. @sneridagh 
+- Update kitconcept.plate to 1.0.0a33. @sneridagh 
+- Update kitconcept.plate to 1.0.0a34. @sneridagh 
+- Update kitconcept.plate to 1.0.0a35. @sneridagh 
+- Update kitconcept.plate to 1.0.0a36. @sneridagh 
+
 ## 3.0.3 (2026-10-02)
 
 

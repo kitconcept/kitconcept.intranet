@@ -1,1 +1,0 @@
-History diff demo page: blocks are stored the way the editor stores them (width on every block, no list start of 1, a quote instead of a wide paragraph), so an edit in the editor shows only the real change in the diff. @reekitconcept

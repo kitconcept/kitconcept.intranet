@@ -1,0 +1,1 @@
+Update @kitconcept/volto-plate to 1.0.0-alpha.35: resolved comment threads stay in the text and can be reopened, the toggle element is no longer offered in the wiki editor, comment and suggestion popovers behave correctly, and invalid Mermaid diagrams no longer leak error graphics onto the page. @sneridagh

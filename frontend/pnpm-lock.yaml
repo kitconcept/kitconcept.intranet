@@ -1450,8 +1450,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-logos-block/packages/volto-logos-block
       '@kitconcept/volto-plate':
-        specifier: ^1.0.0-alpha.34
-        version: 1.0.0-alpha.34(a1342679119e109dfbefb15593a63352)
+        specifier: ^1.0.0-alpha.35
+        version: 1.0.0-alpha.35(a1342679119e109dfbefb15593a63352)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -4228,8 +4228,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.34':
-    resolution: {integrity: sha512-NlSJcan29nAX6mxOGRycikEl2dxZ59T+VKCWdZzpcxJutS+Z6Bbm7s/iuDhJ7l5+N+wxoGQ8roeN4b2sqx6Ofg==}
+  '@kitconcept/volto-plate@1.0.0-alpha.35':
+    resolution: {integrity: sha512-OA1dsYZ/sxNUxvBPgvKKZTRIFkOmjj/88mKEOdlm3JPjyfut0EUz5JDfL8z4V7uUiCli92yS5dkeSZezAy3Huw==}
     peerDependencies:
       '@platejs/ai': ^53.3.12
       '@plone/registry': workspace:*
@@ -16968,7 +16968,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.34(a1342679119e109dfbefb15593a63352)':
+  '@kitconcept/volto-plate@1.0.0-alpha.35(a1342679119e109dfbefb15593a63352)':
     dependencies:
       '@internationalized/date': 3.12.3
       '@platejs/ai': 53.3.12(@ai-sdk/react@4.0.119(react@18.2.0)(zod@4.4.3))(ai@7.0.116(zod@4.4.3))(platejs@53.3.14(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)
@@ -16981,7 +16981,6 @@ snapshots:
       '@platejs/mention': 53.0.0(platejs@53.3.14(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/slash-command': 53.0.0(platejs@53.3.14(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/suggestion': 53.2.3(platejs@53.3.14(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@platejs/toggle': 53.0.0(@babel/core@7.29.7)(@babel/template@7.29.7)(@types/react@18.3.31)(platejs@53.3.14(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.6.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/helpers': 2.0.0-alpha.9(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/plate': 1.0.0-alpha.24(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.62.1)(@plone/components@4.2.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/icons@1.0.0-alpha.1(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.63.0)(tailwind-merge@3.6.0)(tailwindcss@4.3.3)(typescript@5.9.3)(vite@6.4.3(@types/node@24.13.3)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.0)))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/node@24.13.3)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.2.0))

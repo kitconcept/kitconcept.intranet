@@ -21,7 +21,6 @@ import type { Descendant, TElement, Value } from 'platejs';
 import { PlateController, PlateRenderer } from '@plone/plate/components/editor';
 import wikiEditorRenderer from '@kitconcept/volto-plate/plate/presets/wiki-renderer';
 import { PlatePluginsProvider } from '@kitconcept/volto-plate/plate/context/PlatePluginsProvider';
-import { ToggleVisibilityProvider } from '@kitconcept/volto-plate/plate/context/ToggleVisibilityContext';
 import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
 import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
@@ -85,20 +84,12 @@ type Props = {
   view: 'split' | 'unified';
 };
 
-/*
- * The wiki renderer's toggle nodes need a ToggleVisibilityProvider (they
- * throw without one). It is given an empty document on purpose: with the
- * real one, content under a closed toggle is hidden, and a diff must show
- * every change.
- */
 const Renderer = ({ id, value }: { id: string; value: Value }) => (
-  <ToggleVisibilityProvider value={[]}>
-    <PlateRenderer
-      editorConfig={{ ...editorConfig, id }}
-      value={value}
-      className="typeset"
-    />
-  </ToggleVisibilityProvider>
+  <PlateRenderer
+    editorConfig={{ ...editorConfig, id }}
+    value={value}
+    className="typeset"
+  />
 );
 
 const WikiPageDiff = ({ one, two, view }: Props) => {

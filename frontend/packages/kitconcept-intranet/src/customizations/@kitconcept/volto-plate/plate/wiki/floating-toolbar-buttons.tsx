@@ -1,15 +1,18 @@
 /**
  * OVERRIDE floating-toolbar-buttons.tsx
  * REASON: Add an "Insert table" button (3 × 3 with header row) next to the
- *         list and toggle buttons, so a table can be inserted from the
+ *         list buttons, so a table can be inserted from the
  *         toolbar as well as with the `/table` slash command. The relative
  *         import of the clear-formatting button is made absolute (shadowed
  *         files resolve relative imports against this package).
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/plate/wiki/floating-toolbar-buttons.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
- * DATE: 2026-10-01
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a35/frontend/packages/volto-plate/src/plate/wiki/floating-toolbar-buttons.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.35
+ * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
+ * CHANGELOG:
+ *  - Merge volto-plate 1.0.0-alpha.35: drop `ToggleToolbarButton`, the
+ *    toggle plugin was removed from the wiki editor. @sneridagh
  */
 
 import {
@@ -42,7 +45,6 @@ import {
   NumberedListToolbarButton,
   TodoListToolbarButton,
 } from '@plone/plate/components/ui/list-toolbar-button';
-import { ToggleToolbarButton } from '@plone/plate/components/ui/toggle-toolbar-button';
 import { ClearFormattingToolbarButton } from '@kitconcept/volto-plate/plate/wiki/clear-formatting-toolbar-button';
 import { insertWikiTable } from '@kitconcept/intranet/components/WikiTable/insertWikiTable';
 
@@ -127,7 +129,6 @@ export function FloatingToolbarButtons() {
             <BulletedListToolbarButton />
             <TodoListToolbarButton />
             <BlockWidthToolbarButton />
-            <ToggleToolbarButton />
             {/* OVERRIDE */}
             <InsertTableToolbarButton />
           </ToolbarGroup>

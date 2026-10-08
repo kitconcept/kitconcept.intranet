@@ -1,0 +1,7 @@
+// fix for sorting icons, should probably be added in kitconcept-keywordmanager as well
+#page-keyword_manager
+  .react-aria-Table.cmsui-table
+  .react-aria-TableHeader
+  svg {
+  display: inline-block;
+}

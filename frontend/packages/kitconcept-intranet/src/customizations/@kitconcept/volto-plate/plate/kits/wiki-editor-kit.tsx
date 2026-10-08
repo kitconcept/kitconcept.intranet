@@ -6,8 +6,8 @@
  *         table kit. Relative imports are made absolute (shadowed files
  *         resolve relative imports against this package). Everything else
  *         is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a35/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.35
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a36/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.36
  * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
@@ -23,6 +23,8 @@
  *  - Merge volto-plate 1.0.0-alpha.35: drop `ToggleKit` and replace
  *    `CommentKit` with `voltoCommentPlugin` (resolvable comment threads).
  *    @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.36: register
+ *    `VoltoPastePlainTextPlugin`. @sneridagh
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -63,6 +65,7 @@ import { VoltoClipboardImagePastePlugin } from '@kitconcept/volto-plate/plate/pl
 import { VoltoHtmlImagePastePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-html-image-paste';
 import { VoltoImageDropPlugin } from '@kitconcept/volto-plate/plate/plugins/volto-image-drop';
 import { VoltoPasteFormattingPlugin } from '@kitconcept/volto-plate/plate/plugins/volto-paste-formatting';
+import { VoltoPastePlainTextPlugin } from '@kitconcept/volto-plate/plate/plugins/volto-paste-plain-text';
 import { VoltoPasteTitlePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-paste-title';
 import { VoltoLinkKit } from '@kitconcept/volto-plate/plate/plugins/volto-link-kit';
 import { VoltoMentionKit } from '@kitconcept/volto-plate/plate/plugins/volto-mention-kit';
@@ -134,6 +137,7 @@ export const WikiEditorKit = [
   ...DocxKit,
   ...MarkdownKit,
   VoltoPasteFormattingPlugin,
+  VoltoPastePlainTextPlugin,
   VoltoPasteTitlePlugin,
 
   // UI

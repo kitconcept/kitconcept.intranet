@@ -3,8 +3,8 @@
  * REASON: The "Table" entry inserts a 3 × 3 table with a header row
  *         (Confluence default) instead of Plate's 2 × 2 without header.
  *         Everything else is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a35/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.35
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a36/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.36
  * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
@@ -13,6 +13,9 @@
  *    "Advanced blocks" group. @sneridagh
  *  - Merge volto-plate 1.0.0-alpha.35: filter out the toggle entry, the
  *    toggle plugin is not part of the wiki editor preset. @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.36: translated "Image" and "Diagram"
+ *    entries; `extendGroups` arguments are passed on to the upstream
+ *    menu. @sneridagh
  */
 
 import type {
@@ -24,7 +27,18 @@ import { PLONE_BLOCK_TYPE } from '@plone/helpers';
 import { ImageIcon, WorkflowIcon } from 'lucide-react';
 import { KEYS, PathApi } from 'platejs';
 import type { PlateEditor } from 'platejs/react';
+import { defineMessages } from 'react-intl';
 import { insertWikiTable } from '@kitconcept/intranet/components/WikiTable/insertWikiTable';
+
+import {
+  fallbackTranslate,
+  type TranslateFunction,
+} from '@plone/plate/components/editor/plugins/i18n';
+
+const messages = defineMessages({
+  diagram: { id: 'Diagram', defaultMessage: 'Diagram' },
+  image: { id: 'Image', defaultMessage: 'Image' },
+});
 
 const insertPloneBlock = (editor: PlateEditor, blockType: string) => {
   editor.tf.withoutNormalizing(() => {
@@ -48,15 +62,17 @@ const insertPloneBlock = (editor: PlateEditor, blockType: string) => {
   });
 };
 
-const IMAGE_SLASH_ITEM = {
+const IMAGE_SLASH_VALUE = 'block_plateimage';
+
+const createImageSlashItem = (t: TranslateFunction) => ({
   icon: <ImageIcon />,
   keywords: ['image', 'media', 'photo', 'picture'],
-  label: 'Image',
-  value: 'block_plateimage',
+  label: t(messages.image.id, { defaultValue: messages.image.defaultMessage }),
+  value: IMAGE_SLASH_VALUE,
   onSelect: (editor: PlateEditor) => {
     insertPloneBlock(editor, 'plateimage');
   },
-};
+});
 
 const insertDiagram = (editor: PlateEditor) => {
   editor.tf.withoutNormalizing(() => {
@@ -75,17 +91,19 @@ const insertDiagram = (editor: PlateEditor) => {
   });
 };
 
-const DIAGRAM_SLASH_ITEM = {
+const createDiagramSlashItem = (t: TranslateFunction) => ({
   icon: <WorkflowIcon />,
   keywords: ['diagram', 'drawing', 'mermaid', 'plantuml', 'graphviz', 'chart'],
-  label: 'Diagram',
+  label: t(messages.diagram.id, {
+    defaultValue: messages.diagram.defaultMessage,
+  }),
   value: CODE_DRAWING_KEY,
   onSelect: insertDiagram,
-};
+});
 
 // OVERRIDE: not exported, wrapped below.
 const baseSlashMenu: SlashMenuConfig = {
-  extendGroups: (groups) =>
+  extendGroups: (groups, _editor, { t = fallbackTranslate }) =>
     groups
       // The toggle plugin is not part of the wiki editor preset.
       .map((group) => ({
@@ -105,9 +123,7 @@ const baseSlashMenu: SlashMenuConfig = {
         }
 
         if (group.group === 'Text blocks') {
-          if (
-            group.items.some((item) => item.value === IMAGE_SLASH_ITEM.value)
-          ) {
+          if (group.items.some((item) => item.value === IMAGE_SLASH_VALUE)) {
             return group;
           }
 
@@ -119,10 +135,10 @@ const baseSlashMenu: SlashMenuConfig = {
             ...group,
             items:
               paragraphIndex === -1
-                ? [...group.items, IMAGE_SLASH_ITEM]
+                ? [...group.items, createImageSlashItem(t)]
                 : [
                     ...group.items.slice(0, paragraphIndex + 1),
-                    IMAGE_SLASH_ITEM,
+                    createImageSlashItem(t),
                     ...group.items.slice(paragraphIndex + 1),
                   ],
           };
@@ -130,9 +146,12 @@ const baseSlashMenu: SlashMenuConfig = {
 
         if (
           group.group === 'Advanced blocks' &&
-          !group.items.some((item) => item.value === DIAGRAM_SLASH_ITEM.value)
+          !group.items.some((item) => item.value === CODE_DRAWING_KEY)
         ) {
-          return { ...group, items: [...group.items, DIAGRAM_SLASH_ITEM] };
+          return {
+            ...group,
+            items: [...group.items, createDiagramSlashItem(t)],
+          };
         }
 
         return group;
@@ -143,13 +162,15 @@ const baseSlashMenu: SlashMenuConfig = {
 // OVERRIDE: the "Table" entry inserts a 3 × 3 table with a header row.
 export const slashMenu: SlashMenuConfig = {
   ...baseSlashMenu,
-  extendGroups: (groups) =>
-    (baseSlashMenu.extendGroups?.(groups) ?? groups).map((group) => ({
-      ...group,
-      items: group.items.map((item) =>
-        item.value === KEYS.table
-          ? { ...item, onSelect: (editor) => insertWikiTable(editor) }
-          : item,
-      ),
-    })),
+  extendGroups: (groups, editor, options) =>
+    (baseSlashMenu.extendGroups?.(groups, editor, options) ?? groups).map(
+      (group) => ({
+        ...group,
+        items: group.items.map((item) =>
+          item.value === KEYS.table
+            ? { ...item, onSelect: (editor) => insertWikiTable(editor) }
+            : item,
+        ),
+      }),
+    ),
 };

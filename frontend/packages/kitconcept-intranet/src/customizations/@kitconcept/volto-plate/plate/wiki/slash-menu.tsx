@@ -3,14 +3,16 @@
  * REASON: The "Table" entry inserts a 3 × 3 table with a header row
  *         (Confluence default) instead of Plate's 2 × 2 without header.
  *         Everything else is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a33/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.33
- * DATE: 2026-10-05
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a35/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.35
+ * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  * CHANGELOG:
  *  - Merge volto-plate 1.0.0-alpha.33: add the "Diagram" entry to the
  *    "Advanced blocks" group. @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.35: filter out the toggle entry, the
+ *    toggle plugin is not part of the wiki editor preset. @sneridagh
  */
 
 import type {
@@ -85,6 +87,11 @@ const DIAGRAM_SLASH_ITEM = {
 const baseSlashMenu: SlashMenuConfig = {
   extendGroups: (groups) =>
     groups
+      // The toggle plugin is not part of the wiki editor preset.
+      .map((group) => ({
+        ...group,
+        items: group.items.filter((item) => item.value !== KEYS.toggle),
+      }))
       .map((group) => {
         if (group.group === 'Actions') {
           return {

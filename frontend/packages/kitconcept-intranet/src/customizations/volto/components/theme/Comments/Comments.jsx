@@ -34,8 +34,8 @@ import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 
 const messages = defineMessages({
   addComment: {
-    id: 'Add comment... (@ mention a person)',
-    defaultMessage: 'Add comment... (@ mention a person)',
+    id: 'Add comment...',
+    defaultMessage: 'Add comment...',
   },
   comments: {
     id: 'Comments',

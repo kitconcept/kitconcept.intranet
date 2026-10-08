@@ -54,6 +54,16 @@
   content: '→ ';
 }
 
+/* a changed link is two nodes: the old link (old target and text) for the
+   left side only, the new link for the right side and the unified view;
+   the left side keeps the new node's label, not its link */
+.plate-diff-unified .plate-diff-link-old {
+  display: none;
+}
+.plate-diff-left .plate-diff-link-new > :not(.plate-diff-inline-label) {
+  display: none;
+}
+
 /* --- block changes ------------------------------------------------------ */
 
 .plate-diff .plate-diff-block {

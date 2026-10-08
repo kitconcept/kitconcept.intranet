@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { computeDiff } from '@platejs/diff';
 import type { Descendant, TElement, Value } from 'platejs';
-import { mergeLinkChanges } from './linkChanges';
+import { mergeLinkChanges, splitLinkPairs } from './linkChanges';
 
 const options = { isInline: (node: TElement) => node.type === 'a' };
 
@@ -182,5 +182,94 @@ describe('mergeLinkChanges', () => {
       properties: { url: 'https://a' },
       newProperties: { url: 'https://b' },
     });
+  });
+});
+
+describe('splitLinkPairs', () => {
+  const update = <T extends object>(
+    node: T,
+    properties: Record<string, unknown>,
+    newProperties: Record<string, unknown>,
+  ) => ({
+    ...node,
+    diff: true,
+    diffOperation: { type: 'update', properties, newProperties },
+  });
+
+  it('splits a changed link into the old and the new link', () => {
+    const changed = update(
+      link('l1', 'Portal', 'https://b'),
+      { url: 'https://a' },
+      { url: 'https://b' },
+    );
+    const result = splitLinkPairs([t('im '), changed, t('.')]) as TElement[];
+    expect(result.map((node) => ('text' in node ? 'text' : node.type))).toEqual(
+      ['text', 'a', 'a', 'text'],
+    );
+    const [, old, fresh] = result;
+    expect(old.url).toBe('https://a');
+    expect(old.diffLinkPair).toBe('old');
+    expect(op(old)?.type).toBe('delete');
+    expect(fresh.url).toBe('https://b');
+    expect(fresh.diffLinkPair).toBe('new');
+    expect(op(fresh)?.type).toBe('update');
+    expect(old.diffLinkChange).toEqual({ from: 'https://a', to: 'https://b' });
+    expect(fresh.diffLinkChange).toEqual(old.diffLinkChange);
+  });
+
+  it('gives the old link the old text and the new link the diffed text', () => {
+    const changed = update(
+      {
+        ...link('l1', '', 'https://b'),
+        children: [
+          del({ text: 'Projektportal' }),
+          ins({ text: 'GreenCat-Portal' }),
+        ],
+      },
+      { url: 'https://a' },
+      { url: 'https://b' },
+    );
+    const [old, fresh] = splitLinkPairs([changed]) as TElement[];
+    expect(old.children).toEqual([del({ text: 'Projektportal' })]);
+    expect(fresh.children).toEqual([
+      del({ text: 'Projektportal' }),
+      ins({ text: 'GreenCat-Portal' }),
+    ]);
+  });
+
+  it('removes an attribute from the old link that only the new one has', () => {
+    const changed = update(
+      link('l1', 'Portal', 'https://a', { target: '_blank' }),
+      { url: 'https://a', target: undefined },
+      { url: 'https://a', target: '_blank' },
+    );
+    const [old] = splitLinkPairs([changed]) as TElement[];
+    expect('target' in old).toBe(false);
+  });
+
+  it('leaves links whose target did not change and other nodes alone', () => {
+    const nodes = [
+      t('a '),
+      update(
+        link('l1', 'Portal', 'https://a'),
+        { target: '_self' },
+        { target: '_blank' },
+      ),
+      del(link('l2', 'Weg', 'https://x')),
+      ins(link('l3', 'Neu', 'https://y')),
+    ];
+    expect(splitLinkPairs(nodes)).toEqual(nodes);
+  });
+
+  it('reaches links inside nested elements', () => {
+    const changed = update(
+      link('l1', 'hier', 'https://b'),
+      { url: 'https://a' },
+      { url: 'https://b' },
+    );
+    const [paragraph] = splitLinkPairs([p(t('Plan: '), changed)]) as TElement[];
+    expect(paragraph.children).toHaveLength(3);
+    expect((paragraph.children[1] as TElement).diffLinkPair).toBe('old');
+    expect((paragraph.children[2] as TElement).diffLinkPair).toBe('new');
   });
 });

@@ -20,6 +20,19 @@ import type { Descendant, TElement, TText } from 'platejs';
 
 type DiffElement = TElement & { diff?: boolean; diffOperation?: DiffOperation };
 
+/** Old and new target of a link, carried by both nodes of a split pair. */
+export type LinkChange = { from: string; to: string };
+
+/**
+ * Marks the two nodes a changed link is split into for the split view:
+ * `old` is shown on the left only, `new` on the right and in the unified
+ * view.
+ */
+export type LinkPairElement = DiffElement & {
+  diffLinkPair?: 'old' | 'new';
+  diffLinkChange?: LinkChange;
+};
+
 /** Element types that are links in the wiki editor. */
 export const LINK_TYPES: ReadonlySet<string> = new Set(['a', 'link']);
 
@@ -130,3 +143,60 @@ export const mergeLinkChanges = (
   }
   return result;
 };
+
+const TARGET_KEYS = ['url', 'href'];
+
+const targetOf = (props: Record<string, unknown>) => {
+  const key = TARGET_KEYS.find((name) => name in props);
+  return key === undefined ? undefined : String(props[key] ?? '');
+};
+
+/** Keeps the old version of diffed children: no inserted text. */
+const withoutInsertions = (children: Descendant[]): Descendant[] =>
+  children.filter((child) => opType(child) !== 'insert');
+
+/**
+ * Gives every changed link (an `update` produced by `mergeLinkChanges`) a
+ * second node for the split view: the old link, with its old attributes
+ * and text, marked `old`, before the new one, marked `new`. The split view
+ * shows the old node on the left and the new one on the right, so each
+ * side renders a real link with its own target; the unified view hides
+ * the old node. Run after the text marks are final.
+ */
+export const splitLinkPairs = (nodes: Descendant[]): Descendant[] =>
+  nodes.flatMap((node): Descendant[] => {
+    if (isText(node)) return [node];
+    const element = node as LinkPairElement;
+    const op = element.diffOperation;
+    if (isLink(element) && op?.type === 'update') {
+      const from = targetOf(op.properties);
+      const to = targetOf(op.newProperties);
+      if (from !== undefined || to !== undefined) {
+        const change: LinkChange = { from: from ?? '', to: to ?? '' };
+        const { diffOperation: _op, ...rest } = element;
+        const old: LinkPairElement = {
+          ...rest,
+          ...op.properties,
+          children: withoutInsertions(element.children),
+          diff: true,
+          diffOperation: { type: 'delete' },
+          diffLinkPair: 'old',
+          diffLinkChange: change,
+        };
+        // An attribute the old link did not have must not stay on it.
+        for (const key of Object.keys(op.newProperties)) {
+          if (op.properties[key] === undefined) delete old[key];
+        }
+        return [
+          old,
+          { ...element, diffLinkPair: 'new', diffLinkChange: change },
+        ];
+      }
+    }
+    const type = op?.type;
+    return [
+      type === 'insert' || type === 'delete'
+        ? element
+        : { ...element, children: splitLinkPairs(element.children) },
+    ];
+  });

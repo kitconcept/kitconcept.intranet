@@ -26,7 +26,7 @@ import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
 import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import { DiffPlugin } from './DiffPlugin';
-import { mergeLinkChanges } from './linkChanges';
+import { mergeLinkChanges, splitLinkPairs } from './linkChanges';
 import { messages } from './messages';
 import { expandDiffToWords } from './wholeWords';
 import './plate-diff.css';
@@ -111,10 +111,12 @@ const WikiPageDiff = ({ one, two, view }: Props) => {
       // computeDiff marks single characters; show whole words instead. A
       // link whose target changed comes back as removed + added; show it as
       // one changed link with the old and the new target.
-      expandDiffToWords(
-        mergeLinkChanges(
-          computeDiff(getValue(one), getValue(two), { isInline }),
-          { isInline },
+      splitLinkPairs(
+        expandDiffToWords(
+          mergeLinkChanges(
+            computeDiff(getValue(one), getValue(two), { isInline }),
+            { isInline },
+          ),
         ),
       ).filter((node) => !isEmptyChange(node)),
     [one, two],

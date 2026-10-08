@@ -375,11 +375,12 @@ test.describe('Wiki Page history diff', () => {
       ['.plate-diff-right', NEW_URL, 'ins'],
     ] as const) {
       const cell = page.locator(side);
-      // One link, marked as changed, not a removed and an added one.
-      await expect(cell.locator('a', { hasText: 'Projektportal' })).toHaveCount(
-        1,
-      );
-      await expect(cell.locator('.plate-diff-inline-update')).toHaveCount(1);
+      // One visible link per side, a real link with that side's target.
+      const links = cell
+        .locator('a', { hasText: 'Projektportal' })
+        .filter({ visible: true });
+      await expect(links).toHaveCount(1);
+      await expect(links).toHaveAttribute('href', url);
       const label = cell.locator('.plate-diff-inline-label');
       await expect(label).toContainText('Link:');
       await expect(label.locator(mark)).toHaveText(url);
@@ -389,6 +390,11 @@ test.describe('Wiki Page history diff', () => {
     }
 
     await openDiff(page, contentPath, 0, 1, 'unified');
+    const unifiedLinks = page
+      .locator('.plate-diff-unified a', { hasText: 'Projektportal' })
+      .filter({ visible: true });
+    await expect(unifiedLinks).toHaveCount(1);
+    await expect(unifiedLinks).toHaveAttribute('href', NEW_URL);
     const label = page.locator('.plate-diff-unified .plate-diff-inline-label');
     await expect(label.locator('del')).toHaveText(OLD_URL);
     await expect(label.locator('ins')).toHaveText(NEW_URL);

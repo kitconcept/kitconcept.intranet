@@ -17,22 +17,26 @@
 import React, { useMemo } from 'react';
 import { useIntl } from 'react-intl';
 import { computeDiff } from '@platejs/diff';
-import type { Descendant, TElement, Value } from 'platejs';
+import type { Descendant, TElement, TText, Value } from 'platejs';
 import { PlateController, PlateRenderer } from '@plone/plate/components/editor';
+import { applyBlockWidthDefaultsInValue } from '@plone/plate/components/editor/plugins/block-width-plugin';
 import wikiEditorRenderer from '@kitconcept/volto-plate/plate/presets/wiki-renderer';
 import { PlatePluginsProvider } from '@kitconcept/volto-plate/plate/context/PlatePluginsProvider';
-import { ToggleVisibilityProvider } from '@kitconcept/volto-plate/plate/context/ToggleVisibilityContext';
 import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
 import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import { DiffPlugin } from './DiffPlugin';
+import { mergeLinkChanges, splitLinkPairs } from './linkChanges';
 import { messages } from './messages';
+import { withStoredDefaults } from './storedDefaults';
 import { expandDiffToWords } from './wholeWords';
 import './plate-diff.css';
 
 // Inline element types of the wiki kit. The spike hardcodes them; the real
 // implementation should ask the editor (`editor.api.isInline`).
 const INLINE_TYPES = new Set(['a', 'link', 'mention', 'date']);
+const isInline = (node: TElement | TText) =>
+  'type' in node && INLINE_TYPES.has(node.type as string);
 
 const editorConfig = {
   ...wikiEditorRenderer,
@@ -43,10 +47,16 @@ type Content = {
   blocks?: Record<string, { value?: Value }>;
 };
 
-// Rows hold cells only, like the view renderer (see wikiTableNormalizePlugin).
+// Rows hold cells only, like the view renderer (see wikiTableNormalizePlugin),
+// and every top-level block carries what the editor writes on load (block
+// width, no list start of 1), so content stored by code diffs like content
+// saved in the editor.
 const getValue = (content?: Content): Value =>
-  cleanTableRows(
-    (content?.blocks?.[SOMERSAULT_KEY]?.value as Value | undefined) ?? [],
+  withStoredDefaults(
+    cleanTableRows(
+      (content?.blocks?.[SOMERSAULT_KEY]?.value as Value | undefined) ?? [],
+    ),
+    applyBlockWidthDefaultsInValue,
   );
 
 export const hasPlateContent = (content?: Content): boolean =>
@@ -85,31 +95,33 @@ type Props = {
   view: 'split' | 'unified';
 };
 
-/*
- * The wiki renderer's toggle nodes need a ToggleVisibilityProvider (they
- * throw without one). It is given an empty document on purpose: with the
- * real one, content under a closed toggle is hidden, and a diff must show
- * every change.
- */
 const Renderer = ({ id, value }: { id: string; value: Value }) => (
-  <ToggleVisibilityProvider value={[]}>
-    <PlateRenderer
-      editorConfig={{ ...editorConfig, id }}
-      value={value}
-      className="typeset"
-    />
-  </ToggleVisibilityProvider>
+  <PlateRenderer
+    editorConfig={{ ...editorConfig, id }}
+    value={value}
+    className="typeset"
+  />
 );
 
 const WikiPageDiff = ({ one, two, view }: Props) => {
   const intl = useIntl();
   const diffValue = useMemo(
     () =>
-      // computeDiff marks single characters; show whole words instead.
-      expandDiffToWords(
-        computeDiff(getValue(one), getValue(two), {
-          isInline: (node) => INLINE_TYPES.has((node as TElement).type),
-        }),
+      // computeDiff marks single characters; show whole words instead. A
+      // link whose target changed comes back as removed + added; show it as
+      // one changed link with the old and the new target.
+      splitLinkPairs(
+        expandDiffToWords(
+          mergeLinkChanges(
+            computeDiff(getValue(one), getValue(two), {
+              isInline,
+              // The editor gives a node without an id one on save; an id is
+              // not content and must not read as a change.
+              ignoreProps: ['id'],
+            }),
+            { isInline },
+          ),
+        ),
       ).filter((node) => !isEmptyChange(node)),
     [one, two],
   );

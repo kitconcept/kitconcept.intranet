@@ -9,11 +9,14 @@
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Everything else is
  *         unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/components/PlateEditorRenderer/PlateEditorRenderer.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
- * DATE: 2026-10-01
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a35/frontend/packages/volto-plate/src/components/PlateEditorRenderer/PlateEditorRenderer.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.35
+ * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
+ * CHANGELOG:
+ *  - Merge volto-plate 1.0.0-alpha.35: drop the `ToggleVisibilityProvider`
+ *    wrapper, removed upstream with the toggle plugin. @sneridagh
  */
 
 import React from 'react';
@@ -30,7 +33,6 @@ import {
   normalizeUsers,
 } from '@kitconcept/volto-plate/plate/discussion-data';
 import { PlatePluginsProvider } from '@kitconcept/volto-plate/plate/context/PlatePluginsProvider';
-import { ToggleVisibilityProvider } from '@kitconcept/volto-plate/plate/context/ToggleVisibilityContext';
 import MentionLinkTarget from '@kitconcept/volto-plate/components/PlateEditorRenderer/MentionLinkTarget';
 import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 
@@ -69,13 +71,11 @@ const PlateEditorRenderer = ({ content }: PlateEditorRendererProps) => {
         readOnly
       >
         <MentionLinkTarget />
-        <ToggleVisibilityProvider value={value}>
-          <PlateRenderer
-            editorConfig={wikiEditorRenderer}
-            value={value}
-            className="typeset"
-          />
-        </ToggleVisibilityProvider>
+        <PlateRenderer
+          editorConfig={wikiEditorRenderer}
+          value={value}
+          className="typeset"
+        />
       </PlatePluginsProvider>
     </PlateController>
   );

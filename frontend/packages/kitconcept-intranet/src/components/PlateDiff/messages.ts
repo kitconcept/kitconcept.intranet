@@ -20,6 +20,7 @@ export const messages = defineMessages({
     id: 'plateDiff.removedInThisVersion',
     defaultMessage: 'Removed in this version',
   },
+  linkTarget: { id: 'plateDiff.linkTarget', defaultMessage: 'Link' },
   notSet: { id: 'plateDiff.value.notSet', defaultMessage: 'not set' },
   yes: { id: 'plateDiff.value.yes', defaultMessage: 'yes' },
   no: { id: 'plateDiff.value.no', defaultMessage: 'no' },

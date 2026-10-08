@@ -170,15 +170,13 @@ test.describe('Wiki Page history diff', () => {
       changed
         .filter({ hasText: 'Nächstes Treffen' })
         .locator('.plate-diff-label'),
-    ).toContainText('Width: Standard → Wide');
+    ).toContainText('Block type: Paragraph → Quote');
   });
 
   test('5. an edit made in the editor shows in the diff', async ({ page }) => {
     const { contentPath } = await createDiffPage(page);
     const handle = await openInEditor(page, contentPath);
     const value = await getValue(page, handle);
-    // A paragraph whose settings stay as they are (the demo's "wide" width
-    // of "Nächstes Treffen" is not an editor value and is reset on save).
     const index = value.findIndex((node) =>
       nodeText(node).startsWith('Die XPS-Messreihe'),
     );
@@ -327,6 +325,150 @@ test.describe('Wiki Page history diff', () => {
     ).toHaveText(
       'Der Projektplan liegtsteht im ProjektportalGreenCat-Portal, Abgabe bis 25.09.202626.09.2026.',
     );
+  });
+
+  // Changed link target:
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/714
+  test('5d. a link whose target changed shows the old and the new URL', async ({
+    page,
+  }) => {
+    const OLD_URL = 'https://example.org/portal';
+    const NEW_URL = 'https://example.org/portal-neu';
+    const paragraph = (url: string) => ({
+      id: 'p-plan',
+      type: 'p',
+      align: 'start',
+      blockWidth: 'default',
+      children: [
+        { text: 'Der Projektplan liegt im ' },
+        {
+          id: 'l-portal',
+          type: 'a',
+          url,
+          target: '_blank',
+          children: [{ text: 'Projektportal' }],
+        },
+        { text: '.' },
+      ],
+    });
+    const { contentPath } = await createWikiPageWithValue(page, {
+      contentId: 'link-target',
+      title: 'Link target',
+      value: [paragraph(OLD_URL)],
+    });
+    const value = await getWikiValue(page, contentPath);
+    value[value.length - 1] = paragraph(NEW_URL);
+    const content = await getContent(page, contentPath);
+    await patchContent(page, contentPath, {
+      blocks: {
+        ...content.blocks,
+        [SOMERSAULT_KEY]: { '@type': SOMERSAULT_KEY, value },
+      },
+      changeNote: 'Link-Ziel geändert',
+    });
+
+    await openDiff(page, contentPath, 0, 1, 'split');
+    for (const [side, url, mark] of [
+      ['.plate-diff-left', OLD_URL, 'del'],
+      ['.plate-diff-right', NEW_URL, 'ins'],
+    ] as const) {
+      const cell = page.locator(side);
+      // One visible link per side, a real link with that side's target.
+      const links = cell
+        .locator('a', { hasText: 'Projektportal' })
+        .filter({ visible: true });
+      await expect(links).toHaveCount(1);
+      await expect(links).toHaveAttribute('href', url);
+      const label = cell.locator('.plate-diff-inline-label');
+      await expect(label).toContainText('Link:');
+      await expect(label.locator(mark)).toHaveText(url);
+      await expect(label.locator(mark)).toBeVisible();
+      // The other version's target stays hidden on this side.
+      await expect(label.locator(mark === 'del' ? 'ins' : 'del')).toBeHidden();
+    }
+
+    await openDiff(page, contentPath, 0, 1, 'unified');
+    const unifiedLinks = page
+      .locator('.plate-diff-unified a', { hasText: 'Projektportal' })
+      .filter({ visible: true });
+    await expect(unifiedLinks).toHaveCount(1);
+    await expect(unifiedLinks).toHaveAttribute('href', NEW_URL);
+    const label = page.locator('.plate-diff-unified .plate-diff-inline-label');
+    await expect(label.locator('del')).toHaveText(OLD_URL);
+    await expect(label.locator('ins')).toHaveText(NEW_URL);
+    await expect(label.locator('del')).toBeVisible();
+    await expect(label.locator('ins')).toBeVisible();
+  });
+
+  // Content stored without the editor's defaults:
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/714
+  test('5e. the first editor save of a page created by code shows only the real change', async ({
+    page,
+  }) => {
+    // No blockWidth anywhere, a listStart of 1: what code, imports and
+    // migrations store. The editor adds the defaults on its first save.
+    const { contentPath } = await createWikiPageWithValue(page, {
+      contentId: 'stored-by-code',
+      title: 'Stored by code',
+      value: [
+        { id: 'h-1', type: 'h2', children: [{ text: 'Agenda' }] },
+        {
+          id: 'a-1',
+          type: 'p',
+          indent: 1,
+          listStyleType: 'decimal',
+          listStart: 1,
+          children: [{ text: 'Erster Punkt' }],
+        },
+        {
+          id: 'a-2',
+          type: 'p',
+          indent: 1,
+          listStyleType: 'decimal',
+          listStart: 2,
+          children: [{ text: 'Zweiter Punkt' }],
+        },
+        {
+          id: 'c-1',
+          type: 'callout',
+          variant: 'info',
+          icon: '💡',
+          children: [{ text: 'Bitte pünktlich kommen.' }],
+        },
+        {
+          id: 'p-1',
+          type: 'p',
+          align: 'start',
+          children: [{ text: 'Nächstes Treffen am Dienstag.' }],
+        },
+      ],
+    });
+    const handle = await openInEditor(page, contentPath);
+    const value = await getValue(page, handle);
+    const index = value.findIndex((node) =>
+      nodeText(node).startsWith('Nächstes Treffen'),
+    );
+    await setSelection(page, handle, {
+      path: [index, 0],
+      offset: nodeText(value[index]).length,
+    });
+    await expectSelectionIn(page, [index]);
+    await page.keyboard.type(' Raum B2.104.');
+    await savePage(page, contentPath);
+
+    for (const view of ['unified', 'split'] as const) {
+      await openDiff(page, contentPath, 0, 1, view);
+      const diff = page.locator(`.plate-diff-${view}`);
+      // Insertions show in the unified view and on the right of the split view.
+      const newSide =
+        view === 'split' ? diff.locator('.plate-diff-right') : diff;
+      await expect(
+        newSide.locator('ins', { hasText: 'Raum B2.104.' }).first(),
+      ).toBeVisible();
+      // No "Width: not set → Standard" boxes, no removed + added paragraph.
+      await expect(diff.locator('.plate-diff-block')).toHaveCount(0);
+      await expect(diff.locator('.plate-diff-label')).toHaveCount(0);
+    }
   });
 
   test('6. metadata changes show as fields, the content is not repeated', async ({

@@ -21,8 +21,10 @@ from dataclasses import dataclass
 SOMERSAULT_KEY = "__somersault__"
 TITLE_BLOCK_ID = "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c"
 
-# The editor writes these on every block; without them a later change would
-# read "not set → Centred" instead of "Left → Centred" in the diff.
+# The editor writes these on every paragraph and heading, and a ``blockWidth``
+# on every other top-level block (title, list items, callouts, tables, …).
+# Content stored without them would show "Width: not set → Standard" on every
+# block in the diff of its first save in the editor.
 BLOCK_DEFAULTS = {"align": "start", "blockWidth": "default"}
 
 
@@ -44,7 +46,7 @@ def heading(node_id: str, value: str, level: int = 2) -> dict:
 
 
 def title(value: str) -> dict:
-    return node("title", "title", [text(value)])
+    return node("title", "title", [text(value)], blockWidth="default")
 
 
 def cell(node_id: str, *runs, header: bool = False, **props) -> dict:

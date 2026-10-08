@@ -6,9 +6,9 @@
  *         table kit. Relative imports are made absolute (shadowed files
  *         resolve relative imports against this package). Everything else
  *         is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a34/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.34
- * DATE: 2026-10-06
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a35/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.35
+ * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  * CHANGELOG:
@@ -20,6 +20,9 @@
  *    Diagram element). @sneridagh
  *  - Merge volto-plate 1.0.0-alpha.34 (@plone/plate 1.0.0-alpha.24): drop
  *    `SplitHotkeyPlugin`, removed upstream. @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.35: drop `ToggleKit` and replace
+ *    `CommentKit` with `voltoCommentPlugin` (resolvable comment threads).
+ *    @sneridagh
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -36,7 +39,6 @@ import { BlockAnatomyKit } from '@plone/plate/components/editor/plugins/block-an
 import { CalloutKit } from '@plone/plate/components/editor/plugins/callout-kit';
 import { CodeBlockKit } from '@plone/plate/components/editor/plugins/code-block-kit';
 import { ColumnKit } from '@plone/plate/components/editor/plugins/column-kit';
-import { CommentKit } from '@plone/plate/components/editor/plugins/comment-kit';
 import { CursorOverlayKit } from '@plone/plate/components/editor/plugins/cursor-overlay-kit';
 import { DiscussionKit } from '@plone/plate/components/editor/plugins/discussion-kit';
 // import { DndKit } from '@plone/plate/components/editor/plugins/dnd-kit';
@@ -52,7 +54,6 @@ import { createSlashKit } from '@plone/plate/components/editor/plugins/slash-kit
 import { SuggestionKit } from '@plone/plate/components/editor/plugins/suggestion-kit';
 import { TableKit } from '@plone/plate/components/editor/plugins/table-kit';
 import { TocKit } from '@plone/plate/components/editor/plugins/toc-kit';
-import { ToggleKit } from '@plone/plate/components/editor/plugins/toggle-kit';
 import { WikiTableKeysPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableKeysPlugin';
 import { WikiTableNormalizePlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 
@@ -65,6 +66,7 @@ import { VoltoPasteFormattingPlugin } from '@kitconcept/volto-plate/plate/plugin
 import { VoltoPasteTitlePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-paste-title';
 import { VoltoLinkKit } from '@kitconcept/volto-plate/plate/plugins/volto-link-kit';
 import { VoltoMentionKit } from '@kitconcept/volto-plate/plate/plugins/volto-mention-kit';
+import { voltoCommentPlugin } from '@kitconcept/volto-plate/plate/plugins/comment-resolution';
 import { SidebarPlugin } from '@kitconcept/volto-plate/plate/plugins/volto-sidebar';
 import { DateKit } from '@kitconcept/volto-plate/plate/plugins/date-kit';
 import { slashMenu } from '@kitconcept/volto-plate/plate/wiki/slash-menu';
@@ -92,7 +94,6 @@ export const WikiEditorKit = [
   // OVERRIDE
   WikiTableKeysPlugin,
   WikiTableNormalizePlugin,
-  ...ToggleKit,
   ...TocKit,
   ...CalloutKit,
   ...ColumnKit,
@@ -114,7 +115,7 @@ export const WikiEditorKit = [
 
   // Collaboration
   ...DiscussionKit,
-  ...CommentKit,
+  voltoCommentPlugin,
   ...SuggestionKit,
 
   // Editing

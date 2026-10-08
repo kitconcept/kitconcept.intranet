@@ -35,6 +35,35 @@
   outline: 2px dotted #d4a017;
 }
 
+/* "Link: old → new" next to a link whose target changed; the old target
+   carries the deletion mark, the new one the insertion mark, so the split
+   view shows each on its side */
+.plate-diff .plate-diff-inline-label {
+  margin-left: 0.3em;
+  color: #52606f;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.plate-diff .plate-diff-inline-label del,
+.plate-diff .plate-diff-inline-label ins {
+  padding: 0 0.2em;
+  border-radius: 2px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.plate-diff-unified .plate-diff-inline-label ins::before {
+  content: '→ ';
+}
+
+/* a changed link is two nodes: the old link (old target and text) for the
+   left side only, the new link for the right side and the unified view;
+   the left side keeps the new node's label, not its link */
+.plate-diff-unified .plate-diff-link-old {
+  display: none;
+}
+.plate-diff-left .plate-diff-link-new > :not(.plate-diff-inline-label) {
+  display: none;
+}
+
 /* --- block changes ------------------------------------------------------ */
 
 .plate-diff .plate-diff-block {

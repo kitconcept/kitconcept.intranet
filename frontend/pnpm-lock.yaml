@@ -1477,8 +1477,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(@plone/components@core+packages+components)(@plone/registry@core+packages+registry)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
       '@plone-collective/volto-image-editor':
-        specifier: 1.0.1
-        version: 1.0.1(@plone/registry@core+packages+registry)(@plone/types@core+packages+types)(advanced-cropper@0.17.1)(classnames@2.5.1)(react-aria-components@1.20.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 1.1.0
+        version: 1.1.0(@plone/registry@core+packages+registry)(@plone/types@core+packages+types)(advanced-cropper@0.17.1)(classnames@2.5.1)(react-aria-components@1.20.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -4791,8 +4791,8 @@ packages:
       react-intl: '*'
       semantic-ui-react: '*'
 
-  '@plone-collective/volto-image-editor@1.0.1':
-    resolution: {integrity: sha512-uTTKKz3sywT8mMAEb/VLVFn+vkVg///n7fe160LMTHlamhnZ8GUWsY0gAYn6dC+StPQGXYR6osyXqRV4VNaBGw==}
+  '@plone-collective/volto-image-editor@1.1.0':
+    resolution: {integrity: sha512-cHwitv8dF8lUogUir5116uYDxrPOW9sP1lo+9wEI59aZFJ4jkmGxLZD0cNYaAyBQ4j041Y6fO+O3Tqp63RE0/Q==}
     peerDependencies:
       '@plone/registry': workspace:*
       '@plone/types': 2.0.0-alpha.14
@@ -17747,7 +17747,7 @@ snapshots:
       react-intl: 3.12.1(@types/react@18.3.31)(react@18.2.0)
       semantic-ui-react: 2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
-  '@plone-collective/volto-image-editor@1.0.1(@plone/registry@core+packages+registry)(@plone/types@core+packages+types)(advanced-cropper@0.17.1)(classnames@2.5.1)(react-aria-components@1.20.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@plone-collective/volto-image-editor@1.1.0(@plone/registry@core+packages+registry)(@plone/types@core+packages+types)(advanced-cropper@0.17.1)(classnames@2.5.1)(react-aria-components@1.20.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@plone/components': 4.0.0-alpha.6(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/registry': link:core/packages/registry

@@ -73,6 +73,7 @@
     "@kitconcept/volto-solr",
     "@kitconcept/volto-contact-block",
     "@kitconcept/volto-plate",
+    "@kitconcept/volto-keywordmanager",
     "@plone/volto-recyclebin"
   ],
   "dependencies": {
@@ -95,6 +96,7 @@
     "@kitconcept/volto-iframe-block": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
     "@kitconcept/volto-contact-block": "workspace:*",
+    "@kitconcept/volto-keywordmanager": "workspace:*",
     "@plone/components": "workspace:*",
     "@plone/helpers": "^2.0.0-alpha.8",
     "@plone/volto-form-block": "^1.0.0-alpha.3",

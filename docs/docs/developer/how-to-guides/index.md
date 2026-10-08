@@ -11,6 +11,7 @@ last_updated: 2026-03-18
 ```{toctree}
 :maxdepth: 1
 
+run-demo-stack
 blocks-config-ttw
 reindex-content
 move-rename-content

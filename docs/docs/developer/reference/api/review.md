@@ -32,7 +32,7 @@ Marks the content as reviewed and up-to-date. Automatically calculates the next 
 **Example:**
 
 ```http
-POST /my-page/@review/approve
+POST /my-page/@review/approve HTTP/1.1
 ```
 
 ***
@@ -50,12 +50,12 @@ Assigns the content review to another user. Optionally attaches a comment.
 
 **Errors:**
 
-- `400 Bad Request` — if `assignee` is not found in the vocabulary.
+- `400 Bad Request`—if `assignee` is not found in the vocabulary.
 
 **Example:**
 
 ```http
-POST /my-page/@review/delegate
+POST /my-page/@review/delegate HTTP/1.1
 Content-Type: application/json
 
 {
@@ -74,13 +74,13 @@ Postpones the review to a specified future date. Optionally attaches a comment. 
 
 | Field      | Type                   | Required | Description |
 |------------|------------------------|----------|-------------|
-| `due_date` | string (ISO 8601 date) | No       | New review due date, e.g. "2026-09-01". If omitted, the existing due date is unchanged. |
+| `due_date` | string (ISO 8601 date) | No       | New review due date, for example `2026-09-01`. If omitted, the existing due date is unchanged. |
 | `comment`  | string                 | No       | Optional note about why the review was postponed. |
 
 **Example:**
 
 ```http
-POST /my-page/@review/postpone
+POST /my-page/@review/postpone HTTP/1.1
 Content-Type: application/json
 
 {

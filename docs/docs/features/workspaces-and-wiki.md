@@ -16,7 +16,7 @@ last_updated: 2026-09-07
 
 **Status:** v3 · Core (with a Provisional tree-management area) ·
 **Audience:** all users (readers), editors ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
@@ -55,9 +55,9 @@ This is the centerpiece of the v3 "workspace-centered knowledge experience."
 
 ### Wiki Page
 
-- A **folderish** container — Wiki Pages can **nest inside each other**.
+- A **folderish** container—Wiki Pages can **nest inside each other**.
 - **Not globally addable**: a Wiki Page can only be created **inside a
-  Workspace** (or inside another Wiki Page). It does not appear as an "add" option
+  Workspace** (or inside another Wiki Page). It doesn't appear as an "add" option
   at arbitrary locations.
 - Allowed children: **Wiki Page, File, Image**.
 - Carries {doc}`content-lifecycle-management` ownership fields, and is edited with
@@ -65,8 +65,8 @@ This is the centerpiece of the v3 "workspace-centered knowledge experience."
 
 :::{admonition} Not a subsite
 :class: note
-A Workspace is a plain folder distinguished by a marker — it is **not** a
-navigation root or subsite, and does not get its own theme/header/footer. (The
+A Workspace is a plain folder distinguished by a marker—it is **not** a
+navigation root or subsite, and doesn't get its own theme/header/footer. (The
 separate "Subsite" capability is a distinct, provisional feature and is not part
 of Workspaces.)
 :::
@@ -81,10 +81,10 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 ### Navigation tree
 
 - The tree appears **only** when the current content is a **Workspace or Wiki
-  Page** — it is intentionally absent on the site home page and outside Workspace
+  Page**—it is intentionally absent on the site home page and outside Workspace
   contexts.
 - Its root is the **active Workspace** (or the site root as fallback). It
-  **auto-expands** the ancestors of the current item and highlights the current
+  **autoexpands** the ancestors of the current item and highlights the current
   item.
 - Each row shows a **review-state color dot** for its content.
 - The open/closed state is remembered per viewer (browser storage).
@@ -95,16 +95,16 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 Authorized users can act on items directly from the tree:
 
-- **Rename** — inline title edit.
-- **Duplicate** — copies the item and places the copy after the original.
-- **Delete** — removes the item.
-- **Add child** — inline, creates a new **Wiki Page** under the item.
-- **Reorder** — moves items within their parent (button/position-based, **not**
+- **Rename**—inline title edit.
+- **Duplicate**—copies the item and places the copy after the original.
+- **Delete**—removes the item.
+- **Add child**—inline, creates a new **Wiki Page** under the item.
+- **Reorder**—moves items within their parent (button/position-based, **not**
   drag-and-drop).
 
 All of these use standard content operations under the hood (no custom endpoint).
 
-:::{admonition} Provisional — hold from public claims
+:::{admonition} Provisional—hold from public claims
 :class: warning
 Tree-based rename/duplicate/delete/reorder is classified **Provisional** in the
 v3 feature set: roles, confirmation dialogs, descendant handling, conflicts,
@@ -130,8 +130,8 @@ promise.
 
 ## Known limits (v3)
 
-- The **access model** for Workspaces — creation, membership, ownership,
-  isolation, and management permissions — still needs an approved definition
+- The **access model** for Workspaces—creation, membership, ownership,
+  isolation, and management permissions—still needs an approved definition
   before it's a release contract.
 - Wiki Page depth, valid/invalid parents, locking, and translation behavior need
   QA verification.
@@ -139,7 +139,7 @@ promise.
 
 ## Learn more
 
-- **Related feature** — {doc}`wiki-editor` (editing Wiki Pages)
-- **Related feature** — {doc}`content-lifecycle-management`,
+- **Related feature**—{doc}`wiki-editor` (editing Wiki Pages)
+- **Related feature**—{doc}`content-lifecycle-management`,
   {doc}`likes-and-content-rating`
-- **Reference** — {doc}`/reference/content-types`
+- **Reference**—{doc}`/reference/content-types`

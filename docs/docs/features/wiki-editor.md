@@ -16,7 +16,7 @@ last_updated: 2026-09-07
 
 **Status:** v3 · Core (editing) with Provisional areas (mentions, dates,
 discussions/suggestions) · **Audience:** editors ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
@@ -27,7 +27,7 @@ Wiki Pages open in a single continuous document editor with a synchronized page
 title, slash-menu insertion, inline formatting, links, images, people mentions,
 dates, and collaborative comments and suggested changes.
 
-It applies **only to the Wiki Page content type** — all other types keep the
+It applies **only to the Wiki Page content type**—all other types keep the
 standard Volto blocks editor.
 
 ## Who it's for
@@ -37,7 +37,7 @@ standard Volto blocks editor.
 ## Capabilities
 
 - A continuous **rich-text document** editor (not the block toolbar).
-- **Synchronized title** — the in-editor H1 and the page's title field stay in
+- **Synchronized title**—the in-editor H1 and the page's title field stay in
   sync both ways.
 - **Slash menu** and a **floating toolbar** for inserting and formatting.
 - **Links** to external URLs or internal content (with content search and tree
@@ -60,14 +60,14 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
   (gated by `PlateEditorContentTypes = ['WikiPage']`). Metadata fieldsets still
   render in the sidebar.
 - The document is persisted as a **single synthetic block** that holds the
-  editor value plus its discussions and participating users — not as the usual
+  editor value plus its discussions and participating users—not as the usual
   multi-block layout, and not in Plone's native discussion system.
 
 ### Title synchronization
 
 - The document's first heading is a special **title node** rendered as the page
   H1. Typing it updates the content object's `title` field, and vice-versa.
-- The title node is **plain text only** — inline formatting hotkeys are blocked
+- The title node is **plain text only**—inline formatting hotkeys are blocked
   there, Enter creates a following paragraph, and duplicate title nodes are
   removed.
 
@@ -83,7 +83,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
   explicitly disabled** in this editor.
 
 :::{note}
-The exact supported toolbar/block matrix is a **v3 open item** — engineering and
+The exact supported toolbar/block matrix is a **v3 open item**—engineering and
 product still need to approve the final enabled set before it's a release
 promise. Treat the list above as "present in code," not "contractually
 supported."
@@ -102,7 +102,7 @@ supported."
 - Inserted from the **slash menu**, the **sidebar**, by **pasting**, or by
   **dropping** a file.
 - Uploaded images become **real Plone Image objects** created in the current
-  container — governed by the standard "Add Image" permission, no custom upload
+  container—governed by the standard "Add Image" permission, no custom upload
   endpoint.
 
 ### Mentions and dates (Provisional)
@@ -114,11 +114,11 @@ supported."
 - Typing a **second `/`** (`//`) inside the slash menu switches it to a **date
   picker** that inserts an inline date pill.
 
-:::{admonition} Provisional — hold from public claims
+:::{admonition} Provisional—hold from public claims
 :class: warning
 Mentions and inline dates are classified **Provisional** in the v3 feature set:
 selection rules, renamed/missing people, permission trimming, keyboard
-interaction, and some visual polish are not fully validated. Do not include them
+interaction, and some visual polish aren't fully validated. Do not include them
 in public/marketing copy until reconciled.
 :::
 
@@ -130,11 +130,11 @@ in public/marketing copy until reconciled.
   title node is deliberately excluded from suggestion tracking.
 - The comment editor itself supports marks and mentions.
 
-:::{admonition} Provisional — alpha collaboration
+:::{admonition} Provisional—alpha collaboration
 :class: warning
 Inline discussions and suggested changes are substantially built but classified
 **Provisional** (originally a proof of concept): actors, state transitions,
-notifications, audit behavior, and view-mode presentation are not yet a settled
+notifications, audit behavior, and view-mode presentation aren't yet a settled
 contract, and the implementation carries alpha-stage caveats. This is distinct
 from the standard footer **page comments** (see {doc}`workspaces-and-wiki`).
 :::
@@ -146,6 +146,6 @@ from the standard footer **page comments** (see {doc}`workspaces-and-wiki`).
 
 ## Learn more
 
-- **Related feature** — {doc}`workspaces-and-wiki`
-- **Related feature** — {doc}`content-lifecycle-management` (ownership/byline on
+- **Related feature**—{doc}`workspaces-and-wiki`
+- **Related feature**—{doc}`content-lifecycle-management` (ownership/byline on
   Wiki Pages), {doc}`people-and-organisation` (the people behind mentions)

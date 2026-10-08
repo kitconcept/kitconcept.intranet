@@ -8,6 +8,114 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.3 (2026-10-02)
+
+
+### Feature
+
+- Wiki Page tables look and behave like Confluence tables: full width, light grey cell grid, grey bold header row, compact hyphenated cells, row hover, in the editor and in the view (fixes the shifted borders and ~120px tall rows, #546). `/table` and a new "Insert table" toolbar button insert a 3 × 3 table with a header row; the cell toolbar gets a "Header row" toggle; Tab / Shift+Tab move between cells and Tab in the last cell appends a row; Backspace at the start of a cell no longer merges it into the previous cell; column widths are visible, persist and render the same in the view; wide tables scroll inside the page. @reekitconcept [#655](https://github.com/kitconcept/kitconcept.intranet/issue/655)
+- Wiki Page tables: readers can sort by any column (German numbers, amounts and dates understood) and filter tables with more than five rows; editors can drag rows and columns to reorder them (mouse, touch, keyboard, screen readers, via react-aria) or use the new move buttons in the cell toolbar. Sorting and filtering are per visit and not stored; the history diff always shows the stored order. @reekitconcept [#666](https://github.com/kitconcept/kitconcept.intranet/issue/666)
+- Wiki Page tables: the cell toolbar has icons that show the row or column being inserted or deleted (Tabler icons in the style of the Lucide set) instead of plain arrows next to the move arrows and a generic ✕; delete actions are red and come last in their group. @reekitconcept [#674](https://github.com/kitconcept/kitconcept.intranet/issue/674)
+
+
+### Bugfix
+
+- Hide navigation when adding a Workspace @iRohitSingh [#Hide_navigation](https://github.com/kitconcept/kitconcept.intranet/issue/Hide_navigation)
+- Fix css of solr search @iRohitSingh [#solr_search](https://github.com/kitconcept/kitconcept.intranet/issue/solr_search)
+- Fixed the caret sliding into place with an animation after pressing Enter on the last paragraph of a Wiki Page in edit mode. @sneridagh 
+
+
+### Internal
+
+- Updated `@plone-collective/volto-authomatic` to 3.0.0. @sneridagh [#authomatic-3.0.0](https://github.com/kitconcept/kitconcept.intranet/issue/authomatic-3.0.0)
+- Update @kitconcept-volto-solr to 3.0.0-alpha.3. @iRohitSingh [#solr-3.0.0-alpha.3](https://github.com/kitconcept/kitconcept.intranet/issue/solr-3.0.0-alpha.3)
+- Update @kitconcept/volto-plate to 1.0.0-alpha.30 (@plone/plate 1.0.0-alpha.20, Plate.js 53) and rebuild the wiki table shadows on the new upstream files. @reekitconcept [#360](https://github.com/kitconcept/kitconcept.intranet/issue/360)
+
+
+### Tests
+
+- Playwright acceptance tests for wiki tables (insert, editing, paste, sorting, filtering, moving rows and columns, search) and the Wiki Page history diff, following the manual test plans; the demo content is exported as JSON fixtures with `backend/scripts/export_acceptance_fixtures.py`. @reekitconcept [#667](https://github.com/kitconcept/kitconcept.intranet/issue/667)
+
+## 3.0.2 (2026-09-22)
+
+
+### Feature
+
+- Render Wiki Page diffs with Plate's diff plugin instead of Volto's HTML string diff, which showed nothing for Plate content: word-level text changes, added and removed blocks, changed block settings ("Alignment: Left → Centred"), split and unified view, German labels. @reekitconcept [#639](https://github.com/kitconcept/kitconcept.intranet/issue/639)
+
+
+### Bugfix
+
+- Wiki Page diff: table rows, cells and columns are marked without breaking the table; image and callout settings get readable names; unset dates no longer show as 1 January 1970; added/removed rows are hidden on the other side of the split view; the diff renders with volto-plate 1.0.0-alpha.28 (toggle visibility provider). @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
+## 3.0.1 (2026-09-18)
+
+No significant changes.
+
+
+## 3.0.0 (2026-09-17)
+
+
+### Bugfix
+
+- Update use of clickable_profile_link and PersonSummary @Tishasoumya-02 [#update-use-of-clickable-profileLinkandPersonSummary](https://github.com/kitconcept/kitconcept.intranet/issue/update-use-of-clickable-profileLinkandPersonSummary)
+- Add missing placeholder image for Person content types @iRohitSingh [#395](https://github.com/kitconcept/kitconcept.intranet/issue/395)
+- Fix person portraits leaking the internal backend URL in SSR: PersonPill now flattens the given portrait and falls back to the public `/@portrait/<id>` endpoint when it is still an absolute (internal) URL. @sneridagh [#502](https://github.com/kitconcept/kitconcept.intranet/issue/502)
+
+
+### Internal
+
+- Adjusted the container-width for the floating images to be default width. @TimoBroeskamp 
+- Stamp the distribution's `volto_version` during release with `uvx repoplone deps stamp-volto-version` instead of an inline Node one-liner in `.release-it.json`. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.28. @iFlameing 
+- Update VLT final. @sneridagh 
+
+## 3.0.0-alpha.5 (2026-09-11)
+
+
+### Bugfix
+
+- Fix broken Avatar pictures @iRohitSingh [#480](https://github.com/kitconcept/kitconcept.intranet/issue/480)
+- Use the specified English and German labels for authors, the responsible person, and page feedback. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- @kitconcept/volto-plate to 1.0.0-alpha.26. @sneridagh 
+- Fix the Status icons in content folder @Tishasoumya-02 
+- Show all configured CLM authors in the About This Content panel, fall back to content creators when no authors are set, and load user portraits through Volto's portrait middleware. @sneridagh 
+- Show the configured feedback person as the effective feedback recipient, falling back to the responsible person. @sneridagh 
+- Show the workspace navigation portal and hide the like/comment/share footer for content nested inside a workspace (not just the workspace and wiki pages themselves). @iFlameing 
+
+
+### Internal
+
+- Upgrade kitconcept-core to 2.0.0b7, Volto Light Theme to 8.0.0a32, and Volto Banner Block to 1.2.1. @sneridagh 
+
+## 3.0.0-alpha.4 (2026-09-10)
+
+
+### Feature
+
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.2. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Search dialog: the Type / Created by / Updated / Status filter chips are functional - they filter the livesearch, list real users, and travel to the results page URL so a reload reproduces the filtered results. @reebalazs 
+
+
+### Bugfix
+
+- Show CLM box in edit mode and hide it on the login page @iRohitSingh [#clm-edit-mode](https://github.com/kitconcept/kitconcept.intranet/issue/clm-edit-mode)
+- Fix CLM feedback form @iRohitSingh [#feedback-form](https://github.com/kitconcept/kitconcept.intranet/issue/feedback-form)
+- Remove the Feedback about this page link from the footer @iRohitSingh [#remove-footer-feedback](https://github.com/kitconcept/kitconcept.intranet/issue/remove-footer-feedback)
+- Fix the CLM Content Owner (`responsible_person`) field showing a raw user id instead of the person's name after the value was changed and saved, and stop the inheritance hint from appearing for a content's own value (e.g. after clearing the field). @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.1. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+
+
+### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+### Tests
+
+- Add acceptance tests for the CLM `responsible_person` widget: the name is shown after a change+save, no inheritance hint for a content's own value, and the inheritance hint appears with the ancestor's name when the value is genuinely inherited. @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Run block accessibility checks against the retained ``/qa/block`` fixtures and remove checks for fixtures that no longer exist. @sneridagh 
+
 ## 3.0.0-alpha.3 (2026-08-27)
 
 

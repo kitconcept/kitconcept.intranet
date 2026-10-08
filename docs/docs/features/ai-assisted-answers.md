@@ -15,7 +15,7 @@ last_updated: 2026-09-07
 :class: warning
 
 **Status:** v3 · **Beta (Provisional)** · Optional · **Audience:** all users ·
-Requires Solr + an LLM service · **Interim source of truth** — canonical spec
+Requires Solr + an LLM service · **Interim source of truth**—canonical spec
 will move to the intranet.
 :::
 
@@ -33,7 +33,7 @@ enabled it and connected an LLM service.
 ## Who it's for
 
 - **All users**, as a faster way to get a grounded answer instead of scanning
-  results — where the infrastructure is enabled.
+  results—where the infrastructure is enabled.
 
 ## Capabilities
 
@@ -41,7 +41,7 @@ enabled it and connected an LLM service.
 - **Grounded** answers with a **Sources** list linking to the underlying
   documents.
 - **Scope-aware** retrieval (current Workspace / another Workspace / everywhere).
-- **Permission-trimmed** grounding — only content the user may access is used.
+- **Permission-trimmed** grounding—only content the user may access is used.
 
 ## Behaviour & rules
 
@@ -53,7 +53,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 ### How it's triggered and shown
 
 - Normal typing produces live search suggestions; the AI answer is a **separate,
-  explicit action** — an **"Ask AI"** button, shown only when the capability is
+  explicit action**—an **"Ask AI"** button, shown only when the capability is
   available **and** the user has entered a query.
 - The answer panel shows an **"AI Overview"** heading with a **Beta** badge, a
   loading state, the answer, and a **Sources** list (each source links to the
@@ -69,7 +69,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
   passages only. The model is instructed to **decline rather than invent** when
   the answer isn't in the sources, and to answer in the question's language.
 - The selected **search scope** is applied as a real path restriction on
-  retrieval — not cosmetic.
+  retrieval—not cosmetic.
 - **Permission trimming** is applied to retrieval on the server: the answer and
   its sources can only draw on content the current user is authorized to see.
   There is no cross-Workspace or unauthorized-content leakage; unpublished items
@@ -90,7 +90,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 ### Limits
 
 - **Single-turn only.** A follow-up input exists in the design but is
-  **disabled** — there is no multi-turn conversation.
+  **disabled**—there is no multi-turn conversation.
 - **Dialog-only.** AI answers are deliberately **not** offered on the classic
   search-results page (to avoid every search tying up backend workers).
 - **No streaming.** The backend returns the whole answer at once; the "typing"
@@ -110,14 +110,14 @@ administrator/operator must:
 - Provide an **LLM service URL** (and optional token / model overrides) via
   environment variables.
 
-The default posture is **off** — nothing in the distribution enables RAG out of
+The default posture is **off**—nothing in the distribution enables RAG out of
 the box.
 
-:::{admonition} Beta — hold from firm public claims
+:::{admonition} Beta—hold from firm public claims
 :class: warning
 This capability is classified **Optional / Provisional (beta)** in the v3 feature
 set. Its enabled/disabled/unavailable/misconfigured states, answer and source
-presentation, decline behavior, latency, and — critically — permission isolation
+presentation, decline behavior, latency, and—critically—permission isolation
 should be proven in a configured or deterministic test environment before it is
 promised publicly. The backend plumbing is itself labelled beta in its source
 package.
@@ -125,5 +125,5 @@ package.
 
 ## Learn more
 
-- **Related feature** — {doc}`search` (the dialog that hosts it),
+- **Related feature**—{doc}`search` (the dialog that hosts it),
   {doc}`workspaces-and-wiki` (scope), {doc}`people-and-organisation`

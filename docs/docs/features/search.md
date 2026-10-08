@@ -15,7 +15,7 @@ last_updated: 2026-09-07
 :class: warning
 
 **Status:** v3 · **Beta (Provisional)** · **Audience:** all users ·
-Requires Solr · **Interim source of truth** — canonical spec will move to the
+Requires Solr · **Interim source of truth**—canonical spec will move to the
 intranet.
 :::
 
@@ -38,7 +38,7 @@ with content-type tabs, facets, and sorting. The same dialog hosts the optional
 - **As-you-type suggestions** backed by Solr.
 - **Scope switching**: current Workspace / another Workspace / everywhere.
 - A **classic results page** with content-type tabs, real facets, and sorting.
-- **Per-type result cards** (e.g. rich person results).
+- **Per-type result cards** (for example rich person results).
 - **Server-side permission trimming** so users only ever see what they may access.
 
 ## Behaviour & rules
@@ -62,11 +62,11 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 Three scopes, selected via the scope chip:
 
-- **Current Workspace** (default) — resolved from the Workspace the current
+- **Current Workspace** (default)—resolved from the Workspace the current
   content belongs to.
-- **Another accessible Workspace** — chosen from a list that is itself
+- **Another accessible Workspace**—chosen from a list that is itself
   **security-trimmed** (inaccessible Workspaces never appear).
-- **Everywhere** — no path restriction.
+- **Everywhere**—no path restriction.
 
 Scope is translated into a **path filter** applied to suggestions, the results
 page, and AI answers. On Enter, a scoped search opens the Workspace's own results
@@ -74,7 +74,7 @@ page filtered to that path; an "everywhere" search opens the site results page.
 
 :::{note}
 A deferred **"Intranet Portal"** scope (portal content outside any Workspace) is
-**not** selectable — it needs backend exclusion support and was moved to a later
+**not** selectable—it needs backend exclusion support and was moved to a later
 ticket. It survives only as a location label on results, not as a scope option.
 :::
 
@@ -85,7 +85,7 @@ ticket. It survives only as a location label on results, not as a scope option.
   and layout controls.
 - Person results render as rich cards (job title, phone, building/room, email),
   respecting the profile-link site flags.
-- The AI toggle is intentionally **absent** from the classic results page — AI is
+- The AI toggle is intentionally **absent** from the classic results page—AI is
   dialog-only.
 
 ### Permission trimming
@@ -93,12 +93,12 @@ ticket. It survives only as a location label on results, not as a scope option.
 - Enforced **server-side**: every Solr query is filtered by the user's
   roles/groups/id, and hidden-from-search items are excluded. Anonymous users are
   restricted to anonymous-visible content.
-- Applies to suggestions, the results page, and AI grounding alike — inaccessible
+- Applies to suggestions, the results page, and AI grounding alike—inaccessible
   content never appears.
 
-### Filter controls in the dialog (non-functional — demo only)
+### Filter controls in the dialog (non-functional—demo only)
 
-:::{admonition} Exclude — do not present as working
+:::{admonition} Exclude—do not present as working
 :class: warning
 The dialog's **Type / Created-by / Updated / Status** filter chips and the
 "Search titles only" / "Show archived content" toggles are **display-only**. They
@@ -114,13 +114,13 @@ implemented before they can be part of the release contract.
 
 - Requires **Solr** to be set up and active (server-level; no control-panel
   setting).
-- Two legacy control-panel settings — `external_search_url` and
-  `search_field_placeholder` — drive the **older** light-theme search widget, not
+- Two legacy control-panel settings—`external_search_url` and
+  `search_field_placeholder`—drive the **older** light-theme search widget, not
   this dialog. The dialog uses its own placeholder and routing.
 
 ## Learn more
 
-- **How-to** — {doc}`/how-to-guides/settings/search-settings`
-- **Reference (component)** — {doc}`/developer/reference/components/search-tabs`
-- **Related feature** — {doc}`ai-assisted-answers`, {doc}`workspaces-and-wiki`,
+- **How-to**—{doc}`/how-to-guides/settings/search-settings`
+- **Reference (component)**—{doc}`/developer/reference/components/search-tabs`
+- **Related feature**—{doc}`ai-assisted-answers`, {doc}`workspaces-and-wiki`,
   {doc}`personalization`

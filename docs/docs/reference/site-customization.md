@@ -12,7 +12,7 @@ last_updated: 2026-03-18
 
 # Site Customization
 
-This page describes the settings available to customize your site's header, theme colors, and footer. These settings are available once the VLT site customization behaviors have been applied to your site's content types.
+This page describes the settings available to customize your site's header, theme colors, and footer. These settings are available once the {term}`VLT` site customization behaviors have been applied to your site's content types.
 
 :::{note}
 These settings require the VLT behaviors to be applied by a developer first. See [Configure VLT Behaviors](/developer/reference/behaviors/voltolighttheme) for setup instructions.
@@ -28,7 +28,7 @@ Define the main site logo shown in the top left-most side of the header.
 
 ### Complementary logo
 
-Define a complementary logo in the header — a second logo shown on the right-most side.
+Define a complementary logo in the header—a second logo shown on the right-most side.
 
 ### Fat menu
 

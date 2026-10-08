@@ -12,6 +12,8 @@
  *
  * Search component.
  * @module components/theme/Search/Search
+ * FILE: https://github.com/kitconcept/kitconcept.solr/blob/2.0.0a8/frontend/packages/volto-solr/src/components/theme/SolrSearch/SolrSearch.jsx
+ * FILE VERSION: volto-solr 2.0.0a8
  */
 
 import React, { Component, createElement, createRef, forwardRef } from 'react';
@@ -19,6 +21,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { asyncConnect } from '@plone/volto/helpers/AsyncConnect';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { FormattedMessage } from 'react-intl';
 import { createPortal } from 'react-dom';
 import {
@@ -41,6 +44,7 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import paginationLeftSVG from '@plone/volto/icons/left-key.svg';
 import paginationRightSVG from '@plone/volto/icons/right-key.svg';
 // These imports and the legacySearchProps are only for the legacy search
+import { getContent } from '@plone/volto/actions/content/content';
 import { searchContent } from '@plone/volto/actions/search/search';
 import { DefaultResultItem } from '@kitconcept/volto-solr/components/theme/SolrSearch/resultItems';
 import { SelectSorting } from '@kitconcept/volto-solr/components/theme/SolrSearch/SelectSorting';
@@ -237,6 +241,7 @@ class SolrSearch extends Component {
     const location = this.props.history.location;
     const params = qs.parse(location.search);
 
+    this.props.getContent(getBaseUrl(location.pathname));
     this.setState({
       ...this.queryStateFromSearchParams(),
       isClient: true,
@@ -545,6 +550,7 @@ export const __test__ = connect(
     };
   },
   (dispatch, { searchAction }) => ({
+    getContent: (...args) => dispatch(getContent(...args)),
     searchContent: (...args) =>
       dispatch(searchActionWithDefault(searchAction)(...args)),
   }),
@@ -587,6 +593,7 @@ export default compose(
       };
     },
     (dispatch, { searchAction }) => ({
+      getContent: (...args) => dispatch(getContent(...args)),
       searchContent: (...args) =>
         dispatch(searchActionWithDefault(searchAction)(...args)),
     }),

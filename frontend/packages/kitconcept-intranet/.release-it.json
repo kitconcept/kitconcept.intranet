@@ -4,7 +4,7 @@
   },
   "hooks": {
     "after:bump": [
-      "node -e \"const fs=require('fs');const m=JSON.parse(fs.readFileSync('../../mrs.developer.json','utf8'));if(!m.core||!m.core.tag){console.error('Missing mrs.developer core.tag');process.exit(1);}const p=JSON.parse(fs.readFileSync('package.json','utf8'));p.volto_version=m.core.tag;fs.writeFileSync('package.json',JSON.stringify(p,null,2)+'\\n');\"",
+      "uvx repoplone deps stamp-volto-version",
       "git add package.json",
       "uvx towncrier build --draft --yes --version ${version} > .changelog.draft",
       "uvx towncrier build --yes --version ${version}",

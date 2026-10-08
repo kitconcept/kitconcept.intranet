@@ -15,13 +15,13 @@ last_updated: 2026-09-07
 :class: note
 
 **Status:** GA · **Audience:** all users (readers), editors, admins ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
 
 The intranet models staff, teams, and offices as first-class content through
-three custom content types — **Person**, **Organisational Unit**, and
+three custom content types—**Person**, **Organisational Unit**, and
 **Location**. Together they form the **people directory** and the
 **organisational hierarchy** that several other features build on: a Person
 profile is the entity behind {doc}`content-lifecycle-management` ownership, and
@@ -36,11 +36,11 @@ the org unit / location references drive {doc}`personalization`.
 
 ## Capabilities
 
-- **Person** — a rich staff profile (name, academic title, portrait, bio, job
+- **Person**—a rich staff profile (name, academic title, portrait, bio, job
   title, department, contact details, responsibilities), linkable to a Plone
   user account.
-- **Organisational Unit** — a team, department, or division.
-- **Location** — a physical office or building.
+- **Organisational Unit**—a team, department, or division.
+- **Location**—a physical office or building.
 - **Cross-references** between all three, driving directory filtering and
   personalization.
 - Frontend **profile view**, **summary/teaser card**, **search result**, and
@@ -68,7 +68,7 @@ Several contact fields are **permission-protected** for viewing.
 ### Organisational Unit
 
 Represents a team, department, or division. It has **no bespoke fields of its
-own** — its title/description come from standard behaviors — but it **carries a
+own**—its title/description come from standard behaviors—but it **carries a
 `location_reference`**, so a unit can be associated with the offices it sits in.
 Creation is restricted to **site admins**.
 
@@ -104,10 +104,10 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 - The link is **validated**: the username must map to a real Plone user, and a
   given user may be linked to **only one** Person (uniqueness is enforced).
 - This one-to-one link is what lets other features resolve "the current user's
-  Person" — required by {doc}`content-lifecycle-management` ownership and
+  Person"—required by {doc}`content-lifecycle-management` ownership and
   {doc}`personalization`.
 - `contact_email` is a **separate** profile field, independent of the account
-  link — it is the address used by feedback routing, not necessarily the user's
+  link—it is the address used by feedback routing, not necessarily the user's
   login email.
 
 ### Directory listings
@@ -137,7 +137,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 ## Learn more
 
-- **Reference** — {doc}`/reference/content-types`
-- **Concept** — {doc}`/concepts/organisational-structure`
-- **Related feature** — {doc}`content-lifecycle-management`,
+- **Reference**—{doc}`/reference/content-types`
+- **Concept**—{doc}`/concepts/organisational-structure`
+- **Related feature**—{doc}`content-lifecycle-management`,
   {doc}`personalization`

@@ -1,6 +1,339 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.0.3 (2026-10-02)
+
+### Backend
+
+
+#### Feature
+
+- Two wiki-table demo pages ("Projektbudget 2026", "Teilnehmende Konsortialtreffen") in the GreenCat workspace, created by the distribution post handler on new sites and by `scripts/table_demo_content.py` (REST) on existing sites. Wiki Pages created by the demo-content code now carry the title block the editor expects; the history-diff demo page could not be saved in the editor before. @reekitconcept [#655](https://github.com/kitconcept/kitconcept.intranet/issue/655)
+- The wiki-table demo page "Teilnehmende Konsortialtreffen" gets a list of open items for sorting and filtering and a meeting agenda with a merged cell; `scripts/table_demo_content.py` recreates both demo pages on existing sites. @reekitconcept [#666](https://github.com/kitconcept/kitconcept.intranet/issue/666)
+
+
+#### Internal
+
+- Update @kitconcept-volto-solr to 3.0.0-alpha.3. @iRohitSingh [#solr-3.0.0a3](https://github.com/kitconcept/kitconcept.intranet/issue/solr-3.0.0a3)
+- Update the backend to kitconcept.plate 1.0.0a30. @reekitconcept [#360](https://github.com/kitconcept/kitconcept.intranet/issue/360)
+- The REST scripts `scripts/table_demo_content.py` and `scripts/diff_demo_content.py` use `requests` through a shared client, `kitconcept.intranet.utils.plone_client`, and send a browser User-Agent, because sites behind Cloudflare (the kitconcept cluster) block bot-like ones; override it with `--user-agent` or `$PLONE_CLIENT_USER_AGENT`. @reekitconcept 
+
+
+#### Tests
+
+- Add `scripts/export_acceptance_fixtures.py`, which exports the wiki table and history diff demo content as JSON fixtures for the Playwright acceptance tests. @reekitconcept [#667](https://github.com/kitconcept/kitconcept.intranet/issue/667)
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Wiki Page tables look and behave like Confluence tables: full width, light grey cell grid, grey bold header row, compact hyphenated cells, row hover, in the editor and in the view (fixes the shifted borders and ~120px tall rows, #546). `/table` and a new "Insert table" toolbar button insert a 3 × 3 table with a header row; the cell toolbar gets a "Header row" toggle; Tab / Shift+Tab move between cells and Tab in the last cell appends a row; Backspace at the start of a cell no longer merges it into the previous cell; column widths are visible, persist and render the same in the view; wide tables scroll inside the page. @reekitconcept [#655](https://github.com/kitconcept/kitconcept.intranet/issue/655)
+- Wiki Page tables: readers can sort by any column (German numbers, amounts and dates understood) and filter tables with more than five rows; editors can drag rows and columns to reorder them (mouse, touch, keyboard, screen readers, via react-aria) or use the new move buttons in the cell toolbar. Sorting and filtering are per visit and not stored; the history diff always shows the stored order. @reekitconcept [#666](https://github.com/kitconcept/kitconcept.intranet/issue/666)
+- Wiki Page tables: the cell toolbar has icons that show the row or column being inserted or deleted (Tabler icons in the style of the Lucide set) instead of plain arrows next to the move arrows and a generic ✕; delete actions are red and come last in their group. @reekitconcept [#674](https://github.com/kitconcept/kitconcept.intranet/issue/674)
+
+
+#### Bugfix
+
+- Hide navigation when adding a Workspace @iRohitSingh [#Hide_navigation](https://github.com/kitconcept/kitconcept.intranet/issue/Hide_navigation)
+- Fix css of solr search @iRohitSingh [#solr_search](https://github.com/kitconcept/kitconcept.intranet/issue/solr_search)
+- Fixed the caret sliding into place with an animation after pressing Enter on the last paragraph of a Wiki Page in edit mode. @sneridagh 
+
+
+#### Internal
+
+- Updated `@plone-collective/volto-authomatic` to 3.0.0. @sneridagh [#authomatic-3.0.0](https://github.com/kitconcept/kitconcept.intranet/issue/authomatic-3.0.0)
+- Update @kitconcept-volto-solr to 3.0.0-alpha.3. @iRohitSingh [#solr-3.0.0-alpha.3](https://github.com/kitconcept/kitconcept.intranet/issue/solr-3.0.0-alpha.3)
+- Update @kitconcept/volto-plate to 1.0.0-alpha.30 (@plone/plate 1.0.0-alpha.20, Plate.js 53) and rebuild the wiki table shadows on the new upstream files. @reekitconcept [#360](https://github.com/kitconcept/kitconcept.intranet/issue/360)
+
+
+#### Tests
+
+- Playwright acceptance tests for wiki tables (insert, editing, paste, sorting, filtering, moving rows and columns, search) and the Wiki Page history diff, following the manual test plans; the demo content is exported as JSON fixtures with `backend/scripts/export_acceptance_fixtures.py`. @reekitconcept [#667](https://github.com/kitconcept/kitconcept.intranet/issue/667)
+
+
+
+### Project
+
+
+#### Feature
+
+- Wiki Page tables look and behave like Confluence tables: full width, light grey cell grid, grey bold header row, compact hyphenated cells, row hover, in the editor and in the view (fixes the shifted borders and ~120px tall rows, #546). `/table` and a new "Insert table" toolbar button insert a 3 × 3 table with a header row; the cell toolbar gets a "Header row" toggle; Tab / Shift+Tab move between cells and Tab in the last cell appends a row; Backspace at the start of a cell no longer merges it into the previous cell; column widths are visible, persist and render the same in the view; wide tables scroll inside the page. @reekitconcept [#655](https://github.com/kitconcept/kitconcept.intranet/pull/655)
+- Wiki Page tables: readers can sort by any column (German numbers, amounts and dates understood) and filter tables with more than five rows; editors can drag rows and columns to reorder them (mouse, touch, keyboard, screen readers, via react-aria) or use the new move buttons in the cell toolbar. Sorting and filtering are per visit and not stored; the history diff always shows the stored order. @reekitconcept [#666](https://github.com/kitconcept/kitconcept.intranet/pull/666)
+- Wiki Page tables: the cell toolbar has icons that show the row or column being inserted or deleted (Tabler icons in the style of the Lucide set) instead of plain arrows next to the move arrows and a generic ✕; delete actions are red and come last in their group. @reekitconcept [#674](https://github.com/kitconcept/kitconcept.intranet/pull/674)
+
+
+#### Internal
+
+- Split the A11y and the Main Tests acceptance tests in CI into two jobs each, and update `astral-sh/setup-uv` to v10.2.0. @sneridagh 
+
+
+#### Documentation
+
+- Replaced the hardcoded version numbers in the documentation with substitutions: `conf.py` now declares the intranet, Traefik, PostgreSQL, Solr and Tika versions in one place and feeds them to both the MyST substitutions and the source-replacement extension, so pages such as the demo stack guide no longer need a manual bump after every release. @ericof 
+
+
+#### Tests
+
+- Playwright acceptance tests for wiki tables (insert, editing, paste, sorting, filtering, moving rows and columns, search) and the Wiki Page history diff, following the manual test plans; the demo content is exported as JSON fixtures with `backend/scripts/export_acceptance_fixtures.py`. @reekitconcept [#667](https://github.com/kitconcept/kitconcept.intranet/pull/667)
+
+
+
+## 3.0.2 (2026-09-22)
+
+### Backend
+
+
+#### Feature
+
+- History-diff demo page "Jour fixe KW 38": created with four versions and change notes by the distribution post handler on new sites, and by `scripts/diff_demo_content.py` (REST) on existing sites. @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Render Wiki Page diffs with Plate's diff plugin instead of Volto's HTML string diff, which showed nothing for Plate content: word-level text changes, added and removed blocks, changed block settings ("Alignment: Left → Centred"), split and unified view, German labels. @reekitconcept [#639](https://github.com/kitconcept/kitconcept.intranet/issue/639)
+
+
+#### Bugfix
+
+- Wiki Page diff: table rows, cells and columns are marked without breaking the table; image and callout settings get readable names; unset dates no longer show as 1 January 1970; added/removed rows are hidden on the other side of the split view; the diff renders with volto-plate 1.0.0-alpha.28 (toggle visibility provider). @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/issue/642)
+
+
+
+### Project
+
+
+#### Feature
+
+- Render Wiki Page diffs with Plate's diff plugin instead of Volto's HTML string diff, which showed nothing for Plate content: word-level text changes, added and removed blocks, changed block settings ("Alignment: Left → Centred"), split and unified view, German labels. @reekitconcept [#639](https://github.com/kitconcept/kitconcept.intranet/pull/639)
+- Made the host port published by Traefik in `docker-compose.yml` configurable through the `STACK_PORT` environment variable, which still defaults to 80, so the demo stack can run behind a web server that terminates TLS. @ericof 
+- Rewrote `docker-compose.yml` as a self-contained stack: the backend now runs against PostgreSQL/RelStorage with Solr and Tika services defined alongside it, Traefik moved to v3, and the Swarm cron job was replaced by an Ofelia scheduler driven by container labels. @ericof 
+
+
+#### Bugfix
+
+- Wiki Page diff for the pitch demo: structural nodes (table rows, columns) diff correctly, readable names for image and callout settings, unset dates shown as "not set". @reekitconcept [#642](https://github.com/kitconcept/kitconcept.intranet/pull/642)
+
+
+#### Documentation
+
+- Added a how-to guide for running the demo `docker-compose.yml` stack: downloading the file, a complete `.env` example with every supported environment variable, what the stack starts, the site created on the first start, how to serve it behind a web server that terminates TLS, and the limits of the demo (no production readiness, no AI features). @ericof 
+
+
+
+## 3.0.1 (2026-09-18)
+
+### Backend
+
+
+#### Internal
+
+- Update to core 2.1.0 @sneridagh 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 3.0.0 (2026-09-17)
+
+### Backend
+
+
+#### Feature
+
+- Sync the `/personen` persons with Plone users in the example content: add the missing Jutta Halmbach person (with portrait), assign usernames to the persons that had none, and seed the matching member accounts in `principals.json` so every person profile has a user (Max Berger included) and a portrait via `sync_person_portraits`. Also reassign the example content authored by `admin` randomly among `a.becker`, `m.berger` and `c.nguyen`. @sneridagh [#502](https://github.com/kitconcept/kitconcept.intranet/issue/502)
+
+
+#### Internal
+
+- Update VLT final and core (Plone 6.2.2). @sneridagh 
+- Update k.core @Tishasoumya-02 
+- Update the backend to kitconcept.plate 1.0.0a28. @iFlameing 
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Update use of clickable_profile_link and PersonSummary @Tishasoumya-02 [#update-use-of-clickable-profileLinkandPersonSummary](https://github.com/kitconcept/kitconcept.intranet/issue/update-use-of-clickable-profileLinkandPersonSummary)
+- Add missing placeholder image for Person content types @iRohitSingh [#395](https://github.com/kitconcept/kitconcept.intranet/issue/395)
+- Fix person portraits leaking the internal backend URL in SSR: PersonPill now flattens the given portrait and falls back to the public `/@portrait/<id>` endpoint when it is still an absolute (internal) URL. @sneridagh [#502](https://github.com/kitconcept/kitconcept.intranet/issue/502)
+
+
+#### Internal
+
+- Adjusted the container-width for the floating images to be default width. @TimoBroeskamp 
+- Stamp the distribution's `volto_version` during release with `uvx repoplone deps stamp-volto-version` instead of an inline Node one-liner in `.release-it.json`. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.28. @iFlameing 
+- Update VLT final. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Update VScode settings. @sneridagh 
+- Update k.core @Tishasoumya-02 
+
+
+
+## 3.0.0a5 (2026-09-11)
+
+### Backend
+
+
+#### Feature
+
+- Populate Plone user portraits from the images of associated Person profiles when installing the example content. @sneridagh 
+
+
+#### Bugfix
+
+- Standardize German Content Lifecycle Management labels and show the behavior's full name in the edit form. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- Expose configured feedback-person metadata through the CLM expansion. @sneridagh 
+- Show every configured CLM author in the content information and expose the person metadata required by the frontend. @sneridagh 
+
+
+#### Internal
+
+- Upgrade kitconcept.core to 2.0.0b7 and Volto Light Theme to 8.0.0a32. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Fix broken Avatar pictures @iRohitSingh [#480](https://github.com/kitconcept/kitconcept.intranet/issue/480)
+- Use the specified English and German labels for authors, the responsible person, and page feedback. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/issue/622)
+- @kitconcept/volto-plate to 1.0.0-alpha.26. @sneridagh 
+- Fix the Status icons in content folder @Tishasoumya-02 
+- Show all configured CLM authors in the About This Content panel, fall back to content creators when no authors are set, and load user portraits through Volto's portrait middleware. @sneridagh 
+- Show the configured feedback person as the effective feedback recipient, falling back to the responsible person. @sneridagh 
+- Show the workspace navigation portal and hide the like/comment/share footer for content nested inside a workspace (not just the workspace and wiki pages themselves). @iFlameing 
+
+
+#### Internal
+
+- Upgrade kitconcept-core to 2.0.0b7, Volto Light Theme to 8.0.0a32, and Volto Banner Block to 1.2.1. @sneridagh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Refer to the CLM edit fieldset by its full Content Lifecycle Management name in the user and developer documentation. @sneridagh [#622](https://github.com/kitconcept/kitconcept.intranet/pull/622)
+
+
+
+## 3.0.0a4 (2026-09-10)
+
+### Backend
+
+
+#### Feature
+
+- Update kitconcept.solr to 3.0.0a2 (suggestions include images by default). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- New vocabulary kitconcept.intranet.vocabularies.creators: users who created content on the site (unique catalog Creator values with resolved full names), the data source for the search dialog's "Created by" filter. @reebalazs 
+
+
+#### Bugfix
+
+- Fix the content review reminder email body: render the last-updated value as a date instead of the object repr, and add proper line and paragraph breaks (English and German) so the message is no longer a single run-on block. [#486](https://github.com/kitconcept/kitconcept.intranet/issue/486)
+- Update kitconcept.solr to 3.0.0a1 (AI answers no longer cite context-less documents such as Images as sources). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Activate Solr during site creation only when the site was created with Solr support, and reindex the site in the same pass -- including the RAG chunks when AI search is enabled -- so search works without a manual reindex. @ericof 
+- Give the two OpenStreetMap maps blocks on the QA maps page unique titles, so their iframes have unique title attributes (a11y frame-title-unique). 
+- Remove the obsolete ``/features/block`` example branch while retaining the QA block fixtures. @sneridagh 
+
+
+#### Internal
+
+- Adjust QA example content: rename QA section to "Quality Assurance", add missing block descriptions (banner, carousel, form, logos, rss), fix broken logo image references, add banner variations, add grey background variants (carousel, form, event calendar, maps) and an OpenStreetMap example to the maps block. 
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.2. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+- Search dialog: the Type / Created by / Updated / Status filter chips are functional - they filter the livesearch, list real users, and travel to the results page URL so a reload reproduces the filtered results. @reebalazs 
+
+
+#### Bugfix
+
+- Show CLM box in edit mode and hide it on the login page @iRohitSingh [#clm-edit-mode](https://github.com/kitconcept/kitconcept.intranet/issue/clm-edit-mode)
+- Fix CLM feedback form @iRohitSingh [#feedback-form](https://github.com/kitconcept/kitconcept.intranet/issue/feedback-form)
+- Remove the Feedback about this page link from the footer @iRohitSingh [#remove-footer-feedback](https://github.com/kitconcept/kitconcept.intranet/issue/remove-footer-feedback)
+- Fix the CLM Content Owner (`responsible_person`) field showing a raw user id instead of the person's name after the value was changed and saved, and stop the inheritance hint from appearing for a content's own value (e.g. after clearing the field). @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Update @kitconcept/volto-solr to ^3.0.0-alpha.1. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/issue/570)
+
+
+#### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+#### Tests
+
+- Add acceptance tests for the CLM `responsible_person` widget: the name is shown after a change+save, no inheritance hint for a content's own value, and the inheritance hint appears with the ancestor's name when the value is genuinely inherited. @sneridagh [#496](https://github.com/kitconcept/kitconcept.intranet/issue/496)
+- Run block accessibility checks against the retained ``/qa/block`` fixtures and remove checks for fixtures that no longer exist. @sneridagh 
+
+
+
+### Project
+
+
+#### Feature
+
+- Update kitconcept.solr to 3.0.0a2: images appear in the livesearch suggestions by default, like on the results page (team decision from the ticket 570 review). @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/pull/570)
+- Search dialog filter chips: filter livesearch suggestions, search results, and the AI answer by content type, creator (multi-select with avatars and livesearch), last updated, and review state. @reebalazs [#585](https://github.com/kitconcept/kitconcept.intranet/pull/585)
+
+
+#### Bugfix
+
+- Update kitconcept.solr to 3.0.0a1: the AI answer no longer cites documents that contributed no context (e.g. Images) as sources. @reebalazs [#570](https://github.com/kitconcept/kitconcept.intranet/pull/570)
+
+
+#### Internal
+
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+
+
+#### Documentation
+
+- Add a Features documentation section: a product/feature catalog (outside the Diátaxis quadrants) that serves as an interim source of truth for users, QA, and product owners, with a hub page per feature (CLM, feedback, people & organisation, personalization, content review & reminders, likes, workspaces & wiki, wiki editor, search, and AI-assisted answers). [#486](https://github.com/kitconcept/kitconcept.intranet/pull/486)
+- Build and publish the documentation to GitHub Pages at https://kitconcept.github.io/kitconcept.intranet/, replacing the Read the Docs setup. The docs build now runs in CI with warnings treated as errors. @ericof 
+- Cleared every Vale style error in the documentation, linked the first use of VLT and CLM on each page to the glossary, and fixed the remaining Sphinx cross-reference and syntax-highlighting warnings so the documentation builds cleanly with warnings treated as errors. @ericof 
+
+
+
 ## 3.0.0a3 (2026-08-27)
 
 ### Backend

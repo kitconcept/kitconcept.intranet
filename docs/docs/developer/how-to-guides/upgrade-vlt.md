@@ -11,14 +11,14 @@ last_updated: 2026-03-18
 
 # Upgrade Volto Light Theme
 
-## volto-light-theme 8.0.0
+## `volto-light-theme` 8.0.0
 
-### Removed support for Volto 18.x.x
+### Removed support for Volto `18.x.x`
 
 ```{versionadded} 8.0.0-alpha.0
 ```
 
-VLT 8.0.0 requires at least Volto 19.x.x.
+{term}`VLT` 8.0.0 requires at least Volto `19.x.x`.
 
 ### `@plone/components` minimum version 4.0.0 alpha
 
@@ -44,7 +44,7 @@ The recommended add-ons are listed in the {doc}`../reference/recommended-addons`
 All custom code related to the slider block has been moved to the `@kitconcept/volto-slider-block` add-on.
 If you have customized the slider block in your project, you will need to move your customizations shadows to the `@kitconcept/volto-slider-block` add-on as well.
 
-## volto-light-theme 7.0.0
+## `volto-light-theme` 7.0.0
 
 ### The card primitive has been applied to the Teaser block
 
@@ -107,7 +107,7 @@ The rest of the structure remains roughly the same.
 ```{versionadded} 7.0.0-alpha.4
 ```
 
-The shadow does not include the placeholder in case that the teaser is empty.
+The shadow doesn't include the placeholder in case that the teaser is empty.
 This makes it easier to customize the Teaser block without having to override the entire component, including the placeholder.
 This is an excerpt of the new shadowed Teaser `Body` component:
 
@@ -138,9 +138,9 @@ If you have customized Teaser Body components, or registered components with `Te
 
 For accessibility reasons we switched the `<h2>` in the image captions to `<strong>` as this better reflects the actual semantic role there. This should not effect you in most cases, but if you mirrored and customise the `<Caption/>` component you might want to amend this in your code as well.
 
-## volto-light-theme 6.0.0
+## `volto-light-theme` 6.0.0
 
-This section describes how to upgrade to volto-light-theme 6.0.0 from 5.x.x.
+This section describes how to upgrade to `volto-light-theme` 6.0.0 from `5.x.x`.
 See each major version to upgrade between major versions.
 
 ### New `kitconcept.voltolighttheme` backend package
@@ -166,7 +166,9 @@ If you have customized the footer in your site, you might need to adapt your cus
 ```
 
 
+<!-- vale Vale.Terms = NO -->
 (plonegovbr-volto-social-media-label)=
+<!-- vale Vale.Terms = YES -->
 
 ### `@plonegovbr/volto-social-media` integration
 ```{versionadded} 6.0.0-alpha.22
@@ -236,7 +238,7 @@ type footerLogos = Array<footerLogo>
 An automatic upgrade step is provided with this version that updates the data structure in your Plone site root when the `kitconcept.voltolighttheme` behaviors are applied there.
 
 If you've applied these behaviors to other content types, you'll need to create a custom upgrade step based on this one to update those content objects accordingly.
-The [provided upgrade step](backend/src/kitconcept/voltolighttheme/upgrades/v20250321001.py) serves as a helpful reference implementation.
+The [provided upgrade step](https://github.com/kitconcept/volto-light-theme/blob/main/backend/src/kitconcept/voltolighttheme/upgrades/v20250321001.py) serves as a helpful reference implementation.
 
 ### `Anontools` component removed from headers
 ```{deprecated} 6.0.0-alpha.22
@@ -297,18 +299,18 @@ This component saves the value of the custom CSS property `--block-width` as a S
 This component is removed because it was obsolete.
 Use the `blockAlignment` or `blockWidth` widgets instead.
 
-## volto-light-theme 5.0.0
+## `volto-light-theme` 5.0.0
 
 The requirements for VLT have changed:
 
 | VLT version | Volto version |
 |-------------|---------------|
-|   3.x.x  |   >= Volto 17.0.0-alpha.16  |
-|   4.x.x  |   < Volto 17.18.0  |
-|   5.x.x  |   >= Volto 17.18.0 or >=Volto 18.0.0-alpha.36  |
+|   `3.x.x`  |   >= Volto 17.0.0-alpha.16  |
+|   `4.x.x`  |   < Volto 17.18.0  |
+|   `5.x.x`  |   >= Volto 17.18.0 or >=Volto 18.0.0-alpha.36  |
 
 
-## volto-light-theme 4.0.0
+## `volto-light-theme` 4.0.0
 
 The tabbing order in the top header was fixed for accessibility concerns.
 It modifies the underlying HTML, moving from the top header to the bottom, and modifies the CSS to adjust.
@@ -318,7 +320,7 @@ The component can now handle infinite navigation depth instead of only three lev
 The Burger Menu can now be easily customized by overriding the new {file}`MobileNavigationToggler.jsx` file.
 
 
-## volto-light-theme 3.0.0
+## `volto-light-theme` 3.0.0
 
 ### Blocks background colors go full width
 
@@ -326,7 +328,7 @@ The background colors previously snapped to 1440px.
 From 3.0.0-alpha.0 onward, this changed to be unconstrained by default, and expands to the end of the horizontal viewport.
 
 
-### Upgraded support for volto-slider-block 6.0.0
+### Upgraded support for `volto-slider-block` 6.0.0
 
 VLT upgraded the dependency on `@kitconcept/volto-slider-block` to use `6.0.0`.
 

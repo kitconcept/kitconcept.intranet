@@ -44,13 +44,13 @@ describe('Blocks Tests', () => {
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
 
     // then the page view should contain the image block
-    cy.get('#page-document img').should(
+    cy.get('#page-document .block.image img').should(
       'have.attr',
       'src',
       'https://github.com/plone/volto/raw/main/logos/volto-colorful.png',
     );
 
-    cy.get('#page-document img')
+    cy.get('#page-document .block.image img')
       .should('be.visible')
       .and(($img) => {
         // "naturalWidth" and "naturalHeight" are set when the image loads

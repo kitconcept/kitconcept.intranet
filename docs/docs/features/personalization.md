@@ -15,7 +15,7 @@ last_updated: 2026-09-07
 :class: note
 
 **Status:** GA (boost variant requires Solr) · **Audience:** all users, editors ·
-**Interim source of truth** — canonical spec will move to the intranet.
+**Interim source of truth**—canonical spec will move to the intranet.
 :::
 
 ## Summary
@@ -24,9 +24,9 @@ Personalization makes listings more relevant to whoever is looking at them,
 based on the reader's **organisational unit** and **location**. It comes in two
 distinct variants that share the same underlying association:
 
-- **User relevance sort** — a *soft boost*. Content tied to the reader's team or
+- **User relevance sort**—a *soft boost*. Content tied to the reader's team or
   location floats to the top, but everything still appears in the list.
-- **Current logged-in user filter** — a *hard filter*. The listing is restricted
+- **Current logged-in user filter**—a *hard filter*. The listing is restricted
   to items matching the reader's org unit or location.
 
 Both are "passive": the reader does nothing; the system reads their profile
@@ -54,8 +54,8 @@ The chain from reader to ranking is:
 1. The current Plone user is mapped to a **Person** content item by matching the
    Person's `username` field to the user id (`get_current_user_person()` in
    `utils/get_person.py`). The mapping requires **exactly one** matching Person.
-2. That Person carries two reference fields — `organisational_unit_reference`
-   and `location_reference` — each a list of Organisational Unit / Location
+2. That Person carries two reference fields—`organisational_unit_reference`
+   and `location_reference`—each a list of Organisational Unit / Location
    **UIDs** (defined in `behaviors/organisational_unit.py` and
    `behaviors/location.py`).
 3. Those references drive the boost or filter against the same indexes on the
@@ -76,7 +76,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 - Boost weighting is **not equal**: organisational unit matches are boosted more
   strongly than location matches (org unit `^10`, location `^8` in
   `search.py`). So team relevance outranks location relevance.
-- Boosts are **OR-joined** — a match on *either* org unit or location lifts an
+- Boosts are **OR-joined**—a match on *either* org unit or location lifts an
   item.
 - `userRelevance` is a **synthetic sort field**, not a real catalog index. It is
   intercepted before it reaches the catalog and translated into Solr boosts.
@@ -92,20 +92,20 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 ### Fallbacks and degradation
 
 - **Not logged in, no Person, or an ambiguous match** (zero or more than one
-  Person for the user): no boost and no filter are applied — the listing falls
+  Person for the user): no boost and no filter are applied—the listing falls
   back to its default order / unfiltered results.
 - **Reader has no org unit and no location**: the boost set is empty, so nothing
   is boosted; the hard filter adds no constraint.
 - **Solr not installed/active**: the **User relevance sort** is a Solr-only
-  feature — it is only offered when the Solr profile is installed, and its boost
+  feature—it is only offered when the Solr profile is installed, and its boost
   parameter is ignored by a non-Solr catalog. There is **no explicit Solr
   health-check or try/except**; degradation is implicit (empty boosts / ignored
-  parameter). The hard filter does not depend on Solr.
+  parameter). The hard filter doesn't depend on Solr.
 
 ### Scope
 
 - **Listing blocks:** both variants are supported (sort boost and hard filter).
-- **Solr search block:** does **not** use user relevance — it uses standard Solr
+- **Solr search block:** does **not** use user relevance—it uses standard Solr
   relevance scoring only. No user-based boosting is applied in the search block.
 
 ### Reader-facing disclaimer
@@ -126,6 +126,6 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 ## Learn more
 
-- **Concept** — {doc}`/concepts/personalization`
-- **How-to** — {doc}`/how-to-guides/engagement/passive-targeting`
-- **Related feature** — {doc}`people-and-organisation`
+- **Concept**—{doc}`/concepts/personalization`
+- **How-to**—{doc}`/how-to-guides/engagement/passive-targeting`
+- **Related feature**—{doc}`people-and-organisation`

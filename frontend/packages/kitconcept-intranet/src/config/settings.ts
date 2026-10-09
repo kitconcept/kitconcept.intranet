@@ -5,8 +5,18 @@ import DocumentReviewPlug from '@kitconcept/intranet/components/Toolbar/Document
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
 import profilePlaceholder from '../assets/profile-placeholder.svg';
 import Header from '../components/Header/Header';
+import TypeSettingsControlpanel from '@kitconcept/intranet/components/Controlpanels/TypeSettings';
+import typeSettings from '@kitconcept/intranet/reducers/typeSettings/typeSettings';
 
 export default function install(config: ConfigType) {
+  config.settings.controlpanels = [
+    ...config.settings.controlpanels,
+    {
+      '@id': '/type-settings',
+      group: 'Content',
+      title: 'Type Settings',
+    },
+  ];
   const nonContentRoutes = [
     ...config.settings.nonContentRoutes,
     '/feedback-form',
@@ -18,10 +28,15 @@ export default function install(config: ConfigType) {
       path: ['/feedback-form', '/**/feedback-form'],
       component: FeedBackForm,
     },
+    {
+      path: '/controlpanel/type-settings',
+      component: TypeSettingsControlpanel,
+    },
   ];
   config.addonReducers = {
     ...config.addonReducers,
     feedbackContactForm,
+    typeSettings,
   };
 
   config.settings.appExtras = [

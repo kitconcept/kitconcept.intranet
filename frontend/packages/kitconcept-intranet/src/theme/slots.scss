@@ -31,6 +31,30 @@ body.section-login .about-content {
   display: none;
 }
 
+.ui.container.related-items {
+  max-width: var(--default-container-width) !important;
+}
+
+#page-edit .ui.container.related-items {
+  @container (max-width: #{$default-container-width + 2 * $horizontal-space-small-screens}) {
+    padding-right: $horizontal-space-small-screens !important;
+    padding-left: $horizontal-space-small-screens !important;
+    margin-right: $horizontal-space-small-screens !important;
+    margin-left: $horizontal-space-small-screens !important;
+  }
+}
+
+.related-items-container {
+  container-type: inline-size;
+}
+
+#view .related-items-container .ui.container.related-items {
+  @container (max-width: #{$default-container-width + 2 * $horizontal-space-small-screens}) {
+    margin-right: $horizontal-space-small-screens !important;
+    margin-left: $horizontal-space-small-screens !important;
+  }
+}
+
 .about-content {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);

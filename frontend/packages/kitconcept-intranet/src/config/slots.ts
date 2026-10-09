@@ -2,6 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import type { Content, GetSlotArgs, SlotPredicate } from '@plone/types';
 import { ContentTypeCondition } from '@plone/volto/helpers/Slots';
 import { getBaseUrl, isCmsUi } from '@plone/volto/helpers/Url/Url';
+import RelatedItems from '@plone/volto/components/theme/RelatedItems/RelatedItems';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import AboutThisContent from '../slots/AboutThisContent/AboutThisContent';
@@ -21,13 +22,15 @@ const isWorkspaceDescendant = ({ content }: { content: Content }) =>
 
 function isWorkspaceOrDescendant(contentTypes: string[]): SlotPredicate {
   const contentTypeCondition = ContentTypeCondition(contentTypes);
-  return (args: GetSlotArgs) => {
-    const isAddView = args.location.pathname.endsWith('/add');
+  return (args: GetSlotArgs) =>
+    contentTypeCondition(args) || isWorkspaceDescendant(args);
+}
 
-    return (
-      !isAddView && (contentTypeCondition(args) || isWorkspaceDescendant(args))
-    );
-  };
+const isAddView = (args: GetSlotArgs) =>
+  args.location.pathname.endsWith('/add');
+
+function notInAddView(predicate: SlotPredicate): SlotPredicate {
+  return (args: GetSlotArgs) => !isAddView(args) && predicate(args);
 }
 
 function shouldShowContentInteractions(args: GetSlotArgs): boolean {
@@ -88,6 +91,14 @@ export default function install(config: ConfigType) {
       },
     ],
   });
+
+  config.unRegisterSlotComponent('belowContent', 'relatedItems', 0);
+  config.registerSlotComponent({
+    slot: 'belowContent',
+    name: 'relatedItems',
+    component: RelatedItems,
+    predicates: [(args) => !isAddView(args)],
+  });
   config.registerSlotComponent({
     slot: 'belowContent',
     name: 'Content Interactions',
@@ -103,13 +114,17 @@ export default function install(config: ConfigType) {
     slot: 'aboveApp',
     name: 'NavigationTree2',
     component: NavigationTreePortal,
-    predicates: [isWorkspaceOrDescendant(['WikiPage', 'Workspace'])],
+    predicates: [
+      notInAddView(isWorkspaceOrDescendant(['WikiPage', 'Workspace'])),
+    ],
   });
   config.registerSlotComponent({
     slot: 'aboveApp',
     name: 'HideFooter',
     component: HideFooter,
-    predicates: [isWorkspaceOrDescendant(['WikiPage', 'Workspace'])],
+    predicates: [
+      notInAddView(isWorkspaceOrDescendant(['WikiPage', 'Workspace'])),
+    ],
   });
 
   return config;

@@ -31,6 +31,10 @@ body.section-login .about-content {
   display: none;
 }
 
+.ui.container.related-items {
+  max-width: var(--default-container-width) !important;
+}
+
 .about-content {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);

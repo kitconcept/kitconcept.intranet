@@ -2,7 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import type { Content, GetSlotArgs, SlotPredicate } from '@plone/types';
 import { ContentTypeCondition } from '@plone/volto/helpers/Slots';
 import { getBaseUrl, isCmsUi } from '@plone/volto/helpers/Url/Url';
-import RelatedItems from '@plone/volto/components/theme/RelatedItems/RelatedItems';
+import RelatedItems from '../slots/RelatedItems/RelatedItems';
 import IntranetCSSInjector from '../slots/IntranetCSSInjector/IntranetCSSInjector';
 import DocumentByLine from '../slots/DocumentByLine/DocumentByLine';
 import AboutThisContent from '../slots/AboutThisContent/AboutThisContent';

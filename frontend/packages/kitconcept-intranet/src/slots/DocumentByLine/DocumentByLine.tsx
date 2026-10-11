@@ -18,6 +18,14 @@ const messages = defineMessages({
     id: 'modified',
     defaultMessage: 'last modified',
   },
+  oneOpenDiscussion: {
+    id: 'oneOpenDiscussion',
+    defaultMessage: '1 open discussion in text',
+  },
+  multipleOpenDiscussions: {
+    id: 'multipleOpenDiscussions',
+    defaultMessage: '{count} open discussions in text',
+  },
 });
 
 type FormData = {
@@ -72,6 +80,13 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     });
   }, [creators, content]);
 
+  const discussions = content?.blocks?.['__somersault__']?.discussions;
+  const discussionCount = useMemo(() => {
+    return Object.values(discussions || {}).reduce((acc, discussion) => {
+      return acc + (discussion.isResolved ? 0 : 1);
+    }, 0);
+  }, [discussions]);
+
   if (!content) {
     return null;
   }
@@ -124,6 +139,22 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
               }}
               locale={intl.locale}
             />
+          </span>
+        )}
+        {discussionCount > 0 && (
+          <span>
+            {' '}
+            —{' '}
+            {discussionCount === 1 && (
+              <span>{intl.formatMessage(messages.oneOpenDiscussion)}</span>
+            )}
+            {discussionCount > 1 && (
+              <span>
+                {intl.formatMessage(messages.multipleOpenDiscussions, {
+                  count: discussionCount,
+                })}
+              </span>
+            )}
           </span>
         )}
       </div>

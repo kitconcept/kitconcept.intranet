@@ -45,8 +45,11 @@ const ReviewSidebar = (props) => {
   const tab = useSelector((state) => state.sidebar.tab);
   const toolbarExpanded = useSelector((state) => state.toolbar.expanded);
 
+  // Stop mousedown inside the review sidebar from reaching Volto's
+  // document-level `handleClickOutside`, which would otherwise close the
+  // toolbar menu and make the sidebar controls behave as "outside" clicks.
   useEffect(() => {
-    const el = document.getElementById('sidebar');
+    const el = sidebarContainerRef.current;
     if (!el) return;
     const handler = (e) => e.stopImmediatePropagation();
     el.addEventListener('mousedown', handler);

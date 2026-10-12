@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-09-10 15:48+0000\n"
+"POT-Creation-Date: 2026-10-12 00:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -403,6 +403,11 @@ msgstr ""
 msgid "help_current_user_filter"
 msgstr ""
 
+#. Default: "If checked, this type can be added to any container."
+#: kitconcept/intranet/patches.py:11
+msgid "help_global_allow"
+msgstr ""
+
 #. Default: "Filter by Organisational Unit"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_organisational_unit"
@@ -467,6 +472,11 @@ msgstr ""
 #. Default: "Feedback to"
 #: kitconcept/intranet/behaviors/clm.py:49
 msgid "label_feedback_person"
+msgstr ""
+
+#. Default: "Implicitly addable"
+#: kitconcept/intranet/patches.py:10
+msgid "label_global_allow"
 msgstr ""
 
 #. Default: "Organisational Unit"

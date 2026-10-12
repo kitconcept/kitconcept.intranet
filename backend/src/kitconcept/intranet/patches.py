@@ -27,10 +27,10 @@ def apply_type_settings_patch():
         required=False,
     )
 
-    from z3c.form import field
-    from zope.dottedname.resolve import resolve as resolveDottedName
     from plone.app.dexterity.browser.overview import TypeOverviewForm
     from Products.CMFCore.interfaces import IFolderish
+    from z3c.form import field
+    from zope.dottedname.resolve import resolve as resolveDottedName
 
     @property
     def patched_fields(self):

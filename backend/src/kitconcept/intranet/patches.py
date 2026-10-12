@@ -17,6 +17,16 @@ def apply_type_settings_patch():
         ),
     )
 
+    ITypeSettings._InterfaceClass__attrs["restrict_to_path"] = schema.TextLine(
+        __name__="restrict_to_path",
+        title=_("label_restrict_to_path", default="Restrict to path"),
+        description=_(
+            "help_restrict_to_path",
+            default="If specified, this content type can only be added in this path.",
+        ),
+        required=False,
+    )
+
     from z3c.form import field
     from zope.dottedname.resolve import resolve as resolveDottedName
     from plone.app.dexterity.browser.overview import TypeOverviewForm
@@ -30,6 +40,7 @@ def apply_type_settings_patch():
             "title",
             "description",
             "global_allow",
+            "restrict_to_path",
             "filter_content_types",
             "allowed_content_types",
         )

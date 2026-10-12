@@ -4,7 +4,6 @@ from zope.i18nmessageid import MessageFactory
 
 import logging
 
-
 __version__ = "3.1.0"
 
 PACKAGE_NAME = "kitconcept.intranet"
@@ -12,3 +11,7 @@ PACKAGE_NAME = "kitconcept.intranet"
 _ = MessageFactory(PACKAGE_NAME)
 
 logger = logging.getLogger(PACKAGE_NAME)
+
+from kitconcept.intranet.patches import apply_patches
+
+apply_patches()

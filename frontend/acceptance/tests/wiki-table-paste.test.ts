@@ -10,12 +10,22 @@ import type { Page } from '@playwright/test';
 import { setSelection } from '@platejs/playwright';
 
 import {
+  CODE_EDITOR_HTML,
+  CODE_EDITOR_MARKDOWN_HTML,
   CONFLUENCE_TABLE_HTML,
+  CSV_TEXT,
   EXCEL_HTML,
+  FORMATTED_HTML,
   MARKDOWN_TABLE_TEXT,
+  PROSE_TEXT,
   WEB_TABLE_HTML,
 } from '../fixtures/table-clipboard';
-import { pasteData, type EditorNode } from '../fixtures/editor';
+import {
+  getValue,
+  nodeText,
+  pasteData,
+  type EditorNode,
+} from '../fixtures/editor';
 import { openInEditor } from '../fixtures/pages';
 import { savePage, viewTable } from '../fixtures/table';
 import { getTables, tableNodeTexts } from '../fixtures/table-editor';
@@ -140,5 +150,110 @@ test.describe('Wiki tables: paste (D)', () => {
     expect(
       findNode(table, (n) => n.bold === true && n.text === 'zwei'),
     ).toBeTruthy();
+  });
+});
+
+/**
+ * CSV text pasted as plain text becomes a table (ticket
+ * https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/751).
+ */
+test.describe('Wiki tables: paste CSV', () => {
+  test.beforeEach(async ({ page }) => {
+    await login(page);
+  });
+
+  test('CSV text becomes a table with a header row', async ({ page }) => {
+    const { contentPath, editor } = await openEmptyPage(page, 'csv');
+    await pasteData(page, editor, { 'text/plain': CSV_TEXT });
+
+    const [table] = await getTables(page);
+    expect(tableNodeTexts(table)).toEqual([
+      ['Arbeitspaket', 'Budget', 'Verantwortlich'],
+      ['WP1 Koordination', '120000', 'Beck, Clara'],
+      ['WP2 Synthese', '250000', 'Miriam Vogt'],
+      ['WP3 Messung', '80000', 'Sophie Lang'],
+    ]);
+    expect(cellTypes(table)).toEqual([
+      ['th', 'th', 'th'],
+      ['td', 'td', 'td'],
+      ['td', 'td', 'td'],
+      ['td', 'td', 'td'],
+    ]);
+
+    // The saved page renders the table.
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await savePage(page, contentPath);
+    await expect(viewTable(page, 0).locator('tr')).toHaveCount(4);
+    expect(errors).toEqual([]);
+  });
+
+  test('CSV copied from a code editor (HTML without a table) becomes a table', async ({
+    page,
+  }) => {
+    const { editor } = await openEmptyPage(page, 'code-editor');
+    await pasteData(page, editor, {
+      'text/html': CODE_EDITOR_HTML,
+      'text/plain': CSV_TEXT,
+    });
+    const [table] = await getTables(page);
+    expect(tableNodeTexts(table)[0]).toEqual([
+      'Arbeitspaket',
+      'Budget',
+      'Verantwortlich',
+    ]);
+    expect(cellTypes(table)[0]).toEqual(['th', 'th', 'th']);
+    expect(tableNodeTexts(table)).toHaveLength(4);
+  });
+
+  test('a markdown table copied from a code editor becomes a table', async ({
+    page,
+  }) => {
+    const { editor } = await openEmptyPage(page, 'code-editor-markdown');
+    await pasteData(page, editor, {
+      'text/html': CODE_EDITOR_MARKDOWN_HTML,
+      'text/plain': MARKDOWN_TABLE_TEXT,
+    });
+    const [table] = await getTables(page);
+    expect(tableNodeTexts(table)).toEqual([
+      ['Spalte A', 'Spalte B'],
+      ['eins', 'zwei'],
+    ]);
+    expect(
+      findNode(table, (n) => n.bold === true && n.text === 'zwei'),
+    ).toBeTruthy();
+  });
+
+  test('formatted HTML without a table keeps its formatting', async ({
+    page,
+  }) => {
+    const { editor } = await openEmptyPage(page, 'formatted');
+    await pasteData(page, editor, {
+      'text/html': FORMATTED_HTML,
+      'text/plain': 'Ein fetter und ein kursiver Satz.',
+    });
+    expect(await getTables(page)).toEqual([]);
+    const value = await getValue(page, editor);
+    const root = { children: value } as EditorNode;
+    expect(
+      findNode(root, (n) => n.bold === true && n.text === 'fetter'),
+    ).toBeTruthy();
+    expect(
+      findNode(root, (n) => n.italic === true && n.text === 'kursiver'),
+    ).toBeTruthy();
+  });
+
+  test('prose with commas stays paragraphs', async ({ page }) => {
+    const { editor } = await openEmptyPage(page, 'prose');
+    await pasteData(page, editor, { 'text/plain': PROSE_TEXT });
+
+    expect(await getTables(page)).toEqual([]);
+    const value = await getValue(page, editor);
+    expect(value.map(nodeText)).toEqual([
+      'Paste prose',
+      'Hallo, Welt',
+      'Schönen Tag, Miriam',
+      'Bis morgen, Sophie',
+    ]);
   });
 });

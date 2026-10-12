@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+#: components/Blocks/CsvTable/schema
+msgid "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+msgstr "Eine CSV-Datei im Intranet. Mit der Durchsuchen-Schaltfläche auswählen oder die Adresse einfügen."
+
 #. Default: "AI Overview"
 #: components/Header/HeaderSearch
 msgid "AI Overview"
@@ -91,12 +96,28 @@ msgstr "Gebäude"
 msgid "By"
 msgstr "Von"
 
+#. Default: "CSV file"
+#: components/Blocks/CsvTable/schema
+msgid "CSV file"
+msgstr "CSV-Datei"
+
+#. Default: "CSV table"
+#: components/Blocks/CsvTable/schema
+#: index
+msgid "CSV table"
+msgstr "CSV-Tabelle"
+
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 msgid "Cancel"
 msgstr "Abbrechen"
+
+#. Default: "Choose a CSV file in the sidebar."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Choose a CSV file in the sidebar."
+msgstr "Wählen Sie eine CSV-Datei in der Seitenleiste."
 
 #. Default: "Clear filter"
 #: components/WikiTable/TableViewControls
@@ -346,6 +367,11 @@ msgstr "Letztes Jahr"
 msgid "List with date"
 msgstr "Liste mit Datum"
 
+#. Default: "Loading the CSV file…"
+#: components/Blocks/CsvTable/CsvTable
+msgid "Loading the CSV file…"
+msgstr "CSV-Datei wird geladen …"
+
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
@@ -420,6 +446,11 @@ msgstr "Keine Auswahl"
 #: components/widgets/QuerystringWidget
 msgid "Offset"
 msgstr "Offset"
+
+#. Default: "Only CSV files inside the intranet can be shown."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Only CSV files inside the intranet can be shown."
+msgstr "Es können nur CSV-Dateien aus dem Intranet angezeigt werden."
 
 #. Default: "Only internal e-mail addresses are permitted."
 #: components/FeedBackForm/FeedBackForm
@@ -655,6 +686,16 @@ msgstr "Erfolg"
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
 msgstr "Die KI-Antwort ist momentan nicht verfügbar. Bitte versuchen Sie es erneut."
+
+#. Default: "The CSV file could not be loaded."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file could not be loaded."
+msgstr "Die CSV-Datei konnte nicht geladen werden."
+
+#. Default: "The CSV file holds no rows."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file holds no rows."
+msgstr "Die CSV-Datei enthält keine Zeilen."
 
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer

@@ -52,6 +52,12 @@ defineMessages({
     id: 'Move column right',
     defaultMessage: 'Move column right',
   },
+  // Slash menu shadow (#751):
+  //   customizations/@kitconcept/volto-plate/plate/wiki/slash-menu.tsx
+  csvTable: {
+    id: 'CSV table',
+    defaultMessage: 'CSV table',
+  },
 });
 
 declare module '@plone/types' {

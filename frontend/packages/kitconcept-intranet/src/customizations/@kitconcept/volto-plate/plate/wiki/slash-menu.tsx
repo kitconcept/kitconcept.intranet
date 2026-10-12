@@ -2,6 +2,8 @@
  * OVERRIDE slash-menu.tsx
  * REASON: The "Table" entry inserts a 3 × 3 table with a header row
  *         (Confluence default) instead of Plate's 2 × 2 without header.
+ *         A "CSV table" entry (Plone block `csvtable`, a CSV file inside
+ *         the intranet shown as a table) follows the "Table" entry.
  *         Everything else is unchanged.
  * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a36/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
  * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.36
@@ -16,6 +18,7 @@
  *  - Merge volto-plate 1.0.0-alpha.36: translated "Image" and "Diagram"
  *    entries; `extendGroups` arguments are passed on to the upstream
  *    menu. @sneridagh
+ *  - "CSV table" entry (work item 751). @reekitconcept
  */
 
 import type {
@@ -24,7 +27,7 @@ import type {
 } from '@plone/plate/components/editor/plugins/slash-menu';
 import { CODE_DRAWING_KEY, insertCodeDrawing } from '@platejs/code-drawing';
 import { PLONE_BLOCK_TYPE } from '@plone/helpers';
-import { ImageIcon, WorkflowIcon } from 'lucide-react';
+import { FileSpreadsheetIcon, ImageIcon, WorkflowIcon } from 'lucide-react';
 import { KEYS, PathApi } from 'platejs';
 import type { PlateEditor } from 'platejs/react';
 import { defineMessages } from 'react-intl';
@@ -38,6 +41,8 @@ import {
 const messages = defineMessages({
   diagram: { id: 'Diagram', defaultMessage: 'Diagram' },
   image: { id: 'Image', defaultMessage: 'Image' },
+  // OVERRIDE (also in src/index.ts: the i18n extraction skips shadows)
+  csvTable: { id: 'CSV table', defaultMessage: 'CSV table' },
 });
 
 const insertPloneBlock = (editor: PlateEditor, blockType: string) => {
@@ -159,17 +164,36 @@ const baseSlashMenu: SlashMenuConfig = {
       .filter((group) => group && group.items.length > 0) as SlashMenuGroup[],
 };
 
-// OVERRIDE: the "Table" entry inserts a 3 × 3 table with a header row.
+// OVERRIDE: the "CSV table" entry inserts the `csvtable` Plone block.
+const CSV_TABLE_SLASH_VALUE = 'block_csvtable';
+
+const createCsvTableSlashItem = (t: TranslateFunction) => ({
+  icon: <FileSpreadsheetIcon />,
+  keywords: ['csv', 'table', 'data', 'file', 'spreadsheet'],
+  label: t(messages.csvTable.id, {
+    defaultValue: messages.csvTable.defaultMessage,
+  }),
+  value: CSV_TABLE_SLASH_VALUE,
+  onSelect: (editor: PlateEditor) => {
+    insertPloneBlock(editor, 'csvtable');
+  },
+});
+
+// OVERRIDE: the "Table" entry inserts a 3 × 3 table with a header row, and
+// the "CSV table" entry follows it.
 export const slashMenu: SlashMenuConfig = {
   ...baseSlashMenu,
   extendGroups: (groups, editor, options) =>
     (baseSlashMenu.extendGroups?.(groups, editor, options) ?? groups).map(
       (group) => ({
         ...group,
-        items: group.items.map((item) =>
+        items: group.items.flatMap((item) =>
           item.value === KEYS.table
-            ? { ...item, onSelect: (editor) => insertWikiTable(editor) }
-            : item,
+            ? [
+                { ...item, onSelect: (editor) => insertWikiTable(editor) },
+                createCsvTableSlashItem(options.t ?? fallbackTranslate),
+              ]
+            : [item],
         ),
       }),
     ),

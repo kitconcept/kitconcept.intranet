@@ -34,6 +34,27 @@ export const EXCEL_HTML = `<html xmlns:o="urn:schemas-microsoft-com:office:offic
 <!--EndFragment-->
 </table></body></html>`;
 
+/** A CSV file's text, as a text editor or a German Excel export copies it. */
+export const CSV_TEXT = `Arbeitspaket;Budget;Verantwortlich
+WP1 Koordination;120000;"Beck, Clara"
+WP2 Synthese;250000;Miriam Vogt
+WP3 Messung;80000;Sophie Lang
+`;
+
+/** The HTML a code editor (VS Code, Cursor) puts next to copied CSV text. */
+export const CODE_EDITOR_HTML = `<meta charset='utf-8'><div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Menlo, Monaco, 'Courier New', monospace;font-size: 12px;line-height: 18px;white-space: pre;"><div><span style="color: #d4d4d4;">Arbeitspaket;Budget;Verantwortlich</span></div><div><span style="color: #d4d4d4;">WP1 Koordination;120000;"Beck, Clara"</span></div><div><span style="color: #d4d4d4;">WP2 Synthese;250000;Miriam Vogt</span></div><div><span style="color: #d4d4d4;">WP3 Messung;80000;Sophie Lang</span></div></div>`;
+
+/** The same for a markdown table (`MARKDOWN_TABLE_TEXT`) copied from Cursor. */
+export const CODE_EDITOR_MARKDOWN_HTML = `<meta charset='utf-8'><div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Menlo, Monaco, 'Courier New', monospace;font-size: 12px;line-height: 18px;white-space: pre;"><div><span style="color: #d4d4d4;">| Spalte A | Spalte B |</span></div><div><span style="color: #d4d4d4;">| --- | --- |</span></div><div><span style="color: #d4d4d4;">| eins | **zwei** |</span></div></div>`;
+
+/** Formatted text from a web page: HTML without a table, but with marks. */
+export const FORMATTED_HTML = `<meta charset='utf-8'><p>Ein <strong>fetter</strong> und ein <em>kursiver</em> Satz.</p>`;
+
+/** Prose lines with commas: not a table. */
+export const PROSE_TEXT = `Hallo, Welt
+Schönen Tag, Miriam
+Bis morgen, Sophie`;
+
 /** A markdown table as plain text (pasted with ⌘⇧V / from a plain-text source). */
 export const MARKDOWN_TABLE_TEXT = `| Spalte A | Spalte B |
 | --- | --- |

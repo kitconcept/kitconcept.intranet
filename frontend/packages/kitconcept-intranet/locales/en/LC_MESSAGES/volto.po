@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+#: components/Blocks/CsvTable/schema
+msgid "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+msgstr ""
+
 #. Default: "AI Overview"
 #: components/Header/HeaderSearch
 msgid "AI Overview"
@@ -91,11 +96,27 @@ msgstr ""
 msgid "By"
 msgstr ""
 
+#. Default: "CSV file"
+#: components/Blocks/CsvTable/schema
+msgid "CSV file"
+msgstr ""
+
+#. Default: "CSV table"
+#: components/Blocks/CsvTable/schema
+#: index
+msgid "CSV table"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 msgid "Cancel"
+msgstr ""
+
+#. Default: "Choose a CSV file in the sidebar."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Choose a CSV file in the sidebar."
 msgstr ""
 
 #. Default: "Clear filter"
@@ -361,6 +382,11 @@ msgstr ""
 msgid "List with date"
 msgstr ""
 
+#. Default: "Loading the CSV file…"
+#: components/Blocks/CsvTable/CsvTable
+msgid "Loading the CSV file…"
+msgstr ""
+
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
@@ -439,6 +465,11 @@ msgstr ""
 #. Default: "Offset"
 #: components/widgets/QuerystringWidget
 msgid "Offset"
+msgstr ""
+
+#. Default: "Only CSV files inside the intranet can be shown."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Only CSV files inside the intranet can be shown."
 msgstr ""
 
 #. Default: "Only internal e-mail addresses are permitted."
@@ -682,6 +713,16 @@ msgstr ""
 msgid "The AI answer is currently unavailable. Please try again."
 msgstr ""
 
+#. Default: "The CSV file could not be loaded."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file could not be loaded."
+msgstr ""
+
+#. Default: "The CSV file holds no rows."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file holds no rows."
+msgstr ""
+
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
@@ -781,6 +822,11 @@ msgstr ""
 #. Default: "last modified"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
+msgstr ""
+
+#. Default: "{count} open discussions in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "multipleOpenDiscussions"
 msgstr ""
 
 #. Default: "Something went wrong"
@@ -886,6 +932,11 @@ msgstr ""
 #. Default: "Next Review on:"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "nextReview"
+msgstr ""
+
+#. Default: "1 open discussion in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "oneOpenDiscussion"
 msgstr ""
 
 #. Default: "Added"

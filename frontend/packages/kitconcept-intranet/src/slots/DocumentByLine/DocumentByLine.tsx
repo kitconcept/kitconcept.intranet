@@ -18,6 +18,14 @@ const messages = defineMessages({
     id: 'modified',
     defaultMessage: 'last modified',
   },
+  oneOpenDiscussion: {
+    id: 'oneOpenDiscussion',
+    defaultMessage: '1 open discussion in text',
+  },
+  multipleOpenDiscussions: {
+    id: 'multipleOpenDiscussions',
+    defaultMessage: '{count} open discussions in text',
+  },
 });
 
 type FormData = {
@@ -72,6 +80,27 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     });
   }, [creators, content]);
 
+  const discussions = content?.blocks?.['__somersault__']?.discussions;
+  const discussionCount = useMemo(() => {
+    return Object.values(discussions || {}).reduce((acc, discussion) => {
+      return acc + (discussion.isResolved ? 0 : 1);
+    }, 0);
+  }, [discussions]);
+
+  const jumpToFirstOpenDiscussion = () => {
+    const el = document.querySelector<HTMLElement>(
+      '.slate-comment[data-comment-id]:not([data-comment-resolved])',
+    );
+    if (!el) return;
+
+    const block = el.closest<HTMLElement>('[data-block-id]');
+    const trigger = block?.querySelector<HTMLElement>(
+      'button[data-slot="button"][data-active]',
+    );
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    (trigger ?? el).click();
+  };
+
   if (!content) {
     return null;
   }
@@ -92,7 +121,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
           </span>
         )}
         {content.effective && !isAddMode && (
-          <span>
+          <span className="effective-date">
             {content.review_state === 'published' ? (
               <span>
                 {intl.formatMessage(messages.published)}{' '}
@@ -113,7 +142,7 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
           </span>
         )}
         {content.modified && !isAddMode && (
-          <span>
+          <span className="modified-date">
             {intl.formatMessage(messages.modified)}{' '}
             <FormattedDate
               date={content.modified}
@@ -125,6 +154,22 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
               locale={intl.locale}
             />
           </span>
+        )}
+        {discussionCount > 0 && (
+          <button
+            type="button"
+            className="open-discussions"
+            onClick={jumpToFirstOpenDiscussion}
+          >
+            <span className="open-discussions-dot" aria-hidden="true" />
+            <span>
+              {discussionCount === 1
+                ? intl.formatMessage(messages.oneOpenDiscussion)
+                : intl.formatMessage(messages.multipleOpenDiscussions, {
+                    count: discussionCount,
+                  })}
+            </span>
+          </button>
         )}
       </div>
     </>

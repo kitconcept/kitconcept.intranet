@@ -25,6 +25,10 @@
  *    @sneridagh
  *  - Merge volto-plate 1.0.0-alpha.36: register
  *    `VoltoPastePlainTextPlugin`. @sneridagh
+ *  - Register `WikiCsvPastePlugin` (CSV text pastes as a table, work item
+ *    751). @reekitconcept
+ *  - The markdown parser also takes pastes from a code editor, whose HTML
+ *    holds no formatting (`withCodeEditorPaste`). @reekitconcept
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -58,6 +62,8 @@ import { TableKit } from '@plone/plate/components/editor/plugins/table-kit';
 import { TocKit } from '@plone/plate/components/editor/plugins/toc-kit';
 import { WikiTableKeysPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableKeysPlugin';
 import { WikiTableNormalizePlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
+import { WikiCsvPastePlugin } from '@kitconcept/intranet/components/WikiTable/wikiCsvPastePlugin';
+import { withCodeEditorPaste } from '@kitconcept/intranet/components/WikiTable/pasteFromCodeEditor';
 
 import { CodeDrawingKit } from '@kitconcept/volto-plate/plate/plugins/code-drawing-kit';
 import { VoltoFloatingToolbarKit } from '@kitconcept/volto-plate/plate/plugins/volto-floating-toolbar-kit';
@@ -135,7 +141,11 @@ export const WikiEditorKit = [
 
   // Parsers
   ...DocxKit,
-  ...MarkdownKit,
+  // OVERRIDE: markdown pasted from a code editor (HTML without formatting)
+  // is parsed as markdown, see components/WikiTable/pasteFromCodeEditor.ts
+  ...withCodeEditorPaste(MarkdownKit),
+  // OVERRIDE: CSV text becomes a table (tried before the markdown parser)
+  WikiCsvPastePlugin,
   VoltoPasteFormattingPlugin,
   VoltoPastePlainTextPlugin,
   VoltoPasteTitlePlugin,

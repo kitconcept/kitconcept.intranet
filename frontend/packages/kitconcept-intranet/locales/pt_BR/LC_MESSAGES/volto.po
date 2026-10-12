@@ -108,6 +108,11 @@ msgstr ""
 msgid "Clear filter"
 msgstr ""
 
+#. Default: "Columns"
+#: components/Blocks/Listing/Table/schema
+msgid "Columns"
+msgstr ""
+
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -123,6 +128,16 @@ msgstr "Contato"
 #. Default: "Content marked as reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
+msgstr ""
+
+#. Default: "Content type"
+#: components/Blocks/Listing/Table/columns
+msgid "Content type"
+msgstr ""
+
+#. Default: "Content type and title are always shown."
+#: components/Blocks/Listing/Table/schema
+msgid "Content type and title are always shown."
 msgstr ""
 
 #. Default: "Created On"
@@ -401,6 +416,11 @@ msgstr ""
 msgid "Next review"
 msgstr ""
 
+#. Default: "No"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "No"
+msgstr ""
+
 #. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
 msgid "No document found with the selected criteria."
@@ -656,6 +676,12 @@ msgstr "Página/URL do assunto"
 msgid "Success"
 msgstr "Sucesso"
 
+#. Default: "Table"
+#: components/Blocks/Listing/Table/TableTemplate
+#: index
+msgid "Table"
+msgstr ""
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
@@ -665,6 +691,11 @@ msgstr ""
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr "O conteúdo exibido é personalizado para sua área organizacional e localização."
+
+#. Default: "Title"
+#: components/Blocks/Listing/Table/columns
+msgid "Title"
+msgstr ""
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions
@@ -704,6 +735,11 @@ msgstr ""
 #. Default: "Workspace"
 #: components/Header/HeaderSearch
 msgid "Workspace"
+msgstr ""
+
+#. Default: "Yes"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "Yes"
 msgstr ""
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."

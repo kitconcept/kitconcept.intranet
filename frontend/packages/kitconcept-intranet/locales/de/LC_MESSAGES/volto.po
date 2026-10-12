@@ -103,6 +103,11 @@ msgstr "Abbrechen"
 msgid "Clear filter"
 msgstr "Filter löschen"
 
+#. Default: "Columns"
+#: components/Blocks/Listing/Table/schema
+msgid "Columns"
+msgstr "Spalten"
+
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -119,6 +124,16 @@ msgstr "Kontakt"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
 msgstr ""
+
+#. Default: "Content type"
+#: components/Blocks/Listing/Table/columns
+msgid "Content type"
+msgstr "Inhaltstyp"
+
+#. Default: "Content type and title are always shown."
+#: components/Blocks/Listing/Table/schema
+msgid "Content type and title are always shown."
+msgstr "Inhaltstyp und Titel werden immer angezeigt."
 
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
@@ -396,6 +411,11 @@ msgstr "Nachricht"
 msgid "Next review"
 msgstr ""
 
+#. Default: "No"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "No"
+msgstr "Nein"
+
 #. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
 msgid "No document found with the selected criteria."
@@ -651,6 +671,12 @@ msgstr "Betreff Seite/URL"
 msgid "Success"
 msgstr "Erfolg"
 
+#. Default: "Table"
+#: components/Blocks/Listing/Table/TableTemplate
+#: index
+msgid "Table"
+msgstr "Tabelle"
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
@@ -660,6 +686,11 @@ msgstr "Die KI-Antwort ist momentan nicht verfügbar. Bitte versuchen Sie es ern
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und Deines Standorts zusammengestellt."
+
+#. Default: "Title"
+#: components/Blocks/Listing/Table/columns
+msgid "Title"
+msgstr "Titel"
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions
@@ -700,6 +731,11 @@ msgstr "Was ist unklar, veraltet oder fehlt?"
 #: components/Header/HeaderSearch
 msgid "Workspace"
 msgstr "Workspace"
+
+#. Default: "Yes"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "Yes"
+msgstr "Ja"
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm

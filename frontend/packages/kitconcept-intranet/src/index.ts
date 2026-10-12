@@ -14,6 +14,10 @@ defineMessages({
     id: 'List with date',
     defaultMessage: 'List with date',
   },
+  listingTable: {
+    id: 'Table',
+    defaultMessage: 'Table',
+  },
   // Solr facet labels
   organisationalUnit: {
     id: 'Organisational Unit',

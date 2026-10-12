@@ -1,0 +1,23 @@
+#page-controlpanel.dexterity-types {
+  .widget-wrapper {
+    padding: 10px;
+
+    > div {
+      display: flex;
+      padding-bottom: 10px;
+      .custom-label {
+        display: block;
+        color: #000;
+        font-size: 0.77777778rem;
+        font-weight: 500;
+        hyphens: auto;
+        text-transform: none;
+      }
+    }
+    .custom-description {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+  }
+}

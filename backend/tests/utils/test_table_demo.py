@@ -93,6 +93,17 @@ class TestTableDemoContent:
             assert len(tables(value)) == TABLES[page_id]
             assert layout == wiki_content.blocks_layout()
 
+    def test_budget_table_has_a_footer_row_with_sums(self):
+        """The "Gesamt" row is the footer row; its amounts are sum cells."""
+        budget = tables(content.budget_page())[0]
+        footer = budget["children"][-1]
+        assert footer["footer"] is True
+        cells = footer["children"]
+        assert cell_text(cells[0]) == "Gesamt"
+        assert [c.get("calc") for c in cells] == [None, None, "sum", "sum", "sum", None]
+        assert cell_text(cells[2]) == "1.455.000 €"
+        assert all("footer" not in r for r in budget["children"][:-1])
+
     def test_wide_table_has_nine_columns(self):
         value = content.participants_page()
         wide = tables(value)[1]

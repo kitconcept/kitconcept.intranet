@@ -63,6 +63,15 @@ defineMessages({
     id: 'CSV table',
     defaultMessage: 'CSV table',
   },
+  // Table shadow (#750): customizations/@plone/plate/components/ui/table-node.tsx
+  footerRow: {
+    id: 'Footer row',
+    defaultMessage: 'Footer row',
+  },
+  sum: {
+    id: 'Sum',
+    defaultMessage: 'Sum',
+  },
 });
 
 declare module '@plone/types' {

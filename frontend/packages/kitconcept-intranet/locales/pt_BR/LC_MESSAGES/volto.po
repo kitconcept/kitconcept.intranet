@@ -101,11 +101,6 @@ msgstr "Biografia"
 msgid "Building"
 msgstr "Edifício"
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr "Por"
-
 #. Default: "CSV file"
 #: components/Blocks/CsvTable/schema
 msgid "CSV file"
@@ -911,15 +906,20 @@ msgstr ""
 msgid "help"
 msgstr ""
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr "Ir para o primeiro comentário aberto no texto"
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr ""
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr "última modificação"
+msgstr "Atualizado em"
 
 #. Default: "{count} open discussions in text"
 #: slots/DocumentByLine/DocumentByLine
@@ -1345,11 +1345,6 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeReview"
 msgstr ""
-
-#. Default: "published"
-#: slots/DocumentByLine/DocumentByLine
-msgid "published"
-msgstr "publicado"
 
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate

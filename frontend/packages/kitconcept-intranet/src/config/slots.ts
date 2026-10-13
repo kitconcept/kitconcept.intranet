@@ -29,9 +29,7 @@ function isWorkspaceOrDescendant(contentTypes: string[]): SlotPredicate {
 const isAddView = (args: GetSlotArgs) =>
   args.location.pathname.endsWith('/add');
 
-function notInAddView(predicate: SlotPredicate): SlotPredicate {
-  return (args: GetSlotArgs) => !isAddView(args) && predicate(args);
-}
+const notInAddView = (args: GetSlotArgs) => !isAddView(args);
 
 function shouldShowContentInteractions(args: GetSlotArgs): boolean {
   return !isWorkspaceOrDescendant([
@@ -97,7 +95,8 @@ export default function install(config: ConfigType) {
     slot: 'belowContent',
     name: 'relatedItems',
     component: RelatedItems,
-    predicates: [(args) => !isAddView(args)],
+    // TODO: drop this predicate once Volto core hides relatedItems in the add view
+    predicates: [notInAddView],
   });
   config.registerSlotComponent({
     slot: 'belowContent',
@@ -115,7 +114,8 @@ export default function install(config: ConfigType) {
     name: 'NavigationTree2',
     component: NavigationTreePortal,
     predicates: [
-      notInAddView(isWorkspaceOrDescendant(['WikiPage', 'Workspace'])),
+      notInAddView,
+      isWorkspaceOrDescendant(['WikiPage', 'Workspace']),
     ],
   });
   config.registerSlotComponent({
@@ -123,7 +123,8 @@ export default function install(config: ConfigType) {
     name: 'HideFooter',
     component: HideFooter,
     predicates: [
-      notInAddView(isWorkspaceOrDescendant(['WikiPage', 'Workspace'])),
+      notInAddView,
+      isWorkspaceOrDescendant(['WikiPage', 'Workspace']),
     ],
   });
 

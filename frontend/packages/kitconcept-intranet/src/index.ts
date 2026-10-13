@@ -28,6 +28,22 @@ defineMessages({
     id: 'Responsibilities',
     defaultMessage: 'Responsibilities',
   },
+  // Solr facet field messages from @kitconcept/volto-solr, which ships no
+  // translations for them:
+  //   components/theme/SolrSearch/ShowMoreIndicator.jsx
+  //   components/theme/SolrSearch/SearchConditionsFieldSearch.jsx
+  showMore: {
+    id: 'Show more',
+    defaultMessage: 'Show more',
+  },
+  showLess: {
+    id: 'Show less',
+    defaultMessage: 'Show less',
+  },
+  search: {
+    id: 'Search...',
+    defaultMessage: 'Search...',
+  },
   // Wiki table shadows (#655). The i18n extraction does not scan shadowed
   // files, so the messages of
   //   customizations/@kitconcept/volto-plate/plate/wiki/floating-toolbar-buttons.tsx

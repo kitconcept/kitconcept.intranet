@@ -20,6 +20,39 @@
     text-decoration: none;
   }
 }
+// Space the discussions button from the date before it on the date's margin,
+// so the button stays aligned with the text when it wraps.
+.documentByLine .effective-date:has(+ .open-discussions),
+.documentByLine .modified-date:has(+ .open-discussions) {
+  margin-right: 12px;
+}
+.documentByLine .open-discussions {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-primary, $black);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 7px;
+  line-height: inherit;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  .open-discussions-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: #e40166;
+    box-shadow: 0 0 0 3px rgba(228, 1, 102, 0.15);
+  }
+}
+
 h1.documentFirstHeading:has(+ .documentByLine) {
   margin-bottom: $spacing-small;
 }

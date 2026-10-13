@@ -1,0 +1,100 @@
+$listing-table-cell-spacing: 12px;
+
+#page-document
+  .blocks-group-wrapper
+  > .block.listing.listingTable
+  .listing-table-wrapper {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+}
+
+#page-edit .block-editor-listing .listingTable .listing-table-wrapper {
+  @include default-container-width();
+  @include adjustMarginsToEditContainer($default-container-width);
+}
+
+.block.listing.listingTable,
+.block.search.listingTable {
+  .listing-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .listing-table-wrapper ~ .pagination-wrapper {
+    margin-top: $spacing-xlarge;
+
+    @container (max-width: #{$largest-mobile-screen}) {
+      margin-top: $spacing-large;
+    }
+  }
+
+  .listing-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--theme-foreground-color, #{$black});
+    @include body-text();
+
+    th,
+    td {
+      padding: $spacing-small $listing-table-cell-spacing;
+      border: 0;
+      text-align: start;
+      vertical-align: middle;
+
+      &:first-child {
+        padding-inline-start: 0;
+      }
+
+      &:last-child {
+        padding-inline-end: 0;
+      }
+    }
+
+    thead th {
+      border-bottom: 1px solid var(--theme-foreground-color, #{$black});
+      white-space: nowrap;
+      @include body-text-bold();
+    }
+
+    // Body cells, the title cells are row headers (`th`)
+    tbody th,
+    tbody td {
+      // A light grey in every block theme: the low contrast foreground colour
+      // mixed into the block background
+      border-bottom: 1px solid
+        color-mix(
+          in srgb,
+          var(--theme-low-contrast-foreground-color, #{$darkGrey}) 30%,
+          var(--theme-color, #{$white})
+        );
+      @include body-text();
+    }
+
+    tbody tr:last-child > * {
+      border-bottom-color: var(--theme-foreground-color, #{$black});
+    }
+
+    tbody tr:hover > * {
+      background-color: var(--theme-high-contrast-color, #{$lightgrey});
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    // Cells by value type (`cellTypes`)
+    .cell-date {
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .cell-contentTypeIcon {
+      width: 1%;
+
+      .content-type-icon,
+      .icon {
+        display: block;
+      }
+    }
+  }
+}

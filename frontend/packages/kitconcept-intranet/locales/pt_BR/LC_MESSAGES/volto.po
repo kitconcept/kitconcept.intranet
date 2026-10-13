@@ -16,6 +16,11 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+#: components/Blocks/CsvTable/schema
+msgid "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+msgstr ""
+
 #. Default: "AI Overview"
 #: components/Header/HeaderSearch
 msgid "AI Overview"
@@ -44,6 +49,11 @@ msgstr ""
 #. Default: "All statuses"
 #: components/Header/HeaderSearch
 msgid "All statuses"
+msgstr ""
+
+#. Default: "All tasks"
+#: components/Tasks/Tasks
+msgid "All tasks"
 msgstr ""
 
 #. Default: "All types"
@@ -96,6 +106,17 @@ msgstr "Edifício"
 msgid "By"
 msgstr "Por"
 
+#. Default: "CSV file"
+#: components/Blocks/CsvTable/schema
+msgid "CSV file"
+msgstr ""
+
+#. Default: "CSV table"
+#: components/Blocks/CsvTable/schema
+#: index
+msgid "CSV table"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -103,9 +124,19 @@ msgstr "Por"
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Choose a CSV file in the sidebar."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Choose a CSV file in the sidebar."
+msgstr ""
+
 #. Default: "Clear filter"
 #: components/WikiTable/TableViewControls
 msgid "Clear filter"
+msgstr ""
+
+#. Default: "Columns"
+#: components/Blocks/Listing/Table/schema
+msgid "Columns"
 msgstr ""
 
 #. Default: "Comment:"
@@ -123,6 +154,16 @@ msgstr "Contato"
 #. Default: "Content marked as reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
+msgstr ""
+
+#. Default: "Content type"
+#: components/Blocks/Listing/Table/columns
+msgid "Content type"
+msgstr ""
+
+#. Default: "Content type and title are always shown."
+#: components/Blocks/Listing/Table/schema
+msgid "Content type and title are always shown."
 msgstr ""
 
 #. Default: "Created On"
@@ -174,6 +215,11 @@ msgstr ""
 #. Default: "Drag to move the row"
 #: components/WikiTable/useTableDragAndDrop
 msgid "Drag to move the row"
+msgstr ""
+
+#. Default: "Due"
+#: components/Tasks/Tasks
+msgid "Due"
 msgstr ""
 
 #. Default: "E-mail"
@@ -351,6 +397,16 @@ msgstr ""
 msgid "List with date"
 msgstr "Lista com data"
 
+#. Default: "Loading tasks..."
+#: components/Tasks/Tasks
+msgid "Loading tasks"
+msgstr ""
+
+#. Default: "Loading the CSV file…"
+#: components/Blocks/CsvTable/CsvTable
+msgid "Loading the CSV file…"
+msgstr ""
+
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
@@ -386,6 +442,11 @@ msgstr ""
 msgid "Move row up"
 msgstr ""
 
+#. Default: "My tasks"
+#: components/Tasks/Tasks
+msgid "My tasks"
+msgstr ""
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
@@ -396,14 +457,34 @@ msgstr "Nome"
 msgid "News Item"
 msgstr ""
 
+#. Default: "Next page"
+#: components/Tasks/Tasks
+msgid "Next page"
+msgstr ""
+
 #. Default: "Next review"
 #: components/Toolbar/DocumentReview
 msgid "Next review"
 msgstr ""
 
+#. Default: "No"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "No"
+msgstr ""
+
 #. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
 msgid "No document found with the selected criteria."
+msgstr ""
+
+#. Default: "No due date"
+#: components/Tasks/Tasks
+msgid "No due date"
+msgstr ""
+
+#. Default: "No open tasks match these filters."
+#: components/Tasks/Tasks
+msgid "No open tasks match these filters."
 msgstr ""
 
 #. Default: "No results for “{term}”."
@@ -426,6 +507,11 @@ msgstr ""
 msgid "Offset"
 msgstr ""
 
+#. Default: "Only CSV files inside the intranet can be shown."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Only CSV files inside the intranet can be shown."
+msgstr ""
+
 #. Default: "Only internal e-mail addresses are permitted."
 #: components/FeedBackForm/FeedBackForm
 msgid "Only internal e-mail addresses are permitted."
@@ -435,6 +521,11 @@ msgstr "Apenas endereços de e-mail internos são permitidos."
 #: index
 msgid "Organisational Unit"
 msgstr "Área Organizacional"
+
+#. Default: "Overdue"
+#: components/Tasks/Tasks
+msgid "Overdue"
+msgstr ""
 
 #. Default: "Page"
 #: components/Header/HeaderSearch
@@ -478,6 +569,11 @@ msgstr ""
 msgid "PostponeTitle"
 msgstr ""
 
+#. Default: "Previous page"
+#: components/Tasks/Tasks
+msgid "Previous page"
+msgstr ""
+
 #. Default: "Private"
 #: components/Header/HeaderSearch
 #: slots/AboutThisContent/AboutThisContent
@@ -502,6 +598,11 @@ msgstr ""
 #. Default: "Results limit"
 #: components/widgets/QuerystringWidget
 msgid "Results limit"
+msgstr ""
+
+#. Default: "Retry"
+#: components/Tasks/Tasks
+msgid "Retry"
 msgstr ""
 
 #. Default: "Reversed order"
@@ -622,6 +723,11 @@ msgstr ""
 msgid "Sort on"
 msgstr ""
 
+#. Default: "Source"
+#: components/Tasks/Tasks
+msgid "Source"
+msgstr ""
+
 #. Default: "Sources"
 #: components/Header/HeaderSearch
 msgid "Sources"
@@ -656,15 +762,62 @@ msgstr "Página/URL do assunto"
 msgid "Success"
 msgstr "Sucesso"
 
+#. Default: "Table"
+#: components/Blocks/Listing/Table/TableTemplate
+#: index
+msgid "Table"
+msgstr ""
+
+#. Default: "Task"
+#: components/Tasks/Tasks
+msgid "Task"
+msgstr ""
+
+#. Default: "Assignee"
+#: components/Tasks/Tasks
+msgid "Task assignee"
+msgstr ""
+
+#. Default: "Task pages"
+#: components/Tasks/Tasks
+msgid "Task pages"
+msgstr ""
+
+#. Default: "Task scope"
+#: components/Tasks/Tasks
+msgid "Task scope"
+msgstr ""
+
+#. Default: "Tasks"
+#: components/Tasks/Tasks
+#: components/Tasks/TasksMenu
+msgid "Tasks"
+msgstr ""
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
+msgstr ""
+
+#. Default: "The CSV file could not be loaded."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file could not be loaded."
+msgstr ""
+
+#. Default: "The CSV file holds no rows."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file holds no rows."
 msgstr ""
 
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr "O conteúdo exibido é personalizado para sua área organizacional e localização."
+
+#. Default: "Title"
+#: components/Blocks/Listing/Table/columns
+msgid "Title"
+msgstr ""
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions
@@ -676,9 +829,19 @@ msgstr "Para curtir, você precisa estar logado"
 msgid "Today"
 msgstr ""
 
+#. Default: "Tomorrow"
+#: components/Tasks/Tasks
+msgid "Tomorrow"
+msgstr ""
+
 #. Default: "Type"
 #: components/Header/HeaderSearch
 msgid "Type"
+msgstr ""
+
+#. Default: "Unable to load tasks."
+#: components/Tasks/Tasks
+msgid "Unable to load tasks"
 msgstr ""
 
 #. Default: "Updated"
@@ -703,7 +866,13 @@ msgstr ""
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch
+#: components/Tasks/Tasks
 msgid "Workspace"
+msgstr ""
+
+#. Default: "Yes"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "Yes"
 msgstr ""
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
@@ -751,6 +920,11 @@ msgstr ""
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
 msgstr "última modificação"
+
+#. Default: "{count} open discussions in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "multipleOpenDiscussions"
+msgstr ""
 
 #. Default: "Something went wrong"
 #: components/NavigationTree/messages
@@ -855,6 +1029,11 @@ msgstr ""
 #. Default: "Next Review on:"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "nextReview"
+msgstr ""
+
+#. Default: "1 open discussion in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "oneOpenDiscussion"
 msgstr ""
 
 #. Default: "Added"
@@ -1190,6 +1369,11 @@ msgstr "Leia mais"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
 msgstr "Recomendação da Intranet"
+
+#. Default: "{count, plural, one {# task} other {# tasks}}"
+#: components/Tasks/Tasks
+msgid "taskCount"
+msgstr ""
 
 #. Default: "{shown} of {total} rows"
 #: components/WikiTable/TableViewControls

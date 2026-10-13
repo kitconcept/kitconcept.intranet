@@ -3,6 +3,7 @@ import installSettings from './config/settings';
 import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
+import installTasks from './config/tasks';
 import PersonView from './components/theme/PersonView';
 import PersonSummary from './components/Summary/PersonSummary';
 import { defineMessages } from 'react-intl';
@@ -13,6 +14,10 @@ defineMessages({
   listDate: {
     id: 'List with date',
     defaultMessage: 'List with date',
+  },
+  listingTable: {
+    id: 'Table',
+    defaultMessage: 'Table',
   },
   // Solr facet labels
   organisationalUnit: {
@@ -52,6 +57,12 @@ defineMessages({
     id: 'Move column right',
     defaultMessage: 'Move column right',
   },
+  // Slash menu shadow (#751):
+  //   customizations/@kitconcept/volto-plate/plate/wiki/slash-menu.tsx
+  csvTable: {
+    id: 'CSV table',
+    defaultMessage: 'CSV table',
+  },
 });
 
 declare module '@plone/types' {
@@ -65,6 +76,7 @@ const applyConfig = (config: ConfigType) => {
   installSlots(config);
   installWidgets(config);
   installBlocks(config);
+  installTasks(config);
   (
     config.settings.solrSearchOptions as { showSearchInput?: boolean }
   ).showSearchInput = false;

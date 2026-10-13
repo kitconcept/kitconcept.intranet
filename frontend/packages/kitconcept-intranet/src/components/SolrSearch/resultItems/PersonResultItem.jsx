@@ -18,20 +18,23 @@ const PersonResultItem = ({ item }) => {
   return (
     <article className="tileItem personResultItem">
       <div className="itemWrapper">
-        <div className="itemImageWrapper">
+        <div className="itemImageWrapper" style={{ width: 64 }}>
           <MaybeWrap condition={showProfileLinks} as={Link} to={item['@id']}>
-            <Icon
-              size="64px"
-              name={fallbackAvatarSVG}
-              color={config.settings.baseColor}
-            />
-            <ResultItemPreviewImage
-              Wrapper={null}
-              className="profileImage"
-              item={item}
-              width="64"
-              height="64"
-            />
+            {item.image_field ? (
+              <ResultItemPreviewImage
+                Wrapper={null}
+                className="profileImage"
+                item={item}
+                width="64"
+                height="64"
+              />
+            ) : (
+              <Icon
+                size="64px"
+                name={fallbackAvatarSVG}
+                color={config.settings.baseColor}
+              />
+            )}
           </MaybeWrap>
         </div>
         <div className="itemContent">

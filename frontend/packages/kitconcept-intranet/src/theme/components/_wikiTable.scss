@@ -286,3 +286,20 @@ svg.wiki-table-delete-icon {
 .wiki-table-filter-count {
   color: var(--typeset-muted, #878f93);
 }
+
+// CSV table block (components/Blocks/CsvTable). The table is the last (and
+// only) block of a nested read-only renderer; VLT's last-block padding
+// (80px, see the cell rule above) would leave a hole under it. The block's
+// own spacing comes from the wiki page around it.
+.csv-table > .slate-editor > .block:last-child > .block-inner-container {
+  padding-bottom: 0 !important;
+}
+
+// The hint or error shown instead of the table while there is no file, it
+// loads, or it fails.
+.csv-table-message {
+  padding: 0.75em 1em;
+  border: 1px dashed var(--wiki-table-border, #dfe1e6);
+  border-radius: 4px;
+  color: var(--typeset-muted, #878f93);
+}

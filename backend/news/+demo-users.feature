@@ -1,0 +1,1 @@
+Set the password of all example content demo users to `password`, documented them in the README, made Anna Becker, Clara Nguyen and Max Berger Site Administrators, and completed the missing profile data of the demo persons. @sneridagh

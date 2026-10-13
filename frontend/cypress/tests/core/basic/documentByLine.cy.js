@@ -45,7 +45,7 @@ describe('DocumentByLine Tests', () => {
 
     cy.wait('@content');
     cy.get('.documentByLine').should('contain', 'admin');
-    cy.get('.documentByLine .modified-date').should('contain', 'last modified');
+    cy.get('.documentByLine .modified-date').should('contain', 'Updated on');
     cy.get('.documentByLine .effective-date').should('not.exist');
     cy.get('.documentByLine').should('not.contain', 'December 24, 2020');
   });

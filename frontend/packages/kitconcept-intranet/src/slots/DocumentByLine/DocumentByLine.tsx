@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import { useSelector } from 'react-redux';
@@ -6,13 +6,13 @@ import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
-  by: {
-    id: 'By',
-    defaultMessage: 'By',
-  },
   modified: {
     id: 'modified',
-    defaultMessage: 'last modified',
+    defaultMessage: 'Updated on',
+  },
+  jumpToFirstOpenDiscussion: {
+    id: 'jumpToFirstOpenDiscussion',
+    defaultMessage: 'Jump to the first open comment in the text',
   },
   oneOpenDiscussion: {
     id: 'oneOpenDiscussion',
@@ -101,25 +101,25 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     return null;
   }
 
+  const hasCreators = creatorsWithData.length > 0;
   const showModified = !isAddMode && !!content.modified;
 
   return (
     <>
       <div className="documentByLine">
-        {creatorsWithData.length > 0 && (
-          <span>
-            {intl.formatMessage(messages.by)}{' '}
-            {creatorsWithData.map(({ id, name, homepage }, index) => (
-              <React.Fragment key={id}>
+        {hasCreators && (
+          <span className="documentByLine-creators">
+            {creatorsWithData.map(({ id, name }, index) => (
+              <span className="documentByLine-creator" key={id}>
                 <PersonPill id={id} fullname={name} />
-                {index < creatorsWithData.length - 1 && ', '}
-              </React.Fragment>
+                {index < creatorsWithData.length - 1 && ','}
+              </span>
             ))}
-            {showModified && ' — '}
           </span>
         )}
         {showModified && (
           <span className="modified-date">
+            {hasCreators && '· '}
             {intl.formatMessage(messages.modified)}{' '}
             <FormattedDate
               date={content.modified}
@@ -132,10 +132,16 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             />
           </span>
         )}
+        {discussionCount > 0 && (hasCreators || showModified) && (
+          <span className="documentByLine-separator" aria-hidden="true">
+            ·
+          </span>
+        )}
         {discussionCount > 0 && (
           <button
             type="button"
             className="open-discussions"
+            title={intl.formatMessage(messages.jumpToFirstOpenDiscussion)}
             onClick={jumpToFirstOpenDiscussion}
           >
             <span className="open-discussions-dot" aria-hidden="true" />

@@ -96,11 +96,6 @@ msgstr "Vita"
 msgid "Building"
 msgstr ""
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr ""
-
 #. Default: "CSV file"
 #: components/Blocks/CsvTable/schema
 msgid "CSV file"
@@ -906,12 +901,17 @@ msgstr ""
 msgid "help"
 msgstr ""
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr ""
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr ""
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
 msgstr ""

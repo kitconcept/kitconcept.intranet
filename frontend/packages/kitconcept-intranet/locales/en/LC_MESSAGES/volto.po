@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "(Default)"
+#: components/widgets/ContentTypeWorkflow
+msgid "(Default)"
+msgstr ""
+
 #. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
 #: components/Blocks/CsvTable/schema
 msgid "A CSV file inside the intranet. Pick it with the browse button or paste its address."
@@ -114,9 +119,29 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Change workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow"
+msgstr ""
+
+#. Default: "Change workflow?"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow?"
+msgstr ""
+
+#. Default: "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+#: components/widgets/ContentTypeWorkflow
+msgid "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+msgstr ""
+
 #. Default: "Choose a CSV file in the sidebar."
 #: components/Blocks/CsvTable/CsvTable
 msgid "Choose a CSV file in the sidebar."
+msgstr ""
+
+#. Default: "Choose the new state for existing items in each current state. The change is applied when you save."
+#: components/widgets/ContentTypeWorkflow
+msgid "Choose the new state for existing items in each current state. The change is applied when you save."
 msgstr ""
 
 #. Default: "Clear filter"
@@ -174,6 +199,11 @@ msgstr ""
 #. Default: "Criteria"
 #: components/widgets/QuerystringWidget
 msgid "Criteria"
+msgstr ""
+
+#. Default: "Current state"
+#: components/widgets/ContentTypeWorkflow
+msgid "Current state"
 msgstr ""
 
 #. Default: "Dashboard"
@@ -237,6 +267,7 @@ msgstr ""
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr ""
@@ -452,6 +483,16 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+#. Default: "New state"
+#: components/widgets/ContentTypeWorkflow
+msgid "New state"
+msgstr ""
+
+#. Default: "New workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "New workflow"
+msgstr ""
+
 #. Default: "News Item"
 #: components/Header/HeaderSearch
 msgid "News Item"
@@ -500,6 +541,11 @@ msgstr ""
 #. Default: "No selection"
 #: components/widgets/QuerystringWidget
 msgid "No selection"
+msgstr ""
+
+#. Default: "No workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "No workflow"
 msgstr ""
 
 #. Default: "Offset"
@@ -834,6 +880,21 @@ msgstr ""
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr ""
 
+#. Default: "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+msgstr ""
+
+#. Default: "The workflow for this content type could not be updated."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow for this content type could not be updated."
+msgstr ""
+
+#. Default: "The workflow settings could not be loaded."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow settings could not be loaded."
+msgstr ""
+
 #. Default: "Title"
 #: components/Blocks/Listing/Table/columns
 msgid "Title"
@@ -882,6 +943,11 @@ msgstr ""
 #. Default: "What is unclear, outdated or missing?"
 #: slots/AboutThisContent/AboutThisContent
 msgid "What is unclear, outdated or missing?"
+msgstr ""
+
+#. Default: "Workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Workflow"
 msgstr ""
 
 #. Default: "Workspace"

@@ -87,15 +87,15 @@
       method="GET"
       factory=".type_workflow.TypeWorkflowGet"
       for="plone.restapi.bbb.IPloneSiteRoot"
-      permission="cmf.ModifyPortalContent"
+      permission="plone.app.controlpanel.Types"
       name="@type-workflow"
       />
 
   <plone:service
       method="PATCH"
-      factory=".type_workflow.TypeWorkflowPost"
+      factory=".type_workflow.TypeWorkflowPatch"
       for="plone.restapi.bbb.IPloneSiteRoot"
-      permission="cmf.ModifyPortalContent"
+      permission="plone.app.controlpanel.Types"
       name="@type-workflow"
       />
 

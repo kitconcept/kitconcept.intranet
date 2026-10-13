@@ -1,109 +1,140 @@
 from plone import api
 from plone.app.workflow.remap import remap_workflow
+from plone.base.utils import safe_text
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
 from Products.CMFPlone.controlpanel.events import ConfigurationChangedEvent
 from zExceptions import BadRequest
+from zExceptions import NotFound
 from zope.event import notify
+from zope.i18n import translate
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
 
 
-@implementer(IPublishTraverse)
-class TypeWorkflowGet(Service):
-    """@type-workflow endpoint."""
+NO_WORKFLOW = "[none]"
+
+
+class TypeWorkflowBase(Service):
+    """Base class for the @type-workflow endpoints."""
 
     def __init__(self, context, request):
         super().__init__(context, request)
         self.params = []
 
     def publishTraverse(self, request, name):
-        # Treat any path segments after /@review as parameters
+        # Treat any path segments after /@type-workflow as parameters
         self.params.append(name)
         return self
 
-    def reply(self):
+    @property
+    def wftool(self):
+        return api.portal.get_tool("portal_workflow")
+
+    def get_type(self) -> str:
+        """Return the portal type passed as path parameter, or raise."""
         if len(self.params) != 1:
             raise BadRequest("Did you forget to provide the type?")
-        _type = self.params[0]
-
+        portal_type = self.params[0]
         types_tool = api.portal.get_tool("portal_types")
-        if types_tool.getTypeInfo(_type) is None:
-            self.request.response.setStatus(404)
-            return BadRequest("Unknown content type")
+        if types_tool.getTypeInfo(portal_type) is None:
+            raise NotFound("Unknown content type")
+        return portal_type
 
-        wftool = api.portal.get_tool("portal_workflow")
+    def current_workflow(self, portal_type: str) -> str:
+        """Return the id of the first workflow in the chain of the type,
+        or NO_WORKFLOW if the type has no workflow."""
+        chain = self.wftool.getChainForPortalType(portal_type)
+        return chain[0] if chain else NO_WORKFLOW
+
+
+@implementer(IPublishTraverse)
+class TypeWorkflowGet(TypeWorkflowBase):
+    """GET @type-workflow[/<portal_type>]"""
+
+    def translate(self, msg) -> str:
+        return translate(safe_text(msg), domain="plone", context=self.request)
+
+    def reply(self):
+        wftool = self.wftool
+        workflows = []
+        for wf in wftool.values():
+            states = [
+                {"id": state.id, "title": self.translate(state.title)}
+                for state in wf.states.objectValues()
+            ]
+            workflows.append({
+                "title": self.translate(wf.title),
+                "token": wf.id,
+                "initial_state": wf.initial_state,
+                "states": states,
+            })
         default_chain = wftool.getDefaultChain()
-        default_wf = wftool.getWorkflowById(default_chain[0]) if default_chain else None
-        non_default = [info[0] for info in wftool.listChainOverrides()]
-        chain = wftool.getChainForPortalType(_type)
+        result = {
+            "default": default_chain[0] if default_chain else NO_WORKFLOW,
+            "workflows": workflows,
+        }
 
-        if _type in non_default:
-            if chain:
-                wf_id = chain[0]
-                wf = getattr(wftool, wf_id)
-                return {"title": wf.title, "token": wf_id}
-            else:
-                return {"title": "", "token": ""}
+        if self.params:
+            portal_type = self.get_type()
+            overridden = [info[0] for info in wftool.listChainOverrides()]
+            result["current"] = {
+                "uses_default": portal_type not in overridden,
+                "workflow": self.current_workflow(portal_type),
+            }
 
-        if not default_wf:
-            return {"title": "", "token": ""}
-
-        return {"title": default_wf.title, "token": default_chain[0]}
+        return result
 
 
 @implementer(IPublishTraverse)
-class TypeWorkflowPost(Service):
-    """@type-workflow endpoint."""
+class TypeWorkflowPatch(TypeWorkflowBase):
+    """PATCH @type-workflow/<portal_type>
 
-    def __init__(self, context, request):
-        super().__init__(context, request)
-        self.params = []
+    Body: {"new": <workflow id or "[none]">,
+           "old": <optional, workflow id the client expects to replace>,
+           "stateMap": {<old state id or "[none]">: <new state id>}}
+    """
 
-    def publishTraverse(self, request, name):
-        # Treat any path segments after /@review as parameters
-        self.params.append(name)
-        return self
+    def validate_state_map(self, state_map, new: str) -> dict:
+        if state_map is None:
+            return {}
+        if not isinstance(state_map, dict):
+            raise BadRequest("'stateMap' must be an object.")
+        if new == NO_WORKFLOW:
+            return {}
+        valid_states = set(self.wftool[new].states.objectIds())
+        result = {}
+        for old_state, new_state in state_map.items():
+            if new_state not in valid_states:
+                raise BadRequest(f"Unknown state '{new_state}' for workflow '{new}'.")
+            # Objects without a workflow state are remapped using the None key
+            result[None if old_state == NO_WORKFLOW else old_state] = new_state
+        return result
 
     def reply(self):
-        if len(self.params) != 1:
-            raise BadRequest("Did you forget to provide the type?")
-        _type = self.params[0]
-
-        types_tool = api.portal.get_tool("portal_types")
-        if types_tool.getTypeInfo(_type) is None:
-            self.request.response.setStatus(404)
-            return BadRequest("Unknown content type")
+        portal_type = self.get_type()
 
         data = json_body(self.request)
-        old = data.get("old")
         new = data.get("new")
+        if not new:
+            raise BadRequest("Missing parameter 'new'.")
+        if new != NO_WORKFLOW and new not in self.wftool.getWorkflowIds():
+            raise BadRequest(f"Unknown workflow '{new}'.")
 
-        if new == old:
+        current = self.current_workflow(portal_type)
+        old = data.get("old")
+        if old and old != current:
+            raise BadRequest(
+                "The workflow of this type was changed in the meantime. "
+                "Please reload and try again."
+            )
+        if new == current:
             raise BadRequest("Nothing changed.")
 
-        wftool = api.portal.get_tool("portal_workflow")
-        chain = () if new == "[none]" else (new,)
-        state_map = {s["old_state"]: s["new_state"] for s in []}
-        if "[none]" in state_map:
-            state_map[None] = state_map["[none]"]
-            del state_map["[none]"]
-        if _type:
-            type_ids = (_type,)
-        else:
-            types_tool = api.portal.get_tool("portal_types")
-            non_default = [info[0] for info in wftool.listChainOverrides()]
-            type_ids = [
-                _type
-                for _type in types_tool.listContentTypes()
-                if _type not in non_default
-            ]
-            wftool.setChainForPortalTypes(type_ids, wftool.getDefaultChain())
-            wftool.setDefaultChain(",".join(chain))
-            chain = "(Default)"
-
+        state_map = self.validate_state_map(data.get("stateMap"), new)
+        chain = () if new == NO_WORKFLOW else (new,)
         remap_workflow(
-            self.context, type_ids=type_ids, chain=chain, state_map=state_map
+            self.context, type_ids=(portal_type,), chain=chain, state_map=state_map
         )
 
         data = {"workflow": new}

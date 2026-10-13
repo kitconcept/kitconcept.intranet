@@ -14,7 +14,4 @@ _ = MessageFactory(PACKAGE_NAME)
 
 logger = logging.getLogger(PACKAGE_NAME)
 
-from kitconcept.intranet.patches import apply_patches
-
-
 apply_patches()

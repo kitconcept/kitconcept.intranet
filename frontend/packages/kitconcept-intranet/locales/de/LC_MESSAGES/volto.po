@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+#: components/Blocks/CsvTable/schema
+msgid "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+msgstr "Eine CSV-Datei im Intranet. Mit der Durchsuchen-Schaltfläche auswählen oder die Adresse einfügen."
+
 #. Default: "AI Overview"
 #: components/Header/HeaderSearch
 msgid "AI Overview"
@@ -40,6 +45,11 @@ msgstr "Alle"
 #: components/Header/HeaderSearch
 msgid "All statuses"
 msgstr "Alle Status"
+
+#. Default: "All tasks"
+#: components/Tasks/Tasks
+msgid "All tasks"
+msgstr "Alle Aufgaben"
 
 #. Default: "All types"
 #: components/Header/HeaderSearch
@@ -91,6 +101,17 @@ msgstr "Gebäude"
 msgid "By"
 msgstr "Von"
 
+#. Default: "CSV file"
+#: components/Blocks/CsvTable/schema
+msgid "CSV file"
+msgstr "CSV-Datei"
+
+#. Default: "CSV table"
+#: components/Blocks/CsvTable/schema
+#: index
+msgid "CSV table"
+msgstr "CSV-Tabelle"
+
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -98,10 +119,20 @@ msgstr "Von"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#. Default: "Choose a CSV file in the sidebar."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Choose a CSV file in the sidebar."
+msgstr "Wählen Sie eine CSV-Datei in der Seitenleiste."
+
 #. Default: "Clear filter"
 #: components/WikiTable/TableViewControls
 msgid "Clear filter"
 msgstr "Filter löschen"
+
+#. Default: "Columns"
+#: components/Blocks/Listing/Table/schema
+msgid "Columns"
+msgstr "Spalten"
 
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
@@ -119,6 +150,16 @@ msgstr "Kontakt"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
 msgstr ""
+
+#. Default: "Content type"
+#: components/Blocks/Listing/Table/columns
+msgid "Content type"
+msgstr "Inhaltstyp"
+
+#. Default: "Content type and title are always shown."
+#: components/Blocks/Listing/Table/schema
+msgid "Content type and title are always shown."
+msgstr "Inhaltstyp und Titel werden immer angezeigt."
 
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
@@ -170,6 +211,11 @@ msgstr "Ziehen, um die Spalte zu verschieben"
 #: components/WikiTable/useTableDragAndDrop
 msgid "Drag to move the row"
 msgstr "Ziehen, um die Zeile zu verschieben"
+
+#. Default: "Due"
+#: components/Tasks/Tasks
+msgid "Due"
+msgstr "Fällig"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
@@ -346,6 +392,16 @@ msgstr "Letztes Jahr"
 msgid "List with date"
 msgstr "Liste mit Datum"
 
+#. Default: "Loading tasks..."
+#: components/Tasks/Tasks
+msgid "Loading tasks"
+msgstr "Aufgaben werden geladen..."
+
+#. Default: "Loading the CSV file…"
+#: components/Blocks/CsvTable/CsvTable
+msgid "Loading the CSV file…"
+msgstr "CSV-Datei wird geladen …"
+
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
@@ -381,6 +437,11 @@ msgstr "Zeile nach unten verschieben"
 msgid "Move row up"
 msgstr "Zeile nach oben verschieben"
 
+#. Default: "My tasks"
+#: components/Tasks/Tasks
+msgid "My tasks"
+msgstr "Meine Aufgaben"
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
@@ -391,15 +452,35 @@ msgstr "Name"
 msgid "News Item"
 msgstr "Nachricht"
 
+#. Default: "Next page"
+#: components/Tasks/Tasks
+msgid "Next page"
+msgstr "Nächste Seite"
+
 #. Default: "Next review"
 #: components/Toolbar/DocumentReview
 msgid "Next review"
 msgstr ""
 
+#. Default: "No"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "No"
+msgstr "Nein"
+
 #. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
 msgid "No document found with the selected criteria."
 msgstr "Kein Dokument mit den gewählten Kriterien gefunden."
+
+#. Default: "No due date"
+#: components/Tasks/Tasks
+msgid "No due date"
+msgstr "Kein Fälligkeitsdatum"
+
+#. Default: "No open tasks match these filters."
+#: components/Tasks/Tasks
+msgid "No open tasks match these filters."
+msgstr "Keine offenen Aufgaben entsprechen diesen Filtern."
 
 #. Default: "No results for “{term}”."
 #: components/Header/HeaderSearch
@@ -421,6 +502,11 @@ msgstr "Keine Auswahl"
 msgid "Offset"
 msgstr "Offset"
 
+#. Default: "Only CSV files inside the intranet can be shown."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Only CSV files inside the intranet can be shown."
+msgstr "Es können nur CSV-Dateien aus dem Intranet angezeigt werden."
+
 #. Default: "Only internal e-mail addresses are permitted."
 #: components/FeedBackForm/FeedBackForm
 msgid "Only internal e-mail addresses are permitted."
@@ -430,6 +516,11 @@ msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 #: index
 msgid "Organisational Unit"
 msgstr "Organisationseinheit"
+
+#. Default: "Overdue"
+#: components/Tasks/Tasks
+msgid "Overdue"
+msgstr "Überfällig"
 
 #. Default: "Page"
 #: components/Header/HeaderSearch
@@ -473,6 +564,11 @@ msgstr "Überprüfung verschieben"
 msgid "PostponeTitle"
 msgstr "Überprüfung verschieben"
 
+#. Default: "Previous page"
+#: components/Tasks/Tasks
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
 #. Default: "Private"
 #: components/Header/HeaderSearch
 #: slots/AboutThisContent/AboutThisContent
@@ -498,6 +594,11 @@ msgstr "Inhaltsverantwortliche Person"
 #: components/widgets/QuerystringWidget
 msgid "Results limit"
 msgstr "Anzahl der Ergebnisse einschränken"
+
+#. Default: "Retry"
+#: components/Tasks/Tasks
+msgid "Retry"
+msgstr "Erneut versuchen"
 
 #. Default: "Reversed order"
 #: components/widgets/QuerystringWidget
@@ -617,6 +718,11 @@ msgstr "Nach {column} sortieren"
 msgid "Sort on"
 msgstr "Sortieren nach"
 
+#. Default: "Source"
+#: components/Tasks/Tasks
+msgid "Source"
+msgstr "Quelle"
+
 #. Default: "Sources"
 #: components/Header/HeaderSearch
 msgid "Sources"
@@ -651,15 +757,62 @@ msgstr "Betreff Seite/URL"
 msgid "Success"
 msgstr "Erfolg"
 
+#. Default: "Table"
+#: components/Blocks/Listing/Table/TableTemplate
+#: index
+msgid "Table"
+msgstr "Tabelle"
+
+#. Default: "Task"
+#: components/Tasks/Tasks
+msgid "Task"
+msgstr "Aufgabe"
+
+#. Default: "Assignee"
+#: components/Tasks/Tasks
+msgid "Task assignee"
+msgstr "Beauftragte Personen"
+
+#. Default: "Task pages"
+#: components/Tasks/Tasks
+msgid "Task pages"
+msgstr "Aufgabenseiten"
+
+#. Default: "Task scope"
+#: components/Tasks/Tasks
+msgid "Task scope"
+msgstr "Aufgabenauswahl"
+
+#. Default: "Tasks"
+#: components/Tasks/Tasks
+#: components/Tasks/TasksMenu
+msgid "Tasks"
+msgstr "Aufgaben"
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
 msgstr "Die KI-Antwort ist momentan nicht verfügbar. Bitte versuchen Sie es erneut."
 
+#. Default: "The CSV file could not be loaded."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file could not be loaded."
+msgstr "Die CSV-Datei konnte nicht geladen werden."
+
+#. Default: "The CSV file holds no rows."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file holds no rows."
+msgstr "Die CSV-Datei enthält keine Zeilen."
+
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und Deines Standorts zusammengestellt."
+
+#. Default: "Title"
+#: components/Blocks/Listing/Table/columns
+msgid "Title"
+msgstr "Titel"
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions
@@ -671,10 +824,20 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 msgid "Today"
 msgstr "Heute"
 
+#. Default: "Tomorrow"
+#: components/Tasks/Tasks
+msgid "Tomorrow"
+msgstr "Morgen"
+
 #. Default: "Type"
 #: components/Header/HeaderSearch
 msgid "Type"
 msgstr "Typ"
+
+#. Default: "Unable to load tasks."
+#: components/Tasks/Tasks
+msgid "Unable to load tasks"
+msgstr "Aufgaben konnten nicht geladen werden."
 
 #. Default: "Updated"
 #: components/Header/HeaderSearch
@@ -698,8 +861,14 @@ msgstr "Was ist unklar, veraltet oder fehlt?"
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch
+#: components/Tasks/Tasks
 msgid "Workspace"
 msgstr "Workspace"
+
+#. Default: "Yes"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "Yes"
+msgstr "Ja"
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
@@ -746,6 +915,11 @@ msgstr "Die Überprüfung wurde erfolgreich verschoben."
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
 msgstr "zuletzt verändert"
+
+#. Default: "{count} open discussions in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "multipleOpenDiscussions"
+msgstr "{count} offene Kommentare im Text"
 
 #. Default: "Something went wrong"
 #: components/NavigationTree/messages
@@ -851,6 +1025,11 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 msgid "nextReview"
 msgstr "Nächste Kontrolle am: "
+
+#. Default: "1 open discussion in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "oneOpenDiscussion"
+msgstr "1 offener Kommentar im Text"
 
 #. Default: "Added"
 #: components/PlateDiff/messages
@@ -1185,6 +1364,11 @@ msgstr "Weiterlesen"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
 msgstr "Empfehlung aus dem Intranet"
+
+#. Default: "{count, plural, one {# task} other {# tasks}}"
+#: components/Tasks/Tasks
+msgid "taskCount"
+msgstr "{count, plural, one {# Aufgabe} other {# Aufgaben}}"
 
 #. Default: "{shown} of {total} rows"
 #: components/WikiTable/TableViewControls

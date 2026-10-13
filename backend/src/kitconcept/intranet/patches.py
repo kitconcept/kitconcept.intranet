@@ -1,4 +1,3 @@
-from kitconcept.intranet import _
 from zope import schema
 
 
@@ -6,6 +5,7 @@ def apply_type_settings_patch():
     # Add the global_allow field to the TypeOverviewForm.
     # (We should change this upstream.)
 
+    from kitconcept.intranet import _
     from plone.app.dexterity.interfaces import ITypeSettings
 
     ITypeSettings._InterfaceClass__attrs["global_allow"] = schema.Bool(

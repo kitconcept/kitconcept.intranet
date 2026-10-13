@@ -41,7 +41,9 @@ test.describe('Keyword Manager control panel', () => {
 
   test('is reachable from the site setup overview', async ({ page }) => {
     await page.goto('/controlpanel');
-    await page.getByRole('link', { name: /keyword manager/i }).click();
+    await page
+      .getByRole('link', { name: 'Keyword Manager', exact: true })
+      .click();
     await expect(page).toHaveURL(/keyword-manager/i);
   });
 

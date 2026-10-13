@@ -5,6 +5,10 @@ import path from 'path';
 // Volto's build resolves add-on imports to their `src` folder, mirror that
 // for the add-ons whose modules the tests import
 const addonAliases = {
+  'react-router-dom': path.resolve(
+    __dirname,
+    '../../core/packages/volto/node_modules/react-router-dom',
+  ),
   '@kitconcept/volto-light-theme': path.resolve(
     __dirname,
     'node_modules/@kitconcept/volto-light-theme/src',

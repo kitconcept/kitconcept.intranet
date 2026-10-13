@@ -1,4 +1,3 @@
-from kitconcept.intranet import _
 from zope import schema
 
 
@@ -6,6 +5,7 @@ def apply_type_settings_patch():
     # Add the global_allow field to the TypeOverviewForm.
     # (We should change this upstream.)
 
+    from kitconcept.intranet import _
     from plone.app.dexterity.interfaces import ITypeSettings
 
     ITypeSettings._InterfaceClass__attrs["global_allow"] = schema.Bool(
@@ -17,10 +17,10 @@ def apply_type_settings_patch():
         ),
     )
 
-    from z3c.form import field
-    from zope.dottedname.resolve import resolve as resolveDottedName
     from plone.app.dexterity.browser.overview import TypeOverviewForm
     from Products.CMFCore.interfaces import IFolderish
+    from z3c.form import field
+    from zope.dottedname.resolve import resolve as resolveDottedName
 
     @property
     def patched_fields(self):

@@ -46,6 +46,11 @@ msgstr ""
 msgid "All statuses"
 msgstr ""
 
+#. Default: "All tasks"
+#: components/Tasks/Tasks
+msgid "All tasks"
+msgstr ""
+
 #. Default: "All types"
 #: components/Header/HeaderSearch
 msgid "All types"
@@ -205,6 +210,11 @@ msgstr ""
 #. Default: "Drag to move the row"
 #: components/WikiTable/useTableDragAndDrop
 msgid "Drag to move the row"
+msgstr ""
+
+#. Default: "Due"
+#: components/Tasks/Tasks
+msgid "Due"
 msgstr ""
 
 #. Default: "E-mail"
@@ -382,6 +392,11 @@ msgstr ""
 msgid "List with date"
 msgstr ""
 
+#. Default: "Loading tasks..."
+#: components/Tasks/Tasks
+msgid "Loading tasks"
+msgstr ""
+
 #. Default: "Loading the CSV file…"
 #: components/Blocks/CsvTable/CsvTable
 msgid "Loading the CSV file…"
@@ -422,6 +437,11 @@ msgstr ""
 msgid "Move row up"
 msgstr ""
 
+#. Default: "My tasks"
+#: components/Tasks/Tasks
+msgid "My tasks"
+msgstr ""
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
@@ -430,6 +450,11 @@ msgstr ""
 #. Default: "News Item"
 #: components/Header/HeaderSearch
 msgid "News Item"
+msgstr ""
+
+#. Default: "Next page"
+#: components/Tasks/Tasks
+msgid "Next page"
 msgstr ""
 
 #. Default: "Next review"
@@ -445,6 +470,16 @@ msgstr ""
 #. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
 msgid "No document found with the selected criteria."
+msgstr ""
+
+#. Default: "No due date"
+#: components/Tasks/Tasks
+msgid "No due date"
+msgstr ""
+
+#. Default: "No open tasks match these filters."
+#: components/Tasks/Tasks
+msgid "No open tasks match these filters."
 msgstr ""
 
 #. Default: "No results for “{term}”."
@@ -480,6 +515,11 @@ msgstr ""
 #. Default: "Organisational Unit"
 #: index
 msgid "Organisational Unit"
+msgstr ""
+
+#. Default: "Overdue"
+#: components/Tasks/Tasks
+msgid "Overdue"
 msgstr ""
 
 #. Default: "Page"
@@ -524,6 +564,11 @@ msgstr ""
 msgid "PostponeTitle"
 msgstr ""
 
+#. Default: "Previous page"
+#: components/Tasks/Tasks
+msgid "Previous page"
+msgstr ""
+
 #. Default: "Private"
 #: components/Header/HeaderSearch
 #: slots/AboutThisContent/AboutThisContent
@@ -548,6 +593,11 @@ msgstr ""
 #. Default: "Results limit"
 #: components/widgets/QuerystringWidget
 msgid "Results limit"
+msgstr ""
+
+#. Default: "Retry"
+#: components/Tasks/Tasks
+msgid "Retry"
 msgstr ""
 
 #. Default: "Reversed order"
@@ -668,6 +718,11 @@ msgstr ""
 msgid "Sort on"
 msgstr ""
 
+#. Default: "Source"
+#: components/Tasks/Tasks
+msgid "Source"
+msgstr ""
+
 #. Default: "Sources"
 #: components/Header/HeaderSearch
 msgid "Sources"
@@ -708,6 +763,32 @@ msgstr ""
 msgid "Table"
 msgstr ""
 
+#. Default: "Task"
+#: components/Tasks/Tasks
+msgid "Task"
+msgstr ""
+
+#. Default: "Assignee"
+#: components/Tasks/Tasks
+msgid "Task assignee"
+msgstr ""
+
+#. Default: "Task pages"
+#: components/Tasks/Tasks
+msgid "Task pages"
+msgstr ""
+
+#. Default: "Task scope"
+#: components/Tasks/Tasks
+msgid "Task scope"
+msgstr ""
+
+#. Default: "Tasks"
+#: components/Tasks/Tasks
+#: components/Tasks/TasksMenu
+msgid "Tasks"
+msgstr ""
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
@@ -743,9 +824,19 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
+#. Default: "Tomorrow"
+#: components/Tasks/Tasks
+msgid "Tomorrow"
+msgstr ""
+
 #. Default: "Type"
 #: components/Header/HeaderSearch
 msgid "Type"
+msgstr ""
+
+#. Default: "Unable to load tasks."
+#: components/Tasks/Tasks
+msgid "Unable to load tasks"
 msgstr ""
 
 #. Default: "Updated"
@@ -770,6 +861,7 @@ msgstr ""
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch
+#: components/Tasks/Tasks
 msgid "Workspace"
 msgstr ""
 
@@ -1271,6 +1363,11 @@ msgstr ""
 #. Default: "Recommendation from the Intranet"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
+msgstr ""
+
+#. Default: "{count, plural, one {# task} other {# tasks}}"
+#: components/Tasks/Tasks
+msgid "taskCount"
 msgstr ""
 
 #. Default: "{shown} of {total} rows"

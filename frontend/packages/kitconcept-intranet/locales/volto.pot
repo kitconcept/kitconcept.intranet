@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-13T11:40:27.493Z\n"
+"POT-Creation-Date: 2026-10-13T13:30:36.374Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#. Default: "(Default)"
+#: components/widgets/ContentTypeWorkflow
+msgid "(Default)"
+msgstr ""
 
 #. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
 #: components/Blocks/CsvTable/schema
@@ -121,9 +126,29 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Change workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow"
+msgstr ""
+
+#. Default: "Change workflow?"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow?"
+msgstr ""
+
+#. Default: "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+#: components/widgets/ContentTypeWorkflow
+msgid "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+msgstr ""
+
 #. Default: "Choose a CSV file in the sidebar."
 #: components/Blocks/CsvTable/CsvTable
 msgid "Choose a CSV file in the sidebar."
+msgstr ""
+
+#. Default: "Choose the new state for existing items in each current state. The change is applied when you save."
+#: components/widgets/ContentTypeWorkflow
+msgid "Choose the new state for existing items in each current state. The change is applied when you save."
 msgstr ""
 
 #. Default: "Clear filter"
@@ -460,6 +485,11 @@ msgstr ""
 msgid "New state"
 msgstr ""
 
+#. Default: "New workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "New workflow"
+msgstr ""
+
 #. Default: "News Item"
 #: components/Header/HeaderSearch
 msgid "News Item"
@@ -771,7 +801,6 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 #: components/Toolbar/DocumentReview
-#: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr ""
@@ -833,6 +862,16 @@ msgstr ""
 msgid "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
 msgstr ""
 
+#. Default: "The workflow for this content type could not be updated."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow for this content type could not be updated."
+msgstr ""
+
+#. Default: "The workflow settings could not be loaded."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow settings could not be loaded."
+msgstr ""
+
 #. Default: "Title"
 #: components/Blocks/Listing/Table/columns
 msgid "Title"
@@ -883,14 +922,9 @@ msgstr ""
 msgid "What is unclear, outdated or missing?"
 msgstr ""
 
-#. Default: "The workflow for this content type could not be updated. Please try again."
+#. Default: "Workflow"
 #: components/widgets/ContentTypeWorkflow
-msgid "Workflow could not be updated."
-msgstr ""
-
-#. Default: "The workflow for this content type has been updated."
-#: components/widgets/ContentTypeWorkflow
-msgid "Workflow updated."
+msgid "Workflow"
 msgstr ""
 
 #. Default: "Workspace"
@@ -938,11 +972,6 @@ msgstr ""
 #. Default: "The check interval is set to {interval}. To change it, you must edit the content."
 #: components/ContentReviewSidebar/PostponeReview
 msgid "help"
-msgstr ""
-
-#. Default: "New workflow"
-#: components/widgets/ContentTypeWorkflow
-msgid "label_select"
 msgstr ""
 
 #. Default: "Review has been successfully postponed"
@@ -1397,11 +1426,6 @@ msgstr ""
 #: components/Blocks/RSS/GridTemplate
 #: components/Blocks/RSS/SummaryTemplate
 msgid "rss_read_more"
-msgstr ""
-
-#. Default: "Save"
-#: components/widgets/ContentTypeWorkflow
-msgid "save"
 msgstr ""
 
 #. Default: "Recommendation from the Intranet"

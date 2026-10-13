@@ -93,7 +93,7 @@
 
   <plone:service
       method="PATCH"
-      factory=".type_workflow.TypeWorkflowPost"
+      factory=".type_workflow.TypeWorkflowPatch"
       for="plone.restapi.bbb.IPloneSiteRoot"
       permission="plone.app.controlpanel.Types"
       name="@type-workflow"

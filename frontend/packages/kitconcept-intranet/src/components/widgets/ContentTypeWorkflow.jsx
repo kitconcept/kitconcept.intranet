@@ -48,6 +48,7 @@ export default function ContentTypeWorkflow() {
   const [workflows, setWorkflows] = useState([]);
   const [selected, setSelected] = useState(null);
   const [overrides, setOverrides] = useState({});
+  const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
     dispatch({
@@ -59,7 +60,7 @@ export default function ContentTypeWorkflow() {
       setDefaultWf(res.default);
       setSelected(res.current.workflow);
     });
-  }, [dispatch, typeId]);
+  }, [dispatch, typeId, reloadKey]);
 
   const isChanged = data?.current?.workflow !== selected;
 
@@ -80,14 +81,25 @@ export default function ContentTypeWorkflow() {
         path: `/@type-workflow/${typeId}`,
         data: { old: data.token, new: selected, stateMap: stateMap },
       },
-    }).then(() => {
-      toast.success(
-        <Toast
-          title={intl.formatMessage(messages.successTitle)}
-          content={intl.formatMessage(messages.successContent)}
-        />,
-      );
-    });
+    })
+      .then(() => {
+        toast.success(
+          <Toast
+            title={intl.formatMessage(messages.successTitle)}
+            content={intl.formatMessage(messages.successContent)}
+          />,
+        );
+        setReloadKey((k) => k + 1);
+      })
+      .catch(() => {
+        toast.error(
+          <Toast
+            error
+            title={intl.formatMessage(messages.errorTitle)}
+            content={intl.formatMessage(messages.errorContent)}
+          />,
+        );
+      });
   };
 
   const suggest = (state) => {

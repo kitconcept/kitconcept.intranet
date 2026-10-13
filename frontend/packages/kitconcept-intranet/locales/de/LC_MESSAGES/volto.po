@@ -96,11 +96,6 @@ msgstr "Vita"
 msgid "Building"
 msgstr "Gebäude"
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr "Von"
-
 #. Default: "CSV file"
 #: components/Blocks/CsvTable/schema
 msgid "CSV file"
@@ -911,15 +906,20 @@ msgstr "geht an"
 msgid "help"
 msgstr "Das Überprüfungsintervall ist auf %{intervall} eingestellt. Um es zu ändern, müssen Sie den Inhalt bearbeiten."
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr "Zum ersten offenen Kommentar im Text springen"
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr "Die Überprüfung wurde erfolgreich verschoben."
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr "zuletzt verändert"
+msgstr "Aktualisiert am"
 
 #. Default: "{count} open discussions in text"
 #: slots/DocumentByLine/DocumentByLine
@@ -1345,11 +1345,6 @@ msgstr "Wenn Sie möchten, können Sie hier einen Kommentar hinterlassen, beispi
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeReview"
 msgstr "Verschieben Sie den nächsten Prüftermin für diesen Inhalt. Wählen Sie ein neues Datum oder einen Zeitraum, nach dem Sie erneut erinnert werden möchten."
-
-#. Default: "published"
-#: slots/DocumentByLine/DocumentByLine
-msgid "published"
-msgstr "Veröffentlicht"
 
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate

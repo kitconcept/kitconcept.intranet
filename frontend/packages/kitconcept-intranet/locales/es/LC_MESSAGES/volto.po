@@ -103,11 +103,6 @@ msgstr ""
 msgid "Building"
 msgstr ""
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr ""
-
 #. Default: "CSV file"
 #: components/Blocks/CsvTable/schema
 msgid "CSV file"
@@ -923,15 +918,20 @@ msgstr ""
 msgid "help"
 msgstr ""
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr "Ir al primer comentario abierto del texto"
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr ""
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr ""
+msgstr "Actualizado el"
 
 #. Default: "{count} open discussions in text"
 #: slots/DocumentByLine/DocumentByLine
@@ -1356,11 +1356,6 @@ msgstr ""
 #. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeReview"
-msgstr ""
-
-#. Default: "published"
-#: slots/DocumentByLine/DocumentByLine
-msgid "published"
 msgstr ""
 
 #. Default: "No results from RSS feed."

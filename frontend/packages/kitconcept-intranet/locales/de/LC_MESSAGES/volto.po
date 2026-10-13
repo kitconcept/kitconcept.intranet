@@ -86,6 +86,11 @@ msgstr "Beauftragte Person: *"
 msgid "Author"
 msgstr "Autor:innen"
 
+#. Default: "Average"
+#: index
+msgid "Average"
+msgstr "Durchschnitt"
+
 #. Default: "Beta"
 #: components/Header/HeaderSearch
 msgid "Beta"
@@ -111,6 +116,11 @@ msgstr "CSV-Datei"
 #: index
 msgid "CSV table"
 msgstr "CSV-Tabelle"
+
+#. Default: "Calculation"
+#: index
+msgid "Calculation"
+msgstr "Berechnung"
 
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
@@ -180,6 +190,11 @@ msgstr "Inhaltstyp"
 #: components/Blocks/Listing/Table/schema
 msgid "Content type and title are always shown."
 msgstr "Inhaltstyp und Titel werden immer angezeigt."
+
+#. Default: "Count"
+#: index
+msgid "Count"
+msgstr "Anzahl"
 
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
@@ -453,6 +468,16 @@ msgstr "Überarbeitung erforderlich"
 msgid "Mark as Reviewed"
 msgstr "Als geprüft markieren"
 
+#. Default: "Maximum"
+#: index
+msgid "Maximum"
+msgstr "Maximum"
+
+#. Default: "Minimum"
+#: index
+msgid "Minimum"
+msgstr "Minimum"
+
 #. Default: "Move column left"
 #: index
 msgid "Move column left"
@@ -547,6 +572,11 @@ msgstr "Keine Auswahl"
 #: components/widgets/ContentTypeWorkflow
 msgid "No workflow"
 msgstr "Kein Arbeitsablauf"
+
+#. Default: "None"
+#: index
+msgid "None"
+msgstr "Keine"
 
 #. Default: "Offset"
 #: components/widgets/QuerystringWidget

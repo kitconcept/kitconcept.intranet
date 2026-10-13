@@ -37,10 +37,10 @@
  * CHANGELOG:
  *  - Rebase on @plone/plate 1.0.0-alpha.24 (no upstream changes to this
  *    file since 1.0.0-alpha.20). @sneridagh
- *  - "Footer row" toggle (marks the last row, `footer: true`) and "Sum"
- *    toggle for its cells (`calc: 'sum'`, see components/WikiTable/
- *    tableCalc.ts); the footer row has no drag handle and stays last
- *    (work item 750). @reekitconcept
+ *  - "Footer row" toggle (adds a footer row, `footer: true`) and a
+ *    "Calculation" menu for its cells (`calc`: sum, average, min, max,
+ *    count, see components/WikiTable/tableCalc.ts); the footer row has no
+ *    drag handle and stays last (work item 750). @reekitconcept
  */
 
 import * as React from 'react';
@@ -117,10 +117,11 @@ import {
 } from '@kitconcept/intranet/components/WikiTable/tableMoves';
 import {
   CALC_KEY,
-  CALC_SUM,
+  CALC_KINDS,
+  calcOf,
   FOOTER_KEY,
   isFooterRow,
-  isSumCell,
+  type CalcKind,
 } from '@kitconcept/intranet/components/WikiTable/tableCalc';
 import {
   ColumnInsertLeftIcon,
@@ -140,6 +141,8 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from '@plone/plate/components/ui/dropdown-menu';
 import { Popover, PopoverContent } from '@plone/plate/components/ui/popover';
@@ -176,9 +179,33 @@ const messages = defineMessages({
     id: 'Footer row',
     defaultMessage: 'Footer row',
   },
+  calculation: {
+    id: 'Calculation',
+    defaultMessage: 'Calculation',
+  },
+  none: {
+    id: 'None',
+    defaultMessage: 'None',
+  },
   sum: {
     id: 'Sum',
     defaultMessage: 'Sum',
+  },
+  average: {
+    id: 'Average',
+    defaultMessage: 'Average',
+  },
+  min: {
+    id: 'Minimum',
+    defaultMessage: 'Minimum',
+  },
+  max: {
+    id: 'Maximum',
+    defaultMessage: 'Maximum',
+  },
+  count: {
+    id: 'Count',
+    defaultMessage: 'Count',
   },
   moveRowUp: {
     id: 'Move row up',
@@ -306,7 +333,7 @@ function TableFloatingToolbar({
         inFooter:
           isFooterRow(table.children.at(-1) as TElement | undefined) &&
           (entries.row[1] as number[]).at(-1) === table.children.length - 1,
-        sum: isSumCell(entries.cell[0] as TElement),
+        calc: calcOf(entries.cell[0] as TElement),
       };
     },
     [],
@@ -371,12 +398,12 @@ function TableFloatingToolbar({
       { at: [...tablePath, rowCount], select: true },
     );
   };
-  const toggleSum = () => {
+  const setCalc = (kind: CalcKind | null) => {
     const entries = getTableEntries(editor);
     if (!entries) return;
     const at = entries.cell[1];
-    if (position?.sum) editor.tf.unsetNodes(CALC_KEY, { at });
-    else editor.tf.setNodes({ [CALC_KEY]: CALC_SUM }, { at });
+    if (kind) editor.tf.setNodes({ [CALC_KEY]: kind }, { at });
+    else editor.tf.unsetNodes(CALC_KEY, { at });
   };
 
   return (
@@ -458,14 +485,44 @@ function TableFloatingToolbar({
               <PanelBottomIcon />
             </ToolbarButton>
             {position?.inFooter && (
-              <ToolbarButton
-                pressed={position.sum}
-                onClick={toggleSum}
-                onMouseDown={(e) => e.preventDefault()}
-                tooltip={intl.formatMessage(messages.sum)}
-              >
-                <SigmaIcon />
-              </ToolbarButton>
+              <DropdownMenu modal={false}>
+                <DropdownMenuTrigger asChild>
+                  <ToolbarButton
+                    pressed={position.calc !== null}
+                    tooltip={intl.formatMessage(messages.calculation)}
+                  >
+                    <SigmaIcon />
+                  </ToolbarButton>
+                </DropdownMenuTrigger>
+                <DropdownMenuPortal>
+                  <DropdownMenuContent
+                    className="min-w-[180px]"
+                    onCloseAutoFocus={(e) => {
+                      e.preventDefault();
+                      editor.tf.focus();
+                    }}
+                    align="start"
+                    side="right"
+                    sideOffset={0}
+                  >
+                    <DropdownMenuRadioGroup
+                      value={position.calc ?? 'none'}
+                      onValueChange={(value) =>
+                        setCalc(value === 'none' ? null : (value as CalcKind))
+                      }
+                    >
+                      <DropdownMenuRadioItem value="none">
+                        {intl.formatMessage(messages.none)}
+                      </DropdownMenuRadioItem>
+                      {CALC_KINDS.map((kind) => (
+                        <DropdownMenuRadioItem key={kind} value={kind}>
+                          {intl.formatMessage(messages[kind])}
+                        </DropdownMenuRadioItem>
+                      ))}
+                    </DropdownMenuRadioGroup>
+                  </DropdownMenuContent>
+                </DropdownMenuPortal>
+              </DropdownMenu>
             )}
 
             {collapsedInside && (

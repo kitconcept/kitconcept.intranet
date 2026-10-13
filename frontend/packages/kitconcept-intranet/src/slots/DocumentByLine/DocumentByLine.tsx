@@ -10,10 +10,6 @@ const messages = defineMessages({
     id: 'By',
     defaultMessage: 'By',
   },
-  published: {
-    id: 'published',
-    defaultMessage: 'published',
-  },
   modified: {
     id: 'modified',
     defaultMessage: 'last modified',
@@ -105,6 +101,8 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     return null;
   }
 
+  const showModified = !isAddMode && !!content.modified;
+
   return (
     <>
       <div className="documentByLine">
@@ -117,31 +115,10 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
                 {index < creatorsWithData.length - 1 && ', '}
               </React.Fragment>
             ))}
-            {' — '}
+            {showModified && ' — '}
           </span>
         )}
-        {content.effective && !isAddMode && (
-          <span className="effective-date">
-            {content.review_state === 'published' ? (
-              <span>
-                {intl.formatMessage(messages.published)}{' '}
-                <FormattedDate
-                  date={form.global?.effective ?? content?.effective}
-                  format={{
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  }}
-                  locale={intl.locale}
-                />
-                ,{' '}
-              </span>
-            ) : (
-              ''
-            )}
-          </span>
-        )}
-        {content.modified && !isAddMode && (
+        {showModified && (
           <span className="modified-date">
             {intl.formatMessage(messages.modified)}{' '}
             <FormattedDate

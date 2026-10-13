@@ -22,7 +22,6 @@
 }
 // Space the discussions button from the date before it on the date's margin,
 // so the button stays aligned with the text when it wraps.
-.documentByLine .effective-date:has(+ .open-discussions),
 .documentByLine .modified-date:has(+ .open-discussions) {
   margin-right: 12px;
 }

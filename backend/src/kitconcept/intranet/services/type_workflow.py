@@ -45,7 +45,7 @@ class TypeWorkflowGet(Service):
             _type = self.params[0]
             if types_tool.getTypeInfo(_type) is None:
                 self.request.response.setStatus(404)
-                return BadRequest("Unknown content type")
+                raise BadRequest("Unknown content type")
             chain = wftool.getChainForPortalType(_type)
             overridden = [info[0] for info in wftool.listChainOverrides()]
             uses_default = _type not in overridden
@@ -75,7 +75,7 @@ class TypeWorkflowPost(Service):
         types_tool = api.portal.get_tool("portal_types")
         if types_tool.getTypeInfo(_type) is None:
             self.request.response.setStatus(404)
-            return BadRequest("Unknown content type")
+            raise BadRequest("Unknown content type")
 
         data = json_body(self.request)
         old = data.get("old")

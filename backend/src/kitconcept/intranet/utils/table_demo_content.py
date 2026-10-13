@@ -23,6 +23,7 @@ https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_
 from __future__ import annotations
 
 from kitconcept.intranet.utils.wiki_content import Span
+from kitconcept.intranet.utils.wiki_content import Sum
 from kitconcept.intranet.utils.wiki_content import blocks
 from kitconcept.intranet.utils.wiki_content import blocks_layout
 from kitconcept.intranet.utils.wiki_content import heading
@@ -101,14 +102,14 @@ def budget_page() -> list[dict]:
                     "51.300 €",
                     "im Plan",
                 ],
-                [
-                    text("Gesamt", bold=True),
-                    "",
-                    text("1.455.000 €", bold=True),
-                    text("922.500 €", bold=True),
-                    text("532.500 €", bold=True),
-                    "",
-                ],
+            ],
+            footer=[
+                "Gesamt",
+                "",
+                Sum("1.455.000 €"),
+                Sum("922.500 €"),
+                Sum("532.500 €"),
+                "",
             ],
             col_sizes=[175, 120, 130, 125, 115, 115],
         ),

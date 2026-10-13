@@ -27,6 +27,9 @@
  * CHANGELOG:
  *  - Rebase on @plone/plate 1.0.0-alpha.24 (no upstream changes to this
  *    file since 1.0.0-alpha.20). @sneridagh
+ *  - The footer row (`footer: true`, see components/WikiTable/tableCalc.ts)
+ *    is neither sorted nor filtered and stays last (work item 750).
+ *    @reekitconcept
  */
 
 import * as React from 'react';
@@ -54,6 +57,7 @@ import {
   sortRowIndices,
   type SortDirection,
 } from '@kitconcept/intranet/components/WikiTable/tableSort';
+import { isFooterRow } from '@kitconcept/intranet/components/WikiTable/tableCalc';
 import { WikiTableViewContext } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import {
   SortButton,
@@ -135,14 +139,19 @@ export function TableElementStatic({
   const rows = props.element.children as TTableRowElement[];
   const header = isHeaderRow(rows[0]);
   const bodyStart = header ? 1 : 0;
+  // OVERRIDE (750): the footer row is not part of the body.
+  const bodyEnd =
+    rows.length > 1 && isFooterRow(rows[rows.length - 1])
+      ? rows.length - 1
+      : rows.length;
   const texts = React.useMemo(
     () =>
       rows
-        .slice(bodyStart)
+        .slice(bodyStart, bodyEnd)
         .map((row) =>
           (row.children as TElement[]).map((cell) => NodeApi.string(cell)),
         ),
-    [rows, bodyStart],
+    [rows, bodyStart, bodyEnd],
   );
   // The rows arrive as Plate's <Children> element holding the row nodes
   // (next to what plugins render below the content); that element is
@@ -207,6 +216,8 @@ export function TableElementStatic({
             ? React.cloneElement(rowNodes, undefined, [
                 ...rows.slice(0, bodyStart),
                 ...order.map((row) => rows[bodyStart + row]),
+                // OVERRIDE (750): the footer row stays last
+                ...rows.slice(bodyEnd),
               ] as unknown as React.ReactNode)
             : child,
         )
@@ -245,7 +256,15 @@ export function TableElementStatic({
 
 export function TableRowElementStatic(props: SlateElementProps) {
   return (
-    <SlateElement {...props} as="tr" className="h-full">
+    <SlateElement
+      {...props}
+      as="tr"
+      // OVERRIDE (750)
+      className={cn(
+        'h-full',
+        isFooterRow(props.element) && 'wiki-table-footer',
+      )}
+    >
       {props.children}
     </SlateElement>
   );

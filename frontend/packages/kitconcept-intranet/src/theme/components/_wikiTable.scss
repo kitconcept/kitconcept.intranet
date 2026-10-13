@@ -80,6 +80,15 @@
     font-weight: 600;
   }
 
+  // Footer row (components/WikiTable/tableCalc.ts): styled like the header.
+  tr.wiki-table-footer > td:not([style*='--cellBackground']) {
+    background-color: var(--wiki-table-header-bg);
+  }
+
+  tr.wiki-table-footer > td {
+    font-weight: 600;
+  }
+
   tbody tr:hover > td:not([style*='--cellBackground']) {
     background-color: var(--wiki-table-hover-bg);
   }

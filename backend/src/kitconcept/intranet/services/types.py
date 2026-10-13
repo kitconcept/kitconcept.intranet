@@ -1,7 +1,5 @@
-from plone import api
 from plone.registry.interfaces import IRegistry
 from plone.restapi.services.types.get import TypesGet as BaseService
-from plone.restapi.services.types.get import TypesInfo
 from zope.component import getUtility
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
@@ -35,23 +33,3 @@ class TypesGet(BaseService):
 
         response["fieldsets"] = fieldsets
         return response
-
-
-orig_call = TypesInfo.__call__
-
-
-def patched__call__(self, expand=False):
-    portal_types = api.portal.get_tool("portal_types")
-    result = orig_call(self, expand=expand)["types"]
-    if isinstance(result, list):
-        for info in result:
-            fti = portal_types[info["id"]]
-            restrict_to_path = getattr(fti, "restrict_to_path", None)
-            current_path = "/".join(self.context.getPhysicalPath())
-            if restrict_to_path and not current_path.startswith(restrict_to_path):
-                info["addable"] = False
-                info["immediately_addable"] = False
-    return {"types": result}
-
-
-TypesInfo.__call__ = patched__call__

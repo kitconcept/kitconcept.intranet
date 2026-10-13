@@ -1,1 +1,1 @@
-Add a "Restrict to path" setting to content types, limiting where a type can be added. @sneridagh
+Add a path restriction setting for each content type in the types control panel. @davisagli

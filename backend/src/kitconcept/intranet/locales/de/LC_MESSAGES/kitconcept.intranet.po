@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-10-12 00:06+0000\n"
+"POT-Creation-Date: 2026-10-13 03:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -401,7 +401,7 @@ msgid "help_current_user_filter"
 msgstr "Entspricht den Werten, die dem aktuell angemeldeten Benutzer zugewiesen sind."
 
 #. Default: "If checked, this type can be added to any container."
-#: kitconcept/intranet/patches.py:11
+#: kitconcept/intranet/patches.py:14
 msgid "help_global_allow"
 msgstr "Wenn diese Option aktiviert ist, kann dieser Typ jedem Container hinzugefügt werden."
 
@@ -424,6 +424,12 @@ msgstr "Nach Standort filtern"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_responsibilities_filter"
 msgstr "Nach Aufgaben filtern"
+
+#. Default: "If specified, this content type can only be added in these paths and their descendants. Enter one site-relative path per line (for example /news)."
+#: kitconcept/intranet/patches.py:23
+#, fuzzy
+msgid "help_restrict_to_paths"
+msgstr "Wenn angegeben, kann dieser Inhaltstyp nur in diesen Pfaden und ihren Unterordnern hinzugefügt werden. Geben Sie einen Pfad relativ zur Website pro Zeile ein (zum Beispiel /news)."
 
 #. Default: "... will be notified as soon as the review is due. Unless otherwise specified, the content owner is considered the responsible person."
 #: kitconcept/intranet/behaviors/content_review.py:63
@@ -472,7 +478,7 @@ msgid "label_feedback_person"
 msgstr "Feedback an"
 
 #. Default: "Implicitly addable"
-#: kitconcept/intranet/patches.py:10
+#: kitconcept/intranet/patches.py:13
 msgid "label_global_allow"
 msgstr "Implizit hinzufügbar"
 
@@ -496,6 +502,11 @@ msgstr "Zuständigkeiten"
 #: kitconcept/intranet/behaviors/clm.py:36
 msgid "label_responsible"
 msgstr "Inhaltsverantwortliche Person"
+
+#. Default: "Restrict to paths"
+#: kitconcept/intranet/patches.py:22
+msgid "label_restrict_to_paths"
+msgstr "Auf Pfade beschränken"
 
 #. Default: "Reviewer"
 #: kitconcept/intranet/behaviors/content_review.py:62

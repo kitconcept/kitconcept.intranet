@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 3.2.0 (2026-10-13)
+
+
+### Feature
+
+- Add a path restriction setting for each content type in the types control panel. @davisagli [#553](https://github.com/kitconcept/kitconcept.intranet/issue/553)
+- Example content: the GreenCat workspace gets a CSV file ("Projektbudget 2026 (CSV)") and the Wiki Page "Projektbudget aus CSV-Datei" that shows it with the new CSV table block. @reekitconcept [#751](https://github.com/kitconcept/kitconcept.intranet/issue/751)
+- Add "implicitly addable" setting to the types control panel. @davisagli 
+- Add example of Table variation for Listing Block. @danalvrz 
+- Index Plate todo items as Inline Tasks with assignment, workspace and assignee display names, due dates, completion timestamps, and searchable text. @davisagli 
+- Update kitconcept.keywordmanager to 1.0.0a3. @jnptk 
+
 ## 3.1.0 (2026-10-08)
 
 

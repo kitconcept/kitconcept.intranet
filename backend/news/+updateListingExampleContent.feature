@@ -1,1 +1,0 @@
-Add example of Table variation for Listing Block. @danalvrz

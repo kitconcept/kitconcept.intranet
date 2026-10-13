@@ -8,6 +8,24 @@
 
 <!-- towncrier release notes start -->
 
+## 3.2.0 (2026-10-13)
+
+
+### Feature
+
+- Wiki Page tables: CSV text pasted into a Wiki Page (from a file, a text editor or a spreadsheet export; semicolons, tabs or commas) becomes a table with a header row. @reekitconcept [#751](https://github.com/kitconcept/kitconcept.intranet/issue/751)
+- Wiki Page tables: the new "CSV table" block (slash menu) shows a CSV file from inside the intranet as a read-only table with sorting and filtering; the file is read again whenever the page is shown. @reekitconcept [#751](https://github.com/kitconcept/kitconcept.intranet/issue/751)
+- Add Table listing variation. @danalvrz 
+- Add a Tasks view with My tasks and All tasks tabs, workspace filtering, task counts, source links, due dates, workspace and assignee columns. @davisagli 
+- Show count of open inline comments in the byline. @davisagli 
+- Update @kitconcept/volto-keywordmanager to 1.0.0a3. @jnptk 
+
+
+### Bugfix
+
+- Fix duplicate portrait image in Person search results. @davisagli [#763](https://github.com/kitconcept/kitconcept.intranet/issue/763)
+- Wiki Pages: markdown (e.g. a markdown table) copied from a code editor such as VS Code or Cursor is parsed as markdown when pasted; before, it had to be pasted as plain text (Shift+Cmd+V). @reekitconcept 
+
 ## 3.1.0 (2026-10-08)
 
 

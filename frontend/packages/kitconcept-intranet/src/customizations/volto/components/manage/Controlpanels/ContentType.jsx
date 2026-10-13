@@ -1,3 +1,12 @@
+/**
+ * OVERRIDE ContentType.jsx
+ * REASON: Added a new tab to the controlpanel to change workflow per content type.
+ * FILE: https://github.com/plone/volto/blob/19.5.0/packages/volto/src/components/manage/Controlpanels/ContentType.jsx
+ * FILE VERSION: Volto 19.5.0
+ * PULL REQUEST: https://github.com/kitconcept/kitconcept.intranet/pull/555
+ * DATE: 2026-10-13
+ * DEVELOPER: @jnptk
+ */
 import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -124,6 +133,7 @@ function ContentType() {
       }
     }
 
+    /* START CUSTOMIZATION */
     const schemaWithWorkflow = {
       ...localControlpanel.schema,
       fieldsets: [
@@ -135,6 +145,7 @@ function ContentType() {
         __workflow: { title: 'Workflow', widget: 'contentTypeWorkflow' },
       },
     };
+    /* END CUSTOMIZATION */
 
     return (
       <div id="page-controlpanel" className="ui container dexterity-types">

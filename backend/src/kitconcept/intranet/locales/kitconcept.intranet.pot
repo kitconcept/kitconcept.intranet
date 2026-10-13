@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-10-12 00:06+0000\n"
+"POT-Creation-Date: 2026-10-13 03:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -404,7 +404,7 @@ msgid "help_current_user_filter"
 msgstr ""
 
 #. Default: "If checked, this type can be added to any container."
-#: kitconcept/intranet/patches.py:11
+#: kitconcept/intranet/patches.py:14
 msgid "help_global_allow"
 msgstr ""
 
@@ -426,6 +426,11 @@ msgstr ""
 #. Default: "Filter by responsibilities"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_responsibilities_filter"
+msgstr ""
+
+#. Default: "If specified, this content type can only be added in these paths and their descendants. Enter one site-relative path per line (for example /news)."
+#: kitconcept/intranet/patches.py:23
+msgid "help_restrict_to_paths"
 msgstr ""
 
 #. Default: "... will be notified as soon as the review is due. Unless otherwise specified, the content owner is considered the responsible person."
@@ -475,7 +480,7 @@ msgid "label_feedback_person"
 msgstr ""
 
 #. Default: "Implicitly addable"
-#: kitconcept/intranet/patches.py:10
+#: kitconcept/intranet/patches.py:13
 msgid "label_global_allow"
 msgstr ""
 
@@ -498,6 +503,11 @@ msgstr ""
 #. Default: "Content Owner:"
 #: kitconcept/intranet/behaviors/clm.py:36
 msgid "label_responsible"
+msgstr ""
+
+#. Default: "Restrict to paths"
+#: kitconcept/intranet/patches.py:22
+msgid "label_restrict_to_paths"
 msgstr ""
 
 #. Default: "Reviewer"

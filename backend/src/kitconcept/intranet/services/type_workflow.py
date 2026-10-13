@@ -82,6 +82,9 @@ class TypeWorkflowPost(Service):
         new = data.get("new")
         state_map = data.get("stateMap")
 
+        if not old or not new:
+            raise BadRequest("Missing parameter. Please provide both 'old' and 'new'.")
+
         if new == old:
             raise BadRequest("Nothing changed.")
 

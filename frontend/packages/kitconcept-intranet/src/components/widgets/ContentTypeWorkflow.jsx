@@ -60,11 +60,15 @@ export default function ContentTypeWorkflow() {
 
   return (
     <div className="widget-wrapper">
-      <div>
-        <label className="custom-label">
+      <div className="workflow-field">
+        <p className="custom-label">
           {intl.formatMessage(messages.label_select)}
-        </label>
-        <Select value={selected} onChange={(key) => setSelected(key)}>
+        </p>
+        <Select
+          className="workflow-select"
+          value={selected}
+          onChange={(key) => setSelected(key)}
+        >
           {workflows?.items?.map((wf) => (
             <SelectItem key={wf.value} id={wf.value}>
               {wf.label}
@@ -78,7 +82,11 @@ export default function ContentTypeWorkflow() {
       <p className="custom-description">
         {intl.formatMessage(messages.description_select)}
       </p>
-      <Button isDisabled={!isChanged} onPress={handleSave}>
+      <Button
+        className="react-aria-Button workflow-save"
+        isDisabled={!isChanged}
+        onPress={handleSave}
+      >
         {intl.formatMessage(messages.save)}
       </Button>
     </div>

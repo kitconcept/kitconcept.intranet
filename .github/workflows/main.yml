@@ -176,6 +176,7 @@ jobs:
     needs:
         - config
         - acceptance
+        - playwright
         - a11y
         - backend
     with:
@@ -194,6 +195,7 @@ jobs:
     needs:
         - config
         - acceptance
+        - playwright
         - a11y
         - frontend
     with:
@@ -256,6 +258,7 @@ jobs:
       - config
       - image-build
       - acceptance
+      - playwright
       - a11y
       - backend
       - frontend
@@ -269,6 +272,7 @@ jobs:
           echo '| config | ${{ needs.config.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| image-build | ${{ needs.image-build.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| acceptance | ${{ needs.acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| playwright | ${{ needs.playwright.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| a11y | ${{ needs.a11y.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| backend | ${{ needs.backend.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend | ${{ needs.frontend.result }} |' >> $GITHUB_STEP_SUMMARY

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-13T01:55:15.241Z\n"
+"POT-Creation-Date: 2026-10-13T11:40:27.493Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -183,6 +183,11 @@ msgstr ""
 msgid "Criteria"
 msgstr ""
 
+#. Default: "Current state"
+#: components/widgets/ContentTypeWorkflow
+msgid "Current state"
+msgstr ""
+
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
 msgid "Delegate Review Update"
@@ -239,6 +244,7 @@ msgstr ""
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr ""
@@ -449,6 +455,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+#. Default: "New state"
+#: components/widgets/ContentTypeWorkflow
+msgid "New state"
+msgstr ""
+
 #. Default: "News Item"
 #: components/Header/HeaderSearch
 msgid "News Item"
@@ -497,6 +508,11 @@ msgstr ""
 #. Default: "No selection"
 #: components/widgets/QuerystringWidget
 msgid "No selection"
+msgstr ""
+
+#. Default: "No workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "No workflow"
 msgstr ""
 
 #. Default: "Offset"
@@ -755,6 +771,7 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 #: components/Toolbar/DocumentReview
+#: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr ""
@@ -811,6 +828,11 @@ msgstr ""
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr ""
 
+#. Default: "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+msgstr ""
+
 #. Default: "Title"
 #: components/Blocks/Listing/Table/columns
 msgid "Title"
@@ -861,6 +883,16 @@ msgstr ""
 msgid "What is unclear, outdated or missing?"
 msgstr ""
 
+#. Default: "The workflow for this content type could not be updated. Please try again."
+#: components/widgets/ContentTypeWorkflow
+msgid "Workflow could not be updated."
+msgstr ""
+
+#. Default: "The workflow for this content type has been updated."
+#: components/widgets/ContentTypeWorkflow
+msgid "Workflow updated."
+msgstr ""
+
 #. Default: "Workspace"
 #: components/Header/HeaderSearch
 #: components/Tasks/Tasks
@@ -906,6 +938,11 @@ msgstr ""
 #. Default: "The check interval is set to {interval}. To change it, you must edit the content."
 #: components/ContentReviewSidebar/PostponeReview
 msgid "help"
+msgstr ""
+
+#. Default: "New workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "label_select"
 msgstr ""
 
 #. Default: "Review has been successfully postponed"
@@ -1360,6 +1397,11 @@ msgstr ""
 #: components/Blocks/RSS/GridTemplate
 #: components/Blocks/RSS/SummaryTemplate
 msgid "rss_read_more"
+msgstr ""
+
+#. Default: "Save"
+#: components/widgets/ContentTypeWorkflow
+msgid "save"
 msgstr ""
 
 #. Default: "Recommendation from the Intranet"

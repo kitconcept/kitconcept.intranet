@@ -9,18 +9,12 @@ test.beforeEach(async ({ page }) => {
 test('Personal tools link to the current user Person dashboard', async ({
   page,
 }) => {
-  await createContent(page, {
-    contentType: 'Folder',
-    contentId: 'personen',
-    contentTitle: 'Personen',
-  });
   // The Person id differs from the userid, so the link must come from the
   // `username` lookup, not from the userid.
   await createContent(page, {
     contentType: 'Person',
     contentId: 'site-admin',
     contentTitle: 'Site Admin',
-    path: 'personen',
     bodyModifier: (body) => ({
       ...body,
       first_name: 'Site',
@@ -35,10 +29,7 @@ test('Personal tools link to the current user Person dashboard', async ({
   const dashboard = page
     .locator('.personal-tools')
     .getByRole('link', { name: 'Dashboard' });
-  await expect(dashboard).toHaveAttribute(
-    'href',
-    '/personen/site-admin/dashboard',
-  );
+  await expect(dashboard).toHaveAttribute('href', '/site-admin/dashboard');
 });
 
 test('Personal tools hide the Dashboard link without a Person', async ({

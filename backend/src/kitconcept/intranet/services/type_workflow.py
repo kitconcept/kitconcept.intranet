@@ -5,14 +5,13 @@ from plone.restapi.services import Service
 from Products.CMFPlone.controlpanel.events import ConfigurationChangedEvent
 from zExceptions import BadRequest
 from zope.event import notify
-from zope.i18n import translate
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
 
 
 @implementer(IPublishTraverse)
 class TypeWorkflowGet(Service):
-    """@review endpoint."""
+    """@type-workflow endpoint."""
 
     def __init__(self, context, request):
         super().__init__(context, request)
@@ -55,7 +54,7 @@ class TypeWorkflowGet(Service):
 
 @implementer(IPublishTraverse)
 class TypeWorkflowPost(Service):
-    """@review endpoint."""
+    """@type-workflow endpoint."""
 
     def __init__(self, context, request):
         super().__init__(context, request)

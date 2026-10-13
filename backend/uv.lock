@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = "==3.14.*"
 
 [options]
@@ -1499,6 +1499,7 @@ wheels = [
 [[package]]
 name = "kitconcept-intranet"
 source = { editable = "." }
+default-groups = ["build", "test"]
 dependencies = [
     { name = "collective-solr" },
     { name = "kitconcept-contactblock" },

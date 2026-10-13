@@ -61,9 +61,10 @@
     }
   }
 
+  // Darker than the design's #878f93, which fails WCAG AA contrast (4.5:1).
   .modified-date,
   .documentByLine-separator {
-    color: var(--typeset-muted, #878f93);
+    color: #70777a;
     font-size: 13px;
     font-weight: 400;
   }

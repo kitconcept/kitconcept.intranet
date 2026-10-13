@@ -68,21 +68,42 @@ class Span:
     cols: int
 
 
-def table(node_id: str, header: list, rows: list[list], col_sizes=None) -> dict:
-    """A table with a header row.
+@dataclass(frozen=True)
+class Sum:
+    """A footer cell that shows the sum of its column (``calc: "sum"``).
 
-    ``header`` and every entry of ``rows`` are lists of cell contents: a
-    string, a tuple of runs (strings and ``text(...)`` dicts with marks), or
-    a ``Span`` for a merged cell (the row then lists fewer cells).
+    ``content`` is the sum as the editor writes it; the editor recomputes it
+    whenever the table changes.
+    """
+
+    content: str | dict | tuple
+
+
+def table(
+    node_id: str,
+    header: list,
+    rows: list[list],
+    col_sizes=None,
+    footer: list | None = None,
+) -> dict:
+    """A table with a header row and, with ``footer``, a footer row.
+
+    ``header``, every entry of ``rows`` and ``footer`` are lists of cell
+    contents: a string, a tuple of runs (strings and ``text(...)`` dicts with
+    marks), a ``Span`` for a merged cell (the row then lists fewer cells), or
+    in the footer a ``Sum`` for a cell that shows its column's sum.
     """
 
     def runs(content):
-        if isinstance(content, Span):
+        if isinstance(content, Span | Sum):
             content = content.content
         return content if isinstance(content, tuple) else (content,)
 
     def span(content):
-        return {"colSpan": content.cols} if isinstance(content, Span) else {}
+        props = {"colSpan": content.cols} if isinstance(content, Span) else {}
+        if isinstance(content, Sum):
+            props["calc"] = "sum"
+        return props
 
     children = [
         row(
@@ -101,6 +122,18 @@ def table(node_id: str, header: list, rows: list[list], col_sizes=None) -> dict:
                     cell(f"{node_id}-r{r}c{c}", *runs(content), **span(content))
                     for c, content in enumerate(values)
                 ),
+            )
+        )
+    if footer is not None:
+        children.append(
+            node(
+                "tr",
+                f"{node_id}-f",
+                [
+                    cell(f"{node_id}-f{c}", *runs(content), **span(content))
+                    for c, content in enumerate(footer)
+                ],
+                footer=True,
             )
         )
     props = {"colSizes": col_sizes} if col_sizes else {}

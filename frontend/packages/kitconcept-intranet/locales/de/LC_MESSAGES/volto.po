@@ -101,11 +101,6 @@ msgstr "Vita"
 msgid "Building"
 msgstr "Gebäude"
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr "Von"
-
 #. Default: "CSV file"
 #: components/Blocks/CsvTable/schema
 msgid "CSV file"
@@ -210,6 +205,11 @@ msgstr ""
 #: components/widgets/ContentTypeWorkflow
 msgid "Current state"
 msgstr "Aktueller Status"
+
+#. Default: "Dashboard"
+#: components/Dashboard/DashboardMenu
+msgid "Dashboard"
+msgstr "Dashboard"
 
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
@@ -327,6 +327,11 @@ msgstr "Tabelle filtern"
 #: components/Header/HeaderSearch
 msgid "Folder"
 msgstr "Ordner"
+
+#. Default: "Footer row"
+#: index
+msgid "Footer row"
+msgstr "Fußzeile"
 
 #. Default: "Generating answer…"
 #: components/Header/HeaderSearch
@@ -688,6 +693,11 @@ msgstr "Nur Titel durchsuchen"
 msgid "Search workspace"
 msgstr "Workspace durchsuchen"
 
+#. Default: "Search..."
+#: index
+msgid "Search..."
+msgstr "Suche"
+
 #. Default: "Search…"
 #: components/Header/HeaderSearch
 msgid "Search…"
@@ -723,6 +733,16 @@ msgstr "Alle Suchergebnisse anzeigen"
 #: components/Header/HeaderSearch
 msgid "Show archived content"
 msgstr "Archivierte Inhalte anzeigen"
+
+#. Default: "Show less"
+#: index
+msgid "Show less"
+msgstr "Weniger anzeigen"
+
+#. Default: "Show more"
+#: index
+msgid "Show more"
+msgstr "Alle anzeigen"
 
 #. Default: "Show more breadcrumb items"
 #: components/Header/HeaderBreadcrumbs
@@ -802,6 +822,11 @@ msgstr "Betreff Seite/URL"
 #: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr "Erfolg"
+
+#. Default: "Sum"
+#: index
+msgid "Sum"
+msgstr "Summe"
 
 #. Default: "Table"
 #: components/Blocks/Listing/Table/TableTemplate
@@ -972,15 +997,20 @@ msgstr "geht an"
 msgid "help"
 msgstr "Das Überprüfungsintervall ist auf %{intervall} eingestellt. Um es zu ändern, müssen Sie den Inhalt bearbeiten."
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr "Zum ersten offenen Kommentar im Text springen"
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr "Die Überprüfung wurde erfolgreich verschoben."
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr "zuletzt verändert"
+msgstr "Aktualisiert am"
 
 #. Default: "{count} open discussions in text"
 #: slots/DocumentByLine/DocumentByLine
@@ -1406,11 +1436,6 @@ msgstr "Wenn Sie möchten, können Sie hier einen Kommentar hinterlassen, beispi
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeReview"
 msgstr "Verschieben Sie den nächsten Prüftermin für diesen Inhalt. Wählen Sie ein neues Datum oder einen Zeitraum, nach dem Sie erneut erinnert werden möchten."
-
-#. Default: "published"
-#: slots/DocumentByLine/DocumentByLine
-msgid "published"
-msgstr "Veröffentlicht"
 
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate

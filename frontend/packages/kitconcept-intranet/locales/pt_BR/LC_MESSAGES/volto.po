@@ -106,11 +106,6 @@ msgstr "Biografia"
 msgid "Building"
 msgstr "Edifício"
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr "Por"
-
 #. Default: "CSV file"
 #: components/Blocks/CsvTable/schema
 msgid "CSV file"
@@ -215,6 +210,11 @@ msgstr ""
 #: components/widgets/ContentTypeWorkflow
 msgid "Current state"
 msgstr ""
+
+#. Default: "Dashboard"
+#: components/Dashboard/DashboardMenu
+msgid "Dashboard"
+msgstr "Painel"
 
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
@@ -331,6 +331,11 @@ msgstr ""
 #. Default: "Folder"
 #: components/Header/HeaderSearch
 msgid "Folder"
+msgstr ""
+
+#. Default: "Footer row"
+#: index
+msgid "Footer row"
 msgstr ""
 
 #. Default: "Generating answer…"
@@ -693,6 +698,11 @@ msgstr ""
 msgid "Search workspace"
 msgstr ""
 
+#. Default: "Search..."
+#: index
+msgid "Search..."
+msgstr ""
+
 #. Default: "Search…"
 #: components/Header/HeaderSearch
 msgid "Search…"
@@ -727,6 +737,16 @@ msgstr ""
 #. Default: "Show archived content"
 #: components/Header/HeaderSearch
 msgid "Show archived content"
+msgstr ""
+
+#. Default: "Show less"
+#: index
+msgid "Show less"
+msgstr ""
+
+#. Default: "Show more"
+#: index
+msgid "Show more"
 msgstr ""
 
 #. Default: "Show more breadcrumb items"
@@ -807,6 +827,11 @@ msgstr "Página/URL do assunto"
 #: slots/AboutThisContent/AboutThisContent
 msgid "Success"
 msgstr "Sucesso"
+
+#. Default: "Sum"
+#: index
+msgid "Sum"
+msgstr ""
 
 #. Default: "Table"
 #: components/Blocks/Listing/Table/TableTemplate
@@ -977,15 +1002,20 @@ msgstr ""
 msgid "help"
 msgstr ""
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr "Ir para o primeiro comentário aberto no texto"
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr ""
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr "última modificação"
+msgstr "Atualizado em"
 
 #. Default: "{count} open discussions in text"
 #: slots/DocumentByLine/DocumentByLine
@@ -1411,11 +1441,6 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeReview"
 msgstr ""
-
-#. Default: "published"
-#: slots/DocumentByLine/DocumentByLine
-msgid "published"
-msgstr "publicado"
 
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate

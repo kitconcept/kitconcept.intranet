@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import { useSelector } from 'react-redux';
@@ -6,17 +6,13 @@ import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
-  by: {
-    id: 'By',
-    defaultMessage: 'By',
-  },
-  published: {
-    id: 'published',
-    defaultMessage: 'published',
-  },
   modified: {
     id: 'modified',
-    defaultMessage: 'last modified',
+    defaultMessage: 'Updated on',
+  },
+  jumpToFirstOpenDiscussion: {
+    id: 'jumpToFirstOpenDiscussion',
+    defaultMessage: 'Jump to the first open comment in the text',
   },
   oneOpenDiscussion: {
     id: 'oneOpenDiscussion',
@@ -105,44 +101,25 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     return null;
   }
 
+  const hasCreators = creatorsWithData.length > 0;
+  const showModified = !isAddMode && !!content.modified;
+
   return (
     <>
       <div className="documentByLine">
-        {creatorsWithData.length > 0 && (
-          <span>
-            {intl.formatMessage(messages.by)}{' '}
-            {creatorsWithData.map(({ id, name, homepage }, index) => (
-              <React.Fragment key={id}>
+        {hasCreators && (
+          <span className="documentByLine-creators">
+            {creatorsWithData.map(({ id, name }, index) => (
+              <span className="documentByLine-creator" key={id}>
                 <PersonPill id={id} fullname={name} />
-                {index < creatorsWithData.length - 1 && ', '}
-              </React.Fragment>
-            ))}
-            {' — '}
-          </span>
-        )}
-        {content.effective && !isAddMode && (
-          <span className="effective-date">
-            {content.review_state === 'published' ? (
-              <span>
-                {intl.formatMessage(messages.published)}{' '}
-                <FormattedDate
-                  date={form.global?.effective ?? content?.effective}
-                  format={{
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  }}
-                  locale={intl.locale}
-                />
-                ,{' '}
+                {index < creatorsWithData.length - 1 && ','}
               </span>
-            ) : (
-              ''
-            )}
+            ))}
           </span>
         )}
-        {content.modified && !isAddMode && (
+        {showModified && (
           <span className="modified-date">
+            {hasCreators && '· '}
             {intl.formatMessage(messages.modified)}{' '}
             <FormattedDate
               date={content.modified}
@@ -155,10 +132,16 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
             />
           </span>
         )}
+        {discussionCount > 0 && (hasCreators || showModified) && (
+          <span className="documentByLine-separator" aria-hidden="true">
+            ·
+          </span>
+        )}
         {discussionCount > 0 && (
           <button
             type="button"
             className="open-discussions"
+            title={intl.formatMessage(messages.jumpToFirstOpenDiscussion)}
             onClick={jumpToFirstOpenDiscussion}
           >
             <span className="open-discussions-dot" aria-hidden="true" />

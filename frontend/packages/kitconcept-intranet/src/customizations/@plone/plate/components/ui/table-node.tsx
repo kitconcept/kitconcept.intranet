@@ -37,6 +37,10 @@
  * CHANGELOG:
  *  - Rebase on @plone/plate 1.0.0-alpha.24 (no upstream changes to this
  *    file since 1.0.0-alpha.20). @sneridagh
+ *  - "Footer row" toggle (marks the last row, `footer: true`) and "Sum"
+ *    toggle for its cells (`calc: 'sum'`, see components/WikiTable/
+ *    tableCalc.ts); the footer row has no drag handle and stays last
+ *    (work item 750). @reekitconcept
  */
 
 import * as React from 'react';
@@ -70,7 +74,9 @@ import {
   MoveRight,
   MoveUp,
   PaintBucketIcon,
+  PanelBottomIcon,
   PanelTopIcon,
+  SigmaIcon,
   SquareSplitHorizontalIcon,
   Trash2Icon,
 } from 'lucide-react';
@@ -109,6 +115,13 @@ import {
   moveColumn,
   moveRow,
 } from '@kitconcept/intranet/components/WikiTable/tableMoves';
+import {
+  CALC_KEY,
+  CALC_SUM,
+  FOOTER_KEY,
+  isFooterRow,
+  isSumCell,
+} from '@kitconcept/intranet/components/WikiTable/tableCalc';
 import {
   ColumnInsertLeftIcon,
   ColumnInsertRightIcon,
@@ -158,6 +171,14 @@ const messages = defineMessages({
   headerRow: {
     id: 'Header row',
     defaultMessage: 'Header row',
+  },
+  footerRow: {
+    id: 'Footer row',
+    defaultMessage: 'Footer row',
+  },
+  sum: {
+    id: 'Sum',
+    defaultMessage: 'Sum',
   },
   moveRowUp: {
     id: 'Move row up',
@@ -280,17 +301,26 @@ function TableFloatingToolbar({
         cols: (table.children[0] as TElement | undefined)?.children.length ?? 0,
         header: isHeaderRow(table.children[0] as TElement | undefined),
         merged: hasMergedCells(table),
+        // OVERRIDE (750): footer row and sum cell
+        footer: isFooterRow(table.children.at(-1) as TElement | undefined),
+        inFooter:
+          isFooterRow(table.children.at(-1) as TElement | undefined) &&
+          (entries.row[1] as number[]).at(-1) === table.children.length - 1,
+        sum: isSumCell(entries.cell[0] as TElement),
       };
     },
     [],
     { equalityFn: (a, b) => JSON.stringify(a) === JSON.stringify(b) },
   );
   const firstBodyRow = position?.header ? 1 : 0;
-  const canMoveRowUp = !!position && position.row > firstBodyRow;
+  // OVERRIDE (750): the footer row stays last.
+  const lastBodyRow = position
+    ? position.rows - 1 - (position.footer ? 1 : 0)
+    : 0;
+  const canMoveRowUp =
+    !!position && !position.inFooter && position.row > firstBodyRow;
   const canMoveRowDown =
-    !!position &&
-    position.row >= firstBodyRow &&
-    position.row < position.rows - 1;
+    !!position && position.row >= firstBodyRow && position.row < lastBodyRow;
   const canMoveColumnLeft = !!position && !position.merged && position.col > 0;
   const canMoveColumnRight =
     !!position && !position.merged && position.col < position.cols - 1;
@@ -314,6 +344,39 @@ function TableFloatingToolbar({
         editor.tf.setNodes({ type }, { at: [...tablePath, 0, index] });
       });
     });
+  };
+
+  // OVERRIDE (750): footer row toggle, like Excel's "Total Row": on adds an
+  // empty footer row (`footer: true`) at the bottom, off removes it. The
+  // sum toggle marks the footer cell the caret is in (`calc: 'sum'`),
+  // WikiTableCalcPlugin writes the column sum into it.
+  const rowCount = element.children.length;
+  const lastRow = element.children[rowCount - 1] as
+    | TTableRowElement
+    | undefined;
+  const hasFooterRow = isFooterRow(lastRow as TElement | undefined);
+  const toggleFooterRow = () => {
+    const tablePath = editor.api.findPath(element);
+    if (!tablePath || !lastRow) return;
+    if (hasFooterRow) {
+      editor.tf.removeNodes({ at: [...tablePath, rowCount - 1] });
+      return;
+    }
+    const cells = lastRow.children.map(() => ({
+      type: editor.getType(KEYS.td),
+      children: [{ type: editor.getType(KEYS.p), children: [{ text: '' }] }],
+    }));
+    editor.tf.insertNodes(
+      { type: editor.getType(KEYS.tr), [FOOTER_KEY]: true, children: cells },
+      { at: [...tablePath, rowCount], select: true },
+    );
+  };
+  const toggleSum = () => {
+    const entries = getTableEntries(editor);
+    if (!entries) return;
+    const at = entries.cell[1];
+    if (position?.sum) editor.tf.unsetNodes(CALC_KEY, { at });
+    else editor.tf.setNodes({ [CALC_KEY]: CALC_SUM }, { at });
   };
 
   return (
@@ -385,6 +448,25 @@ function TableFloatingToolbar({
             >
               <PanelTopIcon />
             </ToolbarButton>
+            {/* OVERRIDE (750): footer row toggle, sum toggle in the footer */}
+            <ToolbarButton
+              pressed={hasFooterRow}
+              onClick={toggleFooterRow}
+              onMouseDown={(e) => e.preventDefault()}
+              tooltip={intl.formatMessage(messages.footerRow)}
+            >
+              <PanelBottomIcon />
+            </ToolbarButton>
+            {position?.inFooter && (
+              <ToolbarButton
+                pressed={position.sum}
+                onClick={toggleSum}
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip={intl.formatMessage(messages.sum)}
+              >
+                <SigmaIcon />
+              </ToolbarButton>
+            )}
 
             {collapsedInside && (
               <ToolbarGroup>
@@ -688,7 +770,12 @@ export function TableRowElement(props: PlateElementProps<TTableRowElement>) {
       {...props}
       ref={useComposedRef(props.ref, rowRef)}
       as="tr"
-      className={cn('group/row', isDragging && 'opacity-50')}
+      className={cn(
+        'group/row',
+        isDragging && 'opacity-50',
+        // OVERRIDE (750)
+        isFooterRow(element) && 'wiki-table-footer',
+      )}
       attributes={{
         ...props.attributes,
         // OVERRIDE: drop target (react-aria)
@@ -701,7 +788,10 @@ export function TableRowElement(props: PlateElementProps<TTableRowElement>) {
       {hasControls && (
         <td className="wiki-table-gutter select-none" contentEditable={false}>
           {/* OVERRIDE: no handle on the header row, it stays on top */}
-          {!isHeaderRow(element) && <RowDragHandle dragProps={dragProps} />}
+          {/* OVERRIDE (750): nor on the footer row, it stays last */}
+          {!isHeaderRow(element) && !isFooterRow(element) && (
+            <RowDragHandle dragProps={dragProps} />
+          )}
           <RowDropLine position={dropLine} />
         </td>
       )}

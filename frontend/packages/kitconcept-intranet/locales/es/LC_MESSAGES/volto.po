@@ -108,11 +108,6 @@ msgstr ""
 msgid "Building"
 msgstr ""
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr ""
-
 #. Default: "CSV file"
 #: components/Blocks/CsvTable/schema
 msgid "CSV file"
@@ -217,6 +212,11 @@ msgstr ""
 #: components/widgets/ContentTypeWorkflow
 msgid "Current state"
 msgstr ""
+
+#. Default: "Dashboard"
+#: components/Dashboard/DashboardMenu
+msgid "Dashboard"
+msgstr "Panel"
 
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
@@ -333,6 +333,11 @@ msgstr ""
 #. Default: "Folder"
 #: components/Header/HeaderSearch
 msgid "Folder"
+msgstr ""
+
+#. Default: "Footer row"
+#: index
+msgid "Footer row"
 msgstr ""
 
 #. Default: "Generating answer…"
@@ -695,6 +700,11 @@ msgstr ""
 msgid "Search workspace"
 msgstr ""
 
+#. Default: "Search..."
+#: index
+msgid "Search..."
+msgstr ""
+
 #. Default: "Search…"
 #: components/Header/HeaderSearch
 msgid "Search…"
@@ -729,6 +739,16 @@ msgstr ""
 #. Default: "Show archived content"
 #: components/Header/HeaderSearch
 msgid "Show archived content"
+msgstr ""
+
+#. Default: "Show less"
+#: index
+msgid "Show less"
+msgstr ""
+
+#. Default: "Show more"
+#: index
+msgid "Show more"
 msgstr ""
 
 #. Default: "Show more breadcrumb items"
@@ -808,6 +828,11 @@ msgstr ""
 #: components/Toolbar/DocumentReview
 #: slots/AboutThisContent/AboutThisContent
 msgid "Success"
+msgstr ""
+
+#. Default: "Sum"
+#: index
+msgid "Sum"
 msgstr ""
 
 #. Default: "Table"
@@ -979,15 +1004,20 @@ msgstr ""
 msgid "help"
 msgstr ""
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr "Ir al primer comentario abierto del texto"
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr ""
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr ""
+msgstr "Actualizado el"
 
 #. Default: "{count} open discussions in text"
 #: slots/DocumentByLine/DocumentByLine
@@ -1412,11 +1442,6 @@ msgstr ""
 #. Default: "Postpone the next review date for this content. Select a new date or a time period after which you would like to be reminded again."
 #: components/ContentReviewSidebar/PostponeReview
 msgid "postponeReview"
-msgstr ""
-
-#. Default: "published"
-#: slots/DocumentByLine/DocumentByLine
-msgid "published"
 msgstr ""
 
 #. Default: "No results from RSS feed."

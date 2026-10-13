@@ -32,8 +32,7 @@ declare module '@plone/types' {
 }
 
 export default function install(config: ConfigType) {
-  const listingBlockVariations = [
-    ...(config.blocks.blocksConfig.listing.variations || []),
+  const intranetListingVariations = [
     {
       id: 'listDate',
       title: 'List with date',
@@ -44,13 +43,31 @@ export default function install(config: ConfigType) {
       title: 'Table',
       template: TableTemplate,
     },
-  ].filter((variation) => !!variation);
+  ];
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
-    variations: listingBlockVariations,
+    variations: [
+      ...(config.blocks.blocksConfig.listing.variations || []),
+      ...intranetListingVariations,
+    ].filter((variation) => !!variation),
     schemaEnhancer: composeSchema(
       config.blocks.blocksConfig.listing.schemaEnhancer,
+      tableColumnsSchemaEnhancer('variation'),
+    ),
+  };
+
+  // The Grid block keeps its own copy of the listing config (see
+  // volto-light-theme's `config/blocks.tsx`), so it needs the same additions
+  const gridListing = config.blocks.blocksConfig.gridBlock.blocksConfig.listing;
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listing = {
+    ...gridListing,
+    variations: [
+      ...(gridListing.variations || []),
+      ...intranetListingVariations,
+    ].filter((variation) => !!variation),
+    schemaEnhancer: composeSchema(
+      gridListing.schemaEnhancer,
       tableColumnsSchemaEnhancer('variation'),
     ),
   };

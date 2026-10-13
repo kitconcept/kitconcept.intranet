@@ -2,29 +2,72 @@
 #page-document .blocks-group-wrapper > .documentByLine {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
-  margin-bottom: $spacing-medium;
+  margin-top: 2px;
+  margin-bottom: 24px;
   .author-name {
     text-decoration: none;
   }
-}
-.contenttype-wikipage .documentByLine {
-  margin-top: 0;
 }
 
 #page-edit .q.container .documentByLine,
 #page-add .q.container .documentByLine {
   @include default-container-width();
   @include adjustMarginsToEditContainer($default-container-width);
-  margin-bottom: $spacing-medium;
+  margin-top: 2px;
+  margin-bottom: 24px;
   .author-name {
     text-decoration: none;
   }
 }
-// Space the discussions button from the date before it on the date's margin,
-// so the button stays aligned with the text when it wraps.
-.documentByLine .effective-date:has(+ .open-discussions),
-.documentByLine .modified-date:has(+ .open-discussions) {
-  margin-right: 12px;
+.documentByLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  line-height: normal;
+
+  .documentByLine-creators {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .documentByLine-creator {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .person-pill {
+    gap: 12px;
+
+    .person-pill-link {
+      gap: 12px;
+    }
+
+    // The fallback avatar sets its size inline.
+    .person-pill-portrait,
+    .person-pill-avatar {
+      width: 32px !important;
+      height: 32px !important;
+      margin: 0;
+    }
+
+    .person-pill-name,
+    .person-pill-link .person-pill-name {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+
+  // Darker than the design's #878f93, which fails WCAG AA contrast (4.5:1).
+  .modified-date,
+  .documentByLine-separator {
+    color: #70777a;
+    font-size: 13px;
+    font-weight: 400;
+  }
 }
 .documentByLine .open-discussions {
   display: inline-flex;
@@ -33,14 +76,13 @@
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--text-primary, $black);
+  color: inherit;
   cursor: pointer;
   font-family: inherit;
   font-size: 13px;
   font-weight: 600;
   gap: 7px;
   line-height: inherit;
-  vertical-align: middle;
   white-space: nowrap;
 
   .open-discussions-dot {

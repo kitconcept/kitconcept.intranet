@@ -719,19 +719,18 @@
               },
               {
                 "type": "tr",
-                "id": "b-budget-r5",
+                "id": "b-budget-f",
                 "children": [
                   {
                     "type": "td",
-                    "id": "b-budget-r5c0",
+                    "id": "b-budget-f0",
                     "children": [
                       {
                         "type": "p",
-                        "id": "b-budget-r5c0-p",
+                        "id": "b-budget-f0-p",
                         "children": [
                           {
-                            "text": "Gesamt",
-                            "bold": true
+                            "text": "Gesamt"
                           }
                         ],
                         "align": "start",
@@ -741,11 +740,11 @@
                   },
                   {
                     "type": "td",
-                    "id": "b-budget-r5c1",
+                    "id": "b-budget-f1",
                     "children": [
                       {
                         "type": "p",
-                        "id": "b-budget-r5c1-p",
+                        "id": "b-budget-f1-p",
                         "children": [
                           {
                             "text": ""
@@ -758,65 +757,65 @@
                   },
                   {
                     "type": "td",
-                    "id": "b-budget-r5c2",
+                    "id": "b-budget-f2",
                     "children": [
                       {
                         "type": "p",
-                        "id": "b-budget-r5c2-p",
+                        "id": "b-budget-f2-p",
                         "children": [
                           {
-                            "text": "1.455.000 €",
-                            "bold": true
+                            "text": "1.455.000 €"
                           }
                         ],
                         "align": "start",
                         "blockWidth": "default"
                       }
-                    ]
+                    ],
+                    "calc": "sum"
                   },
                   {
                     "type": "td",
-                    "id": "b-budget-r5c3",
+                    "id": "b-budget-f3",
                     "children": [
                       {
                         "type": "p",
-                        "id": "b-budget-r5c3-p",
+                        "id": "b-budget-f3-p",
                         "children": [
                           {
-                            "text": "922.500 €",
-                            "bold": true
+                            "text": "922.500 €"
                           }
                         ],
                         "align": "start",
                         "blockWidth": "default"
                       }
-                    ]
+                    ],
+                    "calc": "sum"
                   },
                   {
                     "type": "td",
-                    "id": "b-budget-r5c4",
+                    "id": "b-budget-f4",
                     "children": [
                       {
                         "type": "p",
-                        "id": "b-budget-r5c4-p",
+                        "id": "b-budget-f4-p",
                         "children": [
                           {
-                            "text": "532.500 €",
-                            "bold": true
+                            "text": "532.500 €"
                           }
                         ],
                         "align": "start",
                         "blockWidth": "default"
                       }
-                    ]
+                    ],
+                    "calc": "sum"
                   },
                   {
                     "type": "td",
-                    "id": "b-budget-r5c5",
+                    "id": "b-budget-f5",
                     "children": [
                       {
                         "type": "p",
-                        "id": "b-budget-r5c5-p",
+                        "id": "b-budget-f5-p",
                         "children": [
                           {
                             "text": ""
@@ -827,7 +826,8 @@
                       }
                     ]
                   }
-                ]
+                ],
+                "footer": true
               }
             ],
             "colSizes": [

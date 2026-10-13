@@ -46,6 +46,11 @@ msgstr "Alle"
 msgid "All statuses"
 msgstr "Alle Status"
 
+#. Default: "All tasks"
+#: components/Tasks/Tasks
+msgid "All tasks"
+msgstr "Alle Aufgaben"
+
 #. Default: "All types"
 #: components/Header/HeaderSearch
 msgid "All types"
@@ -206,6 +211,11 @@ msgstr "Ziehen, um die Spalte zu verschieben"
 #: components/WikiTable/useTableDragAndDrop
 msgid "Drag to move the row"
 msgstr "Ziehen, um die Zeile zu verschieben"
+
+#. Default: "Due"
+#: components/Tasks/Tasks
+msgid "Due"
+msgstr "Fällig"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
@@ -382,6 +392,11 @@ msgstr "Letztes Jahr"
 msgid "List with date"
 msgstr "Liste mit Datum"
 
+#. Default: "Loading tasks..."
+#: components/Tasks/Tasks
+msgid "Loading tasks"
+msgstr "Aufgaben werden geladen..."
+
 #. Default: "Loading the CSV file…"
 #: components/Blocks/CsvTable/CsvTable
 msgid "Loading the CSV file…"
@@ -422,6 +437,11 @@ msgstr "Zeile nach unten verschieben"
 msgid "Move row up"
 msgstr "Zeile nach oben verschieben"
 
+#. Default: "My tasks"
+#: components/Tasks/Tasks
+msgid "My tasks"
+msgstr "Meine Aufgaben"
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
@@ -431,6 +451,11 @@ msgstr "Name"
 #: components/Header/HeaderSearch
 msgid "News Item"
 msgstr "Nachricht"
+
+#. Default: "Next page"
+#: components/Tasks/Tasks
+msgid "Next page"
+msgstr "Nächste Seite"
 
 #. Default: "Next review"
 #: components/Toolbar/DocumentReview
@@ -446,6 +471,16 @@ msgstr "Nein"
 #: components/Header/HeaderSearch
 msgid "No document found with the selected criteria."
 msgstr "Kein Dokument mit den gewählten Kriterien gefunden."
+
+#. Default: "No due date"
+#: components/Tasks/Tasks
+msgid "No due date"
+msgstr "Kein Fälligkeitsdatum"
+
+#. Default: "No open tasks match these filters."
+#: components/Tasks/Tasks
+msgid "No open tasks match these filters."
+msgstr "Keine offenen Aufgaben entsprechen diesen Filtern."
 
 #. Default: "No results for “{term}”."
 #: components/Header/HeaderSearch
@@ -481,6 +516,11 @@ msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 #: index
 msgid "Organisational Unit"
 msgstr "Organisationseinheit"
+
+#. Default: "Overdue"
+#: components/Tasks/Tasks
+msgid "Overdue"
+msgstr "Überfällig"
 
 #. Default: "Page"
 #: components/Header/HeaderSearch
@@ -524,6 +564,11 @@ msgstr "Überprüfung verschieben"
 msgid "PostponeTitle"
 msgstr "Überprüfung verschieben"
 
+#. Default: "Previous page"
+#: components/Tasks/Tasks
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
 #. Default: "Private"
 #: components/Header/HeaderSearch
 #: slots/AboutThisContent/AboutThisContent
@@ -549,6 +594,11 @@ msgstr "Inhaltsverantwortliche Person"
 #: components/widgets/QuerystringWidget
 msgid "Results limit"
 msgstr "Anzahl der Ergebnisse einschränken"
+
+#. Default: "Retry"
+#: components/Tasks/Tasks
+msgid "Retry"
+msgstr "Erneut versuchen"
 
 #. Default: "Reversed order"
 #: components/widgets/QuerystringWidget
@@ -668,6 +718,11 @@ msgstr "Nach {column} sortieren"
 msgid "Sort on"
 msgstr "Sortieren nach"
 
+#. Default: "Source"
+#: components/Tasks/Tasks
+msgid "Source"
+msgstr "Quelle"
+
 #. Default: "Sources"
 #: components/Header/HeaderSearch
 msgid "Sources"
@@ -708,6 +763,32 @@ msgstr "Erfolg"
 msgid "Table"
 msgstr "Tabelle"
 
+#. Default: "Task"
+#: components/Tasks/Tasks
+msgid "Task"
+msgstr "Aufgabe"
+
+#. Default: "Assignee"
+#: components/Tasks/Tasks
+msgid "Task assignee"
+msgstr "Beauftragte Personen"
+
+#. Default: "Task pages"
+#: components/Tasks/Tasks
+msgid "Task pages"
+msgstr "Aufgabenseiten"
+
+#. Default: "Task scope"
+#: components/Tasks/Tasks
+msgid "Task scope"
+msgstr "Aufgabenauswahl"
+
+#. Default: "Tasks"
+#: components/Tasks/Tasks
+#: components/Tasks/TasksMenu
+msgid "Tasks"
+msgstr "Aufgaben"
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
@@ -743,10 +824,20 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 msgid "Today"
 msgstr "Heute"
 
+#. Default: "Tomorrow"
+#: components/Tasks/Tasks
+msgid "Tomorrow"
+msgstr "Morgen"
+
 #. Default: "Type"
 #: components/Header/HeaderSearch
 msgid "Type"
 msgstr "Typ"
+
+#. Default: "Unable to load tasks."
+#: components/Tasks/Tasks
+msgid "Unable to load tasks"
+msgstr "Aufgaben konnten nicht geladen werden."
 
 #. Default: "Updated"
 #: components/Header/HeaderSearch
@@ -770,6 +861,7 @@ msgstr "Was ist unklar, veraltet oder fehlt?"
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch
+#: components/Tasks/Tasks
 msgid "Workspace"
 msgstr "Workspace"
 
@@ -1272,6 +1364,11 @@ msgstr "Weiterlesen"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
 msgstr "Empfehlung aus dem Intranet"
+
+#. Default: "{count, plural, one {# task} other {# tasks}}"
+#: components/Tasks/Tasks
+msgid "taskCount"
+msgstr "{count, plural, one {# Aufgabe} other {# Aufgaben}}"
 
 #. Default: "{shown} of {total} rows"
 #: components/WikiTable/TableViewControls

@@ -118,10 +118,16 @@ export async function clickCell(
 ) {
   const cell = cellOf(table, row, col);
   await cell.scrollIntoViewIfNeeded();
-  await cell
+  const text = cell
     .locator('[data-slate-string], [data-slate-zero-width]')
-    .first()
-    .click();
+    .first();
+  // An empty cell holds only Slate's zero-width placeholder, which Playwright
+  // cannot click (no width): click the cell's paragraph instead.
+  if ((await text.boundingBox())?.width) {
+    await text.click();
+  } else {
+    await cell.locator('[data-slate-node="element"]').first().click();
+  }
   // Typed loosely: Playwright's handle unboxing is too deep for the editor
   // type.
   const args: any[] = [
@@ -144,6 +150,29 @@ export async function clickCell(
   return cell;
 }
 
+/**
+ * Selects the whole text of a cell in the editor (through the editor, so the
+ * selection cannot leave the cell as Cmd+A or Shift+Home can), ready to be
+ * replaced by typing.
+ */
+export async function selectCellText(
+  page: Page,
+  table: Locator,
+  row: number,
+  col: number,
+) {
+  const cell = await clickCell(page, table, row, col);
+  const args: any[] = [
+    await getEditorHandle(page, editable(page)),
+    await cell.elementHandle(),
+  ];
+  await page.evaluate(([editor, el]: any[]) => {
+    const path = editor.api.findPath(editor.api.toSlateNode(el));
+    editor.tf.select(editor.api.range(path));
+  }, args);
+  return cell;
+}
+
 /** The cell toolbar of the table holding the selection. */
 export function cellToolbar(page: Page) {
   return page
@@ -162,6 +191,8 @@ const TOOLBAR_LABELS = {
   split: 'Split cell',
   borders: 'Cell borders',
   headerRow: 'Header row',
+  footerRow: 'Footer row',
+  sum: 'Sum',
   deleteTable: 'Delete table',
   insertRowBefore: 'Insert row before',
   insertRowAfter: 'Insert row after',

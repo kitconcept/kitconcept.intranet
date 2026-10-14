@@ -572,4 +572,42 @@ test.describe('NavigationTree', () => {
       ).toBeVisible();
     });
   });
+
+  test.describe('workflow state', () => {
+    test('state dot updates after a workflow transition in the toolbar', async ({
+      page,
+    }) => {
+      await login(page);
+      const { workspaceId, workspacePath } =
+        await createNavTreeWikiContent(page);
+      const idSuffix = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      const pageId = `nav-tree-private-${idSuffix}`;
+      await createContent(page, {
+        contentType: 'WikiPage',
+        contentId: pageId,
+        contentTitle: 'Nav Tree Private Page',
+        path: workspaceId,
+      });
+
+      await page.goto(`${workspacePath}/${pageId}`, {
+        waitUntil: 'networkidle',
+      });
+
+      const stateDot = page
+        .locator('nav.navigation-tree')
+        .getByRole('row', { name: 'Nav Tree Private Page' })
+        .locator('.nav-tree-state-dot');
+      await expect(stateDot).toHaveAttribute('data-review-state', 'private');
+
+      await page.locator('#toolbar button[aria-label="More"]').click();
+      await page.locator('#toolbar .react-select__control').click();
+      await page
+        .locator('.react-select__option', {
+          hasText: /^(Publish|Veröffentlichen)$/,
+        })
+        .click();
+
+      await expect(stateDot).toHaveAttribute('data-review-state', 'published');
+    });
+  });
 });

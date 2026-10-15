@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import lockSVG from '@plone/volto/icons/lock.svg';
 import sendSVG from '@plone/volto/icons/send.svg';
-import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
+import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill';
 import { submitFeedbackContactForm } from '../../actions';
 import { getDisplayedAuthors } from './authors';
 import { getFeedbackRecipient, type CLMPersonData } from './feedbackRecipient';
@@ -239,6 +239,7 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
               <div className="about-content-person" key={id}>
                 <PersonPill
                   id={id}
+                  portrait={id ? `/@portrait/${id}` : undefined}
                   fullname={name}
                   url={url ? flattenToAppURL(url) : undefined}
                 />
@@ -251,7 +252,12 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
             <h3>{intl.formatMessage(messages.responsible)}</h3>
             <div className="about-content-person">
               <PersonPill
-                id={responsiblePersonUsername}
+                id={responsiblePersonUsername ?? ''}
+                portrait={
+                  responsiblePersonUsername
+                    ? `/@portrait/${responsiblePersonUsername}`
+                    : undefined
+                }
                 fullname={responsiblePersonTitle}
               />
             </div>
@@ -290,7 +296,12 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
               <div className="about-content-feedback-recipient">
                 <span>{intl.formatMessage(messages.goesTo)}</span>
                 <PersonPill
-                  id={feedbackRecipientUsername}
+                  id={feedbackRecipientUsername ?? ''}
+                  portrait={
+                    feedbackRecipientUsername
+                      ? `/@portrait/${feedbackRecipientUsername}`
+                      : undefined
+                  }
                   fullname={feedbackRecipientTitle}
                   compact
                 />

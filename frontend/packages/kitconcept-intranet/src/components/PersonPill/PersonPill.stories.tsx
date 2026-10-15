@@ -3,7 +3,7 @@ import configureStore from 'redux-mock-store';
 import { Provider } from 'react-intl-redux';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
+import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill';
 
 const mockStore = configureStore();
 

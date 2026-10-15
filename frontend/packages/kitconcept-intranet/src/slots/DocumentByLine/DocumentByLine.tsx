@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import { useSelector } from 'react-redux';
-import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
+import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -111,7 +111,11 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
           <span className="documentByLine-creators">
             {creatorsWithData.map(({ id, name }, index) => (
               <span className="documentByLine-creator" key={id}>
-                <PersonPill id={id} fullname={name} />
+                <PersonPill
+                  id={id}
+                  fullname={name}
+                  portrait={id ? `/@portrait/${id}` : undefined}
+                />
                 {index < creatorsWithData.length - 1 && ','}
               </span>
             ))}

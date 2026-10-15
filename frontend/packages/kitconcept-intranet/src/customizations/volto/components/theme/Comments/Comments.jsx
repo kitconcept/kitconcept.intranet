@@ -30,7 +30,7 @@ import { usePrevious } from '@plone/volto/helpers/Utils/usePrevious';
 import useUser from '@plone/volto/hooks/user/useUser';
 import commentSVG from '@plone/volto/icons/comment.svg';
 import sendSVG from '@plone/volto/icons/send.svg';
-import PersonPill from '@kitconcept/intranet/components/PersonPill/PersonPill';
+import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill';
 
 const messages = defineMessages({
   addComment: {

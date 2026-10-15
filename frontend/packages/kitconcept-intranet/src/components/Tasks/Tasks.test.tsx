@@ -30,6 +30,7 @@ vi.mock('../NavigationTree/useWorkspaceSwitcher', () => ({
 }));
 vi.mock('@plone/volto/helpers/Url/Url', () => ({
   flattenToAppURL: (url: string) => url,
+  expandToBackendURL: (url: string) => url,
 }));
 
 describe('Task tabs', () => {

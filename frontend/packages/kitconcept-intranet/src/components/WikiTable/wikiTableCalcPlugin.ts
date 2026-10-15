@@ -8,7 +8,13 @@
  *
  * Ticket: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/750
  */
-import { createSlatePlugin, ElementApi, KEYS } from 'platejs';
+import {
+  createSlatePlugin,
+  ElementApi,
+  KEYS,
+  PathApi,
+  RangeApi,
+} from 'platejs';
 
 import { sumUpdates } from './tableCalc';
 
@@ -21,15 +27,27 @@ export const WikiTableCalcPlugin = createSlatePlugin({
       if (ElementApi.isElement(node) && node.type === KEYS.table) {
         const [update] = sumUpdates(node);
         if (update) {
-          editor.tf.replaceNodes(
-            [
-              {
-                type: editor.getType(KEYS.p),
-                children: [{ text: update.text }],
-              },
-            ],
-            { at: [...path, update.row, update.col], children: true },
-          );
+          const cellPath = [...path, update.row, update.col];
+          const caretInCell =
+            !!editor.selection &&
+            PathApi.isDescendant(editor.selection.anchor.path, cellPath);
+          // Only the text is replaced, the cell's paragraph stays: the
+          // history diff then shows a text change, and node ids are stable.
+          // Delete and insert separately: `insertText` with a range as `at`
+          // also moves the editor's selection there (Slate), which would
+          // pull a caret typing elsewhere into this cell.
+          const range = editor.api.range(cellPath);
+          if (range && !RangeApi.isCollapsed(range)) {
+            editor.tf.delete({ at: range });
+          }
+          if (update.text) {
+            editor.tf.insertText(update.text, {
+              at: editor.api.start(cellPath),
+            });
+          }
+          // Deleting the old text leaves a caret inside it at the start;
+          // keep it at the end of the result.
+          if (caretInCell) editor.tf.select(editor.api.end(cellPath));
           return;
         }
       }

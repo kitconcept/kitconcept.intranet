@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-10-13T09:58:54.270Z\n"
+"POT-Creation-Date: 2026-10-13T15:15:20.720Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
+
+#. Default: "(Default)"
+#: components/widgets/ContentTypeWorkflow
+msgid "(Default)"
+msgstr ""
 
 #. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
 #: components/Blocks/CsvTable/schema
@@ -83,6 +88,11 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
+#. Default: "Average"
+#: index
+msgid "Average"
+msgstr ""
+
 #. Default: "Beta"
 #: components/Header/HeaderSearch
 msgid "Beta"
@@ -109,6 +119,11 @@ msgstr ""
 msgid "CSV table"
 msgstr ""
 
+#. Default: "Calculation"
+#: index
+msgid "Calculation"
+msgstr ""
+
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -116,9 +131,29 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Change workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow"
+msgstr ""
+
+#. Default: "Change workflow?"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow?"
+msgstr ""
+
+#. Default: "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+#: components/widgets/ContentTypeWorkflow
+msgid "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+msgstr ""
+
 #. Default: "Choose a CSV file in the sidebar."
 #: components/Blocks/CsvTable/CsvTable
 msgid "Choose a CSV file in the sidebar."
+msgstr ""
+
+#. Default: "Choose the new state for existing items in each current state. The change is applied when you save."
+#: components/widgets/ContentTypeWorkflow
+msgid "Choose the new state for existing items in each current state. The change is applied when you save."
 msgstr ""
 
 #. Default: "Clear filter"
@@ -158,6 +193,11 @@ msgstr ""
 msgid "Content type and title are always shown."
 msgstr ""
 
+#. Default: "Count"
+#: index
+msgid "Count"
+msgstr ""
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
@@ -176,6 +216,11 @@ msgstr ""
 #. Default: "Criteria"
 #: components/widgets/QuerystringWidget
 msgid "Criteria"
+msgstr ""
+
+#. Default: "Current state"
+#: components/widgets/ContentTypeWorkflow
+msgid "Current state"
 msgstr ""
 
 #. Default: "Dashboard"
@@ -239,6 +284,7 @@ msgstr ""
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr ""
@@ -424,6 +470,16 @@ msgstr ""
 msgid "Mark as Reviewed"
 msgstr ""
 
+#. Default: "Maximum"
+#: index
+msgid "Maximum"
+msgstr ""
+
+#. Default: "Minimum"
+#: index
+msgid "Minimum"
+msgstr ""
+
 #. Default: "Move column left"
 #: index
 msgid "Move column left"
@@ -452,6 +508,16 @@ msgstr ""
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
+msgstr ""
+
+#. Default: "New state"
+#: components/widgets/ContentTypeWorkflow
+msgid "New state"
+msgstr ""
+
+#. Default: "New workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "New workflow"
 msgstr ""
 
 #. Default: "News Item"
@@ -502,6 +568,16 @@ msgstr ""
 #. Default: "No selection"
 #: components/widgets/QuerystringWidget
 msgid "No selection"
+msgstr ""
+
+#. Default: "No workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "No workflow"
+msgstr ""
+
+#. Default: "None"
+#: index
+msgid "None"
 msgstr ""
 
 #. Default: "Offset"
@@ -836,6 +912,21 @@ msgstr ""
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr ""
 
+#. Default: "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+msgstr ""
+
+#. Default: "The workflow for this content type could not be updated."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow for this content type could not be updated."
+msgstr ""
+
+#. Default: "The workflow settings could not be loaded."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow settings could not be loaded."
+msgstr ""
+
 #. Default: "Title"
 #: components/Blocks/Listing/Table/columns
 msgid "Title"
@@ -884,6 +975,11 @@ msgstr ""
 #. Default: "What is unclear, outdated or missing?"
 #: slots/AboutThisContent/AboutThisContent
 msgid "What is unclear, outdated or missing?"
+msgstr ""
+
+#. Default: "Workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Workflow"
 msgstr ""
 
 #. Default: "Workspace"

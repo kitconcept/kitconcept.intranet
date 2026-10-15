@@ -2,6 +2,26 @@
 
 <!-- towncrier release notes start -->
 
+## 3.3.0 (2026-10-13)
+
+
+### Feature
+
+- Example content: the budget demo page "Projektbudget 2026" ships its "Gesamt" row as footer row with sum cells; the wiki content helper takes a footer row with Sum cells. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+- Add `@type-workflow` endpoint to change workflows per content type. @jnptk 
+- Set the password of all example content demo users to `password`, documented them in the README, made Anna Becker, Clara Nguyen and Max Berger Site Administrators, and completed the missing profile data of the demo persons. @sneridagh 
+
+
+### Bugfix
+
+- Use the default list layout for the Persons tab in the Solr search results. @danalvrz 
+
+
+### Internal
+
+- Update kitconcept.plate to 1.0.0a37 and kitconcept.voltolighttheme to 8.1.0. @iFlameing 
+- Update kitconcept.voltolighttheme to 8.1.1. @sneridagh 
+
 ## 3.2.0 (2026-10-13)
 
 

@@ -84,9 +84,33 @@ defineMessages({
     id: 'Footer row',
     defaultMessage: 'Footer row',
   },
+  calculation: {
+    id: 'Calculation',
+    defaultMessage: 'Calculation',
+  },
+  none: {
+    id: 'None',
+    defaultMessage: 'None',
+  },
   sum: {
     id: 'Sum',
     defaultMessage: 'Sum',
+  },
+  average: {
+    id: 'Average',
+    defaultMessage: 'Average',
+  },
+  minimum: {
+    id: 'Minimum',
+    defaultMessage: 'Minimum',
+  },
+  maximum: {
+    id: 'Maximum',
+    defaultMessage: 'Maximum',
+  },
+  count: {
+    id: 'Count',
+    defaultMessage: 'Count',
   },
 });
 

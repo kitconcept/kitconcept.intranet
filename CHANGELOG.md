@@ -1,6 +1,68 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.3.0 (2026-10-13)
+
+### Backend
+
+
+#### Feature
+
+- Example content: the budget demo page "Projektbudget 2026" ships its "Gesamt" row as footer row with sum cells; the wiki content helper takes a footer row with Sum cells. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+- Add `@type-workflow` endpoint to change workflows per content type. @jnptk 
+- Set the password of all example content demo users to `password`, documented them in the README, made Anna Becker, Clara Nguyen and Max Berger Site Administrators, and completed the missing profile data of the demo persons. @sneridagh 
+
+
+#### Bugfix
+
+- Use the default list layout for the Persons tab in the Solr search results. @danalvrz 
+
+
+#### Internal
+
+- Update kitconcept.plate to 1.0.0a37 and kitconcept.voltolighttheme to 8.1.0. @iFlameing 
+- Update kitconcept.voltolighttheme to 8.1.1. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Wiki Page tables: "Footer row" in the cell toolbar adds a footer row at the bottom of the table (and removes it again); a footer cell can show the sum of its column ("Sum" in the cell toolbar), updated while editing and stored with the page. The footer row is neither sorted nor filtered in the view. The demo page "Projektbudget 2026" ships its "Gesamt" row as footer with sums. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+- Add a "Dashboard" link to the personal tools menu pointing to the current user's Person dashboard. @sneridagh [#758](https://github.com/kitconcept/kitconcept.intranet/issue/758)
+- Add tab in ContentType.jsx customization to change workflows per content type. @jnptk 
+- Update @kitconcept/volto-light-theme to 8.1.0. @iFlameing 
+
+
+#### Bugfix
+
+- Make the "List with date" and "Table" listing variations available in listing blocks inside a Grid block. @danalvrz 
+- Redesign the document byline to match the intranet 3.0 design. @iFlameing 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.37 @iFlameing 
+
+
+#### Internal
+
+- Update @kitconcept/volto-light-theme to 8.1.1 and @kitconcept/volto-introduction-block to 1.4.2. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Make the release jobs and the final report wait for the Playwright acceptance tests, and list them in the report. @sneridagh 
+
+
+#### Documentation
+
+- Documented the demo users and their credentials in the README. @sneridagh 
+
+
+
 ## 3.2.0 (2026-10-13)
 
 ### Backend

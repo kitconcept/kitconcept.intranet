@@ -192,7 +192,7 @@ const TOOLBAR_LABELS = {
   borders: 'Cell borders',
   headerRow: 'Header row',
   footerRow: 'Footer row',
-  sum: 'Sum',
+  calculation: 'Calculation',
   deleteTable: 'Delete table',
   insertRowBefore: 'Insert row before',
   insertRowAfter: 'Insert row after',
@@ -210,6 +210,15 @@ export type ToolbarAction = keyof typeof TOOLBAR_LABELS;
 
 export function toolbarButton(page: Page, action: ToolbarAction) {
   return cellToolbar(page).getByLabel(TOOLBAR_LABELS[action], { exact: true });
+}
+
+/** Picks a calculation for the footer cell holding the caret. */
+export async function chooseCalculation(
+  page: Page,
+  label: 'None' | 'Sum' | 'Average' | 'Minimum' | 'Maximum' | 'Count',
+) {
+  await clickToolbar(page, 'calculation');
+  await page.getByRole('menuitemradio', { name: label, exact: true }).click();
 }
 
 export async function clickToolbar(page: Page, action: ToolbarAction) {

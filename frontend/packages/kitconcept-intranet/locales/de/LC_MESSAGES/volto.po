@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "(Default)"
+#: components/widgets/ContentTypeWorkflow
+msgid "(Default)"
+msgstr "(Standard)"
+
 #. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
 #: components/Blocks/CsvTable/schema
 msgid "A CSV file inside the intranet. Pick it with the browse button or paste its address."
@@ -81,6 +86,11 @@ msgstr "Beauftragte Person: *"
 msgid "Author"
 msgstr "Autor:innen"
 
+#. Default: "Average"
+#: index
+msgid "Average"
+msgstr "Durchschnitt"
+
 #. Default: "Beta"
 #: components/Header/HeaderSearch
 msgid "Beta"
@@ -107,6 +117,11 @@ msgstr "CSV-Datei"
 msgid "CSV table"
 msgstr "CSV-Tabelle"
 
+#. Default: "Calculation"
+#: index
+msgid "Calculation"
+msgstr "Berechnung"
+
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
@@ -114,10 +129,30 @@ msgstr "CSV-Tabelle"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#. Default: "Change workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow"
+msgstr "Arbeitsablauf ändern"
+
+#. Default: "Change workflow?"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow?"
+msgstr "Arbeitsablauf ändern?"
+
+#. Default: "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+#: components/widgets/ContentTypeWorkflow
+msgid "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+msgstr "Beim Ändern des Arbeitsablaufs werden Status und Berechtigungen aller vorhandenen Elemente dieses Typs gemäß der gewählten Statuszuordnung aktualisiert. Dies kann nicht automatisch rückgängig gemacht werden."
+
 #. Default: "Choose a CSV file in the sidebar."
 #: components/Blocks/CsvTable/CsvTable
 msgid "Choose a CSV file in the sidebar."
 msgstr "Wählen Sie eine CSV-Datei in der Seitenleiste."
+
+#. Default: "Choose the new state for existing items in each current state. The change is applied when you save."
+#: components/widgets/ContentTypeWorkflow
+msgid "Choose the new state for existing items in each current state. The change is applied when you save."
+msgstr "Wählen Sie für vorhandene Elemente in jedem aktuellen Status den neuen Status. Die Änderung wird beim Speichern übernommen."
 
 #. Default: "Clear filter"
 #: components/WikiTable/TableViewControls
@@ -156,6 +191,11 @@ msgstr "Inhaltstyp"
 msgid "Content type and title are always shown."
 msgstr "Inhaltstyp und Titel werden immer angezeigt."
 
+#. Default: "Count"
+#: index
+msgid "Count"
+msgstr "Anzahl"
+
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
 msgid "Created On"
@@ -175,6 +215,11 @@ msgstr "Erstellt am"
 #: components/widgets/QuerystringWidget
 msgid "Criteria"
 msgstr ""
+
+#. Default: "Current state"
+#: components/widgets/ContentTypeWorkflow
+msgid "Current state"
+msgstr "Aktueller Status"
 
 #. Default: "Dashboard"
 #: components/Dashboard/DashboardMenu
@@ -237,6 +282,7 @@ msgstr "Ende"
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr "Fehler"
@@ -422,6 +468,16 @@ msgstr "Überarbeitung erforderlich"
 msgid "Mark as Reviewed"
 msgstr "Als geprüft markieren"
 
+#. Default: "Maximum"
+#: index
+msgid "Maximum"
+msgstr "Maximum"
+
+#. Default: "Minimum"
+#: index
+msgid "Minimum"
+msgstr "Minimum"
+
 #. Default: "Move column left"
 #: index
 msgid "Move column left"
@@ -451,6 +507,16 @@ msgstr "Meine Aufgaben"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
 msgstr "Name"
+
+#. Default: "New state"
+#: components/widgets/ContentTypeWorkflow
+msgid "New state"
+msgstr "Neuer Status"
+
+#. Default: "New workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "New workflow"
+msgstr "Neuer Arbeitsablauf"
 
 #. Default: "News Item"
 #: components/Header/HeaderSearch
@@ -501,6 +567,16 @@ msgstr "Keine Ergebnisse in „{scope}“."
 #: components/widgets/QuerystringWidget
 msgid "No selection"
 msgstr "Keine Auswahl"
+
+#. Default: "No workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "No workflow"
+msgstr "Kein Arbeitsablauf"
+
+#. Default: "None"
+#: index
+msgid "None"
+msgstr "Keine"
 
 #. Default: "Offset"
 #: components/widgets/QuerystringWidget
@@ -834,6 +910,21 @@ msgstr "Die CSV-Datei enthält keine Zeilen."
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und Deines Standorts zusammengestellt."
 
+#. Default: "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+msgstr "Der Arbeitsablauf legt fest, in welchen Status sich Elemente dieses Typs befinden können und wer sie in den einzelnen Status anzeigen oder bearbeiten darf. Ist kein Arbeitsablauf festgelegt, richtet sich die Sichtbarkeit von Elementen dieses Typs nach dem Ordner, in dem sie sich befinden."
+
+#. Default: "The workflow for this content type could not be updated."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow for this content type could not be updated."
+msgstr "Der Arbeitsablauf für diesen Inhaltstyp konnte nicht aktualisiert werden."
+
+#. Default: "The workflow settings could not be loaded."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow settings could not be loaded."
+msgstr "Die Einstellungen zum Arbeitsablauf konnten nicht geladen werden."
+
 #. Default: "Title"
 #: components/Blocks/Listing/Table/columns
 msgid "Title"
@@ -883,6 +974,11 @@ msgstr "Website"
 #: slots/AboutThisContent/AboutThisContent
 msgid "What is unclear, outdated or missing?"
 msgstr "Was ist unklar, veraltet oder fehlt?"
+
+#. Default: "Workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Workflow"
+msgstr "Arbeitsablauf"
 
 #. Default: "Workspace"
 #: components/Header/HeaderSearch

@@ -28,8 +28,9 @@
  *  - Rebase on @plone/plate 1.0.0-alpha.24 (no upstream changes to this
  *    file since 1.0.0-alpha.20). @sneridagh
  *  - The footer row (`footer: true`, see components/WikiTable/tableCalc.ts)
- *    is neither sorted nor filtered and stays last (work item 750).
- *    @reekitconcept
+ *    is neither sorted nor filtered and stays last; while a filter hides
+ *    rows, its calculated cells show the results over the visible rows
+ *    (work item 750). @reekitconcept
  */
 
 import * as React from 'react';
@@ -57,7 +58,10 @@ import {
   sortRowIndices,
   type SortDirection,
 } from '@kitconcept/intranet/components/WikiTable/tableSort';
-import { isFooterRow } from '@kitconcept/intranet/components/WikiTable/tableCalc';
+import {
+  footerRowOver,
+  isFooterRow,
+} from '@kitconcept/intranet/components/WikiTable/tableCalc';
 import { WikiTableViewContext } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import {
   SortButton,
@@ -206,6 +210,14 @@ export function TableElementStatic({
         : null,
     [sortable, sort, rows],
   );
+  // OVERRIDE (750): while a filter hides rows, the footer row's calculated
+  // cells cover the visible rows only.
+  const footerRows = React.useMemo(() => {
+    const footer = rows.slice(bodyEnd);
+    if (!query) return footer;
+    const visible = order.map((row) => rows[bodyStart + row]);
+    return footer.map((row) => footerRowOver(row, visible));
+  }, [rows, bodyStart, bodyEnd, order, query]);
   // React.Children.map keeps the children keyed like the original list.
   // Plate's <Children> element takes the row nodes (not React nodes) as its
   // children, hence the cast.
@@ -217,7 +229,7 @@ export function TableElementStatic({
                 ...rows.slice(0, bodyStart),
                 ...order.map((row) => rows[bodyStart + row]),
                 // OVERRIDE (750): the footer row stays last
-                ...rows.slice(bodyEnd),
+                ...footerRows,
               ] as unknown as React.ReactNode)
             : child,
         )

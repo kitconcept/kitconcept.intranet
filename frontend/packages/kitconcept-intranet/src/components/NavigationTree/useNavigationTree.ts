@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import type { Key } from 'react-aria-components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { searchContent } from '@plone/volto/actions/search/search';
-import { collectAncestorPaths } from './utils';
+import { collectAncestorPaths, getParentPath } from './utils';
 
 export interface SearchItem {
   '@id': string;
@@ -107,6 +107,19 @@ export function useNavigationTree(
     }
     setExpandedKeys((prev) => new Set([...prev, ...ancestors]));
   }, [currentPath, rootPath, dispatchFetch, isAddingWorkspace]);
+
+  const transitionLoaded = useSelector(
+    (state: any) => !!state.workflow?.transition?.loaded,
+  );
+  const prevTransitionLoaded = useRef(transitionLoaded);
+  useEffect(() => {
+    const justCompleted = transitionLoaded && !prevTransitionLoaded.current;
+    prevTransitionLoaded.current = transitionLoaded;
+    if (!justCompleted) return;
+    for (const path of [getParentPath(currentPath), currentPath]) {
+      if (fetchedPaths.current.has(path)) dispatchFetch(path);
+    }
+  }, [transitionLoaded, currentPath, dispatchFetch]);
 
   useEffect(() => {
     if (searchTimerRef.current) clearTimeout(searchTimerRef.current);

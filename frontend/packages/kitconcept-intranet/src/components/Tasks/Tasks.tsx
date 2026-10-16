@@ -21,7 +21,7 @@ import {
   type Task,
 } from './taskHelpers';
 import './Tasks.scss';
-import PersonPill from '../PersonPill/PersonPill';
+import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill';
 import WorkspaceMarker from '../WorkspaceMarker/WorkspaceMarker';
 import WorkspaceFilter from './WorkspaceFilter';
 
@@ -241,6 +241,11 @@ export default function Tasks() {
                               >
                                 <PersonPill
                                   id={assignee.id}
+                                  portrait={
+                                    assignee.id
+                                      ? `/@portrait/${assignee.id}`
+                                      : undefined
+                                  }
                                   fullname={assignee.title}
                                   compact
                                 />

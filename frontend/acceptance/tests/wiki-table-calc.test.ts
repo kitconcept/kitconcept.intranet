@@ -200,6 +200,9 @@ test.describe('Wiki tables: footer row and sums', () => {
 
     await chooseCalculation(page, 'Average');
     await expect(cell).toHaveText('4,71');
+    // Editor marks: computed cell (grey), not an empty result.
+    await expect(cell).toHaveClass(/wiki-table-calc/);
+    await expect(cell).not.toHaveClass(/wiki-table-calc-empty/);
     await chooseCalculation(page, 'Minimum');
     await expect(cell).toHaveText('0,5');
     await chooseCalculation(page, 'Maximum');
@@ -216,6 +219,9 @@ test.describe('Wiki tables: footer row and sums', () => {
     await chooseCalculation(page, 'None');
     await page.keyboard.type('x');
     await expect(cellOf(table, OPEN_ITEMS_ROWS, 4)).toHaveText('8x');
+    await expect(cellOf(table, OPEN_ITEMS_ROWS, 4)).not.toHaveClass(
+      /wiki-table-calc/,
+    );
   });
 
   test('dates for minimum and maximum; skipped cells are counted', async ({
@@ -320,6 +326,8 @@ test.describe('Wiki tables: footer row and sums', () => {
 
     await openInView(page, contentPath);
     const view = viewTable(page, OPEN_ITEMS);
+    // The marks of the editor do not exist in the view.
+    await expect(view.locator('.wiki-table-calc')).toHaveCount(0);
     // By class: while a filter hides rows, the footer's row index changes.
     const footer = (col: number) =>
       view.locator('tr.wiki-table-footer').locator('> th, > td').nth(col);
@@ -459,6 +467,7 @@ test.describe('Wiki tables: footer row and sums', () => {
     await clickCell(page, table, OPEN_ITEMS_ROWS, 4);
     await chooseCalculation(page, 'Sum');
     await expect(footer(4)).toHaveText('');
+    await expect(footer(4)).toHaveClass(/wiki-table-calc-empty/);
 
     // Off and on again: a fresh, empty footer row without calculations.
     await clickToolbar(page, 'footerRow');

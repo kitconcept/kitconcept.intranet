@@ -41,6 +41,10 @@
  *    "Calculation" menu for its cells (`calc`: sum, average, min, max,
  *    count, see components/WikiTable/tableCalc.ts); the footer row has no
  *    drag handle and stays last (work item 750). @reekitconcept
+ *  - Calculated footer cells are marked in the editor (grey: computed, not
+ *    editable by hand; light red: no result, the column holds nothing the
+ *    calculation can use). Editor only, the view shows nothing of it.
+ *    @reekitconcept
  */
 
 import * as React from 'react';
@@ -81,11 +85,12 @@ import {
   Trash2Icon,
 } from 'lucide-react';
 import {
+  KEYS,
+  NodeApi,
   type TElement,
   type TTableCellElement,
   type TTableElement,
   type TTableRowElement,
-  KEYS,
 } from 'platejs';
 import {
   type PlateElementProps,
@@ -1013,6 +1018,16 @@ export function TableCellElement({
   );
   const hasColumnHandle = rowIndex === 0 && !tableMerged && !readOnly;
 
+  // OVERRIDE (750): a calculated footer cell is computed, not typed into;
+  // mark it, and mark it differently when the calculation has no result.
+  const inFooter = useElementSelector(
+    ([node]) => isFooterRow(node as TElement),
+    [],
+    { key: KEYS.tr },
+  );
+  const calcKind = inFooter && !readOnly ? calcOf(element) : null;
+  const calcEmpty = !!calcKind && NodeApi.string(element).trim() === '';
+
   return (
     <PlateElement
       {...props}
@@ -1022,6 +1037,9 @@ export function TableCellElement({
       className={cn(
         'h-full overflow-visible border-none bg-background p-0',
         element.background ? 'bg-(--cellBackground)' : 'bg-background',
+        // OVERRIDE (750), styled in theme/components/_wikiTable.scss
+        calcKind && 'wiki-table-calc',
+        calcEmpty && 'wiki-table-calc-empty',
         isHeader &&
           `
             text-left

@@ -192,6 +192,25 @@ svg.wiki-table-delete-icon {
   color: #b42318;
 }
 
+// Calculated footer cells in the editor (table-node.tsx, work item 750):
+// light blue = computed by the editor, typing into it is undone; light red
+// = the calculation has no result (nothing in the column it can use). The
+// footer row itself is grey like the header, hence a different tint. The
+// view (table-node-static.tsx) does not set these classes.
+:is(.contenttype-workspace, .contenttype-wikipage, body) .typeset {
+  --wiki-table-calc-bg: #e3eefb;
+  --wiki-table-calc-empty-bg: #fbe9e9;
+
+  tr.wiki-table-footer > td.wiki-table-calc:not([style*='--cellBackground']) {
+    background-color: var(--wiki-table-calc-bg);
+  }
+
+  tr.wiki-table-footer
+    > td.wiki-table-calc-empty:not([style*='--cellBackground']) {
+    background-color: var(--wiki-table-calc-empty-bg);
+  }
+}
+
 // View: sorting and filtering controls (components/WikiTable/TableViewControls.tsx).
 
 // Room for the sort button: under the same prefix as the cell padding above,

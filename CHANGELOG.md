@@ -1,6 +1,40 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.4.0 (2026-10-19)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Wiki Page tables: a footer cell can show, besides the sum, the average, the minimum, the maximum or the count of its column ("Calculation" menu in the cell toolbar); minimum and maximum also work on date columns; cells that cannot be used are skipped and the result says how many. In the view, while a filter hides rows, the footer shows the results over the visible rows. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+- Wiki Page tables: in the editor, a footer cell with a calculation is marked light blue (computed, not editable by hand) or light red when the calculation has no result because the column holds nothing it can use; the view is unchanged. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+
+
+#### Bugfix
+
+- Fix regression in merge in #426. @sneridagh 
+- Hide content interactions and the parent's related items in add mode, and render related items at the default container width. @iFlameing 
+- Update the navigation tree workflow state immediately after a workflow transition. @iFlameing 
+- Use volto-plate PersonPill for intranet @iRohitSingh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.3.0 (2026-10-13)
 
 ### Backend

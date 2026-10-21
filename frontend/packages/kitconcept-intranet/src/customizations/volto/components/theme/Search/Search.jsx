@@ -1,6 +1,8 @@
 /**
  * OVERRIDE Search.jsx
  * REASON: Shadowed to adapt the search results page for the intranet.
+ * Adds the SearchCloseBar on top and keeps `location.state` (the search
+ * origin used by "Close search") when the sorting changes.
  * FILE: https://github.com/plone/volto/blob/19.3.1/packages/volto/src/components/theme/Search/Search.jsx
  * FILE VERSION: Volto 19.3.1
  * DATE: 2025-08-07
@@ -28,6 +30,7 @@ import qs from 'query-string';
 import classNames from 'classnames';
 import { defineMessages, injectIntl } from 'react-intl';
 import config from '@plone/volto/registry';
+import SearchCloseBar from '@kitconcept/intranet/components/SearchCloseBar/SearchCloseBar';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { searchContent } from '@plone/volto/actions/search/search';
 import SearchTags from '@plone/volto/components/theme/Search/SearchTags';
@@ -159,6 +162,8 @@ class Search extends Component {
       // eslint-disable-next-line no-restricted-globals
       this.props.history.replace({
         search: searchParams,
+        // Keep the page the search was started from, for "Close search"
+        state: this.props.history.location.state,
       });
     });
   };
@@ -175,6 +180,7 @@ class Search extends Component {
     return (
       <Container id="page-search">
         <Helmet title={this.props.intl.formatMessage(messages.Search)} />
+        <SearchCloseBar />
         <div className="container">
           <article id="content">
             <header>

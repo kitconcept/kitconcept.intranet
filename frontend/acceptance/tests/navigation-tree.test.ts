@@ -610,4 +610,77 @@ test.describe('NavigationTree', () => {
       await expect(stateDot).toHaveAttribute('data-review-state', 'published');
     });
   });
+
+  test.describe('hidden content types', () => {
+    test('images and files are not shown in the tree', async ({ page }) => {
+      await login(page);
+      const { workspaceId, workspacePath } =
+        await createNavTreeWikiContent(page);
+      const idSuffix = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      const mediaPageId = `nav-tree-media-page-${idSuffix}`;
+
+      await createContent(page, {
+        contentType: 'WikiPage',
+        contentId: mediaPageId,
+        contentTitle: 'Nav Tree Media Page',
+        path: workspaceId,
+        transition: 'publish',
+      });
+
+      // One Image and one File in the workspace, and one of each inside
+      // the media page (so it has no visible children).
+      for (const path of [workspaceId, `${workspaceId}/${mediaPageId}`]) {
+        await createContent(page, {
+          contentType: 'Image',
+          contentId: `nav-tree-image-${idSuffix}`,
+          contentTitle: 'Nav Tree Image',
+          path,
+          bodyModifier: (body) => ({
+            ...body,
+            image: {
+              data: 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+              encoding: 'base64',
+              filename: 'pixel.png',
+              'content-type': 'image/png',
+            },
+          }),
+        });
+        await createContent(page, {
+          contentType: 'File',
+          contentId: `nav-tree-file-${idSuffix}`,
+          contentTitle: 'Nav Tree File',
+          path,
+          bodyModifier: (body) => ({
+            ...body,
+            file: {
+              data: 'aGVsbG8=',
+              encoding: 'base64',
+              filename: 'hello.txt',
+              'content-type': 'text/plain',
+            },
+          }),
+        });
+      }
+
+      await page.goto(workspacePath, { waitUntil: 'networkidle' });
+
+      const nav = page.locator('nav.navigation-tree');
+      const mediaPageRow = nav.getByRole('row', {
+        name: 'Nav Tree Media Page',
+      });
+      await expect(mediaPageRow).toBeVisible();
+      await expect(
+        nav.getByRole('row', { name: 'Nav Tree Test Section' }),
+      ).toBeVisible();
+
+      await expect(
+        nav.getByRole('row', { name: 'Nav Tree Image' }),
+      ).toHaveCount(0);
+      await expect(nav.getByRole('row', { name: 'Nav Tree File' })).toHaveCount(
+        0,
+      );
+      // A page that only contains an image and a file has nothing to expand.
+      await expect(mediaPageRow.locator('button[slot="chevron"]')).toBeHidden();
+    });
+  });
 });

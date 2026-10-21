@@ -15,7 +15,10 @@ export interface SearchItem {
 }
 
 export const ROOT_ID = '/';
-const WORKSPACE_PORTAL_TYPE = 'Workspace';
+// Content types that are never shown in the navigation tree.
+const HIDDEN_TYPES_QUERY = {
+  'portal_type.not:record': ['Workspace', 'Image', 'File'],
+};
 
 export function useNavigationTree(
   rootPath: string = ROOT_ID,
@@ -39,9 +42,7 @@ export function useNavigationTree(
   );
 
   function getChildrenForPath(path: string): SearchItem[] {
-    return (subrequests[`nav-tree-${path}`]?.items ?? []).filter(
-      (item: SearchItem) => item['@type'] !== WORKSPACE_PORTAL_TYPE,
-    );
+    return subrequests[`nav-tree-${path}`]?.items ?? [];
   }
 
   function isLoadingForPath(path: string): boolean {
@@ -63,6 +64,7 @@ export function useNavigationTree(
         searchContent(
           path,
           {
+            ...HIDDEN_TYPES_QUERY,
             'path.depth': 1,
             sort_on: 'getObjPositionInParent',
             metadata_fields: ['is_folderish', 'review_state'],
@@ -85,6 +87,7 @@ export function useNavigationTree(
         searchContent(
           path,
           {
+            ...HIDDEN_TYPES_QUERY,
             'path.depth': 1,
             b_size: 1,
             metadata_fields: [],
@@ -137,6 +140,7 @@ export function useNavigationTree(
       searchContent(
         rootPath,
         {
+          ...HIDDEN_TYPES_QUERY,
           Title: `${debouncedSearch}*`,
           metadata_fields: ['is_folderish', 'review_state'],
           b_size: 50,
@@ -174,9 +178,8 @@ export function useNavigationTree(
     [dispatchFetch],
   );
 
-  const searchResults: SearchItem[] = (
-    subrequests['nav-tree-search']?.items ?? []
-  ).filter((item: SearchItem) => item['@type'] !== WORKSPACE_PORTAL_TYPE);
+  const searchResults: SearchItem[] =
+    subrequests['nav-tree-search']?.items ?? [];
   const isSearchLoading = !!subrequests['nav-tree-search']?.loading;
   const rootChildren = isAddingWorkspace ? [] : getChildrenForPath(rootPath);
   const isRootLoading = isAddingWorkspace ? false : isLoadingForPath(rootPath);

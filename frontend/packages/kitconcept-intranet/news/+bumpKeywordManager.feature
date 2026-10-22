@@ -1,0 +1,1 @@
+Bump `@kitconcept/volto-keywordmanager` to version 1.0.0-alpha.4. @jnptk

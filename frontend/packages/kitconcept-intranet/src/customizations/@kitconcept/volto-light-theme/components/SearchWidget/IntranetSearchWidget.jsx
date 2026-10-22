@@ -22,13 +22,19 @@ import { connect } from 'react-redux';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
+import clearSVG from '@plone/volto/icons/clear.svg';
 
 import config from '@plone/volto/registry';
+import { isSearchPath } from '@kitconcept/intranet/components/SearchCloseBar/isSearchPath';
 
 const messages = defineMessages({
   search: {
     id: 'Search',
     defaultMessage: 'Search',
+  },
+  clearSearch: {
+    id: 'Clear search',
+    defaultMessage: 'Clear search',
   },
   searchSite: {
     id: 'Search Site',
@@ -70,6 +76,7 @@ class IntranetSearchWidget extends Component {
     super(props);
     this.onChangeText = this.onChangeText.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onClear = this.onClear.bind(this);
     this.state = {
       text: '',
     };
@@ -86,6 +93,36 @@ class IntranetSearchWidget extends Component {
     this.setState({
       text: value,
     });
+  }
+
+  /**
+   * Clear handler: empties the input and, on the search page, shows the
+   * results for an empty search term again.
+   * @method onClear
+   * @returns {undefined}
+   */
+  onClear() {
+    this.setState({ text: '' }, () => {
+      if (
+        !this.props.site['kitconcept.intranet.external_search_url'] &&
+        isSearchPath(this.props.history.location.pathname)
+      ) {
+        this.onSubmit({ preventDefault: () => {} });
+      }
+    });
+  }
+
+  /**
+   * The page the search was started from, used by "Close search" on the
+   * search page. While already on the search page, keep the original page.
+   * @method searchOrigin
+   * @returns {string} Pathname of the originating page.
+   */
+  searchOrigin() {
+    const { location } = this.props.history;
+    return isSearchPath(location.pathname)
+      ? location.state?.searchOrigin || '/'
+      : location.pathname;
   }
 
   /**
@@ -140,6 +177,7 @@ class IntranetSearchWidget extends Component {
         this.props.history.push({
           pathname: '/search',
           search: qs.stringify(newQueryParams),
+          state: { searchOrigin: this.searchOrigin() },
         });
       } else {
         // Fall back without volto-solr. Only the search text is set, all other
@@ -193,6 +231,17 @@ class IntranetSearchWidget extends Component {
             }
             title={intl.formatMessage(messages.search)}
           />
+          {this.state.text ? (
+            <button
+              type="button"
+              className="clear-search"
+              aria-label={intl.formatMessage(messages.clearSearch)}
+              title={intl.formatMessage(messages.clearSearch)}
+              onClick={this.onClear}
+            >
+              <Icon name={clearSVG} size="37px" />
+            </button>
+          ) : null}
           <button aria-label={intl.formatMessage(messages.search)}>
             <Icon name={zoomSVG} size="37px" />
           </button>

@@ -1,1 +1,0 @@
-Update @kitconcept/volto-plate to 1.0.0-alpha.38: wiki pages support inline comments in view mode, and table of contents entries no longer show overlapping hover frames. The `PlateEditorRenderer` and `wiki-renderer` shadows are rebased on it. @sneridagh

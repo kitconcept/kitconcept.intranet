@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 3.5.0 (2026-10-22)
+
+
+### Feature
+
+- Added a clear button to the header search field and a "Close search" button on the search page. @iFlameing 
+- Bump `@kitconcept/volto-keywordmanager` to version 1.0.0-alpha.4. @jnptk 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.38: wiki pages support inline comments in view mode, and table of contents entries no longer show overlapping hover frames. The `PlateEditorRenderer` and `wiki-renderer` shadows are rebased on it. @sneridagh 
+
+
+### Bugfix
+
+- Hide images and files in the workspace navigation tree. @iFlameing 
+- Update @kitconcept/volto-light-theme to 8.1.2: the sharing page matches the site layout width, the accordion width is fixed in edit mode, and the event calendar block variations are configured separately from the listing block ones. @sneridagh 
+
 ## 3.4.0 (2026-10-19)
 
 

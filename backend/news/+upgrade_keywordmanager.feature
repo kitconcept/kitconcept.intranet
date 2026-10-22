@@ -1,1 +1,0 @@
-Bump `kitconcept.keywordmanager` version to 1.0.0a4. @jnptk

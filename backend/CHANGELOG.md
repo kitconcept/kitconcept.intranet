@@ -2,6 +2,19 @@
 
 <!-- towncrier release notes start -->
 
+## 3.5.0 (2026-10-22)
+
+
+### Feature
+
+- Bump `kitconcept.keywordmanager` version to 1.0.0a4. @jnptk 
+
+
+### Internal
+
+- Update kitconcept.plate to 1.0.0a38, which adds the `@inline-comments` REST service. @sneridagh 
+- Update kitconcept.voltolighttheme to 8.1.2. @sneridagh 
+
 ## 3.4.0 (2026-10-19)
 
 No significant changes.

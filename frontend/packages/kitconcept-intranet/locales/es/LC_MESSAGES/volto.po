@@ -1069,6 +1069,11 @@ msgstr ""
 msgid "navigation_tree_add_new"
 msgstr ""
 
+#. Default: "All workspaces · {count}"
+#: components/NavigationTree/messages
+msgid "navigation_tree_all_workspaces"
+msgstr ""
+
 #. Default: "Clear search"
 #: components/NavigationTree/messages
 msgid "navigation_tree_clear_search"
@@ -1109,9 +1114,19 @@ msgstr ""
 msgid "navigation_tree_no_results"
 msgstr ""
 
+#. Default: "No workspace found"
+#: components/NavigationTree/messages
+msgid "navigation_tree_no_workspace_found"
+msgstr ""
+
 #. Default: "Open navigation"
 #: components/NavigationTree/messages
 msgid "navigation_tree_open_navigation"
+msgstr ""
+
+#. Default: "Portal"
+#: components/NavigationTree/messages
+msgid "navigation_tree_portal_label"
 msgstr ""
 
 #. Default: "Rename"
@@ -1144,14 +1159,24 @@ msgstr ""
 msgid "navigation_tree_search_results"
 msgstr ""
 
-#. Default: "SITE"
-#: components/NavigationTree/messages
-msgid "navigation_tree_site_label"
-msgstr ""
-
 #. Default: "Site navigation"
 #: components/NavigationTree/messages
 msgid "navigation_tree_site_navigation"
+msgstr ""
+
+#. Default: "Workspace"
+#: components/NavigationTree/messages
+msgid "navigation_tree_workspace_label"
+msgstr ""
+
+#. Default: "Workspaces · {count, plural, one {# match} other {# matches}}"
+#: components/NavigationTree/messages
+msgid "navigation_tree_workspace_matches"
+msgstr ""
+
+#. Default: "Search workspace…"
+#: components/NavigationTree/messages
+msgid "navigation_tree_workspace_search_placeholder"
 msgstr ""
 
 #. Default: "Switch workspace"

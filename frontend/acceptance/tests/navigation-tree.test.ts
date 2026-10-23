@@ -683,4 +683,34 @@ test.describe('NavigationTree', () => {
       await expect(mediaPageRow.locator('button[slot="chevron"]')).toBeHidden();
     });
   });
+
+  test.describe('workspace switcher', () => {
+    test('search filters workspaces and keeps the portal entry', async ({
+      page,
+    }) => {
+      await login(page);
+      const { workspacePath } = await createNavTreeWikiContent(page);
+      await page.goto(workspacePath, { waitUntil: 'networkidle' });
+
+      await page.locator('.navigation-tree-header').click();
+      const menu = page.locator('.nav-tree-switcher-menu');
+      const search = page.locator('.nav-tree-switcher-search input');
+      await expect(search).toBeVisible();
+      await expect(menu.locator('.nav-tree-switcher-section')).toHaveCount(2);
+
+      await search.fill('nav tree test');
+      await expect(
+        menu.getByRole('menuitem', { name: 'Nav Tree Test Workspace' }).first(),
+      ).toBeVisible();
+
+      await search.fill('no-such-workspace-xyz');
+      await expect(
+        menu.getByRole('menuitem', {
+          name: /No workspace found|Kein Workspace gefunden/,
+        }),
+      ).toBeVisible();
+      // The portal entry stays visible while filtering.
+      await expect(menu.getByRole('menuitem')).toHaveCount(2);
+    });
+  });
 });

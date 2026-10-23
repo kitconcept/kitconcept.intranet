@@ -1,6 +1,31 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.6.0 (2026-10-23)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Added a search field, Portal/Workspaces sections and a scrollable list to the navigation tree workspace switcher. @iFlameing 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.5.0 (2026-10-22)
 
 ### Backend

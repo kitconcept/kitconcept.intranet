@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.6.0 (2026-10-23)
+
+
+### Feature
+
+- Added a search field, Portal/Workspaces sections and a scrollable list to the navigation tree workspace switcher. @iFlameing 
+
 ## 3.5.0 (2026-10-22)
 
 

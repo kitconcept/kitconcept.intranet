@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.6.1 (2026-10-26)
+
+
+### Bugfix
+
+- Update to Plone 6.2.2.1. This includes security fixes for certifi, pip, plone.app.content, and Pillow. @davisagli 
+
 ## 3.6.0 (2026-10-23)
 
 No significant changes.

@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.6.1 (2026-10-26)
+
+
+### Bugfix
+
+- Update to Volto 19.5.1 and rebuild the frontend image with Node 24.22.1. @davisagli 
+
 ## 3.6.0 (2026-10-23)
 
 

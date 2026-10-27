@@ -1,0 +1,131 @@
+{
+  "id": "session",
+  "description": "A session: assess, fix what was found, then a new request (history, applied changes, created refs).",
+  "formData": {
+    "title": "Kantine",
+    "description": "",
+    "blocks": {
+      "title": {
+        "@type": "title"
+      },
+      "menu": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "The canteen is open from 11:30 to 14:00. The menu chanegs every week."
+              }
+            ]
+          }
+        ],
+        "plaintext": "The canteen is open from 11:30 to 14:00. The menu chanegs every week."
+      },
+      "pay": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "You can pay with your employe card."
+              }
+            ]
+          }
+        ],
+        "plaintext": "You can pay with your employe card."
+      },
+      "vegan": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "There is always a vegetarian dish."
+              }
+            ]
+          }
+        ],
+        "plaintext": "There is always a vegetarian dish."
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "title",
+        "menu",
+        "pay",
+        "vegan"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "request": "What could be improved on this page? Do not change anything yet.",
+      "kind": "report",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b2",
+            "category": "spelling"
+          },
+          {
+            "target": "b3",
+            "category": "spelling"
+          },
+          {
+            "target": "description",
+            "category": "metadata"
+          }
+        ],
+        "optional": [
+          {
+            "target": "title"
+          }
+        ]
+      }
+    },
+    {
+      "request": "Fix the spelling mistakes you found.",
+      "kind": "propose",
+      "apply": "defaults",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b2",
+            "category": "spelling",
+            "if_found_in": 1
+          },
+          {
+            "target": "b3",
+            "category": "spelling",
+            "if_found_in": 1
+          }
+        ],
+        "must_not_change": [
+          "b4"
+        ]
+      }
+    },
+    {
+      "request": "Now write a short description for the page.",
+      "kind": "propose",
+      "apply": "defaults",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "description",
+            "category": "metadata"
+          }
+        ],
+        "must_not_change": [
+          "b2",
+          "b3",
+          "b4"
+        ]
+      }
+    }
+  ]
+}

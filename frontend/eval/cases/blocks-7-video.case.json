@@ -1,0 +1,43 @@
+{
+  "id": "blocks-7-video",
+  "description": "Block creation (D56): A video after b8 with its URL alone; title and preview image are optional and left out (D54).",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "381e5baa-5f99-47f1-a8f3-f31c1cc7aed9"
+  ],
+  "turns": [
+    {
+      "request": "Add the video https://www.youtube.com/watch?v=aqz-KE-bpKQ below this block.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b8",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b8"
+        ],
+        "must_contain": [
+          {
+            "after": "b8",
+            "shapes": [
+              "video"
+            ]
+          },
+          {
+            "after": "b8",
+            "fields": {
+              "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+              "preview_image": null,
+              "title": null
+            }
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

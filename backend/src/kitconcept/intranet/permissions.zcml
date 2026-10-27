@@ -11,6 +11,13 @@
         title="kitconcept.intranet: Site Admins Only"
         />
 
+    <!-- Who may use the AI assistant (services/ai_edit.py). The assistant reads
+         and writes no content, so this only gates the LLM. -->
+    <permission
+        id="kitconcept.intranet.UseAIEdit"
+        title="kitconcept.intranet: Use AI editing"
+        />
+
   </configure>
 
 </configure>

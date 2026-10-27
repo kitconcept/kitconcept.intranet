@@ -1,4 +1,5 @@
 from kitconcept.intranet import _
+from kitconcept.intranet.ai_edit.config import get_ai_edit_config
 from kitconcept.intranet.interfaces import IBrowserLayer
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
@@ -101,6 +102,21 @@ class IIntranetSettings(Interface):
         default="6m",
     )
 
+    enable_ai_edit = schema.Bool(
+        title=_("Enable AI assistant"),
+        description=_(
+            "help_enable_ai_edit",
+            default="Turn the AI assistant in the edit form on or off. The "
+            "feature also requires the LLM endpoint and model to be "
+            "configured through the KITCONCEPT_SOLR_LLM_URL and "
+            "KITCONCEPT_SOLR_LLM_CHAT_MODEL (and optionally "
+            "KITCONCEPT_SOLR_LLM_TOKEN) environment variables; unlike AI "
+            "search, the assistant has no default model.",
+        ),
+        required=False,
+        default=False,
+    )
+
 
 class IntranetSettingsEditForm(RegistryEditForm):
     schema = IIntranetSettings
@@ -135,8 +151,11 @@ class IntranetSiteEndpointExpander:
 
     def __call__(self, data):
         registry = getUtility(IRegistry)
+        # Not checked: a record the site lacks until its upgrade step ran
+        # reads as the field's missing value, instead of every @site call
+        # failing (a field added to IIntranetSettings, e.g. enable_ai_edit)
         settings = registry.forInterface(
-            IIntranetSettings, prefix="kitconcept.intranet"
+            IIntranetSettings, prefix="kitconcept.intranet", check=False
         )
         data["kitconcept.intranet.external_search_url"] = settings.external_search_url
         data["kitconcept.intranet.search_field_placeholder"] = (
@@ -157,3 +176,6 @@ class IntranetSiteEndpointExpander:
         data["kitconcept.intranet.enable_content_review"] = (
             settings.enable_content_review
         )
+        # Effective state: registry toggle on AND LLM endpoint configured
+        # (same as kitconcept.solr.rag_available)
+        data["kitconcept.intranet.ai_edit_available"] = get_ai_edit_config() is not None

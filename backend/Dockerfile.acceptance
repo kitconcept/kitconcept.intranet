@@ -69,6 +69,12 @@ EXPOSE 55001
 ENV ZSERVER_HOST=0.0.0.0
 ENV ZSERVER_PORT=55001
 ENV LISTEN_PORT=55001
+# A fake LLM endpoint, so the AI assistant counts as configured once a test
+# switches it on (its requests are mocked in the browser; nothing calls this
+# host). RAG stays off: it has its own registry toggle. Same as the
+# acceptance-backend-start target of the Makefile. Should be removed after POC evaluation.
+ENV KITCONCEPT_SOLR_LLM_URL=http://llm.invalid
+ENV KITCONCEPT_SOLR_LLM_CHAT_MODEL=acceptance
 
 # Entrypoint is robot-server
 ENTRYPOINT [ "/app/bin/robot-server" ]

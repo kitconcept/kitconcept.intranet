@@ -1,0 +1,87 @@
+{
+  "id": "selected-block",
+  "description": "A request about the selected block, without a ref.",
+  "formData": {
+    "title": "Travel",
+    "description": "Business travel at Example GmbH.",
+    "blocks": {
+      "title": {
+        "@type": "title"
+      },
+      "first": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Book trains through the travel portal."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Book trains through the travel portal."
+      },
+      "long": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "When you travel for work, which happens regularly for many of us, and especially when the trip is longer than a single day, it is important, and in fact required, that you book your accommodation through the travel portal, because only then can the company make sure that the costs are covered and that you are insured during the whole trip."
+              }
+            ]
+          }
+        ],
+        "plaintext": "When you travel for work, which happens regularly for many of us, and especially when the trip is longer than a single day, it is important, and in fact required, that you book your accommodation through the travel portal, because only then can the company make sure that the costs are covered and that you are insured during the whole trip."
+      },
+      "last": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Expenses are reimbursed monthly."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Expenses are reimbursed monthly."
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "title",
+        "first",
+        "long",
+        "last"
+      ]
+    }
+  },
+  "selected": [
+    "long"
+  ],
+  "turns": [
+    {
+      "request": "Shorten this block.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b3",
+            "category": "style"
+          }
+        ],
+        "must_not_change": [
+          "b2",
+          "b4",
+          "title",
+          "description"
+        ]
+      }
+    }
+  ]
+}

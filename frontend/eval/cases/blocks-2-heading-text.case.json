@@ -1,0 +1,49 @@
+{
+  "id": "blocks-2-heading-text",
+  "description": "Block creation (D56): Two text blocks in a row after b29: a heading (level 2 or 3) and a paragraph, in that order. No fact the request does not give (no_new_terms, D57).",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "58af2b67-01ea-4641-a76c-c78a5c8d3148"
+  ],
+  "turns": [
+    {
+      "request": "Below this block add a heading \"Accessibility\" and a paragraph saying that all rooms are wheelchair accessible.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b29",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b29"
+        ],
+        "must_contain": [
+          {
+            "after": "b29",
+            "shapes": [
+              [
+                "h2",
+                "h3"
+              ],
+              "p"
+            ]
+          },
+          {
+            "after": "b29",
+            "text": "Accessibility"
+          },
+          {
+            "after": "b29",
+            "index": 1,
+            "text": "wheelchair"
+          }
+        ],
+        "no_new_terms": true,
+        "no_other_changes": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "blocks-9-no-position",
+  "description": "Block creation (D56, D57): no place named and nothing selected: the new block goes at the end of the page (after b39), and the review says so (atEnd).",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Add a separator.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b39",
+            "category": "structure"
+          }
+        ],
+        "must_contain": [
+          {
+            "after": "b39",
+            "shapes": [
+              "separator"
+            ]
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

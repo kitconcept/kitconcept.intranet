@@ -219,9 +219,14 @@ solr-activate-and-reindex-with-rag-clear: $(VENV_FOLDER) instance/etc/zope.conf 
 	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py --rag-enable --clear
 
 # Acceptance tests
+# A fake LLM endpoint, so the AI assistant counts as configured once a test
+# switches it on (its requests are mocked in the browser; nothing calls this
+# host). RAG stays off: it has its own registry toggle. Same as in
+# Dockerfile.acceptance. Should be removed after POC evaluation.
+ACCEPTANCE_LLM_ENV := KITCONCEPT_SOLR_LLM_URL=http://llm.invalid KITCONCEPT_SOLR_LLM_CHAT_MODEL=acceptance
 .PHONY: acceptance-backend-start
 acceptance-backend-start: ## Start backend acceptance server
-	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.ROBOT_TESTING
+	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 $(ACCEPTANCE_LLM_ENV) $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.ROBOT_TESTING
 
 .PHONY: acceptance-backend-start
 acceptance-a11y-backend-start: ## Start backend a11y acceptance server

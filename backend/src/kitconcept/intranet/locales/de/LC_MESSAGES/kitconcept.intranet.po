@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-10-13 03:44+0000\n"
+"POT-Creation-Date: 2026-10-23 14:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,11 +22,11 @@ msgstr "- Workflow für Intranets. Öffentlicher Zugriff auf veröffentlichte In
 msgid "- Workflow for Intranets. Requires authentication."
 msgstr "- Workflow für Intranets. Authentifizierung erforderlich."
 
-#: kitconcept/intranet/controlpanels/intranet.py:43
+#: kitconcept/intranet/controlpanels/intranet.py:44
 msgid "1:1 round picture"
 msgstr "1:1 kreisförmiges Bild"
 
-#: kitconcept/intranet/controlpanels/intranet.py:44
+#: kitconcept/intranet/controlpanels/intranet.py:45
 msgid "4:5 square picture"
 msgstr "4:5 quadratisches Bild"
 
@@ -54,11 +54,11 @@ msgstr "Fügen Sie die Felder für das Lebenszyklusmanagement hinzu."
 msgid "Adds votes field"
 msgstr "Feld „Stimmen“ hinzufügen"
 
-#: kitconcept/intranet/controlpanels/intranet.py:60
+#: kitconcept/intranet/controlpanels/intranet.py:61
 msgid "Allowed Email Domains"
 msgstr "Zulässige E-Mail-Domains"
 
-#: kitconcept/intranet/controlpanels/intranet.py:81
+#: kitconcept/intranet/controlpanels/intranet.py:82
 msgid "Allowed Iframe Domains"
 msgstr "Zulässige Iframe-Domains"
 
@@ -71,11 +71,11 @@ msgstr "CLM: Hinweise auf möglicherweise veraltete Inhalte"
 msgid "Can only be seen and edited by the owner."
 msgstr "Kann nur vom Eigentümer angesehen und bearbeitet werden."
 
-#: kitconcept/intranet/controlpanels/intranet.py:49
+#: kitconcept/intranet/controlpanels/intranet.py:50
 msgid "Default Feedback Email"
 msgstr "Standard-Feedback-E-Mail"
 
-#: kitconcept/intranet/controlpanels/intranet.py:98
+#: kitconcept/intranet/controlpanels/intranet.py:99
 msgid "Default review interval"
 msgstr "Standard-Überprüfungsintervall"
 
@@ -92,19 +92,23 @@ msgstr "Dr."
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: kitconcept/intranet/controlpanels/intranet.py:56
+#: kitconcept/intranet/controlpanels/intranet.py:57
 msgid "Email address to be CCed in feedback forms."
 msgstr "E-Mail-Adresse, die in Feedback-Formularen in CC gesetzt werden soll."
 
-#: kitconcept/intranet/controlpanels/intranet.py:50
+#: kitconcept/intranet/controlpanels/intranet.py:51
 msgid "Email address used in feedback forms if none is set."
 msgstr "E-Mail-Adresse, die in Feedback-Formularen verwendet wird, wenn keine andere angegeben ist."
 
-#: kitconcept/intranet/controlpanels/intranet.py:74
+#: kitconcept/intranet/controlpanels/intranet.py:106
+msgid "Enable AI assistant"
+msgstr "KI-Assistenten aktivieren"
+
+#: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Enable Content Rating"
 msgstr "Inhaltsbewertung aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:91
+#: kitconcept/intranet/controlpanels/intranet.py:92
 msgid "Enable Content Review"
 msgstr "Inhaltsprüfung aktivieren"
 
@@ -116,19 +120,19 @@ msgstr "Likes aktivieren"
 msgid "Enable Likes for this Content Object"
 msgstr "Likes für dieses Inhaltsobjekt aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:67
+#: kitconcept/intranet/controlpanels/intranet.py:68
 msgid "Enable Sticky Feedback Button"
 msgstr "Sticky-Feedback-Button aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:75
+#: kitconcept/intranet/controlpanels/intranet.py:76
 msgid "Enable content rating globally for the Intranet"
 msgstr "Inhaltsbewertung für das Intranet global aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:92
+#: kitconcept/intranet/controlpanels/intranet.py:93
 msgid "Enable content review reminders globally for the Intranet."
 msgstr "Aktivieren Sie die Erinnerungen zur Inhaltsüberprüfung für das gesamte Intranet."
 
-#: kitconcept/intranet/controlpanels/intranet.py:68
+#: kitconcept/intranet/controlpanels/intranet.py:69
 msgid "Enable or disable the sticky feedback button on all pages."
 msgstr "Aktivieren oder deaktivieren Sie die Sticky-Feedback-Schaltfläche auf allen Seiten."
 
@@ -148,11 +152,11 @@ msgstr "Alle 6 Monate"
 msgid "Every year"
 msgstr "Jedes Jahr"
 
-#: kitconcept/intranet/controlpanels/intranet.py:21
+#: kitconcept/intranet/controlpanels/intranet.py:22
 msgid "External Search URL"
 msgstr "Externe Such-URL"
 
-#: kitconcept/intranet/controlpanels/intranet.py:55
+#: kitconcept/intranet/controlpanels/intranet.py:56
 msgid "Feedback CC email"
 msgstr "Feedback CC E-Mail"
 
@@ -181,7 +185,7 @@ msgstr "Öffentlicher Intranet-Workflow"
 msgid "Intranet Restricted Workflow"
 msgstr "Intranet-beschränkter Workflow"
 
-#: kitconcept/intranet/controlpanels/intranet.py:107
+#: kitconcept/intranet/controlpanels/intranet.py:123
 msgid "Intranet Settings"
 msgstr "Intranet-Einstellungen"
 
@@ -205,7 +209,7 @@ msgstr "Lebenszyklusmanagement-Felder"
 msgid "Likes"
 msgstr "Likes"
 
-#: kitconcept/intranet/controlpanels/intranet.py:61
+#: kitconcept/intranet/controlpanels/intranet.py:62
 msgid "List of allowed email domains for feedback forms."
 msgstr "Liste der zulässigen E-Mail-Domains für Feedback-Formulare."
 
@@ -244,11 +248,11 @@ msgstr "Organisationseinheit"
 msgid "Pending review"
 msgstr "In Bearbeitung"
 
-#: kitconcept/intranet/controlpanels/intranet.py:33
+#: kitconcept/intranet/controlpanels/intranet.py:34
 msgid "Person Picture Aspect Ratio"
 msgstr "Bildformat der Person"
 
-#: kitconcept/intranet/controlpanels/intranet.py:28
+#: kitconcept/intranet/controlpanels/intranet.py:29
 msgid "Placeholder text for the search field."
 msgstr "Platzhaltertext für das Suchfeld."
 
@@ -320,7 +324,7 @@ msgstr "Der Prüfer sendet den Inhalt zur Überarbeitung zurück."
 msgid "Saves userID who liked an item"
 msgstr "Speichert die Benutzer-ID, die einen Artikel geliked hat."
 
-#: kitconcept/intranet/controlpanels/intranet.py:27
+#: kitconcept/intranet/controlpanels/intranet.py:28
 msgid "Search Field Placeholder"
 msgstr "Suchfeld-Platzhalter"
 
@@ -355,7 +359,7 @@ msgstr ""
 msgid "Taxonomy"
 msgstr "Taxonomie"
 
-#: kitconcept/intranet/controlpanels/intranet.py:22
+#: kitconcept/intranet/controlpanels/intranet.py:23
 msgid "Used in the intranet header seach bar."
 msgstr "Verwendet in der Suchleiste der Intranet-Kopfzeile."
 
@@ -400,6 +404,11 @@ msgstr "Content Lifecycle Management"
 msgid "help_current_user_filter"
 msgstr "Entspricht den Werten, die dem aktuell angemeldeten Benutzer zugewiesen sind."
 
+#. Default: "Turn the AI assistant in the edit form on or off. The feature also requires the LLM endpoint and model to be configured through the KITCONCEPT_SOLR_LLM_URL and KITCONCEPT_SOLR_LLM_CHAT_MODEL (and optionally KITCONCEPT_SOLR_LLM_TOKEN) environment variables; unlike AI search, the assistant has no default model."
+#: kitconcept/intranet/controlpanels/intranet.py:107
+msgid "help_enable_ai_edit"
+msgstr "Schaltet den KI-Assistenten im Bearbeitungsformular ein oder aus. Er braucht außerdem den LLM-Endpunkt und das Modell, konfiguriert über die Umgebungsvariablen KITCONCEPT_SOLR_LLM_URL und KITCONCEPT_SOLR_LLM_CHAT_MODEL (und optional KITCONCEPT_SOLR_LLM_TOKEN); anders als die KI-Suche hat der Assistent kein Standardmodell."
+
 #. Default: "If checked, this type can be added to any container."
 #: kitconcept/intranet/patches.py:14
 msgid "help_global_allow"
@@ -411,7 +420,7 @@ msgid "help_organisational_unit"
 msgstr "Nach Organisationseinheit filtern"
 
 #. Default: "Image aspect ratio of the person's picture. This setting is used for the person picture on the person profile page, on teasers that point to a person profile page and on listings where persons are displayed."
-#: kitconcept/intranet/controlpanels/intranet.py:34
+#: kitconcept/intranet/controlpanels/intranet.py:35
 msgid "help_person_picture_aspect_ratio"
 msgstr "Seitenverhältnis des Bildes der Person. Diese Einstellung wird für das Bild der Person auf der Profilseite der Person, in Teasern, die auf eine Profilseite der Person verweisen, und in Listen, in denen Personen angezeigt werden, verwendet."
 

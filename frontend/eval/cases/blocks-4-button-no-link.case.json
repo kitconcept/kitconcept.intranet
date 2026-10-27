@@ -1,0 +1,42 @@
+{
+  "id": "blocks-4-button-no-link",
+  "description": "Block creation (D56): A button with the given label and no link target: none was given, so none may be invented (D48); the message should ask for it.",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "c90fbc73-49f4-4947-9d36-500510e4541b"
+  ],
+  "turns": [
+    {
+      "request": "Add a button \"Contact the team\" below this block.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b36",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b36"
+        ],
+        "must_contain": [
+          {
+            "after": "b36",
+            "shapes": [
+              "__button"
+            ]
+          },
+          {
+            "after": "b36",
+            "fields": {
+              "title": "Contact the team",
+              "href.0.@id": null
+            }
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

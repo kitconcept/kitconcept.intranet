@@ -99,4 +99,25 @@
       name="@type-workflow"
       />
 
+  <!-- AI assistant (POC): proposes edits for the page being edited (called
+       on the content) or added (called on the folder), writes nothing
+       itself. See AI_EDIT_PLAN.md. -->
+  <plone:service
+      method="POST"
+      factory=".ai_edit.AIEditPost"
+      for="zope.interface.Interface"
+      permission="kitconcept.intranet.UseAIEdit"
+      name="@ai-edit"
+      />
+
+  <!-- Same permission: tells the panel whether the user may use the
+       assistant here (401 otherwise) before the first question. -->
+  <plone:service
+      method="GET"
+      factory=".ai_edit.AIEditGet"
+      for="zope.interface.Interface"
+      permission="kitconcept.intranet.UseAIEdit"
+      name="@ai-edit"
+      />
+
 </configure>

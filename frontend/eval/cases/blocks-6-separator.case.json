@@ -1,0 +1,35 @@
+{
+  "id": "blocks-6-separator",
+  "description": "Block creation (D56): A separator after b8, no fields and no styling (an insert without fields, D53).",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "381e5baa-5f99-47f1-a8f3-f31c1cc7aed9"
+  ],
+  "turns": [
+    {
+      "request": "Add a separator after this block.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b8",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b8"
+        ],
+        "must_contain": [
+          {
+            "after": "b8",
+            "shapes": [
+              "separator"
+            ]
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

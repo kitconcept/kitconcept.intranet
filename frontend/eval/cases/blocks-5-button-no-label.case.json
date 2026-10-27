@@ -1,0 +1,18 @@
+{
+  "id": "blocks-5-button-no-label",
+  "description": "Block creation (D56): No label given: the label is required and must not be invented (D55); the answer asks for it, nothing is proposed.",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "e4858372-f3d4-4508-8cff-f1edd099c8e6"
+  ],
+  "turns": [
+    {
+      "request": "Add a button below this block and align it to the right.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "text_only": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI edit eval dashboard</title>
+    <!-- Open this file in a browser and select one or more results files
+         (frontend/eval/results/*.json). Nothing is uploaded: the files are
+         read in the browser. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <style>
+      :root {
+        --bg: #f7f9fa;
+        --surface: #fff;
+        --text: #252525;
+        --muted: #70777a;
+        --border: #e3e8ea;
+        --accent: #007eb1;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #15181a;
+          --surface: #1e2225;
+          --text: #e8eaeb;
+          --muted: #9aa3a7;
+          --border: #343a3e;
+          --accent: #4fb3e0;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font:
+          14px/1.5 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 1200px;
+        padding: 16px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 8px 0 4px;
+        font-size: 20px;
+      }
+      h2 {
+        margin: 0 0 8px;
+        font-size: 15px;
+      }
+      .hint {
+        margin: 0 0 16px;
+        color: var(--muted);
+      }
+      .panel {
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        margin-bottom: 16px;
+        background: var(--surface);
+      }
+      .drop {
+        padding: 18px;
+        border: 2px dashed var(--border);
+        border-radius: 8px;
+        text-align: center;
+      }
+      .drop.over {
+        border-color: var(--accent);
+      }
+      .runs {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 12px 0 0;
+        gap: 8px;
+        list-style: none;
+      }
+      .runs li {
+        display: flex;
+        align-items: center;
+        padding: 4px 8px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        gap: 6px;
+      }
+      .swatch {
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+      }
+      .runs button {
+        border: 0;
+        background: none;
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      }
+      .chart {
+        position: relative;
+        height: 280px;
+      }
+      .wide .chart {
+        height: 340px;
+      }
+      .scroll {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-variant-numeric: tabular-nums;
+      }
+      th,
+      td {
+        padding: 6px 8px;
+        border-bottom: 1px solid var(--border);
+        text-align: right;
+        white-space: nowrap;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--muted);
+        font-weight: 600;
+      }
+      select {
+        padding: 4px;
+        margin-left: 8px;
+      }
+      .empty {
+        color: var(--muted);
+      }
+      td small {
+        margin-left: 4px;
+        color: var(--muted);
+      }
+      .delta {
+        display: block;
+        font-size: 12px;
+      }
+      .good {
+        color: #2e9e5b;
+      }
+      .bad {
+        color: #d32f2f;
+      }
+      .group td {
+        padding-top: 14px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .banner {
+        padding: 10px 12px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        background: #fdf3e1;
+        color: #8a5a00;
+      }
+      .controls {
+        margin-top: 12px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>AI edit eval dashboard</h1>
+      <p class="hint">
+        Load results files from <code>frontend/eval/results/</code> to compare
+        runs. Values a file does not record (older runs) show as n/a. Failed
+        turns count (eval version 2, D52): as finding nothing in recall, as an
+        invalid first answer, and with their time in speed. <code>n</code> is
+        the number of turns behind a value.
+      </p>
+
+      <section class="panel">
+        <div class="drop" id="drop">
+          Drop results files here, or
+          <input type="file" id="files" accept=".json" multiple />
+        </div>
+        <ul class="runs" id="runs"></ul>
+        <div class="controls">
+          Baseline
+          <select id="baseline"></select>
+        </div>
+      </section>
+
+      <div class="banner" id="banner" hidden></div>
+
+      <section class="panel" id="overview">
+        <h2>Overview</h2>
+        <div class="scroll"><table id="table"></table></div>
+      </section>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Success (higher is better)</h2>
+          <div class="chart"><canvas id="success"></canvas></div>
+        </section>
+        <section class="panel">
+          <h2>Reliability (higher is better)</h2>
+          <div class="chart"><canvas id="reliability"></canvas></div>
+        </section>
+        <section class="panel">
+          <h2>Failures (lower is better)</h2>
+          <div class="chart"><canvas id="failures"></canvas></div>
+        </section>
+        <section class="panel">
+          <h2>Safety, counts (lower is better)</h2>
+          <div class="chart"><canvas id="safety"></canvas></div>
+        </section>
+        <section class="panel">
+          <h2>Speed, seconds per turn (lower is better)</h2>
+          <div class="chart"><canvas id="speed"></canvas></div>
+        </section>
+      </div>
+
+      <section class="panel wide">
+        <h2>
+          Per case
+          <select id="metric"></select>
+        </h2>
+        <p class="hint">
+          Bars: the case's value. Dots: each run; red crosses: failed runs (no
+          answer, or a setup failure).
+        </p>
+        <div class="chart"><canvas id="cases"></canvas></div>
+      </section>
+    </main>
+
+    <script>
+      const COLORS = [
+        '#007eb1',
+        '#e07b00',
+        '#2e9e5b',
+        '#c2185b',
+        '#7b5ea7',
+        '#8d6e63',
+        '#00897b',
+        '#5c6bc0',
+      ];
+
+      // KPIs: key, label, group, format ('pct', 's', 'n'), better ('up',
+      // 'down', or null). Groups with a chart: success, reliability,
+      // failures, safety, speed; diagnostics only in the table
+      const METRICS = [
+        // Clean passes (eval version 3, D57): in a run, and in every run
+        // of a case (pass^k)
+        ['passAt1', 'Clean pass (pass@1)', 'success', 'pct', 'up'],
+        // Without the runs the harness rescued (eval version 4, D58)
+        ['modelPassAt1', 'Clean pass, model alone', 'success', 'pct', 'up'],
+        ['passAll', 'Clean in every run (pass^k)', 'success', 'pct', 'up'],
+        ['recallTarget', 'Recall, editor gets', 'success', 'pct', 'up'],
+        ['recallTargetModel', 'Recall, model alone', 'success', 'pct', 'up'],
+        ['precision', 'Precision', 'success', 'pct', 'up'],
+        ['expectedMet', 'Value checks met', 'success', 'pct', 'up'],
+        ['firstValid', 'First answer valid', 'reliability', 'pct', 'up'],
+        ['repairSucceeded', 'Repair succeeded', 'reliability', 'pct', 'up'],
+        ['errorRate', 'Errors (no answer)', 'failures', 'pct', 'down'],
+        ['setupRate', 'Setup failures', 'failures', 'pct', 'down'],
+        ['retryRate', 'Retried (empty answer)', 'failures', 'pct', 'down'],
+        ['repairRate', 'Repair needed', 'failures', 'pct', 'down'],
+        ['mustNotChange', 'Protected blocks changed', 'safety', 'n', 'down'],
+        ['flaggedSelected', 'Flagged, still selected', 'safety', 'n', 'down'],
+        [
+          'preservationFailures',
+          'Preservation failures',
+          'safety',
+          'n',
+          'down',
+        ],
+        ['violations', 'Violations', 'safety', 'n', 'down'],
+        ['dropped', 'Dropped operations', 'safety', 'n', 'down'],
+        ['layoutChanges', 'Unrequested layout', 'safety', 'n', 'down'],
+        ['meanSeconds', 'Mean', 'speed', 's', 'down'],
+        ['p50Seconds', 'p50', 'speed', 's', 'down'],
+        ['p95Seconds', 'p95', 'speed', 's', 'down'],
+        ['tokensPerSecond', 'Tokens per second', 'diagnostics', 'n', 'up'],
+        [
+          'reasoningTokens',
+          'Reasoning tokens per turn',
+          'diagnostics',
+          'n',
+          null,
+        ],
+        ['promptTokens', 'Prompt tokens', 'diagnostics', 'n', null],
+        ['suggested', 'Harness suggestions', 'diagnostics', 'n', null],
+        ['leftovers', 'Leftovers', 'diagnostics', 'n', null],
+        ['newTerms', 'New terms', 'diagnostics', 'n', null],
+        ['textAnswer', 'Text answer', 'diagnostics', 'pct', null],
+      ];
+      const GROUPS = {
+        success: 'Success',
+        reliability: 'Reliability',
+        failures: 'Failures',
+        safety: 'Safety',
+        speed: 'Speed',
+        diagnostics: 'Diagnostics',
+      };
+      // Review flags that mean a change may do harm (harness changes.js)
+      const RISK_FLAGS = [
+        'removesPlaceholders',
+        'dropsFormatting',
+        'replacesMostText',
+        'writesAltText',
+        'sameAsBlock',
+      ];
+      // For estimating reasoning tokens in files that have none
+      const CHARS_PER_TOKEN = 4;
+
+      const results = [];
+      const charts = {};
+      let baseline = null;
+
+      const mean = (values) => {
+        const numbers = values.filter((v) => typeof v === 'number');
+        return numbers.length
+          ? numbers.reduce((sum, v) => sum + v, 0) / numbers.length
+          : null;
+      };
+      const percentile = (values, share) => {
+        const sorted = values
+          .filter((v) => typeof v === 'number')
+          .sort((a, b) => a - b);
+        if (!sorted.length) return null;
+        return sorted[
+          Math.min(sorted.length - 1, Math.ceil(share * sorted.length) - 1)
+        ];
+      };
+      const rate = (turns, test) =>
+        turns.length ? turns.filter(test).length / turns.length : null;
+      const sum = (turns, value) =>
+        turns.some((t) => value(t) !== undefined)
+          ? turns.reduce((total, t) => total + (value(t) || 0), 0)
+          : null;
+
+      const failed = (t) =>
+        !!t.graded.a.error || !!t.graded.a.deploymentFailure;
+      const reasoningOf = (call) =>
+        call.reasoningTokens ??
+        Math.round((call.reasoning || '').length / CHARS_PER_TOKEN);
+      const flaggedSelected = (t) =>
+        t.graded.a.flaggedSelected ??
+        (t.message?.changes || []).filter(
+          (c) => c.selected && RISK_FLAGS.some((flag) => c.flags?.[flag]),
+        ).length;
+
+      /**
+       * The KPIs of a set of turns (from the raw runs), and `ns`: how many
+       * turns each value rests on. What the editor got counts failed
+       * calls (errors): recall 0, no valid first answer, their time.
+       * Setup failures (not the model's) stay out of all but their rate.
+       */
+      const kpis = (turns) => {
+        const graded = turns.filter((t) => !failed(t));
+        const errors = turns.filter(
+          (t) => t.graded.a.error && !t.graded.a.deploymentFailure,
+        );
+        const answered = [...graded, ...errors];
+        const withB = graded.filter((t) => t.graded.b);
+        const failedGradable = turns.filter(
+          (t) => failed(t) && t.graded.gradable,
+        );
+        const recall = (pick) =>
+          mean([...withB.map(pick), ...failedGradable.map(() => 0)]);
+        const seconds = answered
+          .map((t) => t.graded.timing?.turnMs)
+          .filter((ms) => typeof ms === 'number')
+          .map((ms) => ms / 1000);
+        const calls = graded
+          .flatMap((t) => t.graded.timing?.calls || [])
+          .filter((c) => !c.error);
+        const callMs = calls.reduce((total, c) => total + (c.ms || 0), 0);
+        const tokens = calls.reduce(
+          (total, c) => total + (c.completionTokens || 0),
+          0,
+        );
+        const expected = graded.flatMap((t) => t.graded.expected || []);
+        const repaired = graded.filter((t) => t.graded.a.repaired);
+        const precise = withB.filter(
+          (t) => typeof t.graded.b.precision === 'number',
+        );
+        const hasField = (name) =>
+          graded.some((t) => t.graded[name] !== undefined);
+        // A case's turn, over its runs (pass^k needs every run)
+        const byCaseTurn = {};
+        turns.forEach((t) => {
+          const key = `${t.id}|${t.request}`;
+          (byCaseTurn[key] = byCaseTurn[key] || []).push(t);
+        });
+        const hasPassed = turns.some((t) => t.graded.passed !== undefined);
+        const caseTurns = Object.values(byCaseTurn);
+        const values = {
+          passAt1: hasPassed ? rate(turns, (t) => !!t.graded.passed) : null,
+          modelPassAt1: turns.some((t) => t.graded.modelPassed !== undefined)
+            ? rate(turns, (t) => !!t.graded.modelPassed)
+            : null,
+          passAll: hasPassed
+            ? rate(caseTurns, (list) => list.every((t) => t.graded.passed))
+            : null,
+          turns: turns.length,
+          graded: graded.length,
+          recallTarget: recall((t) => t.graded.b.recallTarget),
+          recallTargetModel: recall(
+            (t) => (t.graded.bModel || t.graded.b).recallTarget,
+          ),
+          precision: mean(precise.map((t) => t.graded.b.precision)),
+          expectedMet: expected.length
+            ? expected.filter((e) => e.met).length / expected.length
+            : null,
+          // A retry after an empty answer is no valid first answer
+          firstValid: rate(
+            answered,
+            (t) =>
+              !t.graded.a.error &&
+              t.graded.a.firstAttemptValid &&
+              !t.message?.retried,
+          ),
+          repairSucceeded: rate(repaired, (t) => t.graded.a.repairSucceeded),
+          errorRate: rate(turns, (t) => !!t.graded.a.error),
+          setupRate: rate(turns, (t) => !!t.graded.a.deploymentFailure),
+          retryRate: rate(graded, (t) => !!t.message?.retried),
+          repairRate: rate(graded, (t) => t.graded.a.repaired),
+          mustNotChange: sum(withB, (t) => t.graded.b.mustNotChange?.length),
+          flaggedSelected: sum(graded, flaggedSelected),
+          preservationFailures: sum(
+            graded,
+            (t) => t.graded.preservation?.filter((r) => !r.kept).length,
+          ),
+          violations: sum(graded, (t) => t.graded.invariants?.violations),
+          dropped: sum(graded, (t) => t.message?.dropped?.length),
+          layoutChanges: sum(graded, (t) => t.graded.layoutChanges),
+          meanSeconds: mean(seconds),
+          p50Seconds: percentile(seconds, 0.5),
+          p95Seconds: percentile(seconds, 0.95),
+          tokensPerSecond: callMs ? tokens / (callMs / 1000) : null,
+          reasoningTokens: mean(
+            graded.map((t) =>
+              (t.graded.timing?.calls || []).reduce(
+                (total, c) => total + reasoningOf(c),
+                0,
+              ),
+            ),
+          ),
+          promptTokens: mean(graded.map((t) => t.graded.a.promptTokens)),
+          suggested: sum(graded, (t) => t.message?.suggested),
+          leftovers: sum(graded, (t) => t.message?.leftovers?.length),
+          newTerms: sum(graded, (t) =>
+            t.graded.newTerms?.reduce((n, e) => n + e.terms.length, 0),
+          ),
+          textAnswer: hasField('textAnswer')
+            ? rate(graded, (t) => t.graded.textAnswer)
+            : null,
+        };
+        const ns = {
+          recallTarget: withB.length + failedGradable.length,
+          recallTargetModel: withB.length + failedGradable.length,
+          precision: precise.length,
+          expectedMet: graded.length,
+          firstValid: answered.length,
+          repairSucceeded: repaired.length,
+          errorRate: turns.length,
+          setupRate: turns.length,
+          retryRate: graded.length,
+          repairRate: graded.length,
+          mustNotChange: withB.length,
+          meanSeconds: seconds.length,
+          p50Seconds: seconds.length,
+          p95Seconds: seconds.length,
+        };
+        return { ...values, ns };
+      };
+
+      /** One loaded results file, with its KPIs overall and per case. */
+      const load = (name, data) => {
+        const turns = (data.runs || [])
+          .filter((run) => !run.error)
+          .flatMap((run) => run.turns.map((turn) => ({ ...turn, id: run.id })));
+        const byCase = {};
+        turns.forEach((turn) => {
+          (byCase[turn.id] = byCase[turn.id] || []).push(turn);
+        });
+        const stamp = name.match(/^(\d{4}-\d{2}-\d{2})T(\d{2})-(\d{2})/);
+        return {
+          name,
+          label: data.label || name,
+          date:
+            data.startedAt?.slice(0, 16).replace('T', ' ') ||
+            (stamp ? `${stamp[1]} ${stamp[2]}:${stamp[3]}` : ''),
+          repeat: data.repeat,
+          // Files from before versioning graded as version 1
+          version: data.evalVersion ?? 1,
+          complete: data.complete !== false,
+          extractor: data.extractor?.model || 'none',
+          // The tool architecture (D57); older files: the single tool
+          toolset: data.toolset || 'list',
+          // Clean passes per group of cases (the name before the first -)
+          groups: Object.entries(
+            turns.reduce((groups, turn) => {
+              const group = turn.id.split('-')[0];
+              (groups[group] = groups[group] || []).push(turn);
+              return groups;
+            }, {}),
+          ).map(([group, list]) => [group, kpis(list)]),
+          overall: kpis(turns),
+          cases: Object.fromEntries(
+            Object.entries(byCase).map(([id, list]) => [id, kpis(list)]),
+          ),
+          // Each run of a case on its own, for the dots per run
+          caseRuns: Object.fromEntries(
+            Object.entries(byCase).map(([id, list]) => [
+              id,
+              list.map((turn) => ({ failed: failed(turn), ...kpis([turn]) })),
+            ]),
+          ),
+          visible: true,
+        };
+      };
+
+      const format = (value, kind) => {
+        if (value === null || value === undefined || Number.isNaN(value)) {
+          return 'n/a';
+        }
+        if (kind === 'pct') return `${Math.round(value * 100)} %`;
+        if (kind === 's') return `${value.toFixed(1)} s`;
+        return Number.isInteger(value) ? String(value) : value.toFixed(1);
+      };
+
+      const shown = () => results.filter((r) => r.visible);
+      const color = (r) => COLORS[results.indexOf(r) % COLORS.length];
+
+      const renderRuns = () => {
+        const list = document.getElementById('runs');
+        list.innerHTML = '';
+        results.forEach((r) => {
+          const item = document.createElement('li');
+          const box = document.createElement('input');
+          box.type = 'checkbox';
+          box.checked = r.visible;
+          box.title = 'Show in the charts';
+          box.onchange = () => {
+            r.visible = box.checked;
+            render();
+          };
+          const swatch = document.createElement('span');
+          swatch.className = 'swatch';
+          swatch.style.background = color(r);
+          const text = document.createElement('span');
+          text.textContent = `${r.label} · ${r.date}${r.complete ? '' : ' (incomplete)'}`;
+          const remove = document.createElement('button');
+          remove.textContent = '×';
+          remove.title = 'Remove';
+          remove.onclick = () => {
+            results.splice(results.indexOf(r), 1);
+            render();
+          };
+          item.append(box, swatch, text, remove);
+          list.append(item);
+        });
+      };
+
+      const renderBaseline = () => {
+        const select = document.getElementById('baseline');
+        if (baseline && !results.includes(baseline)) baseline = null;
+        select.innerHTML = '';
+        select.add(new Option('none', ''));
+        results.forEach((r, index) =>
+          select.add(
+            new Option(
+              `${r.label} · ${r.date}`,
+              String(index),
+              false,
+              r === baseline,
+            ),
+          ),
+        );
+        select.onchange = () => {
+          baseline = select.value === '' ? null : results[Number(select.value)];
+          render();
+        };
+        const banner = document.getElementById('banner');
+        const versions = [...new Set(shown().map((r) => r.version))];
+        banner.hidden = versions.length < 2;
+        banner.textContent = `The loaded files were graded by different eval versions (${versions.join(', ')}): a difference may come from the grading, not the model. Compare files of one version.`;
+      };
+
+      const delta = (r, key, kind, better) => {
+        if (!baseline || r === baseline) return '';
+        const now = r.overall[key];
+        const base = baseline.overall[key];
+        if (typeof now !== 'number' || typeof base !== 'number') return '';
+        const d = now - base;
+        if (Math.abs(d) < 1e-9) return '<span class="delta">=</span>';
+        const good = better === 'up' ? d > 0 : better === 'down' ? d < 0 : null;
+        const amount =
+          kind === 'pct'
+            ? `${Math.round(Math.abs(d) * 100)} pt`
+            : kind === 's'
+              ? `${Math.abs(d).toFixed(1)} s`
+              : Number.isInteger(d)
+                ? String(Math.abs(d))
+                : Math.abs(d).toFixed(1);
+        const tone = good === null ? '' : good ? 'good' : 'bad';
+        return `<span class="delta ${tone}">${d > 0 ? '▲' : '▼'} ${amount}</span>`;
+      };
+
+      const renderTable = () => {
+        const table = document.getElementById('table');
+        const runs = shown();
+        if (!runs.length) {
+          table.innerHTML =
+            '<tr><td class="empty">No results loaded yet.</td></tr>';
+          return;
+        }
+        const head = `<tr><th>KPI</th>${runs
+          .map(
+            (r) =>
+              `<th style="color:${color(r)}">${r.label}<br><small>${r.date} · ×${r.repeat ?? '?'} · toolset ${r.toolset} · extractor ${r.extractor}</small></th>`,
+          )
+          .join('')}</tr>`;
+        const cell = (r, key, kind, better) => {
+          const n = r.overall.ns[key];
+          return `<td>${format(r.overall[key], kind)}${n === undefined ? '' : `<small>n=${n}</small>`}${delta(r, key, kind, better)}</td>`;
+        };
+        const row = ([key, label, , kind, better]) =>
+          `<tr><td>${label}</td>${runs.map((r) => cell(r, key, kind, better)).join('')}</tr>`;
+        const rows = [
+          row(['turns', 'Turns', null, 'n', null]),
+          row(['graded', 'Graded', null, 'n', null]),
+          ...Object.entries(GROUPS).flatMap(([group, title]) => [
+            `<tr class="group"><td colspan="${runs.length + 1}">${title}</td></tr>`,
+            ...METRICS.filter(([, , g]) => g === group).map(row),
+          ]),
+        ].join('');
+        // Clean passes by group of cases (blocks, summit, …)
+        const groupNames = [
+          ...new Set(runs.flatMap((r) => r.groups.map(([name]) => name))),
+        ].sort();
+        const groupRows = groupNames
+          .map(
+            (name) =>
+              `<tr><td>${name}: pass@1 / pass^k</td>${runs
+                .map((r) => {
+                  const found = r.groups.find(([group]) => group === name);
+                  return found
+                    ? `<td>${format(found[1].passAt1, 'pct')} / ${format(found[1].passAll, 'pct')}<small>n=${found[1].turns}</small></td>`
+                    : '<td>n/a</td>';
+                })
+                .join('')}</tr>`,
+          )
+          .join('');
+        table.innerHTML =
+          head +
+          rows +
+          `<tr class="group"><td colspan="${runs.length + 1}">By group</td></tr>` +
+          groupRows;
+      };
+
+      const barChart = (id, labels, datasets, kind) => {
+        charts[id]?.destroy();
+        charts[id] = new Chart(document.getElementById(id), {
+          type: 'bar',
+          data: { labels, datasets },
+          options: {
+            maintainAspectRatio: false,
+            animation: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                ...(kind === 'pct'
+                  ? {
+                      max: 1,
+                      ticks: { callback: (v) => `${Math.round(v * 100)} %` },
+                    }
+                  : {}),
+              },
+            },
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (ctx) =>
+                    `${ctx.dataset.label}: ${format(ctx.parsed.y, kind)}`,
+                },
+              },
+            },
+          },
+        });
+      };
+
+      const groupChart = (id, group, kind) => {
+        const metrics = METRICS.filter(([, , g]) => g === group);
+        barChart(
+          id,
+          metrics.map(([, label]) => label),
+          shown().map((r) => ({
+            label: `${r.label} (${r.date})`,
+            data: metrics.map(([key]) => r.overall[key]),
+            backgroundColor: color(r),
+          })),
+          kind,
+        );
+      };
+
+      const renderCases = () => {
+        const select = document.getElementById('metric');
+        if (!select.options.length) {
+          METRICS.forEach(([key, label]) => select.add(new Option(label, key)));
+          select.onchange = renderCases;
+        }
+        const [key, , , kind] = METRICS.find(([k]) => k === select.value);
+        const runs = shown();
+        const cases = [
+          ...new Set(runs.flatMap((r) => Object.keys(r.cases))),
+        ].sort();
+        // A case's label with its number of runs, per loaded file
+        const labels = cases.map((id) => [
+          id,
+          runs.map((r) => `n=${r.cases[id]?.turns ?? 0}`).join(' · '),
+        ]);
+        const dots = runs.flatMap((r) => {
+          const points = cases.flatMap((id, index) =>
+            (r.caseRuns[id] || []).map((run) => ({
+              x: labels[index],
+              y: run.failed ? 0 : run[key],
+              failed: run.failed,
+            })),
+          );
+          const style = (failedRuns) => ({
+            type: 'line',
+            label: `${r.label}: ${failedRuns ? 'failed runs' : 'runs'}`,
+            data: points.filter(
+              (p) => p.failed === failedRuns && typeof p.y === 'number',
+            ),
+            showLine: false,
+            pointRadius: failedRuns ? 7 : 4,
+            pointStyle: failedRuns ? 'crossRot' : 'circle',
+            borderColor: failedRuns ? '#d32f2f' : color(r),
+            backgroundColor: failedRuns ? '#d32f2f' : '#fff',
+            borderWidth: 2,
+          });
+          return [style(false), style(true)];
+        });
+        barChart(
+          'cases',
+          labels,
+          [
+            ...dots,
+            ...runs.map((r) => ({
+              label: `${r.label} (${r.date})`,
+              data: cases.map((id) => r.cases[id]?.[key] ?? null),
+              backgroundColor: `${color(r)}88`,
+            })),
+          ],
+          kind,
+        );
+      };
+
+      const render = () => {
+        renderRuns();
+        renderBaseline();
+        renderTable();
+        groupChart('success', 'success', 'pct');
+        groupChart('reliability', 'reliability', 'pct');
+        groupChart('failures', 'failures', 'pct');
+        groupChart('safety', 'safety', 'n');
+        groupChart('speed', 'speed', 's');
+        renderCases();
+      };
+
+      const read = (files) =>
+        Promise.all(
+          [...files].map((file) =>
+            file.text().then((text) => {
+              try {
+                const data = JSON.parse(text);
+                if (results.some((r) => r.name === file.name)) return;
+                results.push(load(file.name, data));
+              } catch (error) {
+                alert(`${file.name}: not a results file (${error.message})`);
+              }
+            }),
+          ),
+        ).then(() => {
+          results.sort((a, b) => a.date.localeCompare(b.date));
+          render();
+        });
+
+      document.getElementById('files').onchange = (event) =>
+        read(event.target.files);
+      const drop = document.getElementById('drop');
+      drop.ondragover = (event) => {
+        event.preventDefault();
+        drop.classList.add('over');
+      };
+      drop.ondragleave = () => drop.classList.remove('over');
+      drop.ondrop = (event) => {
+        event.preventDefault();
+        drop.classList.remove('over');
+        read(event.dataTransfer.files);
+      };
+      render();
+    </script>
+  </body>
+</html>

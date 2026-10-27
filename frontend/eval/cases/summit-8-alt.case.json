@@ -1,0 +1,43 @@
+{
+  "id": "summit-8-alt",
+  "description": "Draft test 8: images without a usable alt text (hero b2, Marcus b17, Priya b21; the venue photo b28 has only a file name). Graded by the current rule (D40): the model cannot see images, so it names them for a person to write instead of writing them; written alt texts count against must_not_change. Ada's alt (b13) and the floor plan's (b30) stay. Open decision: the draft accepts alt texts taken from the context ('Portrait of Marcus Lindqvist').",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Add alt text to every image that's missing one.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b2",
+            "category": "accessibility",
+            "flag_only": true
+          },
+          {
+            "target": "b17",
+            "category": "accessibility",
+            "flag_only": true
+          },
+          {
+            "target": "b21",
+            "category": "accessibility",
+            "flag_only": true
+          }
+        ],
+        "optional": [
+          {
+            "target": "b28"
+          }
+        ],
+        "must_not_change": [
+          "b2",
+          "b13",
+          "b17",
+          "b21",
+          "b30"
+        ]
+      }
+    }
+  ]
+}

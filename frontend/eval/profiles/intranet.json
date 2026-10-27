@@ -1,0 +1,489 @@
+{
+  "version": 1,
+  "charsPerToken": 3,
+  "pageFields": {
+    "title": {
+      "kind": "string"
+    },
+    "description": {
+      "kind": "text"
+    }
+  },
+  "blockTypes": {
+    "__button": {
+      "fields": {
+        "title": {
+          "kind": "string",
+          "path": "title",
+          "required": true
+        },
+        "href": {
+          "kind": "link",
+          "path": "href"
+        }
+      },
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "blockWidth": {
+          "path": "styles.blockWidth:noprefix",
+          "values": [
+            "narrow",
+            "default"
+          ],
+          "default": "default"
+        },
+        "align": {
+          "path": "styles.align:noprefix",
+          "values": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "left"
+        },
+        "openLinkInNewTab": {
+          "path": "openLinkInNewTab",
+          "values": [
+            "false",
+            "true"
+          ],
+          "boolean": true,
+          "default": "false",
+          "fromSchema": true
+        }
+      },
+      "insertable": true,
+      "initial": {
+        "@type": "__button"
+      }
+    },
+    "accordion": {
+      "container": {
+        "allowed": [
+          "slate",
+          "teaser",
+          "image",
+          "listing",
+          "slateTable",
+          "separator"
+        ]
+      }
+    },
+    "banner": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "blockWidth": {
+          "path": "styles.blockWidth:noprefix",
+          "values": [
+            "layout",
+            "full"
+          ],
+          "default": "layout"
+        }
+      }
+    },
+    "contactList": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      }
+    },
+    "followUsBlock": {
+      "styling": {
+        "align": {
+          "path": "styles.align:noprefix",
+          "values": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "left"
+        }
+      }
+    },
+    "gridBlock": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      },
+      "container": {
+        "allowed": [
+          "image",
+          "listing",
+          "slate",
+          "teaser"
+        ],
+        "max": 4
+      }
+    },
+    "heading": {
+      "fields": {
+        "heading": {
+          "kind": "string",
+          "path": "heading"
+        }
+      },
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      }
+    },
+    "highlight": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "descriptionColor": {
+          "path": "styles.descriptionColor",
+          "values": [
+            "highlight-custom-color-1",
+            "highlight-custom-color-2",
+            "highlight-custom-color-3",
+            "highlight-custom-color-4",
+            "highlight-custom-color-5",
+            "highlight-custom-color-6",
+            "highlight-custom-color-7"
+          ],
+          "default": "highlight-custom-color-1"
+        }
+      }
+    },
+    "image": {
+      "fields": {
+        "alt": {
+          "kind": "string",
+          "path": "alt"
+        },
+        "title": {
+          "kind": "string",
+          "path": "title"
+        },
+        "description": {
+          "kind": "text",
+          "path": "description"
+        }
+      },
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "align": {
+          "path": "styles.align:noprefix",
+          "values": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "center"
+        },
+        "blockWidth": {
+          "path": "styles.blockWidth:noprefix",
+          "values": [
+            "narrow",
+            "default",
+            "layout",
+            "full"
+          ],
+          "default": "default"
+        },
+        "size": {
+          "path": "styles.size:noprefix",
+          "values": [
+            "s",
+            "m",
+            "l"
+          ],
+          "default": "l"
+        }
+      }
+    },
+    "introduction": {
+      "fields": {
+        "text": {
+          "kind": "richtext",
+          "path": "value"
+        }
+      },
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      }
+    },
+    "listing": {
+      "fields": {
+        "headline": {
+          "kind": "string",
+          "path": "headline"
+        }
+      },
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      }
+    },
+    "maps": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "align": {
+          "path": "styles.align:noprefix",
+          "values": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "center"
+        },
+        "blockWidth": {
+          "path": "styles.blockWidth:noprefix",
+          "values": [
+            "narrow",
+            "default",
+            "layout",
+            "full"
+          ],
+          "default": "default"
+        }
+      }
+    },
+    "search": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      }
+    },
+    "separator": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "blockWidth": {
+          "path": "styles.blockWidth:noprefix",
+          "values": [
+            "narrow",
+            "default"
+          ],
+          "default": "default"
+        },
+        "align": {
+          "path": "styles.align:noprefix",
+          "values": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "left"
+        }
+      },
+      "insertable": true,
+      "initial": {
+        "@type": "separator"
+      }
+    },
+    "slate": {
+      "fields": {
+        "text": {
+          "kind": "richtext",
+          "path": "value"
+        }
+      },
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      },
+      "insertable": true,
+      "initial": {
+        "@type": "slate"
+      }
+    },
+    "slateTable": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        }
+      }
+    },
+    "slider": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "flagColor": {
+          "path": "styles.flagColor",
+          "values": [
+            "slider-custom-color-1",
+            "slider-custom-color-2",
+            "slider-custom-color-3",
+            "slider-custom-color-4",
+            "slider-custom-color-5",
+            "slider-custom-color-6",
+            "slider-custom-color-7",
+            "slider-custom-color-8"
+          ],
+          "default": "slider-custom-color-1"
+        }
+      }
+    },
+    "teaser": {
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "align": {
+          "path": "styles.align",
+          "values": [
+            "left",
+            "right",
+            "center"
+          ],
+          "default": "left"
+        }
+      }
+    },
+    "video": {
+      "fields": {
+        "url": {
+          "kind": "url",
+          "path": "url",
+          "fromSchema": true,
+          "required": true
+        },
+        "preview_image": {
+          "kind": "url",
+          "path": "preview_image",
+          "fromSchema": true
+        },
+        "title": {
+          "kind": "string",
+          "path": "title",
+          "fromSchema": true
+        }
+      },
+      "styling": {
+        "theme": {
+          "path": "theme",
+          "values": [
+            "default",
+            "grey"
+          ],
+          "default": "default"
+        },
+        "align": {
+          "path": "styles.align:noprefix",
+          "values": [
+            "left",
+            "center",
+            "right"
+          ],
+          "default": "center"
+        },
+        "blockWidth": {
+          "path": "styles.blockWidth:noprefix",
+          "values": [
+            "narrow",
+            "default",
+            "layout",
+            "full"
+          ],
+          "default": "default"
+        }
+      },
+      "insertable": true,
+      "initial": {
+        "@type": "video"
+      }
+    }
+  }
+}

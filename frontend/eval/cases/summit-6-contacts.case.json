@@ -1,0 +1,62 @@
+{
+  "id": "summit-6-contacts",
+  "description": "Draft test 6: the contact details in 'Questions?' (b36) updated from the 'we've moved' notice (b38): phone +1 (555) 555-0171, office 1701 Enterprise Way, Riverton, email events@nimbuslabs.example. Adapted: link targets are placeholders the model cannot see (htps://, the empty Maps link, mailto:), so broken URLs cannot be fixed and must not be invented; a changed email link text keeps its old mailto target, which the answer should say. The venue address and the notice stay; the code-of-conduct link stays.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Fix all broken links and update outdated contact details.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b36",
+            "category": "outdated"
+          }
+        ],
+        "optional": [
+          {
+            "target": "b4"
+          },
+          {
+            "target": "b29"
+          }
+        ],
+        "must_not_change": [
+          "b38",
+          "b32"
+        ],
+        "must_preserve": [
+          {
+            "block": "b36",
+            "placeholder": "link:5"
+          },
+          {
+            "block": "b29",
+            "text": "88 Harbor Street"
+          }
+        ],
+        "must_contain": [
+          {
+            "block": "b36",
+            "text": "+1 (555) 555-0171"
+          },
+          {
+            "block": "b36",
+            "text": "1701 Enterprise Way"
+          }
+        ],
+        "must_not_contain": [
+          {
+            "block": "b36",
+            "text": "555-0134"
+          },
+          {
+            "block": "b36",
+            "text": "42 Old Mill Road"
+          }
+        ]
+      }
+    }
+  ]
+}

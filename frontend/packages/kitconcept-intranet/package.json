@@ -117,8 +117,12 @@
     "@radix-ui/react-popover": "^1.1.15",
     "class-variance-authority": "^0.7.1",
     "lucide-react": "^0.544.0",
+    "mdast-util-gfm-strikethrough": "2.0.1",
+    "micromark-extension-gfm-strikethrough": "2.1.0",
     "papaparse": "^5.7.0",
-    "platejs": "^53.3.14"
+    "platejs": "^53.3.14",
+    "remark-parse": "11.0.0",
+    "unified": "11.0.5"
   },
   "volto_version": "19.5.0"
 }

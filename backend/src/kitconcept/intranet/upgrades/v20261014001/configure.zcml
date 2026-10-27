@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261013001"
+      destination="20261014001"
+      >
+    <genericsetup:upgradeStep
+        title="AI assistant: the enable_ai_edit registry record"
+        handler=".add_intranet_settings_records"
+        />
+    <genericsetup:upgradeDepends
+        title="AI assistant: the Use AI editing permission"
+        import_steps="rolemap"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

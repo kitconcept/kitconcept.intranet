@@ -1,0 +1,55 @@
+{
+  "id": "blocks-12-row",
+  "description": "Block creation (D56): Four blocks of three types in a row, in the order asked, after b36. No fact the request does not give (no_new_terms, D57).",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "c90fbc73-49f4-4947-9d36-500510e4541b"
+  ],
+  "turns": [
+    {
+      "request": "Below this block add a separator, a heading \"Sponsors\", a paragraph saying that sponsors will be announced soon, and a button \"Become a sponsor\" linking to https://sponsors.example.org.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b36",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b36"
+        ],
+        "must_contain": [
+          {
+            "after": "b36",
+            "shapes": [
+              "separator",
+              [
+                "h2",
+                "h3"
+              ],
+              "p",
+              "__button"
+            ]
+          },
+          {
+            "after": "b36",
+            "index": 1,
+            "text": "Sponsors"
+          },
+          {
+            "after": "b36",
+            "index": 3,
+            "fields": {
+              "title": "Become a sponsor",
+              "href.0.@id": "https://sponsors.example.org"
+            }
+          }
+        ],
+        "no_new_terms": true,
+        "no_other_changes": true
+      }
+    }
+  ]
+}

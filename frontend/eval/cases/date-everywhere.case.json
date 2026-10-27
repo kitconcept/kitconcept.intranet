@@ -1,0 +1,286 @@
+{
+  "id": "date-everywhere",
+  "description": "A date to change on the whole page, written in several formats (from the first browser test); only the date may change, the rest of each block stays. b5 has last year's date (stays) and a deadline that depends on the date (one week before: April 2).",
+  "formData": {
+    "title": "Horizon Summit 2027",
+    "description": "",
+    "blocks": {
+      "title": {
+        "@type": "title"
+      },
+      "hosted": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Hosted by Nimbus Labs · Thursday, March 18, 2027 · Riverton Convention Hall"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Hosted by Nimbus Labs · Thursday, March 18, 2027 · Riverton Convention Hall"
+      },
+      "register": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "type": "link",
+                "data": {
+                  "url": "/register"
+                },
+                "children": [
+                  {
+                    "text": "Register now"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "plaintext": "Register now"
+      },
+      "about-h": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "About the summit"
+              }
+            ]
+          }
+        ],
+        "plaintext": "About the summit"
+      },
+      "about": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Hey everyone, welcome to the official page for Horizon Summit 2027! This is a one-day event that is organized by Nimbus Labs and it is going to take place on March 18, 2027 at the Riverton Convention Hall. Last year's summit on March 19, 2026 had more than 400 attendees and we are expecting even more people this year. Registration is open now and it closes one week before the event, on March 11, so make sure you sign up soon. Early-bird pricing is available until January 31, 2027."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Hey everyone, welcome to the official page for Horizon Summit 2027! This is a one-day event that is organized by Nimbus Labs and it is going to take place on March 18, 2027 at the Riverton Convention Hall. Last year's summit on March 19, 2026 had more than 400 attendees and we are expecting even more people this year. Registration is open now and it closes one week before the event, on March 11, so make sure you sign up soon. Early-bird pricing is available until January 31, 2027."
+      },
+      "schedule-h": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "Schedule"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Schedule"
+      },
+      "day": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "text": "Thursday, March 18"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "plaintext": "Thursday, March 18"
+      },
+      "missed": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Can't make it on the 18th? All keynotes will be recorded and posted the following week."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Can't make it on the 18th? All keynotes will be recorded and posted the following week."
+      },
+      "parking-h": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "Parking"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Parking"
+      },
+      "parking": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "The venue has its own garage on Dock Lane with about 150 spaces. Parking is free for attendees on March 18 – just show your badge at the exit. If the garage is full, there's a public lot on Harbor Street ($12 for the day)."
+              }
+            ]
+          }
+        ],
+        "plaintext": "The venue has its own garage on Dock Lane with about 150 spaces. Parking is free for attendees on March 18 – just show your badge at the exit. If the garage is full, there's a public lot on Harbor Street ($12 for the day)."
+      },
+      "moved": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "text": "Heads up – we've moved!"
+                  }
+                ]
+              },
+              {
+                "text": " Since September 2026, Nimbus Labs is at 1701 Enterprise Way, Riverton. Our new phone number is +1 (555) 555-0171."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Heads up – we've moved! Since September 2026, Nimbus Labs is at 1701 Enterprise Way, Riverton. Our new phone number is +1 (555) 555-0171."
+      },
+      "footer": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Horizon Summit 2027 · 18.03.2027 · © Nimbus Labs"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Horizon Summit 2027 · 18.03.2027 · © Nimbus Labs"
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "title",
+        "hosted",
+        "register",
+        "about-h",
+        "about",
+        "schedule-h",
+        "day",
+        "missed",
+        "parking-h",
+        "parking",
+        "moved",
+        "footer"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "request": "The event date changed to Friday, April 9, 2027. Update it everywhere on the page.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b2",
+            "category": "outdated"
+          },
+          {
+            "target": "b5",
+            "category": "outdated"
+          },
+          {
+            "target": "b7",
+            "category": "outdated"
+          },
+          {
+            "target": "b8",
+            "category": "outdated"
+          },
+          {
+            "target": "b10",
+            "category": "outdated"
+          },
+          {
+            "target": "b12",
+            "category": "outdated"
+          }
+        ],
+        "must_not_change": [
+          "b3",
+          "b4",
+          "b6",
+          "b9",
+          "b11"
+        ],
+        "must_preserve": [
+          {
+            "block": "b3",
+            "placeholder": "link:1"
+          },
+          {
+            "block": "b7",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "block": "b2",
+            "text": "Hosted by Nimbus Labs"
+          },
+          {
+            "block": "b5",
+            "text": "Hey everyone, welcome to the official page for Horizon Summit 2027!"
+          },
+          {
+            "block": "b5",
+            "text": "Last year's summit on March 19, 2026 had more than 400 attendees"
+          },
+          {
+            "block": "b5",
+            "text": "Early-bird pricing is available until January 31, 2027."
+          },
+          {
+            "block": "b8",
+            "text": "All keynotes will be recorded and posted the following week."
+          },
+          {
+            "block": "b10",
+            "text": "just show your badge at the exit"
+          },
+          {
+            "block": "b12",
+            "text": "© Nimbus Labs"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "id": "summit-4-translate",
+  "description": "Draft test 4: all visible text in German, formatting kept (heading levels, bold, italic, links), dates in German format ('18. März 2027'); proper nouns, phone numbers and links stay. Adapted: the schedule table's content is not shown to the model (content=\"not shown\") and cannot be translated; link targets are not visible (placeholders), so anchors cannot be adjusted; alt texts are translation candidates (they start unselected in the review). A long answer: watch timeouts. Not expected: the speaker names (b11, b15, b19) and the footer (b39: a name, a date in numbers, the organizer); a translation of them is not wrong (optional). Since D58 the Parking heading (b31) must still be about parking (Parken, Parkplätze): three runs wrote the next heading's translation into it.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Translate this page into German, keeping the formatting.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b3",
+            "category": "translation"
+          },
+          {
+            "target": "b4",
+            "category": "translation"
+          },
+          {
+            "target": "b5",
+            "category": "translation"
+          },
+          {
+            "target": "b7",
+            "category": "translation"
+          },
+          {
+            "target": "b8",
+            "category": "translation"
+          },
+          {
+            "target": "b9",
+            "category": "translation"
+          },
+          {
+            "target": "b10",
+            "category": "translation"
+          },
+          {
+            "target": "b12",
+            "category": "translation"
+          },
+          {
+            "target": "b14",
+            "category": "translation"
+          },
+          {
+            "target": "b16",
+            "category": "translation"
+          },
+          {
+            "target": "b18",
+            "category": "translation"
+          },
+          {
+            "target": "b20",
+            "category": "translation"
+          },
+          {
+            "target": "b22",
+            "category": "translation"
+          },
+          {
+            "target": "b23",
+            "category": "translation"
+          },
+          {
+            "target": "b24",
+            "category": "translation"
+          },
+          {
+            "target": "b26",
+            "category": "translation"
+          },
+          {
+            "target": "b27",
+            "category": "translation"
+          },
+          {
+            "target": "b29",
+            "category": "translation"
+          },
+          {
+            "target": "b31",
+            "category": "translation"
+          },
+          {
+            "target": "b32",
+            "category": "translation"
+          },
+          {
+            "target": "b33",
+            "category": "translation"
+          },
+          {
+            "target": "b34",
+            "category": "translation"
+          },
+          {
+            "target": "b35",
+            "category": "translation"
+          },
+          {
+            "target": "b36",
+            "category": "translation"
+          },
+          {
+            "target": "b38",
+            "category": "translation"
+          }
+        ],
+        "optional": [
+          {
+            "target": "b13"
+          },
+          {
+            "target": "b30"
+          },
+          {
+            "target": "title"
+          },
+          {
+            "target": "description"
+          },
+          {
+            "target": "b11"
+          },
+          {
+            "target": "b15"
+          },
+          {
+            "target": "b19"
+          },
+          {
+            "target": "b39"
+          }
+        ],
+        "must_preserve": [
+          {
+            "block": "b4",
+            "placeholder": "link:1"
+          },
+          {
+            "block": "b29",
+            "placeholder": "link:2"
+          },
+          {
+            "block": "b36",
+            "placeholder": "link:4"
+          },
+          {
+            "block": "b29",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "block": "b38",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "block": "b12",
+            "marks": [
+              "italic"
+            ]
+          },
+          {
+            "block": "b3",
+            "text": "Nimbus Labs"
+          },
+          {
+            "block": "b3",
+            "text": "Riverton Convention Hall"
+          },
+          {
+            "block": "b11",
+            "text": "Dr. Ada Okafor"
+          },
+          {
+            "block": "b36",
+            "text": "+1 (555) 555-0134"
+          },
+          {
+            "block": "b39",
+            "text": "Horizon Summit 2027"
+          }
+        ],
+        "must_contain": [
+          {
+            "block": "b3",
+            "text": "18. März 2027"
+          },
+          {
+            "block": "b8",
+            "text": "18. März 2027"
+          },
+          {
+            "block": "b31",
+            "text": "Park"
+          }
+        ],
+        "must_not_contain": [
+          {
+            "block": "b8",
+            "text": "Hey everyone"
+          },
+          {
+            "block": "b34",
+            "text": "To make sure"
+          }
+        ]
+      }
+    }
+  ]
+}

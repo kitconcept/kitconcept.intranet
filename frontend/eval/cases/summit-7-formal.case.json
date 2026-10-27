@@ -1,0 +1,130 @@
+{
+  "id": "summit-7-formal",
+  "description": "Draft test 7: casual phrasing rewritten for an executive audience throughout ('Hey everyone', 'awesome', 'gonna', 'breaking stuff', 'drop us a line', 'swing by', 'comfy', 'pretty chilly', 'Heads up'); facts, dates, names, numbers and links stay. Session titles are in the schedule table, which is not shown, so they cannot change.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Make the tone more formal for an executive audience.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b8",
+            "category": "style"
+          },
+          {
+            "target": "b10",
+            "category": "style"
+          },
+          {
+            "target": "b18",
+            "category": "style"
+          },
+          {
+            "target": "b22",
+            "category": "style"
+          },
+          {
+            "target": "b34",
+            "category": "style"
+          },
+          {
+            "target": "b36",
+            "category": "style"
+          },
+          {
+            "target": "b38",
+            "category": "style"
+          }
+        ],
+        "optional": [
+          {
+            "target": "b26"
+          },
+          {
+            "target": "b29"
+          },
+          {
+            "target": "b14"
+          },
+          {
+            "target": "b32"
+          }
+        ],
+        "must_preserve": [
+          {
+            "block": "b36",
+            "placeholder": "link:4"
+          },
+          {
+            "block": "b36",
+            "placeholder": "link:5"
+          },
+          {
+            "block": "b29",
+            "placeholder": "link:2"
+          },
+          {
+            "block": "b8",
+            "text": "March 18, 2027"
+          },
+          {
+            "block": "b8",
+            "text": "400"
+          },
+          {
+            "block": "b8",
+            "text": "January 31, 2027"
+          },
+          {
+            "block": "b36",
+            "text": "+1 (555) 555-0134"
+          },
+          {
+            "block": "b38",
+            "text": "1701 Enterprise Way"
+          }
+        ],
+        "must_not_contain": [
+          {
+            "block": "b8",
+            "text": "Hey everyone"
+          },
+          {
+            "block": "b10",
+            "text": "awesome"
+          },
+          {
+            "block": "b18",
+            "text": "breaking stuff"
+          },
+          {
+            "block": "b22",
+            "text": "gonna"
+          },
+          {
+            "block": "b34",
+            "text": "comfy"
+          },
+          {
+            "block": "b34",
+            "text": "pretty chilly"
+          },
+          {
+            "block": "b36",
+            "text": "drop us a line"
+          },
+          {
+            "block": "b36",
+            "text": "swing by"
+          },
+          {
+            "block": "b38",
+            "text": "Heads up"
+          }
+        ]
+      }
+    }
+  ]
+}

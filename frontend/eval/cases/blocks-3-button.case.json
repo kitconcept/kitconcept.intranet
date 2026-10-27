@@ -1,0 +1,43 @@
+{
+  "id": "blocks-3-button",
+  "description": "Block creation (D56): A button with its label, link target and alignment, all from the request (D24, D48).",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "e4858372-f3d4-4508-8cff-f1edd099c8e6"
+  ],
+  "turns": [
+    {
+      "request": "Add a button \"Get tickets\" below this block that links to https://tickets.example.org/summit and align it to the right.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b4",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b4"
+        ],
+        "must_contain": [
+          {
+            "after": "b4",
+            "shapes": [
+              "__button"
+            ]
+          },
+          {
+            "after": "b4",
+            "fields": {
+              "title": "Get tickets",
+              "href.0.@id": "https://tickets.example.org/summit",
+              "styles.align:noprefix": "right"
+            }
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

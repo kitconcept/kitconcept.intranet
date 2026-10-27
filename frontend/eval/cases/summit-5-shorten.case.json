@@ -1,0 +1,57 @@
+{
+  "id": "summit-5-shorten",
+  "description": "Draft test 5: the intro (b8) in exactly two livelier sentences that keep what (Horizon Summit), who (Nimbus Labs), when (March 18, 2027) and where (Riverton Convention Hall); secondary facts (attendance, early bird, deadline) may go. Every other block stays.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Shorten the intro to two sentences and make it more engaging.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b8",
+            "category": "style"
+          }
+        ],
+        "must_not_change": [
+          "b3",
+          "b7",
+          "b9",
+          "b10",
+          "b14",
+          "b18",
+          "b22",
+          "b26",
+          "b29",
+          "b32",
+          "b34",
+          "b36",
+          "b38"
+        ],
+        "must_contain": [
+          {
+            "block": "b8",
+            "sentences": 2
+          },
+          {
+            "block": "b8",
+            "text": "March 18, 2027"
+          },
+          {
+            "block": "b8",
+            "text": "Riverton Convention Hall"
+          },
+          {
+            "block": "b8",
+            "text": "Nimbus Labs"
+          },
+          {
+            "block": "b8",
+            "text": "Horizon Summit"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+// AI assistant (see AI_WORKFLOW.md, AI_EDIT_PLAN.md). Same visual language as the
+// AI Overview of the search dialog (header.scss), with volto-light-theme
+// buttons.
+$ai-blue: #007eb1;
+$ai-border: #edf1f2;
+// #878f93 in the design fails WCAG AA (4.5:1) for text; as slots.scss
+$ai-grey: #70777a;
+$ai-text: #252525;
+$ai-surface: #f7f9fa;
+$ai-user: #e6f2f8;
+$ai-error: #b03434;
+$ai-success: #2e7d32;
+
+@mixin ai-edit-button {
+  @include button-style;
+  border-color: $ai-blue;
+  color: $ai-blue;
+  font-size: 14px;
+  opacity: 1;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $ai-user;
+  }
+
+  &.primary {
+    background-color: $ai-blue;
+    color: #fff;
+
+    &:hover,
+    &:focus-visible {
+      background-color: #006a95;
+    }
+  }
+
+  // A review already applied: lighter, still there to reopen
+  &.done {
+    border-color: #9ccbe0;
+    background-color: #eef6fa;
+    color: $ai-blue;
+
+    &:hover,
+    &:focus-visible {
+      background-color: $ai-user;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.4;
+  }
+}
+
+.ai-edit-title {
+  display: inline-flex;
+  align-items: center;
+  color: $ai-blue;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 7px;
+}
+
+#sidebar-ai .ai-edit-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: $ai-text;
+  gap: 14px;
+
+  .ai-edit-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ai-edit-beta {
+    padding: 0 5px;
+    border: 1px solid $ai-border;
+    border-radius: 4px;
+    background: #fff;
+    color: $ai-grey;
+    font-size: 11px;
+  }
+
+  .ai-edit-intro,
+  .ai-edit-disclaimer {
+    margin: 0;
+    color: $ai-grey;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .ai-edit-quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ai-edit-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 11px;
+    border: 1px solid $ai-border;
+    border-radius: 999px;
+    background: #fff;
+    color: $ai-text;
+    cursor: pointer;
+    font-size: 13px;
+
+    &:hover:not(:disabled),
+    &:focus-visible {
+      border-color: $ai-blue;
+      color: $ai-blue;
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
+    }
+  }
+
+  .ai-edit-conversation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ai-edit-message {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.55;
+
+    &.user {
+      max-width: 85%;
+      align-self: flex-end;
+      padding: 14px;
+      border-radius: 12px 12px 2px 12px;
+      background: $ai-user;
+    }
+
+    &.assistant {
+      padding: 14px;
+      border: 1px solid $ai-border;
+      border-radius: 8px;
+      background: $ai-surface;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .ai-edit-text {
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+  }
+
+  // The button stays on the right, whatever the status beside it says
+  .ai-edit-proposals-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 8px;
+
+    .ai-edit-button {
+      flex-shrink: 0;
+    }
+  }
+
+  .ai-edit-proposals-info {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ai-edit-proposals-count {
+    color: $ai-grey;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .ai-edit-button {
+    @include ai-edit-button;
+  }
+
+  .ai-edit-applied {
+    color: $ai-success;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .ai-edit-error {
+    color: $ai-error;
+    font: inherit;
+  }
+
+  .ai-edit-loading {
+    margin: 0;
+    animation: ai-edit-pulse 1.2s ease-in-out infinite;
+    color: $ai-grey;
+    font-size: 14px;
+  }
+
+  .ai-edit-input {
+    position: relative;
+
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 11px 48px 11px 16px;
+      border: 1px solid $ai-border;
+      border-radius: 22px;
+      background: #fff;
+      color: $ai-text;
+      font-size: 14px;
+      line-height: 1.45;
+      resize: vertical;
+
+      &::placeholder {
+        color: $ai-grey;
+      }
+
+      &:focus {
+        border-color: $ai-blue;
+        outline: none;
+      }
+    }
+  }
+
+  .ai-edit-send {
+    position: absolute;
+    right: 8px;
+    bottom: 10px;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: $ai-blue;
+    cursor: pointer;
+
+    .icon {
+      fill: #fff !important;
+    }
+
+    &:disabled {
+      background: #dfe5e8;
+      cursor: default;
+      .icon {
+        fill: #9f9b9b !important;
+      }
+    }
+  }
+}
+
+.ui.modal.ai-edit-modal {
+  // Volto's theme fixes modals without horizontal offsets (`margin: 0
+  // auto` alone): this large one ended up left of the center
+  right: 0;
+  left: 0;
+  border-radius: 8px;
+  margin-right: auto;
+  margin-left: auto;
+
+  > .header {
+    border-bottom: 1px solid $ai-border;
+
+    .ai-edit-title {
+      font-size: 18px;
+    }
+  }
+
+  .ai-edit-modal-hint {
+    margin: 0 0 16px;
+    color: $ai-grey;
+    font-size: 14px;
+  }
+
+  .ai-edit-change {
+    padding: 14px 16px;
+    border: 1px solid $ai-border;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    background: #fff;
+
+    &.selected {
+      border-color: $ai-blue;
+    }
+
+    // Applied or stale: cannot be selected
+    &.disabled {
+      background: $ai-surface;
+      opacity: 0.7;
+    }
+  }
+
+  .ai-edit-applied {
+    color: $ai-success;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .ai-edit-change-header {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+
+    input {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      accent-color: $ai-blue;
+    }
+  }
+
+  .ai-edit-change-label {
+    color: $ai-text;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .ai-edit-stale {
+    margin: 8px 0 0;
+    color: $ai-error;
+    font-size: 13px;
+  }
+
+  // A delete is outlined in the error color when selected
+  .ai-edit-change.delete.selected {
+    border-color: $ai-error;
+  }
+
+  .ai-edit-category {
+    padding: 1px 8px;
+    border-radius: 10px;
+    background: $ai-surface;
+    color: $ai-grey;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .ai-edit-reason {
+    margin: 6px 0 0 26px;
+    color: $ai-text;
+    font-size: 14px;
+  }
+
+  // What the editor must notice: a link removed, a split, a container
+  .ai-edit-flags {
+    padding: 0;
+    margin: 6px 0 0 26px;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      padding: 1px 8px;
+      border-radius: 10px;
+      margin: 0 6px 4px 0;
+      background: #fdf3e1;
+      color: #8a5a00;
+      font-size: 12px;
+    }
+  }
+
+  .ai-edit-styling-change {
+    margin: 10px 0 0 26px;
+    font-size: 15px;
+
+    .deletion {
+      padding: 0 4px;
+      background: #fbe4e4;
+      text-decoration: line-through;
+    }
+
+    .addition {
+      padding: 0 4px;
+      background: #e3f4e5;
+    }
+  }
+
+  // Until the row's diff is rendered (ReviewModal LazyDiff)
+  .ai-edit-diff-placeholder {
+    min-height: 48px;
+    border-radius: 6px;
+    margin-top: 4px;
+    background: $ai-surface;
+  }
+
+  // A passage of the page (D42): set apart from the notice above it
+  .ai-edit-quote {
+    padding: 4px 0 4px 12px;
+    border-left: 3px solid #e3b955;
+    margin: 6px 0 0;
+    color: #4a4f52;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+
+    mark {
+      padding: 0 2px;
+      border-radius: 2px;
+      background: #f6d98b;
+      color: $ai-text;
+      font-style: normal;
+    }
+  }
+
+  // Places a replaced value may still be (D42)
+  .ai-edit-leftovers {
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin: 0 0 16px;
+    background: #fdf3dc;
+    font-size: 14px;
+
+    p {
+      margin: 0 0 4px;
+    }
+
+    > p {
+      font-weight: 600;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+  }
+
+  .ai-edit-mass-deletion {
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin: 0 0 16px;
+    background: #fbe4e4;
+    color: $ai-error;
+    font-size: 14px;
+  }
+
+  .ai-edit-diff-columns {
+    display: grid;
+    margin-top: 12px;
+    color: $ai-grey;
+    font-size: 12px;
+    font-weight: 600;
+    grid-template-columns: 1fr 1fr;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .ai-edit-diff {
+    font-size: 15px;
+    line-height: 1.55;
+
+    .ui.grid {
+      margin: 4px 0 0;
+
+      > .row {
+        padding: 0;
+      }
+
+      > .row {
+        flex-wrap: nowrap;
+        gap: 12px;
+      }
+
+      // DiffField uses "six wide" columns (37.5%); use the full width here
+      > .row > .column {
+        width: auto !important;
+        flex: 1 1 0;
+        padding: 10px 12px;
+        border-radius: 6px;
+        background: $ai-surface;
+      }
+    }
+
+    // Plain values keep their line breaks (a new button's fields)
+    .column > span {
+      white-space: pre-wrap;
+    }
+
+    // DiffField's marks, a bit softer than the default diff colors
+    .deletion {
+      background: #fbe4e4;
+      text-decoration: line-through;
+    }
+
+    .addition {
+      background: #e3f4e5;
+    }
+
+    // Links in rich-text diffs have no target (diffHtml.js)
+    .ai-edit-diff-link {
+      color: $ai-grey;
+      text-decoration: underline;
+    }
+  }
+
+  > .actions {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid $ai-border;
+    background: #fff;
+    gap: 10px;
+
+    .ai-edit-button {
+      @include ai-edit-button;
+    }
+  }
+}
+
+@keyframes ai-edit-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+// The assistant cannot be used here (no permission, switched off)
+#sidebar-ai .ai-edit-panel .ai-edit-notice {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 0;
+  background: $ai-surface;
+  color: $ai-text;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+#sidebar-ai .ai-edit-panel .ai-edit-warnings {
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  background: #fdf3e1;
+  color: #8a5a00;
+  font-size: 14px;
+
+  p {
+    margin: 0;
+    font: inherit;
+  }
+}

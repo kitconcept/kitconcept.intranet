@@ -1,0 +1,63 @@
+{
+  "id": "summit-3-parking",
+  "description": "Draft test 3: the Parking section (heading b31, paragraph b32) deleted, and the sentence pointing to it removed from the Venue paragraph (b29); the address, the station and the Maps link stay. Adapted: the page's 'On this page' is a table of contents block (b6), built from the headings, so no menu link to remove. Since D58 the question that introduced the removed sentence (\"Driving?\") must go too: a run that left it alone passed.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Remove the section about the parking arrangements.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b31",
+            "category": "structure"
+          },
+          {
+            "target": "b32",
+            "category": "structure"
+          },
+          {
+            "target": "b29",
+            "category": "structure"
+          }
+        ],
+        "may_delete": [
+          "b31",
+          "b32"
+        ],
+        "must_not_change": [
+          "b27",
+          "b28",
+          "b30",
+          "b33",
+          "b34"
+        ],
+        "must_preserve": [
+          {
+            "block": "b29",
+            "text": "88 Harbor Street"
+          },
+          {
+            "block": "b29",
+            "text": "Riverton Central station"
+          },
+          {
+            "block": "b29",
+            "placeholder": "link:2"
+          }
+        ],
+        "must_not_contain": [
+          {
+            "block": "b29",
+            "text": "parking info"
+          },
+          {
+            "block": "b29",
+            "text": "Driving?"
+          }
+        ]
+      }
+    }
+  ]
+}

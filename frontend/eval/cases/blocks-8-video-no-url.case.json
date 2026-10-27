@@ -1,0 +1,18 @@
+{
+  "id": "blocks-8-video-no-url",
+  "description": "Block creation (D56): No URL given: required for a video (D54) and never invented; the answer asks for it, nothing is proposed.",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "381e5baa-5f99-47f1-a8f3-f31c1cc7aed9"
+  ],
+  "turns": [
+    {
+      "request": "Add a video below this block.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "text_only": true
+      }
+    }
+  ]
+}

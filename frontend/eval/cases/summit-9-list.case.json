@@ -1,0 +1,63 @@
+{
+  "id": "summit-9-list",
+  "description": "Draft test 9: the 'What to bring' paragraph (b34) as a bulleted list of five items, each with its reason; a lead-in sentence is fine (it becomes its own block, the list the next one). Nothing added or dropped; the heading and other sections stay.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Turn the 'What to bring' paragraph into a bulleted list.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b34",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b33",
+          "b35",
+          "b36"
+        ],
+        "must_preserve": [
+          {
+            "block": "b34",
+            "list": {
+              "type": "ul",
+              "items": 5,
+              "depth": 1
+            },
+            "within": 2
+          }
+        ],
+        "must_contain": [
+          {
+            "block": "b34",
+            "text": "laptop",
+            "within": 2
+          },
+          {
+            "block": "b34",
+            "text": "photo ID",
+            "within": 2
+          },
+          {
+            "block": "b34",
+            "text": "water bottle",
+            "within": 2
+          },
+          {
+            "block": "b34",
+            "text": "business cards",
+            "within": 2
+          },
+          {
+            "block": "b34",
+            "text": "jacket",
+            "within": 2
+          }
+        ]
+      }
+    }
+  ]
+}

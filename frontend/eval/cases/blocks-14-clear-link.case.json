@@ -1,0 +1,73 @@
+{
+  "id": "blocks-14-clear-link",
+  "description": "Clearing a field (D57): the button keeps its label and loses its link target (null), nothing else changes.",
+  "formData": {
+    "title": "Tickets",
+    "blocks": {
+      "t": {
+        "@type": "title"
+      },
+      "p": {
+        "@type": "slate",
+        "plaintext": "Get your ticket today.",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Get your ticket today."
+              }
+            ]
+          }
+        ]
+      },
+      "btn": {
+        "@type": "__button",
+        "title": "Get tickets",
+        "href": [
+          {
+            "@id": "https://tickets.example.org/summit"
+          }
+        ]
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "t",
+        "p",
+        "btn"
+      ]
+    }
+  },
+  "selected": [
+    "btn"
+  ],
+  "turns": [
+    {
+      "request": "Remove the link from this button, keep its label.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b3",
+            "category": "other"
+          }
+        ],
+        "must_not_change": [
+          "b2"
+        ],
+        "must_contain": [
+          {
+            "after": "b2",
+            "fields": {
+              "href.0.@id": null,
+              "title": "Get tickets"
+            }
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

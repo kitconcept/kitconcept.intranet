@@ -1,0 +1,18 @@
+{
+  "id": "blocks-11-image",
+  "description": "Block creation (D56): Images cannot be inserted (D24): the answer says so, nothing is proposed.",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "58af2b67-01ea-4641-a76c-c78a5c8d3148"
+  ],
+  "turns": [
+    {
+      "request": "Add a photo of the venue below this block.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "text_only": true
+      }
+    }
+  ]
+}

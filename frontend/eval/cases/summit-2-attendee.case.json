@@ -1,0 +1,47 @@
+{
+  "id": "summit-2-attendee",
+  "description": "Draft test 2 (was summit-2-spock): a new attendee in the pattern of the speakers (### name, italic role line, a short paragraph) after Priya's paragraph (b22); no image block (none can be inserted), no invented role or background: a neutral introduction and a message asking for the details (read newTerms and the message). The name is one the model cannot know: with a famous one (Mr. Spock) the invented background came from its world knowledge, not from the page (D52). The speakers and the schedule stay.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "Add Mira Hollanek as a new attendee and introduce her in a short paragraph.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b22",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16",
+          "b17",
+          "b18",
+          "b19",
+          "b20",
+          "b21",
+          "b22",
+          "b23",
+          "b24",
+          "b25"
+        ],
+        "must_contain": [
+          {
+            "after": "b22",
+            "shapes": [
+              "h3",
+              "em",
+              "p"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

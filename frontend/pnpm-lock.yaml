@@ -1516,6 +1516,12 @@ importers:
       lucide-react:
         specifier: ^0.544.0
         version: 0.544.0(react@18.2.0)
+      mdast-util-gfm-strikethrough:
+        specifier: 2.0.1
+        version: 2.0.1
+      micromark-extension-gfm-strikethrough:
+        specifier: 2.1.0
+        version: 2.1.0
       papaparse:
         specifier: ^5.7.0
         version: 5.7.0
@@ -1537,6 +1543,12 @@ importers:
       react-redux:
         specifier: ^8.1.2
         version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      remark-parse:
+        specifier: 11.0.0
+        version: 11.0.0
+      unified:
+        specifier: 11.0.5
+        version: 11.0.5
       volto-rss-block:
         specifier: ^3.0.1
         version: 3.0.1(@plone/volto@core+packages+volto)

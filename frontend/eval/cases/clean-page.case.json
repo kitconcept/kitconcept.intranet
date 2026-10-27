@@ -1,0 +1,145 @@
+{
+  "id": "clean-page",
+  "description": "A page without problems: every proposed change counts as a false positive.",
+  "formData": {
+    "title": "Working at Example GmbH",
+    "description": "How we work together, where to find help and whom to ask.",
+    "blocks": {
+      "title": {
+        "@type": "title"
+      },
+      "intro": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "Our working hours"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Our working hours"
+      },
+      "hours": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Core hours are from 10:00 to 15:00. Outside of them, everyone plans their own time."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Core hours are from 10:00 to 15:00. Outside of them, everyone plans their own time."
+      },
+      "help": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "h2",
+            "children": [
+              {
+                "text": "Where to find help"
+              }
+            ]
+          }
+        ],
+        "plaintext": "Where to find help"
+      },
+      "helptext": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "The "
+              },
+              {
+                "type": "link",
+                "data": {
+                  "url": "/it/helpdesk"
+                },
+                "children": [
+                  {
+                    "text": "IT helpdesk"
+                  }
+                ]
+              },
+              {
+                "text": " answers questions about devices and accounts."
+              }
+            ]
+          }
+        ],
+        "plaintext": "The IT helpdesk answers questions about devices and accounts."
+      },
+      "topics": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "ul",
+            "children": [
+              {
+                "type": "li",
+                "children": [
+                  {
+                    "text": "Onboarding"
+                  }
+                ]
+              },
+              {
+                "type": "li",
+                "children": [
+                  {
+                    "text": "Holidays"
+                  }
+                ]
+              },
+              {
+                "type": "li",
+                "children": [
+                  {
+                    "text": "Travel expenses"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "plaintext": "Onboarding Holidays Travel expenses"
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "title",
+        "intro",
+        "hours",
+        "help",
+        "helptext",
+        "topics"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "request": "Improve this page where needed.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [],
+        "must_not_change": [
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6"
+        ]
+      }
+    }
+  ]
+}

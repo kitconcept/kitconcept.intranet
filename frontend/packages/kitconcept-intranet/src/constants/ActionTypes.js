@@ -11,3 +11,5 @@ export const TOGGLE_LIKE = 'TOGGLE_LIKE';
 export const POSTPONE_REVIEW = 'POSTPONE_REVIEW';
 export const DELEGATE_REVIEW = 'DELEGATE_REVIEW';
 export const APPROVE_REVIEW = 'APPROVE_REVIEW';
+export const AI_EDIT = 'AI_EDIT';
+export const AI_EDIT_AVAILABLE = 'AI_EDIT_AVAILABLE';

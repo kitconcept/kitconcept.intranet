@@ -97,6 +97,7 @@ msgid "Average"
 msgstr ""
 
 #. Default: "Beta"
+#: components/AIEdit/AIEditPanel
 #: components/Header/HeaderSearch
 msgid "Beta"
 msgstr ""
@@ -128,6 +129,7 @@ msgid "Calculation"
 msgstr ""
 
 #. Default: "Cancel"
+#: components/AIEdit/ReviewModal
 #: components/ContentReviewSidebar/DelegateReview
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
@@ -249,6 +251,11 @@ msgstr ""
 #. Default: "Depth"
 #: components/widgets/QuerystringWidget
 msgid "Depth"
+msgstr ""
+
+#. Default: "Description"
+#: components/AIEdit/ReviewModal
+msgid "Description"
 msgstr ""
 
 #. Default: "Document Review"
@@ -936,6 +943,7 @@ msgid "The workflow settings could not be loaded."
 msgstr ""
 
 #. Default: "Title"
+#: components/AIEdit/ReviewModal
 #: components/Blocks/Listing/Table/columns
 msgid "Title"
 msgstr ""
@@ -1006,6 +1014,397 @@ msgstr ""
 #: slots/AboutThisContent/AboutThisContent
 msgid "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 msgstr "Seu feedback foi enviado com sucesso. Você receberá um e-mail de confirmação em breve."
+
+#. Default: "Applied"
+#: components/AIEdit/AIEditPanel
+#: components/AIEdit/ReviewModal
+msgid "aiEditApplied"
+msgstr ""
+
+#. Default: "Apply selected"
+#: components/AIEdit/ReviewModal
+msgid "aiEditApplySelected"
+msgstr ""
+
+#. Default: "Assess this page"
+#: components/AIEdit/quickActions
+msgid "aiEditAssess"
+msgstr ""
+
+#. Default: "Assess this page: is it clear, well structured and complete? List the most important improvements. Do not change anything yet."
+#: components/AIEdit/quickActions
+msgid "aiEditAssessPrompt"
+msgstr ""
+
+#. Default: "Added at the end of the page: move it if it belongs elsewhere"
+#: components/AIEdit/ReviewModal
+msgid "aiEditAtEnd"
+msgstr ""
+
+#. Default: "Block {ref}: {field}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditBlockField"
+msgstr ""
+
+#. Default: "Accessibility"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryAccessibility"
+msgstr ""
+
+#. Default: "Grammar"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryGrammar"
+msgstr ""
+
+#. Default: "Layout"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryLayout"
+msgstr ""
+
+#. Default: "Metadata"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryMetadata"
+msgstr ""
+
+#. Default: "Other"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryOther"
+msgstr ""
+
+#. Default: "Outdated"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryOutdated"
+msgstr ""
+
+#. Default: "Spelling"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategorySpelling"
+msgstr ""
+
+#. Default: "Structure"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryStructure"
+msgstr ""
+
+#. Default: "Wording"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryStyle"
+msgstr ""
+
+#. Default: "Translation"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCategoryTranslation"
+msgstr ""
+
+#. Default: "Loading…"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditChecking"
+msgstr ""
+
+#. Default: "Current"
+#: components/AIEdit/ReviewModal
+msgid "aiEditCurrent"
+msgstr ""
+
+#. Default: "Delete block {ref} ({type})"
+#: components/AIEdit/ReviewModal
+msgid "aiEditDelete"
+msgstr ""
+
+#. Default: "{count, plural, one {A container with # block inside} other {A container with # blocks inside}}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditDeletesContainer"
+msgstr ""
+
+#. Default: "Inside a container"
+#: components/AIEdit/ReviewModal
+msgid "aiEditDeletesContainerChild"
+msgstr ""
+
+#. Default: "Has content the assistant cannot see (for example a table)"
+#: components/AIEdit/ReviewModal
+msgid "aiEditDeletesHidden"
+msgstr ""
+
+#. Default: "Not a text block"
+#: components/AIEdit/ReviewModal
+msgid "aiEditDeletesNonText"
+msgstr ""
+
+#. Default: "AI-generated. It may contain errors."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditDisclaimer"
+msgstr ""
+
+#. Default: "Loses formatting: {formats}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditDropsFormatting"
+msgstr ""
+
+#. Default: "The AI could not produce an answer for this request. It may not be possible here; try rephrasing it."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditEmptyAnswer"
+msgstr ""
+
+#. Default: "The AI assistant is currently unavailable. Please try again."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditError"
+msgstr ""
+
+#. Default: "The AI assistant is busy. Please try again in a moment."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditErrorBusy"
+msgstr ""
+
+#. Default: "This page is too long for the AI assistant."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditErrorTooLarge"
+msgstr ""
+
+#. Default: "The answer was cut off before it was complete. Try asking for less at once."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditErrorTruncated"
+msgstr ""
+
+#. Default: "You don't have permission to use the AI assistant on this page. Ask a site administrator if you need it."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditForbidden"
+msgstr ""
+
+#. Default: "bold"
+#: components/AIEdit/ReviewModal
+msgid "aiEditFormatBold"
+msgstr ""
+
+#. Default: "heading"
+#: components/AIEdit/ReviewModal
+msgid "aiEditFormatHeading"
+msgstr ""
+
+#. Default: "italic"
+#: components/AIEdit/ReviewModal
+msgid "aiEditFormatItalic"
+msgstr ""
+
+#. Default: "list"
+#: components/AIEdit/ReviewModal
+msgid "aiEditFormatList"
+msgstr ""
+
+#. Default: "AI assistant"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditHeader"
+msgstr ""
+
+#. Default: "Improve the whole page"
+#: components/AIEdit/quickActions
+msgid "aiEditImproveAll"
+msgstr ""
+
+#. Default: "Improve the whole page in one proposal: a better title, a better description, and clearer, well structured text in every block that needs it. Keep all facts and links."
+#: components/AIEdit/quickActions
+msgid "aiEditImproveAllPrompt"
+msgstr ""
+
+#. Default: "Improve title and description"
+#: components/AIEdit/quickActions
+msgid "aiEditImproveTitle"
+msgstr ""
+
+#. Default: "Propose a better title and description for this page."
+#: components/AIEdit/quickActions
+msgid "aiEditImproveTitlePrompt"
+msgstr ""
+
+#. Default: "New {type} block after block {ref}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditInsertAfter"
+msgstr ""
+
+#. Default: "New {type} block at the start of block {ref}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditInsertInto"
+msgstr ""
+
+#. Default: "Ask the AI to assess this page or to improve it. Proposed changes are shown for review before they are applied to the form."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditIntro"
+msgstr ""
+
+#. Default: "These changes delete a large part of the page. Deletions are not selected; check them carefully before you select them."
+#: components/AIEdit/ReviewModal
+msgid "aiEditMassDeletion"
+msgstr ""
+
+#. Default: "Move block {ref} ({type}) after block {anchor}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditMove"
+msgstr ""
+
+#. Default: "No changes proposed."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditNoChanges"
+msgstr ""
+
+#. Default: "The block is removed from the page."
+#: components/AIEdit/ReviewModal
+msgid "aiEditNoDiff"
+msgstr ""
+
+#. Default: "No link target: add it in the editor"
+#: components/AIEdit/ReviewModal
+msgid "aiEditNoLink"
+msgstr ""
+
+#. Default: "The AI assistant is currently switched off."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditNotConfigured"
+msgstr ""
+
+#. Default: "This block type cannot be added by the assistant. Add it in the editor."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditNoticeNotInsertable"
+msgstr ""
+
+#. Default: "What should the {field} of the new {type} block be?"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditNoticeQuestion"
+msgstr ""
+
+#. Default: "Page: {field}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditPageField"
+msgstr ""
+
+#. Default: "Partially applied ({applied} of {count})"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditPartiallyApplied"
+msgstr ""
+
+#. Default: "Ask about this page…"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditPlaceholder"
+msgstr ""
+
+#. Default: "{count, plural, one {# change proposed} other {# changes proposed}}"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditProposed"
+msgstr ""
+
+#. Default: "Proposed"
+#: components/AIEdit/ReviewModal
+msgid "aiEditProposedColumn"
+msgstr ""
+
+#. Default: "Refers to block {block}, which this proposal deletes: apply both or neither"
+#: components/AIEdit/ReviewModal
+msgid "aiEditRefersToDeleted"
+msgstr ""
+
+#. Default: "{count, plural, one {Removes a link} other {Removes # links}}"
+#: components/AIEdit/ReviewModal
+msgid "aiEditRemovesPlaceholders"
+msgstr ""
+
+#. Default: "Replaces most of the current text: check that nothing is lost"
+#: components/AIEdit/ReviewModal
+msgid "aiEditReplacesMostText"
+msgstr ""
+
+#. Default: "Review changes"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditReview"
+msgstr ""
+
+#. Default: "Proposed changes"
+#: components/AIEdit/ReviewModal
+msgid "aiEditReviewHeader"
+msgstr ""
+
+#. Default: "Selected changes are applied to the form. Review them in the editor and save the page as usual."
+#: components/AIEdit/ReviewModal
+msgid "aiEditReviewHint"
+msgstr ""
+
+#. Default: "Not changed by these proposals, but may still mention the old value:"
+#: components/AIEdit/ReviewModal
+msgid "aiEditReviewLeftovers"
+msgstr ""
+
+#. Default: "Not changed by these proposals, but refers to a block they delete:"
+#: components/AIEdit/ReviewModal
+msgid "aiEditReviewReferences"
+msgstr ""
+
+#. Default: "Same value as {block} in this proposal: check that the page itself should change"
+#: components/AIEdit/ReviewModal
+msgid "aiEditSameAsBlock"
+msgstr ""
+
+#. Default: "Send"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditSend"
+msgstr ""
+
+#. Default: "Shorten the text"
+#: components/AIEdit/quickActions
+msgid "aiEditShorten"
+msgstr ""
+
+#. Default: "Make the text of this page shorter and easier to read without losing information. Go through every block."
+#: components/AIEdit/quickActions
+msgid "aiEditShortenPrompt"
+msgstr ""
+
+#. Default: "Becomes {count} blocks"
+#: components/AIEdit/ReviewModal
+msgid "aiEditSplitsInto"
+msgstr ""
+
+#. Default: "This block was edited after the suggestion was made, so the change can no longer be applied. Ask again to get a new suggestion."
+#: components/AIEdit/ReviewModal
+msgid "aiEditStale"
+msgstr ""
+
+#. Default: "AI"
+#: components/AIEdit/sidebarTab
+msgid "aiEditTab"
+msgstr ""
+
+#. Default: "AI editing assistant"
+#: components/AIEdit/sidebarTab
+msgid "aiEditTabTitle"
+msgstr ""
+
+#. Default: "Thinking…"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditThinking"
+msgstr ""
+
+#. Default: "The AI saw only part of the page, so this answer is unreliable. The AI server needs a larger context; please tell an administrator."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditWarningInputTruncated"
+msgstr ""
+
+#. Default: "The AI's proposal could not be used. Try rephrasing the request."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditWarningNothingUsable"
+msgstr ""
+
+#. Default: "The answer was cut off, some changes may be missing. Try asking for fewer changes at once."
+#: components/AIEdit/AIEditPanel
+msgid "aiEditWarningTruncated"
+msgstr ""
+
+#. Default: "{count, plural, one {# proposed change is the same as the current content and is not shown.} other {# proposed changes are the same as the current content and are not shown.}}"
+#: components/AIEdit/AIEditPanel
+msgid "aiEditWarningUnchanged"
+msgstr ""
+
+#. Default: "The assistant cannot see images: check that this describes the image"
+#: components/AIEdit/ReviewModal
+msgid "aiEditWritesAltText"
+msgstr ""
 
 #. Default: "If you wish, you can leave a comment for the person incharge here"
 #: components/ContentReviewSidebar/DelegateReview

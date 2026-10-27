@@ -1,0 +1,115 @@
+{
+  "id": "summit-1-date",
+  "description": "Draft test 1: a date changed on the whole page, in its formats; the dependent registration deadline (one week before: April 2) changes too; last year's date, the early-bird date and 'since September 2026' stay. Adapted: the page has no date in title, description or a date field (the draft's front matter); the weekday is checked where written.",
+  "formDataFile": "pages/horizon-summit.json",
+  "turns": [
+    {
+      "request": "The event date changed to Friday, April 9, 2027. Update it everywhere on the page.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b3",
+            "category": "outdated"
+          },
+          {
+            "target": "b8",
+            "category": "outdated"
+          },
+          {
+            "target": "b24",
+            "category": "outdated"
+          },
+          {
+            "target": "b26",
+            "category": "outdated"
+          },
+          {
+            "target": "b32",
+            "category": "outdated"
+          },
+          {
+            "target": "b39",
+            "category": "outdated"
+          }
+        ],
+        "must_not_change": [
+          "b38"
+        ],
+        "must_contain": [
+          {
+            "block": "b3",
+            "text": "Friday, April 9, 2027"
+          },
+          {
+            "block": "b8",
+            "text": "April 9, 2027"
+          },
+          {
+            "block": "b8",
+            "text": "April 2"
+          },
+          {
+            "block": "b24",
+            "text": "Friday, April 9"
+          },
+          {
+            "block": "b26",
+            "text": "the 9th"
+          },
+          {
+            "block": "b32",
+            "text": "April 9"
+          },
+          {
+            "block": "b39",
+            "text": "09.04.2027"
+          },
+          {
+            "block": "b8",
+            "text": "March 19, 2026"
+          },
+          {
+            "block": "b8",
+            "text": "January 31, 2027"
+          },
+          {
+            "block": "b38",
+            "text": "Since September 2026"
+          }
+        ],
+        "must_not_contain": [
+          {
+            "block": "b3",
+            "text": "March 18"
+          },
+          {
+            "block": "b8",
+            "text": "March 18"
+          },
+          {
+            "block": "b8",
+            "text": "March 11"
+          },
+          {
+            "block": "b24",
+            "text": "Thursday"
+          },
+          {
+            "block": "b26",
+            "text": "18th"
+          },
+          {
+            "block": "b32",
+            "text": "March 18"
+          },
+          {
+            "block": "b39",
+            "text": "18.03."
+          }
+        ]
+      }
+    }
+  ]
+}

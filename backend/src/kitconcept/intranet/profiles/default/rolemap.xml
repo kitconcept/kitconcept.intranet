@@ -7,5 +7,14 @@
       <role name="Site Administrator" />
       <role name="Manager" />
     </permission>
+    <permission acquire="True"
+                name="kitconcept.intranet: Use AI editing"
+    >
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="Editor" />
+      <role name="Contributor" />
+      <role name="Owner" />
+    </permission>
   </permissions>
 </rolemap>

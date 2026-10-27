@@ -1,0 +1,36 @@
+{
+  "id": "blocks-13-move",
+  "description": "Moving a block (D57): the recordings note (b26) right after the schedule heading (b23), as the same block (not deleted and inserted again), its text unchanged.",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "899aa00e-9306-4415-8eff-7b38a0b6b00a"
+  ],
+  "turns": [
+    {
+      "request": "Move this block right after the schedule heading.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b26",
+            "category": "structure"
+          }
+        ],
+        "must_contain": [
+          {
+            "after": "b23",
+            "is": "b26"
+          }
+        ],
+        "must_preserve": [
+          {
+            "block": "b26",
+            "text": "All keynotes will be recorded"
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

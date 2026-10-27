@@ -1,0 +1,35 @@
+{
+  "id": "blocks-10-selected-default",
+  "description": "Block creation (D56): No place named: the new block goes after the selected one (D56).",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "58af2b67-01ea-4641-a76c-c78a5c8d3148"
+  ],
+  "turns": [
+    {
+      "request": "Add a separator.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b29",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b29"
+        ],
+        "must_contain": [
+          {
+            "after": "b29",
+            "shapes": [
+              "separator"
+            ]
+          }
+        ],
+        "no_other_changes": true
+      }
+    }
+  ]
+}

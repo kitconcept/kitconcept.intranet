@@ -1,0 +1,40 @@
+{
+  "id": "blocks-1-text",
+  "description": "Block creation (D56): A text block after the selected one (b8), with the given fact only. No fact the request does not give (no_new_terms, D57).",
+  "formDataFile": "pages/horizon-summit.json",
+  "selected": [
+    "381e5baa-5f99-47f1-a8f3-f31c1cc7aed9"
+  ],
+  "turns": [
+    {
+      "request": "Add a paragraph below this one saying that doors open at 8:30.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "insert@b8",
+            "category": "structure"
+          }
+        ],
+        "must_not_change": [
+          "b8"
+        ],
+        "must_contain": [
+          {
+            "after": "b8",
+            "shapes": [
+              "p"
+            ]
+          },
+          {
+            "after": "b8",
+            "text": "8:30"
+          }
+        ],
+        "no_new_terms": true,
+        "no_other_changes": true
+      }
+    }
+  ]
+}

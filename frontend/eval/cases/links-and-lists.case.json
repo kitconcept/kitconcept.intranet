@@ -1,0 +1,165 @@
+{
+  "id": "links-and-lists",
+  "description": "Two links to the same target (one placeholder twice), a list, emphasis: typos must be fixed without losing structure.",
+  "formData": {
+    "title": "Contact",
+    "description": "Whom to contact for what.",
+    "blocks": {
+      "title": {
+        "@type": "title"
+      },
+      "both": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Write to "
+              },
+              {
+                "type": "link",
+                "data": {
+                  "url": "/contact"
+                },
+                "children": [
+                  {
+                    "text": "us"
+                  }
+                ]
+              },
+              {
+                "text": " or visit "
+              },
+              {
+                "type": "link",
+                "data": {
+                  "url": "/contact"
+                },
+                "children": [
+                  {
+                    "text": "our offfice"
+                  }
+                ]
+              },
+              {
+                "text": "."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Write to us or visit our offfice ."
+      },
+      "items": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "ul",
+            "children": [
+              {
+                "type": "li",
+                "children": [
+                  {
+                    "text": "Recption"
+                  }
+                ]
+              },
+              {
+                "type": "li",
+                "children": [
+                  {
+                    "text": "Facility management"
+                  }
+                ]
+              },
+              {
+                "type": "li",
+                "children": [
+                  {
+                    "text": "IT"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "plaintext": "Recption Facility management IT"
+      },
+      "note": {
+        "@type": "slate",
+        "value": [
+          {
+            "type": "p",
+            "children": [
+              {
+                "text": "Please use the "
+              },
+              {
+                "type": "em",
+                "children": [
+                  {
+                    "text": "form"
+                  }
+                ]
+              },
+              {
+                "text": " for requests."
+              }
+            ]
+          }
+        ],
+        "plaintext": "Please use the form for requests."
+      }
+    },
+    "blocks_layout": {
+      "items": [
+        "title",
+        "both",
+        "items",
+        "note"
+      ]
+    }
+  },
+  "turns": [
+    {
+      "request": "Fix the spelling mistakes.",
+      "kind": "propose",
+      "apply": "none",
+      "labels": {
+        "must_flag": [
+          {
+            "target": "b2",
+            "category": "spelling"
+          },
+          {
+            "target": "b3",
+            "category": "spelling"
+          }
+        ],
+        "must_not_change": [
+          "b4"
+        ],
+        "must_preserve": [
+          {
+            "block": "b2",
+            "placeholder": "link:1"
+          },
+          {
+            "block": "b3",
+            "list": {
+              "type": "ul",
+              "items": 3,
+              "depth": 1
+            }
+          },
+          {
+            "block": "b4",
+            "marks": [
+              "italic"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

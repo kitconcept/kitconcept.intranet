@@ -56,8 +56,8 @@ The site owner account is `admin` with the password `admin`.
 
 Ensure you have the following installed:
 
-- Python 3.12 🐍
-- Node 22 🟩
+- Python 3.14 🐍
+- Node 24 🟩
 - pnpm 🧶
 - Docker 🐳
 - UV (See [https://docs.astral.sh/uv/getting-started/installation/#standalone-installer])

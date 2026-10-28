@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261013001"
+      destination="20261028001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add maintenance banner controlpanel"
+        import_steps="plone.app.registry controlpanel"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

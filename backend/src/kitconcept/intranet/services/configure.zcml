@@ -99,4 +99,12 @@
       name="@type-workflow"
       />
 
+  <plone:service
+      method="GET"
+      factory=".maintenance_banner.MaintenanceBannerService"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@maintenance-banner"
+      />
+
 </configure>

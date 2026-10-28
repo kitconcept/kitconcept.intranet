@@ -8,6 +8,10 @@
       name="intranet-settings"
       />
   <adapter
+      factory=".maintenance_banner.MaintenanceBannerControlpanel"
+      name="maintenance-banner"
+      />
+  <adapter
       factory=".intranet.IntranetSiteEndpointExpander"
       name="kitconcept.intranet"
       />

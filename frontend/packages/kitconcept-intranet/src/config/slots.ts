@@ -12,6 +12,7 @@ import ListingDisclaimer from '../slots/ListingDisclaimer/ListingDisclaimer';
 import NavigationTreePortal from '../components/NavigationTree/NavigationTreePortal';
 import HideFooter from '../slots/HideFooter/HideFooter';
 import CommentsSlot from '../slots/Comments/CommentsSlot';
+import MaintenanceBanner from '../components/MaintenanceBanner/MaintenanceBanner';
 
 const isWorkspaceDescendant = ({ content }: { content: Content }) =>
   Boolean(
@@ -46,6 +47,11 @@ export default function install(config: ConfigType) {
     slot: 'aboveHeader',
     name: 'IntranetCSSInjector',
     component: IntranetCSSInjector,
+  });
+  config.registerSlotComponent({
+    slot: 'aboveHeader',
+    name: 'MaintenanceBanner',
+    component: MaintenanceBanner,
   });
 
   config.registerSlotComponent({

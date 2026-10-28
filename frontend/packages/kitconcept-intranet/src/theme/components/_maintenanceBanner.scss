@@ -1,0 +1,62 @@
+.maintenance-banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 25px;
+  background-color: var(--maintenance-banner-background, #c4000f);
+  color: #fff;
+  gap: 25px;
+  text-align: center;
+
+  @media only screen and (max-width: $largest-mobile-screen) {
+    flex-direction: column;
+  }
+
+  header {
+    flex-shrink: 0;
+
+    svg {
+      display: inline-block;
+      padding-left: 25px;
+      margin: -6px;
+      fill: #fff !important;
+      vertical-align: middle;
+    }
+
+    div {
+      display: inline-block;
+      padding: 0 25px;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 36px;
+      vertical-align: middle;
+    }
+  }
+
+  section {
+    min-width: 50vw;
+    flex: 1 1 min-content;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+
+    time {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 18px;
+    }
+
+    h2,
+    h3,
+    p,
+    strong,
+    a:any-link {
+      color: #fff;
+    }
+
+    ul,
+    ol {
+      display: inline-block;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import DashboardMenu from '@kitconcept/intranet/components/Dashboard/DashboardMe
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
 import profilePlaceholder from '../assets/profile-placeholder.svg';
 import Header from '../components/Header/Header';
+import warningSVG from '@plone/volto/icons/warning.svg';
 
 export default function install(config: ConfigType) {
   const nonContentRoutes = [
@@ -30,6 +31,11 @@ export default function install(config: ConfigType) {
     { match: '/', component: DocumentReviewPlug, props: {} },
     { match: '/', component: DashboardMenu, props: {} },
   ];
+
+  config.settings.controlPanelsIcons = {
+    ...config.settings.controlPanelsIcons,
+    'maintenance-banner': warningSVG,
+  };
 
   config.settings.isMultilingual = false;
   config.settings.nonContentRoutes = nonContentRoutes;

@@ -6,6 +6,7 @@ from kitconcept.intranet.deserializers.tasks import TasksDeserializer
 from kitconcept.intranet.tasks.catalog import synchronize
 from kitconcept.intranet.tasks.model import MISSING_DUE_DATE
 from kitconcept.intranet.tasks.model import TASK_TYPE
+from kitconcept.intranet.tasks.values import extract_task_details
 from kitconcept.intranet.tasks.values import iter_todos
 from kitconcept.intranet.tasks.values import stamp_task_metadata
 from kitconcept.intranet.upgrades.v20261012001 import install_inline_tasks
@@ -41,6 +42,18 @@ def test_modified_without_browser_request():
     from types import SimpleNamespace
 
     modified(SimpleNamespace(REQUEST=Acquired), None)
+
+
+def test_task_text_excludes_mentions_and_their_children(make_plate_mention):
+    mention = make_plate_mention("m", "alice")
+    mention["children"] = [{"text": "Alice"}]
+    details = extract_task_details(
+        todo(
+            children=[mention, {"text": "Write report"}, make_plate_mention("n", "bob")]
+        )
+    )
+    assert details["text"] == "Write report"
+    assert details["assignees"] == ("alice", "bob")
 
 
 @pytest.fixture
@@ -81,7 +94,7 @@ def test_index_identity_text_and_traversal(page, portal, make_plate_mention):
     brain = tasks(portal)[0]
     assert str(UUID(nodes[0]["taskId"])) == nodes[0]["taskId"]
     assert f"{IUUID(page)}:{nodes[0]['taskId']}" == brain.UID
-    assert brain.Title == "Ask Mentioned User before 2026-10-15"
+    assert brain.Title == "Ask  before 2026-10-15"
     assert brain.getObject().task_assignees == ("alice",)
     assert brain.task_due_date == DateTime("2026-10-15 UTC")
     assert brain.task_due_date is not None

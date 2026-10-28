@@ -24,6 +24,8 @@ def iter_todos(value):
 def inline_nodes(node):
     """Walk one task's text, excluding nested todos indexed as separate tasks."""
     yield node
+    if node.get("type") == "mention":
+        return
     for child in node.get("children", []):
         if isinstance(child, dict) and child.get("listStyleType") != "todo":
             yield from inline_nodes(child)
@@ -37,7 +39,7 @@ def extract_task_details(node):
     for child in inline_nodes(node):
         if child.get("type") in {"mention", "date"}:
             value = child.get("value", "")
-            if isinstance(value, str):
+            if child.get("type") == "date" and isinstance(value, str):
                 text.append(value)
             if child.get("type") == "mention" and isinstance(child.get("key"), str):
                 users.append(child["key"])

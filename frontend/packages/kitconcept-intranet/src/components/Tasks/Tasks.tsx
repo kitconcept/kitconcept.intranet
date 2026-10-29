@@ -242,8 +242,8 @@ export default function Tasks() {
                                 <PersonPill
                                   id={assignee.id}
                                   portrait={
-                                    assignee.id
-                                      ? `/@portrait/${assignee.id}`
+                                    assignee.portrait
+                                      ? flattenToAppURL(assignee.portrait)
                                       : undefined
                                   }
                                   fullname={assignee.title}

@@ -6,7 +6,11 @@ export type Task = {
   task_due_date: string;
   task_source_title: string;
   task_workspace: { '@id': string; title: string } | null;
-  task_assignee_details: { id: string; title: string }[];
+  task_assignee_details: {
+    id: string;
+    title: string;
+    portrait?: string | null;
+  }[];
 };
 
 export const TASK_BATCH_SIZE = 25;

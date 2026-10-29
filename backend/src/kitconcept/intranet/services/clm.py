@@ -3,6 +3,7 @@ from kitconcept.intranet.behaviors.clm import ICLM
 from plone import api
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
+from plone.restapi.services.users.get import getPortraitUrl
 from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
@@ -16,6 +17,13 @@ class CLMExpander:
     def __init__(self, context, request):
         self.context = context
         self.request = request
+
+    @staticmethod
+    def _portrait(username):
+        """Portrait URL of the person's Plone user, or None without one."""
+        if not username:
+            return None
+        return getPortraitUrl(api.user.get(username=username))
 
     @staticmethod
     def _person_data(uid):
@@ -33,6 +41,7 @@ class CLMExpander:
         })
         if username:
             person_data["username"] = username
+        person_data["portrait"] = CLMExpander._portrait(username)
 
         return person_data
 
@@ -82,6 +91,9 @@ class CLMExpander:
                     responsible_person["person_url"] = person.absolute_url()
                     responsible_person["username"] = IPloneUser(person).username
                     responsible_person["title"] = person.title
+                    responsible_person["portrait"] = self._portrait(
+                        responsible_person["username"]
+                    )
 
                 result["clm"]["responsible_person"] = responsible_person
                 return result

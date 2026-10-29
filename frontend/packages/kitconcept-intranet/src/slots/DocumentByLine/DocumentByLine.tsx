@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 import type { Content } from '@plone/types';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { useUser } from '@plone/volto/hooks';
 import { useSelector } from 'react-redux';
 import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill';
 import { defineMessages, useIntl } from 'react-intl';
@@ -33,6 +35,7 @@ type FormData = {
 type UserData = {
   fullname: string;
   homepage: string | null;
+  portrait: string | null;
 };
 
 type ContentWithBylineExpander = Content & {
@@ -59,22 +62,31 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   //The expression form.global?.creators ?? content.creators ?? [] creates a new array reference
   //  on every render, even if the values are the same.
   // This makes React think the dependency has changed and re-run
+
+  const user = useUser();
   const creators = useMemo(() => {
+    if (isAddMode) {
+      return form.global?.creators ?? (user?.id ? [user.id] : []);
+    }
     return form.global?.creators ?? content?.creators ?? [];
-  }, [form.global?.creators, content?.creators]);
+  }, [isAddMode, form.global?.creators, content?.creators, user?.id]);
 
   const creatorsWithData = useMemo(() => {
     const usersFromExpander = content?.['@components'].byline.users;
 
     return creators.map((userid: string) => {
-      const userData = usersFromExpander?.[userid];
+      const userData =
+        isAddMode && userid === user?.id ? user : usersFromExpander?.[userid];
       return {
         id: userid,
         name: userData?.fullname || userid,
         homepage: userData?.homepage,
+        portrait: userData?.portrait
+          ? flattenToAppURL(userData.portrait)
+          : undefined,
       };
     });
-  }, [creators, content]);
+  }, [creators, content, isAddMode, user]);
 
   const discussions = content?.blocks?.['__somersault__']?.discussions;
   const discussionCount = useMemo(() => {
@@ -109,13 +121,9 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
       <div className="documentByLine">
         {hasCreators && (
           <span className="documentByLine-creators">
-            {creatorsWithData.map(({ id, name }, index) => (
+            {creatorsWithData.map(({ id, name, portrait }, index) => (
               <span className="documentByLine-creator" key={id}>
-                <PersonPill
-                  id={id}
-                  fullname={name}
-                  portrait={id ? `/@portrait/${id}` : undefined}
-                />
+                <PersonPill id={id} fullname={name} portrait={portrait} />
                 {index < creatorsWithData.length - 1 && ','}
               </span>
             ))}

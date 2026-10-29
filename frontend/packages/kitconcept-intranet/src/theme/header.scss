@@ -418,51 +418,6 @@ $search-text: #252525;
   }
 }
 
-// Scope dropdown (ticket #570): "Everywhere" entry on top, then the
-// workspace list with letter avatars; checkmark marks the selection.
-// The base popover caps width below the menu's needs, so size the
-// popover explicitly (same approach as the breadcrumb menu).
-.react-aria-Popover:has(.header-search-scope-menu) {
-  width: min(320px, calc(100vw - 16px));
-  max-width: none;
-}
-
-.header-search-scope-menu {
-  min-width: 280px;
-
-  .header-search-scope-item {
-    gap: 10px;
-
-    &.is-everywhere {
-      padding-bottom: 10px;
-      border-radius: 6px 6px 0 0;
-      border-bottom: 1px solid #e1e6e9;
-      margin-bottom: 6px;
-
-      .icon {
-        color: $search-grey;
-      }
-    }
-  }
-
-  .header-search-scope-text {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    line-height: 1.3;
-  }
-
-  .header-search-scope-hint {
-    color: $search-grey;
-    font-size: 12px;
-  }
-
-  .header-search-scope-check {
-    flex-shrink: 0;
-    color: $search-blue;
-  }
-}
-
 // Created by: multi-select popover with checkbox rows (ticket 585).
 .header-search-creator-popover {
   min-width: 260px;

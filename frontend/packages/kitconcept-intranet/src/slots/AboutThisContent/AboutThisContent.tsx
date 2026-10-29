@@ -178,9 +178,11 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
   const responsiblePersonUrl = clm?.responsible_person?.person_url;
   const responsiblePersonUsername = clm?.responsible_person?.username;
   const responsiblePersonTitle = clm?.responsible_person?.title;
+  const responsiblePersonPortrait = clm?.responsible_person?.portrait;
   const feedbackRecipient = getFeedbackRecipient(clm);
   const feedbackRecipientUsername = feedbackRecipient?.username;
   const feedbackRecipientTitle = feedbackRecipient?.title;
+  const feedbackRecipientPortrait = feedbackRecipient?.portrait;
 
   const submitFeedback = () => {
     const message = feedback.trim();
@@ -235,11 +237,11 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
         <div className="about-content-item about-content-author">
           <h3>{intl.formatMessage(messages.author)}</h3>
           <div className="about-content-people">
-            {displayedAuthors.map(({ id, name, url }) => (
+            {displayedAuthors.map(({ id, name, url, portrait }) => (
               <div className="about-content-person" key={id}>
                 <PersonPill
                   id={id}
-                  portrait={id ? `/@portrait/${id}` : undefined}
+                  portrait={portrait ? flattenToAppURL(portrait) : undefined}
                   fullname={name}
                   url={url ? flattenToAppURL(url) : undefined}
                 />
@@ -254,8 +256,8 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
               <PersonPill
                 id={responsiblePersonUsername ?? ''}
                 portrait={
-                  responsiblePersonUsername
-                    ? `/@portrait/${responsiblePersonUsername}`
+                  responsiblePersonPortrait
+                    ? flattenToAppURL(responsiblePersonPortrait)
                     : undefined
                 }
                 fullname={responsiblePersonTitle}
@@ -298,8 +300,8 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
                 <PersonPill
                   id={feedbackRecipientUsername ?? ''}
                   portrait={
-                    feedbackRecipientUsername
-                      ? `/@portrait/${feedbackRecipientUsername}`
+                    feedbackRecipientPortrait
+                      ? flattenToAppURL(feedbackRecipientPortrait)
                       : undefined
                   }
                   fullname={feedbackRecipientTitle}

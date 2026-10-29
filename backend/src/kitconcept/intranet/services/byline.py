@@ -1,6 +1,7 @@
 from plone import api
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
+from plone.restapi.services.users.get import getPortraitUrl
 from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
@@ -25,6 +26,7 @@ class BylineExpander:
                 users[user_id] = {
                     "fullname": user.getProperty("fullname") or user_id,
                     "homepage": user.getProperty("home_page"),
+                    "portrait": getPortraitUrl(user),
                 }
 
         result["byline"]["users"] = users

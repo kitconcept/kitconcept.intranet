@@ -23,13 +23,31 @@ export default defineConfig({
   ...voltoVitestConfig,
   test: {
     ...voltoVitestConfig.test,
-    projects: voltoVitestConfig.test.projects.map((project) => ({
-      ...project,
-      resolve: {
-        ...project.resolve,
-        alias: { ...project.resolve?.alias, ...addonAliases },
-      },
-    })),
+    projects: voltoVitestConfig.test.projects.map((project) => {
+      // Volto aliases `@plone/components` to its `src`, where the `Icons`
+      // subpath export does not exist; point it at the icons in that `src`.
+      // Must precede the `@plone/components` alias to take effect.
+      const componentsSrc = project.resolve?.alias?.['@plone/components'];
+      const iconsAlias = componentsSrc
+        ? {
+            '@plone/components/Icons': path.join(
+              componentsSrc,
+              'components/icons/index.ts',
+            ),
+          }
+        : {};
+      return {
+        ...project,
+        resolve: {
+          ...project.resolve,
+          alias: {
+            ...iconsAlias,
+            ...project.resolve?.alias,
+            ...addonAliases,
+          },
+        },
+      };
+    }),
   },
   server: {
     fs: {

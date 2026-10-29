@@ -30,7 +30,10 @@ export default function WorkspaceFilter({
         workspaces.find((item) => item.path === value)?.title || all
       }
       allLabel={all}
-      workspaces={workspaces}
+      workspaces={workspaces.map((item) => ({
+        '@id': item.path,
+        title: item.title,
+      }))}
       disabled={disabled}
       onChange={(path) => onChange(path || '')}
     />

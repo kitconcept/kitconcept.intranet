@@ -449,6 +449,21 @@
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
 }
 
+// The same menu as a filter (tasks, header search) is not tied to the sidebar
+// width and matches the other filter chip popovers (.header-search-chip-menu).
+.react-aria-Popover:has(.workspace-selector-menu) {
+  width: min(max(var(--trigger-width), 320px), calc(100vw - 16px));
+  border: 1px solid #e1e6e9;
+  border-radius: 8px;
+  margin-top: 0;
+  margin-left: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  &[data-placement='bottom'] {
+    margin-top: 6px;
+  }
+}
+
 .nav-tree-switcher-search {
   display: flex;
   height: 32px;
@@ -520,6 +535,16 @@
   &.is-scrolling {
     scrollbar-color: #a8adb4 transparent;
   }
+
+  // Filters have no Portal section heading: 11 rows, one heading (28px),
+  // padding, plus the portal row's description line when there is one.
+  &.workspace-selector-menu {
+    max-height: calc(11 * 36px + 28px + 8px);
+
+    &:has(.nav-tree-switcher-item-description) {
+      max-height: calc(11 * 36px + 15px + 28px + 8px);
+    }
+  }
 }
 
 .nav-tree-switcher-section {
@@ -568,24 +593,6 @@
   }
 }
 
-.nav-tree-switcher-avatar {
-  display: flex;
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-  background: #a8adb4;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-
-  .nav-tree-switcher-item.is-active & {
-    background: #1a1a1a;
-  }
-}
-
 .nav-tree-switcher-item-title {
   overflow: hidden;
   min-width: 0;
@@ -598,6 +605,15 @@
   .nav-tree-switcher-item.is-empty & {
     color: inherit;
   }
+}
+
+.nav-tree-switcher-item-description {
+  display: block;
+  overflow: hidden;
+  color: #888;
+  font-size: 11.5px;
+  line-height: 15px;
+  text-overflow: ellipsis;
 }
 
 .nav-tree-switcher-check {

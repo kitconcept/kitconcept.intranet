@@ -1,6 +1,8 @@
 type Props = { title: string; size?: number };
 
-/** Use the same deterministic workspace colors as the search scope menu. */
+// Letter avatar for a workspace, tinted deterministically by title so
+// a workspace keeps its color across renders and sessions (the design
+// shows colored initials, there is no image avatar on Workspace).
 export function avatarTone(title: string) {
   let tone = 0;
   for (let i = 0; i < title.length; i += 1) {

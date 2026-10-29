@@ -487,9 +487,6 @@ type SearchScope =
   | { kind: 'current' }
   | { kind: 'workspace'; path: string; title: string };
 
-// Letter avatar for a workspace, tinted deterministically by title so
-// a workspace keeps its color across renders and sessions (the design
-// shows colored initials, there is no image avatar on Workspace).
 // The Workspace chip: unlike the demo FilterChips this is a real
 // control - it selects the search scope from "everywhere" plus the
 // list of workspaces the user can access (same data as the navigation

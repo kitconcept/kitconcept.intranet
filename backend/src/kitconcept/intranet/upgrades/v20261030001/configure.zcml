@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261013001"
+      destination="20261030001"
+      >
+    <genericsetup:upgradeDepends
+        title="Install kitconcept.maintenancebanner"
+        import_profile="kitconcept.maintenancebanner:default"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

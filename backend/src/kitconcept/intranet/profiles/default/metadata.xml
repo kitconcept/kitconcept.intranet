@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-  <version>20261013001</version>
+  <version>20261030001</version>
   <dependencies>
     <dependency>plone.app.discussion:default</dependency>
     <dependency>profile-kitconcept.contactblock:default</dependency>
@@ -8,5 +8,6 @@
     <dependency>profile-kitconcept.keywordmanager:default</dependency>
     <dependency>profile-plone.app.iterate:default</dependency>
     <dependency>profile-plone.recyclebin:default</dependency>
+    <dependency>profile-kitconcept.maintenancebanner:default</dependency>
   </dependencies>
 </metadata>

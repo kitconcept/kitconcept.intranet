@@ -113,6 +113,7 @@ overrides:
   '@kitconcept/volto-carousel-block': workspace:*
   '@kitconcept/volto-iframe-block': workspace:*
   '@kitconcept/volto-bm3-compat': workspace:*
+  '@kitconcept/volto-maintenance-banner': workspace:*
   '@kitconcept/volto-keywordmanager': workspace:*
   '@plone/registry': workspace:*
   react-aria-components: ^1.22.1
@@ -1454,6 +1455,9 @@ importers:
       '@kitconcept/volto-logos-block':
         specifier: workspace:*
         version: link:../volto-logos-block/packages/volto-logos-block
+      '@kitconcept/volto-maintenance-banner':
+        specifier: workspace:*
+        version: link:../volto-maintenance-banner/frontend/packages/volto-maintenance-banner
       '@kitconcept/volto-plate':
         specifier: ^1.0.0-alpha.38
         version: 1.0.0-alpha.38(76556cf8afb8e2c95ba961e1ce3c0cbb)
@@ -2125,6 +2129,43 @@ importers:
       '@types/node':
         specifier: ^24
         version: 24.19.1
+      '@types/react':
+        specifier: ^18.3.1
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.31)
+      release-it:
+        specifier: ^19.0.5
+        version: 19.2.4(@types/node@24.19.1)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.1.2
+        version: 3.2.7(@types/debug@4.1.13)(@types/node@24.19.1)(@vitest/ui@3.2.7)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.1)
+
+  packages/volto-maintenance-banner/frontend/packages/volto-maintenance-banner:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/registry':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/registry
+      '@plone/scripts':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/scripts
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../../core/packages/types
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@types/react':
         specifier: ^18.3.1
         version: 18.3.31

@@ -1506,6 +1506,7 @@ dependencies = [
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
     { name = "kitconcept-keywordmanager" },
+    { name = "kitconcept-maintenancebanner" },
     { name = "kitconcept-plate" },
     { name = "kitconcept-solr" },
     { name = "pas-plugins-authomatic" },
@@ -1552,6 +1553,7 @@ requires-dist = [
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.1.1" },
     { name = "kitconcept-keywordmanager", specifier = "==1.0.0a4" },
+    { name = "kitconcept-maintenancebanner", specifier = "==1.0.0a1" },
     { name = "kitconcept-plate", specifier = "==1.0.0a38" },
     { name = "kitconcept-solr", specifier = "==3.0.0a3" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
@@ -1605,6 +1607,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/e4/98/92ede07ca8014ea15e4b1f991ad966da56bee13e94a8579cab984e4caaa2/kitconcept_keywordmanager-1.0.0a4.tar.gz", hash = "sha256:7fc844d1e60bf681c9e528a98beee2b37b31153748643e970d1c482dbc83fbf3", size = 82557, upload-time = "2026-10-22T09:17:16.258Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/16/2f/1238d3730e419d46a4e84483aab6a8963676d328238051ebd75b63010556/kitconcept_keywordmanager-1.0.0a4-py3-none-any.whl", hash = "sha256:6514cf1bf5a195e1e254094898e7566b1b6c8b2a5c672aaca9f1609db8afcb4e", size = 94086, upload-time = "2026-10-22T09:17:14.703Z" },
+]
+
+[[package]]
+name = "kitconcept-maintenancebanner"
+version = "1.0.0a1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/01/df/bbf2dccb5575f08b2743a39aae482679cab5bdb5c79354f856943236c4fc/kitconcept_maintenancebanner-1.0.0a1.tar.gz", hash = "sha256:7060359d605a027386ebf58e4125da0cb2c22fc153104996f257978c0b8e1b28", size = 76504, upload-time = "2026-10-30T03:41:08.938Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1c/16/51e3ee87f231901e96cbd8e9ad51b8f12435860ac063f5f3f3c9318794f0/kitconcept_maintenancebanner-1.0.0a1-py3-none-any.whl", hash = "sha256:d1a667ab06c25995039b62765261b2948a575f6f573dcbbb61eeb49c574169fe", size = 86684, upload-time = "2026-10-30T03:41:07.63Z" },
 ]
 
 [[package]]

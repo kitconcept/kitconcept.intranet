@@ -174,6 +174,7 @@ class InlineTask(Implicit):
     def task_assignee_details(self):
         """Expose every assignee with a display name, falling back to the user ID."""
         from plone import api
+        from plone.restapi.services.users.get import getPortraitUrl
 
         result = []
         for user_id in self.task_assignees:
@@ -181,6 +182,7 @@ class InlineTask(Implicit):
             result.append({
                 "id": user_id,
                 "title": (user.getProperty("fullname") if user else None) or user_id,
+                "portrait": getPortraitUrl(user),
             })
         return result
 

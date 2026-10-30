@@ -294,8 +294,8 @@ def test_workspace_filter_and_live_assignees(page, portal, http_request, make_us
     assert result["items_total"] == 1
     assert result["items"][0]["task_workspace"]["title"] == "Renamed workspace"
     assert result["items"][0]["task_assignee_details"] == [
-        {"id": "alice", "title": "Alice Example"},
-        {"id": "bob", "title": "Bob Example"},
+        {"id": "alice", "title": "Alice Example", "portrait": None},
+        {"id": "bob", "title": "Bob Example", "portrait": None},
     ]
 
 

@@ -72,12 +72,12 @@ context('Workspace search dialog (scope dropdown)', () => {
 
     // the dropdown lists Everywhere plus all workspaces
     cy.get('.header-search-chip').contains('Workspace:').click();
-    cy.get('.header-search-scope-menu').contains('Search in all areas');
-    cy.get('.header-search-scope-menu').contains('GreenCat Workspace');
-    cy.get('.header-search-scope-menu').contains('Quantum Workspace');
+    cy.get('.workspace-selector-menu').contains('Search in all areas');
+    cy.get('.workspace-selector-menu').contains('GreenCat Workspace');
+    cy.get('.workspace-selector-menu').contains('Quantum Workspace');
 
     // switch to Everywhere -> global results with location labels
-    cy.get('.header-search-scope-menu .react-aria-MenuItem')
+    cy.get('.workspace-selector-menu .nav-tree-switcher-item')
       .contains('Everywhere')
       .click();
     cy.get('.header-search-result-title').should('have.length.at.least', 3);
@@ -97,7 +97,7 @@ context('Workspace search dialog (scope dropdown)', () => {
     cy.get('.header-search-result-title').should('have.length', 1);
 
     cy.get('.header-search-chip').contains('Workspace:').click();
-    cy.get('.header-search-scope-menu .react-aria-MenuItem')
+    cy.get('.workspace-selector-menu .nav-tree-switcher-item')
       .contains('Quantum Workspace')
       .click();
 
@@ -152,7 +152,7 @@ context('Workspace search dialog (scope dropdown)', () => {
     cy.get('.header-search-button').click();
     cy.get('.header-search-input-row input').type('vacation');
     cy.get('.header-search-chip').contains('Workspace:').click();
-    cy.get('.header-search-scope-menu .react-aria-MenuItem')
+    cy.get('.workspace-selector-menu .nav-tree-switcher-item')
       .contains('Everywhere')
       .click();
     cy.get('.header-search-input-row input').type('{enter}');
@@ -186,7 +186,7 @@ context('Search dialog filter chips', () => {
     cy.get('.header-search-button').click();
     cy.get('.header-search-input-row input').type(term);
     cy.get('.header-search-chip').contains('Workspace:').click();
-    cy.get('.header-search-scope-menu .react-aria-MenuItem')
+    cy.get('.workspace-selector-menu .nav-tree-switcher-item')
       .contains('Everywhere')
       .click();
   };

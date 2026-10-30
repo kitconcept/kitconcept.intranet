@@ -1,5 +1,6 @@
 type UserData = {
   fullname?: string;
+  portrait?: string | null;
 };
 
 export type CLMAuthorData = {
@@ -7,6 +8,7 @@ export type CLMAuthorData = {
   person_url?: string;
   title?: string;
   username?: string;
+  portrait?: string | null;
 };
 
 type ContentAuthorData = {
@@ -26,6 +28,7 @@ export type DisplayedAuthor = {
   id: string;
   name: string;
   url?: string;
+  portrait?: string;
 };
 
 export const getDisplayedAuthors = (
@@ -46,6 +49,7 @@ export const getDisplayedAuthors = (
         id: author?.username || uid,
         name: author?.title || author?.username || uid,
         url: author?.person_url,
+        portrait: author?.portrait ?? undefined,
       };
     });
   }
@@ -58,6 +62,7 @@ export const getDisplayedAuthors = (
     return {
       id: userid,
       name: userData?.fullname || userid,
+      portrait: userData?.portrait ?? undefined,
     };
   });
 };

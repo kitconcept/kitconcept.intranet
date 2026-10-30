@@ -45,6 +45,10 @@
  *    editable by hand; light red: no result, the column holds nothing the
  *    calculation can use). Editor only, the view shows nothing of it.
  *    @reekitconcept
+ *  - "Width" group in the cell toolbar: Text width, Wide, Full width
+ *    (the table's `blockWidth`: `default`, `layout`, `full`).
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
+ *    @reekitconcept
  */
 
 import * as React from 'react';
@@ -108,6 +112,11 @@ import {
   withHOC,
 } from 'platejs/react';
 import { useElementSelector } from 'platejs/react';
+// OVERRIDE (823): table width
+import {
+  BLOCK_WIDTH_KEY,
+  BlockWidthPlugin,
+} from '@plone/plate/components/editor/plugins/block-width-plugin';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   messages as dndMessages,
@@ -135,6 +144,10 @@ import {
   RowInsertBottomIcon,
   RowInsertTopIcon,
   RowRemoveIcon,
+  // OVERRIDE (823): @plone/icons' width icons (not resolvable from here)
+  WidthDefaultIcon,
+  WidthFullIcon,
+  WidthLayoutIcon,
 } from '@kitconcept/intranet/components/WikiTable/tableToolbarIcons';
 
 import { Button } from '@plone/plate/components/ui/button';
@@ -228,7 +241,37 @@ const messages = defineMessages({
     id: 'Move column right',
     defaultMessage: 'Move column right',
   },
+  // OVERRIDE (823): table width
+  width: {
+    id: 'Width',
+    defaultMessage: 'Width',
+  },
+  widthDefault: {
+    id: 'Text width',
+    defaultMessage: 'Text width',
+  },
+  widthLayout: {
+    id: 'Wide',
+    defaultMessage: 'Wide',
+  },
+  widthFull: {
+    id: 'Full width',
+    defaultMessage: 'Full width',
+  },
+  widthNested: {
+    id: 'The table takes the width of the surrounding block',
+    defaultMessage: 'The table takes the width of the surrounding block',
+  },
 });
+
+// OVERRIDE (823): the table widths of the cell toolbar, values of the
+// theme's block widths (`config.blocks.widths`, allowed for tables in
+// config/blocks.ts).
+const TABLE_WIDTHS = [
+  { value: 'default', icon: WidthDefaultIcon, message: messages.widthDefault },
+  { value: 'layout', icon: WidthLayoutIcon, message: messages.widthLayout },
+  { value: 'full', icon: WidthFullIcon, message: messages.widthFull },
+] as const;
 
 export const TableElement = withHOC(
   TableProvider,
@@ -409,6 +452,27 @@ function TableFloatingToolbar({
     const at = entries.cell[1];
     if (kind) editor.tf.setNodes({ [CALC_KEY]: kind }, { at });
     else editor.tf.unsetNodes(CALC_KEY, { at });
+  };
+
+  // OVERRIDE (823): table width. The text toolbar's block width button
+  // never shows inside a table (its block is the cell's paragraph), so the
+  // width is set here, on the table this toolbar belongs to. `mode:
+  // 'highest'` makes the plugin's `setNodes` match the table, not the
+  // paragraphs in its cells.
+  const { tf: widthTf } = useEditorPlugin(BlockWidthPlugin);
+  const tableWidth = (element as Record<string, unknown>)[BLOCK_WIDTH_KEY];
+  const activeWidth = typeof tableWidth === 'string' ? tableWidth : 'default';
+  // A width only applies to a top-level block. A table inside a column or
+  // another block fills its container, so the buttons are shown disabled.
+  const nestedTable = editor.api.findPath(element)?.length !== 1;
+  const setTableWidth = (value: string) => {
+    const tablePath = editor.api.findPath(element);
+    if (!tablePath) return;
+    (
+      widthTf.blockWidth as {
+        setWidth: (value: string, options?: object) => void;
+      }
+    ).setWidth(value, { at: tablePath, mode: 'highest' });
   };
 
   return (
@@ -672,6 +736,38 @@ function TableFloatingToolbar({
               </ToolbarButton>
             </ToolbarGroup>
           )}
+
+          {/* OVERRIDE (823): table width. The tooltip names the group
+              ("Width: Wide"); the button's own name is the option, inside
+              a group named "Width". */}
+          <ToolbarGroup>
+            <div
+              className="flex items-center"
+              role="group"
+              aria-label={intl.formatMessage(messages.width)}
+              // Disabled buttons take no pointer events, so the reason is
+              // the group's native tooltip.
+              title={
+                nestedTable
+                  ? intl.formatMessage(messages.widthNested)
+                  : undefined
+              }
+            >
+              {TABLE_WIDTHS.map(({ value, icon: Icon, message }) => (
+                <ToolbarButton
+                  key={value}
+                  pressed={activeWidth === value}
+                  disabled={nestedTable}
+                  onClick={() => setTableWidth(value)}
+                  onMouseDown={(e) => e.preventDefault()}
+                  aria-label={intl.formatMessage(message)}
+                  tooltip={`${intl.formatMessage(messages.width)}: ${intl.formatMessage(message)}`}
+                >
+                  <Icon className="size-4" />
+                </ToolbarButton>
+              ))}
+            </div>
+          </ToolbarGroup>
         </Toolbar>
       </PopoverContent>
     </Popover>

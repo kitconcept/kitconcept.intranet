@@ -89,6 +89,11 @@ const valueMessages = defineMessages({
     id: 'plateDiff.value.blockWidth.full',
     defaultMessage: 'Full width',
   },
+  // The theme's name for "Wide", set on wiki tables (work item 823).
+  'blockWidth.layout': {
+    id: 'plateDiff.value.blockWidth.layout',
+    defaultMessage: 'Wide',
+  },
   // type
   'type.p': { id: 'plateDiff.value.type.p', defaultMessage: 'Paragraph' },
   'type.h1': { id: 'plateDiff.value.type.h1', defaultMessage: 'Heading 1' },

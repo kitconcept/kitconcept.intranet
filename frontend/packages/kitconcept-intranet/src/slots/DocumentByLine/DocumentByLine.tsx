@@ -57,19 +57,20 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
   const intl = useIntl();
 
   const form = useSelector((state: FormData) => state.form);
-  const isAddMode = props.location.pathname.includes('/add');
+  const isAddMode = props.location.pathname.endsWith('/add');
 
-  //The expression form.global?.creators ?? content.creators ?? [] creates a new array reference
-  //  on every render, even if the values are the same.
-  // This makes React think the dependency has changed and re-run
+  const formCreators =
+    form.global?.['@id'] === (isAddMode ? undefined : content?.['@id'])
+      ? form.global?.creators
+      : undefined;
 
   const user = useUser();
   const creators = useMemo(() => {
     if (isAddMode) {
-      return form.global?.creators ?? (user?.id ? [user.id] : []);
+      return formCreators ?? (user?.id ? [user.id] : []);
     }
-    return form.global?.creators ?? content?.creators ?? [];
-  }, [isAddMode, form.global?.creators, content?.creators, user?.id]);
+    return formCreators ?? content?.creators ?? [];
+  }, [isAddMode, formCreators, content?.creators, user?.id]);
 
   const creatorsWithData = useMemo(() => {
     const usersFromExpander = content?.['@components'].byline.users;

@@ -6,8 +6,8 @@
  *         table kit. Relative imports are made absolute (shadowed files
  *         resolve relative imports against this package). Everything else
  *         is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a36/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.36
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a39/frontend/packages/volto-plate/src/plate/kits/wiki-editor-kit.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.39
  * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
@@ -35,6 +35,10 @@
  *    is wide, with 10 or more full width).
  *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
  *    @reekitconcept
+ *  - Merge volto-plate 1.0.0-alpha.39: replace `DiscussionKit` with
+ *    `discussionPlugin` rendered through `discussionSlotRender`, so
+ *    comments on tables and code blocks wrap the block's inner container
+ *    instead of the table body / code. @Tishasoumya-02
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -52,7 +56,8 @@ import { CalloutKit } from '@plone/plate/components/editor/plugins/callout-kit';
 import { CodeBlockKit } from '@plone/plate/components/editor/plugins/code-block-kit';
 import { ColumnKit } from '@plone/plate/components/editor/plugins/column-kit';
 import { CursorOverlayKit } from '@plone/plate/components/editor/plugins/cursor-overlay-kit';
-import { DiscussionKit } from '@plone/plate/components/editor/plugins/discussion-kit';
+import { discussionPlugin } from '@plone/plate/components/editor/plugins/discussion-kit';
+import { BlockDiscussion } from '@plone/plate/components/ui/block-discussion';
 // import { DndKit } from '@plone/plate/components/editor/plugins/dnd-kit';
 import { DocxKit } from '@plone/plate/components/editor/plugins/docx-kit';
 import { ExitBreakKit } from '@plone/plate/components/editor/plugins/exit-break-kit';
@@ -73,6 +78,7 @@ import { withCodeEditorPaste } from '@kitconcept/intranet/components/WikiTable/p
 import { WikiTableCalcPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableCalcPlugin';
 import { WikiTableWidthPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableWidthPlugin';
 
+import { discussionSlotRender } from '@kitconcept/volto-plate/plate/discussion-slot';
 import { CodeDrawingKit } from '@kitconcept/volto-plate/plate/plugins/code-drawing-kit';
 import { VoltoFloatingToolbarKit } from '@kitconcept/volto-plate/plate/plugins/volto-floating-toolbar-kit';
 import { VoltoClipboardImagePastePlugin } from '@kitconcept/volto-plate/plate/plugins/volto-clipboard-image-paste';
@@ -135,9 +141,11 @@ export const WikiEditorKit = [
   ...BlockWidthKit,
 
   // Collaboration
-  ...DiscussionKit,
-  voltoCommentPlugin,
   ...SuggestionKit,
+  // OVERRIDE comments on tables and code blocks
+  // wrap the block's inner container instead of the table body /code.
+  discussionPlugin.configure({ render: discussionSlotRender(BlockDiscussion) }),
+  voltoCommentPlugin,
 
   // Editing
   ...WikiSlashKit,

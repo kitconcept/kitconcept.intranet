@@ -75,7 +75,8 @@
     "@kitconcept/volto-contact-block",
     "@kitconcept/volto-plate",
     "@kitconcept/volto-keywordmanager",
-    "@plone/volto-recyclebin"
+    "@plone/volto-recyclebin",
+    "@kitconcept/volto-maintenance-banner"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
@@ -98,6 +99,7 @@
     "@kitconcept/volto-light-theme": "workspace:*",
     "@kitconcept/volto-contact-block": "workspace:*",
     "@kitconcept/volto-keywordmanager": "workspace:*",
+    "@kitconcept/volto-maintenance-banner": "workspace:*",
     "@plone/components": "workspace:*",
     "@plone/helpers": "^2.0.0-alpha.8",
     "@plone/volto-form-block": "^1.0.0-alpha.3",

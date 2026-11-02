@@ -27,6 +27,10 @@ TITLE_BLOCK_ID = "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c"
 # block in the diff of its first save in the editor.
 BLOCK_DEFAULTS = {"align": "start", "blockWidth": "default"}
 
+# The width steps of a wiki table (the theme's block widths that the
+# frontend allows for tables): reading column, wide, full width.
+TABLE_WIDTHS = ("default", "layout", "full")
+
 
 def text(value: str, **marks) -> dict:
     return {"text": value, **marks}
@@ -85,6 +89,7 @@ def table(
     rows: list[list],
     col_sizes=None,
     footer: list | None = None,
+    width: str | None = None,
 ) -> dict:
     """A table with a header row and, with ``footer``, a footer row.
 
@@ -92,6 +97,10 @@ def table(
     contents: a string, a tuple of runs (strings and ``text(...)`` dicts with
     marks), a ``Span`` for a merged cell (the row then lists fewer cells), or
     in the footer a ``Sum`` for a cell that shows its column's sum.
+
+    ``width`` is the table's width step (``blockWidth``): ``"default"``
+    (reading column), ``"layout"`` (wide) or ``"full"`` (full width). Without
+    it the table has no ``blockWidth`` and stays in the reading column.
     """
 
     def runs(content):
@@ -137,6 +146,10 @@ def table(
             )
         )
     props = {"colSizes": col_sizes} if col_sizes else {}
+    if width is not None:
+        if width not in TABLE_WIDTHS:
+            raise ValueError(f"Unknown table width {width!r}")
+        props["blockWidth"] = width
     return node("table", node_id, children, **props)
 
 

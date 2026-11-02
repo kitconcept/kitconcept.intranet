@@ -353,6 +353,11 @@ msgstr "Ordner"
 msgid "Footer row"
 msgstr "Fußzeile"
 
+#. Default: "Full width"
+#: index
+msgid "Full width"
+msgstr "Vollbreite"
+
 #. Default: "Generating answer…"
 #: components/Header/HeaderSearch
 msgid "Generating answer…"
@@ -895,6 +900,11 @@ msgstr "Aufgabenauswahl"
 msgid "Tasks"
 msgstr "Aufgaben"
 
+#. Default: "Text width"
+#: index
+msgid "Text width"
+msgstr "Lesespalte"
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
@@ -914,6 +924,11 @@ msgstr "Die CSV-Datei enthält keine Zeilen."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und Deines Standorts zusammengestellt."
+
+#. Default: "The table takes the width of the surrounding block"
+#: index
+msgid "The table takes the width of the surrounding block"
+msgstr "Die Tabelle übernimmt die Breite des umgebenden Blocks"
 
 #. Default: "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
 #: components/widgets/ContentTypeWorkflow
@@ -979,6 +994,16 @@ msgstr "Website"
 #: slots/AboutThisContent/AboutThisContent
 msgid "What is unclear, outdated or missing?"
 msgstr "Was ist unklar, veraltet oder fehlt?"
+
+#. Default: "Wide"
+#: index
+msgid "Wide"
+msgstr "Breit"
+
+#. Default: "Width"
+#: index
+msgid "Width"
+msgstr "Breite"
 
 #. Default: "Workflow"
 #: components/widgets/ContentTypeWorkflow
@@ -1336,6 +1361,11 @@ msgstr "Standard"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.blockWidth.full"
 msgstr "Volle Breite"
+
+#. Default: "Wide"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.layout"
+msgstr "Breit"
 
 #. Default: "Narrow"
 #: components/PlateDiff/messages

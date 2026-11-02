@@ -204,6 +204,10 @@ const TOOLBAR_LABELS = {
   deleteColumn: 'Delete column',
   moveColumnLeft: 'Move column left',
   moveColumnRight: 'Move column right',
+  // Table width group (work item 823)
+  widthDefault: 'Text width',
+  widthLayout: 'Wide',
+  widthFull: 'Full width',
 } as const;
 
 export type ToolbarAction = keyof typeof TOOLBAR_LABELS;

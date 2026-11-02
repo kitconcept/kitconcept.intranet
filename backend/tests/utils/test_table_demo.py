@@ -82,6 +82,15 @@ class TestWikiContent:
         assert [c.get("colSpan") for c in merged["children"]] == [None, 2]
         assert cell_text(merged["children"][1]) == "2"
 
+    def test_table_width(self):
+        node = wiki_content.table("t", ["A"], [["1"]], width="layout")
+        assert node["blockWidth"] == "layout"
+        assert "blockWidth" not in wiki_content.table("t", ["A"], [["1"]])
+
+    def test_unknown_table_width_is_an_error(self):
+        with pytest.raises(ValueError):
+            wiki_content.table("t", ["A"], [["1"]], width="wide")
+
 
 class TestTableDemoContent:
     def test_two_pages_with_tables(self):
@@ -103,6 +112,13 @@ class TestTableDemoContent:
         assert [c.get("calc") for c in cells] == [None, None, "sum", "sum", "sum", None]
         assert cell_text(cells[2]) == "1.455.000 €"
         assert all("footer" not in r for r in budget["children"][:-1])
+
+    def test_budget_table_is_wide(self):
+        """Six columns do not fit into the reading column (work item 823)."""
+        budget, milestones = tables(content.budget_page())
+        assert len(budget["children"][0]["children"]) == 6
+        assert budget["blockWidth"] == "layout"
+        assert "blockWidth" not in milestones
 
     def test_wide_table_has_nine_columns(self):
         value = content.participants_page()

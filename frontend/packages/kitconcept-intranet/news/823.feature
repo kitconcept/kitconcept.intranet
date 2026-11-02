@@ -1,0 +1,1 @@
+Wiki Page tables: a table can be wider than the reading column. The new "Width" group in the table cell toolbar offers Text width, Wide (up to 1280px) and Full width; a pasted table with 6 or more columns becomes wide, with 10 or more full width. In print a wide table shrinks to the page. @reekitconcept

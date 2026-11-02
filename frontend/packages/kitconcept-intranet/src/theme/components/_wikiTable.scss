@@ -94,6 +94,44 @@
   }
 }
 
+// Table width (work item 823): a table can leave the 780px reading column.
+// @plone/plate's block width plugin sets `--block-width` inline on the
+// table's block from its stored `blockWidth` ("Text width" = `default`,
+// "Wide" = `layout`, "Full width" = `full` = 100% of the content area). The
+// theme's `layout` width is 1440px, wider than the content area on every
+// screen below ~1800px, so "Wide" would look like "Full width": tables cap
+// it at 1280px. The inline `var(--layout-container-width)` on the same
+// element picks this value up. Editor, view and history diff.
+.typeset .block.block-table {
+  --layout-container-width: min(1280px, 100%);
+}
+
+// Print: a table wider than the page shrinks to the page instead of being
+// cut off at the edge of its scroll container.
+@media print {
+  .typeset .block.block-table {
+    .overflow-x-auto {
+      overflow: visible;
+    }
+
+    // The wrapper and the table are 100% wide (see above); the columns
+    // share that width instead of keeping their screen widths.
+    table {
+      table-layout: auto;
+    }
+
+    // Plate's cell component writes the column width as inline styles
+    // (`width`, `min-width`, `max-width`), which no selector can override
+    // without `!important`.
+    td,
+    th {
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: none !important;
+    }
+  }
+}
+
 // Editor controls added by the intranet's table shadow
 // (customizations/@plone/plate/components/ui/table-node.tsx).
 //
@@ -182,6 +220,21 @@
 
   &.is-after {
     right: -1px;
+  }
+}
+
+// No horizontal scrollbar under a table that fits (#783). A table that fits
+// is exactly as wide as its scroll container (`width: 100%` above), and
+// Plate's column resize handle on the right edge of the last column sticks
+// out past it (`-right-1 w-2`: 4.5px), as does its hover line
+// (`right-[-1.5px]`) and the column drop line. That made the container
+// scroll by 5px in the editor. In the last column they end at the table's
+// edge instead; a table that is really wider still scrolls.
+.wiki-table-controls tr > :is(td, th):last-child {
+  > .group > [data-col],
+  > .group > [class~='right-[-1.5px]'],
+  .wiki-table-col-drop-line.is-after {
+    right: 0;
   }
 }
 

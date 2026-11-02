@@ -31,6 +31,10 @@
  *    holds no formatting (`withCodeEditorPaste`). @reekitconcept
  *  - Register `WikiTableCalcPlugin` (sums in the footer row, work item
  *    750). @reekitconcept
+ *  - Register `WikiTableWidthPlugin` (a pasted table with 6 or more columns
+ *    is wide, with 10 or more full width).
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
+ *    @reekitconcept
  *  - Merge volto-plate 1.0.0-alpha.39: replace `DiscussionKit` with
  *    `discussionPlugin` rendered through `discussionSlotRender`, so
  *    comments on tables and code blocks wrap the block's inner container
@@ -72,6 +76,7 @@ import { WikiTableNormalizePlugin } from '@kitconcept/intranet/components/WikiTa
 import { WikiCsvPastePlugin } from '@kitconcept/intranet/components/WikiTable/wikiCsvPastePlugin';
 import { withCodeEditorPaste } from '@kitconcept/intranet/components/WikiTable/pasteFromCodeEditor';
 import { WikiTableCalcPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableCalcPlugin';
+import { WikiTableWidthPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableWidthPlugin';
 
 import { discussionSlotRender } from '@kitconcept/volto-plate/plate/discussion-slot';
 import { CodeDrawingKit } from '@kitconcept/volto-plate/plate/plugins/code-drawing-kit';
@@ -114,6 +119,8 @@ export const WikiEditorKit = [
   WikiTableNormalizePlugin,
   // OVERRIDE (750): sums in the footer row
   WikiTableCalcPlugin,
+  // OVERRIDE (823): pasted tables with many columns are wide
+  WikiTableWidthPlugin,
   ...TocKit,
   ...CalloutKit,
   ...ColumnKit,

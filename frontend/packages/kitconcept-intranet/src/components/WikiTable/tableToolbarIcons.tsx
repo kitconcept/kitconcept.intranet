@@ -86,3 +86,65 @@ export const ColumnRemoveIcon = icon('ColumnRemoveIcon', [
   'M16 10l4 4',
   'M16 14l4 -4',
 ]);
+
+/**
+ * Table width icons of the cell toolbar (work item 823): the block width
+ * icons of @plone/icons (MIT License, used by @plone/plate's block width
+ * button). The intranet package cannot import @plone/icons (it is not one of
+ * its dependencies, and shadowed files resolve imports against this
+ * package), so the paths are copied here. Filled shapes, 24 × 24, in
+ * `currentColor`.
+ * https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
+ */
+function filledIcon(
+  name: string,
+  paths: { d: string; evenOdd?: boolean }[],
+): React.FC<IconProps> {
+  function WidthIcon(props: IconProps) {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+        {...props}
+      >
+        {paths.map(({ d, evenOdd }) => (
+          <path
+            key={d}
+            d={d}
+            fillRule={evenOdd ? 'evenodd' : undefined}
+            clipRule={evenOdd ? 'evenodd' : undefined}
+          />
+        ))}
+      </svg>
+    );
+  }
+  WidthIcon.displayName = name;
+  return WidthIcon;
+}
+
+// @plone/icons WidthDefaultIcon
+export const WidthDefaultIcon = filledIcon('WidthDefaultIcon', [
+  { d: 'M20 3H4V5H20V3Z' },
+  { d: 'M4 7V17H20V7H4ZM18 9H6V15H18V9Z', evenOdd: true },
+  { d: 'M4 19H20V21H4V19Z' },
+]);
+
+// @plone/icons WidthLayoutIcon
+export const WidthLayoutIcon = filledIcon('WidthLayoutIcon', [
+  { d: 'M2 9L4 7V17L2 15H22L20 17V7L22 9H2ZM22 7V17H2V7H22Z' },
+  { d: 'M4 21H20V19H4V21Z' },
+  { d: 'M4 5H20V3H4V5Z' },
+]);
+
+// @plone/icons WidthFullIcon
+export const WidthFullIcon = filledIcon('WidthFullIcon', [
+  {
+    d: 'M9.70726 7.70712L8.29304 6.29291L4.58594 10L8.29304 13.7071L9.70726 12.2929L8.41435 11H15.5856L14.2927 12.2929L15.707 13.7071L19.4141 9.99999L15.707 6.29288L14.2927 7.70709L15.5857 9H8.41438L9.70726 7.70712Z',
+  },
+  { d: 'M2 3V17H22V3H2ZM20 5H4V15H20V5Z', evenOdd: true },
+  { d: 'M4 19H20V21H4V19Z' },
+]);

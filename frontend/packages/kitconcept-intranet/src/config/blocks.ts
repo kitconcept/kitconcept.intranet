@@ -112,5 +112,20 @@ export default function install(config: ConfigType) {
     templates: {},
   };
 
+  // Wiki Page (Plate) tables can leave the reading column: "Wide"
+  // (`layout`, capped for tables in theme/components/_wikiTable.scss) and
+  // "Full width" (`full`), set from the table cell toolbar. The values are
+  // the theme's width definitions (`config.blocks.widths`); @plone/plate's
+  // block width plugin resets any other value. volto-plate registers every
+  // native block with `default` only, and its config runs before this one.
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
+  config.blocks.plateBlocksConfig.table = {
+    ...config.blocks.plateBlocksConfig.table,
+    blockWidth: {
+      defaultWidth: 'default',
+      widths: ['default', 'layout', 'full'],
+    },
+  };
+
   return config;
 }

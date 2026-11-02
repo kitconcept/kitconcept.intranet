@@ -112,6 +112,27 @@ defineMessages({
     id: 'Count',
     defaultMessage: 'Count',
   },
+  // Table shadow (#823): customizations/@plone/plate/components/ui/table-node.tsx
+  width: {
+    id: 'Width',
+    defaultMessage: 'Width',
+  },
+  widthDefault: {
+    id: 'Text width',
+    defaultMessage: 'Text width',
+  },
+  widthLayout: {
+    id: 'Wide',
+    defaultMessage: 'Wide',
+  },
+  widthFull: {
+    id: 'Full width',
+    defaultMessage: 'Full width',
+  },
+  widthNested: {
+    id: 'The table takes the width of the surrounding block',
+    defaultMessage: 'The table takes the width of the surrounding block',
+  },
 });
 
 declare module '@plone/types' {

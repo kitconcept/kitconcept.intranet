@@ -137,6 +137,11 @@ defineMessages({
     id: 'The table takes the width of the surrounding block',
     defaultMessage: 'The table takes the width of the surrounding block',
   },
+  // Table shadow (#824): the resize handle of the table width
+  resizeTable: {
+    id: 'Resize table',
+    defaultMessage: 'Resize table',
+  },
 });
 
 declare module '@plone/types' {

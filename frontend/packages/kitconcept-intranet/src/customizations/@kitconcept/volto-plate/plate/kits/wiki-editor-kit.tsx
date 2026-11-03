@@ -39,6 +39,12 @@
  *    `discussionPlugin` rendered through `discussionSlotRender`, so
  *    comments on tables and code blocks wrap the block's inner container
  *    instead of the table body / code. @Tishasoumya-02
+ *  - Register `WikiTableCustomWidthPlugin` (the custom width the table's
+ *    resize handle stores as `tableWidth`); the table plugin gets
+ *    `disableMarginLeft` (no table indent, a stored `marginLeft` is
+ *    ignored).
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/824
+ *    @reekitconcept
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -77,6 +83,7 @@ import { WikiCsvPastePlugin } from '@kitconcept/intranet/components/WikiTable/wi
 import { withCodeEditorPaste } from '@kitconcept/intranet/components/WikiTable/pasteFromCodeEditor';
 import { WikiTableCalcPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableCalcPlugin';
 import { WikiTableWidthPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableWidthPlugin';
+import { WikiTableCustomWidthPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableCustomWidth';
 
 import { discussionSlotRender } from '@kitconcept/volto-plate/plate/discussion-slot';
 import { CodeDrawingKit } from '@kitconcept/volto-plate/plate/plugins/code-drawing-kit';
@@ -113,7 +120,14 @@ export const WikiEditorKit = [
   ...BasicBlocksKit,
   ...CodeBlockKit,
   ...CodeDrawingKit,
-  ...TableKit,
+  // OVERRIDE (824): no table indent (Plate's `marginLeft`, set by dragging
+  // the first column's left edge): Confluence has none, and a wiki table
+  // starts at the text column.
+  ...TableKit.map((plugin) =>
+    plugin.key === KEYS.table
+      ? plugin.configure({ options: { disableMarginLeft: true } } as never)
+      : plugin,
+  ),
   // OVERRIDE
   WikiTableKeysPlugin,
   WikiTableNormalizePlugin,
@@ -121,6 +135,8 @@ export const WikiEditorKit = [
   WikiTableCalcPlugin,
   // OVERRIDE (823): pasted tables with many columns are wide
   WikiTableWidthPlugin,
+  // OVERRIDE (824): the custom width of the table's resize handle
+  WikiTableCustomWidthPlugin,
   ...TocKit,
   ...CalloutKit,
   ...ColumnKit,

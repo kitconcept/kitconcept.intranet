@@ -217,3 +217,15 @@
   color: #9aa4b2;
   font-size: 0.8rem;
 }
+
+/* A wide table starts at the left edge of the text column
+   (theme/components/_wikiTable.scss, `--wiki-table-start`, work item 824).
+   The change wrapper's border and padding (3px + 12px on the left, 12px on
+   the right) narrow the wrapped table's block and move it right, which put
+   the table 1.5px right of the text column; the start compensates. */
+.typeset .plate-diff-block > .block.block-table:not(.slate-column *) {
+  --wiki-table-start: max(
+    0px,
+    calc((100% - var(--default-container-width)) / 2 - 1.5px)
+  );
+}

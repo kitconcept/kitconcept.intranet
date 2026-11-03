@@ -94,16 +94,53 @@
   }
 }
 
-// Table width (work item 823): a table can leave the 780px reading column.
-// @plone/plate's block width plugin sets `--block-width` inline on the
-// table's block from its stored `blockWidth` ("Text width" = `default`,
-// "Wide" = `layout`, "Full width" = `full` = 100% of the content area). The
-// theme's `layout` width is 1440px, wider than the content area on every
-// screen below ~1800px, so "Wide" would look like "Full width": tables cap
-// it at 1280px. The inline `var(--layout-container-width)` on the same
-// element picks this value up. Editor, view and history diff.
-.typeset .block.block-table {
-  --layout-container-width: min(1280px, 100%);
+// Table width (work items 823, 825): a table can leave the 780px text
+// column. @plone/plate's block width plugin stores the step as `blockWidth`
+// on the table, adds the class `slate-blockWidth-<step>` to the table's
+// block and, for the theme's steps, sets `--block-width` inline on it; the
+// block's `.block-inner-container` is `max-width: var(--block-width)` and
+// centred. The steps: "Text width" = `default` (780px), "Medium" = `medium`
+// (1040px, a table-only step, no inline style), "Wide" = `layout` (the
+// theme's layout width, 1440px) and "Full width" = `full` (the content
+// area). A table wider than the text column never touches the sides of the
+// content area: it keeps a 10px margin left and right. Below about 1800px
+// the content area is narrower than 1440px, so Wide and Full width then
+// have the same width. The rules below set `--block-width` on the table
+// block's own inner container (the child combinator keeps them off the
+// paragraphs in the cells, which have inner containers too), which wins
+// over the inline value on the block. Only top-level tables: a table inside
+// a column keeps the class but fills the column. Editor, view and history
+// diff.
+.typeset .block.block-table:not(.slate-column *) {
+  --wiki-table-medium-width: 1040px;
+  --wiki-table-side-margin: 10px;
+  // The room for a table wider than the text column: the content area minus
+  // the margins. Never less than the text column, which on a small screen is
+  // the content area itself: a table is never narrower than the text.
+  --wiki-table-room: max(
+    var(--default-container-width),
+    calc(100% - 2 * var(--wiki-table-side-margin))
+  );
+
+  &.slate-blockWidth-medium > .block-inner-container {
+    --block-width: min(var(--wiki-table-medium-width), var(--wiki-table-room));
+  }
+
+  &.slate-blockWidth-layout > .block-inner-container {
+    --block-width: min(var(--layout-container-width), var(--wiki-table-room));
+  }
+
+  &.slate-blockWidth-full > .block-inner-container {
+    --block-width: var(--wiki-table-room);
+  }
+}
+
+// The blocks inside a cell fill the cell. `--block-width` is inherited, so
+// without this the paragraphs in the cells of a wide table would take the
+// table's width expression, with its percentages resolved against the cell
+// (a cell wider than the text column got its text capped or indented).
+.typeset .block.block-table :is(td, th) .block > .block-inner-container {
+  --block-width: 100%;
 }
 
 // Print: a table wider than the page shrinks to the page instead of being
@@ -152,6 +189,17 @@
 // keeps its scrolling.
 .typeset .block.slate-table .block-inner-container {
   overflow: visible;
+}
+
+// Cell toolbar (work item 825): never under the navigation tree or the
+// sidebar. Radix gets the two panels' widths as collision padding and tells
+// the toolbar the space that is left; the buttons wrap into a second row
+// when it is too narrow for one (narrower than a 1440px window with both
+// panels open).
+// Tailwind version: `flex-wrap max-w-(--radix-popover-content-available-width)`.
+.wiki-table-toolbar {
+  max-width: var(--radix-popover-content-available-width, 80vw);
+  flex-wrap: wrap;
 }
 
 // 24px gutter left of the table for the row drag handle (Plate: 8px).

@@ -1,15 +1,19 @@
 /**
- * Table width of wiki tables: the "Width" group of the cell toolbar sets
- * Text width (`default`), Wide (`layout`) or Full width (`full`) on the
- * table, a pasted table with many columns gets a wider step on its own, and
- * a table that fits shows no horizontal scrollbar in the editor (#783).
+ * Table width of wiki tables: the "Width" menu of the cell toolbar sets
+ * Text width (`default`), Medium (`medium`, 1040px), Wide (`layout`, 1440px)
+ * or Full width (`full`) on the table, a table wider than the text keeps a
+ * 10px margin to the sides of the content area, a pasted table with many
+ * columns gets a wider step on its own, and a table that fits shows no
+ * horizontal scrollbar in the editor (#783).
  *
  * The test viewport (1440 × 1000) has a content area of about 1060px in the
- * view, so "Wide" (at most 1280px) and "Full width" look the same there: the
- * stored `blockWidth` tells them apart.
+ * view, so Medium, Wide and Full width look the same there: the stored
+ * `blockWidth` tells them apart, and one test widens the window to 1920px
+ * to measure the three steps.
  *
  * Tickets: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
  *          https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/783
+ *          https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/825
  */
 import type { Locator, Page } from '@playwright/test';
 import { setSelection } from '@platejs/playwright';
@@ -22,12 +26,13 @@ import {
 } from '../fixtures/editor';
 import { openInEditor, openInView } from '../fixtures/pages';
 import {
+  chooseWidth,
   clickCell,
   clickToolbar,
   editorTable,
   savePage,
-  toolbarButton,
   viewTable,
+  widthTrigger,
 } from '../fixtures/table';
 import { editorHandleOf, getTables } from '../fixtures/table-editor';
 import {
@@ -77,6 +82,21 @@ async function openPage(page: Page, id: string, value: EditorNode[]) {
   return { contentPath, editor };
 }
 
+/** Opens the width menu, reads its items and their checked state, closes it. */
+async function widthMenu(page: Page) {
+  await widthTrigger(page).click();
+  const items = page.getByRole('menuitemradio');
+  await expect(items.first()).toBeVisible();
+  const names = (await items.allInnerTexts()).map((name) => name.trim());
+  const checked = await items.evaluateAll((els) =>
+    els.map((el) => el.getAttribute('aria-checked') === 'true'),
+  );
+  await page.keyboard.press('Escape');
+  // The menu leaves with an animation; the next open must not see it.
+  await expect(page.getByRole('menu')).toHaveCount(0);
+  return { names, checked };
+}
+
 /** `blockWidth` of the top-level tables in the editor. */
 async function editorWidths(page: Page) {
   return (await getTables(page)).map((node) => node.blockWidth);
@@ -117,48 +137,43 @@ test.describe('Wiki tables: width', () => {
     ]);
     const tableLocator = editorTable(page, 0);
 
-    // A table without a width is in the reading column.
+    // A table without a width is in the reading column; the menu lists
+    // the four steps with Text width checked.
     await clickCell(page, tableLocator, 1, 1);
-    await expect(toolbarButton(page, 'widthDefault')).toHaveAttribute(
-      'aria-checked',
-      'true',
-    );
-    await expect(toolbarButton(page, 'widthLayout')).toHaveAttribute(
-      'aria-checked',
-      'false',
-    );
+    expect(await widthMenu(page)).toEqual({
+      names: ['Text width', 'Medium', 'Wide', 'Full width'],
+      checked: [true, false, false, false],
+    });
     expect(await editorWidths(page)).toEqual(['default']);
+    await expect(widthTrigger(page)).toHaveAccessibleName('Width: Text width');
 
-    await clickToolbar(page, 'widthLayout');
-    await expect(toolbarButton(page, 'widthLayout')).toHaveAttribute(
-      'aria-checked',
-      'true',
-    );
+    await chooseWidth(page, 'Medium');
+    await expect.poll(() => editorWidths(page)).toEqual(['medium']);
+    await expect(widthTrigger(page)).toHaveAccessibleName('Width: Medium');
+    expect((await widthMenu(page)).checked).toEqual([
+      false,
+      true,
+      false,
+      false,
+    ]);
+
+    await chooseWidth(page, 'Wide');
     await expect.poll(() => editorWidths(page)).toEqual(['layout']);
-    // Wide is capped at 1280px (theme/components/_wikiTable.scss).
-    await expect
-      .poll(() =>
-        page.evaluate(() => {
-          const block = document.querySelector('.block.block-table');
-          return block
-            ? getComputedStyle(block)
-                .getPropertyValue('--layout-container-width')
-                .trim()
-            : null;
-        }),
-      )
-      .toContain('min(1280px');
+    expect((await widthMenu(page)).checked).toEqual([
+      false,
+      false,
+      true,
+      false,
+    ]);
 
-    await clickToolbar(page, 'widthFull');
-    await expect(toolbarButton(page, 'widthFull')).toHaveAttribute(
-      'aria-checked',
-      'true',
-    );
-    await expect(toolbarButton(page, 'widthLayout')).toHaveAttribute(
-      'aria-checked',
-      'false',
-    );
+    await chooseWidth(page, 'Full width');
     await expect.poll(() => editorWidths(page)).toEqual(['full']);
+    expect((await widthMenu(page)).checked).toEqual([
+      false,
+      false,
+      false,
+      true,
+    ]);
     // Only the table changed: the paragraphs in its cells and around it
     // keep their width.
     const value = await getTables(page);
@@ -177,7 +192,8 @@ test.describe('Wiki tables: width', () => {
 
     // In the view the table's block is wider than the reading column. (The
     // table element itself is wider than 780px in any case: eight columns
-    // of at least 120px, scrolling inside the block.)
+    // of at least 120px, scrolling inside the block.) A Full width table
+    // keeps a 10px margin to both sides of the content area (#825).
     await openInView(page, contentPath);
     const view = viewTable(page, 0);
     const paragraphBox = await page
@@ -189,16 +205,23 @@ test.describe('Wiki tables: width', () => {
         'xpath=ancestor::div[contains(@class, "block-inner-container")][1]',
       )
       .boundingBox();
+    const blockBox = await view
+      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .boundingBox();
     expect(tableBox!.width).toBeGreaterThan(paragraphBox!.width + 100);
+    expect(Math.round(blockBox!.width - tableBox!.width)).toBe(20);
+    expect(Math.round(tableBox!.x - blockBox!.x)).toBe(10);
 
     // And back to the reading column.
     await openInEditor(page, contentPath);
     await clickCell(page, editorTable(page, 0), 1, 1);
-    await expect(toolbarButton(page, 'widthFull')).toHaveAttribute(
-      'aria-checked',
-      'true',
-    );
-    await clickToolbar(page, 'widthDefault');
+    expect((await widthMenu(page)).checked).toEqual([
+      false,
+      false,
+      false,
+      true,
+    ]);
+    await chooseWidth(page, 'Text width');
     await expect.poll(() => editorWidths(page)).toEqual(['default']);
     await savePage(page, contentPath);
     const box = await viewTable(page, 0)
@@ -209,7 +232,7 @@ test.describe('Wiki tables: width', () => {
     expect(Math.round(box!.width)).toBe(Math.round(paragraphBox!.width));
   });
 
-  test('the six-column budget table of the demo page is wide', async ({
+  test('the six-column budget table of the demo page is medium', async ({
     page,
   }) => {
     const { contentPath } = await createTablePage(page, 'projektbudget-2026');
@@ -220,12 +243,125 @@ test.describe('Wiki tables: width', () => {
       1,
       1,
     );
-    await expect(toolbarButton(page, 'widthLayout')).toHaveAttribute(
-      'aria-checked',
-      'true',
-    );
+    expect((await widthMenu(page)).checked).toEqual([
+      false,
+      true,
+      false,
+      false,
+    ]);
     // The milestone table stays in the reading column.
-    expect(await editorWidths(page)).toEqual(['layout', 'default']);
+    expect(await editorWidths(page)).toEqual(['medium', 'default']);
+  });
+
+  test('on a wide window the four steps are 780, 1040, 1440 and the content area minus the margins', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1920, height: 1000 });
+    const value: EditorNode[] = [paragraph('Text before the table.')];
+    for (const width of ['default', 'medium', 'layout', 'full']) {
+      value.push({ ...table(8, 1), blockWidth: width });
+    }
+    // A one-column Full width table: the paragraph in its wide cell fills
+    // the cell, the table's width rules stop at the table (#825).
+    value.push({ ...table(1, 1), blockWidth: 'full' });
+    const { contentPath } = await createWikiPageWithValue(page, {
+      contentId: 'steps',
+      title: 'Width steps',
+      value,
+    });
+    await openInView(page, contentPath);
+    const widths: number[] = [];
+    for (let i = 0; i < 4; i++) {
+      const box = await viewTable(page, i)
+        .locator(
+          'xpath=ancestor::div[contains(@class, "block-inner-container")][1]',
+        )
+        .boundingBox();
+      widths.push(Math.round(box!.width));
+    }
+    const contentArea = await viewTable(page, 3)
+      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .boundingBox();
+    expect(contentArea!.width).toBeGreaterThan(1480);
+    expect(widths).toEqual([
+      780,
+      1040,
+      1440,
+      Math.round(contentArea!.width - 20),
+    ]);
+    const wideCell = viewTable(page, 4).locator('td').first();
+    const cellBox = await wideCell.boundingBox();
+    const textBox = await wideCell
+      .locator('.block-inner-container')
+      .first()
+      .boundingBox();
+    expect(cellBox!.width).toBeGreaterThan(1400);
+    // Cell padding is 0.65em on each side, nothing else.
+    expect(textBox!.width).toBeGreaterThan(cellBox!.width - 30);
+  });
+
+  test('the cell toolbar stays clear of the panels when they are toggled while it is open', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await openPage(page, 'panels', [paragraph('Intro'), table(8)]);
+    const toolbar = page.locator('.wiki-table-toolbar');
+    // Volto's sidebar trigger ("Shrink sidebar" / "Expand sidebar").
+    const sidebarToggle = page.locator('#sidebar button.trigger');
+    const edges = () =>
+      page.evaluate(() => {
+        const box = (el: Element | null) => el?.getBoundingClientRect();
+        const toolbar = box(document.querySelector('.wiki-table-toolbar'));
+        const sidebar = box(
+          document.querySelector('#sidebar .sidebar-container'),
+        );
+        const tree = box(document.querySelector('.navigation-tree-panel'));
+        return {
+          left: Math.round(toolbar?.left ?? -1),
+          right: Math.round(toolbar?.right ?? -1),
+          sidebarLeft: Math.round(sidebar?.left ?? window.innerWidth),
+          treeRight: Math.round(tree?.right ?? 0),
+          toolbarRight: Math.round(
+            box(document.querySelector('#toolbar .toolbar'))?.right ?? 0,
+          ),
+        };
+      });
+
+    // Sidebar collapsed, toolbar opened: it ends before the collapsed tab.
+    await sidebarToggle.click();
+    await clickCell(page, editorTable(page, 0), 1, 1);
+    await expect(toolbar).toBeVisible();
+    await expect
+      .poll(async () => {
+        const e = await edges();
+        return e.right <= e.sidebarLeft && e.left >= e.treeRight;
+      })
+      .toBe(true);
+
+    // Sidebar expanded while the toolbar is open: it moves out of the way.
+    await sidebarToggle.click();
+    await expect
+      .poll(async () => (await edges()).sidebarLeft)
+      .toBeLessThan(1000);
+    await expect
+      .poll(async () => {
+        const e = await edges();
+        return e.right <= e.sidebarLeft && e.left >= e.treeRight;
+      })
+      .toBe(true);
+    await expect(toolbar).toBeVisible();
+
+    // Navigation tree collapsed, sidebar still open (the toolbar is wider
+    // than the column, so it would spread to the left): the collapsed tab
+    // and Volto's toolbar still count.
+    await page.getByRole('button', { name: /Close navigation tree/ }).click();
+    await expect.poll(async () => (await edges()).treeRight).toBeLessThan(200);
+    await expect
+      .poll(async () => {
+        const e = await edges();
+        return e.left >= Math.max(e.treeRight, e.toolbarRight);
+      })
+      .toBe(true);
   });
 
   test('the history diff shows a table whose width changed', async ({
@@ -239,23 +375,41 @@ test.describe('Wiki tables: width', () => {
       title: 'Width diff',
       value,
     });
-    const wide = value.map((node) =>
-      node.type === 'table' ? { ...node, blockWidth: 'full' } : node,
-    );
-    await patchContent(page, contentPath, {
-      blocks: {
-        [SOMERSAULT_KEY]: {
-          '@type': SOMERSAULT_KEY,
-          value: [
-            { type: 'title', children: [{ text: 'Width diff' }] },
-            ...wide,
-          ],
+    const withWidth = (width: string) =>
+      value.map((node) =>
+        node.type === 'table' ? { ...node, blockWidth: width } : node,
+      );
+    for (const width of ['medium', 'full']) {
+      await patchContent(page, contentPath, {
+        blocks: {
+          [SOMERSAULT_KEY]: {
+            '@type': SOMERSAULT_KEY,
+            value: [
+              { type: 'title', children: [{ text: 'Width diff' }] },
+              ...withWidth(width),
+            ],
+          },
         },
-      },
-      changeNote: 'Full width',
+        changeNote: width,
+      });
+    }
+    // Version 1: Medium, a table-only step (class, no inline style); the
+    // label names it.
+    await page.goto(`${contentPath}/diff?one=0&two=1&view=unified`, {
+      waitUntil: 'networkidle',
     });
+    const medium = page
+      .locator('.plate-diff-unified .plate-diff-block-update')
+      .filter({
+        has: page.locator('table'),
+      });
+    await expect(medium.last()).toContainText('Medium');
+    await expect(medium.last().locator('.block-table').last()).toHaveClass(
+      /slate-blockWidth-medium/,
+    );
+    // Version 2: Full width, one of the theme's steps (inline style).
     for (const view of ['unified', 'split']) {
-      await page.goto(`${contentPath}/diff?one=0&two=1&view=${view}`, {
+      await page.goto(`${contentPath}/diff?one=1&two=2&view=${view}`, {
         waitUntil: 'networkidle',
       });
       const diff = page.locator(`.plate-diff-${view}`);
@@ -271,22 +425,34 @@ test.describe('Wiki tables: width', () => {
     expect(errors).toEqual([]);
   });
 
-  test('pasted CSV with 7 columns is wide, with 3 columns it stays in the reading column', async ({
+  test('pasted CSV with 7 columns is medium, with 8 wide, with 3 it stays in the reading column', async ({
     page,
   }) => {
     const { editor } = await openPage(page, 'paste', [paragraph('')]);
     await setSelection(page, editor, { path: [1, 0], offset: 0 });
     await pasteData(page, editor, { 'text/plain': csv(7) });
-    await expect.poll(() => editorWidths(page)).toEqual(['layout']);
+    await expect.poll(() => editorWidths(page)).toEqual(['medium']);
 
-    // A second paste into the empty paragraph below the table.
-    const value = await page.evaluate(
-      (handle) => (handle as any).children.length,
-      await editorHandleOf(page),
-    );
-    await setSelection(page, editor, { path: [value - 1, 0], offset: 0 });
+    // Further pastes into the empty paragraph below the last table.
+    const lastParagraph = async () =>
+      (await page.evaluate(
+        (handle) => (handle as any).children.length,
+        await editorHandleOf(page),
+      )) - 1;
+    await setSelection(page, editor, {
+      path: [await lastParagraph(), 0],
+      offset: 0,
+    });
+    await pasteData(page, editor, { 'text/plain': csv(8) });
+    await expect.poll(() => editorWidths(page)).toEqual(['medium', 'layout']);
+    await setSelection(page, editor, {
+      path: [await lastParagraph(), 0],
+      offset: 0,
+    });
     await pasteData(page, editor, { 'text/plain': csv(3) });
-    await expect.poll(() => editorWidths(page)).toEqual(['layout', 'default']);
+    await expect
+      .poll(() => editorWidths(page))
+      .toEqual(['medium', 'layout', 'default']);
   });
 
   test('pasted into a column the table keeps no width; a callout splits around a wide table', async ({
@@ -326,24 +492,21 @@ test.describe('Wiki tables: width', () => {
       .toEqual({ width: null });
     expect(await editorWidths(page)).toEqual([]);
 
-    // The width buttons of a nested table are shown, but disabled.
+    // The width button of a nested table is shown, but disabled.
     await clickCell(page, editorTable(page, 0), 0, 0);
-    for (const label of ['Text width', 'Wide', 'Full width']) {
-      await expect(
-        page.getByRole('radio', { name: label, exact: true }),
-      ).toBeDisabled();
-    }
+    await expect(page.getByRole('button', { name: /^Width: / })).toBeDisabled();
 
     // Into the callout: a callout holds text, not blocks, so the table lands
-    // on the page between the two halves and is wide like any other paste.
+    // on the page between the two halves and gets its step like any other
+    // paste.
     await setSelection(page, editor, { path: [3, 0], offset: 2 });
     await pasteData(page, editor, { 'text/plain': csv(7) });
-    await expect.poll(() => editorWidths(page)).toEqual(['layout']);
+    await expect.poll(() => editorWidths(page)).toEqual(['medium']);
     const types = (await getValue(page, handle)).map((node) => node.type);
     expect(types.slice(3, 6)).toEqual(['callout', 'table', 'callout']);
   });
 
-  test('pasted HTML and markdown tables with 6 columns are wide, also after save', async ({
+  test('pasted HTML and markdown tables with 6 columns are medium, also after save', async ({
     page,
   }) => {
     const { contentPath, editor } = await openPage(page, 'paste-html', [
@@ -358,7 +521,7 @@ test.describe('Wiki tables: width', () => {
       'text/html': `<meta charset="utf-8"><table><tbody><tr>${cells('th', 0)}</tr><tr>${cells('td', 1)}</tr></tbody></table>`,
       'text/plain': '0/0\t0/1',
     });
-    await expect.poll(() => editorWidths(page)).toEqual(['layout']);
+    await expect.poll(() => editorWidths(page)).toEqual(['medium']);
 
     const length = await page.evaluate(
       (handle) => (handle as any).children.length,
@@ -370,7 +533,7 @@ test.describe('Wiki tables: width', () => {
     await pasteData(page, editor, {
       'text/plain': [row(0), `|${' --- |'.repeat(6)}`, row(1)].join('\n'),
     });
-    await expect.poll(() => editorWidths(page)).toEqual(['layout', 'layout']);
+    await expect.poll(() => editorWidths(page)).toEqual(['medium', 'medium']);
 
     await savePage(page, contentPath);
     const stored = await getWikiValue(page, contentPath);
@@ -378,7 +541,7 @@ test.describe('Wiki tables: width', () => {
       stored
         .filter((node) => node.type === 'table')
         .map((node) => node.blockWidth),
-    ).toEqual(['layout', 'layout']);
+    ).toEqual(['medium', 'medium']);
   });
 
   test('a pasted table with 10 columns is full width; adding columns keeps the width', async ({

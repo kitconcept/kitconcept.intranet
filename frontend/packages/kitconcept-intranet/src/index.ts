@@ -112,7 +112,7 @@ defineMessages({
     id: 'Count',
     defaultMessage: 'Count',
   },
-  // Table shadow (#823): customizations/@plone/plate/components/ui/table-node.tsx
+  // Table shadow (#823, #825): customizations/@plone/plate/components/ui/table-node.tsx
   width: {
     id: 'Width',
     defaultMessage: 'Width',
@@ -120,6 +120,10 @@ defineMessages({
   widthDefault: {
     id: 'Text width',
     defaultMessage: 'Text width',
+  },
+  widthMedium: {
+    id: 'Medium',
+    defaultMessage: 'Medium',
   },
   widthLayout: {
     id: 'Wide',

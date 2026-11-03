@@ -27,9 +27,9 @@ TITLE_BLOCK_ID = "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c"
 # block in the diff of its first save in the editor.
 BLOCK_DEFAULTS = {"align": "start", "blockWidth": "default"}
 
-# The width steps of a wiki table (the theme's block widths that the
-# frontend allows for tables): reading column, wide, full width.
-TABLE_WIDTHS = ("default", "layout", "full")
+# The width steps of a wiki table (the block widths the frontend allows for
+# tables): text width, medium, wide, full width.
+TABLE_WIDTHS = ("default", "medium", "layout", "full")
 
 
 def text(value: str, **marks) -> dict:
@@ -99,8 +99,9 @@ def table(
     in the footer a ``Sum`` for a cell that shows its column's sum.
 
     ``width`` is the table's width step (``blockWidth``): ``"default"``
-    (reading column), ``"layout"`` (wide) or ``"full"`` (full width). Without
-    it the table has no ``blockWidth`` and stays in the reading column.
+    (text width), ``"medium"``, ``"layout"`` (wide) or ``"full"`` (full
+    width). Without it the table has no ``blockWidth`` and stays in the text
+    column.
     """
 
     def runs(content):

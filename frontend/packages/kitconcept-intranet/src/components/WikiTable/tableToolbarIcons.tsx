@@ -133,6 +133,18 @@ export const WidthDefaultIcon = filledIcon('WidthDefaultIcon', [
   { d: 'M4 19H20V21H4V19Z' },
 ]);
 
+// Medium (work item 825): no @plone/icons counterpart. The frame of
+// WidthDefaultIcon with a double arrow inside: wider than the text column,
+// still inside the frame (WidthLayoutIcon's arrows reach past it).
+export const WidthMediumIcon = filledIcon('WidthMediumIcon', [
+  { d: 'M20 3H4V5H20V3Z' },
+  { d: 'M4 7V17H20V7H4ZM18 9H6V15H18V9Z', evenOdd: true },
+  {
+    d: 'M7 12L10 9.5V14.5L7 12ZM17 12L14 9.5V14.5L17 12ZM9.5 11H14.5V13H9.5V11Z',
+  },
+  { d: 'M4 19H20V21H4V19Z' },
+]);
+
 // @plone/icons WidthLayoutIcon
 export const WidthLayoutIcon = filledIcon('WidthLayoutIcon', [
   { d: 'M2 9L4 7V17L2 15H22L20 17V7L22 9H2ZM22 7V17H2V7H22Z' },

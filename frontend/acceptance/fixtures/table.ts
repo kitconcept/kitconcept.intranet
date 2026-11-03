@@ -204,10 +204,6 @@ const TOOLBAR_LABELS = {
   deleteColumn: 'Delete column',
   moveColumnLeft: 'Move column left',
   moveColumnRight: 'Move column right',
-  // Table width group (work item 823)
-  widthDefault: 'Text width',
-  widthLayout: 'Wide',
-  widthFull: 'Full width',
 } as const;
 
 export type ToolbarAction = keyof typeof TOOLBAR_LABELS;
@@ -223,6 +219,26 @@ export async function chooseCalculation(
 ) {
   await clickToolbar(page, 'calculation');
   await page.getByRole('menuitemradio', { name: label, exact: true }).click();
+}
+
+/**
+ * The width dropdown's trigger (work items 823, 825). Its accessible name
+ * carries the current step: "Width: Medium".
+ */
+export function widthTrigger(page: Page) {
+  return cellToolbar(page).getByRole('button', { name: /^Width: / });
+}
+
+/** Picks a width step for the table holding the caret. */
+export async function chooseWidth(
+  page: Page,
+  label: 'Text width' | 'Medium' | 'Wide' | 'Full width',
+) {
+  const trigger = widthTrigger(page);
+  await expect(trigger).toBeEnabled();
+  await trigger.click();
+  await page.getByRole('menuitemradio', { name: label, exact: true }).click();
+  await expect(page.getByRole('menu')).toHaveCount(0);
 }
 
 export async function clickToolbar(page: Page, action: ToolbarAction) {

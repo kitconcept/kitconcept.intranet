@@ -87,6 +87,10 @@ class TestWikiContent:
         assert node["blockWidth"] == "layout"
         assert "blockWidth" not in wiki_content.table("t", ["A"], [["1"]])
 
+    def test_table_width_medium(self):
+        node = wiki_content.table("t", ["A"], [["1"]], width="medium")
+        assert node["blockWidth"] == "medium"
+
     def test_unknown_table_width_is_an_error(self):
         with pytest.raises(ValueError):
             wiki_content.table("t", ["A"], [["1"]], width="wide")
@@ -113,11 +117,12 @@ class TestTableDemoContent:
         assert cell_text(cells[2]) == "1.455.000 €"
         assert all("footer" not in r for r in budget["children"][:-1])
 
-    def test_budget_table_is_wide(self):
-        """Six columns do not fit into the reading column (work item 823)."""
+    def test_budget_table_is_medium(self):
+        """Six columns do not fit into the text column: the medium step, like
+        a pasted table with six columns (work items 823, 825)."""
         budget, milestones = tables(content.budget_page())
         assert len(budget["children"][0]["children"]) == 6
-        assert budget["blockWidth"] == "layout"
+        assert budget["blockWidth"] == "medium"
         assert "blockWidth" not in milestones
 
     def test_wide_table_has_nine_columns(self):

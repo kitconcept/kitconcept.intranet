@@ -94,6 +94,11 @@ const valueMessages = defineMessages({
     id: 'plateDiff.value.blockWidth.layout',
     defaultMessage: 'Wide',
   },
+  // The table-only step between Text width and Wide (work item 825).
+  'blockWidth.medium': {
+    id: 'plateDiff.value.blockWidth.medium',
+    defaultMessage: 'Medium',
+  },
   // type
   'type.p': { id: 'plateDiff.value.type.p', defaultMessage: 'Paragraph' },
   'type.h1': { id: 'plateDiff.value.type.h1', defaultMessage: 'Heading 1' },

@@ -35,13 +35,12 @@ describe('widthForColumnCount', () => {
     ]);
   });
 
-  it('makes tables with 6 to 9 columns wide', () => {
-    expect([6, 7, 8, 9].map(widthForColumnCount)).toEqual([
-      'layout',
-      'layout',
-      'layout',
-      'layout',
-    ]);
+  it('makes tables with 6 or 7 columns medium', () => {
+    expect([6, 7].map(widthForColumnCount)).toEqual(['medium', 'medium']);
+  });
+
+  it('makes tables with 8 or 9 columns wide', () => {
+    expect([8, 9].map(widthForColumnCount)).toEqual(['layout', 'layout']);
   });
 
   it('makes tables with 10 or more columns full width', () => {
@@ -86,7 +85,7 @@ describe('withPastedTableWidths', () => {
     const result = withPastedTableWidths(nodes);
     expect(result.map((node) => (node as TElement).blockWidth)).toEqual([
       undefined,
-      'layout',
+      'medium',
       'full',
     ]);
     // The input is not changed.

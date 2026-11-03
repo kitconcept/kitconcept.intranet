@@ -112,18 +112,24 @@ export default function install(config: ConfigType) {
     templates: {},
   };
 
-  // Wiki Page (Plate) tables can leave the reading column: "Wide"
-  // (`layout`, capped for tables in theme/components/_wikiTable.scss) and
-  // "Full width" (`full`), set from the table cell toolbar. The values are
-  // the theme's width definitions (`config.blocks.widths`); @plone/plate's
-  // block width plugin resets any other value. volto-plate registers every
-  // native block with `default` only, and its config runs before this one.
+  // Wiki Page (Plate) tables can leave the text column: "Medium"
+  // (`medium`), "Wide" (`layout`) and "Full width" (`full`), set from the
+  // table cell toolbar; the widths themselves are in
+  // theme/components/_wikiTable.scss. `default`, `layout` and `full` are
+  // the theme's width definitions (`config.blocks.widths`); `medium` is a
+  // table-only step, not in that list, so @plone/plate's block width plugin
+  // sets no inline `--block-width` for it and the stylesheet styles it
+  // through the `slate-blockWidth-medium` class the plugin adds to the
+  // block. The plugin resets any value outside this list. volto-plate
+  // registers every native block with `default` only, and its config runs
+  // before this one.
   // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/825
   config.blocks.plateBlocksConfig.table = {
     ...config.blocks.plateBlocksConfig.table,
     blockWidth: {
       defaultWidth: 'default',
-      widths: ['default', 'layout', 'full'],
+      widths: ['default', 'medium', 'layout', 'full'],
     },
   };
 

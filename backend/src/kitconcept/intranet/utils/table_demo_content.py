@@ -114,8 +114,9 @@ def budget_page() -> list[dict]:
                 "",
             ],
             col_sizes=[175, 120, 130, 125, 115, 115],
-            # Six columns: wider than the reading column (work item 823).
-            width="layout",
+            # Six columns: the medium step, as a pasted table with six
+            # columns gets it (work items 823, 825).
+            width="medium",
         ),
         paragraph(
             "b-note",

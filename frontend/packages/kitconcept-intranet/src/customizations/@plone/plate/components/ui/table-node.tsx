@@ -49,6 +49,15 @@
  *    (the table's `blockWidth`: `default`, `layout`, `full`).
  *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
  *    @reekitconcept
+ *  - Fourth width step "Medium" (`medium`, a table-only value) between
+ *    Text width and Wide; the width group became one dropdown (the trigger
+ *    shows the current step, the menu the four steps with their names).
+ *    The cell toolbar keeps clear of the navigation tree and the sidebar,
+ *    which lie over the page: Radix gets their widths as collision padding
+ *    and the toolbar wraps into a second row when the space between them
+ *    is too narrow.
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/825
+ *    @reekitconcept
  */
 
 import * as React from 'react';
@@ -148,6 +157,7 @@ import {
   WidthDefaultIcon,
   WidthFullIcon,
   WidthLayoutIcon,
+  WidthMediumIcon,
 } from '@kitconcept/intranet/components/WikiTable/tableToolbarIcons';
 
 import { Button } from '@plone/plate/components/ui/button';
@@ -250,6 +260,10 @@ const messages = defineMessages({
     id: 'Text width',
     defaultMessage: 'Text width',
   },
+  widthMedium: {
+    id: 'Medium',
+    defaultMessage: 'Medium',
+  },
   widthLayout: {
     id: 'Wide',
     defaultMessage: 'Wide',
@@ -264,11 +278,12 @@ const messages = defineMessages({
   },
 });
 
-// OVERRIDE (823): the table widths of the cell toolbar, values of the
-// theme's block widths (`config.blocks.widths`, allowed for tables in
-// config/blocks.ts).
+// OVERRIDE (823, 825): the table widths of the cell toolbar, the values
+// allowed for tables in config/blocks.ts (`medium` is a table-only step, the
+// others are the theme's block widths).
 const TABLE_WIDTHS = [
   { value: 'default', icon: WidthDefaultIcon, message: messages.widthDefault },
+  { value: 'medium', icon: WidthMediumIcon, message: messages.widthMedium },
   { value: 'layout', icon: WidthLayoutIcon, message: messages.widthLayout },
   { value: 'full', icon: WidthFullIcon, message: messages.widthFull },
 ] as const;
@@ -462,6 +477,9 @@ function TableFloatingToolbar({
   const { tf: widthTf } = useEditorPlugin(BlockWidthPlugin);
   const tableWidth = (element as Record<string, unknown>)[BLOCK_WIDTH_KEY];
   const activeWidth = typeof tableWidth === 'string' ? tableWidth : 'default';
+  const activeStep =
+    TABLE_WIDTHS.find((step) => step.value === activeWidth) ?? TABLE_WIDTHS[0];
+  const ActiveWidthIcon = activeStep.icon;
   // A width only applies to a top-level block. A table inside a column or
   // another block fills its container, so the buttons are shown disabled.
   const nestedTable = editor.api.findPath(element)?.length !== 1;
@@ -475,27 +493,91 @@ function TableFloatingToolbar({
     ).setWidth(value, { at: tablePath, mode: 'highest' });
   };
 
-  return (
-    <Popover
-      // OVERRIDE: only the table holding the selection opens its toolbar.
-      // `canMerge` / `canSplit` are editor-wide, so with several tables on
-      // the page every table showed a toolbar for a multi-cell selection.
-      open={
-        isFocusedLast && selected && (canMerge || canSplit || collapsedInside)
+  // OVERRIDE: only the table holding the selection opens its toolbar.
+  // `canMerge` / `canSplit` are editor-wide, so with several tables on
+  // the page every table showed a toolbar for a multi-cell selection.
+  const toolbarOpen =
+    isFocusedLast && selected && (canMerge || canSplit || collapsedInside);
+
+  // OVERRIDE (825): Volto's toolbar and the navigation tree on the left
+  // and the sidebar on the right lie over the page and take the clicks of
+  // toolbar buttons under them. Radix only avoids the viewport edges, so
+  // the panels' extents go in as collision padding. They are measured when
+  // the toolbar opens and again while it is open whenever a panel can have
+  // moved: a window resize, a class change on `body` (Volto toggles
+  // `has-sidebar` / `has-sidebar-collapsed`), on the tree panel or the
+  // sidebar container, and the end of their slide transitions. The
+  // toolbar's max-width is the space that is left
+  // (`--radix-popover-content-available-width`), see `.wiki-table-toolbar`
+  // in theme/components/_wikiTable.scss.
+  const [panelInsets, setPanelInsets] = React.useState({ left: 0, right: 0 });
+  React.useLayoutEffect(() => {
+    if (!toolbarOpen) return;
+    const rightEdgeOf = (selector: string) =>
+      document.querySelector(selector)?.getBoundingClientRect().right ?? 0;
+    const measure = () => {
+      const sidebar = document
+        .querySelector('#sidebar .sidebar-container')
+        ?.getBoundingClientRect();
+      const next = {
+        left: Math.max(
+          0,
+          rightEdgeOf('#toolbar .toolbar'),
+          rightEdgeOf('.navigation-tree-panel'),
+        ),
+        right: Math.max(0, window.innerWidth - (sidebar?.left ?? Infinity)),
+      };
+      setPanelInsets((current) =>
+        current.left === next.left && current.right === next.right
+          ? current
+          : next,
+      );
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    document.addEventListener('transitionend', measure, true);
+    const observer = new MutationObserver(measure);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+    for (const selector of [
+      '.navigation-tree-panel',
+      '#sidebar .sidebar-container',
+    ]) {
+      const panel = document.querySelector(selector);
+      if (panel) {
+        observer.observe(panel, {
+          attributes: true,
+          attributeFilter: ['class', 'style'],
+        });
       }
-      modal={false}
-    >
+    }
+    return () => {
+      window.removeEventListener('resize', measure);
+      document.removeEventListener('transitionend', measure, true);
+      observer.disconnect();
+    };
+  }, [toolbarOpen]);
+
+  return (
+    <Popover open={toolbarOpen} modal={false}>
       <PopoverAnchor asChild>{children}</PopoverAnchor>
       <PopoverContent
         asChild
         onOpenAutoFocus={(e) => e.preventDefault()}
         contentEditable={false}
+        collisionPadding={panelInsets}
         {...props}
       >
+        {/* OVERRIDE (825): `wiki-table-toolbar` wraps the buttons into a
+            second row instead of Plate's hidden horizontal scroll
+            (`scrollbar-hide max-w-[80vw] overflow-x-auto`). Tailwind
+            version: `flex-wrap max-w-(--radix-popover-content-available-width)`. */}
         <Toolbar
           className={`
-            scrollbar-hide flex w-auto max-w-[80vw] flex-row overflow-x-auto rounded-md border
-            bg-popover p-1 shadow-md
+            wiki-table-toolbar flex w-auto flex-row rounded-md border bg-popover p-1
+            shadow-md
             print:hidden
           `}
           contentEditable={false}
@@ -737,36 +819,57 @@ function TableFloatingToolbar({
             </ToolbarGroup>
           )}
 
-          {/* OVERRIDE (823): table width. The tooltip names the group
-              ("Width: Wide"); the button's own name is the option, inside
-              a group named "Width". */}
+          {/* OVERRIDE (823, 825): table width, one dropdown. The trigger
+              shows the icon of the current step; its tooltip, which is also
+              its accessible name, says which ("Width: Medium"); the menu
+              lists the four steps with their names. A nested table gets the trigger disabled; disabled
+              buttons take no pointer events, so the reason is the native
+              tooltip of the span around it. */}
           <ToolbarGroup>
-            <div
-              className="flex items-center"
-              role="group"
-              aria-label={intl.formatMessage(messages.width)}
-              // Disabled buttons take no pointer events, so the reason is
-              // the group's native tooltip.
+            <span
               title={
                 nestedTable
                   ? intl.formatMessage(messages.widthNested)
                   : undefined
               }
             >
-              {TABLE_WIDTHS.map(({ value, icon: Icon, message }) => (
-                <ToolbarButton
-                  key={value}
-                  pressed={activeWidth === value}
-                  disabled={nestedTable}
-                  onClick={() => setTableWidth(value)}
-                  onMouseDown={(e) => e.preventDefault()}
-                  aria-label={intl.formatMessage(message)}
-                  tooltip={`${intl.formatMessage(messages.width)}: ${intl.formatMessage(message)}`}
-                >
-                  <Icon className="size-4" />
-                </ToolbarButton>
-              ))}
-            </div>
+              <DropdownMenu modal={false}>
+                <DropdownMenuTrigger asChild>
+                  <ToolbarButton
+                    isDropdown
+                    disabled={nestedTable}
+                    tooltip={`${intl.formatMessage(messages.width)}: ${intl.formatMessage(activeStep.message)}`}
+                  >
+                    <ActiveWidthIcon className="size-4" />
+                  </ToolbarButton>
+                </DropdownMenuTrigger>
+                <DropdownMenuPortal>
+                  <DropdownMenuContent
+                    className="min-w-[180px]"
+                    onCloseAutoFocus={(e) => {
+                      e.preventDefault();
+                      editor.tf.focus();
+                    }}
+                    align="end"
+                    side="bottom"
+                    sideOffset={4}
+                    collisionPadding={panelInsets}
+                  >
+                    <DropdownMenuRadioGroup
+                      value={activeWidth}
+                      onValueChange={setTableWidth}
+                    >
+                      {TABLE_WIDTHS.map(({ value, icon: Icon, message }) => (
+                        <DropdownMenuRadioItem key={value} value={value}>
+                          <Icon className="size-4" />
+                          {intl.formatMessage(message)}
+                        </DropdownMenuRadioItem>
+                      ))}
+                    </DropdownMenuRadioGroup>
+                  </DropdownMenuContent>
+                </DropdownMenuPortal>
+              </DropdownMenu>
+            </span>
           </ToolbarGroup>
         </Toolbar>
       </PopoverContent>

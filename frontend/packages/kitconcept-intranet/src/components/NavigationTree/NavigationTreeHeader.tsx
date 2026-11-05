@@ -4,6 +4,10 @@ import { ChevrondownIcon } from '@plone/components/Icons';
 import { messages } from './messages';
 import type { SearchItem } from './useNavigationTree';
 import WorkspaceSwitcherMenu from '../WorkspaceSwitcher/WorkspaceSwitcherMenu';
+import {
+  avatarToneClass,
+  getInitials,
+} from '@kitconcept/volto-plate/helpers/avatar';
 
 interface NavigationTreeHeaderProps {
   siteTitle: string;
@@ -20,12 +24,15 @@ export function NavigationTreeHeader({
 }: NavigationTreeHeaderProps) {
   const intl = useIntl();
   const activeTitle = activeWorkspace ? activeWorkspace.title : siteTitle;
-  const activeInitial = activeTitle?.[0]?.toUpperCase() ?? 'S';
+  const activeInitial = getInitials(activeTitle || 'S');
 
   return (
     <MenuTrigger>
       <Button className="navigation-tree-header">
-        <div className="nav-tree-site-logo" aria-hidden>
+        <div
+          className={`nav-tree-site-logo ${avatarToneClass(activeTitle || activeInitial)}`}
+          aria-hidden
+        >
           {activeInitial}
         </div>
         <div className="nav-tree-site-info">

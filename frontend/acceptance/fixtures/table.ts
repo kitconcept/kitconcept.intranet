@@ -246,3 +246,57 @@ export async function clickToolbar(page: Page, action: ToolbarAction) {
   await expect(button).toBeEnabled();
   await button.click();
 }
+
+/**
+ * The table's inner container: the frame whose width the width steps and
+ * the resize handle set (work items 823, 825, 824).
+ */
+export function tableFrameOf(table: Locator) {
+  return table.locator(
+    'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-inner-container ")][1]',
+  );
+}
+
+/** The resize handle on the right edge of a table in the editor (824). */
+export function resizeHandle(table: Locator) {
+  return tableFrameOf(table).locator('> .wiki-table-resize-handle');
+}
+
+/**
+ * Drags the resize handle of `table` until its frame would be `width` px
+ * wide (before clamping and snapping), in a few mouse steps. The frame's
+ * left edge stays at the text column, so the handle moves by the change of
+ * the width.
+ * `beforeRelease` runs with the mouse still down, for checks of the live
+ * preview. Returns where the pointer was released (x).
+ */
+export async function dragTableWidth(
+  page: Page,
+  table: Locator,
+  width: number,
+  { beforeRelease }: { beforeRelease?: () => Promise<void> } = {},
+) {
+  const handle = resizeHandle(table);
+  await table.hover();
+  const box = await handle.boundingBox();
+  const frame = await tableFrameOf(table).boundingBox();
+  if (!box || !frame) throw new Error('No resize handle');
+  const x = box.x + box.width / 2;
+  const y = box.y + Math.min(box.height / 2, 40);
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  // The handle listens to the mouse once it knows the drag started.
+  await expect(handle).toHaveAttribute('data-resizing', 'true');
+  const endX = x + (width - frame.width);
+  await page.mouse.move(endX, y, { steps: 8 });
+  if (beforeRelease) await beforeRelease();
+  await page.mouse.up();
+  await expect(handle).not.toHaveAttribute('data-resizing', 'true');
+  return endX;
+}
+
+/** Horizontal centre of the resize handle of `table`. */
+export async function resizeHandleX(table: Locator) {
+  const box = await resizeHandle(table).boundingBox();
+  return box ? box.x + box.width / 2 : NaN;
+}

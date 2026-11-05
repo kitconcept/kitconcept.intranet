@@ -7,6 +7,12 @@
  */
 import { defineMessages, type IntlShape } from 'react-intl';
 import type { DiffOperation } from '@platejs/diff';
+import {
+  formatPx,
+  isTableWidth,
+  TABLE_WIDTH_KEY,
+} from '../WikiTable/wikiTableCustomWidth';
+import { BLOCK_WIDTH_KEY } from '../WikiTable/wikiTableWidthPlugin';
 
 export const messages = defineMessages({
   added: { id: 'plateDiff.added', defaultMessage: 'Added' },
@@ -24,11 +30,14 @@ export const messages = defineMessages({
   notSet: { id: 'plateDiff.value.notSet', defaultMessage: 'not set' },
   yes: { id: 'plateDiff.value.yes', defaultMessage: 'yes' },
   no: { id: 'plateDiff.value.no', defaultMessage: 'no' },
+  // Column widths of a table, e.g. "180, 240, 360 px" (work item 824).
+  colSizes: { id: 'plateDiff.value.colSizes', defaultMessage: '{sizes} px' },
 });
 
 const propertyMessages = defineMessages({
   align: { id: 'plateDiff.prop.align', defaultMessage: 'Alignment' },
   blockWidth: { id: 'plateDiff.prop.blockWidth', defaultMessage: 'Width' },
+  colSizes: { id: 'plateDiff.prop.colSizes', defaultMessage: 'Column widths' },
   type: { id: 'plateDiff.prop.type', defaultMessage: 'Block type' },
   indent: { id: 'plateDiff.prop.indent', defaultMessage: 'Indentation' },
   listStyleType: {
@@ -185,6 +194,13 @@ export const valueLabel = (
     return intl.formatMessage(messages.notSet);
   }
   if (value === true) return intl.formatMessage(messages.yes);
+  if (key === 'colSizes' && Array.isArray(value)) {
+    return intl.formatMessage(messages.colSizes, {
+      sizes: value
+        .map((size) => intl.formatNumber(Number(size), { useGrouping: false }))
+        .join(', '),
+    });
+  }
   if (value === false) return intl.formatMessage(messages.no);
   const message =
     valueMessages[`${key}.${String(value)}` as keyof typeof valueMessages];
@@ -203,19 +219,92 @@ export const operationLabel = (op: DiffOperation, intl: IntlShape): string =>
   );
 
 /**
+ * The width of a table as one value (work item 824): its custom width in px
+ * ("1180px") when it has one, else its step ("Medium").
+ */
+const tableWidthLabel = (
+  props: Record<string, unknown>,
+  intl: IntlShape,
+): string => {
+  const custom = props[TABLE_WIDTH_KEY];
+  return isTableWidth(custom)
+    ? formatPx(intl, custom)
+    : valueLabel(BLOCK_WIDTH_KEY, props[BLOCK_WIDTH_KEY], intl);
+};
+
+/**
  * Property changes of an `update`: "Alignment: Left → Centred, Width: Standard → Wide".
  * Empty string for insert/delete.
+ *
+ * A table's step (`blockWidth`) and custom width (`tableWidth`) are one
+ * "Width" line with the width each side shows: "Width: Medium → 1180px".
+ * For the side whose step did not change to show, the step must be in the
+ * operation (`withWidthContext`).
  */
 export const changeSummary = (op: DiffOperation, intl: IntlShape): string => {
   if (op.type !== 'update') return '';
   const { properties = {}, newProperties = {} } = op as Op;
-  return Object.keys(newProperties)
-    .filter((key) => key !== 'id')
-    .map(
-      (key) =>
-        `${propertyLabel(key, intl)}: ${valueLabel(key, properties[key], intl)} → ${valueLabel(key, newProperties[key], intl)}`,
-    )
-    .join(', ');
+  const changed = (key: string) => key in properties || key in newProperties;
+  const customWidth = changed(TABLE_WIDTH_KEY);
+  // The column widths follow the table's width: with a width change they
+  // are no news of their own.
+  const widthChange = customWidth || changed(BLOCK_WIDTH_KEY);
+  const keys = Object.keys(newProperties).filter(
+    (key) => key !== 'id' && !(widthChange && key === 'colSizes'),
+  );
+  const parts: string[] = [];
+  let widthDone = false;
+  for (const key of keys) {
+    if (customWidth && (key === BLOCK_WIDTH_KEY || key === TABLE_WIDTH_KEY)) {
+      if (widthDone) continue;
+      widthDone = true;
+      let from = tableWidthLabel(properties, intl);
+      let to = tableWidthLabel(newProperties, intl);
+      // Both sides show the same custom width, the step under it changed
+      // (it shows again once the custom width is removed): name the step.
+      if (from === to) {
+        from = valueLabel(BLOCK_WIDTH_KEY, properties[BLOCK_WIDTH_KEY], intl);
+        to = valueLabel(BLOCK_WIDTH_KEY, newProperties[BLOCK_WIDTH_KEY], intl);
+      }
+      if (from !== to) {
+        parts.push(`${propertyLabel(BLOCK_WIDTH_KEY, intl)}: ${from} → ${to}`);
+      }
+      continue;
+    }
+    parts.push(
+      `${propertyLabel(key, intl)}: ${valueLabel(key, properties[key], intl)} → ${valueLabel(key, newProperties[key], intl)}`,
+    );
+  }
+  return parts.join(', ');
+};
+
+/**
+ * `computeDiff` puts only the changed properties into an update. For a
+ * table whose custom width changed, the unchanged step (or, for a changed
+ * step, the unchanged custom width) is what one side shows, so it is added
+ * to both sides; `changeSummary` then reads the width of each side. `node`
+ * is the older version of the node: an unchanged property has the same
+ * value in both. Used as `getUpdateProps` of `computeDiff`.
+ */
+export const withWidthContext = (
+  node: Record<string, unknown>,
+  properties: Record<string, unknown>,
+  newProperties: Record<string, unknown>,
+) => {
+  const changed = (key: string) => key in newProperties || key in properties;
+  const both = (key: string) => {
+    if (changed(key) || node[key] === undefined) return;
+    properties[key] = node[key];
+    newProperties[key] = node[key];
+  };
+  if (changed(TABLE_WIDTH_KEY)) both(BLOCK_WIDTH_KEY);
+  if (changed(BLOCK_WIDTH_KEY) && isTableWidth(node[TABLE_WIDTH_KEY])) {
+    both(TABLE_WIDTH_KEY);
+  }
+  return {
+    diff: true,
+    diffOperation: { newProperties, properties, type: 'update' as const },
+  };
 };
 
 /**

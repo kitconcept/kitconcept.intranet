@@ -27,7 +27,7 @@ import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTa
 import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import { DiffPlugin } from './DiffPlugin';
 import { mergeLinkChanges, splitLinkPairs } from './linkChanges';
-import { messages } from './messages';
+import { messages, withWidthContext } from './messages';
 import { withStoredDefaults } from './storedDefaults';
 import { expandDiffToWords } from './wholeWords';
 import './plate-diff.css';
@@ -118,6 +118,13 @@ const WikiPageDiff = ({ one, two, view }: Props) => {
               // The editor gives a node without an id one on save; an id is
               // not content and must not read as a change.
               ignoreProps: ['id'],
+              // A table's step and custom width read as one width (#824).
+              getUpdateProps: (node, properties, newProperties) =>
+                withWidthContext(
+                  node as unknown as Record<string, unknown>,
+                  properties,
+                  newProperties,
+                ),
             }),
             { isInline },
           ),

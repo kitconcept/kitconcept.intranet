@@ -42,7 +42,10 @@ import { getVocabulary } from '@plone/volto/actions/vocabularies/vocabularies';
 import { useWorkspaceSwitcher } from '../NavigationTree/useWorkspaceSwitcher';
 import type { SearchItem } from '../NavigationTree/useNavigationTree';
 import WorkspaceSwitcherMenu from '../WorkspaceSwitcher/WorkspaceSwitcherMenu';
-import { avatarTone } from '../WorkspaceMarker/WorkspaceMarker';
+import {
+  avatarToneClass,
+  getInitials,
+} from '@kitconcept/volto-plate/helpers/avatar';
 
 const messages = defineMessages({
   searchWorkspace: {
@@ -283,15 +286,18 @@ const CreatorAvatar = ({
 }: {
   userid: string;
   label: string;
-}) => (
-  <span
-    className={`header-search-creator-avatar tone-${avatarTone(label)}`}
-    aria-hidden="true"
-  >
-    {label.charAt(0).toUpperCase()}
-    <img src={`/@portrait/${userid}`} alt="" loading="lazy" />
-  </span>
-);
+}) => {
+  const initials = getInitials(label?.trim() || userid);
+  return (
+    <span
+      className={`header-search-creator-avatar ${avatarToneClass(userid || initials)}`}
+      aria-hidden="true"
+    >
+      {initials}
+      <img src={`/@portrait/${userid}`} alt="" loading="lazy" />
+    </span>
+  );
+};
 
 const FilterChip = ({
   label,

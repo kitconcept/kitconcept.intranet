@@ -539,37 +539,16 @@ $search-text: #252525;
   font-weight: 600;
 }
 
-.header-search-scope-avatar,
-.header-search-creator-avatar {
-  &.tone-0 {
-    background: #d9ecdb;
-    color: #256b32;
-  }
-
-  &.tone-1 {
-    background: #dbe7f6;
-    color: #1f4f8f;
-  }
-
-  &.tone-2 {
-    background: #fbe7d4;
-    color: #8a4b12;
-  }
-
-  &.tone-3 {
-    background: #ecdff5;
-    color: #5f3689;
-  }
-
-  &.tone-4 {
-    background: #fadbe2;
-    color: #8f2743;
-  }
-
-  &.tone-5 {
-    background: #dff2f0;
-    color: #1d6a62;
-  }
+// Initials avatar for a person search result without an image.
+.person-result-avatar {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .header-search-chip-toggles {

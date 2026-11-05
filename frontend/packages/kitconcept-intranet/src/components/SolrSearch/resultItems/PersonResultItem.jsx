@@ -6,14 +6,17 @@ import ResultItemPreviewImage from '@kitconcept/volto-solr/components/theme/Solr
 import phoneSVG from '@kitconcept/volto-solr/components/theme/SolrSearch/icons/phone.svg';
 import emailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@kitconcept/volto-solr/components/theme/SolrSearch/icons/location.svg';
-import fallbackAvatarSVG from '@kitconcept/volto-solr/components/theme/SolrSearch/icons/fallback-avatar.svg';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import config from '@plone/volto/registry';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
+import {
+  avatarToneClass,
+  getInitials,
+} from '@kitconcept/volto-plate/helpers/avatar';
 
 const PersonResultItem = ({ item }) => {
   const site = useSelector((state) => state.site?.data);
   const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
+  const initials = getInitials(item.title?.trim() || item.username);
 
   return (
     <article className="tileItem personResultItem">
@@ -29,11 +32,12 @@ const PersonResultItem = ({ item }) => {
                 height="64"
               />
             ) : (
-              <Icon
-                size="64px"
-                name={fallbackAvatarSVG}
-                color={config.settings.baseColor}
-              />
+              <span
+                className={`person-result-avatar ${avatarToneClass(item.username || initials)}`}
+                aria-hidden="true"
+              >
+                {initials}
+              </span>
             )}
           </MaybeWrap>
         </div>

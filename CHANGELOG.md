@@ -1,6 +1,63 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.7.0 (2026-11-05)
+
+### Backend
+
+
+#### Feature
+
+- Add kitconcept.maintenancebanner add-on. (Note: Run the upgrade steps for kitconcept.intranet to install it.) @Tishasoumya-02 
+- Update kitconcept.plate to 1.0.0a39. Improves email notifications for mentions. @davisagli 
+
+
+#### Bugfix
+
+- Exclude mentioned users from extracted task text while retaining task assignees. 
+- Fixed broken mention portraits in the example content, which pointed to `localhost:3000`. @iFlameing 
+- Include the portrait of creators (byline), CLM authors, responsible and feedback persons (clm) and task assignees, so person pills show the placeholder avatar instead of a broken image for users without a portrait. @iFlameing 
+- Update to kitconcept.plate 1.0.0a40. Fixes i18n. @davisagli 
+
+
+#### Internal
+
+- Wiki demo content: the six-column budget table of "Projektbudget 2026" is shown wide; the `table()` helper takes a `width`. @reekitconcept [#823](https://github.com/kitconcept/kitconcept.intranet/issue/823)
+- Wiki table demo content: the budget table uses the new "Medium" width step. @reekitconcept [#825](https://github.com/kitconcept/kitconcept.intranet/issue/825)
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Wiki Page tables: a table can be wider than the reading column. The new "Width" group in the table cell toolbar offers Text width, Wide (up to 1280px) and Full width; a pasted table with 6 or more columns becomes wide, with 10 or more full width. In print a wide table shrinks to the page. @reekitconcept [#823](https://github.com/kitconcept/kitconcept.intranet/issue/823)
+- Wiki Page tables: a resize handle on the right edge of a table sets a width of its own in px ("Resize table"); while dragging, the width snaps to Text width, Medium, Wide and Full width, and a drag that ends on one of them stores that step. The width menu shows the custom width and resets it to a step; stored column widths scale with the table; the view and the history diff show the width ("Width: Medium → 1180px"). https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/824 @reekitconcept [#824](https://github.com/kitconcept/kitconcept.intranet/issue/824)
+- Wiki Page tables: a new width step "Medium" (1040px) between Text width and Wide, chosen like the other steps from the "Width" menu of the table toolbar; Wide is the layout width (1440px) again; a table wider than the text keeps a 10px margin to the sides of the content area; a pasted table with 6 or more columns becomes Medium, with 8 or more Wide, with 10 or more Full width. @reekitconcept [#825](https://github.com/kitconcept/kitconcept.intranet/issue/825)
+- Add @kitconcept/volto-maintenance-banner add-on. @Tishasoumya-02 
+- Made the workspace filters on the Tasks page and in the header search use the same searchable workspace menu as the sidebar switcher. @iFlameing 
+- Update to @kitconcept/volto-plate 1.0.0-alpha.40. Adds colored initials when showing a person pill for a user with no portrait. @davisagli 
+- Use the shared initials color palette for avatars in search results, header search, workspace markers and the navigation sidebar header. @iFlameing 
+
+
+#### Bugfix
+
+- Wiki Page tables: in the editor, a table that fits no longer shows a horizontal scrollbar (the resize handle of the last column stuck out a few pixels). @reekitconcept [#783](https://github.com/kitconcept/kitconcept.intranet/issue/783)
+- Fixed the byline showing the creators of a previously edited or added page after navigating away from the form. @iFlameing 
+- Merged the volto-plate 1.0.0-alpha.39 discussion slot into the customized wiki editor kit, so comments on tables and code blocks are shown outside the table body and code. @Tishasoumya-02 
+- Pass portraits from the backend data to PersonPill in the byline, About this content and tasks, so users without a portrait get the placeholder avatar instead of a broken image. In add mode, the byline now shows the current user as creator instead of the creators of the parent. @iFlameing 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.39. Fixes mention portraits on deployed sites, overflowing comment text, comment popover layout for tables and code blocks, and line-break suggestion indicators. @davisagli 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.6.1 (2026-10-26)
 
 ### Backend

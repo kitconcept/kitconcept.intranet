@@ -2,6 +2,28 @@
 
 <!-- towncrier release notes start -->
 
+## 3.7.0 (2026-11-05)
+
+
+### Feature
+
+- Add kitconcept.maintenancebanner add-on. (Note: Run the upgrade steps for kitconcept.intranet to install it.) @Tishasoumya-02 
+- Update kitconcept.plate to 1.0.0a39. Improves email notifications for mentions. @davisagli 
+
+
+### Bugfix
+
+- Exclude mentioned users from extracted task text while retaining task assignees. 
+- Fixed broken mention portraits in the example content, which pointed to `localhost:3000`. @iFlameing 
+- Include the portrait of creators (byline), CLM authors, responsible and feedback persons (clm) and task assignees, so person pills show the placeholder avatar instead of a broken image for users without a portrait. @iFlameing 
+- Update to kitconcept.plate 1.0.0a40. Fixes i18n. @davisagli 
+
+
+### Internal
+
+- Wiki demo content: the six-column budget table of "Projektbudget 2026" is shown wide; the `table()` helper takes a `width`. @reekitconcept [#823](https://github.com/kitconcept/kitconcept.intranet/issue/823)
+- Wiki table demo content: the budget table uses the new "Medium" width step. @reekitconcept [#825](https://github.com/kitconcept/kitconcept.intranet/issue/825)
+
 ## 3.6.1 (2026-10-26)
 
 

@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { Button, DialogTrigger, Popover, Dialog } from 'react-aria-components';
+import { Button, DialogTrigger, Popover } from 'react-aria-components';
 import { Plug } from '@plone/volto/components/manage/Pluggable';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import rightArrowSVG from '@plone/volto/icons/right-key.svg';
@@ -25,6 +25,19 @@ const DocumentReviewPlug = () => {
   const enableContentReview = site['kitconcept.intranet.enable_content_review'];
   const content = useSelector((state) => state.content?.data);
   const [reviewType, setReviewType] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const onDocMouseDown = (e) => {
+      if (e.target.closest('.review-popover')) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    };
+    document.addEventListener('mousedown', onDocMouseDown, true);
+    return () =>
+      document.removeEventListener('mousedown', onDocMouseDown, true);
+  }, [isOpen]);
 
   if (!enableContentReview) return null;
 
@@ -36,7 +49,7 @@ const DocumentReviewPlug = () => {
         dependencies={[content?.review_state]}
       >
         <li>
-          <DialogTrigger>
+          <DialogTrigger onOpenChange={setIsOpen}>
             <Button
               className="document-review-option"
               aria-label={intl.formatMessage(messages.review)}
@@ -48,14 +61,10 @@ const DocumentReviewPlug = () => {
             <Popover
               className="review-popover"
               placement="end top"
-              onMouseDown={(e) => e.stopPropagation()}
+              isNonModal
+              aria-label={intl.formatMessage(messages.documentReview)}
             >
-              <Dialog
-                className="document-review-dialog"
-                aria-label={intl.formatMessage(messages.documentReview)}
-              >
-                <DocumentReview openReviewSidebar={setReviewType} />
-              </Dialog>
+              <DocumentReview openReviewSidebar={setReviewType} />
             </Popover>
           </DialogTrigger>
         </li>

@@ -228,6 +228,7 @@ msgstr "Aktueller Status"
 
 #. Default: "Dashboard"
 #: components/Dashboard/DashboardMenu
+#: components/Dashboard/DashboardView
 msgid "Dashboard"
 msgstr "Dashboard"
 
@@ -273,6 +274,11 @@ msgstr "Fällig"
 msgid "E-mail"
 msgstr "E-mail"
 
+#. Default: "Edit"
+#: components/Dashboard/DashboardView
+msgid "Edit"
+msgstr "Bearbeiten"
+
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
 msgid "Email"
@@ -286,6 +292,7 @@ msgstr "Ende"
 #. Default: "Error"
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
+#: components/Dashboard/DashboardView
 #: components/FeedBackForm/FeedBackForm
 #: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
@@ -924,6 +931,11 @@ msgstr "Die CSV-Datei konnte nicht geladen werden."
 #: components/Blocks/CsvTable/CsvTable
 msgid "The CSV file holds no rows."
 msgstr "Die CSV-Datei enthält keine Zeilen."
+
+#. Default: "The dashboard could not be created."
+#: components/Dashboard/DashboardView
+msgid "The dashboard could not be created."
+msgstr "Das Dashboard konnte nicht erstellt werden."
 
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer

@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261030001"
+      destination="20261106001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add Dashboard content type and dashboard_workflow"
+        import_profile="kitconcept.intranet:default"
+        import_steps="typeinfo workflow"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

@@ -88,3 +88,70 @@
     }
   }
 }
+
+// Content type layout editor (/controlpanel/dexterity-types/<type>/layout).
+// VLT only constrains block widths inside #page-add / #page-edit, so mirror
+// those rules here to make the layout editor look like the regular edit form.
+#page-controlpanel-layout {
+  [class*='block-editor-']:not(.contained) {
+    @include layout-container-width();
+    @include adjustMarginsToEditContainer($layout-container-width);
+    &.has--block-width--full {
+      @include adjustEditContainerFullWidth();
+    }
+  }
+
+  .block.slate .slate-editor,
+  .block-editor-separator.has--align--left
+    .block.separator.inner
+    .block.separator
+    .block.separator
+    .line,
+  .block-editor-separator.has--align--center
+    .block.separator.inner
+    .block.separator
+    .block.separator
+    .line,
+  .block-editor-codeBlock,
+  .block-editor-mermaidBlock,
+  .block-editor-description .documentDescription {
+    @include narrow-container-width();
+    @include adjustMarginsToEditContainer($narrow-container-width);
+  }
+
+  .block-editor-title h1,
+  .block-editor-accordion .accordion-block,
+  .block.introduction .slate-editor,
+  .block.heading .heading-wrapper,
+  .block-editor-listing .items,
+  .block-editor-listing .listing.message,
+  .block-editor-rssBlock .items,
+  .block-editor-search .searchBlock-container,
+  .block-editor-eventsearch .search-block-event,
+  .block.teaser.has--align--center,
+  .block.eventMetadata .details-container,
+  .block-editor-teaser .teaser-item.default,
+  .block-editor-teaser:not(.contained) .card-inner,
+  .block-editor-slateTable .block.table,
+  .block-editor-highlight .teaser-description-title,
+  .block-editor-toc .table-of-contents,
+  .block-editor-eventCalendar .search-block-event {
+    @include default-container-width();
+    @include adjustMarginsToEditContainer($default-container-width);
+  }
+
+  .block-editor-slate,
+  .block-editor-slider,
+  .block-editor-teaser,
+  .block-editor-separator.has--align--left {
+    @include layout-container-width();
+    @include adjustMarginsToEditContainer($layout-container-width);
+  }
+
+  .block-editor-accordion {
+    [class*='block-editor-'] {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}

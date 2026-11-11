@@ -1,0 +1,1 @@
+Stop overriding the Solr image `CMD` with `solr-precreate`, so config updates reach an existing core (kitconcept/kitconcept.solr#107). @reekitconcept

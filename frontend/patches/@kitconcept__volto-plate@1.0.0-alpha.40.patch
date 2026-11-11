@@ -1,0 +1,27 @@
+diff --git a/src/config/settings.ts b/src/config/settings.ts
+index ec9138242ea6fa43a9e6f03d2be51438bca89ee9..d8cacad2c439059ee49d0285d3d646df683ac1b0 100644
+--- a/src/config/settings.ts
++++ b/src/config/settings.ts
+@@ -31,6 +31,9 @@ export default function install(config: ConfigType) {
+     'theme',
+     'base',
+     'components',
++    // Block content styles of @plone/plate, below the Tailwind utilities so
++    // the editor's affordances (selection, hover, drop lines) win over them.
++    'plone-content',
+     'utilities',
+     'plone-components',
+   ];
+diff --git a/src/theme/tailwind.css b/src/theme/tailwind.css
+index 466784294cdbb698bc33c3d0b6050cb047637d10..ae897994a1336b55b1d3ddc240900e31367eb75a 100644
+--- a/src/theme/tailwind.css
++++ b/src/theme/tailwind.css
+@@ -1,4 +1,8 @@
+ @import '@plone/plate/input.css';
++/* Block content styles of @plone/plate. In Aurora, the add-on styles loader
++   puts them in the `plone-content` layer; Volto doesn't have it, so load them
++   here, in the same layer. */
++@import '@plone/plate/styles/content.css' layer(plone-content);
+ /* Keep the colors in sync with @plone/theming */
+ /* For now, I won't make it a dependency */
+ @import './colors.css';

@@ -16,3 +16,7 @@ yarn.lock
 
 packages/*
 !packages/kitconcept-intranet
+
+# Visual regression: machine specific, taken locally around upgrades
+/playwright/visual-*
+/acceptance/visual/__screenshots__/

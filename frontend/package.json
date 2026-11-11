@@ -61,7 +61,9 @@
       "@kitconcept/volto-maintenance-banner": "workspace:*",
       "@kitconcept/volto-keywordmanager": "workspace:*",
       "@plone/registry": "workspace:*",
-      "react-aria-components": "catalog:"
+      "react-aria-components": "catalog:",
+      "@plone/plate": "1.0.0-alpha.26",
+      "@plone/helpers": "2.0.0-alpha.12"
     },
     "ignoredBuiltDependencies": [
       "@parcel/watcher"
@@ -75,7 +77,10 @@
       "full-icu",
       "lightningcss-cli",
       "unrs-resolver"
-    ]
+    ],
+    "patchedDependencies": {
+      "@kitconcept/volto-plate@1.0.0-alpha.40": "patches/@kitconcept__volto-plate@1.0.0-alpha.40.patch"
+    }
   },
   "packageManager": "pnpm@10.20.0"
 }

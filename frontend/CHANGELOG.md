@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.1 (2026-11-12)
+
+### Bugfix
+
+- Update Volto to 18.36.0 and sync the Volto shadows (Title block edit, Search) with upstream accessibility fixes. @sneridagh 
+
 ## 1.1.0 (2026-11-12)
 
 ## 1.0.0 (2026-09-17)

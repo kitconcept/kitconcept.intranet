@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 3.8.0 (2026-11-12)
+
+
+### Bugfix
+
+- Update to kitconcept.core 2.1.2 and Plone 6.2.3. @davisagli 
+
+
+### Internal
+
+- Acceptance backend: pass the robot server its listener port as `LISTENER_PORT` (the variable it reads); `LISTEN_PORT` was ignored. @reekitconcept 
+
 ## 3.7.0 (2026-11-05)
 
 

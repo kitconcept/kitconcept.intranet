@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.8.0 (2026-11-12)
+
+
+### Bugfix
+
+- Update to Volto 19.7.0. @iFlameing 
+
 ## 3.7.0 (2026-11-05)
 
 

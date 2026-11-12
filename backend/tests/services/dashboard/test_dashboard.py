@@ -48,9 +48,17 @@ class TestDashboard:
         resp = self.session_for("jdoe").get("/jdoe/@dashboard")
         assert resp.status_code == 200
         data = resp.json()
-        assert len(data["blocks_layout"]["items"]) == 1
-        block_id = data["blocks_layout"]["items"][0]
-        assert data["blocks"][block_id]["@type"] == "title"
+        blocks = data["blocks"]
+        types = [blocks[i]["@type"] for i in data["blocks_layout"]["items"]]
+        assert types == ["title", "slate"] + ["gridBlock"] * 4
+        listings = [
+            column
+            for block in blocks.values()
+            if block["@type"] == "gridBlock"
+            for column in block["blocks"].values()
+        ]
+        assert len(listings) == 7
+        assert {column["@type"] for column in listings} == {"listing"}
 
     def test_get_resolves_uids_in_default_blocks(self, monkeypatch):
         """Links in the admin's default layout are turned into URLs."""
@@ -133,3 +141,17 @@ class TestDashboard:
         session.post("/jdoe/@dashboard")
         resp = session.patch("/jdoe/dashboard", json={"title": "My dashboard"})
         assert resp.status_code == 204
+
+    def test_dashboard_is_versionable(self):
+        repository = api.portal.get_tool("portal_repository")
+        assert "Dashboard" in repository.getVersionableContentTypes()
+
+    def test_owner_edit_creates_new_version(self):
+        session = self.session_for("jdoe")
+        assert session.post("/jdoe/@dashboard").status_code == 201
+        resp = session.patch("/jdoe/dashboard", json={"title": "My Dashboard"})
+        assert resp.status_code == 204
+
+        history = session.get("/jdoe/dashboard/@history").json()
+        versions = [item for item in history if item["type"] == "versioning"]
+        assert len(versions) == 2  # Initial + edited version

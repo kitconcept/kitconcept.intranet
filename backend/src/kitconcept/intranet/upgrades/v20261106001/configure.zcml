@@ -8,9 +8,13 @@
       destination="20261106001"
       >
     <genericsetup:upgradeDepends
-        title="Add Dashboard content type and dashboard_workflow"
+        title="Add Dashboard content type, dashboard_workflow and versioning"
         import_profile="kitconcept.intranet:default"
-        import_steps="typeinfo workflow"
+        import_steps="typeinfo workflow repositorytool"
+        />
+    <genericsetup:upgradeStep
+        title="Set the default layout of the Dashboard type"
+        handler="kitconcept.intranet.upgrades.set_dashboard_layout"
         />
   </genericsetup:upgradeSteps>
 </configure>

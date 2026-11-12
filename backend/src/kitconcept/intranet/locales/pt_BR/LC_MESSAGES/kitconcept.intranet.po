@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-10-13 03:44+0000\n"
+"POT-Creation-Date: 2026-11-10 15:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,10 @@ msgstr "Foto quadrada 4:5"
 #: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Uma distribuição Plone para Intranets com Plone. Criada pela kitconcept."
+
+#: kitconcept/intranet/profiles/default/types/Dashboard.xml
+msgid "A private dashboard for each user, created inside their Person. Its layout sets the default blocks of new dashboards."
+msgstr "Um painel privado para cada usuário, criado dentro da sua Pessoa. O layout define os blocos padrão de novos painéis."
 
 #: kitconcept/intranet/behaviors/person.py:19
 msgid "Academic Title"
@@ -66,10 +70,22 @@ msgstr "Domínios de iframe permitidos"
 msgid "CLM: Reminders for potentially outdated content"
 msgstr ""
 
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Can only be seen and edited by the owner and site administrators."
+msgstr "Só pode ser visto e editado pelo proprietário e pelos administradores do site."
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Can only be seen and edited by the owner."
 msgstr "Só pode ser visto e editado pelo proprietário."
+
+#: kitconcept/intranet/profiles/default/types/Dashboard.xml
+msgid "Dashboard"
+msgstr "Painel"
+
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Dashboard Workflow"
+msgstr "Workflow de painel"
 
 #: kitconcept/intranet/controlpanels/intranet.py:49
 msgid "Default Feedback Email"
@@ -264,6 +280,7 @@ msgstr "Por favor, insira seu endereço de e-mail organizacional."
 msgid "Policy package to install our site"
 msgstr "Pacote de políticas para instalar nosso site"
 
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Private"
@@ -341,6 +358,10 @@ msgstr "Configura a intranet para exigir que os usuários estejam autenticados."
 #: kitconcept/intranet/profiles.zcml:29
 msgid "Setup the intranet to use Solr."
 msgstr "Configura a integração da intranet com Solr."
+
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Single state workflow for personal dashboards. Only the owner and site administrators can access them."
+msgstr "Workflow de estado único para painéis pessoais. Somente o proprietário e os administradores do site podem acessá-los."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml

@@ -8,6 +8,8 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.0 (2026-11-12)
+
 ## 1.0.0 (2026-09-17)
 
 ### Internal

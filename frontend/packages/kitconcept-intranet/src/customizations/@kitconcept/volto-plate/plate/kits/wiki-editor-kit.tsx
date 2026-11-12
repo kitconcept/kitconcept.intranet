@@ -45,6 +45,10 @@
  *    ignored).
  *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/824
  *    @reekitconcept
+ *  - Register `WikiTableAlignPlugin` (the table's alignment,
+ *    `tableAlign: 'center'`, set from the cell toolbar).
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836
+ *    @reekitconcept
  */
 
 import { KEYS, type Value, TrailingBlockPlugin } from 'platejs';
@@ -84,6 +88,7 @@ import { withCodeEditorPaste } from '@kitconcept/intranet/components/WikiTable/p
 import { WikiTableCalcPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableCalcPlugin';
 import { WikiTableWidthPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableWidthPlugin';
 import { WikiTableCustomWidthPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableCustomWidth';
+import { WikiTableAlignPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableAlign';
 
 import { discussionSlotRender } from '@kitconcept/volto-plate/plate/discussion-slot';
 import { CodeDrawingKit } from '@kitconcept/volto-plate/plate/plugins/code-drawing-kit';
@@ -137,6 +142,8 @@ export const WikiEditorKit = [
   WikiTableWidthPlugin,
   // OVERRIDE (824): the custom width of the table's resize handle
   WikiTableCustomWidthPlugin,
+  // OVERRIDE (836): left-aligned or centred tables
+  WikiTableAlignPlugin,
   ...TocKit,
   ...CalloutKit,
   ...ColumnKit,

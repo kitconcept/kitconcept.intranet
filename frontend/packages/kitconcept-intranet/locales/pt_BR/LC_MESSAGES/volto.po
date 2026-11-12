@@ -134,6 +134,11 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#. Default: "Centre table"
+#: index
+msgid "Centre table"
+msgstr ""
+
 #. Default: "Change workflow"
 #: components/widgets/ContentTypeWorkflow
 msgid "Change workflow"
@@ -681,9 +686,19 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
+#. Default: "Resize column"
+#: components/WikiTable/TableWidthDrag
+msgid "Resize column"
+msgstr ""
+
 #. Default: "Resize table"
-#: index
+#: components/WikiTable/TableWidthDrag
 msgid "Resize table"
+msgstr ""
+
+#. Default: "Resize the last column"
+#: components/WikiTable/TableWidthDrag
+msgid "Resize the last column"
 msgstr ""
 
 #. Default: "Responsibilities"
@@ -897,6 +912,11 @@ msgstr ""
 #: components/Blocks/Listing/Table/TableTemplate
 #: index
 msgid "Table"
+msgstr ""
+
+#. Default: "Table {width}"
+#: components/WikiTable/TableWidthDrag
+msgid "Table {width}"
 msgstr ""
 
 #. Default: "Task"

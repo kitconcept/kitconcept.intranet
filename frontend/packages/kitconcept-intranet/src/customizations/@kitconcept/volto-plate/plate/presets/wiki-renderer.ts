@@ -18,6 +18,10 @@
  *    `disableMarginLeft`, a stored table indent is ignored.
  *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/824
  *    @reekitconcept
+ *  - Register `WikiTableAlignPlugin`: the view and the history diff centre
+ *    a table with `tableAlign: 'center'`.
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836
+ *    @reekitconcept
  */
 
 import { KEYS } from 'platejs';
@@ -27,6 +31,7 @@ import { wikiBaseEditorKit } from '@kitconcept/volto-plate/plate/kits/wiki-base-
 
 import { FindPathCachePlugin } from '@kitconcept/intranet/components/WikiRenderer/findPathCachePlugin';
 import { WikiTableCustomWidthPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableCustomWidth';
+import { WikiTableAlignPlugin } from '@kitconcept/intranet/components/WikiTable/wikiTableAlign';
 import { TitleRendererBlock } from '@kitconcept/volto-plate/plate/plugins/volto-title-renderer';
 import { ViewCommentKit } from '@kitconcept/volto-plate/plate/plugins/view-comment-kit';
 
@@ -44,6 +49,8 @@ const wikiEditorRenderer: PlateConfig = {
     ),
     // OVERRIDE (824): custom table width
     WikiTableCustomWidthPlugin,
+    // OVERRIDE (836): centred tables
+    WikiTableAlignPlugin,
     ...ViewCommentKit,
     TitleRendererBlock,
     PloneBlockAdapterRendererPlugin,

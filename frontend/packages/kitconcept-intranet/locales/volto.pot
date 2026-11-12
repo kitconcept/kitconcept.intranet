@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-11-16T10:50:07.337Z\n"
+"POT-Creation-Date: 2026-11-16T15:21:11.619Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -129,6 +129,11 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 #: components/FeedBackForm/FeedBackForm
 msgid "Cancel"
+msgstr ""
+
+#. Default: "Centre table"
+#: index
+msgid "Centre table"
 msgstr ""
 
 #. Default: "Change workflow"
@@ -678,9 +683,19 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
+#. Default: "Resize column"
+#: components/WikiTable/TableWidthDrag
+msgid "Resize column"
+msgstr ""
+
 #. Default: "Resize table"
-#: index
+#: components/WikiTable/TableWidthDrag
 msgid "Resize table"
+msgstr ""
+
+#. Default: "Resize the last column"
+#: components/WikiTable/TableWidthDrag
+msgid "Resize the last column"
 msgstr ""
 
 #. Default: "Responsibilities"
@@ -894,6 +909,11 @@ msgstr ""
 #: components/Blocks/Listing/Table/TableTemplate
 #: index
 msgid "Table"
+msgstr ""
+
+#. Default: "Table {width}"
+#: components/WikiTable/TableWidthDrag
+msgid "Table {width}"
 msgstr ""
 
 #. Default: "Task"

@@ -13,6 +13,7 @@ import {
   TABLE_WIDTH_KEY,
 } from '../WikiTable/wikiTableCustomWidth';
 import { BLOCK_WIDTH_KEY } from '../WikiTable/wikiTableWidthPlugin';
+import { TABLE_ALIGN_KEY } from '../WikiTable/wikiTableAlign';
 
 export const messages = defineMessages({
   added: { id: 'plateDiff.added', defaultMessage: 'Added' },
@@ -180,8 +181,16 @@ type Op = DiffOperation & {
   newProperties?: Record<string, unknown>;
 };
 
+/**
+ * Properties labelled like another one: a table's alignment (work item
+ * 836) reads as "Alignment", its value `center` as "Centred".
+ */
+const LABEL_AS: Record<string, string> = { [TABLE_ALIGN_KEY]: 'align' };
+const labelKey = (key: string) => LABEL_AS[key] ?? key;
+
 export const propertyLabel = (key: string, intl: IntlShape): string => {
-  const message = propertyMessages[key as keyof typeof propertyMessages];
+  const message =
+    propertyMessages[labelKey(key) as keyof typeof propertyMessages];
   return message ? intl.formatMessage(message) : key;
 };
 
@@ -191,7 +200,10 @@ export const valueLabel = (
   intl: IntlShape,
 ): string => {
   if (value === undefined || value === null || value === '') {
-    return intl.formatMessage(messages.notSet);
+    // A table without an alignment is left-aligned (work item 836).
+    return key === TABLE_ALIGN_KEY
+      ? intl.formatMessage(valueMessages['align.left'])
+      : intl.formatMessage(messages.notSet);
   }
   if (value === true) return intl.formatMessage(messages.yes);
   if (key === 'colSizes' && Array.isArray(value)) {
@@ -203,7 +215,9 @@ export const valueLabel = (
   }
   if (value === false) return intl.formatMessage(messages.no);
   const message =
-    valueMessages[`${key}.${String(value)}` as keyof typeof valueMessages];
+    valueMessages[
+      `${labelKey(key)}.${String(value)}` as keyof typeof valueMessages
+    ];
   if (message) return intl.formatMessage(message);
   return typeof value === 'string' ? value : JSON.stringify(value);
 };

@@ -129,6 +129,11 @@ msgstr "Berechnung"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#. Default: "Centre table"
+#: index
+msgid "Centre table"
+msgstr "Tabelle zentrieren"
+
 #. Default: "Change workflow"
 #: components/widgets/ContentTypeWorkflow
 msgid "Change workflow"
@@ -676,10 +681,20 @@ msgstr "Privat"
 msgid "Published"
 msgstr "Veröffentlicht"
 
+#. Default: "Resize column"
+#: components/WikiTable/TableWidthDrag
+msgid "Resize column"
+msgstr "Spaltenbreite ändern"
+
 #. Default: "Resize table"
-#: index
+#: components/WikiTable/TableWidthDrag
 msgid "Resize table"
 msgstr "Tabellenbreite ändern"
+
+#. Default: "Resize the last column"
+#: components/WikiTable/TableWidthDrag
+msgid "Resize the last column"
+msgstr "Breite der letzten Spalte ändern"
 
 #. Default: "Responsibilities"
 #: index
@@ -893,6 +908,11 @@ msgstr "Summe"
 #: index
 msgid "Table"
 msgstr "Tabelle"
+
+#. Default: "Table {width}"
+#: components/WikiTable/TableWidthDrag
+msgid "Table {width}"
+msgstr "Tabelle {width}"
 
 #. Default: "Task"
 #: components/Tasks/Tasks

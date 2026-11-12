@@ -222,10 +222,12 @@
    (theme/components/_wikiTable.scss, `--wiki-table-start`, work item 824).
    The change wrapper's border and padding (3px + 12px on the left, 12px on
    the right) narrow the wrapped table's block and move it right, which put
-   the table 1.5px right of the text column; the start compensates. */
+   the table 1.5px right of the text column; the start compensates.
+   `cqw`: the block's content width, as in _wikiTable.scss (work item
+   836). */
 .typeset .plate-diff-block > .block.block-table:not(.slate-column *) {
   --wiki-table-start: max(
     0px,
-    calc((100% - var(--default-container-width)) / 2 - 1.5px)
+    calc((100cqw - var(--default-container-width)) / 2 - 1.5px)
   );
 }

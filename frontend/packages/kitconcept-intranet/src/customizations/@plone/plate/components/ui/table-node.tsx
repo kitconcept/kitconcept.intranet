@@ -32,13 +32,21 @@
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Changes are marked with
  *         OVERRIDE comments; everything else is unchanged.
- * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.24/packages/plate/components/ui/table-node.tsx
- * FILE VERSION: @plone/plate 1.0.0-alpha.24
+ * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.26/packages/plate/components/ui/table-node.tsx
+ * FILE VERSION: @plone/plate 1.0.0-alpha.26
  * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  *         https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/674 (toolbar)
  * DEVELOPER: @reekitconcept
  * CHANGELOG:
+ *  - Rebase on @plone/plate 1.0.0-alpha.26: the table is styled by
+ *    `@plone/plate/styles/content.css` (`block-table__*` classes) instead of
+ *    Tailwind utilities, and cell borders are `data-border-*` attributes
+ *    (`cellBorderAttributes`, from the table-node-static shadow). The old
+ *    Tailwind border classes were no longer generated, so set borders didn't
+ *    show (work item 832). The scroll container keeps `overflow-x-auto` as a
+ *    hook for theme/components/_wikiTable.scss and the acceptance tests.
+ *    @sneridagh
  *  - Rebase on @plone/plate 1.0.0-alpha.24 (no upstream changes to this
  *    file since 1.0.0-alpha.20). @sneridagh
  *  - "Footer row" toggle (adds a footer row, `footer: true`) and a
@@ -216,6 +224,7 @@ import {
 
 import { Button } from '@plone/plate/components/ui/button';
 import { BlockInnerContainer } from '@plone/plate/components/ui/block-inner-container';
+import { cellBorderAttributes } from '@plone/plate/components/ui/table-node-static';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -499,7 +508,7 @@ export const TableElement = withHOC(
         {...props}
         // OVERRIDE (824)
         ref={useComposedRef(props.ref, blockRef)}
-        className={cn('py-5', preview && CUSTOM_WIDTH_CLASS)}
+        className={cn(preview && CUSTOM_WIDTH_CLASS)}
         style={
           preview
             ? ({
@@ -514,7 +523,8 @@ export const TableElement = withHOC(
         >
           <div
             className={cn(
-              'overflow-x-auto overflow-y-hidden',
+              // OVERRIDE: `overflow-x-auto` kept as a hook (see CHANGELOG)
+              'block-table__scroll overflow-x-auto',
               hasControls &&
                 // OVERRIDE: 24px gutter for the row drag handle (was 8px),
                 // styled in theme/components/_wikiTable.scss.
@@ -535,15 +545,15 @@ export const TableElement = withHOC(
             )}
             style={{ paddingLeft: hasControls ? '1.5rem' : marginLeft }}
           >
-            <div className="group/table relative w-fit">
+            <div className="block-table__wrapper">
               <table
                 className={cn(
-                  'mr-0 ml-px table h-px table-fixed border-collapse',
+                  'block-table__table',
                   isSelectingCell && 'selection:bg-transparent',
                 )}
                 {...tableProps}
               >
-                <tbody className="min-w-full">{children}</tbody>
+                <tbody>{children}</tbody>
               </table>
 
               {isSelectingTable && (
@@ -1764,23 +1774,13 @@ export function TableCellElement({
       ref={useComposedRef(props.ref, cellRef)}
       as={isHeader ? 'th' : 'td'}
       className={cn(
-        'h-full overflow-visible border-none bg-background p-0',
-        element.background ? 'bg-(--cellBackground)' : 'bg-background',
         // OVERRIDE (750), styled in theme/components/_wikiTable.scss
         calcKind && 'wiki-table-calc',
         calcEmpty && 'wiki-table-calc-empty',
-        isHeader &&
-          `
-            text-left
-            *:m-0
-          `,
-        'before:size-full',
+        // Header cells have always been bold in the editor, but not in the
+        // rendered content.
+        isHeader && 'font-bold',
         selected && 'before:z-10 before:bg-brand/5',
-        "before:absolute before:box-border before:content-[''] before:select-none",
-        borders.bottom?.size && `before:border-b before:border-b-border`,
-        borders.right?.size && `before:border-r before:border-r-border`,
-        borders.left?.size && `before:border-l before:border-l-border`,
-        borders.top?.size && `before:border-t before:border-t-border`,
       )}
       style={
         {
@@ -1799,12 +1799,10 @@ export function TableCellElement({
         ...(hasColumnHandle ? columnDnd.dropProps : {}),
         colSpan: api.table.getColSpan(element),
         rowSpan: api.table.getRowSpan(element),
+        ...cellBorderAttributes(borders),
       }}
     >
-      <div
-        className="relative z-20 box-border h-full px-3 py-2"
-        style={{ minHeight }}
-      >
+      <div className="block-table__cell-content px-3" style={{ minHeight }}>
         {props.children}
       </div>
 

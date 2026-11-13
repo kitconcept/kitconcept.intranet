@@ -137,6 +137,20 @@ acceptance-test: ## Start Cypress in interactive mode
 ci-acceptance-test: ## Run cypress tests in headless mode for CI
 	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx},excludeSpecPattern='$(CURRENT_DIR)'/cypress/tests/{a11y,visual}*/**/*.{js,jsx,ts,tsx}'
 
+## Visual regression (on demand, e.g. around a volto-plate upgrade; not run in CI)
+## Set FRONTEND_URL if the frontend doesn't run on http://localhost:3000.
+.PHONY: visual-baseline
+visual-baseline: ## Take the baseline screenshots of the wiki blocks and tables (before an upgrade)
+	pnpm exec playwright test --config playwright-visual.config.ts --update-snapshots=all
+
+.PHONY: visual-compare
+visual-compare: ## Compare the wiki blocks and tables against the baseline screenshots (after an upgrade)
+	pnpm exec playwright test --config playwright-visual.config.ts
+
+.PHONY: visual-report
+visual-report: ## Open the report of the last visual comparison, with the diffs
+	pnpm exec playwright show-report playwright/visual-report
+
 ## A11y tests
 .PHONY: acceptance-a11y-frontend-dev-start
 acceptance-a11y-backend-dev-start: ## Start a11y acceptance frontend in prod mode

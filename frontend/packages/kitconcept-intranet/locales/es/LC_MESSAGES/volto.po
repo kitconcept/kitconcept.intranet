@@ -235,6 +235,7 @@ msgstr ""
 
 #. Default: "Dashboard"
 #: components/Dashboard/DashboardMenu
+#: components/Dashboard/DashboardView
 msgid "Dashboard"
 msgstr "Panel"
 
@@ -280,6 +281,11 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
+#. Default: "Edit"
+#: components/Dashboard/DashboardView
+msgid "Edit"
+msgstr ""
+
 #. Default: "Email"
 #: components/FeedBackForm/FeedBackForm
 msgid "Email"
@@ -293,6 +299,7 @@ msgstr ""
 #. Default: "Error"
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
+#: components/Dashboard/DashboardView
 #: components/FeedBackForm/FeedBackForm
 #: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
@@ -935,6 +942,11 @@ msgstr ""
 #. Default: "The CSV file holds no rows."
 #: components/Blocks/CsvTable/CsvTable
 msgid "The CSV file holds no rows."
+msgstr ""
+
+#. Default: "The dashboard could not be created."
+#: components/Dashboard/DashboardView
+msgid "The dashboard could not be created."
 msgstr ""
 
 #. Default: "The displayed content is tailored to your organizational unit and location."

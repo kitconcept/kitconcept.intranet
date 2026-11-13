@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-10-13 03:44+0000\n"
+"POT-Creation-Date: 2026-11-10 15:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,10 @@ msgstr ""
 
 #: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/types/Dashboard.xml
+msgid "A private dashboard for each user, created inside their Person. Its layout sets the default blocks of new dashboards."
 msgstr ""
 
 #: kitconcept/intranet/behaviors/person.py:19
@@ -69,9 +73,21 @@ msgstr ""
 msgid "CLM: Reminders for potentially outdated content"
 msgstr ""
 
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Can only be seen and edited by the owner and site administrators."
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Can only be seen and edited by the owner."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/types/Dashboard.xml
+msgid "Dashboard"
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Dashboard Workflow"
 msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:49
@@ -267,6 +283,7 @@ msgstr ""
 msgid "Policy package to install our site"
 msgstr ""
 
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Private"
@@ -343,6 +360,10 @@ msgstr ""
 
 #: kitconcept/intranet/profiles.zcml:29
 msgid "Setup the intranet to use Solr."
+msgstr ""
+
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Single state workflow for personal dashboards. Only the owner and site administrators can access them."
 msgstr ""
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml

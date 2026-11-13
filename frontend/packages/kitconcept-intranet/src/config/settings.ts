@@ -3,6 +3,7 @@ import type { VLTSettings } from '@kitconcept/volto-light-theme/types';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import DocumentReviewPlug from '@kitconcept/intranet/components/Toolbar/DocumentReviewPlug';
 import DashboardMenu from '@kitconcept/intranet/components/Dashboard/DashboardMenu';
+import DashboardView from '@kitconcept/intranet/components/Dashboard/DashboardView';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
 import profilePlaceholder from '../assets/profile-placeholder.svg';
 import Header from '../components/Header/Header';
@@ -19,6 +20,7 @@ export default function install(config: ConfigType) {
       path: ['/feedback-form', '/**/feedback-form'],
       component: FeedBackForm,
     },
+    { path: '/**/dashboard', exact: true, component: DashboardView },
   ];
   config.addonReducers = {
     ...config.addonReducers,

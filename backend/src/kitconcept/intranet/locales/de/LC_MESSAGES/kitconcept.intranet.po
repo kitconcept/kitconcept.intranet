@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-10-13 03:44+0000\n"
+"POT-Creation-Date: 2026-11-10 15:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,10 @@ msgstr "4:5 quadratisches Bild"
 #: kitconcept/intranet/distributions.zcml:17
 msgid "A Plone distribution for Intranets with Plone. Created by kitconcept."
 msgstr "Eine Plone-Distribution für Intranets mit Plone. Erstellt von kitconcept."
+
+#: kitconcept/intranet/profiles/default/types/Dashboard.xml
+msgid "A private dashboard for each user, created inside their Person. Its layout sets the default blocks of new dashboards."
+msgstr "Ein privates Dashboard für jeden Benutzer, das in seiner Person angelegt wird. Das Layout legt die Standardblöcke neuer Dashboards fest."
 
 #: kitconcept/intranet/behaviors/person.py:19
 msgid "Academic Title"
@@ -66,10 +70,22 @@ msgstr "Zulässige Iframe-Domains"
 msgid "CLM: Reminders for potentially outdated content"
 msgstr "CLM: Hinweise auf möglicherweise veraltete Inhalte"
 
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Can only be seen and edited by the owner and site administrators."
+msgstr "Kann nur vom Eigentümer und von Website-Administratoren angesehen und bearbeitet werden."
+
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Can only be seen and edited by the owner."
 msgstr "Kann nur vom Eigentümer angesehen und bearbeitet werden."
+
+#: kitconcept/intranet/profiles/default/types/Dashboard.xml
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Dashboard Workflow"
+msgstr "Dashboard-Workflow"
 
 #: kitconcept/intranet/controlpanels/intranet.py:49
 msgid "Default Feedback Email"
@@ -264,6 +280,7 @@ msgstr "Bitte geben Sie Ihre geschäftliche E-Mail-Adresse ein."
 msgid "Policy package to install our site"
 msgstr "Paket mit Richtlinien zur Installation unserer Website"
 
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml
 msgid "Private"
@@ -341,6 +358,10 @@ msgstr "Richten Sie das Intranet so ein, dass Benutzer sich immer authentifizier
 #: kitconcept/intranet/profiles.zcml:29
 msgid "Setup the intranet to use Solr."
 msgstr "Richten Sie das Intranet für die Verwendung von Solr ein."
+
+#: kitconcept/intranet/profiles/default/workflows/dashboard_workflow/definition.xml
+msgid "Single state workflow for personal dashboards. Only the owner and site administrators can access them."
+msgstr "Workflow mit einem Status für persönliche Dashboards. Nur der Eigentümer und Website-Administratoren haben Zugriff."
 
 #: kitconcept/intranet/profiles/default/workflows/simple_intranet_workflow/definition.xml
 #: kitconcept/intranet/profiles/restricted/workflows/simple_intranet_workflow/definition.xml

@@ -211,7 +211,9 @@ test.describe('Wiki tables: width', () => {
       )
       .boundingBox();
     const blockBox = await view
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox();
     expect(tableBox!.width).toBeGreaterThan(paragraphBox!.width + 100);
     expect(Math.round(tableBox!.x)).toBe(Math.round(paragraphBox!.x));
@@ -297,7 +299,9 @@ test.describe('Wiki tables: width', () => {
       starts.push(Math.round(box!.x));
     }
     const contentArea = await viewTable(page, 3)
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox();
     // The room: from the text column's left edge to the content area's
     // right edge, minus the 10px margin.

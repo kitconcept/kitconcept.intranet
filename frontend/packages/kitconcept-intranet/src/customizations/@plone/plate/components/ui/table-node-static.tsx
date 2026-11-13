@@ -16,15 +16,23 @@
  *           with more than a few rows. Off in the history diff
  *           (WikiTableViewContext) and for tables with merged cells. The
  *           server render is unsorted and unfiltered, so hydration matches.
+ *         - The scroll container keeps the `overflow-x-auto` class next to
+ *           Plate's `block-table__scroll`: theme/components/_wikiTable.scss
+ *           and the acceptance tests find it by that class.
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Everything else is
  *         unchanged.
- * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.24/packages/plate/components/ui/table-node-static.tsx
- * FILE VERSION: @plone/plate 1.0.0-alpha.24
+ * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.26/packages/plate/components/ui/table-node-static.tsx
+ * FILE VERSION: @plone/plate 1.0.0-alpha.26
  * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
  * CHANGELOG:
+ *  - Rebase on @plone/plate 1.0.0-alpha.26: the table is styled by
+ *    `@plone/plate/styles/content.css` (`block-table__*` classes) instead of
+ *    Tailwind utilities, and cell borders are `data-border-*` attributes
+ *    (`cellBorderAttributes`). The old Tailwind border classes were no longer
+ *    generated, so set borders didn't show (work item 832). @sneridagh
  *  - Rebase on @plone/plate 1.0.0-alpha.24 (no upstream changes to this
  *    file since 1.0.0-alpha.20). @sneridagh
  *  - The footer row (`footer: true`, see components/WikiTable/tableCalc.ts)
@@ -67,6 +75,20 @@ import {
   SortButton,
   TableFilterField,
 } from '@kitconcept/intranet/components/WikiTable/TableViewControls';
+
+type CellBorders = Partial<
+  Record<'top' | 'right' | 'bottom' | 'left', { size?: number } | undefined>
+>;
+
+/** Marks the sides of a cell that have a border, for the content styles. */
+export function cellBorderAttributes(borders?: CellBorders) {
+  return {
+    'data-border-top': borders?.top?.size ? '' : undefined,
+    'data-border-right': borders?.right?.size ? '' : undefined,
+    'data-border-bottom': borders?.bottom?.size ? '' : undefined,
+    'data-border-left': borders?.left?.size ? '' : undefined,
+  };
+}
 
 // OVERRIDE: per-table cell geometry, computed once (see REASON above).
 type CellIndices = { row: number; col: number };
@@ -238,7 +260,7 @@ export function TableElementStatic({
   return (
     <TableGeometryContext.Provider value={geometry}>
       <TableSortContext.Provider value={sortValue}>
-        <SlateElement {...props} className="py-5">
+        <SlateElement {...props}>
           <BlockInnerContainer>
             {/* OVERRIDE: filter field */}
             {filterable && (
@@ -250,12 +272,13 @@ export function TableElementStatic({
               />
             )}
             <div
-              className="overflow-x-auto overflow-y-hidden"
+              // OVERRIDE: `overflow-x-auto` kept as a hook (see REASON)
+              className="block-table__scroll overflow-x-auto"
               style={{ paddingLeft: marginLeft }}
             >
-              <div className="group/table relative w-fit">
-                <table className="mr-0 ml-px table h-px table-fixed border-collapse">
-                  <tbody className="min-w-full">{displayed}</tbody>
+              <div className="block-table__wrapper">
+                <table className="block-table__table">
+                  <tbody>{displayed}</tbody>
                 </table>
               </div>
             </div>
@@ -272,10 +295,7 @@ export function TableRowElementStatic(props: SlateElementProps) {
       {...props}
       as="tr"
       // OVERRIDE (750)
-      className={cn(
-        'h-full',
-        isFooterRow(props.element) && 'wiki-table-footer',
-      )}
+      className={cn(isFooterRow(props.element) && 'wiki-table-footer')}
     >
       {props.children}
     </SlateElement>
@@ -334,26 +354,8 @@ export function TableCellElementStatic({
     <SlateElement
       {...props}
       as={isHeader ? 'th' : 'td'}
-      className={cn(
-        // OVERRIDE
-        sortColumn !== null && 'wiki-table-sortable',
-        'h-full overflow-visible border-none bg-background p-0',
-        element.background ? 'bg-(--cellBackground)' : 'bg-background',
-        isHeader &&
-          `
-            text-left font-normal
-            *:m-0
-          `,
-        'before:size-full',
-        "before:absolute before:box-border before:content-[''] before:select-none",
-        borders &&
-          cn(
-            borders.bottom?.size && `before:border-b before:border-b-border`,
-            borders.right?.size && `before:border-r before:border-r-border`,
-            borders.left?.size && `before:border-l before:border-l-border`,
-            borders.top?.size && `before:border-t before:border-t-border`,
-          ),
-      )}
+      // OVERRIDE
+      className={cn(sortColumn !== null && 'wiki-table-sortable')}
       style={
         {
           '--cellBackground': element.background,
@@ -369,16 +371,14 @@ export function TableCellElementStatic({
         ...props.attributes,
         colSpan,
         rowSpan: api.table.getRowSpan(element),
+        ...cellBorderAttributes(borders),
         // OVERRIDE
         ...(sortColumn !== null
           ? { 'aria-sort': sortDirection ?? 'none' }
           : {}),
       }}
     >
-      <div
-        className="relative z-20 box-border h-full px-4 py-2"
-        style={{ minHeight }}
-      >
+      <div className="block-table__cell-content" style={{ minHeight }}>
         {props.children}
       </div>
       {/* OVERRIDE */}

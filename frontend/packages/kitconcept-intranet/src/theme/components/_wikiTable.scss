@@ -94,44 +94,102 @@
   }
 }
 
-// Table width (work items 823, 825): a table can leave the 780px text
+// Table width (work items 823, 825, 824): a table can leave the 780px text
 // column. @plone/plate's block width plugin stores the step as `blockWidth`
 // on the table, adds the class `slate-blockWidth-<step>` to the table's
 // block and, for the theme's steps, sets `--block-width` inline on it; the
-// block's `.block-inner-container` is `max-width: var(--block-width)` and
-// centred. The steps: "Text width" = `default` (780px), "Medium" = `medium`
-// (1040px, a table-only step, no inline style), "Wide" = `layout` (the
-// theme's layout width, 1440px) and "Full width" = `full` (the content
-// area). A table wider than the text column never touches the sides of the
-// content area: it keeps a 10px margin left and right. Below about 1800px
-// the content area is narrower than 1440px, so Wide and Full width then
-// have the same width. The rules below set `--block-width` on the table
-// block's own inner container (the child combinator keeps them off the
-// paragraphs in the cells, which have inner containers too), which wins
-// over the inline value on the block. Only top-level tables: a table inside
-// a column keeps the class but fills the column. Editor, view and history
-// diff.
+// block's `.block-inner-container` is `max-width: var(--block-width)`. The
+// steps: "Text width" = `default` (780px), "Medium" = `medium` (1040px, a
+// table-only step, no inline style), "Wide" = `layout` (the theme's layout
+// width, 1440px) and "Full width" = `full` (the room, see below).
+//
+// Alignment (the Notion / Claude Docs model, research ticket
+// https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/826):
+// the text column stays centred, a table starts at the text column's left
+// edge and grows to the right; the space left of the text stays free. Its
+// room reaches from there to the right edge of the content area minus a
+// 10px margin: (content + text column) / 2 - 10px. A step or custom width
+// is min(width, room); Full width is the room. The room is never less than
+// the text column, which on a small screen is the content area itself (the
+// left margin is then 0): a table is never narrower than the text. With
+// the navigation tree open, Medium has its own width from a window of
+// about 1700px, Wide from about 2500px; below that they are the room.
+//
+// The rules below set `--block-width` and the margins on the table's frame,
+// which wins over the inline value on the block: the block's own inner
+// container, or, when a cell carries a comment or a suggestion, the
+// wrapper of volto-plate's DiscussionSlot around it (`mx-auto w-full`,
+// `max-width: var(--block-width)`, with the discussion's wrappers inside);
+// the inner container in it then fills it. `:not(table *)` keeps the rules
+// off the paragraphs in the cells, which have inner containers too. Only
+// top-level tables: a table inside a column keeps the class but fills the
+// column. Editor, view and history diff.
+@mixin wiki-table-frame {
+  > .block-inner-container,
+  > :has(.block-inner-container:not(table *)) {
+    @content;
+  }
+}
+
 .typeset .block.block-table:not(.slate-column *) {
   --wiki-table-medium-width: 1040px;
   --wiki-table-side-margin: 10px;
-  // The room for a table wider than the text column: the content area minus
-  // the margins. Never less than the text column, which on a small screen is
-  // the content area itself: a table is never narrower than the text.
+  // The left edge of the text column in the block (0 when the content area
+  // is not wider than the text column), and the room from there, see above.
+  // Percentages resolve against the block, where the inner container uses
+  // them.
+  --wiki-table-start: max(
+    0px,
+    calc((100% - var(--default-container-width)) / 2)
+  );
   --wiki-table-room: max(
     var(--default-container-width),
-    calc(100% - 2 * var(--wiki-table-side-margin))
+    calc(100% - var(--wiki-table-start) - var(--wiki-table-side-margin))
   );
 
-  &.slate-blockWidth-medium > .block-inner-container {
-    --block-width: min(var(--wiki-table-medium-width), var(--wiki-table-room));
+  // The table starts at the text column and grows to the right.
+  @include wiki-table-frame {
+    margin-right: 0;
+    margin-left: var(--wiki-table-start);
   }
 
-  &.slate-blockWidth-layout > .block-inner-container {
-    --block-width: min(var(--layout-container-width), var(--wiki-table-room));
+  // The inner container inside the discussion wrappers fills the frame.
+  > :not(.block-inner-container) .block-inner-container:not(table *) {
+    --block-width: 100%;
   }
 
-  &.slate-blockWidth-full > .block-inner-container {
-    --block-width: var(--wiki-table-room);
+  &.slate-blockWidth-medium {
+    @include wiki-table-frame {
+      --block-width: min(
+        var(--wiki-table-medium-width),
+        var(--wiki-table-room)
+      );
+    }
+  }
+
+  &.slate-blockWidth-layout {
+    @include wiki-table-frame {
+      --block-width: min(var(--layout-container-width), var(--wiki-table-room));
+    }
+  }
+
+  &.slate-blockWidth-full {
+    @include wiki-table-frame {
+      --block-width: var(--wiki-table-room);
+    }
+  }
+
+  // A custom width from the table's resize handle (work item 824):
+  // `tableWidth` on the table, set inline as `--wiki-table-width` with the
+  // class `wiki-table-custom-width` (components/WikiTable/wikiTableCustomWidth.ts;
+  // the editor sets both while dragging, too). It wins over the step, which
+  // the table keeps meanwhile, and like the steps it stays within the room:
+  // on a small screen the table takes the text column and scrolls inside
+  // its frame, in print it shrinks to the page.
+  &.wiki-table-custom-width {
+    @include wiki-table-frame {
+      --block-width: min(var(--wiki-table-width), var(--wiki-table-room));
+    }
   }
 }
 
@@ -139,7 +197,8 @@
 // without this the paragraphs in the cells of a wide table would take the
 // table's width expression, with its percentages resolved against the cell
 // (a cell wider than the text column got its text capped or indented).
-.typeset .block.block-table :is(td, th) .block > .block-inner-container {
+// Any inner container in a cell, also one inside a discussion wrapper.
+.typeset .block.block-table :is(td, th) .block .block-inner-container {
   --block-width: 100%;
 }
 
@@ -202,7 +261,20 @@
   flex-wrap: wrap;
 }
 
-// 24px gutter left of the table for the row drag handle (Plate: 8px).
+// 24px gutter left of the table for the row drag handle (Plate: 8px). The
+// scroll container reaches 1.5rem into the space left of the text column
+// and gives it back as padding (inline in the shadow), so the table starts
+// at the text column and the gutter is inside the container's padding box,
+// not clipped. The gutter cell (the
+// first `td` of every row, `contenteditable="false"`) is a column of width
+// 0: the fixed layout stretches the columns in proportion to their widths
+// when the table is wider than its columns, and a 1.5rem gutter column was
+// stretched with them, so the table's content started right of the text
+// (work item 824). Its row grip and drop line sit left of it, in the
+// gutter. (Without a box, `display: contents`, or absolutely positioned,
+// the cell or its grip still made a column of its own.)
+// Tailwind version: the container `-ml-6 pl-6`, the gutter cell `w-0
+// min-w-0 max-w-0`, the grip `-left-5 w-4 px-0`, the drop line `-left-4 w-4`.
 .wiki-table-controls {
   // 12px on top for the column grips: the container clips vertical overflow.
   padding-top: 12px;
@@ -211,18 +283,35 @@
   > [data-slot='block-selection'] {
     left: 1.5rem;
   }
-}
 
-.wiki-table-gutter {
-  width: 1.5rem;
-}
+  // 1rem wide, in the gutter (Plate's button padding, `has-[>svg]:px-3`,
+  // made it 29px, wider than the gutter).
+  .wiki-table-row-grip {
+    left: -1.25rem;
+    width: 1rem;
+    padding: 0;
 
-.wiki-table-row-grip {
-  left: 0.25rem;
-
-  &:focus-visible {
-    opacity: 1;
+    &:focus-visible {
+      opacity: 1;
+    }
   }
+
+  .wiki-table-row-drop-line {
+    right: auto;
+    left: -1rem;
+    width: 1rem;
+  }
+}
+
+// Under the prefix of the cell rules above.
+:is(.contenttype-workspace, .contenttype-wikipage, body)
+  .typeset
+  .wiki-table-controls
+  td.wiki-table-gutter {
+  width: 0;
+  min-width: 0;
+  max-width: 0;
+  padding: 0;
 }
 
 // Column drag handle on the top edge of the first row's cells.
@@ -271,16 +360,64 @@
   }
 }
 
+// Resize handle on the right edge of a top-level table (work item 824),
+// centred on the edge of the table's frame (its inner container), like
+// Confluence's single handle there: the last column of a top-level table
+// has no column resize handle of its own (table-node.tsx). The handle is a
+// child of the inner container, next to the scroll container, so it adds
+// no scroll width (#783) and is not clipped at Full width, where the frame
+// keeps a 10px margin to the content area. It spans the table's height
+// (below the 12px for the column grips) and draws nothing: the col-resize
+// cursor is the only hover affordance, the label below shows the width
+// while dragging.
+// Tailwind version: the container `relative`, the handle
+// `absolute top-3 bottom-0 -right-1 w-2`.
+.wiki-table-resizable {
+  position: relative;
+}
+
+.wiki-table-resize-handle {
+  top: 12px;
+  right: -4px;
+  bottom: 0;
+  width: 8px;
+  height: auto;
+}
+
+// The width while dragging: px or the name of the step it snapped to, at
+// the top of the handle, towards the table.
+.wiki-table-resize-label {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #252525;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@media print {
+  .wiki-table-resize-handle {
+    display: none;
+  }
+}
+
 // No horizontal scrollbar under a table that fits (#783). A table that fits
 // is exactly as wide as its scroll container (`width: 100%` above), and
 // Plate's column resize handle on the right edge of the last column sticks
-// out past it (`-right-1 w-2`: 4.5px), as does its hover line
-// (`right-[-1.5px]`) and the column drop line. That made the container
-// scroll by 5px in the editor. In the last column they end at the table's
-// edge instead; a table that is really wider still scrolls.
+// out past it (`-right-1 w-2`: 4.5px), as does the column drop line. That
+// made the container scroll by 5px in the editor. In the last column they
+// end at the table's edge instead; a table that is really wider still
+// scrolls. (Since #824 a top-level table has the table's resize handle on
+// that edge instead of the column handle, so the first selector only
+// matches nested tables; the drop line is in every table. The column
+// handles have no hover line any more.)
 .wiki-table-controls tr > :is(td, th):last-child {
   > .group > [data-col],
-  > .group > [class~='right-[-1.5px]'],
   .wiki-table-col-drop-line.is-after {
     right: 0;
   }

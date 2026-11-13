@@ -1,19 +1,22 @@
 /**
  * Table width of wiki tables: the "Width" menu of the cell toolbar sets
  * Text width (`default`), Medium (`medium`, 1040px), Wide (`layout`, 1440px)
- * or Full width (`full`) on the table, a table wider than the text keeps a
- * 10px margin to the sides of the content area, a pasted table with many
+ * or Full width (`full`) on the table, a table wider than the text starts
+ * at the text column's left edge and keeps a 10px margin to the right edge
+ * of the content area (#826), a pasted table with many
  * columns gets a wider step on its own, and a table that fits shows no
  * horizontal scrollbar in the editor (#783).
  *
  * The test viewport (1440 × 1000) has a content area of about 1060px in the
- * view, so Medium, Wide and Full width look the same there: the stored
- * `blockWidth` tells them apart, and one test widens the window to 1920px
- * to measure the three steps.
+ * view and a room of (1060 + 780) / 2 - 10 = 910px from the text column's
+ * left edge, so Medium, Wide and Full width look the same there: the stored
+ * `blockWidth` tells them apart, and one test widens the window to 2600px
+ * to measure the steps.
  *
  * Tickets: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
  *          https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/783
  *          https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/825
+ *          https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/826
  */
 import type { Locator, Page } from '@playwright/test';
 import { setSelection } from '@platejs/playwright';
@@ -26,6 +29,7 @@ import {
 } from '../fixtures/editor';
 import { openInEditor, openInView } from '../fixtures/pages';
 import {
+  cellOf,
   chooseWidth,
   clickCell,
   clickToolbar,
@@ -193,7 +197,8 @@ test.describe('Wiki tables: width', () => {
     // In the view the table's block is wider than the reading column. (The
     // table element itself is wider than 780px in any case: eight columns
     // of at least 120px, scrolling inside the block.) A Full width table
-    // keeps a 10px margin to both sides of the content area (#825).
+    // starts at the text column's left edge and keeps a 10px margin to the
+    // right edge of the content area (#825, #826).
     await openInView(page, contentPath);
     const view = viewTable(page, 0);
     const paragraphBox = await page
@@ -209,8 +214,12 @@ test.describe('Wiki tables: width', () => {
       .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
       .boundingBox();
     expect(tableBox!.width).toBeGreaterThan(paragraphBox!.width + 100);
-    expect(Math.round(blockBox!.width - tableBox!.width)).toBe(20);
-    expect(Math.round(tableBox!.x - blockBox!.x)).toBe(10);
+    expect(Math.round(tableBox!.x)).toBe(Math.round(paragraphBox!.x));
+    expect(
+      Math.round(
+        blockBox!.x + blockBox!.width - (tableBox!.x + tableBox!.width),
+      ),
+    ).toBe(10);
 
     // And back to the reading column.
     await openInEditor(page, contentPath);
@@ -253,10 +262,12 @@ test.describe('Wiki tables: width', () => {
     expect(await editorWidths(page)).toEqual(['medium', 'default']);
   });
 
-  test('on a wide window the four steps are 780, 1040, 1440 and the content area minus the margins', async ({
+  test('on a wide window the four steps are 780, 1040, 1440 and the room, all from the text column', async ({
     page,
   }) => {
-    await page.setViewportSize({ width: 1920, height: 1000 });
+    // From about 2500px Wide is narrower than the room (with the navigation
+    // tree open).
+    await page.setViewportSize({ width: 2600, height: 1000 });
     const value: EditorNode[] = [paragraph('Text before the table.')];
     for (const width of ['default', 'medium', 'layout', 'full']) {
       value.push({ ...table(8, 1), blockWidth: width });
@@ -270,7 +281,12 @@ test.describe('Wiki tables: width', () => {
       value,
     });
     await openInView(page, contentPath);
+    const textColumn = await page
+      .locator('main [data-slate-type="p"] .block-inner-container')
+      .filter({ hasText: 'Text before the table.' })
+      .boundingBox();
     const widths: number[] = [];
+    const starts: number[] = [];
     for (let i = 0; i < 4; i++) {
       const box = await viewTable(page, i)
         .locator(
@@ -278,17 +294,20 @@ test.describe('Wiki tables: width', () => {
         )
         .boundingBox();
       widths.push(Math.round(box!.width));
+      starts.push(Math.round(box!.x));
     }
     const contentArea = await viewTable(page, 3)
       .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
       .boundingBox();
-    expect(contentArea!.width).toBeGreaterThan(1480);
-    expect(widths).toEqual([
-      780,
-      1040,
-      1440,
-      Math.round(contentArea!.width - 20),
-    ]);
+    // The room: from the text column's left edge to the content area's
+    // right edge, minus the 10px margin.
+    const room = Math.round(
+      contentArea!.x + contentArea!.width - textColumn!.x - 10,
+    );
+    expect(room).toBeGreaterThan(1460);
+    expect(widths).toEqual([780, 1040, 1440, room]);
+    // Every step starts at the text column (#826).
+    expect(starts).toEqual(Array(4).fill(Math.round(textColumn!.x)));
     const wideCell = viewTable(page, 4).locator('td').first();
     const cellBox = await wideCell.boundingBox();
     const textBox = await wideCell
@@ -298,6 +317,35 @@ test.describe('Wiki tables: width', () => {
     expect(cellBox!.width).toBeGreaterThan(1400);
     // Cell padding is 0.65em on each side, nothing else.
     expect(textBox!.width).toBeGreaterThan(cellBox!.width - 30);
+  });
+
+  test('in the editor the first column starts at the text column (no stretched gutter)', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1920, height: 1000 });
+    await openPage(page, 'gutter', [
+      paragraph('Text before the table.'),
+      table(4),
+      { ...table(4), blockWidth: 'full' },
+      { ...table(3), blockWidth: 'full', colSizes: [150, 200, 0] },
+    ]);
+    const text = await page
+      .locator('[contenteditable="true"] .block-inner-container')
+      .filter({ hasText: 'Text before the table.' })
+      .last()
+      .boundingBox();
+    for (const index of [0, 1, 2]) {
+      const first = await cellOf(editorTable(page, index), 1, 0).boundingBox();
+      expect(Math.abs(first!.x - text!.x)).toBeLessThanOrEqual(1);
+      // The row grip sits left of the table, clear of the first cell.
+      const row = editorTable(page, index).locator('tr').nth(1);
+      await row.hover();
+      const grip = await row
+        .getByRole('button', { name: 'Drag to move the row' })
+        .boundingBox();
+      expect(grip!.x).toBeGreaterThanOrEqual(text!.x - 27);
+      expect(grip!.x + grip!.width).toBeLessThanOrEqual(first!.x);
+    }
   });
 
   test('the cell toolbar stays clear of the panels when they are toggled while it is open', async ({

@@ -683,6 +683,11 @@ msgstr "Privat"
 msgid "Published"
 msgstr "Veröffentlicht"
 
+#. Default: "Resize table"
+#: index
+msgid "Resize table"
+msgstr "Tabellenbreite ändern"
+
 #. Default: "Responsibilities"
 #: index
 msgid "Responsibilities"
@@ -1279,6 +1284,11 @@ msgstr "Bildunterschrift"
 msgid "plateDiff.prop.checked"
 msgstr "Abgehakt"
 
+#. Default: "Column widths"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.colSizes"
+msgstr "Spaltenbreiten"
+
 #. Default: "Text colour"
 #: components/PlateDiff/messages
 msgid "plateDiff.prop.color"
@@ -1398,6 +1408,11 @@ msgstr "Schmal"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.blockWidth.wide"
 msgstr "Breit"
+
+#. Default: "{sizes} px"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.colSizes"
+msgstr "{sizes} px"
 
 #. Default: "Bulleted list"
 #: components/PlateDiff/messages

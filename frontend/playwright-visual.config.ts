@@ -28,6 +28,10 @@ export default defineConfig({
       animations: 'disabled',
       caret: 'hide',
       scale: 'css',
+      // Per-pixel colour tolerance (default 0.2). Light lines such as the
+      // table cell borders (#dfe1e6 on white) are below the default, so a
+      // missing border would pass unnoticed.
+      threshold: 0.05,
     },
   },
   reporter: [

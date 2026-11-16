@@ -1,6 +1,33 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.9.0 (2026-11-16)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Fix sidebar and popover menu issue in content reminder @Tishasoumya-02 
+- Made the workspace navigation tree sticky and hid it in the control panel. @iFlameing 
+- Update to Volto 19.7.1. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.8.0 (2026-11-12)
 
 ### Backend

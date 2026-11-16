@@ -22,6 +22,7 @@ class TestSiteGet:
         (
             ("kitconcept.person_picture_aspect_ratio", str),
             ("kitconcept.intranet.enable_content_review", bool),
+            ("kitconcept.intranet.enable_content_watching", bool),
         ),
     )
     def test_keys(self, key, type_):
@@ -35,6 +36,7 @@ class TestSiteGet:
         (
             ("kitconcept.person_picture_aspect_ratio", "rounded1to1"),
             ("kitconcept.intranet.enable_content_review", False),
+            ("kitconcept.intranet.enable_content_watching", True),
         ),
     )
     def test_values(self, key, expected):

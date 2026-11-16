@@ -15,6 +15,7 @@ import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill
 import { submitFeedbackContactForm } from '../../actions';
 import { getDisplayedAuthors } from './authors';
 import { getFeedbackRecipient, type CLMPersonData } from './feedbackRecipient';
+import WatchButton from '../../components/WatchButton/WatchButton';
 
 const messages = defineMessages({
   title: {
@@ -232,7 +233,10 @@ const AboutThisContent = ({ content }: AboutThisContentProps) => {
   }
   return (
     <section className="about-content" aria-labelledby="about-content-title">
-      <h2 id="about-content-title">{intl.formatMessage(messages.title)}</h2>
+      <div className="about-content-header">
+        <h2 id="about-content-title">{intl.formatMessage(messages.title)}</h2>
+        <WatchButton showLabel size={24} />
+      </div>
       <div className="about-content-grid">
         <div className="about-content-item about-content-author">
           <h3>{intl.formatMessage(messages.author)}</h3>

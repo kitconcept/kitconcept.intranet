@@ -8,11 +8,13 @@ last_updated: 2026-03-18
 
 # Engagement
 
-Guides for content engagement features including likes, ratings, and personalized content sorting.
+Guides for content engagement features including likes, ratings, watching content, and personalized content sorting.
 
 ```{toctree}
 :maxdepth: 1
 
 enable-likes
+watch-content
+enable-content-watching
 passive-targeting
 ```

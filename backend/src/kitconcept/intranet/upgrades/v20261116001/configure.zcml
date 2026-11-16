@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261030001"
+      destination="20261116001"
+      >
+    <genericsetup:upgradeDepends
+        title="Add the watchers behavior, the watchers index, the Watched by me criterion and the watching setting"
+        import_steps="typeinfo catalog plone.app.registry"
+        />
+    <genericsetup:upgradeStep
+        title="Disable watching content for upgraded sites"
+        handler=".disable_watching_for_upgraded_sites"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

@@ -19,6 +19,15 @@
       provides=".votes.IVotes"
       />
 
+  <plone:behavior
+      name="kitconcept.intranet.watchers"
+      title="Watch content"
+      description="Users can watch the item and get an email when it changes"
+      provides=".watchers.IWatchable"
+      />
+
+  <adapter factory=".watchers.Watchers" />
+
 
   <plone:behavior
       name="kitconcept.intranet.location"

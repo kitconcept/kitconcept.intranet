@@ -54,6 +54,13 @@
     <indexed_attr value="review_due_date" />
   </index>
 
+  <!-- Watch content: user IDs of the watchers -->
+  <index meta_type="KeywordIndex"
+         name="watchers"
+  >
+    <indexed_attr value="watchers" />
+  </index>
+
   <index meta_type="DateIndex"
          name="task_due_date"
   ><indexed_attr value="task_due_date" /></index>

@@ -814,6 +814,11 @@ msgstr "Website"
 msgid "Site Setup"
 msgstr ""
 
+#. Default: "Something went wrong while changing the watch status."
+#: components/WatchButton/WatchButton
+msgid "Something went wrong while changing the watch status."
+msgstr "Beim Ändern der Beobachtung ist ein Fehler aufgetreten."
+
 #. Default: "Something went wrong while liking this post."
 #: components/ContentInteractions/ContentInteractions
 msgid "Something went wrong while liking this post."
@@ -858,6 +863,11 @@ msgstr "Tippen Sie, um zu suchen…"
 #: components/Header/HeaderSearch
 msgid "Status"
 msgstr "Status"
+
+#. Default: "Stop watching this content"
+#: components/WatchButton/WatchButton
+msgid "Stop watching this content"
+msgstr "Beobachtung beenden"
 
 #. Default: "Subject page/URL"
 #: components/FeedBackForm/FeedBackForm
@@ -995,6 +1005,21 @@ msgstr "Aktualisiert"
 msgid "Use preset review interval"
 msgstr "Voreingestelltes Überprüfungsintervall verwenden."
 
+#. Default: "Watch"
+#: components/WatchButton/WatchButton
+msgid "Watch"
+msgstr "Beobachten"
+
+#. Default: "Watch this content"
+#: components/WatchButton/WatchButton
+msgid "Watch this content"
+msgstr "Inhalt beobachten"
+
+#. Default: "Watching"
+#: components/WatchButton/WatchButton
+msgid "Watching"
+msgstr "Beobachtet"
+
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
@@ -1030,6 +1055,16 @@ msgstr "Workspace"
 #: components/Blocks/Listing/Table/cellTypes
 msgid "Yes"
 msgstr "Ja"
+
+#. Default: "You are now watching this content and will be notified of changes by email."
+#: components/WatchButton/WatchButton
+msgid "You are now watching this content and will be notified of changes by email."
+msgstr "Sie beobachten diesen Inhalt jetzt und werden per E-Mail über Änderungen informiert."
+
+#. Default: "You will no longer receive updates for this content."
+#: components/WatchButton/WatchButton
+msgid "You will no longer receive updates for this content."
+msgstr "Sie erhalten keine Benachrichtigungen mehr zu diesem Inhalt."
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm

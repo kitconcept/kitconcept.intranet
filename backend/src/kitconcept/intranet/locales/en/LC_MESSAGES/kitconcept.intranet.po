@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-10-13 03:44+0000\n"
+"POT-Creation-Date: 2026-11-16 10:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,11 +42,11 @@ msgstr ""
 msgid "Academic Title, First and Last Name"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:49
+#: kitconcept/intranet/behaviors/configure.zcml:58
 msgid "Add the intranet-specific person fields"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:42
+#: kitconcept/intranet/behaviors/configure.zcml:51
 msgid "Add the lifecycle management fields"
 msgstr ""
 
@@ -58,11 +58,11 @@ msgstr ""
 msgid "Allowed Email Domains"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:81
+#: kitconcept/intranet/controlpanels/intranet.py:92
 msgid "Allowed Iframe Domains"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:56
+#: kitconcept/intranet/behaviors/configure.zcml:65
 msgid "CLM: Reminders for potentially outdated content"
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Default Feedback Email"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:98
+#: kitconcept/intranet/controlpanels/intranet.py:109
 msgid "Default review interval"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Enable Content Rating"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:91
+#: kitconcept/intranet/controlpanels/intranet.py:102
 msgid "Enable Content Review"
 msgstr ""
 
@@ -120,11 +120,15 @@ msgstr ""
 msgid "Enable Sticky Feedback Button"
 msgstr ""
 
+#: kitconcept/intranet/controlpanels/intranet.py:81
+msgid "Enable Watching Content"
+msgstr ""
+
 #: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Enable content rating globally for the Intranet"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:92
+#: kitconcept/intranet/controlpanels/intranet.py:103
 msgid "Enable content review reminders globally for the Intranet."
 msgstr ""
 
@@ -156,15 +160,15 @@ msgstr ""
 msgid "Feedback CC email"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:28
+#: kitconcept/intranet/behaviors/configure.zcml:37
 msgid "Fields for Location"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:35
+#: kitconcept/intranet/behaviors/configure.zcml:44
 msgid "Fields for Organisational Unit"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:56
+#: kitconcept/intranet/behaviors/configure.zcml:65
 msgid "Fields for reviewing content (part of CLM)"
 msgstr ""
 
@@ -181,7 +185,7 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:107
+#: kitconcept/intranet/controlpanels/intranet.py:118
 msgid "Intranet Settings"
 msgstr ""
 
@@ -189,7 +193,7 @@ msgstr ""
 msgid "Intranet feedback form: {title}"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:49
+#: kitconcept/intranet/behaviors/configure.zcml:58
 msgid "Intranet-specific Person fields"
 msgstr ""
 
@@ -197,7 +201,7 @@ msgstr ""
 msgid "Job Title"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:42
+#: kitconcept/intranet/behaviors/configure.zcml:51
 msgid "Lifecycle Management fields"
 msgstr ""
 
@@ -213,7 +217,7 @@ msgstr ""
 msgid "List of user IDs"
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:28
+#: kitconcept/intranet/behaviors/configure.zcml:37
 #: kitconcept/intranet/behaviors/location.py:18
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
@@ -229,11 +233,15 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "Metadata"
+msgstr ""
+
 #: kitconcept/intranet/services/feedback_contact_form.py:204
 msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
 msgstr ""
 
-#: kitconcept/intranet/behaviors/configure.zcml:35
+#: kitconcept/intranet/behaviors/configure.zcml:44
 #: kitconcept/intranet/behaviors/organisational_unit.py:18
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
@@ -359,6 +367,10 @@ msgstr ""
 msgid "Used in the intranet header seach bar."
 msgstr ""
 
+#: kitconcept/intranet/behaviors/configure.zcml:27
+msgid "Users can watch the item and get an email when it changes"
+msgstr ""
+
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "View"
@@ -381,6 +393,10 @@ msgstr ""
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr ""
 
+#: kitconcept/intranet/behaviors/configure.zcml:27
+msgid "Watch content"
+msgstr ""
+
 #: kitconcept/intranet/services/feedback_contact_form.py:275
 msgid "Your feedback on our intranet content: {title}"
 msgstr ""
@@ -398,6 +414,11 @@ msgstr ""
 #. Default: "Matches the value(s) assigned to the currently logged-in user"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_current_user_filter"
+msgstr ""
+
+#. Default: "Logged-in users can watch content items and get an email when a watched, published item changes."
+#: kitconcept/intranet/controlpanels/intranet.py:82
+msgid "help_enable_content_watching"
 msgstr ""
 
 #. Default: "If checked, this type can be added to any container."
@@ -443,6 +464,16 @@ msgstr ""
 #. Default: "Describe what others can contact you about. Focus on topics, tasks, or questions you are responsible for, such as advising on specific funding programs, supporting application processes, or clarifying formal requirements. Write in a way that allows colleagues without detailed organisational knowledge to understand whether you are the right contact."
 #: kitconcept/intranet/behaviors/person.py:46
 msgid "help_tags"
+msgstr ""
+
+#. Default: "Content watched by the current user"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_watched_by_filter"
+msgstr ""
+
+#. Default: "Content the logged-in user is watching"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_watched_by_me"
 msgstr ""
 
 #: kitconcept/intranet/distributions.zcml:17
@@ -551,4 +582,14 @@ msgstr ""
 #. Default: "Responsibilities & Expertise"
 #: kitconcept/intranet/behaviors/person.py:37
 msgid "label_schema_responsibility_categorization"
+msgstr ""
+
+#. Default: "Watched by"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_watched_by"
+msgstr ""
+
+#. Default: "Watched by me"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_watched_by_me"
 msgstr ""

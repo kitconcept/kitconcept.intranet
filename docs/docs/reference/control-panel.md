@@ -26,6 +26,7 @@ All settings available in the **kitconcept Intranet Settings** control panel (`/
 | Setting | Type | Description | Default |
 |---------|------|-------------|---------|
 | `enable_content_rating` | Boolean | Enable the likes / rating feature globally across the site | `False` |
+| `enable_content_watching` | Boolean | Let logged-in users watch content and get an email when a watched, published item changes. See {doc}`/features/watch-content`. | `True` for new sites, `False` after upgrading |
 
 ## Person settings
 

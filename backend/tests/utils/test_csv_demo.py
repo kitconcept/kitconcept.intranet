@@ -44,6 +44,14 @@ class TestCsvDemoContent:
         assert value[0]["type"] == "title"
         assert page_id == content.PAGE_ID
 
+    def test_csv_table_block_points_into_the_container(self):
+        """The REST script creates the demo in any container (work item 827)."""
+        _id, _title, blocks, _layout = content.page_fields("/wiki-836/")
+        block = next(
+            n for n in blocks["__somersault__"]["value"] if n["type"] == "ploneBlock"
+        )
+        assert block["url"] == f"/wiki-836/{content.FILE_ID}"
+
 
 class TestCreateCsvDemo:
     @pytest.fixture(autouse=True)

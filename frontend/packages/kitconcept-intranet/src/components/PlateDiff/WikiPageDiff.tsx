@@ -28,6 +28,7 @@ import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable
 import { DiffPlugin } from './DiffPlugin';
 import { mergeLinkChanges, splitLinkPairs } from './linkChanges';
 import { messages, withWidthContext } from './messages';
+import { olderSide } from './olderSide';
 import { withStoredDefaults } from './storedDefaults';
 import { expandDiffToWords } from './wholeWords';
 import './plate-diff.css';
@@ -159,7 +160,11 @@ const WikiPageDiff = ({ one, two, view }: Props) => {
                           {intl.formatMessage(messages.notInThisVersion)}
                         </div>
                       ) : (
-                        <Renderer id={`plate-diff-left-${i}`} value={[node]} />
+                        // The older version's properties (#852).
+                        <Renderer
+                          id={`plate-diff-left-${i}`}
+                          value={[olderSide(node)]}
+                        />
                       )}
                     </div>
                     <div className="plate-diff-cell plate-diff-right">

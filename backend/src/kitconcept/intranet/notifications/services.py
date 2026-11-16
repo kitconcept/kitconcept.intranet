@@ -101,9 +101,14 @@ class NotificationsGet(Service):
 
         names: dict = {}
         items = []
+        unread = 0
         for item in notifications:
             brain = visible.get(item["uid"])
             if brain is None:
+                continue
+            if not item["read"]:
+                unread += 1
+            elif unread_only:
                 continue
             extra = {}
             if item.get("review_state_title"):
@@ -122,9 +127,6 @@ class NotificationsGet(Service):
                     "fullname": _fullname(item["actor"], names),
                 },
             })
-        unread = sum(1 for item in items if not item["read"])
-        if unread_only:
-            items = [item for item in items if not item["read"]]
         return {
             "@id": f"{self.context.absolute_url()}/@notifications",
             "items_total": len(items),

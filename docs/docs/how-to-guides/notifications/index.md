@@ -15,4 +15,5 @@ Guides for the notification center, which tells you when colleagues like, edit, 
 
 read-notifications
 choose-notifications
+turn-notification-center-on-or-off
 ```

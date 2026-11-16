@@ -125,7 +125,22 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 ## Configuration
 
-There is no site-wide configuration. Each user sets their own preferences.
+Site administrators turn the whole notification center on or off with
+**Enable Notification Center** in the **Intranet Settings** control panel.
+
+- It's **on** for new sites and **off** for sites upgraded from an earlier
+  version.
+- When it's off, no notifications are created, the bell, the menu entry, and
+  the `/notifications` page are gone, and the REST endpoints answer
+  `404 Not Found`.
+- Turning it off keeps the stored notifications. Turning it on again shows
+  them again, but nothing that happened in between.
+
+Developers can pause notifications for one script or batch job, without
+turning them off for everyone. See
+{doc}`/developer/how-to-guides/pause-notifications`.
+
+Each user sets their own preferences.
 
 ## Demo content
 
@@ -154,6 +169,7 @@ For users:
 - Tutorial: {doc}`/tutorials/follow-activity-on-your-content`
 - How-to: {doc}`/how-to-guides/notifications/read-notifications`
 - How-to: {doc}`/how-to-guides/notifications/choose-notifications`
+- How-to: {doc}`/how-to-guides/notifications/turn-notification-center-on-or-off`
 - Explanation: {doc}`/concepts/notifications`
 
 Related feature: {doc}`watch-content`.
@@ -163,5 +179,6 @@ For developers:
 - Explanation: {doc}`/developer/concepts/notifications`
 - How-to: {doc}`/developer/how-to-guides/add-notification-type`
 - How-to: {doc}`/developer/how-to-guides/refresh-notification-demo`
+- How-to: {doc}`/developer/how-to-guides/pause-notifications`
 - Reference: {doc}`/developer/reference/api/notifications`
 - Reference: {doc}`/developer/reference/components/notifications`

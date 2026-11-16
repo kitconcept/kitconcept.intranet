@@ -32,6 +32,8 @@ After a few days, nothing is in **Today** any more.
 
 - A site with the example content, so the demo users exist.
   The demo is skipped when they're missing.
+- The notification center is on in the **Intranet Settings**.
+  The demo is skipped when it's off.
 - A local backend checkout, set up with `make -C backend install`.
 
 ## Steps

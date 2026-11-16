@@ -22,6 +22,7 @@ They always act on the **current user**: there is no way to read or change anoth
 | `PATCH` | `/@notifications-settings` | Update the current user's preferences. |
 
 All four are registered for `IPloneSiteRoot` with the `zope2.View` permission, and answer `401 Unauthorized` to anonymous users.
+When the notification center is turned off in the Intranet Settings, all four answer `404 Not Found`, to anonymous users too.
 
 Source: `backend/src/kitconcept/intranet/notifications/services.py`.
 
@@ -144,6 +145,7 @@ ETag: "47e2c38fe86aeab6ebfc9f0dc65fb0be"
 | `304 Not Modified` | `If-None-Match` matches the current ETag. Not an error, listed here for completeness. |
 | `400 Bad Request` | `b_start` or `b_size` isn't an integer. |
 | `401 Unauthorized` | The user is anonymous. |
+| `404 Not Found` | The notification center is turned off. |
 
 ## `PATCH /@notifications`
 

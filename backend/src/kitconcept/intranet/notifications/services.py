@@ -1,6 +1,7 @@
 """REST API for the current user's notifications and preferences."""
 
 from . import storage
+from .switch import notifications_enabled
 from datetime import UTC
 from datetime import datetime
 from plone import api
@@ -8,6 +9,7 @@ from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.deserializer import json_body
 from plone.restapi.services import Service
 from zExceptions import BadRequest
+from zExceptions import NotFound
 from zExceptions import Unauthorized
 from zope.i18n import translate
 from zope.interface import alsoProvides
@@ -19,6 +21,9 @@ DEFAULT_BATCH_SIZE = 25
 
 
 def _current_userid() -> str:
+    """The current user's ID. Also checks that the notification center is on."""
+    if not notifications_enabled():
+        raise NotFound("The notification center is turned off.")
     if api.user.is_anonymous():
         raise Unauthorized("Must be logged in.")
     return api.user.get_current().getId()

@@ -61,6 +61,32 @@ Two kinds of events are ignored:
 A failure to store a notification is logged, and the edit, transition, or like goes through.
 Notifications are a side effect; they must never block real work.
 
+(notifications-switch)=
+
+### Turning notifications off
+
+Two switches stop notifications, both in `kitconcept.intranet.notifications.switch`:
+
+| Switch | Scope | Set by |
+|--------|-------|--------|
+| `kitconcept.intranet.enable_notification_center` | The whole site, until changed | Site administrators, in the Intranet Settings |
+| `notifications_paused()` | The current thread, inside a `with` block | Scripts and batch jobs |
+
+The subscribers stay registered either way: ZCML registers them at startup, and they can't be removed at runtime.
+Instead, `notify_authors` and the `moved` subscriber first call `notifications_active()`, and return right away when the setting is off or the thread is paused.
+That costs one cached registry lookup per event, and nothing is written.
+
+Pausing also skips the version updates described in {ref}`notifications-polls-nothing-new`.
+A title changed by a batch job shows up in the bells of its authors within the hour.
+
+Nothing is queued while notifications are off or paused: what happens in that time never notifies anyone.
+Stored notifications are kept.
+
+The setting also hides the frontend: `@site` exposes it, and the bell, the poller, the menu entry, and the `/notifications` page check it.
+The REST endpoints answer `404 Not Found` while it's off.
+
+It works like the watch feature's `enable_content_watching` setting: on for new sites, and turned off by an upgrade step, `20261116002`, for existing ones.
+
 ### Who is notified
 
 The recipients are the item's Dublin Core **creators**, from `listCreators()`.
@@ -146,6 +172,8 @@ Hidden tabs don't poll: background tabs are a large share of open tabs, and nobo
 
 Polling was chosen over WebSockets or server-sent events because it works with every Plone deployment as is: no extra service, no sticky sessions, no proxy configuration.
 The cost is a delay of up to a minute when the user stays on one page.
+
+(notifications-polls-nothing-new)=
 
 ### Polls that find nothing new
 

@@ -15,6 +15,7 @@ import {
 } from 'react-aria-components';
 import { CheckCheck, Settings } from 'lucide-react';
 import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
+import NotFound from '@plone/volto/components/theme/NotFound/NotFound';
 import { useClient } from '@plone/volto/hooks/client/useClient';
 import {
   getNotifications,
@@ -22,6 +23,7 @@ import {
 } from '../../actions/notifications/notifications';
 import NotificationItem from './NotificationItem';
 import NotificationSettings from './NotificationSettings';
+import { useNotificationsEnabled } from './useNotificationsEnabled';
 import {
   groupByDay,
   messages,
@@ -42,6 +44,7 @@ export default function Notifications() {
   const { pathname } = useLocation();
   const isClient = useClient();
   const token = useSelector((state: any) => state.userSession?.token);
+  const enabled = useNotificationsEnabled();
   const [filter, setFilter] = useState<Filter>('all');
   const [size, setSize] = useState(PAGE_SIZE);
   const unread = useSelector(
@@ -54,15 +57,16 @@ export default function Notifications() {
   ) as NotificationList | undefined;
 
   useEffect(() => {
-    if (!token) return;
+    if (!token || !enabled) return;
     dispatch(
       getNotifications(SUBREQUEST, {
         bSize: size,
         unreadOnly: filter === 'unread',
       }),
     );
-  }, [dispatch, token, filter, size]);
+  }, [dispatch, token, enabled, filter, size]);
 
+  if (!enabled) return <NotFound />;
   if (!token)
     return (
       <Redirect to={`/login?return_url=${encodeURIComponent(pathname)}`} />

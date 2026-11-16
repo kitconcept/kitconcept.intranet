@@ -2,6 +2,7 @@
 
 from .storage import add_notification
 from .storage import touch
+from .switch import notifications_active
 from Acquisition import aq_base
 from plone import api
 from zope.container.interfaces import IContainerModifiedEvent
@@ -30,6 +31,8 @@ def _touch_authors(obj) -> None:
     Notifications about an item only ever go to its authors, so theirs are
     the only lists that show its title, URL or visibility.
     """
+    if not notifications_active():
+        return
     for userid in _authors(obj):
         try:
             touch(userid)
@@ -38,7 +41,12 @@ def _touch_authors(obj) -> None:
 
 
 def notify_authors(obj, type_: str, extra: dict | None = None) -> None:
-    """Add a notification of ``type_`` about ``obj`` for each of its authors."""
+    """Add a notification of ``type_`` about ``obj`` for each of its authors.
+
+    Does nothing while the notification center is off or paused.
+    """
+    if not notifications_active():
+        return
     actor = _actor()
     for userid in _authors(obj):
         try:

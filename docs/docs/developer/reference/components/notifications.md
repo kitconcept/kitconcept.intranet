@@ -28,6 +28,7 @@ All paths are relative to `frontend/packages/kitconcept-intranet/src/`.
 | `components/Notifications/NotificationSettings.tsx` | The preferences checkboxes. |
 | `components/Notifications/NotificationsMenu.tsx` | The **Notifications** entry in the toolbar's personal menu. |
 | `components/Notifications/helpers.ts` | Types, constants, i18n messages, and `groupByDay`. |
+| `components/Notifications/useNotificationsEnabled.ts` | `useNotificationsEnabled()`: whether the notification center is on. |
 | `components/Notifications/Notifications.scss` | Styles. |
 | `actions/notifications/notifications.js` | Redux actions. |
 | `reducers/notifications/notifications.js` | Redux reducer. |
@@ -60,7 +61,7 @@ config.unRegisterSlotComponent('headerTools', 'NotificationBell', 0);
 The bell button with the unread badge, and a popover listing the latest notifications.
 
 - Takes no props.
-- Renders nothing when there's no user token.
+- Renders nothing when there's no user token, or when the notification center is off.
 - Reads `unread` and the `latest` subrequest from the store. It doesn't fetch on mount.
 - Opening the dropdown dispatches `getNotifications('latest', {bSize: 5})`.
 - The badge shows the count, or `9+` above nine.
@@ -82,6 +83,7 @@ It dispatches `getNotifications('latest', {bSize: 5})`:
 
 While `document.visibilityState` is `hidden`, the timer is stopped.
 A tab opened in the background fetches once, then waits until it's shown.
+It does nothing while the notification center is off.
 
 The poller relies on the browser's HTTP cache: the backend answers unchanged lists with `304 Not Modified`, and the browser serves the stored response.
 See {ref}`notifications-api-caching`.
@@ -97,6 +99,7 @@ Exports:
 
 The overview page at `/notifications`.
 
+- Shows Volto's `NotFound` page when the notification center is off.
 - Redirects anonymous users to `/login?return_url=/notifications`.
 - Loads the `list` subrequest, 25 notifications at a time. **Load more** grows the batch by 25.
 - Has an **All** and an **Unread** tab (RAC `Tabs`). The **Unread** tab requests `unread_only` and hides entries as soon as they're read.
@@ -132,6 +135,13 @@ A `CheckboxGroup` with one `Checkbox` per type in `NOTIFICATION_TYPES`.
 ### `NotificationsMenu`
 
 Plugs a **Notifications** link to `/notifications` into the `toolbar-user-menu` pluggable, with the ID `intranet-notifications`.
+Plugs nothing when the notification center is off.
+
+### `useNotificationsEnabled`
+
+Returns whether the notification center is on, from the `kitconcept.intranet.enable_notification_center` key of the `@site` endpoint, in `state.site.data`.
+The bell, the poller, the overview page, and the menu entry use it.
+When the key is missing, it returns `false`.
 
 ## Actions
 

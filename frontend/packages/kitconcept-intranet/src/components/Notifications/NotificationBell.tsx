@@ -15,6 +15,7 @@ import {
   markNotificationsRead,
 } from '../../actions/notifications/notifications';
 import NotificationItem from './NotificationItem';
+import { useNotificationsEnabled } from './useNotificationsEnabled';
 import { DROPDOWN_SIZE, LATEST_SUBREQUEST } from './NotificationsPoller';
 import {
   messages,
@@ -29,6 +30,7 @@ export default function NotificationBell() {
   const dispatch = useDispatch();
   const [isOpen, setOpen] = useState(false);
   const token = useSelector((state: any) => state.userSession?.token);
+  const enabled = useNotificationsEnabled();
   const unread = useSelector(
     (state: { notifications: NotificationsState }) =>
       state.notifications?.unread ?? 0,
@@ -42,7 +44,7 @@ export default function NotificationBell() {
   const refresh = () =>
     dispatch(getNotifications(LATEST_SUBREQUEST, { bSize: DROPDOWN_SIZE }));
 
-  if (!token) return null;
+  if (!token || !enabled) return null;
 
   const onRead = (id: string) => dispatch(markNotificationsRead([id]));
   const badge = unread > 9 ? '9+' : String(unread);

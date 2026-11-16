@@ -58,6 +58,10 @@ The page's version history opens, where you can compare the versions.
 
 ## Troubleshooting
 
+**There's no bell.**
+A site administrator has turned the notification center off.
+See {doc}`turn-notification-center-on-or-off`.
+
 **A notification disappeared.**
 You can no longer view its page: the page was deleted, or it's now private.
 Notifications about such pages are hidden and don't count as unread.

@@ -4,14 +4,15 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import NotificationsPoller from './NotificationsPoller';
 import { POLL_INTERVAL } from './helpers';
 
-const { dispatch, session } = vi.hoisted(() => ({
+const { dispatch, session, site } = vi.hoisted(() => ({
   dispatch: vi.fn(),
   session: { token: 'token' as string | undefined },
+  site: { data: { 'kitconcept.intranet.enable_notification_center': true } },
 }));
 
 vi.mock('react-redux', () => ({
   useDispatch: () => dispatch,
-  useSelector: (selector: any) => selector({ userSession: session }),
+  useSelector: (selector: any) => selector({ userSession: session, site }),
 }));
 
 let visibility: DocumentVisibilityState = 'visible';
@@ -36,6 +37,7 @@ describe('NotificationsPoller', () => {
     vi.useFakeTimers();
     dispatch.mockClear();
     session.token = 'token';
+    site.data['kitconcept.intranet.enable_notification_center'] = true;
     visibility = 'visible';
     vi.spyOn(document, 'visibilityState', 'get').mockImplementation(
       () => visibility,
@@ -87,5 +89,14 @@ describe('NotificationsPoller', () => {
     setVisibility('visible');
     vi.advanceTimersByTime(POLL_INTERVAL * 3);
     expect(dispatch).toHaveBeenCalledTimes(1);
+  });
+
+  it('does nothing while the notification center is off', () => {
+    site.data['kitconcept.intranet.enable_notification_center'] = false;
+    renderPoller();
+    vi.advanceTimersByTime(POLL_INTERVAL * 3);
+    setVisibility('hidden');
+    setVisibility('visible');
+    expect(dispatch).not.toHaveBeenCalled();
   });
 });

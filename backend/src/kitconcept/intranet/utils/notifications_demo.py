@@ -19,6 +19,7 @@ creating them anew.
 from datetime import timedelta
 from kitconcept.intranet import logger
 from kitconcept.intranet.notifications import storage
+from kitconcept.intranet.notifications.switch import notifications_enabled
 from kitconcept.intranet.notifications.subscribers import notify_authors
 from plone import api
 from Products.CMFPlone.Portal import PloneSite
@@ -94,6 +95,9 @@ def create_notifications_demo(site: PloneSite) -> int:
     """Create the demo. Return the number of notifications for ``AUTHOR``."""
     if not _users_exist():
         logger.info("Example content users missing, skipping notifications demo")
+        return 0
+    if not notifications_enabled():
+        logger.info("Notification center is turned off, skipping notifications demo")
         return 0
     with api.env.adopt_roles(["Manager"]):
         _reset(site)

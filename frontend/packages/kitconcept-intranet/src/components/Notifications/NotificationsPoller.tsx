@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getNotifications } from '../../actions/notifications/notifications';
 import { POLL_INTERVAL } from './helpers';
+import { useNotificationsEnabled } from './useNotificationsEnabled';
 
 export const LATEST_SUBREQUEST = 'latest';
 export const DROPDOWN_SIZE = 5;
@@ -12,7 +13,8 @@ export const DROPDOWN_SIZE = 5;
  * every navigation and on a slow poll. Mounted once as an app extra, because
  * the header renders the bell more than once (desktop and mobile tools).
  *
- * Hidden tabs don't poll. When a tab becomes visible again, it refreshes
+ * Does nothing while the notification center is off in the Intranet
+ * Settings. Hidden tabs don't poll. When a tab becomes visible again, it refreshes
  * right away and resumes polling. The backend answers polls that find
  * nothing new with 304 Not Modified, which the browser serves from its cache.
  */
@@ -20,9 +22,10 @@ export default function NotificationsPoller() {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const token = useSelector((state: any) => state.userSession?.token);
+  const enabled = useNotificationsEnabled();
 
   useEffect(() => {
-    if (!token) return;
+    if (!token || !enabled) return;
     const refresh = () =>
       dispatch(getNotifications(LATEST_SUBREQUEST, { bSize: DROPDOWN_SIZE }));
     let timer: number | undefined;
@@ -49,7 +52,7 @@ export default function NotificationsPoller() {
       window.clearInterval(timer);
       document.removeEventListener('visibilitychange', onVisibilityChange);
     };
-  }, [dispatch, token, pathname]);
+  }, [dispatch, token, enabled, pathname]);
 
   return null;
 }

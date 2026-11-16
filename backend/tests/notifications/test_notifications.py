@@ -1,6 +1,17 @@
+from kitconcept.intranet.notifications import notifications_enabled
+from kitconcept.intranet.notifications import notifications_paused
+from kitconcept.intranet.notifications.switch import notifications_are_paused
+from kitconcept.intranet.notifications.switch import SETTING
+from kitconcept.intranet.upgrades.v20261116002 import (
+    disable_notification_center_for_upgraded_sites,
+)
 from plone import api
 from plone.app.testing.interfaces import SITE_OWNER_NAME
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
 
+import pytest
+import threading
 import transaction
 
 
@@ -191,3 +202,98 @@ class TestNotificationsETag:
         response = self._poll(author_session, etag)
         assert response.status_code == 200
         assert response.json()["unread"] == 0
+
+
+def _set_enabled(value: bool) -> None:
+    transaction.begin()
+    api.portal.set_registry_record(SETTING, value)
+    transaction.commit()
+
+
+class TestNotificationCenterSetting:
+    def test_on_by_default(self, portal):
+        assert notifications_enabled() is True
+
+    @pytest.mark.parametrize(
+        "method,path",
+        (
+            ("get", "/@notifications"),
+            ("patch", "/@notifications"),
+            ("get", "/@notifications-settings"),
+            ("patch", "/@notifications-settings"),
+        ),
+    )
+    def test_endpoints_are_not_found_when_off(self, author_session, method, path):
+        _set_enabled(False)
+        response = getattr(author_session, method)(path, json={})
+        assert response.status_code == 404
+
+    def test_anonymous_gets_not_found_when_off(self, portal, anon_request):
+        _set_enabled(False)
+        assert anon_request.get("/@notifications").status_code == 404
+
+    def test_nothing_is_created_when_off(self, author_session, editor_session):
+        _set_enabled(False)
+        assert editor_session.post("/doc1/@vote").status_code == 200
+        assert editor_session.patch("/doc1", json={"title": "Off"}).status_code == 204
+        assert editor_session.post("/doc1/@workflow/publish").status_code == 200
+        _set_enabled(True)
+        assert _notifications(author_session)["items"] == []
+
+    def test_notifications_are_kept_while_off(self, author_session, editor_session):
+        editor_session.post("/doc1/@vote")
+        _set_enabled(False)
+        _set_enabled(True)
+        assert _notifications(author_session)["unread"] == 1
+
+    def test_upgrade_step_turns_it_off(self, portal):
+        transaction.begin()
+        disable_notification_center_for_upgraded_sites(None)
+        transaction.commit()
+        assert notifications_enabled() is False
+
+
+class TestNotificationsPaused:
+    def _edit(self, portal, title):
+        transaction.begin()
+        with api.env.adopt_user("editor"):
+            doc = portal["doc1"]
+            doc.title = title
+            notify(ObjectModifiedEvent(doc))
+        transaction.commit()
+
+    def test_paused_block_creates_nothing(self, portal, author_session):
+        with notifications_paused():
+            assert notifications_are_paused()
+            self._edit(portal, "Batch")
+        assert not notifications_are_paused()
+        assert _notifications(author_session)["items"] == []
+
+    def test_notifies_again_after_the_block(self, portal, author_session):
+        with notifications_paused():
+            self._edit(portal, "Batch")
+        self._edit(portal, "Manual")
+        items = _notifications(author_session)["items"]
+        assert [item["type"] for item in items] == ["modified"]
+
+    def test_nested_blocks(self, portal):
+        with notifications_paused():
+            with notifications_paused():
+                pass
+            assert notifications_are_paused()
+        assert not notifications_are_paused()
+
+    def test_resumes_after_an_error(self, portal):
+        with pytest.raises(RuntimeError), notifications_paused():
+            raise RuntimeError
+        assert not notifications_are_paused()
+
+    def test_only_the_current_thread_is_paused(self, portal):
+        seen = []
+        with notifications_paused():
+            thread = threading.Thread(
+                target=lambda: seen.append(notifications_are_paused())
+            )
+            thread.start()
+            thread.join()
+        assert seen == [False]

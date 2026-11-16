@@ -30,4 +30,5 @@ override-components
 configure-reminders-for-content
 add-notification-type
 refresh-notification-demo
+pause-notifications
 ```

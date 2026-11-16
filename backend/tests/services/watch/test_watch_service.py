@@ -67,7 +67,6 @@ class TestWatchService:
 
 
 class TestWatchedByMe:
-
     @pytest.fixture(autouse=True)
     def _setup(self, functional_portal, user_request, anon_request):
         self.portal = functional_portal

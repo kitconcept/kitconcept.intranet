@@ -1,0 +1,1 @@
+Added a notification center (MVP): the content's authors are notified about likes, edits and workflow transitions, via the new `@notifications` and `@notifications-settings` REST services. The example content includes demo activity for `a.becker`, and `make notifications-demo` resets it. @sneridagh

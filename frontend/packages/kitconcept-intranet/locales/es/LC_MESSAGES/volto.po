@@ -460,6 +460,16 @@ msgstr ""
 msgid "List with date"
 msgstr ""
 
+#. Default: "Load more"
+#: components/Notifications/helpers
+msgid "Load more"
+msgstr ""
+
+#. Default: "Loading notifications..."
+#: components/Notifications/helpers
+msgid "Loading notifications"
+msgstr ""
+
 #. Default: "Loading tasks..."
 #: components/Tasks/Tasks
 msgid "Loading tasks"
@@ -480,9 +490,19 @@ msgstr ""
 msgid "Mark Changes Required"
 msgstr ""
 
+#. Default: "Mark all as read"
+#: components/Notifications/helpers
+msgid "Mark all as read"
+msgstr ""
+
 #. Default: "Mark as Reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Mark as Reviewed"
+msgstr ""
+
+#. Default: "Mark as read"
+#: components/Notifications/helpers
+msgid "Mark as read"
 msgstr ""
 
 #. Default: "Maximum"
@@ -598,6 +618,22 @@ msgstr ""
 #. Default: "None"
 #: index
 msgid "None"
+msgstr ""
+
+#. Default: "Notification filter"
+#: components/Notifications/helpers
+msgid "Notification filter"
+msgstr ""
+
+#. Default: "Notification preferences"
+#: components/Notifications/helpers
+msgid "Notification preferences"
+msgstr ""
+
+#. Default: "Notifications"
+#: components/Notifications/helpers
+#: components/Notifications/NotificationsMenu
+msgid "Notifications"
 msgstr ""
 
 #. Default: "Offset"
@@ -758,6 +794,11 @@ msgstr ""
 #. Default: "Search…"
 #: components/Header/HeaderSearch
 msgid "Search…"
+msgstr ""
+
+#. Default: "See all notifications"
+#: components/Notifications/helpers
+msgid "See all notifications"
 msgstr ""
 
 #. Default: "Please Select ..."
@@ -974,6 +1015,7 @@ msgstr ""
 
 #. Default: "Today"
 #: components/Header/HeaderSearch
+#: components/Notifications/helpers
 msgid "Today"
 msgstr ""
 
@@ -985,6 +1027,11 @@ msgstr ""
 #. Default: "Type"
 #: components/Header/HeaderSearch
 msgid "Type"
+msgstr ""
+
+#. Default: "Unable to load notifications."
+#: components/Notifications/helpers
+msgid "Unable to load notifications"
 msgstr ""
 
 #. Default: "Unable to load tasks."
@@ -1000,6 +1047,11 @@ msgstr ""
 #. Default: "Use preset review interval"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "Use preset review interval"
+msgstr ""
+
+#. Default: "View changes"
+#: components/Notifications/helpers
+msgid "View changes"
 msgstr ""
 
 #. Default: "Website"
@@ -1036,6 +1088,11 @@ msgstr ""
 #. Default: "Yes"
 #: components/Blocks/Listing/Table/cellTypes
 msgid "Yes"
+msgstr ""
+
+#. Default: "Yesterday"
+#: components/Notifications/helpers
+msgid "Yesterday"
 msgstr ""
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
@@ -1222,6 +1279,71 @@ msgstr ""
 #. Default: "Next Review on:"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "nextReview"
+msgstr ""
+
+#. Default: "{actor} liked {title}"
+#: components/Notifications/helpers
+msgid "notificationLike"
+msgstr ""
+
+#. Default: "{actor} edited {title}"
+#: components/Notifications/helpers
+msgid "notificationModified"
+msgstr ""
+
+#. Default: "Choose what you want to be notified about."
+#: components/Notifications/helpers
+msgid "notificationPreferencesHelp"
+msgstr ""
+
+#. Default: "You are an author of this item"
+#: components/Notifications/helpers
+msgid "notificationReasonAuthor"
+msgstr ""
+
+#. Default: "Someone likes content I author"
+#: components/Notifications/helpers
+msgid "notificationSettingLike"
+msgstr ""
+
+#. Default: "Someone edits content I author"
+#: components/Notifications/helpers
+msgid "notificationSettingModified"
+msgstr ""
+
+#. Default: "Someone changes the state of content I author (publish, retract, …)"
+#: components/Notifications/helpers
+msgid "notificationSettingTransition"
+msgstr ""
+
+#. Default: "{actor} changed the state of {title} to {state}"
+#: components/Notifications/helpers
+msgid "notificationTransition"
+msgstr ""
+
+#. Default: "{count, plural, =0 {Notifications} one {Notifications, # unread} other {Notifications, # unread}}"
+#: components/Notifications/helpers
+msgid "notificationsBellLabel"
+msgstr ""
+
+#. Default: "You're all caught up. New activity on your content shows up here."
+#: components/Notifications/helpers
+msgid "notificationsEmpty"
+msgstr ""
+
+#. Default: "No unread notifications."
+#: components/Notifications/helpers
+msgid "notificationsEmptyUnread"
+msgstr ""
+
+#. Default: "All"
+#: components/Notifications/helpers
+msgid "notificationsFilterAll"
+msgstr ""
+
+#. Default: "Unread ({count})"
+#: components/Notifications/helpers
+msgid "notificationsFilterUnread"
 msgstr ""
 
 #. Default: "1 open discussion in text"

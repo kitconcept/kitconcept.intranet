@@ -1,0 +1,46 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <subscriber
+      for="plone.dexterity.interfaces.IDexterityContent
+           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+      handler=".subscribers.modified"
+      />
+  <subscriber
+      for="plone.dexterity.interfaces.IDexterityContent
+           Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+      handler=".subscribers.transitioned"
+      />
+
+  <plone:service
+      method="GET"
+      factory=".services.NotificationsGet"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      permission="zope2.View"
+      name="@notifications"
+      />
+  <plone:service
+      method="PATCH"
+      factory=".services.NotificationsPatch"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      permission="zope2.View"
+      name="@notifications"
+      />
+  <plone:service
+      method="GET"
+      factory=".services.NotificationSettingsGet"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      permission="zope2.View"
+      name="@notifications-settings"
+      />
+  <plone:service
+      method="PATCH"
+      factory=".services.NotificationSettingsPatch"
+      for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+      permission="zope2.View"
+      name="@notifications-settings"
+      />
+
+</configure>

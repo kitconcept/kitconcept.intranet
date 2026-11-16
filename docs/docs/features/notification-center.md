@@ -141,3 +141,22 @@ All endpoints are on the site root and need a logged-in user.
 | `PATCH` | `@notifications` | Mark as read: `{"ids": [...]}` for some, `{}` for all. |
 | `GET` | `@notifications-settings` | Read your preferences. |
 | `PATCH` | `@notifications-settings` | Update your preferences, for example `{"like": false}`. |
+
+See the {doc}`API reference </developer/reference/api/notifications>` for the full request and response formats.
+
+## Documentation
+
+For users:
+
+- Tutorial: {doc}`/tutorials/follow-activity-on-your-content`
+- How-to: {doc}`/how-to-guides/notifications/read-notifications`
+- How-to: {doc}`/how-to-guides/notifications/choose-notifications`
+- Explanation: {doc}`/concepts/notifications`
+
+For developers:
+
+- Explanation: {doc}`/developer/concepts/notifications`
+- How-to: {doc}`/developer/how-to-guides/add-notification-type`
+- How-to: {doc}`/developer/how-to-guides/refresh-notification-demo`
+- Reference: {doc}`/developer/reference/api/notifications`
+- Reference: {doc}`/developer/reference/components/notifications`

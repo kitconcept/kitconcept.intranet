@@ -18,4 +18,5 @@ feedback
 byline
 clm
 review
+notifications
 ```

@@ -57,6 +57,11 @@ Person
 
     See: {doc}`/reference/content-types`
 
+Notification center
+    The bell in the header, its dropdown, and the `/notifications` page, which tell users when colleagues like, edit, or change the state of content they author. Each user chooses which types of notifications they get.
+
+    See: {doc}`/features/notification-center`
+
 Organisational Unit
     A custom Plone content type representing a team, department, or division within the organisation. Used to structure the intranet's organisational hierarchy and drive passive targeting.
 

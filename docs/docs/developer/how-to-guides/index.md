@@ -28,4 +28,6 @@ customize-email-templates
 add-vocabulary
 override-components
 configure-reminders-for-content
+add-notification-type
+refresh-notification-demo
 ```

@@ -16,4 +16,5 @@ Learning-oriented guides for getting started with the intranet.
 your-first-page
 organizing-content
 using-feedback
+follow-activity-on-your-content
 ```

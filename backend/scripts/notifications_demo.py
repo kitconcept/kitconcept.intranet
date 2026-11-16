@@ -8,7 +8,7 @@ Usage in a terminal:
     zconsole run instance/etc/zope.conf ./scripts/notifications_demo.py
 
 Usage in a Docker container:
-    ./docker-entrypoint run ./scripts/notifications_demo.py
+    ./docker-entrypoint.sh run scripts/notifications_demo.py
 """
 
 from kitconcept.intranet.utils.notifications_demo import create_notifications_demo

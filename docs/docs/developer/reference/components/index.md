@@ -30,4 +30,5 @@ widgets
 error-boundary
 event-metadata
 inherited-field-wrapper
+notifications
 ```

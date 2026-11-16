@@ -17,6 +17,7 @@ content/index
 blocks/index
 feedback/index
 engagement/index
+notifications/index
 settings/index
 authentication/index
 ```

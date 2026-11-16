@@ -77,6 +77,17 @@ class IIntranetSettings(Interface):
         default=True,
     )
 
+    enable_content_watching = schema.Bool(
+        title=_("Enable Watching Content"),
+        description=_(
+            "help_enable_content_watching",
+            default="Logged-in users can watch content items and get an email "
+            "when a watched, published item changes.",
+        ),
+        required=False,
+        default=True,
+    )
+
     iframe_allowed_domains = schema.List(
         title=_("Allowed Iframe Domains"),
         description="A list of allowed domains for iframes. Example: ['example.com']",
@@ -156,4 +167,7 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.enable_content_review"] = (
             settings.enable_content_review
+        )
+        data["kitconcept.intranet.enable_content_watching"] = (
+            settings.enable_content_watching
         )

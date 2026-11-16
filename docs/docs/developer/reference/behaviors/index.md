@@ -17,6 +17,7 @@ person
 location
 organisational-unit
 votes
+watchers
 clm
 voltolighttheme
 additional-contact-info

@@ -15,3 +15,17 @@ def _currentUser(context, row):
     if not values:
         return {}
     return {row.index: {"query": list(values)}}
+
+
+def _watchedByCurrentUser(context, row):
+    """Content watched by the current user.
+
+    Plone's own currentUser operation returns no user ID for anonymous users,
+    and the catalog then ignores the criterion and returns everything. Match
+    nothing instead.
+    """
+    from plone import api
+
+    if api.user.is_anonymous():
+        return {row.index: {"query": "__no_watcher__"}}
+    return {row.index: {"query": api.user.get_current().getId()}}

@@ -1,0 +1,1 @@
+Watch content: logged-in users can watch a content item and get an email when a published version of it changes. Adds the `@watch` service, the `watchers` index, the "Watched by me" listing criterion and the "Enable Watching Content" setting. @sneridagh

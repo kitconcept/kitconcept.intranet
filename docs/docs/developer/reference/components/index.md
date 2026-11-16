@@ -14,6 +14,7 @@ Frontend components provided by the kitconcept Intranet Distribution and Volto L
 :maxdepth: 1
 
 content-interactions
+watch-button
 feedback-form
 listing-disclaimer
 person-view

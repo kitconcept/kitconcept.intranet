@@ -9,6 +9,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import { toggleLike } from '../../actions/likes/likes';
+import WatchButton from '../WatchButton/WatchButton';
 import {
   flattenToAppURL,
   getBaseUrl,
@@ -183,6 +184,7 @@ ${link}`);
               </div>
             </div>
           )}
+          <WatchButton className="watch-section" size={28} />
           {(allow_discussion || comment_count > 0) && (
             <div className="comments-section">
               <Button aria-label="comments">

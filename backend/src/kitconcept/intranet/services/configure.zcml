@@ -75,6 +75,27 @@
       name="@vote"
       />
 
+  <adapter
+      factory=".watch.WatchExpander"
+      name="watch"
+      />
+
+  <plone:service
+      method="GET"
+      factory=".watch.WatchGet"
+      for="kitconcept.intranet.behaviors.watchers.IWatchable"
+      permission="zope2.View"
+      name="@watch"
+      />
+
+  <plone:service
+      method="POST"
+      factory=".watch.WatchPost"
+      for="kitconcept.intranet.behaviors.watchers.IWatchable"
+      permission="zope2.View"
+      name="@watch"
+      />
+
   <plone:service
       method="POST"
       factory=".review.ReviewPost"

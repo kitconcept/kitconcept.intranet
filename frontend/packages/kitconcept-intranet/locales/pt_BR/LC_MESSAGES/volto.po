@@ -860,6 +860,11 @@ msgstr "Site"
 msgid "Site Setup"
 msgstr ""
 
+#. Default: "Something went wrong while changing the watch status."
+#: components/WatchButton/WatchButton
+msgid "Something went wrong while changing the watch status."
+msgstr ""
+
 #. Default: "Something went wrong while liking this post."
 #: components/ContentInteractions/ContentInteractions
 msgid "Something went wrong while liking this post."
@@ -903,6 +908,11 @@ msgstr ""
 #. Default: "Status"
 #: components/Header/HeaderSearch
 msgid "Status"
+msgstr ""
+
+#. Default: "Stop watching this content"
+#: components/WatchButton/WatchButton
+msgid "Stop watching this content"
 msgstr ""
 
 #. Default: "Subject page/URL"
@@ -1052,6 +1062,21 @@ msgstr ""
 msgid "View changes"
 msgstr ""
 
+#. Default: "Watch"
+#: components/WatchButton/WatchButton
+msgid "Watch"
+msgstr ""
+
+#. Default: "Watch this content"
+#: components/WatchButton/WatchButton
+msgid "Watch this content"
+msgstr ""
+
+#. Default: "Watching"
+#: components/WatchButton/WatchButton
+msgid "Watching"
+msgstr ""
+
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
@@ -1091,6 +1116,16 @@ msgstr ""
 #. Default: "Yesterday"
 #: components/Notifications/helpers
 msgid "Yesterday"
+msgstr ""
+
+#. Default: "You are now watching this content and will be notified of changes by email."
+#: components/WatchButton/WatchButton
+msgid "You are now watching this content and will be notified of changes by email."
+msgstr ""
+
+#. Default: "You will no longer receive updates for this content."
+#: components/WatchButton/WatchButton
+msgid "You will no longer receive updates for this content."
 msgstr ""
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."

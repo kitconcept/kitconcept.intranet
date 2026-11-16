@@ -20,3 +20,4 @@ export {
   getNotificationSettings,
   updateNotificationSettings,
 } from './notifications/notifications';
+export { toggleWatch } from './watch/watch';

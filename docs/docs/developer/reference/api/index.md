@@ -19,4 +19,5 @@ byline
 clm
 review
 notifications
+watch
 ```

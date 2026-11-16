@@ -90,6 +90,16 @@ pnpm --dir frontend --filter @kitconcept/intranet test:acceptance:a11y
 Playwright tests live under `frontend/acceptance/tests`.
 They run through `frontend/playwright.config.ts` and are configured serially (`workers: 1`) because tests can conflict while creating and deleting content.
 
+Fixtures for tests of the Plate editor live under `frontend/acceptance/fixtures`:
+
+- `editor.ts`, `pages.ts`, `native-blocks.ts`: copied unchanged from `@kitconcept/volto-plate` (`frontend/acceptance/fixtures/` there). Editor value and selection helpers, the slash menu, paste through `editor.tf.insertData`, `openInEditor` / `openInView`, and Plate values for each native block. Keep them in sync with volto-plate; do not edit them here.
+- `table.ts`, `table-editor.ts`, `table-clipboard.ts`, `wiki-pages.ts`: intranet-specific helpers for wiki tables and the history diff.
+- `wiki-tables.json`, `wiki-diff.json`: the wiki demo content, exported with `backend/scripts/export_acceptance_fixtures.py`. Re-run the script after changing the demo content.
+
+The backend is reset around every test, so each test creates the page it needs through the REST API.
+Use `createWikiPageWithValue` or `createTablePage` for pages that a test saves in the editor: a page made by volto-plate's `createNativeBlocksPage` cannot be saved.
+Wait for the expected state (`expect.poll`, locator assertions) instead of fixed waits; tests must not be flaky.
+
 Legacy Cypress commands:
 
 ```sh

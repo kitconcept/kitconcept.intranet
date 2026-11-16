@@ -1,8 +1,18 @@
 from collective.person.behaviors.user import IPloneUser
+from io import BytesIO
+from PIL import Image
 from plone import api
 
 import pytest
 import transaction
+
+
+def _png():
+    data = BytesIO()
+    Image.new("RGB", (10, 10)).save(data, "PNG")
+    data.seek(0)
+    data.filename = "portrait.png"
+    return data
 
 
 class TestCLMService:
@@ -56,12 +66,14 @@ class TestCLMService:
             "authors": [
                 {
                     "person_url": f"{self.portal_url}/jane-doe",
+                    "portrait": None,
                     "title": "Jane Doe",
                     "username": "jane",
                     "value": jane.UID(),
                 },
                 {
                     "person_url": f"{self.portal_url}/john-doe",
+                    "portrait": None,
                     "title": "John Doe",
                     "username": "john",
                     "value": john.UID(),
@@ -102,18 +114,54 @@ class TestCLMService:
         assert response.json() == {
             "feedback_person": {
                 "person_url": f"{self.portal_url}/feedback-person",
+                "portrait": None,
                 "title": "Feedback Person",
                 "username": "feedback",
                 "value": feedback_person.UID(),
             },
             "responsible_person": {
                 "person_url": f"{self.portal_url}/responsible-person",
+                "portrait": None,
                 "title": "Responsible Person",
                 "url": f"{self.portal_url}/document",
                 "username": "responsible",
                 "value": responsible_person.UID(),
             },
         }
+
+    def test_get_clm_info_with_portraits(self):
+        membership = api.portal.get_tool("portal_membership")
+        with api.env.adopt_roles(["Manager"]):
+            people = {}
+            for username in ("author", "feedback", "responsible"):
+                self.portal.acl_users.userFolderAddUser(username, "secret", [], [])
+                membership.changeMemberPortrait(_png(), username)
+                people[username] = api.content.create(
+                    self.portal,
+                    "Person",
+                    id=f"{username}-person",
+                    first_name=username.capitalize(),
+                    last_name="Person",
+                    username=username,
+                )
+                IPloneUser(people[username]).username = username
+            self.portal.document.authors = [people["author"].UID()]
+            self.portal.document.feedback_person = people["feedback"].UID()
+            self.portal.document.responsible_person = people["responsible"].UID()
+        transaction.commit()
+
+        response = self.api_session.get("/document/@clm")
+
+        data = response.json()
+        assert data["authors"][0]["portrait"] == f"{self.portal_url}/@portrait/author"
+        assert (
+            data["feedback_person"]["portrait"]
+            == f"{self.portal_url}/@portrait/feedback"
+        )
+        assert (
+            data["responsible_person"]["portrait"]
+            == f"{self.portal_url}/@portrait/responsible"
+        )
 
     def test_get_clm_info_current(self):
         self.portal.document.responsible_person = "John Doe"

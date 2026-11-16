@@ -36,12 +36,8 @@
     "214b08c3-54ff-4e0b-bdaa-afb977e476d1": {
       "@type": "separator",
       "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
         "shortLine": false
       },
       "theme": "default"
@@ -65,6 +61,11 @@
         "sort_order": "ascending"
       },
       "styles": {},
+      "tableColumns": [
+        "Creator",
+        "Type",
+        "ModificationDate"
+      ],
       "theme": "default",
       "variation": "default"
     },
@@ -168,12 +169,8 @@
     "44b37993-1fa9-49fd-b8bf-480da94c32f5": {
       "@type": "separator",
       "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
         "shortLine": false
       },
       "theme": "default"
@@ -231,15 +228,36 @@
     "566ffe1e-045d-40a3-af5b-7e4e9b68f4b5": {
       "@type": "separator",
       "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
         "shortLine": false
       },
       "theme": "default"
+    },
+    "584b9abe-7f54-445c-a94c-aebf715af725": {
+      "@type": "listing",
+      "headline": "Listing: Table",
+      "headlineTag": "h2",
+      "querystring": {
+        "b_size": "6",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "tableColumns": [
+        "Creator",
+        "Type",
+        "ModificationDate"
+      ],
+      "theme": "grey",
+      "variation": "listingTable"
     },
     "58583e53-2368-456d-8d05-b6ba3a3f9417": {
       "@type": "listing",
@@ -313,6 +331,44 @@
       "theme": "default",
       "variation": "default"
     },
+    "6610bd8d-ea0e-45a2-b433-053c796d747c": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing : Table many columns",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "tableColumns": [
+        "Creator",
+        "Type",
+        "ModificationDate",
+        "Subject",
+        "getObjSize",
+        "location",
+        "end",
+        "start",
+        "CreationDate",
+        "EffectiveDate",
+        "review_state",
+        "ExpirationDate",
+        "last_comment_date",
+        "total_comments"
+      ],
+      "theme": "default",
+      "variation": "listingTable"
+    },
     "6ccabf4a-8270-4e3c-b8cb-b1dbf6003aa5": {
       "@type": "listing",
       "headline": "Page List ",
@@ -343,12 +399,8 @@
     "6dfd9430-e17e-4def-b4c3-22e9d6d06cb4": {
       "@type": "separator",
       "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
         "shortLine": false
       },
       "theme": "default"
@@ -488,12 +540,8 @@
     "adb4956c-7a5d-46b3-9fb5-cd746ac8b02b": {
       "@type": "separator",
       "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
         "shortLine": false
       },
       "theme": "default"
@@ -548,6 +596,11 @@
         "sort_order": "ascending"
       },
       "styles": {},
+      "tableColumns": [
+        "Creator",
+        "Type",
+        "ModificationDate"
+      ],
       "theme": "default",
       "variation": "imageGallery"
     },
@@ -650,6 +703,33 @@
       "tag": "h2",
       "theme": "default"
     },
+    "eba1d6e3-8e26-43c4-8b03-98811dc36a1c": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing : Table",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "b_size": "5",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/qa"
+          }
+        ],
+        "sort_on": "getObjPositionInParent",
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "tableColumns": [
+        "Creator",
+        "Type",
+        "ModificationDate"
+      ],
+      "theme": "default",
+      "variation": "listingTable"
+    },
     "eded63f5-0af2-4f91-b588-03a962820f3c": {
       "@type": "listing",
       "headline": "Link List with images",
@@ -678,12 +758,8 @@
     "f1c44331-2962-477d-92df-c8623e84f077": {
       "@type": "separator",
       "styles": {
-        "align:noprefix": {
-          "--block-alignment": "var(--align-left)"
-        },
-        "blockWidth:noprefix": {
-          "--block-width": "var(--default-container-width)"
-        },
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
         "shortLine": false
       },
       "theme": "default"
@@ -698,6 +774,9 @@
       "53ececaa-4219-42a9-861d-862be364fd60",
       "2a597dde-dd2b-4c66-816c-09e243a188f5",
       "c2eaacd0-4e96-4344-a0ac-26ed644fc503",
+      "eba1d6e3-8e26-43c4-8b03-98811dc36a1c",
+      "6610bd8d-ea0e-45a2-b433-053c796d747c",
+      "584b9abe-7f54-445c-a94c-aebf715af725",
       "adb4956c-7a5d-46b3-9fb5-cd746ac8b02b",
       "44c40409-04fc-4cf5-ace4-14a3428d202d",
       "6ccabf4a-8270-4e3c-b8cb-b1dbf6003aa5",
@@ -756,12 +835,19 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-12-10T13:18:59+00:00",
+  "modified": "2026-10-12T14:34:51+00:00",
   "nav_title": null,
   "organisational_unit_reference": null,
   "preview_caption_link": null,
   "responsible_person": null,
+  "review_assignee": null,
+  "review_comment": null,
+  "review_completed_date": null,
+  "review_due_date": "2027-04-12",
+  "review_interval": "6m",
   "review_state": "published",
+  "review_status": "Up-to-date",
+  "review_timeless": false,
   "rights": "",
   "searchwords": [],
   "showinsearch": false,

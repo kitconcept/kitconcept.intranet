@@ -112,8 +112,6 @@
         align-items: center;
         justify-content: center;
         border-radius: 6px;
-        background: #1a1a1a;
-        color: #fff;
         font-size: 16px;
         font-weight: 700;
       }
@@ -435,77 +433,190 @@
 }
 
 .react-aria-Popover:has(.nav-tree-switcher-menu) {
-  width: max-content;
-  min-width: 240px;
-  max-width: 280px;
-  border: none;
-  border-radius: 12px;
+  display: flex;
+  // Width of the navigation tree panel, minus a 10px gutter on each side.
+  width: calc(var(--trigger-width) - 20px);
+  max-width: none;
+  flex-direction: column;
+  border-color: #e8e8e8;
+  border-radius: 2px;
+  // The popover sits 8px below the trigger by default; the design uses 4px.
+  margin-top: -4px;
+  margin-left: 10px;
   background: #fff;
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.06),
-    0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+// The same menu as a filter (tasks, header search) is not tied to the sidebar
+// width and matches the other filter chip popovers (.header-search-chip-menu).
+.react-aria-Popover:has(.workspace-selector-menu) {
+  width: min(max(var(--trigger-width), 320px), calc(100vw - 16px));
+  border: 1px solid #e1e6e9;
+  border-radius: 8px;
+  margin-top: 0;
+  margin-left: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  &[data-placement='bottom'] {
+    margin-top: 6px;
+  }
+}
+
+.nav-tree-switcher-search {
+  display: flex;
+  height: 32px;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  margin: 6px;
+  background: #f5f5f5;
+  color: #888;
+  gap: 8px;
+
+  svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+
+  input {
+    min-width: 0;
+    flex: 1;
+    padding: 1px 2px;
+    color: #111;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: normal;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  button {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    border-radius: 2px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &[data-empty] button {
+    display: none;
+  }
 }
 
 .nav-tree-switcher-menu {
-  overflow: auto;
-  padding: 8px;
-  outline: none;
+  min-height: 0;
+  // Show the Portal section plus 10 workspaces, then scroll: 11 rows of
+  // 36px, the two section headings (24px + 28px) and 8px list padding.
+  // Capped here because react-aria sets the popover's max-height inline.
+  max-height: calc(11 * 36px + 24px + 28px + 8px);
+  flex: 1;
+  padding: 4px;
+  border-top: 1px solid #e8e8e8;
+  overflow-y: auto;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+
+  &.is-scrolling {
+    scrollbar-color: #a8adb4 transparent;
+  }
+
+  // Filters have no Portal section heading: 11 rows, one heading (28px),
+  // padding, plus the portal row's description line when there is one.
+  &.workspace-selector-menu {
+    max-height: calc(11 * 36px + 28px + 8px);
+
+    &:has(.nav-tree-switcher-item-description) {
+      max-height: calc(11 * 36px + 15px + 28px + 8px);
+    }
+  }
+}
+
+.nav-tree-switcher-section {
+  padding: 12px 10px 4px;
+  color: #595959;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: normal;
+  text-transform: uppercase;
+
+  .react-aria-MenuSection:first-child > & {
+    padding-top: 8px;
+  }
 }
 
 .nav-tree-switcher-item {
   display: flex;
   align-items: center;
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 8px 10px;
+  border-radius: 2px;
   cursor: pointer;
-  gap: 12px;
+  font-size: 13.5px;
+  font-weight: 400;
+  gap: 10px;
+  line-height: normal;
   outline: none;
+
+  .react-aria-MenuSection:first-child > & {
+    font-weight: 500;
+  }
 
   &:hover,
   &[data-hovered],
-  &[data-focused] {
-    background: #f5f5f5;
-  }
-
+  &[data-focused],
   &.is-active {
     background: #f5f5f5;
-    font-weight: 600;
   }
-}
 
-.nav-tree-switcher-avatar {
-  display: flex;
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: #a8adb4;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-
-  .nav-tree-switcher-item.is-active & {
-    background: #1a1a1a;
+  &.is-empty {
+    padding-bottom: 10px;
+    background: none;
+    color: #888;
+    cursor: default;
+    font-size: 13px;
   }
 }
 
 .nav-tree-switcher-item-title {
   overflow: hidden;
+  min-width: 0;
   flex: 1;
   color: #111;
-  font-size: 15px;
+  font-size: 13.5px;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  .nav-tree-switcher-item.is-empty & {
+    color: inherit;
+  }
+}
+
+.nav-tree-switcher-item-description {
+  display: block;
+  overflow: hidden;
+  color: #888;
+  font-size: 11.5px;
+  line-height: 15px;
+  text-overflow: ellipsis;
 }
 
 .nav-tree-switcher-check {
-  width: 16px;
-  height: 16px;
   flex-shrink: 0;
   color: #1a1a1a;
-  fill: currentcolor;
 }
 
 .nav-tree-title-input {

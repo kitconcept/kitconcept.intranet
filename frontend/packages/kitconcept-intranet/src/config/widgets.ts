@@ -1,5 +1,6 @@
 import type { ConfigType } from '@plone/registry';
 import InheritedFieldWrapper from '../components/widgets/InheritedFieldWrapper';
+import ContentTypeWorkflow from '../components/widgets/ContentTypeWorkflow';
 
 declare module '@plone/types' {
   export interface WidgetsConfigById {
@@ -13,6 +14,7 @@ const install = (config: ConfigType) => {
     (content: any, props: any) => content?.['@components']?.clm?.[props.id],
   );
   config.widgets.id.responsibilities = config.widgets.widget.token;
+  config.widgets.widget.contentTypeWorkflow = ContentTypeWorkflow;
   return config;
 };
 

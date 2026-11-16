@@ -43,6 +43,17 @@ class TestDiffDemoContent:
         assert "p-beschluss" in ids
         assert "t-clara" in [n["id"] for n in second]
         assert third[ids.index("h-diskussion")]["align"] == "center"
+        by_id = {n["id"]: n for n in third}
+        assert by_id["p-naechstes"]["type"] == "blockquote"
+
+    def test_blocks_are_stored_like_the_editor_stores_them(self):
+        """Every top-level block has a width, the first list item no
+        ``listStart``, no value the editor cannot produce: the diff of the
+        first editor save then shows only the real change."""
+        for value, _ in [(content.version_0(), None), *content.edits()]:
+            for block in value:
+                assert block["blockWidth"] == "default", block["id"]
+                assert block.get("listStart") != 1, block["id"]
 
 
 class TestCreateDemoPage:
@@ -82,4 +93,4 @@ class TestCreateDemoPage:
         value = page.blocks["__somersault__"]["value"]
         by_id = {n["id"]: n for n in value}
         assert by_id["h-diskussion"]["align"] == "center"
-        assert by_id["p-naechstes"]["blockWidth"] == "wide"
+        assert by_id["p-naechstes"]["type"] == "blockquote"

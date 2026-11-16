@@ -83,4 +83,20 @@
       name="@review"
       />
 
+  <plone:service
+      method="GET"
+      factory=".type_workflow.TypeWorkflowGet"
+      for="plone.restapi.bbb.IPloneSiteRoot"
+      permission="plone.app.controlpanel.Types"
+      name="@type-workflow"
+      />
+
+  <plone:service
+      method="PATCH"
+      factory=".type_workflow.TypeWorkflowPatch"
+      for="plone.restapi.bbb.IPloneSiteRoot"
+      permission="plone.app.controlpanel.Types"
+      name="@type-workflow"
+      />
+
 </configure>

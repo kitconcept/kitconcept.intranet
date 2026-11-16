@@ -3,6 +3,7 @@ import installSettings from './config/settings';
 import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
+import installTasks from './config/tasks';
 import PersonView from './components/theme/PersonView';
 import PersonSummary from './components/Summary/PersonSummary';
 import { defineMessages } from 'react-intl';
@@ -14,6 +15,10 @@ defineMessages({
     id: 'List with date',
     defaultMessage: 'List with date',
   },
+  listingTable: {
+    id: 'Table',
+    defaultMessage: 'Table',
+  },
   // Solr facet labels
   organisationalUnit: {
     id: 'Organisational Unit',
@@ -22,6 +27,22 @@ defineMessages({
   responsibilities: {
     id: 'Responsibilities',
     defaultMessage: 'Responsibilities',
+  },
+  // Solr facet field messages from @kitconcept/volto-solr, which ships no
+  // translations for them:
+  //   components/theme/SolrSearch/ShowMoreIndicator.jsx
+  //   components/theme/SolrSearch/SearchConditionsFieldSearch.jsx
+  showMore: {
+    id: 'Show more',
+    defaultMessage: 'Show more',
+  },
+  showLess: {
+    id: 'Show less',
+    defaultMessage: 'Show less',
+  },
+  search: {
+    id: 'Search...',
+    defaultMessage: 'Search...',
   },
   // Wiki table shadows (#655). The i18n extraction does not scan shadowed
   // files, so the messages of
@@ -52,6 +73,75 @@ defineMessages({
     id: 'Move column right',
     defaultMessage: 'Move column right',
   },
+  // Slash menu shadow (#751):
+  //   customizations/@kitconcept/volto-plate/plate/wiki/slash-menu.tsx
+  csvTable: {
+    id: 'CSV table',
+    defaultMessage: 'CSV table',
+  },
+  // Table shadow (#750): customizations/@plone/plate/components/ui/table-node.tsx
+  footerRow: {
+    id: 'Footer row',
+    defaultMessage: 'Footer row',
+  },
+  calculation: {
+    id: 'Calculation',
+    defaultMessage: 'Calculation',
+  },
+  none: {
+    id: 'None',
+    defaultMessage: 'None',
+  },
+  sum: {
+    id: 'Sum',
+    defaultMessage: 'Sum',
+  },
+  average: {
+    id: 'Average',
+    defaultMessage: 'Average',
+  },
+  minimum: {
+    id: 'Minimum',
+    defaultMessage: 'Minimum',
+  },
+  maximum: {
+    id: 'Maximum',
+    defaultMessage: 'Maximum',
+  },
+  count: {
+    id: 'Count',
+    defaultMessage: 'Count',
+  },
+  // Table shadow (#823, #825): customizations/@plone/plate/components/ui/table-node.tsx
+  width: {
+    id: 'Width',
+    defaultMessage: 'Width',
+  },
+  widthDefault: {
+    id: 'Text width',
+    defaultMessage: 'Text width',
+  },
+  widthMedium: {
+    id: 'Medium',
+    defaultMessage: 'Medium',
+  },
+  widthLayout: {
+    id: 'Wide',
+    defaultMessage: 'Wide',
+  },
+  widthFull: {
+    id: 'Full width',
+    defaultMessage: 'Full width',
+  },
+  widthNested: {
+    id: 'The table takes the width of the surrounding block',
+    defaultMessage: 'The table takes the width of the surrounding block',
+  },
+  // Table shadow (#824): the resize handle of the table width
+  resizeTable: {
+    id: 'Resize table',
+    defaultMessage: 'Resize table',
+  },
 });
 
 declare module '@plone/types' {
@@ -65,6 +155,7 @@ const applyConfig = (config: ConfigType) => {
   installSlots(config);
   installWidgets(config);
   installBlocks(config);
+  installTasks(config);
   (
     config.settings.solrSearchOptions as { showSearchInput?: boolean }
   ).showSearchInput = false;

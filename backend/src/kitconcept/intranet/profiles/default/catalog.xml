@@ -54,4 +54,19 @@
     <indexed_attr value="review_due_date" />
   </index>
 
+  <index meta_type="DateIndex"
+         name="task_due_date"
+  ><indexed_attr value="task_due_date" /></index>
+  <index meta_type="DateIndex"
+         name="task_completed"
+  ><indexed_attr value="task_completed" /></index>
+  <index meta_type="FieldIndex"
+         name="task_status"
+  ><indexed_attr value="task_status" /></index>
+  <index meta_type="KeywordIndex"
+         name="task_assignees"
+  ><indexed_attr value="task_assignees" /></index>
+  <column value="task_due_date" />
+  <column value="task_completed" />
+  <column value="task_status" />
 </object>

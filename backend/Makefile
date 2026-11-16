@@ -218,14 +218,17 @@ solr-activate-and-reindex-with-rag: $(VENV_FOLDER) instance/etc/zope.conf ## Act
 solr-activate-and-reindex-with-rag-clear: $(VENV_FOLDER) instance/etc/zope.conf ## Activate solr and RAG (AI search) and reindex with clear
 	@uv run zconsole run instance/etc/zope.conf ./scripts/solr_activate_and_reindex.py --rag-enable --clear
 
-# Acceptance tests
+# Acceptance tests. The robot server takes the Zope port from ZSERVER_PORT and
+# the port of its XML-RPC listener from LISTENER_PORT (plone.app.robotframework;
+# default 49999, shown here so a second backend on this machine knows what to
+# change). Both must differ.
 .PHONY: acceptance-backend-start
 acceptance-backend-start: ## Start backend acceptance server
-	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.ROBOT_TESTING
+	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTENER_PORT=49999 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.ROBOT_TESTING
 
 .PHONY: acceptance-backend-start
 acceptance-a11y-backend-start: ## Start backend a11y acceptance server
-	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.A11Y_TESTING
+	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTENER_PORT=49999 $(BIN_FOLDER)/robot-server kitconcept.intranet.testing.A11Y_TESTING
 
 .PHONY: acceptance-image-build
 acceptance-image-build:  ## Build Docker Images

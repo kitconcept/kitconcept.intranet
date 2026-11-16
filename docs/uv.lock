@@ -942,10 +942,12 @@ dependencies = [
     { name = "plone-api" },
     { name = "plone-app-discussion" },
     { name = "plone-distribution" },
+    { name = "plone-recyclebin" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "python-dateutil" },
     { name = "redturtle-rssservice" },
+    { name = "requests" },
 ]
 
 [package.metadata]
@@ -953,18 +955,20 @@ requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.1.0" },
-    { name = "kitconcept-plate", specifier = "==1.0.0a28" },
-    { name = "kitconcept-solr", specifier = "==3.0.0a2" },
+    { name = "kitconcept-plate", specifier = "==1.0.0a33" },
+    { name = "kitconcept-solr", specifier = "==3.0.0a3" },
     { name = "pas-plugins-authomatic", specifier = "==2.0.0" },
     { name = "pas-plugins-keycloakgroups", specifier = "==1.0.0b1" },
     { name = "pas-plugins-oidc", specifier = "==2.0.0" },
     { name = "plone-api" },
     { name = "plone-app-discussion" },
     { name = "plone-distribution" },
+    { name = "plone-recyclebin", specifier = "==1.0.0a1" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
     { name = "python-dateutil" },
     { name = "redturtle-rssservice", specifier = "==2.2.0" },
+    { name = "requests" },
 ]
 
 [package.metadata.requires-dev]
@@ -1050,7 +1054,7 @@ dev = [
 
 [[package]]
 name = "kitconcept-plate"
-version = "1.0.0a28"
+version = "1.0.0a33"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "plone-api" },
@@ -1058,14 +1062,14 @@ dependencies = [
     { name = "plone-volto" },
     { name = "products-cmfplone" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6d/3a/49706e29e6436b071c1ee60a1214090193f609fc7303e0e90dab4c5b9c7e/kitconcept_plate-1.0.0a28.tar.gz", hash = "sha256:7d278bf014e1a37b6187dca94779e7da6b1d4e8f073519f2fad920372ee2421c", size = 4550427, upload-time = "2026-09-16T10:11:23.298Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a6/b1/6f411a6fab4b794b95d4ae6e6b00f12b79853bf67f780b2945f2172e9f5d/kitconcept_plate-1.0.0a33.tar.gz", hash = "sha256:9670599f2f8d43c693f824d73efd66352bafb31a680df44669b071ddb1006cc2", size = 4550452, upload-time = "2026-10-05T15:02:39.074Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/28/cb/1f1017d97047a5e5cea17e68be6c2fed5a9e749216db7e2650e7ff7bdcad/kitconcept_plate-1.0.0a28-py3-none-any.whl", hash = "sha256:413a8efa4a2a70100e232e4ca51a7d9a53b79434791bb6cdac43310c619f80b7", size = 4583368, upload-time = "2026-09-16T10:11:21.091Z" },
+    { url = "https://files.pythonhosted.org/packages/3d/49/28bb87364d32174655c0ce3d78e2f9f36e50feda51a773b9aaf394bdef1a/kitconcept_plate-1.0.0a33-py3-none-any.whl", hash = "sha256:fc123086f94f98e8df9874b621eeafb5f3454532355a74b18fcd75f4b5e8cfcd", size = 4583369, upload-time = "2026-10-05T15:02:36.816Z" },
 ]
 
 [[package]]
 name = "kitconcept-solr"
-version = "3.0.0a2"
+version = "3.0.0a3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-solr" },
@@ -1076,9 +1080,9 @@ dependencies = [
     { name = "products-cmfplone" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f7/2c/3af7f86f318b4e7fbef30ab5cb9a6402a1705af23c6b00f88a9c010186be/kitconcept_solr-3.0.0a2.tar.gz", hash = "sha256:aa6a88d435e8236aa005886a264c6b6bee43291d9cd79d19301b24a51736b013", size = 18746938, upload-time = "2026-09-09T14:10:25.356Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/2e/ef88c08607dde9ba521476ff61ae24491cffeb0159675192907eebd14063/kitconcept_solr-3.0.0a3.tar.gz", hash = "sha256:816eb082880fe6759101455500e8c7e30eeac8f1aa84b1d3276cc4fc8d637d69", size = 18747137, upload-time = "2026-09-30T11:36:12.062Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e7/b5/ca697555e6e805a66b3d115f71a005ea3894db74e7d0c62ab24841948346/kitconcept_solr-3.0.0a2-py3-none-any.whl", hash = "sha256:9c4ececbc42688642113924e2abe66e9f627e450273edd55aa763e4d0faa015f", size = 18988139, upload-time = "2026-09-09T14:10:20.785Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/12/a6b0bc6ce4d8930da3a283186281c10e42685fea1989d94ddf32515eb1b8/kitconcept_solr-3.0.0a3-py3-none-any.whl", hash = "sha256:6acaf722293418786cbb8e99bf00046118f76dccae4c207226e5c04960a6ca2f", size = 18988152, upload-time = "2026-09-30T11:36:07.464Z" },
 ]
 
 [[package]]
@@ -3020,6 +3024,26 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6e/d0/12d483fa2b511fa2444920b08a0fa17f9faf6df1b84c3e66cd5dda74d2a8/plone_protect-6.0.0.tar.gz", hash = "sha256:362d85f6bb3f2b6ffd3103a8552ea4c994f116a05eff722ddd77b23dd26d9e8f", size = 35970, upload-time = "2026-05-16T21:32:59.914Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fa/f2/6dfd1f5a601bfcae39627af2e2810b666316f4624245e959f3e95cf601f0/plone_protect-6.0.0-py3-none-any.whl", hash = "sha256:221c865ec6ba0e5c1ea66b6e9a33b8d1e5e7893c9a922eaec56b95e34207cca9", size = 31495, upload-time = "2026-05-16T21:32:58.161Z" },
+]
+
+[[package]]
+name = "plone-recyclebin"
+version = "1.0.0a1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-base" },
+    { name = "plone-protect" },
+    { name = "plone-registry" },
+    { name = "products-cmfcore" },
+    { name = "products-cmfplone" },
+    { name = "products-statusmessages" },
+    { name = "z3c-form" },
+    { name = "zope" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5b/0c/5e2715d08c8b14f2fe556089aa91ba146431ae89286e2d5b3fa1c4197f4f/plone_recyclebin-1.0.0a1.tar.gz", hash = "sha256:2b028d031784ebc0b1df0595c7732269afb02130c3c4d62abdbc2d64992b273c", size = 71618, upload-time = "2026-09-22T21:29:03.689Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a4/7f/fa89db35169d2d08521429ac9b1bf632f61938c8e39796edc57750cd625f/plone_recyclebin-1.0.0a1-py3-none-any.whl", hash = "sha256:af248d70ab1ad50f704a83514e6c053f16378476cde785de8e45977f3991875a", size = 73598, upload-time = "2026-09-22T21:29:02.185Z" },
 ]
 
 [[package]]

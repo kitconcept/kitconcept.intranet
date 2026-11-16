@@ -19,14 +19,45 @@ A Plone distribution for Intranets with Plone. Created by kitconcept.
 - Start Docker containers with `docker-compose up`
 - Open kitconcept.intranet in your browser by typing `http://kitconcept-intranet.localhost/` into your browser URL field
 
+### Demo users
+
+Sites created with the example content ship with fictional demo users so you can try out the intranet with different permissions.
+All demo users share the password `password`.
+
+> [!WARNING]
+> These credentials are for local and demo instances only.
+> Never use the example content on a production site.
+
+| Name | Username | Roles |
+| --- | --- | --- |
+| Anna Becker | `a.becker` | Site Administrator, Editor, Contributor |
+| Clara Nguyen | `c.nguyen` | Site Administrator, Editor, Contributor |
+| Max Berger, M.A. | `m.berger` | Site Administrator, Editor, Contributor |
+| Dr. Clara Beck | `c.beck` | Reviewer, Reader, Editor, Contributor |
+| Dr. Miriam Engelhardt | `m.engelhardt` | Reviewer, Reader, Editor, Contributor |
+| Dr. Ayla Demir | `a.demir` | Editor, Contributor |
+| Ben Yilmaz | `b.yilmaz` | Editor, Contributor |
+| David Schmidt | `d.schmidt` | Editor, Contributor |
+| Eva Roth | `e.roth` | Editor, Contributor |
+| Florian Meier | `f.meier` | Editor, Contributor |
+| Jutta Halmbach | `j.halmbach` | Editor, Contributor |
+| Jonas Seidel, B.A. | `j.seidel` | Editor, Contributor |
+| Lukas Brandt, M.Sc. | `l.brandt` | Editor, Contributor |
+| Dr. Nadine Paulsen | `n.paulsen` | Editor, Contributor |
+| Patrick Maier, M.Sc. | `p.maier` | Editor, Contributor |
+| Dr. Sophie Lehner | `s.lehner` | Editor, Contributor |
+| Tim Werner, LL.M. | `t.werner` | Editor, Contributor |
+
+The site owner account is `admin` with the password `admin`.
+
 ## Development
 
 ### Prerequisites ✅
 
 Ensure you have the following installed:
 
-- Python 3.12 🐍
-- Node 22 🟩
+- Python 3.14 🐍
+- Node 24 🟩
 - pnpm 🧶
 - Docker 🐳
 - UV (See [https://docs.astral.sh/uv/getting-started/installation/#standalone-installer])

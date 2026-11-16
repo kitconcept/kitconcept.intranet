@@ -4,7 +4,7 @@
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
     "https": "https://github.com/plone/volto.git",
-    "tag": "19.4.1",
+    "tag": "19.7.0",
     "filterBlobs": true
   },
   "volto-light-theme": {
@@ -13,7 +13,7 @@
     "package": "@kitconcept/volto-light-theme",
     "url": "git@github.com:kitconcept/volto-light-theme.git",
     "https": "https://github.com/kitconcept/volto-light-theme.git",
-    "tag": "8.0.0",
+    "tag": "8.1.2",
     "filterBlobs": true
   },
   "kitconcept-core": {
@@ -86,7 +86,7 @@
     "package": "@kitconcept/volto-introduction-block",
     "url": "git@github.com:kitconcept/volto-introduction-block.git",
     "https": "https://github.com/kitconcept/volto-introduction-block.git",
-    "tag": "1.4.1"
+    "tag": "1.4.2"
   },
   "volto-logos-block": {
     "develop": true,
@@ -94,7 +94,7 @@
     "package": "@kitconcept/volto-logos-block",
     "url": "git@github.com:kitconcept/volto-logos-block.git",
     "https": "https://github.com/kitconcept/volto-logos-block.git",
-    "tag": "4.0.0"
+    "tag": "4.0.1"
   },
   "volto-separator-block": {
     "develop": true,
@@ -135,5 +135,21 @@
     "url": "git@github.com:kitconcept/volto-contact-block.git",
     "https": "https://github.com/kitconcept/volto-contact-block.git",
     "tag": "1.0.0"
+  },
+  "volto-keywordmanager": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-keywordmanager",
+    "url": "git@github.com:kitconcept/kitconcept-keywordmanager.git",
+    "https": "https://github.com/kitconcept/kitconcept-keywordmanager.git",
+    "tag": "1.0.0a4"
+  },
+  "volto-maintenance-banner": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-maintenance-banner",
+    "url": "git@github.com:kitconcept/volto-maintenance-banner.git",
+    "https": "https://github.com/kitconcept/volto-maintenance-banner.git",
+    "tag": "1.0.0a3"
   }
 }

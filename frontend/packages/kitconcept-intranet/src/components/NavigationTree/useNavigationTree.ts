@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import type { Key } from 'react-aria-components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { searchContent } from '@plone/volto/actions/search/search';
-import { collectAncestorPaths } from './utils';
+import { collectAncestorPaths, getParentPath } from './utils';
 
 export interface SearchItem {
   '@id': string;
@@ -15,7 +15,10 @@ export interface SearchItem {
 }
 
 export const ROOT_ID = '/';
-const WORKSPACE_PORTAL_TYPE = 'Workspace';
+// Content types that are never shown in the navigation tree.
+const HIDDEN_TYPES_QUERY = {
+  'portal_type.not:record': ['Workspace', 'Image', 'File'],
+};
 
 export function useNavigationTree(
   rootPath: string = ROOT_ID,
@@ -39,9 +42,7 @@ export function useNavigationTree(
   );
 
   function getChildrenForPath(path: string): SearchItem[] {
-    return (subrequests[`nav-tree-${path}`]?.items ?? []).filter(
-      (item: SearchItem) => item['@type'] !== WORKSPACE_PORTAL_TYPE,
-    );
+    return subrequests[`nav-tree-${path}`]?.items ?? [];
   }
 
   function isLoadingForPath(path: string): boolean {
@@ -63,6 +64,7 @@ export function useNavigationTree(
         searchContent(
           path,
           {
+            ...HIDDEN_TYPES_QUERY,
             'path.depth': 1,
             sort_on: 'getObjPositionInParent',
             metadata_fields: ['is_folderish', 'review_state'],
@@ -85,6 +87,7 @@ export function useNavigationTree(
         searchContent(
           path,
           {
+            ...HIDDEN_TYPES_QUERY,
             'path.depth': 1,
             b_size: 1,
             metadata_fields: [],
@@ -108,6 +111,19 @@ export function useNavigationTree(
     setExpandedKeys((prev) => new Set([...prev, ...ancestors]));
   }, [currentPath, rootPath, dispatchFetch, isAddingWorkspace]);
 
+  const transitionLoaded = useSelector(
+    (state: any) => !!state.workflow?.transition?.loaded,
+  );
+  const prevTransitionLoaded = useRef(transitionLoaded);
+  useEffect(() => {
+    const justCompleted = transitionLoaded && !prevTransitionLoaded.current;
+    prevTransitionLoaded.current = transitionLoaded;
+    if (!justCompleted) return;
+    for (const path of [getParentPath(currentPath), currentPath]) {
+      if (fetchedPaths.current.has(path)) dispatchFetch(path);
+    }
+  }, [transitionLoaded, currentPath, dispatchFetch]);
+
   useEffect(() => {
     if (searchTimerRef.current) clearTimeout(searchTimerRef.current);
     searchTimerRef.current = setTimeout(() => {
@@ -124,6 +140,7 @@ export function useNavigationTree(
       searchContent(
         rootPath,
         {
+          ...HIDDEN_TYPES_QUERY,
           Title: `${debouncedSearch}*`,
           metadata_fields: ['is_folderish', 'review_state'],
           b_size: 50,
@@ -161,9 +178,8 @@ export function useNavigationTree(
     [dispatchFetch],
   );
 
-  const searchResults: SearchItem[] = (
-    subrequests['nav-tree-search']?.items ?? []
-  ).filter((item: SearchItem) => item['@type'] !== WORKSPACE_PORTAL_TYPE);
+  const searchResults: SearchItem[] =
+    subrequests['nav-tree-search']?.items ?? [];
   const isSearchLoading = !!subrequests['nav-tree-search']?.loading;
   const rootChildren = isAddingWorkspace ? [] : getChildrenForPath(rootPath);
   const isRootLoading = isAddingWorkspace ? false : isLoadingForPath(rootPath);

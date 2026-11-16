@@ -5,8 +5,8 @@
  *         instead of Volto's HTML string diff, which shows nothing for Plate
  *         content. Spike for the HISTORY DIFF epic; all other fields and
  *         content types keep the original behaviour.
- * FILE: https://github.com/plone/volto/blob/19.4.1/packages/volto/src/components/manage/Diff/DiffField.jsx
- * FILE VERSION: Volto 19.4.1 (unchanged since 19.3.1)
+ * FILE: https://github.com/plone/volto/blob/19.5.0/packages/volto/src/components/manage/Diff/DiffField.jsx
+ * FILE VERSION: Volto 19.5.0
  * DATE: 2026-09-18
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/639
  * DEVELOPER: @reekitconcept
@@ -82,8 +82,12 @@ const splitWords = (str) => {
       // Check if the tagBuffer contains a special tag
       const tagNameMatch = tagBuffer.match(/^<\/?([a-zA-Z]+[0-9]*)\b/);
       if (tagNameMatch && specialTags.includes(tagNameMatch[1])) {
+        // Only container tags (svg) span until their closing tag; void
+        // elements such as <img> are complete with the opening tag.
         insideSpecialTag =
-          tagNameMatch[0].startsWith('<') && !tagNameMatch[0].startsWith('</');
+          tagNameMatch[1] !== 'img' &&
+          !tagNameMatch[0].startsWith('</') &&
+          !tagBuffer.endsWith('/>');
         result.push(tagBuffer); // Push the complete special tag as one unit
         tagBuffer = '';
         continue;
@@ -172,6 +176,7 @@ const DefaultDiffField = ({
   view,
   schema,
   diffLib,
+  showTitle = true,
 }) => {
   const language = useSelector((state) => state.intl.locale);
   const intl = useIntl();
@@ -287,9 +292,11 @@ const DefaultDiffField = ({
 
   return (
     <Grid data-testid="DiffField">
-      <Grid.Row>
-        <Grid.Column width={12}>{schema.title}</Grid.Column>
-      </Grid.Row>
+      {showTitle && (
+        <Grid.Row>
+          <Grid.Column width={12}>{schema.title}</Grid.Column>
+        </Grid.Row>
+      )}
 
       {view === 'split' && (
         <Grid.Row>
@@ -360,7 +367,15 @@ const DefaultDiffField = ({
  * so both versions are read from the diff state to recognise the title.
  */
 const DiffField = (props) => {
-  const { one, two, contentOne, contentTwo, schema, view } = props;
+  const {
+    one,
+    two,
+    contentOne,
+    contentTwo,
+    schema,
+    view,
+    showTitle = true,
+  } = props;
   const versions = useSelector((state) => state.diff?.data);
   const versionOne = contentOne ?? versions?.[0];
   const versionTwo = contentTwo ?? versions?.[1];
@@ -379,9 +394,11 @@ const DiffField = (props) => {
   if (schema?.widget === 'json' && isPlate) {
     return (
       <Grid data-testid="DiffField">
-        <Grid.Row>
-          <Grid.Column width={12}>{schema.title}</Grid.Column>
-        </Grid.Row>
+        {showTitle && (
+          <Grid.Row>
+            <Grid.Column width={12}>{schema.title}</Grid.Column>
+          </Grid.Row>
+        )}
         <Grid.Row>
           <Grid.Column width={16}>
             <WikiPageDiff one={contentOne} two={contentTwo} view={view} />
@@ -404,6 +421,7 @@ DiffField.propTypes = {
   contentOne: PropTypes.any,
   contentTwo: PropTypes.any,
   view: PropTypes.string.isRequired,
+  showTitle: PropTypes.bool,
   schema: PropTypes.shape({
     widget: PropTypes.string,
     type: PropTypes.string,

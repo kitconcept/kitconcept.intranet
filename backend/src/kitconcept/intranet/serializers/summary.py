@@ -10,3 +10,7 @@ class JSONSummarySerializerMetadata:
         return {
             "job_title",
         }
+
+    def non_metadata_attributes(self):
+        """Resolve requested task source titles from their current page."""
+        return {"task_source_title", "task_workspace", "task_assignee_details"}

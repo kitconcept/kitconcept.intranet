@@ -1,14 +1,16 @@
 /**
  * OVERRIDE Edit.jsx
  * REASON: Add a slot below the title block.
- * FILE: https://github.com/plone/volto/blob/0b06447408cad92728183ae597a76e7e9f8a5ddb/packages/volto/src/components/manage/Blocks/Title/Edit.jsx
- * FILE VERSION: Volto 18.23.0
+ * FILE: https://github.com/plone/volto/blob/19.5.0/packages/volto/src/components/manage/Blocks/Title/Edit.jsx
+ * FILE VERSION: Volto 19.5.0
  * PULL REQUEST: https://github.com/kitconcept/kitconcept.intranet/pull/131
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/issues/19
  * DATE: 2025-07-29
  * DEVELOPER: @Tishasoumya-02
  * CHANGELOG:
  *  - Add documentByLine feature. @Tishasoumya-02
+ *  - Merge Volto 19.5.0: ignore keys while an IME composition is active,
+ *    and label the editable title ("Content title"). @sneridagh
  */
 
 import React, {
@@ -25,12 +27,17 @@ import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRendere
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
+import { isIMEComposing } from '@plone/volto/helpers/Utils/Utils';
 import { P } from '@plone/volto-slate/constants';
 
 const messages = defineMessages({
   title: {
     id: 'Type the title…',
     defaultMessage: 'Type the title…',
+  },
+  editable_title: {
+    id: 'Content title',
+    defaultMessage: 'Content title',
   },
 });
 
@@ -124,6 +131,10 @@ export const TitleBlockEdit = (props) => {
 
   const handleKeyDown = useCallback(
     (ev) => {
+      // Ignore keys while an IME composition is active (e.g. CJK conversion).
+      if (isIMEComposing(ev)) {
+        return;
+      }
       if (ev.key === 'Return' || ev.key === 'Enter') {
         ev.preventDefault();
         if (!disableNewBlocks) {
@@ -175,6 +186,7 @@ export const TitleBlockEdit = (props) => {
         renderElement={renderElement}
         onFocus={handleFocus}
         aria-multiline="false"
+        aria-label={intl.formatMessage(messages.editable_title)}
       ></Editable>
       {/* START CUSTOMIZATION */}
       <SlotRenderer name="belowContentTitle" content={content} />

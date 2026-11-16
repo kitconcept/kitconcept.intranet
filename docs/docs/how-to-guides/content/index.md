@@ -3,7 +3,7 @@ myst:
   html_meta:
     description: "How-to guides for creating and managing intranet content types."
     keywords: "how-to, content, person, location, organisational unit"
-last_updated: 2026-03-18
+last_updated: 2026-10-05
 ---
 
 # Content
@@ -17,6 +17,7 @@ create-person
 create-location
 create-organisational-unit
 set-content-owner
+restore-deleted-content
 drag-drop-files
 image-editor
 proxy-object-link

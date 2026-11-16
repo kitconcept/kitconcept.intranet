@@ -7,6 +7,8 @@
  * of the LLM call (see internal ticket #515), so pages outside the
  * dialog must not trigger it. kitconcept.solr keeps its own "Use AI"
  * toggle behavior; this override removes it for the intranet.
+ * Also adds the SearchCloseBar on top and keeps `location.state` (the
+ * search origin used by "Close search") when the query params are updated.
  * DATE: 2026-07-29
  * DEVELOPER: @reebalazs
  *
@@ -21,6 +23,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { asyncConnect } from '@plone/volto/helpers/AsyncConnect';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { FormattedMessage } from 'react-intl';
 import { createPortal } from 'react-dom';
 import {
@@ -43,6 +46,7 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import paginationLeftSVG from '@plone/volto/icons/left-key.svg';
 import paginationRightSVG from '@plone/volto/icons/right-key.svg';
 // These imports and the legacySearchProps are only for the legacy search
+import { getContent } from '@plone/volto/actions/content/content';
 import { searchContent } from '@plone/volto/actions/search/search';
 import { DefaultResultItem } from '@kitconcept/volto-solr/components/theme/SolrSearch/resultItems';
 import { SelectSorting } from '@kitconcept/volto-solr/components/theme/SolrSearch/SelectSorting';
@@ -55,6 +59,7 @@ import {
   queryStateToParams,
 } from '@kitconcept/volto-solr/components/theme/SolrSearch/SearchQuery';
 import { VocabProvider } from '@kitconcept/volto-solr/components/theme/SolrSearch/vocabs/VocabContext';
+import SearchCloseBar from '@kitconcept/intranet/components/SearchCloseBar/SearchCloseBar';
 
 const messages = defineMessages({
   TypeSearchWords: {
@@ -239,6 +244,7 @@ class SolrSearch extends Component {
     const location = this.props.history.location;
     const params = qs.parse(location.search);
 
+    this.props.getContent(getBaseUrl(location.pathname));
     this.setState({
       ...this.queryStateFromSearchParams(),
       isClient: true,
@@ -303,6 +309,7 @@ class SolrSearch extends Component {
   updateSearch = () => {
     this.props.history.replace({
       search: qs.stringify(queryStateToParams(this.state)),
+      state: this.props.history.location.state,
     });
   };
 
@@ -362,6 +369,7 @@ class SolrSearch extends Component {
         <Segment basic id="page-search" className="header-wrapper">
           <Helmet title="Search" />
           <Container>
+            <SearchCloseBar />
             {this.props.showSearchInput ? (
               <div className="search-input">
                 <form className="ui form" onSubmit={this.onSubmit}>
@@ -547,6 +555,7 @@ export const __test__ = connect(
     };
   },
   (dispatch, { searchAction }) => ({
+    getContent: (...args) => dispatch(getContent(...args)),
     searchContent: (...args) =>
       dispatch(searchActionWithDefault(searchAction)(...args)),
   }),
@@ -589,6 +598,7 @@ export default compose(
       };
     },
     (dispatch, { searchAction }) => ({
+      getContent: (...args) => dispatch(getContent(...args)),
       searchContent: (...args) =>
         dispatch(searchActionWithDefault(searchAction)(...args)),
     }),

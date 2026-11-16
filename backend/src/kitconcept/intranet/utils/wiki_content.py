@@ -21,9 +21,15 @@ from dataclasses import dataclass
 SOMERSAULT_KEY = "__somersault__"
 TITLE_BLOCK_ID = "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c"
 
-# The editor writes these on every block; without them a later change would
-# read "not set → Centred" instead of "Left → Centred" in the diff.
+# The editor writes these on every paragraph and heading, and a ``blockWidth``
+# on every other top-level block (title, list items, callouts, tables, …).
+# Content stored without them would show "Width: not set → Standard" on every
+# block in the diff of its first save in the editor.
 BLOCK_DEFAULTS = {"align": "start", "blockWidth": "default"}
+
+# The width steps of a wiki table (the block widths the frontend allows for
+# tables): text width, medium, wide, full width.
+TABLE_WIDTHS = ("default", "medium", "layout", "full")
 
 
 def text(value: str, **marks) -> dict:
@@ -44,7 +50,7 @@ def heading(node_id: str, value: str, level: int = 2) -> dict:
 
 
 def title(value: str) -> dict:
-    return node("title", "title", [text(value)])
+    return node("title", "title", [text(value)], blockWidth="default")
 
 
 def cell(node_id: str, *runs, header: bool = False, **props) -> dict:
@@ -66,21 +72,48 @@ class Span:
     cols: int
 
 
-def table(node_id: str, header: list, rows: list[list], col_sizes=None) -> dict:
-    """A table with a header row.
+@dataclass(frozen=True)
+class Sum:
+    """A footer cell that shows the sum of its column (``calc: "sum"``).
 
-    ``header`` and every entry of ``rows`` are lists of cell contents: a
-    string, a tuple of runs (strings and ``text(...)`` dicts with marks), or
-    a ``Span`` for a merged cell (the row then lists fewer cells).
+    ``content`` is the sum as the editor writes it; the editor recomputes it
+    whenever the table changes.
+    """
+
+    content: str | dict | tuple
+
+
+def table(
+    node_id: str,
+    header: list,
+    rows: list[list],
+    col_sizes=None,
+    footer: list | None = None,
+    width: str | None = None,
+) -> dict:
+    """A table with a header row and, with ``footer``, a footer row.
+
+    ``header``, every entry of ``rows`` and ``footer`` are lists of cell
+    contents: a string, a tuple of runs (strings and ``text(...)`` dicts with
+    marks), a ``Span`` for a merged cell (the row then lists fewer cells), or
+    in the footer a ``Sum`` for a cell that shows its column's sum.
+
+    ``width`` is the table's width step (``blockWidth``): ``"default"``
+    (text width), ``"medium"``, ``"layout"`` (wide) or ``"full"`` (full
+    width). Without it the table has no ``blockWidth`` and stays in the text
+    column.
     """
 
     def runs(content):
-        if isinstance(content, Span):
+        if isinstance(content, Span | Sum):
             content = content.content
         return content if isinstance(content, tuple) else (content,)
 
     def span(content):
-        return {"colSpan": content.cols} if isinstance(content, Span) else {}
+        props = {"colSpan": content.cols} if isinstance(content, Span) else {}
+        if isinstance(content, Sum):
+            props["calc"] = "sum"
+        return props
 
     children = [
         row(
@@ -101,7 +134,23 @@ def table(node_id: str, header: list, rows: list[list], col_sizes=None) -> dict:
                 ),
             )
         )
+    if footer is not None:
+        children.append(
+            node(
+                "tr",
+                f"{node_id}-f",
+                [
+                    cell(f"{node_id}-f{c}", *runs(content), **span(content))
+                    for c, content in enumerate(footer)
+                ],
+                footer=True,
+            )
+        )
     props = {"colSizes": col_sizes} if col_sizes else {}
+    if width is not None:
+        if width not in TABLE_WIDTHS:
+            raise ValueError(f"Unknown table width {width!r}")
+        props["blockWidth"] = width
     return node("table", node_id, children, **props)
 
 

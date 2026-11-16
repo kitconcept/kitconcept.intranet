@@ -1,0 +1,345 @@
+/**
+ * OVERRIDE Diff.jsx
+ * REASON: Volto diffs the blocks one by one, following `blocks_layout`.
+ *         Wiki Pages keep their Plate content in `blocks.__somersault__`,
+ *         which the layout does not list, so its diff was never rendered.
+ *         The Plate block is appended to the block ids of both versions, so
+ *         DiffField (also overridden) renders it with the Plate diff.
+ *         Everything else is unchanged.
+ * FILE: https://github.com/plone/volto/blob/19.5.0/packages/volto/src/components/manage/Diff/Diff.jsx
+ * FILE VERSION: Volto 19.5.0
+ * DATE: 2026-10-08
+ * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/639
+ * DEVELOPER: @sneridagh
+ */
+/**
+ * Diff component.
+ * @module components/manage/Diff/Diff
+ */
+
+import React, { useEffect, useMemo } from 'react';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { useSelector, useDispatch } from 'react-redux';
+import filter from 'lodash/filter';
+import isEqual from 'lodash/isEqual';
+import map from 'lodash/map';
+import { Container, Button, Dropdown, Grid, Table } from 'semantic-ui-react';
+import { Link, useLocation, useHistory } from 'react-router-dom';
+import { createPortal } from 'react-dom';
+import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
+import qs from 'query-string';
+
+import { getDiff } from '@plone/volto/actions/diff/diff';
+import { getSchema } from '@plone/volto/actions/schema/schema';
+import { getHistory } from '@plone/volto/actions/history/history';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import {
+  getBlocksFieldname,
+  getBlocksLayoutFieldname,
+  hasBlocksData,
+} from '@plone/volto/helpers/Blocks/Blocks';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
+import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
+import DiffField from '@plone/volto/components/manage/Diff/DiffField';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { useClient } from '@plone/volto/hooks/client/useClient';
+import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
+
+import backSVG from '@plone/volto/icons/back.svg';
+
+const messages = defineMessages({
+  diff: {
+    id: 'Diff',
+    defaultMessage: 'Diff',
+  },
+  back: {
+    id: 'Back',
+    defaultMessage: 'Back',
+  },
+  split: {
+    id: 'Split',
+    defaultMessage: 'Split',
+  },
+  unified: {
+    id: 'Unified',
+    defaultMessage: 'Unified',
+  },
+});
+
+/**
+ * Diff component.
+ * @function Diff
+ * @param {Object} diffLib Lazy loaded diff library
+ * @returns {JSX.Element}
+ */
+function Diff({ diffLib }) {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const history = useHistory();
+  const isClient = useClient();
+  const intl = useIntl();
+
+  const data = useSelector((state) => state.diff.data);
+  const historyEntries = useSelector((state) => state.history.entries);
+  const schema = useSelector((state) => state.schema.schema);
+  const error = useSelector((state) => state.diff.error);
+  const title = useSelector((state) => state.content.data?.title);
+  const type = useSelector((state) => state.content.data?.['@type']);
+
+  const pathname = location.pathname;
+  const searchParams = qs.parse(location.search);
+  const one = searchParams.one;
+  const two = searchParams.two;
+  const view = searchParams.view || 'split';
+
+  useEffect(() => {
+    if (type) {
+      dispatch(getSchema(type));
+    }
+    if (pathname) {
+      dispatch(getHistory(getBaseUrl(pathname)));
+    }
+    if (pathname && one && two) {
+      dispatch(getDiff(getBaseUrl(pathname), one, two));
+    }
+  }, [pathname, one, two, type, dispatch]);
+
+  /**
+   * On select view handler
+   * @method onSelectView
+   * @param {object} event Event object
+   * @param {string} value Value
+   * @returns {undefined}
+   */
+  const onSelectView = (event, { value }) => {
+    history.push(`${pathname}?one=${one}&two=${two}&view=${value}`);
+  };
+
+  /**
+   * On change one handler
+   * @method onChangeOne
+   * @param {object} event Event object
+   * @param {string} value Value
+   * @returns {undefined}
+   */
+  const onChangeOne = (event, { value }) => {
+    history.push(`${pathname}?one=${value}&two=${two}&view=${view}`);
+  };
+
+  /**
+   * On change two handler
+   * @method onChangeTwo
+   * @param {object} event Event object
+   * @param {string} value Value
+   * @returns {undefined}
+   */
+  const onChangeTwo = (event, { value }) => {
+    history.push(`${pathname}?one=${one}&two=${value}&view=${view}`);
+  };
+
+  const versions = useMemo(
+    () =>
+      map(
+        filter(historyEntries, (entry) => 'version' in entry),
+        (entry, index) => ({
+          text: (
+            <>
+              {index === 0 ? 'Current' : entry.version}&nbsp;(
+              <FormattedDate date={entry.time} long className="text" />, &nbsp;
+              {entry.actor.fullname})
+            </>
+          ),
+          value: `${entry.version}`,
+          key: `${entry.version}`,
+        }),
+      ),
+    [historyEntries],
+  );
+
+  const blocksField = data[0] ? getBlocksFieldname(data[0]) : null;
+  const blocksLayoutField = data[0] ? getBlocksLayoutFieldname(data[0]) : null;
+  const blocksOne = (blocksField && data[0]?.[blocksField]) || {};
+  const blocksTwo = (blocksField && data[1]?.[blocksField]) || {};
+  // OVERRIDE: the Plate block of Wiki Pages is not in the layout.
+  const withPlateBlock = (ids, blocks) =>
+    SOMERSAULT_KEY in blocks && !ids.includes(SOMERSAULT_KEY)
+      ? [...ids, SOMERSAULT_KEY]
+      : ids;
+  const blockIdsOne = withPlateBlock(
+    (blocksLayoutField && data[0]?.[blocksLayoutField]?.items) || [],
+    blocksOne,
+  );
+  const blockIdsTwo = withPlateBlock(
+    (blocksLayoutField && data[1]?.[blocksLayoutField]?.items) || [],
+    blocksTwo,
+  );
+  // Diff the block order first, so that added, removed and moved blocks
+  // show up at their position. A moved block is shown as removed at its old
+  // position and added at its new one. Blocks that stayed in place are only
+  // shown if their data changed.
+  const changedBlocks = diffLib
+    .diffArrays(blockIdsOne, blockIdsTwo)
+    .flatMap((part, partIndex) =>
+      part.value
+        .filter(
+          (id) =>
+            part.added ||
+            part.removed ||
+            !isEqual(blocksOne[id], blocksTwo[id]),
+        )
+        .map((id) => ({
+          key: `${id}-${partIndex}`,
+          id,
+          one: part.added ? undefined : blocksOne[id],
+          two: part.removed ? undefined : blocksTwo[id],
+        })),
+    );
+
+  return error?.status === 401 ? (
+    <Unauthorized />
+  ) : (
+    <Container id="page-diff">
+      <Helmet title={intl.formatMessage(messages.diff)} />
+      <h1>
+        <FormattedMessage
+          id="Difference between revision {one} and {two} of {title}"
+          defaultMessage="Difference between revision {one} and {two} of {title}"
+          values={{
+            one,
+            two,
+            title,
+          }}
+        />
+      </h1>
+      <Grid>
+        <Grid.Column width={9}>
+          <p className="description">
+            <FormattedMessage
+              id="You can view the difference of the revisions below."
+              defaultMessage="You can view the difference of the revisions below."
+            />
+          </p>
+        </Grid.Column>
+        <Grid.Column width={3} textAlign="right">
+          <Button.Group>
+            {map(
+              [
+                {
+                  id: 'split',
+                  label: intl.formatMessage(messages.split),
+                },
+                {
+                  id: 'unified',
+                  label: intl.formatMessage(messages.unified),
+                },
+              ],
+              (viewOption) => (
+                <Button
+                  type="button"
+                  key={viewOption.id}
+                  value={viewOption.id}
+                  active={view === viewOption.id}
+                  onClick={onSelectView}
+                >
+                  {viewOption.label}
+                </Button>
+              ),
+            )}
+          </Button.Group>
+        </Grid.Column>
+      </Grid>
+      {historyEntries.length > 0 && (
+        <Table basic="very">
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell width={6}>
+                <FormattedMessage id="Base" defaultMessage="Base" />
+                <Dropdown
+                  onChange={onChangeOne}
+                  value={one}
+                  selection
+                  fluid
+                  options={versions}
+                />
+              </Table.HeaderCell>
+              <Table.HeaderCell width={6}>
+                <FormattedMessage id="Compare" defaultMessage="Compare" />
+                <Dropdown
+                  onChange={onChangeTwo}
+                  value={two}
+                  selection
+                  fluid
+                  options={versions}
+                />
+              </Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+        </Table>
+      )}
+      {schema &&
+        data.length > 0 &&
+        map(schema.fieldsets, (fieldset) =>
+          map(
+            fieldset.fields,
+            (field) =>
+              !isEqual(data[0][field], data[1][field]) &&
+              field !== getBlocksFieldname(data[0]) &&
+              field !== getBlocksLayoutFieldname(data[0]) && (
+                <DiffField
+                  key={field}
+                  one={data[0][field]}
+                  two={data[1][field]}
+                  schema={schema.properties[field]}
+                  view={view}
+                />
+              ),
+          ),
+        )}
+      {schema &&
+        data.length > 0 &&
+        hasBlocksData(data[0]) &&
+        map(changedBlocks, ({ key, id, one, two }, index) => (
+          <DiffField
+            key={key}
+            one={one}
+            two={two}
+            contentOne={{
+              ...data[0],
+              [blocksField]: one ? { [id]: one } : {},
+              [blocksLayoutField]: { items: one ? [id] : [] },
+            }}
+            contentTwo={{
+              ...data[1],
+              [blocksField]: two ? { [id]: two } : {},
+              [blocksLayoutField]: { items: two ? [id] : [] },
+            }}
+            schema={schema.properties[blocksField]}
+            view={view}
+            showTitle={index === 0}
+          />
+        ))}
+      {isClient &&
+        createPortal(
+          <Toolbar
+            pathname={pathname}
+            hideDefaultViewButtons
+            inner={
+              <Link to={`${getBaseUrl(pathname)}/historyview`} className="item">
+                <Icon
+                  name={backSVG}
+                  className="contents circled"
+                  size="30px"
+                  title={intl.formatMessage(messages.back)}
+                />
+              </Link>
+            }
+          />,
+          document.getElementById('toolbar'),
+        )}
+    </Container>
+  );
+}
+
+export default injectLazyLibs('diffLib')(Diff);

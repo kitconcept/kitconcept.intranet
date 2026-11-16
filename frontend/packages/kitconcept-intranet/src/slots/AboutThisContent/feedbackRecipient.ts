@@ -3,6 +3,7 @@ export type CLMPersonData = {
   person_url?: string;
   title?: string;
   username?: string;
+  portrait?: string | null;
 };
 
 type CLMData = {

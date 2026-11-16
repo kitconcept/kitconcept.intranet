@@ -65,4 +65,40 @@ describe('getDisplayedAuthors', () => {
       },
     ]);
   });
+
+  it('passes the portrait of CLM authors and creators', () => {
+    expect(
+      getDisplayedAuthors({
+        authors: ['person-1'],
+        '@components': {
+          clm: {
+            authors: [
+              {
+                value: 'person-1',
+                title: 'First Author',
+                username: 'first',
+                portrait: 'http://localhost:8080/Plone/@portrait/first',
+              },
+            ],
+          },
+        },
+      })[0].portrait,
+    ).toBe('http://localhost:8080/Plone/@portrait/first');
+
+    expect(
+      getDisplayedAuthors({
+        creators: ['creator', 'no-portrait'],
+        '@components': {
+          byline: {
+            users: {
+              creator: {
+                portrait: 'http://localhost:8080/Plone/@portrait/creator',
+              },
+              'no-portrait': { portrait: null },
+            },
+          },
+        },
+      }).map(({ portrait }) => portrait),
+    ).toEqual(['http://localhost:8080/Plone/@portrait/creator', undefined]);
+  });
 });

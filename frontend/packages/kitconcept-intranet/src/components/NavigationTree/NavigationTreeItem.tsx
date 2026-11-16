@@ -241,6 +241,7 @@ export function NavigationTreeItem({
           <span
             className="nav-tree-state-dot"
             style={{ background: getStateColor(item.review_state) }}
+            data-review-state={item.review_state}
             aria-hidden
           />
           {!isRenaming && !isAdding && (

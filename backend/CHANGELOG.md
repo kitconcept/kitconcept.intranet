@@ -2,6 +2,140 @@
 
 <!-- towncrier release notes start -->
 
+## 3.8.0 (2026-11-12)
+
+
+### Bugfix
+
+- Update to kitconcept.core 2.1.2 and Plone 6.2.3. @davisagli 
+
+
+### Internal
+
+- Acceptance backend: pass the robot server its listener port as `LISTENER_PORT` (the variable it reads); `LISTEN_PORT` was ignored. @reekitconcept 
+
+## 3.7.0 (2026-11-05)
+
+
+### Feature
+
+- Add kitconcept.maintenancebanner add-on. (Note: Run the upgrade steps for kitconcept.intranet to install it.) @Tishasoumya-02 
+- Update kitconcept.plate to 1.0.0a39. Improves email notifications for mentions. @davisagli 
+
+
+### Bugfix
+
+- Exclude mentioned users from extracted task text while retaining task assignees. 
+- Fixed broken mention portraits in the example content, which pointed to `localhost:3000`. @iFlameing 
+- Include the portrait of creators (byline), CLM authors, responsible and feedback persons (clm) and task assignees, so person pills show the placeholder avatar instead of a broken image for users without a portrait. @iFlameing 
+- Update to kitconcept.plate 1.0.0a40. Fixes i18n. @davisagli 
+
+
+### Internal
+
+- Wiki demo content: the six-column budget table of "Projektbudget 2026" is shown wide; the `table()` helper takes a `width`. @reekitconcept [#823](https://github.com/kitconcept/kitconcept.intranet/issue/823)
+- Wiki table demo content: the budget table uses the new "Medium" width step. @reekitconcept [#825](https://github.com/kitconcept/kitconcept.intranet/issue/825)
+
+## 3.6.1 (2026-10-26)
+
+
+### Bugfix
+
+- Update to Plone 6.2.2.1. This includes security fixes for certifi, pip, plone.app.content, and Pillow. @davisagli 
+
+## 3.6.0 (2026-10-23)
+
+No significant changes.
+
+
+## 3.5.0 (2026-10-22)
+
+
+### Feature
+
+- Bump `kitconcept.keywordmanager` version to 1.0.0a4. @jnptk 
+
+
+### Internal
+
+- Update kitconcept.plate to 1.0.0a38, which adds the `@inline-comments` REST service. @sneridagh 
+- Update kitconcept.voltolighttheme to 8.1.2. @sneridagh 
+
+## 3.4.0 (2026-10-19)
+
+No significant changes.
+
+
+## 3.3.0 (2026-10-13)
+
+
+### Feature
+
+- Example content: the budget demo page "Projektbudget 2026" ships its "Gesamt" row as footer row with sum cells; the wiki content helper takes a footer row with Sum cells. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+- Add `@type-workflow` endpoint to change workflows per content type. @jnptk 
+- Set the password of all example content demo users to `password`, documented them in the README, made Anna Becker, Clara Nguyen and Max Berger Site Administrators, and completed the missing profile data of the demo persons. @sneridagh 
+
+
+### Bugfix
+
+- Use the default list layout for the Persons tab in the Solr search results. @danalvrz 
+
+
+### Internal
+
+- Update kitconcept.plate to 1.0.0a37 and kitconcept.voltolighttheme to 8.1.0. @iFlameing 
+- Update kitconcept.voltolighttheme to 8.1.1. @sneridagh 
+
+## 3.2.0 (2026-10-13)
+
+
+### Feature
+
+- Add a path restriction setting for each content type in the types control panel. @davisagli [#553](https://github.com/kitconcept/kitconcept.intranet/issue/553)
+- Example content: the GreenCat workspace gets a CSV file ("Projektbudget 2026 (CSV)") and the Wiki Page "Projektbudget aus CSV-Datei" that shows it with the new CSV table block. @reekitconcept [#751](https://github.com/kitconcept/kitconcept.intranet/issue/751)
+- Add "implicitly addable" setting to the types control panel. @davisagli 
+- Add example of Table variation for Listing Block. @danalvrz 
+- Index Plate todo items as Inline Tasks with assignment, workspace and assignee display names, due dates, completion timestamps, and searchable text. @davisagli 
+- Update kitconcept.keywordmanager to 1.0.0a3. @jnptk 
+
+## 3.1.0 (2026-10-08)
+
+
+### Feature
+
+- Add `plone.recyclebin` to the distribution and install its default profile on new and upgraded sites. [#691](https://github.com/kitconcept/kitconcept.intranet/issue/691)
+- History diff demo page: blocks are stored the way the editor stores them (width on every block, no list start of 1, a quote instead of a wide paragraph), so an edit in the editor shows only the real change in the diff. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Add `kitconcept.keywordmanager` package. @jnptk 
+
+
+### Internal
+
+- Update kitconcept.plate to 1.0.0a32. @sneridagh 
+- Update kitconcept.plate to 1.0.0a33. @sneridagh 
+- Update kitconcept.plate to 1.0.0a34. @sneridagh 
+- Update kitconcept.plate to 1.0.0a35. @sneridagh 
+- Update kitconcept.plate to 1.0.0a36. @sneridagh 
+
+## 3.0.3 (2026-10-02)
+
+
+### Feature
+
+- Two wiki-table demo pages ("Projektbudget 2026", "Teilnehmende Konsortialtreffen") in the GreenCat workspace, created by the distribution post handler on new sites and by `scripts/table_demo_content.py` (REST) on existing sites. Wiki Pages created by the demo-content code now carry the title block the editor expects; the history-diff demo page could not be saved in the editor before. @reekitconcept [#655](https://github.com/kitconcept/kitconcept.intranet/issue/655)
+- The wiki-table demo page "Teilnehmende Konsortialtreffen" gets a list of open items for sorting and filtering and a meeting agenda with a merged cell; `scripts/table_demo_content.py` recreates both demo pages on existing sites. @reekitconcept [#666](https://github.com/kitconcept/kitconcept.intranet/issue/666)
+
+
+### Internal
+
+- Update @kitconcept-volto-solr to 3.0.0-alpha.3. @iRohitSingh [#solr-3.0.0a3](https://github.com/kitconcept/kitconcept.intranet/issue/solr-3.0.0a3)
+- Update the backend to kitconcept.plate 1.0.0a30. @reekitconcept [#360](https://github.com/kitconcept/kitconcept.intranet/issue/360)
+- The REST scripts `scripts/table_demo_content.py` and `scripts/diff_demo_content.py` use `requests` through a shared client, `kitconcept.intranet.utils.plone_client`, and send a browser User-Agent, because sites behind Cloudflare (the kitconcept cluster) block bot-like ones; override it with `--user-agent` or `$PLONE_CLIENT_USER_AGENT`. @reekitconcept 
+
+
+### Tests
+
+- Add `scripts/export_acceptance_fixtures.py`, which exports the wiki table and history diff demo content as JSON fixtures for the Playwright acceptance tests. @reekitconcept [#667](https://github.com/kitconcept/kitconcept.intranet/issue/667)
+
 ## 3.0.2 (2026-09-22)
 
 

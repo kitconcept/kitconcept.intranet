@@ -82,6 +82,19 @@ class TestWikiContent:
         assert [c.get("colSpan") for c in merged["children"]] == [None, 2]
         assert cell_text(merged["children"][1]) == "2"
 
+    def test_table_width(self):
+        node = wiki_content.table("t", ["A"], [["1"]], width="layout")
+        assert node["blockWidth"] == "layout"
+        assert "blockWidth" not in wiki_content.table("t", ["A"], [["1"]])
+
+    def test_table_width_medium(self):
+        node = wiki_content.table("t", ["A"], [["1"]], width="medium")
+        assert node["blockWidth"] == "medium"
+
+    def test_unknown_table_width_is_an_error(self):
+        with pytest.raises(ValueError):
+            wiki_content.table("t", ["A"], [["1"]], width="wide")
+
 
 class TestTableDemoContent:
     def test_two_pages_with_tables(self):
@@ -92,6 +105,25 @@ class TestTableDemoContent:
             assert value[0] == wiki_content.title(page_title)
             assert len(tables(value)) == TABLES[page_id]
             assert layout == wiki_content.blocks_layout()
+
+    def test_budget_table_has_a_footer_row_with_sums(self):
+        """The "Gesamt" row is the footer row; its amounts are sum cells."""
+        budget = tables(content.budget_page())[0]
+        footer = budget["children"][-1]
+        assert footer["footer"] is True
+        cells = footer["children"]
+        assert cell_text(cells[0]) == "Gesamt"
+        assert [c.get("calc") for c in cells] == [None, None, "sum", "sum", "sum", None]
+        assert cell_text(cells[2]) == "1.455.000 €"
+        assert all("footer" not in r for r in budget["children"][:-1])
+
+    def test_budget_table_is_medium(self):
+        """Six columns do not fit into the text column: the medium step, like
+        a pasted table with six columns (work items 823, 825)."""
+        budget, milestones = tables(content.budget_page())
+        assert len(budget["children"][0]["children"]) == 6
+        assert budget["blockWidth"] == "medium"
+        assert "blockWidth" not in milestones
 
     def test_wide_table_has_nine_columns(self):
         value = content.participants_page()

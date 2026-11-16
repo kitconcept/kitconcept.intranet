@@ -5,9 +5,13 @@ export const messages = defineMessages({
     id: 'navigation_tree_open_navigation',
     defaultMessage: 'Open navigation',
   },
-  siteLabel: {
-    id: 'navigation_tree_site_label',
-    defaultMessage: 'SITE',
+  portalLabel: {
+    id: 'navigation_tree_portal_label',
+    defaultMessage: 'Portal',
+  },
+  workspaceLabel: {
+    id: 'navigation_tree_workspace_label',
+    defaultMessage: 'Workspace',
   },
   navigationLabel: {
     id: 'navigation_tree_navigation_label',
@@ -52,6 +56,23 @@ export const messages = defineMessages({
   workspaceSwitcherLabel: {
     id: 'navigation_tree_workspace_switcher_label',
     defaultMessage: 'Switch workspace',
+  },
+  workspaceSearchPlaceholder: {
+    id: 'navigation_tree_workspace_search_placeholder',
+    defaultMessage: 'Search workspace…',
+  },
+  allWorkspaces: {
+    id: 'navigation_tree_all_workspaces',
+    defaultMessage: 'All workspaces · {count}',
+  },
+  workspaceMatches: {
+    id: 'navigation_tree_workspace_matches',
+    defaultMessage:
+      'Workspaces · {count, plural, one {# match} other {# matches}}',
+  },
+  noWorkspaceFound: {
+    id: 'navigation_tree_no_workspace_found',
+    defaultMessage: 'No workspace found',
   },
   addNew: {
     id: 'navigation_tree_add_new',

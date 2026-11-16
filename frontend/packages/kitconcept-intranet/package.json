@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/intranet",
-  "version": "3.0.2",
+  "version": "3.8.0",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -41,6 +41,7 @@
     "@plone/types": "workspace:*",
     "@testing-library/react": "^16.2.0",
     "@types/lodash": "^4.14.201",
+    "@types/papaparse": "^5.5.2",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "playwright": "^1.61.0",
@@ -52,6 +53,7 @@
     "@kitconcept/volto-iframe-block",
     "volto-rss-block",
     "@eeacms/volto-accordion-block",
+    "@eeacms/volto-pdf-block",
     "@kitconcept/volto-banner-block",
     "@kitconcept/volto-bm3-compat",
     "@kitconcept/volto-button-block",
@@ -71,10 +73,14 @@
     "@plone-collective/volto-authomatic",
     "@kitconcept/volto-solr",
     "@kitconcept/volto-contact-block",
-    "@kitconcept/volto-plate"
+    "@kitconcept/volto-plate",
+    "@kitconcept/volto-keywordmanager",
+    "@plone/volto-recyclebin",
+    "@kitconcept/volto-maintenance-banner"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
+    "@eeacms/volto-pdf-block": "^1.0.12",
     "@kitconcept/core": "workspace:*",
     "@kitconcept/volto-banner-block": "workspace:*",
     "@kitconcept/volto-bm3-compat": "workspace:*",
@@ -92,16 +98,20 @@
     "@kitconcept/volto-iframe-block": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
     "@kitconcept/volto-contact-block": "workspace:*",
+    "@kitconcept/volto-keywordmanager": "workspace:*",
+    "@kitconcept/volto-maintenance-banner": "workspace:*",
     "@plone/components": "workspace:*",
     "@plone/helpers": "^2.0.0-alpha.8",
     "@plone/volto-form-block": "^1.0.0-alpha.3",
-    "@plone-collective/volto-authomatic": "3.0.0-alpha.6",
-    "@plone-collective/volto-image-editor": "1.0.1",
+    "@plone/volto-recyclebin": "^1.0.0-alpha.2",
+    "@plone-collective/volto-authomatic": "3.0.0",
+    "@plone-collective/volto-image-editor": "1.1.0",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
     "react-aria-components": "catalog:",
     "volto-rss-block": "^3.0.1",
-    "@kitconcept/volto-plate": "^1.0.0-alpha.30",
+    "@kitconcept/volto-plate": "^1.0.0-alpha.40",
+    "@platejs/code-drawing": "^53.0.0",
     "@platejs/diff": "^53.0.0",
     "@platejs/selection": "^53.1.6",
     "@platejs/table": "^53.0.9",
@@ -109,7 +119,8 @@
     "@radix-ui/react-popover": "^1.1.15",
     "class-variance-authority": "^0.7.1",
     "lucide-react": "^0.544.0",
+    "papaparse": "^5.7.0",
     "platejs": "^53.3.14"
   },
-  "volto_version": "19.4.1"
+  "volto_version": "19.7.0"
 }

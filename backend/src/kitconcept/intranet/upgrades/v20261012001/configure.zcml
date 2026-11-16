@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261005001"
+      destination="20261012001"
+      >
+    <genericsetup:upgradeStep
+        title="Index inline tasks from Plate documents."
+        handler=".install_inline_tasks"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

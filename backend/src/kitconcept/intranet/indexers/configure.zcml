@@ -1,3 +1,11 @@
 <configure xmlns="http://namespaces.zope.org/zope">
+  <adapter
+      factory=".tasks.allowed_roles_and_users"
+      name="allowedRolesAndUsers"
+      />
+  <adapter
+      factory=".tasks.review_state"
+      name="review_state"
+      />
 
 </configure>

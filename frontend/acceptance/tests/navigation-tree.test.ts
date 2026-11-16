@@ -572,4 +572,145 @@ test.describe('NavigationTree', () => {
       ).toBeVisible();
     });
   });
+
+  test.describe('workflow state', () => {
+    test('state dot updates after a workflow transition in the toolbar', async ({
+      page,
+    }) => {
+      await login(page);
+      const { workspaceId, workspacePath } =
+        await createNavTreeWikiContent(page);
+      const idSuffix = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      const pageId = `nav-tree-private-${idSuffix}`;
+      await createContent(page, {
+        contentType: 'WikiPage',
+        contentId: pageId,
+        contentTitle: 'Nav Tree Private Page',
+        path: workspaceId,
+      });
+
+      await page.goto(`${workspacePath}/${pageId}`, {
+        waitUntil: 'networkidle',
+      });
+
+      const stateDot = page
+        .locator('nav.navigation-tree')
+        .getByRole('row', { name: 'Nav Tree Private Page' })
+        .locator('.nav-tree-state-dot');
+      await expect(stateDot).toHaveAttribute('data-review-state', 'private');
+
+      await page.locator('#toolbar button[aria-label="More"]').click();
+      await page.locator('#toolbar .react-select__control').click();
+      await page
+        .locator('.react-select__option', {
+          hasText: /^(Publish|Veröffentlichen)$/,
+        })
+        .click();
+
+      await expect(stateDot).toHaveAttribute('data-review-state', 'published');
+    });
+  });
+
+  test.describe('hidden content types', () => {
+    test('images and files are not shown in the tree', async ({ page }) => {
+      await login(page);
+      const { workspaceId, workspacePath } =
+        await createNavTreeWikiContent(page);
+      const idSuffix = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      const mediaPageId = `nav-tree-media-page-${idSuffix}`;
+
+      await createContent(page, {
+        contentType: 'WikiPage',
+        contentId: mediaPageId,
+        contentTitle: 'Nav Tree Media Page',
+        path: workspaceId,
+        transition: 'publish',
+      });
+
+      // One Image and one File in the workspace, and one of each inside
+      // the media page (so it has no visible children).
+      for (const path of [workspaceId, `${workspaceId}/${mediaPageId}`]) {
+        await createContent(page, {
+          contentType: 'Image',
+          contentId: `nav-tree-image-${idSuffix}`,
+          contentTitle: 'Nav Tree Image',
+          path,
+          bodyModifier: (body) => ({
+            ...body,
+            image: {
+              data: 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+              encoding: 'base64',
+              filename: 'pixel.png',
+              'content-type': 'image/png',
+            },
+          }),
+        });
+        await createContent(page, {
+          contentType: 'File',
+          contentId: `nav-tree-file-${idSuffix}`,
+          contentTitle: 'Nav Tree File',
+          path,
+          bodyModifier: (body) => ({
+            ...body,
+            file: {
+              data: 'aGVsbG8=',
+              encoding: 'base64',
+              filename: 'hello.txt',
+              'content-type': 'text/plain',
+            },
+          }),
+        });
+      }
+
+      await page.goto(workspacePath, { waitUntil: 'networkidle' });
+
+      const nav = page.locator('nav.navigation-tree');
+      const mediaPageRow = nav.getByRole('row', {
+        name: 'Nav Tree Media Page',
+      });
+      await expect(mediaPageRow).toBeVisible();
+      await expect(
+        nav.getByRole('row', { name: 'Nav Tree Test Section' }),
+      ).toBeVisible();
+
+      await expect(
+        nav.getByRole('row', { name: 'Nav Tree Image' }),
+      ).toHaveCount(0);
+      await expect(nav.getByRole('row', { name: 'Nav Tree File' })).toHaveCount(
+        0,
+      );
+      // A page that only contains an image and a file has nothing to expand.
+      await expect(mediaPageRow.locator('button[slot="chevron"]')).toBeHidden();
+    });
+  });
+
+  test.describe('workspace switcher', () => {
+    test('search filters workspaces and keeps the portal entry', async ({
+      page,
+    }) => {
+      await login(page);
+      const { workspacePath } = await createNavTreeWikiContent(page);
+      await page.goto(workspacePath, { waitUntil: 'networkidle' });
+
+      await page.locator('.navigation-tree-header').click();
+      const menu = page.locator('.nav-tree-switcher-menu');
+      const search = page.locator('.nav-tree-switcher-search input');
+      await expect(search).toBeVisible();
+      await expect(menu.locator('.nav-tree-switcher-section')).toHaveCount(2);
+
+      await search.fill('nav tree test');
+      await expect(
+        menu.getByRole('menuitem', { name: 'Nav Tree Test Workspace' }).first(),
+      ).toBeVisible();
+
+      await search.fill('no-such-workspace-xyz');
+      await expect(
+        menu.getByRole('menuitem', {
+          name: /No workspace found|Kein Workspace gefunden/,
+        }),
+      ).toBeVisible();
+      // The portal entry stays visible while filtering.
+      await expect(menu.getByRole('menuitem')).toHaveCount(2);
+    });
+  });
 });

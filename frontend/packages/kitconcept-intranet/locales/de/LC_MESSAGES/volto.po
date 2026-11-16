@@ -11,6 +11,16 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "(Default)"
+#: components/widgets/ContentTypeWorkflow
+msgid "(Default)"
+msgstr "(Standard)"
+
+#. Default: "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+#: components/Blocks/CsvTable/schema
+msgid "A CSV file inside the intranet. Pick it with the browse button or paste its address."
+msgstr "Eine CSV-Datei im Intranet. Mit der Durchsuchen-Schaltfläche auswählen oder die Adresse einfügen."
+
 #. Default: "AI Overview"
 #: components/Header/HeaderSearch
 msgid "AI Overview"
@@ -40,6 +50,11 @@ msgstr "Alle"
 #: components/Header/HeaderSearch
 msgid "All statuses"
 msgstr "Alle Status"
+
+#. Default: "All tasks"
+#: components/Tasks/Tasks
+msgid "All tasks"
+msgstr "Alle Aufgaben"
 
 #. Default: "All types"
 #: components/Header/HeaderSearch
@@ -71,6 +86,11 @@ msgstr "Beauftragte Person: *"
 msgid "Author"
 msgstr "Autor:innen"
 
+#. Default: "Average"
+#: index
+msgid "Average"
+msgstr "Durchschnitt"
+
 #. Default: "Beta"
 #: components/Header/HeaderSearch
 msgid "Beta"
@@ -86,10 +106,21 @@ msgstr "Vita"
 msgid "Building"
 msgstr "Gebäude"
 
-#. Default: "By"
-#: slots/DocumentByLine/DocumentByLine
-msgid "By"
-msgstr "Von"
+#. Default: "CSV file"
+#: components/Blocks/CsvTable/schema
+msgid "CSV file"
+msgstr "CSV-Datei"
+
+#. Default: "CSV table"
+#: components/Blocks/CsvTable/schema
+#: index
+msgid "CSV table"
+msgstr "CSV-Tabelle"
+
+#. Default: "Calculation"
+#: index
+msgid "Calculation"
+msgstr "Berechnung"
 
 #. Default: "Cancel"
 #: components/ContentReviewSidebar/DelegateReview
@@ -98,10 +129,45 @@ msgstr "Von"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#. Default: "Change workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow"
+msgstr "Arbeitsablauf ändern"
+
+#. Default: "Change workflow?"
+#: components/widgets/ContentTypeWorkflow
+msgid "Change workflow?"
+msgstr "Arbeitsablauf ändern?"
+
+#. Default: "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+#: components/widgets/ContentTypeWorkflow
+msgid "Changing the workflow updates the state and permissions of all existing items of this type according to the selected state mapping. This cannot be undone automatically."
+msgstr "Beim Ändern des Arbeitsablaufs werden Status und Berechtigungen aller vorhandenen Elemente dieses Typs gemäß der gewählten Statuszuordnung aktualisiert. Dies kann nicht automatisch rückgängig gemacht werden."
+
+#. Default: "Choose a CSV file in the sidebar."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Choose a CSV file in the sidebar."
+msgstr "Wählen Sie eine CSV-Datei in der Seitenleiste."
+
+#. Default: "Choose the new state for existing items in each current state. The change is applied when you save."
+#: components/widgets/ContentTypeWorkflow
+msgid "Choose the new state for existing items in each current state. The change is applied when you save."
+msgstr "Wählen Sie für vorhandene Elemente in jedem aktuellen Status den neuen Status. Die Änderung wird beim Speichern übernommen."
+
 #. Default: "Clear filter"
 #: components/WikiTable/TableViewControls
 msgid "Clear filter"
 msgstr "Filter löschen"
+
+#. Default: "Close search"
+#: components/SearchCloseBar/SearchCloseBar
+msgid "Close search"
+msgstr "Suche schließen"
+
+#. Default: "Columns"
+#: components/Blocks/Listing/Table/schema
+msgid "Columns"
+msgstr "Spalten"
 
 #. Default: "Comment:"
 #: components/ContentReviewSidebar/DelegateReview
@@ -119,6 +185,21 @@ msgstr "Kontakt"
 #: components/Toolbar/DocumentReview
 msgid "Content marked as reviewed"
 msgstr ""
+
+#. Default: "Content type"
+#: components/Blocks/Listing/Table/columns
+msgid "Content type"
+msgstr "Inhaltstyp"
+
+#. Default: "Content type and title are always shown."
+#: components/Blocks/Listing/Table/schema
+msgid "Content type and title are always shown."
+msgstr "Inhaltstyp und Titel werden immer angezeigt."
+
+#. Default: "Count"
+#: index
+msgid "Count"
+msgstr "Anzahl"
 
 #. Default: "Created On"
 #: components/ContentInteractions/ContentInteractions
@@ -139,6 +220,16 @@ msgstr "Erstellt am"
 #: components/widgets/QuerystringWidget
 msgid "Criteria"
 msgstr ""
+
+#. Default: "Current state"
+#: components/widgets/ContentTypeWorkflow
+msgid "Current state"
+msgstr "Aktueller Status"
+
+#. Default: "Dashboard"
+#: components/Dashboard/DashboardMenu
+msgid "Dashboard"
+msgstr "Dashboard"
 
 #. Default: "Delegate Review Update"
 #: components/Toolbar/DocumentReview
@@ -171,6 +262,11 @@ msgstr "Ziehen, um die Spalte zu verschieben"
 msgid "Drag to move the row"
 msgstr "Ziehen, um die Zeile zu verschieben"
 
+#. Default: "Due"
+#: components/Tasks/Tasks
+msgid "Due"
+msgstr "Fällig"
+
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 #: components/theme/PersonView
@@ -191,6 +287,7 @@ msgstr "Ende"
 #: components/Blocks/IFrame/isValidUrl
 #: components/ContentReviewSidebar/DelegateReview
 #: components/FeedBackForm/FeedBackForm
+#: components/widgets/ContentTypeWorkflow
 #: slots/AboutThisContent/AboutThisContent
 msgid "Error"
 msgstr "Fehler"
@@ -250,6 +347,16 @@ msgstr "Tabelle filtern"
 #: components/Header/HeaderSearch
 msgid "Folder"
 msgstr "Ordner"
+
+#. Default: "Footer row"
+#: index
+msgid "Footer row"
+msgstr "Fußzeile"
+
+#. Default: "Full width"
+#: index
+msgid "Full width"
+msgstr "Vollbreite"
 
 #. Default: "Generating answer…"
 #: components/Header/HeaderSearch
@@ -346,6 +453,16 @@ msgstr "Letztes Jahr"
 msgid "List with date"
 msgstr "Liste mit Datum"
 
+#. Default: "Loading tasks..."
+#: components/Tasks/Tasks
+msgid "Loading tasks"
+msgstr "Aufgaben werden geladen..."
+
+#. Default: "Loading the CSV file…"
+#: components/Blocks/CsvTable/CsvTable
+msgid "Loading the CSV file…"
+msgstr "CSV-Datei wird geladen …"
+
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
@@ -360,6 +477,21 @@ msgstr "Überarbeitung erforderlich"
 #: components/Toolbar/DocumentReview
 msgid "Mark as Reviewed"
 msgstr "Als geprüft markieren"
+
+#. Default: "Maximum"
+#: index
+msgid "Maximum"
+msgstr "Maximum"
+
+#. Default: "Medium"
+#: index
+msgid "Medium"
+msgstr "Mittel"
+
+#. Default: "Minimum"
+#: index
+msgid "Minimum"
+msgstr "Minimum"
 
 #. Default: "Move column left"
 #: index
@@ -381,25 +513,60 @@ msgstr "Zeile nach unten verschieben"
 msgid "Move row up"
 msgstr "Zeile nach oben verschieben"
 
+#. Default: "My tasks"
+#: components/Tasks/Tasks
+msgid "My tasks"
+msgstr "Meine Aufgaben"
+
 #. Default: "Name"
 #: components/FeedBackForm/FeedBackForm
 msgid "Name"
 msgstr "Name"
+
+#. Default: "New state"
+#: components/widgets/ContentTypeWorkflow
+msgid "New state"
+msgstr "Neuer Status"
+
+#. Default: "New workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "New workflow"
+msgstr "Neuer Arbeitsablauf"
 
 #. Default: "News Item"
 #: components/Header/HeaderSearch
 msgid "News Item"
 msgstr "Nachricht"
 
+#. Default: "Next page"
+#: components/Tasks/Tasks
+msgid "Next page"
+msgstr "Nächste Seite"
+
 #. Default: "Next review"
 #: components/Toolbar/DocumentReview
 msgid "Next review"
 msgstr ""
 
+#. Default: "No"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "No"
+msgstr "Nein"
+
 #. Default: "No document found with the selected criteria."
 #: components/Header/HeaderSearch
 msgid "No document found with the selected criteria."
 msgstr "Kein Dokument mit den gewählten Kriterien gefunden."
+
+#. Default: "No due date"
+#: components/Tasks/Tasks
+msgid "No due date"
+msgstr "Kein Fälligkeitsdatum"
+
+#. Default: "No open tasks match these filters."
+#: components/Tasks/Tasks
+msgid "No open tasks match these filters."
+msgstr "Keine offenen Aufgaben entsprechen diesen Filtern."
 
 #. Default: "No results for “{term}”."
 #: components/Header/HeaderSearch
@@ -416,10 +583,25 @@ msgstr "Keine Ergebnisse in „{scope}“."
 msgid "No selection"
 msgstr "Keine Auswahl"
 
+#. Default: "No workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "No workflow"
+msgstr "Kein Arbeitsablauf"
+
+#. Default: "None"
+#: index
+msgid "None"
+msgstr "Keine"
+
 #. Default: "Offset"
 #: components/widgets/QuerystringWidget
 msgid "Offset"
 msgstr "Offset"
+
+#. Default: "Only CSV files inside the intranet can be shown."
+#: components/Blocks/CsvTable/CsvTable
+msgid "Only CSV files inside the intranet can be shown."
+msgstr "Es können nur CSV-Dateien aus dem Intranet angezeigt werden."
 
 #. Default: "Only internal e-mail addresses are permitted."
 #: components/FeedBackForm/FeedBackForm
@@ -430,6 +612,11 @@ msgstr "Es sind nur interne E-Mail-Adressen zulässig."
 #: index
 msgid "Organisational Unit"
 msgstr "Organisationseinheit"
+
+#. Default: "Overdue"
+#: components/Tasks/Tasks
+msgid "Overdue"
+msgstr "Überfällig"
 
 #. Default: "Page"
 #: components/Header/HeaderSearch
@@ -473,6 +660,11 @@ msgstr "Überprüfung verschieben"
 msgid "PostponeTitle"
 msgstr "Überprüfung verschieben"
 
+#. Default: "Previous page"
+#: components/Tasks/Tasks
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
 #. Default: "Private"
 #: components/Header/HeaderSearch
 #: slots/AboutThisContent/AboutThisContent
@@ -483,6 +675,11 @@ msgstr "Privat"
 #: components/Header/HeaderSearch
 msgid "Published"
 msgstr "Veröffentlicht"
+
+#. Default: "Resize table"
+#: index
+msgid "Resize table"
+msgstr "Tabellenbreite ändern"
 
 #. Default: "Responsibilities"
 #: index
@@ -498,6 +695,11 @@ msgstr "Inhaltsverantwortliche Person"
 #: components/widgets/QuerystringWidget
 msgid "Results limit"
 msgstr "Anzahl der Ergebnisse einschränken"
+
+#. Default: "Retry"
+#: components/Tasks/Tasks
+msgid "Retry"
+msgstr "Erneut versuchen"
 
 #. Default: "Reversed order"
 #: components/widgets/QuerystringWidget
@@ -541,6 +743,11 @@ msgstr "Nur Titel durchsuchen"
 msgid "Search workspace"
 msgstr "Workspace durchsuchen"
 
+#. Default: "Search..."
+#: index
+msgid "Search..."
+msgstr "Suche"
+
 #. Default: "Search…"
 #: components/Header/HeaderSearch
 msgid "Search…"
@@ -567,10 +774,25 @@ msgstr "Ich möchte diesen Intranet-Inhalt mit Ihnen teilen:"
 msgid "Share this page via email"
 msgstr "Seite per E-Mail teilen"
 
+#. Default: "Show all results"
+#: components/Header/HeaderSearch
+msgid "Show all results"
+msgstr "Alle Suchergebnisse anzeigen"
+
 #. Default: "Show archived content"
 #: components/Header/HeaderSearch
 msgid "Show archived content"
 msgstr "Archivierte Inhalte anzeigen"
+
+#. Default: "Show less"
+#: index
+msgid "Show less"
+msgstr "Weniger anzeigen"
+
+#. Default: "Show more"
+#: index
+msgid "Show more"
+msgstr "Alle anzeigen"
 
 #. Default: "Show more breadcrumb items"
 #: components/Header/HeaderBreadcrumbs
@@ -612,6 +834,11 @@ msgstr "Nach {column} sortieren"
 msgid "Sort on"
 msgstr "Sortieren nach"
 
+#. Default: "Source"
+#: components/Tasks/Tasks
+msgid "Source"
+msgstr "Quelle"
+
 #. Default: "Sources"
 #: components/Header/HeaderSearch
 msgid "Sources"
@@ -646,15 +873,92 @@ msgstr "Betreff Seite/URL"
 msgid "Success"
 msgstr "Erfolg"
 
+#. Default: "Sum"
+#: index
+msgid "Sum"
+msgstr "Summe"
+
+#. Default: "Table"
+#: components/Blocks/Listing/Table/TableTemplate
+#: index
+msgid "Table"
+msgstr "Tabelle"
+
+#. Default: "Task"
+#: components/Tasks/Tasks
+msgid "Task"
+msgstr "Aufgabe"
+
+#. Default: "Assignee"
+#: components/Tasks/Tasks
+msgid "Task assignee"
+msgstr "Beauftragte Personen"
+
+#. Default: "Task pages"
+#: components/Tasks/Tasks
+msgid "Task pages"
+msgstr "Aufgabenseiten"
+
+#. Default: "Task scope"
+#: components/Tasks/Tasks
+msgid "Task scope"
+msgstr "Aufgabenauswahl"
+
+#. Default: "Tasks"
+#: components/Tasks/Tasks
+#: components/Tasks/TasksMenu
+msgid "Tasks"
+msgstr "Aufgaben"
+
+#. Default: "Text width"
+#: index
+msgid "Text width"
+msgstr "Lesespalte"
+
 #. Default: "The AI answer is currently unavailable. Please try again."
 #: components/Header/HeaderSearch
 msgid "The AI answer is currently unavailable. Please try again."
 msgstr "Die KI-Antwort ist momentan nicht verfügbar. Bitte versuchen Sie es erneut."
 
+#. Default: "The CSV file could not be loaded."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file could not be loaded."
+msgstr "Die CSV-Datei konnte nicht geladen werden."
+
+#. Default: "The CSV file holds no rows."
+#: components/Blocks/CsvTable/CsvTable
+msgid "The CSV file holds no rows."
+msgstr "Die CSV-Datei enthält keine Zeilen."
+
 #. Default: "The displayed content is tailored to your organizational unit and location."
 #: slots/ListingDisclaimer/ListingDisclaimer
 msgid "The displayed content is tailored to your organizational unit and location."
 msgstr "Die angezeigten Inhalte wurden anhand Deiner Organisationseinheit und Deines Standorts zusammengestellt."
+
+#. Default: "The table takes the width of the surrounding block"
+#: index
+msgid "The table takes the width of the surrounding block"
+msgstr "Die Tabelle übernimmt die Breite des umgebenden Blocks"
+
+#. Default: "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow controls which states items of this type can be in and who can view or edit them in each state. If no workflow is set, the visibility of items of this type is determined by the folder they are in."
+msgstr "Der Arbeitsablauf legt fest, in welchen Status sich Elemente dieses Typs befinden können und wer sie in den einzelnen Status anzeigen oder bearbeiten darf. Ist kein Arbeitsablauf festgelegt, richtet sich die Sichtbarkeit von Elementen dieses Typs nach dem Ordner, in dem sie sich befinden."
+
+#. Default: "The workflow for this content type could not be updated."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow for this content type could not be updated."
+msgstr "Der Arbeitsablauf für diesen Inhaltstyp konnte nicht aktualisiert werden."
+
+#. Default: "The workflow settings could not be loaded."
+#: components/widgets/ContentTypeWorkflow
+msgid "The workflow settings could not be loaded."
+msgstr "Die Einstellungen zum Arbeitsablauf konnten nicht geladen werden."
+
+#. Default: "Title"
+#: components/Blocks/Listing/Table/columns
+msgid "Title"
+msgstr "Titel"
 
 #. Default: "To submit a Like you must be logged in"
 #: components/ContentInteractions/ContentInteractions
@@ -666,10 +970,20 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 msgid "Today"
 msgstr "Heute"
 
+#. Default: "Tomorrow"
+#: components/Tasks/Tasks
+msgid "Tomorrow"
+msgstr "Morgen"
+
 #. Default: "Type"
 #: components/Header/HeaderSearch
 msgid "Type"
 msgstr "Typ"
+
+#. Default: "Unable to load tasks."
+#: components/Tasks/Tasks
+msgid "Unable to load tasks"
+msgstr "Aufgaben konnten nicht geladen werden."
 
 #. Default: "Updated"
 #: components/Header/HeaderSearch
@@ -691,10 +1005,31 @@ msgstr "Website"
 msgid "What is unclear, outdated or missing?"
 msgstr "Was ist unklar, veraltet oder fehlt?"
 
+#. Default: "Wide"
+#: index
+msgid "Wide"
+msgstr "Breit"
+
+#. Default: "Width"
+#: index
+msgid "Width"
+msgstr "Breite"
+
+#. Default: "Workflow"
+#: components/widgets/ContentTypeWorkflow
+msgid "Workflow"
+msgstr "Arbeitsablauf"
+
 #. Default: "Workspace"
 #: components/Header/HeaderSearch
+#: components/Tasks/Tasks
 msgid "Workspace"
 msgstr "Workspace"
+
+#. Default: "Yes"
+#: components/Blocks/Listing/Table/cellTypes
+msgid "Yes"
+msgstr "Ja"
 
 #. Default: "Your feedback has been submitted successfully. You will receive a confirmation email shortly."
 #: components/FeedBackForm/FeedBackForm
@@ -732,15 +1067,25 @@ msgstr "geht an"
 msgid "help"
 msgstr "Das Überprüfungsintervall ist auf %{intervall} eingestellt. Um es zu ändern, müssen Sie den Inhalt bearbeiten."
 
+#. Default: "Jump to the first open comment in the text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "jumpToFirstOpenDiscussion"
+msgstr "Zum ersten offenen Kommentar im Text springen"
+
 #. Default: "Review has been successfully postponed"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "messagePostpone"
 msgstr "Die Überprüfung wurde erfolgreich verschoben."
 
-#. Default: "last modified"
+#. Default: "Updated on"
 #: slots/DocumentByLine/DocumentByLine
 msgid "modified"
-msgstr "zuletzt verändert"
+msgstr "Aktualisiert am"
+
+#. Default: "{count} open discussions in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "multipleOpenDiscussions"
+msgstr "{count} offene Kommentare im Text"
 
 #. Default: "Something went wrong"
 #: components/NavigationTree/messages
@@ -751,6 +1096,11 @@ msgstr ""
 #: components/NavigationTree/messages
 msgid "navigation_tree_add_new"
 msgstr ""
+
+#. Default: "All workspaces · {count}"
+#: components/NavigationTree/messages
+msgid "navigation_tree_all_workspaces"
+msgstr "Alle Workspaces · {count}"
 
 #. Default: "Clear search"
 #: components/NavigationTree/messages
@@ -792,10 +1142,20 @@ msgstr ""
 msgid "navigation_tree_no_results"
 msgstr ""
 
+#. Default: "No workspace found"
+#: components/NavigationTree/messages
+msgid "navigation_tree_no_workspace_found"
+msgstr "Kein Workspace gefunden"
+
 #. Default: "Open navigation"
 #: components/NavigationTree/messages
 msgid "navigation_tree_open_navigation"
 msgstr ""
+
+#. Default: "Portal"
+#: components/NavigationTree/messages
+msgid "navigation_tree_portal_label"
+msgstr "Portal"
 
 #. Default: "Rename"
 #: components/NavigationTree/messages
@@ -827,15 +1187,25 @@ msgstr ""
 msgid "navigation_tree_search_results"
 msgstr ""
 
-#. Default: "SITE"
-#: components/NavigationTree/messages
-msgid "navigation_tree_site_label"
-msgstr ""
-
 #. Default: "Site navigation"
 #: components/NavigationTree/messages
 msgid "navigation_tree_site_navigation"
 msgstr ""
+
+#. Default: "Workspace"
+#: components/NavigationTree/messages
+msgid "navigation_tree_workspace_label"
+msgstr "Workspace"
+
+#. Default: "Workspaces · {count, plural, one {# match} other {# matches}}"
+#: components/NavigationTree/messages
+msgid "navigation_tree_workspace_matches"
+msgstr "Workspaces · {count} Treffer"
+
+#. Default: "Search workspace…"
+#: components/NavigationTree/messages
+msgid "navigation_tree_workspace_search_placeholder"
+msgstr "Workspace suchen…"
 
 #. Default: "Switch workspace"
 #: components/NavigationTree/messages
@@ -847,6 +1217,11 @@ msgstr ""
 msgid "nextReview"
 msgstr "Nächste Kontrolle am: "
 
+#. Default: "1 open discussion in text"
+#: slots/DocumentByLine/DocumentByLine
+msgid "oneOpenDiscussion"
+msgstr "1 offener Kommentar im Text"
+
 #. Default: "Added"
 #: components/PlateDiff/messages
 msgid "plateDiff.added"
@@ -856,6 +1231,11 @@ msgstr "Hinzugefügt"
 #: components/PlateDiff/messages
 msgid "plateDiff.changed"
 msgstr "Geändert"
+
+#. Default: "Link"
+#: components/PlateDiff/messages
+msgid "plateDiff.linkTarget"
+msgstr "Link"
 
 #. Default: "Not in this version"
 #: components/PlateDiff/messages
@@ -891,6 +1271,11 @@ msgstr "Bildunterschrift"
 #: components/PlateDiff/messages
 msgid "plateDiff.prop.checked"
 msgstr "Abgehakt"
+
+#. Default: "Column widths"
+#: components/PlateDiff/messages
+msgid "plateDiff.prop.colSizes"
+msgstr "Spaltenbreiten"
 
 #. Default: "Text colour"
 #: components/PlateDiff/messages
@@ -992,6 +1377,16 @@ msgstr "Standard"
 msgid "plateDiff.value.blockWidth.full"
 msgstr "Volle Breite"
 
+#. Default: "Wide"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.layout"
+msgstr "Breit"
+
+#. Default: "Medium"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.blockWidth.medium"
+msgstr "Mittel"
+
 #. Default: "Narrow"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.blockWidth.narrow"
@@ -1001,6 +1396,11 @@ msgstr "Schmal"
 #: components/PlateDiff/messages
 msgid "plateDiff.value.blockWidth.wide"
 msgstr "Breit"
+
+#. Default: "{sizes} px"
+#: components/PlateDiff/messages
+msgid "plateDiff.value.colSizes"
+msgstr "{sizes} px"
 
 #. Default: "Bulleted list"
 #: components/PlateDiff/messages
@@ -1152,11 +1552,6 @@ msgstr "Wenn Sie möchten, können Sie hier einen Kommentar hinterlassen, beispi
 msgid "postponeReview"
 msgstr "Verschieben Sie den nächsten Prüftermin für diesen Inhalt. Wählen Sie ein neues Datum oder einen Zeitraum, nach dem Sie erneut erinnert werden möchten."
 
-#. Default: "published"
-#: slots/DocumentByLine/DocumentByLine
-msgid "published"
-msgstr "Veröffentlicht"
-
 #. Default: "No results from RSS feed."
 #: components/Blocks/RSS/DefaultTemplate
 #: components/Blocks/RSS/GridTemplate
@@ -1175,6 +1570,11 @@ msgstr "Weiterlesen"
 #: components/ContentInteractions/ContentInteractions
 msgid "shareSubject"
 msgstr "Empfehlung aus dem Intranet"
+
+#. Default: "{count, plural, one {# task} other {# tasks}}"
+#: components/Tasks/Tasks
+msgid "taskCount"
+msgstr "{count, plural, one {# Aufgabe} other {# Aufgaben}}"
 
 #. Default: "{shown} of {total} rows"
 #: components/WikiTable/TableViewControls

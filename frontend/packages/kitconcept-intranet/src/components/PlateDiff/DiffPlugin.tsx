@@ -20,7 +20,13 @@ import {
   PlateLeaf,
   type PlateLeafProps,
 } from 'platejs/react';
-import { changeSummary, describeOperation, operationLabel } from './messages';
+import type { LinkChange, LinkPairElement } from './linkChanges';
+import {
+  changeSummary,
+  describeOperation,
+  messages,
+  operationLabel,
+} from './messages';
 
 export const DIFF_KEY = 'diff';
 
@@ -62,17 +68,38 @@ function DiffLeaf(props: PlateLeafProps) {
 function DiffBlock({
   op,
   inline,
+  pair,
+  linkChange,
   children,
-}: React.PropsWithChildren<{ op: DiffOperation; inline: boolean }>) {
+}: React.PropsWithChildren<{
+  op: DiffOperation;
+  inline: boolean;
+  pair?: 'old' | 'new';
+  linkChange?: LinkChange;
+}>) {
   const intl = useIntl();
   const summary = changeSummary(op, intl);
   if (inline) {
+    const label = intl.formatMessage(messages.linkTarget);
+    const pairClass = pair ? ` plate-diff-link-${pair}` : '';
     return (
       <span
-        className={`plate-diff-inline plate-diff-inline-${op.type}`}
-        title={describeOperation(op, intl)}
+        className={`plate-diff-inline plate-diff-inline-${op.type}${pairClass}`}
+        title={
+          linkChange
+            ? `${label}: ${linkChange.from} → ${linkChange.to}`
+            : describeOperation(op, intl)
+        }
       >
         {children}
+        {linkChange && pair === 'new' ? (
+          // The old target shows on the left / as removed, the new one on
+          // the right / as added, through the classes of the text marks.
+          <span className="plate-diff-inline-label" contentEditable={false}>
+            {label}: <del className="plate-diff-delete">{linkChange.from}</del>
+            <ins className="plate-diff-insert">{linkChange.to}</ins>
+          </span>
+        ) : null}
       </span>
     );
   }
@@ -110,8 +137,14 @@ export const DiffPlugin = createPlatePlugin({
       ({ children, editor, element }) => {
         const op = (element as DiffElement).diffOperation;
         if (!op || UNWRAPPABLE_TYPES.includes(element.type)) return children;
+        const { diffLinkPair, diffLinkChange } = element as LinkPairElement;
         return (
-          <DiffBlock op={op} inline={editor.api.isInline(element)}>
+          <DiffBlock
+            op={op}
+            inline={editor.api.isInline(element)}
+            pair={diffLinkPair}
+            linkChange={diffLinkChange}
+          >
             {children}
           </DiffBlock>
         );

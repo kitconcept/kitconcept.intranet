@@ -7,7 +7,7 @@ import {
   type FormEvent,
 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   Button,
@@ -24,7 +24,6 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import calendarSVG from '@plone/volto/icons/calendar.svg';
-import checkSVG from '@plone/volto/icons/check.svg';
 import fileSVG from '@plone/volto/icons/file.svg';
 import folderSVG from '@plone/volto/icons/folder.svg';
 import globeSVG from '@plone/volto/icons/globe.svg';
@@ -42,6 +41,11 @@ import {
 import { getVocabulary } from '@plone/volto/actions/vocabularies/vocabularies';
 import { useWorkspaceSwitcher } from '../NavigationTree/useWorkspaceSwitcher';
 import type { SearchItem } from '../NavigationTree/useNavigationTree';
+import WorkspaceSwitcherMenu from '../WorkspaceSwitcher/WorkspaceSwitcherMenu';
+import {
+  avatarToneClass,
+  getInitials,
+} from '@kitconcept/volto-plate/helpers/avatar';
 
 const messages = defineMessages({
   searchWorkspace: {
@@ -71,6 +75,10 @@ const messages = defineMessages({
   searchEverywhere: {
     id: 'Search everywhere',
     defaultMessage: 'Search everywhere',
+  },
+  showAllResults: {
+    id: 'Show all results',
+    defaultMessage: 'Show all results',
   },
   askAI: {
     id: 'Ask AI',
@@ -278,15 +286,18 @@ const CreatorAvatar = ({
 }: {
   userid: string;
   label: string;
-}) => (
-  <span
-    className={`header-search-creator-avatar tone-${avatarTone(label)}`}
-    aria-hidden="true"
-  >
-    {label.charAt(0).toUpperCase()}
-    <img src={`/@portrait/${userid}`} alt="" loading="lazy" />
-  </span>
-);
+}) => {
+  const initials = getInitials(label?.trim() || userid);
+  return (
+    <span
+      className={`header-search-creator-avatar ${avatarToneClass(userid || initials)}`}
+      aria-hidden="true"
+    >
+      {initials}
+      <img src={`/@portrait/${userid}`} alt="" loading="lazy" />
+    </span>
+  );
+};
 
 const FilterChip = ({
   label,
@@ -482,28 +493,6 @@ type SearchScope =
   | { kind: 'current' }
   | { kind: 'workspace'; path: string; title: string };
 
-// Letter avatar for a workspace, tinted deterministically by title so
-// a workspace keeps its color across renders and sessions (the design
-// shows colored initials, there is no image avatar on Workspace).
-const AVATAR_TONES = 6;
-
-const avatarTone = (title: string) => {
-  let hash = 0;
-  for (let i = 0; i < title.length; i += 1) {
-    hash = (hash * 31 + title.charCodeAt(i)) % AVATAR_TONES;
-  }
-  return hash;
-};
-
-const WorkspaceAvatar = ({ title }: { title: string }) => (
-  <span
-    className={`header-search-scope-avatar tone-${avatarTone(title)}`}
-    aria-hidden="true"
-  >
-    {title.charAt(0).toUpperCase()}
-  </span>
-);
-
 // The Workspace chip: unlike the demo FilterChips this is a real
 // control - it selects the search scope from "everywhere" plus the
 // list of workspaces the user can access (same data as the navigation
@@ -513,12 +502,14 @@ const ScopeChip = ({
   scopeTitle,
   currentWorkspacePath,
   workspaces,
+  isWorkspacesLoading,
   onScopeChange,
 }: {
   scope: SearchScope;
   scopeTitle: string;
   currentWorkspacePath: string | null;
   workspaces: SearchItem[];
+  isWorkspacesLoading: boolean;
   onScopeChange: (scope: SearchScope) => void;
 }) => {
   const intl = useIntl();
@@ -539,15 +530,25 @@ const ScopeChip = ({
         {intl.formatMessage(messages.filterWorkspace)}: {scopeTitle}
         <ChevrondownIcon aria-hidden="true" size="xs" />
       </Button>
-      <Menu
-        className="header-search-chip-menu header-search-scope-menu"
-        aria-label={intl.formatMessage(messages.filterWorkspace)}
-        onAction={(key) => {
-          if (key === 'everywhere') {
+      <WorkspaceSwitcherMenu
+        className="workspace-selector-menu"
+        workspaces={workspaces.map((item) => ({
+          '@id': flattenToAppURL(item['@id']),
+          title: item.title,
+        }))}
+        isLoading={isWorkspacesLoading}
+        selectedId={selectedPath}
+        isPortalSelected={scope.kind === 'everywhere'}
+        ariaLabel={intl.formatMessage(messages.filterWorkspace)}
+        showPortal
+        portalTitle={intl.formatMessage(messages.everywhere)}
+        portalDescription={intl.formatMessage(messages.everywhereHint)}
+        portalIcon={<Icon name={globeSVG} size="18px" />}
+        onSelect={(path) => {
+          if (path === null) {
             onScopeChange({ kind: 'everywhere' });
             return;
           }
-          const path = String(key);
           if (path === currentWorkspacePath) {
             onScopeChange({ kind: 'current' });
             return;
@@ -559,47 +560,7 @@ const ScopeChip = ({
             onScopeChange({ kind: 'workspace', path, title: workspace.title });
           }
         }}
-      >
-        <MenuItem
-          id="everywhere"
-          className="react-aria-MenuItem header-search-scope-item is-everywhere"
-        >
-          <Icon name={globeSVG} size="18px" />
-          <span className="header-search-scope-text">
-            {intl.formatMessage(messages.everywhere)}
-            <span className="header-search-scope-hint">
-              {intl.formatMessage(messages.everywhereHint)}
-            </span>
-          </span>
-          {scope.kind === 'everywhere' ? (
-            <Icon
-              name={checkSVG}
-              size="16px"
-              className="header-search-scope-check"
-            />
-          ) : null}
-        </MenuItem>
-        {workspaces.map((item) => {
-          const path = flattenToAppURL(item['@id']);
-          return (
-            <MenuItem
-              key={path}
-              id={path}
-              className="react-aria-MenuItem header-search-scope-item"
-            >
-              <WorkspaceAvatar title={item.title} />
-              <span className="header-search-scope-text">{item.title}</span>
-              {selectedPath === path ? (
-                <Icon
-                  name={checkSVG}
-                  size="16px"
-                  className="header-search-scope-check"
-                />
-              ) : null}
-            </MenuItem>
-          );
-        })}
-      </Menu>
+      />
     </MenuTrigger>
   );
 };
@@ -609,6 +570,7 @@ const FilterChips = ({
   scopeTitle,
   currentWorkspacePath,
   workspaces,
+  isWorkspacesLoading,
   creatorOptions,
   filters,
   onScopeChange,
@@ -619,6 +581,7 @@ const FilterChips = ({
   scopeTitle: string;
   currentWorkspacePath: string | null;
   workspaces: SearchItem[];
+  isWorkspacesLoading: boolean;
   creatorOptions: FilterOption[];
   filters: SearchFilters;
   onScopeChange: (scope: SearchScope) => void;
@@ -698,6 +661,7 @@ const FilterChips = ({
           scopeTitle={scopeTitle}
           currentWorkspacePath={currentWorkspacePath}
           workspaces={workspaces}
+          isWorkspacesLoading={isWorkspacesLoading}
           onScopeChange={onScopeChange}
         />
         {chips.map((chip, index) => (
@@ -980,7 +944,9 @@ const HeaderSearch = () => {
   const [scope, setScope] = useState<SearchScope>({ kind: 'current' });
   // Workspace list for the scope dropdown; fetched once the dialog
   // opens (the header itself is on every page, the list is not).
-  const { workspaces } = useWorkspaceSwitcher({ enabled: isSearchOpen });
+  const { workspaces, isLoading: isWorkspacesLoading } = useWorkspaceSwitcher({
+    enabled: isSearchOpen,
+  });
 
   // Filter chips (ticket 585). The selections become extra_conditions
   // rows for the livesearch and, on Enter, for the results page URL.
@@ -1137,38 +1103,39 @@ const HeaderSearch = () => {
     return home ? home.title : intl.formatMessage(messages.intranetPortal);
   };
 
+  // Enter and the "Show all results" link go to the workspace-scoped
+  // search page: the nested @@search route plus local=true restricts
+  // the classic results (and, through the page's own wiring, the AI
+  // retrieval) to the workspace subtree. Without a workspace path,
+  // plain global search.
+  // is_multilingual=false: the intranet is monolingual, and the
+  // backend's multilingual path handling would neutralize the
+  // path_prefix filter on a site without plone.app.multilingual.
+  // Active filters travel as the extra_conditions URL parameter:
+  // the results page forwards it to the backend and keeps it across
+  // in-page interactions, so reloading the URL reproduces the
+  // filtered results (ticket 585).
+  const conditionsQuery = extraConditions
+    ? `&extra_conditions=${encodeURIComponent(extraConditions)}`
+    : '';
+  let resultsURL: string;
+  if (scopePath) {
+    const query = term
+      ? `?SearchableText=${encodeURIComponent(term)}&local=true` +
+        `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
+        `&is_multilingual=false` +
+        conditionsQuery
+      : '';
+    resultsURL = `${scopePath}/@@search${query}`;
+  } else {
+    resultsURL = term
+      ? `/search?SearchableText=${encodeURIComponent(term)}` + conditionsQuery
+      : '/search';
+  }
+
   const submitSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Enter goes to the workspace-scoped search page: the nested
-    // @@search route plus local=true restricts the classic results
-    // (and, through the page's own wiring, the AI retrieval) to the
-    // workspace subtree. Without a workspace path, plain global search.
-    // is_multilingual=false: the intranet is monolingual, and the
-    // backend's multilingual path handling would neutralize the
-    // path_prefix filter on a site without plone.app.multilingual.
-    // Active filters travel as the extra_conditions URL parameter:
-    // the results page forwards it to the backend and keeps it across
-    // in-page interactions, so reloading the URL reproduces the
-    // filtered results (ticket 585).
-    const conditionsQuery = extraConditions
-      ? `&extra_conditions=${encodeURIComponent(extraConditions)}`
-      : '';
-    if (scopePath) {
-      const query = term
-        ? `?SearchableText=${encodeURIComponent(term)}&local=true` +
-          `&path_prefix=${encodeURIComponent(`${scopePath}/`)}` +
-          `&is_multilingual=false` +
-          conditionsQuery
-        : '';
-      navigateTo(`${scopePath}/@@search${query}`);
-    } else {
-      navigateTo(
-        term
-          ? `/search?SearchableText=${encodeURIComponent(term)}` +
-              conditionsQuery
-          : '/search',
-      );
-    }
+    navigateTo(resultsURL);
   };
 
   const onAskAI = () => {
@@ -1243,6 +1210,7 @@ const HeaderSearch = () => {
               scopeTitle={scopeTitle}
               currentWorkspacePath={workspace.path}
               workspaces={workspaces}
+              isWorkspacesLoading={isWorkspacesLoading}
               creatorOptions={creatorOptions}
               filters={filters}
               onScopeChange={onScopeChange}
@@ -1294,6 +1262,29 @@ const HeaderSearch = () => {
                 {intl.formatMessage(messages.typeToSearch)}
               </div>
             )}
+
+            {term ? (
+              <div className="header-search-footer">
+                <Link
+                  className="header-search-show-all"
+                  to={resultsURL}
+                  onClick={(event) => {
+                    // A modified click opens the results in a new tab
+                    // or window: keep the dialog and its search open.
+                    if (
+                      !event.metaKey &&
+                      !event.ctrlKey &&
+                      !event.shiftKey &&
+                      !event.altKey
+                    ) {
+                      closeSearch();
+                    }
+                  }}
+                >
+                  {intl.formatMessage(messages.showAllResults)}
+                </Link>
+              </div>
+            ) : null}
           </Dialog>
         </Modal>
       </ModalOverlay>

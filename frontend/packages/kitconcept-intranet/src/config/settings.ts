@@ -2,6 +2,7 @@ import type { ConfigType } from '@plone/registry';
 import type { VLTSettings } from '@kitconcept/volto-light-theme/types';
 import FeedBackForm from '../components/FeedBackForm/FeedBackForm';
 import DocumentReviewPlug from '@kitconcept/intranet/components/Toolbar/DocumentReviewPlug';
+import DashboardMenu from '@kitconcept/intranet/components/Dashboard/DashboardMenu';
 import feedbackContactForm from '../reducers/feedbackContactForm/feedbackContactForm';
 import profilePlaceholder from '../assets/profile-placeholder.svg';
 import Header from '../components/Header/Header';
@@ -27,6 +28,7 @@ export default function install(config: ConfigType) {
   config.settings.appExtras = [
     ...config.settings.appExtras,
     { match: '/', component: DocumentReviewPlug, props: {} },
+    { match: '/', component: DashboardMenu, props: {} },
   ];
 
   config.settings.isMultilingual = false;

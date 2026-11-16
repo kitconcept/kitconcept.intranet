@@ -2,23 +2,48 @@
  * OVERRIDE slash-menu.tsx
  * REASON: The "Table" entry inserts a 3 × 3 table with a header row
  *         (Confluence default) instead of Plate's 2 × 2 without header.
+ *         A "CSV table" entry (Plone block `csvtable`, a CSV file inside
+ *         the intranet shown as a table) follows the "Table" entry.
  *         Everything else is unchanged.
- * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a30/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
- * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.30
- * DATE: 2026-10-01
+ * FILE: https://github.com/kitconcept/volto-plate/blob/1.0.0a36/frontend/packages/volto-plate/src/plate/wiki/slash-menu.tsx
+ * FILE VERSION: @kitconcept/volto-plate 1.0.0-alpha.36
+ * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
+ * CHANGELOG:
+ *  - Merge volto-plate 1.0.0-alpha.33: add the "Diagram" entry to the
+ *    "Advanced blocks" group. @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.35: filter out the toggle entry, the
+ *    toggle plugin is not part of the wiki editor preset. @sneridagh
+ *  - Merge volto-plate 1.0.0-alpha.36: translated "Image" and "Diagram"
+ *    entries; `extendGroups` arguments are passed on to the upstream
+ *    menu. @sneridagh
+ *  - "CSV table" entry (work item 751). @reekitconcept
  */
 
 import type {
   SlashMenuConfig,
   SlashMenuGroup,
 } from '@plone/plate/components/editor/plugins/slash-menu';
+import { CODE_DRAWING_KEY, insertCodeDrawing } from '@platejs/code-drawing';
 import { PLONE_BLOCK_TYPE } from '@plone/helpers';
-import { ImageIcon } from 'lucide-react';
+import { FileSpreadsheetIcon, ImageIcon, WorkflowIcon } from 'lucide-react';
 import { KEYS, PathApi } from 'platejs';
 import type { PlateEditor } from 'platejs/react';
+import { defineMessages } from 'react-intl';
 import { insertWikiTable } from '@kitconcept/intranet/components/WikiTable/insertWikiTable';
+
+import {
+  fallbackTranslate,
+  type TranslateFunction,
+} from '@plone/plate/components/editor/plugins/i18n';
+
+const messages = defineMessages({
+  diagram: { id: 'Diagram', defaultMessage: 'Diagram' },
+  image: { id: 'Image', defaultMessage: 'Image' },
+  // OVERRIDE (also in src/index.ts: the i18n extraction skips shadows)
+  csvTable: { id: 'CSV table', defaultMessage: 'CSV table' },
+});
 
 const insertPloneBlock = (editor: PlateEditor, blockType: string) => {
   editor.tf.withoutNormalizing(() => {
@@ -42,20 +67,54 @@ const insertPloneBlock = (editor: PlateEditor, blockType: string) => {
   });
 };
 
-const IMAGE_SLASH_ITEM = {
+const IMAGE_SLASH_VALUE = 'block_plateimage';
+
+const createImageSlashItem = (t: TranslateFunction) => ({
   icon: <ImageIcon />,
   keywords: ['image', 'media', 'photo', 'picture'],
-  label: 'Image',
-  value: 'block_plateimage',
+  label: t(messages.image.id, { defaultValue: messages.image.defaultMessage }),
+  value: IMAGE_SLASH_VALUE,
   onSelect: (editor: PlateEditor) => {
     insertPloneBlock(editor, 'plateimage');
   },
+});
+
+const insertDiagram = (editor: PlateEditor) => {
+  editor.tf.withoutNormalizing(() => {
+    const block = editor.api.block();
+    if (!block) return;
+
+    insertCodeDrawing(
+      editor,
+      {},
+      { at: PathApi.next(block[1]), nextBlock: false, select: true },
+    );
+
+    if (block[0].type !== CODE_DRAWING_KEY) {
+      editor.tf.removeNodes({ previousEmptyBlock: true });
+    }
+  });
 };
+
+const createDiagramSlashItem = (t: TranslateFunction) => ({
+  icon: <WorkflowIcon />,
+  keywords: ['diagram', 'drawing', 'mermaid', 'plantuml', 'graphviz', 'chart'],
+  label: t(messages.diagram.id, {
+    defaultValue: messages.diagram.defaultMessage,
+  }),
+  value: CODE_DRAWING_KEY,
+  onSelect: insertDiagram,
+});
 
 // OVERRIDE: not exported, wrapped below.
 const baseSlashMenu: SlashMenuConfig = {
-  extendGroups: (groups) =>
+  extendGroups: (groups, _editor, { t = fallbackTranslate }) =>
     groups
+      // The toggle plugin is not part of the wiki editor preset.
+      .map((group) => ({
+        ...group,
+        items: group.items.filter((item) => item.value !== KEYS.toggle),
+      }))
       .map((group) => {
         if (group.group === 'Actions') {
           return {
@@ -69,9 +128,7 @@ const baseSlashMenu: SlashMenuConfig = {
         }
 
         if (group.group === 'Text blocks') {
-          if (
-            group.items.some((item) => item.value === IMAGE_SLASH_ITEM.value)
-          ) {
+          if (group.items.some((item) => item.value === IMAGE_SLASH_VALUE)) {
             return group;
           }
 
@@ -83,12 +140,22 @@ const baseSlashMenu: SlashMenuConfig = {
             ...group,
             items:
               paragraphIndex === -1
-                ? [...group.items, IMAGE_SLASH_ITEM]
+                ? [...group.items, createImageSlashItem(t)]
                 : [
                     ...group.items.slice(0, paragraphIndex + 1),
-                    IMAGE_SLASH_ITEM,
+                    createImageSlashItem(t),
                     ...group.items.slice(paragraphIndex + 1),
                   ],
+          };
+        }
+
+        if (
+          group.group === 'Advanced blocks' &&
+          !group.items.some((item) => item.value === CODE_DRAWING_KEY)
+        ) {
+          return {
+            ...group,
+            items: [...group.items, createDiagramSlashItem(t)],
           };
         }
 
@@ -97,16 +164,37 @@ const baseSlashMenu: SlashMenuConfig = {
       .filter((group) => group && group.items.length > 0) as SlashMenuGroup[],
 };
 
-// OVERRIDE: the "Table" entry inserts a 3 × 3 table with a header row.
+// OVERRIDE: the "CSV table" entry inserts the `csvtable` Plone block.
+const CSV_TABLE_SLASH_VALUE = 'block_csvtable';
+
+const createCsvTableSlashItem = (t: TranslateFunction) => ({
+  icon: <FileSpreadsheetIcon />,
+  keywords: ['csv', 'table', 'data', 'file', 'spreadsheet'],
+  label: t(messages.csvTable.id, {
+    defaultValue: messages.csvTable.defaultMessage,
+  }),
+  value: CSV_TABLE_SLASH_VALUE,
+  onSelect: (editor: PlateEditor) => {
+    insertPloneBlock(editor, 'csvtable');
+  },
+});
+
+// OVERRIDE: the "Table" entry inserts a 3 × 3 table with a header row, and
+// the "CSV table" entry follows it.
 export const slashMenu: SlashMenuConfig = {
   ...baseSlashMenu,
-  extendGroups: (groups) =>
-    (baseSlashMenu.extendGroups?.(groups) ?? groups).map((group) => ({
-      ...group,
-      items: group.items.map((item) =>
-        item.value === KEYS.table
-          ? { ...item, onSelect: (editor) => insertWikiTable(editor) }
-          : item,
-      ),
-    })),
+  extendGroups: (groups, editor, options) =>
+    (baseSlashMenu.extendGroups?.(groups, editor, options) ?? groups).map(
+      (group) => ({
+        ...group,
+        items: group.items.flatMap((item) =>
+          item.value === KEYS.table
+            ? [
+                { ...item, onSelect: (editor) => insertWikiTable(editor) },
+                createCsvTableSlashItem(options.t ?? fallbackTranslate),
+              ]
+            : [item],
+        ),
+      }),
+    ),
 };

@@ -1,4 +1,7 @@
-body.has-no-footer {
+body.has-no-footer,
+body.view-addview.contenttype-wikipage,
+body.view-addview.contenttype-workspace,
+body.view-addview.has-header-intranet-compact {
   #footer > .pre-footer ~ * {
     display: none;
   }

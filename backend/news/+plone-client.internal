@@ -1,1 +1,0 @@
-The REST scripts `scripts/table_demo_content.py` and `scripts/diff_demo_content.py` use `requests` through a shared client, `kitconcept.intranet.utils.plone_client`, and send a browser User-Agent, because sites behind Cloudflare (the kitconcept cluster) block bot-like ones; override it with `--user-agent` or `$PLONE_CLIENT_USER_AGENT`. @reekitconcept

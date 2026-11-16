@@ -1,0 +1,90 @@
+#page-controlpanel.dexterity-types {
+  .widget-wrapper {
+    padding: 10px;
+
+    .workflow-field {
+      display: grid;
+      align-items: center;
+      padding-bottom: 10px;
+      gap: 1rem;
+      grid-template-columns: minmax(0, min(50%, 450px)) minmax(0, 1fr);
+
+      /* make the Select and its trigger button fill its column */
+      .workflow-select,
+      .workflow-select button {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* let the value text take the free space and truncate if too long */
+      .workflow-select [data-rac] .react-aria-SelectValue,
+      .workflow-select button > span:first-child {
+        overflow: hidden;
+        flex: 1;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .custom-label {
+        display: block;
+        margin: 0;
+        color: #000;
+        font-size: 0.77777778rem;
+        font-weight: 500;
+        hyphens: auto;
+        text-transform: none;
+      }
+    }
+
+    .custom-description {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 18px;
+    }
+
+    .workflow-state-map {
+      overflow: hidden;
+      width: 100%;
+      border: 1px solid #dcdfe3;
+      border-radius: 4px;
+      margin: 1.5rem 0;
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed; /* equal columns, long titles can't stretch the table */
+
+      th {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #dcdfe3;
+        background: #f4f6f8;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      td {
+        padding: 0.5rem 1rem;
+        vertical-align: middle;
+      }
+
+      tr + tr td {
+        border-top: 1px solid #eceff1;
+      }
+
+      .workflow-state-map-select,
+      .workflow-state-map-select button {
+        width: 100%;
+      }
+
+      .workflow-state-map-select [data-rac] .react-aria-SelectValue,
+      .workflow-state-map-select button > span:first-child {
+        overflow: hidden;
+        flex: 1;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

@@ -5,10 +5,11 @@ post handler (``table_demo.create_table_demo_pages``, for freshly created
 sites) and by ``scripts/table_demo_content.py`` (REST, for existing sites).
 
 Both pages live in the GreenCat workspace next to the history-diff demo
-page. "Projektbudget 2026" has a budget table and a milestone table with
-marks and links in the cells; "Teilnehmende Konsortialtreffen" has a
-contact table, a wide attendance table (nine columns) that scrolls inside
-the page, a list of open items and the agenda of the next meeting.
+page. "Projektbudget 2026" has a budget table (six columns, shown wide)
+and a milestone table with marks and links in the cells; "Teilnehmende
+Konsortialtreffen" has a contact table, a wide attendance table (nine
+columns) that scrolls inside the page, a list of open items and the agenda
+of the next meeting.
 
 The open items show sorting and filtering in the view: more than five rows
 (the filter field appears), due dates out of order, a German decimal
@@ -16,13 +17,15 @@ column and empty cells (sorted last). The agenda has a merged cell, so its
 columns cannot be moved and it has no sort buttons or filter.
 
 Tickets: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655,
-https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/666
+https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/666,
+https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
 """
 
 # ruff: noqa: RUF001  (typographic dashes in the German content)
 from __future__ import annotations
 
 from kitconcept.intranet.utils.wiki_content import Span
+from kitconcept.intranet.utils.wiki_content import Sum
 from kitconcept.intranet.utils.wiki_content import blocks
 from kitconcept.intranet.utils.wiki_content import blocks_layout
 from kitconcept.intranet.utils.wiki_content import heading
@@ -101,16 +104,19 @@ def budget_page() -> list[dict]:
                     "51.300 €",
                     "im Plan",
                 ],
-                [
-                    text("Gesamt", bold=True),
-                    "",
-                    text("1.455.000 €", bold=True),
-                    text("922.500 €", bold=True),
-                    text("532.500 €", bold=True),
-                    "",
-                ],
+            ],
+            footer=[
+                "Gesamt",
+                "",
+                Sum("1.455.000 €"),
+                Sum("922.500 €"),
+                Sum("532.500 €"),
+                "",
             ],
             col_sizes=[175, 120, 130, 125, 115, 115],
+            # Six columns: the medium step, as a pasted table with six
+            # columns gets it (work items 823, 825).
+            width="medium",
         ),
         paragraph(
             "b-note",

@@ -19,11 +19,18 @@
  *         Relative imports are made absolute (shadowed files resolve
  *         relative imports against this package). Everything else is
  *         unchanged.
- * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.20/packages/plate/components/ui/table-node-static.tsx
- * FILE VERSION: @plone/plate 1.0.0-alpha.20
+ * FILE: https://github.com/plone/aurora/blob/plone-plate-1.0.0-alpha.24/packages/plate/components/ui/table-node-static.tsx
+ * FILE VERSION: @plone/plate 1.0.0-alpha.24
  * DATE: 2026-10-01
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/655
  * DEVELOPER: @reekitconcept
+ * CHANGELOG:
+ *  - Rebase on @plone/plate 1.0.0-alpha.24 (no upstream changes to this
+ *    file since 1.0.0-alpha.20). @sneridagh
+ *  - The footer row (`footer: true`, see components/WikiTable/tableCalc.ts)
+ *    is neither sorted nor filtered and stays last; while a filter hides
+ *    rows, its calculated cells show the results over the visible rows
+ *    (work item 750). @reekitconcept
  */
 
 import * as React from 'react';
@@ -51,6 +58,10 @@ import {
   sortRowIndices,
   type SortDirection,
 } from '@kitconcept/intranet/components/WikiTable/tableSort';
+import {
+  footerRowOver,
+  isFooterRow,
+} from '@kitconcept/intranet/components/WikiTable/tableCalc';
 import { WikiTableViewContext } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import {
   SortButton,
@@ -132,14 +143,19 @@ export function TableElementStatic({
   const rows = props.element.children as TTableRowElement[];
   const header = isHeaderRow(rows[0]);
   const bodyStart = header ? 1 : 0;
+  // OVERRIDE (750): the footer row is not part of the body.
+  const bodyEnd =
+    rows.length > 1 && isFooterRow(rows[rows.length - 1])
+      ? rows.length - 1
+      : rows.length;
   const texts = React.useMemo(
     () =>
       rows
-        .slice(bodyStart)
+        .slice(bodyStart, bodyEnd)
         .map((row) =>
           (row.children as TElement[]).map((cell) => NodeApi.string(cell)),
         ),
-    [rows, bodyStart],
+    [rows, bodyStart, bodyEnd],
   );
   // The rows arrive as Plate's <Children> element holding the row nodes
   // (next to what plugins render below the content); that element is
@@ -194,6 +210,14 @@ export function TableElementStatic({
         : null,
     [sortable, sort, rows],
   );
+  // OVERRIDE (750): while a filter hides rows, the footer row's calculated
+  // cells cover the visible rows only.
+  const footerRows = React.useMemo(() => {
+    const footer = rows.slice(bodyEnd);
+    if (!query) return footer;
+    const visible = order.map((row) => rows[bodyStart + row]);
+    return footer.map((row) => footerRowOver(row, visible));
+  }, [rows, bodyStart, bodyEnd, order, query]);
   // React.Children.map keeps the children keyed like the original list.
   // Plate's <Children> element takes the row nodes (not React nodes) as its
   // children, hence the cast.
@@ -204,6 +228,8 @@ export function TableElementStatic({
             ? React.cloneElement(rowNodes, undefined, [
                 ...rows.slice(0, bodyStart),
                 ...order.map((row) => rows[bodyStart + row]),
+                // OVERRIDE (750): the footer row stays last
+                ...footerRows,
               ] as unknown as React.ReactNode)
             : child,
         )
@@ -242,7 +268,15 @@ export function TableElementStatic({
 
 export function TableRowElementStatic(props: SlateElementProps) {
   return (
-    <SlateElement {...props} as="tr" className="h-full">
+    <SlateElement
+      {...props}
+      as="tr"
+      // OVERRIDE (750)
+      className={cn(
+        'h-full',
+        isFooterRow(props.element) && 'wiki-table-footer',
+      )}
+    >
       {props.children}
     </SlateElement>
   );

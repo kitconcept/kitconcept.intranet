@@ -27,7 +27,11 @@
       "email": "",
       "groupid": "Site Administrators",
       "groups": [],
-      "principals": [],
+      "principals": [
+        "a.becker",
+        "c.nguyen",
+        "m.berger"
+      ],
       "roles": [
         "Site Administrator"
       ],
@@ -39,11 +43,13 @@
       "description": "",
       "email": "anna.becker@example.org",
       "fullname": "Anna Becker",
-      "groups": [],
+      "groups": [
+        "Site Administrators"
+      ],
       "home_page": "",
       "location": "",
       "login_name": "a.becker",
-      "password": "{SSHA}4mM7/9DQJO0eDDqX+5VG/xngWl+ZQFwn3Mg8",
+      "password": "{SSHA}1C7+dPoS+msLH3D34t2/15+dEI5wyauYhPdb",
       "roles": [
         "Contributor",
         "Editor",
@@ -59,7 +65,7 @@
       "home_page": "",
       "location": "",
       "login_name": "a.demir",
-      "password": "{SSHA}le8FmSs5SvKHtCTFmjgwBWLFu5dd17HTsiXU",
+      "password": "{SSHA}+jxe4Yjd3pLRTcBzR0pldJ3ZAVQ3+VidMsJy",
       "roles": [
         "Contributor",
         "Editor",
@@ -75,7 +81,7 @@
       "home_page": "",
       "location": "Loc-2 \u2013 Standort K\u00f6ln",
       "login_name": "b.yilmaz",
-      "password": "{SSHA}hUVHTGxFUp7ozwYDmT1pxCzZ10NBrTu8VHLO",
+      "password": "{SSHA}j/uGCZIB0fgbwvm0Ot4G5WkA49MoOAuNywp+",
       "roles": [
         "Contributor",
         "Editor",
@@ -85,13 +91,13 @@
     },
     {
       "description": "",
-      "email": "clar.abeck@example.org",
+      "email": "clara.beck@example.org",
       "fullname": "Dr. Clara Beck",
       "groups": [],
       "home_page": "",
       "location": "",
       "login_name": "c.beck",
-      "password": "{SSHA}42/mbSawYasV+EbWH9bmlI13vcBYNY16OUoZ",
+      "password": "{SSHA}ojzmye3SZZdIWrw5LcjKDHUJS3e4lkA5Nl+G",
       "roles": [
         "Contributor",
         "Editor",
@@ -105,11 +111,13 @@
       "description": "",
       "email": "clara.nguyen@example.org",
       "fullname": "Clara Nguyen",
-      "groups": [],
+      "groups": [
+        "Site Administrators"
+      ],
       "home_page": "",
       "location": "Loc-3 \u2013 Standort Berlin",
       "login_name": "c.nguyen",
-      "password": "{SSHA}nntlRW1frmZaLm8BIIiXtU13NSpKBlSwkiy+",
+      "password": "{SSHA}ponQWYciir3FiDgJbExQ7oaA9nIaS9D2+Jkl",
       "roles": [
         "Contributor",
         "Editor",
@@ -125,7 +133,7 @@
       "home_page": "",
       "location": "Loc-2 \u2013 Standort K\u00f6ln",
       "login_name": "d.schmidt",
-      "password": "{SSHA}bxt2uEXaiekoDDKpco/8MBaM+k1ZoDvRZHGu",
+      "password": "{SSHA}36VQxlhZozGlJKWM1wEBBjQWk8r6krbxHs/7",
       "roles": [
         "Contributor",
         "Editor",
@@ -141,7 +149,7 @@
       "home_page": "",
       "location": "Loc-1 \u2013 Standort Bonn",
       "login_name": "e.roth",
-      "password": "{SSHA}72VEUFtT8XDDzt811SIKbRI5v6bQrk5V6UKy",
+      "password": "{SSHA}RZ1fXRgxAWKRj+o/uBXiKPAtpvquMpb6Gi2I",
       "roles": [
         "Contributor",
         "Editor",
@@ -157,7 +165,7 @@
       "home_page": "",
       "location": "",
       "login_name": "f.meier",
-      "password": "{SSHA}97nYluCGUuyEg0C0tPaUqMl8an6CSFeXVrat",
+      "password": "{SSHA}AgfWAXLJAoJLhae/2gqxHJNHJIbyIpESRS/k",
       "roles": [
         "Contributor",
         "Editor",
@@ -173,7 +181,7 @@
       "home_page": "",
       "location": "",
       "login_name": "j.halmbach",
-      "password": "{SSHA}ZGGaZscLTdnqHQ0YublVLVLdhQkPzbfFe2f7",
+      "password": "{SSHA}tiJJU52NwK0cyTDE7MUsL+zd3gqFg+hEirLo",
       "roles": [
         "Contributor",
         "Editor",
@@ -189,7 +197,7 @@
       "home_page": "",
       "location": "",
       "login_name": "j.seidel",
-      "password": "{SSHA}GAFW8kI4NGmdbtcoWwlQ+Rtxz5RuKLBGBmLq",
+      "password": "{SSHA}5ft55OSVZv+GpIVj6KbSlDld8V1waIh1lt/n",
       "roles": [
         "Contributor",
         "Editor",
@@ -205,7 +213,7 @@
       "home_page": "",
       "location": "",
       "login_name": "l.brandt",
-      "password": "{SSHA}Y/lG3M8c5E3exLvJ3rkUz2Nzv1/UEkiUvM40",
+      "password": "{SSHA}FhJxfoZZQ+Bj8uvl9ox1vu9VwuokO1PKrlV0",
       "roles": [
         "Contributor",
         "Editor",
@@ -217,11 +225,13 @@
       "description": "",
       "email": "max.berger@example.com",
       "fullname": "Max Berger, M.A.",
-      "groups": [],
+      "groups": [
+        "Site Administrators"
+      ],
       "home_page": "",
       "location": "",
       "login_name": "m.berger",
-      "password": "{SSHA}nHVjB6L9nPPZ5EV8qU+fHK/t5FuQUjoieU6n",
+      "password": "{SSHA}GgTeoVDDCrFsHQhNdX89gV8LF94I3NHPwxKH",
       "roles": [
         "Contributor",
         "Editor",
@@ -237,7 +247,7 @@
       "home_page": "",
       "location": "",
       "login_name": "m.engelhardt",
-      "password": "{SSHA}oBZacBfZFkMdCt7aas0ofmKEts416yYoHIB8",
+      "password": "{SSHA}jsK7QrG8nmEE0Bt0vMOR6JxKXYYbVoCqNoto",
       "roles": [
         "Contributor",
         "Editor",
@@ -255,7 +265,7 @@
       "home_page": "",
       "location": "",
       "login_name": "n.paulsen",
-      "password": "{SSHA}UEVJVBKtLr4SadcH0hdm/n556DKJ1ruqCe6g",
+      "password": "{SSHA}YBF3Srxdj9neXwnGQgJ9qRiikgQnrLOhbMH4",
       "roles": [
         "Contributor",
         "Editor",
@@ -271,7 +281,7 @@
       "home_page": "",
       "location": "",
       "login_name": "p.maier",
-      "password": "{SSHA}im+dYPHcC7X9lqQgZcqCwWcTVLysBs61H6tr",
+      "password": "{SSHA}ZmHMOHy5CfynhdpBhTnPFYEaVbZo6wjXQ3Jj",
       "roles": [
         "Contributor",
         "Editor",
@@ -287,7 +297,7 @@
       "home_page": "",
       "location": "",
       "login_name": "s.lehner",
-      "password": "{SSHA}wCsWS4CpAhRvkcTZjPPyvFyvj9N5wC6iwVSH",
+      "password": "{SSHA}9tXsQl1LH1LvWzf9Nbk1uN37mCVvZKvMPxAj",
       "roles": [
         "Contributor",
         "Editor",
@@ -303,7 +313,7 @@
       "home_page": "",
       "location": "",
       "login_name": "t.werner",
-      "password": "{SSHA}7k5VR6MXVXcfaupNScwFrtIWaJ/i2r+bpo6V",
+      "password": "{SSHA}w5CtDXnTbTNJV5NWD27boLhbG6Qet9dxOYTl",
       "roles": [
         "Contributor",
         "Editor",

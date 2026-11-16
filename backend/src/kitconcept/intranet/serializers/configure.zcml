@@ -11,5 +11,6 @@
   <adapter factory=".vocab.SerializeTermWithUrlToJson" />
   <adapter factory=".event.EventSerializer" />
   <adapter factory=".person.PersonSerializer" />
+  <adapter factory=".tasks.TaskSerializer" />
 
 </configure>

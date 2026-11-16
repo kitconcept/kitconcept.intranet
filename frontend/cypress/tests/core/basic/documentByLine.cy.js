@@ -23,7 +23,7 @@ describe('DocumentByLine Tests', () => {
     cy.get('.documentByLine').should('contain', 'admin');
   });
 
-  it('Check for published date in the documentByLine', function () {
+  it('Shows only the modified date in the documentByLine', function () {
     cy.navigate('/my-page-1/edit');
     cy.wait('@content');
 
@@ -42,9 +42,11 @@ describe('DocumentByLine Tests', () => {
       'have.class',
       'documentByLine',
     );
-    
+
     cy.wait('@content');
     cy.get('.documentByLine').should('contain', 'admin');
-    cy.get('.documentByLine').should('contain', 'December 24, 2020');
+    cy.get('.documentByLine .modified-date').should('contain', 'Updated on');
+    cy.get('.documentByLine .effective-date').should('not.exist');
+    cy.get('.documentByLine').should('not.contain', 'December 24, 2020');
   });
 });

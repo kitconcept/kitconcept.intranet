@@ -19,4 +19,5 @@ security-model
 block-model
 layout
 vertical-spacing
+inline-tasks
 ```

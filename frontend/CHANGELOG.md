@@ -8,6 +8,182 @@
 
 <!-- towncrier release notes start -->
 
+## 3.8.0 (2026-11-12)
+
+
+### Bugfix
+
+- Update to Volto 19.7.0. @iFlameing 
+
+## 3.7.0 (2026-11-05)
+
+
+### Feature
+
+- Wiki Page tables: a table can be wider than the reading column. The new "Width" group in the table cell toolbar offers Text width, Wide (up to 1280px) and Full width; a pasted table with 6 or more columns becomes wide, with 10 or more full width. In print a wide table shrinks to the page. @reekitconcept [#823](https://github.com/kitconcept/kitconcept.intranet/issue/823)
+- Wiki Page tables: a resize handle on the right edge of a table sets a width of its own in px ("Resize table"); while dragging, the width snaps to Text width, Medium, Wide and Full width, and a drag that ends on one of them stores that step. The width menu shows the custom width and resets it to a step; stored column widths scale with the table; the view and the history diff show the width ("Width: Medium → 1180px"). https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/824 @reekitconcept [#824](https://github.com/kitconcept/kitconcept.intranet/issue/824)
+- Wiki Page tables: a new width step "Medium" (1040px) between Text width and Wide, chosen like the other steps from the "Width" menu of the table toolbar; Wide is the layout width (1440px) again; a table wider than the text keeps a 10px margin to the sides of the content area; a pasted table with 6 or more columns becomes Medium, with 8 or more Wide, with 10 or more Full width. @reekitconcept [#825](https://github.com/kitconcept/kitconcept.intranet/issue/825)
+- Add @kitconcept/volto-maintenance-banner add-on. @Tishasoumya-02 
+- Made the workspace filters on the Tasks page and in the header search use the same searchable workspace menu as the sidebar switcher. @iFlameing 
+- Update to @kitconcept/volto-plate 1.0.0-alpha.40. Adds colored initials when showing a person pill for a user with no portrait. @davisagli 
+- Use the shared initials color palette for avatars in search results, header search, workspace markers and the navigation sidebar header. @iFlameing 
+
+
+### Bugfix
+
+- Wiki Page tables: in the editor, a table that fits no longer shows a horizontal scrollbar (the resize handle of the last column stuck out a few pixels). @reekitconcept [#783](https://github.com/kitconcept/kitconcept.intranet/issue/783)
+- Fixed the byline showing the creators of a previously edited or added page after navigating away from the form. @iFlameing 
+- Merged the volto-plate 1.0.0-alpha.39 discussion slot into the customized wiki editor kit, so comments on tables and code blocks are shown outside the table body and code. @Tishasoumya-02 
+- Pass portraits from the backend data to PersonPill in the byline, About this content and tasks, so users without a portrait get the placeholder avatar instead of a broken image. In add mode, the byline now shows the current user as creator instead of the creators of the parent. @iFlameing 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.39. Fixes mention portraits on deployed sites, overflowing comment text, comment popover layout for tables and code blocks, and line-break suggestion indicators. @davisagli 
+
+## 3.6.1 (2026-10-26)
+
+
+### Bugfix
+
+- Update to Volto 19.5.1 and rebuild the frontend image with Node 24.22.1. @davisagli 
+
+## 3.6.0 (2026-10-23)
+
+
+### Feature
+
+- Added a search field, Portal/Workspaces sections and a scrollable list to the navigation tree workspace switcher. @iFlameing 
+
+## 3.5.0 (2026-10-22)
+
+
+### Feature
+
+- Added a clear button to the header search field and a "Close search" button on the search page. @iFlameing 
+- Bump `@kitconcept/volto-keywordmanager` to version 1.0.0-alpha.4. @jnptk 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.38: wiki pages support inline comments in view mode, and table of contents entries no longer show overlapping hover frames. The `PlateEditorRenderer` and `wiki-renderer` shadows are rebased on it. @sneridagh 
+
+
+### Bugfix
+
+- Hide images and files in the workspace navigation tree. @iFlameing 
+- Update @kitconcept/volto-light-theme to 8.1.2: the sharing page matches the site layout width, the accordion width is fixed in edit mode, and the event calendar block variations are configured separately from the listing block ones. @sneridagh 
+
+## 3.4.0 (2026-10-19)
+
+
+### Feature
+
+- Wiki Page tables: a footer cell can show, besides the sum, the average, the minimum, the maximum or the count of its column ("Calculation" menu in the cell toolbar); minimum and maximum also work on date columns; cells that cannot be used are skipped and the result says how many. In the view, while a filter hides rows, the footer shows the results over the visible rows. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+- Wiki Page tables: in the editor, a footer cell with a calculation is marked light blue (computed, not editable by hand) or light red when the calculation has no result because the column holds nothing it can use; the view is unchanged. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+
+
+### Bugfix
+
+- Fix regression in merge in #426. @sneridagh 
+- Hide content interactions and the parent's related items in add mode, and render related items at the default container width. @iFlameing 
+- Update the navigation tree workflow state immediately after a workflow transition. @iFlameing 
+- Use volto-plate PersonPill for intranet @iRohitSingh 
+
+## 3.3.0 (2026-10-13)
+
+
+### Feature
+
+- Wiki Page tables: "Footer row" in the cell toolbar adds a footer row at the bottom of the table (and removes it again); a footer cell can show the sum of its column ("Sum" in the cell toolbar), updated while editing and stored with the page. The footer row is neither sorted nor filtered in the view. The demo page "Projektbudget 2026" ships its "Gesamt" row as footer with sums. @reekitconcept [#750](https://github.com/kitconcept/kitconcept.intranet/issue/750)
+- Add a "Dashboard" link to the personal tools menu pointing to the current user's Person dashboard. @sneridagh [#758](https://github.com/kitconcept/kitconcept.intranet/issue/758)
+- Add tab in ContentType.jsx customization to change workflows per content type. @jnptk 
+- Update @kitconcept/volto-light-theme to 8.1.0. @iFlameing 
+
+
+### Bugfix
+
+- Make the "List with date" and "Table" listing variations available in listing blocks inside a Grid block. @danalvrz 
+- Redesign the document byline to match the intranet 3.0 design. @iFlameing 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.37 @iFlameing 
+
+
+### Internal
+
+- Update @kitconcept/volto-light-theme to 8.1.1 and @kitconcept/volto-introduction-block to 1.4.2. @sneridagh 
+
+## 3.2.0 (2026-10-13)
+
+
+### Feature
+
+- Wiki Page tables: CSV text pasted into a Wiki Page (from a file, a text editor or a spreadsheet export; semicolons, tabs or commas) becomes a table with a header row. @reekitconcept [#751](https://github.com/kitconcept/kitconcept.intranet/issue/751)
+- Wiki Page tables: the new "CSV table" block (slash menu) shows a CSV file from inside the intranet as a read-only table with sorting and filtering; the file is read again whenever the page is shown. @reekitconcept [#751](https://github.com/kitconcept/kitconcept.intranet/issue/751)
+- Add Table listing variation. @danalvrz 
+- Add a Tasks view with My tasks and All tasks tabs, workspace filtering, task counts, source links, due dates, workspace and assignee columns. @davisagli 
+- Show count of open inline comments in the byline. @davisagli 
+- Update @kitconcept/volto-keywordmanager to 1.0.0a3. @jnptk 
+
+
+### Bugfix
+
+- Fix duplicate portrait image in Person search results. @davisagli [#763](https://github.com/kitconcept/kitconcept.intranet/issue/763)
+- Wiki Pages: markdown (e.g. a markdown table) copied from a code editor such as VS Code or Cursor is parsed as markdown when pasted; before, it had to be pasted as plain text (Shift+Cmd+V). @reekitconcept 
+
+## 3.1.0 (2026-10-08)
+
+
+### Feature
+
+- Add `@plone/volto-recyclebin` to the distribution and cover the basic delete and restore flow with Playwright. [#691](https://github.com/kitconcept/kitconcept.intranet/issue/691)
+- Wiki Page diff: a changed word is marked as a whole ("liegt" → "steht") instead of only the characters that differ. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Wiki Page diff: a link whose target changed is shown as one changed link with the old and the new URL, instead of the same link text removed and added. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Wiki Page diff: a page that was created by code or imported no longer shows "Width: not set → Standard" on every block in the diff of its first save in the editor; the demo page stores the values the editor stores. @reekitconcept [#714](https://github.com/kitconcept/kitconcept.intranet/issue/714)
+- Add `@eeacms/volto-pdf-block`. @davisagli 
+- Add `@kitconcept/volto-keywordmanager` package. @jnptk 
+- The search overlay renders a "Show all results" link at the bottom that opens the full results page. @danalvrz 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.32: content pasted from Word, LibreOffice or a web page keeps its images as image blocks, takes the styles of the wiki page, and its title becomes the title of the wiki page. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.33: add a Diagram element to the wiki editor (slash menu "Diagram"), to write Mermaid, Graphviz or Flowchart code and see the rendered diagram. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.35: resolved comment threads stay in the text and can be reopened, the toggle element is no longer offered in the wiki editor, comment and suggestion popovers behave correctly, and invalid Mermaid diagrams no longer leak error graphics onto the page. @sneridagh 
+- Update @plone-collective/volto-image-editor to 1.1.0. @danalvrz 
+
+
+### Bugfix
+
+- Add 100px bottom padding to comments inside workspaces @iRohitSingh 
+- Hide site footer when adding images or files in workspace content @iRohitSingh 
+- Removed the misleading "@ mention a person" hint from the comment form placeholder. @iFlameing 
+- Update @kitconcept/volto-light-theme to 8.0.2: the tags no longer overlap the last block of a page when that block has a background color. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.34 (@plone/plate 1.0.0-alpha.24): the wiki editor sidebar follows the selected block (Block tab for images, Document tab for everything else) and no longer shows the unused Order tab, and the Plate editor strings are translatable. @sneridagh 
+- Update @kitconcept/volto-plate to 1.0.0-alpha.36: pasted plain text keeps the style of where it lands, and the "Image" and "Diagram" slash menu items are translated. @sneridagh 
+
+
+### Internal
+
+- Added the quanta container to the shadowed search to take the correct styles. @TimoBroeskamp 
+- Update @kitconcept/volto-logos-block to 4.0.1 @iRohitSingh 
+- Updated Volto to 19.5.0. @iFlameing 
+
+## 3.0.3 (2026-10-02)
+
+
+### Feature
+
+- Wiki Page tables look and behave like Confluence tables: full width, light grey cell grid, grey bold header row, compact hyphenated cells, row hover, in the editor and in the view (fixes the shifted borders and ~120px tall rows, #546). `/table` and a new "Insert table" toolbar button insert a 3 × 3 table with a header row; the cell toolbar gets a "Header row" toggle; Tab / Shift+Tab move between cells and Tab in the last cell appends a row; Backspace at the start of a cell no longer merges it into the previous cell; column widths are visible, persist and render the same in the view; wide tables scroll inside the page. @reekitconcept [#655](https://github.com/kitconcept/kitconcept.intranet/issue/655)
+- Wiki Page tables: readers can sort by any column (German numbers, amounts and dates understood) and filter tables with more than five rows; editors can drag rows and columns to reorder them (mouse, touch, keyboard, screen readers, via react-aria) or use the new move buttons in the cell toolbar. Sorting and filtering are per visit and not stored; the history diff always shows the stored order. @reekitconcept [#666](https://github.com/kitconcept/kitconcept.intranet/issue/666)
+- Wiki Page tables: the cell toolbar has icons that show the row or column being inserted or deleted (Tabler icons in the style of the Lucide set) instead of plain arrows next to the move arrows and a generic ✕; delete actions are red and come last in their group. @reekitconcept [#674](https://github.com/kitconcept/kitconcept.intranet/issue/674)
+
+
+### Bugfix
+
+- Hide navigation when adding a Workspace @iRohitSingh [#Hide_navigation](https://github.com/kitconcept/kitconcept.intranet/issue/Hide_navigation)
+- Fix css of solr search @iRohitSingh [#solr_search](https://github.com/kitconcept/kitconcept.intranet/issue/solr_search)
+- Fixed the caret sliding into place with an animation after pressing Enter on the last paragraph of a Wiki Page in edit mode. @sneridagh 
+
+
+### Internal
+
+- Updated `@plone-collective/volto-authomatic` to 3.0.0. @sneridagh [#authomatic-3.0.0](https://github.com/kitconcept/kitconcept.intranet/issue/authomatic-3.0.0)
+- Update @kitconcept-volto-solr to 3.0.0-alpha.3. @iRohitSingh [#solr-3.0.0-alpha.3](https://github.com/kitconcept/kitconcept.intranet/issue/solr-3.0.0-alpha.3)
+- Update @kitconcept/volto-plate to 1.0.0-alpha.30 (@plone/plate 1.0.0-alpha.20, Plate.js 53) and rebuild the wiki table shadows on the new upstream files. @reekitconcept [#360](https://github.com/kitconcept/kitconcept.intranet/issue/360)
+
+
+### Tests
+
+- Playwright acceptance tests for wiki tables (insert, editing, paste, sorting, filtering, moving rows and columns, search) and the Wiki Page history diff, following the manual test plans; the demo content is exported as JSON fixtures with `backend/scripts/export_acceptance_fixtures.py`. @reekitconcept [#667](https://github.com/kitconcept/kitconcept.intranet/issue/667)
+
 ## 3.0.2 (2026-09-22)
 
 

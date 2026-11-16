@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261012001"
+      destination="20261013001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update kitconcept.solr configuration: use default list layout for Persons"
+        import_profile="kitconcept.intranet:solr"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

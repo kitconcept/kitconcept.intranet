@@ -2,24 +2,99 @@
 #page-document .blocks-group-wrapper > .documentByLine {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
-  margin-bottom: $spacing-medium;
+  margin-top: 2px;
+  margin-bottom: 24px;
   .author-name {
     text-decoration: none;
   }
-}
-.contenttype-wikipage .documentByLine {
-  margin-top: 0;
 }
 
 #page-edit .q.container .documentByLine,
 #page-add .q.container .documentByLine {
   @include default-container-width();
   @include adjustMarginsToEditContainer($default-container-width);
-  margin-bottom: $spacing-medium;
+  margin-top: 2px;
+  margin-bottom: 24px;
   .author-name {
     text-decoration: none;
   }
 }
+.documentByLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  line-height: normal;
+
+  .documentByLine-creators {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .documentByLine-creator {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .person-pill {
+    gap: 12px;
+
+    .person-pill-link {
+      gap: 12px;
+    }
+
+    // The fallback avatar sets its size inline.
+    .person-pill-portrait,
+    .person-pill-avatar {
+      width: 32px !important;
+      height: 32px !important;
+      margin: 0;
+    }
+
+    .person-pill-name,
+    .person-pill-link .person-pill-name {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+
+  // Darker than the design's #878f93, which fails WCAG AA contrast (4.5:1).
+  .modified-date,
+  .documentByLine-separator {
+    color: #70777a;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+.documentByLine .open-discussions {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 7px;
+  line-height: inherit;
+  white-space: nowrap;
+
+  .open-discussions-dot {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: #e40166;
+    box-shadow: 0 0 0 3px rgba(228, 1, 102, 0.15);
+  }
+}
+
 h1.documentFirstHeading:has(+ .documentByLine) {
   margin-bottom: $spacing-small;
 }
@@ -29,6 +104,30 @@ h1.documentFirstHeading:has(+ .documentByLine) {
 body.cms-ui:not(.view-editview) .about-content,
 body.section-login .about-content {
   display: none;
+}
+
+.ui.container.related-items {
+  max-width: var(--default-container-width) !important;
+}
+
+#page-edit .ui.container.related-items {
+  @container (max-width: #{$default-container-width + 2 * $horizontal-space-small-screens}) {
+    padding-right: $horizontal-space-small-screens !important;
+    padding-left: $horizontal-space-small-screens !important;
+    margin-right: $horizontal-space-small-screens !important;
+    margin-left: $horizontal-space-small-screens !important;
+  }
+}
+
+.related-items-container {
+  container-type: inline-size;
+}
+
+#view .related-items-container .ui.container.related-items {
+  @container (max-width: #{$default-container-width + 2 * $horizontal-space-small-screens}) {
+    margin-right: $horizontal-space-small-screens !important;
+    margin-left: $horizontal-space-small-screens !important;
+  }
 }
 
 .about-content {

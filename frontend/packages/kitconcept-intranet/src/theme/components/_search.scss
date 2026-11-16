@@ -1,10 +1,3 @@
-.section-search #page-search > .ui.container {
-  width: 100% !important;
-  max-width: var(--layout-container-width) !important;
-  padding: 0 10px !important;
-  margin: 0 auto !important;
-}
-
 // Hide the empty search tabs container (e.g. on an empty search term, when
 // there are no facet groups). Semantic UI's `.ui.menu` enforces a `min-height`,
 // so an empty `.searchTabs` would otherwise render as a stray grey rectangle.
@@ -35,6 +28,20 @@
   > div {
     margin-left: 1em;
   }
+  > button {
+    flex-shrink: 0;
+  }
+  // Clear button next to the search button
+  button.clear-search {
+    display: flex;
+    width: auto;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--primary-foreground-color, #000);
+    cursor: pointer;
+  }
 }
 // ### Solr search results ###
 .section-search #content-core .search-items article.tileItem {
@@ -59,6 +66,51 @@
     display: flex;
     .tileFooterDate {
       display: flex;
+    }
+  }
+}
+
+// Search page: an empty bar with the size and background of the breadcrumbs,
+body.section-search #main .breadcrumbs {
+  display: none;
+}
+
+.search-close-bar {
+  margin-bottom: 20px;
+
+  .search-close-bar-background {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    height: 68px;
+    margin-left: -50vw;
+    background-color: $lightgrey;
+  }
+
+  .search-close-bar-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+    padding-right: 4px;
+  }
+
+  .close-search {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--primary-foreground-color, #000);
+    cursor: pointer;
+    font-size: 14px;
+    gap: 6px;
+
+    .icon {
+      box-sizing: content-box;
+      padding: 2px;
+      border-radius: 50%;
+      background-color: var(--primary-foreground-color, #000);
+      color: var(--primary-color, #fff);
     }
   }
 }

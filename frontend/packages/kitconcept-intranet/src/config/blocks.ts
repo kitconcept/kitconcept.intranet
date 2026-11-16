@@ -4,12 +4,20 @@ import RssGridTemplate from '../components/Blocks/RSS/GridTemplate';
 import RssSummaryTemplate from '../components/Blocks/RSS/SummaryTemplate';
 import type { StyleDefinition } from '@plone/types';
 import EventCalendarTemplate from '../components/Blocks/Listing/EventCalendarTemplate';
+import TableTemplate from '../components/Blocks/Listing/Table/TableTemplate';
+import { tableColumnsSchemaEnhancer } from '../components/Blocks/Listing/Table/schema';
+import { composeSchema } from '@plone/volto/helpers/Extensions';
 import { ContactListStylingSchema } from '../components/Blocks/ContactList/schema';
+import CsvTableEdit from '../components/Blocks/CsvTable/Edit';
+import CsvTableView from '../components/Blocks/CsvTable/View';
+import { CsvTableSchema } from '../components/Blocks/CsvTable/schema';
+import tableSVG from '@plone/volto/icons/table.svg';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
     rssBlock: BlockConfigBase;
     contactList: BlockConfigBase;
+    csvtable: BlockConfigBase;
   }
 
   export interface BlockConfigBase {
@@ -24,19 +32,49 @@ declare module '@plone/types' {
 }
 
 export default function install(config: ConfigType) {
-  const listingBlockVariations = [
-    ...(config.blocks.blocksConfig.listing.variations || []),
+  const intranetListingVariations = [
     {
       id: 'listDate',
       title: 'List with date',
       template: EventCalendarTemplate,
     },
-  ].filter((variation) => !!variation);
+    {
+      id: 'listingTable',
+      title: 'Table',
+      template: TableTemplate,
+    },
+  ];
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
-    variations: listingBlockVariations,
+    variations: [
+      ...(config.blocks.blocksConfig.listing.variations || []),
+      ...intranetListingVariations,
+    ].filter((variation) => !!variation),
+    schemaEnhancer: composeSchema(
+      config.blocks.blocksConfig.listing.schemaEnhancer,
+      tableColumnsSchemaEnhancer('variation'),
+    ),
   };
+
+  // The Grid block keeps its own copy of the listing config (see
+  // volto-light-theme's `config/blocks.tsx`), so it needs the same additions
+  const gridListing = config.blocks.blocksConfig.gridBlock.blocksConfig.listing;
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listing = {
+    ...gridListing,
+    variations: [
+      ...(gridListing.variations || []),
+      ...intranetListingVariations,
+    ].filter((variation) => !!variation),
+    schemaEnhancer: composeSchema(
+      gridListing.schemaEnhancer,
+      tableColumnsSchemaEnhancer('variation'),
+    ),
+  };
+  config.blocks.blocksConfig.search.schemaEnhancer = composeSchema(
+    config.blocks.blocksConfig.search.schemaEnhancer,
+    tableColumnsSchemaEnhancer('listingBodyTemplate'),
+  );
   config.blocks.blocksConfig.rssBlock.templates = {
     default: {
       label: 'List',
@@ -54,6 +92,46 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.contactList.schemaEnhancer =
     ContactListStylingSchema;
+
+  // CSV table: a CSV file inside the intranet shown as a read-only wiki
+  // table. A Plone block inside Wiki Pages only (inserted from the slash
+  // menu, like the wiki image), hence `restricted`.
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/751
+  config.blocks.blocksConfig.csvtable = {
+    id: 'csvtable',
+    title: 'CSV table',
+    icon: tableSVG,
+    group: 'common',
+    view: CsvTableView,
+    edit: CsvTableEdit,
+    blockSchema: CsvTableSchema,
+    restricted: true,
+    mostUsed: false,
+    sidebarTab: 1,
+    // Required by this package's own `BlockConfigBase` augmentation above.
+    templates: {},
+  };
+
+  // Wiki Page (Plate) tables can leave the text column: "Medium"
+  // (`medium`), "Wide" (`layout`) and "Full width" (`full`), set from the
+  // table cell toolbar; the widths themselves are in
+  // theme/components/_wikiTable.scss. `default`, `layout` and `full` are
+  // the theme's width definitions (`config.blocks.widths`); `medium` is a
+  // table-only step, not in that list, so @plone/plate's block width plugin
+  // sets no inline `--block-width` for it and the stylesheet styles it
+  // through the `slate-blockWidth-medium` class the plugin adds to the
+  // block. The plugin resets any value outside this list. volto-plate
+  // registers every native block with `default` only, and its config runs
+  // before this one.
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/823
+  // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/825
+  config.blocks.plateBlocksConfig.table = {
+    ...config.blocks.plateBlocksConfig.table,
+    blockWidth: {
+      defaultWidth: 'default',
+      widths: ['default', 'medium', 'layout', 'full'],
+    },
+  };
 
   return config;
 }

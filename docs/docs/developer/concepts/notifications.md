@@ -12,7 +12,7 @@ last_updated: 2026-11-16
 # Notification center architecture
 
 The notification center is deliberately small.
-It's an MVP that shows the feature end to end, and leaves room for the parts that will come later: watching content, email delivery, and real-time updates.
+It's an MVP that shows the feature end to end, and leaves room for the parts that will come later: notifications about watched content, email delivery, and real-time updates.
 This page explains how the pieces fit together, and why they're built the way they are.
 
 ## Overview
@@ -157,13 +157,38 @@ The unread count is global, and is updated from every list response.
 Marking as read updates every list, so the bell and the page stay consistent without fetching again.
 The count only drops by notifications that were still unread, so clicking a read one again doesn't lower it.
 
+## Relation to watching
+
+{doc}`Watching content <watch-content>` is a separate feature that reacts to the same events.
+The two pipelines don't share code or storage:
+
+| | Notification center | Watching |
+|-|---------------------|----------|
+| Recipients | The item's creators | The item's watchers, from the `kitconcept.intranet.watchers` annotation |
+| Events | `IObjectModifiedEvent`, `IAfterTransitionEvent`, likes in `@vote` | `IObjectModifiedEvent`, `IAfterTransitionEvent` to `published`, `IAfterCheckinEvent` |
+| Content state | Any | Published only |
+| When | Synchronously, in the event subscriber | Queued per transaction; built in a before-commit hook, sent after a successful commit |
+| Output | A stored entry, read through `@notifications` | An email |
+| Opt out | Per type, `@notifications-settings` | Per item, `@watch` |
+
+A user who authors and watches an item gets both a bell notification and an email for the same edit.
+
+Watched content isn't in the notification center yet.
+The natural place to join them is `_build_mails()` in `kitconcept.intranet.utils.watch_notifier`.
+It runs in a before-commit hook, once per changed item, and already has the item, the editor, and the watchers who can view the item.
+Calling `storage.add_notification()` there, for each recipient and with a new type such as `watched`, would store the entries in the same transaction as the change.
+The overview page would then need a second reason line, "You watch this item."
+Watch emails are only built for published content; a bell entry for watched content could follow the same rule or not, which is a product decision.
+
 ## Limits and future work
 
 Known limits of the MVP:
 
 - **Only creators are notified.**
-  Watching content and areas is planned, and will add new types and a second reason line.
+  Watchers get emails from the watch feature, but nothing in the bell.
+  Watching whole areas isn't supported by either feature.
 - **No email.**
+  The notification center itself sends none.
   An email digest would read from the same storage.
 - **No real-time push.**
   The REST API stays the same if push is added; the poller would only become a fallback.
@@ -180,3 +205,4 @@ To add a type within the current design, see {doc}`/developer/how-to-guides/add-
 - {doc}`/developer/reference/components/notifications`
 - {doc}`/concepts/notifications`
 - {doc}`security-model`
+- {doc}`watch-content`

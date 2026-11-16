@@ -27,7 +27,8 @@ The **Authors** field of {doc}`content ownership <content-ownership>` is a diffe
 
 Authorship is the simplest signal that a page matters to you.
 It needs no setup: everyone who has ever created a page already has something to be notified about.
-Watching content or areas you didn't create is planned as a separate feature, and will add its own notification types.
+To follow content you didn't create, you {doc}`watch </features/watch-content>` it instead.
+See {ref}`notifications-and-watching` below.
 
 ## What counts as activity
 
@@ -87,10 +88,30 @@ So a new notification shows up within a minute at most.
 Each person keeps their 200 newest notifications.
 When a new one arrives, the oldest beyond 200 is dropped.
 
+(notifications-and-watching)=
+
+## Notifications and watching
+
+The intranet has two ways to keep you informed about content.
+They're separate features, and work side by side.
+
+| | Notification center | Watching |
+|-|---------------------|----------|
+| **Which content** | Content you author | Content you chose to watch |
+| **Setup** | None | Select the eye on each item |
+| **What you hear about** | Likes, edits, and state changes | Edits, publishing, and check-ins |
+| **Only published content** | No, any state | Yes |
+| **Where** | The bell and `/notifications` | An email for each change |
+| **Turn off** | Per type, in the preferences | Per item, with the eye |
+
+If you watch a page you also author, you get both: a notification in the bell and an email.
+
+Watched content doesn't show up in the bell yet.
+
 ## What's not there yet
 
 The notification center is a first version.
-It doesn't send emails, doesn't group notifications into threads, and doesn't notify you about content you watch.
+It doesn't send emails, doesn't group notifications into threads, and doesn't list content you watch.
 These may come in later versions.
 
 ## See also
@@ -99,3 +120,4 @@ These may come in later versions.
 - {doc}`/how-to-guides/notifications/read-notifications`
 - {doc}`/features/notification-center`
 - {doc}`content-ownership`
+- {doc}`/features/watch-content`

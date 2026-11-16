@@ -28,8 +28,9 @@ you see it.
 
 In this first version, you're notified about activity on content you **author**:
 {doc}`likes <likes-and-content-rating>`, edits, and workflow changes such as
-publish or retract. Watching content and areas will add more notification types
-later.
+publish or retract. To follow content you didn't create, use
+{doc}`watch-content`: it sends an email when a watched item changes. Watched
+content doesn't show up in the bell yet.
 
 ## Who it's for
 
@@ -70,7 +71,7 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 | Type | Created when | Who is notified |
 |------|--------------|-----------------|
-| Like | Someone likes the item through `@vote`. Unliking creates nothing. | The item's creators |
+| Like | Someone likes the item through `@vote`. Taking a like back creates nothing. | The item's creators |
 | Edit | Someone edits the item. | The item's creators |
 | State change | Someone runs a workflow transition, such as publish or retract. | The item's creators |
 
@@ -152,6 +153,8 @@ For users:
 - How-to: {doc}`/how-to-guides/notifications/read-notifications`
 - How-to: {doc}`/how-to-guides/notifications/choose-notifications`
 - Explanation: {doc}`/concepts/notifications`
+
+Related feature: {doc}`watch-content`.
 
 For developers:
 

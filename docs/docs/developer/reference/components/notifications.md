@@ -77,7 +77,14 @@ It dispatches `getNotifications('latest', {bSize: 5})`:
 
 - when a user token appears, for example after login;
 - when the path name changes;
-- every `POLL_INTERVAL` milliseconds (60 000) while a user is logged in.
+- every `POLL_INTERVAL` milliseconds (60 000) while a user is logged in and the tab is visible;
+- when a hidden tab becomes visible again.
+
+While `document.visibilityState` is `hidden`, the timer is stopped.
+A tab opened in the background fetches once, then waits until it's shown.
+
+The poller relies on the browser's HTTP cache: the backend answers unchanged lists with `304 Not Modified`, and the browser serves the stored response.
+See {ref}`notifications-api-caching`.
 
 Exports:
 

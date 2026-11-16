@@ -3,6 +3,10 @@
 Everything lives in one annotation on the site root: a BTree of per-user
 lists, so writes for different users do not conflict. Only the newest
 ``MAX_PER_USER`` notifications are kept.
+
+Each user with notifications also has a version number, changed whenever
+their list may look different. The REST service builds its ETag from it, so
+a poll that finds nothing new is answered with 304 Not Modified.
 """
 
 from BTrees.OOBTree import OOBTree
@@ -36,7 +40,31 @@ def _root(create: bool = False) -> PersistentMapping | None:
     if root is None and create:
         root = PersistentMapping({"items": OOBTree(), "settings": OOBTree()})
         annotations[ANNOTATION_KEY] = root
+    if root is not None and create and "versions" not in root:
+        # Sites created before versions existed get them on the next write.
+        root["versions"] = OOBTree()
     return root
+
+
+def get_version(userid: str) -> int:
+    """Return the version of the user's notifications, 0 if never changed."""
+    root = _root()
+    if root is None or "versions" not in root:
+        return 0
+    return root["versions"].get(userid, 0)
+
+
+def touch(userid: str) -> None:
+    """Change the user's version, so cached notification lists are refetched.
+
+    Only users who have notifications have a version: for everyone else,
+    there is nothing a cached list could get wrong.
+    """
+    root = _root()
+    if root is None or userid not in root["items"]:
+        return
+    root = _root(create=True)
+    root["versions"][userid] = root["versions"].get(userid, 0) + 1
 
 
 def get_settings(userid: str) -> dict:
@@ -93,6 +121,7 @@ def add_notification(
                 item["created"] = now.isoformat()
                 item["title"] = obj.Title()
                 items.insert(0, item)
+                touch(userid)
                 return dict(item)
             # Items are newest first: stop once outside the window.
             if now - datetime.fromisoformat(item["created"]) >= COLLAPSE_WINDOW:
@@ -109,6 +138,7 @@ def add_notification(
     })
     items.insert(0, item)
     del items[MAX_PER_USER:]
+    touch(userid)
     return dict(item)
 
 
@@ -123,4 +153,6 @@ def mark_read(userid: str, ids: list[str] | None = None) -> int:
         if not item["read"] and (wanted is None or item["id"] in wanted):
             item["read"] = True
             count += 1
+    if count:
+        touch(userid)
     return count

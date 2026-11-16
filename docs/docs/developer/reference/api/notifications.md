@@ -108,10 +108,40 @@ Authorization: Bearer <token>
 }
 ```
 
+(notifications-api-caching)=
+
+### Caching
+
+Every response carries an `ETag` and `Cache-Control: private, no-cache`, so browsers store it and revalidate it before using it again.
+
+A request with an `If-None-Match` header that contains the current ETag gets `304 Not Modified`, with the `ETag` header and no body.
+Weak ETags (`W/"…"`), lists of ETags, and `*` are accepted.
+
+The ETag changes when:
+
+- the user gets a new notification, or an existing one is merged with a new edit;
+- notifications are marked as read;
+- an item the user authors is edited, changes state, or is moved, renamed, or deleted;
+- the query string or the language differs;
+- the hour changes.
+
+```http
+GET /@notifications?b_size=5 HTTP/1.1
+Accept: application/json
+Authorization: Bearer <token>
+If-None-Match: "47e2c38fe86aeab6ebfc9f0dc65fb0be"
+```
+
+```http
+HTTP/1.1 304 Not Modified
+ETag: "47e2c38fe86aeab6ebfc9f0dc65fb0be"
+```
+
 ### Errors
 
 | Status | Condition |
 |--------|-----------|
+| `304 Not Modified` | `If-None-Match` matches the current ETag. Not an error, listed here for completeness. |
 | `400 Bad Request` | `b_start` or `b_size` isn't an integer. |
 | `401 Unauthorized` | The user is anonymous. |
 

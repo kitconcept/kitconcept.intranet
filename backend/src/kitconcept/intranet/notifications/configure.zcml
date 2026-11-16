@@ -13,6 +13,12 @@
            Products.DCWorkflow.interfaces.IAfterTransitionEvent"
       handler=".subscribers.transitioned"
       />
+  <!-- Moves, renames and deletions, including those of a parent. -->
+  <subscriber
+      for="plone.dexterity.interfaces.IDexterityContent
+           zope.lifecycleevent.interfaces.IObjectMovedEvent"
+      handler=".subscribers.moved"
+      />
 
   <plone:service
       method="GET"

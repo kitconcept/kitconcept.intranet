@@ -77,7 +77,8 @@ Everything is stored in one annotation on the site root, under the key `kitconce
 ```text
 PersistentMapping
 ├── "items":    OOBTree  userid → PersistentList[PersistentMapping]   (newest first)
-└── "settings": OOBTree  userid → PersistentMapping {type: bool}
+├── "settings": OOBTree  userid → PersistentMapping {type: bool}
+└── "versions": OOBTree  userid → int   (changes whenever the user's list may look different)
 ```
 
 Each stored notification holds `id`, `type`, `actor`, `uid`, `title`, `created`, `read`, and, for transitions, `transition`, `review_state`, and `review_state_title`.
@@ -137,13 +138,46 @@ The frontend has no push channel.
 
 - when the user token appears, for example after login;
 - on every route change;
-- every 60 seconds while the page is open.
+- every 60 seconds while the tab is visible;
+- when a hidden tab becomes visible again.
 
 Opening the bell's dropdown fetches again.
+Hidden tabs don't poll: background tabs are a large share of open tabs, and nobody looks at their bell.
 
 Polling was chosen over WebSockets or server-sent events because it works with every Plone deployment as is: no extra service, no sticky sessions, no proxy configuration.
-The request is cheap, one annotation read and one catalog query.
 The cost is a delay of up to a minute when the user stays on one page.
+
+### Polls that find nothing new
+
+Most polls find nothing new.
+A full answer loads all of the user's notifications, runs a catalog query for their items, and looks up the actors' names, only to return the same five entries again.
+So `GET @notifications` answers with an `ETag` and `Cache-Control: private, no-cache`.
+The browser stores the response, and on the next poll asks whether it's still current, with `If-None-Match`.
+If the ETag still matches, the service returns `304 Not Modified` before doing any of that work, and the browser hands the stored response to the frontend.
+The frontend code doesn't know about any of this.
+
+The ETag is a hash of:
+
+- the user ID;
+- the user's **version**, a counter in the `versions` B-tree;
+- the query string;
+- the current language, because state titles are translated;
+- the current hour.
+
+`storage.touch()` changes the version whenever the user's list may look different:
+
+| Change | Where |
+|--------|-------|
+| A new or merged notification | `add_notification` |
+| Notifications marked as read | `mark_read` |
+| An edit or transition of an item the user authors, even when it creates no notification, for example their own edit | `notify_authors` |
+| An item the user authors is moved, renamed, or deleted, also through a parent | the `IObjectMovedEvent` subscriber |
+
+Notifications about an item only ever go to its creators, so touching the creators covers every list that shows the item.
+Only users who already have notifications get a version; for everyone else there's nothing to invalidate.
+
+The hour is a safety net for changes no subscriber sees, such as new local roles that hide an item, a renamed actor, or a changed list of creators.
+Those show up within an hour at most, when the ETag changes anyway.
 
 The fetching lives in the poller, not in the bell, because the Volto Light Theme header renders the `headerTools` slot more than once.
 A bell that fetched by itself would fire one request per rendered copy.

@@ -63,7 +63,7 @@ You can no longer view its page: the page was deleted, or it's now private.
 Notifications about such pages are hidden and don't count as unread.
 
 **A notification doesn't show up right away.**
-The bell refreshes when you open another page, and every minute.
+The bell refreshes when you open another page, every minute, and when you switch back to its browser tab.
 Open another page, or wait a minute.
 
 **Several edits show as one notification.**

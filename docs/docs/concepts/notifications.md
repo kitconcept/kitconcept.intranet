@@ -83,6 +83,9 @@ The bell doesn't receive notifications the instant they happen.
 It asks for new ones when you log in, whenever you open another page, every minute while a page stays open, and when you open the dropdown.
 So a new notification shows up within a minute at most.
 
+Browser tabs in the background don't ask.
+When you switch back to a tab, its bell updates right away.
+
 ## How long notifications are kept
 
 Each person keeps their 200 newest notifications.

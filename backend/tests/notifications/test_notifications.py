@@ -110,3 +110,84 @@ class TestNotificationSettings:
     def test_unknown_type(self, author_session):
         response = author_session.patch("/@notifications-settings", json={"x": 1})
         assert response.status_code == 400
+
+
+class TestNotificationsETag:
+    """Polls that find nothing new are answered with 304 Not Modified."""
+
+    @staticmethod
+    def _poll(session, etag=None, **params):
+        headers = {"If-None-Match": etag} if etag else {}
+        return session.get("/@notifications", params=params, headers=headers)
+
+    def test_etag_and_revalidation_headers(self, author_session):
+        response = self._poll(author_session)
+        assert response.status_code == 200
+        assert response.headers["ETag"].startswith('"')
+        assert response.headers["Cache-Control"] == "private, no-cache"
+
+    def test_unchanged_list_is_not_modified(self, author_session, editor_session):
+        editor_session.post("/doc1/@vote")
+        etag = self._poll(author_session).headers["ETag"]
+        response = self._poll(author_session, etag)
+        assert response.status_code == 304
+        assert response.content == b""
+        assert response.headers["ETag"] == etag
+
+    def test_weak_and_listed_etags_match(self, author_session):
+        etag = self._poll(author_session).headers["ETag"]
+        assert self._poll(author_session, f"W/{etag}").status_code == 304
+        assert self._poll(author_session, f'"other", {etag}').status_code == 304
+        assert self._poll(author_session, '"other"').status_code == 200
+
+    def test_etag_depends_on_query_and_user(self, author_session, editor_session):
+        etag = self._poll(author_session).headers["ETag"]
+        assert self._poll(author_session, etag, b_size=5).status_code == 200
+        assert self._poll(editor_session, etag).status_code == 200
+
+    def test_new_notification_changes_etag(self, author_session, editor_session):
+        etag = self._poll(author_session).headers["ETag"]
+        editor_session.post("/doc1/@vote")
+        response = self._poll(author_session, etag)
+        assert response.status_code == 200
+        assert response.json()["unread"] == 1
+
+    def test_mark_read_changes_etag(self, author_session, editor_session):
+        editor_session.post("/doc1/@vote")
+        etag = self._poll(author_session).headers["ETag"]
+        author_session.patch("/@notifications", json={})
+        response = self._poll(author_session, etag)
+        assert response.status_code == 200
+        assert response.json()["unread"] == 0
+
+    def test_own_edit_changes_etag(self, author_session, editor_session):
+        # The author's own retitling creates no notification, but their
+        # list shows the new title.
+        editor_session.post("/doc1/@vote")
+        etag = self._poll(author_session).headers["ETag"]
+        author_session.patch("/doc1", json={"title": "Doc One"})
+        response = self._poll(author_session, etag)
+        assert response.status_code == 200
+        assert response.json()["items"][0]["title"] == "Doc One"
+
+    def test_rename_changes_etag(self, portal, author_session, editor_session):
+        editor_session.post("/doc1/@vote")
+        etag = self._poll(author_session).headers["ETag"]
+        transaction.begin()
+        with api.env.adopt_user(SITE_OWNER_NAME):
+            api.content.rename(obj=portal["doc1"], new_id="doc-renamed")
+        transaction.commit()
+        response = self._poll(author_session, etag)
+        assert response.status_code == 200
+        assert response.json()["items"][0]["@id"].split(chr(47))[-1] == "doc-renamed"
+
+    def test_delete_changes_etag(self, portal, author_session, editor_session):
+        editor_session.post("/doc1/@vote")
+        etag = self._poll(author_session).headers["ETag"]
+        transaction.begin()
+        with api.env.adopt_user(SITE_OWNER_NAME):
+            api.content.delete(obj=portal["doc1"], check_linkintegrity=False)
+        transaction.commit()
+        response = self._poll(author_session, etag)
+        assert response.status_code == 200
+        assert response.json()["unread"] == 0

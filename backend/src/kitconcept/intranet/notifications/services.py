@@ -1,6 +1,8 @@
 """REST API for the current user's notifications and preferences."""
 
 from . import storage
+from datetime import UTC
+from datetime import datetime
 from plone import api
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.deserializer import json_body
@@ -9,6 +11,8 @@ from zExceptions import BadRequest
 from zExceptions import Unauthorized
 from zope.i18n import translate
 from zope.interface import alsoProvides
+
+import hashlib
 
 
 DEFAULT_BATCH_SIZE = 25
@@ -28,15 +32,60 @@ def _fullname(userid: str, cache: dict) -> str:
     return cache[userid]
 
 
+def _etag(userid: str, request) -> str:
+    """ETag of the user's notification list as this request would render it.
+
+    Changes with the user's notifications (``storage.touch``), the query and
+    the language. The hour is part of it as a safety net: changes the
+    subscribers don't see, such as new local roles or a renamed actor, show
+    up within an hour.
+    """
+    parts = [
+        userid,
+        str(storage.get_version(userid)),
+        request.get("QUERY_STRING", ""),
+        api.portal.get_current_language(),
+        datetime.now(UTC).strftime("%Y-%m-%dT%H"),
+    ]
+    digest = hashlib.sha256("\n".join(parts).encode()).hexdigest()[:32]
+    return f'"{digest}"'
+
+
+def _matches(etag: str, if_none_match: str) -> bool:
+    """Whether ``etag`` is in an If-None-Match header, ignoring weakness.
+
+    Proxies that compress the response may turn the ETag into a weak one.
+    """
+    if not if_none_match:
+        return False
+    for candidate in if_none_match.split(","):
+        candidate = candidate.strip()
+        if candidate.startswith("W/"):
+            candidate = candidate[2:]
+        if candidate in (etag, "*"):
+            return True
+    return False
+
+
 class NotificationsGet(Service):
     """List the current user's notifications, newest first.
 
     Entries about content the user can no longer view are left out.
     Query: ``b_start``, ``b_size``, ``unread_only``.
+
+    Responses carry an ETag and must be revalidated. A request whose
+    If-None-Match matches gets 304 Not Modified without a body: the bell
+    polls every minute, and most polls find nothing new.
     """
 
     def reply(self):
         userid = _current_userid()
+        etag = _etag(userid, self.request)
+        response = self.request.response
+        response.setHeader("ETag", etag)
+        response.setHeader("Cache-Control", "private, no-cache")
+        if _matches(etag, self.request.getHeader("If-None-Match", "")):
+            return self.reply_no_content(status=304)
         form = self.request.form
         try:
             b_start = max(int(form.get("b_start", 0)), 0)

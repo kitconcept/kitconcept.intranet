@@ -103,6 +103,8 @@ This section is the behavioural spec. Treat each rule as a testable assertion.
 
 - The bell refreshes when you log in, on every page navigation, and every
   60 seconds while the page stays open. Opening the dropdown refreshes it too.
+- Tabs in the background don't refresh. Switching back to a tab refreshes its
+  bell right away.
 - There is no real-time push in the MVP.
 
 ### Preferences

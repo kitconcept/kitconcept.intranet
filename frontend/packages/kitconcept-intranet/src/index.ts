@@ -4,6 +4,7 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import installTasks from './config/tasks';
+import installNotifications from './config/notifications';
 import PersonView from './components/theme/PersonView';
 import PersonSummary from './components/Summary/PersonSummary';
 import { defineMessages } from 'react-intl';
@@ -156,6 +157,7 @@ const applyConfig = (config: ConfigType) => {
   installWidgets(config);
   installBlocks(config);
   installTasks(config);
+  installNotifications(config);
   (
     config.settings.solrSearchOptions as { showSearchInput?: boolean }
   ).showSearchInput = false;

@@ -1,3 +1,4 @@
+from kitconcept.intranet.notifications.subscribers import notify_authors
 from plone import api
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.services import Service
@@ -27,6 +28,7 @@ class VotesPost(Service):
         else:
             votes.append(username)
             msg = "Like added"
+            notify_authors(self.context, "like")
 
         self.context.votes = votes
 

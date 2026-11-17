@@ -157,6 +157,11 @@ import-ai-content: $(VENV_FOLDER) instance/etc/zope.conf ## Import the AI search
 	@uv run plone-importer instance/etc/zope.conf $(PLONE_SITE_ID) $(AI_CONTENT_FOLDER)
 	@uv run zconsole run instance/etc/zope.conf ./scripts/ai_content_demo_passwords.py
 
+.PHONY: notifications-demo
+notifications-demo: $(VENV_FOLDER) instance/etc/zope.conf ## Seed notification center demo activity (log in as a.becker)
+	@echo "$(GREEN)==> Seed notification center demo $(RESET)"
+	@PLONE_SITE_ID=$(PLONE_SITE_ID) uv run zconsole run instance/etc/zope.conf ./scripts/notifications_demo.py
+
 .PHONY: update-ai-content
 update-ai-content: $(VENV_FOLDER) ## Export the AI search test corpus inside package
 	@echo "$(GREEN)==> Export AI test corpus into $(AI_CONTENT_FOLDER) $(RESET)"

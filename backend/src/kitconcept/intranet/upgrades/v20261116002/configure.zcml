@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261116001"
+      destination="20261116002"
+      >
+    <genericsetup:upgradeDepends
+        title="Add the notification center setting"
+        import_steps="plone.app.registry"
+        />
+    <genericsetup:upgradeStep
+        title="Disable the notification center for upgraded sites"
+        handler=".disable_notification_center_for_upgraded_sites"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

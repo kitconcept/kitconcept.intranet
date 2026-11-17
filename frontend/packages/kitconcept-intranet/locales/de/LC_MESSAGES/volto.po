@@ -453,6 +453,16 @@ msgstr "Letztes Jahr"
 msgid "List with date"
 msgstr "Liste mit Datum"
 
+#. Default: "Load more"
+#: components/Notifications/helpers
+msgid "Load more"
+msgstr "Mehr laden"
+
+#. Default: "Loading notifications..."
+#: components/Notifications/helpers
+msgid "Loading notifications"
+msgstr "Benachrichtigungen werden geladen …"
+
 #. Default: "Loading tasks..."
 #: components/Tasks/Tasks
 msgid "Loading tasks"
@@ -473,10 +483,20 @@ msgstr "Standort"
 msgid "Mark Changes Required"
 msgstr "Überarbeitung erforderlich"
 
+#. Default: "Mark all as read"
+#: components/Notifications/helpers
+msgid "Mark all as read"
+msgstr "Alle als gelesen markieren"
+
 #. Default: "Mark as Reviewed"
 #: components/Toolbar/DocumentReview
 msgid "Mark as Reviewed"
 msgstr "Als geprüft markieren"
+
+#. Default: "Mark as read"
+#: components/Notifications/helpers
+msgid "Mark as read"
+msgstr "Als gelesen markieren"
 
 #. Default: "Maximum"
 #: index
@@ -592,6 +612,22 @@ msgstr "Kein Arbeitsablauf"
 #: index
 msgid "None"
 msgstr "Keine"
+
+#. Default: "Notification filter"
+#: components/Notifications/helpers
+msgid "Notification filter"
+msgstr "Benachrichtigungsfilter"
+
+#. Default: "Notification preferences"
+#: components/Notifications/helpers
+msgid "Notification preferences"
+msgstr "Benachrichtigungseinstellungen"
+
+#. Default: "Notifications"
+#: components/Notifications/helpers
+#: components/Notifications/NotificationsMenu
+msgid "Notifications"
+msgstr "Benachrichtigungen"
 
 #. Default: "Offset"
 #: components/widgets/QuerystringWidget
@@ -752,6 +788,11 @@ msgstr "Suche"
 #: components/Header/HeaderSearch
 msgid "Search…"
 msgstr "Suchen…"
+
+#. Default: "See all notifications"
+#: components/Notifications/helpers
+msgid "See all notifications"
+msgstr "Alle Benachrichtigungen anzeigen"
 
 #. Default: "Please Select ..."
 #: components/ContentReviewSidebar/DelegateReview
@@ -977,6 +1018,7 @@ msgstr "Um ein „Gefällt mir“ abzugeben, müssen Sie angemeldet sein."
 
 #. Default: "Today"
 #: components/Header/HeaderSearch
+#: components/Notifications/helpers
 msgid "Today"
 msgstr "Heute"
 
@@ -989,6 +1031,11 @@ msgstr "Morgen"
 #: components/Header/HeaderSearch
 msgid "Type"
 msgstr "Typ"
+
+#. Default: "Unable to load notifications."
+#: components/Notifications/helpers
+msgid "Unable to load notifications"
+msgstr "Benachrichtigungen konnten nicht geladen werden."
 
 #. Default: "Unable to load tasks."
 #: components/Tasks/Tasks
@@ -1004,6 +1051,11 @@ msgstr "Aktualisiert"
 #: components/ContentReviewSidebar/PostponeReview
 msgid "Use preset review interval"
 msgstr "Voreingestelltes Überprüfungsintervall verwenden."
+
+#. Default: "View changes"
+#: components/Notifications/helpers
+msgid "View changes"
+msgstr "Änderungen ansehen"
 
 #. Default: "Watch"
 #: components/WatchButton/WatchButton
@@ -1055,6 +1107,11 @@ msgstr "Workspace"
 #: components/Blocks/Listing/Table/cellTypes
 msgid "Yes"
 msgstr "Ja"
+
+#. Default: "Yesterday"
+#: components/Notifications/helpers
+msgid "Yesterday"
+msgstr "Gestern"
 
 #. Default: "You are now watching this content and will be notified of changes by email."
 #: components/WatchButton/WatchButton
@@ -1251,6 +1308,71 @@ msgstr ""
 #: components/ContentReviewSidebar/PostponeReview
 msgid "nextReview"
 msgstr "Nächste Kontrolle am: "
+
+#. Default: "{actor} liked {title}"
+#: components/Notifications/helpers
+msgid "notificationLike"
+msgstr "{actor} gefällt {title}"
+
+#. Default: "{actor} edited {title}"
+#: components/Notifications/helpers
+msgid "notificationModified"
+msgstr "{actor} hat {title} bearbeitet"
+
+#. Default: "Choose what you want to be notified about."
+#: components/Notifications/helpers
+msgid "notificationPreferencesHelp"
+msgstr "Wählen Sie, worüber Sie benachrichtigt werden möchten."
+
+#. Default: "You are an author of this item"
+#: components/Notifications/helpers
+msgid "notificationReasonAuthor"
+msgstr "Sie sind Autor:in dieses Inhalts"
+
+#. Default: "Someone likes content I author"
+#: components/Notifications/helpers
+msgid "notificationSettingLike"
+msgstr "Jemandem gefällt ein Inhalt, den ich verfasst habe"
+
+#. Default: "Someone edits content I author"
+#: components/Notifications/helpers
+msgid "notificationSettingModified"
+msgstr "Jemand bearbeitet einen Inhalt, den ich verfasst habe"
+
+#. Default: "Someone changes the state of content I author (publish, retract, …)"
+#: components/Notifications/helpers
+msgid "notificationSettingTransition"
+msgstr "Jemand ändert den Status eines Inhalts, den ich verfasst habe (veröffentlichen, zurückziehen, …)"
+
+#. Default: "{actor} changed the state of {title} to {state}"
+#: components/Notifications/helpers
+msgid "notificationTransition"
+msgstr "{actor} hat den Status von {title} auf {state} gesetzt"
+
+#. Default: "{count, plural, =0 {Notifications} one {Notifications, # unread} other {Notifications, # unread}}"
+#: components/Notifications/helpers
+msgid "notificationsBellLabel"
+msgstr "{count, plural, =0 {Benachrichtigungen} one {Benachrichtigungen, # ungelesen} other {Benachrichtigungen, # ungelesen}}"
+
+#. Default: "You're all caught up. New activity on your content shows up here."
+#: components/Notifications/helpers
+msgid "notificationsEmpty"
+msgstr "Sie sind auf dem neuesten Stand. Neue Aktivitäten an Ihren Inhalten erscheinen hier."
+
+#. Default: "No unread notifications."
+#: components/Notifications/helpers
+msgid "notificationsEmptyUnread"
+msgstr "Keine ungelesenen Benachrichtigungen."
+
+#. Default: "All"
+#: components/Notifications/helpers
+msgid "notificationsFilterAll"
+msgstr "Alle"
+
+#. Default: "Unread ({count})"
+#: components/Notifications/helpers
+msgid "notificationsFilterUnread"
+msgstr "Ungelesen ({count})"
 
 #. Default: "1 open discussion in text"
 #: slots/DocumentByLine/DocumentByLine

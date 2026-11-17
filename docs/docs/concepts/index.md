@@ -2,7 +2,7 @@
 myst:
   html_meta:
     description: "Conceptual guides for understanding how the kitconcept intranet works."
-    keywords: "concepts, content ownership, organisational structure, personalization"
+    keywords: "concepts, content ownership, organisational structure, personalization, notifications"
 last_updated: 2026-03-18
 ---
 
@@ -16,4 +16,5 @@ Background reading for understanding how the intranet works.
 content-ownership
 organisational-structure
 personalization
+notifications
 ```

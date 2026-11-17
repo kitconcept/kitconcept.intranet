@@ -20,5 +20,6 @@ block-model
 layout
 vertical-spacing
 inline-tasks
+notifications
 watch-content
 ```

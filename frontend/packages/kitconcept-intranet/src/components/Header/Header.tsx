@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
 import HeaderBreadcrumbs from './HeaderBreadcrumbs';
 import HeaderSearch from './HeaderSearch';
+import NotificationBell from '../Notifications/NotificationBell';
 import cx from 'classnames';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 
@@ -75,6 +76,7 @@ const Header = (props) => {
         >
           <HeaderBreadcrumbs pathname={pathname} />
           <HeaderSearch />
+          <NotificationBell />
         </div>
       </div>
     </>

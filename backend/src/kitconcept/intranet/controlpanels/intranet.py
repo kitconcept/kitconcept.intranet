@@ -88,6 +88,19 @@ class IIntranetSettings(Interface):
         default=True,
     )
 
+    enable_notification_center = schema.Bool(
+        title=_("Enable Notification Center"),
+        description=_(
+            "help_enable_notification_center",
+            default="Logged-in users see a bell with notifications about likes, "
+            "edits and workflow changes on content they author. When off, no "
+            "notifications are created and the bell is hidden. Existing "
+            "notifications are kept.",
+        ),
+        required=False,
+        default=True,
+    )
+
     iframe_allowed_domains = schema.List(
         title=_("Allowed Iframe Domains"),
         description="A list of allowed domains for iframes. Example: ['example.com']",
@@ -170,4 +183,7 @@ class IntranetSiteEndpointExpander:
         )
         data["kitconcept.intranet.enable_content_watching"] = (
             settings.enable_content_watching
+        )
+        data["kitconcept.intranet.enable_notification_center"] = (
+            settings.enable_notification_center
         )

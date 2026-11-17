@@ -76,11 +76,13 @@
     "@kitconcept/volto-plate",
     "@kitconcept/volto-keywordmanager",
     "@plone/volto-recyclebin",
-    "@kitconcept/volto-maintenance-banner"
+    "@kitconcept/volto-maintenance-banner",
+    "@eeacms/volto-taxonomy"
   ],
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
     "@eeacms/volto-pdf-block": "^1.0.12",
+    "@eeacms/volto-taxonomy": "^7.0.0",
     "@kitconcept/core": "workspace:*",
     "@kitconcept/volto-banner-block": "workspace:*",
     "@kitconcept/volto-bm3-compat": "workspace:*",

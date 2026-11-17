@@ -798,6 +798,35 @@ wheels = [
 ]
 
 [[package]]
+name = "collective-collectionfilter"
+version = "6.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-app-contenttypes" },
+    { name = "plone-app-event" },
+    { name = "plone-app-querystring" },
+    { name = "plone-app-uuid" },
+    { name = "plone-app-vocabularies" },
+    { name = "plone-app-z3cform" },
+    { name = "plone-autoform" },
+    { name = "plone-base" },
+    { name = "plone-dexterity" },
+    { name = "plone-i18n" },
+    { name = "plone-memoize" },
+    { name = "plone-portlets" },
+    { name = "plone-supermodel" },
+    { name = "plone-uuid" },
+    { name = "products-cmfcore" },
+    { name = "products-cmfplone" },
+    { name = "z3c-form" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f6/2d/8f45fad5775e48376060c68634ecb266dd9956bc55e13ef57fc231b8b023/collective_collectionfilter-6.0.0.tar.gz", hash = "sha256:a1f2a9bf9001e3151f1bd3a054f0e2966cb76975c22853698616f168122fba8d", size = 1121102, upload-time = "2026-03-30T23:32:47.675Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3a/55/b1561923975c61ff9c858988fc8c7906b8e7509e3b5f63b8e7c5a307de7c/collective_collectionfilter-6.0.0-py3-none-any.whl", hash = "sha256:865bf9b19b9d6cf72118245737337bf481f5de7cd196a0034c3cf4e2e9db9358", size = 2084369, upload-time = "2026-03-30T23:32:43.963Z" },
+]
+
+[[package]]
 name = "collective-contact-behaviors"
 version = "1.0.0b6"
 source = { registry = "https://pypi.org/simple" }
@@ -911,6 +940,40 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/a4/d5/4c3bd4c1c51b1eab61ca06541c8e72563da6b70e384d122a98dbf07df083/collective_solr-10.1.1.tar.gz", hash = "sha256:6df4bdca150e9b1c20605c1be7d825aa60be53a2a359bc9578a3ae9d1f363d61", size = 208270, upload-time = "2026-03-11T17:08:09.988Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9d/2d/363ecb7a9e87b74c60d261d47e5afd90c72292b09b58b483eba1da7658ed/collective_solr-10.1.1-py3-none-any.whl", hash = "sha256:fe879466d069d0a466f0b044f3b9606676dc02f30af5aadf64da17393a4a70b2", size = 212536, upload-time = "2026-03-11T17:08:07.342Z" },
+]
+
+[[package]]
+name = "collective-taxonomy"
+version = "4.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "collective-collectionfilter" },
+    { name = "lxml" },
+    { name = "plone-api" },
+    { name = "plone-app-contentmenu" },
+    { name = "plone-app-contenttypes" },
+    { name = "plone-app-multilingual" },
+    { name = "plone-app-registry" },
+    { name = "plone-app-vocabularies" },
+    { name = "plone-app-z3cform" },
+    { name = "plone-autoform" },
+    { name = "plone-base" },
+    { name = "plone-behavior" },
+    { name = "plone-dexterity" },
+    { name = "plone-i18n" },
+    { name = "plone-indexer" },
+    { name = "plone-memoize" },
+    { name = "plone-namedfile" },
+    { name = "plone-protect" },
+    { name = "plone-restapi" },
+    { name = "plone-supermodel" },
+    { name = "products-cmfcore" },
+    { name = "z3c-form" },
+    { name = "zope" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d2/b2/c1d740d5ec4490fc7b1d2d1fae7f20a2c877027977bb1970a78a9e64d588/collective_taxonomy-4.1.0.tar.gz", hash = "sha256:0dab6e2e218dfe73e6e5b915c0f8b8acfd288e17da7440459ad131756570ad4d", size = 4381559, upload-time = "2026-11-16T15:24:10.473Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/33/c4/df620eb2b19b46ebccd10695a816866335f5d6616e6c3403814d08b1efba/collective_taxonomy-4.1.0-py3-none-any.whl", hash = "sha256:8ef204f2ff534f7ea19e4cfca3859edd806f03b26d1cc58bcb723a0d5ace50f2", size = 618275, upload-time = "2026-11-16T15:24:04.926Z" },
 ]
 
 [[package]]
@@ -1521,6 +1584,7 @@ source = { editable = "." }
 default-groups = ["build", "test"]
 dependencies = [
     { name = "collective-solr" },
+    { name = "collective-taxonomy" },
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
     { name = "kitconcept-keywordmanager" },
@@ -1568,6 +1632,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
+    { name = "collective-taxonomy", specifier = "==4.1.0" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.1.2" },
     { name = "kitconcept-keywordmanager", specifier = "==1.0.0a4" },

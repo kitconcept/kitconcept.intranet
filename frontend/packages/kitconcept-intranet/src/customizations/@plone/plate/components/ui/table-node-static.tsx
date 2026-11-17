@@ -31,6 +31,19 @@
  *    is neither sorted nor filtered and stays last; while a filter hides
  *    rows, its calculated cells show the results over the visible rows
  *    (work item 750). @reekitconcept
+ *  - The scroll container gets no inline left padding when there is no
+ *    table indent (`disableMarginLeft`): its padding is the left area of a
+ *    table wider than the room (theme/components/_wikiTable.scss), which an
+ *    inline `padding-left: 0px` overrode.
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836
+ *    @reekitconcept *  - The cells of a top-level table on a step (no custom width) take their
+ *    share of the table's width (`scaledCellWidth`), so the table renders
+ *    the step's width with its stored column widths scaled to it; as px
+ *    they made the table as wide as their sum. The per-table geometry is
+ *    keyed by the cell node instead of its id: cells without an id
+ *    (stored through the REST API) all took the last cell's position.
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836
+ *    @reekitconcept
  */
 
 import * as React from 'react';
@@ -43,7 +56,7 @@ import type {
 } from 'platejs';
 import type { SlateElementProps } from 'platejs/static';
 
-import { BaseTablePlugin } from '@platejs/table';
+import { BaseTablePlugin, getTableColumnCount } from '@platejs/table';
 import { NodeApi } from 'platejs';
 import { SlateElement } from 'platejs/static';
 
@@ -64,6 +77,11 @@ import {
 } from '@kitconcept/intranet/components/WikiTable/tableCalc';
 import { WikiTableViewContext } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import {
+  customWidthOf,
+  scaledCellWidth,
+  scaledTableMinWidth,
+} from '@kitconcept/intranet/components/WikiTable/wikiTableCustomWidth';
+import {
   SortButton,
   TableFilterField,
 } from '@kitconcept/intranet/components/WikiTable/TableViewControls';
@@ -71,8 +89,14 @@ import {
 // OVERRIDE: per-table cell geometry, computed once (see REASON above).
 type CellIndices = { row: number; col: number };
 type TableGeometry = {
-  indices: Map<string, CellIndices>;
+  // OVERRIDE (836): keyed by the cell node, not its id: cells without an
+  // id (content stored through the REST API) all got the last cell's.
+  indices: Map<TTableCellElement, CellIndices>;
   colSizes: number[];
+  // OVERRIDE (836): a top-level table on a step (no custom width): its
+  // cells take their share of the table's width, see `scaledCellWidth`.
+  scaled: boolean;
+  columns: number;
   rowSizes: (number | undefined)[];
   rowCount: number;
 };
@@ -95,14 +119,14 @@ function computeTableGeometry(
   getRowSpan: (cell: TTableCellElement) => number,
 ): TableGeometry {
   // Same walk as Plate's computeCellIndices, for the whole table at once.
-  const indices = new Map<string, CellIndices>();
+  const indices = new Map<TTableCellElement, CellIndices>();
   const skip: boolean[][] = [];
   const rows = table.children as TTableRowElement[];
   rows.forEach((row, rowIndex) => {
     let col = 0;
     for (const cell of row.children as TTableCellElement[]) {
       while (skip[rowIndex]?.[col]) col++;
-      indices.set(cell.id as string, { row: rowIndex, col });
+      indices.set(cell, { row: rowIndex, col });
       const colSpan = getColSpan(cell);
       const rowSpan = getRowSpan(cell);
       for (let r = 0; r < rowSpan; r++) {
@@ -115,6 +139,8 @@ function computeTableGeometry(
   return {
     indices,
     colSizes: (table.colSizes as number[] | undefined) ?? [],
+    scaled: false,
+    columns: getTableColumnCount(table),
     rowSizes: rows.map((row) => row.size as number | undefined),
     rowCount: rows.length,
   };
@@ -128,14 +154,18 @@ export function TableElementStatic({
   const marginLeft = disableMarginLeft ? 0 : props.element.marginLeft;
   // OVERRIDE
   const { api } = props.editor.getPlugin(BaseTablePlugin);
+  const topLevel = props.path?.length === 1;
   const geometry = React.useMemo(
-    () =>
-      computeTableGeometry(
+    () => ({
+      ...computeTableGeometry(
         props.element,
         api.table.getColSpan,
         api.table.getRowSpan,
       ),
-    [props.element, api],
+      // OVERRIDE (836)
+      scaled: topLevel && customWidthOf(props.element) === null,
+    }),
+    [props.element, api, topLevel],
   );
 
   // OVERRIDE: sorting and filtering (see REASON).
@@ -251,10 +281,25 @@ export function TableElementStatic({
             )}
             <div
               className="overflow-x-auto overflow-y-hidden"
-              style={{ paddingLeft: marginLeft }}
+              // OVERRIDE (836): no inline padding without an indent
+              style={marginLeft ? { paddingLeft: marginLeft } : undefined}
             >
               <div className="group/table relative w-fit">
-                <table className="mr-0 ml-px table h-px table-fixed border-collapse">
+                <table
+                  className="mr-0 ml-px table h-px table-fixed border-collapse"
+                  // OVERRIDE (836): a table on a step keeps each column at
+                  // the minimum width (its cells are shares of its width)
+                  style={
+                    geometry.scaled
+                      ? {
+                          minWidth: scaledTableMinWidth(
+                            geometry.colSizes,
+                            geometry.columns,
+                          ),
+                        }
+                      : undefined
+                  }
+                >
                   <tbody className="min-w-full">{displayed}</tbody>
                 </table>
               </div>
@@ -296,7 +341,7 @@ export function TableCellElementStatic({
   // TableElementStatic.
   const geometry = React.useContext(TableGeometryContext);
   const colSpan = api.table.getColSpan(element);
-  const cellIndices = geometry?.indices.get(element.id as string);
+  const cellIndices = geometry?.indices.get(element);
   // OVERRIDE: sort button in the header row.
   const tableSort = React.useContext(TableSortContext);
   const sortColumn =
@@ -357,13 +402,29 @@ export function TableCellElementStatic({
       style={
         {
           '--cellBackground': element.background,
-          maxWidth: width || 240,
-          minWidth: width || 120,
-          // OVERRIDE: column width for the fixed table layout (see
-          // theme/components/_wikiTable.scss); unresized columns share the
-          // table width, resized ones keep their proportion.
-          width: width || 120,
-        } as React.CSSProperties
+          // OVERRIDE (836): a table on a step: the cell's share of the
+          // table's width (the step), not px that would widen the table.
+          ...(geometry?.scaled && cellIndices
+            ? {
+                maxWidth: 'none',
+                minWidth: 0,
+                width: scaledCellWidth(
+                  geometry.colSizes,
+                  geometry.columns,
+                  cellIndices.col,
+                  colSpan,
+                ),
+              }
+            : {
+                maxWidth: width || 240,
+                minWidth: width || 120,
+                // OVERRIDE: column width for the fixed table layout (see
+                // theme/components/_wikiTable.scss); unresized columns
+                // share the table width, resized ones keep their
+                // proportion.
+                width: width || 120,
+              }),
+        } as unknown as React.CSSProperties
       }
       attributes={{
         ...props.attributes,

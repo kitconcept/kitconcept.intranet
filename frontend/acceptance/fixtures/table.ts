@@ -204,6 +204,7 @@ const TOOLBAR_LABELS = {
   deleteColumn: 'Delete column',
   moveColumnLeft: 'Move column left',
   moveColumnRight: 'Move column right',
+  centerTable: 'Centre table',
 } as const;
 
 export type ToolbarAction = keyof typeof TOOLBAR_LABELS;
@@ -257,9 +258,57 @@ export function tableFrameOf(table: Locator) {
   );
 }
 
-/** The resize handle on the right edge of a table in the editor (824). */
+/**
+ * The table's handle: the outer one of the two right edges of a table in
+ * the editor (824, 836), right of the frame.
+ */
 export function resizeHandle(table: Locator) {
   return tableFrameOf(table).locator('> .wiki-table-resize-handle');
+}
+
+/**
+ * The last column's edge: the inner one of the two right edges of a table
+ * in the editor, on the frame's right edge (836).
+ */
+export function columnEdge(table: Locator) {
+  return tableFrameOf(table).locator('> .wiki-table-column-edge');
+}
+
+/** The border right of column `col` of a top-level table (836). */
+export function columnBorder(table: Locator, col: number) {
+  return table
+    .locator('tr')
+    .nth(1)
+    .locator('> th, > td:not([contenteditable="false"])')
+    .nth(col)
+    .locator(`> .group > [data-col="${col}"]`);
+}
+
+/**
+ * Drags a width handle (`resizeHandle`, `columnEdge`, `columnBorder`) by
+ * `by` px, from a whole pixel inside it (the drag model then moves the
+ * border by exactly `by`). `beforeRelease` runs with the mouse still
+ * down. Returns where the pointer was released (x).
+ */
+export async function dragHandleBy(
+  page: Page,
+  handle: Locator,
+  by: number,
+  { beforeRelease }: { beforeRelease?: () => Promise<void> } = {},
+) {
+  await handle.hover();
+  const box = await handle.boundingBox();
+  if (!box) throw new Error('No handle');
+  const x = Math.round(box.x + box.width / 2);
+  const y = Math.round(box.y + Math.min(box.height / 2, 30));
+  await page.mouse.move(x, y);
+  await page.mouse.down();
+  await expect(handle).toHaveAttribute('data-resizing', 'true');
+  await page.mouse.move(x + by, y, { steps: 8 });
+  if (beforeRelease) await beforeRelease();
+  await page.mouse.up();
+  await expect(handle).not.toHaveAttribute('data-resizing', 'true');
+  return x + by;
 }
 
 /**

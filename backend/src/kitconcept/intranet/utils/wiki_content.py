@@ -31,6 +31,10 @@ BLOCK_DEFAULTS = {"align": "start", "blockWidth": "default"}
 # tables): text width, medium, wide, full width.
 TABLE_WIDTHS = ("default", "medium", "layout", "full")
 
+# The one alignment a wiki table stores (``tableAlign``); left-aligned is
+# the property's absence (work item 836).
+TABLE_ALIGNS = ("center",)
+
 
 def text(value: str, **marks) -> dict:
     return {"text": value, **marks}
@@ -90,6 +94,8 @@ def table(
     col_sizes=None,
     footer: list | None = None,
     width: str | None = None,
+    table_width: int | None = None,
+    align: str | None = None,
 ) -> dict:
     """A table with a header row and, with ``footer``, a footer row.
 
@@ -146,12 +152,36 @@ def table(
                 footer=True,
             )
         )
+    return node(
+        "table", node_id, children, **table_props(col_sizes, width, table_width, align)
+    )
+
+
+def table_props(
+    col_sizes=None,
+    width: str | None = None,
+    table_width: int | None = None,
+    align: str | None = None,
+) -> dict:
+    """The width and alignment properties of a table node, see ``table``."""
     props = {"colSizes": col_sizes} if col_sizes else {}
     if width is not None:
         if width not in TABLE_WIDTHS:
             raise ValueError(f"Unknown table width {width!r}")
         props["blockWidth"] = width
-    return node("table", node_id, children, **props)
+    if table_width is not None:
+        if not col_sizes or sum(col_sizes) != table_width:
+            raise ValueError(
+                f"The column sizes {col_sizes!r} do not add up to the table "
+                f"width {table_width!r}"
+            )
+        props.setdefault("blockWidth", "default")
+        props["tableWidth"] = table_width
+    if align is not None:
+        if align not in TABLE_ALIGNS:
+            raise ValueError(f"Unknown table alignment {align!r}")
+        props["tableAlign"] = align
+    return props
 
 
 def blocks(value: list[dict]) -> dict:

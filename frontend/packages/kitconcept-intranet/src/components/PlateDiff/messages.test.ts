@@ -212,3 +212,23 @@ describe('changeSummary of a step change under a custom width', () => {
     ).toBe('Width: Medium → Full width');
   });
 });
+
+describe('changeSummary of a table alignment (work item 836)', () => {
+  it('reads "Alignment: Left → Centred" and back', () => {
+    expect(summaryOf({}, { tableAlign: 'center' })).toBe(
+      'Alignment: Left → Centred',
+    );
+    expect(summaryOf({ tableAlign: 'center' }, {})).toBe(
+      'Alignment: Centred → Left',
+    );
+  });
+
+  it('keeps the width line next to it', () => {
+    expect(
+      summaryOf(
+        { blockWidth: 'medium' },
+        { blockWidth: 'medium', tableWidth: 1180, tableAlign: 'center' },
+      ),
+    ).toBe('Width: Medium → 1180px, Alignment: Left → Centred');
+  });
+});

@@ -1,9 +1,10 @@
-"""Create the two wiki-table demo pages on a site.
+"""Create the wiki-table demo pages on a site.
 
-The pages ("Projektbudget 2026" and "Teilnehmende Konsortialtreffen" in the
-GreenCat workspace) come from ``table_demo_content``. They are created by
-the distribution's post handler after the content import; safe to run
-again: existing pages are left alone.
+The pages ("Projektbudget 2026", "Teilnehmende Konsortialtreffen" and
+"Tabellenbreiten" in the GreenCat workspace) come from
+``table_demo_content``. They are created by the distribution's post handler
+after the content import; safe to run again: existing pages are left alone,
+missing ones are created.
 """
 
 from kitconcept.intranet import logger

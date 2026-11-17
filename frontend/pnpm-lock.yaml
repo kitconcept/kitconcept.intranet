@@ -1413,6 +1413,9 @@ importers:
       '@eeacms/volto-pdf-block':
         specifier: ^1.0.12
         version: 1.0.12(react@18.2.0)(webpack@5.111.1(lightningcss@1.33.0))
+      '@eeacms/volto-taxonomy':
+        specifier: ^7.0.0
+        version: 7.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
@@ -3311,6 +3314,13 @@ packages:
 
   '@eeacms/volto-pdf-block@1.0.12':
     resolution: {integrity: sha512-06laYl6WTQn7QBI/kaK/TXXQ6cayhgg8gBAYKtSeL0Ir4rus4kJucLqD+oZ9E+rYtnj1OjHzr8tH8lAEBukdHg==}
+
+  '@eeacms/volto-taxonomy@7.0.0':
+    resolution: {integrity: sha512-N8YYOtp2Yr3Eizk1taWvNaofhcRx7mZGgyzgHjx+d7qsL4KerAqzAmdseY8LSfSLRXhocU94khdTMMo+TdCKJA==}
+    engines: {node: '>=22.0.0'}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
 
   '@eeacms/volto-widget-theme-picker@3.0.1':
     resolution: {integrity: sha512-f6JHJwWtCXYnrvPfrAjWKT96OHPOyU8izjqjvtTP1w4liez1qZcSkVVhKsPOcGDAXHCAKko4rxTQ0Rm4pvE2wQ==}
@@ -14869,7 +14879,7 @@ snapshots:
       '@standard-schema/spec': 1.1.0
       '@workflow/serde': 4.1.0
       eventsource-parser: 3.1.1
-      undici: 7.30.0
+      undici: 7.30.1
       zod: 4.6.5
 
   '@ai-sdk/provider@4.0.18':
@@ -16107,6 +16117,12 @@ snapshots:
     transitivePeerDependencies:
       - react
       - webpack
+
+  '@eeacms/volto-taxonomy@7.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-portal: 4.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
 
   '@eeacms/volto-widget-theme-picker@3.0.1': {}
 
@@ -19335,7 +19351,7 @@ snapshots:
       chalk: 3.0.0
       css.escape: 1.5.1
       dom-accessibility-api: 0.6.3
-      lodash: 4.18.1
+      lodash: 4.17.21
       redent: 3.0.0
 
   '@testing-library/react-hooks@8.0.1(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react-test-renderer@18.2.0(react@18.2.0))(react@18.2.0)':
@@ -22557,7 +22573,7 @@ snapshots:
       '@babel/plugin-syntax-flow': 7.29.7(@babel/core@7.29.7)
       '@babel/plugin-transform-react-jsx': 7.29.7(@babel/core@7.29.7)
       eslint: 8.57.1
-      lodash: 4.18.1
+      lodash: 4.17.21
       string-natural-compare: 3.0.1
 
   eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1):
@@ -26296,7 +26312,7 @@ snapshots:
 
   pretty-error@4.0.0:
     dependencies:
-      lodash: 4.18.1
+      lodash: 4.17.21
       renderkid: 3.0.0
 
   pretty-format@26.6.2:

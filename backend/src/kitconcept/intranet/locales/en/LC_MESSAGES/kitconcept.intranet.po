@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-11-16 10:41+0000\n"
+"POT-Creation-Date: 2026-11-16 19:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgstr ""
 msgid "Allowed Email Domains"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:92
+#: kitconcept/intranet/controlpanels/intranet.py:105
 msgid "Allowed Iframe Domains"
 msgstr ""
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Default Feedback Email"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:109
+#: kitconcept/intranet/controlpanels/intranet.py:122
 msgid "Default review interval"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 msgid "Enable Content Rating"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:102
+#: kitconcept/intranet/controlpanels/intranet.py:115
 msgid "Enable Content Review"
 msgstr ""
 
@@ -114,6 +114,10 @@ msgstr ""
 
 #: kitconcept/intranet/behaviors/votes.py:24
 msgid "Enable Likes for this Content Object"
+msgstr ""
+
+#: kitconcept/intranet/controlpanels/intranet.py:92
+msgid "Enable Notification Center"
 msgstr ""
 
 #: kitconcept/intranet/controlpanels/intranet.py:67
@@ -128,7 +132,7 @@ msgstr ""
 msgid "Enable content rating globally for the Intranet"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:103
+#: kitconcept/intranet/controlpanels/intranet.py:116
 msgid "Enable content review reminders globally for the Intranet."
 msgstr ""
 
@@ -185,7 +189,7 @@ msgstr ""
 msgid "Intranet Restricted Workflow"
 msgstr ""
 
-#: kitconcept/intranet/controlpanels/intranet.py:118
+#: kitconcept/intranet/controlpanels/intranet.py:131
 msgid "Intranet Settings"
 msgstr ""
 
@@ -419,6 +423,11 @@ msgstr ""
 #. Default: "Logged-in users can watch content items and get an email when a watched, published item changes."
 #: kitconcept/intranet/controlpanels/intranet.py:82
 msgid "help_enable_content_watching"
+msgstr ""
+
+#. Default: "Logged-in users see a bell with notifications about likes, edits and workflow changes on content they author. When off, no notifications are created and the bell is hidden. Existing notifications are kept."
+#: kitconcept/intranet/controlpanels/intranet.py:93
+msgid "help_enable_notification_center"
 msgstr ""
 
 #. Default: "If checked, this type can be added to any container."

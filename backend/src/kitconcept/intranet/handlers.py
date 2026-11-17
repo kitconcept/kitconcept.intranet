@@ -3,6 +3,7 @@ from kitconcept.core.utils.distributions import handler as _handler
 from kitconcept.core.utils.distributions import post_handler as _post_handler
 from kitconcept.intranet.utils.csv_demo import create_csv_demo
 from kitconcept.intranet.utils.diff_demo import create_demo_page
+from kitconcept.intranet.utils.notifications_demo import create_notifications_demo
 from kitconcept.intranet.utils.person_portraits import sync_person_portraits
 from kitconcept.intranet.utils.table_demo import create_table_demo_pages
 from kitconcept.solr.reindex_helpers import activate_and_reindex
@@ -46,6 +47,8 @@ def post_handler(
         create_demo_page(site)
         create_table_demo_pages(site)
         create_csv_demo(site)
+        # Demo activity for the notification center (log in as a.becker).
+        create_notifications_demo(site)
     if answers.get("setup_solr", False) and os.environ.get("SOLR_ACTIVATE"):
         solr_rag = bool(os.environ.get("SOLR_RAG"))
         activate_and_reindex(site, clear=True, rag=solr_rag)

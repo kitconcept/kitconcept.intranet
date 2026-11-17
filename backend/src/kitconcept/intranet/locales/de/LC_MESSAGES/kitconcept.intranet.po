@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-11-16 10:41+0000\n"
+"POT-Creation-Date: 2026-11-16 19:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "Feld „Stimmen“ hinzufügen"
 msgid "Allowed Email Domains"
 msgstr "Zulässige E-Mail-Domains"
 
-#: kitconcept/intranet/controlpanels/intranet.py:92
+#: kitconcept/intranet/controlpanels/intranet.py:105
 msgid "Allowed Iframe Domains"
 msgstr "Zulässige Iframe-Domains"
 
@@ -75,7 +75,7 @@ msgstr "Kann nur vom Eigentümer angesehen und bearbeitet werden."
 msgid "Default Feedback Email"
 msgstr "Standard-Feedback-E-Mail"
 
-#: kitconcept/intranet/controlpanels/intranet.py:109
+#: kitconcept/intranet/controlpanels/intranet.py:122
 msgid "Default review interval"
 msgstr "Standard-Überprüfungsintervall"
 
@@ -104,7 +104,7 @@ msgstr "E-Mail-Adresse, die in Feedback-Formularen verwendet wird, wenn keine an
 msgid "Enable Content Rating"
 msgstr "Inhaltsbewertung aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:102
+#: kitconcept/intranet/controlpanels/intranet.py:115
 msgid "Enable Content Review"
 msgstr "Inhaltsprüfung aktivieren"
 
@@ -115,6 +115,10 @@ msgstr "Likes aktivieren"
 #: kitconcept/intranet/behaviors/votes.py:24
 msgid "Enable Likes for this Content Object"
 msgstr "Likes für dieses Inhaltsobjekt aktivieren"
+
+#: kitconcept/intranet/controlpanels/intranet.py:92
+msgid "Enable Notification Center"
+msgstr "Benachrichtigungszentrale aktivieren"
 
 #: kitconcept/intranet/controlpanels/intranet.py:67
 msgid "Enable Sticky Feedback Button"
@@ -128,7 +132,7 @@ msgstr "Beobachten von Inhalten aktivieren"
 msgid "Enable content rating globally for the Intranet"
 msgstr "Inhaltsbewertung für das Intranet global aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:103
+#: kitconcept/intranet/controlpanels/intranet.py:116
 msgid "Enable content review reminders globally for the Intranet."
 msgstr "Aktivieren Sie die Erinnerungen zur Inhaltsüberprüfung für das gesamte Intranet."
 
@@ -185,7 +189,7 @@ msgstr "Öffentlicher Intranet-Workflow"
 msgid "Intranet Restricted Workflow"
 msgstr "Intranet-beschränkter Workflow"
 
-#: kitconcept/intranet/controlpanels/intranet.py:118
+#: kitconcept/intranet/controlpanels/intranet.py:131
 msgid "Intranet Settings"
 msgstr "Intranet-Einstellungen"
 
@@ -420,6 +424,11 @@ msgstr "Entspricht den Werten, die dem aktuell angemeldeten Benutzer zugewiesen 
 #: kitconcept/intranet/controlpanels/intranet.py:82
 msgid "help_enable_content_watching"
 msgstr "Angemeldete Benutzer können Inhalte beobachten und erhalten eine E-Mail, wenn sich ein beobachteter, veröffentlichter Inhalt ändert."
+
+#. Default: "Logged-in users see a bell with notifications about likes, edits and workflow changes on content they author. When off, no notifications are created and the bell is hidden. Existing notifications are kept."
+#: kitconcept/intranet/controlpanels/intranet.py:93
+msgid "help_enable_notification_center"
+msgstr "Angemeldete Benutzer sehen eine Glocke mit Benachrichtigungen über Likes, Bearbeitungen und Statusänderungen an Inhalten, die sie verfasst haben. Ist sie deaktiviert, werden keine Benachrichtigungen erstellt und die Glocke ist ausgeblendet. Vorhandene Benachrichtigungen bleiben erhalten."
 
 #. Default: "If checked, this type can be added to any container."
 #: kitconcept/intranet/patches.py:14

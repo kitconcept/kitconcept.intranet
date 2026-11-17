@@ -2,6 +2,16 @@
 
 <!-- towncrier release notes start -->
 
+## 3.10.0 (2026-11-17)
+
+
+### Feature
+
+- Example content: the Wiki Page "Tabellenbreiten" in the GreenCat workspace shows every width a wiki table can have, one table per case (text width, Medium, Wide, Full width, a custom width set by the resize handle, a centred table, a table wider than the page) and links to the other table demo pages; created by the distribution post handler on new sites (existing demo pages are kept) and by `scripts/table_demo_content.py` (REST) on existing sites. The script now also creates the CSV table demo and replaces a demo page that is locked in the editor. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/827 @reekitconcept [#827](https://github.com/kitconcept/kitconcept.intranet/issue/827)
+- Add `collective.taxonomy` 4.1.0 to the distribution, installed by default and via an upgrade step on existing sites. @sneridagh 
+- Added a notification center (MVP): the content's authors are notified about likes, edits and workflow transitions, via the new `@notifications` and `@notifications-settings` REST services. The `enable_notification_center` setting in the Intranet Settings turns it on or off; it's on for new sites and turned off when upgrading. Scripts can pause it with `notifications_paused()`. The example content includes demo activity for `a.becker`, and `make notifications-demo` resets it. @sneridagh 
+- Watch content: logged-in users can watch a content item and get an email when a published version of it changes. Adds the `@watch` service, the `watchers` index, the "Watched by me" listing criterion and the "Enable Watching Content" setting. @sneridagh 
+
 ## 3.9.0 (2026-11-16)
 
 No significant changes.

@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 3.10.0 (2026-11-17)
+
+
+### Feature
+
+- Wiki Page tables, the width model of #828: a border between two columns moves width between the two columns and keeps the table's width (once the neighbour is at its minimum the table grows); the right edge is double, the last column's edge resizes that column and the table's handle scales all columns, both snap a width on a step to that step; a table can grow past the page, held past the edge it keeps growing (slowly within 24px, fast beyond); a table wider than the page scrolls into the area left of the text; a "Centre table" toggle centres a wide table in the editor and the view ("Alignment: Left → Centred" in the history). https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836 @reekitconcept [#836](https://github.com/kitconcept/kitconcept.intranet/issue/836)
+- Add `@eeacms/volto-taxonomy` 7.0.0 to the distribution. @sneridagh 
+- Added a notification center (MVP): a bell with unread badge and dropdown in the header, a `/notifications` overview page with mark as read and per-type preferences. All of it is hidden when the notification center is turned off in the Intranet Settings. @sneridagh 
+- Watch content: logged-in users can watch a content item with the eye toggle in "About this content" (or next to Like below the content) and get an email when it changes. @sneridagh 
+
+
+### Bugfix
+
+- Wiki Page history diff, split view: the older side draws a changed block with the older version's properties, so a table shows its own column widths, width and alignment on each side (both sides showed the newer ones). https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/852 @reekitconcept [#852](https://github.com/kitconcept/kitconcept.intranet/issue/852)
+
 ## 3.9.0 (2026-11-16)
 
 

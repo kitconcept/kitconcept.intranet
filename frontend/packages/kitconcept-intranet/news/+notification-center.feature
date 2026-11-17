@@ -1,1 +1,0 @@
-Added a notification center (MVP): a bell with unread badge and dropdown in the header, a `/notifications` overview page with mark as read and per-type preferences. All of it is hidden when the notification center is turned off in the Intranet Settings. @sneridagh

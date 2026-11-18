@@ -42,6 +42,7 @@ import {
   type DragInput,
   dragResult,
   formatPx,
+  hasColumnWidths,
   moveBorderDrag,
   moveTableDrag,
   seedSizes,
@@ -221,7 +222,7 @@ const measureTable = (block: HTMLElement, node: TTableElement) => {
   const stored = (node.colSizes as number[] | undefined) ?? [];
   const rendered = cells
     ? cells.map((cell) => cell.getBoundingClientRect().width)
-    : stored.length === columns && stored.every((size) => size > 0)
+    : hasColumnWidths(stored, columns)
       ? stored.map((size) => (size * tableBox.width) / sumOf(stored))
       : Array.from({ length: columns }, () => tableBox.width / columns);
   const startSizes = seedSizes(rendered);
@@ -239,6 +240,15 @@ const measureTable = (block: HTMLElement, node: TTableElement) => {
     columnsOffset,
   };
 };
+
+/**
+ * The columns of a top-level table as they are rendered, in whole pixels
+ * (what a drag starts from, see `measureTable`); null when the table
+ * cannot be measured. For a column delete on a table without a stored
+ * width for every column (work item 836).
+ */
+export const measureColumnWidths = (block: HTMLElement, node: TTableElement) =>
+  measureTable(block, node)?.startSizes ?? null;
 
 /**
  * Applies the drag rules to where the pointer and the table are now

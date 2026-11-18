@@ -1426,6 +1426,77 @@ test.describe('Wiki tables: resize handle', () => {
     await expect.poll(() => frameWidth(editor)).toBe(780);
   });
 
+  test('a deleted column takes its rendered width off a custom width without stored columns (#824 data)', async ({
+    page,
+  }) => {
+    // Custom widths the handle of #824 stored without a column drag: no
+    // column widths, or a 0 for a column never resized.
+    await openPage(page, 'delete-column-824', [
+      paragraph('Intro'),
+      table(4, { blockWidth: 'default', tableWidth: 1200 }),
+      table(4, {
+        blockWidth: 'default',
+        tableWidth: 1200,
+        colSizes: [400, 0, 400, 400],
+      }),
+    ]);
+    const stored = async (index: number) => {
+      const node = (await getTables(page))[index];
+      return { tableWidth: node?.tableWidth, colSizes: node?.colSizes };
+    };
+    const renderedColumns = (tableLocator: Locator) =>
+      tableLocator
+        .locator('tr')
+        .first()
+        .locator('> th')
+        .evaluateAll((cells) =>
+          cells.map((cell) => cell.getBoundingClientRect().width),
+        );
+
+    // No column widths: four equal columns of 1200, three are 900.
+    const first = editorTable(page, 0);
+    await clickCell(page, first, 1, 1);
+    await clickToolbar(page, 'deleteColumn');
+    await expect(first.locator('tr').first().locator('th')).toHaveCount(3);
+    await expect
+      .poll(() => stored(0))
+      .toEqual({ tableWidth: 900, colSizes: [300, 300, 300] });
+    await expect.poll(() => frameWidth(first)).toBe(900);
+    // One undo step: the column, the widths and the width.
+    await page.keyboard.press('ControlOrMeta+z');
+    await expect(first.locator('tr').first().locator('th')).toHaveCount(4);
+    await expect
+      .poll(() => stored(0))
+      .toEqual({ tableWidth: 1200, colSizes: undefined });
+
+    // A column never resized (0): the columns as they are rendered, the
+    // deleted one taken off.
+    const second = editorTable(page, 1);
+    const before = await renderedColumns(second);
+    expect(before).toHaveLength(4);
+    await clickCell(page, second, 1, 2);
+    await clickToolbar(page, 'deleteColumn');
+    await expect(second.locator('tr').first().locator('th')).toHaveCount(3);
+    const expected = before[0] + before[1] + before[3];
+    await expect
+      .poll(async () =>
+        Math.abs(((await stored(1)).tableWidth as number) - expected),
+      )
+      .toBeLessThanOrEqual(1);
+    const { tableWidth, colSizes } = await stored(1);
+    expect((colSizes as number[]).reduce((sum, size) => sum + size, 0)).toBe(
+      tableWidth,
+    );
+    await expect
+      .poll(async () => Math.abs((await frameWidth(second)) - expected))
+      .toBeLessThanOrEqual(1);
+    await page.keyboard.press('ControlOrMeta+z');
+    await expect(second.locator('tr').first().locator('th')).toHaveCount(4);
+    await expect
+      .poll(() => stored(1))
+      .toEqual({ tableWidth: 1200, colSizes: [400, 0, 400, 400] });
+  });
+
   test('a border pulled back inside after the speed zones snaps under the pointer in the scrolled frame', async ({
     page,
   }) => {

@@ -8,6 +8,7 @@ import {
   deletedColumnChange,
   dragResult,
   fitColSizes,
+  hasColumnWidths,
   seedColSizes,
   seedSizes,
   shownWidth,
@@ -370,6 +371,18 @@ describe('presetFor', () => {
     // Wide is the room: Wide (Full width is its own guide only on a room
     // wider than Wide, 1580 above).
     expect(presetFor(1091, { ...wide, room: 1091.4 })).toBe('layout');
+  });
+});
+
+describe('hasColumnWidths', () => {
+  it('is true only with a positive width for every column', () => {
+    expect(hasColumnWidths([400, 400, 400], 3)).toBe(true);
+    // #824 data: a custom width without a column drag.
+    expect(hasColumnWidths(undefined, 3)).toBe(false);
+    expect(hasColumnWidths([], 3)).toBe(false);
+    expect(hasColumnWidths([400, 400], 3)).toBe(false);
+    expect(hasColumnWidths([400, 0, 400], 3)).toBe(false);
+    expect(hasColumnWidths([400, 400, 400, 400], 3)).toBe(false);
   });
 });
 

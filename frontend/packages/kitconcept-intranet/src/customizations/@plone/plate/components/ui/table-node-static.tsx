@@ -77,8 +77,8 @@ import {
 } from '@kitconcept/intranet/components/WikiTable/tableCalc';
 import { WikiTableViewContext } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import {
+  cellWidthStyle,
   customWidthOf,
-  scaledCellWidth,
   scaledTableMinWidth,
 } from '@kitconcept/intranet/components/WikiTable/wikiTableCustomWidth';
 import {
@@ -404,26 +404,15 @@ export function TableCellElementStatic({
           '--cellBackground': element.background,
           // OVERRIDE (836): a table on a step: the cell's share of the
           // table's width (the step), not px that would widen the table.
-          ...(geometry?.scaled && cellIndices
-            ? {
-                maxWidth: 'none',
-                minWidth: 0,
-                width: scaledCellWidth(
-                  geometry.colSizes,
-                  geometry.columns,
-                  cellIndices.col,
-                  colSpan,
-                ),
-              }
-            : {
-                maxWidth: width || 240,
-                minWidth: width || 120,
-                // OVERRIDE: column width for the fixed table layout (see
-                // theme/components/_wikiTable.scss); unresized columns
-                // share the table width, resized ones keep their
-                // proportion.
-                width: width || 120,
-              }),
+          // OVERRIDE: px otherwise, the column width for the fixed table
+          // layout. The same style as the editor (`cellWidthStyle`).
+          ...cellWidthStyle(
+            geometry?.scaled && cellIndices ? geometry.colSizes : null,
+            geometry?.columns ?? 0,
+            cellIndices?.col ?? 0,
+            colSpan,
+            width,
+          ),
         } as unknown as React.CSSProperties
       }
       attributes={{

@@ -42,6 +42,7 @@ import {
   type DragInput,
   dragResult,
   formatPx,
+  hasColumnWidths,
   moveBorderDrag,
   moveTableDrag,
   seedSizes,
@@ -134,6 +135,28 @@ const columnCellsOf = (table: HTMLTableElement, columns: number) => {
   return null;
 };
 
+/**
+ * The first column's left edge, from the table's (`tableLeft`): where the
+ * row of single cells (`cells`, see `columnCellsOf`) starts, or, when every
+ * row has a merged cell, right of the row grip's gutter cell (the first
+ * cell of a row, not editable; a column of width 0 in the editor). 0
+ * without either.
+ */
+export const columnsOffsetOf = (
+  table: HTMLTableElement,
+  cells: HTMLElement[] | null,
+  tableLeft: number,
+) => {
+  if (cells) return cells[0].getBoundingClientRect().left - tableLeft;
+  for (const row of Array.from(table.rows)) {
+    const gutter = row.cells[0];
+    if (gutter?.getAttribute('contenteditable') === 'false') {
+      return gutter.getBoundingClientRect().right - tableLeft;
+    }
+  }
+  return 0;
+};
+
 export type DragTarget = { kind: 'table' } | { kind: 'border'; index: number };
 
 /** What the table shows while a drag is on. */
@@ -221,14 +244,12 @@ const measureTable = (block: HTMLElement, node: TTableElement) => {
   const stored = (node.colSizes as number[] | undefined) ?? [];
   const rendered = cells
     ? cells.map((cell) => cell.getBoundingClientRect().width)
-    : stored.length === columns && stored.every((size) => size > 0)
+    : hasColumnWidths(stored, columns)
       ? stored.map((size) => (size * tableBox.width) / sumOf(stored))
       : Array.from({ length: columns }, () => tableBox.width / columns);
   const startSizes = seedSizes(rendered);
   if (!startSizes) return null;
-  const columnsOffset = cells
-    ? cells[0].getBoundingClientRect().left - tableBox.left
-    : 0;
+  const columnsOffset = columnsOffsetOf(table, cells, tableBox.left);
   return {
     frame,
     scroller,
@@ -239,6 +260,15 @@ const measureTable = (block: HTMLElement, node: TTableElement) => {
     columnsOffset,
   };
 };
+
+/**
+ * The columns of a top-level table as they are rendered, in whole pixels
+ * (what a drag starts from, see `measureTable`); null when the table
+ * cannot be measured. For a column delete on a table without a stored
+ * width for every column (work item 836).
+ */
+export const measureColumnWidths = (block: HTMLElement, node: TTableElement) =>
+  measureTable(block, node)?.startSizes ?? null;
 
 /**
  * Applies the drag rules to where the pointer and the table are now
@@ -439,9 +469,11 @@ export function useTableWidthDrag({
           : startBorderDrag(startSizes, target.index, pointerX, widths);
       const handle = event.currentTarget;
       const pointerId = event.pointerId;
+      // Only the pointer that started the drag: another finger or a pen
+      // moving without a button, or released, would end it.
       const onMove = (moveEvent: PointerEvent) => {
         const drag = running.current;
-        if (!drag) return;
+        if (!drag || moveEvent.pointerId !== pointerId) return;
         drag.pointerX = moveEvent.clientX;
         if (moveEvent.clientX !== drag.startX) drag.moved = true;
         // A release that never arrived (outside the window).
@@ -452,7 +484,9 @@ export function useTableWidthDrag({
       // `lostpointercapture`; here the handles can go away during a drag,
       // the window became too narrow, and that ends it storing nothing,
       // see `enabled` below.)
-      const onUp = () => finish(true);
+      const onUp = (upEvent: PointerEvent) => {
+        if (upEvent.pointerId === pointerId) finish(true);
+      };
       try {
         handle.setPointerCapture(pointerId);
       } catch {
@@ -492,10 +526,18 @@ export function useTableWidthDrag({
           }
         },
       };
+      // The columns as they are displayed from the drag's first render on:
+      // `active` turns off the scaled widths of a table on a step
+      // (TableCellElement), and until the first frame sets the preview the
+      // cells would render their stored widths (a clamped table jumped to
+      // its step width for a frame).
+      setColSizeOverrides(
+        new Map(startSizes.map((size, index) => [index, size])),
+      );
       setActive(keyOf(target));
       running.current.raf = requestAnimationFrame(tick);
     },
-    [blockRef, enabled, finish, tick],
+    [blockRef, enabled, finish, tick, setColSizeOverrides],
   );
 
   // A table that can no longer be resized (the window became too narrow,

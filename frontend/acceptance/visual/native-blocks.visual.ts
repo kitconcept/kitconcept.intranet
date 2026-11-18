@@ -1,4 +1,4 @@
-// Copied from @kitconcept/volto-plate (kitconcept/volto-plate#95,
+// Copied from @kitconcept/volto-plate (1.0.0-alpha.43,
 // frontend/acceptance/visual/native-blocks.visual.ts). Keep it in sync with
 // volto-plate; intranet-specific snapshots go into wiki-tables.visual.ts.
 

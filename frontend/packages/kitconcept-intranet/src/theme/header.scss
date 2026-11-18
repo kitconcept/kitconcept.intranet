@@ -958,3 +958,9 @@ body.has-header-intranet-compact .sidebar-container {
   top: var(--topbar-height);
   height: calc(100vh - var(--topbar-height));
 }
+
+// Keep the maintenance banner above the fixed sticky menu (z-index: 11)
+.maintenance-banner {
+  position: relative;
+  z-index: 12;
+}

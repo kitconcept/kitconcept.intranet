@@ -1870,6 +1870,68 @@ test.describe('Wiki tables: resize handle', () => {
     await expect.poll(() => overflowOf(wide)).toBeGreaterThan(500);
   });
 
+  test('a drag on a step clamped to the room starts as displayed: no frame renders the stored column widths', async ({
+    page,
+  }) => {
+    // Wide, columns adding up to 1440, at 1920 with the sidebar and the
+    // navigation tree open: the room (about 913px) clamps the table, its
+    // columns are scaled to it.
+    await page.setViewportSize({ width: 1920, height: 1000 });
+    await openPage(page, 'drag-start-clamped', [
+      paragraph('Intro'),
+      table(4, { blockWidth: 'layout', colSizes: [360, 360, 360, 360] }),
+    ]);
+    const editor = editorTable(page, 0);
+    await expect(editor).toBeVisible();
+    const room = (await tableFrameOf(editor).boundingBox())!.width;
+    expect(room).toBeLessThan(1400);
+    await expect
+      .poll(async () => (await editor.boundingBox())!.width)
+      .toBeLessThanOrEqual(room + 1);
+    // The table's width in each of the frames after the pointerdown.
+    await editor.evaluate((tableElement) => {
+      const widths: number[] = [];
+      (window as any).dragStartWidths = widths;
+      const record = () => {
+        widths.push(tableElement.getBoundingClientRect().width);
+        if (widths.length < 8) requestAnimationFrame(record);
+      };
+      window.addEventListener(
+        'pointerdown',
+        () => requestAnimationFrame(record),
+        {
+          capture: true,
+          once: true,
+        },
+      );
+    });
+    const border = columnBorder(editor, 1);
+    await border.hover();
+    const box = (await border.boundingBox())!;
+    await page.mouse.move(
+      Math.round(box.x + box.width / 2),
+      Math.round(box.y + Math.min(box.height / 2, 30)),
+    );
+    await page.mouse.down();
+    await expect(border).toHaveAttribute('data-resizing', 'true');
+    await expect
+      .poll(() =>
+        page.evaluate(() => (window as any).dragStartWidths.length as number),
+      )
+      .toBe(8);
+    const widths = await page.evaluate(
+      () => (window as any).dragStartWidths as number[],
+    );
+    expect(Math.max(...widths)).toBeLessThanOrEqual(room + 1);
+    await page.mouse.up();
+    await expect(border).not.toHaveAttribute('data-resizing', 'true');
+    // A click stores nothing.
+    expect((await getTables(page))[0]).toMatchObject({
+      blockWidth: 'layout',
+      colSizes: [360, 360, 360, 360],
+    });
+  });
+
   test('a table on a step renders the step within the room, its stored columns scaled in proportion', async ({
     page,
   }) => {

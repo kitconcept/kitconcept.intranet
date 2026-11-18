@@ -502,10 +502,18 @@ export function useTableWidthDrag({
           }
         },
       };
+      // The columns as they are displayed from the drag's first render on:
+      // `active` turns off the scaled widths of a table on a step
+      // (TableCellElement), and until the first frame sets the preview the
+      // cells would render their stored widths (a clamped table jumped to
+      // its step width for a frame).
+      setColSizeOverrides(
+        new Map(startSizes.map((size, index) => [index, size])),
+      );
       setActive(keyOf(target));
       running.current.raf = requestAnimationFrame(tick);
     },
-    [blockRef, enabled, finish, tick],
+    [blockRef, enabled, finish, tick, setColSizeOverrides],
   );
 
   // A table that can no longer be resized (the window became too narrow,

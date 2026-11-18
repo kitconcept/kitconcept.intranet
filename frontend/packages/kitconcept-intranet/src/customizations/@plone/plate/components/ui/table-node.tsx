@@ -228,10 +228,10 @@ import {
 } from '@kitconcept/intranet/components/WikiTable/tableToolbarIcons';
 // OVERRIDE (824, 836): custom table width and the width handles
 import {
+  cellWidthStyle,
   CUSTOM_WIDTH_CLASS,
   customWidthOf,
   deletedColumnChange,
-  scaledCellWidth,
   scaledTableMinWidth,
   formatPx,
   frameWidthOf,
@@ -1814,27 +1814,17 @@ export function TableCellElement({
           // OVERRIDE (836): a top-level table on a step: the cell's share of
           // the table's width (the step), not px that would widen the
           // table. While a width is dragged the preview is a custom width,
-          // and px follow the pointer.
-          ...(scaledColSizes
-            ? {
-                maxWidth: 'none',
-                minWidth: 0,
-                width: scaledCellWidth(
-                  scaledColSizes,
-                  tableColumns,
-                  colIndex - colSpan + 1,
-                  colSpan,
-                ),
-              }
-            : {
-                maxWidth: width || 240,
-                minWidth: width || 120,
-                // OVERRIDE: column width for the fixed table layout (see
-                // theme/components/_wikiTable.scss); unresized columns
-                // share the table width, resized ones keep their
-                // proportion.
-                width: width || 120,
-              }),
+          // and px follow the pointer. OVERRIDE: px otherwise, the column
+          // width for the fixed table layout (Plate set only min and max
+          // width). The same style as the view (`cellWidthStyle`); the
+          // cell's first column (`colIndex` is its last).
+          ...cellWidthStyle(
+            scaledColSizes,
+            tableColumns,
+            colIndex - colSpan + 1,
+            colSpan,
+            width,
+          ),
         } as React.CSSProperties
       }
       attributes={{

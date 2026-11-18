@@ -394,6 +394,42 @@ export function scaledCellWidth(
   return total > 0 ? `${(width / total) * 100}%` : 'auto';
 }
 
+/** The width style of a table cell, see `cellWidthStyle`. */
+export type CellWidthStyle = {
+  maxWidth: number | string;
+  minWidth: number | string;
+  width: number | string;
+};
+
+/**
+ * The width style of a cell spanning `span` columns from `firstCol`, the
+ * same in the editor and the view. `colSizes` set (a top-level table on a
+ * step): the cell's share of the table's width (`scaledCellWidth`), not px
+ * that would widen the table. Null: `pxWidth`, the cell's columns in px,
+ * for the fixed table layout (theme/components/_wikiTable.scss); columns
+ * never resized share the table's width.
+ */
+export function cellWidthStyle(
+  colSizes: readonly number[] | null | undefined,
+  columns: number,
+  firstCol: number,
+  span: number,
+  pxWidth: number | string | undefined,
+): CellWidthStyle {
+  if (colSizes) {
+    return {
+      maxWidth: 'none',
+      minWidth: 0,
+      width: scaledCellWidth(colSizes, columns, firstCol, span),
+    };
+  }
+  return {
+    maxWidth: pxWidth || 240,
+    minWidth: pxWidth || 120,
+    width: pxWidth || 120,
+  };
+}
+
 /**
  * The minimum width in px of a table on a step whose cells take their
  * share of its width (`scaledCellWidth`): wide enough for its narrowest

@@ -3,6 +3,7 @@ import type { TElement, Value } from 'platejs';
 import { createSlateEditor } from 'platejs';
 import {
   type BorderDrag,
+  cellWidthStyle,
   customWidthOf,
   type DragInput,
   deletedColumnChange,
@@ -899,5 +900,35 @@ describe('scaledCellWidth / scaledTableMinWidth', () => {
     // Eight columns never resized: 960px, wider than Text width (scrolls).
     expect(scaledTableMinWidth(undefined, 8)).toBe(960);
     expect(scaledTableMinWidth([], 0)).toBe(0);
+  });
+});
+
+describe('cellWidthStyle', () => {
+  it("a table on a step: the share of the cell's columns, from its first column", () => {
+    // A cell spanning columns 1-2 of 260/260/260.
+    expect(cellWidthStyle([260, 260, 260], 3, 0, 2, 520)).toEqual({
+      maxWidth: 'none',
+      minWidth: 0,
+      width: `${(520 / 780) * 100}%`,
+    });
+    expect(cellWidthStyle([260, 260, 260], 3, 1, 2, 520).width).toBe(
+      `${(520 / 780) * 100}%`,
+    );
+    expect(cellWidthStyle([200, 300, 500], 3, 2, 1, 500).width).toBe('50%');
+    // No stored widths: every column at the minimum.
+    expect(cellWidthStyle([], 4, 0, 1, 0).width).toBe('25%');
+  });
+
+  it("otherwise px: the cell's columns, the minimum for columns never resized", () => {
+    expect(cellWidthStyle(null, 3, 0, 2, 520)).toEqual({
+      maxWidth: 520,
+      minWidth: 520,
+      width: 520,
+    });
+    expect(cellWidthStyle(undefined, 3, 0, 1, 0)).toEqual({
+      maxWidth: 240,
+      minWidth: 120,
+      width: 120,
+    });
   });
 });

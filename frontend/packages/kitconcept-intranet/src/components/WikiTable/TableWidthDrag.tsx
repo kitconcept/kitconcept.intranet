@@ -135,6 +135,28 @@ const columnCellsOf = (table: HTMLTableElement, columns: number) => {
   return null;
 };
 
+/**
+ * The first column's left edge, from the table's (`tableLeft`): where the
+ * row of single cells (`cells`, see `columnCellsOf`) starts, or, when every
+ * row has a merged cell, right of the row grip's gutter cell (the first
+ * cell of a row, not editable; a column of width 0 in the editor). 0
+ * without either.
+ */
+export const columnsOffsetOf = (
+  table: HTMLTableElement,
+  cells: HTMLElement[] | null,
+  tableLeft: number,
+) => {
+  if (cells) return cells[0].getBoundingClientRect().left - tableLeft;
+  for (const row of Array.from(table.rows)) {
+    const gutter = row.cells[0];
+    if (gutter?.getAttribute('contenteditable') === 'false') {
+      return gutter.getBoundingClientRect().right - tableLeft;
+    }
+  }
+  return 0;
+};
+
 export type DragTarget = { kind: 'table' } | { kind: 'border'; index: number };
 
 /** What the table shows while a drag is on. */
@@ -227,9 +249,7 @@ const measureTable = (block: HTMLElement, node: TTableElement) => {
       : Array.from({ length: columns }, () => tableBox.width / columns);
   const startSizes = seedSizes(rendered);
   if (!startSizes) return null;
-  const columnsOffset = cells
-    ? cells[0].getBoundingClientRect().left - tableBox.left
-    : 0;
+  const columnsOffset = columnsOffsetOf(table, cells, tableBox.left);
   return {
     frame,
     scroller,

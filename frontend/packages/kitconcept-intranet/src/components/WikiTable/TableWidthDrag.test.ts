@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import type { TTableElement } from 'platejs';
 
-import { measureColumnWidths } from './TableWidthDrag';
+import { columnsOffsetOf, measureColumnWidths } from './TableWidthDrag';
 import { deletedColumnChange, sumOf } from './wikiTableCustomWidth';
 
 const wide = { text: 780, medium: 1040, wide: 1440, room: 1580 };
@@ -30,6 +30,7 @@ const place = (element: Element, left: number, width: number) => {
 const renderTable = (
   tableLeft: number,
   rows: { width: number; colSpan?: number }[][],
+  gutterWidth = 0,
 ) => {
   const block = document.createElement('div');
   block.innerHTML =
@@ -41,9 +42,9 @@ const renderTable = (
     const row = document.createElement('tr');
     const gutter = document.createElement('td');
     gutter.setAttribute('contenteditable', 'false');
-    place(gutter, tableLeft, 0);
+    place(gutter, tableLeft, gutterWidth);
     row.appendChild(gutter);
-    let x = tableLeft;
+    let x = tableLeft + gutterWidth;
     for (const { width, colSpan = 1 } of cells) {
       const cell = document.createElement('td');
       cell.colSpan = colSpan;
@@ -160,5 +161,31 @@ describe('measureColumnWidths (a column delete on #824 data, work item 836)', ()
   it('is null for a table that cannot be measured', () => {
     const block = document.createElement('div');
     expect(measureColumnWidths(block, tableNode(4))).toBeNull();
+  });
+});
+
+describe('columnsOffsetOf', () => {
+  const columnCells = (block: HTMLElement) =>
+    Array.from(block.querySelectorAll('tr')[0].cells).slice(1);
+
+  it('is where the row of single cells starts', () => {
+    const block = renderTable(100, [[{ width: 300 }, { width: 300 }]], 24);
+    const table = block.querySelector('table')!;
+    expect(columnsOffsetOf(table, columnCells(block), 100)).toBe(24);
+  });
+
+  it('without a row of single cells: right of the gutter cell', () => {
+    const block = renderTable(
+      100,
+      [[{ width: 600, colSpan: 2 }], [{ width: 600, colSpan: 2 }]],
+      24,
+    );
+    expect(columnsOffsetOf(block.querySelector('table')!, null, 100)).toBe(24);
+  });
+
+  it('is 0 without a gutter cell (the view, a read-only editor)', () => {
+    const table = document.createElement('table');
+    table.insertRow().insertCell();
+    expect(columnsOffsetOf(table, null, 100)).toBe(0);
   });
 });

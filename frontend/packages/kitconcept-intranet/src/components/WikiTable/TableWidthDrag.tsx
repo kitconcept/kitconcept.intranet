@@ -449,9 +449,11 @@ export function useTableWidthDrag({
           : startBorderDrag(startSizes, target.index, pointerX, widths);
       const handle = event.currentTarget;
       const pointerId = event.pointerId;
+      // Only the pointer that started the drag: another finger or a pen
+      // moving without a button, or released, would end it.
       const onMove = (moveEvent: PointerEvent) => {
         const drag = running.current;
-        if (!drag) return;
+        if (!drag || moveEvent.pointerId !== pointerId) return;
         drag.pointerX = moveEvent.clientX;
         if (moveEvent.clientX !== drag.startX) drag.moved = true;
         // A release that never arrived (outside the window).
@@ -462,7 +464,9 @@ export function useTableWidthDrag({
       // `lostpointercapture`; here the handles can go away during a drag,
       // the window became too narrow, and that ends it storing nothing,
       // see `enabled` below.)
-      const onUp = () => finish(true);
+      const onUp = (upEvent: PointerEvent) => {
+        if (upEvent.pointerId === pointerId) finish(true);
+      };
       try {
         handle.setPointerCapture(pointerId);
       } catch {

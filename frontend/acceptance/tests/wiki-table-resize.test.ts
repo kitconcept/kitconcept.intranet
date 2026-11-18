@@ -1870,6 +1870,67 @@ test.describe('Wiki tables: resize handle', () => {
     await expect.poll(() => overflowOf(wide)).toBeGreaterThan(500);
   });
 
+  test('a drag follows only its own pointer: another pointer moving without a button or released does not end it', async ({
+    page,
+  }) => {
+    await openPage(page, 'drag-pointer-id', [
+      paragraph('Intro'),
+      table(3, { tableWidth: 960, colSizes: [320, 320, 320] }),
+    ]);
+    const editor = editorTable(page, 0);
+    const edge = columnEdge(editor);
+    const label = page.locator('.wiki-table-resize-label');
+    await editor.hover();
+    await edge.hover();
+    const box = (await edge.boundingBox())!;
+    const x = Math.round(box.x + box.width / 2);
+    const y = Math.round(box.y + Math.min(box.height / 2, 20));
+    await page.mouse.move(x, y);
+    await page.mouse.down();
+    await expect(edge).toHaveAttribute('data-resizing', 'true');
+    await page.mouse.move(x + 40, y, { steps: 4 });
+    await expect(label).toHaveText('360px · Table 1000px');
+    // A second finger or a pen during the drag: a move without a button,
+    // a release, a cancel.
+    await page.evaluate(
+      ([clientX, clientY]) => {
+        const init = {
+          bubbles: true,
+          clientX,
+          clientY,
+          isPrimary: false,
+          pointerType: 'touch',
+        };
+        window.dispatchEvent(
+          new PointerEvent('pointermove', {
+            ...init,
+            pointerId: 97,
+            buttons: 0,
+          }),
+        );
+        window.dispatchEvent(
+          new PointerEvent('pointerup', { ...init, pointerId: 98 }),
+        );
+        window.dispatchEvent(
+          new PointerEvent('pointercancel', { ...init, pointerId: 99 }),
+        );
+      },
+      [x + 40, y],
+    );
+    await expect(edge).toHaveAttribute('data-resizing', 'true');
+    // The drag still follows the mouse, and stores where it is released.
+    await page.mouse.move(x + 100, y, { steps: 4 });
+    await expect(label).toHaveText('420px · Table 1060px');
+    await page.mouse.up();
+    await expect(edge).not.toHaveAttribute('data-resizing', 'true');
+    await expect
+      .poll(async () => {
+        const node = (await getTables(page))[0];
+        return { tableWidth: node?.tableWidth, colSizes: node?.colSizes };
+      })
+      .toEqual({ tableWidth: 1060, colSizes: [320, 320, 420] });
+  });
+
   test('a drag on a step clamped to the room starts as displayed: no frame renders the stored column widths', async ({
     page,
   }) => {

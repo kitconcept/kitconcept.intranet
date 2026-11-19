@@ -1414,8 +1414,8 @@ importers:
         specifier: ^1.0.12
         version: 1.0.12(react@18.2.0)(webpack@5.111.1(lightningcss@1.33.0))
       '@eeacms/volto-taxonomy':
-        specifier: ^7.0.0
-        version: 7.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^7.1.0
+        version: 7.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/core':
         specifier: workspace:*
         version: link:../kitconcept-core/frontend/packages/kitconcept-core
@@ -3315,8 +3315,8 @@ packages:
   '@eeacms/volto-pdf-block@1.0.12':
     resolution: {integrity: sha512-06laYl6WTQn7QBI/kaK/TXXQ6cayhgg8gBAYKtSeL0Ir4rus4kJucLqD+oZ9E+rYtnj1OjHzr8tH8lAEBukdHg==}
 
-  '@eeacms/volto-taxonomy@7.0.0':
-    resolution: {integrity: sha512-N8YYOtp2Yr3Eizk1taWvNaofhcRx7mZGgyzgHjx+d7qsL4KerAqzAmdseY8LSfSLRXhocU94khdTMMo+TdCKJA==}
+  '@eeacms/volto-taxonomy@7.1.0':
+    resolution: {integrity: sha512-SjDpCwaH02roSaekRxyesAgQQmOSwbAHPZ1YZTQt7s3LgT9amQBaQM3txlzmiE2IJE4rDuo177Yye1ZOOQPklA==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       react: ^18.2.0
@@ -16098,7 +16098,7 @@ snapshots:
       - react
       - webpack
 
-  '@eeacms/volto-taxonomy@7.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@eeacms/volto-taxonomy@7.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)

@@ -944,7 +944,7 @@ wheels = [
 
 [[package]]
 name = "collective-taxonomy"
-version = "4.1.0"
+version = "4.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "collective-collectionfilter" },
@@ -971,9 +971,9 @@ dependencies = [
     { name = "z3c-form" },
     { name = "zope" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d2/b2/c1d740d5ec4490fc7b1d2d1fae7f20a2c877027977bb1970a78a9e64d588/collective_taxonomy-4.1.0.tar.gz", hash = "sha256:0dab6e2e218dfe73e6e5b915c0f8b8acfd288e17da7440459ad131756570ad4d", size = 4381559, upload-time = "2026-11-16T15:24:10.473Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4f/a6/fd1e6ec049f7d7bc782423540d101ca26647e80d5229fd08a14d81998931/collective_taxonomy-4.1.1.tar.gz", hash = "sha256:429df85b648a05cc3d18295ac4963e27afab91bb7a7b1a0ca7f09a1caf814479", size = 4385488, upload-time = "2026-11-18T18:32:08.512Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/33/c4/df620eb2b19b46ebccd10695a816866335f5d6616e6c3403814d08b1efba/collective_taxonomy-4.1.0-py3-none-any.whl", hash = "sha256:8ef204f2ff534f7ea19e4cfca3859edd806f03b26d1cc58bcb723a0d5ace50f2", size = 618275, upload-time = "2026-11-16T15:24:04.926Z" },
+    { url = "https://files.pythonhosted.org/packages/cb/6c/2658c1689514b353f70becaab04c6e6e777364152e31d170ba7ff41038b8/collective_taxonomy-4.1.1-py3-none-any.whl", hash = "sha256:ca2628001e2cfdf8b5530cfd8bf360dc82edddd2cd38f3f8cbbab5bf14164392", size = 622781, upload-time = "2026-11-18T18:32:02.924Z" },
 ]
 
 [[package]]
@@ -1632,7 +1632,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
-    { name = "collective-taxonomy", specifier = "==4.1.0" },
+    { name = "collective-taxonomy", specifier = "==4.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.1.2" },
     { name = "kitconcept-keywordmanager", specifier = "==1.0.0a4" },

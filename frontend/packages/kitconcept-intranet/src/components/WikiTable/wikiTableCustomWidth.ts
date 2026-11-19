@@ -394,6 +394,42 @@ export function scaledCellWidth(
   return total > 0 ? `${(width / total) * 100}%` : 'auto';
 }
 
+/** The width style of a table cell, see `cellWidthStyle`. */
+export type CellWidthStyle = {
+  maxWidth: number | string;
+  minWidth: number | string;
+  width: number | string;
+};
+
+/**
+ * The width style of a cell spanning `span` columns from `firstCol`, the
+ * same in the editor and the view. `colSizes` set (a top-level table on a
+ * step): the cell's share of the table's width (`scaledCellWidth`), not px
+ * that would widen the table. Null: `pxWidth`, the cell's columns in px,
+ * for the fixed table layout (theme/components/_wikiTable.scss); columns
+ * never resized share the table's width.
+ */
+export function cellWidthStyle(
+  colSizes: readonly number[] | null | undefined,
+  columns: number,
+  firstCol: number,
+  span: number,
+  pxWidth: number | string | undefined,
+): CellWidthStyle {
+  if (colSizes) {
+    return {
+      maxWidth: 'none',
+      minWidth: 0,
+      width: scaledCellWidth(colSizes, columns, firstCol, span),
+    };
+  }
+  return {
+    maxWidth: pxWidth || 240,
+    minWidth: pxWidth || 120,
+    width: pxWidth || 120,
+  };
+}
+
 /**
  * The minimum width in px of a table on a step whose cells take their
  * share of its width (`scaledCellWidth`): wide enough for its narrowest
@@ -416,6 +452,20 @@ export function scaledTableMinWidth(
 /** The sum of `sizes`. */
 export const sumOf = (sizes: readonly number[]) =>
   sizes.reduce((total, size) => total + size, 0);
+
+/**
+ * Whether `colSizes` holds a width for each of the table's `columns`: none
+ * missing, none 0 (a column never resized). Tables that got a custom width
+ * from the handle of work item 824 without a column drag have none or only
+ * some.
+ */
+export const hasColumnWidths = (
+  colSizes: readonly unknown[] | undefined,
+  columns: number,
+): colSizes is number[] =>
+  !!colSizes &&
+  colSizes.length === columns &&
+  colSizes.every((size) => typeof size === 'number' && size > 0);
 
 /**
  * Column widths to start a drag from: the columns' rendered widths in whole
@@ -881,8 +931,10 @@ export function shownWidth(
  * 836), or null: the width is the sum of the columns left
  * (`after`, from `before`), by the rule of a drag's end (`dragResult`: a
  * sum exactly on a step stores the step); below the text width the
- * columns are scaled up to it. Columns never resized (stored as 0) are
- * left alone. Stored columns that do not add up to the custom width
+ * columns are scaled up to it. Null without a width for every column
+ * (`hasColumnWidths`; the shadow's `deleteColumn` stores the rendered
+ * widths before the delete, as a drag does). Stored columns that do not
+ * add up to the custom width
  * (`tableWidth`; #824 never grew them, the table stretched them) are
  * first scaled as the table displayed them.
  */

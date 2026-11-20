@@ -1462,8 +1462,8 @@ importers:
         specifier: workspace:*
         version: link:../volto-maintenance-banner/frontend/packages/volto-maintenance-banner
       '@kitconcept/volto-plate':
-        specifier: ^1.0.0-alpha.40
-        version: 1.0.0-alpha.40(76556cf8afb8e2c95ba961e1ce3c0cbb)
+        specifier: ^1.0.0-alpha.43
+        version: 1.0.0-alpha.43(76556cf8afb8e2c95ba961e1ce3c0cbb)
       '@kitconcept/volto-separator-block':
         specifier: workspace:*
         version: link:../volto-separator-block/packages/volto-separator-block
@@ -1496,7 +1496,7 @@ importers:
         version: link:../../core/packages/components
       '@plone/helpers':
         specifier: ^2.0.0-alpha.8
-        version: 2.0.0-alpha.9(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 2.0.0-alpha.12(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/volto-form-block':
         specifier: ^1.0.0-alpha.3
         version: 1.0.0-alpha.3(@internationalized/date@3.12.4)(@loadable/component@5.16.7(react@18.2.0))(classnames@2.5.1)(promise-file-reader@1.0.2)(query-string@9.5.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.31)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react-toastify@5.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(semantic-ui-react@2.1.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -4286,12 +4286,12 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.40':
-    resolution: {integrity: sha512-Itmx+mcypIU7Wo14b4vePSHKSfrE3j/YrBcJ7WFmIlLUKLR74aXA3/rUFzYUrwte2ND/aZwv/D19maPIO8yhcQ==}
+  '@kitconcept/volto-plate@1.0.0-alpha.43':
+    resolution: {integrity: sha512-e8I7VEOf/VGjd6rHjryRQM5JLO9NPow1qMJhS4obLNThslJ/LlTAsCa+91Iimilee6VyIKKGekUD4l6XfZV03w==}
     peerDependencies:
       '@platejs/ai': ^53.3.12
       '@plone/registry': workspace:*
-      '@plone/types': 2.0.1
+      '@plone/types': 2.3.0
       class-variance-authority: ^0.7.1
       classnames: ^2.5.1
       lodash: ^4.17.21
@@ -4872,8 +4872,17 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/helpers@2.0.0-alpha.9':
-    resolution: {integrity: sha512-wGrj0Ggx8Y6tmK78iKSjBkUlHe3Gg6tPjiVFiSpo7expjWg5TvmS23/RlxurK4lvnuR9mvwRx9Xx6nDnfiQTLw==}
+  '@plone/components@4.2.3':
+    resolution: {integrity: sha512-tFtii1UvEvZhQc4p26BY2cqK8sVqU5TmvOphphiCnLK2Qedl04TwYAvcZpD+Ij1O7vBNxuVFy3tcvTlrpDLKxw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
+  '@plone/helpers@2.0.0-alpha.12':
+    resolution: {integrity: sha512-UJLh8bPE0ejUaodqkc2k3HI94VrEgbXYtgoBQBA/eJe3GyPR6CxkfhZ+UKeom7GPN92/qu0MsLxphDl9V0v8dA==}
     peerDependencies:
       '@plone/registry': workspace:*
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -4891,10 +4900,9 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/plate@1.0.0-alpha.24':
-    resolution: {integrity: sha512-cSWHDqe9ZIS6JxvrkNbuQdwd3QN3zYEBuF1KVASFc9ARtzWbaJAk3mjFDZ0lKa0JPF2fRu1v37I2thN2CcdYUA==}
+  '@plone/plate@1.0.0-alpha.27':
+    resolution: {integrity: sha512-RdphrjuKLqPd1Ibn833/CiT/bBHw4vohnO/LZQmoElr+Vu3gUB7u2lguxw/+wlqz9RJ6j2jmtZbUC80mNiXvLA==}
     peerDependencies:
-      '@plone/components': ^4.0.0 || ^5.0.0-alpha.0
       '@plone/icons': ^1.0.0-alpha.0
       '@plone/registry': workspace:*
       react: ^18.2.0 || ^19.0.0
@@ -11321,6 +11329,7 @@ packages:
 
   node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
+    deprecated: This package is no longer needed on supported Node.js versions. Node.js 16+ includes AbortController and AbortSignal as built-in globals. All Node.js versions requiring this polyfill are end-of-life. Use the built-in globals instead.
 
   node-emoji@2.2.0:
     resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
@@ -17068,7 +17077,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kitconcept/volto-plate@1.0.0-alpha.40(76556cf8afb8e2c95ba961e1ce3c0cbb)':
+  '@kitconcept/volto-plate@1.0.0-alpha.43(76556cf8afb8e2c95ba961e1ce3c0cbb)':
     dependencies:
       '@internationalized/date': 3.12.4
       '@platejs/ai': 53.3.15(@ai-sdk/react@4.0.119(react@18.2.0)(zod@4.6.5))(ai@7.0.116(zod@4.6.5))(platejs@53.3.15(@types/lodash@4.17.25)(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.7.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.9.3)
@@ -17081,9 +17090,9 @@ snapshots:
       '@platejs/mention': 53.0.0(platejs@53.3.15(@types/lodash@4.17.25)(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.7.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/slash-command': 53.0.0(platejs@53.3.15(@types/lodash@4.17.25)(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.7.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/suggestion': 53.2.3(platejs@53.3.15(@types/lodash@4.17.25)(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.7.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/components': 4.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/helpers': 2.0.0-alpha.9(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/plate': 1.0.0-alpha.24(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.64.0)(@plone/components@4.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/icons@1.0.0-alpha.1(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.64.2)(tailwind-merge@3.7.0)(tailwindcss@4.3.3)(typescript@5.9.3)(vite@6.4.4(@types/node@24.19.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.1)))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/lodash@4.17.25)(@types/node@24.19.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@18.2.0))
+      '@plone/components': 4.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/helpers': 2.0.0-alpha.12(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/plate': 1.0.0-alpha.27(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.64.0)(@plone/icons@1.0.0-alpha.1(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.64.2)(tailwind-merge@3.7.0)(tailwindcss@4.3.3)(typescript@5.9.3)(vite@6.4.4(@types/node@24.19.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.1)))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/lodash@4.17.25)(@types/node@24.19.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@18.2.0))
       '@plone/registry': link:core/packages/registry
       '@plone/types': link:core/packages/types
       '@radix-ui/react-dropdown-menu': 2.1.25(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -17889,7 +17898,24 @@ snapshots:
     optionalDependencies:
       react-dom: 18.2.0(react@18.2.0)
 
-  '@plone/helpers@2.0.0-alpha.9(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@plone/components@4.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@internationalized/date': 3.12.4
+      '@react-aria/utils': 3.34.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-spectrum/utils': 3.13.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      clsx: 2.1.1
+      react: 18.2.0
+      react-aria: 3.53.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-aria-components: 1.22.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-stately: 3.51.0(react@18.2.0)
+      tailwind-merge: 3.7.0
+      tailwind-variants: 3.3.1(tailwind-merge@3.7.0)(tailwindcss@4.3.3)
+      tailwindcss: 4.3.3
+      tailwindcss-animate: 1.0.7(tailwindcss@4.3.3)
+    optionalDependencies:
+      react-dom: 18.2.0(react@18.2.0)
+
+  '@plone/helpers@2.0.0-alpha.12(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@plone/registry': link:core/packages/registry
       jotai: 2.20.3(@babel/core@7.29.7)(@babel/template@7.29.7)(@types/react@18.3.31)(react@18.2.0)
@@ -17924,7 +17950,7 @@ snapshots:
       - typescript
       - vite
 
-  '@plone/plate@1.0.0-alpha.24(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.64.0)(@plone/components@4.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(@plone/icons@1.0.0-alpha.1(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.64.2)(tailwind-merge@3.7.0)(tailwindcss@4.3.3)(typescript@5.9.3)(vite@6.4.4(@types/node@24.19.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.1)))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/lodash@4.17.25)(@types/node@24.19.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@18.2.0))':
+  '@plone/plate@1.0.0-alpha.27(@babel/core@7.29.7)(@babel/template@7.29.7)(@emoji-mart/data@1.2.1)(@playwright/test@1.64.0)(@plone/icons@1.0.0-alpha.1(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.64.2)(tailwind-merge@3.7.0)(tailwindcss@4.3.3)(typescript@5.9.3)(vite@6.4.4(@types/node@24.19.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.1)))(@plone/registry@core+packages+registry)(@types/hoist-non-react-statics@3.3.7(@types/react@18.3.31))(@types/lodash@4.17.25)(@types/node@24.19.1)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(typescript@5.9.3)(use-sync-external-store@1.7.0(react@18.2.0))':
     dependencies:
       '@ai-sdk/react': 4.0.119(react@18.2.0)(zod@4.6.5)
       '@ariakit/react': 0.4.41(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -17956,8 +17982,7 @@ snapshots:
       '@platejs/table': 53.0.9(platejs@53.3.15(@types/lodash@4.17.25)(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.7.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/toc': 53.0.0(platejs@53.3.15(@types/lodash@4.17.25)(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.7.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@platejs/toggle': 53.0.0(@babel/core@7.29.7)(@babel/template@7.29.7)(@types/react@18.3.31)(platejs@53.3.15(@types/lodash@4.17.25)(@types/react@18.3.31)(immer@10.2.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(scheduler@0.23.2)(use-sync-external-store@1.7.0(react@18.2.0)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/components': 4.2.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/helpers': 2.0.0-alpha.9(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/helpers': 2.0.0-alpha.12(@babel/core@7.29.7)(@babel/template@7.29.7)(@plone/registry@core+packages+registry)(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/icons': 1.0.0-alpha.1(@svgr/core@8.1.0(typescript@5.9.3))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(rollup@4.64.2)(tailwind-merge@3.7.0)(tailwindcss@4.3.3)(typescript@5.9.3)(vite@6.4.4(@types/node@24.19.1)(jiti@2.7.0)(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.1))
       '@plone/registry': link:core/packages/registry
       '@radix-ui/react-alert-dialog': 1.1.24(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

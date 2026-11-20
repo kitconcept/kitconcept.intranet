@@ -667,7 +667,9 @@ test.describe('Wiki tables: resize handle', () => {
     // before the content area's right edge in the editor (#826, #836); the
     // handle is inside the content area, not clipped.
     const block = (await full
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox())!;
     const fullFrame = (await tableFrameOf(full).boundingBox())!;
     expect(Math.round(fullFrame.x)).toBe(await textColumnX(page, 'Intro'));
@@ -1015,7 +1017,7 @@ test.describe('Wiki tables: resize handle', () => {
     await page.setViewportSize({ width: 2600, height: 1000 });
     await expect(handle).toHaveCount(1);
     const block = editor.locator(
-      'xpath=ancestor::div[contains(@class, "block-table")][1]',
+      'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
     );
     await expect(block).not.toHaveClass(/wiki-table-custom-width/);
     await expect.poll(() => frameWidth(editor)).toBe(780);

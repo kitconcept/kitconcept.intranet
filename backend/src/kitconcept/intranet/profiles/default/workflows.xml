@@ -6,12 +6,18 @@
   <object meta_type="Workflow"
           name="simple_intranet_workflow"
   />
+  <object meta_type="Workflow"
+          name="dashboard_workflow"
+  />
   <bindings>
     <default>
       <bound-workflow workflow_id="simple_intranet_workflow" />
     </default>
     <type type_id="Plone Site">
       <bound-workflow workflow_id="simple_intranet_workflow" />
+    </type>
+    <type type_id="Dashboard">
+      <bound-workflow workflow_id="dashboard_workflow" />
     </type>
   </bindings>
 </object>

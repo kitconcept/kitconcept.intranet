@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        meta_type="Dexterity FTI"
+        name="Dashboard"
+        i18n:domain="kitconcept.intranet"
+>
+
+  <!-- Basic properties -->
+  <property name="title"
+            i18n:translate=""
+  >Dashboard</property>
+  <property name="description"
+            i18n:translate=""
+  >A private dashboard for each user, created inside their Person. Its layout sets the default blocks of new dashboards.</property>
+
+  <property name="allow_discussion">False</property>
+  <property name="factory">Dashboard</property>
+  <property name="link_target" />
+
+  <!-- Hierarchy control -->
+  <!-- Not addable anywhere: the @dashboard service creates it inside a Person -->
+  <property name="global_allow">False</property>
+
+  <!-- Schema, class and security -->
+  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="model_file" />
+  <!-- model_source is intentionally not set here: re-importing typeinfo would
+       overwrite the layout edited TTW. It is set once in Python by
+       kitconcept.intranet.upgrades.set_dashboard_layout. -->
+  <property name="schema" />
+
+  <!-- Enabled behaviors -->
+  <property name="behaviors"
+            purge="true"
+  >
+    <element value="plone.basic" />
+    <element value="volto.blocks.editable.layout" />
+    <element value="plone.versioning" />
+    <element value="plone.locking" />
+  </property>
+
+</object>

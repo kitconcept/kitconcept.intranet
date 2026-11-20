@@ -2,6 +2,24 @@
 
 <!-- towncrier release notes start -->
 
+## 3.11.0 (2026-11-20)
+
+
+### Feature
+
+- Watch content: watch emails now go through the MailHost's transactional queue instead of being sent after commit with `immediate=True`, the notifier keeps a reference to the changed object instead of looking it up again by UID, and `notifications_paused()` now also stops watch emails, so batch jobs don't email the watchers. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/854 @sneridagh 
+
+
+### Bugfix
+
+- Pin plone.restapi to 10.3.0. @sneridagh 
+- Update `collective.taxonomy` to 4.1.1: changing the field prefix no longer leaves a listing criterion that returns all content, saving the taxonomy settings no longer empties the index, content is reindexed when terms are deleted or moved, and the taxonomy description is stored instead of showing the site description. @sneridagh 
+
+
+### Internal
+
+- Add example content of users without the portrait image @iRohitSingh [#602](https://github.com/kitconcept/kitconcept.intranet/issue/602)
+
 ## 3.10.0 (2026-11-17)
 
 

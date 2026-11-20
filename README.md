@@ -50,6 +50,15 @@ All demo users share the password `password`.
 
 The site owner account is `admin` with the password `admin`.
 
+#### Notification center demo
+
+The example content includes activity for the notification center.
+Log in as Anna Becker (`a.becker`) to see it: the bell in the header shows unread notifications, and `/notifications` lists all of them.
+Colleagues liked, edited, published, and retracted her pages under `/benachrichtigungen-demo`.
+
+The notification times are relative to when the site was created.
+To make them recent again, stop the backend and reset the demo with `make -C backend notifications-demo`.
+
 ## Development
 
 ### Prerequisites ✅

@@ -139,6 +139,54 @@ body.section-login .about-content {
   margin-bottom: $spacing-medium;
   text-align: left;
 
+  .about-content-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    .watch-button {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      padding: 6px 12px;
+      border: 1px solid #c7d7dc;
+      border-radius: 2px;
+      background: $white;
+      color: $darkGrey;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+      gap: 8px;
+      line-height: 1.2;
+      text-decoration: none;
+
+      &:hover,
+      &[data-focus-visible] {
+        border-color: $darkGrey;
+      }
+
+      // Pressed: the user is watching this content.
+      &.watching {
+        border-color: $darkGrey;
+        background: $darkGrey;
+        color: $white;
+        font-weight: $bold;
+
+        &:hover,
+        &[data-focus-visible] {
+          opacity: 0.85;
+        }
+      }
+
+      .icon-wrapper,
+      .eye-icon {
+        display: inline-flex;
+        color: inherit;
+      }
+    }
+  }
+
   h2 {
     margin-bottom: $spacing-small;
     color: $darkGrey;

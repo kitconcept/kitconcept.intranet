@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-11-10 15:06+0000\n"
+"POT-Creation-Date: 2026-11-20 12:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,11 @@ msgstr "Akademischer Titel"
 msgid "Academic Title, First and Last Name"
 msgstr "Akademischer Titel, Vor- und Nachname"
 
-#: kitconcept/intranet/behaviors/configure.zcml:49
+#: kitconcept/intranet/behaviors/configure.zcml:58
 msgid "Add the intranet-specific person fields"
 msgstr "Fügen Sie die intranet-spezifischen Personenfelder hinzu"
 
-#: kitconcept/intranet/behaviors/configure.zcml:42
+#: kitconcept/intranet/behaviors/configure.zcml:51
 msgid "Add the lifecycle management fields"
 msgstr "Fügen Sie die Felder für das Lebenszyklusmanagement hinzu."
 
@@ -62,11 +62,11 @@ msgstr "Feld „Stimmen“ hinzufügen"
 msgid "Allowed Email Domains"
 msgstr "Zulässige E-Mail-Domains"
 
-#: kitconcept/intranet/controlpanels/intranet.py:81
+#: kitconcept/intranet/controlpanels/intranet.py:105
 msgid "Allowed Iframe Domains"
 msgstr "Zulässige Iframe-Domains"
 
-#: kitconcept/intranet/behaviors/configure.zcml:56
+#: kitconcept/intranet/behaviors/configure.zcml:65
 msgid "CLM: Reminders for potentially outdated content"
 msgstr "CLM: Hinweise auf möglicherweise veraltete Inhalte"
 
@@ -91,7 +91,7 @@ msgstr "Dashboard-Workflow"
 msgid "Default Feedback Email"
 msgstr "Standard-Feedback-E-Mail"
 
-#: kitconcept/intranet/controlpanels/intranet.py:98
+#: kitconcept/intranet/controlpanels/intranet.py:122
 msgid "Default review interval"
 msgstr "Standard-Überprüfungsintervall"
 
@@ -120,7 +120,7 @@ msgstr "E-Mail-Adresse, die in Feedback-Formularen verwendet wird, wenn keine an
 msgid "Enable Content Rating"
 msgstr "Inhaltsbewertung aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:91
+#: kitconcept/intranet/controlpanels/intranet.py:115
 msgid "Enable Content Review"
 msgstr "Inhaltsprüfung aktivieren"
 
@@ -132,15 +132,23 @@ msgstr "Likes aktivieren"
 msgid "Enable Likes for this Content Object"
 msgstr "Likes für dieses Inhaltsobjekt aktivieren"
 
+#: kitconcept/intranet/controlpanels/intranet.py:92
+msgid "Enable Notification Center"
+msgstr "Benachrichtigungszentrale aktivieren"
+
 #: kitconcept/intranet/controlpanels/intranet.py:67
 msgid "Enable Sticky Feedback Button"
 msgstr "Sticky-Feedback-Button aktivieren"
+
+#: kitconcept/intranet/controlpanels/intranet.py:81
+msgid "Enable Watching Content"
+msgstr "Beobachten von Inhalten aktivieren"
 
 #: kitconcept/intranet/controlpanels/intranet.py:75
 msgid "Enable content rating globally for the Intranet"
 msgstr "Inhaltsbewertung für das Intranet global aktivieren"
 
-#: kitconcept/intranet/controlpanels/intranet.py:92
+#: kitconcept/intranet/controlpanels/intranet.py:116
 msgid "Enable content review reminders globally for the Intranet."
 msgstr "Aktivieren Sie die Erinnerungen zur Inhaltsüberprüfung für das gesamte Intranet."
 
@@ -172,15 +180,15 @@ msgstr "Externe Such-URL"
 msgid "Feedback CC email"
 msgstr "Feedback CC E-Mail"
 
-#: kitconcept/intranet/behaviors/configure.zcml:28
+#: kitconcept/intranet/behaviors/configure.zcml:37
 msgid "Fields for Location"
 msgstr "Felder für Standort"
 
-#: kitconcept/intranet/behaviors/configure.zcml:35
+#: kitconcept/intranet/behaviors/configure.zcml:44
 msgid "Fields for Organisational Unit"
 msgstr "Felder für Organisationseinheit"
 
-#: kitconcept/intranet/behaviors/configure.zcml:56
+#: kitconcept/intranet/behaviors/configure.zcml:65
 msgid "Fields for reviewing content (part of CLM)"
 msgstr "Felder zur Überprüfung von Inhalten (Teil von CLM)"
 
@@ -197,7 +205,7 @@ msgstr "Öffentlicher Intranet-Workflow"
 msgid "Intranet Restricted Workflow"
 msgstr "Intranet-beschränkter Workflow"
 
-#: kitconcept/intranet/controlpanels/intranet.py:107
+#: kitconcept/intranet/controlpanels/intranet.py:131
 msgid "Intranet Settings"
 msgstr "Intranet-Einstellungen"
 
@@ -205,7 +213,7 @@ msgstr "Intranet-Einstellungen"
 msgid "Intranet feedback form: {title}"
 msgstr "Feedback-Formular für das Intranet: {title}"
 
-#: kitconcept/intranet/behaviors/configure.zcml:49
+#: kitconcept/intranet/behaviors/configure.zcml:58
 msgid "Intranet-specific Person fields"
 msgstr "Intranet-spezifische Personenfelder"
 
@@ -213,7 +221,7 @@ msgstr "Intranet-spezifische Personenfelder"
 msgid "Job Title"
 msgstr "Funktion"
 
-#: kitconcept/intranet/behaviors/configure.zcml:42
+#: kitconcept/intranet/behaviors/configure.zcml:51
 msgid "Lifecycle Management fields"
 msgstr "Lebenszyklusmanagement-Felder"
 
@@ -229,7 +237,7 @@ msgstr "Liste der zulässigen E-Mail-Domains für Feedback-Formulare."
 msgid "List of user IDs"
 msgstr "Liste der Benutzer-IDs"
 
-#: kitconcept/intranet/behaviors/configure.zcml:28
+#: kitconcept/intranet/behaviors/configure.zcml:37
 #: kitconcept/intranet/behaviors/location.py:18
 #: kitconcept/intranet/profiles/default/types/Location.xml
 msgid "Location"
@@ -245,11 +253,15 @@ msgstr "Mitglied zieht Einreichung zurück"
 msgid "Member submits content for publication"
 msgstr "Mitglied reicht Inhalte zur Veröffentlichung ein"
 
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "Metadata"
+msgstr "Metadaten"
+
 #: kitconcept/intranet/services/feedback_contact_form.py:204
 msgid "No responsible person or default feedback email is configured. Please contact the site administrator."
 msgstr "Es ist keine verantwortliche Person oder Standard-Feedback-E-Mail konfiguriert. Bitte wenden Sie sich an den Website-Administrator."
 
-#: kitconcept/intranet/behaviors/configure.zcml:35
+#: kitconcept/intranet/behaviors/configure.zcml:44
 #: kitconcept/intranet/behaviors/organisational_unit.py:18
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "Organisational Unit"
@@ -380,6 +392,10 @@ msgstr "Taxonomie"
 msgid "Used in the intranet header seach bar."
 msgstr "Verwendet in der Suchleiste der Intranet-Kopfzeile."
 
+#: kitconcept/intranet/behaviors/configure.zcml:27
+msgid "Users can watch the item and get an email when it changes"
+msgstr "Benutzer können den Inhalt beobachten und erhalten bei Änderungen eine E-Mail"
+
 #: kitconcept/intranet/profiles/default/types/Location.xml
 #: kitconcept/intranet/profiles/default/types/Organisational_Unit.xml
 msgid "View"
@@ -402,6 +418,10 @@ msgstr "Stimmen"
 msgid "Waiting to be reviewed, not editable by the owner."
 msgstr "Wartet auf Überprüfung, kann vom Eigentümer nicht bearbeitet werden."
 
+#: kitconcept/intranet/behaviors/configure.zcml:27
+msgid "Watch content"
+msgstr "Inhalte beobachten"
+
 #: kitconcept/intranet/services/feedback_contact_form.py:275
 msgid "Your feedback on our intranet content: {title}"
 msgstr "Ihr Feedback zu unseren Intranet-Inhalten: {title}"
@@ -420,6 +440,16 @@ msgstr "Content Lifecycle Management"
 #: kitconcept/intranet/profiles/default/registry/querystring.xml
 msgid "help_current_user_filter"
 msgstr "Entspricht den Werten, die dem aktuell angemeldeten Benutzer zugewiesen sind."
+
+#. Default: "Logged-in users can watch content items and get an email when a watched, published item changes."
+#: kitconcept/intranet/controlpanels/intranet.py:82
+msgid "help_enable_content_watching"
+msgstr "Angemeldete Benutzer können Inhalte beobachten und erhalten eine E-Mail, wenn sich ein beobachteter, veröffentlichter Inhalt ändert."
+
+#. Default: "Logged-in users see a bell with notifications about likes, edits and workflow changes on content they author. When off, no notifications are created and the bell is hidden. Existing notifications are kept."
+#: kitconcept/intranet/controlpanels/intranet.py:93
+msgid "help_enable_notification_center"
+msgstr "Angemeldete Benutzer sehen eine Glocke mit Benachrichtigungen über Likes, Bearbeitungen und Statusänderungen an Inhalten, die sie verfasst haben. Ist sie deaktiviert, werden keine Benachrichtigungen erstellt und die Glocke ist ausgeblendet. Vorhandene Benachrichtigungen bleiben erhalten."
 
 #. Default: "If checked, this type can be added to any container."
 #: kitconcept/intranet/patches.py:14
@@ -465,6 +495,16 @@ msgstr "Nach Prüfstatus filtern"
 #: kitconcept/intranet/behaviors/person.py:46
 msgid "help_tags"
 msgstr "Beschreiben Sie, wofür andere Sie konkret kontaktieren können. Nennen Sie Themen, Aufgaben oder Fragestellungen, für die Sie ansprechbar oder verantwortlich sind, zum Beispiel die Beratung zu bestimmten Förderprogrammen, die Begleitung von Antragsverfahren oder die Klärung formaler Anforderungen. Formulieren Sie die Angaben so, dass auch neue Kolleg:innen ohne Organisationswissen erkennen können, ob Sie die richtige Ansprechperson sind."
+
+#. Default: "Content watched by the current user"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_watched_by_filter"
+msgstr "Inhalte, die der aktuelle Benutzer beobachtet"
+
+#. Default: "Content the logged-in user is watching"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "help_watched_by_me"
+msgstr "Inhalte, die der angemeldete Benutzer beobachtet"
 
 #: kitconcept/intranet/distributions.zcml:17
 msgid "kitconcept Intranet"
@@ -573,3 +613,13 @@ msgstr "Zeitlose Inhalte – von Überprüfungserinnerungen ausschließen"
 #: kitconcept/intranet/behaviors/person.py:37
 msgid "label_schema_responsibility_categorization"
 msgstr "Zuständigkeiten und Fachkenntnissen"
+
+#. Default: "Watched by"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_watched_by"
+msgstr "Beobachtet von"
+
+#. Default: "Watched by me"
+#: kitconcept/intranet/profiles/default/registry/querystring.xml
+msgid "label_watched_by_me"
+msgstr "Von mir beobachtet"

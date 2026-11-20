@@ -5,16 +5,15 @@
   <genericsetup:upgradeSteps
       profile="kitconcept.intranet:default"
       source="20261030001"
-      destination="20261106001"
+      destination="20261116001"
       >
     <genericsetup:upgradeDepends
-        title="Add Dashboard content type, dashboard_workflow and versioning"
-        import_profile="kitconcept.intranet:default"
-        import_steps="typeinfo workflow repositorytool"
+        title="Add the watchers behavior, the watchers index, the Watched by me criterion and the watching setting"
+        import_steps="typeinfo catalog plone.app.registry"
         />
     <genericsetup:upgradeStep
-        title="Set the default layout of the Dashboard type"
-        handler="kitconcept.intranet.upgrades.set_dashboard_layout"
+        title="Disable watching content for upgraded sites"
+        handler=".disable_watching_for_upgraded_sites"
         />
   </genericsetup:upgradeSteps>
 </configure>

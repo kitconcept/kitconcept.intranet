@@ -222,7 +222,7 @@ constraints = [
     { name = "plone-resource", specifier = "==4.0.0" },
     { name = "plone-resourceeditor", specifier = "==5.0.0" },
     { name = "plone-rest", specifier = "==6.0.0" },
-    { name = "plone-restapi", specifier = "==10.2.1" },
+    { name = "plone-restapi", specifier = "==10.3.0" },
     { name = "plone-rfc822", specifier = "==4.0.0" },
     { name = "plone-scale", specifier = "==5.1.1" },
     { name = "plone-schema", specifier = "==3.0.0" },
@@ -798,6 +798,35 @@ wheels = [
 ]
 
 [[package]]
+name = "collective-collectionfilter"
+version = "6.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-app-contenttypes" },
+    { name = "plone-app-event" },
+    { name = "plone-app-querystring" },
+    { name = "plone-app-uuid" },
+    { name = "plone-app-vocabularies" },
+    { name = "plone-app-z3cform" },
+    { name = "plone-autoform" },
+    { name = "plone-base" },
+    { name = "plone-dexterity" },
+    { name = "plone-i18n" },
+    { name = "plone-memoize" },
+    { name = "plone-portlets" },
+    { name = "plone-supermodel" },
+    { name = "plone-uuid" },
+    { name = "products-cmfcore" },
+    { name = "products-cmfplone" },
+    { name = "z3c-form" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f6/2d/8f45fad5775e48376060c68634ecb266dd9956bc55e13ef57fc231b8b023/collective_collectionfilter-6.0.0.tar.gz", hash = "sha256:a1f2a9bf9001e3151f1bd3a054f0e2966cb76975c22853698616f168122fba8d", size = 1121102, upload-time = "2026-03-30T23:32:47.675Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3a/55/b1561923975c61ff9c858988fc8c7906b8e7509e3b5f63b8e7c5a307de7c/collective_collectionfilter-6.0.0-py3-none-any.whl", hash = "sha256:865bf9b19b9d6cf72118245737337bf481f5de7cd196a0034c3cf4e2e9db9358", size = 2084369, upload-time = "2026-03-30T23:32:43.963Z" },
+]
+
+[[package]]
 name = "collective-contact-behaviors"
 version = "1.0.0b6"
 source = { registry = "https://pypi.org/simple" }
@@ -911,6 +940,40 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/a4/d5/4c3bd4c1c51b1eab61ca06541c8e72563da6b70e384d122a98dbf07df083/collective_solr-10.1.1.tar.gz", hash = "sha256:6df4bdca150e9b1c20605c1be7d825aa60be53a2a359bc9578a3ae9d1f363d61", size = 208270, upload-time = "2026-03-11T17:08:09.988Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9d/2d/363ecb7a9e87b74c60d261d47e5afd90c72292b09b58b483eba1da7658ed/collective_solr-10.1.1-py3-none-any.whl", hash = "sha256:fe879466d069d0a466f0b044f3b9606676dc02f30af5aadf64da17393a4a70b2", size = 212536, upload-time = "2026-03-11T17:08:07.342Z" },
+]
+
+[[package]]
+name = "collective-taxonomy"
+version = "4.1.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "collective-collectionfilter" },
+    { name = "lxml" },
+    { name = "plone-api" },
+    { name = "plone-app-contentmenu" },
+    { name = "plone-app-contenttypes" },
+    { name = "plone-app-multilingual" },
+    { name = "plone-app-registry" },
+    { name = "plone-app-vocabularies" },
+    { name = "plone-app-z3cform" },
+    { name = "plone-autoform" },
+    { name = "plone-base" },
+    { name = "plone-behavior" },
+    { name = "plone-dexterity" },
+    { name = "plone-i18n" },
+    { name = "plone-indexer" },
+    { name = "plone-memoize" },
+    { name = "plone-namedfile" },
+    { name = "plone-protect" },
+    { name = "plone-restapi" },
+    { name = "plone-supermodel" },
+    { name = "products-cmfcore" },
+    { name = "z3c-form" },
+    { name = "zope" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4f/a6/fd1e6ec049f7d7bc782423540d101ca26647e80d5229fd08a14d81998931/collective_taxonomy-4.1.1.tar.gz", hash = "sha256:429df85b648a05cc3d18295ac4963e27afab91bb7a7b1a0ca7f09a1caf814479", size = 4385488, upload-time = "2026-11-18T18:32:08.512Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cb/6c/2658c1689514b353f70becaab04c6e6e777364152e31d170ba7ff41038b8/collective_taxonomy-4.1.1-py3-none-any.whl", hash = "sha256:ca2628001e2cfdf8b5530cfd8bf360dc82edddd2cd38f3f8cbbab5bf14164392", size = 622781, upload-time = "2026-11-18T18:32:02.924Z" },
 ]
 
 [[package]]
@@ -1521,6 +1584,7 @@ source = { editable = "." }
 default-groups = ["build", "test"]
 dependencies = [
     { name = "collective-solr" },
+    { name = "collective-taxonomy" },
     { name = "kitconcept-contactblock" },
     { name = "kitconcept-core" },
     { name = "kitconcept-keywordmanager" },
@@ -1568,6 +1632,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "collective-solr", specifier = "==10.1.1" },
+    { name = "collective-taxonomy", specifier = "==4.1.1" },
     { name = "kitconcept-contactblock", specifier = "==1.0.0a6" },
     { name = "kitconcept-core", specifier = "==2.1.2" },
     { name = "kitconcept-keywordmanager", specifier = "==1.0.0a4" },
@@ -3894,7 +3959,7 @@ wheels = [
 
 [[package]]
 name = "plone-restapi"
-version = "10.2.1"
+version = "10.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "packaging" },
@@ -3909,9 +3974,9 @@ dependencies = [
     { name = "pytz" },
     { name = "zope" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/99/f1/fa6aeb4842355b4e6aa2e16a83c8b376f75ee29e12cbac60c296247a186b/plone_restapi-10.2.1.tar.gz", hash = "sha256:8810399fd409b7983e812b003090e938f7b43d67af17533de11711585aca0717", size = 3022825, upload-time = "2026-11-10T13:15:01.154Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/07/5b/0f6ce49b625fca0d7b94f4fbf4b2e9ab247db6338180f64b7997daf441d7/plone_restapi-10.3.0.tar.gz", hash = "sha256:1242bd1420edfef6d7503ecba4e54cc12640a8609c64a679856f5235c427929c", size = 3021880, upload-time = "2026-11-16T21:47:01.41Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8c/55/d0e2bcffbb6199dfeaecd740d0184ad5083d06a7bef346cf697c658d0814/plone_restapi-10.2.1-py3-none-any.whl", hash = "sha256:6e030aaf95d28f238f5b4d8dd8f8f5d04d36981f194ec9b19dac76ac3e47e009", size = 3137808, upload-time = "2026-11-10T13:14:58.361Z" },
+    { url = "https://files.pythonhosted.org/packages/60/42/03b3877df1e19e2bea49b79c2ea9f0e107cb8fd20f01a3bb3e48751ae303/plone_restapi-10.3.0-py3-none-any.whl", hash = "sha256:bc66811fab237bc38b10cce8e84079ae4c4d7e0ce5d54e3526d95d9263a22dd3", size = 3129162, upload-time = "2026-11-16T21:46:59.33Z" },
 ]
 
 [package.optional-dependencies]

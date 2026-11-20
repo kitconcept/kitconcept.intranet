@@ -55,7 +55,7 @@ export default function install(config: ConfigType) {
 
   config.settings.apiExpanders = [
     ...config.settings.apiExpanders,
-    { match: '', GET_CONTENT: ['byline', 'clm'] },
+    { match: '', GET_CONTENT: ['byline', 'clm', 'watch'] },
   ];
 
   return config;

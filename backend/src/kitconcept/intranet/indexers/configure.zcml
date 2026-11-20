@@ -4,6 +4,10 @@
       name="allowedRolesAndUsers"
       />
   <adapter
+      factory=".watchers.watchers"
+      name="watchers"
+      />
+  <adapter
       factory=".tasks.review_state"
       name="review_state"
       />

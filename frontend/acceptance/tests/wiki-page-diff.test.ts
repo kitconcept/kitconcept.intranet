@@ -21,7 +21,7 @@ import { setSelection } from '@platejs/playwright';
 
 import { getValue, nodeText } from '../fixtures/editor';
 import { openInEditor } from '../fixtures/pages';
-import { savePage } from '../fixtures/table';
+import { savePage, tableFrameOf } from '../fixtures/table';
 import { expectSelectionIn } from '../fixtures/table-editor';
 import {
   createDiffPage,
@@ -619,5 +619,104 @@ test.describe('Wiki Page history diff', () => {
       // Rows hold cells only: no diff wrapper element inside a table body.
       await expect(page.locator('tbody > div, tr > div')).toHaveCount(0);
     }
+  });
+
+  test('52. split view: each side draws a changed table with its own column widths, width and alignment', async ({
+    page,
+  }) => {
+    // Work item 852: both sides drew the newer version's widths.
+    await page.setViewportSize({ width: 2600, height: 1000 });
+    const cell = (type: string, text: string) => ({
+      type,
+      id: `cell-${text}`,
+      children: [{ type: 'p', id: `p-${text}`, children: [{ text }] }],
+    });
+    const tableNode = (props: Record<string, unknown>) => ({
+      type: 'table',
+      id: 'table-852',
+      children: [0, 1, 2].map((row) => ({
+        type: 'tr',
+        id: `row-${row}`,
+        children: [0, 1, 2].map((col) =>
+          cell(row ? 'td' : 'th', `${row}/${col}`),
+        ),
+      })),
+      ...props,
+    });
+    const intro = { type: 'p', id: 'intro', children: [{ text: 'Intro' }] };
+    const { contentPath } = await createWikiPageWithValue(page, {
+      contentId: 'diff-column-widths',
+      title: 'Diff column widths',
+      value: [intro, tableNode({ blockWidth: 'default' })],
+    });
+    const versions: Record<string, unknown>[] = [
+      // A column border dragged: the column widths only.
+      { blockWidth: 'default', colSizes: [424, 184, 305] },
+      // The width: Text width → Medium.
+      { blockWidth: 'medium', colSizes: [424, 184, 305] },
+      // The alignment: left → centred.
+      {
+        blockWidth: 'medium',
+        colSizes: [424, 184, 305],
+        tableAlign: 'center',
+      },
+    ];
+    for (const props of versions) {
+      await patchContent(page, contentPath, {
+        blocks: {
+          [SOMERSAULT_KEY]: {
+            '@type': SOMERSAULT_KEY,
+            value: [
+              { type: 'title', children: [{ text: 'Diff column widths' }] },
+              intro,
+              tableNode(props),
+            ],
+          },
+        },
+        changeNote: JSON.stringify(props),
+      });
+    }
+    const side = (name: 'left' | 'right') =>
+      page.locator(`.plate-diff-split .plate-diff-${name} table`).last();
+    const columnWidths = (table: ReturnType<typeof side>) =>
+      table
+        .locator('tr')
+        .first()
+        .locator('> th')
+        .evaluateAll((cells) =>
+          cells.map((item) => item.getBoundingClientRect().width),
+        );
+
+    await openDiff(page, contentPath, 0, 1, 'split');
+    // The older side: no column widths, even columns.
+    const left = await columnWidths(side('left'));
+    const mean = left.reduce((sum, width) => sum + width, 0) / left.length;
+    for (const width of left) expect(Math.abs(width - mean)).toBeLessThan(3);
+    // The newer side: the stored widths, in proportion (a table on a step).
+    const right = await columnWidths(side('right'));
+    const total = right.reduce((sum, width) => sum + width, 0);
+    [424, 184, 305].forEach((size, index) =>
+      expect(Math.abs(right[index] / total - size / 913)).toBeLessThan(0.01),
+    );
+
+    await openDiff(page, contentPath, 1, 2, 'split');
+    // Text width on the older side, Medium on the newer one. (Each side
+    // of the split view is narrower than the text column, 631px at 2600,
+    // so both frames are that wide: the step shows in the blocks' width
+    // classes.)
+    const blockOf = (name: 'left' | 'right') =>
+      side(name).locator(
+        'xpath=ancestor::div[contains(@class, "block-table")][1]',
+      );
+    await expect(blockOf('left')).toHaveClass(/slate-blockWidth-default/);
+    await expect(blockOf('right')).toHaveClass(/slate-blockWidth-medium/);
+    expect(
+      Math.round((await tableFrameOf(side('left')).boundingBox())!.width),
+    ).toBeLessThanOrEqual(780);
+
+    await openDiff(page, contentPath, 2, 3, 'split');
+    // Left-aligned on the older side, centred on the newer one.
+    await expect(blockOf('left')).not.toHaveClass(/wiki-table-centered/);
+    await expect(blockOf('right')).toHaveClass(/wiki-table-centered/);
   });
 });

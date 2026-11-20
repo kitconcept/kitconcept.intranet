@@ -36,6 +36,24 @@
     padding: 1em;
   }
 
+  .postpone-form-content {
+    overflow: visible;
+  }
+
+  .date-time-widget-wrapper {
+    position: relative;
+  }
+
+  .date-input,
+  .SingleDatePicker {
+    position: static;
+  }
+
+  .SingleDatePicker_picker {
+    right: 0;
+    left: auto !important;
+  }
+
   #field-review-comment {
     border: none;
     border-bottom: 1px solid #c7d5d8;

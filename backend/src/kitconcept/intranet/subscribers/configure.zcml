@@ -33,4 +33,27 @@
       handler=".vocabulary.cache_buster"
       />
 
+
+  <!-- Watch content -->
+  <subscriber
+      for="kitconcept.intranet.behaviors.watchers.IWatchable
+           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+      handler=".watchers.content_modified"
+      />
+  <subscriber
+      for="kitconcept.intranet.behaviors.watchers.IWatchable
+           Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+      handler=".watchers.content_transitioned"
+      />
+  <subscriber
+      for="kitconcept.intranet.behaviors.watchers.IWatchable
+           plone.app.iterate.interfaces.IAfterCheckinEvent"
+      handler=".watchers.content_checked_in"
+      />
+  <subscriber
+      for="kitconcept.intranet.behaviors.watchers.IWatchable
+           zope.lifecycleevent.interfaces.IObjectCopiedEvent"
+      handler=".watchers.content_copied"
+      />
+
 </configure>

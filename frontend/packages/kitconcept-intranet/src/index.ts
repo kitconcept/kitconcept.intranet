@@ -4,6 +4,7 @@ import installSlots from './config/slots';
 import installWidgets from './config/widgets';
 import installBlocks from './config/blocks';
 import installTasks from './config/tasks';
+import installNotifications from './config/notifications';
 import PersonView from './components/theme/PersonView';
 import PersonSummary from './components/Summary/PersonSummary';
 import { defineMessages } from 'react-intl';
@@ -137,10 +138,10 @@ defineMessages({
     id: 'The table takes the width of the surrounding block',
     defaultMessage: 'The table takes the width of the surrounding block',
   },
-  // Table shadow (#824): the resize handle of the table width
-  resizeTable: {
-    id: 'Resize table',
-    defaultMessage: 'Resize table',
+  // Table shadow (#836): the alignment toggle
+  centerTable: {
+    id: 'Centre table',
+    defaultMessage: 'Centre table',
   },
 });
 
@@ -156,6 +157,7 @@ const applyConfig = (config: ConfigType) => {
   installWidgets(config);
   installBlocks(config);
   installTasks(config);
+  installNotifications(config);
   (
     config.settings.solrSearchOptions as { showSearchInput?: boolean }
   ).showSearchInput = false;

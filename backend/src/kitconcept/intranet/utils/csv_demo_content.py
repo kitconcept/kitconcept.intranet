@@ -1,14 +1,16 @@
 """Content of the CSV table demo: a CSV file and the Wiki Page that shows it.
 
 Pure data, no Plone imports: used by the distribution's post handler
-(``csv_demo.create_csv_demo``) for freshly created sites. Both objects live
+(``csv_demo.create_csv_demo``) for freshly created sites and by
+``scripts/table_demo_content.py`` (REST, for existing sites). Both objects live
 in the GreenCat workspace next to the table demo pages: the file
 "projektbudget-2026.csv" and the page "Projektbudget aus CSV-Datei" with a
 CSV table block that reads the file whenever the page is shown. The file has
 more than five rows, so the view offers the filter field, and a column of
 plain numbers, so sorting by budget is numeric.
 
-Ticket: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/751
+Tickets: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/751,
+https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/827
 """
 
 from __future__ import annotations
@@ -45,7 +47,8 @@ def csv_table_block(node_id: str, url: str) -> dict:
     return node("ploneBlock", node_id, [text("")], **{"@type": "csvtable", "url": url})
 
 
-def page() -> list[dict]:
+def page(container: str = CONTAINER_PATH) -> list[dict]:
+    """The page; its CSV table block reads the file in ``container``."""
     return [
         title(PAGE_TITLE),
         paragraph(
@@ -57,7 +60,7 @@ def page() -> list[dict]:
             "ohne die Seite zu bearbeiten. Sortieren und Filtern funktionieren "
             "wie bei jeder Wiki-Tabelle.",
         ),
-        csv_table_block("csv-block", f"{CONTAINER_PATH}/{FILE_ID}"),
+        csv_table_block("csv-block", f"{container.rstrip('/')}/{FILE_ID}"),
         paragraph(
             "csv-outro",
             "Die Datei liegt als Beispiel neben dieser Seite; im Editor wird "
@@ -66,6 +69,6 @@ def page() -> list[dict]:
     ]
 
 
-def page_fields() -> tuple[str, str, dict, dict]:
-    """(id, title, blocks, blocks_layout) of the demo page."""
-    return PAGE_ID, PAGE_TITLE, blocks(page()), blocks_layout()
+def page_fields(container: str = CONTAINER_PATH) -> tuple[str, str, dict, dict]:
+    """(id, title, blocks, blocks_layout) of the demo page in ``container``."""
+    return PAGE_ID, PAGE_TITLE, blocks(page(container)), blocks_layout()

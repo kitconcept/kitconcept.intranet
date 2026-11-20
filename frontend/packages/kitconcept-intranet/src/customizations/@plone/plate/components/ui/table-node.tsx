@@ -89,6 +89,35 @@
  *    (theme/components/_wikiTable.scss).
  *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/826
  *    @reekitconcept
+ *  - The width model of research ticket #828 replaces the rules of #824:
+ *    a border between two columns shares the width with its right
+ *    neighbour (the table grows once the neighbour is at its minimum,
+ *    never shrinks); a double edge on the right, both pinned to the
+ *    frame's right edge: the last column's own edge resizes that column
+ *    (the table follows), the table's handle scales all columns and snaps
+ *    to the steps; past the room the pointer's distance from the edge sets
+ *    the speed (zones shown while dragging); a custom width is the sum of
+ *    the columns and is no longer clamped to the room (a wider table
+ *    scrolls and uses the area left of the text column). The handles and
+ *    the drag are components/WikiTable/TableWidthDrag.tsx (Plate's column
+ *    resize handle is replaced in top-level tables, nested tables keep
+ *    it); 32px margin right of the frame in the editor (the
+ *    `wiki-table-editing` class). A step from the width menu scales the
+ *    stored column widths to it; an inserted column in a table with a
+ *    custom width keeps the width, unless the minimums do not fit; a
+ *    deleted column takes its width off a custom width (its rendered
+ *    width when not every column has a stored one). The cells of a
+ *    top-level table on a step take their share of its width (the stored
+ *    column widths are proportions there; as px they widened the table to
+ *    their sum).
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836
+ *    @reekitconcept
+ *  - "Centre table" toggle in the toolbar, next to the width
+ *    (`tableAlign: 'center'`, see components/WikiTable/wikiTableAlign.ts;
+ *    the editor, the view and the diff centre the table; while its width
+ *    is dragged, a centred table's frame keeps its left edge).
+ *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836
+ *    @reekitconcept
  */
 
 import * as React from 'react';
@@ -116,6 +145,7 @@ import {
 } from '@platejs/table/react';
 import { PopoverAnchor } from '@radix-ui/react-popover';
 import {
+  AlignHorizontalJustifyCenterIcon,
   CombineIcon,
   EraserIcon,
   Grid2X2Icon,
@@ -196,23 +226,41 @@ import {
   WidthLayoutIcon,
   WidthMediumIcon,
 } from '@kitconcept/intranet/components/WikiTable/tableToolbarIcons';
-// OVERRIDE (824): custom table width
+// OVERRIDE (824, 836): custom table width and the width handles
 import {
+  cellWidthStyle,
   CUSTOM_WIDTH_CLASS,
   customWidthOf,
-  dragChange,
+  deletedColumnChange,
+  scaledTableMinWidth,
   formatPx,
-  dragWidth,
-  fitColSizes,
   frameWidthOf,
+  hasColumnWidths,
   insertedColSizes,
   seedColSizes,
+  stepColSizes,
   stepWidth,
+  sumOf,
   TABLE_WIDTH_KEY,
   TABLE_WIDTH_VAR,
-  type DragWidth,
-  type StepWidths,
+  type WidthChange,
 } from '@kitconcept/intranet/components/WikiTable/wikiTableCustomWidth';
+import {
+  ColumnBorderGrip,
+  measureBlock,
+  measureColumnWidths,
+  measureStepWidths,
+  TableEdgeHandles,
+  TableWidthDragContext,
+  useTableWidthDrag,
+} from '@kitconcept/intranet/components/WikiTable/TableWidthDrag';
+import type { TableWidth } from '@kitconcept/intranet/components/WikiTable/wikiTableWidthPlugin';
+// OVERRIDE (836): table alignment
+import {
+  isCentered,
+  TABLE_ALIGN_CENTER,
+  TABLE_ALIGN_KEY,
+} from '@kitconcept/intranet/components/WikiTable/wikiTableAlign';
 
 import { Button } from '@plone/plate/components/ui/button';
 import { BlockInnerContainer } from '@plone/plate/components/ui/block-inner-container';
@@ -330,10 +378,10 @@ const messages = defineMessages({
     id: 'The table takes the width of the surrounding block',
     defaultMessage: 'The table takes the width of the surrounding block',
   },
-  // OVERRIDE (824)
-  resizeTable: {
-    id: 'Resize table',
-    defaultMessage: 'Resize table',
+  // OVERRIDE (836)
+  centerTable: {
+    id: 'Centre table',
+    defaultMessage: 'Centre table',
   },
 });
 
@@ -375,28 +423,20 @@ const setTableStepWithoutCustomWidth = (
   setTableStep(editor, path, value);
 };
 
-// OVERRIDE (824): stores the width a drag of the resize handle ended on, as
-// one change (one undo step): the step it snapped to (and no custom width)
-// or the custom width; column widths that no longer fit are scaled down
-// (see `dragChange`). A drag that changes nothing writes nothing, nor
-// does one that ends at the room when the frame was clamped to it.
-const storeDraggedWidth = (
+// OVERRIDE (836): stores what a drag of a width handle ended with, as one
+// change (one undo step): the column widths, and the step it ended on (the
+// custom width goes) or the custom width (see `dragResult` in
+// components/WikiTable/wikiTableCustomWidth.ts); a border drag that kept
+// the table's width leaves the width as it is.
+const storeWidthChange = (
   editor: SlateEditor,
   table: TTableElement,
-  next: DragWidth,
-  start: { width: number; steps: StepWidths },
+  change: WidthChange,
 ) => {
-  const change = dragChange(table, next, {
-    startWidth: start.width,
-    room: start.steps.room,
-    text: start.steps.text,
-  });
   const path = editor.api.findPath(table);
-  if (!change || !path) return;
+  if (!path) return;
   editor.tf.withoutNormalizing(() => {
-    if (change.colSizes) {
-      editor.tf.setNodes({ colSizes: change.colSizes }, { at: path });
-    }
+    editor.tf.setNodes({ colSizes: change.colSizes }, { at: path });
     if (change.step) {
       setTableStepWithoutCustomWidth(editor, table, path, change.step);
     } else if (change.tableWidth) {
@@ -406,48 +446,6 @@ const storeDraggedWidth = (
       );
     }
   });
-};
-
-// OVERRIDE (824): whether the table shows its resize handle (its cells then
-// leave the right edge to it, see TableCellElement).
-const TableWidthHandleContext = React.createContext(false);
-
-// OVERRIDE (824): the width shown while dragging; `unchanged`: releasing
-// here changes nothing, the label shows the table's width as it is.
-type TablePreview = DragWidth & { unchanged: boolean };
-
-// OVERRIDE (824): the text width and the content width of a table's block.
-const measureBlock = (block: HTMLElement) => {
-  const style = window.getComputedStyle(block);
-  const content =
-    block.clientWidth -
-    (Number.parseFloat(style.paddingLeft) || 0) -
-    (Number.parseFloat(style.paddingRight) || 0);
-  return {
-    style,
-    text: Number.parseFloat(
-      style.getPropertyValue('--default-container-width'),
-    ),
-    content,
-  };
-};
-
-// OVERRIDE (824): the step widths of the table's block in px, as the CSS of
-// theme/components/_wikiTable.scss resolves them: `--wiki-table-room`
-// reaches from the text column's left edge to the content area's right
-// edge minus the side margin, never less than the text column.
-const measureStepWidths = (block: HTMLElement): StepWidths => {
-  const { style, text, content } = measureBlock(block);
-  const px = (name: string) => Number.parseFloat(style.getPropertyValue(name));
-  const margin = px('--wiki-table-side-margin') || 0;
-  // The table starts at the text column's left edge (#826).
-  const start = Math.max(0, (content - text) / 2);
-  return {
-    text,
-    medium: px('--wiki-table-medium-width'),
-    wide: px('--layout-container-width'),
-    room: Math.max(text, content - start - margin),
-  };
 };
 
 export const TableElement = withHOC(
@@ -467,14 +465,18 @@ export const TableElement = withHOC(
 
     const isSelectingTable = useBlockSelected(props.element.id as string);
 
-    // OVERRIDE (824): resize handle for the table width, on top-level
-    // tables only (a table in a column fills the column). While dragging,
-    // the width is previewed on the block (inline `--wiki-table-width` and
-    // the custom width class, the same CSS as a stored width); the node is
-    // written once, when the drag ends.
+    // OVERRIDE (824, 836): the width handles, on top-level tables only (a
+    // table in a column fills the column): borders between columns, the
+    // last column's edge and the table's handle (see
+    // components/WikiTable/TableWidthDrag.tsx). While dragging, the width
+    // is previewed on the block (inline `--wiki-table-width` and the custom
+    // width class, the same CSS as a stored width), the columns through
+    // Plate's column size overrides; the node is written once, when the
+    // drag ends.
+    const intl = useIntl();
+    const editor = useEditorRef();
     const blockRef = React.useRef<HTMLDivElement>(null);
-    const [preview, setPreview] = React.useState<TablePreview | null>(null);
-    // No handle where the content area is narrower than the text column
+    // No handles where the content area is narrower than the text column
     // (a small window, or the editor's sidebar and navigation tree taking
     // the room): every step and custom width is the content area there,
     // nothing can be resized.
@@ -493,23 +495,67 @@ export const TableElement = withHOC(
       return () => observer.disconnect();
     }, [topLevel]);
     const resizable = topLevel && !narrow;
+    const stepName = React.useCallback(
+      (step: TableWidth) => {
+        const message = TABLE_WIDTHS.find(
+          (item) => item.value === step,
+        )?.message;
+        return message ? intl.formatMessage(message) : step;
+      },
+      [intl],
+    );
+    const onCommit = React.useCallback(
+      (change: WidthChange) => storeWidthChange(editor, props.element, change),
+      [editor, props.element],
+    );
+    const { api: dragApi, preview } = useTableWidthDrag({
+      blockRef,
+      element: props.element,
+      enabled: resizable,
+      stepName,
+      onCommit,
+    });
+    // OVERRIDE (836): a top-level table on a step (not while its width is
+    // dragged, the preview is a custom width): the cells take their share
+    // of its width (TableCellElement), the table keeps each column at the
+    // minimum width.
+    const scaledMinWidth =
+      props.path.length === 1 &&
+      customWidthOf(props.element) === null &&
+      !dragApi.active
+        ? scaledTableMinWidth(
+            props.element.colSizes as number[] | undefined,
+            getTableColumnCount(props.element),
+          )
+        : 0;
 
     const content = (
       <PlateElement
         {...props}
         // OVERRIDE (824)
         ref={useComposedRef(props.ref, blockRef)}
-        className={cn('py-5', preview && CUSTOM_WIDTH_CLASS)}
+        className={cn(
+          'py-5',
+          preview && CUSTOM_WIDTH_CLASS,
+          // OVERRIDE (836): the editor's margin for the right edges
+          !readOnly && 'wiki-table-editing',
+          // OVERRIDE (836): a centred table's frame keeps its left edge
+          // while its width is dragged
+          preview?.pinnedLeft != null && 'wiki-table-drag-pinned',
+        )}
         style={
           preview
             ? ({
                 [TABLE_WIDTH_VAR]: `${preview.width}px`,
+                ...(preview.pinnedLeft != null
+                  ? { '--wiki-table-drag-left': `${preview.pinnedLeft}px` }
+                  : {}),
               } as React.CSSProperties)
             : undefined
         }
       >
         <BlockInnerContainer
-          // OVERRIDE (824): positions the resize handle
+          // OVERRIDE (824): positions the width handles
           className={resizable ? 'wiki-table-resizable' : undefined}
         >
           <div
@@ -524,16 +570,22 @@ export const TableElement = withHOC(
                 // "Tailwind version" comments in this file). pt-3: 12px on
                 // top for the column drag handles (the container clips
                 // vertical overflow). OVERRIDE (824): the gutter is the
-                // container's left padding (1.5rem, inline below; Plate's
-                // table indent `marginLeft` is disabled for wiki tables),
-                // the table starts at the text column.
+                // container's left padding (1.5rem; Plate's table indent
+                // `marginLeft` is disabled for wiki tables), the table
+                // starts at the text column. OVERRIDE (836): the padding
+                // also holds the left area of a table wider than the room
+                // (CSS, `--wiki-table-pad`).
                 // `
-                //   -ml-6 pt-3
+                //   -ml-6 pt-3 pl-6
                 //   *:data-[slot=block-selection]:left-6
                 // `,
                 'wiki-table-controls',
             )}
-            style={{ paddingLeft: hasControls ? '1.5rem' : marginLeft }}
+            style={
+              !hasControls && marginLeft
+                ? { paddingLeft: marginLeft }
+                : undefined
+            }
           >
             <div className="group/table relative w-fit">
               <table
@@ -542,6 +594,11 @@ export const TableElement = withHOC(
                   isSelectingCell && 'selection:bg-transparent',
                 )}
                 {...tableProps}
+                // OVERRIDE (836): a table on a step: its columns are shares
+                // of its width; no narrower than keeps each at the minimum
+                style={
+                  scaledMinWidth ? { minWidth: scaledMinWidth } : undefined
+                }
               >
                 <tbody className="min-w-full">{children}</tbody>
               </table>
@@ -554,12 +611,12 @@ export const TableElement = withHOC(
               )}
             </div>
           </div>
-          {/* OVERRIDE (824) */}
+          {/* OVERRIDE (824, 836) */}
           {resizable && (
-            <TableWidthHandle
-              blockRef={blockRef}
+            <TableEdgeHandles
+              api={dragApi}
               preview={preview}
-              onPreview={setPreview}
+              columns={getTableColumnCount(props.element)}
             />
           )}
         </BlockInnerContainer>
@@ -571,146 +628,13 @@ export const TableElement = withHOC(
     }
 
     return (
-      // OVERRIDE (824)
-      <TableWidthHandleContext.Provider value={resizable}>
+      // OVERRIDE (836): the column borders of the cells start drags too
+      <TableWidthDragContext.Provider value={resizable ? dragApi : null}>
         <TableFloatingToolbar>{content}</TableFloatingToolbar>
-      </TableWidthHandleContext.Provider>
+      </TableWidthDragContext.Provider>
     );
   },
 );
-
-// OVERRIDE (824): the handle on the right edge of the table, centred on the
-// edge (a child of the table's inner container, outside the scroll
-// container; the last column has no column resize handle on that edge,
-// see TableCellElement). The drag starts at the rendered width of the inner
-// container, whose left edge stays at the text column (#826): the width
-// follows the pointer one to one. It is kept between the text column and
-// the room and snaps to the step widths. Plate's
-// ResizeHandle reports the drag (`delta` since mousedown, `finished` on
-// mouseup). A label at the handle shows the width or the step while
-// dragging. No keyboard resizing: the width menu sets the steps.
-function TableWidthHandle({
-  blockRef,
-  preview,
-  onPreview,
-}: {
-  blockRef: React.RefObject<HTMLDivElement | null>;
-  preview: TablePreview | null;
-  onPreview: (preview: TablePreview | null) => void;
-}) {
-  const intl = useIntl();
-  const editor = useEditorRef();
-  const element = useElement<TTableElement>();
-  const start = React.useRef<{ width: number; steps: StepWidths } | null>(null);
-  const shown = React.useRef<TablePreview | null>(null);
-  // A handle that goes away during a drag (the window became too narrow
-  // for it) never sees the mouseup: the preview ends with it, nothing is
-  // stored.
-  React.useEffect(() => () => onPreview(null), [onPreview]);
-  // The handle's options are stable (a ref for the element), so Plate's
-  // handle does not re-add its window listeners on every render.
-  const elementRef = React.useRef(element);
-  elementRef.current = element;
-  const begin = React.useCallback(
-    (event: React.MouseEvent | React.TouchEvent) => {
-      const block = blockRef.current;
-      const inner = (event.currentTarget as HTMLElement).parentElement;
-      if (!block || !inner) return;
-      start.current = {
-        width: inner.getBoundingClientRect().width,
-        steps: measureStepWidths(block),
-      };
-    },
-    [blockRef],
-  );
-  const onResize = React.useCallback(
-    ({ delta, finished }: { delta: number; finished: boolean }) => {
-      const element = elementRef.current;
-      const current = start.current;
-      if (!current) return;
-      // Only the frame's right edge moves (the table is left-aligned with
-      // the text column), so the width changes by the pointer's way.
-      const next = dragWidth(current.width + delta, current.steps);
-      if (!finished) {
-        // The label shows what releasing here stores: nothing for a drag
-        // that changes nothing (see `dragChange`), so then the table's
-        // width as it is.
-        const unchanged =
-          dragChange(element, next, {
-            startWidth: current.width,
-            room: current.steps.room,
-            text: current.steps.text,
-          }) === null;
-        // Only a new width, step or label re-renders the table (and its
-        // toolbar), not every mouse move.
-        const last = shown.current;
-        if (
-          last?.width !== next.width ||
-          last?.step !== next.step ||
-          last?.unchanged !== unchanged
-        ) {
-          shown.current = { ...next, unchanged };
-          onPreview(shown.current);
-        }
-        return;
-      }
-      start.current = null;
-      shown.current = null;
-      onPreview(null);
-      // A click without a move changes nothing.
-      if (delta !== 0) storeDraggedWidth(editor, element, next, current);
-    },
-    [editor, onPreview],
-  );
-  const options = React.useMemo(
-    () => ({
-      direction: 'right' as const,
-      onResize,
-      onMouseDown: (event: React.MouseEvent) => {
-        // Keep the caret where it is (like the toolbar buttons).
-        event.preventDefault();
-        begin(event);
-      },
-      onTouchStart: begin,
-    }),
-    [onResize, begin],
-  );
-  const storedWidth = customWidthOf(element);
-  const storedStep = (element as Record<string, unknown>)[BLOCK_WIDTH_KEY];
-  const shownWidth = preview?.unchanged ? storedWidth : preview?.width;
-  const shownStep = preview?.unchanged
-    ? storedWidth
-      ? null
-      : typeof storedStep === 'string'
-        ? storedStep
-        : 'default'
-    : preview?.step;
-  const stepMessage = shownStep
-    ? TABLE_WIDTHS.find((item) => item.value === shownStep)?.message
-    : undefined;
-  const label = intl.formatMessage(messages.resizeTable);
-
-  return (
-    <ResizeHandle
-      options={options}
-      className="wiki-table-resize-handle"
-      contentEditable={false}
-      suppressContentEditableWarning
-      role="separator"
-      aria-orientation="vertical"
-      aria-label={label}
-      title={preview ? undefined : label}
-    >
-      {preview && (
-        <span className="wiki-table-resize-label">
-          {stepMessage
-            ? intl.formatMessage(stepMessage)
-            : formatPx(intl, shownWidth ?? preview.width)}
-        </span>
-      )}
-    </ResizeHandle>
-  );
-}
 
 function TableFloatingToolbar({
   children,
@@ -846,7 +770,8 @@ function TableFloatingToolbar({
   // minimum), so a table whose widths filled its frame scrolled. See
   // `insertedColSizes`. The frame: the step or custom width of a top-level
   // table (as the width menu measures it), the rendered frame of a nested
-  // one.
+  // one. OVERRIDE (836): a custom width is the sum of the columns: when
+  // their minimums do not fit it, it grows with them.
   const insertColumn = (side: 'before' | 'after') => {
     const tablePath = editor.api.findPath(element);
     const block = editor.api.toDOMNode(element);
@@ -880,18 +805,63 @@ function TableFloatingToolbar({
       side,
       frame,
     );
-    if (colSizes) editor.tf.setNodes({ colSizes }, { at: tablePath });
+    if (!colSizes) return;
+    const custom = customWidthOf(table);
+    editor.tf.setNodes(
+      custom !== null && sumOf(colSizes) > custom
+        ? { colSizes, [TABLE_WIDTH_KEY]: sumOf(colSizes) }
+        : { colSizes },
+      { at: tablePath },
+    );
+  };
+
+  // OVERRIDE (836): a custom width is the sum of the columns: after a
+  // column delete it is the sum of the columns left (a step when it lands
+  // on one, the text width at least), in the delete's undo step (same
+  // tick). See `deletedColumnChange`. Plate removes only the column's
+  // entry in `colSizes`. A custom width without a stored width for every
+  // column (set by the handle of 824 without a column drag) first stores
+  // the columns as they are rendered, as a drag does, in the same step
+  // (already as displayed: not scaled to the custom width again).
+  const deleteColumn = () => {
+    const tablePath = editor.api.findPath(element);
+    const block = editor.api.toDOMNode(element);
+    let before = element.colSizes as number[] | undefined;
+    let custom = customWidthOf(element);
+    if (!tablePath || tablePath.length !== 1 || !block || custom === null) {
+      tf.remove.tableColumn();
+      return;
+    }
+    if (!hasColumnWidths(before, getTableColumnCount(element))) {
+      const rendered = measureColumnWidths(block, element);
+      if (rendered) {
+        editor.tf.setNodes({ colSizes: rendered }, { at: tablePath });
+        before = rendered;
+        custom = sumOf(rendered);
+      }
+    }
+    tf.remove.tableColumn();
+    // The last column takes the table with it.
+    const table = editor.api.node<TTableElement>(tablePath)?.[0];
+    if (table?.type !== editor.getType(KEYS.table)) return;
+    const change = deletedColumnChange(
+      before,
+      table.colSizes as number[] | undefined,
+      measureStepWidths(block),
+      custom,
+    );
+    if (change) storeWidthChange(editor, table, change);
   };
 
   // OVERRIDE (824): a step also removes the custom width, in one undo step.
-  // Stored column widths that do not fit the step are scaled down, as a
-  // drag does (see `fitColSizes`).
+  // OVERRIDE (836): stored column widths are scaled to the step's width
+  // (see `stepColSizes`).
   const setTableWidth = (value: string) => {
     const tablePath = editor.api.findPath(element);
     if (!tablePath) return;
     const block = editor.api.toDOMNode(element);
     const colSizes = block
-      ? fitColSizes(
+      ? stepColSizes(
           element.colSizes as number[] | undefined,
           stepWidth(value, measureStepWidths(block)),
         )
@@ -900,6 +870,22 @@ function TableFloatingToolbar({
       if (colSizes) editor.tf.setNodes({ colSizes }, { at: tablePath });
       setTableStepWithoutCustomWidth(editor, element, tablePath, value);
     });
+  };
+
+  // OVERRIDE (836): left-aligned (no property) or centred, see
+  // components/WikiTable/wikiTableAlign.ts.
+  const centered = isCentered(element);
+  const toggleCentered = () => {
+    const tablePath = editor.api.findPath(element);
+    if (!tablePath) return;
+    if (centered) {
+      editor.tf.unsetNodes(TABLE_ALIGN_KEY, { at: tablePath });
+    } else {
+      editor.tf.setNodes(
+        { [TABLE_ALIGN_KEY]: TABLE_ALIGN_CENTER },
+        { at: tablePath },
+      );
+    }
   };
 
   // OVERRIDE: only the table holding the selection opens its toolbar.
@@ -1212,9 +1198,8 @@ function TableFloatingToolbar({
               </ToolbarButton>
               {/* OVERRIDE: delete last in the group (#674) */}
               <ToolbarButton
-                onClick={() => {
-                  tf.remove.tableColumn();
-                }}
+                // OVERRIDE (836): see `deleteColumn`
+                onClick={deleteColumn}
                 onMouseDown={(e) => e.preventDefault()}
                 tooltip="Delete column"
               >
@@ -1275,6 +1260,25 @@ function TableFloatingToolbar({
                   </DropdownMenuContent>
                 </DropdownMenuPortal>
               </DropdownMenu>
+            </span>
+            {/* OVERRIDE (836): centred or left-aligned; like the width, a
+                nested table fills its container. */}
+            <span
+              title={
+                nestedTable
+                  ? intl.formatMessage(messages.widthNested)
+                  : undefined
+              }
+            >
+              <ToolbarButton
+                pressed={centered}
+                disabled={nestedTable}
+                onClick={toggleCentered}
+                onMouseDown={(e) => e.preventDefault()}
+                tooltip={intl.formatMessage(messages.centerTable)}
+              >
+                <AlignHorizontalJustifyCenterIcon />
+              </ToolbarButton>
             </span>
           </ToolbarGroup>
         </Toolbar>
@@ -1578,7 +1582,9 @@ function RowDropLine({ position }: { position: 'before' | 'after' | null }) {
   );
 }
 
-// OVERRIDE (824): before a column border is dragged, every column gets its
+// OVERRIDE (824): before a column border of a nested table is dragged
+// (top-level tables have the width handles of TableWidthDrag, 836), every
+// column gets its
 // rendered width as its stored width, when the stored ones do not render
 // as they are (see `seedColSizes`): otherwise the fixed layout stretches
 // the dragged column and its border jumps away from the pointer. The
@@ -1620,6 +1626,9 @@ const seedRenderedColSizes = (
   return true;
 };
 
+// OVERRIDE (836): a stable empty value for the selector below.
+const NO_COL_SIZES: number[] = [];
+
 export function TableCellElement({
   isHeader,
   ...props
@@ -1646,17 +1655,33 @@ export function TableCellElement({
   const { borders, colIndex, colSpan, minHeight, rowIndex, selected, width } =
     useTableCellElement();
 
-  // OVERRIDE (824): the right edge of a table with a resize handle
-  // (TableWidthHandle) belongs to that handle: its last column gets no
-  // column resize handle there, so there is one handle on that edge. A
-  // table without one (nested, or where the content area is narrower than
-  // the text column) keeps Plate's.
-  const hasTableHandle = React.useContext(TableWidthHandleContext);
+  // OVERRIDE (824, 836): in a table with width handles (TableWidthDrag:
+  // top-level, the content area not narrower than the text column) the
+  // borders between columns are its column border grips, and the right
+  // edge belongs to its double edge (the last column's edge and the
+  // table's handle, on the frame): the last column has no grip there. A
+  // table without them (nested, or where the content area is narrower
+  // than the text column) keeps Plate's column resize handles.
+  const widthDrag = React.useContext(TableWidthDragContext);
+  const hasTableHandle = widthDrag !== null;
   const tableColumns = useElementSelector(
     ([node]) => getTableColumnCount(node as TTableElement),
     [],
     { key: KEYS.table },
   );
+  // OVERRIDE (836): the stored column widths of a top-level table on a step
+  // (no custom width) when no width is being dragged: the cells take their
+  // share of the table's width (see `scaledCellWidth`); null otherwise.
+  const stepColSizes = useElementSelector(
+    ([node, path]) =>
+      path.length === 1 && customWidthOf(node) === null
+        ? ((node as TTableElement).colSizes as number[] | undefined) ??
+          NO_COL_SIZES
+        : null,
+    [],
+    { key: KEYS.table },
+  );
+  const scaledColSizes = widthDrag?.active ? null : stepColSizes;
   // `colIndex` is the cell's last column (Plate's `endingColIndex`).
   const atTableEdge = hasTableHandle && colIndex >= tableColumns - 1;
 
@@ -1672,7 +1697,8 @@ export function TableCellElement({
   const editor = useEditorRef();
   const cellRef = React.useRef<HTMLTableCellElement>(null);
 
-  // OVERRIDE (824): the column resize handles seed the stored column widths
+  // OVERRIDE (824): Plate's column resize handles (nested tables) seed the
+  // stored column widths
   // from the rendered ones on the first move of a drag
   // (`seedRenderedColSizes`); that move only seeds, the next ones resize
   // from the seeded widths. Plate's write at the end of the drag joins the
@@ -1785,12 +1811,20 @@ export function TableCellElement({
       style={
         {
           '--cellBackground': element.background,
-          maxWidth: width || 240,
-          minWidth: width || 120,
-          // OVERRIDE: column width for the fixed table layout (see
-          // theme/components/_wikiTable.scss); unresized columns share the
-          // table width, resized ones keep their proportion.
-          width: width || 120,
+          // OVERRIDE (836): a top-level table on a step: the cell's share of
+          // the table's width (the step), not px that would widen the
+          // table. While a width is dragged the preview is a custom width,
+          // and px follow the pointer. OVERRIDE: px otherwise, the column
+          // width for the fixed table layout (Plate set only min and max
+          // width). The same style as the view (`cellWidthStyle`); the
+          // cell's first column (`colIndex` is its last).
+          ...cellWidthStyle(
+            scaledColSizes,
+            tableColumns,
+            colIndex - colSpan + 1,
+            colSpan,
+            width,
+          ),
         } as React.CSSProperties
       }
       attributes={{
@@ -1821,7 +1855,11 @@ export function TableCellElement({
                 <ColumnDragHandle dragProps={columnDnd.dragProps} />
               )}
               <ColumnDropLine position={columnDnd.dropLine} />
-              {!atTableEdge && (
+              {/* OVERRIDE (836) */}
+              {widthDrag && !atTableEdge && (
+                <ColumnBorderGrip api={widthDrag} index={colIndex} />
+              )}
+              {!widthDrag && (
                 <ResizeHandle
                   // OVERRIDE (824)
                   {...rightProps}
@@ -1832,10 +1870,11 @@ export function TableCellElement({
               )}
               <ResizeHandle {...bottomProps} className="-bottom-1 h-2" />
 
-              {/* OVERRIDE (824): no hover line on the column resize
+              {/* OVERRIDE (824): no hover line on Plate's column resize
                   handle (Plate showed a `bg-ring` line on hover and while
                   resizing, `columnResizeVariants`): the col-resize cursor
-                  is the only affordance, like the table's resize handle. */}
+                  is the only affordance. OVERRIDE (836): the column border
+                  grips of a top-level table show a line on hover. */}
             </>
           )}
         </div>

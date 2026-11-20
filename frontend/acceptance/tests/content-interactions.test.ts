@@ -122,3 +122,43 @@ test.describe('RelatedItems', () => {
     await expect(page.locator('.related-items')).toHaveCount(0);
   });
 });
+
+test.describe('Watch content', () => {
+  test('a logged-in user can watch and stop watching a page', async ({
+    page,
+  }) => {
+    await login(page);
+    const pageId = `watch-content-${uniqueSuffix()}`;
+    await createContent(page, {
+      contentType: 'Document',
+      contentId: pageId,
+      contentTitle: 'Watched page',
+      transition: 'publish',
+    });
+
+    await page.goto(`/${pageId}`, { waitUntil: 'networkidle' });
+    // On a Document the watch button sits in the About this content box.
+    // It is a toggle: its name stays the same, aria-pressed has the state.
+    const watchButton = page
+      .locator('.about-content')
+      .getByRole('button', { name: 'Watch this content' });
+    await expect(watchButton).toHaveAttribute('aria-pressed', 'false');
+
+    await watchButton.click();
+    await expect(
+      page.getByText('You are now watching this content'),
+    ).toBeVisible();
+    await expect(watchButton).toHaveAttribute('aria-pressed', 'true');
+    await expect(watchButton).toContainText('Watching');
+
+    // The state comes from the backend, so it survives a reload.
+    await page.reload({ waitUntil: 'networkidle' });
+    await expect(watchButton).toHaveAttribute('aria-pressed', 'true');
+
+    await watchButton.click();
+    await expect(
+      page.getByText('You will no longer receive updates for this content.'),
+    ).toBeVisible();
+    await expect(watchButton).toHaveAttribute('aria-pressed', 'false');
+  });
+});

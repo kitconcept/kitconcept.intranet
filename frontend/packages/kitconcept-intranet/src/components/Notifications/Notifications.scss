@@ -1,0 +1,406 @@
+$notification-accent: #007eb1;
+$notification-border: #c7d5d8;
+$notification-unread-bg: #eef7fb;
+$notification-muted: #5a6a70;
+$notification-badge: #c8102e;
+
+// Header bell
+
+.notification-bell {
+  position: relative;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &[data-hovered],
+  &[data-pressed] {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid $notification-accent;
+    outline-offset: 2px;
+  }
+}
+
+.notification-badge {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  min-width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: $notification-badge;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+
+// VLT's tools bar lays its links out inline: keep the bell aligned.
+.header .tools .notification-bell {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.notification-popover {
+  width: min(380px, calc(100vw - 32px));
+  border: 1px solid $notification-border;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.notification-dropdown {
+  outline: none;
+
+  .notification-list {
+    max-height: 420px;
+    overflow-y: auto;
+  }
+}
+
+.notification-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid $notification-border;
+
+  h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.notification-link-button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: $notification-accent;
+  cursor: pointer;
+  font-size: 14px;
+
+  &[data-hovered] {
+    text-decoration: underline;
+  }
+}
+
+.notification-see-all {
+  display: block;
+  padding: 12px 16px;
+  border-top: 1px solid $notification-border;
+  color: $notification-accent;
+  font-size: 14px;
+  text-align: center;
+}
+
+// Shared list
+
+.notification-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.notification-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eef1f3;
+  gap: 12px;
+
+  &.unread {
+    background: $notification-unread-bg;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.notification-icon {
+  display: inline-flex;
+  flex: none;
+  margin-top: 2px;
+  color: $notification-muted;
+
+  .notification-like & {
+    color: $notification-badge;
+  }
+}
+
+.notification-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.notification-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+
+  strong {
+    font-weight: 600;
+  }
+
+  a {
+    color: $notification-accent;
+    font-size: inherit;
+    font-weight: 500;
+  }
+}
+
+.notification-meta {
+  margin: 2px 0 0;
+  color: $notification-muted;
+  font-size: 13px;
+
+  a {
+    color: $notification-accent;
+    font-size: inherit;
+  }
+}
+
+.notification-item.compact {
+  .notification-text {
+    font-size: 14px;
+  }
+
+  .notification-dot {
+    top: 18px;
+  }
+}
+
+.notification-dot {
+  position: absolute;
+  top: 20px;
+  left: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $notification-accent;
+}
+
+.notification-mark-read {
+  display: inline-flex;
+  flex: none;
+  padding: 6px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: $notification-muted;
+  cursor: pointer;
+
+  &[data-hovered] {
+    background: rgba(0, 0, 0, 0.06);
+    color: $notification-accent;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid $notification-accent;
+  }
+}
+
+.notification-empty {
+  padding: 16px;
+  margin: 0;
+  color: $notification-muted;
+}
+
+// Overview page
+
+.notifications-view {
+  max-width: 880px;
+  padding: 40px 24px 72px;
+  margin: 0 auto;
+
+  h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.15;
+  }
+
+  .notification-list {
+    overflow: hidden;
+    border: 1px solid $notification-border;
+    border-radius: 8px;
+  }
+
+  .notification-empty {
+    padding: 24px 0;
+  }
+}
+
+.notifications-view-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.notifications-mark-all,
+.notifications-load-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid $notification-border;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  gap: 6px;
+
+  &[data-hovered] {
+    border-color: $notification-accent;
+    color: $notification-accent;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid $notification-accent;
+    outline-offset: 2px;
+  }
+}
+
+.notifications-load-more {
+  margin-top: 16px;
+}
+
+.notifications-view-tabs {
+  display: flex;
+  border-bottom: 1px solid $notification-border;
+  margin: 24px 0 8px;
+  gap: 28px;
+
+  .react-aria-Tab {
+    padding: 12px 2px 10px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    &[data-selected] {
+      border-bottom-color: $notification-accent;
+    }
+
+    &[data-focus-visible] {
+      outline: 2px solid $notification-accent;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.notifications-day h2 {
+  margin: 24px 0 8px;
+  color: $notification-muted;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.notifications-view-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notifications-settings-button {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid $notification-border;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+
+  &[data-hovered],
+  &[data-pressed] {
+    border-color: $notification-accent;
+    color: $notification-accent;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid $notification-accent;
+    outline-offset: 2px;
+  }
+}
+
+.notifications-settings-popover {
+  width: min(400px, calc(100vw - 32px));
+}
+
+.notifications-settings-dialog {
+  padding: 16px 20px;
+  outline: none;
+}
+
+.notification-settings {
+  [slot='description'] {
+    display: block;
+    margin: 4px 0 12px;
+    color: $notification-muted;
+    font-size: 14px;
+  }
+}
+
+.notification-settings-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.notification-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  cursor: pointer;
+  font-size: 14px;
+  gap: 10px;
+
+  .notification-checkbox-box {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $notification-muted;
+    border-radius: 4px;
+    color: transparent;
+  }
+
+  &[data-selected] .notification-checkbox-box {
+    border-color: $notification-accent;
+    background: $notification-accent;
+    color: #fff;
+  }
+
+  &[data-focus-visible] .notification-checkbox-box {
+    outline: 2px solid $notification-accent;
+    outline-offset: 2px;
+  }
+}

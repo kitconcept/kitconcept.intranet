@@ -18,4 +18,6 @@ feedback
 byline
 clm
 review
+notifications
+watch
 ```

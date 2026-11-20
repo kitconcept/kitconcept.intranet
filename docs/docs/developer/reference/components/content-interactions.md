@@ -24,6 +24,10 @@ The **ContentInteractions.jsx** component is a custom React component that integ
   - The `enable_likes` field must be True for the specific content item
   - Only available when all these conditions are active
 
+- **Watch**: An eye-only toggle to watch the content item
+  - Rendered by the [WatchButton](/developer/reference/components/watch-button) component
+  - Only shown to logged-in users when watching content is enabled and the type has the `kitconcept.intranet.watchers` behavior
+
 - **Comments**: Displays total comment count
   - Only shown when commenting is enabled
 

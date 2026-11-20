@@ -48,6 +48,8 @@ follow its links when you need to do, configure, or extend it.
 | {doc}`personalization` | Boost or filter listings by relevance to the current user's team or location (passive targeting). | All users | Boost needs Solr |
 | {doc}`content-review-reminders` | Schedule content reviews, act on them (approve/delegate/postpone), and remind reviewers by email. | Editors, admins | Off by default |
 | {doc}`likes-and-content-rating` | Let logged-in users like content and see a like count in the interactions bar. | All users | Per-item opt-in |
+| {doc}`notification-center` | Tell authors when colleagues like, edit, or change the state of their content: header bell, overview page, and preferences. | All users | MVP |
+| {doc}`watch-content` | Watch a content item and get an email every time a published version of it changes. | All users | MVP |
 | {doc}`Recycle bin </how-to-guides/content/restore-deleted-content>` | Keep deleted content recoverable until a manager restores or permanently removes it. | Managers | Enabled by default |
 | {doc}`workspaces-and-wiki` | Focused team knowledge areas with nested Wiki Pages, an app-like navigation tree, and a compact header. | All users | v3 |
 | {doc}`wiki-editor` | A modern Plate-powered rich-text editor for Wiki Pages, with links, images, mentions, comments, and suggestions. | Editors | v3 |
@@ -74,6 +76,8 @@ people-and-organisation
 personalization
 content-review-reminders
 likes-and-content-rating
+notification-center
+watch-content
 workspaces-and-wiki
 wiki-editor
 search

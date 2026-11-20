@@ -73,8 +73,12 @@ class TestSiteCreation:
         [
             ("/", "Access contents information", "Anonymous", False),
             ("/", "Access contents information", "Authenticated", True),
+            ("/", "Access contents information", "Manager", True),
+            ("/", "Access contents information", "Site Administrator", True),
             ("/", "View", "Anonymous", False),
             ("/", "View", "Authenticated", True),
+            ("/", "View", "Manager", True),
+            ("/", "View", "Site Administrator", True),
         ],
     )
     def test_content_permission_role(

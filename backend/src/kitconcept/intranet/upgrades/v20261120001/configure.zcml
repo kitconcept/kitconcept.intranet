@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <!-- Restricted profile -->
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:restricted"
+      source="1001"
+      destination="1002"
+      >
+    <genericsetup:upgradeDepends
+        title="Reapply the rolemap of the site root"
+        import_steps="rolemap"
+        />
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="kitconcept.intranet:default"
+      source="20261117001"
+      destination="20261120001"
+      >
+    <genericsetup:upgradeStep
+        title="Grant Manager and Site Administrator access to the site root on restricted sites"
+        handler=".upgrade_restricted_rolemap"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

@@ -5,7 +5,7 @@ myst:
     keywords: "blocks, configuration, TTW, mutator DSL, kitconcept.blocks.config, developer"
 doc_type: how-to
 audience: developer
-last_updated: 2026-03-18
+last_updated: 2026-11-23
 ---
 
 # Configure blocks through the web (TTW)
@@ -19,6 +19,7 @@ This feature relies on the `kitconcept.blocks.config` behavior. It is enabled by
 - **Enabled blocks**—disable blocks from appearing in the blocks chooser
 - **Themes of a block**—define available StyleWrapper themes
 - **Enabled variations of a block**—limit which variations editors can choose
+- **Themes of all blocks at once**—define site-wide StyleWrapper themes with the reserved `"*"` key
 
 These configurations are modeled through a **mutator field** in JSON format. The mutator definition is applied to the hardcoded blocks configuration, modifying default values with the instructions in the field.
 
@@ -49,14 +50,19 @@ The mutator field is stored in `blocks_config_mutator` on the `kitconcept.blocks
 ### TypeScript type definition
 
 ```ts
-export type MutatorDSL = Record<
-  string,
-  {
-    disable?: boolean;
-    variations?: string[];
-    themes?: StyleDefinition[];
-  }
->;
+export type BlockMutator = {
+  disable?: boolean;
+  variations?: string[];
+  themes?: StyleDefinition[];
+};
+
+export type GlobalMutator = {
+  themes?: StyleDefinition[];
+};
+
+export type MutatorDSL = {
+  '*'?: GlobalMutator;
+} & Record<string, BlockMutator | undefined>;
 ```
 
 Where:
@@ -99,6 +105,72 @@ This mutator will:
 - Define a custom theme for the `teaser` block with specific CSS properties.
 - Enable only the `variationB` variation for the `gridBlock`.
 - Disable the `description` block from the blocks chooser.
+
+## Site-wide themes
+
+The reserved `"*"` key sets the themes of all blocks at once.
+It only supports `themes`, and any other key in it is ignored with a warning in the browser console.
+
+```json
+{
+  "*": {
+    "themes": [
+      {
+        "style": {
+          "--theme-color": "#fff",
+          "--theme-high-contrast-color": "#ecebeb",
+          "--theme-foreground-color": "#000",
+          "--theme-low-contrast-foreground-color": "#555555"
+        },
+        "name": "default",
+        "label": "Default"
+      },
+      {
+        "style": {
+          "--theme-color": "#CFE7F9",
+          "--theme-high-contrast-color": "#fff",
+          "--theme-foreground-color": "#000",
+          "--theme-low-contrast-foreground-color": "#333333"
+        },
+        "name": "light-blue",
+        "label": "Light blue"
+      }
+    ]
+  },
+  "__button": {
+    "themes": [
+      {
+        "style": {
+          "--theme-color": "#fff",
+          "--theme-high-contrast-color": "#ecebeb",
+          "--theme-foreground-color": "#000",
+          "--theme-low-contrast-foreground-color": "#555555"
+        },
+        "name": "default",
+        "label": "Default"
+      }
+    ]
+  }
+}
+```
+
+The settings are applied in this order, and a later step takes precedence over an earlier one:
+
+1. The blocks configuration from code.
+2. The `"*"` themes. They replace `config.blocks.themes`, which blocks without their own themes fall back to. Blocks whose themes in code are a copy of `config.blocks.themes` get them too. Blocks with their own palette in code keep it.
+3. The block's own entry. In the example above, the Button block only offers the `default` theme, and all other blocks offer both themes.
+
+Keep these points in mind:
+
+- Include a theme named `default`. Blocks without a selected theme fall back to it. Without it, they are shown without theme colors, and a warning is shown in the browser console.
+- Content stores the name of the selected theme. If you remove or rename a theme, blocks that use it lose their colors without any error.
+- Blocks inside a Grid block inherit the theme of the Grid by its name. If a block's own `themes` entry leaves out names of the site-wide themes, that block cannot inherit them.
+
+## How the configuration is applied
+
+The configuration is merged onto the blocks configuration from code every time it changes, never onto a previous result.
+When you navigate to content without a blocks configuration, the configuration from code is restored.
+So the settings of a site or subsite do not stay active after you leave it.
 
 ## See Also
 

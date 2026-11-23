@@ -6,7 +6,7 @@ myst:
 doc_type: how-to
 audience: admin
 tags: [blocks, configuration, site-settings]
-last_updated: 2026-04-27
+last_updated: 2026-11-23
 ---
 
 # Configure blocks through the web
@@ -21,6 +21,7 @@ You can configure:
 - **Enabled blocks**—disable blocks you don't want editors to use
 - **Themes of a block**—restrict or define available themes
 - **Enabled variations of a block**—limit which block variations are available
+- **Themes of all blocks at once**—define the themes every block offers, with the special `"*"` entry
 
 ## Steps
 
@@ -63,6 +64,54 @@ The field accepts a JSON object. Use double quotes and no trailing commas (stand
   }
 }
 ```
+
+**Example—set the themes of all blocks, and limit the Button block to one theme:**
+
+```json
+{
+  "*": {
+    "themes": [
+      {
+        "style": {
+          "--theme-color": "#fff",
+          "--theme-high-contrast-color": "#ecebeb",
+          "--theme-foreground-color": "#000",
+          "--theme-low-contrast-foreground-color": "#555555"
+        },
+        "name": "default",
+        "label": "Default"
+      },
+      {
+        "style": {
+          "--theme-color": "#CFE7F9",
+          "--theme-high-contrast-color": "#fff",
+          "--theme-foreground-color": "#000",
+          "--theme-low-contrast-foreground-color": "#333333"
+        },
+        "name": "light-blue",
+        "label": "Light blue"
+      }
+    ]
+  },
+  "__button": {
+    "themes": [
+      {
+        "style": {
+          "--theme-color": "#fff",
+          "--theme-high-contrast-color": "#ecebeb",
+          "--theme-foreground-color": "#000",
+          "--theme-low-contrast-foreground-color": "#555555"
+        },
+        "name": "default",
+        "label": "Default"
+      }
+    ]
+  }
+}
+```
+
+A block's own `themes` entry takes precedence over the `"*"` entry.
+Always include a theme named `default`, and don't remove or rename a theme that content already uses: blocks that use it lose their colors.
 
 ### 4. Save
 

@@ -1711,6 +1711,9 @@ importers:
       '@plone/components':
         specifier: workspace:^
         version: link:../../../../core/packages/components
+      lodash:
+        specifier: 4.18.1
+        version: 4.18.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1720,6 +1723,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-intl:
+        specifier: ^3.12.1
+        version: 3.12.1(@types/react@18.3.31)(react@18.2.0)
     devDependencies:
       '@plone/registry':
         specifier: workspace:*
@@ -1842,11 +1848,17 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@plone/scripts':
-        specifier: ^3.6.1
+        specifier: ^3.10.3
         version: 3.10.7
+      react-intl:
+        specifier: ^3.12.1
+        version: 3.12.1(@types/react@18.3.31)(react@18.2.0)
       release-it:
         specifier: ^19.0.2
         version: 19.2.4(@types/node@24.19.1)(magicast@0.3.5)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/debug@4.1.13)(@types/node@24.19.1)(@vitest/ui@3.2.7)(jiti@2.7.0)(jsdom@28.1.0(@noble/hashes@1.8.0))(less@3.13.1)(lightningcss@1.33.0)(sass@1.58.0)(terser@5.51.2)(yaml@2.9.1)
 
   packages/volto-highlight-block/packages/volto-highlight-block:
     dependencies:

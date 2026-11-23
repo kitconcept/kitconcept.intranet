@@ -1711,9 +1711,6 @@ importers:
       '@plone/components':
         specifier: workspace:^
         version: link:../../../../core/packages/components
-      lodash:
-        specifier: 4.18.1
-        version: 4.18.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -1723,9 +1720,6 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
-      react-intl:
-        specifier: ^3.12.1
-        version: 3.12.1(@types/react@18.3.31)(react@18.2.0)
     devDependencies:
       '@plone/registry':
         specifier: workspace:*
@@ -1736,6 +1730,12 @@ importers:
       '@plone/types':
         specifier: workspace:*
         version: link:../../../../core/packages/types
+      lodash:
+        specifier: 4.18.1
+        version: 4.18.1
+      react-intl:
+        specifier: ^3.12.1
+        version: 3.12.1(@types/react@18.3.31)(react@18.2.0)
       release-it:
         specifier: ^19.0.5
         version: 19.2.4(@types/node@24.19.1)(magicast@0.3.5)

@@ -1,1 +1,0 @@
-Give the workspace area its own calm look, set apart from the portal: a warm light grey rail and navigation column, a white content area and top bar without separator lines, warm near-black text and no accent colour. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/875 @sneridagh

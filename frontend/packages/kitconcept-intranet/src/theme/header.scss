@@ -963,11 +963,18 @@ body.has-header-intranet-compact .sidebar-container {
 // 200px and sizes it with `flex: 1 1 0`, which is too small for most client
 // logos. Give it up to 300px on desktop; below $computer-breakpoint the
 // intranet header's own 130px tablet/mobile sizing still applies.
+// The 80px max-height is lifted too: with it, a logo narrower than 3.75:1
+// (e.g. DLR's 310x93) never reaches 300px wide.
 // https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/871
 @media only screen and (min-width: $computer-breakpoint + 1) {
   body .header-wrapper .header .logo-nav-wrapper .logo {
     max-width: 300px;
+    max-height: none;
     flex: 0 1 300px;
+
+    a img {
+      max-height: none;
+    }
   }
 }
 

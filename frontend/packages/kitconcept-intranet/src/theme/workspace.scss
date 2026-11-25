@@ -1,0 +1,141 @@
+// Workspace look ("variant D", analog Notion).
+//
+// The workspace (a Workspace and everything inside it) is set apart from the
+// portal by a toned rail and navigation column and by the absence of an accent
+// colour. Layout and typography stay as they are: this file only changes
+// colours.
+//
+// The scope is the body class that the compact workspace header sets on every
+// workspace view (`has-header-intranet-compact`, see `Header.tsx`). The
+// components read these tokens with their current portal colour as the
+// fallback, so the portal keeps its look. React Aria popovers render into
+// `body`, so they inherit the tokens too.
+//
+// Deviations from the design, for WCAG 2.1 AA:
+// - Secondary text and placeholders use #696864 instead of #787774 and
+//   #a5a4a0, which stay under 4.5:1 on the navigation tone and its hover.
+// - Muted icons (chevrons, close and row actions) use #858480 instead of
+//   #91918e, which stays under 3:1 on the navigation tone.
+// - Only the published state dot is grey. Private and pending keep their
+//   colour, so the dot still tells the states apart.
+
+body.has-header-intranet-compact {
+  // Palette
+  --workspace-foreground: #37352f;
+  --workspace-foreground-muted: #696864;
+  --workspace-chrome-background: #f8f8f7;
+  --workspace-content-background: #ffffff;
+  --workspace-grey-100: #f1f1ef;
+  --workspace-grey-200: #efefed;
+  --workspace-grey-250: #e9e9e7;
+  --workspace-grey-300: #e3e2e0;
+  --workspace-grey-400: #c7c6c3;
+  --workspace-grey-500: #858480;
+  --workspace-grey-600: #5f5e5b;
+  --workspace-rail-border-color: #e6e5e2;
+
+  // Navigation column
+  --nav-tree-background: var(--workspace-chrome-background);
+  --nav-tree-collapsed-background: var(--workspace-chrome-background);
+  --nav-tree-border-color: transparent;
+  --nav-tree-search-background: var(--workspace-grey-100);
+  --nav-tree-foreground: var(--workspace-foreground);
+  --nav-tree-foreground-strong: var(--workspace-foreground);
+  --nav-tree-foreground-muted: var(--workspace-foreground-muted);
+  --nav-tree-placeholder-color: var(--workspace-foreground-muted);
+  --nav-tree-icon-color: var(--workspace-foreground);
+  --nav-tree-icon-muted-color: var(--workspace-grey-500);
+  --nav-tree-focus-color: var(--workspace-foreground);
+  --nav-tree-hover-background: var(--workspace-grey-200);
+  --nav-tree-current-background: var(--workspace-grey-200);
+  --nav-tree-current-hover-background: var(--workspace-grey-250);
+  --nav-tree-current-accent: transparent;
+  --nav-tree-action-hover-background: var(--workspace-grey-300);
+  --nav-tree-state-published-color: var(--workspace-grey-400);
+
+  // Menus (workspace switcher, item menu, breadcrumb menu)
+  --nav-tree-menu-background: var(--workspace-content-background);
+  --nav-tree-menu-border-color: var(--workspace-grey-300);
+  --nav-tree-menu-hover-background: var(--workspace-grey-100);
+  --workspace-menu-border-color: var(--workspace-grey-300);
+
+  // Top bar
+  --workspace-topbar-background: var(--workspace-content-background);
+  --workspace-topbar-border-color: transparent;
+  --workspace-topbar-foreground: var(--workspace-foreground);
+  --workspace-topbar-foreground-muted: var(--workspace-foreground-muted);
+  --workspace-topbar-control-background: var(--workspace-grey-100);
+  --workspace-topbar-control-border-color: var(--workspace-grey-200);
+  --workspace-topbar-control-hover-background: var(--workspace-grey-200);
+
+  // Navigation tree: grey dot for the published (default) state. The state
+  // colour is an inline style from the workflow mapping, so it needs
+  // `!important`; it is safe here because the token is always set.
+  #navigation-tree .nav-tree-state-dot[data-review-state='published'] {
+    background: var(--nav-tree-state-published-color) !important;
+  }
+
+  // Rail (Volto toolbar): same tone as the navigation column, one thin line
+  // between the two, no shadow, neutral icons without a coloured ring.
+  #toolbar .toolbar {
+    background-color: var(--workspace-chrome-background);
+    box-shadow: none;
+
+    @media only screen and (min-width: $largest-mobile-screen) {
+      border-right: 1px solid var(--workspace-rail-border-color);
+    }
+
+    .toolbar-body a,
+    .toolbar-body button,
+    .toolbar-actions .contents,
+    .toolbar-actions .edit,
+    .toolbar-actions .save,
+    .toolbar-actions .cancel {
+      color: var(--workspace-grey-600);
+    }
+
+    .toolbar-actions .contents.circled {
+      background-color: transparent;
+    }
+
+    svg.circled {
+      border-color: transparent;
+    }
+
+    .toolbar-handler .published::before {
+      background: var(--workspace-grey-400);
+    }
+  }
+
+  // Content: warm near-black text and dark links underlined in grey.
+  #page-document,
+  #page-edit,
+  #page-add {
+    h1.documentFirstHeading {
+      color: var(--workspace-foreground);
+    }
+  }
+
+  .typeset {
+    --typeset-foreground: var(--workspace-foreground);
+    --typeset-muted: var(--workspace-foreground-muted);
+    --link-foreground-color: var(--workspace-foreground);
+
+    a:not(:where(.not-typeset, [data-not-typeset], .not-typeset *)) {
+      text-decoration-color: var(--workspace-grey-400);
+      text-decoration-line: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        text-decoration-color: currentColor;
+      }
+    }
+  }
+
+  .documentByLine {
+    .modified-date,
+    .documentByLine-separator {
+      color: var(--workspace-foreground-muted);
+    }
+  }
+}

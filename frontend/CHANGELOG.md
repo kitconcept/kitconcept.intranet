@@ -8,6 +8,24 @@
 
 <!-- towncrier release notes start -->
 
+## 3.12.0 (2026-11-24)
+
+
+### Feature
+
+- Give the workspace area its own calm look, set apart from the portal: a warm light grey rail and navigation column, a white content area and top bar without separator lines, warm near-black text and no accent colour. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/875 @sneridagh 
+- Increased the maximum width of the header logo from 200px to 300px on desktop. @sneridagh 
+
+
+### Bugfix
+
+- Update to Volto 19.8.2. @sneridagh 
+
+
+### Internal
+
+- Update @kitconcept/core to 2.2.1, @kitconcept/volto-light-theme to 8.1.5, and the block add-ons to the versions VLT 8.1.5 uses, including @kitconcept/volto-highlight-block 5.3.0 and @kitconcept/volto-slider-block 7.2.0. @sneridagh 
+
 ## 3.11.0 (2026-11-20)
 
 

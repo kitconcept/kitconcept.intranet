@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.12.0 (2026-11-24)
+
+
+### Internal
+
+- Update kitconcept.core to 2.2.1, kitconcept.voltolighttheme to 8.1.5, pas.plugins.oidc to 2.1.0 and pas.plugins.authomatic to 3.1.0. @sneridagh 
+
 ## 3.11.0 (2026-11-20)
 
 

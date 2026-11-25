@@ -16,3 +16,15 @@ body.contenttype-wikipage #footer > .container:not(:empty),
 body.contenttype-workspace #footer > .container:not(:empty) {
   padding: 0 !important;
 }
+
+// VLT gives nested footer containers 20px side margins on small screens.
+// With Tailwind's `.container { width: 100% }`
+// that overflows the viewport, so use padding for the gutter instead.
+#footer > .container:not(:empty) .container {
+  @container (max-width: 980px) {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

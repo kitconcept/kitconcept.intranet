@@ -21,8 +21,8 @@ body.has-sidebar .header-intranet-compact-wrapper {
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  border-bottom: 1px solid #eef1f3;
-  background-color: $white;
+  border-bottom: 1px solid var(--workspace-topbar-border-color, #eef1f3);
+  background-color: var(--workspace-topbar-background, #{$white});
   gap: 24px;
   transition: background-color 220ms ease;
 
@@ -53,8 +53,10 @@ body.has-sidebar .header-intranet-compact-wrapper {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    // Take the free space so the search and the bell stay on the right.
+    margin-right: auto;
     margin-bottom: 0;
-    color: #878f93;
+    color: var(--workspace-topbar-foreground-muted, #878f93);
 
     .react-aria-Breadcrumb,
     .react-aria-Link {
@@ -63,23 +65,23 @@ body.has-sidebar .header-intranet-compact-wrapper {
     }
 
     .react-aria-Link {
-      color: #878f93;
+      color: var(--workspace-topbar-foreground-muted, #878f93);
       font-size: 14px;
       font-weight: 400;
       line-height: normal;
     }
 
     .react-aria-Link[data-hovered]:has(.header-breadcrumb-home) {
-      color: $black;
+      color: var(--workspace-topbar-foreground, #{$black});
     }
 
     .react-aria-Link[data-hovered] .header-breadcrumb-parent {
-      color: $black;
+      color: var(--workspace-topbar-foreground, #{$black});
       text-decoration: underline;
     }
 
     .react-aria-Breadcrumb:last-child .react-aria-Link {
-      color: $black;
+      color: var(--workspace-topbar-foreground, #{$black});
       text-decoration: none;
     }
 
@@ -95,13 +97,13 @@ body.has-sidebar .header-intranet-compact-wrapper {
     padding: 0;
     border: 0;
     border-radius: 6px;
-    background: #f2f5f6;
-    color: $black;
+    background: var(--workspace-topbar-control-background, #f2f5f6);
+    color: var(--workspace-topbar-foreground, #{$black});
     cursor: pointer;
 
     &[data-hovered],
     &[data-focused] {
-      background: #eef1f3;
+      background: var(--workspace-topbar-control-hover-background, #eef1f3);
     }
   }
 }
@@ -117,7 +119,7 @@ body:has(.header-intranet-compact) {
 .react-aria-Popover:has(.header-breadcrumb-menu) {
   width: min(640px, calc(100vw - 16px));
   max-width: none;
-  border: 1px solid #e1e6e9;
+  border: 1px solid var(--workspace-menu-border-color, #e1e6e9);
   border-radius: 8px;
   background: $white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
@@ -140,7 +142,7 @@ body:has(.header-intranet-compact) {
     padding: 6px 12px;
 
     margin: 0;
-    color: #878f93;
+    color: var(--workspace-topbar-foreground-muted, #878f93);
     font-size: 14px;
     font-weight: 400;
     gap: 10px;
@@ -148,16 +150,16 @@ body:has(.header-intranet-compact) {
 
     &[data-hovered],
     &[data-focused] {
-      background: #eef1f3;
+      background: var(--workspace-topbar-control-hover-background, #eef1f3);
     }
 
     &:last-child {
-      color: $black;
+      color: var(--workspace-topbar-foreground, #{$black});
     }
 
     svg {
       flex: 0 0 auto;
-      color: #878f93;
+      color: var(--workspace-topbar-foreground-muted, #878f93);
     }
 
     span {
@@ -179,16 +181,16 @@ body:has(.header-intranet-compact) {
   align-items: center;
   justify-content: flex-start;
   padding: 0 16px;
-  border: 1px solid #eef1f3;
+  border: 1px solid var(--workspace-topbar-control-border-color, #eef1f3);
   border-radius: 3px;
-  background: #f2f5f6;
-  color: #878f93;
+  background: var(--workspace-topbar-control-background, #f2f5f6);
+  color: var(--workspace-topbar-foreground-muted, #878f93);
   cursor: pointer;
   gap: 12px;
 
   &:hover,
   &:focus {
-    color: #5f6970;
+    color: var(--workspace-topbar-foreground, #5f6970);
   }
 
   &:focus-visible {
@@ -957,6 +959,45 @@ $search-text: #252525;
 body.has-header-intranet-compact .sidebar-container {
   top: var(--topbar-height);
   height: calc(100vh - var(--topbar-height));
+}
+
+// Override of the volto-light-theme header logo size: VLT caps the logo at
+// 200px and sizes it with `flex: 1 1 0`, which is too small for most client
+// logos. Give it up to 300px on desktop; below $computer-breakpoint the
+// intranet header's own 130px tablet/mobile sizing still applies.
+// The 80px max-height is raised to 100px too: with 80px, a logo narrower
+// than 3.75:1 (e.g. DLR's 310x93) never reaches 300px wide. 100px lets any
+// logo of 3:1 or wider fill 300px, and stops square or portrait logos from
+// making the header very tall.
+// https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/871
+@media only screen and (min-width: $computer-breakpoint + 1) {
+  body .header-wrapper .header .logo-nav-wrapper .logo {
+    max-width: 300px;
+    max-height: 100px;
+    flex: 0 1 300px;
+
+    a img {
+      max-height: 100px;
+    }
+  }
+
+  // The intranet header centres its search between the logo and the
+  // complementary logo column. With a 300px logo column and VLT's 200px
+  // complementary column the search sat 50px right of centre, so the
+  // complementary column gets the same 300px. The complementary logo image
+  // itself keeps VLT's 200px limit.
+  body
+    .header-wrapper.intranet-header
+    .header
+    .logo-nav-wrapper
+    .complementary-logo {
+    max-width: 300px;
+    flex: 0 1 300px;
+
+    img {
+      max-width: 200px;
+    }
+  }
 }
 
 // Keep the maintenance banner above the fixed sticky menu (z-index: 11)

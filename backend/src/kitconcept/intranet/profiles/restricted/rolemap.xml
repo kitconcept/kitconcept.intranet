@@ -6,6 +6,8 @@
     >
       <role name="Authenticated" />
       <role name="Member" />
+      <role name="Manager" />
+      <role name="Site Administrator" />
     </permission>
     <permission acquire="False"
                 name="Modify portal content"
@@ -20,6 +22,8 @@
     >
       <role name="Authenticated" />
       <role name="Member" />
+      <role name="Manager" />
+      <role name="Site Administrator" />
     </permission>
   </permissions>
 </rolemap>

@@ -1,6 +1,95 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.12.0 (2026-11-24)
+
+### Backend
+
+
+#### Internal
+
+- Update kitconcept.core to 2.2.1, kitconcept.voltolighttheme to 8.1.5, pas.plugins.oidc to 2.1.0 and pas.plugins.authomatic to 3.1.0. @sneridagh 
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Give the workspace area its own calm look, set apart from the portal: a warm light grey rail and navigation column, a white content area and top bar without separator lines, warm near-black text and no accent colour. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/875 @sneridagh 
+- Increased the maximum width of the header logo from 200px to 300px on desktop. @sneridagh 
+
+
+#### Bugfix
+
+- Update to Volto 19.8.2. @sneridagh 
+
+
+#### Internal
+
+- Update @kitconcept/core to 2.2.1, @kitconcept/volto-light-theme to 8.1.5, and the block add-ons to the versions VLT 8.1.5 uses, including @kitconcept/volto-highlight-block 5.3.0 and @kitconcept/volto-slider-block 7.2.0. @sneridagh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Document the site-wide `"*"` themes of the blocks configuration DSL, the keys a block allows to be changed (`ttwConfigurable`), such as the Highlight and Slider colors, and the checks on their values. @sneridagh 
+
+
+
+## 3.11.0 (2026-11-20)
+
+### Backend
+
+
+#### Feature
+
+- Watch content: watch emails now go through the MailHost's transactional queue instead of being sent after commit with `immediate=True`, the notifier keeps a reference to the changed object instead of looking it up again by UID, and `notifications_paused()` now also stops watch emails, so batch jobs don't email the watchers. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/854 @sneridagh 
+
+
+#### Bugfix
+
+- Pin plone.restapi to 10.3.0. @sneridagh 
+- Update `collective.taxonomy` to 4.1.1: changing the field prefix no longer leaves a listing criterion that returns all content, saving the taxonomy settings no longer empties the index, content is reindexed when terms are deleted or moved, and the taxonomy description is stored instead of showing the site description. @sneridagh 
+
+
+#### Internal
+
+- Add example content of users without the portrait image @iRohitSingh [#602](https://github.com/kitconcept/kitconcept.intranet/issue/602)
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Wiki Page tables, follow-up of the width model review: a column delete on a table with a custom width but no stored column widths (set by the handle of #824) takes the deleted column's rendered width off the table instead of stretching the remaining columns; a drag on a step table clamped to the page no longer shows the stored column widths for one frame when it starts; a width drag follows only the pointer that started it; the first column's offset is measured also when every row has a merged cell; one shared cell width style for the editor and the view. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836 @reekitconcept [#836](https://github.com/kitconcept/kitconcept.intranet/issue/836)
+- Fixed the sticky menu covering the maintenance banner. @iFlameing 
+- Update `@eeacms/volto-taxonomy` to 7.1.0: the taxonomy settings no longer offer the field prefix, and deleting a term that content uses asks for confirmation. @sneridagh 
+- Update to Volto 19.8.0. @sneridagh 
+- Update to Volto 19.8.1. @sneridagh 
+
+
+#### Internal
+
+- Updated the volto-image-editor version to 1.2.0. @TimoBroeskamp 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Watch content and notification center docs: explain the MailHost queue, pausing watch emails in batch jobs with `notifications_paused()`, and the known limits for UI bulk actions and the `watchers` index. @sneridagh 
+
+
+
 ## 3.10.0 (2026-11-17)
 
 ### Backend

@@ -105,7 +105,8 @@
  *    `wiki-table-editing` class). A step from the width menu scales the
  *    stored column widths to it; an inserted column in a table with a
  *    custom width keeps the width, unless the minimums do not fit; a
- *    deleted column takes its width off a custom width. The cells of a
+ *    deleted column takes its width off a custom width (its rendered
+ *    width when not every column has a stored one). The cells of a
  *    top-level table on a step take their share of its width (the stored
  *    column widths are proportions there; as px they widened the table to
  *    their sum).
@@ -227,13 +228,14 @@ import {
 } from '@kitconcept/intranet/components/WikiTable/tableToolbarIcons';
 // OVERRIDE (824, 836): custom table width and the width handles
 import {
+  cellWidthStyle,
   CUSTOM_WIDTH_CLASS,
   customWidthOf,
   deletedColumnChange,
-  scaledCellWidth,
   scaledTableMinWidth,
   formatPx,
   frameWidthOf,
+  hasColumnWidths,
   insertedColSizes,
   seedColSizes,
   stepColSizes,
@@ -246,6 +248,7 @@ import {
 import {
   ColumnBorderGrip,
   measureBlock,
+  measureColumnWidths,
   measureStepWidths,
   TableEdgeHandles,
   TableWidthDragContext,
@@ -816,16 +819,28 @@ function TableFloatingToolbar({
   // column delete it is the sum of the columns left (a step when it lands
   // on one, the text width at least), in the delete's undo step (same
   // tick). See `deletedColumnChange`. Plate removes only the column's
-  // entry in `colSizes`.
+  // entry in `colSizes`. A custom width without a stored width for every
+  // column (set by the handle of 824 without a column drag) first stores
+  // the columns as they are rendered, as a drag does, in the same step
+  // (already as displayed: not scaled to the custom width again).
   const deleteColumn = () => {
     const tablePath = editor.api.findPath(element);
     const block = editor.api.toDOMNode(element);
-    const before = element.colSizes as number[] | undefined;
-    const custom = customWidthOf(element);
-    tf.remove.tableColumn();
+    let before = element.colSizes as number[] | undefined;
+    let custom = customWidthOf(element);
     if (!tablePath || tablePath.length !== 1 || !block || custom === null) {
+      tf.remove.tableColumn();
       return;
     }
+    if (!hasColumnWidths(before, getTableColumnCount(element))) {
+      const rendered = measureColumnWidths(block, element);
+      if (rendered) {
+        editor.tf.setNodes({ colSizes: rendered }, { at: tablePath });
+        before = rendered;
+        custom = sumOf(rendered);
+      }
+    }
+    tf.remove.tableColumn();
     // The last column takes the table with it.
     const table = editor.api.node<TTableElement>(tablePath)?.[0];
     if (table?.type !== editor.getType(KEYS.table)) return;
@@ -1799,27 +1814,17 @@ export function TableCellElement({
           // OVERRIDE (836): a top-level table on a step: the cell's share of
           // the table's width (the step), not px that would widen the
           // table. While a width is dragged the preview is a custom width,
-          // and px follow the pointer.
-          ...(scaledColSizes
-            ? {
-                maxWidth: 'none',
-                minWidth: 0,
-                width: scaledCellWidth(
-                  scaledColSizes,
-                  tableColumns,
-                  colIndex - colSpan + 1,
-                  colSpan,
-                ),
-              }
-            : {
-                maxWidth: width || 240,
-                minWidth: width || 120,
-                // OVERRIDE: column width for the fixed table layout (see
-                // theme/components/_wikiTable.scss); unresized columns
-                // share the table width, resized ones keep their
-                // proportion.
-                width: width || 120,
-              }),
+          // and px follow the pointer. OVERRIDE: px otherwise, the column
+          // width for the fixed table layout (Plate set only min and max
+          // width). The same style as the view (`cellWidthStyle`); the
+          // cell's first column (`colIndex` is its last).
+          ...cellWidthStyle(
+            scaledColSizes,
+            tableColumns,
+            colIndex - colSpan + 1,
+            colSpan,
+            width,
+          ),
         } as React.CSSProperties
       }
       attributes={{

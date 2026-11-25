@@ -1426,6 +1426,77 @@ test.describe('Wiki tables: resize handle', () => {
     await expect.poll(() => frameWidth(editor)).toBe(780);
   });
 
+  test('a deleted column takes its rendered width off a custom width without stored columns (#824 data)', async ({
+    page,
+  }) => {
+    // Custom widths the handle of #824 stored without a column drag: no
+    // column widths, or a 0 for a column never resized.
+    await openPage(page, 'delete-column-824', [
+      paragraph('Intro'),
+      table(4, { blockWidth: 'default', tableWidth: 1200 }),
+      table(4, {
+        blockWidth: 'default',
+        tableWidth: 1200,
+        colSizes: [400, 0, 400, 400],
+      }),
+    ]);
+    const stored = async (index: number) => {
+      const node = (await getTables(page))[index];
+      return { tableWidth: node?.tableWidth, colSizes: node?.colSizes };
+    };
+    const renderedColumns = (tableLocator: Locator) =>
+      tableLocator
+        .locator('tr')
+        .first()
+        .locator('> th')
+        .evaluateAll((cells) =>
+          cells.map((cell) => cell.getBoundingClientRect().width),
+        );
+
+    // No column widths: four equal columns of 1200, three are 900.
+    const first = editorTable(page, 0);
+    await clickCell(page, first, 1, 1);
+    await clickToolbar(page, 'deleteColumn');
+    await expect(first.locator('tr').first().locator('th')).toHaveCount(3);
+    await expect
+      .poll(() => stored(0))
+      .toEqual({ tableWidth: 900, colSizes: [300, 300, 300] });
+    await expect.poll(() => frameWidth(first)).toBe(900);
+    // One undo step: the column, the widths and the width.
+    await page.keyboard.press('ControlOrMeta+z');
+    await expect(first.locator('tr').first().locator('th')).toHaveCount(4);
+    await expect
+      .poll(() => stored(0))
+      .toEqual({ tableWidth: 1200, colSizes: undefined });
+
+    // A column never resized (0): the columns as they are rendered, the
+    // deleted one taken off.
+    const second = editorTable(page, 1);
+    const before = await renderedColumns(second);
+    expect(before).toHaveLength(4);
+    await clickCell(page, second, 1, 2);
+    await clickToolbar(page, 'deleteColumn');
+    await expect(second.locator('tr').first().locator('th')).toHaveCount(3);
+    const expected = before[0] + before[1] + before[3];
+    await expect
+      .poll(async () =>
+        Math.abs(((await stored(1)).tableWidth as number) - expected),
+      )
+      .toBeLessThanOrEqual(1);
+    const { tableWidth, colSizes } = await stored(1);
+    expect((colSizes as number[]).reduce((sum, size) => sum + size, 0)).toBe(
+      tableWidth,
+    );
+    await expect
+      .poll(async () => Math.abs((await frameWidth(second)) - expected))
+      .toBeLessThanOrEqual(1);
+    await page.keyboard.press('ControlOrMeta+z');
+    await expect(second.locator('tr').first().locator('th')).toHaveCount(4);
+    await expect
+      .poll(() => stored(1))
+      .toEqual({ tableWidth: 1200, colSizes: [400, 0, 400, 400] });
+  });
+
   test('a border pulled back inside after the speed zones snaps under the pointer in the scrolled frame', async ({
     page,
   }) => {
@@ -1797,6 +1868,129 @@ test.describe('Wiki tables: resize handle', () => {
     const wide = editorTable(page, 1);
     await expect.poll(() => marginsOf(wide)).toEqual([32, 32]);
     await expect.poll(() => overflowOf(wide)).toBeGreaterThan(500);
+  });
+
+  test('a drag follows only its own pointer: another pointer moving without a button or released does not end it', async ({
+    page,
+  }) => {
+    await openPage(page, 'drag-pointer-id', [
+      paragraph('Intro'),
+      table(3, { tableWidth: 960, colSizes: [320, 320, 320] }),
+    ]);
+    const editor = editorTable(page, 0);
+    const edge = columnEdge(editor);
+    const label = page.locator('.wiki-table-resize-label');
+    await editor.hover();
+    await edge.hover();
+    const box = (await edge.boundingBox())!;
+    const x = Math.round(box.x + box.width / 2);
+    const y = Math.round(box.y + Math.min(box.height / 2, 20));
+    await page.mouse.move(x, y);
+    await page.mouse.down();
+    await expect(edge).toHaveAttribute('data-resizing', 'true');
+    await page.mouse.move(x + 40, y, { steps: 4 });
+    await expect(label).toHaveText('360px · Table 1000px');
+    // A second finger or a pen during the drag: a move without a button,
+    // a release, a cancel.
+    await page.evaluate(
+      ([clientX, clientY]) => {
+        const init = {
+          bubbles: true,
+          clientX,
+          clientY,
+          isPrimary: false,
+          pointerType: 'touch',
+        };
+        window.dispatchEvent(
+          new PointerEvent('pointermove', {
+            ...init,
+            pointerId: 97,
+            buttons: 0,
+          }),
+        );
+        window.dispatchEvent(
+          new PointerEvent('pointerup', { ...init, pointerId: 98 }),
+        );
+        window.dispatchEvent(
+          new PointerEvent('pointercancel', { ...init, pointerId: 99 }),
+        );
+      },
+      [x + 40, y],
+    );
+    await expect(edge).toHaveAttribute('data-resizing', 'true');
+    // The drag still follows the mouse, and stores where it is released.
+    await page.mouse.move(x + 100, y, { steps: 4 });
+    await expect(label).toHaveText('420px · Table 1060px');
+    await page.mouse.up();
+    await expect(edge).not.toHaveAttribute('data-resizing', 'true');
+    await expect
+      .poll(async () => {
+        const node = (await getTables(page))[0];
+        return { tableWidth: node?.tableWidth, colSizes: node?.colSizes };
+      })
+      .toEqual({ tableWidth: 1060, colSizes: [320, 320, 420] });
+  });
+
+  test('a drag on a step clamped to the room starts as displayed: no frame renders the stored column widths', async ({
+    page,
+  }) => {
+    // Wide, columns adding up to 1440, at 1920 with the sidebar and the
+    // navigation tree open: the room (about 913px) clamps the table, its
+    // columns are scaled to it.
+    await page.setViewportSize({ width: 1920, height: 1000 });
+    await openPage(page, 'drag-start-clamped', [
+      paragraph('Intro'),
+      table(4, { blockWidth: 'layout', colSizes: [360, 360, 360, 360] }),
+    ]);
+    const editor = editorTable(page, 0);
+    await expect(editor).toBeVisible();
+    const room = (await tableFrameOf(editor).boundingBox())!.width;
+    expect(room).toBeLessThan(1400);
+    await expect
+      .poll(async () => (await editor.boundingBox())!.width)
+      .toBeLessThanOrEqual(room + 1);
+    // The table's width in each of the frames after the pointerdown.
+    await editor.evaluate((tableElement) => {
+      const widths: number[] = [];
+      (window as any).dragStartWidths = widths;
+      const record = () => {
+        widths.push(tableElement.getBoundingClientRect().width);
+        if (widths.length < 8) requestAnimationFrame(record);
+      };
+      window.addEventListener(
+        'pointerdown',
+        () => requestAnimationFrame(record),
+        {
+          capture: true,
+          once: true,
+        },
+      );
+    });
+    const border = columnBorder(editor, 1);
+    await border.hover();
+    const box = (await border.boundingBox())!;
+    await page.mouse.move(
+      Math.round(box.x + box.width / 2),
+      Math.round(box.y + Math.min(box.height / 2, 30)),
+    );
+    await page.mouse.down();
+    await expect(border).toHaveAttribute('data-resizing', 'true');
+    await expect
+      .poll(() =>
+        page.evaluate(() => (window as any).dragStartWidths.length as number),
+      )
+      .toBe(8);
+    const widths = await page.evaluate(
+      () => (window as any).dragStartWidths as number[],
+    );
+    expect(Math.max(...widths)).toBeLessThanOrEqual(room + 1);
+    await page.mouse.up();
+    await expect(border).not.toHaveAttribute('data-resizing', 'true');
+    // A click stores nothing.
+    expect((await getTables(page))[0]).toMatchObject({
+      blockWidth: 'layout',
+      colSizes: [360, 360, 360, 360],
+    });
   });
 
   test('a table on a step renders the step within the room, its stored columns scaled in proportion', async ({

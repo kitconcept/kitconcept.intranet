@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/intranet",
-  "version": "3.10.0",
+  "version": "3.12.0",
   "description": "A Plone distribution for Intranets with Plone. Created by kitconcept.",
   "main": "src/index.ts",
   "license": "MIT",
@@ -82,7 +82,7 @@
   "dependencies": {
     "@eeacms/volto-accordion-block": "^12.0.0",
     "@eeacms/volto-pdf-block": "^1.0.12",
-    "@eeacms/volto-taxonomy": "^7.0.0",
+    "@eeacms/volto-taxonomy": "^7.1.0",
     "@kitconcept/core": "workspace:*",
     "@kitconcept/volto-banner-block": "workspace:*",
     "@kitconcept/volto-bm3-compat": "workspace:*",
@@ -107,7 +107,7 @@
     "@plone/volto-form-block": "^1.0.0-alpha.3",
     "@plone/volto-recyclebin": "^1.0.0-alpha.2",
     "@plone-collective/volto-authomatic": "3.0.0",
-    "@plone-collective/volto-image-editor": "1.1.0",
+    "@plone-collective/volto-image-editor": "1.3.0",
     "classnames": "2.5.1",
     "lodash": "4.17.21",
     "react-aria-components": "catalog:",
@@ -124,5 +124,5 @@
     "papaparse": "^5.7.0",
     "platejs": "^53.3.14"
   },
-  "volto_version": "19.7.1"
+  "volto_version": "19.8.2"
 }

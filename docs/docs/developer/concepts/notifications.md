@@ -82,6 +82,9 @@ A title changed by a batch job shows up in the bells of its authors within the h
 Nothing is queued while notifications are off or paused: what happens in that time never notifies anyone.
 Stored notifications are kept.
 
+The pause also stops the watch emails ({doc}`watch-content`), so a script needs only one `with` block to keep the whole intranet quiet.
+The notification center's setting doesn't: watch emails have their own setting, `enable_content_watching`.
+
 The setting also hides the frontend: `@site` exposes it, and the bell, the poller, the menu entry, and the `/notifications` page check it.
 The REST endpoints answer `404 Not Found` while it's off.
 

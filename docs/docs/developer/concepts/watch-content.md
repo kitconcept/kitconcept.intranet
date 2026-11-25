@@ -22,7 +22,7 @@ schema, see the reference pages listed at the end.
 | `kitconcept.intranet.watchers` behavior | `behaviors/watchers.py` | Marks a type as watchable (`IWatchable`) and adapts it to `IWatchers`, which stores the user IDs. |
 | `@watch` service and `watch` expander | `services/watch.py` | Lets the current user read and toggle their own watch state. |
 | Event subscribers | `subscribers/watchers.py` | Turn edits, publishing and check-ins into queued changes; clear watchers on copies. |
-| Watch notifier | `utils/watch_notifier.py` | Collects the changes of a transaction, builds the emails and sends them after commit. |
+| Watch notifier | `utils/watch_notifier.py` | Collects the changes of a transaction, builds the emails before commit and queues them in the MailHost. |
 | `watchers` index and "Watched by me" | `indexers/watchers.py`, `queryparser.py`, `catalog.xml`, `registry/querystring.xml` | Let listings query the content a user watches. |
 | `WatchButton` | `frontend/…/components/WatchButton/` | The toggle in the UI. |
 
@@ -59,24 +59,35 @@ So the notifier works per **transaction**:
 
 1. **Queue.** The subscribers call `queue_change(obj)`. The first call in a
    transaction stores a `PendingChanges` object on the transaction
-   (`transaction.set_data`) and registers a before-commit and an after-commit
-   hook. Every change is stored by UID, so an item changed several times in one
-   transaction is queued once. The editor's user ID and the change note (from
-   the request annotation that `plone.app.versioningbehavior` writes) are kept
-   with it.
+   (`transaction.set_data`) and registers a before-commit hook. Every change is
+   stored by UID, together with the object itself, so an item changed several
+   times in one transaction is queued once. The editor's user ID and the change
+   note (from the request annotation that `plone.app.versioningbehavior`
+   writes) are kept with it.
 2. **Build, before commit.** The before-commit hook runs while the content, the
    request and the security context are still available. For each queued item
-   it checks that the item still exists and is published, works out the
-   recipients and composes one email per recipient. Any exception is logged and
-   the emails are dropped—a notification problem must never abort the save.
-3. **Send, after commit.** The after-commit hook sends the emails only if the
-   transaction committed. Each email is sent on its own with
-   `api.portal.send_email(..., immediate=True)`; a failure is logged per
-   recipient.
+   it checks that the item is still at its place (not deleted or moved later in
+   the transaction) and published, works out the recipients and composes one
+   email per recipient. Any exception is logged—a notification problem must
+   never abort the save.
+3. **Send, on commit.** Each email is handed to the MailHost with
+   `api.portal.send_email()`, **without** `immediate=True`. The MailHost joins
+   the transaction and sends the email only if it commits. An aborted
+   transaction sends nothing, and a mail server error during sending is logged
+   by `zope.sendmail` without breaking the commit.
 
-Sending after commit, rather than handing the emails to the transactional mail
-delivery, keeps SMTP errors out of the two-phase commit, where an exception can
-no longer be rolled back cleanly. After commit, a failed email is just logged.
+### Pausing for batch jobs
+
+`queue_change` does nothing inside the notification center's
+`notifications_paused()` block (see
+{doc}`/developer/how-to-guides/pause-notifications`). Use it in scripts,
+migrations and upgrade steps that change many items, so the watchers don't get
+an email for each one.
+
+The check happens when a change is queued, not when the emails are built:
+scripts usually commit after the `with` block has ended, so the before-commit
+hook runs outside the pause. Changes queued outside the block in the same
+transaction still send their emails.
 
 ### Which events count
 
@@ -151,7 +162,14 @@ empty—nobody watches anything yet—so no reindexing is needed.
   "minor change" option yet.
 - The email is plain text, built in Python (`compose()` in
   `utils/watch_notifier.py`); it isn't a template site admins can edit.
-- Emails are sent during the request, one per recipient. Items with a large number of watchers would make that save slower.
+- Emails are composed during the request, one per recipient. Items with a large
+  number of watchers would make that save slower.
+- Bulk actions in the UI (for example publishing many items from folder
+  contents) send one request per item, so each watched item sends its emails.
+  The pause only covers backend code.
+- The `watchers` index is a plain `KeywordIndex`. A dedicated index that keeps
+  one set per user could be more efficient for "Watched by me"; worth revisiting
+  if toggles get slow or conflict on large sites.
 
 ## See also
 

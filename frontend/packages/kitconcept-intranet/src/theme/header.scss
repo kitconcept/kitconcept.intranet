@@ -978,6 +978,24 @@ body.has-header-intranet-compact .sidebar-container {
       max-height: 100px;
     }
   }
+
+  // The intranet header centres its search between the logo and the
+  // complementary logo column. With a 300px logo column and VLT's 200px
+  // complementary column the search sat 50px right of centre, so the
+  // complementary column gets the same 300px. The complementary logo image
+  // itself keeps VLT's 200px limit.
+  body
+    .header-wrapper.intranet-header
+    .header
+    .logo-nav-wrapper
+    .complementary-logo {
+    max-width: 300px;
+    flex: 0 1 300px;
+
+    img {
+      max-width: 200px;
+    }
+  }
 }
 
 // Keep the maintenance banner above the fixed sticky menu (z-index: 11)

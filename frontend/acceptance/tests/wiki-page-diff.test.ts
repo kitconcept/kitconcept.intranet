@@ -706,7 +706,7 @@ test.describe('Wiki Page history diff', () => {
     // classes.)
     const blockOf = (name: 'left' | 'right') =>
       side(name).locator(
-        'xpath=ancestor::div[contains(@class, "block-table")][1]',
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
       );
     await expect(blockOf('left')).toHaveClass(/slate-blockWidth-default/);
     await expect(blockOf('right')).toHaveClass(/slate-blockWidth-medium/);

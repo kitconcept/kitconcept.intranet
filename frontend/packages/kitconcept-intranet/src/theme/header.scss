@@ -53,6 +53,8 @@ body.has-sidebar .header-intranet-compact-wrapper {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    // Take the free space so the search and the bell stay on the right.
+    margin-right: auto;
     margin-bottom: 0;
     color: var(--workspace-topbar-foreground-muted, #878f93);
 

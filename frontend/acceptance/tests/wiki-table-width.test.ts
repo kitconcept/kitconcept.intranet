@@ -44,7 +44,8 @@ import {
   createWikiPageWithValue,
   getWikiValue,
   patchContent,
-  SOMERSAULT_KEY,
+  MAIN_REGION,
+  PLATE_TYPE,
   TABLES,
 } from '../fixtures/wiki-pages';
 import { login } from './login';
@@ -434,8 +435,8 @@ test.describe('Wiki tables: width', () => {
     for (const width of ['medium', 'full']) {
       await patchContent(page, contentPath, {
         blocks: {
-          [SOMERSAULT_KEY]: {
-            '@type': SOMERSAULT_KEY,
+          [MAIN_REGION]: {
+            '@type': PLATE_TYPE,
             value: [
               { type: 'title', children: [{ text: 'Width diff' }] },
               ...withWidth(width),

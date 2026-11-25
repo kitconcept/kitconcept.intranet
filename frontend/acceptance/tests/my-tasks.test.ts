@@ -27,8 +27,8 @@ test('Long workspace and source labels truncate, and selected tabs keep their re
       ...body,
       blocks: {
         ...(body.blocks as Record<string, unknown>),
-        __somersault__: {
-          '@type': '__somersault__',
+        main: {
+          '@type': 'plate',
           value: [
             {
               type: 'p',
@@ -301,7 +301,7 @@ test('Task tabs show all assignees and filter both scopes by workspace', async (
         ...body,
         blocks: {
           ...(body.blocks as Record<string, unknown>),
-          __somersault__: { '@type': '__somersault__', value },
+          main: { '@type': 'plate', value },
         },
       }),
     });

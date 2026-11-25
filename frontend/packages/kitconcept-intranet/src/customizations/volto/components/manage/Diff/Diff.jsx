@@ -1,16 +1,23 @@
 /**
  * OVERRIDE Diff.jsx
  * REASON: Volto diffs the blocks one by one, following `blocks_layout`.
- *         Wiki Pages keep their Plate content in `blocks.__somersault__`,
- *         which the layout does not list, so its diff was never rendered.
- *         The Plate block is appended to the block ids of both versions, so
- *         DiffField (also overridden) renders it with the Plate diff.
+ *         Wiki Pages keep their Plate content in the `main` region
+ *         (`blocks.main`), which the layout does not list, so its diff was
+ *         never rendered. The region is appended to the block ids of both
+ *         versions, so DiffField (also overridden) renders it with the Plate
+ *         diff. Versions stored before the `main` region keep it in the
+ *         legacy `blocks.__somersault__`: both versions are read with it
+ *         renamed to `main` (`migrateSomersaultRegion`), so a version before
+ *         and one after the rename are compared as the same block.
  *         Everything else is unchanged.
  * FILE: https://github.com/plone/volto/blob/19.5.0/packages/volto/src/components/manage/Diff/Diff.jsx
  * FILE VERSION: Volto 19.5.0
  * DATE: 2026-10-08
  * TICKET: https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/639
  * DEVELOPER: @sneridagh
+ * CHANGELOG:
+ *  - Read the `main` region of volto-plate 1.0.0-alpha.41, and the legacy
+ *    `__somersault__` block renamed to it (plone/aurora#379). @sneridagh
  */
 /**
  * Diff component.
@@ -45,7 +52,8 @@ import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorize
 import DiffField from '@plone/volto/components/manage/Diff/DiffField';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { useClient } from '@plone/volto/hooks/client/useClient';
-import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
+import { MAIN_REGION } from '@kitconcept/volto-plate/constants';
+import { migrateSomersaultRegion } from '@kitconcept/volto-plate/helpers/plateRegion';
 
 import backSVG from '@plone/volto/icons/back.svg';
 
@@ -160,21 +168,25 @@ function Diff({ diffLib }) {
 
   const blocksField = data[0] ? getBlocksFieldname(data[0]) : null;
   const blocksLayoutField = data[0] ? getBlocksLayoutFieldname(data[0]) : null;
-  const blocksOne = (blocksField && data[0]?.[blocksField]) || {};
-  const blocksTwo = (blocksField && data[1]?.[blocksField]) || {};
-  // OVERRIDE: the Plate block of Wiki Pages is not in the layout.
+  // OVERRIDE: a version stored before the `main` region has the legacy
+  // `__somersault__` block; read it as `main`, so both versions pair up.
+  const { blocks: blocksOne, blocksLayout: layoutOne } =
+    migrateSomersaultRegion(
+      (blocksField && data[0]?.[blocksField]) || {},
+      blocksLayoutField ? data[0]?.[blocksLayoutField] : undefined,
+    );
+  const { blocks: blocksTwo, blocksLayout: layoutTwo } =
+    migrateSomersaultRegion(
+      (blocksField && data[1]?.[blocksField]) || {},
+      blocksLayoutField ? data[1]?.[blocksLayoutField] : undefined,
+    );
+  // OVERRIDE: the Plate region of Wiki Pages is not in the layout.
   const withPlateBlock = (ids, blocks) =>
-    SOMERSAULT_KEY in blocks && !ids.includes(SOMERSAULT_KEY)
-      ? [...ids, SOMERSAULT_KEY]
+    MAIN_REGION in blocks && !ids.includes(MAIN_REGION)
+      ? [...ids, MAIN_REGION]
       : ids;
-  const blockIdsOne = withPlateBlock(
-    (blocksLayoutField && data[0]?.[blocksLayoutField]?.items) || [],
-    blocksOne,
-  );
-  const blockIdsTwo = withPlateBlock(
-    (blocksLayoutField && data[1]?.[blocksLayoutField]?.items) || [],
-    blocksTwo,
-  );
+  const blockIdsOne = withPlateBlock(layoutOne?.items || [], blocksOne);
+  const blockIdsTwo = withPlateBlock(layoutTwo?.items || [], blocksTwo);
   // Diff the block order first, so that added, removed and moved blocks
   // show up at their position. A moved block is shown as removed at its old
   // position and added at its new one. Blocks that stayed in place are only

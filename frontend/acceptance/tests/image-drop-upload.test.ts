@@ -14,8 +14,8 @@ function withEmptySomersaultBody(body: Record<string, unknown>) {
   return {
     ...body,
     blocks: {
-      __somersault__: {
-        '@type': '__somersault__',
+      main: {
+        '@type': 'plate',
         value: [
           { type: 'title', children: [{ text: title }] },
           { type: 'p', children: [{ text: '' }] },

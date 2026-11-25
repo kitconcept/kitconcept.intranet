@@ -46,8 +46,8 @@ export async function createNativeBlocksPage(
     bodyModifier: (body) => ({
       ...body,
       blocks: {
-        __somersault__: {
-          '@type': '__somersault__',
+        main: {
+          '@type': 'plate',
           value: [
             ...(withTitle
               ? [{ type: 'title', children: [{ text: title }] }]

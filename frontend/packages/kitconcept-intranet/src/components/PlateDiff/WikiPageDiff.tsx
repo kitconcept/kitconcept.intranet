@@ -1,6 +1,7 @@
 /**
  * Diff of two versions of a Wiki Page (Plate content stored in
- * `blocks.__somersault__.value`), rendered with Plate itself.
+ * the `main` region, or the legacy `blocks.__somersault__`), rendered with
+ * Plate itself.
  *
  * `computeDiff` (from `@platejs/diff`) returns the *new* document with the
  * changed nodes annotated (`diff`, `diffOperation`); deleted nodes are kept
@@ -22,7 +23,10 @@ import { PlateController, PlateRenderer } from '@plone/plate/components/editor';
 import { applyBlockWidthDefaultsInValue } from '@plone/plate/components/editor/plugins/block-width-plugin';
 import wikiEditorRenderer from '@kitconcept/volto-plate/plate/presets/wiki-renderer';
 import { PlatePluginsProvider } from '@kitconcept/volto-plate/plate/context/PlatePluginsProvider';
-import { SOMERSAULT_KEY } from '@kitconcept/volto-plate/constants';
+import {
+  getPlateRegion,
+  hasPlateRegion,
+} from '@kitconcept/volto-plate/helpers/plateRegion';
 import { cleanTableRows } from '@kitconcept/intranet/components/WikiTable/wikiTableNormalizePlugin';
 import { WikiTableViewProvider } from '@kitconcept/intranet/components/WikiTable/tableViewContext';
 import { DiffPlugin } from './DiffPlugin';
@@ -55,13 +59,13 @@ type Content = {
 const getValue = (content?: Content): Value =>
   withStoredDefaults(
     cleanTableRows(
-      (content?.blocks?.[SOMERSAULT_KEY]?.value as Value | undefined) ?? [],
+      getPlateRegion<{ value?: Value }>(content?.blocks)?.value ?? [],
     ),
     applyBlockWidthDefaultsInValue,
   );
 
 export const hasPlateContent = (content?: Content): boolean =>
-  Boolean(content?.blocks && SOMERSAULT_KEY in content.blocks);
+  hasPlateRegion(content?.blocks);
 
 const opType = (node: Descendant) =>
   (node as TElement & { diffOperation?: { type: string } }).diffOperation?.type;

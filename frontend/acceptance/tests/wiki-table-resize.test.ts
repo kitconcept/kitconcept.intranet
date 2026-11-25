@@ -49,7 +49,8 @@ import {
   createWikiPageWithValue,
   getWikiValue,
   patchContent,
-  SOMERSAULT_KEY,
+  MAIN_REGION,
+  PLATE_TYPE,
 } from '../fixtures/wiki-pages';
 import { login } from './login';
 import { expect, test } from './test';
@@ -521,8 +522,8 @@ test.describe('Wiki tables: resize handle', () => {
     for (const props of versions) {
       await patchContent(page, contentPath, {
         blocks: {
-          [SOMERSAULT_KEY]: {
-            '@type': SOMERSAULT_KEY,
+          [MAIN_REGION]: {
+            '@type': PLATE_TYPE,
             value: [
               { type: 'title', children: [{ text: 'Resize diff' }] },
               ...value.map((node) =>

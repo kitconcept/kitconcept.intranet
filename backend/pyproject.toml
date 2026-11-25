@@ -24,7 +24,7 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
-    "kitconcept.core==2.1.2",
+    "kitconcept.core==2.2.1",
     "plone.api",
     "plone.app.discussion",
     "plone.distribution",
@@ -33,9 +33,9 @@ dependencies = [
     "redturtle.rssservice==2.2.0",
     "python-dateutil",
     "requests",
-    "pas.plugins.authomatic==2.0.0",
+    "pas.plugins.authomatic==3.1.0",
     "pas.plugins.keycloakgroups==1.0.0b1",
-    "pas.plugins.oidc==2.0.0",
+    "pas.plugins.oidc==2.1.0",
     "collective-solr==10.1.1",
     "kitconcept.solr==3.0.0a3",
     "kitconcept.contactblock==1.0.0a6",
@@ -43,7 +43,7 @@ dependencies = [
     "kitconcept.plate==1.0.0a40",
     "plone.recyclebin==1.0.0a2",
     "kitconcept.maintenancebanner==1.0.0a3",
-    "collective.taxonomy==4.1.0",
+    "collective.taxonomy==4.1.1",
 ]
 
 [dependency-groups]
@@ -317,7 +317,7 @@ constraint-dependencies = [
     "cmarkgfm==2025.10.22",
     "collective.MockMailHost==4.0.0",
     "collective.monkeypatcher==3.0.0",
-    "collective.person==1.0.0b6",
+    "collective.person==1.0.0b7",
     "collective.recipe.omelette==3.0.0",
     "collective.recipe.template==3.0",
     "collective.recipe.vscode==0.1.9",
@@ -370,7 +370,7 @@ constraint-dependencies = [
     "jsonschema-specifications==2025.9.1",
     "jsonschema==4.26.0",
     "keyring==25.7.0",
-    "kitconcept.core==2.1.2",
+    "kitconcept.core==2.2.1",
     "kitconcept.voltolighttheme>=8.0.0",
     "legacy-cgi==2.6.4",
     "lockfile==0.12.2",
@@ -487,7 +487,7 @@ constraint-dependencies = [
     "plone.resource==4.0.0",
     "plone.resourceeditor==5.0.0",
     "plone.rest==6.0.0",
-    "plone.restapi==10.2.1",
+    "plone.restapi==10.3.0",
     "plone.rfc822==4.0.0",
     "plone.scale==5.1.1",
     "plone.schema==3.0.0",

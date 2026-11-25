@@ -1,19 +1,24 @@
 """Emails to the users watching a content item when it changes.
 
 Changes are collected per transaction and each changed item gets one email
-per watcher, however many events a save fires. The emails are built in a
-before-commit hook, while the content and the security context are still
-available, and sent in an after-commit hook, so an aborted transaction sends
+per watcher, however many events a save fires. The emails are built and
+handed to the MailHost in a before-commit hook, while the content and the
+security context are still available. The MailHost queues them and sends
+them only when the transaction commits, so an aborted transaction sends
 nothing and a mail server error never breaks the save.
+
+Nothing is queued while ``notifications_paused()`` is active, so scripts and
+batch jobs can change watched content without emailing the watchers.
 """
 
+from Acquisition import aq_base
 from dataclasses import dataclass
 from dataclasses import field
 from DateTime import DateTime
 from kitconcept.intranet.behaviors.watchers import IWatchers
+from kitconcept.intranet.notifications.switch import notifications_are_paused
 from plone import api
 from plone.app.iterate.interfaces import IWorkingCopy
-from plone.app.uuid.utils import uuidToObject
 from plone.uuid.interfaces import IUUID
 from zope.annotation.interfaces import IAnnotations
 from zope.globalrequest import getRequest
@@ -31,7 +36,7 @@ CHANGE_NOTE_KEY = "plone.app.versioningbehavior-changeNote"
 
 @dataclass
 class Change:
-    uid: str
+    obj: object
     editor: str | None
     change_note: str | None = None
 
@@ -46,7 +51,6 @@ class Mail:
 @dataclass
 class PendingChanges:
     changes: dict[str, Change] = field(default_factory=dict)
-    mails: list[Mail] = field(default_factory=list)
 
 
 def watching_enabled() -> bool:
@@ -73,13 +77,18 @@ def _pending() -> PendingChanges:
     except KeyError:
         pending = PendingChanges()
         txn.set_data(_pending, pending)
-        txn.addBeforeCommitHook(_build_mails, (pending,))
-        txn.addAfterCommitHook(_send_mails, (pending,))
+        txn.addBeforeCommitHook(_send_mails, (pending,))
         return pending
 
 
 def queue_change(obj, change_note: str | None = None) -> None:
-    """Remember that ``obj`` changed in the current transaction."""
+    """Remember that ``obj`` changed in the current transaction.
+
+    Checked here, not when the emails are built: scripts usually commit after
+    the ``notifications_paused()`` block has ended.
+    """
+    if notifications_are_paused():
+        return
     if IWorkingCopy.providedBy(obj) or not watching_enabled():
         return
     if not IWatchers(obj).userids():
@@ -91,7 +100,7 @@ def queue_change(obj, change_note: str | None = None) -> None:
     changes = _pending().changes
     change = changes.get(uid)
     if change is None:
-        changes[uid] = Change(uid=uid, editor=_current_userid(), change_note=note)
+        changes[uid] = Change(obj=obj, editor=_current_userid(), change_note=note)
     elif note and not change.change_note:
         change.change_note = note
 
@@ -196,11 +205,25 @@ def compose(obj, recipient_name: str, editor_name: str | None, change_note):
     return subject, "\n".join(lines)
 
 
-def _build_mails(pending: PendingChanges) -> None:
+def _still_in_site(obj) -> bool:
+    """Whether ``obj`` is still at its place, not deleted or moved since."""
+    path = obj.getPhysicalPath()
+    found = api.portal.get().unrestrictedTraverse(path, None)
+    return found is not None and aq_base(found) is aq_base(obj)
+
+
+def send_mail(mail: Mail) -> None:
+    """Queue the email in the MailHost; it is sent when the transaction commits."""
+    api.portal.send_email(
+        recipient=mail.recipient, subject=mail.subject, body=mail.body
+    )
+
+
+def _send_mails(pending: PendingChanges) -> None:
     try:
         for change in pending.changes.values():
-            obj = uuidToObject(change.uid, unrestricted=True)
-            if obj is None or not is_published(obj):
+            obj = change.obj
+            if not _still_in_site(obj) or not is_published(obj):
                 continue
             editor = api.user.get(userid=change.editor) if change.editor else None
             editor_name = _fullname(editor) if editor else None
@@ -208,29 +231,7 @@ def _build_mails(pending: PendingChanges) -> None:
                 subject, body = compose(
                     obj, _fullname(user), editor_name, change.change_note
                 )
-                pending.mails.append(Mail(user.getProperty("email"), subject, body))
+                send_mail(Mail(user.getProperty("email"), subject, body))
     except Exception:
         # Never break the save because of a notification.
         logger.exception("Could not prepare the watch notifications.")
-        pending.mails.clear()
-
-
-def send_mail(mail: Mail) -> None:
-    api.portal.send_email(
-        recipient=mail.recipient,
-        subject=mail.subject,
-        body=mail.body,
-        immediate=True,
-    )
-
-
-def _send_mails(committed: bool, pending: PendingChanges) -> None:
-    if not committed:
-        return
-    for mail in pending.mails:
-        try:
-            send_mail(mail)
-        except Exception:
-            logger.exception(
-                f"Could not send the watch notification to {mail.recipient}."
-            )

@@ -16,6 +16,7 @@ This guide shows you how to change many content items from a script without noti
 Each edit, workflow transition, or like creates a notification for the item's creators.
 A script that edits thousands of items would flood their bells and write a notification for each change.
 `notifications_paused()` turns notifications off for the code inside a `with` block.
+It also stops the emails to people who watch the changed content.
 
 ## Prerequisites
 
@@ -46,7 +47,7 @@ A script that edits thousands of items would flood their bells and write a notif
 
 ## Result
 
-The changes inside the block create no notifications.
+The changes inside the block create no notifications and send no watch emails.
 Code after the block notifies as usual, also after an error inside the block.
 
 Only the current thread is paused.

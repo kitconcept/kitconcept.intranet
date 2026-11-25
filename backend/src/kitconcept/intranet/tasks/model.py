@@ -1,5 +1,6 @@
 """Transient catalogable task objects reconstructed from the current page value."""
 
+from .regions import plate_region
 from .values import extract_task_details
 from .values import iter_todos
 from AccessControl import ClassSecurityInfo
@@ -49,7 +50,7 @@ class TaskContainer(Implicit, Traversable):
     def __getitem__(self, task_id):
         """Reconstruct a task, or fail traversal when its todo no longer exists."""
         page = self.__parent__
-        value = (getattr(page, "blocks", {}) or {}).get("__somersault__", {})
+        _, value = plate_region(getattr(page, "blocks", {}) or {})
         for node in iter_todos(value.get("value", [])):
             if node.get("taskId") == task_id:
                 # Use the page's acquisition chain for permissions and local roles.

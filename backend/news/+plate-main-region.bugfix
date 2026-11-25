@@ -1,0 +1,1 @@
+Inline tasks, the example content and the demo content helpers use the `main` region of wiki pages (`@type: plate`), and still read the legacy `__somersault__` block of pages not migrated yet. Without it, the tasks of pages saved by the new editor or migrated by the kitconcept.plate upgrade step were no longer indexed. @sneridagh

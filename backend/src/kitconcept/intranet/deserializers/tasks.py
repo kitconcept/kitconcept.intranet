@@ -3,7 +3,10 @@
 from Acquisition import aq_base
 from kitconcept.intranet.tasks.catalog import PENDING_KEY
 from kitconcept.intranet.tasks.catalog import changes
+from kitconcept.intranet.tasks.regions import plate_region
 from kitconcept.intranet.tasks.values import stamp_task_metadata
+from kitconcept.plate.regions import LEGACY_SOMERSAULT
+from kitconcept.plate.regions import PLATE_TYPE
 from plone.dexterity.interfaces import IDexterityContent
 from plone.restapi.deserializer.blocks import BlocksJSONFieldDeserializer
 from plone.restapi.interfaces import IBlockFieldDeserializationTransformer
@@ -19,18 +22,32 @@ from zope.publisher.interfaces.browser import IBrowserRequest
 @adapter(Interface, IBrowserRequest)
 @implementer(IBlockFieldDeserializationTransformer)
 class TasksDeserializer:
-    """Preserve trusted task identity and timestamps while transforming a block."""
+    """Preserve trusted task identity and timestamps while transforming a block.
+
+    For the legacy ``__somersault__`` region; ``PlateTasksDeserializer`` handles
+    the ``main`` region (``"@type": "plate"``).
+    """
 
     order = 110
-    block_type = "__somersault__"
+    block_type = LEGACY_SOMERSAULT
     disabled = False
 
     def __init__(self, context, request):
         self.context = context
 
     def __call__(self, block):
-        existing = (getattr(self.context, "blocks", {}) or {}).get("__somersault__", {})
+        # The stored region may still be the legacy one while the editor
+        # already sends ``main``: the first save after the upgrade.
+        _, existing = plate_region(getattr(self.context, "blocks", {}) or {})
         return stamp_task_metadata(self.context, block, existing=existing)
+
+
+@adapter(Interface, IBrowserRequest)
+@implementer(IBlockFieldDeserializationTransformer)
+class PlateTasksDeserializer(TasksDeserializer):
+    """The same for the ``main`` region, stored with ``"@type": "plate"``."""
+
+    block_type = PLATE_TYPE
 
 
 @adapter(IJSONField, IDexterityContent, IBrowserRequest)
@@ -41,13 +58,9 @@ class TaskBlocksDeserializer(BlocksJSONFieldDeserializer):
     def __call__(self, value):
         value = super().__call__(value)
         if self.field.getName() == "blocks":
-            existing = (getattr(self.context, "blocks", {}) or {}).get(
-                "__somersault__", {}
-            )
+            _, existing = plate_region(getattr(self.context, "blocks", {}) or {})
             # Apply after REST stores the field and finalizes the page path.
             # Request annotations prevent failed input from leaking into later saves.
             pending = IAnnotations(self.request).setdefault(PENDING_KEY, {})
-            pending[aq_base(self.context)] = changes(
-                existing, value.get("__somersault__", {})
-            )
+            pending[aq_base(self.context)] = changes(existing, plate_region(value)[1])
         return value

@@ -471,3 +471,73 @@ def test_link_integrity_checks_page_once_and_skips_virtual_fragments(
     view = getMultiAdapter((page, http_request), name="delete_confirmation_info")
     assert view.get_breaches([page]) == []
     assert checked == [page]
+
+
+# The `main` region: kitconcept.plate 1.0.0a43 stores the page body in
+# blocks["main"] with "@type": "plate" (plone/aurora#379). The editor saves a
+# legacy page in that shape on its first save, and the upgrade step migrates
+# the rest.
+
+
+def save_main(page, nodes):
+    """Like `save`, in the current shape: the `main` region."""
+    page.blocks = TaskBlocksDeserializer(IBlocks["blocks"], page, page.REQUEST)({
+        "main": {"@type": "plate", "value": deepcopy(nodes)}
+    })
+    notify(ObjectModifiedEvent(page))
+    page.reindexObject()
+    return deepcopy(list(iter_todos(page.blocks["main"]["value"])))
+
+
+def task_uids(page, nodes):
+    return {f"{IUUID(page)}:{node['taskId']}" for node in nodes}
+
+
+def test_main_region_is_indexed_and_traversable(page, portal):
+    nodes = save_main(page, [todo()])
+    assert str(UUID(nodes[0]["taskId"])) == nodes[0]["taskId"]
+    brain = tasks(portal)[0]
+    assert {brain.UID} == task_uids(page, nodes)
+    assert brain.getObject().UID() == brain.UID
+
+
+def test_first_save_as_main_keeps_the_legacy_tasks(page, portal):
+    nodes = save(page, [todo("One"), todo("Two", checked=True)])
+    saved = save_main(page, nodes)
+    assert "__somersault__" not in page.blocks
+    assert [
+        (node["taskId"], node["taskCreator"], node.get("taskCompleted"))
+        for node in saved
+    ] == [
+        (node["taskId"], node["taskCreator"], node.get("taskCompleted"))
+        for node in nodes
+    ]
+    assert {brain.UID for brain in tasks(portal)} == task_uids(page, nodes)
+    save_main(page, saved[:1])
+    assert {brain.UID for brain in tasks(portal)} == task_uids(page, saved[:1])
+
+
+def test_migrated_page_keeps_its_tasks(page, portal):
+    from kitconcept.plate.migration import migrate_somersault_blocks
+
+    nodes = save(page, [todo()])
+    assert migrate_somersault_blocks(page)
+    assert "main" in page.blocks
+    brain = tasks(portal)[0]
+    assert {brain.UID} == task_uids(page, nodes)
+    assert brain.getObject().UID() == brain.UID
+
+
+def test_main_region_copy_gets_fresh_task_ids(page, portal):
+    nodes = save_main(page, [todo()])
+    with api.env.adopt_roles(["Manager"]):
+        copied = api.content.copy(source=page, target=page.__parent__, id="copy")
+    assert copied.blocks["main"]["value"][0]["taskId"] != nodes[0]["taskId"]
+    assert len(tasks(portal)) == 2
+
+
+def test_synchronize_main_region(page, portal):
+    page.blocks = {"main": {"@type": "plate", "value": [todo()]}}
+    synchronize(page, portal.portal_catalog, legacy=True)
+    assert "taskId" in page.blocks["main"]["value"][0]
+    assert tasks(portal)[0].Creator == page.Creator()

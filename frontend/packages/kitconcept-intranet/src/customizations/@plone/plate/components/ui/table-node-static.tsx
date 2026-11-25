@@ -44,7 +44,8 @@
  *    table wider than the room (theme/components/_wikiTable.scss), which an
  *    inline `padding-left: 0px` overrode.
  *    https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/836
- *    @reekitconcept *  - The cells of a top-level table on a step (no custom width) take their
+ *    @reekitconcept
+ *  - The cells of a top-level table on a step (no custom width) take their
  *    share of the table's width (`scaledCellWidth`), so the table renders
  *    the step's width with its stored column widths scaled to it; as px
  *    they made the table as wide as their sum. The per-table geometry is

@@ -29,7 +29,7 @@ def notifications_active() -> bool:
 
 @contextmanager
 def notifications_paused() -> Iterator[None]:
-    """Create no notifications for what happens inside the block.
+    """Create no notifications and send no watch emails for the block.
 
     For scripts and batch jobs that change many items. Only the current
     thread is affected: other requests keep notifying as usual, and nothing

@@ -1,1 +1,0 @@
-Updated `@plone-collective/volto-authomatic` to 3.1.1. After login, an absolute `return_url` other than a loopback address now falls back to the site root, and a loopback `return_url` asks for explicit consent on the new `/login-consent` page, whose Allow button now hands the token to the local application. @ericof

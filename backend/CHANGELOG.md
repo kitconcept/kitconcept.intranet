@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 3.12.1 (2026-11-25)
+
+
+### Bugfix
+
+- On restricted sites, Managers and Site Administrators get access to the site root again, and content created under a role adopted by a logged-in user is recorded with that user as the workflow actor. Sites are upgraded automatically, and the upgrade only changes restricted sites. @ericof 
+
+
+### Internal
+
+- Add example content pages created by users without portraits @iRohitSingh 
+
 ## 3.12.0 (2026-11-24)
 
 

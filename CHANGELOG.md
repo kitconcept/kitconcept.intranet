@@ -1,6 +1,45 @@
 # Changelog
 
 <!-- towncrier release notes start -->
+## 3.12.1 (2026-11-25)
+
+### Backend
+
+
+#### Bugfix
+
+- On restricted sites, Managers and Site Administrators get access to the site root again, and content created under a role adopted by a logged-in user is recorded with that user as the workflow actor. Sites are upgraded automatically, and the upgrade only changes restricted sites. @ericof 
+
+
+#### Internal
+
+- Add example content pages created by users without portraits @iRohitSingh 
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Align the workspace header search field to the right again, next to the notification bell. @sneridagh 
+- Center the header search again on desktop: the complementary logo column gets the same 300px as the larger logo column, so the search no longer sits 50px right of the middle. https://gitlab.kitconcept.io/kitconcept/distribution-kitconcept-intranet/-/work_items/871 @sneridagh 
+- Fix horizontal scroll on mobile caused by the footer containers' side margins. @Tishasoumya-02 
+
+
+#### Internal
+
+- Updated `@plone-collective/volto-authomatic` to 3.1.1. After login, an absolute `return_url` other than a loopback address now falls back to the site root, and a loopback `return_url` asks for explicit consent on the new `/login-consent` page, whose Allow button now hands the token to the local application. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 3.12.0 (2026-11-24)
 
 ### Backend

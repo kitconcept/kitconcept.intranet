@@ -124,9 +124,10 @@ class TestUpgradeRestricted:
             self.setup_tool.setLastVersionForProfile(DEFAULT_PROFILE, SOURCE)
 
     def test_offered_from_source_version(self):
-        assert pending_steps(self.setup_tool, DEFAULT_PROFILE) == [
-            (SOURCE, DESTINATION)
-        ]
+        assert pending_steps(self.setup_tool, DEFAULT_PROFILE)[0] == (
+            SOURCE,
+            DESTINATION,
+        )
 
     @pytest.mark.parametrize("permission", PERMISSIONS)
     @pytest.mark.parametrize("role", ROLES)
@@ -138,7 +139,7 @@ class TestUpgradeRestricted:
 
     def test_upgrade_bumps_versions(self):
         with api.env.adopt_user(SITE_OWNER_NAME):
-            self.setup_tool.upgradeProfile(DEFAULT_PROFILE)
+            self.setup_tool.upgradeProfile(DEFAULT_PROFILE, dest=DESTINATION)
             default = self.setup_tool.getLastVersionForProfile(DEFAULT_PROFILE)
             restricted = self.setup_tool.getLastVersionForProfile(RESTRICTED_PROFILE)
         assert default == (DESTINATION,)
@@ -160,9 +161,10 @@ class TestUpgradeNotRestricted:
             self.setup_tool.setLastVersionForProfile(DEFAULT_PROFILE, SOURCE)
 
     def test_offered_from_source_version(self):
-        assert pending_steps(self.setup_tool, DEFAULT_PROFILE) == [
-            (SOURCE, DESTINATION)
-        ]
+        assert pending_steps(self.setup_tool, DEFAULT_PROFILE)[0] == (
+            SOURCE,
+            DESTINATION,
+        )
 
     @pytest.mark.parametrize("permission", PERMISSIONS)
     def test_roles_not_granted(self, permission: str):

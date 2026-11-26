@@ -15,3 +15,22 @@
 input:focus-visible {
   border-color: inherit !important;
 }
+
+// VLT colours the button of the Button block the same on `:hover`, `:active`
+// and `:focus`. A mouse click leaves the focus on it, so it looked pressed
+// until the next click elsewhere. Keep that colour for keyboard focus (the
+// only focus indicator, since the outline is off above) and while hovered or
+// pressed; otherwise show the button's normal colours.
+body .block.__button {
+  > .button.container,
+  > .block-inner-container {
+    a,
+    button {
+      &:focus:not(:focus-visible):not(:hover):not(:active) {
+        border-color: var(--theme-foreground-color);
+        background-color: var(--theme-color);
+        color: var(--theme-foreground-color);
+      }
+    }
+  }
+}

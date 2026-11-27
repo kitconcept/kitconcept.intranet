@@ -4,8 +4,10 @@ Pure data, no Plone imports. Used by the demo content modules
 (``diff_demo_content``, ``table_demo_content``) for the distribution's post
 handler and for the REST scripts in ``scripts/``.
 
-A Wiki Page stores its content as a Plate value in
-``blocks["__somersault__"]["value"]``. The editor also expects a ``title``
+A Wiki Page stores its content as a Plate value in the ``main`` region,
+``blocks["main"]["value"]``, with ``"@type": "plate"`` (kitconcept.plate
+1.0.0a43; older pages use the legacy ``__somersault__`` block, see
+https://github.com/plone/aurora/issues/379). The editor also expects a ``title``
 block in ``blocks`` whose id is listed in ``blocks_layout["items"]`` (the
 example content is exported like that); a page with an empty layout opens
 fine but crashes the editor on Save (``Form.onSubmit`` looks the layout
@@ -18,7 +20,10 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 
-SOMERSAULT_KEY = "__somersault__"
+# kitconcept.plate.regions.MAIN_REGION and PLATE_TYPE, repeated here so this
+# module stays free of imports for the REST scripts.
+MAIN_REGION = "main"
+PLATE_TYPE = "plate"
 TITLE_BLOCK_ID = "3f3a2b1c-6d4e-4f5a-9b8c-7d6e5f4a3b2c"
 
 # The editor writes these on every paragraph and heading, and a ``blockWidth``
@@ -188,7 +193,7 @@ def blocks(value: list[dict]) -> dict:
     """The ``blocks`` field of a Wiki Page holding ``value`` as Plate content."""
     return {
         TITLE_BLOCK_ID: {"@type": "title"},
-        SOMERSAULT_KEY: {"@type": SOMERSAULT_KEY, "value": value},
+        MAIN_REGION: {"@type": PLATE_TYPE, "value": value},
     }
 
 

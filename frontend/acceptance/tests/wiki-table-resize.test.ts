@@ -49,7 +49,8 @@ import {
   createWikiPageWithValue,
   getWikiValue,
   patchContent,
-  SOMERSAULT_KEY,
+  MAIN_REGION,
+  PLATE_TYPE,
 } from '../fixtures/wiki-pages';
 import { login } from './login';
 import { expect, test } from './test';
@@ -101,7 +102,9 @@ const overflowOf = (tableLocator: Locator) =>
 /** The space left and right of a table's frame in its block. */
 async function marginsOf(tableLocator: Locator) {
   const block = (await tableLocator
-    .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+    .locator(
+      'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+    )
     .boundingBox())!;
   const frame = (await tableFrameOf(tableLocator).boundingBox())!;
   return [
@@ -234,7 +237,9 @@ test.describe('Wiki tables: resize handle', () => {
     // (Wide, 1440px, is wider than the editor's room), and as in the #828
     // mockup the narrower step is the one stored.
     const block = (await editor
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox())!;
     const frame = (await tableFrameOf(editor).boundingBox())!;
     const room = block.x + block.width - 32 - frame.x;
@@ -517,8 +522,8 @@ test.describe('Wiki tables: resize handle', () => {
     for (const props of versions) {
       await patchContent(page, contentPath, {
         blocks: {
-          [SOMERSAULT_KEY]: {
-            '@type': SOMERSAULT_KEY,
+          [MAIN_REGION]: {
+            '@type': PLATE_TYPE,
             value: [
               { type: 'title', children: [{ text: 'Resize diff' }] },
               ...value.map((node) =>
@@ -667,7 +672,9 @@ test.describe('Wiki tables: resize handle', () => {
     // before the content area's right edge in the editor (#826, #836); the
     // handle is inside the content area, not clipped.
     const block = (await full
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox())!;
     const fullFrame = (await tableFrameOf(full).boundingBox())!;
     expect(Math.round(fullFrame.x)).toBe(await textColumnX(page, 'Intro'));
@@ -1015,7 +1022,7 @@ test.describe('Wiki tables: resize handle', () => {
     await page.setViewportSize({ width: 2600, height: 1000 });
     await expect(handle).toHaveCount(1);
     const block = editor.locator(
-      'xpath=ancestor::div[contains(@class, "block-table")][1]',
+      'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
     );
     await expect(block).not.toHaveClass(/wiki-table-custom-width/);
     await expect.poll(() => frameWidth(editor)).toBe(780);
@@ -1147,7 +1154,9 @@ test.describe('Wiki tables: resize handle', () => {
     const editor = editorTable(page, 0);
     await expect(editor).toBeVisible();
     const block = (await editor
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox())!;
     // The frame's right edge at the room; the room from the text column.
     const roomEdge = Math.round(block.x + block.width - 32);
@@ -1202,7 +1211,7 @@ test.describe('Wiki tables: resize handle', () => {
     const textX = await textColumnX(page, 'Text before the table.');
     const blockOf = (tableLocator: Locator) =>
       tableLocator.locator(
-        'xpath=ancestor::div[contains(@class, "block-table")][1]',
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
       );
     const check = async (tableLocator: Locator, margin: number, x: number) => {
       const block = (await blockOf(tableLocator).boundingBox())!;
@@ -1314,7 +1323,9 @@ test.describe('Wiki tables: resize handle', () => {
     // Wider than the page: from the left margin, scrolling.
     const wide = viewTable(page, 1);
     const block = (await wide
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox())!;
     const wideFrame = (await tableFrameOf(wide).boundingBox())!;
     expect(Math.round(wideFrame.x - block.x)).toBe(10);
@@ -1504,7 +1515,9 @@ test.describe('Wiki tables: resize handle', () => {
     const editor = editorTable(page, 0);
     await expect(editor).toBeVisible();
     const block = (await editor
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox())!;
     const roomEdge = Math.round(block.x + block.width - 32);
     const room = roomEdge - (await tableFrameOf(editor).boundingBox())!.x;
@@ -1585,7 +1598,9 @@ test.describe('Wiki tables: resize handle', () => {
     ) => {
       const editor = editorTable(page, index);
       const block = (await editor
-        .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+        .locator(
+          'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+        )
         .boundingBox())!;
       const roomEdge = Math.round(block.x + block.width - 32);
       const room = roomEdge - (await tableFrameOf(editor).boundingBox())!.x;
@@ -1669,7 +1684,9 @@ test.describe('Wiki tables: resize handle', () => {
     const edge = columnEdge(wide);
     const frameOfWide = tableFrameOf(wide);
     const wideBlock = (await wide
-      .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+      .locator(
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+      )
       .boundingBox())!;
     const roomEdge = Math.round(wideBlock.x + wideBlock.width - 32);
     await edge.scrollIntoViewIfNeeded();
@@ -2009,7 +2026,9 @@ test.describe('Wiki tables: resize handle', () => {
     const proportions = [360 / 1440, 480 / 1440, 600 / 1440];
     const check = async (tableLocator: Locator, margin: number) => {
       const block = (await tableLocator
-        .locator('xpath=ancestor::div[contains(@class, "block-table")][1]')
+        .locator(
+          'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
+        )
         .boundingBox())!;
       const frame = (await tableFrameOf(tableLocator).boundingBox())!;
       const room = block.x + block.width - margin - frame.x;

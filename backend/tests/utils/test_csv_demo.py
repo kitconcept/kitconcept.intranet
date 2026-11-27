@@ -37,7 +37,7 @@ class TestCsvDemoContent:
 
     def test_page_holds_a_csv_table_block_pointing_at_the_file(self):
         page_id, _title, blocks, _layout = content.page_fields()
-        value = blocks["__somersault__"]["value"]
+        value = blocks["main"]["value"]
         block = next(n for n in value if n["type"] == "ploneBlock")
         assert block["@type"] == "csvtable"
         assert block["url"] == f"{content.CONTAINER_PATH}/{content.FILE_ID}"
@@ -48,7 +48,7 @@ class TestCsvDemoContent:
         """The REST script creates the demo in any container (work item 827)."""
         _id, _title, blocks, _layout = content.page_fields("/wiki-836/")
         block = next(
-            n for n in blocks["__somersault__"]["value"] if n["type"] == "ploneBlock"
+            n for n in blocks["main"]["value"] if n["type"] == "ploneBlock"
         )
         assert block["url"] == f"/wiki-836/{content.FILE_ID}"
 

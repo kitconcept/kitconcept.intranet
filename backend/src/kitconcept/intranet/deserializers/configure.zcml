@@ -4,4 +4,8 @@
       factory=".tasks.TasksDeserializer"
       provides="plone.restapi.interfaces.IBlockFieldDeserializationTransformer"
       />
+  <subscriber
+      factory=".tasks.PlateTasksDeserializer"
+      provides="plone.restapi.interfaces.IBlockFieldDeserializationTransformer"
+      />
 </configure>

@@ -62,7 +62,7 @@ class TestWikiContent:
         layout = wiki_content.blocks_layout()
         assert layout["items"] == [wiki_content.TITLE_BLOCK_ID]
         assert blocks[wiki_content.TITLE_BLOCK_ID] == {"@type": "title"}
-        assert blocks["__somersault__"]["@type"] == "__somersault__"
+        assert blocks["main"]["@type"] == "plate"
 
     def test_table_has_header_row_and_unique_ids(self):
         node = wiki_content.table(
@@ -149,7 +149,7 @@ class TestTableDemoContent:
         pages = content.pages()
         assert [p[0] for p in pages] == [p[0] for p in content.PAGES]
         for page_id, page_title, blocks, layout in pages:
-            value = blocks["__somersault__"]["value"]
+            value = blocks["main"]["value"]
             assert value[0] == wiki_content.title(page_title)
             assert len(tables(value)) == TABLES[page_id]
             assert layout == wiki_content.blocks_layout()
@@ -267,7 +267,7 @@ class TestWidthsPage:
 
     def test_pages_pass_the_container_on(self):
         value = {
-            page_id: blocks["__somersault__"]["value"]
+            page_id: blocks["main"]["value"]
             for page_id, _title, blocks, _layout in content.pages("/wiki-836")
         }
         assert {
@@ -291,7 +291,7 @@ class TestCreateTableDemoPages:
             assert page.title == page_title
             assert page.blocks_layout["items"] == [wiki_content.TITLE_BLOCK_ID]
             assert (
-                len(tables(page.blocks["__somersault__"]["value"])) == TABLES[page_id]
+                len(tables(page.blocks["main"]["value"])) == TABLES[page_id]
             )
 
     def test_is_idempotent(self, workspace):

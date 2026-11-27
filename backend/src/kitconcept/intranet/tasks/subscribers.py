@@ -4,6 +4,7 @@ from .catalog import PENDING_KEY
 from .catalog import apply_changes
 from .model import TASK_TYPE
 from .model import InlineTask
+from .regions import plate_region
 from .values import iter_todos
 from .values import stamp_task_metadata
 from Acquisition import aq_base
@@ -32,7 +33,7 @@ def moved(context, event):
         aq_base(context), "_v_copied_tasks", False
     ):
         context.__dict__.pop("_v_copied_tasks", None)
-        block = (getattr(context, "blocks", {}) or {}).get("__somersault__", {})
+        _, block = plate_region(getattr(context, "blocks", {}) or {})
         for node in iter_todos(block.get("value", [])):
             InlineTask(context, node).reindexObject()
 
@@ -50,10 +51,9 @@ def will_move(context, event):
 def copied(context, event):
     """Give copied todos fresh UUIDs and authorship before indexing the new page."""
     blocks = getattr(aq_base(context), "blocks", {}) or {}
-    if "__somersault__" in blocks:
+    key, block = plate_region(blocks)
+    if key is not None:
         blocks = deepcopy(blocks)
-        blocks["__somersault__"] = stamp_task_metadata(
-            context, blocks["__somersault__"], reset=True
-        )
+        blocks[key] = stamp_task_metadata(context, block, reset=True)
         context.blocks = blocks
         context._v_copied_tasks = True

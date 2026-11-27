@@ -2,6 +2,7 @@
 
 from .model import NAMESPACE
 from .model import InlineTask
+from .regions import plate_region
 from .values import extract_task_details
 from .values import iter_todos
 from .values import stamp_task_metadata
@@ -40,13 +41,13 @@ def synchronize(page, catalog, legacy=False):
     if "task_status" not in catalog.indexes():
         return
     blocks = getattr(aq_base(page), "blocks", {}) or {}
-    if "__somersault__" not in blocks:
+    key, block = plate_region(blocks)
+    if key is None:
         return
-    block = blocks["__somersault__"]
     normalized = stamp_task_metadata(page, block, existing=block, legacy=legacy)
     if block != normalized:
         # Replace the JSON field so persistence notices normalized task metadata.
         next_blocks = deepcopy(blocks)
-        next_blocks["__somersault__"] = normalized
+        next_blocks[key] = normalized
         page.blocks = next_blocks
     apply_changes(page, catalog, list(iter_todos(normalized.get("value", []))), [])

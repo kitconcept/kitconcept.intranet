@@ -1,7 +1,8 @@
 /**
  * OVERRIDE DiffField.jsx
  * REASON: Render the diff of Wiki Pages (Plate content in
- *         `blocks.__somersault__`) with Plate's own diff (`@platejs/diff`)
+ *         the `main` region, or the legacy `blocks.__somersault__`) with
+ *         Plate's own diff (`@platejs/diff`)
  *         instead of Volto's HTML string diff, which shows nothing for Plate
  *         content. Spike for the HISTORY DIFF epic; all other fields and
  *         content types keep the original behaviour.
@@ -356,7 +357,8 @@ const DefaultDiffField = ({
 };
 
 /**
- * Wiki Pages store their Plate content in `blocks.__somersault__`; the HTML
+ * Wiki Pages store their Plate content in the `main` region (or the legacy
+ * `blocks.__somersault__`); the HTML
  * string diff cannot render it (lazy-loaded renderer), so those go to the
  * Plate-based diff. Everything else keeps the default behaviour.
  *

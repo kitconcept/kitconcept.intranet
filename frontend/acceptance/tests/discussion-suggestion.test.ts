@@ -19,8 +19,8 @@ function withSomersaultDiscussionFixture({
     return {
       ...body,
       blocks: {
-        __somersault__: {
-          '@type': '__somersault__',
+        main: {
+          '@type': 'plate',
           value: [
             { type: 'title', children: [{ text: title }] },
             {
@@ -64,7 +64,7 @@ function withSomersaultDiscussionFixture({
         },
       },
       blocks_layout: {
-        items: ['__somersault__'],
+        items: ['main'],
       },
     };
   };
@@ -90,8 +90,8 @@ function withSomersaultSuggestionFixture({
     return {
       ...body,
       blocks: {
-        __somersault__: {
-          '@type': '__somersault__',
+        main: {
+          '@type': 'plate',
           value: [
             { type: 'title', children: [{ text: title }] },
             {
@@ -143,7 +143,7 @@ function withSomersaultSuggestionFixture({
         },
       },
       blocks_layout: {
-        items: ['__somersault__'],
+        items: ['main'],
       },
     };
   };

@@ -2,7 +2,11 @@ import { expect, test } from './test';
 import { login } from './login';
 import { createWikiPage } from './content';
 import { waitForPlateEditorReady } from './plate';
-import { getEditorHandle, getSelection, setSelection } from '@platejs/playwright';
+import {
+  getEditorHandle,
+  getSelection,
+  setSelection,
+} from '@platejs/playwright';
 
 function withSomersaultBody(body: Record<string, unknown>) {
   const title = typeof body.title === 'string' ? body.title : '';
@@ -10,8 +14,8 @@ function withSomersaultBody(body: Record<string, unknown>) {
   return {
     ...body,
     blocks: {
-      __somersault__: {
-        '@type': '__somersault__',
+      main: {
+        '@type': 'plate',
         value: [
           { type: 'title', children: [{ text: title }] },
           { type: 'p', children: [{ text: '' }] },

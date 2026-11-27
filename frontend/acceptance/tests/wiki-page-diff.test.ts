@@ -30,7 +30,8 @@ import {
   getContent,
   getWikiValue,
   patchContent,
-  SOMERSAULT_KEY,
+  MAIN_REGION,
+  PLATE_TYPE,
   TABLES,
 } from '../fixtures/wiki-pages';
 
@@ -299,7 +300,7 @@ test.describe('Wiki Page history diff', () => {
     await patchContent(page, contentPath, {
       blocks: {
         ...content.blocks,
-        [SOMERSAULT_KEY]: { '@type': SOMERSAULT_KEY, value },
+        [MAIN_REGION]: { '@type': PLATE_TYPE, value },
       },
       changeNote: 'Drei Wörter geändert',
     });
@@ -362,7 +363,7 @@ test.describe('Wiki Page history diff', () => {
     await patchContent(page, contentPath, {
       blocks: {
         ...content.blocks,
-        [SOMERSAULT_KEY]: { '@type': SOMERSAULT_KEY, value },
+        [MAIN_REGION]: { '@type': PLATE_TYPE, value },
       },
       changeNote: 'Link-Ziel geändert',
     });
@@ -538,7 +539,7 @@ test.describe('Wiki Page history diff', () => {
     await patchContent(page, contentPath, {
       blocks: {
         ...content.blocks,
-        [SOMERSAULT_KEY]: { '@type': SOMERSAULT_KEY, value },
+        [MAIN_REGION]: { '@type': PLATE_TYPE, value },
       },
       changeNote: 'Zeile verschoben',
     });
@@ -596,7 +597,7 @@ test.describe('Wiki Page history diff', () => {
     await patchContent(page, contentPath, {
       blocks: {
         ...content.blocks,
-        [SOMERSAULT_KEY]: { '@type': SOMERSAULT_KEY, value },
+        [MAIN_REGION]: { '@type': PLATE_TYPE, value },
       },
       changeNote: 'Tabelle aktualisiert',
     });
@@ -664,8 +665,8 @@ test.describe('Wiki Page history diff', () => {
     for (const props of versions) {
       await patchContent(page, contentPath, {
         blocks: {
-          [SOMERSAULT_KEY]: {
-            '@type': SOMERSAULT_KEY,
+          [MAIN_REGION]: {
+            '@type': PLATE_TYPE,
             value: [
               { type: 'title', children: [{ text: 'Diff column widths' }] },
               intro,
@@ -706,7 +707,7 @@ test.describe('Wiki Page history diff', () => {
     // classes.)
     const blockOf = (name: 'left' | 'right') =>
       side(name).locator(
-        'xpath=ancestor::div[contains(@class, "block-table")][1]',
+        'xpath=ancestor::div[contains(concat(" ", normalize-space(@class), " "), " block-table ")][1]',
       );
     await expect(blockOf('left')).toHaveClass(/slate-blockWidth-default/);
     await expect(blockOf('right')).toHaveClass(/slate-blockWidth-medium/);

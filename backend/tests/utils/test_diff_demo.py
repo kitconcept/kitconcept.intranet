@@ -90,7 +90,7 @@ class TestCreateDemoPage:
 
     def test_current_content_is_last_version(self, workspace):
         page = workspace[content.PAGE_ID]
-        value = page.blocks["__somersault__"]["value"]
+        value = page.blocks["main"]["value"]
         by_id = {n["id"]: n for n in value}
         assert by_id["h-diskussion"]["align"] == "center"
         assert by_id["p-naechstes"]["type"] == "blockquote"

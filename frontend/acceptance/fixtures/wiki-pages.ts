@@ -20,7 +20,25 @@ type PlateNode = {
   [key: string]: unknown;
 };
 
+/**
+ * The region of the page body and its `@type` (volto-plate 1.0.0-alpha.41,
+ * kitconcept.plate 1.0.0a43): `blocks.main`, with `"@type": "plate"`.
+ */
+export const MAIN_REGION = 'main';
+export const PLATE_TYPE = 'plate';
+
+/**
+ * The legacy key and `@type` of the page body, before the `main` region:
+ * content not migrated yet still has it, see plone/aurora#379.
+ */
 export const SOMERSAULT_KEY = '__somersault__';
+
+/** The page body region of `blocks`, in either shape (`main` wins). */
+export function plateRegion(blocks: Blocks | undefined) {
+  return (blocks?.[MAIN_REGION] ?? blocks?.[SOMERSAULT_KEY]) as
+    | { value: PlateNode[]; [key: string]: unknown }
+    | undefined;
+}
 
 export type TablePageId =
   | 'projektbudget-2026'
@@ -86,13 +104,13 @@ export async function getContent(
   return response.json();
 }
 
-/** The Plate value stored in a Wiki Page's somersault block. */
+/** The Plate value stored in a Wiki Page's body region. */
 export async function getWikiValue(
   requestOrPage: APIRequestContext | Page,
   path: string,
 ): Promise<PlateNode[]> {
   const content = await getContent(requestOrPage, path);
-  return content.blocks[SOMERSAULT_KEY].value;
+  return plateRegion(content.blocks)?.value ?? [];
 }
 
 function withBlocks(blocks: Blocks, blocksLayout: Blocks) {
@@ -140,8 +158,8 @@ export async function createWikiPageWithValue(
       ...body,
       blocks: {
         ...(body.blocks as Blocks),
-        [SOMERSAULT_KEY]: {
-          '@type': SOMERSAULT_KEY,
+        [MAIN_REGION]: {
+          '@type': PLATE_TYPE,
           value: [{ type: 'title', children: [{ text: title }] }, ...value],
         },
       },

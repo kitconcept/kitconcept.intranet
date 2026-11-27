@@ -5,6 +5,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useUser } from '@plone/volto/hooks';
 import { useSelector } from 'react-redux';
 import PersonPill from '@kitconcept/volto-plate/components/PersonPill/PersonPill';
+import { getPlateRegion } from '@kitconcept/volto-plate/helpers/plateRegion';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -89,7 +90,9 @@ const DocumentByLine = ({ content, ...props }: DocumentByLineProps) => {
     });
   }, [creators, content, isAddMode, user]);
 
-  const discussions = content?.blocks?.['__somersault__']?.discussions;
+  const discussions = getPlateRegion<{
+    discussions?: Record<string, { isResolved?: boolean }>;
+  }>(content?.blocks)?.discussions;
   const discussionCount = useMemo(() => {
     return Object.values(discussions || {}).reduce((acc, discussion) => {
       return acc + (discussion.isResolved ? 0 : 1);

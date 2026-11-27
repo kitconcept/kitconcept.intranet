@@ -20,4 +20,5 @@ clm
 review
 notifications
 watch
+dashboard
 ```

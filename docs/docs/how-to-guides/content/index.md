@@ -17,6 +17,7 @@ create-person
 create-location
 create-organisational-unit
 set-content-owner
+customize-your-dashboard
 restore-deleted-content
 drag-drop-files
 image-editor

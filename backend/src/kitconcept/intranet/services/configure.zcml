@@ -28,6 +28,37 @@
       name="@site"
       />
 
+  <!-- collective.taxonomy guards the @taxonomy write endpoints with
+       cmf.ManagePortal, which Plone grants to Manager only. Re-register them
+       on our browser layer with the "Manage taxonomies" permission, which
+       Site Administrators have, as the taxonomy control panel itself uses. -->
+  <plone:service
+      method="POST"
+      factory="collective.taxonomy.restapi.services.taxonomy.add.TaxonomyPost"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      permission="collective.taxonomy.ManageTaxonomies"
+      layer="kitconcept.intranet.interfaces.IBrowserLayer"
+      name="@taxonomy"
+      />
+
+  <plone:service
+      method="PATCH"
+      factory="collective.taxonomy.restapi.services.taxonomy.update.TaxonomyPatch"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      permission="collective.taxonomy.ManageTaxonomies"
+      layer="kitconcept.intranet.interfaces.IBrowserLayer"
+      name="@taxonomy"
+      />
+
+  <plone:service
+      method="DELETE"
+      factory="collective.taxonomy.restapi.services.taxonomy.delete.TaxonomyDelete"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      permission="collective.taxonomy.ManageTaxonomies"
+      layer="kitconcept.intranet.interfaces.IBrowserLayer"
+      name="@taxonomy"
+      />
+
   <adapter
       factory=".byline.BylineExpander"
       name="byline"

@@ -19,4 +19,5 @@ import-export
 search-settings
 iframe-domains
 content-review
+set-default-dashboard-layout
 ```

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+             description="Single state workflow for personal dashboards. Only the owner and site administrators can access them."
+             initial_state="private"
+             state_variable="review_state"
+             title="Dashboard Workflow"
+             workflow_id="dashboard_workflow"
+             i18n:attributes="title; description"
+             i18n:domain="kitconcept.intranet"
+>
+
+  <permission>Access contents information</permission>
+  <permission>Modify portal content</permission>
+  <permission>View</permission>
+
+  <state state_id="private"
+         title="Private"
+         i18n:attributes="title"
+  >
+    <description i18n:translate="">
+    Can only be seen and edited by the owner and site administrators.
+    </description>
+    <permission-map acquired="False"
+                    name="Access contents information"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="Modify portal content"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False"
+                    name="View"
+    >
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="action"
+  >
+    <description>Previous transition</description>
+    <default>
+
+      <expression>transition/getId|nothing</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="actor"
+  >
+    <description>The ID of the user who performed the previous transition</description>
+    <default>
+
+      <expression>user/getId</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="comments"
+  >
+    <description>Comment about the last transition</description>
+    <default>
+
+      <expression>python:state_change.kwargs.get('comment', '')</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
+  <variable for_catalog="False"
+            for_status="False"
+            update_always="False"
+            variable_id="review_history"
+  >
+    <description>Provides access to workflow history</description>
+    <default>
+
+      <expression>state_change/getHistory</expression>
+    </default>
+    <guard>
+      <guard-permission>Request review</guard-permission>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </variable>
+  <variable for_catalog="False"
+            for_status="True"
+            update_always="True"
+            variable_id="time"
+  >
+    <description>When the previous transition was performed</description>
+    <default>
+
+      <expression>state_change/getDateTime</expression>
+    </default>
+    <guard>
+</guard>
+  </variable>
+
+</dc-workflow>

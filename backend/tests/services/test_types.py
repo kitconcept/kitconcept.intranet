@@ -84,3 +84,15 @@ def test_paths_setting():
     assert IText.providedBy(setting)
     setting.validate("/news\n/events")
     assert setting.required is False
+
+
+def test_patch_ignores_selected(portal, manager_request):
+    """The Volto Layout editor also sends `selected` along with the blocks."""
+    resp = manager_request.patch(
+        "/@types/Dashboard",
+        json={"properties": {"selected": {"default": "some-block-id"}}},
+    )
+    assert resp.status_code == 204
+
+    properties = manager_request.get("/@types/Dashboard").json()["properties"]
+    assert "selected" not in properties

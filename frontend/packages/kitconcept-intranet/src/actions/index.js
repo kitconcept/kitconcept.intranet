@@ -14,6 +14,7 @@
 export { submitFeedbackContactForm } from './emailSend';
 export { toggleLike } from './likes/likes';
 export { postponeReview, delegateReview, approveReview } from './review/review';
+export { getDashboard, createDashboard } from './dashboard/dashboard';
 export {
   getNotifications,
   markNotificationsRead,

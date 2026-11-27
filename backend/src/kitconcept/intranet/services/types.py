@@ -1,5 +1,6 @@
 from plone.registry.interfaces import IRegistry
 from plone.restapi.services.types.get import TypesGet as BaseService
+from plone.restapi.services.types.update import TypesUpdate as BaseTypesUpdate
 from zope.component import getUtility
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
@@ -33,3 +34,17 @@ class TypesGet(BaseService):
 
         response["fieldsets"] = fieldsets
         return response
+
+
+class TypesUpdate(BaseTypesUpdate):
+    """Override @types PATCH to ignore the `selected` key.
+
+    The Layout editor in the Volto types control panel sends the selected
+    block id along with blocks and blocks_layout. plone.restapi would try to
+    create a `selected` field, fail with a 400 and roll back the whole save.
+    """
+
+    def reply_for_field(self, name, field_name, data, create=False):
+        if create and field_name == "selected":
+            return self.reply_no_content()
+        return super().reply_for_field(name, field_name, data, create=create)
